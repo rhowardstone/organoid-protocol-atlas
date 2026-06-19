@@ -13,8 +13,8 @@ local-only (git-ignored); this report and the manifest carry metadata + checksum
 | PMC4900885 | cerebral | ncbi_efetch_xml | 3962 | 67 | 9 | 7 | 5 | 0 | 37 | supplement_external_only; external_supplement_files; figures_present |
 | PMC5659341 | cerebral | ncbi_efetch_xml | 43103 | 197 | 5 | 11 | 5 | 1 | 43 | supplement_external_only; tables_present; external_supplement_files; figures_present |
 | PMC4519016 | cerebral | ncbi_efetch_xml | 3707 | 62 | 8 | 7 | 6 | 0 | 52 | supplement_external_only; external_supplement_files; figures_present |
-| PMC4620584 | kidney | ncbi_efetch_xml | 13222 | 868 | 4 | 8 | 4 | 0 | 54 | external_supplement_files; figures_present |
-| PMC4747858 | kidney | ncbi_efetch_xml | 10081 | 32 | 2 | 6 | 1 | 0 | 51 | supplement_external_only; external_supplement_files; figures_present |
+| PMC4620584 | kidney | europe_pmc_xml | 15983 | 1314 | 8 | 8 | 189 | 0 | 54 | external_supplement_files; figures_present |
+| PMC4747858 | kidney | europe_pmc_xml | 10081 | 32 | 2 | 6 | 1 | 0 | 51 | supplement_external_only; external_supplement_files; figures_present |
 | PMC5113819 | kidney | ncbi_efetch_xml | 18792 | 0 | 0 | 3 | 1 | 2 | 51 | no_supplementary_material_inline; tables_present; figures_present |
 | PMC4313365 | liver | ncbi_efetch_xml | 22096 | 1024 | 6 | 15 | 3 | 0 | 61 | external_supplement_files; figures_present |
 | PMC3634804 | liver | ncbi_efetch_xml | 1803 | 292 | 7 | 4 | 3 | 0 | 30 | supplement_external_only; external_supplement_files; figures_present |
@@ -33,10 +33,10 @@ local-only (git-ignored); this report and the manifest carry metadata + checksum
 
 ## Aggregate
 - Papers: 25
-- Source routes: {'europe_pmc_xml': 1, 'ncbi_efetch_xml': 24}
+- Source routes: {'europe_pmc_xml': 3, 'ncbi_efetch_xml': 22}
 - Methods section found: 25/25
 - Supplement text inline (>=400 chars): 8/25 (low is expected — real supplements are external files, see below)
-- Papers with external supplement files: 23/25 (140 files total)
+- Papers with external supplement files: 23/25 (144 files total)
 - Papers with figures: 25/25 (192 figures total)
 - Papers with tables: 9/25 (recipe sometimes lives in tables)
 

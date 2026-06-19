@@ -240,6 +240,7 @@ def parse_jats(xml_bytes: bytes) -> dict:
     return {
         "methods_text": methods_text,
         "methods_detected": methods_detected,
+        "body_text": body_text,
         "body_chars": body_chars,
         "supplementary_text": supplementary_text,
         "supplementary_files": supplementary_files,
@@ -256,6 +257,7 @@ def parse_jats(xml_bytes: bytes) -> dict:
 def content_sha256(parsed: dict) -> str:
     payload = {
         "methods_text": parsed["methods_text"],
+        "body_text": parsed["body_text"],
         "supplementary_text": parsed["supplementary_text"],
         "supplementary_files": parsed["supplementary_files"],
         "figures": parsed["figures"],
