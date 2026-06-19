@@ -46,6 +46,9 @@ organoid_demo/            the working prototype (the CONTRACT + baseline + eval 
   outputs/                baseline predictions + metrics + error_analysis (reference)
 pipeline/
   tier0_extract.py        Tier 0: XML-first evidence-bundle extraction (no LLM)
+  tier1_extract.py        Tier 1: local-LLM structured extraction -> OrganoidProtocol (+ grounding)
+  build_kg.py             build the SQLite protocol KG (Datasette-servable)
+serve/metadata.yaml       Datasette config: facets + canned comparison queries (PaperStack serve layer)
 data/
   corpus/pmc_oa_25.tsv    25-paper PMC-OA corpus manifest (selection only; no text yet)
   corpus/README.md        columns, selection policy, coverage, acceptance gate

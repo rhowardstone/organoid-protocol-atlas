@@ -1,0 +1,2 @@
+# Generated SQLite KG (carries evidence snippets) — regenerate via pipeline/build_kg.py
+*.db
