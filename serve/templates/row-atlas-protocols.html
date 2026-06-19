@@ -1,0 +1,73 @@
+{% extends "default:base.html" %}
+{% block title %}Protocol — Organoid Protocol Atlas{% endblock %}
+{% block body_class %}index{% endblock %}
+
+{% block content %}
+<div class="apa-topbar">
+  <span class="dot"></span> <a href="/">ORGANOID PROTOCOL ATLAS</a>
+  <span class="dot"></span> <a href="/atlas/protocols">All protocols</a>
+  <span class="dot"></span> <a href="/atlas/signaling_by_type">Compare</a>
+</div>
+
+<div class="apa-recipe" id="recipe"><p style="color:var(--muted)">Loading protocol…</p></div>
+
+<script>
+const pmcid = decodeURIComponent(location.pathname.split('/').filter(Boolean).pop());
+const esc = s => (s==null?'':String(s)).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const j = async u => (await fetch(u)).json();
+
+function conc(r){
+  if(r.value==null && !r.unit) return '';
+  const u = r.canonical_unit || r.unit || '';
+  return `${r.value==null?'':r.value} ${u==='not stated'?'':u}`.trim();
+}
+function badge(g){ return g ? '<span class="apa-badge ok">grounded</span>' : '<span class="apa-badge no">ungrounded</span>'; }
+
+(async () => {
+  let p, reags;
+  try {
+    [p] = await j(`/atlas/protocols/${encodeURIComponent(pmcid)}.json?_shape=array`);
+    reags = await j(`/atlas/reagents.json?_shape=array&_size=300&pmcid=${encodeURIComponent(pmcid)}`);
+  } catch (e) {
+    document.getElementById('recipe').innerHTML = '<p>Could not load this protocol.</p>'; return;
+  }
+  const sig = reags.filter(r => r.kind === 'signaling');
+  const sup = reags.filter(r => r.kind === 'supplement');
+  const cite = `<a href="https://doi.org/${esc(p.doi)}" target="_blank" rel="noopener">${esc(p.doi)}</a>`;
+  const title = `${esc((p.organoid_type||'').toUpperCase())} organoid · ${esc(p.first_author||'')} ${esc(p.year||'')}`;
+
+  const ax = [
+    ['Organoid type', p.organoid_type],
+    ['Source cells', `${esc(p.source_cell_type||'—')}${p.species?(' · '+esc(p.species)):''}`],
+    ['Matrix', p.matrix || '—'],
+    ['Base media', p.base_media || ('— ('+(p.base_media_reporting||'?')+')')],
+    ['License', p.license || '—'],
+    ['Grounding', (p.grounding_rate==null?'—':Math.round(p.grounding_rate*100)+'%')],
+  ].map(([k,v]) => `<div class="ax"><div class="k">${esc(k)}</div><div class="v">${esc(v)}</div></div>`).join('');
+
+  const rows = sig.map(r => `
+    <tr>
+      <td><a href="/atlas/reagents?name__exact=${encodeURIComponent(r.name)}">${esc(r.name)}</a></td>
+      <td>${esc(r.role==='not stated'?'':r.role)}</td>
+      <td>${esc(conc(r))}</td>
+      <td>${badge(r.grounded)}</td>
+      <td class="quote">${r.evidence_quote?('“'+esc(r.evidence_quote)+'”'):''}</td>
+    </tr>`).join('') || `<tr><td colspan="5" style="color:var(--muted)">No signaling factors extracted.</td></tr>`;
+
+  document.getElementById('recipe').innerHTML = `
+    <div class="apa-kicker">Recipe card · ${esc(pmcid)}</div>
+    <h1>${title}</h1>
+    <p style="color:var(--muted);margin:.2rem 0 0">Source: ${cite}</p>
+    <div class="apa-axes">${ax}</div>
+    <h3 style="margin:1.2rem 0 .3rem">Signaling cocktail <span style="color:var(--muted);font-weight:400">(${sig.length})</span></h3>
+    <table class="apa-cocktail">
+      <thead><tr><th>Reagent</th><th>Role</th><th>Conc.</th><th>Evidence</th><th>Verbatim span</th></tr></thead>
+      <tbody>${rows}</tbody>
+    </table>
+    ${sup.length ? `<h3 style="margin:1.2rem 0 .3rem">Media supplements <span style="color:var(--muted);font-weight:400">(${sup.length})</span></h3>
+      <p style="font-size:.9rem">${sup.map(r=>esc(r.name)).join(' · ')}</p>` : ''}
+    <p style="margin-top:1.5rem"><a href="/atlas/protocols">← all protocols</a></p>
+  `;
+})();
+</script>
+{% endblock %}

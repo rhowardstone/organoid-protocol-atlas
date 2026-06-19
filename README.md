@@ -49,7 +49,7 @@ pipeline/
   tier1_extract.py        Tier 1: local-LLM structured extraction -> OrganoidProtocol (+ grounding)
   build_kg.py             build the SQLite protocol KG (Datasette-servable)
 serve/metadata.yaml       Datasette config: facets + canned comparison queries (PaperStack serve layer)
-serve/templates/index.html  custom landing (thesis, pipeline, live stats, jump-in cards)
+serve/templates/          custom landing + protocol recipe-card row view (evidence-linked)
 serve/static/atlas.css    global theme — repurposed CaseStack-style frontend (not vanilla Datasette)
 data/
   corpus/pmc_oa_25.tsv    25-paper PMC-OA corpus manifest (selection only; no text yet)
