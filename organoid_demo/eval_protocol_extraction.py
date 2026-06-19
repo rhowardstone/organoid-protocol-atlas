@@ -76,7 +76,7 @@ def evaluate(preds: dict[str, OrganoidProtocol], gold: dict) -> dict:
         if g["matrix"]["reporting"] == "reported":
             scalar_checks.append((p.matrix.name, g["matrix"]["name"]))
         if g["base_media"]["reporting"] == "reported":
-            scalar_checks.append((p.base_media, g["base_media"]["value"]))
+            scalar_checks.append((p.base_media.name, g["base_media"]["value"]))
         for got, want in scalar_checks:
             scalar_total += 1
             if got == want:
@@ -94,7 +94,7 @@ def evaluate(preds: dict[str, OrganoidProtocol], gold: dict) -> dict:
             report_errors.append(f"{g['organoid_type']}: matrix predicted "
                                   f"{pred_matrix_status}, gold {g['matrix']['reporting']}")
 
-        pred_media_status = "reported" if p.base_media else "unresolved_absence"
+        pred_media_status = "reported" if p.base_media.name else "unresolved_absence"
         report_total += 1
         if pred_media_status == g["base_media"]["reporting"]:
             report_hits += 1

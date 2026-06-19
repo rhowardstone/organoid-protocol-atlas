@@ -25,7 +25,7 @@ def main():
         grounded = sum(1 for r in proto.signaling_factors if r.evidence)
         print(f"  {proto.organoid_type.value:<11} {proto.source_doi:<22} "
               f"{n_factors} signaling factors ({grounded} grounded), "
-              f"matrix={proto.matrix.name}, media={proto.base_media}")
+              f"matrix={proto.matrix.name}, media={proto.base_media.name}")
 
     print("\n== Grounded comparison query: signaling factors by organoid type ==\n")
     comp = store.signaling_comparison()
@@ -44,7 +44,7 @@ def main():
         missing = []
         if proto.matrix.name is None:
             missing.append("matrix")
-        if proto.base_media is None:
+        if proto.base_media.name is None:
             missing.append("base_media")
         if not proto.signaling_factors:
             missing.append("signaling_factors")

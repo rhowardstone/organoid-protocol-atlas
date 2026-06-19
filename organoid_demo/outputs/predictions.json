@@ -21,7 +21,17 @@
         "confidence": 0.85
       }
     },
-    "base_media": "Advanced DMEM/F12",
+    "base_media": {
+      "name": "Advanced DMEM/F12",
+      "reporting": "reported",
+      "evidence": {
+        "source_doi": "10.1038/nature07935",
+        "quote": "Isolated mouse small intestinal crypts were embedded in Matrigel and overlaid with Advanced DMEM/F12 supplemented with EGF (50 ng/ml), Noggin (100 ng/ml) and R-spondin1 (500 ng/ml).",
+        "section": "Methods",
+        "page": null,
+        "confidence": 0.8
+      }
+    },
     "media_supplements": [],
     "signaling_factors": [
       {
@@ -114,6 +124,7 @@
       "Lgr5",
       "crypt-villus morphology"
     ],
+    "schema_version": "0.2",
     "extractor_version": "rule_based_v1",
     "notes": null
   },
@@ -145,7 +156,17 @@
         "confidence": 0.85
       }
     },
-    "base_media": "neural induction medium",
+    "base_media": {
+      "name": "neural induction medium",
+      "reporting": "reported",
+      "evidence": {
+        "source_doi": "10.1038/nature12517",
+        "quote": "Human embryonic stem cells were aggregated to form embryoid bodies in low-bFGF medium, then transferred to neural induction medium.",
+        "section": "Methods",
+        "page": null,
+        "confidence": 0.8
+      }
+    },
     "media_supplements": [],
     "signaling_factors": [
       {
@@ -205,6 +226,7 @@
       "SOX2",
       "immunostaining"
     ],
+    "schema_version": "0.2",
     "extractor_version": "rule_based_v1",
     "notes": null
   },
@@ -230,7 +252,11 @@
       "reporting": "reported",
       "evidence": null
     },
-    "base_media": null,
+    "base_media": {
+      "name": null,
+      "reporting": "reported",
+      "evidence": null
+    },
     "media_supplements": [],
     "signaling_factors": [
       {
@@ -305,6 +331,7 @@
       "PAX2",
       "nephrin"
     ],
+    "schema_version": "0.2",
     "extractor_version": "rule_based_v1",
     "notes": null
   }

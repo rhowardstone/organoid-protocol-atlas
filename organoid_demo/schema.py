@@ -125,6 +125,18 @@ class Matrix(BaseModel):
     evidence: Optional[Evidence] = None
 
 
+class BaseMedia(BaseModel):
+    """
+    The basal culture medium. Modeled like Matrix (not a bare string) so that
+    absence is typed and the value can carry provenance. This is the field the
+    kidney case exercises: the source omits it (`not_reported`), which is a
+    finding — distinct from the extractor simply missing it.
+    """
+    name: Optional[str] = Field(None, description="e.g. 'Advanced DMEM/F12', 'mTeSR1'.")
+    reporting: Reporting = Reporting.REPORTED
+    evidence: Optional[Evidence] = None
+
+
 class TimelineStage(BaseModel):
     """One differentiation/maturation stage. Step-ordering is an eval target."""
     name: str = Field(..., description="e.g. 'embryoid body', 'neural induction', 'expansion'.")
@@ -153,7 +165,7 @@ class OrganoidProtocol(BaseModel):
 
     source_cells: SourceCells = Field(default_factory=SourceCells)
     matrix: Matrix = Field(default_factory=Matrix)
-    base_media: Optional[str] = Field(None, description="e.g. 'Advanced DMEM/F12', 'mTeSR1'.")
+    base_media: BaseMedia = Field(default_factory=BaseMedia)
     media_supplements: list[Reagent] = Field(default_factory=list)
     signaling_factors: list[Reagent] = Field(
         default_factory=list,
@@ -170,6 +182,7 @@ class OrganoidProtocol(BaseModel):
     )
 
     # Extraction-level metadata for evaluation
+    schema_version: str = "0.2"
     extractor_version: Optional[str] = None
     notes: Optional[str] = None
 
@@ -181,7 +194,7 @@ if __name__ == "__main__":
         organoid_type=OrganoidType.INTESTINAL,
         source_cells=SourceCells(cell_type=SourceCellType.ADULT_STEM, species="Mus musculus"),
         matrix=Matrix(name="Matrigel"),
-        base_media="Advanced DMEM/F12",
+        base_media=BaseMedia(name="Advanced DMEM/F12"),
         signaling_factors=[
             Reagent(
                 name="EGF",

@@ -20,6 +20,7 @@ import re
 from typing import Callable, Optional, Protocol
 
 from schema import (
+    BaseMedia,
     Concentration,
     Evidence,
     Matrix,
@@ -104,7 +105,7 @@ class RuleBasedExtractor:
         proto.organoid_type = self._detect_type(text, organoid_hint)
         proto.source_cells = self._detect_cells(text, doi, sentences)
         proto.matrix = self._detect_matrix(text, doi, sentences)
-        proto.base_media = self._detect_media(text)
+        proto.base_media = self._detect_media(text, doi, sentences)
         proto.signaling_factors = self._detect_reagents(doi, sentences)
         proto.assay_endpoints = self._detect_endpoints(text)
         return proto
@@ -147,11 +148,11 @@ class RuleBasedExtractor:
                 return Matrix(name=term, evidence=self._evidence_for(doi, sentences, term, 0.85))
         return Matrix()
 
-    def _detect_media(self, text: str) -> Optional[str]:
+    def _detect_media(self, text: str, doi: str, sentences: list[str]) -> BaseMedia:
         for term in MEDIA_TERMS:
             if term.lower() in text.lower():
-                return term
-        return None
+                return BaseMedia(name=term, evidence=self._evidence_for(doi, sentences, term, 0.8))
+        return BaseMedia()
 
     def _detect_reagents(self, doi: str, sentences: list[str]) -> list[Reagent]:
         out: list[Reagent] = []
