@@ -1,4 +1,6 @@
 title: Organoid Protocol Atlas
+extra_css_urls:
+  - /static/atlas.css
 description_html: >
   <p><strong>Evidence-grounded organoid culture protocols, extracted from the literature.</strong>
   Methods sections from a 25-paper PMC corpus, parsed into structured protocol records
