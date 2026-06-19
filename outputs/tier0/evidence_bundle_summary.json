@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-06-19T20:40:42+00:00",
+  "papers": 25,
+  "source_routes": {
+    "europe_pmc_xml": 1,
+    "ncbi_efetch_xml": 24
+  },
+  "methods_section_found": 25,
+  "no_methods_section": 0,
+  "supplement_text_inline_ge400chars": 8,
+  "papers_with_tables": 9,
+  "fetch_failed": 0,
+  "license_breakdown": {
+    "author-manuscript": 16,
+    "unknown": 1,
+    "CC-BY": 7,
+    "CC-BY-NC-ND": 1
+  },
+  "median_methods_chars": 14043,
+  "median_reference_count": 44,
+  "papers_with_external_supplement_files": 23,
+  "total_external_supplement_files": 140,
+  "papers_with_figures": 25,
+  "total_figures": 192,
+  "papers_with_links": 24,
+  "deferred_modalities": {
+    "external_supplement_files": "inventoried, NOT downloaded/parsed yet (next deterministic step)",
+    "figure_graphics": "captions captured; image content needs Tier 2 (targeted vision)",
+    "cited_protocols": "'as previously described [ref]' resolution is Tier 3 (agent)"
+  }
+}

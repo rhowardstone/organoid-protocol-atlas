@@ -44,9 +44,14 @@ organoid_demo/            the working prototype (the CONTRACT + baseline + eval 
   HANDOFF.md              full build spec (architecture, tiers, iteration loop, cost)
   PORTING.md              prototype → craig/ module mapping
   outputs/                baseline predictions + metrics + error_analysis (reference)
+pipeline/
+  tier0_extract.py        Tier 0: XML-first evidence-bundle extraction (no LLM)
 data/
   corpus/pmc_oa_25.tsv    25-paper PMC-OA corpus manifest (selection only; no text yet)
   corpus/README.md        columns, selection policy, coverage, acceptance gate
+  evidence_bundles/       Tier 0 output: full bundles local-only (git-ignored);
+                          manifest.jsonl (metadata+checksums) + README committed
+outputs/tier0/            evidence_bundle_summary.json + extraction_report.md
 docs/
   PLAN.md                 first build target, sequencing, locked decisions, open questions
   RESEARCH_BRIEF.md       scientific landscape: NIH programs, ontologies, prior art, eval baselines

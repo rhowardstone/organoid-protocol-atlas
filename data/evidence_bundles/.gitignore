@@ -1,0 +1,4 @@
+# Full-text evidence bundles are NOT redistributable (corpus includes PMC
+# author-manuscript / unknown-license rows). Keep them local-only; commit only
+# the metadata manifest, checksums, and summary reports.
+local/
