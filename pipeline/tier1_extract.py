@@ -171,6 +171,12 @@ def main():
         try:
             m = call_ollama(PROMPT.format(evidence=evidence))
             proto, g = to_protocol(doi, m, evidence)
+            # organoid_type is curated in the corpus manifest (baked into the bundle) ->
+            # trust it, not the LLM's guess.
+            try:
+                proto.organoid_type = OrganoidType(bundle["organoid_type"])
+            except (ValueError, KeyError):
+                pass
         except Exception as e:  # noqa: BLE001
             summary.append({"pmcid": pmcid, "doi": doi, "error": f"{type(e).__name__}: {e}"})
             continue

@@ -27,6 +27,7 @@ from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
 PRED = REPO / "data" / "predictions" / "local"
+BUNDLES = REPO / "data" / "evidence_bundles" / "local"
 CORPUS = REPO / "data" / "corpus" / "pmc_oa_25.tsv"
 DB = REPO / "data" / "kg" / "atlas.db"
 
@@ -69,7 +70,17 @@ CREATE TABLE reagents (
     unit TEXT,
     canonical_unit TEXT,
     evidence_quote TEXT,
-    grounded INTEGER
+    grounded INTEGER,
+    suspect_unit INTEGER  -- deterministic sanity flag (e.g. growth factor in mg/mL)
+);
+
+-- Source methods text, for the in-context evidence highlighter (local serving).
+DROP TABLE IF EXISTS sources;
+CREATE TABLE sources (
+    pmcid TEXT PRIMARY KEY,
+    license TEXT,
+    methods_text TEXT,
+    supplementary_text TEXT
 );
 
 CREATE VIRTUAL TABLE reagents_fts USING fts5(
@@ -107,18 +118,23 @@ def main():
         pmcid = pf.stem
         p = json.loads(pf.read_text())
         cm = meta.get(pmcid, {})
+        # organoid_type is curated ground-truth in the corpus manifest -> use it;
+        # don't trust the LLM's guess (it misclassified 5/25).
+        oty = cm.get("organoid_type") or p.get("organoid_type")
 
         def add_reagents(items, kind):
             nonlocal n_reagents
             for r in items or []:
                 conc = r.get("concentration") or {}
                 ev = r.get("evidence") or {}
+                u = (conc.get("canonical_unit") or conc.get("unit") or "").lower()
+                suspect = 1 if (kind == "signaling" and u == "mg/ml") else 0
                 conn.execute(
                     "INSERT INTO reagents(pmcid,doi,organoid_type,kind,name,role,value,unit,"
-                    "canonical_unit,evidence_quote,grounded) VALUES (?,?,?,?,?,?,?,?,?,?,?)",
-                    (pmcid, p.get("source_doi"), p.get("organoid_type"), kind,
+                    "canonical_unit,evidence_quote,grounded,suspect_unit) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)",
+                    (pmcid, p.get("source_doi"), oty, kind,
                      r.get("name"), r.get("role"), conc.get("value"), conc.get("unit"),
-                     conc.get("canonical_unit"), ev.get("quote"), 1 if ev.get("quote") else 0),
+                     conc.get("canonical_unit"), ev.get("quote"), 1 if ev.get("quote") else 0, suspect),
                 )
                 n_reagents += 1
 
@@ -129,7 +145,7 @@ def main():
         sc = p.get("source_cells") or {}
         conn.execute(
             "INSERT INTO protocols VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
-            (pmcid, p.get("source_doi"), p.get("organoid_type"), sc.get("species"),
+            (pmcid, p.get("source_doi"), oty, sc.get("species"),
              sc.get("cell_type"), (p.get("matrix") or {}).get("name"), bm.get("name"),
              bm.get("reporting"), cm.get("first_author"), cm.get("year"),
              cm.get("journal"), cm.get("license"), cm.get("gold_candidate"),
@@ -139,6 +155,14 @@ def main():
         add_reagents(sf, "signaling")
         add_reagents(sup, "supplement")
         add_reagents(p.get("small_molecules"), "small_molecule")
+
+        # source methods text for the in-context highlighter
+        bpath = BUNDLES / f"{pmcid}.json"
+        if bpath.exists():
+            b = json.loads(bpath.read_text())
+            conn.execute("INSERT INTO sources VALUES (?,?,?,?)",
+                         (pmcid, cm.get("license"), b.get("methods_text", ""),
+                          b.get("supplementary_text", "")))
         n_protocols += 1
 
     conn.execute("INSERT INTO reagents_fts(reagents_fts) VALUES ('optimize')")

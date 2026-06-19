@@ -31,7 +31,7 @@ databases:
           <code>evidence_quote</code> is a verbatim span from the source; <code>grounded=0</code>
           means the model's quote did not exactly match (kept honest, not hidden).</p>
         label_column: name
-        facets: [organoid_type, kind, role, canonical_unit, grounded]
+        facets: [organoid_type, kind, role, canonical_unit, grounded, suspect_unit]
         fts_table: reagents_fts
     queries:
       signaling_by_type:

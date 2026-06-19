@@ -22,6 +22,12 @@ function conc(r){
   return `${r.value==null?'':r.value} ${u==='not stated'?'':u}`.trim();
 }
 function badge(g){ return g ? '<span class="apa-badge ok">grounded</span>' : '<span class="apa-badge no">ungrounded</span>'; }
+function highlight(text, quotes){
+  let html = esc(text);
+  const uniq = [...new Set(quotes.filter(Boolean))].sort((a,b) => b.length - a.length);
+  for (const q of uniq){ const eq = esc(q); html = html.split(eq).join('<mark class="apa-hl">'+eq+'</mark>'); }
+  return html;
+}
 
 (async () => {
   let p, reags;
@@ -31,6 +37,8 @@ function badge(g){ return g ? '<span class="apa-badge ok">grounded</span>' : '<s
   } catch (e) {
     document.getElementById('recipe').innerHTML = '<p>Could not load this protocol.</p>'; return;
   }
+  let src = null;
+  try { [src] = await j(`/atlas/sources/${encodeURIComponent(pmcid)}.json?_shape=array`); } catch (e) {}
   const sig = reags.filter(r => r.kind === 'signaling');
   const sup = reags.filter(r => r.kind === 'supplement');
   const cite = `<a href="https://doi.org/${esc(p.doi)}" target="_blank" rel="noopener">${esc(p.doi)}</a>`;
@@ -49,7 +57,7 @@ function badge(g){ return g ? '<span class="apa-badge ok">grounded</span>' : '<s
     <tr>
       <td><a href="/atlas/reagents?name__exact=${encodeURIComponent(r.name)}">${esc(r.name)}</a></td>
       <td>${esc(r.role==='not stated'?'':r.role)}</td>
-      <td>${esc(conc(r))}</td>
+      <td>${esc(conc(r))}${r.suspect_unit ? ' <span class="apa-badge no" title="implausible unit — likely extraction error">⚠</span>' : ''}</td>
       <td>${badge(r.grounded)}</td>
       <td class="quote">${r.evidence_quote?('“'+esc(r.evidence_quote)+'”'):''}</td>
     </tr>`).join('') || `<tr><td colspan="5" style="color:var(--muted)">No signaling factors extracted.</td></tr>`;
@@ -68,6 +76,14 @@ function badge(g){ return g ? '<span class="apa-badge ok">grounded</span>' : '<s
       <p style="font-size:.9rem">${sup.map(r=>esc(r.name)).join(' · ')}</p>` : ''}
     <p style="margin-top:1.5rem"><a href="/atlas/protocols">← all protocols</a></p>
   `;
+
+  if (src && src.methods_text) {
+    const quotes = reags.filter(r => r.evidence_quote).map(r => r.evidence_quote);
+    const lic = src.license ? (' · ' + esc(src.license)) : '';
+    document.getElementById('recipe').insertAdjacentHTML('beforeend',
+      `<h3 style="margin:1.4rem 0 .3rem">Source methods <span style="color:var(--muted);font-weight:400">(every grounded value highlighted in context${lic})</span></h3>
+       <div class="apa-source">${highlight(src.methods_text, quotes)}</div>`);
+  }
 })();
 </script>
 {% endblock %}
