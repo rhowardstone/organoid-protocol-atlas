@@ -23,7 +23,9 @@ and does not change; everything else is a backend swap.
 
 ## What is NOT done (current limitations)
 
-- No gold-standard annotation yet → no real accuracy numbers. (Day 3.)
+- A 3-protocol *fixture* gold (`gold_annotations.json`) exists for harness validation;
+  real accuracy numbers begin with a 10–12 protocol PMC-OA gold over actual extracted
+  methods text. Current metrics are harness/pipeline sanity checks, not model accuracy.
 - No ontology grounding → `ontology_id` fields are stubs.
 - No retrieval/RAG path exercised → comparison is over a fixed 3-doc set.
 - Rule baseline double-counts synonyms → demonstrates the normalization gap,
