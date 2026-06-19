@@ -44,9 +44,13 @@ organoid_demo/            the working prototype (the CONTRACT + baseline + eval 
   HANDOFF.md              full build spec (architecture, tiers, iteration loop, cost)
   PORTING.md              prototype → craig/ module mapping
   outputs/                baseline predictions + metrics + error_analysis (reference)
+data/
+  corpus/pmc_oa_25.tsv    25-paper PMC-OA corpus manifest (selection only; no text yet)
+  corpus/README.md        columns, selection policy, coverage, acceptance gate
 docs/
   PLAN.md                 first build target, sequencing, locked decisions, open questions
   RESEARCH_BRIEF.md       scientific landscape: NIH programs, ontologies, prior art, eval baselines
+  OSS_LANDSCAPE.md        OSS tooling survey: reuse / avoid / differentiator
 AGENTS.md                 operating contract for any agent working in this repo
 ```
 
