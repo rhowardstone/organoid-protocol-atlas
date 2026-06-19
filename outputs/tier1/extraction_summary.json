@@ -1,0 +1,46 @@
+{
+  "generated_at": "2026-06-19T21:08:31+00:00",
+  "model": "gemma3:12b",
+  "papers": 3,
+  "rows": [
+    {
+      "pmcid": "PMC10739970",
+      "doi": "10.1038/s41598-023-50250-w",
+      "organoid_type": "liver",
+      "model": "gemma3:12b",
+      "n_signaling_factors": 3,
+      "n_supplements": 6,
+      "matrix": "Matrigel",
+      "base_media": "DMEM/F-12",
+      "reagents_grounded": 3,
+      "reagents_total": 3,
+      "grounding_rate": 1.0
+    },
+    {
+      "pmcid": "PMC3033971",
+      "doi": "10.1038/nature09691",
+      "organoid_type": "intestinal",
+      "model": "gemma3:12b",
+      "n_signaling_factors": 6,
+      "n_supplements": 5,
+      "matrix": "Matrigel",
+      "base_media": "mTesR1",
+      "reagents_grounded": 3,
+      "reagents_total": 6,
+      "grounding_rate": 0.5
+    },
+    {
+      "pmcid": "PMC3634804",
+      "doi": "10.1038/nature11826",
+      "organoid_type": "liver",
+      "model": "gemma3:12b",
+      "n_signaling_factors": 4,
+      "n_supplements": 5,
+      "matrix": "Matrigel",
+      "base_media": "AdDMEM/F12",
+      "reagents_grounded": 4,
+      "reagents_total": 4,
+      "grounding_rate": 1.0
+    }
+  ]
+}
