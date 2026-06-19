@@ -1,13 +1,25 @@
-# Organoid Protocol Intelligence
+# Organoid Protocol Atlas
+
+*Evidence-grounded extraction and comparison of organoid culture protocols.*
 
 Turn organoid-culture papers into structured, queryable, **evidence-grounded** protocol
 records — capturing the axes along which protocols actually differ (source cells, matrix,
 base media, signaling cocktail, timeline, passaging, endpoints), where every populated
-field carries a provenance span.
+value that can carry an evidence span does (provenance is mandatory on the fields that
+matter, tracked elsewhere).
 
 This is **not a scraper**. The research is in what's hard: entity normalization,
 distinguishing *not reported* from *not extracted*, and resolving protocols stated by
 reference to a cited source.
+
+```
+paper (PDF)
+  └─ Tier 0  GROBID/PyMuPDF → methods + supplementary + tables + refs   (deterministic)
+  └─ Tier 1  LLM extract → OrganoidProtocol JSON w/ evidence spans      (Haiku/Sonnet)
+  └─ eval harness (the acceptance gate): field match · reporting status ·
+             grounding · unit norm · wrong-bucket/dup  → routes escalation
+  └─ queryable, comparable protocol atlas (typed KG nodes + citations)
+```
 
 ## Status
 
