@@ -1,0 +1,16 @@
+# Archives / scratch
+*.zip
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/
+
+# Eval/run artifacts that are regenerated (keep organoid_demo/outputs as reference)
+workspace/evals/results/
+workspace/evals/transcripts/
+
+# OS
+.DS_Store

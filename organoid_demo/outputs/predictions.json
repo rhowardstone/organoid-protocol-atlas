@@ -1,0 +1,311 @@
+{
+  "10.1038/nature07935": {
+    "source_doi": "10.1038/nature07935",
+    "organoid_type": "intestinal",
+    "source_cells": {
+      "cell_type": "adult_stem_cell",
+      "line_name": null,
+      "species": "Mus musculus",
+      "reporting": "reported",
+      "evidence": null
+    },
+    "matrix": {
+      "name": "Matrigel",
+      "percent": null,
+      "reporting": "reported",
+      "evidence": {
+        "source_doi": "10.1038/nature07935",
+        "quote": "Isolated mouse small intestinal crypts were embedded in Matrigel and overlaid with Advanced DMEM/F12 supplemented with EGF (50 ng/ml), Noggin (100 ng/ml) and R-spondin1 (500 ng/ml).",
+        "section": "Methods",
+        "page": null,
+        "confidence": 0.85
+      }
+    },
+    "base_media": "Advanced DMEM/F12",
+    "media_supplements": [],
+    "signaling_factors": [
+      {
+        "name": "EGF",
+        "canonical_name": null,
+        "ontology_id": null,
+        "role": "growth factor",
+        "concentration": {
+          "value": 50.0,
+          "unit": "ng/ml",
+          "canonical_unit": "ng/mL",
+          "raw": "(50 ng/ml)"
+        },
+        "evidence": {
+          "source_doi": "10.1038/nature07935",
+          "quote": "Isolated mouse small intestinal crypts were embedded in Matrigel and overlaid with Advanced DMEM/F12 supplemented with EGF (50 ng/ml), Noggin (100 ng/ml) and R-spondin1 (500 ng/ml).",
+          "section": "Methods",
+          "page": null,
+          "confidence": 0.9
+        }
+      },
+      {
+        "name": "Noggin",
+        "canonical_name": null,
+        "ontology_id": null,
+        "role": "BMP inhibitor",
+        "concentration": {
+          "value": 100.0,
+          "unit": "ng/ml",
+          "canonical_unit": "ng/mL",
+          "raw": "(100 ng/ml)"
+        },
+        "evidence": {
+          "source_doi": "10.1038/nature07935",
+          "quote": "Isolated mouse small intestinal crypts were embedded in Matrigel and overlaid with Advanced DMEM/F12 supplemented with EGF (50 ng/ml), Noggin (100 ng/ml) and R-spondin1 (500 ng/ml).",
+          "section": "Methods",
+          "page": null,
+          "confidence": 0.9
+        }
+      },
+      {
+        "name": "R-spondin1",
+        "canonical_name": null,
+        "ontology_id": null,
+        "role": "Wnt agonist",
+        "concentration": {
+          "value": 500.0,
+          "unit": "ng/ml",
+          "canonical_unit": "ng/mL",
+          "raw": "(500 ng/ml)"
+        },
+        "evidence": {
+          "source_doi": "10.1038/nature07935",
+          "quote": "Isolated mouse small intestinal crypts were embedded in Matrigel and overlaid with Advanced DMEM/F12 supplemented with EGF (50 ng/ml), Noggin (100 ng/ml) and R-spondin1 (500 ng/ml).",
+          "section": "Methods",
+          "page": null,
+          "confidence": 0.9
+        }
+      },
+      {
+        "name": "R-spondin",
+        "canonical_name": null,
+        "ontology_id": null,
+        "role": "Wnt agonist",
+        "concentration": {
+          "value": 500.0,
+          "unit": "ng/ml",
+          "canonical_unit": "ng/mL",
+          "raw": "(500 ng/ml)"
+        },
+        "evidence": {
+          "source_doi": "10.1038/nature07935",
+          "quote": "Isolated mouse small intestinal crypts were embedded in Matrigel and overlaid with Advanced DMEM/F12 supplemented with EGF (50 ng/ml), Noggin (100 ng/ml) and R-spondin1 (500 ng/ml).",
+          "section": "Methods",
+          "page": null,
+          "confidence": 0.9
+        }
+      }
+    ],
+    "small_molecules": [],
+    "timeline": [],
+    "passaging": {
+      "method": null,
+      "split_ratio": null,
+      "interval_days": null,
+      "reporting": "reported",
+      "evidence": null
+    },
+    "assay_endpoints": [
+      "Lgr5",
+      "crypt-villus morphology"
+    ],
+    "extractor_version": "rule_based_v1",
+    "notes": null
+  },
+  "10.1038/nature12517": {
+    "source_doi": "10.1038/nature12517",
+    "organoid_type": "cerebral",
+    "source_cells": {
+      "cell_type": "ESC",
+      "line_name": null,
+      "species": "Homo sapiens",
+      "reporting": "reported",
+      "evidence": {
+        "source_doi": "10.1038/nature12517",
+        "quote": "Human embryonic stem cells were aggregated to form embryoid bodies in low-bFGF medium, then transferred to neural induction medium.",
+        "section": "Methods",
+        "page": null,
+        "confidence": 0.6
+      }
+    },
+    "matrix": {
+      "name": "Matrigel",
+      "percent": null,
+      "reporting": "reported",
+      "evidence": {
+        "source_doi": "10.1038/nature12517",
+        "quote": "Neuroepithelial tissues were embedded in Matrigel droplets and cultured in differentiation medium containing B27 and N2 without added growth factors.",
+        "section": "Methods",
+        "page": null,
+        "confidence": 0.85
+      }
+    },
+    "base_media": "neural induction medium",
+    "media_supplements": [],
+    "signaling_factors": [
+      {
+        "name": "bFGF",
+        "canonical_name": null,
+        "ontology_id": null,
+        "role": "growth factor",
+        "concentration": null,
+        "evidence": {
+          "source_doi": "10.1038/nature12517",
+          "quote": "Human embryonic stem cells were aggregated to form embryoid bodies in low-bFGF medium, then transferred to neural induction medium.",
+          "section": "Methods",
+          "page": null,
+          "confidence": 0.7
+        }
+      },
+      {
+        "name": "B27",
+        "canonical_name": null,
+        "ontology_id": null,
+        "role": "supplement",
+        "concentration": null,
+        "evidence": {
+          "source_doi": "10.1038/nature12517",
+          "quote": "Neuroepithelial tissues were embedded in Matrigel droplets and cultured in differentiation medium containing B27 and N2 without added growth factors.",
+          "section": "Methods",
+          "page": null,
+          "confidence": 0.7
+        }
+      },
+      {
+        "name": "N2",
+        "canonical_name": null,
+        "ontology_id": null,
+        "role": "supplement",
+        "concentration": null,
+        "evidence": {
+          "source_doi": "10.1038/nature12517",
+          "quote": "Neuroepithelial tissues were embedded in Matrigel droplets and cultured in differentiation medium containing B27 and N2 without added growth factors.",
+          "section": "Methods",
+          "page": null,
+          "confidence": 0.7
+        }
+      }
+    ],
+    "small_molecules": [],
+    "timeline": [],
+    "passaging": {
+      "method": null,
+      "split_ratio": null,
+      "interval_days": null,
+      "reporting": "reported",
+      "evidence": null
+    },
+    "assay_endpoints": [
+      "PAX6",
+      "SOX2",
+      "immunostaining"
+    ],
+    "extractor_version": "rule_based_v1",
+    "notes": null
+  },
+  "10.1038/nature15695": {
+    "source_doi": "10.1038/nature15695",
+    "organoid_type": "kidney",
+    "source_cells": {
+      "cell_type": "iPSC",
+      "line_name": null,
+      "species": "Homo sapiens",
+      "reporting": "reported",
+      "evidence": {
+        "source_doi": "10.1038/nature15695",
+        "quote": "Cells were aggregated and cultured for 7 days, with a brief CHIR99021 pulse on day 7.",
+        "section": "Methods",
+        "page": null,
+        "confidence": 0.6
+      }
+    },
+    "matrix": {
+      "name": null,
+      "percent": null,
+      "reporting": "reported",
+      "evidence": null
+    },
+    "base_media": null,
+    "media_supplements": [],
+    "signaling_factors": [
+      {
+        "name": "CHIR99021",
+        "canonical_name": null,
+        "ontology_id": null,
+        "role": "GSK3 inhibitor (Wnt agonist)",
+        "concentration": {
+          "value": 8.0,
+          "unit": "uM",
+          "canonical_unit": "uM",
+          "raw": "(8 uM)"
+        },
+        "evidence": {
+          "source_doi": "10.1038/nature15695",
+          "quote": "Human iPSCs (line CRL1502) were treated with CHIR99021 (8 uM) for 4 days to induce posterior primitive streak, followed by FGF9 (200 ng/ml) and heparin (1 ug/ml) to promote intermediate mesoderm.",
+          "section": "Methods",
+          "page": null,
+          "confidence": 0.9
+        }
+      },
+      {
+        "name": "FGF9",
+        "canonical_name": null,
+        "ontology_id": null,
+        "role": "growth factor",
+        "concentration": {
+          "value": 200.0,
+          "unit": "ng/ml",
+          "canonical_unit": "ng/mL",
+          "raw": "(200 ng/ml)"
+        },
+        "evidence": {
+          "source_doi": "10.1038/nature15695",
+          "quote": "Human iPSCs (line CRL1502) were treated with CHIR99021 (8 uM) for 4 days to induce posterior primitive streak, followed by FGF9 (200 ng/ml) and heparin (1 ug/ml) to promote intermediate mesoderm.",
+          "section": "Methods",
+          "page": null,
+          "confidence": 0.9
+        }
+      },
+      {
+        "name": "heparin",
+        "canonical_name": null,
+        "ontology_id": null,
+        "role": "cofactor",
+        "concentration": {
+          "value": 1.0,
+          "unit": "ug/ml",
+          "canonical_unit": "ug/mL",
+          "raw": "(1 ug/ml)"
+        },
+        "evidence": {
+          "source_doi": "10.1038/nature15695",
+          "quote": "Human iPSCs (line CRL1502) were treated with CHIR99021 (8 uM) for 4 days to induce posterior primitive streak, followed by FGF9 (200 ng/ml) and heparin (1 ug/ml) to promote intermediate mesoderm.",
+          "section": "Methods",
+          "page": null,
+          "confidence": 0.9
+        }
+      }
+    ],
+    "small_molecules": [],
+    "timeline": [],
+    "passaging": {
+      "method": null,
+      "split_ratio": null,
+      "interval_days": null,
+      "reporting": "reported",
+      "evidence": null
+    },
+    "assay_endpoints": [
+      "WT1",
+      "PAX2",
+      "nephrin"
+    ],
+    "extractor_version": "rule_based_v1",
+    "notes": null
+  }
+}

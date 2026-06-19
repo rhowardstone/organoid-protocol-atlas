@@ -1,0 +1,40 @@
+{
+  "_about": "Hand-annotated gold standard for the 3 demo protocols. Reporting status is annotated explicitly: 'reported' means the source states it; 'not_reported' means the source omits it (tacit knowledge). This is what lets the harness distinguish a real omission from an extractor miss. B27/N2 are deliberately filed as media_supplements, NOT signaling_factors, to test biological bucketing.",
+  "10.1038/nature07935": {
+    "organoid_type": "intestinal",
+    "source_cells": {"cell_type": "adult_stem_cell", "species": "Mus musculus"},
+    "matrix": {"name": "Matrigel", "reporting": "reported"},
+    "base_media": {"value": "Advanced DMEM/F12", "reporting": "reported"},
+    "signaling_factors": [
+      {"name": "EGF", "role": "growth factor", "concentration": {"value": 50.0, "canonical_unit": "ng/mL"}},
+      {"name": "Noggin", "role": "BMP inhibitor", "concentration": {"value": 100.0, "canonical_unit": "ng/mL"}},
+      {"name": "R-spondin1", "role": "Wnt agonist", "concentration": {"value": 500.0, "canonical_unit": "ng/mL"}}
+    ],
+    "media_supplements": []
+  },
+  "10.1038/nature12517": {
+    "organoid_type": "cerebral",
+    "source_cells": {"cell_type": "ESC", "species": "Homo sapiens"},
+    "matrix": {"name": "Matrigel", "reporting": "reported"},
+    "base_media": {"value": "neural induction medium", "reporting": "reported"},
+    "signaling_factors": [
+      {"name": "bFGF", "role": "growth factor", "concentration": null}
+    ],
+    "media_supplements": [
+      {"name": "B27"},
+      {"name": "N2"}
+    ]
+  },
+  "10.1038/nature15695": {
+    "organoid_type": "kidney",
+    "source_cells": {"cell_type": "iPSC", "species": "Homo sapiens"},
+    "matrix": {"name": null, "reporting": "not_reported"},
+    "base_media": {"value": null, "reporting": "not_reported"},
+    "signaling_factors": [
+      {"name": "CHIR99021", "role": "GSK3 inhibitor (Wnt agonist)", "concentration": {"value": 8.0, "canonical_unit": "uM"}},
+      {"name": "FGF9", "role": "growth factor", "concentration": {"value": 200.0, "canonical_unit": "ng/mL"}},
+      {"name": "heparin", "role": "cofactor", "concentration": {"value": 1.0, "canonical_unit": "ug/mL"}}
+    ],
+    "media_supplements": []
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "scalar_exact_match": {
+    "hits": 13,
+    "total": 13,
+    "score": 1.0
+  },
+  "reporting_status_accuracy": {
+    "hits": 4,
+    "total": 6,
+    "score": 0.6667,
+    "errors": [
+      "kidney: matrix predicted unresolved_absence, gold not_reported",
+      "kidney: base_media predicted unresolved_absence, gold not_reported"
+    ]
+  },
+  "signaling_factor_precision": 0.7,
+  "signaling_factor_recall": 1.0,
+  "unit_normalization_accuracy": {
+    "hits": 6,
+    "total": 6,
+    "score": 1.0
+  },
+  "evidence_grounding": {
+    "hits": 10,
+    "total": 10,
+    "score": 1.0
+  },
+  "wrong_bucket_or_duplicate_rate": {
+    "count": 3,
+    "of_predicted": 10,
+    "rate": 0.3,
+    "examples": [
+      "intestinal: 'R-spondin' -> duplicate",
+      "cerebral: 'B27' -> wrong-bucket / not-in-gold",
+      "cerebral: 'N2' -> wrong-bucket / not-in-gold"
+    ]
+  }
+}
