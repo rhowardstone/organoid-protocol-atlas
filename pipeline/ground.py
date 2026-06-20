@@ -99,7 +99,7 @@ def _cached(kind: str, key: str, fetch, offline: bool):
     return data, True
 
 
-def name_lookup(name: str, biolink_type: str | None = None, limit: int = 10,
+def name_lookup(name: str, biolink_type: str | None = None, limit: int = 20,
                 offline: bool = False):
     key = f"{name}__{biolink_type or 'any'}"
     qs = {"string": name, "autocomplete": "false", "limit": limit}
@@ -124,10 +124,35 @@ def _category(curie: str, offline: bool) -> str | None:
     return cats[0] if cats else None
 
 
+_GREEK = {"α": "alpha", "β": "beta", "γ": "gamma", "δ": "delta", "κ": "kappa",
+          "λ": "lambda", "μ": "u", "ω": "omega"}
+
+
+def _norm(s: str | None) -> str:
+    s = (s or "").lower()
+    for g, r in _GREEK.items():
+        s = s.replace(g, r)
+    return re.sub(r"[^a-z0-9]", "", s)
+
+
+def _verify(query: str, hit: dict) -> bool:
+    """A resolution is ACCEPTED only if the query matches the entity's label or one
+    of its synonyms (normalized). A real service hit is necessary but NOT sufficient:
+    this rejects near-misses (PGE2->15-keto-PGE2) and wrong entities (TGF-β1->pig
+    TGF-beta receptor) so they never count as accepted `resolved` CURIEs."""
+    q = _norm(query)
+    if not q:
+        return False
+    cands = {_norm(hit.get("label"))}
+    cands.update(_norm(s) for s in (hit.get("synonyms") or []))
+    return q in cands
+
+
 def ground_entity(name: str, kind: str = "reagent", offline: bool = False) -> dict:
     """Resolve one free-text entity to a Biolink CURIE. Honest 3-state status."""
     rec = {"query": name, "kind": kind, "grounding_status": "not_attempted",
-           "curie": None, "label": None, "biolink_category": None, "source": None}
+           "curie": None, "label": None, "biolink_category": None, "source": None,
+           "flags": []}
     if not name:
         return rec
     prefixes = KIND_PREFIXES.get(kind, ())
@@ -138,6 +163,7 @@ def ground_entity(name: str, kind: str = "reagent", offline: bool = False) -> di
         types = ["biolink:ChemicalEntity"]
         prefixes = ("CHEBI", "PUBCHEM.COMPOUND", "UNII", "DRUGBANK", "MESH")
     called = False
+    candidate = None   # first prefix-acceptable hit that FAILED label/synonym verify
     for bt in types:
         hits = name_lookup(name, biolink_type=bt, offline=offline)
         if hits is None:
@@ -145,12 +171,23 @@ def ground_entity(name: str, kind: str = "reagent", offline: bool = False) -> di
         called = True
         for h in hits:
             curie = h.get("curie")
-            if curie and (not prefixes or curie.split(":")[0] in prefixes):
+            if not curie or (prefixes and curie.split(":")[0] not in prefixes):
+                continue
+            if _verify(name, h):  # query matches label/synonym -> ACCEPT
                 rec.update(grounding_status="resolved", curie=curie,
                            label=h.get("label"), source="sri-name-resolver",
                            biolink_category=_category(curie, offline) or
                            (h.get("types") or [None])[0])
                 return rec
+            if candidate is None:   # remember the best near-miss, do not accept it
+                candidate = (curie, h.get("label"), (h.get("types") or [None])[0])
+    if candidate:
+        # a real hit came back but its label/synonyms don't match the query -> a
+        # candidate for human review, NEVER an accepted CURIE (won't feed KGX as fact).
+        rec.update(grounding_status="needs_review", curie=candidate[0],
+                   label=candidate[1], biolink_category=candidate[2],
+                   source="sri-name-resolver", flags=["label_mismatch"])
+        return rec
     rec["grounding_status"] = "not_found" if called else "not_attempted"
     return rec
 
@@ -206,20 +243,25 @@ def main():
     # cell lines -> Cellosaurus CVCL_ (the RRID)
     records += [ground_cell_line(cl, args.offline) for cl in ["WA09", "WTC-11"]]
 
-    by_status = {}
+    STATUSES = ("resolved", "needs_review", "not_found", "not_attempted")
+    by_status = {s: 0 for s in STATUSES}
     for r in records:
-        by_status.setdefault(r["grounding_status"], 0)
-        by_status[r["grounding_status"]] += 1
+        by_status[r["grounding_status"]] = by_status.get(r["grounding_status"], 0) + 1
+    by_kind = {}
+    for r in records:
+        k = by_kind.setdefault(r["kind"], {s: 0 for s in STATUSES})
+        k[r["grounding_status"]] += 1
     coverage = {
         "generated_by": "pipeline/ground.py",
         "n": len(records),
+        # accepted == resolved ONLY; needs_review are candidates that must NOT feed
+        # KGX/TRAPI as facts until a human accepts them.
+        "accepted_resolved": by_status["resolved"],
+        "candidates_needs_review": by_status["needs_review"],
         "by_status": by_status,
-        "by_kind": {},
+        "by_kind": by_kind,
         "records": records,
     }
-    for r in records:
-        k = coverage["by_kind"].setdefault(r["kind"], {"resolved": 0, "not_found": 0, "not_attempted": 0})
-        k[r["grounding_status"]] += 1
     (OUT / "coverage.json").write_text(json.dumps(coverage, indent=2, ensure_ascii=False))
     res = [r for r in records if r["grounding_status"] == "resolved"]
     print(f"grounded {len(res)}/{len(records)} | by status: {by_status}")

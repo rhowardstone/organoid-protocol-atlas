@@ -378,5 +378,299 @@
     ],
     "score": 201.35204,
     "clique_identifier_count": 4
+  },
+  {
+    "curie": "UBERON:0000101",
+    "label": "lobe of lung",
+    "highlighting": {},
+    "synonyms": [
+      "Lung Lobe",
+      "LUNG LOBE",
+      "lobe lung",
+      "lung lobe",
+      "lobes lung",
+      "lobes lungs",
+      "Lobe of lung",
+      "lobe of lung",
+      "Pulmonary lobe",
+      "lobe pulmonary",
+      "pulmonary lobe",
+      "pulminory lobe",
+      "Lobe of lung, NOS",
+      "Structure of lobe of lung",
+      "Structure of lobe of lung (body structure)"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:GrossAnatomicalStructure",
+      "biolink:AnatomicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:OrganismalEntity",
+      "biolink:SubjectOfInvestigation",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 197.59003,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "UBERON:0003538",
+    "label": "right lung bronchiole",
+    "highlighting": {},
+    "synonyms": [
+      "Right Lung Bronchiole",
+      "right lung bronchiole",
+      "bronchiole of right lung",
+      "Bronchiole of right lung",
+      "Structure of bronchiole of right lung",
+      "Structure of bronchiole of right lung (body structure)"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:GrossAnatomicalStructure",
+      "biolink:AnatomicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:OrganismalEntity",
+      "biolink:SubjectOfInvestigation",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 197.59003,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "UBERON:0003539",
+    "label": "left lung bronchiole",
+    "highlighting": {},
+    "synonyms": [
+      "Left Lung Bronchiole",
+      "left lung bronchiole",
+      "bronchiole of left lung",
+      "Bronchiole of left lung",
+      "Structure of bronchiole of left lung",
+      "Structure of bronchiole of left lung (body structure)"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:GrossAnatomicalStructure",
+      "biolink:AnatomicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:OrganismalEntity",
+      "biolink:SubjectOfInvestigation",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 197.59003,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "UBERON:0004861",
+    "label": "right lung alveolus",
+    "highlighting": {},
+    "synonyms": [
+      "right lung alveolus",
+      "Right Lung Alveolus",
+      "alveolus of right lung"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:GrossAnatomicalStructure",
+      "biolink:AnatomicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:OrganismalEntity",
+      "biolink:SubjectOfInvestigation",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 197.59003,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "UBERON:0004862",
+    "label": "left lung alveolus",
+    "highlighting": {},
+    "synonyms": [
+      "left lung alveolus",
+      "Left Lung Alveolus",
+      "alveolus of left lung",
+      "alveolus of lobe of left lung"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:GrossAnatomicalStructure",
+      "biolink:AnatomicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:OrganismalEntity",
+      "biolink:SubjectOfInvestigation",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 197.59003,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "UBERON:0006518",
+    "label": "right lung lobe",
+    "highlighting": {},
+    "synonyms": [
+      "right lung lobe",
+      "lobe of right lung",
+      "Lobe of right lung",
+      "Lobe of the Right Lung",
+      "lobe of the right lung",
+      "Structure of lobe of right lung",
+      "Structure of lobe of right lung (body structure)"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:GrossAnatomicalStructure",
+      "biolink:AnatomicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:OrganismalEntity",
+      "biolink:SubjectOfInvestigation",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 197.59003,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "UBERON:0008951",
+    "label": "left lung lobe",
+    "highlighting": {},
+    "synonyms": [
+      "left lung lobe",
+      "Lobe of left lung",
+      "lobe of left lung",
+      "Lobe of the Left Lung",
+      "lobe of the left lung",
+      "Structure of lobe of left lung",
+      "Structure of lobe of left lung (body structure)"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:GrossAnatomicalStructure",
+      "biolink:AnatomicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:OrganismalEntity",
+      "biolink:SubjectOfInvestigation",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 197.59003,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "UMLS:C0458078",
+    "label": "Fissure of lung",
+    "highlighting": {},
+    "synonyms": [
+      "fissure lung",
+      "lung fissure",
+      "fissures lungs",
+      "fissure of lung",
+      "Pleural fissure",
+      "Fissure of lung",
+      "Pulmonary fissure",
+      "Pulmonary fissure(space)",
+      "Pulmonary fissural surface",
+      "Structure of fissure of lung",
+      "Structure of fissure of lung (body structure)"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:AnatomicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:OrganismalEntity",
+      "biolink:SubjectOfInvestigation",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 197.59003,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "UMLS:C0734040",
+    "label": "Horizontal fissure of right lung(line)",
+    "highlighting": {},
+    "synonyms": [
+      "horizontal fissure",
+      "Horizontal fissure",
+      "Horizontal fissure surface",
+      "Horizontal fissure of right lung",
+      "Fissura horizontalis pulmonis dextri",
+      "Horizontal fissure of right lung(line)",
+      "horizontal fissure of right lung(line)",
+      "Fissura horizontalis (pulmonis dextri)",
+      "Horizontal fissure of right lung (line)",
+      "Horizontal fissure of right lung(space)",
+      "Right lung, horizontal interlobar fissure",
+      "Horizontal interlobar fissure of right lung",
+      "Structure of horizontal interlobar fissure of right lung",
+      "Structure of horizontal interlobar fissure of right lung (body structure)"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:AnatomicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:OrganismalEntity",
+      "biolink:SubjectOfInvestigation",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 189.75362,
+    "clique_identifier_count": 4
+  },
+  {
+    "curie": "UBERON:0003536",
+    "label": "right lung alveolar duct",
+    "highlighting": {},
+    "synonyms": [
+      "Right Lung Alveolar Duct",
+      "right lung alveolar duct",
+      "alveolar duct of right lung"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:GrossAnatomicalStructure",
+      "biolink:AnatomicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:OrganismalEntity",
+      "biolink:SubjectOfInvestigation",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 184.72636,
+    "clique_identifier_count": 3
   }
 ]

@@ -386,5 +386,356 @@
     ],
     "score": 2974.4568,
     "clique_identifier_count": 8
+  },
+  {
+    "curie": "NCBIGene:105585344",
+    "label": "BMP7",
+    "highlighting": {},
+    "synonyms": [
+      "BMP7",
+      "bone morphogenetic protein 7",
+      "A0A2K5KKN9_CERAT Bone morphogenetic protein 7 (trembl)",
+      "A0A2K5KKQ3_CERAT Bone morphogenetic protein 7 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9531"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2974.4568,
+    "clique_identifier_count": 8
+  },
+  {
+    "curie": "NCBIGene:112633620",
+    "label": "BMP7",
+    "highlighting": {},
+    "synonyms": [
+      "BMP7",
+      "bone morphogenetic protein 7",
+      "A0A8D2K157_THEGE Bone morphogenetic protein 7 (trembl)",
+      "A0A8D2K1G9_THEGE Bone morphogenetic protein 7 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9565"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2974.4568,
+    "clique_identifier_count": 8
+  },
+  {
+    "curie": "NCBIGene:114894392",
+    "label": "BMP7",
+    "highlighting": {},
+    "synonyms": [
+      "BMP7",
+      "bone morphogenetic protein 7",
+      "A0A8C6ATQ1_MONMO Bone morphogenetic protein 7 (trembl)",
+      "A0A8C6AWX4_MONMO Bone morphogenetic protein 7 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:40151"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2974.4568,
+    "clique_identifier_count": 8
+  },
+  {
+    "curie": "NCBIGene:118881810",
+    "label": "BMP7",
+    "highlighting": {},
+    "synonyms": [
+      "BMP7",
+      "bone morphogenetic protein 7",
+      "A0A8C0DMY8_BALMU Bone morphogenetic protein 7 (trembl)",
+      "A0A8C0DQE7_BALMU Bone morphogenetic protein 7 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9771"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2974.4568,
+    "clique_identifier_count": 8
+  },
+  {
+    "curie": "NCBIGene:12162",
+    "label": "Bmp7",
+    "highlighting": {},
+    "synonyms": [
+      "OP1",
+      "Bmp7",
+      "osteogenic protein 1",
+      "bone morphogenetic protein 7",
+      "Op1",
+      "Bmp-7",
+      "mBMP7",
+      "OP-1 (mouse)",
+      "BMP-7 (mouse)",
+      "osteogenic protein 1 (mouse)",
+      "bone morphogenetic protein 7 (mouse)",
+      "BMP7_MOUSE Bone morphogenetic protein 7 (sprot)"
+    ],
+    "taxa": [
+      "NCBITaxon:10090"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2815.01,
+    "clique_identifier_count": 7
+  },
+  {
+    "curie": "NCBIGene:458357",
+    "label": "BMP7",
+    "highlighting": {},
+    "synonyms": [
+      "BMP7",
+      "bone morphogenetic protein 7",
+      "bone morphogenetic protein 7 (osteogenic protein 1)",
+      "A0A2I3TN54_PANTR Bone morphogenetic protein 7 (trembl)",
+      "H2QKM7_PANTR Bone morphogenetic protein 7 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9598"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2815.01,
+    "clique_identifier_count": 7
+  },
+  {
+    "curie": "NCBIGene:100475946",
+    "label": "BMP7",
+    "highlighting": {},
+    "synonyms": [
+      "BMP7",
+      "bone morphogenetic protein 7",
+      "A0A7N5JFJ6_AILME Bone morphogenetic protein 7 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9646"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2815.01,
+    "clique_identifier_count": 7
+  },
+  {
+    "curie": "NCBIGene:101315710",
+    "label": "BMP7",
+    "highlighting": {},
+    "synonyms": [
+      "BMP7",
+      "bone morphogenetic protein 7",
+      "A0A2U4C1V4_TURTR Bone morphogenetic protein 7 isoform X1 (trembl)",
+      "A0A2U4C239_TURTR Bone morphogenetic protein 7 (trembl)",
+      "A0A6J3Q4E6_TURTR Bone morphogenetic protein 7 isoform X5 (trembl)",
+      "A0A6J3Q4M4_TURTR Bone morphogenetic protein 7 isoform X3 (trembl)",
+      "A0A6J3Q4Y2_TURTR Bone morphogenetic protein 7 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9739"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2815.01,
+    "clique_identifier_count": 7
+  },
+  {
+    "curie": "NCBIGene:109253498",
+    "label": "BMP7",
+    "highlighting": {},
+    "synonyms": [
+      "BMP7",
+      "bone morphogenetic protein 7",
+      "A0A9V1EHQ0_PANPR Bone morphogenetic protein 7 (trembl)",
+      "A0A9V1EHU0_PANPR Bone morphogenetic protein 7 (trembl)",
+      "A0A9W2UI49_PANPR Bone morphogenetic protein 7 isoform X2 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9691"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2815.01,
+    "clique_identifier_count": 7
+  },
+  {
+    "curie": "NCBIGene:113903197",
+    "label": "BMP7",
+    "highlighting": {},
+    "synonyms": [
+      "BMP7",
+      "bone morphogenetic protein 7",
+      "A0A4W2DCR7_BOBOX Bone morphogenetic protein 7 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:30522"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2815.01,
+    "clique_identifier_count": 7
   }
 ]

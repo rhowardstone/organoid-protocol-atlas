@@ -258,5 +258,254 @@
     ],
     "score": 122.72209,
     "clique_identifier_count": 11
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:155011957",
+    "label": "TGF-beta",
+    "highlighting": {},
+    "synonyms": [
+      "TGF-b",
+      "TGF-Β",
+      "TGF-beta",
+      "CID 168310495",
+      "H-DL-Met-DL-Leu-DL-Val-DL-Ala-DL-Ala-DL-xiIle-DL-Gln-DL-Ser-DL-Ala-Gly-DL-Leu-DL-xiThr-DL-Glu-DL-xiThr-DL-Leu-DL-Asn-DL-Arg-DL-Glu-Gly-DL-Val-DL-Tyr-DL-xiThr-DL-Val-DL-Phe-DL-Ala-DL-Pro-DL-xiThr-DL-Asn-DL-Glu-DL-Ala-DL-Phe-DL-Arg-DL-Ala-DL-Leu-DL-Pro-DL-Pro-DL-Arg-DL-Glu-DL-Arg-DL-Ser-DL-Arg-DL-Leu-DL-Leu-OH"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 121.130936,
+    "clique_identifier_count": 4
+  },
+  {
+    "curie": "UniProtKB:A0A8C1YK91",
+    "label": "A0A8C1YK91_CYPCA TGF-beta receptor type-1 (trembl)",
+    "highlighting": {},
+    "synonyms": [
+      "A0A8C1YK91_CYPCA TGF-beta receptor type-1 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:7962"
+    ],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 113.8843,
+    "clique_identifier_count": 7
+  },
+  {
+    "curie": "UniProtKB:A0A8C1SSQ9",
+    "label": "A0A8C1SSQ9_CYPCA TGF-beta receptor type-1 (trembl)",
+    "highlighting": {},
+    "synonyms": [
+      "A0A8C1SSQ9_CYPCA TGF-beta receptor type-1 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:7962"
+    ],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 113.8843,
+    "clique_identifier_count": 7
+  },
+  {
+    "curie": "UniProtKB:A0A8D2C683",
+    "label": "A0A8D2C683_PIG TGF-beta receptor type-1 (trembl)",
+    "highlighting": {},
+    "synonyms": [
+      "A0A8D2C683_PIG TGF-beta receptor type-1 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9823"
+    ],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 113.8843,
+    "clique_identifier_count": 7
+  },
+  {
+    "curie": "UniProtKB:A0A8C1RXF4",
+    "label": "A0A8C1RXF4_CYPCA TGF-beta receptor type-1 (trembl)",
+    "highlighting": {},
+    "synonyms": [
+      "A0A8C1RXF4_CYPCA TGF-beta receptor type-1 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:7962"
+    ],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 113.8843,
+    "clique_identifier_count": 7
+  },
+  {
+    "curie": "UniProtKB:A0A4X1TDL7",
+    "label": "A0A4X1TDL7_PIG TGF-beta family profile domain-containing protein (trembl)",
+    "highlighting": {},
+    "synonyms": [
+      "A0A4X1TDL7_PIG TGF-beta family profile domain-containing protein (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9823"
+    ],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 113.71777,
+    "clique_identifier_count": 9
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:11616263",
+    "label": "Tgf|A-IN-1",
+    "highlighting": {},
+    "synonyms": [
+      "Tgf|A-IN-1"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 105.35898,
+    "clique_identifier_count": 4
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:121411850",
+    "label": "Tgf|ari-IN-1",
+    "highlighting": {},
+    "synonyms": [
+      "Tgf|ari-IN-1"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 105.35898,
+    "clique_identifier_count": 4
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:162618103",
+    "label": "Tgf|ari-IN-4",
+    "highlighting": {},
+    "synonyms": [
+      "Tgf|ari-IN-4"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 105.35898,
+    "clique_identifier_count": 4
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:166177004",
+    "label": "Tgf|A1-IN-2",
+    "highlighting": {},
+    "synonyms": [
+      "Tgf|A1-IN-2"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 105.35898,
+    "clique_identifier_count": 4
   }
 ]

@@ -417,5 +417,345 @@
     ],
     "score": 2369.092,
     "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:618474",
+    "label": "FGF4",
+    "highlighting": {},
+    "synonyms": [
+      "HST",
+      "FGF4",
+      "HBGF-4",
+      "fibroblast growth factor 4",
+      "heparin-binding growth factor 4",
+      "heparin secretory-transforming protein",
+      "fibroblast growth factor 4 (heparin secretory transforming protein 1, Kaposi sarcoma oncogene)",
+      "G3XGD3_BOVIN Fibroblast growth factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9913"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2369.092,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:709016",
+    "label": "FGF4",
+    "highlighting": {},
+    "synonyms": [
+      "FGF4",
+      "fibroblast growth factor 4",
+      "fibroblast growth factor 4 (heparin secretory transforming protein 1, Kaposi sarcoma oncogene)",
+      "A0A5F8AM91_MACMU Fibroblast growth factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9544"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2369.092,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:747727",
+    "label": "FGF4",
+    "highlighting": {},
+    "synonyms": [
+      "FGF4",
+      "fibroblast growth factor 4",
+      "fibroblast growth factor 4 (heparin secretory transforming protein 1, Kaposi sarcoma oncogene)",
+      "H2Q4B4_PANTR Fibroblast growth factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9598"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2369.092,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:100060525",
+    "label": "FGF4",
+    "highlighting": {},
+    "synonyms": [
+      "FGF4",
+      "fibroblast growth factor 4",
+      "A0A3Q2HY38_HORSE Fibroblast growth factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9796"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2369.092,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:100075228",
+    "label": "FGF4",
+    "highlighting": {},
+    "synonyms": [
+      "FGF4",
+      "fibroblast growth factor 4",
+      "A0A6I8NM05_ORNAN Fibroblast growth factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9258"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2369.092,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:100228700",
+    "label": "FGF4",
+    "highlighting": {},
+    "synonyms": [
+      "FGF4",
+      "fibroblast growth factor 4",
+      "fibroblast growth factor 4 (heparin secretory transforming protein 1, Kaposi sarcoma oncogene)",
+      "A0A674H046_TAEGU Fibroblast growth factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:59729"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2369.092,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:100409540",
+    "label": "FGF4",
+    "highlighting": {},
+    "synonyms": [
+      "FGF4",
+      "fibroblast growth factor 4",
+      "F7I9F2_CALJA Fibroblast growth factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9483"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2369.092,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:100440732",
+    "label": "FGF4",
+    "highlighting": {},
+    "synonyms": [
+      "FGF4",
+      "fibroblast growth factor 4",
+      "H2NCJ7_PONAB Fibroblast growth factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9601"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2369.092,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:100705897",
+    "label": "fgf4",
+    "highlighting": {},
+    "synonyms": [
+      "fgf4",
+      "fibroblast growth factor 4",
+      "I3KNU9_ORENI Fibroblast growth factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:8128"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2369.092,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:100730350",
+    "label": "Fgf4",
+    "highlighting": {},
+    "synonyms": [
+      "Fgf4",
+      "FGF7A",
+      "fibroblast growth factor 4",
+      "fibroblast growth factor 7A",
+      "H0VPV0_CAVPO Fibroblast growth factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:10141"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2369.092,
+    "clique_identifier_count": 5
   }
 ]

@@ -379,5 +379,355 @@
     ],
     "score": 2633.8364,
     "clique_identifier_count": 6
+  },
+  {
+    "curie": "NCBIGene:102017258",
+    "label": "Gdnf",
+    "highlighting": {},
+    "synonyms": [
+      "Gdnf",
+      "glial cell line-derived neurotrophic factor",
+      "A0A8C2VVS0_CHILA Glial cell line-derived neurotrophic factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:34839"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2633.8364,
+    "clique_identifier_count": 6
+  },
+  {
+    "curie": "NCBIGene:102986670",
+    "label": "GDNF",
+    "highlighting": {},
+    "synonyms": [
+      "GDNF",
+      "glial cell line-derived neurotrophic factor",
+      "A0A2Y9SIB7_PHYMC Glial cell line-derived neurotrophic factor (trembl)",
+      "A0A455BLB0_PHYMC Glial cell line-derived neurotrophic factor (trembl)",
+      "A0A9W2WTB1_PHYMC Glial cell line-derived neurotrophic factor isoform X1 (trembl)",
+      "A0A9W2WTN9_PHYMC Glial cell line-derived neurotrophic factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9755"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2633.8364,
+    "clique_identifier_count": 6
+  },
+  {
+    "curie": "NCBIGene:103215153",
+    "label": "GDNF",
+    "highlighting": {},
+    "synonyms": [
+      "GDNF",
+      "glial cell line-derived neurotrophic factor",
+      "A0A0D9RWP9_CHLSB Glial cell line-derived neurotrophic factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:60711"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2633.8364,
+    "clique_identifier_count": 6
+  },
+  {
+    "curie": "NCBIGene:110214886",
+    "label": "GDNF",
+    "highlighting": {},
+    "synonyms": [
+      "GDNF",
+      "glial cell line-derived neurotrophic factor",
+      "A0A6P5L0C0_PHACI Glial cell line-derived neurotrophic factor (trembl)",
+      "A0A6P5L7V1_PHACI Glial cell line-derived neurotrophic factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:38626"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2633.8364,
+    "clique_identifier_count": 6
+  },
+  {
+    "curie": "NCBIGene:118893083",
+    "label": "GDNF",
+    "highlighting": {},
+    "synonyms": [
+      "GDNF",
+      "glial cell line-derived neurotrophic factor",
+      "A0A8B8X3L5_BALMU Glial cell line-derived neurotrophic factor (trembl)",
+      "A0A8B8X815_BALMU Glial cell line-derived neurotrophic factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9771"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2633.8364,
+    "clique_identifier_count": 6
+  },
+  {
+    "curie": "NCBIGene:14573",
+    "label": "Gdnf",
+    "highlighting": {},
+    "synonyms": [
+      "ATF",
+      "Gdnf",
+      "neurotrophic factor",
+      "astrocyte-derived trophic factor",
+      "glial cell line-derived neurotrophic factor",
+      "glial cell line derived neurotrophic factor",
+      "mGDNF",
+      "ATF (mouse)",
+      "astrocyte-derived trophic factor (mouse)",
+      "glial cell line-derived neurotrophic factor (mouse)",
+      "GDNF_MOUSE Glial cell line-derived neurotrophic factor (sprot)"
+    ],
+    "taxa": [
+      "NCBITaxon:10090"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2425.1897,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:386587",
+    "label": "GDNF",
+    "highlighting": {},
+    "synonyms": [
+      "GDNF",
+      "glial cell derived neurotrophic factor",
+      "glial cell line-derived neurotrophic factor",
+      "A0AAA9TTY2_BOVIN Glial cell line-derived neurotrophic factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9913"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2425.1897,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:395569",
+    "label": "GDNF",
+    "highlighting": {},
+    "synonyms": [
+      "GDNF",
+      "glial cell derived neurotrophic factor",
+      "glial cell line-derived neurotrophic factor",
+      "glial cell line-derived neurotrophic factor long form",
+      "A0A8V0YHD0_CHICK Glial cell line-derived neurotrophic factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9031"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2425.1897,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:471566",
+    "label": "GDNF",
+    "highlighting": {},
+    "synonyms": [
+      "GDNF",
+      "glial cell derived neurotrophic factor",
+      "glial cell line-derived neurotrophic factor",
+      "A0A2I3RKL7_PANTR Glial cell line-derived neurotrophic factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9598"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2425.1897,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:706345",
+    "label": "GDNF",
+    "highlighting": {},
+    "synonyms": [
+      "GDNF",
+      "neurotrophic factor",
+      "glial cell derived neurotrophic factor",
+      "glial cell line-derived neurotrophic factor",
+      "glial cell line derived neurotrophic factor",
+      "A0A1D5R2Z3_MACMU Glial cell line-derived neurotrophic factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9544"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2425.1897,
+    "clique_identifier_count": 5
   }
 ]

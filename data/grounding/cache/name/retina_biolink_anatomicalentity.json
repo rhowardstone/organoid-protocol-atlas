@@ -390,5 +390,310 @@
     ],
     "score": 248.47829,
     "clique_identifier_count": 5
+  },
+  {
+    "curie": "UBERON:0001794",
+    "label": "inner limiting layer of retina",
+    "highlighting": {},
+    "synonyms": [
+      "ILM",
+      "Inner Limiting Membrane",
+      "inner limiting membrane",
+      "inner limiting membranes",
+      "retina inner limiting membrane",
+      "inner limiting layer of retina",
+      "retina internal limiting lamina",
+      "inner limiting membrane of retina",
+      "stratum limitans internum retinae",
+      "internal limiting lamina of retina",
+      "internal limiting membrane of retina"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:AnatomicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:OrganismalEntity",
+      "biolink:SubjectOfInvestigation",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 248.47829,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "UBERON:0001782",
+    "label": "pigmented layer of retina",
+    "highlighting": {},
+    "synonyms": [
+      "PRE",
+      "RPE",
+      "pigmented retina",
+      "pigmented epithelium",
+      "p. pigmentosa retinae",
+      "retinal pigment layer",
+      "pigmented layer of retina",
+      "Pigmented layer of retina",
+      "pigment cell layer retina",
+      "epithelium pigment retinal",
+      "Retinal Pigment Epithelium",
+      "stratum pigmentosa retinae",
+      "Retinal pigment epithelium",
+      "retinal pigment epithelium",
+      "Retina, pigment epithelium",
+      "epithelium, retinal pigment",
+      "stratum pigmentosum retinae",
+      "Stratum pigmentosum retinae",
+      "Pigment Epithelium, Retinal",
+      "Epithelium, Retinal Pigment",
+      "pigmented retina epithelium",
+      "epithelium pigmented retinal",
+      "Pigment epithelium of retina",
+      "Pigment cell layer of retina",
+      "pigmented retinal epithelium",
+      "pigment epithelium of retina",
+      "Pigmented retinal epithelium",
+      "retinal pigmented epithelium",
+      "stratum pigmentosum (retina)",
+      "Stratum pigmentosum (Retina)",
+      "Outer pigmented layer of retina",
+      "outer pigmented layer of retina",
+      "RETINAL PIGMENTED EPITHELIAL LAYER",
+      "Structure of retinal pigment epithelium",
+      "Structure of retinal pigment epithelium (body structure)"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:GrossAnatomicalStructure",
+      "biolink:AnatomicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:OrganismalEntity",
+      "biolink:SubjectOfInvestigation",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 237.72482,
+    "clique_identifier_count": 4
+  },
+  {
+    "curie": "CL:0000745",
+    "label": "retina horizontal cell",
+    "highlighting": {},
+    "synonyms": [
+      "HC",
+      "HCs",
+      "horizontal cell",
+      "retina horizontal cell",
+      "Retinal Horizontal Cell",
+      "Retinal Horizontal Cells",
+      "Cell, Retinal Horizontal",
+      "Horizontal Cell, Retinal",
+      "Cells, Retinal Horizontal",
+      "Horizontal Cells, Retinal"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:Cell",
+      "biolink:AnatomicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:OrganismalEntity",
+      "biolink:SubjectOfInvestigation",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 219.02412,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "UBERON:0005425",
+    "label": "presumptive neural retina",
+    "highlighting": {},
+    "synonyms": [
+      "future NR",
+      "presumptive retina",
+      "presumptive retinas",
+      "future neural layer",
+      "future neural retina",
+      "optic cup inner layer",
+      "inner layer optic cup",
+      "future neural epithelium",
+      "presumptive neural retina",
+      "future retinal neural layer"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:AnatomicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:OrganismalEntity",
+      "biolink:SubjectOfInvestigation",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 219.02412,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "UMLS:C0459676",
+    "label": "Subdivision of retina",
+    "highlighting": {},
+    "synonyms": [
+      "Zone of retina",
+      "Region of retina",
+      "Retina subdivision",
+      "Subdivision of retina",
+      "Structure of zone of retina",
+      "Structure of subdivision of retina",
+      "Structure of zone of retina (body structure)",
+      "Structure of subdivision of retina (body structure)"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:AnatomicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:OrganismalEntity",
+      "biolink:SubjectOfInvestigation",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 219.02412,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "UBERON:0001793",
+    "label": "nerve fiber layer of retina",
+    "highlighting": {},
+    "synonyms": [
+      "nerve fiber layer",
+      "optic fiber layer",
+      "optic fiber layers",
+      "retina nerve fiber layer",
+      "stratum opticum of retina",
+      "nerve fiber layer of retina",
+      "stratum neurofibrum retinae",
+      "stratum neurofibrarum retinae",
+      "stratum neurofibrarum (retina)",
+      "layer of nerve fibers of retina",
+      "neural retina nerve fibre layer",
+      "layer of nerve fibres of retina"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:AnatomicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:OrganismalEntity",
+      "biolink:SubjectOfInvestigation",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 192.24905,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "UMLS:C2700415",
+    "label": "Mouse Retina",
+    "highlighting": {},
+    "synonyms": [
+      "Mouse Retina",
+      "Eye - Retina (MMHCC)"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:AnatomicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:OrganismalEntity",
+      "biolink:SubjectOfInvestigation",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 186.56422,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "UMLS:C4322365",
+    "label": "Midzone of retina",
+    "highlighting": {},
+    "synonyms": [
+      "Midzone of retina"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:AnatomicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:OrganismalEntity",
+      "biolink:SubjectOfInvestigation",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 173.57251,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "UMLS:C1282414",
+    "label": "Quadrant of retina",
+    "highlighting": {},
+    "synonyms": [
+      "Quadrant of retina",
+      "Structure of quadrant of retina",
+      "Structure of quadrant of retina (body structure)"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:AnatomicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:OrganismalEntity",
+      "biolink:SubjectOfInvestigation",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 173.57251,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "UMLS:C0929713",
+    "label": "Right nonvisual retina",
+    "highlighting": {},
+    "synonyms": [
+      "Right nonvisual retina"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:AnatomicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:OrganismalEntity",
+      "biolink:SubjectOfInvestigation",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 173.57251,
+    "clique_identifier_count": 2
   }
 ]

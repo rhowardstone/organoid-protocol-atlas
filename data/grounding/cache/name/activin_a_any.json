@@ -287,5 +287,338 @@
     ],
     "score": 356.14,
     "clique_identifier_count": 3
+  },
+  {
+    "curie": "UniProtKB:I3JQW2",
+    "label": "I3JQW2_ORENI Activin A receptor type 1 (trembl)",
+    "highlighting": {},
+    "synonyms": [
+      "I3JQW2_ORENI Activin A receptor type 1 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:8128"
+    ],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 356.14,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "UniProtKB:A0A8C1KLP9",
+    "label": "A0A8C1KLP9_CYPCA Activin A receptor type 2Ab (trembl)",
+    "highlighting": {},
+    "synonyms": [
+      "A0A8C1KLP9_CYPCA Activin A receptor type 2Ab (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:7962"
+    ],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 356.14,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "UniProtKB:A0A8C5AWZ3",
+    "label": "A0A8C5AWZ3_GADMO Activin A receptor type 1C (trembl)",
+    "highlighting": {},
+    "synonyms": [
+      "A0A8C5AWZ3_GADMO Activin A receptor type 1C (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:8049"
+    ],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 356.14,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "NCBIGene:100152307",
+    "label": "ACVR1",
+    "highlighting": {},
+    "synonyms": [
+      "ACVR1",
+      "activin type I receptor",
+      "activin receptor type-1",
+      "activin A receptor type 1",
+      "activin A receptor, type I",
+      "A0A4X1VK09_PIG Serine/threonine-protein kinase receptor (trembl)",
+      "E9M2M1_PIG Serine/threonine-protein kinase receptor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9823"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 349.80878,
+    "clique_identifier_count": 37
+  },
+  {
+    "curie": "UniProtKB:D3Z1K2",
+    "label": "D3Z1K2_MOUSE Activin A receptor, type IC (Fragment) (trembl)",
+    "highlighting": {},
+    "synonyms": [
+      "D3Z1K2_MOUSE Activin A receptor, type IC (Fragment) (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:10090"
+    ],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 337.74463,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "UniProtKB:F5H5Q2",
+    "label": "F5H5Q2_HUMAN Activin A receptor type 1B (Fragment) (trembl)",
+    "highlighting": {},
+    "synonyms": [
+      "F5H5Q2_HUMAN Activin A receptor type 1B (Fragment) (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9606"
+    ],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 337.74463,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "UniProtKB:A0AAQ5BGI2",
+    "label": "A0AAQ5BGI2_HUMAN Activin A receptor like type 1 (trembl)",
+    "highlighting": {},
+    "synonyms": [
+      "A0AAQ5BGI2_HUMAN Activin A receptor like type 1 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9606"
+    ],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 337.74463,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "UniProtKB:C9JW28",
+    "label": "C9JW28_HUMAN Activin A receptor type 1 (Fragment) (trembl)",
+    "highlighting": {},
+    "synonyms": [
+      "C9JW28_HUMAN Activin A receptor type 1 (Fragment) (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9606"
+    ],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 337.74463,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "NCBIGene:108720005",
+    "label": "inhba.S",
+    "highlighting": {},
+    "synonyms": [
+      "edf",
+      "frp",
+      "inhba.S",
+      "activin A",
+      "inhibin beta A chain",
+      "inhibin beta A S homeolog",
+      "inhibin subunit beta A S homeolog",
+      "A0A1L8FRS5_XENLA Inhibin beta A chain (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:8355"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 335.44287,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "NCBIGene:3624",
+    "label": "INHBA",
+    "highlighting": {},
+    "synonyms": [
+      "FRP",
+      "EDF",
+      "INHBA",
+      "ACTIVIN A",
+      "INHBA Gene",
+      "INHBA gene",
+      "ACTIVIN A-B",
+      "ACTIVIN BETA-A",
+      "INHIBIN, BETA-1",
+      "inhibin, beta A",
+      "Inhibin, beta-1",
+      "INHIBIN, BETA A",
+      "activin beta-A chain",
+      "FSH-RELEASING FACTOR",
+      "inhibin beta A chain",
+      "FSH-RELEASING PROTEIN",
+      "FSH-releasing protein",
+      "inhibin subunit beta A",
+      "inhibin beta A subunit",
+      "erythroid differentiation factor",
+      "ERYTHROID DIFFERENTIATION FACTOR",
+      "erythroid differentiation protein",
+      "follicle-stimulating hormone-releasing protein",
+      "FOLLICLE-STIMULATING HORMONE-RELEASING PROTEIN",
+      "inhibin, beta A (activin A, activin AB alpha polypeptide)",
+      "Inhibin, Beta A (Activin A, Activin AB Alpha Polypeptide) Gene",
+      "A4D1W7_HUMAN Inhibin beta A chain (trembl)",
+      "hINHBA",
+      "Activin A",
+      "EDF (human)",
+      "Inhibin Beta A",
+      "Inhibin, Beta-1",
+      "Activin AB Alpha",
+      "Activin Beta-A Chain",
+      "INHBA protein, human",
+      "Inhibin Beta A Chain",
+      "FSH-Releasing Factor",
+      "FSH-Releasing Protein",
+      "activin beta-A chain (human)",
+      "inhibin beta A chain (human)",
+      "Erythroid Differentiation Factor",
+      "Erythroid Differentiation Protein",
+      "INHBA_HUMAN Inhibin beta A chain (sprot)",
+      "erythroid differentiation protein (human)",
+      "Follicle-Stimulating Hormone-Releasing Protein",
+      "inhibin, beta A (activin A, activin AB alpha polypeptide) protein, human"
+    ],
+    "taxa": [
+      "NCBITaxon:9606"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 320.54358,
+    "clique_identifier_count": 15
   }
 ]

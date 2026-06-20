@@ -369,5 +369,342 @@
     ],
     "score": 2643.014,
     "clique_identifier_count": 6
+  },
+  {
+    "curie": "NCBIGene:101968098",
+    "label": "Fgf10",
+    "highlighting": {},
+    "synonyms": [
+      "Fgf10",
+      "fibroblast growth factor 10",
+      "I3N0G7_ICTTR Fibroblast growth factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:43179"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2643.014,
+    "clique_identifier_count": 6
+  },
+  {
+    "curie": "NCBIGene:102029240",
+    "label": "Fgf10",
+    "highlighting": {},
+    "synonyms": [
+      "Fgf10",
+      "fibroblast growth factor 10",
+      "A0A8C2VFB3_CHILA Fibroblast growth factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:34839"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2643.014,
+    "clique_identifier_count": 6
+  },
+  {
+    "curie": "NCBIGene:103215226",
+    "label": "FGF10",
+    "highlighting": {},
+    "synonyms": [
+      "FGF10",
+      "fibroblast growth factor 10",
+      "A0A0D9RW10_CHLSB Fibroblast growth factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:60711"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2643.014,
+    "clique_identifier_count": 6
+  },
+  {
+    "curie": "NCBIGene:117354326",
+    "label": "FGF10",
+    "highlighting": {},
+    "synonyms": [
+      "FGF10",
+      "fibroblast growth factor 10",
+      "A0A6P8PUN3_GEOSA Fibroblast growth factor 10 isoform X5 (trembl)",
+      "A0A6P8PYM2_GEOSA Fibroblast growth factor (trembl)",
+      "A0A6P8QLA3_GEOSA Fibroblast growth factor (trembl)",
+      "A0A6P8QLB3_GEOSA Fibroblast growth factor (trembl)",
+      "A0A6P8QLF2_GEOSA Fibroblast growth factor 10 isoform X4 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:260995"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2643.014,
+    "clique_identifier_count": 6
+  },
+  {
+    "curie": "NCBIGene:326285",
+    "label": "FGF10",
+    "highlighting": {},
+    "synonyms": [
+      "FGF10",
+      "fibroblast growth factor 10",
+      "A0A3Q1NAV6_BOVIN Fibroblast growth factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9913"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2433.6404,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:443074",
+    "label": "FGF10",
+    "highlighting": {},
+    "synonyms": [
+      "FGF10",
+      "FGF-10",
+      "fibroblast growth factor 10",
+      "Q9N1B9_SHEEP Fibroblast growth factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9940"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2433.6404,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:471553",
+    "label": "FGF10",
+    "highlighting": {},
+    "synonyms": [
+      "FGF5A",
+      "FGF10",
+      "fibroblast growth factor 5A",
+      "fibroblast growth factor 10",
+      "A0A2I3T2G6_PANTR Fibroblast growth factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9598"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2433.6404,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:701584",
+    "label": "FGF10",
+    "highlighting": {},
+    "synonyms": [
+      "FGF10",
+      "fibroblast growth factor 10",
+      "F6RWC6_MACMU Fibroblast growth factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9544"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2433.6404,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:100052655",
+    "label": "FGF10",
+    "highlighting": {},
+    "synonyms": [
+      "FGF10",
+      "fibroblast growth factor 10",
+      "F7CND4_HORSE Fibroblast growth factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9796"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2433.6404,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:100225191",
+    "label": "FGF10",
+    "highlighting": {},
+    "synonyms": [
+      "FGF10",
+      "fibroblast growth factor 10",
+      "A0A674H506_TAEGU Fibroblast growth factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:59729"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2433.6404,
+    "clique_identifier_count": 5
   }
 ]

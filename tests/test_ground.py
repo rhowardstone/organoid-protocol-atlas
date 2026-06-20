@@ -44,6 +44,26 @@ def test_cell_line_resolves_to_cellosaurus_rrid():
     assert ground.ground_cell_line("WA09", **OFF)["curie"] == "Cellosaurus:CVCL_9773"
 
 
+def test_near_miss_metabolite_is_not_accepted_resolved():
+    # PR #9 review regression: PGE2 -> 15-Keto-PGE2 is a near-miss; must NOT count as
+    # accepted `resolved` (would poison KGX). Candidate, flagged, for human review.
+    r = ground.ground_entity("PGE2", "reagent", **OFF)
+    assert r["grounding_status"] == "needs_review" != "resolved"
+    assert "label_mismatch" in r["flags"]
+
+
+def test_wrong_entity_is_not_accepted_resolved():
+    # PR #9 review regression: TGF-β1 -> pig TGF-beta *receptor* is the wrong entity.
+    r = ground.ground_entity("TGF-β1", "reagent", **OFF)
+    assert r["grounding_status"] == "needs_review"
+    assert r["curie"] is not None and "label_mismatch" in r["flags"]
+
+
+def test_accepted_resolved_has_no_mismatch_flag():
+    r = ground.ground_entity("CHIR99021", "reagent", **OFF)
+    assert r["grounding_status"] == "resolved" and r["flags"] == []
+
+
 def test_zero_hit_is_not_found_never_guessed():
     r = ground.ground_entity("zzqnotarealreagent42", "reagent", **OFF)
     assert r["grounding_status"] == "not_found"

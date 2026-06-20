@@ -325,5 +325,266 @@
     ],
     "score": 295.706,
     "clique_identifier_count": 4
+  },
+  {
+    "curie": "CHEBI:190308",
+    "label": "ent-PGE2",
+    "highlighting": {},
+    "synonyms": [
+      "ent-PGE2",
+      "ent-Prostaglandin E2",
+      "(Z)-7-[(1S,2S,3S)-3-hydroxy-2-[(E,3R)-3-hydroxyoct-1-enyl]-5-oxocyclopentyl]hept-5-enoic acid"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 295.706,
+    "clique_identifier_count": 4
+  },
+  {
+    "curie": "CHEBI:165313",
+    "label": "19(R)-OH-PGE2",
+    "highlighting": {},
+    "synonyms": [
+      "Eganoprost",
+      "19(R)-OH-PGE2",
+      "19-Hydroxy-PGE2",
+      "19-Hydroxy-pge2",
+      "19R-Hydroxy-PGE2",
+      "19(R)-Hydroxy-pge2",
+      "19R-19-Hydroxy pge-2",
+      "19-Hydroxyprostaglandin e2",
+      "19(R)-Hydroxy-prostaglandin e2",
+      "19(R)-hydroxy-Prostaglandin E2",
+      "9-oxo-11R,15S,19R-Trihydroxy-5Z,13E-prostadienoate",
+      "9-oxo-11R,15S,19R-Trihydroxy-5Z,13E-prostadienoic acid",
+      "(Z)-7-[(1R,2R,3R)-2-[(E,3S,7R)-3,7-dihydroxyoct-1-enyl]-3-hydroxy-5-oxocyclopentyl]hept-5-enoic acid"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 286.34003,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "CHEBI:165319",
+    "label": "1-Glyceryl-PGE2",
+    "highlighting": {},
+    "synonyms": [
+      "1-PGE(,2)-g",
+      "1-Glyceryl-PGE2",
+      "Prostaglandin pge(,2) 1-glycerol",
+      "Prostaglandin PGE2 1-glyceryl ester",
+      "1-(9,15-dioxo-11alpha-Hydroxy-(5Z,13E)-prostadienoyl)-glycerol",
+      "[(2R)-2,3-dihydroxypropyl] (Z)-7-[(1R,2R,3S)-3-hydroxy-2-[(E,3S)-3-hydroxyoct-1-enyl]-5-oxocyclopentyl]hept-5-enoate",
+      "(2R)-2,3-Dihydroxypropyl (5Z)-7-[(1R,2R,3S)-3-hydroxy-2-[(1E,3S)-3-hydroxyoct-1-en-1-yl]-5-oxocyclopentyl]hept-5-enoic acid"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 275.11404,
+    "clique_identifier_count": 4
+  },
+  {
+    "curie": "CHEBI:165320",
+    "label": "20-Ethyl-PGE2",
+    "highlighting": {},
+    "synonyms": [
+      "20-Ethyl-PGE2",
+      "20a,20b-dihomo-9-oxo-11R,15S-dihydroxy-5Z,13E-prostadienoic acid",
+      "(Z)-7-[(1R,2R,3R)-3-hydroxy-2-[(E,3S)-3-hydroxydec-1-enyl]-5-oxocyclopentyl]hept-5-enoic acid"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 275.11404,
+    "clique_identifier_count": 4
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:162640753",
+    "label": "PGE2-EA-d4",
+    "highlighting": {},
+    "synonyms": [
+      "PGE2-EA-d4"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 275.11404,
+    "clique_identifier_count": 4
+  },
+  {
+    "curie": "UNII:6V30L285LP",
+    "label": "5-trans-PGE2",
+    "highlighting": {},
+    "synonyms": [
+      "5-trans-PGE2",
+      "5-TRANS-PROSTAGLANDIN E2"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 275.11404,
+    "clique_identifier_count": 4
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:6441015",
+    "label": "16-methyl-20-methoxy-PGE2",
+    "highlighting": {},
+    "synonyms": [
+      "16-methyl-20-methoxy-PGE2",
+      "16(S)-methyl-20-methoxy-PGE2",
+      "16(S)-methyl-20-methoxyprostaglandin E2"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 268.8379,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "CHEBI:165305",
+    "label": "15-Methyl-15S-PGE2",
+    "highlighting": {},
+    "synonyms": [
+      "15-Methyl-15S-PGE2",
+      "15-methyl-15S-PGE2",
+      "(Z)-7-[(1R,2R,3R)-3-hydroxy-2-[(E,3S)-3-hydroxy-3-methyloct-1-enyl]-5-oxocyclopentyl]hept-5-enoic acid"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 257.2033,
+    "clique_identifier_count": 4
+  },
+  {
+    "curie": "CHEBI:165308",
+    "label": "16-Phenyl-tetranor-PGE2",
+    "highlighting": {},
+    "synonyms": [
+      "16-Phenyl-tetranor-PGE2",
+      "16-phenyl tetranor Prostaglandin E2",
+      "(Z)-7-[(1R,2R,3R)-3-hydroxy-2-[(E,3S)-3-hydroxy-4-phenylbut-1-enyl]-5-oxocyclopentyl]hept-5-enoic acid"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 257.2033,
+    "clique_identifier_count": 4
+  },
+  {
+    "curie": "CHEBI:176067",
+    "label": "Prostaglandin PGE2 glyceryl ester",
+    "highlighting": {},
+    "synonyms": [
+      "Prostaglandin PGE2 glyceryl ester",
+      "1,3-dihydroxypropan-2-yl (Z)-7-[(1S,2S,3S)-3-hydroxy-2-[(E,3S)-3-hydroxyoct-1-enyl]-5-oxocyclopentyl]hept-5-enoate",
+      "1,3-Dihydroxypropan-2-yl (5Z)-7-[(1S,2S,3S)-3-hydroxy-2-[(1E,3S)-3-hydroxyoct-1-en-1-yl]-5-oxocyclopentyl]hept-5-enoic acid"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 257.2033,
+    "clique_identifier_count": 4
   }
 ]

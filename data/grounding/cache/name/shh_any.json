@@ -394,5 +394,339 @@
     ],
     "score": 2432.4639,
     "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:100147450",
+    "label": "SHH",
+    "highlighting": {},
+    "synonyms": [
+      "SHH",
+      "sonic hedgehog protein",
+      "sonic hedgehog signaling molecule",
+      "F6TJJ6_HORSE Hedgehog protein (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9796"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2432.4639,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:100222391",
+    "label": "SHH",
+    "highlighting": {},
+    "synonyms": [
+      "SHH",
+      "sonic hedghog protein",
+      "sonic hedgehog homolog",
+      "sonic hedgehog protein",
+      "H0YR00_TAEGU Hedgehog protein (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:59729"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2432.4639,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:100352774",
+    "label": "SHH",
+    "highlighting": {},
+    "synonyms": [
+      "SHH",
+      "sonic hedgehog protein",
+      "G1TCI1_RABIT Hedgehog protein (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9986"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2432.4639,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:100557233",
+    "label": "shh",
+    "highlighting": {},
+    "synonyms": [
+      "shh",
+      "sonic hedgehog protein",
+      "A0A803SKN6_ANOCA Hedgehog protein (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:28377"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2432.4639,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:100732014",
+    "label": "Shh",
+    "highlighting": {},
+    "synonyms": [
+      "Shh",
+      "sonic hedgehog protein",
+      "A0A286XZZ2_CAVPO Hedgehog protein (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:10141"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2432.4639,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:100773402",
+    "label": "Shh",
+    "highlighting": {},
+    "synonyms": [
+      "Shh",
+      "Sonic hedgehog protein",
+      "sonic hedgehog protein",
+      "A0A3L7H8J6_CRIGR Hedgehog protein (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:10029"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2432.4639,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:100925029",
+    "label": "SHH",
+    "highlighting": {},
+    "synonyms": [
+      "SHH",
+      "sonic hedgehog protein",
+      "G3WSF2_SARHA Hedgehog protein (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9305"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2432.4639,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:101020074",
+    "label": "SHH",
+    "highlighting": {},
+    "synonyms": [
+      "SHH",
+      "sonic hedgehog protein",
+      "A0A096NWF2_PAPAN Hedgehog protein (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9555"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2432.4639,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:101935657",
+    "label": "SHH",
+    "highlighting": {},
+    "synonyms": [
+      "SHH",
+      "sonic hedgehog protein",
+      "A0A8C3HZ65_CHRPI Hedgehog protein (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:8478"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2432.4639,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:102925960",
+    "label": "Shh",
+    "highlighting": {},
+    "synonyms": [
+      "Shh",
+      "sonic hedgehog protein",
+      "A0A6I9M1I7_PERMB Hedgehog protein (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:230844"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2432.4639,
+    "clique_identifier_count": 5
   }
 ]

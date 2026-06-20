@@ -1333,5 +1333,264 @@
     ],
     "score": 370.80762,
     "clique_identifier_count": 10
+  },
+  {
+    "curie": "CHEBI:177775",
+    "label": "Dexamethasone Tebutate",
+    "highlighting": {},
+    "synonyms": [
+      "Dexamethasone Tebutate",
+      "Dexamethasone tebutate",
+      "DEXAMETHASONE TEBUTATE",
+      "[2-[(8S,9R,10S,11S,13S,14S,16R,17R)-9-luoro-11,17-dihydroxy-10,13,16-trimethyl-3-oxo-6,7,8,11,12,14,15,16-octahydrocyclopenta[a]phenanthren-17-yl]-2-oxoethyl] 3,3-dimethylbutanoate"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 345.95914,
+    "clique_identifier_count": 6
+  },
+  {
+    "curie": "CHEBI:177864",
+    "label": "Dexamethasone beloxil",
+    "highlighting": {},
+    "synonyms": [
+      "Dexamethasone beloxil",
+      "DEXAMETHASONE BELOXIL",
+      "Dexamethasone Beloxil",
+      "(8S,9R,10S,11S,13S,14S,16R,17R)-9-luoro-11,17-dihydroxy-10,13,16-trimethyl-17-(2-phenylmethoxyacetyl)-6,7,8,11,12,14,15,16-octahydrocyclopenta[a]phenanthren-3-one"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 345.95914,
+    "clique_identifier_count": 6
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:6435929",
+    "label": "dexamethasone linoleate",
+    "highlighting": {},
+    "synonyms": [
+      "dexamethasone linoleate",
+      "dexamethasone 21-linoleate",
+      "Pregna-1,4-diene-3,20-dione, 9-fluoro-11,17-dihydroxy-16-methyl-21-((1-oxo-9,12-octadecadienyl)oxy)-, (11beta,16alpha,21(9Z,12Z))-"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 345.95914,
+    "clique_identifier_count": 6
+  },
+  {
+    "curie": "UNII:O9S11FMA79",
+    "label": "dexamethasone 21-methanesulfonate",
+    "highlighting": {},
+    "synonyms": [
+      "dexamethasone 21-mesylate",
+      "Dexamethasone 21-mesylate",
+      "DEXAMETHASONE 21-METHANESULFONATE",
+      "dexamethasone 21-methanesulfonate"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 343.9548,
+    "clique_identifier_count": 7
+  },
+  {
+    "curie": "CHEBI:32132",
+    "label": "dexamethasone sodium m-sulfobenzoate",
+    "highlighting": {},
+    "synonyms": [
+      "Dexapos",
+      "Santeson",
+      "dexamethasone sodium m-sulfobenzoate",
+      "Dexamethasone sodium-m-sulfobenzoate",
+      "Dexamethasone metasulfobenzoate sodium",
+      "Dexamethazone metasulfobenzoate sodium",
+      "Dexamethasone Metasulfobenzoate Sodium",
+      "Dexamethasone-21-sulphobenzoate sodium",
+      "DEXAMETHASONE SODIUM METASULFOBENZOATE",
+      "sodium 3-[(9-fluoro-11beta,17-dihydroxy-16alpha-methyl-3,20-dioxopregna-1,4-dien-21-yloxy)carbonyl]benzenesulfonate"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:MolecularMixture",
+      "biolink:ChemicalMixture",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 321.56232,
+    "clique_identifier_count": 7
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:9885914",
+    "label": "dexamethasone oxetanone",
+    "highlighting": {},
+    "synonyms": [
+      "dexamethasone oxetanone",
+      "(11beta,16alpha)-17,21-Epoxy-9-fluoro-11-hydroxy-16-methylpregna-1,4-diene-3,20-dione",
+      "Pregna-1,4-diene-3,20-dione, 17,21-epoxy-9-fluoro-11-hydroxy-16-methyl-, (11beta,16alpha)-"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 318.55304,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:63039",
+    "label": "dexamethasone 21-iodoacetate",
+    "highlighting": {},
+    "synonyms": [
+      "dexamethasone 21-iodoacetate",
+      "Dexamethasone 21-iodoacetate",
+      "Pregna-1,4-diene-3,20-dione, 9-fluoro-11,17-dihydroxy-21-((iodoacetyl)oxy)-16-methyl-, (11beta,16alpha)-"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 296.3701,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:63043",
+    "label": "dexamethasone sulfate ester",
+    "highlighting": {},
+    "synonyms": [
+      "Dexamethasone 21-sulfate",
+      "dexamethasone sulfate ester"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 296.3701,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:63045",
+    "label": "dexamethasone 17-propionate",
+    "highlighting": {},
+    "synonyms": [
+      "DX-17P",
+      "dexamethasone 17-propionate",
+      "Dexamethasone 17-propionate"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 296.3701,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:63051",
+    "label": "dexamethasone 21-tributylacetate",
+    "highlighting": {},
+    "synonyms": [
+      "DMTBA",
+      "dexamethasone 21-tributylacetate",
+      "Pregna-1,4-diene-3,20-dione, 21-((2,2-dibutyl-1-oxohexyl)oxy)-9-fluoro-11,17-dihydroxy-16-methyl-, (11beta,16alpha)-"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 296.3701,
+    "clique_identifier_count": 5
   }
 ]

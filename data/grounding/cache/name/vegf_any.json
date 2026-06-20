@@ -331,5 +331,316 @@
     ],
     "score": 386.81503,
     "clique_identifier_count": 3
+  },
+  {
+    "curie": "NCBIGene:104948932",
+    "label": "vegfaa",
+    "highlighting": {},
+    "synonyms": [
+      "vegf",
+      "vegfaa",
+      "vascular endothelial growth factor A-A",
+      "A0A6I9NDY9_9TELE Vascular endothelial growth factor A-A-like isoform X1 (trembl)",
+      "A0A6I9NG92_9TELE Vascular endothelial growth factor A-A-like isoform X2 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:8208"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 386.81503,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "NCBIGene:100860957",
+    "label": "VEGFA",
+    "highlighting": {},
+    "synonyms": [
+      "VEGF",
+      "VEGFA",
+      "VEGFA165",
+      "VEGFA189",
+      "vascular endothelial growth factor A",
+      "vascular endothelial growth factor 121",
+      "vascular endothelila growth factor 165",
+      "vascular endothelial growth factor A, long form",
+      "A0A024DAZ8_CAPHI Vascular endothelial growth factor A (trembl)",
+      "K4P986_CAPHI Vascular endothelial growth factor A (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9925"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 352.2378,
+    "clique_identifier_count": 8
+  },
+  {
+    "curie": "NCBIGene:8797204",
+    "label": "PCPV_gp003",
+    "highlighting": {},
+    "synonyms": [
+      "VEGF",
+      "PCPV_gp003"
+    ],
+    "taxa": [
+      "NCBITaxon:129726"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 348.06195,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "NCBIGene:8797333",
+    "label": "PCPV_gp132",
+    "highlighting": {},
+    "synonyms": [
+      "VEGF",
+      "PCPV_gp132"
+    ],
+    "taxa": [
+      "NCBITaxon:129726"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 348.06195,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "NCBIGene:105343926",
+    "label": "LOC105343926",
+    "highlighting": {},
+    "synonyms": [
+      "VEGF",
+      "LOC105343926",
+      "vascular endothelial growth factor A",
+      "Vascular endothelial growth factor D",
+      "LOW QUALITY PROTEIN: vascular endothelial growth factor C"
+    ],
+    "taxa": [
+      "NCBITaxon:29159"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 306.54364,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "UNII:9NPC24K8FA",
+    "label": "VEGF receptor 2 kinase inhibitor II",
+    "highlighting": {},
+    "synonyms": [
+      "VEGFR 2 KINASE INHIBITOR II",
+      "VEGF receptor 2 kinase inhibitor II",
+      "VEGF Receptor 2 Kinase Inhibitor II"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 303.02774,
+    "clique_identifier_count": 6
+  },
+  {
+    "curie": "NCBIGene:107311307",
+    "label": "VEGFA",
+    "highlighting": {},
+    "synonyms": [
+      "VPF",
+      "VEGF",
+      "VEGFA",
+      "VEGF-A",
+      "Vascular permeability factor",
+      "vascular endothelial growth factor A",
+      "VEGFA_COTJA Vascular endothelial growth factor A (sprot)"
+    ],
+    "taxa": [
+      "NCBITaxon:93934"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 298.4176,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "NCBIGene:100713483",
+    "label": "Vegfa",
+    "highlighting": {},
+    "synonyms": [
+      "Vegf",
+      "Vegfa",
+      "vascular endothelial growth factor A, long form"
+    ],
+    "taxa": [
+      "NCBITaxon:10141"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 274.81247,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "NCBIGene:105088633",
+    "label": "VEGFA",
+    "highlighting": {},
+    "synonyms": [
+      "vegf",
+      "VEGFA",
+      "vascular endothelial growth factor A, long form"
+    ],
+    "taxa": [
+      "NCBITaxon:9838"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 274.81247,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "NCBIGene:114705300",
+    "label": "Vegfa",
+    "highlighting": {},
+    "synonyms": [
+      "VEGF",
+      "Vegfa",
+      "vascular endothelial growth factor A"
+    ],
+    "taxa": [
+      "NCBITaxon:10041"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 274.81247,
+    "clique_identifier_count": 1
   }
 ]

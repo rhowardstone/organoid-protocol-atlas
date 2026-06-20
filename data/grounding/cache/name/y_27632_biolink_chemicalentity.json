@@ -235,5 +235,266 @@
     ],
     "score": 331.10425,
     "clique_identifier_count": 1
+  },
+  {
+    "curie": "UMLS:C0960249",
+    "label": "Y 27632, (4(R)-trans)-isomer",
+    "highlighting": {},
+    "synonyms": [
+      "Y 27632, (4(R)-trans)-isomer"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 312.03177,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "UMLS:C0960250",
+    "label": "Y 27632, (4(S)-trans)-isomer",
+    "highlighting": {},
+    "synonyms": [
+      "Y 27632, (4(S)-trans)-isomer"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 312.03177,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "UMLS:C0960248",
+    "label": "Y 27632, dihydrochloride, (4(R)-trans)-isomer",
+    "highlighting": {},
+    "synonyms": [
+      "Y 27632, dihydrochloride, (4(R)-trans)-isomer"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 295.0368,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "CHEBI:31246",
+    "label": "Y 25130",
+    "highlighting": {},
+    "synonyms": [
+      "Y 25130",
+      "Azasetron hydrochloride",
+      "AZASETRON HYDROCHLORIDE",
+      "N-(1-azabicyclo[2.2.2]octan-3-yl)-6-chloro-4-methyl-3-oxo-1,4-benzoxazine-8-carboxamide;hydron;chloride"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:MolecularMixture",
+      "biolink:ChemicalMixture",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 157.36896,
+    "clique_identifier_count": 13
+  },
+  {
+    "curie": "CHEBI:8682",
+    "label": "pyronin Y",
+    "highlighting": {},
+    "synonyms": [
+      "PYRONIN",
+      "Pyronine",
+      "Pyronin G",
+      "Pyronin Y",
+      "pyronin Y",
+      "PYRONIN Y",
+      "C.I. 45005",
+      "PYRONINE Y",
+      "Pyronine Y",
+      "Pyronine G",
+      "Pyronin Yellow",
+      "Pyronine G stain",
+      "Pyronine G stain (substance)",
+      "3,6-Bis(dimethylamino)xanthylium chloride",
+      "Xanthylium, 3,6-bis(dimethylamino)-, chloride",
+      "6-(dimethylamino)-N,N-dimethyl-3H-xanthen-3-iminium chloride"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:MolecularMixture",
+      "biolink:ChemicalMixture",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 142.98828,
+    "clique_identifier_count": 10
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:132781",
+    "label": "Y 26611",
+    "highlighting": {},
+    "synonyms": [
+      "Y 26611",
+      "Y-26611",
+      "7-AMMCIFQ",
+      "7-(2-aminomethylmorpholino)-1-cyclopropyl-6,8-difluoro-1,4-dihydro-4-oxo-3-quinolinecarboxylic acid"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 137.30487,
+    "clique_identifier_count": 9
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:24868177",
+    "label": "neuropeptide Y",
+    "highlighting": {},
+    "synonyms": [
+      "CID 77068007",
+      "neuropeptide Y",
+      "NPY (human, rat)",
+      "[3H]neuropeptide Y",
+      "human Neuropeptide Y",
+      "HUMAN NEUROPEPTIDE Y",
+      "[3H]NPY (human, mouse, rat)",
+      "[125I]NPY (human, mouse, rat)"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 137.30487,
+    "clique_identifier_count": 9
+  },
+  {
+    "curie": "CHEBI:79404",
+    "label": "Y 23684",
+    "highlighting": {},
+    "synonyms": [
+      "Y 23684",
+      "Y-23684",
+      "2-(4-Chlorophenyl)-5,6-dihydro-[1]benzothepino[5,4-c]pyridazin-3(2H)-one-7-oxide",
+      "(1)Benzothiepino(5,4-c)pyridazin-3(2H)-one, 2-(4-chlorophenyl)-5,6-dihydro-, 7-oxide"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 131.02214,
+    "clique_identifier_count": 8
+  },
+  {
+    "curie": "CHEBI:91412",
+    "label": "Y-33075",
+    "highlighting": {},
+    "synonyms": [
+      "Y33075",
+      "Y-33075",
+      "Y-39983",
+      "4-[(1R)-1-aminoethyl]-N-(1H-pyrrolo[2,3-b]pyridin-4-yl)benzamide"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 131.02214,
+    "clique_identifier_count": 8
+  },
+  {
+    "curie": "CHEBI:92788",
+    "label": "Y 26763",
+    "highlighting": {},
+    "synonyms": [
+      "Y-26763",
+      "Y 26763",
+      "N-[(3S,4R)-6-cyano-3-hydroxy-2,2-dimethyl-3,4-dihydro-2H-1-benzopyran-4-yl]-N-hydroxyacetamide",
+      "Acetamide, N-(6-cyano-3,4-dihydro-3-hydroxy-2,2-dimethyl-2H-1-benzopyran-4-yl)-N-hydroxy-, (3S-trans)-"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 131.02214,
+    "clique_identifier_count": 8
   }
 ]

@@ -280,5 +280,242 @@
     ],
     "score": 401.16336,
     "clique_identifier_count": 3
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:97301426",
+    "label": "Caged Retinoic Acid",
+    "highlighting": {},
+    "synonyms": [
+      "Caged Retinoic Acid"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 401.16336,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:168006874",
+    "label": "Retinoic acid-d6",
+    "highlighting": {},
+    "synonyms": [
+      "Retinoic acid-d6"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 401.16336,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "CHEBI:197177",
+    "label": "14-methyl-20,14-retro-retinoic acid",
+    "highlighting": {},
+    "synonyms": [
+      "14-methyl-20,14-retro-retinoic acid",
+      "14-Methyl-20,14-retro-retinoic acid",
+      "(4E,6E,8E)-2,7-dimethyl-3-methylidene-9-(2,6,6-trimethylcyclohexen-1-yl)nona-4,6,8-trienoic acid"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 385.2532,
+    "clique_identifier_count": 4
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:11174913",
+    "label": "Retinoic acid, 4-hydroxy-, methyl ester",
+    "highlighting": {},
+    "synonyms": [
+      "Retinoic acid, 4-hydroxy-, methyl ester"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 385.2532,
+    "clique_identifier_count": 4
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:71316382",
+    "label": "5,8-Epoxy-13-cis-retinoic acid",
+    "highlighting": {},
+    "synonyms": [
+      "5,8-Oxy-13-cis-retinoate",
+      "5,8-Epoxy-13-cis-retinoate",
+      "5,8-Oxy-13-cis-retinoic acid",
+      "5,8-Epoxy-13-cis-retinoic acid"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 385.2532,
+    "clique_identifier_count": 4
+  },
+  {
+    "curie": "UNII:R1UDJ9769D",
+    "label": "Retinoic acid, 5,6-epoxy-5,6-dihydro-",
+    "highlighting": {},
+    "synonyms": [
+      "5,6-EPOXYTRETINOIN",
+      "Retinoic acid, 5,6-epoxy-5,6-dihydro-"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 385.2532,
+    "clique_identifier_count": 4
+  },
+  {
+    "curie": "UNII:B68UKK8PG0",
+    "label": "4-Hydroxy-13-cis-retinoic acid",
+    "highlighting": {},
+    "synonyms": [
+      "4-HYDROXYISOTRETINOIN",
+      "4-Hydroxy-13-cis-retinoic acid"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 385.2532,
+    "clique_identifier_count": 4
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:6506621",
+    "label": "Retinoic acid, 2-hydroxy-",
+    "highlighting": {},
+    "synonyms": [
+      "Retinoic acid, 2-hydroxy-"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 375.04645,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:6914379",
+    "label": "11,12-3H-Retinoic acid",
+    "highlighting": {},
+    "synonyms": [
+      "11,12-3H-Retinoic acid"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 375.04645,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:15125876",
+    "label": "20,14-Retro-retinoic acid",
+    "highlighting": {},
+    "synonyms": [
+      "20,14-Retro-retinoic acid"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 375.04645,
+    "clique_identifier_count": 3
   }
 ]

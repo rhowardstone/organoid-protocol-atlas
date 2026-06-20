@@ -651,5 +651,239 @@
     ],
     "score": 446.0473,
     "clique_identifier_count": 3
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:87355840",
+    "label": "S-allylmercapto-N-acetylcysteine",
+    "highlighting": {},
+    "synonyms": [
+      "S-allylmercapto-N-acetylcysteine"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 446.0473,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:122630934",
+    "label": "Captopril-N-acetylcysteine Disulfide",
+    "highlighting": {},
+    "synonyms": [
+      "Captopril-N-acetylcysteine Disulfide"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 446.0473,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:156012091",
+    "label": "Pirfenidone-N-acetylcysteine adduct",
+    "highlighting": {},
+    "synonyms": [
+      "Pirfenidone-N-acetylcysteine adduct"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 446.0473,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:3596578",
+    "label": "S-(b-hydroxyethyl)-N-acetylcysteine",
+    "highlighting": {},
+    "synonyms": [
+      "S-(b-hydroxyethyl)-N-acetylcysteine"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 418.78333,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:125499",
+    "label": "N-acetylcysteine-6,7-dihydro-7-hydroxy-1-hydroxymethyl-5H-pyrrolizine",
+    "highlighting": {},
+    "synonyms": [
+      "NAC-DHP",
+      "N-acetylcysteine-6,7-dihydro-7-hydroxy-1-hydroxymethyl-5H-pyrrolizine"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 414.56958,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:43782",
+    "label": "S-(N,N-Dipropylcarbamoyl)-N-acetylcysteine",
+    "highlighting": {},
+    "synonyms": [
+      "S-(N,N-Dipropylcarbamoyl)-N-acetylcysteine"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 402.8667,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:3082283",
+    "label": "S-(3-hydroxy-3-carboxy-n-propyl)-N-acetylcysteine",
+    "highlighting": {},
+    "synonyms": [
+      "S-(3-hydroxy-3-carboxy-n-propyl)-N-acetylcysteine"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 397.22943,
+    "clique_identifier_count": 4
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:195480",
+    "label": "S-(2-(1-carboxy-2-methylpropyl)isoindole-1-yl)-N-acetylcysteine",
+    "highlighting": {},
+    "synonyms": [
+      "CMPI-AcCys",
+      "S-(2-(1-carboxy-2-methylpropyl)isoindole-1-yl)-N-acetylcysteine",
+      "S-(2-(1-Carboxy-2-methylpropyl)isoindole-1-yl)-N-acetylcysteine"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 396.02908,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "UNII:P3N7601R5P",
+    "label": "S-(3,5-Di-tert-butyl-4-hydroxybenzyl)-N-acetylcysteine",
+    "highlighting": {},
+    "synonyms": [
+      "S-(3,5-Di-tert-butyl-4-hydroxybenzyl)-N-acetylcysteine",
+      "S-(3,5-DI-TERT-BUTYL-4-HYDROXYBENZYL)-N-ACETYLCYSTEINE"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 390.67453,
+    "clique_identifier_count": 4
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:24202468",
+    "label": "Silver-N-acetylcysteine",
+    "highlighting": {},
+    "synonyms": [
+      "Silver-N-acetylcysteine"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:MolecularMixture",
+      "biolink:ChemicalMixture",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 378.09955,
+    "clique_identifier_count": 2
   }
 ]

@@ -518,5 +518,259 @@
     ],
     "score": 209.22911,
     "clique_identifier_count": 6
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:2777545",
+    "label": "6-(Trifluoromethyl)nicotinamide",
+    "highlighting": {},
+    "synonyms": [
+      "6-(Trifluoromethyl)nicotinamide"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 206.07024,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:6454016",
+    "label": "nicotinamide-benzimidazole dinucleotide",
+    "highlighting": {},
+    "synonyms": [
+      "nicotinamide-benzimidazole dinucleotide",
+      "Nicotinamide-benzimidazole dinucleotide"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 206.07024,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:135421870",
+    "label": "nicotinamide-hypoxanthine dinucleotide",
+    "highlighting": {},
+    "synonyms": [
+      "HypNADH",
+      "deamino-NADH",
+      "nicotinamide-hypoxanthine dinucleotide",
+      "Nicotinamide-hypoxanthine dinucleotide",
+      "reduced nicotinamide hypoxanthine dinucleotide"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 206.07024,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:135600304",
+    "label": "nicotinamide guanine dinucleotide",
+    "highlighting": {},
+    "synonyms": [
+      "NGD nucleotide",
+      "nicotinamide guanine dinucleotide",
+      "Nicotinamide guanine dinucleotide"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 206.07024,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "UNII:Y2I575WI0D",
+    "label": "Cyclobutyrol nicotinamide",
+    "highlighting": {},
+    "synonyms": [
+      "Cyclobutyrol nicotinamide",
+      "CYCLOBUTYROL NICOTINAMIDE"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:MolecularMixture",
+      "biolink:ChemicalMixture",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 198.95605,
+    "clique_identifier_count": 4
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:925",
+    "label": "beta-nicotinamide adenine dinucleotide",
+    "highlighting": {},
+    "synonyms": [
+      "b-Nicotinamide adenine dinucleotide",
+      "Β-nicotinamide adenine dinucleotide",
+      "beta-nicotinamide adenine dinucleotide",
+      "beta-Nicotinamide adenine dinucleotide",
+      "[[5-(6-Aminopurin-9-yl)-3,4-dihydroxyoxolan-2-yl]methoxy-oxidophosphoryl] [5-(3-azaniumylcarbonylpyridin-1-ium-1-yl)-3,4-dihydroxyoxolan-2-yl]methyl phosphate",
+      "[[5-(6-Aminopurin-9-yl)-3,4-dihydroxy-tetrahydrofuran-2-yl]methoxy-hydroxy-phosphoryl] [5-(3-carbamoylpyridin-1-ium-1-yl)-3,4-dihydroxy-tetrahydrofuran-2-yl]methyl phosphate"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 192.65445,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:64196",
+    "label": "Nicotinamide, N-(1-adamantyl)-",
+    "highlighting": {},
+    "synonyms": [
+      "Nicotinamide, N-(1-adamantyl)-"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 192.65445,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:164223",
+    "label": "nicotinamide 2-azidoadenine dinucleotide",
+    "highlighting": {},
+    "synonyms": [
+      "2N3NAD",
+      "2-azido-NAD",
+      "2-azidoadenosine dinucleotide",
+      "nicotinamide 2-azidoadenine dinucleotide",
+      "Nicotinamide 2-azidoadenine dinucleotide"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 192.65445,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:193665",
+    "label": "nicotinamide ribose diphosphate ribose",
+    "highlighting": {},
+    "synonyms": [
+      "NAmRDPR",
+      "Nicotinamide ribose diphosphate ribose",
+      "nicotinamide ribose diphosphate ribose",
+      "D-ribofuranose, 5-(trihydrogen diphosphate), 5-5'-ester with 3-(aminocarbonyl)-1-beta-D-ribofuranosylpyridinium hydroxide, inner salt"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 192.65445,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:3081268",
+    "label": "nicotinamide 8-azidoadenine dinucleotide",
+    "highlighting": {},
+    "synonyms": [
+      "8-N3-NAD",
+      "8-azido-NAD",
+      "(A)-8-azido-NAD+",
+      "nicotinamide 8-azidoadenine dinucleotide",
+      "Nicotinamide 8-azidoadenine dinucleotide"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 192.65445,
+    "clique_identifier_count": 5
   }
 ]

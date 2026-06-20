@@ -339,5 +339,334 @@
     ],
     "score": 417.42004,
     "clique_identifier_count": 9
+  },
+  {
+    "curie": "NCBIGene:102573443",
+    "label": "NTF3",
+    "highlighting": {},
+    "synonyms": [
+      "NT3",
+      "nt-3",
+      "NTF3",
+      "NTF3-1",
+      "neurotrophin-3",
+      "A0A151P6L4_ALLMI Neurotrophin-3 (trembl)",
+      "A0A151P6L6_ALLMI Neurotrophin-3 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:8496"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 417.0933,
+    "clique_identifier_count": 4
+  },
+  {
+    "curie": "NCBIGene:386825",
+    "label": "ntf3",
+    "highlighting": {},
+    "synonyms": [
+      "NT-3",
+      "ntf3",
+      "wu:fl98d04",
+      "neurotrophin 3",
+      "neurotrophin-3",
+      "A0A8M1P3S4_DANRE Neurotrophin-3 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:7955"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 407.22598,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "UniProtKB:Q16620-5",
+    "label": "BDNF/NT-3 growth factors receptor isoform h5 (human)",
+    "highlighting": {},
+    "synonyms": [
+      "hNTRK2/iso:h5",
+      "BDNF/NT-3 growth factors receptor isoform h5 (human)"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 405.85715,
+    "clique_identifier_count": 8
+  },
+  {
+    "curie": "UniProtKB:Q16288-1",
+    "label": "NT-3 growth factor receptor isoform 1 (human)",
+    "highlighting": {},
+    "synonyms": [
+      "hNTRK3/iso:1",
+      "NT-3 growth factor receptor isoform 1 (human)",
+      "NT-3 growth factor receptor isoform A (human)"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 378.00162,
+    "clique_identifier_count": 6
+  },
+  {
+    "curie": "UniProtKB:Q16620-3",
+    "label": "BDNF/NT-3 growth factors receptor isoform TrkB-T-Shc (human)",
+    "highlighting": {},
+    "synonyms": [
+      "hNTRK2/iso:TrkB-T-Shc",
+      "BDNF/NT-3 growth factors receptor isoform TrkB-T-Shc (human)"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 369.5555,
+    "clique_identifier_count": 8
+  },
+  {
+    "curie": "UniProtKB:Q16620-4",
+    "label": "BDNF/NT-3 growth factors receptor isoform h4 (human)",
+    "highlighting": {},
+    "synonyms": [
+      "hNTRK2/iso:h4",
+      "BDNF/NT-3 growth factors receptor isoform h4 (human)"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 359.43597,
+    "clique_identifier_count": 6
+  },
+  {
+    "curie": "UniProtKB:P15209-2",
+    "label": "BDNF/NT-3 growth factors receptor isoform 2 (mouse)",
+    "highlighting": {},
+    "synonyms": [
+      "mNTRK2/iso:2",
+      "TrkBTK- (mouse)",
+      "TRKB-T1 (mouse)",
+      "GP95-TRKB (mouse)",
+      "BDNF/NT-3 growth factors receptor isoform 2 (mouse)"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 359.43597,
+    "clique_identifier_count": 6
+  },
+  {
+    "curie": "UniProtKB:P15209-1",
+    "label": "BDNF/NT-3 growth factors receptor isoform 1 (mouse)",
+    "highlighting": {},
+    "synonyms": [
+      "TRKB-FL",
+      "L3 (mouse)",
+      "mNTRK2/iso:1",
+      "TrkBTK+ (mouse)",
+      "GP145-TRKB (mouse)",
+      "BDNF/NT-3 growth factors receptor isoform 1 (mouse)"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 359.43597,
+    "clique_identifier_count": 6
+  },
+  {
+    "curie": "NCBIGene:81737",
+    "label": "Ntf3",
+    "highlighting": {},
+    "synonyms": [
+      "HDNF",
+      "Ntf3",
+      "NT-3",
+      "NGF-2",
+      "neurotrophin 3",
+      "neurotrophin-3",
+      "neurotrophic factor",
+      "nerve growth factor 2",
+      "neurotrophin-3 (HDNF/NT-3)",
+      "A0A0G2JVQ7_RAT Neurotrophin-3 (trembl)",
+      "A0A0G2JXV7_RAT Neurotrophin-3 (trembl)",
+      "Ntf-3",
+      "rNTF3",
+      "HDNF (rat)",
+      "NT-3 (rat)",
+      "NGF-2 (rat)",
+      "neurotrophin-3 (rat)",
+      "neurotrophic factor (rat)",
+      "nerve growth factor 2 (rat)",
+      "NTF3_RAT Neurotrophin-3 (sprot)"
+    ],
+    "taxa": [
+      "NCBITaxon:10116"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 348.04556,
+    "clique_identifier_count": 15
+  },
+  {
+    "curie": "NCBIGene:397511",
+    "label": "NTRK3",
+    "highlighting": {},
+    "synonyms": [
+      "TRKC",
+      "trk-C",
+      "NTRK3",
+      "gp145-trkC",
+      "trkC tyrosine kinase",
+      "tyrosine kinase receptor",
+      "NT-3 growth factor receptor",
+      "neurotrophic receptor tyrosine kinase 3",
+      "neurotrophic tyrosine kinase, receptor, type 3",
+      "A0A287AK14_PIG NT-3 growth factor receptor isoform X3 (trembl)",
+      "A0A480DQD2_PIG Tyrosine-protein kinase receptor (trembl)",
+      "A0A480N1D5_PIG NT-3 growth factor receptor isoform e (trembl)",
+      "A0A4X1WCM2_PIG Tyrosine-protein kinase receptor (trembl)",
+      "A0A4X1WCM3_PIG Tyrosine-protein kinase receptor (trembl)",
+      "A0A4X1WCM8_PIG Neurotrophic receptor tyrosine kinase 3 (trembl)",
+      "A0A4X1WDT4_PIG Tyrosine-protein kinase receptor (trembl)",
+      "A0A4X1WDT7_PIG NT-3 growth factor receptor (trembl)",
+      "NTRK3_PIG NT-3 growth factor receptor (sprot)"
+    ],
+    "taxa": [
+      "NCBITaxon:9823"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 330.74246,
+    "clique_identifier_count": 86
   }
 ]

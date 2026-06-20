@@ -380,5 +380,306 @@
     ],
     "score": 202.41022,
     "clique_identifier_count": 4
+  },
+  {
+    "curie": "UBERON:0002616",
+    "label": "Brain part",
+    "highlighting": {},
+    "synonyms": [
+      "Brain part",
+      "brain part",
+      "Brain Part",
+      "brain parts",
+      "part of brain",
+      "Part of brain",
+      "segment of brain",
+      "neuraxis segment",
+      "regional part of brain",
+      "neuroanatomical region",
+      "brain biological structure",
+      "brain anatomical structure",
+      "Brain part (body structure)",
+      "anatomical structure of brain",
+      "biological structure of brain"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:GrossAnatomicalStructure",
+      "biolink:AnatomicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:OrganismalEntity",
+      "biolink:SubjectOfInvestigation",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 187.39632,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "UBERON:0006238",
+    "label": "future brain",
+    "highlighting": {},
+    "synonyms": [
+      "encephalon",
+      "future brain",
+      "brain rudiment",
+      "embryonic brain",
+      "presumptive brain"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:AnatomicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:OrganismalEntity",
+      "biolink:SubjectOfInvestigation",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 187.39632,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "UBERON:0002092",
+    "label": "brain dura mater",
+    "highlighting": {},
+    "synonyms": [
+      "Human Dura Mater",
+      "brain dura mater",
+      "Brain Dura Mater",
+      "Cranial dura mater",
+      "cranial dura mater",
+      "dura mater of brain",
+      "Dura mater of brain",
+      "Dura mater encephali",
+      "dura mater encephali",
+      "dura mater cranialis",
+      "Dura mater cranialis",
+      "Brain dura mater structure",
+      "Brain dura mater structure (body structure)"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:GrossAnatomicalStructure",
+      "biolink:AnatomicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:OrganismalEntity",
+      "biolink:SubjectOfInvestigation",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 174.34668,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "UBERON:0003549",
+    "label": "brain pia mater",
+    "highlighting": {},
+    "synonyms": [
+      "Brain Pia Mater",
+      "brain pia mater",
+      "pia mater of brain",
+      "brain pia mater of neuraxis",
+      "pia mater of neuraxis of brain"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:GrossAnatomicalStructure",
+      "biolink:AnatomicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:OrganismalEntity",
+      "biolink:SubjectOfInvestigation",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 174.34668,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "UBERON:0005397",
+    "label": "brain arachnoid mater",
+    "highlighting": {},
+    "synonyms": [
+      "brain arachnoid mater",
+      "brain arachnoid matter",
+      "cranial arachnoid mater",
+      "Brain Arachnoid Membrane",
+      "arachnoidea mater cranialis",
+      "arachnoidea mater encephali"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:GrossAnatomicalStructure",
+      "biolink:AnatomicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:OrganismalEntity",
+      "biolink:SubjectOfInvestigation",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 174.34668,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "UBERON:0008998",
+    "label": "vasculature of brain",
+    "highlighting": {},
+    "synonyms": [
+      "brain vasculature",
+      "vasculature of brain",
+      "cerebrovascular system",
+      "intracerebral vasculature"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:AnatomicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:OrganismalEntity",
+      "biolink:SubjectOfInvestigation",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 174.34668,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "UBERON:0013118",
+    "label": "sulcus of brain",
+    "highlighting": {},
+    "synonyms": [
+      "sulcus",
+      "Sulci cerebri",
+      "cerebral sulci",
+      "sulci & spaces",
+      "cerebral sulcus",
+      "Cerebral Sulcus",
+      "sulcus of brain",
+      "Cerebral sulcus",
+      "Sulci cerebrales",
+      "fissure of brain",
+      "Structure of cerebral sulcus",
+      "Structure of cerebral sulcus (body structure)"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:AnatomicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:OrganismalEntity",
+      "biolink:SubjectOfInvestigation",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 174.34668,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "UBERON:0013150",
+    "label": "future brain vesicle",
+    "highlighting": {},
+    "synonyms": [
+      "brain vesicle",
+      "early brain vesicle",
+      "future brain vesicle",
+      "Primary brain vesicle",
+      "Primary Brain Vesicle",
+      "primary brain vesicle",
+      "primitive brain vesicle",
+      "secondary brain vesicle",
+      "Primary Cerebral Vesicle"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:GrossAnatomicalStructure",
+      "biolink:AnatomicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:OrganismalEntity",
+      "biolink:SubjectOfInvestigation",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 174.34668,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "UMLS:C1519211",
+    "label": "Secondary brain vesicle",
+    "highlighting": {},
+    "synonyms": [
+      "Secondary brain vesicle",
+      "Secondary Brain Vesicle"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:AnatomicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:OrganismalEntity",
+      "biolink:SubjectOfInvestigation",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 174.34668,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "UBERON:0003016",
+    "label": "postcommissural fornix of brain",
+    "highlighting": {},
+    "synonyms": [
+      "POFX",
+      "pofx",
+      "Postcommissural fibres",
+      "Postcommissural fibers",
+      "postcommissural fornix",
+      "Postcommissural fornix",
+      "fornix postcommissuralis",
+      "Fornix postcommissuralis",
+      "Columna posterior fornicis",
+      "columna posterior fornicis",
+      "postcommissural fornix of brain",
+      "Fornix (entering Corpus mamillare)",
+      "fornix (entering Corpus mamillare)",
+      "Structure of postcommissural fornix",
+      "Structure of postcommissural fornix (body structure)"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:AnatomicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:OrganismalEntity",
+      "biolink:SubjectOfInvestigation",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 162.99619,
+    "clique_identifier_count": 3
   }
 ]

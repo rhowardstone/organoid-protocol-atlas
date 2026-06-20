@@ -320,5 +320,290 @@
     ],
     "score": 189.7542,
     "clique_identifier_count": 5
+  },
+  {
+    "curie": "CL:0000047",
+    "label": "neural stem cell",
+    "highlighting": {},
+    "synonyms": [
+      "NSC",
+      "nerve stem cell",
+      "Neural Stem Cell",
+      "neural stem cell",
+      "Neural stem cell",
+      "cells nerve stem",
+      "Neural Stem Cells",
+      "Cell, Neural Stem",
+      "Neural stem cells",
+      "Stem Cell, Neural",
+      "neuronal stem cell",
+      "Stem Cells, Neural",
+      "Cells, Neural Stem"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:Cell",
+      "biolink:AnatomicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:OrganismalEntity",
+      "biolink:SubjectOfInvestigation",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 182.31488,
+    "clique_identifier_count": 4
+  },
+  {
+    "curie": "CL:0000052",
+    "label": "totipotent stem cell",
+    "highlighting": {},
+    "synonyms": [
+      "Totipotent Stem Cell",
+      "Totipotent stem cell",
+      "totipotent stem cell",
+      "Stem Cell, Totipotent",
+      "Totipotent Stem Cells",
+      "Cell, Totipotent Stem",
+      "Cells, Totipotent Stem",
+      "Stem Cells, Totipotent",
+      "totipotential stem cell",
+      "Totipotential stem cell"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:Cell",
+      "biolink:AnatomicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:OrganismalEntity",
+      "biolink:SubjectOfInvestigation",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 182.31488,
+    "clique_identifier_count": 4
+  },
+  {
+    "curie": "UMLS:C4764367",
+    "label": "iPSC-derived Natural Killer Cells FT500",
+    "highlighting": {},
+    "synonyms": [
+      "FT500",
+      "FT-500",
+      "FT 500",
+      "iPSC-NK Cells FT500",
+      "iPSC-derived NK Cells FT500",
+      "iPSC-derived Natural Killer Cells FT500",
+      "Induced Pluripotent Stem Cell-derived Natural Killer Cells FT500"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:Cell",
+      "biolink:AnatomicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:OrganismalEntity",
+      "biolink:SubjectOfInvestigation",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 179.12111,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "UMLS:C5447330",
+    "label": "iPSC-derived CD16/IL-15RF-expressing CD38-eliminated NK Cells FT538",
+    "highlighting": {},
+    "synonyms": [
+      "FT538",
+      "FT-538",
+      "FT 538",
+      "iPSC-derived CD16/IL-15RF-expressing CD38-eliminated NK Cells FT538",
+      "Induced Pluripotent Stem Cell-derived CD16/IL-15RF-expressing CD38-eliminated Natural Killer Cells FT538"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:Cell",
+      "biolink:AnatomicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:OrganismalEntity",
+      "biolink:SubjectOfInvestigation",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 170.93102,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "CL:0000048",
+    "label": "multi fate stem cell",
+    "highlighting": {},
+    "synonyms": [
+      "multipotent cell",
+      "Multipotent cell",
+      "multifate stem cell",
+      "multi fate stem cell",
+      "multi-fate stem cell",
+      "multipotent stem cell",
+      "Multipotent stem cell",
+      "Multipotent Stem Cell",
+      "Stem Cell, Multipotent",
+      "Multipotent Stem Cells",
+      "Multipotent stem cells",
+      "Stem Cells, Multipotent",
+      "Multipotential stem cell"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:Cell",
+      "biolink:AnatomicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:OrganismalEntity",
+      "biolink:SubjectOfInvestigation",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 170.44565,
+    "clique_identifier_count": 4
+  },
+  {
+    "curie": "UMLS:C3642419",
+    "label": "Autologous Pluripotent ALDHbr Stem Cells ALD-451",
+    "highlighting": {},
+    "synonyms": [
+      "ALD-451",
+      "ALD-451 Bright Cells",
+      "ALD-451 bright cells",
+      "Autologous Pluripotent ALDHbr Stem Cells ALD-451",
+      "autologous pluripotent ALDHbr stem cells ALD-451"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:Cell",
+      "biolink:AnatomicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:OrganismalEntity",
+      "biolink:SubjectOfInvestigation",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 159.93774,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "CL:0002195",
+    "label": "Liver Stem Cell",
+    "highlighting": {},
+    "synonyms": [
+      "HpSC",
+      "Liver stem cell",
+      "Liver Stem Cell",
+      "Liver Stem Cells",
+      "Hepatic stem cell",
+      "hepatic stem cell"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:Cell",
+      "biolink:AnatomicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:OrganismalEntity",
+      "biolink:SubjectOfInvestigation",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 157.03749,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "CL:0002259",
+    "label": "neuroepithelial stem cell",
+    "highlighting": {},
+    "synonyms": [
+      "neuroepithelial stem cell",
+      "Totipotent Neuroepithelial Stem Cell",
+      "totipotent neuroepithelial stem cell",
+      "Totipotent neuroepithelial stem cell"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:Cell",
+      "biolink:AnatomicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:OrganismalEntity",
+      "biolink:SubjectOfInvestigation",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 157.03749,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "UMLS:C1882409",
+    "label": "Pluripotent Bronchial Precursor Cell",
+    "highlighting": {},
+    "synonyms": [
+      "Pluripotent Bronchial Precursor Cell"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:Cell",
+      "biolink:AnatomicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:OrganismalEntity",
+      "biolink:SubjectOfInvestigation",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 155.23482,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "UMLS:C1709585",
+    "label": "Pluripotent Primordial Germ Cell",
+    "highlighting": {},
+    "synonyms": [
+      "Pluripotent Primordial Germ Cell"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:Cell",
+      "biolink:AnatomicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:OrganismalEntity",
+      "biolink:SubjectOfInvestigation",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 155.23482,
+    "clique_identifier_count": 2
   }
 ]

@@ -340,5 +340,266 @@
     ],
     "score": 203.23743,
     "clique_identifier_count": 3
+  },
+  {
+    "curie": "UMLS:C0447556",
+    "label": "Neck of pancreas",
+    "highlighting": {},
+    "synonyms": [
+      "Neck",
+      "Pancreas Neck",
+      "PANCREAS, NECK",
+      "Pancreatic neck",
+      "Pancreatic Neck",
+      "Neck of pancreas",
+      "Collum pancreatis",
+      "Neck of the Pancreas",
+      "Structure of neck of pancreas",
+      "Structure of neck of pancreas (body structure)"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:AnatomicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:OrganismalEntity",
+      "biolink:SubjectOfInvestigation",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 203.23743,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "UBERON:0004792",
+    "label": "secretion of endocrine pancreas",
+    "highlighting": {},
+    "synonyms": [
+      "Endocrine Pancreas Secretion",
+      "endocrine pancreas secretion",
+      "Pancreatic Endocrine Secretion",
+      "pancreatic endocrine secretion",
+      "secretion of endocrine pancreas",
+      "pars endocrina pancreatis secretion",
+      "secretion of pars endocrina pancreatis"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:AnatomicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:OrganismalEntity",
+      "biolink:SubjectOfInvestigation",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 190.00607,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "UBERON:0004793",
+    "label": "secretion of exocrine pancreas",
+    "highlighting": {},
+    "synonyms": [
+      "Pancreatic fluid",
+      "Pancreatic Fluid",
+      "pancreatic juice",
+      "Pancreatic Juices",
+      "Exocrine Pancreas Secretion",
+      "exocrine pancreas secretion",
+      "pancreatic exocrine secretion",
+      "Pancreatic Exocrine Secretion",
+      "secretion of exocrine pancreas",
+      "pars exocrina pancreatis secretion",
+      "secretion of pars exocrina pancreatis"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:AnatomicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:OrganismalEntity",
+      "biolink:SubjectOfInvestigation",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 190.00607,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "UBERON:0014726",
+    "label": "intercalated duct of pancreas",
+    "highlighting": {},
+    "synonyms": [
+      "Pancreatic ductule",
+      "pancreatic ductule",
+      "Intercalated duct of pancreas",
+      "intercalated duct of pancreas",
+      "ductus intercalatus (pancreas)",
+      "Ductus intercalatus (Pancreas)",
+      "Intercalated Duct of the Pancreas",
+      "Structure of intercalated duct of pancreas",
+      "Structure of intercalated duct of pancreas (body structure)"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:GrossAnatomicalStructure",
+      "biolink:AnatomicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:OrganismalEntity",
+      "biolink:SubjectOfInvestigation",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 190.00607,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "UBERON:0000016",
+    "label": "endocrine pancreas",
+    "highlighting": {},
+    "synonyms": [
+      "Endocrine Pancreas",
+      "endocrine pancreas",
+      "pars endocrina pancreatis",
+      "endocrine part of pancreas",
+      "islets of Langerhans part of pancreas"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:GrossAnatomicalStructure",
+      "biolink:AnatomicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:OrganismalEntity",
+      "biolink:SubjectOfInvestigation",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 173.11714,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "UMLS:C2322990",
+    "label": "Dorsal pancreas",
+    "highlighting": {},
+    "synonyms": [
+      "Dorsal pancreas"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:AnatomicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:OrganismalEntity",
+      "biolink:SubjectOfInvestigation",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 173.11714,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "UMLS:C2329399",
+    "label": "Ventral pancreas",
+    "highlighting": {},
+    "synonyms": [
+      "Ventral pancreas"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:AnatomicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:OrganismalEntity",
+      "biolink:SubjectOfInvestigation",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 173.11714,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "UMLS:C1882810",
+    "label": "Rat Pancreas",
+    "highlighting": {},
+    "synonyms": [
+      "Rat Pancreas",
+      "Pancreas (RENI)"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:AnatomicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:OrganismalEntity",
+      "biolink:SubjectOfInvestigation",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 173.11714,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "UMLS:C1518865",
+    "label": "Mouse Pancreas",
+    "highlighting": {},
+    "synonyms": [
+      "Mouse Pancreas",
+      "Pancreas (MMHCC)"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:AnatomicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:OrganismalEntity",
+      "biolink:SubjectOfInvestigation",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 173.11714,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "UMLS:C2329059",
+    "label": "Primordial pancreas",
+    "highlighting": {},
+    "synonyms": [
+      "Primordial pancreas"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:AnatomicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:OrganismalEntity",
+      "biolink:SubjectOfInvestigation",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 173.11714,
+    "clique_identifier_count": 2
   }
 ]

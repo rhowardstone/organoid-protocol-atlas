@@ -177,5 +177,175 @@
     ],
     "score": 212.70676,
     "clique_identifier_count": 1
+  },
+  {
+    "curie": "NCBITaxon:2883641",
+    "label": "Homo sapiens x Pan troglodytes tetraploid cell line",
+    "highlighting": {},
+    "synonyms": [
+      "Homo sapiens x Pan troglodytes tetraploid cell line"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:OrganismTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity"
+    ],
+    "score": 212.70676,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "NCBITaxon:270523",
+    "label": "Tetragonula sapiens",
+    "highlighting": {},
+    "synonyms": [
+      "Trigona sapiens",
+      "Tetragonula sapiens"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:OrganismTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity"
+    ],
+    "score": 48.905987,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "NCBITaxon:399796",
+    "label": "Macrobiotus sapiens",
+    "highlighting": {},
+    "synonyms": [
+      "Macrobiotus sapiens"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:OrganismTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity"
+    ],
+    "score": 48.905987,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "UMLS:C1477136",
+    "label": "Tetragonula sapiens",
+    "highlighting": {},
+    "synonyms": [
+      "Trigona sapiens",
+      "Tetragonula sapiens"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:OrganismTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity"
+    ],
+    "score": 48.905987,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "UMLS:C2271139",
+    "label": "Macrobiotus sapiens",
+    "highlighting": {},
+    "synonyms": [
+      "Macrobiotus sapiens"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:OrganismTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity"
+    ],
+    "score": 48.905987,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "NCBITaxon:9605",
+    "label": "Homo (humans)",
+    "highlighting": {},
+    "synonyms": [
+      "Homo",
+      "humans",
+      "Homo (humans)"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:OrganismTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity"
+    ],
+    "score": 47.416443,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "NCBITaxon:2813598",
+    "label": "unclassified Homo",
+    "highlighting": {},
+    "synonyms": [
+      "unclassified Homo"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:OrganismTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity"
+    ],
+    "score": 47.416443,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "NCBITaxon:2813599",
+    "label": "Homo sp.",
+    "highlighting": {},
+    "synonyms": [
+      "Homo sp."
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:OrganismTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity"
+    ],
+    "score": 47.416443,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "UMLS:C1300203",
+    "label": "Genus Homo",
+    "highlighting": {},
+    "synonyms": [
+      "homo",
+      "Homo",
+      "homos",
+      "humans",
+      "Hominoid",
+      "Genus Homo",
+      "Genus Homo (organism)"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:OrganismTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity"
+    ],
+    "score": 47.416443,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "UMLS:C3782468",
+    "label": "Homo heidelbergensis",
+    "highlighting": {},
+    "synonyms": [
+      "Homo heidelbergensis"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:OrganismTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity"
+    ],
+    "score": 47.416443,
+    "clique_identifier_count": 1
   }
 ]

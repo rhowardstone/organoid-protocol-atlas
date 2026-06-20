@@ -778,5 +778,240 @@
     ],
     "score": 201.63019,
     "clique_identifier_count": 3
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:71716619",
+    "label": "HEPARIN/DIAZENIUMDIOLATE CONJUGATE",
+    "highlighting": {},
+    "synonyms": [
+      "HEPARIN/DIAZENIUMDIOLATE CONJUGATE",
+      "GlcA4Me(b1-4)[piperazino(-6d)]a-GlcNS1Me3S"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 201.63019,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:71717838",
+    "label": "HEPARIN/DIAZENIUMDIOLATE CONJUGATE",
+    "highlighting": {},
+    "synonyms": [
+      "HEPARIN/DIAZENIUMDIOLATE CONJUGATE",
+      "(Z)-[4-[[(2R,3R,4R,5R,6S)-3-[(2R,3R,4R,5S,6S)-6-carboxy-3,4-dihydroxy-5-methoxyoxan-2-yl]oxy-6-methoxy-5-(sulfoamino)-4-sulfooxyoxan-2-yl]methyl]piperazin-1-yl]-(methoxymethoxyimino)-oxidoazanium"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 201.63019,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:71717839",
+    "label": "HEPARIN/DIAZENIUMDIOLATE CONJUGATE",
+    "highlighting": {},
+    "synonyms": [
+      "GlcA4Me(b1-4)a-GlcNS1Me3S6S",
+      "HEPARIN/DIAZENIUMDIOLATE CONJUGATE"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 201.63019,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:71719098",
+    "label": "HEPARIN PENTASACCHARIDE DEFGH",
+    "highlighting": {},
+    "synonyms": [
+      "HEPARIN PENTASACCHARIDE DEFGH",
+      "heparin pentasaccharide DEFGH"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 201.63019,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "MESH:C058416",
+    "label": "TSKgel heparin-5PW",
+    "highlighting": {},
+    "synonyms": [
+      "gel chelate-5PW",
+      "TSKgel heparin-5PW",
+      "TSK gel heparin 5PW",
+      "TSK-Gel Heparin 5PW"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 201.63019,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:5056205",
+    "label": "Heparin disaccharide IV-H",
+    "highlighting": {},
+    "synonyms": [
+      "Heparin disaccharide IV-H"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 188.50346,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:117072650",
+    "label": "Heparin disaccharide iii-H sodium",
+    "highlighting": {},
+    "synonyms": [
+      "Heparin disaccharide iii-H sodium"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:MolecularMixture",
+      "biolink:ChemicalMixture",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 176.98146,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "MESH:C020906",
+    "label": "heparin-poly(methyl methacrylate) copolymer",
+    "highlighting": {},
+    "synonyms": [
+      "heparin-poly(methyl methacrylate) copolymer",
+      "Heparin, polymer with methyl 2-methyl-2-propenoate"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 176.98146,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:25244225",
+    "label": "Lmw heparin",
+    "highlighting": {},
+    "synonyms": [
+      "Lmw heparin"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 171.7481,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "MESH:C031388",
+    "label": "heparin-dihydergot",
+    "highlighting": {},
+    "synonyms": [
+      "heparin-DHE",
+      "heparin-dihydergot",
+      "heparin-dihydroergotamine",
+      "dihydroergotamine-heparin"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 171.7481,
+    "clique_identifier_count": 2
   }
 ]

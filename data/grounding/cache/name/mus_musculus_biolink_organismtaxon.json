@@ -169,5 +169,168 @@
     ],
     "score": 306.93658,
     "clique_identifier_count": 1
+  },
+  {
+    "curie": "NCBITaxon:947985",
+    "label": "Mus musculus albula",
+    "highlighting": {},
+    "synonyms": [
+      "Mus musculus albula"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:OrganismTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity"
+    ],
+    "score": 306.93658,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "NCBITaxon:1385377",
+    "label": "Mus musculus gansuensis",
+    "highlighting": {},
+    "synonyms": [
+      "M. m. gansuensis",
+      "Mus musculus gansuensis"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:OrganismTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity"
+    ],
+    "score": 306.93658,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "NCBITaxon:1643390",
+    "label": "Mus musculus helgolandicus",
+    "highlighting": {},
+    "synonyms": [
+      "Mus musculus helgolandicus"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:OrganismTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity"
+    ],
+    "score": 306.93658,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "NCBITaxon:1879032",
+    "label": "Mus musculus isatissus",
+    "highlighting": {},
+    "synonyms": [
+      "Mus musculus isatissus"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:OrganismTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity"
+    ],
+    "score": 306.93658,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "NCBITaxon:2039782",
+    "label": "Mus musculus kobuvirus",
+    "highlighting": {},
+    "synonyms": [
+      "Mus musculus kobuvirus"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:OrganismTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity"
+    ],
+    "score": 306.93658,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "NCBITaxon:2039784",
+    "label": "Mus musculus picornavirus",
+    "highlighting": {},
+    "synonyms": [
+      "Mus musculus picornavirus"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:OrganismTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity"
+    ],
+    "score": 306.93658,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "NCBITaxon:3049974",
+    "label": "Mus musculus jeilongvirus",
+    "highlighting": {},
+    "synonyms": [
+      "Mus musculus jeilongvirus"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:OrganismTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity"
+    ],
+    "score": 306.93658,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "UMLS:C5757006",
+    "label": "Mus musculus gentilulus",
+    "highlighting": {},
+    "synonyms": [
+      "Mus musculus gentilulus"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:OrganismTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity"
+    ],
+    "score": 306.93658,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "UMLS:C5716185",
+    "label": "Mus musculus gansuensis",
+    "highlighting": {},
+    "synonyms": [
+      "M. m. gansuensis",
+      "Mus musculus gansuensis"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:OrganismTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity"
+    ],
+    "score": 306.93658,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "UMLS:C5758844",
+    "label": "Mus musculus molossinus",
+    "highlighting": {},
+    "synonyms": [
+      "Mus molossinus",
+      "Mus musculus molossinus"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:OrganismTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity"
+    ],
+    "score": 306.93658,
+    "clique_identifier_count": 1
   }
 ]

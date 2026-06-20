@@ -262,5 +262,204 @@
     ],
     "score": 109.54902,
     "clique_identifier_count": 1
+  },
+  {
+    "curie": "MESH:C051020",
+    "label": "SAG-M blood",
+    "highlighting": {},
+    "synonyms": [
+      "SAG-M blood"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 109.54902,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "MESH:C573100",
+    "label": "SAG protein, mouse",
+    "highlighting": {},
+    "synonyms": [
+      "SAG protein, mouse"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 109.54902,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "UMLS:C0073952",
+    "label": "SAG-M blood",
+    "highlighting": {},
+    "synonyms": [
+      "SAG-M blood"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:Drug",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:OntologyClass",
+      "biolink:MolecularMixture",
+      "biolink:ChemicalMixture",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 109.54902,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "CHEBI:145670",
+    "label": "2-(beta-D-glucopyranosyloxy)benzoate",
+    "highlighting": {},
+    "synonyms": [
+      "SAG",
+      "Salicylate 2-b-D-glucoside",
+      "Salicylate 2-β-D-glucoside",
+      "2-(Β-D-glucosyloxy)benzoate",
+      "2-(b-D-Glucosyloxy)benzoate",
+      "Salicylate 2-O-b-D-glucoside",
+      "Salicylate 2-O-β-D-glucoside",
+      "Salicylate 2-beta-D-glucoside",
+      "Salicylic acid 2-b-D-glucoside",
+      "2-(beta-D-glucosyloxy)benzoate",
+      "2-(beta-D-Glucosyloxy)benzoate",
+      "Salicylic acid 2-β-D-glucoside",
+      "Salicylate 2-O-beta-D-glucoside",
+      "2-(Β-D-glucosyloxy)benzoic acid",
+      "2-(b-D-Glucosyloxy)benzoic acid",
+      "salicylate 2-O-beta-D-glucoside",
+      "Salicylic acid 2-O-b-D-glucoside",
+      "Salicylic acid 2-O-β-D-glucoside",
+      "2-(Β-D-glucopyranosyloxy)benzoate",
+      "2-(b-D-Glucopyranosyloxy)benzoate",
+      "Salicylic acid 2-beta-D-glucoside",
+      "salicylic acid 2-beta-D-glucoside",
+      "Salicylate 2-O-&beta;-D-glucoside",
+      "2-(beta-D-Glucosyloxy)benzoic acid",
+      "Salicylic acid 2-O-beta-D-glucoside",
+      "Salicylic acid 2-&beta;-D-glucoside",
+      "2-(beta-D-glucopyranosyloxy)benzoate",
+      "2-(b-D-Glucopyranosyloxy)benzoic acid",
+      "2-(Β-D-glucopyranosyloxy)benzoic acid",
+      "Salicylic acid 2-O-&beta;-D-glucoside",
+      "2-O-&beta;-glucopyranosylsalicylic acid",
+      "2-(beta-D-Glucopyranosyloxy)benzoic acid",
+      "2-Hydroxybenzoic acid 2-O-&beta;-D-glucoside",
+      "2-{[(2S,3R,4S,5S,6R)-3,4,5-trihydroxy-6-(hydroxymethyl)tetrahydro-2H-pyran-2-yl]oxy}benzoate",
+      "2-{[(2S,3R,4S,5S,6R)-3,4,5-trihydroxy-6-(hydroxymethyl)tetrahydro-2H-pyran-2-yl]oxy}benzoic acid"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 70.03164,
+    "clique_identifier_count": 4
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:10197687",
+    "label": "aminexil",
+    "highlighting": {},
+    "synonyms": [
+      "Kopexil",
+      "aminexil",
+      "Aminexil",
+      "Mexoryl sag",
+      "DIAMINOPYRIMIDINE OXIDE",
+      "Diaminopyrimidine oxide",
+      "2,4-pyrimidinediamine, 3-oxide",
+      "2,4-diaminopyrimidine 3-n-oxide"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 66.95593,
+    "clique_identifier_count": 7
+  },
+  {
+    "curie": "MESH:C530519",
+    "label": "methyl salicylate 2-O-beta-D-glucoside",
+    "highlighting": {},
+    "synonyms": [
+      "Me-SAG",
+      "methyl salicylate 2-O-beta-D-glucoside"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 50.018116,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "UMLS:C0885818",
+    "label": "Teucrium scorodonia, wood sage, Homeopathic preparation",
+    "highlighting": {},
+    "synonyms": [
+      "teucrium scorodonia/wood sag",
+      "Teucrium scorodonia / wood sage",
+      "Teucrium scorodonia, wood sage, Homeopathic preparation"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 25.657175,
+    "clique_identifier_count": 1
   }
 ]

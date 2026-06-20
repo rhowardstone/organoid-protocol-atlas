@@ -398,5 +398,369 @@
     ],
     "score": 2977.2405,
     "clique_identifier_count": 8
+  },
+  {
+    "curie": "NCBIGene:100764472",
+    "label": "Hgf",
+    "highlighting": {},
+    "synonyms": [
+      "Hgf",
+      "hepatocyte growth factor",
+      "hepatocyte growth factor (hepapoietin A; scatter factor)",
+      "A0A8C2MT57_CRIGR Hepatocyte growth factor (trembl)",
+      "A0A9J7F2B1_CRIGR Hepatocyte growth factor isoform X3 (trembl)",
+      "A0A9J7F7E4_CRIGR Hepatocyte growth factor isoform X4 (trembl)",
+      "G3HPQ5_CRIGR Hepatocyte growth factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:10029"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2977.2405,
+    "clique_identifier_count": 8
+  },
+  {
+    "curie": "NCBIGene:103249922",
+    "label": "HGF",
+    "highlighting": {},
+    "synonyms": [
+      "HGF",
+      "hepatocyte growth factor",
+      "A0A1U7SMG8_CARSF Hepatocyte growth factor (trembl)",
+      "A0A1U7SYT3_CARSF Hepatocyte growth factor (trembl)",
+      "A0A3Q0DG51_CARSF Hepatocyte growth factor (trembl)",
+      "A0A3Q0DKG9_CARSF Hepatocyte growth factor isoform X6 (trembl)",
+      "A0A3Q0DM20_CARSF Hepatocyte growth factor (trembl)",
+      "A0A3Q0DMW9_CARSF Hepatocyte growth factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:1868482"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2977.2405,
+    "clique_identifier_count": 8
+  },
+  {
+    "curie": "NCBIGene:103658669",
+    "label": "HGF",
+    "highlighting": {},
+    "synonyms": [
+      "HGF",
+      "hepatocyte growth factor",
+      "A0A384BP91_URSMA Hepatocyte growth factor (trembl)",
+      "A0A384BPA7_URSMA Hepatocyte growth factor (trembl)",
+      "A0A452UEJ7_URSMA Hepatocyte growth factor (trembl)",
+      "A0A8M1GWY7_URSMA Hepatocyte growth factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:29073"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2977.2405,
+    "clique_identifier_count": 8
+  },
+  {
+    "curie": "NCBIGene:110206952",
+    "label": "HGF",
+    "highlighting": {},
+    "synonyms": [
+      "HGF",
+      "hepatocyte growth factor",
+      "A0A6P5K4H1_PHACI Hepatocyte growth factor (trembl)",
+      "A0A6P5K549_PHACI Hepatocyte growth factor (trembl)",
+      "A0A6P5K610_PHACI Hepatocyte growth factor isoform X3 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:38626"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2977.2405,
+    "clique_identifier_count": 8
+  },
+  {
+    "curie": "NCBIGene:114025219",
+    "label": "HGF",
+    "highlighting": {},
+    "synonyms": [
+      "HGF",
+      "hepatocyte growth factor",
+      "A0A4X2L643_VOMUR Hepatocyte growth factor (trembl)",
+      "A0A4X2L786_VOMUR Hepatocyte growth factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:29139"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2977.2405,
+    "clique_identifier_count": 8
+  },
+  {
+    "curie": "NCBIGene:282879",
+    "label": "HGF",
+    "highlighting": {},
+    "synonyms": [
+      "SF",
+      "HGF",
+      "hepapoietin A",
+      "scatter factor",
+      "hepatopoeitin-A",
+      "hepatopoietin-A",
+      "hepatocyte growth factor",
+      "A0A1L3G6L5_BOVIN Hepatocyte growth factor (trembl)",
+      "F1MZD6_BOVIN Hepatocyte growth factor (trembl)",
+      "HGF_BOVIN Hepatocyte growth factor (sprot)"
+    ],
+    "taxa": [
+      "NCBITaxon:9913"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2817.6443,
+    "clique_identifier_count": 7
+  },
+  {
+    "curie": "NCBIGene:395941",
+    "label": "HGF",
+    "highlighting": {},
+    "synonyms": [
+      "HGF",
+      "HGF/SF",
+      "HGF alpha-chain",
+      "hepatocyte growth factor",
+      "hepatocyte growth factor /scatter factor",
+      "hepatocyte growth factor (hepapoietin A; scatter factor)",
+      "A0A8V0Y9C1_CHICK Hepatocyte growth factor (trembl)",
+      "Q788Q2_CHICK HGF protein ( SFprotein ) (Fragment) (trembl)",
+      "Q90978_CHICK Hepatocyte growth factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9031"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2817.6443,
+    "clique_identifier_count": 7
+  },
+  {
+    "curie": "NCBIGene:101677610",
+    "label": "HGF",
+    "highlighting": {},
+    "synonyms": [
+      "HGF",
+      "hepatocyte growth factor",
+      "A0A8U0MF54_MUSPF Hepatocyte growth factor (trembl)",
+      "A0A8U0NXR4_MUSPF Hepatocyte growth factor (trembl)",
+      "M3Z3L5_MUSPF Hepatocyte growth factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9669"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2817.6443,
+    "clique_identifier_count": 7
+  },
+  {
+    "curie": "NCBIGene:108536940",
+    "label": "HGF",
+    "highlighting": {},
+    "synonyms": [
+      "HGF",
+      "hepatocyte growth factor",
+      "A0A2K6MWT8_RHIBE Hepatocyte growth factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:61621"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2817.6443,
+    "clique_identifier_count": 7
+  },
+  {
+    "curie": "NCBIGene:116497145",
+    "label": "HGF",
+    "highlighting": {},
+    "synonyms": [
+      "HGF",
+      "hepatocyte growth factor",
+      "A0A6J3DZ04_AYTFU Hepatocyte growth factor (trembl)",
+      "A0A6J3DZ33_AYTFU Hepatocyte growth factor (trembl)",
+      "A0A6J3E3A2_AYTFU Hepatocyte growth factor (trembl)",
+      "A0A6J3E3B4_AYTFU Hepatocyte growth factor (trembl)",
+      "A0A6J3E527_AYTFU Hepatocyte growth factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:219594"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2817.6443,
+    "clique_identifier_count": 7
   }
 ]
