@@ -164,3 +164,22 @@
 - Normalization win surfaced by the view: "Prostaglandine E2" now collapses to PGE2 (CANON);
   64 -> 63 canonical signaling factors. Rebuilt KG. Tests green (10).
 - Linked from index topbar + a feature card.
+
+## Iteration 12 — 2026-06-20 — Corpus expansion (retinal) + incremental pipeline (#12)
+- Added incremental --only flags to tier0_extract.py and tier1_extract.py so new papers are
+  fetched/extracted WITHOUT re-processing (or perturbing) the stable corpus; both merge into the
+  existing manifest/summary rather than clobbering.
+- Curated + added one new retinal methods paper: PMC11194494 (Harkin 2024, PNAS, CC-BY-NC-ND) —
+  "highly reproducible/efficient retinal organoid differentiation". Clean extraction: BMP4
+  50 ng/mL + LDN-193189 200 nM (canonical retinal induction), 100% grounded; Tier-2 vision ran
+  on its figures too.
+- GUT-CHECK rejected a second candidate (PMC6895716, Brooks 2019): thin methods (2271 chars) led
+  the model to misclassify retinal MARKER genes (CHX10/VSX2, BRN3A, PKCα, CALB) as signaling
+  factors. Ingesting it would pollute the heatmap/consensus — removed it (manifest + bundle +
+  pred + pruned reporting artifacts). Quality over quantity; missing data beats false data.
+- Result: corpus 25->26, retinal 1->2 (consensus now "provisional" not "single protocol"),
+  reagents 293, figure_confirmed 9, corpus grounding held at 0.81. Landing stats updated. Full
+  vision_summary regenerated (9 CC papers). Tests green (10).
+- Note: gastric (n=2) still needs a clean foundational paper — search returned only reviews;
+  deferred to careful curation. data/corpus/pmc_oa_25.tsv filename now understates the count
+  (26) — rename to corpus.tsv is a pending cleanup (5 refs).

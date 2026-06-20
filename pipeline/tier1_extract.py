@@ -189,12 +189,16 @@ def to_protocol(doi: str, m: dict, evidence: str) -> tuple[OrganoidProtocol, dic
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--limit", type=int, default=0)
+    ap.add_argument("--only", default="", help="comma-separated PMCIDs (incremental extraction)")
     args = ap.parse_args()
     PRED_DIR.mkdir(parents=True, exist_ok=True)
     OUT_DIR.mkdir(parents=True, exist_ok=True)
 
+    only = {p.strip() for p in args.only.split(",") if p.strip()}
     bundles = sorted(BUNDLES.glob("*.json"))
-    if args.limit:
+    if only:
+        bundles = [b for b in bundles if b.stem in only]
+    elif args.limit:
         bundles = bundles[: args.limit]
 
     summary = []
@@ -226,7 +230,13 @@ def main():
             "grounding_rate": rate,
         })
 
-    (OUT_DIR / "extraction_summary.json").write_text(json.dumps({
+    # incremental (--only): merge fresh rows into the existing summary, keeping the rest
+    summary_path = OUT_DIR / "extraction_summary.json"
+    if only and summary_path.exists():
+        prior = json.loads(summary_path.read_text()).get("rows", [])
+        done = {s["pmcid"] for s in summary}
+        summary = [s for s in prior if s["pmcid"] not in done] + summary
+    summary_path.write_text(json.dumps({
         "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "model": MODEL, "papers": len(summary), "rows": summary,
     }, indent=2))

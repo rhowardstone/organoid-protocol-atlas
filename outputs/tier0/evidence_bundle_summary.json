@@ -1,28 +1,28 @@
 {
-  "generated_at": "2026-06-19T20:45:12+00:00",
-  "papers": 25,
+  "generated_at": "2026-06-20T16:30:28+00:00",
+  "papers": 27,
   "source_routes": {
-    "europe_pmc_xml": 3,
+    "europe_pmc_xml": 5,
     "ncbi_efetch_xml": 22
   },
-  "methods_section_found": 25,
+  "methods_section_found": 27,
   "no_methods_section": 0,
-  "supplement_text_inline_ge400chars": 8,
+  "supplement_text_inline_ge400chars": 10,
   "papers_with_tables": 9,
   "fetch_failed": 0,
   "license_breakdown": {
     "author-manuscript": 16,
     "unknown": 1,
     "CC-BY": 7,
-    "CC-BY-NC-ND": 1
+    "CC-BY-NC-ND": 3
   },
-  "median_methods_chars": 14882,
-  "median_reference_count": 44,
-  "papers_with_external_supplement_files": 23,
-  "total_external_supplement_files": 144,
-  "papers_with_figures": 25,
-  "total_figures": 192,
-  "papers_with_links": 24,
+  "median_methods_chars": 14043,
+  "median_reference_count": 51,
+  "papers_with_external_supplement_files": 25,
+  "total_external_supplement_files": 154,
+  "papers_with_figures": 27,
+  "total_figures": 205,
+  "papers_with_links": 26,
   "deferred_modalities": {
     "external_supplement_files": "inventoried, NOT downloaded/parsed yet (next deterministic step)",
     "figure_graphics": "captions captured; image content needs Tier 2 (targeted vision)",

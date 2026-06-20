@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-06-20T14:46:27+00:00",
+  "generated_at": "2026-06-20T16:31:48+00:00",
   "model": "gemma3:12b",
-  "papers": 25,
+  "papers": 26,
   "rows": [
     {
       "pmcid": "PMC10739970",
@@ -311,6 +311,19 @@
       "pmcid": "PMC8516798",
       "doi": "10.1016/j.celrep.2021.109920",
       "error": "AttributeError: 'str' object has no attribute 'get'"
+    },
+    {
+      "pmcid": "PMC11194494",
+      "doi": "10.1073/pnas.2317285121",
+      "organoid_type": "retinal",
+      "model": "gemma3:12b",
+      "n_signaling_factors": 2,
+      "n_supplements": 4,
+      "matrix": "Matrigel or Geltrex",
+      "base_media": "mTeSR1 or mTeSR PLUS",
+      "reagents_grounded": 2,
+      "reagents_total": 2,
+      "grounding_rate": 1.0
     }
   ]
 }

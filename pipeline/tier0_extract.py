@@ -275,6 +275,8 @@ def content_sha256(parsed: dict) -> str:
 def main():
     ap = argparse.ArgumentParser(description="Tier 0 evidence-bundle extraction (XML-first, no LLM)")
     ap.add_argument("--limit", type=int, default=0, help="process only the first N rows (0 = all)")
+    ap.add_argument("--only", default="", help="comma-separated PMCIDs to process (incremental; "
+                                               "merges into the existing manifest)")
     ap.add_argument("--sleep", type=float, default=0.34, help="delay between fetches (politeness)")
     args = ap.parse_args()
 
@@ -282,7 +284,10 @@ def main():
     OUT_DIR.mkdir(parents=True, exist_ok=True)
 
     rows = list(csv.DictReader(open(CORPUS), delimiter="\t"))
-    if args.limit:
+    only = {p.strip() for p in args.only.split(",") if p.strip()}
+    if only:
+        rows = [r for r in rows if r["pmcid"] in only]
+    elif args.limit:
         rows = rows[: args.limit]
 
     manifest_records = []
@@ -348,7 +353,12 @@ def main():
         manifest_records.append(rec)
         time.sleep(args.sleep)
 
-    # write metadata manifest (NO body text)
+    # write metadata manifest (NO body text). For incremental (--only) runs, merge
+    # the freshly processed records into the existing manifest instead of clobbering it.
+    if only and MANIFEST.exists():
+        prior = [json.loads(l) for l in MANIFEST.read_text().splitlines() if l.strip()]
+        done = {r["pmcid"] for r in manifest_records}
+        manifest_records = [r for r in prior if r["pmcid"] not in done] + manifest_records
     with open(MANIFEST, "w") as f:
         for rec in manifest_records:
             f.write(json.dumps(rec, ensure_ascii=False) + "\n")
