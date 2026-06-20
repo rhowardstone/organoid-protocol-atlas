@@ -45,10 +45,12 @@ NON_REAGENT_RE = re.compile(
 
 def is_non_reagent(name: str | None) -> bool:
     return bool(name) and bool(NON_REAGENT_RE.search(name))
+
+
 sys.path.insert(0, str(REPO / "organoid_demo"))
 
 from schema import (  # noqa: E402
-    BaseMedia, Concentration, Evidence, Matrix, OrganoidProtocol,
+    BaseMedia, Concentration, CultureConditions, Evidence, Matrix, OrganoidProtocol,
     OrganoidType, Passaging, Reagent, Reporting, SourceCells, SourceCellType,
     TimelineStage,
 )
@@ -91,8 +93,9 @@ def build_evidence_text(bundle: dict, cap: int = 24000) -> str:
 PROMPT = """You extract an organoid culture protocol from the text into JSON.
 Return ONLY JSON with keys:
 organoid_type (intestinal|gastric|cerebral|kidney|liver|lung|retinal|pancreatic|other),
-source_cells: {{cell_type (iPSC|ESC|adult_stem_cell|primary_tissue|other), species}},
+source_cells: {{cell_type (iPSC|ESC|adult_stem_cell|primary_tissue|other), species, line_name, rrid}},
 matrix: {{name}}, base_media: {{name}},
+culture_conditions: {{temperature_c, co2_pct, o2_pct, evidence_quote}},
 signaling_factors: [{{name, role, value, unit, evidence_quote}}],
 media_supplements: [{{name}}],
 passaging: {{method, split_ratio, interval_days}},
@@ -100,6 +103,11 @@ timeline: [{{name, day_start, day_end}}],
 assay_endpoints: [string].
 RULES:
 - evidence_quote MUST be copied verbatim (exact substring) from the text.
+- culture_conditions: numeric temperature_c / co2_pct / o2_pct ONLY if the text states them
+  (e.g. "37 °C, 5% CO2"); evidence_quote = the verbatim span containing those numbers; null if
+  not stated. Do NOT assume 37C/5%CO2 — extract only what is written.
+- source_cells.line_name = the cell line as named (e.g. H9, WTC-11); rrid = an RRID/Cellosaurus
+  accession (e.g. CVCL_9773) ONLY if it appears verbatim; null otherwise.
 - Extract ONLY items explicitly stated in THIS text. Never copy example wording, never fill
   from background knowledge. If a field/list is not stated, use null or [] — do not invent.
 - passaging: method/split_ratio/interval_days only if the text states them (interval_days = integer).
@@ -187,13 +195,51 @@ def to_protocol(doi: str, m: dict, evidence: str) -> tuple[OrganoidProtocol, dic
     timeline = [t for t in timeline if t.name and t.name.lower() in el]
     endpoints = [x for x in endpoints if x.lower() in el]
 
+    # v0.3 culture_conditions — grounded numerics only. Keep a value iff the model's
+    # quote is verbatim AND the number string appears in that quote (no assumed 37C/5%).
+    def _num(x):
+        try:
+            return float(x)
+        except (ValueError, TypeError):
+            return None
+    cc_in = m.get("culture_conditions") or {}
+    cq = (cc_in.get("evidence_quote") or "").strip()
+    cq_ok = bool(cq) and cq in evidence
+
+    def _grounded_num(key):
+        v = _num(cc_in.get(key))
+        if v is None or not cq_ok:
+            return None
+        # the numeric must appear in the quote as a WHOLE number, not digits embedded
+        # in a larger one (else co2=7 would ground against "37 °C"). #7 review fix.
+        forms = {str(int(v)) if v == int(v) else None, str(v), f"{v:g}"} - {None}
+        return v if any(re.search(r"(?<![\d.])" + re.escape(f) + r"(?![\d.])", cq)
+                        for f in forms) else None
+    temp, co2, o2 = _grounded_num("temperature_c"), _grounded_num("co2_pct"), _grounded_num("o2_pct")
+    has_cc = any(x is not None for x in (temp, co2, o2))
+    culture_conditions = CultureConditions(
+        temperature_c=temp, co2_pct=co2, o2_pct=o2,
+        reporting=Reporting.REPORTED if has_cc else Reporting.NOT_EXTRACTED,
+        evidence=Evidence(source_doi=doi, quote=cq, section="Methods", confidence=0.0) if has_cc else None)
+
+    # v0.3 cell-line identity — require EXACT (case-sensitive) substring grounding so the
+    # stored Evidence quote is genuinely verbatim ("h9" is dropped if the source says "H9").
+    # RRID must not be an ungrounded convenience field (PR #4 + #7 review notes).
+    ln = (sc.get("line_name") or "").strip() or None
+    rrid = (sc.get("rrid") or "").strip() or None
+    ln = ln if (ln and ln in evidence) else None
+    rrid = rrid if (rrid and rrid in evidence) else None
+    sc_ev = Evidence(source_doi=doi, quote=(rrid or ln), section="Methods", confidence=0.0) \
+        if (ln or rrid) else None
+
     proto = OrganoidProtocol(
         source_doi=doi,
         extractor_version=f"tier1_local::{MODEL}",
         organoid_type=_enum(OrganoidType, m.get("organoid_type"), OrganoidType.OTHER),
         source_cells=SourceCells(
             cell_type=_enum(SourceCellType, sc.get("cell_type"), SourceCellType.OTHER),
-            species=sc.get("species")),
+            species=sc.get("species"), line_name=ln, rrid=rrid, evidence=sc_ev),
+        culture_conditions=culture_conditions,
         matrix=Matrix(name=mx.get("name")),
         base_media=BaseMedia(name=bm.get("name"),
                              reporting=Reporting.REPORTED if bm.get("name") else Reporting.NOT_REPORTED),
