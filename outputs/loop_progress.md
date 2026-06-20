@@ -91,3 +91,29 @@
 - Added serve/run.sh (reproducible launch incl. --plugins-dir). Tests green.
 - Next: Tier-3 protocol-by-reference via craig/citation_expander+acquisition (#9, ≤20% cap);
   design polish (#2).
+
+## Iteration 8 — 2026-06-20 — Tier-3 protocol-by-reference: detection + feasibility (#9)
+- Audited craig before building (per instruction). craig/literature/citation_expander.py +
+  acquisition.py are CORPUS-EXPANSION tools (given seeds, discover MORE related papers via
+  OpenAlex/Semantic-Scholar graphs) and pull heavy deps (sentence-transformers ~500MB +
+  internal API clients). That's the wrong tool for "resolve a specific in-text citation to
+  its protocol source" — same honest call as scientific_ner in iter 4; did NOT force-fit.
+  Only craig/doi_fetcher.py (CrossRef DOI->metadata, no auth) is cleanly reusable later.
+- Right architecture = reuse MY OWN Tier-0 (PMCID->methods via Europe PMC) on the cited
+  paper. Built pipeline/tier3_detect.py: flags papers that DELEGATE their culture protocol
+  to an EXTERNAL citation ("differentiation ... as previously described [11]"). Gating:
+  external-only (excludes self-refs "step 13"/"section above"/"Extended Procedures"),
+  culture-context-only (excludes sequencing/immuno/mouse/imaging assay delegations),
+  requires a resolvable citation marker (numbered ref or "(Author et al., year)").
+  Result: 9/25 papers delegate a culture protocol — the ≤20% cap = 5, so Tier-3 MUST
+  prioritize (more papers delegate than the cap allows; logged, not hidden).
+- Proved resolution feasibility: Europe PMC free-text search resolves "Sato 2011 intestinal
+  organoid Lgr5" -> the right Sato 2011 papers. BUT a loose "Kadoshima forebrain 2013" query
+  returned 2025/2026 reviews — so resolution MUST use fielded (AUTH:/PUB_YEAR:) queries +
+  verification before attributing protocol to a cited DOI. Fetching the wrong paper would
+  fabricate provenance (core invariant) — so the fetch+extract+attribute build is deferred to
+  its own iteration with verification discipline, NOT rushed here.
+- Committed the detector + candidates.json (router signal) + unit tests (5, gating logic on
+  synthetic text — CI-safe, no corpus needed). Full suite green (7).
+- Next: build Tier-3 fetch+extract+attribute on the verified-resolvable subset (provenance =
+  the CITED paper's DOI, clearly labeled "inherited via reference"); then design polish #2.

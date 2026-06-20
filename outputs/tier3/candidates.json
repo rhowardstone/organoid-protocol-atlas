@@ -1,0 +1,88 @@
+{
+  "corpus": 25,
+  "tier3_cap_20pct": 5,
+  "n_candidates": 9,
+  "candidates": [
+    {
+      "pmcid": "PMC10739970",
+      "organoid_type": "liver",
+      "doi": "10.1038/s41598-023-50250-w",
+      "delegation": "ed using a CytoTune\u00ae-iPS 2.0 Sendai Reprogramming Kit (Thermo Fisher) as previously described 11 . The iPSC colonies were picked and maintained on a \u03b3-irradiated m",
+      "cited": {
+        "kind": "numbered"
+      }
+    },
+    {
+      "pmcid": "PMC3033971",
+      "organoid_type": "intestinal",
+      "doi": "10.1038/nature09691",
+      "delegation": "out feeders. Differentiation into Definitive Endoderm was carried out as previously described 11 . Briefly, a 3-day ActivinA (R&D systems) differentiation protocol",
+      "cited": {
+        "kind": "numbered"
+      }
+    },
+    {
+      "pmcid": "PMC4270898",
+      "organoid_type": "gastric",
+      "doi": "10.1038/nature13863",
+      "delegation": "0 \u03bcM; Stemgent). On the following day, PSCs were differentiated to DE as previously described 9 , 31 . Cells were exposed to Activin A (100 ng ml \u22121 ; Cell Guidanc",
+      "cited": {
+        "kind": "numbered"
+      }
+    },
+    {
+      "pmcid": "PMC4370190",
+      "organoid_type": "retinal",
+      "doi": "10.1038/ncomms5047",
+      "delegation": "n The procedure to induce early stages of retinal differentiation was based on a previously described protocol with major modifications 14 , 22 , 29 . Briefly, on day 0 (D0) of dif",
+      "cited": {
+        "kind": "numbered"
+      }
+    },
+    {
+      "pmcid": "PMC4620584",
+      "organoid_type": "kidney",
+      "doi": "10.1038/ncomms9715",
+      "delegation": "IWP2, Tocris) for 48\u2009h, RBNI for 48\u2009h and RB every 3 days thereafter, as described for 2D cardiomyocyte differentiation 29 . Fluorescence and Electron M",
+      "cited": {
+        "kind": "numbered"
+      }
+    },
+    {
+      "pmcid": "PMC4753163",
+      "organoid_type": "pancreatic",
+      "doi": "10.1038/nm.3973",
+      "delegation": "tors were generated in a monolayer format using a modification of our previously described staged differentiation protocol 30 , 31 . Stem cells were regularly t",
+      "cited": {
+        "kind": "numbered"
+      }
+    },
+    {
+      "pmcid": "PMC5659341",
+      "organoid_type": "cerebral",
+      "doi": "10.1038/nature22047",
+      "delegation": "2,500 single cells in each well of a 96-well plate. EBs were cultured as described in 10 . After five days in culture, EBs were transferred to Intermedi",
+      "cited": {
+        "kind": "numbered"
+      }
+    },
+    {
+      "pmcid": "PMC5722201",
+      "organoid_type": "liver",
+      "doi": "10.1038/nm.4438",
+      "delegation": "Healthy liver-derived organoids were isolated and cultured using our previously described method 24 , 25 while tumour-derived organoids (tumouroids) were isola",
+      "cited": {
+        "kind": "numbered"
+      }
+    },
+    {
+      "pmcid": "PMC6906116",
+      "organoid_type": "cerebral",
+      "doi": "10.1038/s41586-019-1289-x",
+      "delegation": "d Data Table 1 ). Self-patterned whole-brain organoids were generated as previously described 3 , 34 . Dorsal and ventral spheroids were generated using a modifica",
+      "cited": {
+        "kind": "numbered"
+      }
+    }
+  ]
+}
