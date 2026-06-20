@@ -85,6 +85,30 @@ def verdict(r, min_grounding):
     return None
 
 
+def stage_accepted(r, dry_run, local_dir=None, pred_dir=None):
+    """Write per-paper local bundle + prediction and return the corpus row to append.
+    Honors the dry-run write boundary: in dry-run nothing is written and None is
+    returned (no corpus row). Dirs are injectable so the boundary is testable offline."""
+    if dry_run:
+        return None
+    local_dir = local_dir or LOCAL_DIR
+    pred_dir = pred_dir or PRED_DIR
+    local_dir.mkdir(parents=True, exist_ok=True)
+    pred_dir.mkdir(parents=True, exist_ok=True)
+    (local_dir / f"{r['pmcid']}.json").write_text(json.dumps(r["bundle"], ensure_ascii=False, indent=2))
+    (pred_dir / f"{r['pmcid']}.json").write_text(r["proto"].model_dump_json(indent=2))
+    cd = r["cand"]
+    return {**{k: "" for k in CORPUS_COLS},
+            "organoid_type": cd.get("organoid_type"), "doi": cd.get("doi"),
+            "pmcid": cd.get("pmcid"), "first_author": cd.get("first_author"),
+            "year": cd.get("year"), "journal": cd.get("journal"),
+            "species": cd.get("species") or "tbd",
+            "source_cell_type": cd.get("source_cell_type") or "tbd",
+            "license": cd.get("license"), "has_methods": "yes",
+            "has_supplement": "tbd", "gold_candidate": "no", "flags": "auto-ingested",
+            "notes": f"orchestrator batch; grounding {r['grounding_rate']}"}
+
+
 def process_one(cand: dict) -> dict:
     """Fetch + extract one candidate; return a QC verdict dict."""
     pmcid, doi = cand["pmcid"], cand.get("doi", "")
@@ -135,21 +159,9 @@ def main():
             rejected.append({"pmcid": r["pmcid"], "reason": reason})
             print(f"  REJECT {r['pmcid']}: {reason}", flush=True)
             continue
-        if not args.dry_run:
-            LOCAL_DIR.mkdir(parents=True, exist_ok=True)
-            PRED_DIR.mkdir(parents=True, exist_ok=True)
-            (LOCAL_DIR / f"{r['pmcid']}.json").write_text(json.dumps(r["bundle"], ensure_ascii=False, indent=2))
-            (PRED_DIR / f"{r['pmcid']}.json").write_text(r["proto"].model_dump_json(indent=2))
-            cd = r["cand"]
-            new_rows.append({**{k: "" for k in CORPUS_COLS},
-                             "organoid_type": cd.get("organoid_type"), "doi": cd.get("doi"),
-                             "pmcid": cd.get("pmcid"), "first_author": cd.get("first_author"),
-                             "year": cd.get("year"), "journal": cd.get("journal"),
-                             "species": cd.get("species") or "tbd",
-                             "source_cell_type": cd.get("source_cell_type") or "tbd",
-                             "license": cd.get("license"), "has_methods": "yes",
-                             "has_supplement": "tbd", "gold_candidate": "no", "flags": "auto-ingested",
-                             "notes": f"orchestrator batch; grounding {r['grounding_rate']}"})
+        row = stage_accepted(r, args.dry_run)
+        if row:
+            new_rows.append(row)
         accepted.append({k: r[k] for k in ("pmcid", "doi", "organoid_type", "n_signaling",
                                            "grounded", "grounding_rate", "methods_chars")})
         print(f"  ACCEPT {r['pmcid']} ({r['organoid_type']}): {r['n_signaling']} sig, "

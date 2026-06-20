@@ -95,3 +95,34 @@ def test_verdict_accept_at_exact_threshold():
     # grounding_rate == threshold is NOT below threshold -> accept
     r = {"pmcid": "PMC1", "n_signaling": 3, "grounding_rate": 0.8}
     assert o.verdict(r, 0.8) is None
+
+
+# --- stage_accepted: dry-run write boundary (no network/Ollama) ---
+
+class _Proto:
+    def model_dump_json(self, indent=None):
+        return '{"stub": true}'
+
+
+def _accept_result(pmcid="PMC9"):
+    return {"pmcid": pmcid, "doi": "10.1/x", "grounding_rate": 0.9,
+            "bundle": {"pmcid": pmcid, "methods_text": "..."}, "proto": _Proto(),
+            "cand": {"organoid_type": "cardiac", "doi": "10.1/x", "pmcid": pmcid,
+                     "first_author": "Doe", "year": "2025", "journal": "J",
+                     "species": "human", "source_cell_type": "iPSC", "license": "CC BY 4.0"}}
+
+
+def test_stage_accepted_dry_run_writes_nothing_and_returns_none(tmp_path):
+    ld, pd = tmp_path / "bundles", tmp_path / "preds"
+    row = o.stage_accepted(_accept_result(), dry_run=True, local_dir=ld, pred_dir=pd)
+    assert row is None
+    assert not ld.exists() and not pd.exists()
+
+
+def test_stage_accepted_real_run_writes_bundle_pred_and_returns_row(tmp_path):
+    ld, pd = tmp_path / "bundles", tmp_path / "preds"
+    row = o.stage_accepted(_accept_result("PMC9"), dry_run=False, local_dir=ld, pred_dir=pd)
+    assert (ld / "PMC9.json").exists() and (pd / "PMC9.json").exists()
+    assert row["pmcid"] == "PMC9" and row["flags"] == "auto-ingested"
+    # row carries every corpus column (DictWriter would otherwise raise)
+    assert set(row) == set(o.CORPUS_COLS)
