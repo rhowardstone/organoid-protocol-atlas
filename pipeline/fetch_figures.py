@@ -30,7 +30,7 @@ import urllib.request
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
-CORPUS = REPO / "data" / "corpus" / "pmc_oa_25.tsv"
+CORPUS = REPO / "data" / "corpus" / "corpus.tsv"
 BUNDLES = REPO / "data" / "evidence_bundles" / "local"
 FIG_DIR = REPO / "data" / "figures" / "local"
 S3 = "https://pmc-oa-opendata.s3.amazonaws.com"

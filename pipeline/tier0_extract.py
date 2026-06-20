@@ -2,7 +2,7 @@
 """
 Tier 0 — Evidence-bundle extraction (deterministic, no LLM).
 
-For each paper in data/corpus/pmc_oa_25.tsv, fetch JATS full text (Europe PMC
+For each paper in data/corpus/corpus.tsv, fetch JATS full text (Europe PMC
 fullTextXML first, NCBI efetch fallback) and extract a per-paper evidence bundle:
 methods text, supplementary text, tables, references, and a section map.
 
@@ -37,7 +37,7 @@ from pathlib import Path
 import lxml.etree as ET
 
 REPO = Path(__file__).resolve().parent.parent
-CORPUS = REPO / "data" / "corpus" / "pmc_oa_25.tsv"
+CORPUS = REPO / "data" / "corpus" / "corpus.tsv"
 LOCAL_DIR = REPO / "data" / "evidence_bundles" / "local"
 MANIFEST = REPO / "data" / "evidence_bundles" / "manifest.jsonl"
 OUT_DIR = REPO / "outputs" / "tier0"

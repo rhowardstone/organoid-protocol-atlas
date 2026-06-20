@@ -1,6 +1,6 @@
 # Corpus — PMC-OA 25-paper organoid benchmark seed
 
-`pmc_oa_25.tsv` is the selection manifest for the first real benchmark corpus: 25 organoid
+`corpus.tsv` is the selection manifest for the first real benchmark corpus: 25 organoid
 papers with **full text retrievable from PMC** (so the Methods are extractable), spanning
 8 organoid systems. This is the seed that turns the prototype from a 3-fixture demo into a
 real benchmark.

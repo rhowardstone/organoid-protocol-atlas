@@ -33,7 +33,7 @@ REPO = Path(__file__).resolve().parent.parent
 PRED = REPO / "data" / "predictions" / "local"
 PRED2 = REPO / "data" / "predictions" / "local" / "tier2"
 BUNDLES = REPO / "data" / "evidence_bundles" / "local"
-CORPUS = REPO / "data" / "corpus" / "pmc_oa_25.tsv"
+CORPUS = REPO / "data" / "corpus" / "corpus.tsv"
 DB = REPO / "data" / "kg" / "atlas.db"
 
 SCHEMA = """
