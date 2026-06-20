@@ -69,3 +69,25 @@
   SB431542/SAG on neural. Tests green.
 - Next (frontend parity cont.): dark mode toggle, then a grounded AI Q&A ask-proxy on the
   local model (must cite evidence spans — missing evidence beats false evidence).
+
+## Iteration 7 — 2026-06-20 — Dark mode + grounded AI Q&A ask-proxy (frontend parity #8 done)
+- Dark mode: global serve/static/atlas.js (toggle injected on every Datasette page,
+  persisted in localStorage, applied pre-paint) + a full dark palette in atlas.css
+  ([data-theme="dark"]). Caught a bug while testing — the top bar used var(--ink) for its
+  background, which flips light in dark mode; added a dedicated --bar (stays dark in both).
+  Verified across index/heatmap/ask/table views.
+- Grounded Q&A ask-proxy: serve/plugins/ask.py (Datasette register_routes -> /-/ask).
+  RAG over the FTS index: retrieve reagent rows (organoid-type-led + FTS on meaningful,
+  non-stopword terms), feed ONLY those rows to a LOCAL model (llama3.1:8b via ollama), force
+  inline [PMCID] citations, and refuse ("I don't have grounded evidence...") when nothing
+  relevant is retrieved. No API. serve/templates/pages/ask.html renders the answer (citations
+  linked to recipe cards), a grounded/no-evidence badge, and evidence cards (reagent, dose,
+  verbatim quote, DOI, 📷).
+- Tested honestly: first version over-refused because FTS matched stopwords (which/signaling/
+  factors) and pulled off-topic rows; fixed with a stoplist + organoid-type-led retrieval +
+  a synthesize-from-usage prompt. Faithfulness verified against the KG (kidney CHIR 3.0 μM
+  matches PMC4620584; recovered "8-10 μM" from PMC4747858's evidence quote where the parsed
+  value was null); refuses on out-of-corpus questions ("best pizza topping").
+- Added serve/run.sh (reproducible launch incl. --plugins-dir). Tests green.
+- Next: Tier-3 protocol-by-reference via craig/citation_expander+acquisition (#9, ≤20% cap);
+  design polish (#2).

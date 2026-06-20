@@ -16,7 +16,42 @@
   --bad: #b91c1c;
   --font: 'Work Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   --mono: 'DM Mono', ui-monospace, Menlo, monospace;
+  --bar: #0f172a;           /* top bar — stays dark in both themes */
 }
+
+/* Dark theme — toggled via /static/atlas.js (data-theme on <html>) */
+html[data-theme="dark"] {
+  --ink: #e6edf3;
+  --paper: #0f1620;
+  --paper-2: #0b1119;
+  --paper-3: #1b2533;
+  --accent: #38bdf8;        /* brighter cyan for contrast */
+  --accent-2: #4ade80;
+  --muted: #93a4b5;
+  --border: #2a3645;
+  --good: #4ade80;
+  --warn: #fbbf24;
+  --bad: #f87171;
+}
+html[data-theme="dark"] body { background: var(--paper-2); color: var(--ink); }
+html[data-theme="dark"] header.hd, html[data-theme="dark"] .ft { background: #060a10 !important; }
+html[data-theme="dark"] table.rows-and-columns td,
+html[data-theme="dark"] table.rows-and-columns th { background: var(--paper); color: var(--ink); border-color: var(--border); }
+html[data-theme="dark"] .apa-badge.ok { background: #052e16; border-color: #14532d; }
+html[data-theme="dark"] .apa-badge.no { background: #2a0f10; border-color: #7f1d1d; }
+html[data-theme="dark"] .apa-badge.fig { background: #1e1b3a; border-color: #4c3a8c; color: #c4b5fd; }
+html[data-theme="dark"] input[type=search], html[data-theme="dark"] input[type=text],
+html[data-theme="dark"] select { background: var(--paper-3); color: var(--ink); border-color: var(--border); }
+
+/* floating theme toggle (injected by atlas.js) */
+.apa-theme-btn {
+  position: fixed; bottom: 18px; right: 18px; z-index: 50;
+  font-family: var(--mono); font-size: .76rem; padding: 7px 12px;
+  border-radius: 999px; border: 1px solid var(--border);
+  background: var(--paper); color: var(--ink); cursor: pointer;
+  box-shadow: 0 2px 10px rgba(0,0,0,.18);
+}
+.apa-theme-btn:hover { border-color: var(--accent); color: var(--accent); }
 
 /* Kill default Datasette chrome so our shell shows through */
 body.index header, body.index footer { display: none !important; }
@@ -31,7 +66,7 @@ code, .col-doi, .col-pmcid { font-family: var(--mono); font-size: 0.85em; }
 /* Top brand bar injected on every page */
 .apa-topbar {
   display: flex; align-items: center; gap: .6rem; justify-content: center;
-  background: var(--ink); color: #e6edf3; padding: .55rem 1rem;
+  background: var(--bar); color: #e6edf3; padding: .55rem 1rem;
   font-family: var(--mono); font-size: .7rem; letter-spacing: .12em; text-transform: uppercase;
 }
 .apa-topbar a { color: #e6edf3; opacity: .85; }
@@ -88,6 +123,32 @@ code, .col-doi, .col-pmcid { font-family: var(--mono); font-size: 0.85em; }
 .hm-on .hm-n { mix-blend-mode: normal; }
 .hm-on[style*="--i:0.1"], .hm-on[style*="--i:0.2"], .hm-on[style*="--i:0.3"] { color: var(--ink); }
 .hm-fig { position: absolute; top: -3px; right: -1px; font-size: .6rem; filter: drop-shadow(0 0 1px #fff); }
+
+/* --- Ask the Atlas (grounded Q&A) --- */
+.apa-ask-head { max-width: 760px; margin: 1.6rem auto .4rem; padding: 0 1.2rem; }
+.apa-ask-head h1 { font-size: 1.7rem; margin: .2rem 0 .4rem; letter-spacing: -.01em; }
+.apa-ask-form { display: flex; gap: .5rem; margin: 1rem 0 .6rem; }
+.apa-ask-form input { flex: 1; font-family: var(--font); font-size: 1rem; padding: 11px 14px; border: 1px solid var(--border); border-radius: 10px; background: var(--paper); color: var(--ink); }
+.apa-ask-form input:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 18%, transparent); }
+.apa-ask-form button { font-family: var(--font); font-weight: 600; padding: 0 20px; border: none; border-radius: 10px; background: var(--accent); color: #fff; cursor: pointer; }
+.apa-ask-form button:hover { filter: brightness(1.08); }
+.apa-ask-examples { display: flex; flex-wrap: wrap; gap: .4rem; align-items: center; font-size: .82rem; color: var(--muted); }
+.apa-ask-examples .ex { font-family: var(--font); font-size: .8rem; color: var(--accent); background: var(--paper-3); border: 1px solid var(--border); border-radius: 999px; padding: 4px 11px; cursor: pointer; }
+.apa-ask-examples .ex:hover { border-color: var(--accent); }
+.apa-ask-out { max-width: 760px; margin: .4rem auto 3rem; padding: 0 1.2rem; }
+.apa-ask-loading { color: var(--muted); padding: 1.2rem 0; font-style: italic; }
+.apa-ask-card { background: var(--paper); border: 1px solid var(--border); border-radius: 12px; padding: 1.1rem 1.3rem; margin-top: .8rem; }
+.apa-ask-q { font-weight: 600; color: var(--muted); font-size: .9rem; margin-bottom: .6rem; }
+.apa-ask-a { font-size: 1.02rem; line-height: 1.65; white-space: pre-wrap; }
+.apa-ask-a .cite { font-family: var(--mono); font-size: .82em; }
+.apa-ask-model { margin-top: .8rem; font-size: .74rem; color: var(--muted); font-family: var(--mono); }
+.apa-ask-srch { max-width: 760px; margin: 1.4rem 0 .3rem; font-size: 1rem; }
+.apa-ask-src { display: grid; gap: .55rem; }
+.src-row { background: var(--paper); border: 1px solid var(--border); border-left: 3px solid var(--accent); border-radius: 8px; padding: .6rem .8rem; }
+.src-head { font-weight: 600; }
+.src-meta { font-weight: 400; color: var(--muted); font-size: .82rem; font-family: var(--mono); margin-left: .4rem; }
+.src-quote { color: var(--ink); font-size: .9rem; line-height: 1.5; margin: .3rem 0; opacity: .85; }
+.src-doi { font-family: var(--mono); font-size: .78rem; }
 
 /* ---------- Recipe card (protocol row page) ---------- */
 .apa-recipe { max-width: 980px; margin: 1.5rem auto; padding: 0 1.5rem; }
