@@ -195,3 +195,20 @@
   map, run instructions (serve/run.sh), and the local-A100/no-API stance. De-id verified clean.
 - Next: gastric still needs a clean foundational paper (deferred); otherwise keep asking what
   NEW category adds value. Flagged (supervisor): #5 schema v0.3, #10 Tier-3 ingestion.
+
+## Iteration 14 — 2026-06-20 — Gastric expansion + non-reagent guard (corpus + quality)
+- Targeted curation found the clean foundational gastric paper: PMC7951181 (Broda 2019,
+  Nat Protoc, "Generation of human antral and fundic gastric organoids"). Tier-0 (NCBI efetch,
+  40k methods chars) -> Tier-1. Gastric 2->3, crossing the consensus threshold.
+- GUT-CHECK caught the model listing equipment/software as signaling factors ("Nikon A1
+  confocal", "NIS-Elements software"). Rather than reject the key paper, added a deterministic
+  NON-REAGENT guard to tier1 (is_non_reagent: instruments/microscopes/software/imaging systems)
+  — a generalizable quality check like suspect_unit. Broda now: Activin A, BMP4, FGF4, FGF10,
+  CHIR99021, Retinoic acid (6 clean canonical factors). Scan of all existing preds: 0 residual
+  junk (guard is conservative, no false positives). +5 unit tests.
+- Normalization: added spelled-out aliases (Bone morphogenetic protein 4->BMP4, Fibroblast
+  growth factor 4/10->FGF4/10, epidermal/hepatocyte/VEGF) so Broda's long-form names merge with
+  the rest. Verified BMP4/FGF10 now unify surface forms.
+- Result: corpus 26->27, reagents 299, grounding held 0.816, gastric consensus now "7 core · 8
+  variable" (Activin A/BMP4/CHIR/EGF/FGF4/FGF10/RA core — sensible endoderm->gastric induction).
+  Stats updated. Tests green (12).

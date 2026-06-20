@@ -22,12 +22,29 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import sys
 import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
+
+# Deterministic non-reagent guard: the model occasionally lists lab equipment,
+# software, or imaging systems as "signaling factors" (they appear verbatim in
+# methods, so substring-grounding alone won't catch them). Drop names that are
+# clearly instruments/software, not culture reagents. Conservative — matches only
+# unambiguous equipment/software tokens, never real reagents.
+NON_REAGENT_RE = re.compile(
+    r"(confocal|microscop|imaging (?:software|system)|\bsoftware\b|NIS[- ]?Elements|"
+    r"ImageJ|\bFIJI\b|FlowJo|cytometer|spectrophotomet|centrifuge|\bincubator\b|"
+    r"\bNikon\b|\bZeiss\b|\bLeica\b|\bOlympus\b|scanner|workstation|GraphPad|"
+    r"\bPrism\b|microplate reader|hemocytometer|water bath|biosafety|\bPPE\b|"
+    r"forceps|scalpel|\bpipette\b|thermocycler|\bcamera\b)", re.I)
+
+
+def is_non_reagent(name: str | None) -> bool:
+    return bool(name) and bool(NON_REAGENT_RE.search(name))
 sys.path.insert(0, str(REPO / "organoid_demo"))
 
 from schema import (  # noqa: E402
@@ -176,7 +193,8 @@ def to_protocol(doi: str, m: dict, evidence: str) -> tuple[OrganoidProtocol, dic
         matrix=Matrix(name=mx.get("name")),
         base_media=BaseMedia(name=bm.get("name"),
                              reporting=Reporting.REPORTED if bm.get("name") else Reporting.NOT_REPORTED),
-        signaling_factors=[reagent(d) for d in (m.get("signaling_factors") or []) if d.get("name")],
+        signaling_factors=[reagent(d) for d in (m.get("signaling_factors") or [])
+                           if d.get("name") and not is_non_reagent(d.get("name"))],
         media_supplements=[Reagent(name=str(s.get("name") if isinstance(s, dict) else s).strip())
                            for s in (m.get("media_supplements") or []) if s],
         passaging=passaging,

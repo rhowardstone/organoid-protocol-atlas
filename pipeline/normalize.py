@@ -40,11 +40,17 @@ CANON = {
     "sb431542": "SB431542", "a8301": "A83-01",
     # Wnt / GSK3
     "wnt3a": "Wnt3a", "chir99021": "CHIR99021", "chir": "CHIR99021",
-    # FGFs (bFGF == FGF2)
+    # FGFs (bFGF == FGF2); include spelled-out forms (papers vary)
     "bfgf": "FGF2", "fgf2": "FGF2", "fgfbasic": "FGF2", "basicfgf": "FGF2",
+    "basicfibroblastgrowthfactor": "FGF2", "fibroblastgrowthfactor2": "FGF2",
     "fgf4": "FGF4", "fgf7": "FGF7", "fgf9": "FGF9", "fgf10": "FGF10",
-    # BMP axis
+    "fibroblastgrowthfactor4": "FGF4", "fibroblastgrowthfactor7": "FGF7",
+    "fibroblastgrowthfactor9": "FGF9", "fibroblastgrowthfactor10": "FGF10",
+    # BMP axis (incl. spelled-out forms)
     "bmp4": "BMP4", "bmp7": "BMP7", "noggin": "Noggin",
+    "bonemorphogeneticprotein4": "BMP4", "bonemorphogeneticprotein7": "BMP7",
+    "epidermalgrowthfactor": "EGF", "hepatocytegrowthfactor": "HGF",
+    "vascularendothelialgrowthfactor": "VEGF",
     "dorsomorphin": "Dorsomorphin", "ldn193189": "LDN-193189",
     # growth factors / neurotrophins
     "egf": "EGF", "hgf": "HGF", "bdnf": "BDNF", "nt3": "NT-3", "ntf3": "NT-3",

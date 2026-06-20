@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-06-20T16:31:48+00:00",
+  "generated_at": "2026-06-20T16:57:00+00:00",
   "model": "gemma3:12b",
-  "papers": 26,
+  "papers": 27,
   "rows": [
     {
       "pmcid": "PMC10739970",
@@ -323,6 +323,19 @@
       "base_media": "mTeSR1 or mTeSR PLUS",
       "reagents_grounded": 2,
       "reagents_total": 2,
+      "grounding_rate": 1.0
+    },
+    {
+      "pmcid": "PMC7951181",
+      "doi": "10.1038/s41596-018-0080-z",
+      "organoid_type": "gastric",
+      "model": "gemma3:12b",
+      "n_signaling_factors": 6,
+      "n_supplements": 0,
+      "matrix": "hESC-qualified Matrigel",
+      "base_media": "mTeSR1 medium",
+      "reagents_grounded": 6,
+      "reagents_total": 6,
       "grounding_rate": 1.0
     }
   ]

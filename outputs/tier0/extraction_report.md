@@ -31,16 +31,16 @@ local-only (git-ignored); this report and the manifest carry metadata + checksum
 | PMC7757566 | pancreatic | ncbi_efetch_xml | 81107 | 0 | 0 | 8 | 4 | 9 | 17 | no_supplementary_material_inline; tables_present; figures_present |
 | PMC4370190 | retinal | ncbi_efetch_xml | 13259 | 27 | 1 | 8 | 2 | 0 | 70 | supplement_external_only; external_supplement_files; figures_present |
 | PMC11194494 | retinal | europe_pmc_xml | 6499 | 587 | 3 | 6 | 4 | 0 | 55 | external_supplement_files; figures_present |
-| PMC6895716 | retinal | europe_pmc_xml | 2271 | 600 | 7 | 7 | 9 | 0 | 51 | external_supplement_files; figures_present |
+| PMC7951181 | gastric | ncbi_efetch_xml | 40632 | 0 | 0 | 6 | 3 | 4 | 27 | no_supplementary_material_inline; tables_present; figures_present |
 
 ## Aggregate
 - Papers: 27
-- Source routes: {'europe_pmc_xml': 5, 'ncbi_efetch_xml': 22}
+- Source routes: {'europe_pmc_xml': 4, 'ncbi_efetch_xml': 23}
 - Methods section found: 27/27
-- Supplement text inline (>=400 chars): 10/27 (low is expected — real supplements are external files, see below)
-- Papers with external supplement files: 25/27 (154 files total)
-- Papers with figures: 27/27 (205 figures total)
-- Papers with tables: 9/27 (recipe sometimes lives in tables)
+- Supplement text inline (>=400 chars): 9/27 (low is expected — real supplements are external files, see below)
+- Papers with external supplement files: 24/27 (147 files total)
+- Papers with figures: 27/27 (204 figures total)
+- Papers with tables: 10/27 (recipe sometimes lives in tables)
 
 ## What is captured vs. deferred (by design)
 Captured (Tier 0, deterministic text): methods prose, full body text, table text,
