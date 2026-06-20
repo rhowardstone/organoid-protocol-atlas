@@ -1,0 +1,129 @@
+{
+  "NCBIGene:100525086": {
+    "id": {
+      "identifier": "NCBIGene:100525086",
+      "label": "FGF10"
+    },
+    "equivalent_identifiers": [
+      {
+        "identifier": "NCBIGene:100525086",
+        "label": "FGF10",
+        "taxa": [
+          "NCBITaxon:9823"
+        ]
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCG00000016878"
+      },
+      {
+        "identifier": "RGD:14199577"
+      },
+      {
+        "identifier": "UniProtKB:A0A8D0XPM7",
+        "label": "A0A8D0XPM7_PIG Fibroblast growth factor (trembl)",
+        "taxa": [
+          "NCBITaxon:9823"
+        ]
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00015012584"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00015012584.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00025027093"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00025027093.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00030039580"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00030039580.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00035037692"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00035037692.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00040025737"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00040025737.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00045012917"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00045012917.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00050012220"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00050012220.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00055025605"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00055025605.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00060021313"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00060021313.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00065016421"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00065016421.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00070005172"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00070005172.1"
+      },
+      {
+        "identifier": "UniProtKB:F1SMG2",
+        "label": "F1SMG2_PIG Fibroblast growth factor (trembl)",
+        "taxa": [
+          "NCBITaxon:9823"
+        ]
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00000017886"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00000017886.2"
+      }
+    ],
+    "taxa": [
+      "NCBITaxon:9823"
+    ],
+    "type": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ]
+  }
+}

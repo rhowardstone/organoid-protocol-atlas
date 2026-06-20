@@ -1,0 +1,39 @@
+{
+  "PUBCHEM.COMPOUND:44288444": {
+    "id": {
+      "identifier": "PUBCHEM.COMPOUND:44288444",
+      "label": "GASTRIN"
+    },
+    "equivalent_identifiers": [
+      {
+        "identifier": "PUBCHEM.COMPOUND:44288444",
+        "label": "Gastrin"
+      },
+      {
+        "identifier": "PUBCHEM.COMPOUND:162820019",
+        "label": "(4S)-4-amino-5-[2-[(2S)-2-[N-[(2S)-1-[(2S)-1-[(2S)-4-carboxy-1-[(2S)-4-carboxy-1-[(2R)-4-carboxy-1-[(2R)-4-carboxy-1-[(2R)-4-carboxy-1-[(2R)-1-[(2R)-1-[2-[(2R)-1-[(2R)-1-[(2R)-3-carboxy-1-hydroxy-1-[(2R)-1-hydroxy-1-imino-3-phenylpropan-2-yl]iminopropan-2-yl]imino-1-hydroxy-4-methylsulfanylbutan-2-yl]imino-1-hydroxy-3-(1H-indol-3-yl)propan-2-yl]imino-2-hydroxyethyl]imino-1-hydroxy-3-(4-hydroxyphenyl)propan-2-yl]imino-1-hydroxypropan-2-yl]imino-1-hydroxybutan-2-yl]imino-1-hydroxybutan-2-yl]imino-1-hydroxybutan-2-yl]imino-1-hydroxybutan-2-yl]imino-1-hydroxybutan-2-yl]imino-1-hydroxy-4-methylpentan-2-yl]imino-1-hydroxy-3-(1H-indol-3-yl)propan-2-yl]-C-hydroxycarbonimidoyl]pyrrolidin-1-yl]-2-oxoethyl]imino-5-hydroxypentanoic acid"
+      },
+      {
+        "identifier": "CHEMBL.COMPOUND:CHEMBL413654",
+        "label": "GASTRIN"
+      },
+      {
+        "identifier": "CAS:9002-76-0"
+      },
+      {
+        "identifier": "INCHIKEY:AOXOCDRNSPFDPE-UKEONUMOSA-N"
+      }
+    ],
+    "type": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ]
+  }
+}

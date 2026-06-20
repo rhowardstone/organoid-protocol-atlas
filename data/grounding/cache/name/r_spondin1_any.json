@@ -1,0 +1,361 @@
+[
+  {
+    "curie": "NCBIGene:469283",
+    "label": "RSPO1",
+    "highlighting": {},
+    "synonyms": [
+      "RSPO1",
+      "R-spondin1",
+      "R-spondin-1",
+      "R-spondin 1",
+      "R-spondin homolog",
+      "A0A2J8LYN1_PANTR R-spondin-1 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9598"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 626.6216,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:103187309",
+    "label": "rspo1",
+    "highlighting": {},
+    "synonyms": [
+      "rspo1",
+      "R-spondin1",
+      "R-spondin-1"
+    ],
+    "taxa": [
+      "NCBITaxon:7868"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 623.4348,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "NCBIGene:511675",
+    "label": "RSPO1",
+    "highlighting": {},
+    "synonyms": [
+      "RSPO1",
+      "R-spondin1",
+      "R-spondin-1",
+      "R-spondin 1",
+      "R-spondin homolog",
+      "A7YY21_BOVIN R-spondin-1 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9913"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 384.21127,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "UniProtKB:B5B425",
+    "label": "B5B425_TRASC R-spondin1 (trembl)",
+    "highlighting": {},
+    "synonyms": [
+      "B5B425_TRASC R-spondin1 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:34903"
+    ],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 349.4729,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "UniProtKB:V9LJA3",
+    "label": "V9LJA3_CALMI R-spondin1 (Fragment) (trembl)",
+    "highlighting": {},
+    "synonyms": [
+      "V9LJA3_CALMI R-spondin1 (Fragment) (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:7868"
+    ],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 328.11182,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "UMLS:C1871969",
+    "label": "RSPO1 protein, mouse",
+    "highlighting": {},
+    "synonyms": [
+      "R-spondin1, mouse",
+      "RSPO1 protein, mouse"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 239.35124,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "UMLS:C3180198",
+    "label": "RSPO1 protein, zebrafish",
+    "highlighting": {},
+    "synonyms": [
+      "RSPO1 protein, zebrafish",
+      "R-spondin1 protein, zebrafish"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 227.22644,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "CHEBI:195928",
+    "label": "(R)-Dihydrocitronellol",
+    "highlighting": {},
+    "synonyms": [
+      "Pelargol",
+      "Dimethyloctanol",
+      "Dimethyl octanol",
+      "perhydro-Geraniol",
+      "tetrahydrogeraniol",
+      "Dimethyloctan-2-ol",
+      "Dimethyl-1-octanol",
+      "Tetrahydrogeraniol",
+      "dihydrocitronellol",
+      "Dihydrocitronellol",
+      "tetrahydro-Geraniol",
+      "dihydro-Citronellol",
+      "Geraniol tetrahydride",
+      "3,7-DIMETHYL-1-OCTANOL",
+      "3,7-Dimethyl-1-octanol",
+      "3,7-dimethyloctan-1-ol",
+      "2,6-Dimethyl-8-octanol",
+      "3,7-dimethyl-1-octanol",
+      "3,7-Dimethyloctan-1-ol",
+      "(R)-Dihydrocitronellol",
+      "S-3,7-Dimethyl-1-octanol",
+      "3,7-Dimethyl-(S)-1-octanol",
+      "3,7-Dimethyl-(R)-1-octanol",
+      "3,7-Dimethyl-(.+/-.)-1-octanol",
+      "3,7-Dimethyloctan-1-ol, titanium salt"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 149.83595,
+    "clique_identifier_count": 24
+  },
+  {
+    "curie": "CHEBI:28972",
+    "label": "(R)-Propylene glycol",
+    "highlighting": {},
+    "synonyms": [
+      "1,2-Propanediol",
+      "2,3-Propanediol",
+      "Propylene glycol",
+      "R-1,2-PROPANEDIOL",
+      "D-(-)-Propanediol",
+      "2-Hydroxypropanol",
+      "R-1,2-propanediol",
+      "Methylethyl glycol",
+      "α-Propylene glycol",
+      "Isopropylene glycol",
+      "(R)-1,2-Propanediol",
+      "1-Deoxy-sn-glycerol",
+      "(-)-1,2-Propanediol",
+      "(R)-Propylene glycol",
+      "1,2-Dihydroxypropane",
+      "Monopropylene glycol",
+      "(-)-Propylene glycol",
+      "1,2-Propylene glycol",
+      "(R)-propane-1,2-diol",
+      "(R)-Propane-1,2-diol",
+      "(2R)-1,2-Propanediol",
+      "1,2-(RS)-Propanediol",
+      "R-(-)-1,2-Propanediol",
+      "Methylethylene glycol",
+      "(2R)-Propane-1,2-diol",
+      "(2R)-propane-1,2-diol",
+      "PROPYLENE GLYCOL, (R)-",
+      "alpha-Propylene glycol",
+      "R-(-)-Propylene glycol",
+      "(R)-(-)-1,2-Propanediol",
+      "(R)-2-Hydroxy-1-propanol",
+      "propylene glycol, (R)-"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 142.7349,
+    "clique_identifier_count": 26
+  },
+  {
+    "curie": "NCBIGene:284654",
+    "label": "RSPO1",
+    "highlighting": {},
+    "synonyms": [
+      "RSPO",
+      "RSPO1",
+      "RSPONDIN",
+      "CRISTIN3",
+      "FLJ40906",
+      "R-SPONDIN",
+      "RSPO1 gene",
+      "R-SPONDIN 1",
+      "R-spondin-1",
+      "R-spondin 1",
+      "R-spondin homolog",
+      "R-SPONDIN FAMILY, MEMBER 1",
+      "roof plate-specific spondin-1",
+      "R-spondin homolog (Xenopus laevis)",
+      "ROOF PLATE-SPECIFIC SPONDIN, MOUSE, HOMOLOG OF",
+      "hRspo1",
+      "hRSPO1",
+      "R-spondin-1 (human)",
+      "RSPO1 protein, human",
+      "hRSpo1 protein, human",
+      "R-spondin1 protein, human",
+      "RSPO1_HUMAN R-spondin-1 (sprot)",
+      "roof plate-specific spondin-1 (human)",
+      "roof plate-specific spondin protein, human",
+      "R-spondin homolog (Xenopus laevis) protein, human"
+    ],
+    "taxa": [
+      "NCBITaxon:9606"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 131.07635,
+    "clique_identifier_count": 9
+  }
+]

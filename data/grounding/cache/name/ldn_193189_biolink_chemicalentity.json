@@ -1,0 +1,257 @@
+[
+  {
+    "curie": "CHEBI:91387",
+    "label": "LDN-193189",
+    "highlighting": {},
+    "synonyms": [
+      "LDN193189",
+      "LDN-193189",
+      "LDN 193189",
+      "4-[6-[4-(1-piperazinyl)phenyl]-3-pyrazolo[1,5-a]pyrimidinyl]quinoline",
+      "4-(6-(4-(Piperazin-1-yl)phenyl)pyrazolo[1,5-a]pyrimidin-3-yl)quinoline",
+      "4-(6-(4-(piperazin-1-yl)phenyl_pyrazolo[1,5-a]pyrimidin-3-yl)quinoline",
+      "Quinoline, 4-(6-(4-(1-piperazinyl)phenyl)pyrazolo(1,5-a)pyrimidin-3-yl)-"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 5333.4326,
+    "clique_identifier_count": 10
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:91900717",
+    "label": "LDN 193189 dihydrochloride",
+    "highlighting": {},
+    "synonyms": [
+      "LDN 193189 dihydrochloride"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:MolecularMixture",
+      "biolink:ChemicalMixture",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 1210.2739,
+    "clique_identifier_count": 4
+  },
+  {
+    "curie": "UNII:PLH51K438W",
+    "label": "LDN-193189 monohydrochloride",
+    "highlighting": {},
+    "synonyms": [
+      "LDN-193189 monohydrochloride",
+      "LDN-193189 MONOHYDROCHLORIDE"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:MolecularMixture",
+      "biolink:ChemicalMixture",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 1210.2739,
+    "clique_identifier_count": 4
+  },
+  {
+    "curie": "CHEBI:229962",
+    "label": "LDN-212854",
+    "highlighting": {},
+    "synonyms": [
+      "LDN212854",
+      "LDN-212854",
+      "Ldn-212854",
+      "LDN 212854",
+      "5-{6-[4-(piperazin-1-yl)phenyl]pyrazolo[1,5-a]pyrimidin-3-yl}quinoline",
+      "5-[6-[4-(1-piperazinyl)phenyl]pyrazolo[1,5-a]pyrimidin-3-yl]-quinoline"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 250.32361,
+    "clique_identifier_count": 7
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:16760696",
+    "label": "LDN 57444",
+    "highlighting": {},
+    "synonyms": [
+      "LDN57444",
+      "Ldn-57444",
+      "LDN-57444",
+      "LDN 57444"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 234.24907,
+    "clique_identifier_count": 6
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:950368",
+    "label": "LDN-91946",
+    "highlighting": {},
+    "synonyms": [
+      "LDN-91946",
+      "Ldn-91946"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 215.69237,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:91754554",
+    "label": "LDN-214117",
+    "highlighting": {},
+    "synonyms": [
+      "Ldn-214117",
+      "LDN-214117"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 215.69237,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:46882744",
+    "label": "Ldn-211904 oxalate",
+    "highlighting": {},
+    "synonyms": [
+      "Ldn-211904 oxalate"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:MolecularMixture",
+      "biolink:ChemicalMixture",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 180.25278,
+    "clique_identifier_count": 4
+  },
+  {
+    "curie": "CHEBI:61189",
+    "label": "Ldn-DF",
+    "highlighting": {},
+    "synonyms": [
+      "LDN-DF",
+      "Ldn-DF",
+      "GalNAcbeta1-4(Fucalpha1-2Fucalpha1-3)GlcNAc",
+      "GalNAc(beta1-4)[Fuc(alpha1-2)Fuc(alpha1-3)]GlcNAc",
+      "beta-D-GalNAc-(1->4)-[alpha-L-Fuc-(1->2)-alpha-L-Fuc-(1->3)]-D-GlcNAc",
+      "beta-D-GalpNAc-(1->4)-[alpha-L-Fucp-(1->2)-alpha-L-Fucp-(1->3)]-D-GlcpNAc",
+      "N-acetyl-beta-D-galactosaminyl-(1->4)-[alpha-L-fucopyranosyl-(1->2)-alpha-L-fucopyranosyl-(1->3)]-N-acetyl-D-glucosamine",
+      "2-acetamido-2-deoxy-beta-D-galactopyranosyl-(1->4)-[alpha-L-fucopyranosyl-(1->2)-alpha-L-fucopyranosyl-(1->3)]-2-acetamido-2-deoxy-D-glucopyranose",
+      "2-acetamido-2-deoxy-beta-D-galactopyranosyl-(1->4)-[6-deoxy-alpha-L-galactopyranosyl-(1->2)-6-deoxy-alpha-L-galactopyranosyl-(1->3)]-2-acetamido-2-deoxy-D-glucopyranose"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 166.8824,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:90488975",
+    "label": "LDN 209929 dihydrochloride",
+    "highlighting": {},
+    "synonyms": [
+      "LDN 209929 dihydrochloride"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:MolecularMixture",
+      "biolink:ChemicalMixture",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 155.26129,
+    "clique_identifier_count": 3
+  }
+]

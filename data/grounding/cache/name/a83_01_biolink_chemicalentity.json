@@ -1,0 +1,264 @@
+[
+  {
+    "curie": "CHEBI:233322",
+    "label": "A-83-01",
+    "highlighting": {},
+    "synonyms": [
+      "A83-01",
+      "A-83-01",
+      "909910-43-6",
+      "3-(6-methylpyridin-2-yl)-N-phenyl-4-(quinolin-4-yl)-1H-pyrazole-1-carbothioamide",
+      "3-(6-Methylpyridin-2-yl)-N-phenyl-4-(quinolin-4-yl)-1H-pyrazole-1-carbothioamide"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 883.7531,
+    "clique_identifier_count": 9
+  },
+  {
+    "curie": "UNII:X4D0G881CN",
+    "label": "OATD-01",
+    "highlighting": {},
+    "synonyms": [
+      "OATD-01",
+      "GLPG4716",
+      "5-(4-((2S,5S)-5-(4-CHLOROBENZYL)-2-METHYLMORPHOLINO)PIPERIDIN-1-YL)-1H-1,2,4-TRIAZOL-3-AMINE",
+      "5-(4-((2S,5S)-5-(4-chlorobenzyl)-2-methylmorpholino)piperidin-1-yl)-1H-1,2,4-triazol-3-amine",
+      "5-(4-((2S,5S)-5-(4-Chlorobenzyl)-2-methylmorpholino)piperidin-1-yl)-1H-1,2,4-triazol-3-amine",
+      "5-[4-[(2S,5S)-5-[(4-Chlorophenyl)methyl]-2-methyl-4-morpholinyl]-1-piperidinyl]-1H-1,2,4-triazol-3-amine",
+      "1H-1,2,4-Triazol-3-amine, 5-[4-[(2S,5S)-5-[(4-chlorophenyl)methyl]-2-methyl-4-morpholinyl]-1-piperidinyl]-"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 186.61429,
+    "clique_identifier_count": 10
+  },
+  {
+    "curie": "UNII:7V7IHI0SYG",
+    "label": "FF-10101-01",
+    "highlighting": {},
+    "synonyms": [
+      "FF-10101",
+      "Ff-10101",
+      "FF-10101-01",
+      "FF10101 Succinate",
+      "FF-10101 succinate",
+      "FF-10101 Succinate",
+      "FLT3 Inhibitor FF-10101 Succinate",
+      "FLT3 inhibitor FF-10101 succinate"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 166.7182,
+    "clique_identifier_count": 9
+  },
+  {
+    "curie": "CHEBI:76204",
+    "label": "HR1405-01",
+    "highlighting": {},
+    "synonyms": [
+      "HR1405-01",
+      "loxoprofen-SRS",
+      "LOXOPROFEN TRANS ALCOHOL",
+      "Loxoprofen active metabolite",
+      "loxoprofen active metabolite",
+      "LOXOPROFEN TRANS-ALCOHOL, (2S,1'R,2'S)-",
+      "(2S)-2-(4-{[(1R,2S)-2-hydroxycyclopentyl]methyl}phenyl)propanoic acid"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 161.83089,
+    "clique_identifier_count": 7
+  },
+  {
+    "curie": "CHEBI:224537",
+    "label": "KM-01",
+    "highlighting": {},
+    "synonyms": [
+      "KM-01",
+      "KM 01",
+      "[(1R,2S,7R,8aR)-7-hydroxy-1,8a-dimethyl-6-oxo-7-(3-oxoprop-1-en-2-yl)-2,8-dihydro-1H-naphthalen-2-yl] (2E,4E,6S)-6-methylocta-2,4-dienoate"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 151.4389,
+    "clique_identifier_count": 6
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:4695397",
+    "label": "phenylglycine-01",
+    "highlighting": {},
+    "synonyms": [
+      "phenylglycine-01",
+      "Phenylglycine-01"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 151.4389,
+    "clique_identifier_count": 6
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:182118",
+    "label": "NGP 1-01",
+    "highlighting": {},
+    "synonyms": [
+      "NGP-1-01",
+      "NGP 1-01",
+      "Ngp 1-01",
+      "2,6,3,5-Ethanediylidenepentaleno(1,6-bc)pyrrol-2(1H)-ol, octahydro-1-(phenylmethyl)-"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 150.56154,
+    "clique_identifier_count": 7
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:78357766",
+    "label": "HTH-01-015",
+    "highlighting": {},
+    "synonyms": [
+      "Hth-01-015",
+      "HTH-01-015"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 150.56154,
+    "clique_identifier_count": 7
+  },
+  {
+    "curie": "CHEBI:132509",
+    "label": "HG-10-102-01",
+    "highlighting": {},
+    "synonyms": [
+      "HG-10-102-01",
+      "(4-{[5-chloro-4-(methylamino)pyrimidin-2-yl]amino}-3-methoxyphenyl)(morpholin-4-yl)methanone"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 148.73239,
+    "clique_identifier_count": 8
+  },
+  {
+    "curie": "CHEBI:133818",
+    "label": "HG-9-91-01",
+    "highlighting": {},
+    "synonyms": [
+      "HG-9-91-01",
+      "N-(2,4-dimethoxyphenyl)-N'-(2,6-dimethylphenyl)-N-{6-[4-(4-methylpiperazin-1-yl)anilino]pyrimidin-4-yl}urea"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 148.73239,
+    "clique_identifier_count": 8
+  }
+]

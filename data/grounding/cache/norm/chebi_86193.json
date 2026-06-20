@@ -1,0 +1,43 @@
+{
+  "CHEBI:86193": {
+    "id": {
+      "identifier": "CHEBI:86193",
+      "label": "DAPT"
+    },
+    "equivalent_identifiers": [
+      {
+        "identifier": "CHEBI:86193",
+        "label": "DAPT"
+      },
+      {
+        "identifier": "PUBCHEM.COMPOUND:5311272",
+        "label": "Dapt"
+      },
+      {
+        "identifier": "CHEMBL.COMPOUND:CHEMBL255682"
+      },
+      {
+        "identifier": "CAS:208255-80-5"
+      },
+      {
+        "identifier": "GTOPDB:11363",
+        "label": "DAPT"
+      },
+      {
+        "identifier": "INCHIKEY:DWJXYEABWRJFSP-XOBRGWDASA-N"
+      }
+    ],
+    "type": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "information_content": 100.0
+  }
+}

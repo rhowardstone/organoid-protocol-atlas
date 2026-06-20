@@ -1,0 +1,138 @@
+{
+  "Cellosaurus": {
+    "cell-line-list": [
+      {
+        "accession-list": [
+          {
+            "type": "primary",
+            "value": "CVCL_9773"
+          }
+        ],
+        "name-list": [
+          {
+            "type": "synonym",
+            "value": "WA 09"
+          },
+          {
+            "type": "synonym",
+            "value": "WA-09"
+          },
+          {
+            "type": "synonym",
+            "value": "WA9"
+          },
+          {
+            "type": "synonym",
+            "value": "H9"
+          },
+          {
+            "type": "synonym",
+            "value": "H9.hESCs"
+          },
+          {
+            "type": "synonym",
+            "value": "H9 ESC"
+          },
+          {
+            "type": "synonym",
+            "value": "H9 hES"
+          },
+          {
+            "type": "synonym",
+            "value": "H9ES"
+          },
+          {
+            "type": "synonym",
+            "value": "GE09"
+          },
+          {
+            "type": "synonym",
+            "value": "WAe003-A"
+          },
+          {
+            "type": "synonym",
+            "value": "WICELLe003-A"
+          },
+          {
+            "type": "synonym",
+            "value": "WAe009-A"
+          },
+          {
+            "type": "synonym",
+            "value": "WA09-PCBC"
+          },
+          {
+            "type": "synonym",
+            "value": "PCBC02hse2014030502"
+          },
+          {
+            "type": "synonym",
+            "value": "SC14-067"
+          },
+          {
+            "type": "synonym",
+            "value": "UKERe008-A"
+          },
+          {
+            "type": "identifier",
+            "value": "WA09"
+          }
+        ]
+      },
+      {
+        "accession-list": [
+          {
+            "type": "primary",
+            "value": "CVCL_E6BE"
+          }
+        ],
+        "name-list": [
+          {
+            "type": "synonym",
+            "value": "H9-BIN3OE"
+          },
+          {
+            "type": "identifier",
+            "value": "WA09 BIN3 OE"
+          }
+        ]
+      },
+      {
+        "accession-list": [
+          {
+            "type": "primary",
+            "value": "CVCL_B5ZJ"
+          }
+        ],
+        "name-list": [
+          {
+            "type": "synonym",
+            "value": "CRX+/tdTomato"
+          },
+          {
+            "type": "identifier",
+            "value": "WA09 CRX+/tdTomato"
+          }
+        ]
+      },
+      {
+        "accession-list": [
+          {
+            "type": "primary",
+            "value": "CVCL_GQ06"
+          }
+        ],
+        "name-list": [
+          {
+            "type": "synonym",
+            "value": "MIXL1-2A-eGFP"
+          },
+          {
+            "type": "identifier",
+            "value": "WA09 MIXL1-2A-eGFP"
+          }
+        ]
+      }
+    ]
+  }
+}

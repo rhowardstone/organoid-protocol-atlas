@@ -1,0 +1,37 @@
+[
+  {
+    "curie": "CHEBI:91091",
+    "label": "CHIR 99021",
+    "highlighting": {},
+    "synonyms": [
+      "CT-99021",
+      "CHIR-911",
+      "CHIR99021",
+      "Chir99021",
+      "CHIR 99021",
+      "CHIR-99021",
+      "Chir-99021",
+      "Chir 99021",
+      "LADUVIGLUSIB",
+      "laduviglusib",
+      "Laduviglusib",
+      "6-((2-((4-(2,4-Dichlorophenyl)-5-(4-methyl-1H-imidazol-2-yl)pyrimidin-2-yl)amino)ethyl)amino)nicotinonitrile",
+      "6-[(2-{[4-(2,4-dichlorophenyl)-5-(4-methyl-1H-imidazol-2-yl)pyrimidin-2-yl]amino}ethyl)amino]pyridine-3-carbonitrile"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 703.22754,
+    "clique_identifier_count": 11
+  }
+]

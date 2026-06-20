@@ -1,0 +1,291 @@
+[
+  {
+    "curie": "CHEBI:81351",
+    "label": "Activin A",
+    "highlighting": {},
+    "synonyms": [
+      "Activin A"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 2115.115,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "UMLS:C0100748",
+    "label": "activin A",
+    "highlighting": {},
+    "synonyms": [
+      "EYDF",
+      "Activin A",
+      "activin A",
+      "A-activin",
+      "homo-activin A",
+      "Activin A (substance)",
+      "erythroid differentiation factor"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 2115.115,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "GTOPDB:4857",
+    "label": "activin A",
+    "highlighting": {},
+    "synonyms": [
+      "5006",
+      "activin A"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 1334.489,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "MESH:C422405",
+    "label": "activin A",
+    "highlighting": {},
+    "synonyms": [
+      "activin A"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 1334.489,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "UNII:8JH1HY3MS5",
+    "label": "ACTIVIN A",
+    "highlighting": {},
+    "synonyms": [
+      "ACTIVIN A"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 1334.489,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "NCBIGene:16323",
+    "label": "Inhba",
+    "highlighting": {},
+    "synonyms": [
+      "Inhba",
+      "activin A",
+      "inhibin beta-A",
+      "inhibin beta A chain",
+      "activin beta-A chain",
+      "mINHBA",
+      "activin beta-A chain (mouse)",
+      "inhibin beta A chain (mouse)",
+      "INHBA_MOUSE Inhibin beta A chain (sprot)",
+      "Q3UY39_MOUSE Inhibin beta A chain (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:10090"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 477.59818,
+    "clique_identifier_count": 10
+  },
+  {
+    "curie": "NCBIGene:100038114",
+    "label": "inhba",
+    "highlighting": {},
+    "synonyms": [
+      "edf",
+      "frp",
+      "inhba",
+      "activin A",
+      "inhibin beta A",
+      "inhibin beta A chain",
+      "inhibin subunit beta A",
+      "inhibin, beta A (activin A, activin AB alpha polypeptide)",
+      "F6XFQ8_XENTR Inhibin beta A chain (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:8364"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 380.7937,
+    "clique_identifier_count": 4
+  },
+  {
+    "curie": "NCBIGene:29200",
+    "label": "Inhba",
+    "highlighting": {},
+    "synonyms": [
+      "Inhba",
+      "activin A",
+      "inhibin beta-A",
+      "inhibin beta A chain",
+      "activin beta-A chain",
+      "inhibin beta A subunit",
+      "inhibin subunit beta A",
+      "A6K9B0_RAT Inhibin beta A chain (trembl)",
+      "rINHBA",
+      "inhibin beta A chain (rat)",
+      "activin beta-A chain (rat)",
+      "INHBA_RAT Inhibin beta A chain (sprot)"
+    ],
+    "taxa": [
+      "NCBITaxon:10116"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 375.18054,
+    "clique_identifier_count": 8
+  },
+  {
+    "curie": "GO:0043509",
+    "label": "activin A complex",
+    "highlighting": {},
+    "synonyms": [
+      "inhibin beta-A",
+      "activin A complex",
+      "activin A complex location"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:CellularComponent",
+      "biolink:AnatomicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:OrganismalEntity",
+      "biolink:SubjectOfInvestigation",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 360.84955,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "UniProtKB:A0A8C1KNS6",
+    "label": "A0A8C1KNS6_CYPCA Activin A receptor type 2Ab (trembl)",
+    "highlighting": {},
+    "synonyms": [
+      "A0A8C1KNS6_CYPCA Activin A receptor type 2Ab (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:7962"
+    ],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 356.14,
+    "clique_identifier_count": 3
+  }
+]

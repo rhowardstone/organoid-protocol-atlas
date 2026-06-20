@@ -1,0 +1,268 @@
+[
+  {
+    "curie": "PUBCHEM.COMPOUND:44288444",
+    "label": "GASTRIN",
+    "highlighting": {},
+    "synonyms": [
+      "GASTRIN",
+      "Gastrin",
+      "(4S)-4-amino-5-[2-[(2S)-2-[N-[(2S)-1-[(2S)-1-[(2S)-4-carboxy-1-[(2S)-4-carboxy-1-[(2R)-4-carboxy-1-[(2R)-4-carboxy-1-[(2R)-4-carboxy-1-[(2R)-1-[(2R)-1-[2-[(2R)-1-[(2R)-1-[(2R)-3-carboxy-1-hydroxy-1-[(2R)-1-hydroxy-1-imino-3-phenylpropan-2-yl]iminopropan-2-yl]imino-1-hydroxy-4-methylsulfanylbutan-2-yl]imino-1-hydroxy-3-(1H-indol-3-yl)propan-2-yl]imino-2-hydroxyethyl]imino-1-hydroxy-3-(4-hydroxyphenyl)propan-2-yl]imino-1-hydroxypropan-2-yl]imino-1-hydroxybutan-2-yl]imino-1-hydroxybutan-2-yl]imino-1-hydroxybutan-2-yl]imino-1-hydroxybutan-2-yl]imino-1-hydroxybutan-2-yl]imino-1-hydroxy-4-methylpentan-2-yl]imino-1-hydroxy-3-(1H-indol-3-yl)propan-2-yl]-C-hydroxycarbonimidoyl]pyrrolidin-1-yl]-2-oxoethyl]imino-5-hydroxypentanoic acid"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 3182.847,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "CHEBI:75441",
+    "label": "gastrin-17",
+    "highlighting": {},
+    "synonyms": [
+      "G 17",
+      "Gastrin-17",
+      "gastrin-17",
+      "gastrin 17",
+      "Little gastrin",
+      "Gastrin (human)",
+      "Little gastrin I",
+      "desulfated gastrin-17",
+      "Heptadecapeptide gastrin",
+      "Gastrin heptadecapeptide",
+      "Glp-Gly-Pro-Trp-Leu-Glu-Glu-Glu-Glu-Glu-Ala-Tyr-Gly-Trp-Met-Asp-Phe-NH2",
+      "5-oxo-L-prolylglycyl-L-prolyl-L-tryptophyl-L-leucyl-L-alpha-glutamyl-L-alpha-glutamyl-L-alpha-glutamyl-L-alpha-glutamyl-L-alpha-glutamyl-L-alanyl-L-tyrosylglycyl-L-tryptophyl-L-methionyl-L-alpha-aspartyl-L-phenylalaninamide"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 400.52493,
+    "clique_identifier_count": 10
+  },
+  {
+    "curie": "CHEBI:75451",
+    "label": "gastrin-14",
+    "highlighting": {},
+    "synonyms": [
+      "gastrin-14",
+      "minigastrin",
+      "Minigastrin",
+      "MINIGASTRIN",
+      "22-34-Gastrin",
+      "Gastrin (21-34)",
+      "Gastrin tetradecapeptide",
+      "Trp-Leu-Glu-Glu-Glu-Glu-Glu-Ala-Tyr-Gly-Trp-Met-Asp-Phe",
+      "L-tryptophyl-L-leucyl-L-alpha-glutamyl-L-alpha-glutamyl-L-alpha-glutamyl-L-alpha-glutamyl-L-alpha-glutamyl-L-alanyl-L-tyrosylglycyl-L-tryptophyl-L-methionyl-L-alpha-aspartyl-L-phenylalanine",
+      "(4S)-4-[[(2S)-2-[[(2S)-2-[[(2S)-2-[[(2S)-2-[[(2S)-2-[[(2S)-2-amino-1-hydroxy-3-(1H-indol-3-yl)propylidene]amino]-1-hydroxy-4-methylpentylidene]amino]-4-carboxy-1-hydroxybutylidene]amino]-4-carboxy-1-hydroxybutylidene]amino]-4-carboxy-1-hydroxybutylidene]amino]-4-carboxy-1-hydroxybutylidene]amino]-5-[(2S)-1-[(2S)-1-[2-[(2S)-1-[(2S)-1-[(2S)-3-carboxy-1-hydroxy-1-[(2S)-1-hydroxy-1-imino-3-phenylpropan-2-yl]iminopropan-2-yl]imino-1-hydroxy-4-methylsulfanylbutan-2-yl]imino-1-hydroxy-3-(1H-indol-3-yl)propan-2-yl]imino-2-hydroxyethyl]imino-1-hydroxy-3-(4-hydroxyphenyl)propan-2-yl]imino-1-hydroxypropan-2-yl]imino-5-hydroxypentanoic acid"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 400.52493,
+    "clique_identifier_count": 10
+  },
+  {
+    "curie": "CHEBI:75437",
+    "label": "gastrin-34",
+    "highlighting": {},
+    "synonyms": [
+      "gastrin-34",
+      "Gastrin-34",
+      "Big gastrin",
+      "QLGPQGPPHLVADPSKKQGPWLEEEEEAYGWMAF",
+      "Gln-Leu-Gly-Pro-Gln-Gly-Pro-Pro-His-Leu-Val-Ala-Asp-Pro-Ser-Lys-Lys-Gln-Gly-Pro-Trp-Leu-Glu-Glu-Glu-Glu-Glu-Ala-Tyr-Gly-Trp-Met-Asp-Phe",
+      "L-glutaminyl-L-leucylglycyl-L-prolyl-L-glutaminylglycyl-L-prolyl-L-prolyl-L-histidyl-L-leucyl-L-valyl-L-alanyl-L-alpha-aspartyl-L-prolyl-L-seryl-L-lysyl-L-lysyl-L-glutaminylglycyl-L-prolyl-L-tryptophyl-L-leucyl-L-alpha-glutamyl-L-alpha-glutamyl-L-alpha-glutamyl-L-alpha-glutamyl-L-alpha-glutamyl-L-alanyl-L-tyrosylglycyl-L-tryptophyl-L-methionyl-L-alpha-aspartyl-L-phenylalanine"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 299.28094,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:91898398",
+    "label": "Gastrin I",
+    "highlighting": {},
+    "synonyms": [
+      "Gastrin I",
+      "Gastrin I Rat",
+      "(4S)-4-[[(2S)-2-[[(2S)-2-[[(2S)-2-[[(2S)-2-[[(2S)-2-[[[(2S)-1-[(2S)-1-[(2S)-5-carbamimidamido-2-[[hydroxy-[(2S)-5-hydroxy-3,4-dihydro-2H-pyrrol-2-yl]methylidene]amino]pentanoyl]pyrrolidine-2-carbonyl]pyrrolidin-2-yl]-hydroxymethylidene]amino]-1-hydroxy-4-methylsulfanylbutylidene]amino]-4-carboxy-1-hydroxybutylidene]amino]-4-carboxy-1-hydroxybutylidene]amino]-4-carboxy-1-hydroxybutylidene]amino]-4-carboxy-1-hydroxybutylidene]amino]-5-[(2S)-1-[(2S)-1-[2-[(2S)-1-[(2S)-1-[(2S)-3-carboxy-1-hydroxy-1-[(2S)-1-hydroxy-1-imino-3-phenylpropan-2-yl]iminopropan-2-yl]imino-1-hydroxy-4-methylsulfanylbutan-2-yl]imino-1-hydroxy-3-(1H-indol-3-yl)propan-2-yl]imino-2-hydroxyethyl]imino-1-hydroxy-3-(4-hydroxyphenyl)propan-2-yl]imino-1-hydroxypropan-2-yl]imino-5-hydroxypentanoic acid"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 299.28094,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:189058",
+    "label": "gastrin hexapeptide",
+    "highlighting": {},
+    "synonyms": [
+      "Gastrin hexapeptide",
+      "gastrin hexapeptide"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 268.82742,
+    "clique_identifier_count": 4
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:16132197",
+    "label": "DM-gastrin",
+    "highlighting": {},
+    "synonyms": [
+      "DM-gastrin"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 268.82742,
+    "clique_identifier_count": 4
+  },
+  {
+    "curie": "UNII:3BL184GALN",
+    "label": "big gastrin",
+    "highlighting": {},
+    "synonyms": [
+      "big gastrin",
+      "GASTRIN-34 HUMAN",
+      "Gastrin-34 human"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 268.82742,
+    "clique_identifier_count": 4
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:16137975",
+    "label": "gastrin releasing peptide (14-27)",
+    "highlighting": {},
+    "synonyms": [
+      "Grp(14-27)(human,porcine,canine)",
+      "Gastrin releasing peptide (14-27)",
+      "gastrin releasing peptide (14-27)",
+      "(2S)-2-[[2-[[(2S)-2-[[[(2S)-1-[(2S)-2-[[(2S)-2-amino-1-hydroxy-4-methylsulfanylbutylidene]amino]-3-(4-hydroxyphenyl)propanoyl]pyrrolidin-2-yl]-hydroxymethylidene]amino]-5-carbamimidamido-1-hydroxypentylidene]amino]-1-hydroxyethylidene]amino]-N-[(2S)-1-hydroxy-1-[(2S)-1-hydroxy-1-[(2S)-1-hydroxy-1-[(2S)-1-hydroxy-1-[2-hydroxy-2-[(2S)-1-hydroxy-1-[(2S)-1-hydroxy-1-[(2S)-1-hydroxy-1-imino-4-methylsulfanylbutan-2-yl]imino-4-methylpentan-2-yl]imino-3-(1H-imidazol-5-yl)propan-2-yl]iminoethyl]imino-3-methylbutan-2-yl]iminopropan-2-yl]imino-3-(1H-indol-3-yl)propan-2-yl]imino-3-(1H-imidazol-5-yl)propan-2-yl]butanediimidic acid"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 265.42816,
+    "clique_identifier_count": 6
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:16132151",
+    "label": "gastrin heptadecapeptide, Nle(15)-",
+    "highlighting": {},
+    "synonyms": [
+      "gastrin heptadecapeptide, Nle(15)-",
+      "(4S)-4-[[(2S)-4-carboxy-2-[[(2S)-4-carboxy-2-[[(2S)-4-carboxy-2-[[(2S)-4-carboxy-1-hydroxy-2-[[(2S)-1-hydroxy-2-[[(2S)-1-hydroxy-2-[[hydroxy-[(2S)-1-[2-[[hydroxy-[(2S)-5-hydroxy-3,4-dihydro-2H-pyrrol-2-yl]methylidene]amino]acetyl]pyrrolidin-2-yl]methylidene]amino]-3-(1H-indol-3-yl)propylidene]amino]-4-methylpentylidene]amino]butylidene]amino]-1-hydroxybutylidene]amino]-1-hydroxybutylidene]amino]-1-hydroxybutylidene]amino]-5-[(2S)-1-[(2S)-1-[2-[(2S)-1-[(2S)-1-[(2S)-3-carboxy-1-hydroxy-1-[(2S)-1-hydroxy-1-imino-3-phenylpropan-2-yl]iminopropan-2-yl]imino-1-hydroxyhexan-2-yl]imino-1-hydroxy-3-(1H-indol-3-yl)propan-2-yl]imino-2-hydroxyethyl]imino-1-hydroxy-3-(4-hydroxyphenyl)propan-2-yl]imino-1-hydroxypropan-2-yl]imino-5-hydroxypentanoic acid"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 260.31277,
+    "clique_identifier_count": 5
+  }
+]

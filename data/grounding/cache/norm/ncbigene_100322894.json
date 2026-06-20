@@ -1,0 +1,149 @@
+{
+  "NCBIGene:100322894": {
+    "id": {
+      "identifier": "NCBIGene:100322894",
+      "label": "GDNF"
+    },
+    "equivalent_identifiers": [
+      {
+        "identifier": "NCBIGene:100322894",
+        "label": "GDNF",
+        "taxa": [
+          "NCBITaxon:9823"
+        ]
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCG00000038727"
+      },
+      {
+        "identifier": "RGD:14146028"
+      },
+      {
+        "identifier": "UniProtKB:A0A287AHR3",
+        "label": "A0A287AHR3_PIG Glial cell line-derived neurotrophic factor (trembl)",
+        "taxa": [
+          "NCBITaxon:9823"
+        ]
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00000043401"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00000043401.2"
+      },
+      {
+        "identifier": "UniProtKB:A0A2Z5TSR7",
+        "label": "A0A2Z5TSR7_PIG Glial cell line-derived neurotrophic factor (trembl)",
+        "taxa": [
+          "NCBITaxon:9823"
+        ]
+      },
+      {
+        "identifier": "UniProtKB:A0A4X1T5H8",
+        "label": "A0A4X1T5H8_PIG Glial cell line-derived neurotrophic factor (trembl)",
+        "taxa": [
+          "NCBITaxon:9823"
+        ]
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00015006906"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00015006906.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00025017224"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00025017224.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00030024307"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00030024307.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00035031027"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00035031027.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00040029269"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00040029269.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00045005331"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00045005331.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00050026044"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00050026044.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00055018777"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00055018777.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00060001278"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00060001278.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00065018670"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00065018670.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00070011133"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00070011133.1"
+      },
+      {
+        "identifier": "UniProtKB:A0A8W4F937",
+        "label": "A0A8W4F937_PIG Glial cell line-derived neurotrophic factor (trembl)",
+        "taxa": [
+          "NCBITaxon:9823"
+        ]
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00000075340"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00000075340.1"
+      }
+    ],
+    "taxa": [
+      "NCBITaxon:9823"
+    ],
+    "type": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ]
+  }
+}

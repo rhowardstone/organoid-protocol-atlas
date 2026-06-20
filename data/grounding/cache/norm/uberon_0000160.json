@@ -1,0 +1,42 @@
+{
+  "UBERON:0000160": {
+    "id": {
+      "identifier": "UBERON:0000160",
+      "label": "intestine"
+    },
+    "equivalent_identifiers": [
+      {
+        "identifier": "UBERON:0000160",
+        "label": "intestine"
+      },
+      {
+        "identifier": "UMLS:C0021853",
+        "label": "Intestines"
+      },
+      {
+        "identifier": "MESH:D007422",
+        "label": "Intestines"
+      },
+      {
+        "identifier": "NCIT:C12736",
+        "label": "Intestine"
+      },
+      {
+        "identifier": "NCIT:C25266",
+        "label": "Intestinal"
+      }
+    ],
+    "type": [
+      "biolink:GrossAnatomicalStructure",
+      "biolink:AnatomicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:OrganismalEntity",
+      "biolink:SubjectOfInvestigation",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "information_content": 51.3
+  }
+}

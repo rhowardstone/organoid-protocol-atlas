@@ -1,0 +1,30 @@
+{
+  "MESH:C517523": {
+    "id": {
+      "identifier": "UMLS:C1870665",
+      "label": "R-spondin3 protein, mouse"
+    },
+    "equivalent_identifiers": [
+      {
+        "identifier": "UMLS:C1870665",
+        "label": "R-spondin3 protein, mouse"
+      },
+      {
+        "identifier": "MESH:C517523",
+        "label": "R-spondin3 protein, mouse"
+      }
+    ],
+    "type": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ]
+  }
+}

@@ -1,0 +1,266 @@
+[
+  {
+    "curie": "CHEBI:75728",
+    "label": "SAG",
+    "highlighting": {},
+    "synonyms": [
+      "SAG",
+      "DG(38:4)",
+      "DAG(38:4)",
+      "Diglyceride",
+      "DG(18:0/20:4)",
+      "Diacylglycerol",
+      "DAG(18:0/20:4)",
+      "DG(18:0/20:4N6)",
+      "DG(18:0/20:4W6)",
+      "DAG(18:0/20:4N6)",
+      "DAG(18:0/20:4W6)",
+      "DG(18:0/20:4OMEGA6)",
+      "DG(18:0/20:4omega6)",
+      "Diacylglycerol(38:4)",
+      "DAG(18:0/20:4OMEGA6)",
+      "DAG(18:0/20:4omega6)",
+      "DG(18:0/20:4/0:0)[iso2]",
+      "Diacylglycerol(18:0/20:4)",
+      "DG(18:0/20:4(omega-6)/0:0)",
+      "DG(18:0/20:4(OMEGA-6)/0:0)",
+      "Diacylglycerol(18:0/20:4n6)",
+      "Diacylglycerol(18:0/20:4W6)",
+      "Diacylglycerol(18:0/20:4omega6)",
+      "DG(18:0/20:4(5Z,8Z,11Z,14Z)/0:0)",
+      "1-stearoyl-2-arachidonoylglycerol",
+      "1-Stearoyl-2-arachidonoylglycerol",
+      "1-stearoyl-2-arachidonoyl-sn-glycerol",
+      "1-Stearoyl-2-arachidonoyl-SN-glycerol",
+      "1-Stearoyl-2-arachidonoyl-sn-glycerol",
+      "DG(18:0/20:4(5Z,8Z,11Z,14Z)/0:0)[iso2]",
+      "1-octadecanoyl-2-(5Z,8Z,11Z,14Z-eicosatetraenoyl)-sn-glycerol",
+      "1-Octadecanoyl-2-(5Z,8Z,11Z,14Z-eicosatetraenoyl)-sn-glycerol",
+      "(2S)-1-hydroxy-3-(stearoyloxy)propan-2-yl (5Z,8Z,11Z,14Z)-icosa-5,8,11,14-tetraenoate",
+      "(2S)-1-Hydroxy-3-(stearoyloxy)propan-2-yl (5Z,8Z,11Z,14Z)-icosa-5,8,11,14-tetraenoate",
+      "(2S)-1-hydroxy-3-(octadecanoyloxy)propan-2-yl (5Z,8Z,11Z,14Z)-icosa-5,8,11,14-tetraenoate",
+      "(2S)-1-Hydroxy-3-(stearoyloxy)propan-2-yl (5Z,8Z,11Z,14Z)-icosa-5,8,11,14-tetraenoic acid"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 2980.5334,
+    "clique_identifier_count": 8
+  },
+  {
+    "curie": "UNII:4XN97SZK4J",
+    "label": "SAG",
+    "highlighting": {},
+    "synonyms": [
+      "SAG"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 940.2536,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "CHEBI:138438",
+    "label": "3-chloro-N-[trans-4-(methylamino)cyclohexyl]-N-[3-(pyridin-4-yl)benzyl]-1-benzothiophene-2-carboxamide",
+    "highlighting": {},
+    "synonyms": [
+      "SAG",
+      "SG8",
+      "smoothened agonist",
+      "3-chloro-N-[trans-4-(methylamino)cyclohexyl]-N-[3-(pyridin-4-yl)benzyl]-1-benzothiophene-2-carboxamide",
+      "3-chloro-N-[trans-4-(methylamino)cyclohexyl]-N-[[3-(4-pyridinyl)phenyl]methyl]benzo[b]thiophene-2-carboxamide"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 328.35126,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "CHEBI:232702",
+    "label": "SAG hydrochloride",
+    "highlighting": {},
+    "synonyms": [
+      "SAG hydrochloride",
+      "Smoothened agonist hydrochloride"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:MolecularMixture",
+      "biolink:ChemicalMixture",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 304.3758,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:154884292",
+    "label": "SAG dihydrochloride",
+    "highlighting": {},
+    "synonyms": [
+      "SAG dihydrochloride"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:MolecularMixture",
+      "biolink:ChemicalMixture",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 235.49727,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:71451507",
+    "label": "SAG Analog (LowTox)",
+    "highlighting": {},
+    "synonyms": [
+      "SAG Analog (LowTox)"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 219.09804,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:44543753",
+    "label": "SAG (Racemate)",
+    "highlighting": {},
+    "synonyms": [
+      "SAG (Racemate)"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:MolecularMixture",
+      "biolink:ChemicalMixture",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 186.62717,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "MESH:C468918",
+    "label": "SAG compound",
+    "highlighting": {},
+    "synonyms": [
+      "SAG 1.1",
+      "SAG compound",
+      "Smoothened Agonist (SAG)"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 186.62717,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "UMLS:C0629072",
+    "label": "4-SAG",
+    "highlighting": {},
+    "synonyms": [
+      "4-SAG"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 117.748634,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "MESH:C479876",
+    "label": "SAG protein, rat",
+    "highlighting": {},
+    "synonyms": [
+      "SAG protein, rat"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 109.54902,
+    "clique_identifier_count": 1
+  }
+]

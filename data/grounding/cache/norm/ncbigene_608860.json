@@ -1,0 +1,81 @@
+{
+  "NCBIGene:608860": {
+    "id": {
+      "identifier": "NCBIGene:608860",
+      "label": "SHH"
+    },
+    "equivalent_identifiers": [
+      {
+        "identifier": "NCBIGene:608860",
+        "label": "SHH",
+        "taxa": [
+          "NCBITaxon:9615"
+        ]
+      },
+      {
+        "identifier": "ENSEMBL:ENSCAFG00845013237"
+      },
+      {
+        "identifier": "RGD:12429705"
+      },
+      {
+        "identifier": "UniProtKB:A0A8C0NU16",
+        "label": "A0A8C0NU16_CANLF Hedgehog protein (trembl)",
+        "taxa": [
+          "NCBITaxon:9615"
+        ]
+      },
+      {
+        "identifier": "ENSEMBL:ENSCAFP00000038369"
+      },
+      {
+        "identifier": "ENSEMBL:ENSCAFP00000038369.3"
+      },
+      {
+        "identifier": "ENSEMBL:ENSCAFP00030029471"
+      },
+      {
+        "identifier": "ENSEMBL:ENSCAFP00030029471.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSCAFP00040018891"
+      },
+      {
+        "identifier": "ENSEMBL:ENSCAFP00040018891.1"
+      },
+      {
+        "identifier": "UniProtKB:A0A8I3NQ51",
+        "label": "A0A8I3NQ51_CANLF Hedgehog protein (trembl)",
+        "taxa": [
+          "NCBITaxon:9615"
+        ]
+      },
+      {
+        "identifier": "ENSEMBL:ENSCAFP00845018508"
+      },
+      {
+        "identifier": "ENSEMBL:ENSCAFP00845018508.1"
+      }
+    ],
+    "taxa": [
+      "NCBITaxon:9615"
+    ],
+    "type": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ]
+  }
+}

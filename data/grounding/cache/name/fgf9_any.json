@@ -1,0 +1,402 @@
+[
+  {
+    "curie": "NCBIGene:396717",
+    "label": "FGF9",
+    "highlighting": {},
+    "synonyms": [
+      "GAF",
+      "FGF9",
+      "FGF-9",
+      "HBGF-9",
+      "glia-activating factor",
+      "fibroblast growth factor 9",
+      "FGF9_PIG Fibroblast growth factor 9 (sprot)"
+    ],
+    "taxa": [
+      "NCBITaxon:9823"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 4607.658,
+    "clique_identifier_count": 31
+  },
+  {
+    "curie": "NCBIGene:14180",
+    "label": "Fgf9",
+    "highlighting": {},
+    "synonyms": [
+      "Eks",
+      "GAF",
+      "Fgf9",
+      "FGF-9",
+      "Fgf4b",
+      "HBGF-9",
+      "elbow knee synostosis",
+      "glia-activating factor",
+      "fibroblast growth factor 9",
+      "fibroblast growth factor 4b",
+      "A0A7U3L5J2_MOUSE Fibroblast growth factor (trembl)",
+      "E9Q2N2_MOUSE Fibroblast growth factor (trembl)",
+      "mFGF9",
+      "Fgf-9",
+      "GAF (mouse)",
+      "FGF-9 (mouse)",
+      "HBGF-9 (mouse)",
+      "glia-activating factor (mouse)",
+      "fibroblast growth factor 9 (mouse)",
+      "FGF9_MOUSE Fibroblast growth factor 9 (sprot)"
+    ],
+    "taxa": [
+      "NCBITaxon:10090"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 3508.598,
+    "clique_identifier_count": 13
+  },
+  {
+    "curie": "NCBIGene:477340",
+    "label": "FGF9",
+    "highlighting": {},
+    "synonyms": [
+      "FGF9",
+      "fibroblast growth factor 9",
+      "fibroblast growth factor 9 (glia-activating factor)",
+      "A0A8C0TNC4_CANLF Fibroblast growth factor (trembl)",
+      "J9P0B3_CANLF Fibroblast growth factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9615"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 3508.598,
+    "clique_identifier_count": 13
+  },
+  {
+    "curie": "NCBIGene:2254",
+    "label": "FGF9",
+    "highlighting": {},
+    "synonyms": [
+      "GAF",
+      "FGF9",
+      "FGF-9",
+      "SYNS3",
+      "HBFG-9",
+      "HBGF-9",
+      "FGF9 Gene",
+      "FGF9 gene",
+      "glia-activating factor",
+      "GLIA-ACTIVATING FACTOR",
+      "FIBROBLAST GROWTH FACTOR 9",
+      "fibroblast growth factor 9",
+      "Fibroblast Growth Factor 9 Gene",
+      "heparin-binding growth factor 9",
+      "fibroblast growth factor 9 (glia-activating factor)",
+      "hFGF9",
+      "GAF (human)",
+      "FGF-9 (human)",
+      "HBGF-9 (human)",
+      "FGF9 protein, human",
+      "FGF-9 protein, human",
+      "Glia-Activating Factor",
+      "Fibroblast Growth Factor 9",
+      "glia-activating factor, human",
+      "glia-activating factor (human)",
+      "Heparin-Binding Growth Factor 9",
+      "fibroblast growth factor 9, human",
+      "fibroblast growth factor 9 (human)",
+      "heparin-binding growth factor 9 (human)",
+      "FGF9_HUMAN Fibroblast growth factor 9 (sprot)"
+    ],
+    "taxa": [
+      "NCBITaxon:9606"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 3303.6562,
+    "clique_identifier_count": 11
+  },
+  {
+    "curie": "NCBIGene:25444",
+    "label": "Fgf9",
+    "highlighting": {},
+    "synonyms": [
+      "GAF",
+      "Fgf9",
+      "FGF-9",
+      "Fgf4b",
+      "HBGF-9",
+      "glia-activating factor",
+      "fibroblast growth factor 9",
+      "fibroblast growth factor 4b",
+      "A0A7U3JW62_RAT Fibroblast growth factor (trembl)",
+      "rFGF9",
+      "Fgf-9",
+      "GAF (rat)",
+      "FGF-9 (rat)",
+      "HBGF-9 (rat)",
+      "glia-activating factor (rat)",
+      "fibroblast growth factor 9 (rat)",
+      "FGF9_RAT Fibroblast growth factor 9 (sprot)"
+    ],
+    "taxa": [
+      "NCBITaxon:10116"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2921.186,
+    "clique_identifier_count": 8
+  },
+  {
+    "curie": "NCBIGene:102523878",
+    "label": "FGF9",
+    "highlighting": {},
+    "synonyms": [
+      "FGF9",
+      "fibroblast growth factor 9",
+      "A0A8B6Y7Y5_CAMFR Fibroblast growth factor (trembl)",
+      "A0A8B8UCN4_CAMFR Fibroblast growth factor (trembl)",
+      "A0A8B8UCN7_CAMFR Fibroblast growth factor (trembl)",
+      "A0A8B8UDD9_CAMFR Fibroblast growth factor (trembl)",
+      "A0A8B8UDG8_CAMFR Fibroblast growth factor (trembl)",
+      "A0A8B8UDZ6_CAMFR Fibroblast growth factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:419612"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2921.186,
+    "clique_identifier_count": 8
+  },
+  {
+    "curie": "NCBIGene:115289647",
+    "label": "FGF9",
+    "highlighting": {},
+    "synonyms": [
+      "FGF9",
+      "fibroblast growth factor 9",
+      "A0A673SNL3_SURSU Fibroblast growth factor (trembl)",
+      "A0A673T017_SURSU Fibroblast growth factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:37032"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2921.186,
+    "clique_identifier_count": 8
+  },
+  {
+    "curie": "NCBIGene:103727190",
+    "label": "Fgf9",
+    "highlighting": {},
+    "synonyms": [
+      "Fgf9",
+      "fibroblast growth factor 9",
+      "A0A8C6R4X2_NANGA Fibroblast growth factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:1026970"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2764.5947,
+    "clique_identifier_count": 7
+  },
+  {
+    "curie": "NCBIGene:105878875",
+    "label": "FGF9",
+    "highlighting": {},
+    "synonyms": [
+      "FGF9",
+      "fibroblast growth factor 9",
+      "A0A8C5W6A3_MICMU Fibroblast growth factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:30608"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2764.5947,
+    "clique_identifier_count": 7
+  },
+  {
+    "curie": "NCBIGene:113902389",
+    "label": "FGF9",
+    "highlighting": {},
+    "synonyms": [
+      "FGF9",
+      "fibroblast growth factor 9",
+      "A0A4W2F938_BOBOX Fibroblast growth factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:30522"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2764.5947,
+    "clique_identifier_count": 7
+  }
+]

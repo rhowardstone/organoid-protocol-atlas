@@ -1,0 +1,64 @@
+{
+  "CHEBI:78510": {
+    "id": {
+      "identifier": "CHEBI:78510",
+      "label": "Dorsomorphin"
+    },
+    "equivalent_identifiers": [
+      {
+        "identifier": "CHEBI:78510",
+        "label": "dorsomorphin"
+      },
+      {
+        "identifier": "UNII:10K52CIC1Z",
+        "label": "DORSOMORPHIN"
+      },
+      {
+        "identifier": "PUBCHEM.COMPOUND:11524144",
+        "label": "Dorsomorphin"
+      },
+      {
+        "identifier": "CHEMBL.COMPOUND:CHEMBL478629",
+        "label": "DORSOMORPHIN"
+      },
+      {
+        "identifier": "DRUGBANK:DB08597",
+        "label": "Dorsomorphin"
+      },
+      {
+        "identifier": "MESH:C516138",
+        "label": "dorsomorphin"
+      },
+      {
+        "identifier": "CAS:866405-64-3"
+      },
+      {
+        "identifier": "GTOPDB:4907",
+        "label": "dorsomorphin"
+      },
+      {
+        "identifier": "HMDB:HMDB0251590",
+        "label": "Dorsomorphin"
+      },
+      {
+        "identifier": "INCHIKEY:XHBVYDAKJHETMP-UHFFFAOYSA-N"
+      },
+      {
+        "identifier": "UMLS:C1871460",
+        "label": "dorsomorphin"
+      }
+    ],
+    "type": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "information_content": 100.0
+  }
+}

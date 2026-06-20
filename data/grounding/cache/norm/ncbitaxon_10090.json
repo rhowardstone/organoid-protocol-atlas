@@ -1,0 +1,19 @@
+{
+  "NCBITaxon:10090": {
+    "id": {
+      "identifier": "NCBITaxon:10090",
+      "label": "Mus musculus (house mouse)"
+    },
+    "equivalent_identifiers": [
+      {
+        "identifier": "NCBITaxon:10090",
+        "label": "Mus musculus (house mouse)"
+      }
+    ],
+    "type": [
+      "biolink:OrganismTaxon",
+      "biolink:NamedThing"
+    ],
+    "information_content": 29.3
+  }
+}

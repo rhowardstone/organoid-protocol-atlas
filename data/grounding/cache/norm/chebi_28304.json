@@ -1,0 +1,587 @@
+{
+  "CHEBI:28304": {
+    "id": {
+      "identifier": "CHEBI:28304",
+      "label": "Heparin"
+    },
+    "equivalent_identifiers": [
+      {
+        "identifier": "CHEBI:28304",
+        "label": "heparin"
+      },
+      {
+        "identifier": "UNII:T2410KM04A",
+        "label": "HEPARIN"
+      },
+      {
+        "identifier": "PUBCHEM.COMPOUND:22833565",
+        "label": "HepFlush"
+      },
+      {
+        "identifier": "CHEMBL.COMPOUND:CHEMBL1201513",
+        "label": "HEPARIN CALCIUM"
+      },
+      {
+        "identifier": "CHEMBL.COMPOUND:CHEMBL1201657",
+        "label": "HEPARIN SODIUM"
+      },
+      {
+        "identifier": "CHEMBL.COMPOUND:CHEMBL1909300"
+      },
+      {
+        "identifier": "CHEMBL.COMPOUND:CHEMBL4650299",
+        "label": "HEPARIN"
+      },
+      {
+        "identifier": "CHEMBL.COMPOUND:CHEMBL526514",
+        "label": "SODIUM HEPARIN"
+      },
+      {
+        "identifier": "DRUGBANK:DB01109",
+        "label": "Heparin"
+      },
+      {
+        "identifier": "MESH:D006493",
+        "label": "Heparin"
+      },
+      {
+        "identifier": "CAS:9005-49-6"
+      },
+      {
+        "identifier": "DrugCentral:1358",
+        "label": "heparin"
+      },
+      {
+        "identifier": "GTOPDB:4214",
+        "label": "heparin"
+      },
+      {
+        "identifier": "INCHIKEY:ZFGMDIBRIDKWMY-PASTXAENSA-N"
+      },
+      {
+        "identifier": "UMLS:C0019134",
+        "label": "heparin"
+      },
+      {
+        "identifier": "RXCUI:5224"
+      },
+      {
+        "identifier": "MESH:C006871",
+        "label": "calcium heparin"
+      },
+      {
+        "identifier": "CAS:37270-89-6"
+      },
+      {
+        "identifier": "UMLS:C0054452",
+        "label": "heparin calcium"
+      },
+      {
+        "identifier": "RXCUI:20044"
+      },
+      {
+        "identifier": "DRUGBANK:DB15404",
+        "label": "Heparin, bovine"
+      },
+      {
+        "identifier": "UMLS:C0771246",
+        "label": "heparin, bovine"
+      },
+      {
+        "identifier": "RXCUI:1856273"
+      },
+      {
+        "identifier": "UMLS:C1445698",
+        "label": "heparin sodium, bovine"
+      },
+      {
+        "identifier": "RXCUI:236025"
+      },
+      {
+        "identifier": "UMLS:C0770546",
+        "label": "heparin, porcine"
+      },
+      {
+        "identifier": "RXCUI:235473"
+      },
+      {
+        "identifier": "UMLS:C0982192",
+        "label": "heparin sodium, porcine"
+      },
+      {
+        "identifier": "RXCUI:314659"
+      },
+      {
+        "identifier": "UMLS:C0037513",
+        "label": "heparin sodium"
+      },
+      {
+        "identifier": "RXCUI:9877"
+      },
+      {
+        "identifier": "RXCUI:849698"
+      },
+      {
+        "identifier": "UMLS:C2700648",
+        "label": "heparin calcium 25000 UNT/ML"
+      },
+      {
+        "identifier": "RXCUI:849760"
+      },
+      {
+        "identifier": "UMLS:C0689042",
+        "label": "heparin calcium 25000 UNT/ML Injectable Solution"
+      },
+      {
+        "identifier": "RXCUI:1361026"
+      },
+      {
+        "identifier": "UMLS:C2684111",
+        "label": "heparin sodium, porcine 10 UNT/ML"
+      },
+      {
+        "identifier": "RXCUI:1361029"
+      },
+      {
+        "identifier": "UMLS:C0977415",
+        "label": "heparin sodium, porcine 10 UNT/ML Injectable Solution"
+      },
+      {
+        "identifier": "RXCUI:1361047"
+      },
+      {
+        "identifier": "UMLS:C2684109",
+        "label": "heparin sodium, porcine 100 UNT/ML"
+      },
+      {
+        "identifier": "RXCUI:1361048"
+      },
+      {
+        "identifier": "UMLS:C0977402",
+        "label": "heparin sodium, porcine 100 UNT/ML Injectable Solution"
+      },
+      {
+        "identifier": "RXCUI:1361225"
+      },
+      {
+        "identifier": "UMLS:C3527813",
+        "label": "heparin sodium, porcine 1000 UNT/ML"
+      },
+      {
+        "identifier": "RXCUI:1361226"
+      },
+      {
+        "identifier": "UMLS:C0977396",
+        "label": "heparin sodium, porcine 1000 UNT/ML Injectable Solution"
+      },
+      {
+        "identifier": "RXCUI:1361567"
+      },
+      {
+        "identifier": "UMLS:C2684669",
+        "label": "heparin sodium, porcine 2000 UNT/ML"
+      },
+      {
+        "identifier": "RXCUI:1361568"
+      },
+      {
+        "identifier": "UMLS:C0977429",
+        "label": "5 ML heparin sodium, porcine 2000 UNT/ML Injection"
+      },
+      {
+        "identifier": "RXCUI:1361573"
+      },
+      {
+        "identifier": "UMLS:C2684671",
+        "label": "heparin sodium, porcine 20000 UNT/ML"
+      },
+      {
+        "identifier": "RXCUI:1361574"
+      },
+      {
+        "identifier": "UMLS:C0977428",
+        "label": "heparin sodium, porcine 20000 UNT/ML Injectable Solution"
+      },
+      {
+        "identifier": "RXCUI:1361576"
+      },
+      {
+        "identifier": "UMLS:C2684673",
+        "label": "heparin sodium, porcine 2500 UNT/ML"
+      },
+      {
+        "identifier": "RXCUI:1361577"
+      },
+      {
+        "identifier": "UMLS:C0977430",
+        "label": "10 ML heparin sodium, porcine 2500 UNT/ML Injection"
+      },
+      {
+        "identifier": "RXCUI:1361606"
+      },
+      {
+        "identifier": "UMLS:C2684697",
+        "label": "heparin sodium, porcine 40 UNT/ML"
+      },
+      {
+        "identifier": "RXCUI:1361607"
+      },
+      {
+        "identifier": "UMLS:C0977437",
+        "label": "500 ML heparin sodium, porcine 40 UNT/ML Injection"
+      },
+      {
+        "identifier": "RXCUI:1361612"
+      },
+      {
+        "identifier": "UMLS:C3528040",
+        "label": "heparin sodium, porcine 50 UNT/ML"
+      },
+      {
+        "identifier": "RXCUI:1361614"
+      },
+      {
+        "identifier": "UMLS:C2684704",
+        "label": "heparin sodium, porcine 5000 UNT/ML"
+      },
+      {
+        "identifier": "RXCUI:1361615"
+      },
+      {
+        "identifier": "UMLS:C0977439",
+        "label": "heparin sodium, porcine 5000 UNT/ML Injectable Solution"
+      },
+      {
+        "identifier": "RXCUI:1361852"
+      },
+      {
+        "identifier": "UMLS:C3528170",
+        "label": "heparin sodium, porcine 10000 UNT/ML"
+      },
+      {
+        "identifier": "RXCUI:1361853"
+      },
+      {
+        "identifier": "UMLS:C2586674",
+        "label": "0.5 ML heparin sodium, porcine 10000 UNT/ML Cartridge"
+      },
+      {
+        "identifier": "RXCUI:1362023"
+      },
+      {
+        "identifier": "UMLS:C2684436",
+        "label": "heparin sodium, porcine 1 UNT/ML"
+      },
+      {
+        "identifier": "RXCUI:1362060"
+      },
+      {
+        "identifier": "UMLS:C2684448",
+        "label": "2 ML heparin sodium, porcine 100 UNT/ML Prefilled Syringe"
+      },
+      {
+        "identifier": "RXCUI:1362062"
+      },
+      {
+        "identifier": "UMLS:C0977398",
+        "label": "3 ML heparin sodium, porcine 100 UNT/ML Prefilled Syringe"
+      },
+      {
+        "identifier": "RXCUI:1362064"
+      },
+      {
+        "identifier": "UMLS:C2684450",
+        "label": "heparin sodium, porcine 2 UNT/ML"
+      },
+      {
+        "identifier": "RXCUI:1362067"
+      },
+      {
+        "identifier": "UMLS:C3499909",
+        "label": "3 ML heparin sodium, porcine 2000 UNT/ML Prefilled Syringe"
+      },
+      {
+        "identifier": "RXCUI:1362831"
+      },
+      {
+        "identifier": "UMLS:C2586911",
+        "label": "heparin sodium, porcine 10000 UNT/ML Injectable Solution"
+      },
+      {
+        "identifier": "RXCUI:1362935"
+      },
+      {
+        "identifier": "UMLS:C0702812",
+        "label": "heparin sodium, porcine 2 UNT/ML Injectable Solution"
+      },
+      {
+        "identifier": "RXCUI:1658634"
+      },
+      {
+        "identifier": "UMLS:C3888374",
+        "label": "0.5 ML heparin sodium, porcine 10000 UNT/ML Injection"
+      },
+      {
+        "identifier": "RXCUI:1658637"
+      },
+      {
+        "identifier": "UMLS:C3888375",
+        "label": "1 ML heparin sodium, porcine 10000 UNT/ML Injection"
+      },
+      {
+        "identifier": "RXCUI:1658647"
+      },
+      {
+        "identifier": "UMLS:C3888371",
+        "label": "2 ML heparin sodium, porcine 1000 UNT/ML Injection"
+      },
+      {
+        "identifier": "RXCUI:1658659"
+      },
+      {
+        "identifier": "UMLS:C3888372",
+        "label": "1 ML heparin sodium, porcine 1000 UNT/ML Injection"
+      },
+      {
+        "identifier": "RXCUI:1658690"
+      },
+      {
+        "identifier": "UMLS:C3887738",
+        "label": "1000 ML heparin sodium, porcine 2 UNT/ML Injection"
+      },
+      {
+        "identifier": "RXCUI:1658692"
+      },
+      {
+        "identifier": "UMLS:C3887737",
+        "label": "500 ML heparin sodium, porcine 2 UNT/ML Injection"
+      },
+      {
+        "identifier": "RXCUI:1658717"
+      },
+      {
+        "identifier": "UMLS:C3888358",
+        "label": "250 ML heparin sodium, porcine 100 UNT/ML Injection"
+      },
+      {
+        "identifier": "RXCUI:1659195"
+      },
+      {
+        "identifier": "UMLS:C3887732",
+        "label": "500 ML heparin sodium, porcine 50 UNT/ML Injection"
+      },
+      {
+        "identifier": "RXCUI:1659197"
+      },
+      {
+        "identifier": "UMLS:C3887735",
+        "label": "250 ML heparin sodium, porcine 50 UNT/ML Injection"
+      },
+      {
+        "identifier": "RXCUI:1659260"
+      },
+      {
+        "identifier": "UMLS:C3888232",
+        "label": "1 ML heparin sodium, porcine 5000 UNT/ML Cartridge"
+      },
+      {
+        "identifier": "RXCUI:1659263"
+      },
+      {
+        "identifier": "UMLS:C3888231",
+        "label": "1 ML heparin sodium, porcine 5000 UNT/ML Injection"
+      },
+      {
+        "identifier": "RXCUI:1798389"
+      },
+      {
+        "identifier": "UMLS:C4255057",
+        "label": "1 ML heparin sodium, porcine 5000 UNT/ML Prefilled Syringe"
+      },
+      {
+        "identifier": "RXCUI:1856274"
+      },
+      {
+        "identifier": "UMLS:C4293620",
+        "label": "heparin Injectable Product"
+      },
+      {
+        "identifier": "RXCUI:1856275"
+      },
+      {
+        "identifier": "UMLS:C4293599",
+        "label": "heparin Injectable Solution"
+      },
+      {
+        "identifier": "RXCUI:1856278"
+      },
+      {
+        "identifier": "UMLS:C4293598",
+        "label": "heparin Prefilled Syringe"
+      },
+      {
+        "identifier": "RXCUI:1857598"
+      },
+      {
+        "identifier": "UMLS:C4293585",
+        "label": "heparin Injection"
+      },
+      {
+        "identifier": "RXCUI:1857949"
+      },
+      {
+        "identifier": "UMLS:C4293581",
+        "label": "heparin Cartridge"
+      },
+      {
+        "identifier": "RXCUI:2121591"
+      },
+      {
+        "identifier": "UMLS:C4765067",
+        "label": "0.5 ML heparin sodium, porcine 10000 UNT/ML Prefilled Syringe"
+      },
+      {
+        "identifier": "RXCUI:2645345"
+      },
+      {
+        "identifier": "UMLS:C5834557",
+        "label": "heparin sodium, porcine Injection"
+      },
+      {
+        "identifier": "RXCUI:2647068"
+      },
+      {
+        "identifier": "UMLS:C5835957",
+        "label": "heparin sodium, porcine Cartridge"
+      },
+      {
+        "identifier": "RXCUI:2647069"
+      },
+      {
+        "identifier": "UMLS:C5835958",
+        "label": "heparin calcium Prefilled Syringe"
+      },
+      {
+        "identifier": "RXCUI:2647601"
+      },
+      {
+        "identifier": "UMLS:C5836393",
+        "label": "heparin sodium, bovine Injectable Solution"
+      },
+      {
+        "identifier": "RXCUI:2647602"
+      },
+      {
+        "identifier": "UMLS:C5836394",
+        "label": "heparin calcium Injectable Solution"
+      },
+      {
+        "identifier": "RXCUI:2648594"
+      },
+      {
+        "identifier": "UMLS:C5837232",
+        "label": "heparin sodium, porcine Injectable Solution"
+      },
+      {
+        "identifier": "RXCUI:2649102"
+      },
+      {
+        "identifier": "UMLS:C5837650",
+        "label": "heparin sodium, porcine Prefilled Syringe"
+      },
+      {
+        "identifier": "RXCUI:2654548"
+      },
+      {
+        "identifier": "UMLS:C5838414",
+        "label": "heparin sodium, porcine Injectable Solution [Hep-Pak]"
+      },
+      {
+        "identifier": "RXCUI:2660769"
+      },
+      {
+        "identifier": "UMLS:C5844576",
+        "label": "heparin calcium Injectable Product"
+      },
+      {
+        "identifier": "RXCUI:2660794"
+      },
+      {
+        "identifier": "UMLS:C5844601",
+        "label": "heparin sodium, bovine Injectable Product"
+      },
+      {
+        "identifier": "RXCUI:2663055"
+      },
+      {
+        "identifier": "UMLS:C5846859",
+        "label": "heparin sodium, porcine Injectable Product"
+      },
+      {
+        "identifier": "RXCUI:2670458"
+      },
+      {
+        "identifier": "UMLS:C5874526",
+        "label": "heparin / taurolidine Injection"
+      },
+      {
+        "identifier": "RXCUI:2670460"
+      },
+      {
+        "identifier": "UMLS:C5874541",
+        "label": "heparin sodium, porcine / taurolidine Injection"
+      },
+      {
+        "identifier": "RXCUI:2670463"
+      },
+      {
+        "identifier": "UMLS:C5874367",
+        "label": "Defencath"
+      },
+      {
+        "identifier": "RXCUI:2670464"
+      },
+      {
+        "identifier": "UMLS:C5874417",
+        "label": "heparin sodium, porcine 1000 UNT/ML / taurolidine 13.5 MG/ML [Defencath]"
+      },
+      {
+        "identifier": "RXCUI:2670465"
+      },
+      {
+        "identifier": "UMLS:C5874469",
+        "label": "Defencath Injectable Product"
+      },
+      {
+        "identifier": "RXCUI:2670466"
+      },
+      {
+        "identifier": "UMLS:C5874441",
+        "label": "heparin / taurolidine Injection [Defencath]"
+      },
+      {
+        "identifier": "RXCUI:2670467"
+      },
+      {
+        "identifier": "UMLS:C5874459",
+        "label": "heparin sodium, porcine / taurolidine Injection [Defencath]"
+      }
+    ],
+    "type": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:Drug",
+      "biolink:OntologyClass",
+      "biolink:MolecularMixture",
+      "biolink:ChemicalMixture"
+    ],
+    "information_content": 86.3
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "CHEBI:63053": {
+    "id": {
+      "identifier": "CHEBI:63053",
+      "label": "purmorphamine"
+    },
+    "equivalent_identifiers": [
+      {
+        "identifier": "CHEBI:63053",
+        "label": "purmorphamine"
+      },
+      {
+        "identifier": "UNII:PB12M2F8KY",
+        "label": "PURMORPHAMINE"
+      },
+      {
+        "identifier": "PUBCHEM.COMPOUND:5284329",
+        "label": "Purmorphamine"
+      },
+      {
+        "identifier": "CHEMBL.COMPOUND:CHEMBL1221984",
+        "label": "PURMORPHAMINE"
+      },
+      {
+        "identifier": "MESH:C470893",
+        "label": "purmorphamine"
+      },
+      {
+        "identifier": "CAS:483367-10-8"
+      },
+      {
+        "identifier": "GTOPDB:10356",
+        "label": "purmorphamine"
+      },
+      {
+        "identifier": "INCHIKEY:FYBHCRQFSFYWPY-UHFFFAOYSA-N"
+      },
+      {
+        "identifier": "UMLS:C1173968",
+        "label": "purmorphamine"
+      }
+    ],
+    "type": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "information_content": 100.0
+  }
+}

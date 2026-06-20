@@ -1,0 +1,41 @@
+{
+  "CL:0002322": {
+    "id": {
+      "identifier": "CL:0002322",
+      "label": "embryonic stem cell"
+    },
+    "equivalent_identifiers": [
+      {
+        "identifier": "CL:0002322",
+        "label": "embryonic stem cell"
+      },
+      {
+        "identifier": "UMLS:C0596508",
+        "label": "Embryonic Stem Cells"
+      },
+      {
+        "identifier": "NCIT:C12935",
+        "label": "Embryonic Stem Cell"
+      },
+      {
+        "identifier": "MESH:D053595",
+        "label": "Embryonic Stem Cells"
+      },
+      {
+        "identifier": "SNOMEDCT:419965008"
+      }
+    ],
+    "type": [
+      "biolink:Cell",
+      "biolink:AnatomicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:OrganismalEntity",
+      "biolink:SubjectOfInvestigation",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "information_content": 95.4
+  }
+}

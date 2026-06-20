@@ -1,0 +1,173 @@
+[
+  {
+    "curie": "NCBITaxon:10090",
+    "label": "Mus musculus (house mouse)",
+    "highlighting": {},
+    "synonyms": [
+      "mouse",
+      "house mouse",
+      "Mus musculus",
+      "Mus musculus (house mouse)"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:OrganismTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity"
+    ],
+    "score": 374.93103,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "NCBITaxon:477816",
+    "label": "Mus musculus musculus x Mus musculus castaneus",
+    "highlighting": {},
+    "synonyms": [
+      "Mus musculus musculus x M. m. castaneus",
+      "Mus musculus musculus x Mus musculus castaneus",
+      "Mus musculus castaneus x Mus musculus musculus"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:OrganismTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity"
+    ],
+    "score": 332.1352,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "NCBITaxon:3004188",
+    "label": "Mus musculus musculus x Mus musculus molossinus",
+    "highlighting": {},
+    "synonyms": [
+      "Mus musculus molossinus x Mus musculus musculus",
+      "Mus musculus musculus x Mus musculus molossinus"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:OrganismTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity"
+    ],
+    "score": 332.1352,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "UMLS:C5807087",
+    "label": "Mus musculus musculus x Mus musculus molossinus",
+    "highlighting": {},
+    "synonyms": [
+      "Mus musculus molossinus x Mus musculus musculus",
+      "Mus musculus musculus x Mus musculus molossinus"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:OrganismTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity"
+    ],
+    "score": 332.1352,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "NCBITaxon:3109569",
+    "label": "Mus musculus domesticus x Mus musculus castaneus",
+    "highlighting": {},
+    "synonyms": [
+      "Mus musculus castaneus x Mus musculus domesticus",
+      "Mus musculus domesticus x Mus musculus castaneus"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:OrganismTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity"
+    ],
+    "score": 325.3037,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "UMLS:C5750766",
+    "label": "Mus musculus musculus",
+    "highlighting": {},
+    "synonyms": [
+      "Mus musculus musculus",
+      "Mus musculus hortulanus"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:OrganismTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity"
+    ],
+    "score": 318.62253,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "NCBITaxon:46456",
+    "label": "Mus musculus wagneri",
+    "highlighting": {},
+    "synonyms": [
+      "Mus wagneri",
+      "M. m. wagneri",
+      "Mus musculus wagneri"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:OrganismTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity"
+    ],
+    "score": 306.93658,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "NCBITaxon:80274",
+    "label": "Mus musculus gentilulus",
+    "highlighting": {},
+    "synonyms": [
+      "Mus musculus gentilulus"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:OrganismTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity"
+    ],
+    "score": 306.93658,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "NCBITaxon:116058",
+    "label": "Mus musculus brevirostris",
+    "highlighting": {},
+    "synonyms": [
+      "Mus musculus brevirostris"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:OrganismTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity"
+    ],
+    "score": 306.93658,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "NCBITaxon:179238",
+    "label": "Mus musculus homourus",
+    "highlighting": {},
+    "synonyms": [
+      "Mus musculus homourus"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:OrganismTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity"
+    ],
+    "score": 306.93658,
+    "clique_identifier_count": 1
+  }
+]

@@ -1,0 +1,171 @@
+[
+  {
+    "curie": "CHEBI:78510",
+    "label": "Dorsomorphin",
+    "highlighting": {},
+    "synonyms": [
+      "Compound C",
+      "compound C",
+      "dorsomorphin",
+      "Dorsomorphin",
+      "DORSOMORPHIN",
+      "Compound C dorsomorphin",
+      "compound C dorsomorphin",
+      "AMPK inhibitor, compound C",
+      "(6-(4-(2-Piperidin-1-ylethoxy)phenyl))-3-pyridin-4-ylpyrazolo(1,5-a)pyrimidine",
+      "6-(4-(2-(1-Piperidinyl)ethoxy)phenyl)-3-(4-pyridinyl)pyrazolo(1,5-a)pyrimidine",
+      "4-(6-(4-(2-(Piperidin-1-yl)ethoxy)phenyl)pyrazolo(1,5-a)pyrimidin-3-yl)pyridine",
+      "6-{4-[2-(piperidin-1-yl)ethoxy]phenyl}-3-(pyridin-4-yl)pyrazolo[1,5-a]pyrimidine"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 4773.7856,
+    "clique_identifier_count": 11
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:50997746",
+    "label": "dorsomorphin (91E)",
+    "highlighting": {},
+    "synonyms": [
+      "dorsomorphin (91E)"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 354.3597,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:86346670",
+    "label": "Dorsomorphin hydrochloride",
+    "highlighting": {},
+    "synonyms": [
+      "Dorsomorphin hydrochloride"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:MolecularMixture",
+      "biolink:ChemicalMixture",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 354.3597,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:72699263",
+    "label": "dorsomorphin (6LE)",
+    "highlighting": {},
+    "synonyms": [
+      "dorsomorphin (6LE)"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 280.82343,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "UNII:TD4NBA239W",
+    "label": "DORSOMORPHIN DIHYDROCHLORIDE",
+    "highlighting": {},
+    "synonyms": [
+      "DORSOMORPHIN DIHYDROCHLORIDE"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 177.17986,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "UNII:CK24RRP6DS",
+    "label": "DORSOMORPHIN HYDROCHLORIDE",
+    "highlighting": {},
+    "synonyms": [
+      "DORSOMORPHIN HYDROCHLORIDE"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 177.17986,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:49761481",
+    "label": "BML-275",
+    "highlighting": {},
+    "synonyms": [
+      "BML-275",
+      "Dorsomorphin dihydrochloride"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:MolecularMixture",
+      "biolink:ChemicalMixture",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 162.66997,
+    "clique_identifier_count": 5
+  }
+]

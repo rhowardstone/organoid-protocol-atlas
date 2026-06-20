@@ -1,0 +1,40 @@
+{
+  "CHEBI:26536": {
+    "id": {
+      "identifier": "CHEBI:26536",
+      "label": "retinoic acid"
+    },
+    "equivalent_identifiers": [
+      {
+        "identifier": "CHEBI:26536",
+        "label": "retinoic acid"
+      },
+      {
+        "identifier": "PUBCHEM.COMPOUND:5538",
+        "label": "3,7-Dimethyl-9-(2,6,6-trimethylcyclohex-1-en-1-yl)nona-2,4,6,8-tetraenoic acid"
+      },
+      {
+        "identifier": "CHEMBL.COMPOUND:CHEMBL1235644"
+      },
+      {
+        "identifier": "HMDB:HMDB0244343",
+        "label": "3,7-Dimethyl-9-(2,6,6-trimethylcyclohex-1-en-1-yl)nona-2,4,6,8-tetraenoic acid"
+      },
+      {
+        "identifier": "INCHIKEY:SHGAZHPCJJPHSC-UHFFFAOYSA-N"
+      }
+    ],
+    "type": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "information_content": 76.9
+  }
+}

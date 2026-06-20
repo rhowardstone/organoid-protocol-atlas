@@ -1,0 +1,262 @@
+[
+  {
+    "curie": "UniProtKB:A0A4X1SQN6",
+    "label": "A0A4X1SQN6_PIG TGF-beta receptor type-1 (trembl)",
+    "highlighting": {},
+    "synonyms": [
+      "A0A4X1SQN6_PIG TGF-beta receptor type-1 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9823"
+    ],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 151.84573,
+    "clique_identifier_count": 15
+  },
+  {
+    "curie": "UniProtKB:A0A8D1IKS6",
+    "label": "A0A8D1IKS6_PIG TGF-beta receptor type-1 (trembl)",
+    "highlighting": {},
+    "synonyms": [
+      "A0A8D1IKS6_PIG TGF-beta receptor type-1 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9823"
+    ],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 144.53264,
+    "clique_identifier_count": 13
+  },
+  {
+    "curie": "UniProtKB:A0A4X1VWB3",
+    "label": "A0A4X1VWB3_PIG TGF-beta-activated kinase 1 and MAP3K7-binding protein 1 (trembl)",
+    "highlighting": {},
+    "synonyms": [
+      "A0A4X1VWB3_PIG TGF-beta-activated kinase 1 and MAP3K7-binding protein 1 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9823"
+    ],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 136.79794,
+    "clique_identifier_count": 23
+  },
+  {
+    "curie": "UniProtKB:A0A4X1VW87",
+    "label": "A0A4X1VW87_PIG TGF-beta-activated kinase 1 and MAP3K7-binding protein 1 (trembl)",
+    "highlighting": {},
+    "synonyms": [
+      "A0A4X1VW87_PIG TGF-beta-activated kinase 1 and MAP3K7-binding protein 1 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9823"
+    ],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 136.79794,
+    "clique_identifier_count": 23
+  },
+  {
+    "curie": "UniProtKB:A0A8D0NKK2",
+    "label": "A0A8D0NKK2_PIG TGF-beta-activated kinase 1 and MAP3K7-binding protein 1 (trembl)",
+    "highlighting": {},
+    "synonyms": [
+      "A0A8D0NKK2_PIG TGF-beta-activated kinase 1 and MAP3K7-binding protein 1 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9823"
+    ],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 133.05257,
+    "clique_identifier_count": 21
+  },
+  {
+    "curie": "UniProtKB:A0A8D0TGL5",
+    "label": "A0A8D0TGL5_PIG TGF-beta receptor type-1 (trembl)",
+    "highlighting": {},
+    "synonyms": [
+      "A0A8D0TGL5_PIG TGF-beta receptor type-1 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9823"
+    ],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 126.10515,
+    "clique_identifier_count": 9
+  },
+  {
+    "curie": "UniProtKB:A0A8D1UCF9",
+    "label": "A0A8D1UCF9_PIG TGF-beta activated kinase 1 (MAP3K7) binding protein 3 (trembl)",
+    "highlighting": {},
+    "synonyms": [
+      "A0A8D1UCF9_PIG TGF-beta activated kinase 1 (MAP3K7) binding protein 3 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9823"
+    ],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 124.682236,
+    "clique_identifier_count": 15
+  },
+  {
+    "curie": "UniProtKB:A0A8D0JIH9",
+    "label": "A0A8D0JIH9_PIG TGF-beta activated kinase 1 (MAP3K7) binding protein 3 (trembl)",
+    "highlighting": {},
+    "synonyms": [
+      "A0A8D0JIH9_PIG TGF-beta activated kinase 1 (MAP3K7) binding protein 3 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9823"
+    ],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 124.682236,
+    "clique_identifier_count": 15
+  },
+  {
+    "curie": "UniProtKB:A0A8D1N9M7",
+    "label": "A0A8D1N9M7_PIG TGF-beta family profile domain-containing protein (trembl)",
+    "highlighting": {},
+    "synonyms": [
+      "A0A8D1N9M7_PIG TGF-beta family profile domain-containing protein (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9823"
+    ],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 122.72209,
+    "clique_identifier_count": 11
+  },
+  {
+    "curie": "UniProtKB:A0A8D0IS00",
+    "label": "A0A8D0IS00_PIG TGF-beta family profile domain-containing protein (trembl)",
+    "highlighting": {},
+    "synonyms": [
+      "A0A8D0IS00_PIG TGF-beta family profile domain-containing protein (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9823"
+    ],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 122.72209,
+    "clique_identifier_count": 11
+  }
+]

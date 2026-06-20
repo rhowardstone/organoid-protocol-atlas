@@ -1,0 +1,63 @@
+{
+  "CHEBI:91091": {
+    "id": {
+      "identifier": "CHEBI:91091",
+      "label": "CHIR 99021"
+    },
+    "equivalent_identifiers": [
+      {
+        "identifier": "CHEBI:91091",
+        "label": "CHIR 99021"
+      },
+      {
+        "identifier": "UNII:234CMT4GK4",
+        "label": "LADUVIGLUSIB"
+      },
+      {
+        "identifier": "PUBCHEM.COMPOUND:9956119",
+        "label": "Laduviglusib"
+      },
+      {
+        "identifier": "CHEMBL.COMPOUND:CHEMBL412142",
+        "label": "LADUVIGLUSIB"
+      },
+      {
+        "identifier": "MESH:C473711",
+        "label": "Chir 99021"
+      },
+      {
+        "identifier": "CAS:252917-06-9"
+      },
+      {
+        "identifier": "CAS:809-015-4"
+      },
+      {
+        "identifier": "GTOPDB:8014",
+        "label": "laduviglusib"
+      },
+      {
+        "identifier": "HMDB:HMDB0250080",
+        "label": "6-((2-((4-(2,4-Dichlorophenyl)-5-(4-methyl-1H-imidazol-2-yl)pyrimidin-2-yl)amino)ethyl)amino)nicotinonitrile"
+      },
+      {
+        "identifier": "INCHIKEY:AQGNHMOJWBZFQQ-UHFFFAOYSA-N"
+      },
+      {
+        "identifier": "UMLS:C1176214",
+        "label": "Chir 99021"
+      }
+    ],
+    "type": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "information_content": 100.0
+  }
+}

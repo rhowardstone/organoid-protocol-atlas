@@ -1,0 +1,295 @@
+[
+  {
+    "curie": "NCBIGene:778701",
+    "label": "noggin",
+    "highlighting": {},
+    "synonyms": [
+      "noggin",
+      "noggin protein",
+      "Q4H336_CIOIN Noggin (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:7719"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 3212.3904,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "UMLS:C0171998",
+    "label": "noggin",
+    "highlighting": {},
+    "synonyms": [
+      "noggin",
+      "protein noggin",
+      "noggin protein"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 1969.6681,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "PR:000000021",
+    "label": "noggin",
+    "highlighting": {},
+    "synonyms": [
+      "NOG",
+      "noggin"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 1242.7223,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "GTOPDB:10975",
+    "label": "Noggin",
+    "highlighting": {},
+    "synonyms": [
+      "Noggin"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 1242.7223,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "PANTHER.FAMILY:PTHR10494:SF5",
+    "label": "NOGGIN",
+    "highlighting": {},
+    "synonyms": [
+      "NOGGIN"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:GeneFamily",
+      "biolink:GeneGroupingMixin",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity"
+    ],
+    "score": 1242.7223,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "NCBIGene:574073",
+    "label": "NOG",
+    "highlighting": {},
+    "synonyms": [
+      "NOG",
+      "noggin",
+      "A0A8D1L1P4_PIG Noggin (trembl)",
+      "B8XVN4_PIG Noggin (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9823"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 875.06506,
+    "clique_identifier_count": 23
+  },
+  {
+    "curie": "NCBIGene:102183633",
+    "label": "NOG",
+    "highlighting": {},
+    "synonyms": [
+      "NOG",
+      "noggin",
+      "A0A2Z4FR29_CAPHI Noggin (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9925"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 693.0625,
+    "clique_identifier_count": 7
+  },
+  {
+    "curie": "NCBIGene:113878142",
+    "label": "NOG",
+    "highlighting": {},
+    "synonyms": [
+      "NOG",
+      "noggin",
+      "A0A4W2IEW3_BOBOX Noggin (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:30522"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 693.0625,
+    "clique_identifier_count": 7
+  },
+  {
+    "curie": "NCBIGene:100972370",
+    "label": "NOG",
+    "highlighting": {},
+    "synonyms": [
+      "NOG",
+      "noggin",
+      "A0A2R8ZAH7_PANPA Noggin (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9597"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 648.55743,
+    "clique_identifier_count": 6
+  },
+  {
+    "curie": "NCBIGene:101968886",
+    "label": "Nog",
+    "highlighting": {},
+    "synonyms": [
+      "Nog",
+      "noggin",
+      "I3N3E1_ICTTR Noggin (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:43179"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 648.55743,
+    "clique_identifier_count": 6
+  }
+]

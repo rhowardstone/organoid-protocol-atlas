@@ -257,3 +257,22 @@
 - Next (when PR #4 merges -> PR-B extraction wiring + eval gold fixtures); meanwhile the
   Tier-3 states(verified|unresolved|rejected)+unverified-delegation-UI-note PR (issue #3, no
   ingestion).
+
+## Iteration 19 — 2026-06-20 — S1: live SRI entity grounding (sprint Tier-S, Agent A)
+- Per GitHub #8 sprint directives: built pipeline/ground.py — grounds free-text entities to
+  Biolink CURIEs via live SRI Name Resolver + Node Normalizer + Cellosaurus, disk-caching every
+  response so tests run offline. Honest 3-state grounding_status {resolved|not_found|not_attempted};
+  CURIEs never fabricated.
+- VERIFIED (real calls, cached as committed fixtures, 105 files): small molecules -> CHEBI
+  (CHIR99021 CHEBI:91091, Y-27632, SB431542, A83-01, Forskolin, Retinoic acid, DAPT, ...);
+  protein growth factors -> NCBIGene clique (EGF NCBIGene:1950) — honest gene/protein conflation,
+  not PR (the live-service reality; documented); species -> NCBITaxon (9606/10090); organoid tissue
+  -> UBERON; cell types -> CL; cell line WA09 -> Cellosaurus:CVCL_9773 (correct H9 RRID).
+- GROUNDED != CORRECT discipline caught 2 abbreviation collisions: SAG->S-antigen gene and
+  PGE2->random locus (unfiltered top hit). Fix: curated small-molecule set constrains those to
+  CHEBI chemicals (SAG->CHEBI:75728). PGE2->CHEBI:15547 is a near-miss metabolite (15-keto-PGE2) —
+  recorded honestly with its label for a curator (candidate for the P1.5 curated override).
+- Coverage artifact generated (outputs/grounding/coverage.json): 52 resolved / 1 not_found
+  (WTC-11 cell line — Cellosaurus exact-match miss, not guessed). +7 offline tests (35 total).
+- Next (S1 cont.): produce grounded sidecar records data/predictions/local/grounded/<pmcid>.json
+  (predictions + per-entity grounding) for Agent B's KGX/TRAPI (S2); curated ontology overrides (P1.5).

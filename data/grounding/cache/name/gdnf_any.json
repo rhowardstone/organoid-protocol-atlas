@@ -1,0 +1,383 @@
+[
+  {
+    "curie": "NCBIGene:100322894",
+    "label": "GDNF",
+    "highlighting": {},
+    "synonyms": [
+      "GDNF",
+      "glial cell derived neurotrophic factor",
+      "glial cell line-derived neurotrophic factor",
+      "glial cell-line derived neurotrophic factor",
+      "A0A287AHR3_PIG Glial cell line-derived neurotrophic factor (trembl)",
+      "A0A2Z5TSR7_PIG Glial cell line-derived neurotrophic factor (trembl)",
+      "A0A4X1T5H8_PIG Glial cell line-derived neurotrophic factor (trembl)",
+      "A0A8W4F937_PIG Glial cell line-derived neurotrophic factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9823"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 4773.014,
+    "clique_identifier_count": 33
+  },
+  {
+    "curie": "NCBIGene:2668",
+    "label": "GDNF",
+    "highlighting": {},
+    "synonyms": [
+      "ATF",
+      "GDNF",
+      "ATF1",
+      "ATF2",
+      "HSCR3",
+      "HFB1-GDNF",
+      "GDNF Gene",
+      "GDNF gene",
+      "astrocyte-derived trophic factor",
+      "glial derived neurotrophic factor",
+      "glial cell derived neurotrophic factor",
+      "glial cell line-derived neurotrophic factor",
+      "GLIAL CELL LINE-DERIVED NEUROTROPHIC FACTOR",
+      "glial cell line derived neurotrophic factor",
+      "Glial Cell Derived Neurotrophic Factor Gene",
+      "A0A0S2Z3T2_HUMAN Glial cell line-derived neurotrophic factor (Fragment) (trembl)",
+      "A0A0S2Z3V2_HUMAN Glial cell line-derived neurotrophic factor (Fragment) (trembl)",
+      "hGDNF",
+      "ATF (human)",
+      "GDNF protein, human",
+      "Astrocyte-Derived Trophic Factor",
+      "Glial Derived Neurotrophic Factor",
+      "astrocyte-derived trophic factor (human)",
+      "Glial Cell Line-Derived Neurotrophic Factor",
+      "Glial Cell Line Derived Neurotrophic Factor",
+      "Glial Cell-Line Derived Neurotrophic Factor",
+      "glial cell derived neurotrophic factor, human",
+      "glial cell line-derived neurotrophic factor (human)",
+      "GDNF_HUMAN Glial cell line-derived neurotrophic factor (sprot)"
+    ],
+    "taxa": [
+      "NCBITaxon:9606"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 3363.381,
+    "clique_identifier_count": 11
+  },
+  {
+    "curie": "NCBIGene:119871563",
+    "label": "GDNF",
+    "highlighting": {},
+    "synonyms": [
+      "GDNF",
+      "glial cell derived neurotrophic factor",
+      "glial cell line-derived neurotrophic factor",
+      "A0A8C0Q9A4_CANLF Glial cell line-derived neurotrophic factor (trembl)",
+      "A0A8I3MVS5_CANLF Glial cell line-derived neurotrophic factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9615"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 3363.381,
+    "clique_identifier_count": 11
+  },
+  {
+    "curie": "NCBIGene:25453",
+    "label": "Gdnf",
+    "highlighting": {},
+    "synonyms": [
+      "ATF",
+      "gndf",
+      "Gdnf",
+      "astrocyte-derived trophic factor",
+      "glial cell derived neurotrophic factor",
+      "Glial cell line derived neutrophic factor",
+      "glial cell line-derived neurotrophic factor",
+      "A6KGH0_RAT Glial cell line-derived neurotrophic factor (trembl)",
+      "A7UGJ1_RAT Glial cell line-derived neurotrophic factor (trembl)",
+      "F8WFL7_RAT Glial cell line-derived neurotrophic factor (trembl)",
+      "rGDNF",
+      "ATF (rat)",
+      "astrocyte-derived trophic factor (rat)",
+      "glial cell line-derived neurotrophic factor (rat)",
+      "GDNF_RAT Glial cell line-derived neurotrophic factor (sprot)"
+    ],
+    "taxa": [
+      "NCBITaxon:10116"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 3245.6091,
+    "clique_identifier_count": 10
+  },
+  {
+    "curie": "NCBIGene:102169798",
+    "label": "GDNF",
+    "highlighting": {},
+    "synonyms": [
+      "GDNF",
+      "glial cell line-derived neurotrophic factor",
+      "A0A452FSD7_CAPHI Glial cell line-derived neurotrophic factor (trembl)",
+      "A0A8C2R844_CAPHI Glial cell line-derived neurotrophic factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9925"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 3245.6091,
+    "clique_identifier_count": 10
+  },
+  {
+    "curie": "NCBIGene:100229958",
+    "label": "GDNF",
+    "highlighting": {},
+    "synonyms": [
+      "GDNF",
+      "glial cell line-derived neurotrophic factor",
+      "A0A674GT80_TAEGU Glial cell line-derived neurotrophic factor (trembl)",
+      "A0A674H3U5_TAEGU Glial cell line-derived neurotrophic factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:59729"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2973.9966,
+    "clique_identifier_count": 8
+  },
+  {
+    "curie": "NCBIGene:104665760",
+    "label": "GDNF",
+    "highlighting": {},
+    "synonyms": [
+      "GDNF",
+      "glial cell line-derived neurotrophic factor",
+      "A0A2K6RM80_RHIRO Glial cell line-derived neurotrophic factor (trembl)",
+      "A0A2K6RM89_RHIRO Glial cell line-derived neurotrophic factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:61622"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2973.9966,
+    "clique_identifier_count": 8
+  },
+  {
+    "curie": "NCBIGene:113878998",
+    "label": "GDNF",
+    "highlighting": {},
+    "synonyms": [
+      "GDNF",
+      "glial cell line-derived neurotrophic factor",
+      "A0A4W2FAL1_BOBOX Glial cell line-derived neurotrophic factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:30522"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2814.5742,
+    "clique_identifier_count": 7
+  },
+  {
+    "curie": "NCBIGene:100969352",
+    "label": "GDNF",
+    "highlighting": {},
+    "synonyms": [
+      "GDNF",
+      "glial cell line-derived neurotrophic factor",
+      "A0A2R8ZDG7_PANPA Glial cell line-derived neurotrophic factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9597"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2633.8364,
+    "clique_identifier_count": 6
+  },
+  {
+    "curie": "NCBIGene:101345158",
+    "label": "GDNF",
+    "highlighting": {},
+    "synonyms": [
+      "GDNF",
+      "glial cell line-derived neurotrophic factor",
+      "A0A2Y9E647_TRIMA Glial cell line-derived neurotrophic factor (trembl)",
+      "A0A2Y9E6C8_TRIMA Glial cell line-derived neurotrophic factor (trembl)",
+      "A0A2Y9G0T1_TRIMA Glial cell line-derived neurotrophic factor (trembl)",
+      "A0A2Y9G359_TRIMA Glial cell line-derived neurotrophic factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:127582"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2633.8364,
+    "clique_identifier_count": 6
+  }
+]

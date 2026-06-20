@@ -1,0 +1,81 @@
+{
+  "NCBIGene:482208": {
+    "id": {
+      "identifier": "NCBIGene:482208",
+      "label": "WNT3A"
+    },
+    "equivalent_identifiers": [
+      {
+        "identifier": "NCBIGene:482208",
+        "label": "WNT3A",
+        "taxa": [
+          "NCBITaxon:9615"
+        ]
+      },
+      {
+        "identifier": "ENSEMBL:ENSCAFG00845007960"
+      },
+      {
+        "identifier": "RGD:12300969"
+      },
+      {
+        "identifier": "UniProtKB:A0A8C0NGX3",
+        "label": "A0A8C0NGX3_CANLF Protein Wnt (trembl)",
+        "taxa": [
+          "NCBITaxon:9615"
+        ]
+      },
+      {
+        "identifier": "ENSEMBL:ENSCAFP00000001681"
+      },
+      {
+        "identifier": "ENSEMBL:ENSCAFP00000001681.5"
+      },
+      {
+        "identifier": "ENSEMBL:ENSCAFP00030022382"
+      },
+      {
+        "identifier": "ENSEMBL:ENSCAFP00030022382.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSCAFP00040007164"
+      },
+      {
+        "identifier": "ENSEMBL:ENSCAFP00040007164.1"
+      },
+      {
+        "identifier": "UniProtKB:A0A8I3MWK0",
+        "label": "A0A8I3MWK0_CANLF Protein Wnt (trembl)",
+        "taxa": [
+          "NCBITaxon:9615"
+        ]
+      },
+      {
+        "identifier": "ENSEMBL:ENSCAFP00845010849"
+      },
+      {
+        "identifier": "ENSEMBL:ENSCAFP00845010849.1"
+      }
+    ],
+    "taxa": [
+      "NCBITaxon:9615"
+    ],
+    "type": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ]
+  }
+}

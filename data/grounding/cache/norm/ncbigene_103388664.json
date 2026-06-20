@@ -1,0 +1,59 @@
+{
+  "NCBIGene:103388664": {
+    "id": {
+      "identifier": "NCBIGene:103388664",
+      "label": "rspo2"
+    },
+    "equivalent_identifiers": [
+      {
+        "identifier": "NCBIGene:103388664",
+        "label": "rspo2",
+        "taxa": [
+          "NCBITaxon:244447"
+        ]
+      },
+      {
+        "identifier": "ENSEMBL:ENSCSEG00000009198"
+      },
+      {
+        "identifier": "UniProtKB:A0A0K0MV72",
+        "label": "A0A0K0MV72_CYNSE R-spondin-2 (trembl)",
+        "taxa": [
+          "NCBITaxon:244447"
+        ]
+      },
+      {
+        "identifier": "ENSEMBL:ENSCSEP00000014341"
+      },
+      {
+        "identifier": "ENSEMBL:ENSCSEP00000014341.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSCSEP00000014343"
+      },
+      {
+        "identifier": "ENSEMBL:ENSCSEP00000014343.1"
+      }
+    ],
+    "taxa": [
+      "NCBITaxon:244447"
+    ],
+    "type": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ]
+  }
+}

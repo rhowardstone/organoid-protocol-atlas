@@ -1,0 +1,74 @@
+{
+  "NCBIGene:443306": {
+    "id": {
+      "identifier": "NCBIGene:443306",
+      "label": "FGF2"
+    },
+    "equivalent_identifiers": [
+      {
+        "identifier": "NCBIGene:443306",
+        "label": "FGF2",
+        "taxa": [
+          "NCBITaxon:9940"
+        ]
+      },
+      {
+        "identifier": "ENSEMBL:ENSOARG00020036121"
+      },
+      {
+        "identifier": "UniProtKB:P20003",
+        "label": "FGF2_SHEEP Fibroblast growth factor 2 (sprot)",
+        "taxa": [
+          "NCBITaxon:9940"
+        ]
+      },
+      {
+        "identifier": "ENSEMBL:ENSOARP00020048931"
+      },
+      {
+        "identifier": "ENSEMBL:ENSOARP00025008408"
+      },
+      {
+        "identifier": "ENSEMBL:ENSOARP00040007974"
+      },
+      {
+        "identifier": "ENSEMBL:ENSOARP00180021643"
+      },
+      {
+        "identifier": "ENSEMBL:ENSOARP00185020660"
+      },
+      {
+        "identifier": "ENSEMBL:ENSOARP00215008970"
+      },
+      {
+        "identifier": "ENSEMBL:ENSOARP00220038139"
+      },
+      {
+        "identifier": "ENSEMBL:ENSOARP00225016427"
+      },
+      {
+        "identifier": "ENSEMBL:ENSOARP00260019429"
+      }
+    ],
+    "taxa": [
+      "NCBITaxon:9940"
+    ],
+    "type": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ]
+  }
+}

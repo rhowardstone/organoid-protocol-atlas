@@ -1,0 +1,514 @@
+{
+  "generated_by": "pipeline/ground.py",
+  "n": 53,
+  "by_status": {
+    "resolved": 52,
+    "not_found": 1
+  },
+  "by_kind": {
+    "reagent": {
+      "resolved": 39,
+      "not_found": 0,
+      "not_attempted": 0
+    },
+    "species": {
+      "resolved": 2,
+      "not_found": 0,
+      "not_attempted": 0
+    },
+    "tissue": {
+      "resolved": 8,
+      "not_found": 0,
+      "not_attempted": 0
+    },
+    "cell_type": {
+      "resolved": 2,
+      "not_found": 0,
+      "not_attempted": 0
+    },
+    "cell_line": {
+      "resolved": 1,
+      "not_found": 1,
+      "not_attempted": 0
+    }
+  },
+  "records": [
+    {
+      "query": "A83-01",
+      "kind": "reagent",
+      "grounding_status": "resolved",
+      "curie": "CHEBI:233322",
+      "label": "A-83-01",
+      "biolink_category": "biolink:SmallMolecule",
+      "source": "sri-name-resolver"
+    },
+    {
+      "query": "Activin A",
+      "kind": "reagent",
+      "grounding_status": "resolved",
+      "curie": "CHEBI:81351",
+      "label": "Activin A",
+      "biolink_category": "biolink:ChemicalEntity",
+      "source": "sri-name-resolver"
+    },
+    {
+      "query": "BDNF",
+      "kind": "reagent",
+      "grounding_status": "resolved",
+      "curie": "NCBIGene:397495",
+      "label": "BDNF",
+      "biolink_category": "biolink:Gene",
+      "source": "sri-name-resolver"
+    },
+    {
+      "query": "BMP4",
+      "kind": "reagent",
+      "grounding_status": "resolved",
+      "curie": "NCBIGene:100113425",
+      "label": "BMP4",
+      "biolink_category": "biolink:Gene",
+      "source": "sri-name-resolver"
+    },
+    {
+      "query": "BMP7",
+      "kind": "reagent",
+      "grounding_status": "resolved",
+      "curie": "NCBIGene:492315",
+      "label": "BMP7",
+      "biolink_category": "biolink:Gene",
+      "source": "sri-name-resolver"
+    },
+    {
+      "query": "CHIR99021",
+      "kind": "reagent",
+      "grounding_status": "resolved",
+      "curie": "CHEBI:91091",
+      "label": "CHIR 99021",
+      "biolink_category": "biolink:SmallMolecule",
+      "source": "sri-name-resolver"
+    },
+    {
+      "query": "DAPT",
+      "kind": "reagent",
+      "grounding_status": "resolved",
+      "curie": "CHEBI:86193",
+      "label": "DAPT",
+      "biolink_category": "biolink:SmallMolecule",
+      "source": "sri-name-resolver"
+    },
+    {
+      "query": "Dexamethasone",
+      "kind": "reagent",
+      "grounding_status": "resolved",
+      "curie": "CHEBI:41879",
+      "label": "Dexamethasone",
+      "biolink_category": "biolink:SmallMolecule",
+      "source": "sri-name-resolver"
+    },
+    {
+      "query": "Dorsomorphin",
+      "kind": "reagent",
+      "grounding_status": "resolved",
+      "curie": "CHEBI:78510",
+      "label": "Dorsomorphin",
+      "biolink_category": "biolink:SmallMolecule",
+      "source": "sri-name-resolver"
+    },
+    {
+      "query": "EGF",
+      "kind": "reagent",
+      "grounding_status": "resolved",
+      "curie": "NCBIGene:1950",
+      "label": "EGF",
+      "biolink_category": "biolink:Gene",
+      "source": "sri-name-resolver"
+    },
+    {
+      "query": "FGF10",
+      "kind": "reagent",
+      "grounding_status": "resolved",
+      "curie": "NCBIGene:100525086",
+      "label": "FGF10",
+      "biolink_category": "biolink:Gene",
+      "source": "sri-name-resolver"
+    },
+    {
+      "query": "FGF2",
+      "kind": "reagent",
+      "grounding_status": "resolved",
+      "curie": "NCBIGene:443306",
+      "label": "FGF2",
+      "biolink_category": "biolink:Gene",
+      "source": "sri-name-resolver"
+    },
+    {
+      "query": "FGF4",
+      "kind": "reagent",
+      "grounding_status": "resolved",
+      "curie": "NCBIGene:100518595",
+      "label": "FGF4",
+      "biolink_category": "biolink:Gene",
+      "source": "sri-name-resolver"
+    },
+    {
+      "query": "FGF7",
+      "kind": "reagent",
+      "grounding_status": "resolved",
+      "curie": "NCBIGene:397281",
+      "label": "FGF7",
+      "biolink_category": "biolink:Gene",
+      "source": "sri-name-resolver"
+    },
+    {
+      "query": "FGF9",
+      "kind": "reagent",
+      "grounding_status": "resolved",
+      "curie": "NCBIGene:396717",
+      "label": "FGF9",
+      "biolink_category": "biolink:Gene",
+      "source": "sri-name-resolver"
+    },
+    {
+      "query": "Forskolin",
+      "kind": "reagent",
+      "grounding_status": "resolved",
+      "curie": "CHEBI:93891",
+      "label": "Forskolin",
+      "biolink_category": "biolink:SmallMolecule",
+      "source": "sri-name-resolver"
+    },
+    {
+      "query": "GDNF",
+      "kind": "reagent",
+      "grounding_status": "resolved",
+      "curie": "NCBIGene:100322894",
+      "label": "GDNF",
+      "biolink_category": "biolink:Gene",
+      "source": "sri-name-resolver"
+    },
+    {
+      "query": "Gastrin",
+      "kind": "reagent",
+      "grounding_status": "resolved",
+      "curie": "PUBCHEM.COMPOUND:44288444",
+      "label": "GASTRIN",
+      "biolink_category": "biolink:SmallMolecule",
+      "source": "sri-name-resolver"
+    },
+    {
+      "query": "HGF",
+      "kind": "reagent",
+      "grounding_status": "resolved",
+      "curie": "NCBIGene:100525120",
+      "label": "HGF",
+      "biolink_category": "biolink:Gene",
+      "source": "sri-name-resolver"
+    },
+    {
+      "query": "Heparin",
+      "kind": "reagent",
+      "grounding_status": "resolved",
+      "curie": "CHEBI:28304",
+      "label": "Heparin",
+      "biolink_category": "biolink:SmallMolecule",
+      "source": "sri-name-resolver"
+    },
+    {
+      "query": "IGF-1",
+      "kind": "reagent",
+      "grounding_status": "resolved",
+      "curie": "NCBIGene:100136517",
+      "label": "LOC100136517",
+      "biolink_category": "biolink:Gene",
+      "source": "sri-name-resolver"
+    },
+    {
+      "query": "LDN-193189",
+      "kind": "reagent",
+      "grounding_status": "resolved",
+      "curie": "CHEBI:91387",
+      "label": "LDN-193189",
+      "biolink_category": "biolink:SmallMolecule",
+      "source": "sri-name-resolver"
+    },
+    {
+      "query": "N-acetylcysteine",
+      "kind": "reagent",
+      "grounding_status": "resolved",
+      "curie": "CHEBI:28939",
+      "label": "Acetylcysteine",
+      "biolink_category": "biolink:SmallMolecule",
+      "source": "sri-name-resolver"
+    },
+    {
+      "query": "NT-3",
+      "kind": "reagent",
+      "grounding_status": "resolved",
+      "curie": "NCBIGene:532393",
+      "label": "NTF3",
+      "biolink_category": "biolink:Gene",
+      "source": "sri-name-resolver"
+    },
+    {
+      "query": "Nicotinamide",
+      "kind": "reagent",
+      "grounding_status": "resolved",
+      "curie": "CHEBI:17154",
+      "label": "Nicotinamide",
+      "biolink_category": "biolink:SmallMolecule",
+      "source": "sri-name-resolver"
+    },
+    {
+      "query": "Noggin",
+      "kind": "reagent",
+      "grounding_status": "resolved",
+      "curie": "NCBIGene:778701",
+      "label": "noggin",
+      "biolink_category": "biolink:Gene",
+      "source": "sri-name-resolver"
+    },
+    {
+      "query": "PGE2",
+      "kind": "reagent",
+      "grounding_status": "resolved",
+      "curie": "CHEBI:15547",
+      "label": "15-Keto-PGE2",
+      "biolink_category": "biolink:SmallMolecule",
+      "source": "sri-name-resolver"
+    },
+    {
+      "query": "Purmorphamine",
+      "kind": "reagent",
+      "grounding_status": "resolved",
+      "curie": "CHEBI:63053",
+      "label": "purmorphamine",
+      "biolink_category": "biolink:SmallMolecule",
+      "source": "sri-name-resolver"
+    },
+    {
+      "query": "R-spondin1",
+      "kind": "reagent",
+      "grounding_status": "resolved",
+      "curie": "NCBIGene:469283",
+      "label": "RSPO1",
+      "biolink_category": "biolink:Gene",
+      "source": "sri-name-resolver"
+    },
+    {
+      "query": "R-spondin2",
+      "kind": "reagent",
+      "grounding_status": "resolved",
+      "curie": "NCBIGene:103388664",
+      "label": "rspo2",
+      "biolink_category": "biolink:Gene",
+      "source": "sri-name-resolver"
+    },
+    {
+      "query": "R-spondin3",
+      "kind": "reagent",
+      "grounding_status": "resolved",
+      "curie": "MESH:C517523",
+      "label": "R-spondin3 protein, mouse",
+      "biolink_category": "biolink:Protein",
+      "source": "sri-name-resolver"
+    },
+    {
+      "query": "Retinoic acid",
+      "kind": "reagent",
+      "grounding_status": "resolved",
+      "curie": "CHEBI:26536",
+      "label": "retinoic acid",
+      "biolink_category": "biolink:SmallMolecule",
+      "source": "sri-name-resolver"
+    },
+    {
+      "query": "SAG",
+      "kind": "reagent",
+      "grounding_status": "resolved",
+      "curie": "CHEBI:75728",
+      "label": "SAG",
+      "biolink_category": "biolink:SmallMolecule",
+      "source": "sri-name-resolver"
+    },
+    {
+      "query": "SB431542",
+      "kind": "reagent",
+      "grounding_status": "resolved",
+      "curie": "CHEBI:91108",
+      "label": "SB 431542",
+      "biolink_category": "biolink:SmallMolecule",
+      "source": "sri-name-resolver"
+    },
+    {
+      "query": "SHH",
+      "kind": "reagent",
+      "grounding_status": "resolved",
+      "curie": "NCBIGene:608860",
+      "label": "SHH",
+      "biolink_category": "biolink:Gene",
+      "source": "sri-name-resolver"
+    },
+    {
+      "query": "TGF-β1",
+      "kind": "reagent",
+      "grounding_status": "resolved",
+      "curie": "UniProtKB:A0A4X1SQN6",
+      "label": "A0A4X1SQN6_PIG TGF-beta receptor type-1 (trembl)",
+      "biolink_category": "biolink:Protein",
+      "source": "sri-name-resolver"
+    },
+    {
+      "query": "VEGF",
+      "kind": "reagent",
+      "grounding_status": "resolved",
+      "curie": "NCBIGene:100136118",
+      "label": "vegf",
+      "biolink_category": "biolink:Gene",
+      "source": "sri-name-resolver"
+    },
+    {
+      "query": "Wnt3a",
+      "kind": "reagent",
+      "grounding_status": "resolved",
+      "curie": "NCBIGene:482208",
+      "label": "WNT3A",
+      "biolink_category": "biolink:Gene",
+      "source": "sri-name-resolver"
+    },
+    {
+      "query": "Y-27632",
+      "kind": "reagent",
+      "grounding_status": "resolved",
+      "curie": "CHEBI:75393",
+      "label": "Y-27632",
+      "biolink_category": "biolink:SmallMolecule",
+      "source": "sri-name-resolver"
+    },
+    {
+      "query": "Homo sapiens",
+      "kind": "species",
+      "grounding_status": "resolved",
+      "curie": "NCBITaxon:9606",
+      "label": "Humans",
+      "biolink_category": "biolink:OrganismTaxon",
+      "source": "sri-name-resolver"
+    },
+    {
+      "query": "Mus musculus",
+      "kind": "species",
+      "grounding_status": "resolved",
+      "curie": "NCBITaxon:10090",
+      "label": "Mus musculus (house mouse)",
+      "biolink_category": "biolink:OrganismTaxon",
+      "source": "sri-name-resolver"
+    },
+    {
+      "query": "intestine",
+      "kind": "tissue",
+      "grounding_status": "resolved",
+      "curie": "UBERON:0000160",
+      "label": "intestine",
+      "biolink_category": "biolink:GrossAnatomicalStructure",
+      "source": "sri-name-resolver"
+    },
+    {
+      "query": "brain",
+      "kind": "tissue",
+      "grounding_status": "resolved",
+      "curie": "UBERON:0000955",
+      "label": "brain",
+      "biolink_category": "biolink:GrossAnatomicalStructure",
+      "source": "sri-name-resolver"
+    },
+    {
+      "query": "kidney",
+      "kind": "tissue",
+      "grounding_status": "resolved",
+      "curie": "UBERON:0002113",
+      "label": "kidney",
+      "biolink_category": "biolink:GrossAnatomicalStructure",
+      "source": "sri-name-resolver"
+    },
+    {
+      "query": "liver",
+      "kind": "tissue",
+      "grounding_status": "resolved",
+      "curie": "UBERON:0002107",
+      "label": "liver",
+      "biolink_category": "biolink:GrossAnatomicalStructure",
+      "source": "sri-name-resolver"
+    },
+    {
+      "query": "lung",
+      "kind": "tissue",
+      "grounding_status": "resolved",
+      "curie": "UBERON:0002048",
+      "label": "lung",
+      "biolink_category": "biolink:GrossAnatomicalStructure",
+      "source": "sri-name-resolver"
+    },
+    {
+      "query": "retina",
+      "kind": "tissue",
+      "grounding_status": "resolved",
+      "curie": "UBERON:0000966",
+      "label": "retina",
+      "biolink_category": "biolink:GrossAnatomicalStructure",
+      "source": "sri-name-resolver"
+    },
+    {
+      "query": "stomach",
+      "kind": "tissue",
+      "grounding_status": "resolved",
+      "curie": "UBERON:0000945",
+      "label": "stomach",
+      "biolink_category": "biolink:GrossAnatomicalStructure",
+      "source": "sri-name-resolver"
+    },
+    {
+      "query": "pancreas",
+      "kind": "tissue",
+      "grounding_status": "resolved",
+      "curie": "UBERON:0001264",
+      "label": "pancreas",
+      "biolink_category": "biolink:GrossAnatomicalStructure",
+      "source": "sri-name-resolver"
+    },
+    {
+      "query": "induced pluripotent stem cell",
+      "kind": "cell_type",
+      "grounding_status": "resolved",
+      "curie": "CL:0002248",
+      "label": "pluripotent stem cell",
+      "biolink_category": "biolink:Cell",
+      "source": "sri-name-resolver"
+    },
+    {
+      "query": "embryonic stem cell",
+      "kind": "cell_type",
+      "grounding_status": "resolved",
+      "curie": "CL:0002322",
+      "label": "embryonic stem cell",
+      "biolink_category": "biolink:Cell",
+      "source": "sri-name-resolver"
+    },
+    {
+      "query": "WA09",
+      "kind": "cell_line",
+      "grounding_status": "resolved",
+      "curie": "Cellosaurus:CVCL_9773",
+      "label": "WA09",
+      "biolink_category": "biolink:CellLine",
+      "source": "cellosaurus"
+    },
+    {
+      "query": "WTC-11",
+      "kind": "cell_line",
+      "grounding_status": "not_found",
+      "curie": null,
+      "label": null,
+      "biolink_category": "biolink:CellLine",
+      "source": "cellosaurus"
+    }
+  ]
+}

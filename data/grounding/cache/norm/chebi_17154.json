@@ -1,0 +1,432 @@
+{
+  "CHEBI:17154": {
+    "id": {
+      "identifier": "CHEBI:17154",
+      "label": "Nicotinamide"
+    },
+    "equivalent_identifiers": [
+      {
+        "identifier": "CHEBI:17154",
+        "label": "nicotinamide"
+      },
+      {
+        "identifier": "CHEBI:25521"
+      },
+      {
+        "identifier": "CHEBI:7556"
+      },
+      {
+        "identifier": "CHEBI:14645"
+      },
+      {
+        "identifier": "CHEBI:44258"
+      },
+      {
+        "identifier": "UNII:25X51I8RD4",
+        "label": "NIACINAMIDE"
+      },
+      {
+        "identifier": "PUBCHEM.COMPOUND:936",
+        "label": "Nicotinamide"
+      },
+      {
+        "identifier": "CHEMBL.COMPOUND:CHEMBL1140",
+        "label": "NIACINAMIDE"
+      },
+      {
+        "identifier": "DRUGBANK:DB02701",
+        "label": "Nicotinamide"
+      },
+      {
+        "identifier": "MESH:D009536",
+        "label": "Niacinamide"
+      },
+      {
+        "identifier": "CAS:11032-50-1"
+      },
+      {
+        "identifier": "CAS:202-713-4"
+      },
+      {
+        "identifier": "CAS:98-92-0"
+      },
+      {
+        "identifier": "DrugCentral:1906",
+        "label": "nicotinamide"
+      },
+      {
+        "identifier": "HMDB:HMDB0001406",
+        "label": "Niacinamide"
+      },
+      {
+        "identifier": "KEGG.COMPOUND:C00153",
+        "label": "Nicotinamide"
+      },
+      {
+        "identifier": "INCHIKEY:DFPAKSUCGFBDDF-UHFFFAOYSA-N"
+      },
+      {
+        "identifier": "UMLS:C0028027",
+        "label": "niacinamide"
+      },
+      {
+        "identifier": "RXCUI:7405"
+      },
+      {
+        "identifier": "CHEBI:17154",
+        "label": "nicotinamide"
+      },
+      {
+        "identifier": "CHEBI:25521"
+      },
+      {
+        "identifier": "CHEBI:7556"
+      },
+      {
+        "identifier": "CHEBI:14645"
+      },
+      {
+        "identifier": "CHEBI:44258"
+      },
+      {
+        "identifier": "UNII:25X51I8RD4",
+        "label": "NIACINAMIDE"
+      },
+      {
+        "identifier": "PUBCHEM.COMPOUND:936",
+        "label": "Nicotinamide"
+      },
+      {
+        "identifier": "CHEMBL.COMPOUND:CHEMBL1140",
+        "label": "NIACINAMIDE"
+      },
+      {
+        "identifier": "DRUGBANK:DB02701",
+        "label": "Nicotinamide"
+      },
+      {
+        "identifier": "MESH:D009536",
+        "label": "Niacinamide"
+      },
+      {
+        "identifier": "CAS:11032-50-1"
+      },
+      {
+        "identifier": "CAS:202-713-4"
+      },
+      {
+        "identifier": "CAS:98-92-0"
+      },
+      {
+        "identifier": "DrugCentral:1906",
+        "label": "nicotinamide"
+      },
+      {
+        "identifier": "HMDB:HMDB0001406",
+        "label": "Niacinamide"
+      },
+      {
+        "identifier": "KEGG.COMPOUND:C00153",
+        "label": "Nicotinamide"
+      },
+      {
+        "identifier": "INCHIKEY:DFPAKSUCGFBDDF-UHFFFAOYSA-N"
+      },
+      {
+        "identifier": "UMLS:C0028027",
+        "label": "niacinamide"
+      },
+      {
+        "identifier": "RXCUI:7405"
+      },
+      {
+        "identifier": "UMLS:C0991853",
+        "label": "nicotinamide hydriodide"
+      },
+      {
+        "identifier": "RXCUI:317251"
+      },
+      {
+        "identifier": "RXCUI:198025"
+      },
+      {
+        "identifier": "UMLS:C0689751",
+        "label": "niacinamide 500 MG Oral Tablet"
+      },
+      {
+        "identifier": "RXCUI:245210"
+      },
+      {
+        "identifier": "UMLS:C0785857",
+        "label": "niacinamide 250 MG Oral Tablet"
+      },
+      {
+        "identifier": "RXCUI:245443"
+      },
+      {
+        "identifier": "UMLS:C0786145",
+        "label": "niacinamide 500 MG Extended Release Oral Tablet"
+      },
+      {
+        "identifier": "RXCUI:248052"
+      },
+      {
+        "identifier": "UMLS:C0789290",
+        "label": "niacinamide 0.04 MG/MG Topical Gel"
+      },
+      {
+        "identifier": "RXCUI:311965"
+      },
+      {
+        "identifier": "UMLS:C0978972",
+        "label": "niacinamide 100 MG Oral Tablet"
+      },
+      {
+        "identifier": "RXCUI:311967"
+      },
+      {
+        "identifier": "UMLS:C0978974",
+        "label": "niacinamide 500 MG Oral Capsule"
+      },
+      {
+        "identifier": "RXCUI:311968"
+      },
+      {
+        "identifier": "UMLS:C0978975",
+        "label": "niacinamide 50 MG Oral Tablet"
+      },
+      {
+        "identifier": "RXCUI:316345"
+      },
+      {
+        "identifier": "UMLS:C0988095",
+        "label": "niacinamide 100 MG/ML"
+      },
+      {
+        "identifier": "RXCUI:316347"
+      },
+      {
+        "identifier": "UMLS:C0988118",
+        "label": "niacinamide 50 MG"
+      },
+      {
+        "identifier": "RXCUI:316348"
+      },
+      {
+        "identifier": "UMLS:C0988120",
+        "label": "niacinamide 500 MG"
+      },
+      {
+        "identifier": "RXCUI:317654"
+      },
+      {
+        "identifier": "UMLS:C0993431",
+        "label": "niacinamide 100 MG"
+      },
+      {
+        "identifier": "RXCUI:332254"
+      },
+      {
+        "identifier": "UMLS:C1128445",
+        "label": "niacinamide 250 MG"
+      },
+      {
+        "identifier": "RXCUI:336346"
+      },
+      {
+        "identifier": "UMLS:C1133577",
+        "label": "niacinamide 750 MG"
+      },
+      {
+        "identifier": "RXCUI:336494"
+      },
+      {
+        "identifier": "UMLS:C1133755",
+        "label": "niacinamide 3 MG"
+      },
+      {
+        "identifier": "RXCUI:337322"
+      },
+      {
+        "identifier": "UMLS:C1134796",
+        "label": "niacinamide 0.04 MG/MG"
+      },
+      {
+        "identifier": "RXCUI:349824"
+      },
+      {
+        "identifier": "UMLS:C1165459",
+        "label": "niacinamide 20 MG"
+      },
+      {
+        "identifier": "RXCUI:349884"
+      },
+      {
+        "identifier": "UMLS:C1165531",
+        "label": "niacinamide 15 MG"
+      },
+      {
+        "identifier": "RXCUI:350320"
+      },
+      {
+        "identifier": "UMLS:C2340780",
+        "label": "niacinamide 17 MG"
+      },
+      {
+        "identifier": "RXCUI:373054"
+      },
+      {
+        "identifier": "UMLS:C1247116",
+        "label": "niacinamide Oral Capsule"
+      },
+      {
+        "identifier": "RXCUI:373056"
+      },
+      {
+        "identifier": "UMLS:C1247118",
+        "label": "niacinamide Oral Tablet"
+      },
+      {
+        "identifier": "RXCUI:373057"
+      },
+      {
+        "identifier": "UMLS:C1247119",
+        "label": "niacinamide Extended Release Oral Tablet"
+      },
+      {
+        "identifier": "RXCUI:378044"
+      },
+      {
+        "identifier": "UMLS:C1252282",
+        "label": "niacinamide Topical Gel"
+      },
+      {
+        "identifier": "RXCUI:451168"
+      },
+      {
+        "identifier": "UMLS:C1382754",
+        "label": "niacinamide 20 MG/ML"
+      },
+      {
+        "identifier": "RXCUI:476830"
+      },
+      {
+        "identifier": "UMLS:C1509926",
+        "label": "niacinamide Topical Cream"
+      },
+      {
+        "identifier": "RXCUI:802688"
+      },
+      {
+        "identifier": "UMLS:C2356079",
+        "label": "niacinamide 30 MG"
+      },
+      {
+        "identifier": "RXCUI:877470"
+      },
+      {
+        "identifier": "UMLS:C2724629",
+        "label": "niacinamide 0.467 MG/ML"
+      },
+      {
+        "identifier": "RXCUI:1090960"
+      },
+      {
+        "identifier": "UMLS:C2979505",
+        "label": "niacinamide 2.44 MG/ML"
+      },
+      {
+        "identifier": "RXCUI:1093331"
+      },
+      {
+        "identifier": "UMLS:C2980779",
+        "label": "niacinamide 20 MG/ML Topical Cream"
+      },
+      {
+        "identifier": "RXCUI:1099030"
+      },
+      {
+        "identifier": "UMLS:C3153360",
+        "label": "niacinamide 3 MG/ML"
+      },
+      {
+        "identifier": "RXCUI:1145106"
+      },
+      {
+        "identifier": "UMLS:C3190775",
+        "label": "niacinamide 600 MG"
+      },
+      {
+        "identifier": "RXCUI:1158662"
+      },
+      {
+        "identifier": "UMLS:C3213060",
+        "label": "niacinamide Oral Product"
+      },
+      {
+        "identifier": "RXCUI:1158663"
+      },
+      {
+        "identifier": "UMLS:C3213061",
+        "label": "niacinamide Pill"
+      },
+      {
+        "identifier": "RXCUI:1158664"
+      },
+      {
+        "identifier": "UMLS:C3213062",
+        "label": "niacinamide Topical Product"
+      },
+      {
+        "identifier": "RXCUI:1304549"
+      },
+      {
+        "identifier": "UMLS:C3485678",
+        "label": "niacinamide 4 MG/ML"
+      },
+      {
+        "identifier": "RXCUI:1305190"
+      },
+      {
+        "identifier": "UMLS:C3486138",
+        "label": "niacinamide 3.4 MG/ML"
+      },
+      {
+        "identifier": "RXCUI:1314393"
+      },
+      {
+        "identifier": "UMLS:C3500345",
+        "label": "niacinamide 12.5 MG/ML"
+      },
+      {
+        "identifier": "RXCUI:1648144"
+      },
+      {
+        "identifier": "UMLS:C4018684",
+        "label": "niacinamide 2 MG/ML"
+      },
+      {
+        "identifier": "RXCUI:444331"
+      },
+      {
+        "identifier": "RXCUI:476828"
+      }
+    ],
+    "type": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:Drug",
+      "biolink:OntologyClass",
+      "biolink:MolecularMixture",
+      "biolink:ChemicalMixture"
+    ],
+    "information_content": 66.5
+  }
+}

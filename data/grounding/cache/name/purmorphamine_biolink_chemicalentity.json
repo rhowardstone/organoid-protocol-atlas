@@ -1,0 +1,29 @@
+[
+  {
+    "curie": "CHEBI:63053",
+    "label": "purmorphamine",
+    "highlighting": {},
+    "synonyms": [
+      "purmorphamine",
+      "PURMORPHAMINE",
+      "Purmorphamine",
+      "9H-purin-6-amine, 9-cyclohexyl-N-(4-(4-morpholinyl)phenyl)-2-(1-naphthalenyloxy)-",
+      "9-cyclohexyl-N-[4-(morpholin-4-yl)phenyl]-2-(naphthalen-1-yloxy)-9H-purin-6-amine"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 4423.5254,
+    "clique_identifier_count": 9
+  }
+]

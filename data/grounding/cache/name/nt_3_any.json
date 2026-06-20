@@ -1,0 +1,343 @@
+[
+  {
+    "curie": "NCBIGene:532393",
+    "label": "NTF3",
+    "highlighting": {},
+    "synonyms": [
+      "NTF3",
+      "NT-3",
+      "neurotrophin 3",
+      "neurotrophin-3",
+      "A0AAF6ZED4_BOVIN Neurotrophin-3 (trembl)",
+      "NTF3_BOVIN Neurotrophin-3 (sprot)"
+    ],
+    "taxa": [
+      "NCBITaxon:9913"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 880.6948,
+    "clique_identifier_count": 20
+  },
+  {
+    "curie": "NCBIGene:109075242",
+    "label": "ntf3",
+    "highlighting": {},
+    "synonyms": [
+      "ntf3",
+      "NT-3",
+      "neurotrophin-3",
+      "A0A8C1YWH3_CYPCA Neurotrophin-3 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:7962"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 850.782,
+    "clique_identifier_count": 8
+  },
+  {
+    "curie": "NCBIGene:100144493",
+    "label": "NTF3",
+    "highlighting": {},
+    "synonyms": [
+      "NT3",
+      "NT-3",
+      "NTF3",
+      "neurotrophin 3",
+      "neurotrophin-3",
+      "A0A287B6J8_PIG Neurotrophin-3 (trembl)",
+      "A0A5G2QHH1_PIG Neurotrophin-3 (trembl)",
+      "NTF3_PIG Neurotrophin-3 (sprot)"
+    ],
+    "taxa": [
+      "NCBITaxon:9823"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 594.75934,
+    "clique_identifier_count": 12
+  },
+  {
+    "curie": "UniProtKB:Q16620-2",
+    "label": "BDNF/NT-3 growth factors receptor isoform hTrkB-T1 (human)",
+    "highlighting": {},
+    "synonyms": [
+      "hNTRK2/iso:hTrkB-T1",
+      "BDNF/NT-3 growth factors receptor isoform hTrkB-T1 (human)"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 592.86646,
+    "clique_identifier_count": 28
+  },
+  {
+    "curie": "UniProtKB:A0A8D0V6Y7",
+    "label": "A0A8D0V6Y7_PIG NT-3 growth factor receptor (trembl)",
+    "highlighting": {},
+    "synonyms": [
+      "A0A8D0V6Y7_PIG NT-3 growth factor receptor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9823"
+    ],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 540.5702,
+    "clique_identifier_count": 13
+  },
+  {
+    "curie": "NCBIGene:101801114",
+    "label": "NTF3",
+    "highlighting": {},
+    "synonyms": [
+      "NTF3",
+      "nt-3",
+      "neurotrophin-3"
+    ],
+    "taxa": [
+      "NCBITaxon:8839"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 515.69226,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "UniProtKB:Q16620-1",
+    "label": "BDNF/NT-3 growth factors receptor isoform TrkB (human)",
+    "highlighting": {},
+    "synonyms": [
+      "hNTRK2/iso:TrkB",
+      "BDNF/NT-3 growth factors receptor isoform TrkB (human)",
+      "BDNF/NT-3 growth factors receptor isoform gp145-TrkB (human)"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 473.78088,
+    "clique_identifier_count": 12
+  },
+  {
+    "curie": "NCBIGene:102378075",
+    "label": "NTF3",
+    "highlighting": {},
+    "synonyms": [
+      "NTF3",
+      "nt-3",
+      "neurotrophin-3",
+      "A0A1U7S019_ALLSI Neurotrophin-3 (trembl)",
+      "A0A1U8DBT0_ALLSI Neurotrophin-3 (trembl)",
+      "A0A3Q0H2P4_ALLSI Neurotrophin-3 (trembl)",
+      "A0A3Q0H6C6_ALLSI Neurotrophin-3 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:38654"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 454.87515,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:428099",
+    "label": "NTF3",
+    "highlighting": {},
+    "synonyms": [
+      "NT3",
+      "HDNF",
+      "NT-3",
+      "NTF3",
+      "NGF2",
+      "NGF-2",
+      "neurotrophin 3",
+      "neurotrophin-3",
+      "neurotrophic factor",
+      "nerve growth factor 2",
+      "A0A3Q2U804_CHICK Neurotrophin-3 (trembl)",
+      "chick-NTF3",
+      "NT-3 (chicken)",
+      "HDNF (chicken)",
+      "NGF-2 (chicken)",
+      "neurotrophin-3 (chicken)",
+      "neurotrophic factor (chicken)",
+      "nerve growth factor 2 (chicken)",
+      "NTF3_CHICK Neurotrophin-3 (sprot)"
+    ],
+    "taxa": [
+      "NCBITaxon:9031"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 434.12677,
+    "clique_identifier_count": 32
+  },
+  {
+    "curie": "NCBIGene:549124",
+    "label": "ntf3",
+    "highlighting": {},
+    "synonyms": [
+      "nt3",
+      "hdnf",
+      "ntf3",
+      "nt-3",
+      "ngf2",
+      "ngf-2",
+      "neurotrophin 3",
+      "neurotrophin-3",
+      "A0A6I8QMK6_XENTR Neurotrophin-3 (trembl)",
+      "A0A8J0SFK4_XENTR Neurotrophin-3 (trembl)",
+      "F7EB21_XENTR Neurotrophin-3 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:8364"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 417.42004,
+    "clique_identifier_count": 9
+  }
+]

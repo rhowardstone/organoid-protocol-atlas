@@ -1,0 +1,74 @@
+{
+  "UniProtKB:A0A4X1SQN6": {
+    "id": {
+      "identifier": "UniProtKB:A0A4X1SQN6",
+      "label": "A0A4X1SQN6_PIG TGF-beta receptor type-1 (trembl)"
+    },
+    "equivalent_identifiers": [
+      {
+        "identifier": "UniProtKB:A0A4X1SQN6",
+        "label": "A0A4X1SQN6_PIG TGF-beta receptor type-1 (trembl)",
+        "taxa": [
+          "NCBITaxon:9823"
+        ]
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00015022056"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00015022056.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00030009933"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00030009933.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00035026786"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00035026786.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00040015071"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00040015071.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00050032224"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00050032224.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00060030030"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00060030030.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00070004370"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00070004370.1"
+      }
+    ],
+    "taxa": [
+      "NCBITaxon:9823"
+    ],
+    "type": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ]
+  }
+}

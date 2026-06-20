@@ -1,0 +1,38 @@
+{
+  "CL:0002248": {
+    "id": {
+      "identifier": "CL:0002248",
+      "label": "pluripotent stem cell"
+    },
+    "equivalent_identifiers": [
+      {
+        "identifier": "CL:0002248",
+        "label": "pluripotent stem cell"
+      },
+      {
+        "identifier": "UMLS:C0872076",
+        "label": "Pluripotent Stem Cells"
+      },
+      {
+        "identifier": "NCIT:C12977",
+        "label": "Pluripotent Stem Cell"
+      },
+      {
+        "identifier": "MESH:D039904",
+        "label": "Pluripotent Stem Cells"
+      }
+    ],
+    "type": [
+      "biolink:Cell",
+      "biolink:AnatomicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:OrganismalEntity",
+      "biolink:SubjectOfInvestigation",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "information_content": 77.8
+  }
+}

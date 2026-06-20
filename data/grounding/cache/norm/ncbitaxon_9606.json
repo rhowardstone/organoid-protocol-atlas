@@ -1,0 +1,23 @@
+{
+  "NCBITaxon:9606": {
+    "id": {
+      "identifier": "NCBITaxon:9606",
+      "label": "Humans"
+    },
+    "equivalent_identifiers": [
+      {
+        "identifier": "NCBITaxon:9606",
+        "label": "Homo sapiens (human)"
+      },
+      {
+        "identifier": "MESH:D006801",
+        "label": "Humans"
+      }
+    ],
+    "type": [
+      "biolink:OrganismTaxon",
+      "biolink:NamedThing"
+    ],
+    "information_content": 21.8
+  }
+}

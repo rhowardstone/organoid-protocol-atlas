@@ -1,0 +1,52 @@
+{
+  "CHEBI:91108": {
+    "id": {
+      "identifier": "CHEBI:91108",
+      "label": "SB 431542"
+    },
+    "equivalent_identifiers": [
+      {
+        "identifier": "CHEBI:91108",
+        "label": "SB 431542"
+      },
+      {
+        "identifier": "UNII:E1557V1V0N",
+        "label": "SB-431542"
+      },
+      {
+        "identifier": "PUBCHEM.COMPOUND:4521392",
+        "label": "4-(4-(benzo[d][1,3]dioxol-5-yl)-5-(pyridin-2-yl)-1H-imidazol-2-yl)benzamide"
+      },
+      {
+        "identifier": "CHEMBL.COMPOUND:CHEMBL440084",
+        "label": "SB-431542"
+      },
+      {
+        "identifier": "CAS:301836-41-9"
+      },
+      {
+        "identifier": "GTOPDB:8216",
+        "label": "SB-431542"
+      },
+      {
+        "identifier": "HMDB:HMDB0246120",
+        "label": "4-(4-(Benzo[d][1,3]dioxol-5-yl)-5-(pyridin-2-yl)-1H-imidazol-2-yl)benzamide"
+      },
+      {
+        "identifier": "INCHIKEY:FHYUGAJXYORMHI-UHFFFAOYSA-N"
+      }
+    ],
+    "type": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "information_content": 100.0
+  }
+}

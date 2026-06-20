@@ -1,0 +1,46 @@
+{
+  "UBERON:0000966": {
+    "id": {
+      "identifier": "UBERON:0000966",
+      "label": "retina"
+    },
+    "equivalent_identifiers": [
+      {
+        "identifier": "UBERON:0000966",
+        "label": "retina"
+      },
+      {
+        "identifier": "UMLS:C0035298",
+        "label": "Retina"
+      },
+      {
+        "identifier": "UMLS:C1278894",
+        "label": "Entire retina"
+      },
+      {
+        "identifier": "MESH:D012160",
+        "label": "Retina"
+      },
+      {
+        "identifier": "NCIT:C12343",
+        "label": "Retina"
+      },
+      {
+        "identifier": "NCIT:C87176",
+        "label": "Retinal"
+      }
+    ],
+    "type": [
+      "biolink:GrossAnatomicalStructure",
+      "biolink:AnatomicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:OrganismalEntity",
+      "biolink:SubjectOfInvestigation",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "information_content": 52.7
+  }
+}

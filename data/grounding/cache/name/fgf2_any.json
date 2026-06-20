@@ -1,0 +1,422 @@
+[
+  {
+    "curie": "NCBIGene:443306",
+    "label": "FGF2",
+    "highlighting": {},
+    "synonyms": [
+      "FGF2",
+      "BFGF",
+      "FGF-2",
+      "HBGF-2",
+      "fibroblast growth factor 2",
+      "basic fibroblast growth factor",
+      "heparin-binding growth factor 2",
+      "fibroblast growth factor 2 (basic)",
+      "FGF2_SHEEP Fibroblast growth factor 2 (sprot)"
+    ],
+    "taxa": [
+      "NCBITaxon:9940"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 3379.576,
+    "clique_identifier_count": 12
+  },
+  {
+    "curie": "NCBIGene:14173",
+    "label": "Fgf2",
+    "highlighting": {},
+    "synonyms": [
+      "Fgf2",
+      "bFGF",
+      "Fgfb",
+      "Fgf-2",
+      "Fgf2a",
+      "HBGF-2",
+      "fibroblast growth factor 2",
+      "fibroblast growth factor 2a",
+      "basic fibroblast growth factor",
+      "heparin-binding growth factor 2",
+      "mFGF2",
+      "bFGF (mouse)",
+      "FGF-2 (mouse)",
+      "HBGF-2 (mouse)",
+      "fibroblast growth factor 2 (mouse)",
+      "basic fibroblast growth factor (mouse)",
+      "heparin-binding growth factor 2 (mouse)",
+      "FGF2_MOUSE Fibroblast growth factor 2 (sprot)",
+      "Q541T2_MOUSE Fibroblast growth factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:10090"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 3159.4656,
+    "clique_identifier_count": 10
+  },
+  {
+    "curie": "NCBIGene:115252306",
+    "label": "fgf2",
+    "highlighting": {},
+    "synonyms": [
+      "fgf2",
+      "fibroblast growth factor 2",
+      "basic fibroblast growth factor",
+      "A0A674NNT2_TAKRU Fibroblast growth factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:31033"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 3159.4656,
+    "clique_identifier_count": 10
+  },
+  {
+    "curie": "NCBIGene:2247",
+    "label": "FGF2",
+    "highlighting": {},
+    "synonyms": [
+      "FGFB",
+      "FGF2",
+      "BFGF",
+      "FGF-2",
+      "HBGF-2",
+      "FGF2 gene",
+      "FGF2 Gene",
+      "prostatropin",
+      "fibroblast growth factor 2",
+      "FIBROBLAST GROWTH FACTOR 2",
+      "heparin-binding growth factor 2",
+      "FIBROBLAST GROWTH FACTOR, BASIC",
+      "fibroblast growth factor 2 (basic)",
+      "basic fibroblast growth factor bFGF",
+      "Fibroblast Growth Factor 2 (Basic) Gene",
+      "D9ZGF5_HUMAN Fibroblast growth factor (trembl)",
+      "bFGF",
+      "hFGF2",
+      "Prostatropin",
+      "bFGF (human)",
+      "FGF-2 (human)",
+      "HBGF-2 (human)",
+      "Fibroblast Growth Factor 2",
+      "Basic Fibroblast Growth Factor",
+      "Heparin-Binding Growth Factor 2",
+      "Fibroblast Growth Factor 2, human",
+      "fibroblast growth factor 2 (human)",
+      "basic fibroblast growth factor (human)",
+      "heparin-binding growth factor 2 (human)",
+      "FGF2_HUMAN Fibroblast growth factor 2 (sprot)"
+    ],
+    "taxa": [
+      "NCBITaxon:9606"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 3033.885,
+    "clique_identifier_count": 9
+  },
+  {
+    "curie": "NCBIGene:54250",
+    "label": "Fgf2",
+    "highlighting": {},
+    "synonyms": [
+      "Fgf2",
+      "bFGF",
+      "Fgf-2",
+      "Fgf2a",
+      "HBGF-2",
+      "fibroblast growth factor 2",
+      "fibroblast growth factor 2a",
+      "heparin binding growth factor",
+      "basic fibroblast growth factor",
+      "heparin-binding growth factor 2",
+      "angiogenesis promoting growth factor",
+      "A0A7U3JW58_RAT Fibroblast growth factor (trembl)",
+      "rFGF2",
+      "bFGF (rat)",
+      "FGF-2 (rat)",
+      "HBGF-2 (rat)",
+      "fibroblast growth factor 2 (rat)",
+      "basic fibroblast growth factor (rat)",
+      "heparin-binding growth factor 2 (rat)",
+      "FGF2_RAT Fibroblast growth factor 2 (sprot)"
+    ],
+    "taxa": [
+      "NCBITaxon:10116"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2895.062,
+    "clique_identifier_count": 8
+  },
+  {
+    "curie": "NCBIGene:396413",
+    "label": "FGF2",
+    "highlighting": {},
+    "synonyms": [
+      "FGF2",
+      "BFGF",
+      "FGF-2",
+      "HBGF-2",
+      "fibroblast growth factor 2",
+      "basic fibroblast growth factor",
+      "heparin-binding growth factor 2",
+      "fibroblast growth factor 2 (basic)",
+      "chick-FGF2",
+      "bFGF (chicken)",
+      "FGF-2 (chicken)",
+      "HBGF-2 (chicken)",
+      "fibroblast growth factor 2 (chicken)",
+      "basic fibroblast growth factor (chicken)",
+      "heparin-binding growth factor 2 (chicken)",
+      "FGF2_CHICK Fibroblast growth factor 2 (sprot)"
+    ],
+    "taxa": [
+      "NCBITaxon:9031"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2739.871,
+    "clique_identifier_count": 7
+  },
+  {
+    "curie": "NCBIGene:106611625",
+    "label": "fgf2",
+    "highlighting": {},
+    "synonyms": [
+      "fgf2",
+      "fibroblast growth factor 2",
+      "A0A1S3ST36_SALSA Fibroblast growth factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:8030"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2739.871,
+    "clique_identifier_count": 7
+  },
+  {
+    "curie": "NCBIGene:111835519",
+    "label": "fgf2",
+    "highlighting": {},
+    "synonyms": [
+      "fgf2",
+      "fibroblast growth factor 2",
+      "A0A3B3T2E3_9TELE Fibroblast growth factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:1676925"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2739.871,
+    "clique_identifier_count": 7
+  },
+  {
+    "curie": "NCBIGene:102915626",
+    "label": "Fgf2",
+    "highlighting": {},
+    "synonyms": [
+      "Fgf2",
+      "fibroblast growth factor 2",
+      "fibroblast growth factor 2 (basic)",
+      "A0A6I9M7S9_PERMB Fibroblast growth factor (trembl)",
+      "A0A6J0EGQ6_PERMB Fibroblast growth factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:230844"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2563.9302,
+    "clique_identifier_count": 6
+  },
+  {
+    "curie": "NCBIGene:619384",
+    "label": "FGF2",
+    "highlighting": {},
+    "synonyms": [
+      "FGF2",
+      "BFGF",
+      "FGF-2",
+      "HBGF2",
+      "HBGF-2",
+      "prostatropin",
+      "fibroblast growth factor 2",
+      "basic fibroblast growth factor",
+      "heparin-binding growth factor 2",
+      "fibroblast growth factor 2 (basic)",
+      "FGF2_MONDO Fibroblast growth factor 2 (sprot)"
+    ],
+    "taxa": [
+      "NCBITaxon:13616"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2360.8215,
+    "clique_identifier_count": 5
+  }
+]

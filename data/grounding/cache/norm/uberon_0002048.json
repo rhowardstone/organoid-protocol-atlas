@@ -1,0 +1,38 @@
+{
+  "UBERON:0002048": {
+    "id": {
+      "identifier": "UBERON:0002048",
+      "label": "lung"
+    },
+    "equivalent_identifiers": [
+      {
+        "identifier": "UBERON:0002048",
+        "label": "lung"
+      },
+      {
+        "identifier": "UMLS:C0024109",
+        "label": "Lung"
+      },
+      {
+        "identifier": "MESH:D008168",
+        "label": "Lung"
+      },
+      {
+        "identifier": "NCIT:C12468",
+        "label": "Lung"
+      }
+    ],
+    "type": [
+      "biolink:GrossAnatomicalStructure",
+      "biolink:AnatomicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:OrganismalEntity",
+      "biolink:SubjectOfInvestigation",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "information_content": 53.2
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "NCBIGene:469283": {
+    "id": {
+      "identifier": "NCBIGene:469283",
+      "label": "RSPO1"
+    },
+    "equivalent_identifiers": [
+      {
+        "identifier": "NCBIGene:469283",
+        "label": "RSPO1",
+        "taxa": [
+          "NCBITaxon:9598"
+        ]
+      },
+      {
+        "identifier": "ENSEMBL:ENSPTRG00045030929"
+      },
+      {
+        "identifier": "UniProtKB:A0A2J8LYN1",
+        "label": "A0A2J8LYN1_PANTR R-spondin-1 (trembl)",
+        "taxa": [
+          "NCBITaxon:9598"
+        ]
+      },
+      {
+        "identifier": "ENSEMBL:ENSPTRP00000000970"
+      },
+      {
+        "identifier": "ENSEMBL:ENSPTRP00000000970.6"
+      }
+    ],
+    "taxa": [
+      "NCBITaxon:9598"
+    ],
+    "type": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ]
+  }
+}
