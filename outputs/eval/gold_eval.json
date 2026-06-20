@@ -1,0 +1,76 @@
+{
+  "generated_at": "2026-06-20T22:04:31.892974+00:00",
+  "generator": "pipeline/eval_gold.py",
+  "honesty": "Only HUMAN-VERIFIED gold (truthy verified_by) is scored; unverified gold is skipped and never counted. No model-vs-model.",
+  "provenance": {
+    "gold_dir": "gold/candidate",
+    "pred_dir": "/atb-data/rye/Organoid/data/predictions/local",
+    "gold_files_found": 6,
+    "gold_pmcids": [
+      "PMC3033971",
+      "PMC4270898",
+      "PMC4370217",
+      "PMC4620584",
+      "PMC6428276",
+      "PMC6906116"
+    ],
+    "verified_count": 0,
+    "skipped_unverified_count": 6,
+    "skipped_no_prediction_count": 0
+  },
+  "match_rules": {
+    "name_normalizer": "ground._norm (lowercase, greek-fold, strip non-alnum)",
+    "set_fields": [
+      "signaling_factors",
+      "small_molecules"
+    ],
+    "scalar_fields": [
+      "source_cells.cell_type",
+      "matrix",
+      "base_media"
+    ],
+    "set_match": "normalized set overlap; duplicates collapsed",
+    "scalar_match": "exact after normalize -> correct/incorrect/missing/not_in_gold"
+  },
+  "verified_gold_scored": [],
+  "skipped_unverified": [
+    {
+      "pmcid": "PMC3033971",
+      "file": "gold/candidate/PMC3033971.json",
+      "reason": "verified_by is null"
+    },
+    {
+      "pmcid": "PMC4270898",
+      "file": "gold/candidate/PMC4270898.json",
+      "reason": "verified_by is null"
+    },
+    {
+      "pmcid": "PMC4370217",
+      "file": "gold/candidate/PMC4370217.json",
+      "reason": "verified_by is null"
+    },
+    {
+      "pmcid": "PMC4620584",
+      "file": "gold/candidate/PMC4620584.json",
+      "reason": "verified_by is null"
+    },
+    {
+      "pmcid": "PMC6428276",
+      "file": "gold/candidate/PMC6428276.json",
+      "reason": "verified_by is null"
+    },
+    {
+      "pmcid": "PMC6906116",
+      "file": "gold/candidate/PMC6906116.json",
+      "reason": "verified_by is null"
+    }
+  ],
+  "skipped_no_prediction": [],
+  "is_real_metric": false,
+  "aggregate": {
+    "papers_scored": 0,
+    "set_fields": {},
+    "scalar_fields": {}
+  },
+  "per_paper": {}
+}

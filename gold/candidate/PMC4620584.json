@@ -1,0 +1,76 @@
+{
+  "pmcid": "PMC4620584",
+  "doi": "10.1038/ncomms9715",
+  "verified_by": null,
+  "candidate_by": "agentA-subagent",
+  "gold": {
+    "organoid_type": "kidney",
+    "source_cells": {
+      "cell_type": "ESC",
+      "species": "Homo sapiens"
+    },
+    "matrix": {
+      "name": "GelTrex",
+      "reporting": "reported"
+    },
+    "base_media": {
+      "value": "Advanced RPMI",
+      "reporting": "reported"
+    },
+    "signaling_factors": [
+      {
+        "name": "CHIR99021",
+        "role": "GSK3 inhibitor / Wnt activator",
+        "concentration": {
+          "value": 12,
+          "canonical_unit": "uM"
+        }
+      },
+      {
+        "name": "IWP2",
+        "role": "inhibitor of WNT production",
+        "concentration": {
+          "value": 5,
+          "canonical_unit": "uM"
+        }
+      },
+      {
+        "name": "Y27632",
+        "role": "Rho-kinase inhibitor",
+        "concentration": {
+          "value": 10,
+          "canonical_unit": "uM"
+        }
+      }
+    ],
+    "media_supplements": [
+      {
+        "name": "B27 Supplement"
+      },
+      {
+        "name": "Glutamax"
+      }
+    ]
+  },
+  "evidence": {
+    "organoid_type": "Kidney organoid cultures (400,000 cells) were dissociated with accutase",
+    "source_cells.cell_type": "In all, 60,000–120,000 H9 hPSCs were plated per 1.9 cm 2 and sandwiched, sufficient to produce scattered, isolated spheroid colonies.",
+    "source_cells.species": "iPSCs from BJ foreskin fibroblasts (ATCC CRL-2522) and HDFα human dermal fibroblasts",
+    "matrix": "For thin gel sandwich colonies, cells were plated at 60,000 (primed) or 30,000 (naive) cells/well of a 24-well plate or 4-well chamber slide pre-coated with GelTrex in media supplemented with 10 μM Rho-kinase inhibitor Y27632 (Stemgent).",
+    "base_media": "then changed to RB (Advanced RPMI+1X Glutamax+1X B27 Supplement, all from Thermo Fisher Scientific) and replaced every 3 days thereafter.",
+    "CHIR99021": "hPSC spheroids were treated with 12 μM CHIR (Stemgent) for 36 h, then changed to RB",
+    "IWP2": ", 5 μM inhibitor of WNT production-2 (IWP2, Tocris)",
+    "Y27632": "media supplemented with 10 μM Rho-kinase inhibitor Y27632 (Stemgent).",
+    "B27 Supplement": "RB (Advanced RPMI+1X Glutamax+1X B27 Supplement, all from Thermo Fisher Scientific)",
+    "Glutamax": "RB (Advanced RPMI+1X Glutamax+1X B27 Supplement, all from Thermo Fisher Scientific)"
+  },
+  "flags": [
+    "source_cells.cell_type: The kidney organoids were specifically derived from H9 hPSCs. H9/WA09 is a human embryonic stem cell line (hESC), so cell_type=ESC. However, the methods describe many cell lines (multiple iPSC lines, mESCs) used across the broader study; the tubular/kidney organoid differentiation explicitly used H9 hPSCs. Methods_text does not contain a verbatim string explicitly calling H9 an 'ESC' or 'hESC' within the differentiation section; H9 is referred to as 'hPSCs'. The hESC classification of H9 is from line-identity convention, so confidence is moderate.",
+    "source_cells.species: No single verbatim phrase explicitly states the species of H9. 'Homo sapiens' is inferred from 'H9 hPSCs' (human pluripotent stem cells) and the repeated 'human' references. The provided evidence quote is the closest verbatim mention of 'human' cells but does not name H9 specifically. Confidence moderate.",
+    "matrix: Multiple matrices are described (GelTrex for the thin-gel sandwich used in kidney organoid generation; collagen I and Matrigel for thick gel cultures; Matrigel for transwell/teratoma). The kidney/tubular organoid sandwich protocol uses GelTrex. Matrigel is also a candidate matrix. Low-to-moderate confidence on selecting GelTrex as THE primary matrix.",
+    "base_media: Two media regimens are used for tubular organoid differentiation: RB (Advanced RPMI+Glutamax+B27) and RBNI (RB minus insulin). mTeSR1 is the maintenance/sandwich media. 'Advanced RPMI' selected as base media of the differentiation (RB). Moderate confidence.",
+    "concentrations: CHIR is used at 12 uM in the differentiation (also 3 uM in mESC maintenance, not relevant to kidney organoids). Y27632 at 10 uM in sandwich. IWP2 at 5 uM. All verbatim.",
+    "canonical_unit: 'uM' used as ASCII for the micromolar symbol; source uses Greek mu (μM)."
+  ],
+  "notes": "This paper combines many cell lines and culture conditions; the KIDNEY/tubular organoid differentiation specifically uses H9 hPSCs in a GelTrex thin-gel sandwich. Differentiation: 48 h after sandwiching, spheroids treated with 12 uM CHIR for 36 h, then switched to RB (Advanced RPMI + Glutamax + B27). An alternative regimen uses RBNI (RB minus insulin) with a CHIR pulse followed by 5 uM IWP2. Y27632 (10 uM) is used during initial sandwich plating. mTeSR1 is the hPSC maintenance medium (StemCell Technologies). No FGF9, Activin A, BMP, retinoic acid, or noggin reported. KSR (knockout serum replacement) appears only in hLR5 iPSC maintenance media, NOT in the kidney organoid differentiation, so it is excluded. B27 and Glutamax are media supplements in RB. Insulin is implicitly present in B27/RB and its withdrawal defines RBNI, but insulin is not separately listed as a supplement. species and cell_type for H9 are inferred from line identity and 'hPSC'/'human' usage rather than an explicit verbatim H9-is-hESC statement; both flagged for human verification."
+}
