@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-06-20T16:55:11+00:00",
-  "papers": 27,
+  "generated_at": "2026-06-20T17:07:33+00:00",
+  "papers": 28,
   "source_routes": {
-    "europe_pmc_xml": 4,
+    "europe_pmc_xml": 5,
     "ncbi_efetch_xml": 23
   },
-  "methods_section_found": 27,
+  "methods_section_found": 28,
   "no_methods_section": 0,
   "supplement_text_inline_ge400chars": 9,
   "papers_with_tables": 10,
@@ -13,16 +13,16 @@
   "license_breakdown": {
     "author-manuscript": 17,
     "unknown": 1,
-    "CC-BY": 7,
+    "CC-BY": 8,
     "CC-BY-NC-ND": 2
   },
-  "median_methods_chars": 14882,
-  "median_reference_count": 44,
-  "papers_with_external_supplement_files": 24,
-  "total_external_supplement_files": 147,
-  "papers_with_figures": 27,
-  "total_figures": 204,
-  "papers_with_links": 26,
+  "median_methods_chars": 15395.5,
+  "median_reference_count": 47.5,
+  "papers_with_external_supplement_files": 25,
+  "total_external_supplement_files": 149,
+  "papers_with_figures": 28,
+  "total_figures": 210,
+  "papers_with_links": 27,
   "deferred_modalities": {
     "external_supplement_files": "inventoried, NOT downloaded/parsed yet (next deterministic step)",
     "figure_graphics": "captions captured; image content needs Tier 2 (targeted vision)",

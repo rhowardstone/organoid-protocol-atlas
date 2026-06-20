@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-06-20T16:57:00+00:00",
+  "generated_at": "2026-06-20T17:07:44+00:00",
   "model": "gemma3:12b",
-  "papers": 27,
+  "papers": 28,
   "rows": [
     {
       "pmcid": "PMC10739970",
@@ -337,6 +337,19 @@
       "reagents_grounded": 6,
       "reagents_total": 6,
       "grounding_rate": 1.0
+    },
+    {
+      "pmcid": "PMC12625545",
+      "doi": "10.1186/s13287-025-04771-y",
+      "organoid_type": "retinal",
+      "model": "gemma3:12b",
+      "n_signaling_factors": 2,
+      "n_supplements": 10,
+      "matrix": "Matrigel\u2122",
+      "base_media": "Essential 8",
+      "reagents_grounded": 1,
+      "reagents_total": 2,
+      "grounding_rate": 0.5
     }
   ]
 }

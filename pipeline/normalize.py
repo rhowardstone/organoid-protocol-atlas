@@ -49,6 +49,7 @@ CANON = {
     # BMP axis (incl. spelled-out forms)
     "bmp4": "BMP4", "bmp7": "BMP7", "noggin": "Noggin",
     "bonemorphogeneticprotein4": "BMP4", "bonemorphogeneticprotein7": "BMP7",
+    "rhbmp4": "BMP4", "rhbmp7": "BMP7", "rhnoggin": "Noggin", "rhegf": "EGF",
     "epidermalgrowthfactor": "EGF", "hepatocytegrowthfactor": "HGF",
     "vascularendothelialgrowthfactor": "VEGF",
     "dorsomorphin": "Dorsomorphin", "ldn193189": "LDN-193189",

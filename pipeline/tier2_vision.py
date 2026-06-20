@@ -100,6 +100,7 @@ def load_image_b64(path: Path, max_side: int = 1280) -> str:
 def main():
     PRED2.mkdir(parents=True, exist_ok=True)
     OUT.mkdir(parents=True, exist_ok=True)
+    subset = bool(sys.argv[1:])
     targets = sys.argv[1:] or [p.name for p in sorted(FIG_DIR.iterdir()) if p.is_dir()]
 
     summary = []
@@ -175,6 +176,14 @@ def main():
                         "culture_factors": cf})
         print(f"[{pmcid}] flagged {len(flagged)} figs | grounded stages {gs}/{rs} "
               f"reagents {gr}/{rr} | culture-factors {cf}", flush=True)
+
+    # incremental (subset) run: merge fresh rows into the existing summary so the
+    # committed artifact reflects the whole CC-paper set, not just what was re-run.
+    out_path = OUT / "vision_summary.json"
+    if subset and out_path.exists():
+        prior = json.loads(out_path.read_text()).get("rows", [])
+        done = {s["pmcid"] for s in summary}
+        summary = [s for s in prior if s["pmcid"] not in done] + summary
 
     g_st = sum(s["grounded_stages"] for s in summary)
     r_st = sum(s["raw_stages"] for s in summary)

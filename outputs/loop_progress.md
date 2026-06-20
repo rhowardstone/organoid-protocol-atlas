@@ -212,3 +212,20 @@
 - Result: corpus 26->27, reagents 299, grounding held 0.816, gastric consensus now "7 core · 8
   variable" (Activin A/BMP4/CHIR/EGF/FGF4/FGF10/RA core — sensible endoderm->gastric induction).
   Stats updated. Tests green (12).
+
+## Iteration 15 — 2026-06-20 — Retinal #3: every organoid type now n>=3 (milestone)
+- Goal: make every type's /consensus non-provisional (retinal was the last at n=2).
+- Tried Capowski 2019 (PMC6340149, the canonical retinal staging paper) — but its PMC record
+  is front-matter only (no OA full-text body via Europe PMC or efetch), so 0 methods extracted.
+  Removed it cleanly (unusable, not noisy).
+- Added Bohrer 2025 (PMC12625545, Stem Cell Res Ther, CC-BY, "clinical-grade iPSC retinal
+  organoids w/ transplantable photoreceptors"). Clean extraction: Matrigel / Essential 8 base,
+  factors rhBMP4 1.5 + all-trans retinoic acid 1.0 — the canonical early retinal induction pair
+  (matches Harkin's BMP4+LDN). Thin (2 factors) but correct, no equipment/marker junk. Tier-2
+  vision ran on its figures (CC-BY).
+- MILESTONE: corpus 27->28, retinal 1->...->3; ALL 8 organoid types now have >=3 protocols, so
+  every consensus card is non-provisional. Grounding held 0.813.
+- Normalization: added recombinant aliases (rhBMP4->BMP4, rhNoggin->Noggin, rhEGF->EGF);
+  BMP4 now unifies BMP4 / "Bone morphogenetic protein 4" / rhBMP4.
+- Tooling: gave tier2_vision.py the same incremental-summary merge as tier0/tier1 (subset runs
+  no longer clobber vision_summary). Stats updated. Tests green (12).
