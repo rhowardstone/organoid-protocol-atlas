@@ -42,3 +42,16 @@ def test_public_ask_page_is_honest_without_model():
     assert "model synthesis unavailable here" in html
     assert "evidence retrieved" in html
     assert "public Render deployment" in html
+
+
+def test_is_public_license_excludes_nc_nd_and_nonfree():
+    import sys
+    sys.path.insert(0, str(ROOT / "pipeline"))
+    from export_public import is_public_license
+    # freely redistributable -> public
+    for lic in ["CC-BY", "CC-BY-4.0", "CC BY 4.0", "cc-by", "CC0", "CC0-1.0", "CC-BY-SA"]:
+        assert is_public_license(lic), lic
+    # NonCommercial / NoDerivatives / non-CC -> excluded from public build
+    for lic in ["CC-BY-NC", "CC-BY-NC-ND", "CC-BY-ND", "author-manuscript",
+                "unknown", "", None]:
+        assert not is_public_license(lic), lic
