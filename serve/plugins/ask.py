@@ -7,7 +7,9 @@ retrieved out of the knowledge graph (RAG over the FTS index), must cite the
 source PMCIDs, and is told to refuse when the retrieved context does not contain
 the answer — missing evidence beats false evidence. No outside knowledge, no API.
 
-Route:  GET /-/ask?q=...   ->  {question, answer, sources:[...], grounded: bool}
+Routes:
+- GET /-/ask?q=... -> {question, answer, sources:[...], grounded: bool}
+- GET /llms.txt    -> agent-readable public API and provenance guide
 """
 
 from __future__ import annotations
@@ -25,6 +27,52 @@ from datasette import hookimpl, Response
 OLLAMA = os.environ.get("OLLAMA_URL", "http://localhost:11434/api/generate")
 MODEL = os.environ.get("OLLAMA_MODEL", "llama3.1:8b")
 TOP_K = 12
+
+LLMS_TXT = """# Organoid Protocol Atlas
+
+Public, license-safe Datasette deployment of the Organoid Protocol Atlas.
+
+Base URL: https://organoid-protocol-atlas.onrender.com
+Source: https://github.com/rhowardstone/organoid-protocol-atlas
+
+## What is available here
+
+This public deployment contains the CC-licensed public subset: 10 papers, 10
+protocol rows, and 122 public reagent/protocol rows. It does not redistribute
+full methods text or paper bodies. Evidence fields are short citation snippets
+kept so users and agents can trace claims back to the source paper.
+
+The larger local pipeline tracks a verified 28-paper corpus and additional
+candidate papers, but those are not all public on this hosted deployment.
+
+## Useful endpoints
+
+- /atlas/protocols.json?_shape=array&_size=max
+- /atlas/reagents.json?_shape=array&_size=max
+- /atlas/reagents.json?_shape=array&_size=max&kind__exact=signaling
+- /-/ask?q=which%20factors%20define%20kidney%20organoids%3F
+
+Datasette table pages also support faceting, filtering, sorting, and JSON
+exports. Prefer the JSON endpoints for programmatic use.
+
+## Evidence rules for agents
+
+- Treat rows as extracted literature evidence, not clinical or wet-lab advice.
+- Cite PMCID and DOI values from returned rows whenever making a claim.
+- Do not infer that a factor is absent from biology because it is absent here.
+- Respect grounding fields and evidence snippets; missing evidence beats false
+  certainty.
+- Natural-language synthesis from /-/ask is only available when the deployment
+  can reach the local model; otherwise the endpoint returns retrieved evidence
+  rows without model synthesis.
+
+## Public subset counts
+
+- papers: 10
+- protocols: 10
+- reagent/protocol rows: 122
+- full text redistributed: no
+"""
 
 # organoid types we can detect in a question to bias retrieval
 _TYPES = ["intestinal", "gastric", "cerebral", "kidney", "liver", "lung",
@@ -160,6 +208,10 @@ async def ask(datasette, request):
     })
 
 
+async def llms_txt(datasette, request):
+    return Response.text(LLMS_TXT)
+
+
 @hookimpl
 def register_routes():
-    return [(r"^/-/ask$", ask)]
+    return [(r"^/-/ask$", ask), (r"^/llms\.txt$", llms_txt)]
