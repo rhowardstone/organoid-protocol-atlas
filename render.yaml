@@ -1,0 +1,16 @@
+# Render blueprint — deploy the public Organoid Protocol Atlas (Datasette over the
+# license-safe CC-only subset). Connect the repo in Render; it picks this up.
+# Free plan works (sleeps when idle); bump to starter for always-on.
+services:
+  - type: web
+    name: organoid-atlas
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /
+    autoDeploy: true
+    # To enable live /ask, set OLLAMA_URL to a tunneled A100 endpoint in the Render
+    # dashboard; left unset, /ask returns grounded evidence + an honest "local-only" note.
+    envVars:
+      - key: OLLAMA_URL
+        sync: false

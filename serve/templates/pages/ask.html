@@ -1,5 +1,5 @@
 {% extends "default:base.html" %}
-{% block title %}Ask the Atlas — Organoid Protocol Atlas{% endblock %}
+{% block title %}Ask the Atlas - Organoid Protocol Atlas{% endblock %}
 {% block body_class %}index{% endblock %}
 
 {% block content %}
@@ -7,24 +7,26 @@
   <span class="dot"></span> <a href="/">ORGANOID PROTOCOL ATLAS</a>
   <span class="dot"></span> <a href="/atlas/protocols">Protocols</a>
   <span class="dot"></span> <a href="/heatmap">Morphogen grammar</a>
+  <span class="dot"></span> <a href="/llms.txt">llms.txt</a>
 </div>
 
 <div class="apa-ask-head">
-  <div class="apa-kicker">Ask the Atlas · grounded Q&amp;A</div>
-  <h1>Ask a question about organoid protocols</h1>
-  <p class="apa-sub">A local model (no API) answers <em>only</em> from reagents retrieved out of the
-  knowledge graph, and cites the source papers. If the corpus has no evidence, it says so —
-  missing evidence beats false evidence.</p>
+  <div class="apa-kicker">Ask the Atlas - grounded evidence retrieval</div>
+  <h1>Ask a question about public organoid protocols</h1>
+  <p class="apa-sub">Questions retrieve rows from the public knowledge graph and show the source
+  evidence. When a local model is attached, it synthesizes answers only from those rows and cites
+  the source papers. On the public Render deployment, evidence retrieval still works when model
+  synthesis is unavailable.</p>
 
   <form id="askForm" class="apa-ask-form" autocomplete="off">
-    <input id="askInput" type="search" placeholder="e.g. which factors define intestinal organoids?" />
+    <input id="askInput" type="search" placeholder="e.g. which factors define kidney organoids?" />
     <button type="submit">Ask</button>
   </form>
   <div class="apa-ask-examples">
     <span>Try:</span>
-    <button class="ex">which signaling factors define intestinal organoids?</button>
+    <button class="ex">which signaling factors define kidney organoids?</button>
     <button class="ex">what concentration of CHIR99021 is used in kidney organoids?</button>
-    <button class="ex">which factors are shared across lung and intestinal organoids?</button>
+    <button class="ex">which factors are shared across lung and kidney organoids?</button>
   </div>
 </div>
 
@@ -34,36 +36,43 @@
 const esc = s => (s==null?'':String(s)).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const out = document.getElementById('askOut');
 
-// turn [PMCID] citations in the answer into links
 function linkCites(text){
   return esc(text).replace(/\[(PMC\d+)\]/g, '<a class="cite" href="/atlas/protocols/$1">[$1]</a>');
 }
 
 async function ask(q){
-  out.innerHTML = `<div class="apa-ask-loading">Thinking with the local model… <span class="apa-dots"></span></div>`;
+  out.innerHTML = `<div class="apa-ask-loading">Retrieving grounded evidence... <span class="apa-dots"></span></div>`;
   let d;
   try { d = await (await fetch('/-/ask?q=' + encodeURIComponent(q))).json(); }
-  catch(e){ out.innerHTML = '<div class="apa-ask-card">Could not reach the local model.</div>'; return; }
+  catch(e){ out.innerHTML = '<div class="apa-ask-card">Could not reach the Atlas evidence service.</div>'; return; }
 
   const ans = d.answer || d.error || 'No answer.';
-  const badge = d.grounded
-    ? '<span class="apa-badge ok">grounded</span>'
-    : '<span class="apa-badge no">no evidence</span>';
+  const hasSources = Boolean(d.sources && d.sources.length);
+  let badge = '<span class="apa-badge no">no evidence</span>';
+  if (d.grounded) {
+    badge = '<span class="apa-badge ok">grounded answer</span>';
+  } else if (hasSources) {
+    badge = '<span class="apa-badge ok">evidence retrieved</span>';
+  }
+  const modelNote = d.model
+    ? `<div class="apa-ask-model">answered locally by ${esc(d.model)}</div>`
+    : (d.model_available === false ? '<div class="apa-ask-model">model synthesis unavailable here; showing retrieved evidence</div>' : '');
+
   let html = `<div class="apa-ask-card">
       <div class="apa-ask-q">${esc(d.question)} ${badge}</div>
       <div class="apa-ask-a">${linkCites(ans)}</div>
-      ${d.model?`<div class="apa-ask-model">answered locally by ${esc(d.model)}</div>`:''}
+      ${modelNote}
     </div>`;
 
-  if (d.sources && d.sources.length){
+  if (hasSources){
     html += `<h3 class="apa-ask-srch">Evidence (${d.sources.length})</h3><div class="apa-ask-src">`;
     for (const s of d.sources){
       const dose = (s.value!=null) ? `${s.value} ${esc(s.unit||'')}` : '';
-      const fig = s.figure_confirmed ? ' <span class="apa-badge fig">📷</span>' : '';
+      const fig = s.figure_confirmed ? ' <span class="apa-badge fig">figure</span>' : '';
       html += `<div class="src-row">
         <div class="src-head"><a href="/atlas/protocols/${esc(s.pmcid)}">${esc(s.reagent)}</a>${fig}
-          <span class="src-meta">${esc(s.organoid_type)}${dose?' · '+esc(dose):''} · ${esc(s.pmcid)}</span></div>
-        ${s.quote?`<div class="src-quote">“${esc(s.quote)}”</div>`:''}
+          <span class="src-meta">${esc(s.organoid_type)}${dose?' - '+esc(dose):''} - ${esc(s.pmcid)}</span></div>
+        ${s.quote?`<div class="src-quote">"${esc(s.quote)}"</div>`:''}
         ${s.doi?`<a class="src-doi" href="https://doi.org/${esc(s.doi)}" target="_blank" rel="noopener">${esc(s.doi)}</a>`:''}
       </div>`;
     }

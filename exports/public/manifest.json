@@ -1,0 +1,20 @@
+{
+  "license_filter": "CC*",
+  "n_papers": 10,
+  "papers": [
+    "PMC10739970",
+    "PMC11194494",
+    "PMC12625545",
+    "PMC4370190",
+    "PMC4370217",
+    "PMC4620584",
+    "PMC6376275",
+    "PMC6906116",
+    "PMC7757566",
+    "PMC8516798"
+  ],
+  "tables": {
+    "protocols": 10,
+    "reagents": 122
+  }
+}

@@ -12,81 +12,84 @@
   <span class="dot"></span> <a href="/heatmap">Morphogen grammar</a>
   <span class="dot"></span> <a href="/consensus">Consensus</a>
   <span class="dot"></span> <a href="/ask">Ask</a>
+  <span class="dot"></span> <a href="/llms.txt">llms.txt</a>
   <span class="dot"></span> <a href="https://github.com/rhowardstone/organoid-protocol-atlas">Source</a>
 </div>
 
 <div class="apa-hero">
-  <div class="apa-kicker">Evidence-grounded · extracted from the literature</div>
+  <div class="apa-kicker">Public CC subset - evidence-grounded</div>
   <h1>Organoid Protocol Atlas</h1>
-  <p class="lead">Methods sections from organoid-culture papers, turned into structured,
-  queryable protocol records — source cells, matrix, base media, and the signaling cocktail —
-  where every reagent links to a verbatim source span and a DOI. The recipe behind every
-  organoid, made comparable.</p>
+  <p class="lead">A license-safe public slice of the organoid protocol corpus, turned into
+  structured, queryable protocol records: source cells, matrix, base media, and signaling
+  cocktail rows with DOI-linked evidence snippets. The full local pipeline tracks the larger
+  verified corpus; this hosted build exposes the public CC subset without redistributing full
+  methods text.</p>
 
   <div class="apa-pipeline">
-    <span class="step">paper (PMC)</span><span class="arrow">→</span>
-    <span class="step">Tier 0 · evidence bundle</span><span class="arrow">→</span>
-    <span class="step">Tier 1 · local-LLM extraction</span><span class="arrow">→</span>
-    <span class="step">grounded protocol KG</span><span class="arrow">→</span>
+    <span class="step">CC paper subset</span><span class="arrow">-&gt;</span>
+    <span class="step">short evidence snippets</span><span class="arrow">-&gt;</span>
+    <span class="step">public protocol KG</span><span class="arrow">-&gt;</span>
     <span class="step">compare / query</span>
   </div>
 </div>
 
 <div class="apa-stats">
-  <div class="apa-stat"><div class="n">28</div><div class="l">protocols extracted</div></div>
-  <div class="apa-stat"><div class="n">311</div><div class="l">reagents</div></div>
-  <div class="apa-stat"><div class="n">8</div><div class="l">organoid systems</div></div>
-  <div class="apa-stat"><div class="n">81%</div><div class="l">evidence-grounded</div></div>
-  <div class="apa-stat"><div class="n">210</div><div class="l">figures inventoried</div></div>
-  <div class="apa-stat"><div class="n">149</div><div class="l">supplement files</div></div>
+  <div class="apa-stat"><div class="n">10</div><div class="l">public protocols</div></div>
+  <div class="apa-stat"><div class="n">122</div><div class="l">public rows</div></div>
+  <div class="apa-stat"><div class="n">6</div><div class="l">organoid systems</div></div>
+  <div class="apa-stat"><div class="n">CC*</div><div class="l">public license filter</div></div>
+  <div class="apa-stat"><div class="n">0</div><div class="l">full-text bodies</div></div>
+  <div class="apa-stat"><div class="n">1</div><div class="l">agent guide at /llms.txt</div></div>
 </div>
 
 <div class="apa-cards">
   <a class="apa-card" href="/atlas/protocols">
-    <h3>Browse protocols →</h3>
-    <p>One recipe card per paper: cells, matrix, media, signaling cocktail with
-    concentrations and evidence. Faceted by organoid type, source cell, license.</p>
+    <h3>Browse protocols -&gt;</h3>
+    <p>One public recipe card per paper: cells, matrix, media, signaling cocktail with
+    concentrations and evidence snippets. Faceted by organoid type, source cell, license.</p>
   </a>
   <a class="apa-card green" href="/heatmap">
-    <h3>Morphogen grammar →</h3>
-    <p>The signature view: every canonical signaling factor × every organoid system, as a
-    heatmap. See which morphogens are universal and which are lineage-specific — figure-confirmed
-    cells marked 📷.</p>
+    <h3>Morphogen grammar -&gt;</h3>
+    <p>The signature view: every canonical signaling factor by every public organoid system,
+    as a heatmap. See which morphogens recur and which are lineage-specific; figure-confirmed
+    cells are marked when available.</p>
   </a>
   <a class="apa-card" href="/consensus">
-    <h3>Consensus recipes →</h3>
-    <p>The canonical recipe per organoid system: each factor's usage frequency across that type's
-    protocols — core cocktail vs variable additions, with modal doses. Computed, not asserted.</p>
+    <h3>Consensus recipes -&gt;</h3>
+    <p>The canonical recipe per organoid system: each factor's usage frequency across that
+    type's public protocols, core cocktail vs variable additions, with modal doses. Computed,
+    not asserted.</p>
   </a>
   <a class="apa-card" href="/ask">
-    <h3>Ask the Atlas →</h3>
-    <p>Natural-language questions answered by a local model that cites the source papers —
-    grounded in the knowledge graph, and honest when the corpus has no evidence.</p>
+    <h3>Ask the Atlas -&gt;</h3>
+    <p>Natural-language questions retrieve grounded rows from the public knowledge graph. If
+    a local model is attached, it synthesizes answers; otherwise the evidence rows are shown.</p>
   </a>
   <a class="apa-card" href="/atlas/compare_reagent?reagent=CHIR99021">
-    <h3>Track one reagent →</h3>
-    <p>See how a single factor (e.g. CHIR99021, EGF, R-spondin) is used and dosed across
-    every protocol that includes it.</p>
+    <h3>Track one reagent -&gt;</h3>
+    <p>See how a single factor, such as CHIR99021, EGF, or R-spondin, is used and dosed across
+    every public protocol that includes it.</p>
   </a>
   <a class="apa-card green" href="/atlas/reagents">
-    <h3>Search reagents →</h3>
-    <p>Full-text search across all extracted reagents and their evidence spans. Filter by
-    kind (signaling vs supplement), role, unit, grounding.</p>
+    <h3>Search reagents -&gt;</h3>
+    <p>Search across public extracted reagents and their short evidence snippets. Filter by
+    kind, role, unit, and grounding.</p>
   </a>
   <a class="apa-card" href="/atlas/grounding_by_protocol">
-    <h3>Grounding coverage →</h3>
-    <p>How much of each protocol's cocktail is verbatim-grounded. The honest quality signal
-    that drives where to improve next.</p>
+    <h3>Grounding coverage -&gt;</h3>
+    <p>How much of each public protocol's cocktail is evidence-grounded. The honest quality
+    signal that drives where to improve next.</p>
   </a>
   <a class="apa-card green" href="/atlas/protocols?gold_candidate=yes">
-    <h3>Gold candidates →</h3>
-    <p>The 12 protocols (2 per core system) slated for hand annotation — the seed benchmark
-    for measured accuracy.</p>
+    <h3>Gold candidates -&gt;</h3>
+    <p>Public rows can be filtered for benchmark candidates, while human-verified gold
+    evaluation remains a gated local workflow.</p>
   </a>
 </div>
 
 <div class="apa-foot">
-  Open source (MIT) · extraction runs locally · short citation snippets only, full text not
-  redistributed · <a href="https://github.com/rhowardstone/organoid-protocol-atlas">github.com/rhowardstone/organoid-protocol-atlas</a>
+  Open source (MIT) - extraction runs locally - short citation snippets only, full text not
+  redistributed - <a href="/llms.txt">llms.txt</a> -
+  <a href="https://github.com/rhowardstone/organoid-protocol-atlas">github.com/rhowardstone/organoid-protocol-atlas</a>
 </div>
 {% endblock %}
