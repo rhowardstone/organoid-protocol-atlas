@@ -1,0 +1,3596 @@
+{
+  "generated_at": "2026-06-20T23:19:14+00:00",
+  "provenance": {
+    "command": "python pipeline/ingest_orchestrator.py --limit 489 --min-grounding 0.5 --workers 4 --candidates data/corpus/incoming/organoid_corpus_candidates_generated.csv",
+    "model": "gemma3:12b",
+    "candidates_file": "organoid_corpus_candidates_generated.csv",
+    "candidates_sha256_16": "d34d7aceda9eb5a0",
+    "min_grounding": 0.5,
+    "cc_only": false,
+    "dry_run": false,
+    "workers": 4
+  },
+  "candidates_considered": 489,
+  "accepted": 324,
+  "rejected": 165,
+  "accepted_papers": [
+    {
+      "pmcid": "PMC10085542",
+      "doi": "10.1093/gastro/goad019",
+      "organoid_type": "pancreatic",
+      "n_signaling": 13,
+      "grounded": 13,
+      "grounding_rate": 1.0,
+      "methods_chars": 20792
+    },
+    {
+      "pmcid": "PMC10094119",
+      "doi": "10.3390/ijms24076244",
+      "organoid_type": "cardiac",
+      "n_signaling": 9,
+      "grounded": 9,
+      "grounding_rate": 1.0,
+      "methods_chars": 29334
+    },
+    {
+      "pmcid": "PMC10179392",
+      "doi": "10.3390/ijms24098125",
+      "organoid_type": "pancreatic",
+      "n_signaling": 7,
+      "grounded": 7,
+      "grounding_rate": 1.0,
+      "methods_chars": 50494
+    },
+    {
+      "pmcid": "PMC10216466",
+      "doi": "10.3390/biom13050875",
+      "organoid_type": "gastric",
+      "n_signaling": 9,
+      "grounded": 9,
+      "grounding_rate": 1.0,
+      "methods_chars": 26607
+    },
+    {
+      "pmcid": "PMC10307727",
+      "doi": "10.1007/s00018-023-04836-2",
+      "organoid_type": "pancreatic",
+      "n_signaling": 2,
+      "grounded": 2,
+      "grounding_rate": 1.0,
+      "methods_chars": 9636
+    },
+    {
+      "pmcid": "PMC10310803",
+      "doi": "10.1038/s41467-023-39113-0",
+      "organoid_type": "gastric",
+      "n_signaling": 7,
+      "grounded": 7,
+      "grounding_rate": 1.0,
+      "methods_chars": 19586
+    },
+    {
+      "pmcid": "PMC10407810",
+      "doi": "10.3389/fbioe.2023.1214431",
+      "organoid_type": "cardiac",
+      "n_signaling": 4,
+      "grounded": 3,
+      "grounding_rate": 0.75,
+      "methods_chars": 46384
+    },
+    {
+      "pmcid": "PMC10466470",
+      "doi": "10.34172/jcvtr.2023.31830",
+      "organoid_type": "cardiac",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 11266
+    },
+    {
+      "pmcid": "PMC10520631",
+      "doi": "10.1002/advs.202300164",
+      "organoid_type": "gastric",
+      "n_signaling": 4,
+      "grounded": 4,
+      "grounding_rate": 1.0,
+      "methods_chars": 13732
+    },
+    {
+      "pmcid": "PMC10645385",
+      "doi": "10.1172/jci170500",
+      "organoid_type": "lung",
+      "n_signaling": 10,
+      "grounded": 8,
+      "grounding_rate": 0.8,
+      "methods_chars": 37705
+    },
+    {
+      "pmcid": "PMC10673726",
+      "doi": "10.1007/s00383-023-05586-9",
+      "organoid_type": "gastric",
+      "n_signaling": 8,
+      "grounded": 8,
+      "grounding_rate": 1.0,
+      "methods_chars": 8617
+    },
+    {
+      "pmcid": "PMC10894554",
+      "doi": "10.1177/20417314241232502",
+      "organoid_type": "lung",
+      "n_signaling": 6,
+      "grounded": 5,
+      "grounding_rate": 0.833,
+      "methods_chars": 70217
+    },
+    {
+      "pmcid": "PMC10915962",
+      "doi": "",
+      "organoid_type": "kidney",
+      "n_signaling": 12,
+      "grounded": 11,
+      "grounding_rate": 0.917,
+      "methods_chars": 24083
+    },
+    {
+      "pmcid": "PMC10944495",
+      "doi": "10.1038/s41598-024-57059-1",
+      "organoid_type": "pancreatic",
+      "n_signaling": 8,
+      "grounded": 8,
+      "grounding_rate": 1.0,
+      "methods_chars": 11616
+    },
+    {
+      "pmcid": "PMC10999936",
+      "doi": "10.1016/j.heliyon.2024.e28420",
+      "organoid_type": "hepatic",
+      "n_signaling": 6,
+      "grounded": 4,
+      "grounding_rate": 0.667,
+      "methods_chars": 18668
+    },
+    {
+      "pmcid": "PMC11006621",
+      "doi": "10.1111/1753-0407.13545",
+      "organoid_type": "pancreatic",
+      "n_signaling": 7,
+      "grounded": 6,
+      "grounding_rate": 0.857,
+      "methods_chars": 33655
+    },
+    {
+      "pmcid": "PMC11035500",
+      "doi": "10.1186/s13619-024-00193-y",
+      "organoid_type": "cardiac",
+      "n_signaling": 7,
+      "grounded": 7,
+      "grounding_rate": 1.0,
+      "methods_chars": 8413
+    },
+    {
+      "pmcid": "PMC11099456",
+      "doi": "10.4251/wjgo.v16.i5.1725",
+      "organoid_type": "gastric",
+      "n_signaling": 6,
+      "grounded": 5,
+      "grounding_rate": 0.833,
+      "methods_chars": 34112
+    },
+    {
+      "pmcid": "PMC11103887",
+      "doi": "10.1016/j.stemcr.2024.03.008",
+      "organoid_type": "gastric",
+      "n_signaling": 6,
+      "grounded": 6,
+      "grounding_rate": 1.0,
+      "methods_chars": 2059
+    },
+    {
+      "pmcid": "PMC11132046",
+      "doi": "10.1002/advs.202304326",
+      "organoid_type": "gastric",
+      "n_signaling": 5,
+      "grounded": 5,
+      "grounding_rate": 1.0,
+      "methods_chars": 6617
+    },
+    {
+      "pmcid": "PMC11186971",
+      "doi": "10.1016/j.reth.2024.05.020",
+      "organoid_type": "hepatic",
+      "n_signaling": 7,
+      "grounded": 7,
+      "grounding_rate": 1.0,
+      "methods_chars": 53700
+    },
+    {
+      "pmcid": "PMC11190488",
+      "doi": "10.1016/j.bbrep.2024.101736",
+      "organoid_type": "kidney",
+      "n_signaling": 13,
+      "grounded": 11,
+      "grounding_rate": 0.846,
+      "methods_chars": 30951
+    },
+    {
+      "pmcid": "PMC11210168",
+      "doi": "",
+      "organoid_type": "pancreatic",
+      "n_signaling": 12,
+      "grounded": 12,
+      "grounding_rate": 1.0,
+      "methods_chars": 86156
+    },
+    {
+      "pmcid": "PMC11226883",
+      "doi": "10.1093/rb/rbae072",
+      "organoid_type": "cardiac",
+      "n_signaling": 3,
+      "grounded": 2,
+      "grounding_rate": 0.667,
+      "methods_chars": 21873
+    },
+    {
+      "pmcid": "PMC11272814",
+      "doi": "10.1007/s10238-024-01435-8",
+      "organoid_type": "gastric",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 18039
+    },
+    {
+      "pmcid": "PMC11274427",
+      "doi": "10.3390/biom14070772",
+      "organoid_type": "gastric",
+      "n_signaling": 2,
+      "grounded": 2,
+      "grounding_rate": 1.0,
+      "methods_chars": 19412
+    },
+    {
+      "pmcid": "PMC11304926",
+      "doi": "10.1186/s13287-024-03865-3",
+      "organoid_type": "hepatic",
+      "n_signaling": 11,
+      "grounded": 11,
+      "grounding_rate": 1.0,
+      "methods_chars": 46477
+    },
+    {
+      "pmcid": "PMC11315325",
+      "doi": "10.1371/journal.pone.0308743",
+      "organoid_type": "retinal",
+      "n_signaling": 6,
+      "grounded": 4,
+      "grounding_rate": 0.667,
+      "methods_chars": 11578
+    },
+    {
+      "pmcid": "PMC11358266",
+      "doi": "10.1038/s41467-024-51487-3",
+      "organoid_type": "hepatic",
+      "n_signaling": 7,
+      "grounded": 7,
+      "grounding_rate": 1.0,
+      "methods_chars": 25195
+    },
+    {
+      "pmcid": "PMC11404120",
+      "doi": "10.1093/cei/uxad118",
+      "organoid_type": "intestinal",
+      "n_signaling": 8,
+      "grounded": 6,
+      "grounding_rate": 0.75,
+      "methods_chars": 37753
+    },
+    {
+      "pmcid": "PMC11418062",
+      "doi": "10.34133/bmef.0065",
+      "organoid_type": "cerebral",
+      "n_signaling": 5,
+      "grounded": 5,
+      "grounding_rate": 1.0,
+      "methods_chars": 28709
+    },
+    {
+      "pmcid": "PMC11520781",
+      "doi": "10.1186/s13287-024-03956-1",
+      "organoid_type": "cardiac",
+      "n_signaling": 3,
+      "grounded": 2,
+      "grounding_rate": 0.667,
+      "methods_chars": 25493
+    },
+    {
+      "pmcid": "PMC11535291",
+      "doi": "10.4062/biomolther.2024.148",
+      "organoid_type": "lung",
+      "n_signaling": 7,
+      "grounded": 7,
+      "grounding_rate": 1.0,
+      "methods_chars": 27073
+    },
+    {
+      "pmcid": "PMC11574267",
+      "doi": "10.1038/s42003-024-07193-3",
+      "organoid_type": "pancreatic",
+      "n_signaling": 8,
+      "grounded": 8,
+      "grounding_rate": 1.0,
+      "methods_chars": 21755
+    },
+    {
+      "pmcid": "PMC11576200",
+      "doi": "10.3389/fphar.2024.1472361",
+      "organoid_type": "kidney",
+      "n_signaling": 13,
+      "grounded": 10,
+      "grounding_rate": 0.769,
+      "methods_chars": 26042
+    },
+    {
+      "pmcid": "PMC11612215",
+      "doi": "10.15283/ijsc23075",
+      "organoid_type": "gastric",
+      "n_signaling": 10,
+      "grounded": 10,
+      "grounding_rate": 1.0,
+      "methods_chars": 22957
+    },
+    {
+      "pmcid": "PMC11629183",
+      "doi": "10.1016/j.mocell.2024.100140",
+      "organoid_type": "lung",
+      "n_signaling": 3,
+      "grounded": 2,
+      "grounding_rate": 0.667,
+      "methods_chars": 13989
+    },
+    {
+      "pmcid": "PMC11632457",
+      "doi": "10.1039/d4lc00771a",
+      "organoid_type": "retinal",
+      "n_signaling": 5,
+      "grounded": 4,
+      "grounding_rate": 0.8,
+      "methods_chars": 9129
+    },
+    {
+      "pmcid": "PMC11641514",
+      "doi": "10.3390/ijms252312947",
+      "organoid_type": "retinal",
+      "n_signaling": 3,
+      "grounded": 3,
+      "grounding_rate": 1.0,
+      "methods_chars": 10753
+    },
+    {
+      "pmcid": "PMC11662859",
+      "doi": "10.1186/s13287-024-04115-2",
+      "organoid_type": "cardiac",
+      "n_signaling": 11,
+      "grounded": 11,
+      "grounding_rate": 1.0,
+      "methods_chars": 15970
+    },
+    {
+      "pmcid": "PMC11682736",
+      "doi": "10.1016/j.celrep.2024.114874",
+      "organoid_type": "cerebral",
+      "n_signaling": 2,
+      "grounded": 1,
+      "grounding_rate": 0.5,
+      "methods_chars": 26986
+    },
+    {
+      "pmcid": "PMC11719574",
+      "doi": "10.3390/ijms26010055",
+      "organoid_type": "retinal",
+      "n_signaling": 4,
+      "grounded": 3,
+      "grounding_rate": 0.75,
+      "methods_chars": 8075
+    },
+    {
+      "pmcid": "PMC11723681",
+      "doi": "10.1097/eus.0000000000000098",
+      "organoid_type": "pancreatic",
+      "n_signaling": 6,
+      "grounded": 6,
+      "grounding_rate": 1.0,
+      "methods_chars": 7284
+    },
+    {
+      "pmcid": "PMC11744189",
+      "doi": "10.1093/jmcb/mjae030",
+      "organoid_type": "gastric",
+      "n_signaling": 7,
+      "grounded": 7,
+      "grounding_rate": 1.0,
+      "methods_chars": 9779
+    },
+    {
+      "pmcid": "PMC11764187",
+      "doi": "10.12336/biomatertransl.2024.04.002",
+      "organoid_type": "cardiac",
+      "n_signaling": 3,
+      "grounded": 3,
+      "grounding_rate": 1.0,
+      "methods_chars": 44707
+    },
+    {
+      "pmcid": "PMC11775963",
+      "doi": "10.1177/09636897241303271",
+      "organoid_type": "gastric",
+      "n_signaling": 4,
+      "grounded": 4,
+      "grounding_rate": 1.0,
+      "methods_chars": 45461
+    },
+    {
+      "pmcid": "PMC11779682",
+      "doi": "10.1016/j.reth.2024.12.013",
+      "organoid_type": "intestinal",
+      "n_signaling": 9,
+      "grounded": 8,
+      "grounding_rate": 0.889,
+      "methods_chars": 25761
+    },
+    {
+      "pmcid": "PMC11790636",
+      "doi": "10.3389/fimmu.2024.1540209",
+      "organoid_type": "pancreatic",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 12996
+    },
+    {
+      "pmcid": "PMC11791066",
+      "doi": "10.1038/s42003-025-07461-w",
+      "organoid_type": "lung",
+      "n_signaling": 5,
+      "grounded": 3,
+      "grounding_rate": 0.6,
+      "methods_chars": 17616
+    },
+    {
+      "pmcid": "PMC11795835",
+      "doi": "10.1016/j.mtbio.2025.101505",
+      "organoid_type": "cardiac",
+      "n_signaling": 12,
+      "grounded": 11,
+      "grounding_rate": 0.917,
+      "methods_chars": 58608
+    },
+    {
+      "pmcid": "PMC11798851",
+      "doi": "10.1038/s41586-024-08462-1",
+      "organoid_type": "cardiac",
+      "n_signaling": 5,
+      "grounded": 5,
+      "grounding_rate": 1.0,
+      "methods_chars": 44849
+    },
+    {
+      "pmcid": "PMC11812335",
+      "doi": "10.1080/19490976.2025.2463581",
+      "organoid_type": "gastric",
+      "n_signaling": 8,
+      "grounded": 7,
+      "grounding_rate": 0.875,
+      "methods_chars": 16476
+    },
+    {
+      "pmcid": "PMC11836903",
+      "doi": "10.1111/jcmm.70330",
+      "organoid_type": "intestinal",
+      "n_signaling": 3,
+      "grounded": 3,
+      "grounding_rate": 1.0,
+      "methods_chars": 33906
+    },
+    {
+      "pmcid": "PMC11840725",
+      "doi": "10.7150/thno.104883",
+      "organoid_type": "pancreatic",
+      "n_signaling": 2,
+      "grounded": 2,
+      "grounding_rate": 1.0,
+      "methods_chars": 11571
+    },
+    {
+      "pmcid": "PMC11850396",
+      "doi": "10.3389/fphar.2025.1473863",
+      "organoid_type": "hepatic",
+      "n_signaling": 5,
+      "grounded": 5,
+      "grounding_rate": 1.0,
+      "methods_chars": 44269
+    },
+    {
+      "pmcid": "PMC11854395",
+      "doi": "10.3390/cells14040252",
+      "organoid_type": "retinal",
+      "n_signaling": 3,
+      "grounded": 3,
+      "grounding_rate": 1.0,
+      "methods_chars": 17323
+    },
+    {
+      "pmcid": "PMC11889630",
+      "doi": "10.1016/j.mtbio.2025.101566",
+      "organoid_type": "cardiac",
+      "n_signaling": 2,
+      "grounded": 1,
+      "grounding_rate": 0.5,
+      "methods_chars": 30735
+    },
+    {
+      "pmcid": "PMC11908814",
+      "doi": "10.1159/000541919",
+      "organoid_type": "kidney",
+      "n_signaling": 8,
+      "grounded": 8,
+      "grounding_rate": 1.0,
+      "methods_chars": 29189
+    },
+    {
+      "pmcid": "PMC11910075",
+      "doi": "10.1016/j.isci.2025.112005",
+      "organoid_type": "cardiac",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 15546
+    },
+    {
+      "pmcid": "PMC11926186",
+      "doi": "10.1038/s41467-025-57131-y",
+      "organoid_type": "gastric",
+      "n_signaling": 8,
+      "grounded": 8,
+      "grounding_rate": 1.0,
+      "methods_chars": 11876
+    },
+    {
+      "pmcid": "PMC11945118",
+      "doi": "10.3390/pathogens14030286",
+      "organoid_type": "retinal",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 16499
+    },
+    {
+      "pmcid": "PMC11966913",
+      "doi": "10.1186/s12974-025-03366-x",
+      "organoid_type": "retinal",
+      "n_signaling": 5,
+      "grounded": 3,
+      "grounding_rate": 0.6,
+      "methods_chars": 43263
+    },
+    {
+      "pmcid": "PMC11990004",
+      "doi": "10.3390/ijms26073263",
+      "organoid_type": "retinal",
+      "n_signaling": 19,
+      "grounded": 18,
+      "grounding_rate": 0.947,
+      "methods_chars": 45241
+    },
+    {
+      "pmcid": "PMC11993987",
+      "doi": "10.1186/s13287-025-04282-w",
+      "organoid_type": "kidney",
+      "n_signaling": 3,
+      "grounded": 3,
+      "grounding_rate": 1.0,
+      "methods_chars": 12727
+    },
+    {
+      "pmcid": "PMC11998602",
+      "doi": "10.1007/s00018-025-05658-0",
+      "organoid_type": "pancreatic",
+      "n_signaling": 8,
+      "grounded": 5,
+      "grounding_rate": 0.625,
+      "methods_chars": 19974
+    },
+    {
+      "pmcid": "PMC12018802",
+      "doi": "10.1093/lifemedi/lnaf012",
+      "organoid_type": "intestinal",
+      "n_signaling": 6,
+      "grounded": 6,
+      "grounding_rate": 1.0,
+      "methods_chars": 52399
+    },
+    {
+      "pmcid": "PMC12030824",
+      "doi": "10.3390/vetsci12040362",
+      "organoid_type": "pancreatic",
+      "n_signaling": 7,
+      "grounded": 5,
+      "grounding_rate": 0.714,
+      "methods_chars": 9310
+    },
+    {
+      "pmcid": "PMC12055624",
+      "doi": "10.1007/s40472-025-00470-y",
+      "organoid_type": "pancreatic",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 47150
+    },
+    {
+      "pmcid": "PMC12069716",
+      "doi": "10.1038/s42003-025-08168-8",
+      "organoid_type": "cardiac",
+      "n_signaling": 3,
+      "grounded": 2,
+      "grounding_rate": 0.667,
+      "methods_chars": 16245
+    },
+    {
+      "pmcid": "PMC12080355",
+      "doi": "10.1093/stmcls/sxaf012",
+      "organoid_type": "kidney",
+      "n_signaling": 5,
+      "grounded": 3,
+      "grounding_rate": 0.6,
+      "methods_chars": 11429
+    },
+    {
+      "pmcid": "PMC12081310",
+      "doi": "10.1038/s41588-025-02182-6",
+      "organoid_type": "lung",
+      "n_signaling": 13,
+      "grounded": 7,
+      "grounding_rate": 0.538,
+      "methods_chars": 26753
+    },
+    {
+      "pmcid": "PMC12084451",
+      "doi": "10.1186/s13619-025-00237-x",
+      "organoid_type": "gastric",
+      "n_signaling": 20,
+      "grounded": 13,
+      "grounding_rate": 0.65,
+      "methods_chars": 20610
+    },
+    {
+      "pmcid": "PMC12119492",
+      "doi": "10.3389/fcimb.2025.1572244",
+      "organoid_type": "gastric",
+      "n_signaling": 7,
+      "grounded": 7,
+      "grounding_rate": 1.0,
+      "methods_chars": 12955
+    },
+    {
+      "pmcid": "PMC12129933",
+      "doi": "10.3389/fcvm.2025.1537730",
+      "organoid_type": "cardiac",
+      "n_signaling": 7,
+      "grounded": 7,
+      "grounding_rate": 1.0,
+      "methods_chars": 18616
+    },
+    {
+      "pmcid": "PMC12155111",
+      "doi": "10.3390/cells14110842",
+      "organoid_type": "cerebral",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 70196
+    },
+    {
+      "pmcid": "PMC12162665",
+      "doi": "10.3389/fcell.2025.1599384",
+      "organoid_type": "gastric",
+      "n_signaling": 9,
+      "grounded": 9,
+      "grounding_rate": 1.0,
+      "methods_chars": 105492
+    },
+    {
+      "pmcid": "PMC12189234",
+      "doi": "10.3390/bioengineering12060652",
+      "organoid_type": "lung",
+      "n_signaling": 5,
+      "grounded": 5,
+      "grounding_rate": 1.0,
+      "methods_chars": 33727
+    },
+    {
+      "pmcid": "PMC12189686",
+      "doi": "10.3390/biomedicines13061272",
+      "organoid_type": "hepatic",
+      "n_signaling": 5,
+      "grounded": 5,
+      "grounding_rate": 1.0,
+      "methods_chars": 32238
+    },
+    {
+      "pmcid": "PMC12195329",
+      "doi": "10.3390/microorganisms13061281",
+      "organoid_type": "cerebral",
+      "n_signaling": 12,
+      "grounded": 10,
+      "grounding_rate": 0.833,
+      "methods_chars": 30710
+    },
+    {
+      "pmcid": "PMC12202271",
+      "doi": "10.1186/s40580-025-00495-0",
+      "organoid_type": "cerebral",
+      "n_signaling": 8,
+      "grounded": 6,
+      "grounding_rate": 0.75,
+      "methods_chars": 3269
+    },
+    {
+      "pmcid": "PMC12216149",
+      "doi": "10.1038/s41467-025-60934-8",
+      "organoid_type": "cardiac",
+      "n_signaling": 13,
+      "grounded": 11,
+      "grounding_rate": 0.846,
+      "methods_chars": 21671
+    },
+    {
+      "pmcid": "PMC12216864",
+      "doi": "10.1038/s41536-025-00418-x",
+      "organoid_type": "kidney",
+      "n_signaling": 2,
+      "grounded": 1,
+      "grounding_rate": 0.5,
+      "methods_chars": 22549
+    },
+    {
+      "pmcid": "PMC12247448",
+      "doi": "10.1186/s12967-025-06736-4",
+      "organoid_type": "cerebral",
+      "n_signaling": 2,
+      "grounded": 1,
+      "grounding_rate": 0.5,
+      "methods_chars": 44717
+    },
+    {
+      "pmcid": "PMC12256518",
+      "doi": "10.3389/fcimb.2025.1601688",
+      "organoid_type": "gastric",
+      "n_signaling": 5,
+      "grounded": 5,
+      "grounding_rate": 1.0,
+      "methods_chars": 31709
+    },
+    {
+      "pmcid": "PMC12281010",
+      "doi": "10.1016/j.crtox.2025.100249",
+      "organoid_type": "cerebral",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 37899
+    },
+    {
+      "pmcid": "PMC12288960",
+      "doi": "10.1172/jci.insight.186338",
+      "organoid_type": "retinal",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 11910
+    },
+    {
+      "pmcid": "PMC12292610",
+      "doi": "10.3390/biomedicines13071623",
+      "organoid_type": "lung",
+      "n_signaling": 9,
+      "grounded": 9,
+      "grounding_rate": 1.0,
+      "methods_chars": 7878
+    },
+    {
+      "pmcid": "PMC12296607",
+      "doi": "10.1186/s12931-025-03327-1",
+      "organoid_type": "lung",
+      "n_signaling": 5,
+      "grounded": 5,
+      "grounding_rate": 1.0,
+      "methods_chars": 73214
+    },
+    {
+      "pmcid": "PMC12297600",
+      "doi": "10.1186/s13287-025-04522-z",
+      "organoid_type": "kidney",
+      "n_signaling": 4,
+      "grounded": 4,
+      "grounding_rate": 1.0,
+      "methods_chars": 14761
+    },
+    {
+      "pmcid": "PMC12302050",
+      "doi": "10.1167/iovs.66.9.58",
+      "organoid_type": "retinal",
+      "n_signaling": 3,
+      "grounded": 3,
+      "grounding_rate": 1.0,
+      "methods_chars": 13462
+    },
+    {
+      "pmcid": "PMC12307681",
+      "doi": "10.1016/j.omton.2025.201017",
+      "organoid_type": "pancreatic",
+      "n_signaling": 3,
+      "grounded": 2,
+      "grounding_rate": 0.667,
+      "methods_chars": 12061
+    },
+    {
+      "pmcid": "PMC12312423",
+      "doi": "10.1186/s13287-025-04500-5",
+      "organoid_type": "lung",
+      "n_signaling": 10,
+      "grounded": 8,
+      "grounding_rate": 0.8,
+      "methods_chars": 45052
+    },
+    {
+      "pmcid": "PMC12314479",
+      "doi": "10.12688/f1000research.162496.1",
+      "organoid_type": "pancreatic",
+      "n_signaling": 13,
+      "grounded": 12,
+      "grounding_rate": 0.923,
+      "methods_chars": 14310
+    },
+    {
+      "pmcid": "PMC12327626",
+      "doi": "10.1371/journal.pone.0328898",
+      "organoid_type": "intestinal",
+      "n_signaling": 4,
+      "grounded": 4,
+      "grounding_rate": 1.0,
+      "methods_chars": 15706
+    },
+    {
+      "pmcid": "PMC12336816",
+      "doi": "10.1016/j.mtbio.2025.102148",
+      "organoid_type": "gastric",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 32522
+    },
+    {
+      "pmcid": "PMC12338369",
+      "doi": "10.34067/kid.0000000834",
+      "organoid_type": "kidney",
+      "n_signaling": 3,
+      "grounded": 3,
+      "grounding_rate": 1.0,
+      "methods_chars": 9362
+    },
+    {
+      "pmcid": "PMC12340003",
+      "doi": "10.1038/s41598-025-14425-x",
+      "organoid_type": "cerebral",
+      "n_signaling": 6,
+      "grounded": 6,
+      "grounding_rate": 1.0,
+      "methods_chars": 15433
+    },
+    {
+      "pmcid": "PMC12340526",
+      "doi": "10.1183/16000617.0255-2024",
+      "organoid_type": "lung",
+      "n_signaling": 4,
+      "grounded": 4,
+      "grounding_rate": 1.0,
+      "methods_chars": 36616
+    },
+    {
+      "pmcid": "PMC12346501",
+      "doi": "10.3390/ijms26157080",
+      "organoid_type": "intestinal",
+      "n_signaling": 8,
+      "grounded": 8,
+      "grounding_rate": 1.0,
+      "methods_chars": 7781
+    },
+    {
+      "pmcid": "PMC12346743",
+      "doi": "10.3390/ijms26157248",
+      "organoid_type": "cardiac",
+      "n_signaling": 4,
+      "grounded": 4,
+      "grounding_rate": 1.0,
+      "methods_chars": 19387
+    },
+    {
+      "pmcid": "PMC12354852",
+      "doi": "10.1038/s41467-025-62818-3",
+      "organoid_type": "gastric",
+      "n_signaling": 5,
+      "grounded": 5,
+      "grounding_rate": 1.0,
+      "methods_chars": 23958
+    },
+    {
+      "pmcid": "PMC12369226",
+      "doi": "10.1186/s13104-025-07440-8",
+      "organoid_type": "retinal",
+      "n_signaling": 2,
+      "grounded": 2,
+      "grounding_rate": 1.0,
+      "methods_chars": 1070
+    },
+    {
+      "pmcid": "PMC12378450",
+      "doi": "10.1038/s41467-025-63290-9",
+      "organoid_type": "kidney",
+      "n_signaling": 8,
+      "grounded": 8,
+      "grounding_rate": 1.0,
+      "methods_chars": 28123
+    },
+    {
+      "pmcid": "PMC12379590",
+      "doi": "10.1128/msphere.00820-24",
+      "organoid_type": "intestinal",
+      "n_signaling": 7,
+      "grounded": 6,
+      "grounding_rate": 0.857,
+      "methods_chars": 33317
+    },
+    {
+      "pmcid": "PMC12383812",
+      "doi": "10.3390/biom15081118",
+      "organoid_type": "cerebral",
+      "n_signaling": 11,
+      "grounded": 10,
+      "grounding_rate": 0.909,
+      "methods_chars": 30981
+    },
+    {
+      "pmcid": "PMC12391696",
+      "doi": "10.1016/j.jbc.2025.110510",
+      "organoid_type": "intestinal",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 24751
+    },
+    {
+      "pmcid": "PMC12398568",
+      "doi": "10.1038/s41536-025-00428-9",
+      "organoid_type": "kidney",
+      "n_signaling": 3,
+      "grounded": 3,
+      "grounding_rate": 1.0,
+      "methods_chars": 11290
+    },
+    {
+      "pmcid": "PMC12398611",
+      "doi": "10.1038/s41467-025-63107-9",
+      "organoid_type": "kidney",
+      "n_signaling": 4,
+      "grounded": 3,
+      "grounding_rate": 0.75,
+      "methods_chars": 30464
+    },
+    {
+      "pmcid": "PMC12402132",
+      "doi": "10.1038/s44318-025-00504-2",
+      "organoid_type": "kidney",
+      "n_signaling": 13,
+      "grounded": 12,
+      "grounding_rate": 0.923,
+      "methods_chars": 28125
+    },
+    {
+      "pmcid": "PMC12414973",
+      "doi": "10.3389/fphar.2025.1650200",
+      "organoid_type": "pancreatic",
+      "n_signaling": 12,
+      "grounded": 12,
+      "grounding_rate": 1.0,
+      "methods_chars": 52213
+    },
+    {
+      "pmcid": "PMC12427660",
+      "doi": "10.3390/cells14171393",
+      "organoid_type": "cardiac",
+      "n_signaling": 9,
+      "grounded": 6,
+      "grounding_rate": 0.667,
+      "methods_chars": 53717
+    },
+    {
+      "pmcid": "PMC12429095",
+      "doi": "10.3390/ijms26178675",
+      "organoid_type": "retinal",
+      "n_signaling": 4,
+      "grounded": 4,
+      "grounding_rate": 1.0,
+      "methods_chars": 12262
+    },
+    {
+      "pmcid": "PMC12434145",
+      "doi": "10.1038/s41378-025-01038-7",
+      "organoid_type": "cerebral",
+      "n_signaling": 13,
+      "grounded": 11,
+      "grounding_rate": 0.846,
+      "methods_chars": 69362
+    },
+    {
+      "pmcid": "PMC12445665",
+      "doi": "10.1093/stcltm/szaf040",
+      "organoid_type": "lung",
+      "n_signaling": 4,
+      "grounded": 2,
+      "grounding_rate": 0.5,
+      "methods_chars": 43106
+    },
+    {
+      "pmcid": "PMC12447339",
+      "doi": "10.1016/j.stemcr.2025.102632",
+      "organoid_type": "cerebral",
+      "n_signaling": 5,
+      "grounded": 4,
+      "grounding_rate": 0.8,
+      "methods_chars": 31571
+    },
+    {
+      "pmcid": "PMC12449818",
+      "doi": "10.1167/tvst.14.9.27",
+      "organoid_type": "retinal",
+      "n_signaling": 6,
+      "grounded": 5,
+      "grounding_rate": 0.833,
+      "methods_chars": 19020
+    },
+    {
+      "pmcid": "PMC12456021",
+      "doi": "10.1128/jvi.00928-25",
+      "organoid_type": "gastric",
+      "n_signaling": 7,
+      "grounded": 7,
+      "grounding_rate": 1.0,
+      "methods_chars": 10428
+    },
+    {
+      "pmcid": "PMC12456137",
+      "doi": "10.1128/jvi.01132-25",
+      "organoid_type": "lung",
+      "n_signaling": 6,
+      "grounded": 6,
+      "grounding_rate": 1.0,
+      "methods_chars": 46590
+    },
+    {
+      "pmcid": "PMC12463091",
+      "doi": "10.1002/advs.202503932",
+      "organoid_type": "lung",
+      "n_signaling": 11,
+      "grounded": 7,
+      "grounding_rate": 0.636,
+      "methods_chars": 24775
+    },
+    {
+      "pmcid": "PMC12464001",
+      "doi": "10.3389/fncel.2025.1635775",
+      "organoid_type": "retinal",
+      "n_signaling": 4,
+      "grounded": 4,
+      "grounding_rate": 1.0,
+      "methods_chars": 13708
+    },
+    {
+      "pmcid": "PMC12465241",
+      "doi": "10.1186/s13287-025-04625-7",
+      "organoid_type": "cardiac",
+      "n_signaling": 4,
+      "grounded": 2,
+      "grounding_rate": 0.5,
+      "methods_chars": 29261
+    },
+    {
+      "pmcid": "PMC12474279",
+      "doi": "10.3390/toxins17090470",
+      "organoid_type": "kidney",
+      "n_signaling": 4,
+      "grounded": 4,
+      "grounding_rate": 1.0,
+      "methods_chars": 13248
+    },
+    {
+      "pmcid": "PMC12479813",
+      "doi": "10.1038/s41423-025-01312-8",
+      "organoid_type": "hepatic",
+      "n_signaling": 8,
+      "grounded": 8,
+      "grounding_rate": 1.0,
+      "methods_chars": 28901
+    },
+    {
+      "pmcid": "PMC12487822",
+      "doi": "10.1101/gr.280338.124",
+      "organoid_type": "gastric",
+      "n_signaling": 2,
+      "grounded": 2,
+      "grounding_rate": 1.0,
+      "methods_chars": 27943
+    },
+    {
+      "pmcid": "PMC12489359",
+      "doi": "10.1016/j.ajpath.2025.05.006",
+      "organoid_type": "retinal",
+      "n_signaling": 5,
+      "grounded": 3,
+      "grounding_rate": 0.6,
+      "methods_chars": 14124
+    },
+    {
+      "pmcid": "PMC12523766",
+      "doi": "10.3390/ani15192850",
+      "organoid_type": "intestinal",
+      "n_signaling": 2,
+      "grounded": 2,
+      "grounding_rate": 1.0,
+      "methods_chars": 10659
+    },
+    {
+      "pmcid": "PMC12545897",
+      "doi": "10.1016/j.ekir.2025.07.019",
+      "organoid_type": "kidney",
+      "n_signaling": 4,
+      "grounded": 4,
+      "grounding_rate": 1.0,
+      "methods_chars": 6029
+    },
+    {
+      "pmcid": "PMC12548413",
+      "doi": "10.1128/jvi.01098-25",
+      "organoid_type": "lung",
+      "n_signaling": 8,
+      "grounded": 8,
+      "grounding_rate": 1.0,
+      "methods_chars": 12945
+    },
+    {
+      "pmcid": "PMC12561403",
+      "doi": "10.1002/advs.202501661",
+      "organoid_type": "kidney",
+      "n_signaling": 9,
+      "grounded": 8,
+      "grounding_rate": 0.889,
+      "methods_chars": 11213
+    },
+    {
+      "pmcid": "PMC12563409",
+      "doi": "10.3390/ijms262010161",
+      "organoid_type": "intestinal",
+      "n_signaling": 4,
+      "grounded": 4,
+      "grounding_rate": 1.0,
+      "methods_chars": 13459
+    },
+    {
+      "pmcid": "PMC12564065",
+      "doi": "10.3390/jcdd12100389",
+      "organoid_type": "cardiac",
+      "n_signaling": 5,
+      "grounded": 5,
+      "grounding_rate": 1.0,
+      "methods_chars": 42620
+    },
+    {
+      "pmcid": "PMC12564647",
+      "doi": "10.3390/biom15101356",
+      "organoid_type": "gastric",
+      "n_signaling": 5,
+      "grounded": 4,
+      "grounding_rate": 0.8,
+      "methods_chars": 9822
+    },
+    {
+      "pmcid": "PMC12566879",
+      "doi": "10.3390/mps8050125",
+      "organoid_type": "kidney",
+      "n_signaling": 4,
+      "grounded": 2,
+      "grounding_rate": 0.5,
+      "methods_chars": 23176
+    },
+    {
+      "pmcid": "PMC12574287",
+      "doi": "10.1186/s41232-025-00396-z",
+      "organoid_type": "lung",
+      "n_signaling": 7,
+      "grounded": 7,
+      "grounding_rate": 1.0,
+      "methods_chars": 30877
+    },
+    {
+      "pmcid": "PMC12575760",
+      "doi": "10.1038/s41467-025-64598-2",
+      "organoid_type": "kidney",
+      "n_signaling": 4,
+      "grounded": 4,
+      "grounding_rate": 1.0,
+      "methods_chars": 18127
+    },
+    {
+      "pmcid": "PMC12575888",
+      "doi": "10.1007/s00018-025-05868-6",
+      "organoid_type": "cardiac",
+      "n_signaling": 3,
+      "grounded": 3,
+      "grounding_rate": 1.0,
+      "methods_chars": 12310
+    },
+    {
+      "pmcid": "PMC12577290",
+      "doi": "10.1186/s13023-025-04059-7",
+      "organoid_type": "retinal",
+      "n_signaling": 9,
+      "grounded": 8,
+      "grounding_rate": 0.889,
+      "methods_chars": 26698
+    },
+    {
+      "pmcid": "PMC12594919",
+      "doi": "10.1016/j.jpha.2025.101323",
+      "organoid_type": "cerebral",
+      "n_signaling": 4,
+      "grounded": 4,
+      "grounding_rate": 1.0,
+      "methods_chars": 27143
+    },
+    {
+      "pmcid": "PMC12607406",
+      "doi": "10.3390/ani15213145",
+      "organoid_type": "intestinal",
+      "n_signaling": 7,
+      "grounded": 6,
+      "grounding_rate": 0.857,
+      "methods_chars": 14073
+    },
+    {
+      "pmcid": "PMC12617557",
+      "doi": "10.1002/btm2.70051",
+      "organoid_type": "retinal",
+      "n_signaling": 3,
+      "grounded": 2,
+      "grounding_rate": 0.667,
+      "methods_chars": 45838
+    },
+    {
+      "pmcid": "PMC12617951",
+      "doi": "10.1371/journal.pone.0336164",
+      "organoid_type": "hepatic",
+      "n_signaling": 3,
+      "grounded": 2,
+      "grounding_rate": 0.667,
+      "methods_chars": 10253
+    },
+    {
+      "pmcid": "PMC12631937",
+      "doi": "10.1002/advs.202508584",
+      "organoid_type": "hepatic",
+      "n_signaling": 9,
+      "grounded": 8,
+      "grounding_rate": 0.889,
+      "methods_chars": 16400
+    },
+    {
+      "pmcid": "PMC12648008",
+      "doi": "10.1016/j.apsb.2025.09.013",
+      "organoid_type": "cardiac",
+      "n_signaling": 15,
+      "grounded": 15,
+      "grounding_rate": 1.0,
+      "methods_chars": 81066
+    },
+    {
+      "pmcid": "PMC12653128",
+      "doi": "10.3390/life15111680",
+      "organoid_type": "kidney",
+      "n_signaling": 10,
+      "grounded": 7,
+      "grounding_rate": 0.7,
+      "methods_chars": 57544
+    },
+    {
+      "pmcid": "PMC12657418",
+      "doi": "10.3389/fcell.2025.1629988",
+      "organoid_type": "cardiac",
+      "n_signaling": 5,
+      "grounded": 5,
+      "grounding_rate": 1.0,
+      "methods_chars": 15108
+    },
+    {
+      "pmcid": "PMC12658161",
+      "doi": "10.15283/ijsc25036",
+      "organoid_type": "lung",
+      "n_signaling": 3,
+      "grounded": 3,
+      "grounding_rate": 1.0,
+      "methods_chars": 19813
+    },
+    {
+      "pmcid": "PMC12665103",
+      "doi": "10.7150/thno.114415",
+      "organoid_type": "hepatic",
+      "n_signaling": 16,
+      "grounded": 16,
+      "grounding_rate": 1.0,
+      "methods_chars": 22616
+    },
+    {
+      "pmcid": "PMC12678949",
+      "doi": "10.5306/wjco.v16.i11.110453",
+      "organoid_type": "gastric",
+      "n_signaling": 6,
+      "grounded": 6,
+      "grounding_rate": 1.0,
+      "methods_chars": 38701
+    },
+    {
+      "pmcid": "PMC12683206",
+      "doi": "10.1002/adhm.202502044",
+      "organoid_type": "kidney",
+      "n_signaling": 15,
+      "grounded": 15,
+      "grounding_rate": 1.0,
+      "methods_chars": 4538
+    },
+    {
+      "pmcid": "PMC12686538",
+      "doi": "10.1038/s44321-025-00330-3",
+      "organoid_type": "pancreatic",
+      "n_signaling": 6,
+      "grounded": 6,
+      "grounding_rate": 1.0,
+      "methods_chars": 37495
+    },
+    {
+      "pmcid": "PMC12686912",
+      "doi": "10.1016/j.omtm.2025.101627",
+      "organoid_type": "retinal",
+      "n_signaling": 2,
+      "grounded": 1,
+      "grounding_rate": 0.5,
+      "methods_chars": 22244
+    },
+    {
+      "pmcid": "PMC12691017",
+      "doi": "10.3390/cells14231898",
+      "organoid_type": "gastric",
+      "n_signaling": 6,
+      "grounded": 6,
+      "grounding_rate": 1.0,
+      "methods_chars": 44849
+    },
+    {
+      "pmcid": "PMC12702919",
+      "doi": "10.3389/fbioe.2025.1684315",
+      "organoid_type": "lung",
+      "n_signaling": 4,
+      "grounded": 4,
+      "grounding_rate": 1.0,
+      "methods_chars": 7188
+    },
+    {
+      "pmcid": "PMC12703266",
+      "doi": "10.1136/gutjnl-2025-335793",
+      "organoid_type": "gastric",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 233
+    },
+    {
+      "pmcid": "PMC12711465",
+      "doi": "10.3389/fendo.2025.1692333",
+      "organoid_type": "cerebral",
+      "n_signaling": 4,
+      "grounded": 4,
+      "grounding_rate": 1.0,
+      "methods_chars": 12333
+    },
+    {
+      "pmcid": "PMC12718864",
+      "doi": "10.1097/jcma.0000000000001198",
+      "organoid_type": "retinal",
+      "n_signaling": 7,
+      "grounded": 6,
+      "grounding_rate": 0.857,
+      "methods_chars": 6741
+    },
+    {
+      "pmcid": "PMC12727648",
+      "doi": "10.3389/fbioe.2025.1691972",
+      "organoid_type": "cardiac",
+      "n_signaling": 3,
+      "grounded": 3,
+      "grounding_rate": 1.0,
+      "methods_chars": 57453
+    },
+    {
+      "pmcid": "PMC12735905",
+      "doi": "10.3390/ph18121781",
+      "organoid_type": "hepatic",
+      "n_signaling": 5,
+      "grounded": 5,
+      "grounding_rate": 1.0,
+      "methods_chars": 41709
+    },
+    {
+      "pmcid": "PMC12744831",
+      "doi": "10.1016/j.stemcr.2025.102708",
+      "organoid_type": "gastric",
+      "n_signaling": 6,
+      "grounded": 6,
+      "grounding_rate": 1.0,
+      "methods_chars": 14573
+    },
+    {
+      "pmcid": "PMC12749118",
+      "doi": "10.52601/bpr.2025.240069",
+      "organoid_type": "hepatic",
+      "n_signaling": 4,
+      "grounded": 4,
+      "grounding_rate": 1.0,
+      "methods_chars": 15480
+    },
+    {
+      "pmcid": "PMC12750162",
+      "doi": "10.1016/j.apsb.2025.09.029",
+      "organoid_type": "hepatic",
+      "n_signaling": 6,
+      "grounded": 5,
+      "grounding_rate": 0.833,
+      "methods_chars": 20243
+    },
+    {
+      "pmcid": "PMC12754141",
+      "doi": "10.3748/wjg.v31.i46.114415",
+      "organoid_type": "hepatic",
+      "n_signaling": 9,
+      "grounded": 9,
+      "grounding_rate": 1.0,
+      "methods_chars": 62302
+    },
+    {
+      "pmcid": "PMC12758142",
+      "doi": "10.1101/gad.352924.125",
+      "organoid_type": "retinal",
+      "n_signaling": 4,
+      "grounded": 3,
+      "grounding_rate": 0.75,
+      "methods_chars": 23111
+    },
+    {
+      "pmcid": "PMC12765093",
+      "doi": "10.1016/j.isci.2025.114323",
+      "organoid_type": "lung",
+      "n_signaling": 2,
+      "grounded": 2,
+      "grounding_rate": 1.0,
+      "methods_chars": 13420
+    },
+    {
+      "pmcid": "PMC12767103",
+      "doi": "10.1002/advs.202515862",
+      "organoid_type": "pancreatic",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 14708
+    },
+    {
+      "pmcid": "PMC12771668",
+      "doi": "10.1002/mco2.70571",
+      "organoid_type": "hepatic",
+      "n_signaling": 6,
+      "grounded": 6,
+      "grounding_rate": 1.0,
+      "methods_chars": 78974
+    },
+    {
+      "pmcid": "PMC12777511",
+      "doi": "10.1111/apha.70157",
+      "organoid_type": "intestinal",
+      "n_signaling": 6,
+      "grounded": 6,
+      "grounding_rate": 1.0,
+      "methods_chars": 16350
+    },
+    {
+      "pmcid": "PMC12790724",
+      "doi": "10.1016/j.stemcr.2025.102650",
+      "organoid_type": "kidney",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 7480
+    },
+    {
+      "pmcid": "PMC12804188",
+      "doi": "10.1038/s41598-025-31582-1",
+      "organoid_type": "lung",
+      "n_signaling": 11,
+      "grounded": 11,
+      "grounding_rate": 1.0,
+      "methods_chars": 18773
+    },
+    {
+      "pmcid": "PMC12811101",
+      "doi": "10.1177/0271678x251409022",
+      "organoid_type": "cerebral",
+      "n_signaling": 5,
+      "grounded": 3,
+      "grounding_rate": 0.6,
+      "methods_chars": 37205
+    },
+    {
+      "pmcid": "PMC12816206",
+      "doi": "10.3389/fcell.2025.1746622",
+      "organoid_type": "pancreatic",
+      "n_signaling": 7,
+      "grounded": 7,
+      "grounding_rate": 1.0,
+      "methods_chars": 41312
+    },
+    {
+      "pmcid": "PMC12821291",
+      "doi": "10.1186/s12882-025-04566-6",
+      "organoid_type": "kidney",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 11164
+    },
+    {
+      "pmcid": "PMC12825330",
+      "doi": "10.1002/smtd.202401050",
+      "organoid_type": "retinal",
+      "n_signaling": 5,
+      "grounded": 4,
+      "grounding_rate": 0.8,
+      "methods_chars": 18193
+    },
+    {
+      "pmcid": "PMC12826602",
+      "doi": "10.3389/ftox.2025.1753572",
+      "organoid_type": "cerebral",
+      "n_signaling": 4,
+      "grounded": 3,
+      "grounding_rate": 0.75,
+      "methods_chars": 11264
+    },
+    {
+      "pmcid": "PMC12828395",
+      "doi": "10.1016/j.gastha.2025.100860",
+      "organoid_type": "gastric",
+      "n_signaling": 6,
+      "grounded": 6,
+      "grounding_rate": 1.0,
+      "methods_chars": 18025
+    },
+    {
+      "pmcid": "PMC12828948",
+      "doi": "10.1186/s40164-026-00743-x",
+      "organoid_type": "pancreatic",
+      "n_signaling": 3,
+      "grounded": 3,
+      "grounding_rate": 1.0,
+      "methods_chars": 81347
+    },
+    {
+      "pmcid": "PMC12829165",
+      "doi": "10.1186/s13287-025-04739-y",
+      "organoid_type": "pancreatic",
+      "n_signaling": 7,
+      "grounded": 6,
+      "grounding_rate": 0.857,
+      "methods_chars": 30133
+    },
+    {
+      "pmcid": "PMC12829276",
+      "doi": "10.1186/s13287-025-04866-6",
+      "organoid_type": "kidney",
+      "n_signaling": 5,
+      "grounded": 3,
+      "grounding_rate": 0.6,
+      "methods_chars": 9729
+    },
+    {
+      "pmcid": "PMC12837672",
+      "doi": "10.3390/biomedicines14010045",
+      "organoid_type": "retinal",
+      "n_signaling": 2,
+      "grounded": 2,
+      "grounding_rate": 1.0,
+      "methods_chars": 20742
+    },
+    {
+      "pmcid": "PMC12838547",
+      "doi": "10.3390/biomedicines14010221",
+      "organoid_type": "lung",
+      "n_signaling": 11,
+      "grounded": 6,
+      "grounding_rate": 0.545,
+      "methods_chars": 58054
+    },
+    {
+      "pmcid": "PMC12842532",
+      "doi": "10.3390/ijms27020981",
+      "organoid_type": "cardiac",
+      "n_signaling": 4,
+      "grounded": 4,
+      "grounding_rate": 1.0,
+      "methods_chars": 12984
+    },
+    {
+      "pmcid": "PMC12843511",
+      "doi": "10.1371/journal.pbio.3003597",
+      "organoid_type": "retinal",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 23379
+    },
+    {
+      "pmcid": "PMC12847054",
+      "doi": "10.3389/fcell.2025.1746709",
+      "organoid_type": "retinal",
+      "n_signaling": 11,
+      "grounded": 9,
+      "grounding_rate": 0.818,
+      "methods_chars": 20428
+    },
+    {
+      "pmcid": "PMC12847443",
+      "doi": "10.3389/fmed.2025.1733668",
+      "organoid_type": "gastric",
+      "n_signaling": 8,
+      "grounded": 8,
+      "grounding_rate": 1.0,
+      "methods_chars": 30313
+    },
+    {
+      "pmcid": "PMC12857267",
+      "doi": "10.1016/j.mtbio.2025.102757",
+      "organoid_type": "hepatic",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 23983
+    },
+    {
+      "pmcid": "PMC12864042",
+      "doi": "10.1038/s44385-025-00063-5",
+      "organoid_type": "kidney",
+      "n_signaling": 6,
+      "grounded": 3,
+      "grounding_rate": 0.5,
+      "methods_chars": 34518
+    },
+    {
+      "pmcid": "PMC12864791",
+      "doi": "10.1038/s44320-025-00172-8",
+      "organoid_type": "cardiac",
+      "n_signaling": 2,
+      "grounded": 2,
+      "grounding_rate": 1.0,
+      "methods_chars": 75799
+    },
+    {
+      "pmcid": "PMC12865037",
+      "doi": "10.1038/s41598-025-34504-3",
+      "organoid_type": "cardiac",
+      "n_signaling": 3,
+      "grounded": 2,
+      "grounding_rate": 0.667,
+      "methods_chars": 6955
+    },
+    {
+      "pmcid": "PMC12875692",
+      "doi": "10.1097/cm9.0000000000003707",
+      "organoid_type": "hepatic",
+      "n_signaling": 7,
+      "grounded": 7,
+      "grounding_rate": 1.0,
+      "methods_chars": 44911
+    },
+    {
+      "pmcid": "PMC12882664",
+      "doi": "10.1016/j.redox.2026.104057",
+      "organoid_type": "lung",
+      "n_signaling": 8,
+      "grounded": 8,
+      "grounding_rate": 1.0,
+      "methods_chars": 20867
+    },
+    {
+      "pmcid": "PMC12892906",
+      "doi": "10.1172/jci.insight.194759",
+      "organoid_type": "kidney",
+      "n_signaling": 5,
+      "grounded": 5,
+      "grounding_rate": 1.0,
+      "methods_chars": 23762
+    },
+    {
+      "pmcid": "PMC12893041",
+      "doi": "10.1242/dmm.052478",
+      "organoid_type": "hepatic",
+      "n_signaling": 10,
+      "grounded": 7,
+      "grounding_rate": 0.7,
+      "methods_chars": 54009
+    },
+    {
+      "pmcid": "PMC12893407",
+      "doi": "10.1002/adbi.202500536",
+      "organoid_type": "gastric",
+      "n_signaling": 3,
+      "grounded": 3,
+      "grounding_rate": 1.0,
+      "methods_chars": 189975
+    },
+    {
+      "pmcid": "PMC12893922",
+      "doi": "10.1038/s41586-025-09884-1",
+      "organoid_type": "hepatic",
+      "n_signaling": 4,
+      "grounded": 2,
+      "grounding_rate": 0.5,
+      "methods_chars": 98111
+    },
+    {
+      "pmcid": "PMC12895850",
+      "doi": "10.1186/s40360-025-01074-z",
+      "organoid_type": "hepatic",
+      "n_signaling": 11,
+      "grounded": 11,
+      "grounding_rate": 1.0,
+      "methods_chars": 10654
+    },
+    {
+      "pmcid": "PMC12896475",
+      "doi": "10.3390/ani16030469",
+      "organoid_type": "intestinal",
+      "n_signaling": 7,
+      "grounded": 7,
+      "grounding_rate": 1.0,
+      "methods_chars": 40303
+    },
+    {
+      "pmcid": "PMC12898197",
+      "doi": "10.3390/ijms27031280",
+      "organoid_type": "pancreatic",
+      "n_signaling": 6,
+      "grounded": 5,
+      "grounding_rate": 0.833,
+      "methods_chars": 55464
+    },
+    {
+      "pmcid": "PMC12898405",
+      "doi": "10.4251/wjgo.v18.i2.114161",
+      "organoid_type": "gastric",
+      "n_signaling": 5,
+      "grounded": 5,
+      "grounding_rate": 1.0,
+      "methods_chars": 10574
+    },
+    {
+      "pmcid": "PMC12902409",
+      "doi": "10.5187/jast.2024.e114",
+      "organoid_type": "intestinal",
+      "n_signaling": 11,
+      "grounded": 9,
+      "grounding_rate": 0.818,
+      "methods_chars": 11199
+    },
+    {
+      "pmcid": "PMC12902515",
+      "doi": "10.5187/jast.2024.e116",
+      "organoid_type": "intestinal",
+      "n_signaling": 8,
+      "grounded": 5,
+      "grounding_rate": 0.625,
+      "methods_chars": 15124
+    },
+    {
+      "pmcid": "PMC12903095",
+      "doi": "10.1016/j.stemcr.2025.102787",
+      "organoid_type": "intestinal",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 8297
+    },
+    {
+      "pmcid": "PMC12905087",
+      "doi": "10.1177/09636897261417623",
+      "organoid_type": "pancreatic",
+      "n_signaling": 11,
+      "grounded": 10,
+      "grounding_rate": 0.909,
+      "methods_chars": 65535
+    },
+    {
+      "pmcid": "PMC12911366",
+      "doi": "10.1186/s10020-025-01405-0",
+      "organoid_type": "retinal",
+      "n_signaling": 12,
+      "grounded": 10,
+      "grounding_rate": 0.833,
+      "methods_chars": 58406
+    },
+    {
+      "pmcid": "PMC12915785",
+      "doi": "10.1080/19490976.2026.2630483",
+      "organoid_type": "intestinal",
+      "n_signaling": 4,
+      "grounded": 4,
+      "grounding_rate": 1.0,
+      "methods_chars": 14372
+    },
+    {
+      "pmcid": "PMC12917985",
+      "doi": "10.1186/s13578-025-01515-6",
+      "organoid_type": "cerebral",
+      "n_signaling": 8,
+      "grounded": 7,
+      "grounding_rate": 0.875,
+      "methods_chars": 102962
+    },
+    {
+      "pmcid": "PMC12921240",
+      "doi": "10.1017/s0031182025100668",
+      "organoid_type": "intestinal",
+      "n_signaling": 9,
+      "grounded": 8,
+      "grounding_rate": 0.889,
+      "methods_chars": 31442
+    },
+    {
+      "pmcid": "PMC12921254",
+      "doi": "10.1017/s0031182025100619",
+      "organoid_type": "intestinal",
+      "n_signaling": 6,
+      "grounded": 6,
+      "grounding_rate": 1.0,
+      "methods_chars": 10903
+    },
+    {
+      "pmcid": "PMC12921360",
+      "doi": "10.3389/fcell.2025.1712621",
+      "organoid_type": "gastric",
+      "n_signaling": 2,
+      "grounded": 2,
+      "grounding_rate": 1.0,
+      "methods_chars": 51688
+    },
+    {
+      "pmcid": "PMC12925955",
+      "doi": "10.1016/j.stemcr.2025.102724",
+      "organoid_type": "cerebral",
+      "n_signaling": 3,
+      "grounded": 3,
+      "grounding_rate": 1.0,
+      "methods_chars": 6264
+    },
+    {
+      "pmcid": "PMC12929407",
+      "doi": "10.3389/fcimb.2026.1725344",
+      "organoid_type": "lung",
+      "n_signaling": 13,
+      "grounded": 13,
+      "grounding_rate": 1.0,
+      "methods_chars": 11519
+    },
+    {
+      "pmcid": "PMC12933599",
+      "doi": "10.1016/j.nsa.2026.106988",
+      "organoid_type": "hepatic",
+      "n_signaling": 8,
+      "grounded": 8,
+      "grounding_rate": 1.0,
+      "methods_chars": 71707
+    },
+    {
+      "pmcid": "PMC12937646",
+      "doi": "",
+      "organoid_type": "kidney",
+      "n_signaling": 9,
+      "grounded": 7,
+      "grounding_rate": 0.778,
+      "methods_chars": 39646
+    },
+    {
+      "pmcid": "PMC12937747",
+      "doi": "",
+      "organoid_type": "cardiac",
+      "n_signaling": 2,
+      "grounded": 2,
+      "grounding_rate": 1.0,
+      "methods_chars": 80671
+    },
+    {
+      "pmcid": "PMC12938774",
+      "doi": "10.3390/biomimetics11020142",
+      "organoid_type": "cerebral",
+      "n_signaling": 5,
+      "grounded": 3,
+      "grounding_rate": 0.6,
+      "methods_chars": 26679
+    },
+    {
+      "pmcid": "PMC12940303",
+      "doi": "",
+      "organoid_type": "retinal",
+      "n_signaling": 3,
+      "grounded": 3,
+      "grounding_rate": 1.0,
+      "methods_chars": 10257
+    },
+    {
+      "pmcid": "PMC12944987",
+      "doi": "10.3390/v18020238",
+      "organoid_type": "intestinal",
+      "n_signaling": 2,
+      "grounded": 2,
+      "grounding_rate": 1.0,
+      "methods_chars": 96296
+    },
+    {
+      "pmcid": "PMC12953928",
+      "doi": "10.34133/research.1165",
+      "organoid_type": "cardiac",
+      "n_signaling": 2,
+      "grounded": 2,
+      "grounding_rate": 1.0,
+      "methods_chars": 78360
+    },
+    {
+      "pmcid": "PMC12954766",
+      "doi": "10.15283/ijsc25042",
+      "organoid_type": "cardiac",
+      "n_signaling": 11,
+      "grounded": 10,
+      "grounding_rate": 0.909,
+      "methods_chars": 48063
+    },
+    {
+      "pmcid": "PMC12955914",
+      "doi": "10.1002/advs.202516507",
+      "organoid_type": "intestinal",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 21093
+    },
+    {
+      "pmcid": "PMC12960935",
+      "doi": "10.1038/s41392-026-02595-7",
+      "organoid_type": "hepatic",
+      "n_signaling": 11,
+      "grounded": 9,
+      "grounding_rate": 0.818,
+      "methods_chars": 39399
+    },
+    {
+      "pmcid": "PMC12963012",
+      "doi": "10.3389/frtra.2026.1740314",
+      "organoid_type": "pancreatic",
+      "n_signaling": 6,
+      "grounded": 5,
+      "grounding_rate": 0.833,
+      "methods_chars": 16884
+    },
+    {
+      "pmcid": "PMC12969023",
+      "doi": "10.1016/j.omton.2026.201160",
+      "organoid_type": "retinal",
+      "n_signaling": 3,
+      "grounded": 3,
+      "grounding_rate": 1.0,
+      "methods_chars": 17422
+    },
+    {
+      "pmcid": "PMC12969800",
+      "doi": "10.1016/j.mtbio.2026.102972",
+      "organoid_type": "lung",
+      "n_signaling": 11,
+      "grounded": 11,
+      "grounding_rate": 1.0,
+      "methods_chars": 15780
+    },
+    {
+      "pmcid": "PMC12977266",
+      "doi": "10.31744/einstein_journal/2026ao1716",
+      "organoid_type": "cerebral",
+      "n_signaling": 7,
+      "grounded": 6,
+      "grounding_rate": 0.857,
+      "methods_chars": 13136
+    },
+    {
+      "pmcid": "PMC12977569",
+      "doi": "10.1128/mbio.03003-25",
+      "organoid_type": "intestinal",
+      "n_signaling": 3,
+      "grounded": 3,
+      "grounding_rate": 1.0,
+      "methods_chars": 11335
+    },
+    {
+      "pmcid": "PMC12984627",
+      "doi": "",
+      "organoid_type": "hepatic",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 9896
+    },
+    {
+      "pmcid": "PMC12990332",
+      "doi": "10.1016/j.xpro.2026.104423",
+      "organoid_type": "cerebral",
+      "n_signaling": 5,
+      "grounded": 3,
+      "grounding_rate": 0.6,
+      "methods_chars": 54952
+    },
+    {
+      "pmcid": "PMC12992528",
+      "doi": "10.1016/j.reth.2026.101087",
+      "organoid_type": "kidney",
+      "n_signaling": 13,
+      "grounded": 13,
+      "grounding_rate": 1.0,
+      "methods_chars": 44072
+    },
+    {
+      "pmcid": "PMC12992574",
+      "doi": "10.1038/s42003-026-09710-y",
+      "organoid_type": "intestinal",
+      "n_signaling": 8,
+      "grounded": 8,
+      "grounding_rate": 1.0,
+      "methods_chars": 25092
+    },
+    {
+      "pmcid": "PMC12996818",
+      "doi": "10.1016/j.isci.2026.115071",
+      "organoid_type": "cardiac",
+      "n_signaling": 10,
+      "grounded": 10,
+      "grounding_rate": 1.0,
+      "methods_chars": 28218
+    },
+    {
+      "pmcid": "PMC12998197",
+      "doi": "10.1111/febs.70265",
+      "organoid_type": "lung",
+      "n_signaling": 4,
+      "grounded": 4,
+      "grounding_rate": 1.0,
+      "methods_chars": 53670
+    },
+    {
+      "pmcid": "PMC13005688",
+      "doi": "10.1002/adhm.202504719",
+      "organoid_type": "kidney",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 59029
+    },
+    {
+      "pmcid": "PMC13007296",
+      "doi": "10.1016/j.virs.2026.02.002",
+      "organoid_type": "lung",
+      "n_signaling": 9,
+      "grounded": 9,
+      "grounding_rate": 1.0,
+      "methods_chars": 44707
+    },
+    {
+      "pmcid": "PMC13011608",
+      "doi": "10.1080/17460751.2026.2634720",
+      "organoid_type": "pancreatic",
+      "n_signaling": 3,
+      "grounded": 3,
+      "grounding_rate": 1.0,
+      "methods_chars": 79879
+    },
+    {
+      "pmcid": "PMC13018151",
+      "doi": "10.3389/fimmu.2026.1747589",
+      "organoid_type": "cerebral",
+      "n_signaling": 6,
+      "grounded": 6,
+      "grounding_rate": 1.0,
+      "methods_chars": 42579
+    },
+    {
+      "pmcid": "PMC13020122",
+      "doi": "10.1186/s12917-026-05358-2",
+      "organoid_type": "intestinal",
+      "n_signaling": 2,
+      "grounded": 2,
+      "grounding_rate": 1.0,
+      "methods_chars": 8994
+    },
+    {
+      "pmcid": "PMC13023802",
+      "doi": "10.3390/biom16030458",
+      "organoid_type": "kidney",
+      "n_signaling": 10,
+      "grounded": 10,
+      "grounding_rate": 1.0,
+      "methods_chars": 53091
+    },
+    {
+      "pmcid": "PMC13024533",
+      "doi": "10.3390/biology15060488",
+      "organoid_type": "cerebral",
+      "n_signaling": 3,
+      "grounded": 2,
+      "grounding_rate": 0.667,
+      "methods_chars": 7352
+    },
+    {
+      "pmcid": "PMC13025031",
+      "doi": "10.1126/sciadv.aea8280",
+      "organoid_type": "intestinal",
+      "n_signaling": 11,
+      "grounded": 9,
+      "grounding_rate": 0.818,
+      "methods_chars": 10531
+    },
+    {
+      "pmcid": "PMC13025886",
+      "doi": "10.3390/cells15060532",
+      "organoid_type": "pancreatic",
+      "n_signaling": 5,
+      "grounded": 3,
+      "grounding_rate": 0.6,
+      "methods_chars": 52347
+    },
+    {
+      "pmcid": "PMC13030031",
+      "doi": "10.3390/toxins18030149",
+      "organoid_type": "intestinal",
+      "n_signaling": 3,
+      "grounded": 3,
+      "grounding_rate": 1.0,
+      "methods_chars": 69967
+    },
+    {
+      "pmcid": "PMC13031523",
+      "doi": "10.1038/s41598-026-41177-z",
+      "organoid_type": "cerebral",
+      "n_signaling": 8,
+      "grounded": 8,
+      "grounding_rate": 1.0,
+      "methods_chars": 9415
+    },
+    {
+      "pmcid": "PMC13031808",
+      "doi": "10.1038/s41598-026-40376-y",
+      "organoid_type": "retinal",
+      "n_signaling": 3,
+      "grounded": 3,
+      "grounding_rate": 1.0,
+      "methods_chars": 18086
+    },
+    {
+      "pmcid": "PMC13036102",
+      "doi": "10.3389/fcell.2026.1710021",
+      "organoid_type": "lung",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 16614
+    },
+    {
+      "pmcid": "PMC13039810",
+      "doi": "10.1038/s41419-026-08635-y",
+      "organoid_type": "hepatic",
+      "n_signaling": 16,
+      "grounded": 16,
+      "grounding_rate": 1.0,
+      "methods_chars": 14450
+    },
+    {
+      "pmcid": "PMC13041676",
+      "doi": "10.1172/jci.insight.190283",
+      "organoid_type": "kidney",
+      "n_signaling": 3,
+      "grounded": 3,
+      "grounding_rate": 1.0,
+      "methods_chars": 23787
+    },
+    {
+      "pmcid": "PMC13041762",
+      "doi": "10.1126/sciadv.aeb2333",
+      "organoid_type": "intestinal",
+      "n_signaling": 4,
+      "grounded": 3,
+      "grounding_rate": 0.75,
+      "methods_chars": 17615
+    },
+    {
+      "pmcid": "PMC13042217",
+      "doi": "10.1038/s44385-025-00054-6",
+      "organoid_type": "cardiac",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 81878
+    },
+    {
+      "pmcid": "PMC13052169",
+      "doi": "10.1111/cpr.70118",
+      "organoid_type": "hepatic",
+      "n_signaling": 6,
+      "grounded": 6,
+      "grounding_rate": 1.0,
+      "methods_chars": 11013
+    },
+    {
+      "pmcid": "PMC13052877",
+      "doi": "10.1371/journal.ppat.1014069",
+      "organoid_type": "intestinal",
+      "n_signaling": 4,
+      "grounded": 4,
+      "grounding_rate": 1.0,
+      "methods_chars": 21433
+    },
+    {
+      "pmcid": "PMC13065809",
+      "doi": "10.1038/s41598-026-42089-8",
+      "organoid_type": "retinal",
+      "n_signaling": 6,
+      "grounded": 3,
+      "grounding_rate": 0.5,
+      "methods_chars": 9527
+    },
+    {
+      "pmcid": "PMC13067506",
+      "doi": "10.1186/s12931-026-03610-9",
+      "organoid_type": "lung",
+      "n_signaling": 6,
+      "grounded": 6,
+      "grounding_rate": 1.0,
+      "methods_chars": 30202
+    },
+    {
+      "pmcid": "PMC13067788",
+      "doi": "10.1002/advs.202522276",
+      "organoid_type": "intestinal",
+      "n_signaling": 3,
+      "grounded": 3,
+      "grounding_rate": 1.0,
+      "methods_chars": 49239
+    },
+    {
+      "pmcid": "PMC13087714",
+      "doi": "10.1016/j.reth.2026.101109",
+      "organoid_type": "cardiac",
+      "n_signaling": 3,
+      "grounded": 3,
+      "grounding_rate": 1.0,
+      "methods_chars": 49229
+    },
+    {
+      "pmcid": "PMC13088841",
+      "doi": "10.1186/s13062-026-00755-x",
+      "organoid_type": "hepatic",
+      "n_signaling": 9,
+      "grounded": 5,
+      "grounding_rate": 0.556,
+      "methods_chars": 16155
+    },
+    {
+      "pmcid": "PMC13094536",
+      "doi": "10.1002/exp2.70160",
+      "organoid_type": "cerebral",
+      "n_signaling": 7,
+      "grounded": 6,
+      "grounding_rate": 0.857,
+      "methods_chars": 19566
+    },
+    {
+      "pmcid": "PMC13098098",
+      "doi": "10.1111/jcmm.71092",
+      "organoid_type": "cerebral",
+      "n_signaling": 3,
+      "grounded": 3,
+      "grounding_rate": 1.0,
+      "methods_chars": 7395
+    },
+    {
+      "pmcid": "PMC13099313",
+      "doi": "10.3389/fvets.2026.1807098",
+      "organoid_type": "lung",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 15190
+    },
+    {
+      "pmcid": "PMC13104096",
+      "doi": "10.1002/advs.74917",
+      "organoid_type": "cardiac",
+      "n_signaling": 2,
+      "grounded": 2,
+      "grounding_rate": 1.0,
+      "methods_chars": 98165
+    },
+    {
+      "pmcid": "PMC13112721",
+      "doi": "10.1186/s13287-026-04953-2",
+      "organoid_type": "intestinal",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 1703
+    },
+    {
+      "pmcid": "PMC13113633",
+      "doi": "10.3390/bioengineering13040478",
+      "organoid_type": "pancreatic",
+      "n_signaling": 3,
+      "grounded": 3,
+      "grounding_rate": 1.0,
+      "methods_chars": 54039
+    },
+    {
+      "pmcid": "PMC13114402",
+      "doi": "10.3390/cells15080703",
+      "organoid_type": "cardiac",
+      "n_signaling": 2,
+      "grounded": 1,
+      "grounding_rate": 0.5,
+      "methods_chars": 15504
+    },
+    {
+      "pmcid": "PMC13114865",
+      "doi": "10.3390/brainsci16040427",
+      "organoid_type": "cerebral",
+      "n_signaling": 7,
+      "grounded": 4,
+      "grounding_rate": 0.571,
+      "methods_chars": 47598
+    },
+    {
+      "pmcid": "PMC13116992",
+      "doi": "10.3390/gels12040287",
+      "organoid_type": "cerebral",
+      "n_signaling": 3,
+      "grounded": 3,
+      "grounding_rate": 1.0,
+      "methods_chars": 41282
+    },
+    {
+      "pmcid": "PMC13121393",
+      "doi": "10.1007/s10637-026-01605-3",
+      "organoid_type": "pancreatic",
+      "n_signaling": 14,
+      "grounded": 9,
+      "grounding_rate": 0.643,
+      "methods_chars": 18682
+    },
+    {
+      "pmcid": "PMC13126071",
+      "doi": "",
+      "organoid_type": "hepatic",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 28319
+    },
+    {
+      "pmcid": "PMC13129011",
+      "doi": "10.1038/s41598-026-43852-7",
+      "organoid_type": "hepatic",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 27977
+    },
+    {
+      "pmcid": "PMC13130689",
+      "doi": "10.1016/j.xcrm.2026.102720",
+      "organoid_type": "kidney",
+      "n_signaling": 18,
+      "grounded": 17,
+      "grounding_rate": 0.944,
+      "methods_chars": 35791
+    },
+    {
+      "pmcid": "PMC13130776",
+      "doi": "10.1186/s13287-026-05030-4",
+      "organoid_type": "hepatic",
+      "n_signaling": 10,
+      "grounded": 7,
+      "grounding_rate": 0.7,
+      "methods_chars": 9866
+    },
+    {
+      "pmcid": "PMC13135991",
+      "doi": "10.3389/fphar.2026.1778142",
+      "organoid_type": "intestinal",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 1255
+    },
+    {
+      "pmcid": "PMC13136479",
+      "doi": "10.1038/s41598-026-42990-2",
+      "organoid_type": "hepatic",
+      "n_signaling": 2,
+      "grounded": 2,
+      "grounding_rate": 1.0,
+      "methods_chars": 19340
+    },
+    {
+      "pmcid": "PMC13137809",
+      "doi": "10.1002/advs.202524001",
+      "organoid_type": "kidney",
+      "n_signaling": 6,
+      "grounded": 4,
+      "grounding_rate": 0.667,
+      "methods_chars": 24835
+    },
+    {
+      "pmcid": "PMC13140501",
+      "doi": "10.1093/burnst/tkag015",
+      "organoid_type": "pancreatic",
+      "n_signaling": 2,
+      "grounded": 2,
+      "grounding_rate": 1.0,
+      "methods_chars": 96449
+    },
+    {
+      "pmcid": "PMC13143278",
+      "doi": "10.7554/elife.98340",
+      "organoid_type": "cerebral",
+      "n_signaling": 5,
+      "grounded": 5,
+      "grounding_rate": 1.0,
+      "methods_chars": 10226
+    },
+    {
+      "pmcid": "PMC13147989",
+      "doi": "10.1016/j.xinn.2026.101281",
+      "organoid_type": "kidney",
+      "n_signaling": 2,
+      "grounded": 2,
+      "grounding_rate": 1.0,
+      "methods_chars": 14398
+    },
+    {
+      "pmcid": "PMC13151152",
+      "doi": "10.3389/fendo.2026.1795738",
+      "organoid_type": "pancreatic",
+      "n_signaling": 11,
+      "grounded": 11,
+      "grounding_rate": 1.0,
+      "methods_chars": 15767
+    },
+    {
+      "pmcid": "PMC13153201",
+      "doi": "10.1038/s41378-026-01249-6",
+      "organoid_type": "cardiac",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 99296
+    },
+    {
+      "pmcid": "PMC13154695",
+      "doi": "10.1186/s13287-026-04995-6",
+      "organoid_type": "intestinal",
+      "n_signaling": 9,
+      "grounded": 9,
+      "grounding_rate": 1.0,
+      "methods_chars": 13028
+    },
+    {
+      "pmcid": "PMC13154875",
+      "doi": "10.1186/s13046-026-03717-3",
+      "organoid_type": "pancreatic",
+      "n_signaling": 7,
+      "grounded": 5,
+      "grounding_rate": 0.714,
+      "methods_chars": 9400
+    },
+    {
+      "pmcid": "PMC13157183",
+      "doi": "10.1016/j.ebiom.2026.106277",
+      "organoid_type": "hepatic",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 11013
+    },
+    {
+      "pmcid": "PMC13162504",
+      "doi": "10.1186/s12860-026-00591-x",
+      "organoid_type": "kidney",
+      "n_signaling": 7,
+      "grounded": 7,
+      "grounding_rate": 1.0,
+      "methods_chars": 23326
+    },
+    {
+      "pmcid": "PMC13164303",
+      "doi": "10.3390/ijms27094128",
+      "organoid_type": "lung",
+      "n_signaling": 2,
+      "grounded": 1,
+      "grounding_rate": 0.5,
+      "methods_chars": 20537
+    },
+    {
+      "pmcid": "PMC13167430",
+      "doi": "10.3389/fmed.2026.1815902",
+      "organoid_type": "kidney",
+      "n_signaling": 4,
+      "grounded": 4,
+      "grounding_rate": 1.0,
+      "methods_chars": 67409
+    },
+    {
+      "pmcid": "PMC13167934",
+      "doi": "10.3389/fmicb.2026.1818217",
+      "organoid_type": "intestinal",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 13756
+    },
+    {
+      "pmcid": "PMC13168099",
+      "doi": "10.3389/fnmol.2026.1801891",
+      "organoid_type": "cerebral",
+      "n_signaling": 12,
+      "grounded": 9,
+      "grounding_rate": 0.75,
+      "methods_chars": 44023
+    },
+    {
+      "pmcid": "PMC13169162",
+      "doi": "10.3389/fonc.2026.1766571",
+      "organoid_type": "gastric",
+      "n_signaling": 10,
+      "grounded": 10,
+      "grounding_rate": 1.0,
+      "methods_chars": 64154
+    },
+    {
+      "pmcid": "PMC13170160",
+      "doi": "10.1186/s12860-026-00588-6",
+      "organoid_type": "pancreatic",
+      "n_signaling": 9,
+      "grounded": 9,
+      "grounding_rate": 1.0,
+      "methods_chars": 15788
+    },
+    {
+      "pmcid": "PMC13176542",
+      "doi": "10.1002/adhm.202505524",
+      "organoid_type": "cardiac",
+      "n_signaling": 5,
+      "grounded": 4,
+      "grounding_rate": 0.8,
+      "methods_chars": 25176
+    },
+    {
+      "pmcid": "PMC13178435",
+      "doi": "10.1038/s41563-026-02519-4",
+      "organoid_type": "intestinal",
+      "n_signaling": 8,
+      "grounded": 8,
+      "grounding_rate": 1.0,
+      "methods_chars": 28408
+    },
+    {
+      "pmcid": "PMC13180589",
+      "doi": "10.3389/fphar.2026.1782408",
+      "organoid_type": "lung",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 66759
+    },
+    {
+      "pmcid": "PMC13182113",
+      "doi": "10.1186/s13287-026-04996-5",
+      "organoid_type": "cardiac",
+      "n_signaling": 7,
+      "grounded": 7,
+      "grounding_rate": 1.0,
+      "methods_chars": 66405
+    },
+    {
+      "pmcid": "PMC13182545",
+      "doi": "10.7150/ijbs.116040",
+      "organoid_type": "cerebral",
+      "n_signaling": 2,
+      "grounded": 2,
+      "grounding_rate": 1.0,
+      "methods_chars": 17471
+    },
+    {
+      "pmcid": "PMC13183798",
+      "doi": "10.1002/mco2.70768",
+      "organoid_type": "lung",
+      "n_signaling": 12,
+      "grounded": 7,
+      "grounding_rate": 0.583,
+      "methods_chars": 99539
+    },
+    {
+      "pmcid": "PMC13184248",
+      "doi": "10.1038/s41419-026-08724-y",
+      "organoid_type": "retinal",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 17511
+    },
+    {
+      "pmcid": "PMC13186046",
+      "doi": "10.1016/j.isci.2026.115752",
+      "organoid_type": "kidney",
+      "n_signaling": 3,
+      "grounded": 3,
+      "grounding_rate": 1.0,
+      "methods_chars": 15933
+    },
+    {
+      "pmcid": "PMC13206403",
+      "doi": "10.1002/adhm.202504849",
+      "organoid_type": "hepatic",
+      "n_signaling": 7,
+      "grounded": 7,
+      "grounding_rate": 1.0,
+      "methods_chars": 28207
+    },
+    {
+      "pmcid": "PMC13208207",
+      "doi": "10.3390/medicina62050859",
+      "organoid_type": "lung",
+      "n_signaling": 5,
+      "grounded": 5,
+      "grounding_rate": 1.0,
+      "methods_chars": 52901
+    },
+    {
+      "pmcid": "PMC13213672",
+      "doi": "10.1016/j.jcmgh.2026.101772",
+      "organoid_type": "intestinal",
+      "n_signaling": 4,
+      "grounded": 4,
+      "grounding_rate": 1.0,
+      "methods_chars": 25149
+    },
+    {
+      "pmcid": "PMC13214305",
+      "doi": "10.1016/j.bbrep.2026.102622",
+      "organoid_type": "pancreatic",
+      "n_signaling": 14,
+      "grounded": 13,
+      "grounding_rate": 0.929,
+      "methods_chars": 10912
+    },
+    {
+      "pmcid": "PMC13214524",
+      "doi": "10.1016/j.sopen.2026.05.002",
+      "organoid_type": "intestinal",
+      "n_signaling": 8,
+      "grounded": 5,
+      "grounding_rate": 0.625,
+      "methods_chars": 13045
+    },
+    {
+      "pmcid": "PMC13218870",
+      "doi": "10.3389/fonc.2026.1803705",
+      "organoid_type": "cerebral",
+      "n_signaling": 6,
+      "grounded": 6,
+      "grounding_rate": 1.0,
+      "methods_chars": 70912
+    },
+    {
+      "pmcid": "PMC13223991",
+      "doi": "10.1016/j.isci.2026.116053",
+      "organoid_type": "kidney",
+      "n_signaling": 7,
+      "grounded": 7,
+      "grounding_rate": 1.0,
+      "methods_chars": 13301
+    },
+    {
+      "pmcid": "PMC13224076",
+      "doi": "10.1016/j.mtbio.2026.103181",
+      "organoid_type": "hepatic",
+      "n_signaling": 8,
+      "grounded": 8,
+      "grounding_rate": 1.0,
+      "methods_chars": 19922
+    },
+    {
+      "pmcid": "PMC13225201",
+      "doi": "10.1242/dmm.052737",
+      "organoid_type": "lung",
+      "n_signaling": 3,
+      "grounded": 3,
+      "grounding_rate": 1.0,
+      "methods_chars": 44657
+    },
+    {
+      "pmcid": "PMC13225715",
+      "doi": "10.1242/dmm.052769",
+      "organoid_type": "cardiac",
+      "n_signaling": 5,
+      "grounded": 5,
+      "grounding_rate": 1.0,
+      "methods_chars": 35373
+    },
+    {
+      "pmcid": "PMC13226553",
+      "doi": "",
+      "organoid_type": "lung",
+      "n_signaling": 6,
+      "grounded": 6,
+      "grounding_rate": 1.0,
+      "methods_chars": 15555
+    },
+    {
+      "pmcid": "PMC13228084",
+      "doi": "10.1128/spectrum.02316-25",
+      "organoid_type": "intestinal",
+      "n_signaling": 2,
+      "grounded": 2,
+      "grounding_rate": 1.0,
+      "methods_chars": 23693
+    },
+    {
+      "pmcid": "PMC13230137",
+      "doi": "10.3389/fcell.2026.1809928",
+      "organoid_type": "cerebral",
+      "n_signaling": 2,
+      "grounded": 1,
+      "grounding_rate": 0.5,
+      "methods_chars": 43980
+    },
+    {
+      "pmcid": "PMC13235386",
+      "doi": "10.1016/j.bioactmat.2026.05.033",
+      "organoid_type": "cardiac",
+      "n_signaling": 5,
+      "grounded": 3,
+      "grounding_rate": 0.6,
+      "methods_chars": 21202
+    },
+    {
+      "pmcid": "PMC13236901",
+      "doi": "10.3389/fbioe.2026.1790902",
+      "organoid_type": "gastric",
+      "n_signaling": 2,
+      "grounded": 1,
+      "grounding_rate": 0.5,
+      "methods_chars": 79359
+    },
+    {
+      "pmcid": "PMC13241417",
+      "doi": "10.1007/s10544-026-00829-7",
+      "organoid_type": "hepatic",
+      "n_signaling": 11,
+      "grounded": 7,
+      "grounding_rate": 0.636,
+      "methods_chars": 20036
+    },
+    {
+      "pmcid": "PMC13241776",
+      "doi": "10.1016/j.bbrep.2026.102653",
+      "organoid_type": "gastric",
+      "n_signaling": 9,
+      "grounded": 9,
+      "grounding_rate": 1.0,
+      "methods_chars": 20140
+    },
+    {
+      "pmcid": "PMC13241826",
+      "doi": "10.1111/cpr.70223",
+      "organoid_type": "cerebral",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 87110
+    },
+    {
+      "pmcid": "PMC13246858",
+      "doi": "10.1038/s41467-026-71680-w",
+      "organoid_type": "lung",
+      "n_signaling": 12,
+      "grounded": 7,
+      "grounding_rate": 0.583,
+      "methods_chars": 40198
+    },
+    {
+      "pmcid": "PMC13247413",
+      "doi": "10.1002/btm2.70123",
+      "organoid_type": "cerebral",
+      "n_signaling": 4,
+      "grounded": 4,
+      "grounding_rate": 1.0,
+      "methods_chars": 11577
+    },
+    {
+      "pmcid": "PMC13252844",
+      "doi": "10.1371/journal.ppat.1014321",
+      "organoid_type": "intestinal",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 9177
+    },
+    {
+      "pmcid": "PMC13253792",
+      "doi": "",
+      "organoid_type": "hepatic",
+      "n_signaling": 15,
+      "grounded": 14,
+      "grounding_rate": 0.933,
+      "methods_chars": 46291
+    },
+    {
+      "pmcid": "PMC13254702",
+      "doi": "",
+      "organoid_type": "lung",
+      "n_signaling": 5,
+      "grounded": 5,
+      "grounding_rate": 1.0,
+      "methods_chars": 10120
+    },
+    {
+      "pmcid": "PMC13256479",
+      "doi": "10.3390/cells15110963",
+      "organoid_type": "cerebral",
+      "n_signaling": 3,
+      "grounded": 3,
+      "grounding_rate": 1.0,
+      "methods_chars": 26799
+    },
+    {
+      "pmcid": "PMC13260613",
+      "doi": "",
+      "organoid_type": "hepatic",
+      "n_signaling": 10,
+      "grounded": 10,
+      "grounding_rate": 1.0,
+      "methods_chars": 12345
+    },
+    {
+      "pmcid": "PMC13260716",
+      "doi": "",
+      "organoid_type": "hepatic",
+      "n_signaling": 7,
+      "grounded": 5,
+      "grounding_rate": 0.714,
+      "methods_chars": 42282
+    },
+    {
+      "pmcid": "PMC8420044",
+      "doi": "10.1186/s13287-021-02521-4",
+      "organoid_type": "gastric",
+      "n_signaling": 7,
+      "grounded": 7,
+      "grounding_rate": 1.0,
+      "methods_chars": 6441
+    },
+    {
+      "pmcid": "PMC9287064",
+      "doi": "10.1111/hel.12891",
+      "organoid_type": "gastric",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 2435
+    },
+    {
+      "pmcid": "PMC9959977",
+      "doi": "10.3390/ijms24044027",
+      "organoid_type": "pancreatic",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 34241
+    }
+  ],
+  "rejected_papers": [
+    {
+      "pmcid": "PMC10872169",
+      "reason": "no_methods"
+    },
+    {
+      "pmcid": "PMC10941468",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10950634",
+      "reason": "low_grounding=0.1"
+    },
+    {
+      "pmcid": "PMC11144550",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC11144751",
+      "reason": "low_grounding=0.154"
+    },
+    {
+      "pmcid": "PMC11177823",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC11227007",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC11237002",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC11251028",
+      "reason": "low_grounding=0.333"
+    },
+    {
+      "pmcid": "PMC11318694",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC11323579",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC11346450",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC11396807",
+      "reason": "low_grounding=0.444"
+    },
+    {
+      "pmcid": "PMC11458617",
+      "reason": "low_grounding=0.286"
+    },
+    {
+      "pmcid": "PMC11528013",
+      "reason": "low_grounding=0.167"
+    },
+    {
+      "pmcid": "PMC11726960",
+      "reason": "low_grounding=0.286"
+    },
+    {
+      "pmcid": "PMC11732820",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC11762450",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC11799150",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC11866153",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC11866579",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC11871743",
+      "reason": "low_grounding=0.25"
+    },
+    {
+      "pmcid": "PMC11882745",
+      "reason": "low_grounding=0.231"
+    },
+    {
+      "pmcid": "PMC11933005",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC11946240",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC11998530",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC12011692",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12027382",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC12028617",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC12108686",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12116454",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12116939",
+      "reason": "low_grounding=0.333"
+    },
+    {
+      "pmcid": "PMC12117945",
+      "reason": "low_grounding=0.375"
+    },
+    {
+      "pmcid": "PMC12149405",
+      "reason": "low_grounding=0.429"
+    },
+    {
+      "pmcid": "PMC12215077",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC12260729",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12292278",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC12292604",
+      "reason": "low_grounding=0.333"
+    },
+    {
+      "pmcid": "PMC12294766",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12307212",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12311600",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12327341",
+      "reason": "low_grounding=0.091"
+    },
+    {
+      "pmcid": "PMC12358629",
+      "reason": "low_grounding=0.333"
+    },
+    {
+      "pmcid": "PMC12367976",
+      "reason": "low_grounding=0.333"
+    },
+    {
+      "pmcid": "PMC12377151",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC12389403",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12394640",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC12405138",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC12405370",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12407140",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12407878",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12453064",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12467935",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12482142",
+      "reason": "extract_error:ValidationError"
+    },
+    {
+      "pmcid": "PMC12488937",
+      "reason": "low_grounding=0.333"
+    },
+    {
+      "pmcid": "PMC12499486",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC12499647",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC12504399",
+      "reason": "low_grounding=0.4"
+    },
+    {
+      "pmcid": "PMC12557781",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC12584838",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12586785",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC12592234",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12594264",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12594906",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12615267",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC12634667",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12652747",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC12658070",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12672344",
+      "reason": "low_grounding=0.111"
+    },
+    {
+      "pmcid": "PMC12673224",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC12686720",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC12692019",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12692710",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12702322",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC12713053",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC12714198",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12715344",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12717054",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC12723542",
+      "reason": "low_grounding=0.333"
+    },
+    {
+      "pmcid": "PMC12733716",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12744860",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12756300",
+      "reason": "low_grounding=0.4"
+    },
+    {
+      "pmcid": "PMC12766950",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC12771672",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC12786086",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC12797737",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12800103",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12821206",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12822396",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC12824400",
+      "reason": "low_grounding=0.444"
+    },
+    {
+      "pmcid": "PMC12832676",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12852793",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12874115",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC12901704",
+      "reason": "no_methods"
+    },
+    {
+      "pmcid": "PMC12904728",
+      "reason": "low_grounding=0.333"
+    },
+    {
+      "pmcid": "PMC12910853",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC12911747",
+      "reason": "extract_error:ValidationError"
+    },
+    {
+      "pmcid": "PMC12915229",
+      "reason": "low_grounding=0.25"
+    },
+    {
+      "pmcid": "PMC12925966",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC12926446",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC12927097",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC12939310",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12944275",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12950791",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12968642",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC12985085",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC12990659",
+      "reason": "low_grounding=0.2"
+    },
+    {
+      "pmcid": "PMC12992530",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12994226",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC12998116",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC13003744",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC13014286",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC13015845",
+      "reason": "low_grounding=0.429"
+    },
+    {
+      "pmcid": "PMC13017197",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC13023869",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC13031871",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC13035940",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC13043231",
+      "reason": "low_grounding=0.25"
+    },
+    {
+      "pmcid": "PMC13044878",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC13061793",
+      "reason": "low_grounding=0.4"
+    },
+    {
+      "pmcid": "PMC13072481",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC13073298",
+      "reason": "low_grounding=0.111"
+    },
+    {
+      "pmcid": "PMC13088355",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC13094297",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC13107919",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC13118553",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC13121592",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC13138029",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC13138044",
+      "reason": "low_grounding=0.333"
+    },
+    {
+      "pmcid": "PMC13141115",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC13147764",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC13148931",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC13158549",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC13164133",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC13165920",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC13175505",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC13176544",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC13181862",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC13186086",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC13187038",
+      "reason": "low_grounding=0.091"
+    },
+    {
+      "pmcid": "PMC13190451",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC13191303",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC13192094",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC13193134",
+      "reason": "no_methods"
+    },
+    {
+      "pmcid": "PMC13194713",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC13199092",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC13204722",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC13204734",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC13204989",
+      "reason": "low_grounding=0.333"
+    },
+    {
+      "pmcid": "PMC13213680",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC13228442",
+      "reason": "no_methods"
+    },
+    {
+      "pmcid": "PMC13228570",
+      "reason": "no_methods"
+    },
+    {
+      "pmcid": "PMC13229853",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC13231361",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC13231639",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC13231838",
+      "reason": "low_grounding=0.375"
+    },
+    {
+      "pmcid": "PMC13232138",
+      "reason": "no_methods"
+    },
+    {
+      "pmcid": "PMC13234404",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC13235370",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC13246504",
+      "reason": "low_grounding=0.333"
+    },
+    {
+      "pmcid": "PMC13248853",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC13255226",
+      "reason": "extract_error:ValidationError"
+    },
+    {
+      "pmcid": "PMC13257478",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC7618580",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC9855865",
+      "reason": "low_grounding=0.143"
+    }
+  ]
+}
