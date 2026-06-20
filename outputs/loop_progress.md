@@ -205,7 +205,7 @@
   NON-REAGENT guard to tier1 (is_non_reagent: instruments/microscopes/software/imaging systems)
   — a generalizable quality check like suspect_unit. Broda now: Activin A, BMP4, FGF4, FGF10,
   CHIR99021, Retinoic acid (6 clean canonical factors). Scan of all existing preds: 0 residual
-  junk (guard is conservative, no false positives). +5 unit tests.
+  junk (guard is conservative, no false positives). +2 unit tests.
 - Normalization: added spelled-out aliases (Bone morphogenetic protein 4->BMP4, Fibroblast
   growth factor 4/10->FGF4/10, epidermal/hepatocyte/VEGF) so Broda's long-form names merge with
   the rest. Verified BMP4/FGF10 now unify surface forms.
