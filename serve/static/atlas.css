@@ -163,7 +163,7 @@ code, .col-doi, .col-pmcid { font-family: var(--mono); font-size: 0.85em; }
 .apa-cocktail .quote { font-size: .8rem; color: var(--muted); font-style: italic; }
 
 /* In-context evidence highlighter */
-.apa-source { max-height: 360px; overflow: auto; background: var(--paper); border: 1px solid var(--border); border-radius: 10px; padding: 1rem 1.1rem; font-size: .85rem; line-height: 1.7; white-space: pre-wrap; color: #2b343d; }
+.apa-source { max-height: 360px; overflow: auto; background: var(--paper); border: 1px solid var(--border); border-radius: 10px; padding: 1rem 1.1rem; font-size: .85rem; line-height: 1.7; white-space: pre-wrap; color: var(--ink); }
 mark.apa-hl { background: #fde68a; color: #1a1a1a; padding: 0 2px; border-radius: 2px; }
 
 .apa-foot { max-width: 1180px; margin: 0 auto; padding: 2rem 1.5rem; color: var(--muted); font-size: .8rem; border-top: 1px solid var(--border); }

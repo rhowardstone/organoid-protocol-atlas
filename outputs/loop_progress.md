@@ -140,3 +140,14 @@
   protocols after human confirmation. Needs supervisor OK before any KG ingestion.
 - Committed detection + resolve/verify + 8 CI-safe unit tests (gating logic, no network/corpus).
   Full suite green (10).
+
+## Iteration 10 — 2026-06-20 — Design polish + UX gut-check (#2)
+- Used the site as a user across index / protocols-table / recipe card, light + dark, and a
+  390px mobile viewport (stats reflow 2-up, cards stack, topbar wraps — responsive OK).
+- Correctness: landing stats were stale — fixed reagents 280->287, grounding 77%->81%
+  (improved since entity-norm + rebuilds), supplement files 140->144, to match the live KG.
+- Dark-mode faux-pas caught + fixed: the source-methods highlighter panel (.apa-source) had a
+  hardcoded dark text colour (#2b343d) -> dark-on-dark, nearly invisible in dark mode. Switched
+  to var(--ink); verified computed colour now light (rgb(230,237,243)) with yellow highlights
+  still legible. Datasette table views + custom pages otherwise theme cleanly.
+- Tests green.
