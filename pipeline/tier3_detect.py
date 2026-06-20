@@ -56,12 +56,14 @@ SELF = re.compile(
     r"in ref\.?\s*\d|previous section|earlier in)", re.I)
 
 # resolvable external citation marker near the phrase
-NAMED = re.compile(r"\(([A-Z][A-Za-z\-]+)\s+et\s+al\.?\s*,?\s*(\d{4})[a-z]?\)")
+NAMED = re.compile(r"\(([A-Z][A-Za-z\-]+)\s+et\s+al\.?\s*,?\s*(\d{4})[a-z]?\s*\)")
 NUMREF = re.compile(r"described[^.]{0,40}?\b\d{1,3}\b")
 
 
 def detect_one(b: dict) -> dict | None:
-    m = b.get("methods_text", "") or ""
+    # normalize non-breaking spaces (common in PMC XML) so the citation/whitespace
+    # patterns match reliably ("Sato et\xa0al , 2011 )").
+    m = (b.get("methods_text", "") or "").replace("\xa0", " ")
     for mm in DELEG.finditer(m):
         s, e = mm.start(), mm.end()
         near = m[max(0, s - 120):e + 140]
