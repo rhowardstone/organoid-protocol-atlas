@@ -51,9 +51,16 @@ class Evidence(BaseModel):
 
 
 class Reporting(str, Enum):
-    """Why a field is empty. 'Not reported' and 'not applicable' are different findings."""
+    """Why a field is empty. These are different findings, not interchangeable.
+
+    The distinction that matters for honesty: NOT_REPORTED asserts the paper does
+    not state the value (only safe when the relevant section was actually read);
+    NOT_EXTRACTED admits we may have missed it (section out of window / uncertain).
+    Default to NOT_EXTRACTED when unsure — under-claim rather than fabricate absence.
+    """
     REPORTED = "reported"
-    NOT_REPORTED = "not_reported"   # tacit/omitted — a measurable gap
+    NOT_REPORTED = "not_reported"     # paper genuinely omits it — a measurable gap
+    NOT_EXTRACTED = "not_extracted"   # we did not capture it (uncertain) — honest unknown
     NOT_APPLICABLE = "not_applicable"
 
 
@@ -113,8 +120,26 @@ class Reagent(BaseModel):
 class SourceCells(BaseModel):
     cell_type: SourceCellType = SourceCellType.OTHER
     line_name: Optional[str] = Field(None, description="e.g. 'H9', 'WTC-11', patient-derived ID.")
+    # v0.3: cell-line identity for reproducibility. RRID/Cellosaurus accession
+    # (e.g. 'CVCL_9773'). Extends SourceCells rather than a separate model, since
+    # line_name already lives here (DRY); free-text now, Cellosaurus validation later.
+    rrid: Optional[str] = Field(None, description="RRID / Cellosaurus accession, e.g. 'CVCL_9773'.")
     species: Optional[str] = Field(None, description="e.g. 'Homo sapiens', 'Mus musculus'.")
     reporting: Reporting = Reporting.REPORTED
+    evidence: Optional[Evidence] = None
+
+
+class CultureConditions(BaseModel):
+    """v0.3: physical culture environment — a genuine protocol discriminator.
+
+    Oxygen tension especially: some brain-organoid protocols required ~40% O2 and
+    later ones explicitly removed it. Numerics are usually stated cleanly. Defaults
+    to NOT_EXTRACTED (honest unknown) until an extractor populates + grounds them.
+    """
+    temperature_c: Optional[float] = Field(None, description="Incubation temperature, °C (usually 37).")
+    co2_pct: Optional[float] = Field(None, description="CO2 percentage (usually 5).")
+    o2_pct: Optional[float] = Field(None, description="O2 percentage (e.g. 20/ambient, or hypoxic/40).")
+    reporting: Reporting = Reporting.NOT_EXTRACTED
     evidence: Optional[Evidence] = None
 
 
@@ -175,6 +200,7 @@ class OrganoidProtocol(BaseModel):
 
     timeline: list[TimelineStage] = Field(default_factory=list)
     passaging: Passaging = Field(default_factory=Passaging)
+    culture_conditions: CultureConditions = Field(default_factory=CultureConditions)  # v0.3
 
     assay_endpoints: list[str] = Field(
         default_factory=list,
@@ -182,7 +208,7 @@ class OrganoidProtocol(BaseModel):
     )
 
     # Extraction-level metadata for evaluation
-    schema_version: str = "0.2"
+    schema_version: str = "0.3"
     extractor_version: Optional[str] = None
     notes: Optional[str] = None
 
