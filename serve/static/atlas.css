@@ -66,6 +66,7 @@ code, .col-doi, .col-pmcid { font-family: var(--mono); font-size: 0.85em; }
 .apa-badge { font-family: var(--mono); font-size: .68rem; padding: 1px 6px; border-radius: 5px; border: 1px solid var(--border); }
 .apa-badge.ok { color: var(--good); border-color: #bbf7d0; background: #f0fdf4; }
 .apa-badge.no { color: var(--bad); border-color: #fecaca; background: #fef2f2; }
+.apa-badge.fig { color: #7c3aed; border-color: #ddd6fe; background: #f5f3ff; }
 
 /* ---------- Recipe card (protocol row page) ---------- */
 .apa-recipe { max-width: 980px; margin: 1.5rem auto; padding: 0 1.5rem; }

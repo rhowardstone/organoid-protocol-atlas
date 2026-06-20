@@ -1,0 +1,86 @@
+{
+  "generated_at": "2026-06-20T15:19:04+00:00",
+  "model": "gemma3:12b",
+  "papers": 8,
+  "grounding": {
+    "stages_grounded": 14,
+    "stages_raw": 19,
+    "reagents_grounded": 27,
+    "reagents_raw": 27,
+    "culture_factors_gated": 10
+  },
+  "rows": [
+    {
+      "pmcid": "PMC10739970",
+      "n_flagged": 5,
+      "grounded_stages": 5,
+      "raw_stages": 5,
+      "grounded_reagents": 10,
+      "raw_reagents": 10,
+      "culture_factors": 0
+    },
+    {
+      "pmcid": "PMC4370190",
+      "n_flagged": 5,
+      "grounded_stages": 3,
+      "raw_stages": 3,
+      "grounded_reagents": 2,
+      "raw_reagents": 2,
+      "culture_factors": 2
+    },
+    {
+      "pmcid": "PMC4370217",
+      "n_flagged": 2,
+      "grounded_stages": 2,
+      "raw_stages": 2,
+      "grounded_reagents": 8,
+      "raw_reagents": 8,
+      "culture_factors": 6
+    },
+    {
+      "pmcid": "PMC4620584",
+      "n_flagged": 4,
+      "grounded_stages": 3,
+      "raw_stages": 8,
+      "grounded_reagents": 6,
+      "raw_reagents": 6,
+      "culture_factors": 1
+    },
+    {
+      "pmcid": "PMC6376275",
+      "n_flagged": 2,
+      "grounded_stages": 0,
+      "raw_stages": 0,
+      "grounded_reagents": 1,
+      "raw_reagents": 1,
+      "culture_factors": 1
+    },
+    {
+      "pmcid": "PMC6906116",
+      "n_flagged": 3,
+      "grounded_stages": 1,
+      "raw_stages": 1,
+      "grounded_reagents": 0,
+      "raw_reagents": 0,
+      "culture_factors": 0
+    },
+    {
+      "pmcid": "PMC7757566",
+      "n_flagged": 0,
+      "grounded_stages": 0,
+      "raw_stages": 0,
+      "grounded_reagents": 0,
+      "raw_reagents": 0,
+      "culture_factors": 0
+    },
+    {
+      "pmcid": "PMC8516798",
+      "n_flagged": 1,
+      "grounded_stages": 0,
+      "raw_stages": 0,
+      "grounded_reagents": 0,
+      "raw_reagents": 0,
+      "culture_factors": 0
+    }
+  ]
+}

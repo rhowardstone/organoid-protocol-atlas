@@ -55,7 +55,7 @@ function highlight(text, quotes){
 
   const rows = sig.map(r => `
     <tr>
-      <td><a href="/atlas/reagents?canonical__exact=${encodeURIComponent(r.canonical || r.name)}">${esc(r.name)}</a></td>
+      <td><a href="/atlas/reagents?canonical__exact=${encodeURIComponent(r.canonical || r.name)}">${esc(r.name)}</a>${r.figure_confirmed ? ' <span class="apa-badge fig" title="also shown in this paper&apos;s figure schematic — confirmed by Tier-2 vision">📷 figure</span>' : ''}</td>
       <td>${esc(r.role==='not stated'?'':r.role)}</td>
       <td>${esc(conc(r))}${r.suspect_unit ? ' <span class="apa-badge no" title="implausible unit — likely extraction error">⚠</span>' : ''}</td>
       <td>${badge(r.grounded)}</td>
@@ -67,7 +67,7 @@ function highlight(text, quotes){
     <h1>${title}</h1>
     <p style="color:var(--muted);margin:.2rem 0 0">Source: ${cite}</p>
     <div class="apa-axes">${ax}</div>
-    <h3 style="margin:1.2rem 0 .3rem">Signaling cocktail <span style="color:var(--muted);font-weight:400">(${sig.length})</span></h3>
+    <h3 style="margin:1.2rem 0 .3rem">Signaling cocktail <span style="color:var(--muted);font-weight:400">(${sig.length})${sig.filter(r=>r.figure_confirmed).length?` · ${sig.filter(r=>r.figure_confirmed).length} 📷 confirmed in a figure schematic`:''}</span></h3>
     <table class="apa-cocktail">
       <thead><tr><th>Reagent</th><th>Role</th><th>Conc.</th><th>Evidence</th><th>Verbatim span</th></tr></thead>
       <tbody>${rows}</tbody>

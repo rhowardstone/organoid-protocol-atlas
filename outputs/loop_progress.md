@@ -26,3 +26,30 @@
 - Result: signaling 85 raw → 65 canonical (20 collapsed). R-spondin1 ← {R-Spondin1,RSPO1,R-spondin 1,R-spondin}; FGF2 ← {FGF2,bFGF}; Activin A, SB431542, A83-01 collapsed; R-spondin3 kept distinct (correct). Browser/JSON-verified.
 - Surfaced real variety: R-spondin1 as recombinant (ng/mL) vs conditioned-medium (%v/v) — a genuine cross-protocol comparison insight.
 - Next: A100 vision (Qwen2.5-VL, solve figure fetch); then frontend parity (Q&A/heatmap/dark mode); ChEBI/PR ontology_id enrichment later.
+
+## Iteration 5 — 2026-06-20 — A100 vision (Tier-2) on REAL figures
+- Solved the figure-fetch blocker: NCBI OA packages are FTP-only and the HTML render
+  endpoints (ptpmcrender / .../bin/) hang behind this host's firewall. Working route =
+  the PMC Open Access mirror on the AWS Registry of Open Data (S3 over HTTPS, not
+  firewalled): https://pmc-oa-opendata.s3.amazonaws.com/PMC<id>.<ver>/<file>.jpg
+- pipeline/fetch_figures.py: license-gated (CC-/open only) S3 figure acquisition; images
+  cached LOCAL-ONLY (data/figures/local/, git-ignored). 59 figures across 8 CC papers.
+- pipeline/tier2_vision.py: gemma3:12b (A100) vision on caption-FLAGGED schematics only
+  (router/cost guardrail — 24 of 59 figures), grounded against paper text. Verified the
+  model reads figures correctly (schematic vs microscopy classification is right; OCR is
+  accurate — it transcribed "Protocol schematic", marker names, factor abbreviations).
+- Measured honestly: substring-grounding alone leaks noise (panel labels A.MH, reporters
+  mCherry/shNT, assay compounds cisplatin/lucifer-yellow pass because they appear in body
+  text). Added a culture-factor vocabulary gate (normalize.canonical_or_none + FIG_ABBREV:
+  ACTA->Activin A, NOG->Noggin, SB->SB431542). Gate -> 10 clean factors, 0 noise.
+- KEY FINDING: 9/10 gated figure-factors were ALREADY in the Tier-1 text extraction; only
+  1 net-new (Forskolin, PMC6376275 — and that's the CFTR swelling *assay* reagent, not a
+  culture factor, so auto-merging would have been WRONG). So Tier-2's value here is
+  CROSS-MODAL CORROBORATION, not new reagents. Merged as an ANNOTATION only:
+  reagents.figure_confirmed / protocols.n_figure_confirmed. 7 reagents now confirmed by
+  both text + figure schematic (lung Activin A/Noggin/SB431542/SAG/FGF4, kidney CHIR99021,
+  retinal Retinoic acid). Surfaced: 📷 badge + cocktail-header count + reagents facet.
+- Did NOT inject noisy figure reagents into the KG (build discipline: prove the metric,
+  don't merge "looks better"). Vision-broad outputs kept as local experimental artifacts.
+- Next: scale flagging beyond caption cues (some schematics have terse captions); consider
+  Qwen2.5-VL for harder OCR; then frontend parity (#8: Q&A / heatmap / dark mode).

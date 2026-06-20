@@ -22,7 +22,7 @@ import collections
 import re
 
 
-def norm_key(name: str) -> str:
+def norm_key(name: str | None) -> str:
     """Aggressive match key: lowercase, strip all non-alphanumerics."""
     return re.sub(r"[^a-z0-9]", "", (name or "").lower())
 
@@ -57,6 +57,29 @@ CANON = {
     "pge2": "PGE2", "prostaglandine2": "PGE2", "heparin": "Heparin",
     "sag": "SAG", "purmorphamine": "Purmorphamine", "dapt": "DAPT", "shh": "SHH",
 }
+
+
+# Abbreviations that appear in figure schematics (Tier-2 vision) but rarely in prose.
+# These extend CANON for the vision gate only (kept separate to avoid widening the
+# text path, where the full names are already used).
+FIG_ABBREV = {
+    "acta": "Activin A", "nog": "Noggin", "sb": "SB431542",
+    "fsk": "Forskolin", "ldn": "LDN-193189", "dm": "Dorsomorphin",
+}
+
+
+def canonical_or_none(name: str | None) -> str | None:
+    """Return the canonical reagent name iff `name` is a known culture factor.
+
+    The gate for Tier-2 vision: figure OCR surfaces panel labels, reporters
+    (mCherry, shNT) and assay compounds (cisplatin, lucifer yellow) that pass a
+    crude substring-grounding check. Only names resolving to a curated culture
+    factor (CANON or a known figure abbreviation) are kept as protocol reagents.
+    """
+    k = norm_key(name)
+    if not k:
+        return None
+    return CANON.get(k) or FIG_ABBREV.get(k)
 
 
 def build_canon_map(names) -> dict:

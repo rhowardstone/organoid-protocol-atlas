@@ -31,6 +31,7 @@ from normalize import build_canon_map  # noqa: E402
 
 REPO = Path(__file__).resolve().parent.parent
 PRED = REPO / "data" / "predictions" / "local"
+PRED2 = REPO / "data" / "predictions" / "local" / "tier2"
 BUNDLES = REPO / "data" / "evidence_bundles" / "local"
 CORPUS = REPO / "data" / "corpus" / "pmc_oa_25.tsv"
 DB = REPO / "data" / "kg" / "atlas.db"
@@ -56,6 +57,7 @@ CREATE TABLE protocols (
     gold_candidate TEXT,
     n_signaling_factors INTEGER,
     n_supplements INTEGER,
+    n_figure_confirmed INTEGER,
     reagents_grounded INTEGER,
     reagents_total INTEGER,
     grounding_rate REAL,
@@ -79,7 +81,8 @@ CREATE TABLE reagents (
     canonical_unit TEXT,
     evidence_quote TEXT,
     grounded INTEGER,
-    suspect_unit INTEGER  -- deterministic sanity flag (e.g. growth factor in mg/mL)
+    suspect_unit INTEGER, -- deterministic sanity flag (e.g. growth factor in mg/mL)
+    figure_confirmed INTEGER  -- Tier-2: this canonical factor also appears in a figure schematic
 );
 
 -- Source methods text, for the in-context evidence highlighter (local serving).
@@ -129,6 +132,17 @@ def main():
             all_names += [r.get("name") for r in (pp.get(kk) or []) if isinstance(r, dict)]
     canon_map = build_canon_map(all_names)
 
+    # Tier-2 cross-modal corroboration: canonical factors a vision pass confirmed
+    # in a figure schematic, per paper. Used to annotate (not add) reagents.
+    fig_confirmed: dict[str, set] = {}
+    if PRED2.exists():
+        for f2 in PRED2.glob("*.json"):
+            t2 = json.loads(f2.read_text())
+            confirmed = {c.get("canonical") for fig in t2.get("figures", [])
+                         for c in fig.get("culture_factors", []) if c.get("canonical")}
+            if confirmed:
+                fig_confirmed[t2["pmcid"]] = confirmed
+
     n_protocols = n_reagents = 0
     for pf in sorted(PRED.glob("*.json")):
         pmcid = pf.stem
@@ -146,18 +160,24 @@ def main():
                 u = (conc.get("canonical_unit") or conc.get("unit") or "").lower()
                 suspect = 1 if (kind == "signaling" and u == "mg/ml") else 0
                 nm = r.get("name")
+                canon = canon_map.get(nm, nm)
+                fconf = 1 if canon in fig_confirmed.get(pmcid, set()) else 0
                 conn.execute(
                     "INSERT INTO reagents(pmcid,doi,organoid_type,kind,name,canonical,role,value,unit,"
-                    "canonical_unit,evidence_quote,grounded,suspect_unit) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)",
+                    "canonical_unit,evidence_quote,grounded,suspect_unit,figure_confirmed) "
+                    "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
                     (pmcid, p.get("source_doi"), oty, kind,
-                     nm, canon_map.get(nm, nm), r.get("role"), conc.get("value"), conc.get("unit"),
-                     conc.get("canonical_unit"), ev.get("quote"), 1 if ev.get("quote") else 0, suspect),
+                     nm, canon, r.get("role"), conc.get("value"), conc.get("unit"),
+                     conc.get("canonical_unit"), ev.get("quote"), 1 if ev.get("quote") else 0,
+                     suspect, fconf),
                 )
                 n_reagents += 1
 
         sf = p.get("signaling_factors") or []
         sup = p.get("media_supplements") or []
         grounded = sum(1 for r in sf if (r.get("evidence") or {}).get("quote"))
+        conf_set = fig_confirmed.get(pmcid, set())
+        n_conf = sum(1 for r in sf if canon_map.get(r.get("name"), r.get("name")) in conf_set)
         bm = p.get("base_media") or {}
         sc = p.get("source_cells") or {}
         pgd = p.get("passaging") or {}
@@ -170,12 +190,12 @@ def main():
             for t in (p.get("timeline") or []) if t.get("name"))
         endpoints_s = " · ".join(str(x) for x in (p.get("assay_endpoints") or []))
         conn.execute(
-            "INSERT INTO protocols VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+            "INSERT INTO protocols VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
             (pmcid, p.get("source_doi"), oty, sc.get("species"),
              sc.get("cell_type"), (p.get("matrix") or {}).get("name"), bm.get("name"),
              bm.get("reporting"), cm.get("first_author"), cm.get("year"),
              cm.get("journal"), cm.get("license"), cm.get("gold_candidate"),
-             len(sf), len(sup), grounded, len(sf),
+             len(sf), len(sup), n_conf, grounded, len(sf),
              round(grounded / len(sf), 3) if sf else None, p.get("extractor_version"),
              passaging_s or None, timeline_s or None, endpoints_s or None),
         )

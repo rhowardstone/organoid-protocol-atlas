@@ -20,3 +20,6 @@ workspace/evals/transcripts/
 *.png
 landing*.png
 recipe*.png
+
+# Local Claude project dir
+.claude/
