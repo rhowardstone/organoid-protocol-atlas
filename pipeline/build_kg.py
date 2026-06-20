@@ -27,7 +27,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from normalize import build_canon_map  # noqa: E402
+from normalize import build_canon_map, canon_unit  # noqa: E402
 
 REPO = Path(__file__).resolve().parent.parent
 PRED = REPO / "data" / "predictions" / "local"
@@ -157,7 +157,8 @@ def main():
             for r in items or []:
                 conc = r.get("concentration") or {}
                 ev = r.get("evidence") or {}
-                u = (conc.get("canonical_unit") or conc.get("unit") or "").lower()
+                cunit = canon_unit(conc.get("canonical_unit") or conc.get("unit"))
+                u = (cunit or "").lower()
                 suspect = 1 if (kind == "signaling" and u == "mg/ml") else 0
                 nm = r.get("name")
                 canon = canon_map.get(nm, nm)
@@ -168,7 +169,7 @@ def main():
                     "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
                     (pmcid, p.get("source_doi"), oty, kind,
                      nm, canon, r.get("role"), conc.get("value"), conc.get("unit"),
-                     conc.get("canonical_unit"), ev.get("quote"), 1 if ev.get("quote") else 0,
+                     cunit, ev.get("quote"), 1 if ev.get("quote") else 0,
                      suspect, fconf),
                 )
                 n_reagents += 1

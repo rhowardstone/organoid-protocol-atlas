@@ -33,6 +33,25 @@ function modalDose(doses){
   return best[0][0] + (uniq>1 ? ` <span class="cons-varies">(+${uniq-1} other${uniq>2?'s':''})</span>` : '');
 }
 
+const fmt = x => Number(x.toFixed(4)).toString();   // trim float cruft (10.0 -> 10)
+function median(a){ const s=[...a].sort((x,y)=>x-y), m=s.length>>1;
+  return s.length%2 ? s[m] : (s[m-1]+s[m])/2; }
+
+// dose range when >=2 reported concentrations share a (canonical) unit; else modal.
+function doseRange(doses, nums){
+  if(nums.length>=2){
+    const byU={}; for(const x of nums){ (byU[x.u]=byU[x.u]||[]).push(x.v); }
+    const u = Object.keys(byU).sort((a,b)=>byU[b].length-byU[a].length)[0];
+    const vals = byU[u];
+    if(vals.length>=2){
+      const lo=Math.min(...vals), hi=Math.max(...vals), med=median(vals);
+      const span = lo===hi ? `${fmt(lo)} ${esc(u)}` : `${fmt(lo)}–${fmt(hi)} ${esc(u)}`;
+      return `${span}${lo!==hi?` <span class="cons-varies">· med ${fmt(med)}</span>`:''}`;
+    }
+  }
+  return modalDose(doses);
+}
+
 (async () => {
   let protos, sig;
   try {
@@ -47,17 +66,20 @@ function modalDose(doses){
   const m = {};
   for(const r of sig){
     const t=r.organoid_type, c=r.canonical||r.name; if(!t||!c) continue;
-    (m[t]=m[t]||{}); (m[t][c]=m[t][c]||{pmcids:new Set(),doses:[],fig:false});
+    (m[t]=m[t]||{}); (m[t][c]=m[t][c]||{pmcids:new Set(),doses:[],nums:[],fig:false});
     const cell=m[t][c]; cell.pmcids.add(r.pmcid);
     if(r.figure_confirmed) cell.fig=true;
-    if(r.value!=null){ const u=r.canonical_unit||r.unit||''; cell.doses.push(`${r.value}${u&&u!=='not stated'?' '+u:''}`); }
+    if(r.value!=null){ const u=r.canonical_unit||r.unit||'';
+      cell.doses.push(`${r.value}${u&&u!=='not stated'?' '+u:''}`);
+      if(typeof r.value==='number' && u && u!=='not stated' && u!=='%') cell.nums.push({v:r.value,u});
+    }
   }
 
   const types = Object.keys(m).sort((a,b)=>(nByType[b]||0)-(nByType[a]||0)||a.localeCompare(b));
   let html='';
   for(const t of types){
     const n = nByType[t]||0;
-    const rows = Object.entries(m[t]).map(([c,d])=>({c, k:d.pmcids.size, doses:d.doses, fig:d.fig}))
+    const rows = Object.entries(m[t]).map(([c,d])=>({c, k:d.pmcids.size, doses:d.doses, nums:d.nums, fig:d.fig}))
       .sort((a,b)=>b.k-a.k || a.c.localeCompare(b.c));
     const core = rows.filter(r=>r.k/n>=0.5);
     const variable = rows.filter(r=>r.k/n<0.5);
@@ -70,7 +92,7 @@ function modalDose(doses){
       return `<div class="cons-row">
         <a class="cons-name" href="/atlas/reagents?canonical__exact=${encodeURIComponent(r.c)}&organoid_type__exact=${encodeURIComponent(t)}">${esc(r.c)}</a>${r.fig?' <span class="apa-badge fig">📷</span>':''}
         <div class="cons-bar"><div class="cons-fill" style="width:${pct}%"></div><span class="cons-pct">${r.k}/${n}</span></div>
-        <div class="cons-dose">${modalDose(r.doses)}</div>
+        <div class="cons-dose">${doseRange(r.doses, r.nums)}</div>
       </div>`;
     };
 

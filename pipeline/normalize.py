@@ -91,6 +91,25 @@ def canonical_or_none(name: str | None) -> str | None:
     return CANON.get(k) or FIG_ABBREV.get(k)
 
 
+def canon_unit(u: str | None) -> str | None:
+    """Canonical concentration unit. Unifies the two micro signs (µ U+00B5 / μ
+    U+03BC), the "ng ml -1" / "ng ml−1" / "ng/ml" notations, and molar forms, so
+    doses that are really the same unit compare and range correctly.
+    """
+    if not u:
+        return None
+    s = u.strip().replace("μ", "u").replace("µ", "u").replace("−", "-")
+    low = s.lower()
+    m = re.match(r"^(ng|ug|mg|pg|g)\s*[/·.]?\s*ml(?:\s*[-–]?\s*1)?$", low)
+    if m:
+        return {"ng": "ng/mL", "ug": "ug/mL", "mg": "mg/mL", "pg": "pg/mL", "g": "g/mL"}[m.group(1)]
+    molar = {"um": "uM", "umol/l": "uM", "nm": "nM", "nmol/l": "nM",
+             "mm": "mM", "mmol/l": "mM", "m": "M", "mol/l": "M", "pm": "pM"}
+    if low in molar:
+        return molar[low]
+    return s  # percent variants etc. kept verbatim (carry meaning, e.g. % v/v)
+
+
 def build_canon_map(names) -> dict:
     """raw name -> canonical name. CANON first; else most-frequent surface form per key."""
     by_key = collections.defaultdict(collections.Counter)

@@ -229,3 +229,16 @@
   BMP4 now unifies BMP4 / "Bone morphogenetic protein 4" / rhBMP4.
 - Tooling: gave tier2_vision.py the same incremental-summary merge as tier0/tier1 (subset runs
   no longer clobber vision_summary). Stats updated. Tests green (12).
+
+## Iteration 16 — 2026-06-20 — Dose ranges in /consensus + unit canonicalization
+- Enriched /consensus: each factor now shows a DOSE RANGE (min–max + median) when >=2 reported
+  concentrations share a canonical unit; else the modal dose. % excluded (conditioned-medium
+  %v/v isn't comparable). Grounded + honest — never invents a range from <2 values.
+- USING it surfaced a real unit-normalization gap: "ng ml −1" (McCracken gastric) didn't merge
+  with "ng/mL", and the two micro-signs (µ U+00B5 vs μ U+03BC) split uM/μM (42 split as 23+19).
+  Added normalize.canon_unit (centralized, applied at KG build like reagent names): unifies
+  micro-signs, "ng ml -1"/"ng·ml−1"/"ng/ml" -> ng/mL, molar forms (nmol/L->nM). Rebuilt:
+  ng/mL 61->67, uM unified to 42, µg variants -> ug/mL(5); percent kept verbatim.
+- Now ranges merge correctly: e.g. gastric EGF 50–100 ng/mL (med 75) across McCracken+Broda;
+  cerebral SB431542 5–10 µM (med 7.5); lung FGF10 100–500 ng/mL. Kidney CHIR honestly shows
+  "+1 other" (only 1 µM value; the other is the flagged 10 mM suspect). +5 normalize tests (17).
