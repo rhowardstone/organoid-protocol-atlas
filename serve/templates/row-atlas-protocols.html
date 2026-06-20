@@ -72,6 +72,9 @@ function highlight(text, quotes){
       <thead><tr><th>Reagent</th><th>Role</th><th>Conc.</th><th>Evidence</th><th>Verbatim span</th></tr></thead>
       <tbody>${rows}</tbody>
     </table>
+    ${p.timeline ? `<h3 style="margin:1.2rem 0 .3rem">Timeline</h3><p style="font-size:.9rem;line-height:1.6">${esc(p.timeline)}</p>` : ''}
+    ${p.passaging ? `<p style="font-size:.9rem"><strong>Passaging:</strong> ${esc(p.passaging)}</p>` : ''}
+    ${p.assay_endpoints ? `<p style="font-size:.9rem"><strong>Validation / endpoints:</strong> ${esc(p.assay_endpoints)}</p>` : ''}
     ${sup.length ? `<h3 style="margin:1.2rem 0 .3rem">Media supplements <span style="color:var(--muted);font-weight:400">(${sup.length})</span></h3>
       <p style="font-size:.9rem">${sup.map(r=>esc(r.name)).join(' · ')}</p>` : ''}
     <p style="margin-top:1.5rem"><a href="/atlas/protocols">← all protocols</a></p>

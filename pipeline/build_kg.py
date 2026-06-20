@@ -55,7 +55,10 @@ CREATE TABLE protocols (
     reagents_grounded INTEGER,
     reagents_total INTEGER,
     grounding_rate REAL,
-    extractor TEXT
+    extractor TEXT,
+    passaging TEXT,
+    timeline TEXT,
+    assay_endpoints TEXT
 );
 
 CREATE TABLE reagents (
@@ -143,14 +146,24 @@ def main():
         grounded = sum(1 for r in sf if (r.get("evidence") or {}).get("quote"))
         bm = p.get("base_media") or {}
         sc = p.get("source_cells") or {}
+        pgd = p.get("passaging") or {}
+        passaging_s = " · ".join(str(x) for x in [
+            pgd.get("method"), pgd.get("split_ratio"),
+            (f"{pgd.get('interval_days')}d" if pgd.get("interval_days") else None)] if x)
+        timeline_s = " → ".join(
+            f"{t.get('name')} (d{t.get('day_start') if t.get('day_start') is not None else '?'}"
+            f"–{t.get('day_end') if t.get('day_end') is not None else '?'})"
+            for t in (p.get("timeline") or []) if t.get("name"))
+        endpoints_s = " · ".join(str(x) for x in (p.get("assay_endpoints") or []))
         conn.execute(
-            "INSERT INTO protocols VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+            "INSERT INTO protocols VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
             (pmcid, p.get("source_doi"), oty, sc.get("species"),
              sc.get("cell_type"), (p.get("matrix") or {}).get("name"), bm.get("name"),
              bm.get("reporting"), cm.get("first_author"), cm.get("year"),
              cm.get("journal"), cm.get("license"), cm.get("gold_candidate"),
              len(sf), len(sup), grounded, len(sf),
-             round(grounded / len(sf), 3) if sf else None, p.get("extractor_version")),
+             round(grounded / len(sf), 3) if sf else None, p.get("extractor_version"),
+             passaging_s or None, timeline_s or None, endpoints_s or None),
         )
         add_reagents(sf, "signaling")
         add_reagents(sup, "supplement")

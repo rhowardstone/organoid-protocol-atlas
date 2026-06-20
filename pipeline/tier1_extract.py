@@ -83,12 +83,12 @@ timeline: [{{name, day_start, day_end}}],
 assay_endpoints: [string].
 RULES:
 - evidence_quote MUST be copied verbatim (exact substring) from the text.
-- passaging.method e.g. "mechanical" or "enzymatic (TrypLE)"; split_ratio e.g. "1:4";
-  interval_days an integer (days between passages). Omit a field if not stated.
-- timeline = ordered differentiation/maturation stages, e.g.
-  {{"name":"definitive endoderm","day_start":0,"day_end":3}}. Integers for days; omit if unknown.
-- assay_endpoints = how the organoid is validated (markers/readouts), e.g.
-  "Lgr5 expression", "PAX6 immunostaining", "forskolin swelling".
+- Extract ONLY items explicitly stated in THIS text. Never copy example wording, never fill
+  from background knowledge. If a field/list is not stated, use null or [] — do not invent.
+- passaging: method/split_ratio/interval_days only if the text states them (interval_days = integer).
+- timeline = ordered culture/differentiation stages NAMED IN THIS TEXT, with day_start/day_end
+  if the text gives them (integers); [] if the text does not describe staged timing.
+- assay_endpoints = validation readouts/markers THIS paper actually reports; [] if none stated.
 - signaling_factors = morphogens / growth factors / pathway agonists or inhibitors
   (e.g. EGF, Noggin, R-spondin, Wnt3a, FGF4, FGF9, ActivinA, CHIR99021, SB431542, Y-27632).
 - viability supplements (B27, N2, FBS, nicotinamide, N-acetylcysteine, Pen/Strep) go in
@@ -160,6 +160,11 @@ def to_protocol(doi: str, m: dict, evidence: str) -> tuple[OrganoidProtocol, dic
                               day_end=_int(t.get("day_end")))
                 for t in (m.get("timeline") or []) if isinstance(t, dict) and t.get("name")]
     endpoints = [str(x).strip() for x in (m.get("assay_endpoints") or []) if x]
+    # deterministic anti-hallucination: keep only stage names / endpoints that actually
+    # appear (verbatim, case-insensitive) in the source text. Kills prompt-example parroting.
+    el = evidence.lower()
+    timeline = [t for t in timeline if t.name and t.name.lower() in el]
+    endpoints = [x for x in endpoints if x.lower() in el]
 
     proto = OrganoidProtocol(
         source_doi=doi,

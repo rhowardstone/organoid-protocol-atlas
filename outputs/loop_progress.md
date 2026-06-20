@@ -12,3 +12,10 @@
 - Honest limit found: long papers (e.g. Driehuis 81k methods) truncated at 9k window → passaging beyond the window missed. Next: chunk/raise cap for long methods.
 - FLAGGED for supervisor: schema v0.3 new categories (culture_conditions temp/CO2/O2, seeding_density, passage_number, cell_line RRID) — needs approval before touching schema.py.
 - Next: surface timeline/passaging/endpoints in KG + recipe card.
+
+## Iteration 3 — 2026-06-20 — Surface new fields + CAUGHT & FIXED prompt-example parroting
+- Surfaced timeline/passaging/assay_endpoints in KG (build_kg columns) + recipe card; browser-verified (Huch 2015 liver card renders all three + highlight panel).
+- GUT-CHECK CAUGHT a real bug from iteration 2: my prompt's example values were being parroted — 'definitive endoderm' in 10/25 timelines, 'PAX6' in 13/25 endpoints, across unrelated organoid types (fabricated, inflated coverage).
+- Fix: (1) removed parrotable examples from the prompt; (2) deterministic substring-grounding — drop any timeline stage / endpoint not appearing verbatim in the source text. Re-ran corpus.
+- Result: parroting collapsed (definitive endoderm 10→1, PAX6 13→1, forskolin 12→0, Lgr5 12→0). Surviving endpoints now paper-specific & correct (liver→ALB/HNF4α, intestinal→CDX2, gastric→PAS staining). timeline 4/25 real (was 15/25 inflated). grounding 0.78.
+- Lesson: never put parrotable concrete examples in an extraction prompt; ground free-text fields by substring. Note: 2/25 extraction errors this run (kept prior); full re-run ~16min, deferred.
