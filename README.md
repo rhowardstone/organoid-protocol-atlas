@@ -3,86 +3,105 @@
 *Evidence-grounded extraction and comparison of organoid culture protocols.*
 
 Turn organoid-culture papers into structured, queryable, **evidence-grounded** protocol
-records — capturing the axes along which protocols actually differ (source cells, matrix,
-base media, signaling cocktail, timeline, passaging, endpoints), where every populated
-value that can carry an evidence span does (provenance is mandatory on the fields that
-matter, tracked elsewhere).
+records — the axes along which protocols actually differ (source cells, matrix, base media,
+signaling cocktail, timeline, passaging, endpoints) — where every extracted value that can
+carry an evidence span is backed by a **verbatim quote** from the source and a DOI.
 
-This is **not a scraper**. The research is in what's hard: entity normalization,
-distinguishing *not reported* from *not extracted*, and resolving protocols stated by
-reference to a cited source.
+This is **not a scraper**. The work is in what's hard: entity normalization, distinguishing
+*not reported* from *not extracted*, cross-modal confirmation from figures, and detecting
+protocols stated by reference to a cited paper. The guiding rule throughout is
+**missing evidence beats false evidence** — values without grounding are dropped or flagged,
+never fabricated.
+
+Everything runs on a **local A100** (models via [ollama](https://ollama.com)) — no API, no keys.
+
+## Pipeline
 
 ```
-paper (PDF)
-  └─ Tier 0  GROBID/PyMuPDF → methods + supplementary + tables + refs   (deterministic)
-  └─ Tier 1  LLM extract → OrganoidProtocol JSON w/ evidence spans      (Haiku/Sonnet)
-  └─ eval harness (the acceptance gate): field match · reporting status ·
-             grounding · unit norm · wrong-bucket/dup  → routes escalation
-  └─ queryable, comparable protocol atlas (typed KG nodes + citations)
+paper (PMC)
+  └─ Tier 0   Europe PMC JATS XML → methods + supplement + tables + figures + refs   (deterministic, no LLM)
+  └─ Tier 1   local LLM (gemma3:12b) → OrganoidProtocol JSON, each value verbatim-grounded
+  └─ Tier 2   local vision (gemma3:12b) on figure schematics → cross-modal "figure-confirmed" factors
+  └─ Tier 3   detect protocols delegated to a citation ("…as previously described (Sato 2011)")
+              → resolve + verify the cited paper (human-review queue; never auto-attribute provenance)
+  └─ entity normalization (bFGF≡FGF2, RSPO1≡R-spondin1, …) → canonical knowledge graph
+  └─ Datasette site: recipe cards · morphogen heatmap · consensus recipes · grounded Q&A
 ```
 
-## Status
+Corpus: **26 PMC papers across 8 organoid systems** (intestinal, gastric, cerebral, kidney,
+liver, lung, retinal, pancreatic); corpus-wide evidence grounding ≈ **0.81**.
 
-Prototype stage. `organoid_demo/` is a working vertical slice (3-paper fixtures,
-rule-based baseline + eval harness) that runs and reproduces a documented baseline.
-The build target is to port it onto the `craig/` research substrate
-(in the sibling `Claude-Code-Scientist` repo) and run Tier 0 + Tier 1 over a 25-paper
-corpus against a gold set. See `docs/PLAN.md`.
+## What you can do
+
+- **Browse protocols** — one recipe card per paper: cells, matrix, media, the signaling
+  cocktail with concentrations, timeline/passaging/endpoints, and the source methods with
+  every grounded value highlighted in context.
+- **Morphogen grammar** (`/heatmap`) — every canonical signaling factor × every organoid
+  system; which morphogens are universal (Noggin, Wnt3a, EGF…) vs. lineage-specific.
+- **Consensus recipes** (`/consensus`) — the canonical recipe per organoid type: each
+  factor's usage frequency (core cocktail vs. variable additions) + modal dose. Computed,
+  not asserted; small-n types are labelled, never overstated.
+- **Ask the Atlas** (`/ask`) — natural-language questions answered by a local model that
+  retrieves from the knowledge graph, cites the source papers, and refuses when the corpus
+  has no evidence.
+- Full-text reagent search, per-reagent comparison across protocols, grounding-coverage view,
+  light/dark themes.
+
+## Evidence & honesty
+
+- Every reagent's `evidence_quote` is checked to be a **verbatim substring** of the source;
+  ungrounded values are not asserted as fact (`grounded=0`, shown as such).
+- Tier 2 adds figure factors only as a **`figure_confirmed` annotation** on text-extracted
+  values — vision corroborates, it doesn't inject unverified data.
+- Tier 3 emits a **review queue**, not auto-ingested records — resolving the wrong citation
+  would fabricate provenance, so attribution waits on human confirmation.
+- Implausible units (e.g. a growth factor in mg/mL) are flagged, not silently "fixed".
 
 ## Repo map
 
 ```
-organoid_demo/            the working prototype (the CONTRACT + baseline + eval harness)
-  schema.py               OrganoidProtocol — the interface contract (do NOT change unversioned)
-  corpus.py               3 representative methods fixtures (→ real PDF extraction on port)
-  extractors.py           rule-based baseline + pluggable LLMExtractor (prompt included)
-  store_query.py          SQLite store + grounded comparison query
-  run_demo.py             end-to-end pipeline (extract → store → query)
-  eval_protocol_extraction.py   the eval harness == the acceptance gate
-  gold_annotations.json   hand-annotated gold (3 protocols now → grow to 30–50)
-  ANNOTATION_GUIDELINES.md  how gold is produced + what the harness enforces
-  HANDOFF.md              full build spec (architecture, tiers, iteration loop, cost)
-  PORTING.md              prototype → craig/ module mapping
-  outputs/                baseline predictions + metrics + error_analysis (reference)
+organoid_demo/schema.py   OrganoidProtocol — the interface contract (versioned; do NOT change unversioned)
 pipeline/
-  tier0_extract.py        Tier 0: XML-first evidence-bundle extraction (no LLM)
-  tier1_extract.py        Tier 1: local-LLM structured extraction -> OrganoidProtocol (+ grounding)
-  build_kg.py             build the SQLite protocol KG (Datasette-servable)
-serve/metadata.yaml       Datasette config: facets + canned comparison queries (PaperStack serve layer)
-serve/templates/          custom landing + protocol recipe-card row view (evidence-linked)
-serve/static/atlas.css    global theme — repurposed CaseStack-style frontend (not vanilla Datasette)
+  tier0_extract.py     Tier 0: Europe PMC JATS → evidence bundles (--only for incremental)
+  tier1_extract.py     Tier 1: local-LLM structured extraction + verbatim grounding
+  tier2_vision.py      Tier 2: local vision on flagged figure schematics (cross-modal)
+  fetch_figures.py     figure-image acquisition (PMC OA AWS S3 mirror; license-gated, local-only)
+  tier3_detect.py      Tier 3: detect protocols delegated to a citation (the router signal)
+  tier3_resolve.py     Tier 3: resolve + verify the cited paper (review queue)
+  normalize.py         reagent entity canonicalization
+  build_kg.py          build the SQLite knowledge graph (Datasette-servable)
+serve/
+  run.sh               serve the atlas (Datasette + templates + static + plugins)
+  metadata.yaml        facets + canned comparison queries
+  templates/           landing, recipe cards, /heatmap, /consensus, /ask
+  static/atlas.css|js  theme + dark-mode toggle
+  plugins/ask.py       grounded Q&A ask-proxy (RAG over FTS → local model)
 data/
-  corpus/pmc_oa_25.tsv    25-paper PMC-OA corpus manifest (selection only; no text yet)
-  corpus/README.md        columns, selection policy, coverage, acceptance gate
-  evidence_bundles/       Tier 0 output: full bundles local-only (git-ignored);
-                          manifest.jsonl (metadata+checksums) + README committed
-outputs/tier0/            evidence_bundle_summary.json + extraction_report.md
-docs/
-  PLAN.md                 first build target, sequencing, locked decisions, open questions
-  RESEARCH_BRIEF.md       scientific landscape: NIH programs, ontologies, prior art, eval baselines
-  OSS_LANDSCAPE.md        OSS tooling survey: reuse / avoid / differentiator
-AGENTS.md                 operating contract for any agent working in this repo
+  corpus/corpus.tsv    PMC corpus manifest (selection metadata)
+  evidence_bundles/    Tier 0 output — full bundles local-only (git-ignored); manifest committed
+  figures/             Tier 2 figure cache — local-only (git-ignored)
+  predictions/         Tier 1/2 predictions — local-only (git-ignored)
+outputs/               committed metrics/summaries (no body text); loop_progress.md
+tests/                 baseline regression + Tier-3 gating unit tests
+docs/                  PLAN, RESEARCH_BRIEF, OSS_LANDSCAPE
 ```
 
-## Run the prototype
+Full text, figure images, and predictions are **local-only** (git-ignored); only metadata,
+checksums, short citation snippets, and count-level summaries are committed.
+
+## Run
 
 ```bash
-pip install pydantic
-cd organoid_demo
-python run_demo.py                  # see the pipeline work
-python eval_protocol_extraction.py  # metrics table + outputs/ (the acceptance gate)
+# serve the atlas (builds the KG on first run if needed)
+./serve/run.sh                      # → http://localhost:8002
+
+# or run the pipeline yourself (local A100 + ollama)
+python pipeline/tier0_extract.py            # evidence bundles
+python pipeline/tier1_extract.py            # extraction + grounding
+python pipeline/tier2_vision.py             # figure confirmation
+python pipeline/build_kg.py                 # build data/kg/atlas.db
+pytest -q                                   # tests
 ```
 
-Expected baseline (the failures are intentional eval fixtures — see HANDOFF.md §9):
-
-```
-Scalar exact match:        13/13 = 1.00
-Reporting-status accuracy:  4/6  = 0.6667
-Signaling factor precision:        0.70
-Signaling factor recall:           1.00
-Unit-normalization accuracy: 6/6  = 1.00
-Evidence grounding:        10/10 = 1.00
-Wrong-bucket / duplicate rate: 3/10 = 0.30
-```
-
-Start at `organoid_demo/HANDOFF.md` §10 for the first build task, then `docs/PLAN.md`.
+The `organoid_demo/` prototype (3-paper fixtures, rule-based baseline + eval harness) still
+runs as the reproducible acceptance gate: `cd organoid_demo && python eval_protocol_extraction.py`.

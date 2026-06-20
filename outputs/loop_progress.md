@@ -183,3 +183,15 @@
 - Note: gastric (n=2) still needs a clean foundational paper — search returned only reviews;
   deferred to careful curation. data/corpus/pmc_oa_25.tsv filename now understates the count
   (26) — rename to corpus.tsv is a pending cleanup (5 refs).
+
+## Iteration 13 — 2026-06-20 — README refresh + corpus-file rename (repo presentation)
+- Renamed data/corpus/pmc_oa_25.tsv -> corpus.tsv (the "25" understated the grown corpus);
+  updated the 4 code/doc refs; build_kg + tests verified green. (separate commit)
+- Rewrote README.md: it was stale (described the GROBID/Haiku prototype, "no text yet", 25
+  papers) and mentioned NONE of the built system. Now accurately documents the real pipeline
+  (Tier 0 Europe PMC XML → Tier 1 local gemma3 + grounding → Tier 2 vision figure-confirmation
+  → Tier 3 protocol-by-reference review queue → normalization → KG), the four views
+  (recipe cards, /heatmap, /consensus, /ask), the evidence/honesty guarantees, the current repo
+  map, run instructions (serve/run.sh), and the local-A100/no-API stance. De-id verified clean.
+- Next: gastric still needs a clean foundational paper (deferred); otherwise keep asking what
+  NEW category adds value. Flagged (supervisor): #5 schema v0.3, #10 Tier-3 ingestion.
