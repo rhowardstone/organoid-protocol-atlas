@@ -23,3 +23,8 @@ recipe*.png
 
 # Local Claude project dir
 .claude/
+
+# Generated public DB (built at Docker-image build time by serve/build_public_db.py;
+# never commit the .db — exports/public/*.jsonl are the committed source of truth).
+data/public/
+*.db

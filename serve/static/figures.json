@@ -1,0 +1,588 @@
+[
+  {
+    "pmcid": "PMC6906116",
+    "doi": "10.1038/s41586-019-1289-x",
+    "organoid_type": "cerebral",
+    "label": "Figure 1:",
+    "caption": "Brain organoids cultured for 3 months generate cellular diversity of the human cerebral cortex with high organoid-to-organoid reproducibility. a, Protocol schematic. b, 3 month PGP1 (batch 1: b1) organoids. c, IHC of 1 month PGP1 (b1) organoids for neuronal (MAP2) and dorsal forebrain progenitor (EMX1) markers, and of 3 month PGP1 (b1) organoids for corticofugal projection neuron (CTIP2) and callosal projection neuron (SATB2) markers. Top, entire organoids (scale bar, 200 μm); bottom, high-magnification views of three different organoids per timepoint (scale bar, 50 μm). d, T-distributed stochastic neighbor embedding (t-SNE) plots of scRNA-seq data from 3 month organoids after canonical correlation analysis (CCA) batch correction and alignment (PGP1: two batches, b1, b2; HUES66: one batch, n=3 organoids per batch). Left column, combined organoids from each batch, colored by cell types; right, individual organoids. Number of cells per plot are indicated. PNs, projection neurons; CPNs, callosal PNs; IPCs, intermediate progenitor cells, CFuPNs, corticofugal PNs; INs, interneurons; RG, radial glia; oRG, outer radial glia; Imm., immature; Inhib., inhibitory. Information on replicates for all figures is reported in the Methods under “Statistics and Reproducibility”.",
+    "s3_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC6906116.1/nihms-1529307-f0001.jpg",
+    "is_protocol_schematic": true,
+    "confirmed_factors": []
+  },
+  {
+    "pmcid": "PMC6906116",
+    "doi": "10.1038/s41586-019-1289-x",
+    "organoid_type": "cerebral",
+    "label": "Figure 2:",
+    "caption": "Brain organoids cultured for 6 months show increased cortical cell diversity while maintaining high organoid-to-organoid reproducibility. a, T-SNE plots of combined 6 month organoids after batch correction (11a: one batch; GM08330: one batch; PGP1: two independent batches, b1, b3; n=3 organoids per batch). Left column, combined organoids from each batch, colored by cell type; right, individual organoids. Abbreviations as in Figure 1 . b, Left, t-SNE plots of PGP1 (b1) organoids at 3 and 6 months (n=3 organoids per timepoint) after batch correction. Right, percent distribution of cell types at each timepoint. c, IHC for astroglial markers GFAP and S100B in a PGP1 (b1) organoid at 6 months (scale bar: whole organoid, 500 μm; high-magnification, 100μm).",
+    "s3_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC6906116.1/nihms-1529307-f0002.jpg",
+    "is_protocol_schematic": false,
+    "confirmed_factors": []
+  },
+  {
+    "pmcid": "PMC6906116",
+    "doi": "10.1038/s41586-019-1289-x",
+    "organoid_type": "cerebral",
+    "label": "Figure 3:",
+    "caption": "Cells in organoids are generated following a precise and reproducible trajectory and are transcriptionally similar to cells of the human fetal cortex. a-b, Pseudotime t-SNE plots for the 3 ( a ) and 6 ( b ) month organoids shown in Figures 1d and 2a , colored according to cell type (far left) and pseudotime trajectory (center left; yellow-early to green-late). Right: contribution of each batch of organoids to the pseudotime plots. (n=3 organoids per batch, downsampled to 35,000 cells per timepoint.) c, Agreement between cell type classifications in the human fetal cortex 18 and in cell populations of organoids at 3 months (n=3 organoids per batch). Dot size and color intensity indicate the percent of cells in each organoid cell type assigned to each human cell type by a Random Forest classifier. Abbreviations as in Fig. 1 . d, Spearman correlation coefficients of variable gene expression in human fetal cortex 18 with equivalent cell types found in dorsally patterned forebrain organoids (n as in Figures 1d and 2a ) and self-patterned whole-brain organoids 3 (n=19 individual organoids, 4 independent batches). e, IHC for neuronal (MAP2) and excitatory presynaptic (VGluT1) and postsynaptic (PSD95) markers in 3 month PGP1 and 11a dorsally patterned organoids; co-localization is shown in white (arrows) (scale bars: 20μm). Lower panels: VGluT1 and PSD95 staining alone; insets: enlargements of boxed areas.",
+    "s3_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC6906116.1/nihms-1529307-f0003.jpg",
+    "is_protocol_schematic": false,
+    "confirmed_factors": []
+  },
+  {
+    "pmcid": "PMC6906116",
+    "doi": "10.1038/s41586-019-1289-x",
+    "organoid_type": "cerebral",
+    "label": "Figure 4:",
+    "caption": "Dorsally patterned organoids show sample-to-sample reproducibility similar to endogenous brains. (a-e) Percent of cells from each individual organoid or endogenous cortex belonging to each cell cluster in identically processed datasets from a, dorsally patterned forebrain organoids at 3 months (3 batches, n=9 organoids) and 6 months (4 batches, n=11 organoids), b, self-patterned whole-brain organoids at 6 months 3 (n=4), c, fetal human cortex 29 (n=2), d, adult human cortex 28 (n=7), and e, adult mouse cortex 30 (n=5). Top: t-SNE plots of the cell clusters for each dataset. Mutual information (MI) scores represent the dependence between the cluster and the individual (scores range from 0: individuals have the same cluster makeup, to 1: individuals cluster separately). Z-scores represent the divergence of the MI score from the mean MI score expected at random. All datasets downsampled to n=659 cells per sample.",
+    "s3_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC6906116.1/nihms-1529307-f0004.jpg",
+    "is_protocol_schematic": false,
+    "confirmed_factors": []
+  },
+  {
+    "pmcid": "PMC6906116",
+    "doi": "10.1038/s41586-019-1289-x",
+    "organoid_type": "cerebral",
+    "label": "Extended Data Figure 1:",
+    "caption": "Comparison of organoids and spheroids generated by different protocols. a, From left: self-patterned whole-brain organoids 3 , dorsally patterned forebrain organoids (protocol modified from Kadoshima et al . 5 ), and dorsal and ventral forebrain spheroids (protocol modified from Rigamonti et al . 15 ). All models are generated from the PGP1 line and cultured for 6 months. b, IHC for neuronal (MAP2), dorsal forebrain progenitor (EMX1 and PAX6), CFuPN (CTIP2), and CPN (SATB2) markers, across a time course from 1 to 6 months [scale bars: whole organoids (Whole Org), left column, 200μm; close-up images, 50μm].",
+    "s3_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC6906116.1/nihms-1529307-f0005.jpg",
+    "is_protocol_schematic": false,
+    "confirmed_factors": []
+  },
+  {
+    "pmcid": "PMC6906116",
+    "doi": "10.1038/s41586-019-1289-x",
+    "organoid_type": "cerebral",
+    "label": "Extended Data Figure 2:",
+    "caption": "Analysis of cell type-specific markers in organoids derived from different lines. a, Expression of selected marker genes used in cell type identification. Violin plots show distribution of normalized expression in cells from CCA-aligned organoids at 3 months (n=9 organoids from 3 batches). CFuPNS: n=15,866 cells; CPNs, n=18,905 cells; Cycling, n=4,035 cells; Immature INs, n=353 cells; Immature PNs, n=6,727 cells; IPCs, 4,276 cells; oRG, n=5,436 cells; and RG, n=3,318 cells. Scale: normalized read counts. b, IHC for neuronal (MAP2), dorsal forebrain progenitor (EMX1 and PAX6), CFuPN (CTIP2), CPN (SATB2), radial glia (SOX2), and proliferation (Ki67) markers in PGP1 (b2), 11a, GM08330, and HUES66 organoids at 3 months. c, In situ RNA hybridization for the IPC (EOMES a.k.a. TBR2), Cajal-Retzius (Reelin), and post-mitotic PN (TBR1) markers in 3 month PGP1 (b2), 11a, GM08330, and HUES66 organoids. d, IHC for the forebrain progenitor (FOXG1), outer radial glia (HOPX), post-mitotic PN (TBR1), and IPC (TBR2) markers in PGP1 (b2) organoids at 3 and 6 months (scale bars for B, C, D: 50 μm). Abbreviations as in Figure 1 .",
+    "s3_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC6906116.1/nihms-1529307-f0006.jpg",
+    "is_protocol_schematic": false,
+    "confirmed_factors": []
+  },
+  {
+    "pmcid": "PMC6906116",
+    "doi": "10.1038/s41586-019-1289-x",
+    "organoid_type": "cerebral",
+    "label": "Extended Data Figure 3:",
+    "caption": "Evaluation of apoptosis, hypoxia, and doublets in organoid scRNA-seq data. a-b, T-SNE plots showing average scaled expression of all genes from the a, apoptosis and b, hypoxia mSigDB Hallmark genesets in PGP1 (b1) organoids at 3 (left) and 6 (right) months. Abbreviations as in Figure 1 . n =3 organoids per timepoint. c-d, Histograms showing number of cells expressing c, apoptosis markers and d, hypoxia markers in PGP1 organoids at 3 and 6 months. X-axis indicates average scaled expression of all genes in the corresponding mSigDB Hallmark geneset. The similarity in markers of hypoxia and apoptosis between the three and six month single-cell data indicates that the growth conditions of this protocol preserve the health of the tissue over many months in culture. e, IHC of a 6 month PGP1 organoid for the apoptotic marker activated caspase 3, on the perimeter (Box 1) and in the center of an organoid (Box 2) (scale bar: whole organoid section, 500 μm; close-up images, 100μm). f, Multiplet detection using the Scrublet 39 program. Scores represent the probability that the “cell” represents a droplet containing more than one cell. From left, t-SNE plots of PGP1 (two batches: b1, b2; n =3 organoids for b1, and n =3 organoids for b2) and HUES66 ( n =3 organoids) organoids at 3 months; and 11a ( n =3 organoids), GM08330 ( n =3 organoids), and PGP1 (two batches: b1, b3; n =3 organoids for b1, and n =2 organoids for b3) organoids at 6 months. Overall, 2-8% of cells were predicted to be multiplets, which is consistent with the expected multiplet rate (~5%) given our loadings of approximately 10,000 cells per channel 35 .",
+    "s3_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC6906116.1/nihms-1529307-f0007.jpg",
+    "is_protocol_schematic": false,
+    "confirmed_factors": []
+  },
+  {
+    "pmcid": "PMC6906116",
+    "doi": "10.1038/s41586-019-1289-x",
+    "organoid_type": "cerebral",
+    "label": "Extended Data Figure 4:",
+    "caption": "Cell types in individual organoids are generated following a precise and reproducible temporal order and are transcriptionally similar to human fetal cortex cell types. a, T-SNE plots produced by Monocle2 showing the contribution of cells from individual PGP1 (b1) organoids at 3 ( n =2,665, 3,094, and 2,264 cells from Orgs 1-3) and 6 months ( n =3,959, 2,971, and 3,042 cells from Orgs 16-18) to plots in Fig. 3a – b . b, Agreement between cell type classifications in cell populations of 11a, GM08330, and PGP1 organoids (two batches: b1, b3) at 6 months with cell types described in a previously published single-cell RNA-seq dataset of the human fetal cortex 18 . Dot size and color intensity indicate the percent of organoid cells in each cell cluster assigned to each human cortex cell type by a Random Forest classifier. Abbreviations as in Figure 1 .",
+    "s3_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC6906116.1/nihms-1529307-f0008.jpg",
+    "is_protocol_schematic": false,
+    "confirmed_factors": []
+  },
+  {
+    "pmcid": "PMC6906116",
+    "doi": "10.1038/s41586-019-1289-x",
+    "organoid_type": "cerebral",
+    "label": "Extended Data Figure 5:",
+    "caption": "Dorsally patterned forebrain organoids show reproducibility similar to that of endogenous brain, as compared to self-patterned whole-brain organoids. a-b, Percent distribution of cell types in a, (left) individual 3 month PGP1 (two batches: b1, b2) and HUES66 (n=3 per batch) dorsally patterned forebrain organoids, and (right) individual 6 month 11a, GM08330, and PGP1 (two batches: b1, b3, n=3 per batch) dorsally patterned forebrain organoids, vs. b, individual 6 month self-patterned whole-brain organoids 3 . c-e, Distribution of cell types as assigned in the original publication across c, individual samples of fetal human cortex 29 , d, adult human cortex samples from distinct individuals 28 , and e, adult mouse cortex samples from distinct individuals 30 . Abbreviations as in Fig. 1 . DG, dentate gyrus; CGE, caudal ganglionic eminence; MGE, medial ganglionic eminence.",
+    "s3_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC6906116.1/nihms-1529307-f0009.jpg",
+    "is_protocol_schematic": false,
+    "confirmed_factors": []
+  },
+  {
+    "pmcid": "PMC4620584",
+    "doi": "10.1038/ncomms9715",
+    "organoid_type": "kidney",
+    "label": "Figure 1",
+    "caption": "hPSCs form cavitated spheroids in 3D culture. ( a ) Schematic of spheroid-to-organoid culture protocol. ( b ) Phase contrast images of ESCs in sandwich (3D) or monolayer (2D) cultures. Consecutive days are shown, with d0 indicating the time point immediately before sandwiching. ( c ) Confocal optical sections showing PODXL, ZO-1 and βCAT immunofluorescence through a representative spheroid with cavity. Vertical distance from top to bottom row is shown at left. ( d ) Representative brightfield images of hPSCs in 3D cultures that were dissociated (coloured frames) and passaged (matching coloured arrows). Dashed arrows represent serial passages in the 3D condition. Lower row shows cells plated into 2D cultures from dissociated spheroids from each passage. ( e ) Hematoxylin and eosin-stained sections of teratomas generated from hPSC serial 3D passages p3, p6 and p9 showing pigmented epithelium (ectoderm), cartilage (mesoderm) and glandular epithelium (endoderm). ( f ) Cell number (average of duplicate counts for each time point, or AVG of all five time points shown in the last column) in 2D and 3D cultures 72 h after plating. ( g ) Representative immunofluorescence images showing OCT4 and sex-determining region Y box-2 (SOX2) or tumor rejection antigen 1–60 (TRA-1-60) and NANOG localization in p3 and p7 serially sandwiched hPSCs. Scale bars, 100 μm. Error bars, s.e.m.",
+    "s3_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC4620584.2/ncomms9715-f1.jpg",
+    "is_protocol_schematic": true,
+    "confirmed_factors": [
+      "CHIR99021"
+    ]
+  },
+  {
+    "pmcid": "PMC4620584",
+    "doi": "10.1038/ncomms9715",
+    "organoid_type": "kidney",
+    "label": "Figure 2",
+    "caption": "Tubular organoids recapitulate kidney development and architecture. ( a ) Phase contrast images of spheroid differentiation into tubular organoids. Red arrowheads highlight epithelia. ( b ) Confocal optical sections showing LTL with nephron progenitor markers Sine oculis homeobox homologue 2 (SIX2), Lin11-Isl1-Mec3 (LIM) homeobox 1 (LHX1), paired box gene 2 (PAX2) and ( c ) proximal tubule markers low density lipoprotein-related protein 2/megalin and cubilin in tubular organoids. ( d ) Electron micrographs of a representative tubule, with progressive magnifications of regions in coloured boxes highlighting apical microvilli (arrowheads) and tight junctions (arrows). ( e ) Wide-field images showing tubule anatomical progression from E-cadherin (ECAD) + to LTL + to PODXL + organoid segments. ( f ) Low-magnification image of organoid with interlacing tubules and peripheral PODXL + aggregates (left) and high-magnification confocal optical section showing co-localization of synaptopodin (SYNPO) and Wilms tumour protein (WT1) in organoid podocyte-like cells (right). ( g ) Wide-field immunofluorescence showing co-localization of CD31 with von Willebrand factor (vWF, left), or with nephron markers in tubular organoids derived from hESCs and iPSCs (right). White arrowheads show interactions between tubular, podocyte-like and endothelial compartments. White dashed outline highlights a representative tubular terminus. Images are representative of one hESC line and three iPSC lines from different patients. ( h ) Number of tubular organoids formed per unit surface area in cultures of hESCs and iPSCs (left) and per cent of these LTL + organoids associated with CD31 + and PODXL + cell types within the organoid (right). ( i ) Confocal images of organoid-derived human tubule (H) with LTL reactivity after 3 weeks of growth inside the developing mouse kidney cortex (m). Scale bars, 100 μm. Error bars, s.e.m ( n ≥3 experiments).",
+    "s3_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC4620584.2/ncomms9715-f2.jpg",
+    "is_protocol_schematic": false,
+    "confirmed_factors": []
+  },
+  {
+    "pmcid": "PMC4620584",
+    "doi": "10.1038/ncomms9715",
+    "organoid_type": "kidney",
+    "label": "Figure 3",
+    "caption": "Tubular organoids create a microphysiological model for kidney nephrotoxicity studies. ( a ) Co-localization of KIM-1 antibody AKG7 with LTL or ( b ) with a second KIM-1 antibody (KIM1ab2). ( c ) Quantification of organoids expressing KIM-1 after treatment with 50 μM cisplatin (Cispl.) or 5 mM gentamicin (Gent.), compared with vehicle-treated controls ( n =3/condition, >50 organoids/experiment). ( d ) Phase contrast of living cells, or KIM-1 and NANOG immunofluorescence, in epiblast spheroids treated with titrations of cisplatin and gentamicin. No KIM-1 expression is observed at any dose including 5 mM gentamicin, a concentration sufficient to induce KIM-1 upregulation in kidney organoids. Cisplatin was toxic to spheroids at concentrations>1 μM. ( e ) Phase contrast time course of tubules in culture. After 120 days of culture (d120), tubules were fixed and stained for LTL. ( f ) Whole well of a 96-well plate showing kidney organoids. Scale bars, 50 μm. Error bars, s.e.m.",
+    "s3_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC4620584.2/ncomms9715-f3.jpg",
+    "is_protocol_schematic": false,
+    "confirmed_factors": []
+  },
+  {
+    "pmcid": "PMC4620584",
+    "doi": "10.1038/ncomms9715",
+    "organoid_type": "kidney",
+    "label": "Figure 4",
+    "caption": "Differential accumulation of fluorescent cargoes in epiblast spheroids versus kidney organoid tubules. ( a ) Experimental schematic and confocal time-lapse images showing hPSC spheroids incubated with lucifer yellow (LY) and rhodamine-conjugated dextran (RD). ( b ) Experimental schematic and wide-field time course of an hPSC spheroid cavity after microinjection with RD. No autofluorescence is detected (green fluorescent protein channel). ( c ) An hPSC spheroid treated with fluorescein methotrexate for 4 h, immediately after washout. ( d ) Time course of an hPSC spheroid incubated with LY or RD molecular dyes for 4 h, after which the media was replaced without dyes (washout). ( e ) Representative time course of a tubular organoid incubated with RD and LY for 4 h (pulse), followed by incubation in fresh media without dyes (chase), fixation and co-localization with LTL. ( f , g ) Quantification of tubular organoids that accumulated RD, with or without 2 μM Latrunculin B ( n =3). ( h ) Fluorescein methotrexate and RD distributions in two representative live organoids 1 h and 18 h after washout. Scale bars, 50 μm ( a – d ) or 100 μm ( e – h ). Error bars, s.e.m.",
+    "s3_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC4620584.2/ncomms9715-f4.jpg",
+    "is_protocol_schematic": true,
+    "confirmed_factors": []
+  },
+  {
+    "pmcid": "PMC4620584",
+    "doi": "10.1038/ncomms9715",
+    "organoid_type": "kidney",
+    "label": "Figure 5",
+    "caption": "Podocalyxin promotes lumenogenesis in epiblast spheroids. ( a ) Immunoblot for podocalyxin protein in two representative PODXL −/− hPSC mutant clones (m1 and m2), compared with CRISPR/Cas9 non-mutant wild-type clones (WT) or cells subjected to scrambled (scr) or podocalyxin (pod) siRNA knockdown. ( b ) Brightfield images of sandwiched parental ESCs were compared with two mutant or two WT CRISPR/Cas9 clones. ( c ) Cavitated spheroids as a percentage of total colonies. Data from pools of WT or mutant cell lines were averaged to determine group means (AVG, n ≥9) and P values. ( d ) Podocalyxin and ZO-1 immunofluorescence in naive and primed hLR5 hPSCs or ( e ) mESCs and EpiSCs. ( f ) Confocal z-sections of undifferentiated hPSCs showing localization of ZO-1 and βCAT in unmodified (WT) or PODXL −/− colonies. ( g ) Filamentous actin (f-actin) and occludin (OCLN) immunofluorescence in undifferentiated WT or PODXL −/− clones. ( h ) Averaged TEER measurements in WT or PODXL −/− monolayers ( n ≥3). Scale bars, 50 μm or ( f , g ) 20 μm. Error bars, s.e.m.",
+    "s3_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC4620584.2/ncomms9715-f5.jpg",
+    "is_protocol_schematic": false,
+    "confirmed_factors": []
+  },
+  {
+    "pmcid": "PMC4620584",
+    "doi": "10.1038/ncomms9715",
+    "organoid_type": "kidney",
+    "label": "Figure 6",
+    "caption": "Junctional complexes are disrupted in hPSC-derived PODXL −/− podocyte-like cells. ( a ) Confocal optical section of adult human kidney. Podocalyxin is expressed in podocytes and peritubular capillaries, but is absent from tubules (white dotted lines). Auto, autofluorescence. ( b ) Crumbs3 expression in hPSC-derived kidney organoids (confocal red channel) and human kidney tissue (far right panel, immunohistochemistry). ( c ) Confocal optical sections showing distributions of ZO-1 with podocalyxin or ( d ) βCAT in hPSC-derived podocyte-like cell clusters. Arrowheads highlight tracks of junctional complexes between podocyte-like cells. ( e ) Confocal sections of wild-type or PODXL −/− podocyte-like cell clusters in tubular organoids. ( f ) Gap widths between adjacent podocyte-like cell nuclei in these cell lines ( n ≥100 gaps pooled from two experiments). Scale bars, 50 μm. Error bars, s.e.m.",
+    "s3_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC4620584.2/ncomms9715-f6.jpg",
+    "is_protocol_schematic": false,
+    "confirmed_factors": []
+  },
+  {
+    "pmcid": "PMC4620584",
+    "doi": "10.1038/ncomms9715",
+    "organoid_type": "kidney",
+    "label": "Figure 7",
+    "caption": "PKD hPSCs model lineage-specific cyst formation. ( a ) Immunoblots showing reduction in full-length polycystin-1 (PC1) in CRISPR-generated PKD1 −/− hPSCs or ( b ) polycystin-2 (PC2) in PKD2 −/− hPSCs, compared with isogenic controls. PKD2 knockdown is shown for comparison. ( c ) Epiblast spheroid morphology in representative PKD knockout hPSCs and controls. ( d ) Representative cyst on day 58 of culture in PKD2 kidney organoids. ( e ) Quantification of cyst formation rate in PKD knockout organoids and isogenic WT controls as an average of all experiments ( n >10) or as scatter plots of individual experiments. ( f ) Wide-field epifluorescence images and ( g ) confocal optical sections showing LTL reactivity in cysts. Representative z-sections show hollow center of cyst and associated tubular organoid (arrow). Zoom is shown of red boxed regions. Scale bars, 100 μm. Error bars, s.e.m. * P <0.01.",
+    "s3_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC4620584.2/ncomms9715-f7.jpg",
+    "is_protocol_schematic": false,
+    "confirmed_factors": []
+  },
+  {
+    "pmcid": "PMC4620584",
+    "doi": "10.1038/ncomms9715",
+    "organoid_type": "kidney",
+    "label": "Figure 8",
+    "caption": "Models of hPSC-derived epithelia. ( a ) Model of hPSC lumenogenesis. ICM-stage hPSCs lack polarized tight junctions, resulting in randomized aggregate formation. Epiblast-stage hPSCs are polarized with continuous tight junctions, and thus organize into a single-cell epithelium. In 3D growth, polarized accumulation of podocalyxin (blue) at the apical membrane results in charge repulsion (negative charges), promoting separation of the cells to form a lumen. Tight junctions (red) permit the entry of small (green) molecules but exclude macromolecules (red), which accumulate in intercellular spaces. Zoom of boxed area is shown, highlighting polarized epithelial cells. ( b ) Architecture of a proximal tubule within a kidney organoid. An elongated proximal tubule forms a simple columnar epithelium which binds LTL (green) on the apical surface. Surrounding podocyte-like cells express high levels of podocalyxin and form a less organized, aggregate structure at tubular termini. ZO-1 (red) is expressed at a sub-apical position, restricted by podocalyxin (blue). Endothelial cells interact closely with both tubular and podocyte-like compartments. Faded background structures place epithelial structures formed in vitro into their proposed context in vivo .",
+    "s3_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC4620584.2/ncomms9715-f8.jpg",
+    "is_protocol_schematic": false,
+    "confirmed_factors": []
+  },
+  {
+    "pmcid": "PMC10739970",
+    "doi": "10.1038/s41598-023-50250-w",
+    "organoid_type": "liver",
+    "label": "Figure 1",
+    "caption": "Efficient and reproducible generation of iPSC-derived liver organoids. (a) Schematic diagram of the previous ( upper ) and new ( lower ) protocols to generate iPSC-derived expandable liver organoids. A. MH (mature hepatocyte medium) (2D); B. MH (3D); C. HM (hepatic medium); D. EM (expansion medium); E. DM (differentiation medium). (b) Representative morphology of cells in each generation condition after 25 days of differentiation. (c) Organoid size and (d) organoid number in each condition after 25 days of differentiation. Data are the mean ± SEM (n = 3) and analyzed by the Student’s t-test. * p < 0.05, ** p < 0.01, and *** p < 0.001.",
+    "s3_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC10739970.1/41598_2023_50250_Fig1_HTML.jpg",
+    "is_protocol_schematic": true,
+    "confirmed_factors": []
+  },
+  {
+    "pmcid": "PMC10739970",
+    "doi": "10.1038/s41598-023-50250-w",
+    "organoid_type": "liver",
+    "label": "Figure 2",
+    "caption": "Characterization of organoids generated by the new protocol. (a) Representative morphology of organoids in each condition at passage 1 (p1). (b) mRNA expression levels of the indicated genes in each condition at p1. Primary human hepatocytes (PHH) and human adult liver tissue samples were used as positive controls and human iPSCs were used as a negative control. (c) Representative morphology of organoids in each condition at p2. (d) mRNA expression levels of ALB in each condition at p2 and p3. ( e) Passages to which it was possible to expand in each condition. (f) Scheme of differentiation ( upper ) and representative morphology of the organoids after differentiation ( lower ). (g) mRNA expression levels of ALB and CYP3A4 in each condition of the organoids after differentiation. Data are the mean ± SEM (n = 3) and analyzed by the Student’s t-test. * p < 0.05, ** p < 0.01, and *** p < 0.001.",
+    "s3_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC10739970.1/41598_2023_50250_Fig2_HTML.jpg",
+    "is_protocol_schematic": true,
+    "confirmed_factors": []
+  },
+  {
+    "pmcid": "PMC10739970",
+    "doi": "10.1038/s41598-023-50250-w",
+    "organoid_type": "liver",
+    "label": "Figure 3",
+    "caption": "Essential factors in the medium for long-term culture. (a) Representative morphology of organoids in each condition on day 3 ( upper ) and day 9 ( lower ) after depletion. (b) Organoid number in each depleted condition on day 3 ( left ) and day 9 ( right ). (c) Organoid size in each depleted condition on day 9. (d) Representative morphology of late passage organoids in each condition at 1 week ( upper ) and 6 weeks ( lower ) after depletion. (e) Cell number of late passage organoids after serial passaging in each indicated depleted condition. Data are the mean ± SEM (n = 3) and analyzed by the Student’s t-test. * p < 0.05 and ** p < 0.01.",
+    "s3_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC10739970.1/41598_2023_50250_Fig3_HTML.jpg",
+    "is_protocol_schematic": false,
+    "confirmed_factors": []
+  },
+  {
+    "pmcid": "PMC10739970",
+    "doi": "10.1038/s41598-023-50250-w",
+    "organoid_type": "liver",
+    "label": "Figure 4",
+    "caption": "Top enriched pathways of proliferative liver organoids. (a) Heat map of the ‘regulation of cell population proliferation’ GO term ( left ) in DEGs between MH and HM and growth-related signaling within them ( right ). (b) GO map of ‘regulation of cell population proliferation’ genes enriched in HM. (c) PPI network analysis of 122 genes involved in FGF signaling. (d) Top enriched pathways in FGF signaling by Reactome analysis. (e) mRNA expression levels of genes related to major growth signaling in MH and HM condition. Data are the mean ± SEM (n = 3) and analyzed by the Student’s t-test. * p < 0.05.",
+    "s3_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC10739970.1/41598_2023_50250_Fig4_HTML.jpg",
+    "is_protocol_schematic": false,
+    "confirmed_factors": []
+  },
+  {
+    "pmcid": "PMC10739970",
+    "doi": "10.1038/s41598-023-50250-w",
+    "organoid_type": "liver",
+    "label": "Figure 5",
+    "caption": "Effects of FGFR4 knockdown on generation and maintenance of organoids. (a) Schematic diagram of lentiviral transduction of shFGFR4 during organoid generation. (b) Representative morphology ( left ) and mCherry expression ( right ) of cells transduced with shNT ( upper ) and shFGFR4 ( lower ) at 7 days after transduction. (c) mRNA expression levels of FGFR4 in shNT- and shFGFR4-transduced cells. (d) Schematic diagram of lentiviral transduction of shFGFR4 in HM-cultured proliferative organoids. (e) Representative morphology and mCherry expression of shNT- and shFGFR4-transduced organoids at 3 days ( left ) and 7 days ( right ) after transduction. (f) Organoid size in each condition at 3 and 7 days after transduction. (g) mRNA expression levels of the indicated genes in shNT- and shFGFR4-transduced cells at 3 days after knockdown. (h) Immunostaining of CASP3 (green, upper ), mCherry signals (red, middle ), and merged images ( bottom ) in each condition at 3 days after knockdown. Data are the mean ± SEM (n = 3) and analyzed by the Student’s t-test. * p < 0.05 and *** p < 0.001.",
+    "s3_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC10739970.1/41598_2023_50250_Fig5_HTML.jpg",
+    "is_protocol_schematic": true,
+    "confirmed_factors": []
+  },
+  {
+    "pmcid": "PMC10739970",
+    "doi": "10.1038/s41598-023-50250-w",
+    "organoid_type": "liver",
+    "label": "Figure 6",
+    "caption": "Generation of liver organoids from GSD1a patient-derived iPSCs by the new protocol and their characterization. (a) Schematic diagram of liver organoid generation from healthy donor control and GSD1a patient-derived iPSCs using the new protocol. (b) Representative morphology of control ( upper ) and GSD1a ( lower ) organoids in HM and DM condition. (c) mRNA expression levels of the indicated genes in control and GSD1a organoids in HM and DM conditions. (d) Immunostaining of control and GSD1a organoids in HM and DM condition with the indicated antibodies. (e) Quantification of ALB secretion by control and GSD1a organoids in HM and DM condition. Data are the mean ± SEM (n = 3) and analyzed by the Student’s t-test. * p < 0.05, ** p < 0.01, and *** p < 0.001.",
+    "s3_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC10739970.1/41598_2023_50250_Fig6_HTML.jpg",
+    "is_protocol_schematic": true,
+    "confirmed_factors": []
+  },
+  {
+    "pmcid": "PMC10739970",
+    "doi": "10.1038/s41598-023-50250-w",
+    "organoid_type": "liver",
+    "label": "Figure 7",
+    "caption": "Disease modeling using GSD1a patient-specific liver organoids. (a) mRNA expression levels of G6PC in control and GSD1a organoids in HM and DM conditions. (b) G6Pase enzyme activity in control and GSD1a organoids in HM and DM condition. (c) Lipid droplets stained with Nile red in control and GSD1a organoids in DM condition. (d) Quantification of TG in control and GSD1a organoids in HM and DM condition. (e) Glycogen accumulation detected by PAS staining in control ( upper ) and GSD1a ( lower ) organoids in HM and DM conditions. (f) Quantification of lactate secretion by control and GSD1a organoids in HM and DM condition. Data are the mean ± SEM (n = 3) and analyzed by the Student’s t-test. * p < 0.05, ** p < 0.01, and *** p < 0.001.",
+    "s3_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC10739970.1/41598_2023_50250_Fig7_HTML.jpg",
+    "is_protocol_schematic": false,
+    "confirmed_factors": []
+  },
+  {
+    "pmcid": "PMC4370217",
+    "doi": "10.7554/eLife.05098",
+    "organoid_type": "lung",
+    "label": "Figure 1.",
+    "caption": "Generation of three-dimensional ventral anterior foregut spheroids from endoderm monolayers. ( A ) hESCs were differentiated into foregut endoderm by treating cells with 4 days of Activin A (ACTA) followed by 4 days of NOG+SB. ( B ) Foregut endoderm (NOG+SB) had high expression of the foregut marker SOX2 while the hindgut marker CDX2 was significantly reduced compared to untreated endoderm controls (End). NOG+SB monolayers had high expression of ventral anterior foregut genes NKX2.1 and PAX8 while the posterior foregut marker PDX1 was reduced. The foregut marker HHEX is expressed in the developing liver, biliary system, and thyroid and remained unchanged. ( C ) The majority of cells in NOG+SB treated cultures were SOX2 positive (green) compared to the control, in which only scattered clusters of cells were SOX2 positive. The scale bar represents 200 µm. ( D ) hESCs were differentiated into foregut spheroids by treating cells with 4 days of ACTA and then additional 4–6 days of NOG+SB+FGF4+Ch. Representative images of a spheroid in a matrigel droplet are shown as a whole mount image. Scale bar represents 100 µm. ( E ) Foregut spheroids (NOG+SB+FGF4+Ch) had high expression of the foregut marker SOX2 while the hindgut marker CDX2 was significantly reduced compared to untreated endoderm control (End) (top panel). Spheroids had high expression of anterior foregut genes NKX2.1 and PAX8 while the posterior foregut marker PDX1 was reduced and HHEX was unchanged (bottom panel). *p < 0.05, error bars represent SEM. ( F ) The majority of cells in foregut spheroids are FOXA2+ (green, left panel) and SOX2+ (white, right panel) and ECAD+ (red, right panel). Scale bar represent 50 µm. DOI: http://dx.doi.org/10.7554/eLife.05098.003",
+    "s3_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC4370217.1/elife05098f001.jpg",
+    "is_protocol_schematic": true,
+    "confirmed_factors": [
+      "Activin A"
+    ]
+  },
+  {
+    "pmcid": "PMC4370217",
+    "doi": "10.7554/eLife.05098",
+    "organoid_type": "lung",
+    "label": "Figure 2.",
+    "caption": "Induction of NKX2.1 in anterior foregut endoderm by modulating FGF and HH signaling. ( A ) hESCs were differentiated into endoderm (End) or anterior foregut with NOG+SB (For). Anterior foregut was treated with low (50 ng/ml) and high (500 ng/ml) concentrations of FGF2. FGF2 caused a dose-dependent increase in SHH and PAX8 expression with a modest increase in NKX2.1 expression compared to untreated endoderm controls. Note that NKX2.1 expression is increased by NOG+SB exposure alone (no FGF2). ( B ) Addition of the FGF inhibitor SU5402 (SU) to NOG+SB foregut cultures (For) caused a significant reduction of SHH and PAX8 expression, but NKX2.1, GLI1 , and PTCH1 were not significantly different compared to the foregut controls, in which no growth factors were added after SB+NOG. ( C ) Addition of the HH inhibitor Sant-2 caused a significant reduction in NKX2.1 compared to foregut control. Similarly when FGF2 (500 ng/ml) and Sant-2 were added simultaneously, the modest NKX2.1 induction caused by FGF2 was significantly reduced whereas PAX8 expression remained unchanged. ( D ) Foregut endoderm treated with SAG or SAG+SU for 8 days had a 6.5-fold and 21-fold increase of NKX2.1 expression, respectively, compared to untreated foregut controls. PAX8 expression was unchanged in the SAG treated cultures whereas SAG+SU treated cultures demonstrated a 41-fold decrease in PAX8 expression. End = endoderm; For = foregut in all panels. *p < 0.05, error bars represent SEM. DOI: http://dx.doi.org/10.7554/eLife.05098.008",
+    "s3_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC4370217.1/elife05098f002.jpg",
+    "is_protocol_schematic": false,
+    "confirmed_factors": []
+  },
+  {
+    "pmcid": "PMC4370217",
+    "doi": "10.7554/eLife.05098",
+    "organoid_type": "lung",
+    "label": "Figure 3.",
+    "caption": "HH-induced ventral foregut spheroids give rise to lung organoids. ( A ) hESCs were differentiated into foregut spheroids by treating cells with 4 days of ACTA and then an additional 4–6 days of NOG+SB+FGF4+Ch with the addition of the HH agonist SAG. Representative whole mount images of spheroids in a matrigel droplet are shown at low (left, scale bar 200 µm) and high magnification (right, scale bar 100 µm). ( B ) The addition of SAG to the NOG+SB+FGF4+Ch spheres caused a reduction in SOX2 and CDX2 transcripts (top panel) and a significant increase of NKX2.1 transcript (bottom panel) compared to NOG+SB+FGF4+Ch spheres (without SAG). Other foregut lineages ( PAX8, PDX1, HHEX ) were not significantly different when SAG was added. ( C ) The majority of the cells in NOG+SB+FGF4+Ch+SAG spheres expressed FOXA2, SOX2 and NKX2.1 protein. Scale bars represent 50 µm. ( D ) Timeline showing NOG+SB+FGF4+Ch+SAG induced foregut spheroids grown and maintained in FGF10. Note that Day 1 is the day spheroids were plated in Matrigel. The scale bar represents 100 µm. ( E ) Organoids express lung markers in a manner consistent with mouse lung development. All expression is shown relative to undifferentiated pluripotent stem cells (hPSC), and adult human lung is shown as a reference. Lung progenitor markers NMYC and ID2 were very low in adult lung, and were expressed at high levels in early organoid cultures, but were reduced over time (D = Days in culture), whereas NKX2.1 expression remained relatively constant. In contrast, SFTPC is known to be expressed at low levels in distal lung progenitors, but increases and is highly expressed in AECII cells. Consistently, SFTPC is highly expressed in adult human lungs and increases over time in organoid cultures and the AECI marker HOPX is also highly expressed in adult human lung and increases over time in organoids. *p < 0.05. All error bars represent SEM. DOI: http://dx.doi.org/10.7554/eLife.05098.010",
+    "s3_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC4370217.1/elife05098f003.jpg",
+    "is_protocol_schematic": false,
+    "confirmed_factors": [
+      "Activin A",
+      "Noggin",
+      "SB431542",
+      "FGF4",
+      "SAG"
+    ]
+  },
+  {
+    "pmcid": "PMC4370217",
+    "doi": "10.7554/eLife.05098",
+    "organoid_type": "lung",
+    "label": "Figure 4.",
+    "caption": "Lung organoids form proximal airway-like structures. ( A ) Genes expressed in the proximal airway were examined in organoids across time. The proximal airway cell marker SOX2 decreased over time in HLOs cultures compared to D10 HLOs. Compared to undifferentiated hPSCs, organoids expressed high levels of the basal cell marker P63 at all time points, while expression of the club cell marker SCGB1A1 and ciliated cell marker FOXJ1 increased significantly in prolonged cultures (compared to D10 HLOs). There was an increasing but non-significant trend in goblet cell MUC5AC expression over time in culture. ( B ) D65 HLOs had structures resembling the proximal airway, in which the epithelium (β-catenin, red) possesses P63+ basal cells (green), and is surrounded by SMA+ (white, upper and lower left panel) mesenchymal tissue. Adjacent to the P63 positive basal cell layer (green, lower, right panel) were FOXJ1 positive cells (white). Scale bars represent 50 µM (top) and 10 µM (bottom). ( C ) Proximal airway-like epithelium (β-catenin, green) co-stained for ACTTUB on the apical side of the cell (red). Scale bars represent 50 µM (top) and 10 µM (bottom). ( D ). Proximal airway-like epithelium (E-cadherin, red) also co-stained with Club cell marker CC10 (white, right panel). Scale bars represent 50 µM (top) and 10 µM (bottom). ( E ) Acellular human lung matrix was seeded with spheroids and cultured for 40 days (D40). Matrices had abundant proximal airway-like structures that had multi-ciliated cells on the apical surfaced labeled by ACTTUB (red, top panel) in low (scale bar 50 µM) and high magnification (scale bar 10 µM). Serial sections showed that cells were also FOXJ1 positive (white, lower panel) with the epithelium outlined in ECAD (green) in low (scale bar 50 µM) and high magnification (scale bar 10 µM). ( B – D ) ‘L’ in high magnification images indicates the lumen. *p < 0.05. All error bars represent SEM. DOI: http://dx.doi.org/10.7554/eLife.05098.017",
+    "s3_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC4370217.1/elife05098f004.jpg",
+    "is_protocol_schematic": false,
+    "confirmed_factors": []
+  },
+  {
+    "pmcid": "PMC4370217",
+    "doi": "10.7554/eLife.05098",
+    "organoid_type": "lung",
+    "label": "Figure 5.",
+    "caption": "Lung organoids possess multiple types of mesenchymal cells. ( A ) D65 HLOs have PDGFRα+ (green) VIM+ (white) double-positive myofibroblasts and PDGFRα−/VIM+ fibroblasts. Scale bar represents 50 µm. ( B ) D65 HLOs also possesses PDGFRα+ (green) SMA+ (white) double-positive myofibroblasts and PDGFRα−/SMA+ smooth muscle and myofibrblasts. Scale bar represents 50 µm. ( C ) D65 HLOs do not contain any cartilage whereas positive control iPSC derived teratoma had clear Safranin O staining specific to cartilage. Fast green marks the cytoplasm and hematoxylin the nuclei of both tissues. Scale bar represents 100 µm. DOI: http://dx.doi.org/10.7554/eLife.05098.020",
+    "s3_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC4370217.1/elife05098f005.jpg",
+    "is_protocol_schematic": false,
+    "confirmed_factors": []
+  },
+  {
+    "pmcid": "PMC4370217",
+    "doi": "10.7554/eLife.05098",
+    "organoid_type": "lung",
+    "label": "Figure 6.",
+    "caption": "Lung organoids possess abundant distal bipotent progenitor cells. ( A ) The expression of the distal progenitor marker SOX9 remained unchanged over time and expression of the AECI marker PDPN was low in HLO cultures. ( B ) The majority of SFTPC+ cells (green, left panel) co-expressed SOX9 (red). Similarly, many cells expressing the AECI early marker HOPX+ (green, right panel) co-expressed SOX9 (red). Few, scattered cells expressed the late AECII marker SFTPB (white, second panel) or the AECI marker, PDPN (third panel, white). Few PDPN+ cells also showed elongated, squamous morphology seen in the adult lung. ( C ) Human lung AECII cells labeled with SFTPC (green, left panel) did not co-express SOX9. SFTPB+ cells (white, second panel) in the adult human lung have similar morphology to SFTPB+ cells in HLOs. Human lung AECI cells expressed PDPN (white, third panel), and show characteristic AECI cell shape. Human AECI cells express HOPX (green, right panel), but did not co-express SOX9. ( B – C ) Scale bar in lower magnification images in B (upper panel) represent 50 µM and the scale bars in higher magnification images in B , C (lower panel) represent 10 µM. ( D ) D50 HLOs contain lamellar bodies which are organelles specific to AECII cells. Scale bars represent 500 nm. DOI: http://dx.doi.org/10.7554/eLife.05098.021",
+    "s3_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC4370217.1/elife05098f006.jpg",
+    "is_protocol_schematic": false,
+    "confirmed_factors": []
+  },
+  {
+    "pmcid": "PMC4370217",
+    "doi": "10.7554/eLife.05098",
+    "organoid_type": "lung",
+    "label": "Figure 7.",
+    "caption": "Quantitative assessment of the composition of lung organoids. ( A ) HLOs were assessed for proximal airway-like structures (P63+) and distal airway-like structures (P63−/SFTPC+). 81% of HLOs have proximal airway-like epithelium while 100% have distal airway-like epithelium (n = 48 individual HLOs). ( B ) The average cross-sectional area within an HLO that is comprised of P63+ proximal airway-like and P63−/SFTPC+ distal airway-like epithelium was calculated. Proximal structures comprised 14.5% (±0.6%) of the entire area of the HLO (P63+), whereas 85.5% (±0.6%) of HLO was distal-like epithelium and mesenchyme (P63−). ( C – G ) The percent of specific cell markers present in an organoid was determined by dividing by the total number of DAPI+ nuclei within the same section (n = 15 individual HLOs). Each point represents the data from an individual HLO while the open bar represents the average percent of cells. ( C ) On average, 57% of all cells in the HLOs were NKX2.1+, ( D ) 39% of all cells were P63+, ( E ) 3% were FOXJ1+, ( F ) 5% were SFTPC+, ( G ) 4% of all cells were HOPX+. ( B – G ) Error bars represent SEM. DOI: http://dx.doi.org/10.7554/eLife.05098.023",
+    "s3_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC4370217.1/elife05098f007.jpg",
+    "is_protocol_schematic": false,
+    "confirmed_factors": []
+  },
+  {
+    "pmcid": "PMC4370217",
+    "doi": "10.7554/eLife.05098",
+    "organoid_type": "lung",
+    "label": "Figure 8.",
+    "caption": "RNA sequencing analysis associates HLOs with fetal lung tissue. 6 HLOs (n = 3 D65 HLOs and n = 3 D110 HLOs) were compared to the undifferentiated H9 stem cells (SC) and definitive endoderm (Def End) and publicly available datasets of adult and fetal human lungs (see Supplementary file 1 ). ( A – B ) Plot of the first three principle components generated in the principle component (PC) analysis as pairwise 2-dimensional plots ( A ) or as an aggregate 3-dimensional projection ( B ), ( C ) hierarchical clustering, and ( D ) Spearman's correlation all demonstrate that HLOs are most closely related to the fetal lung. DOI: http://dx.doi.org/10.7554/eLife.05098.024",
+    "s3_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC4370217.1/elife05098f008.jpg",
+    "is_protocol_schematic": false,
+    "confirmed_factors": []
+  },
+  {
+    "pmcid": "PMC6376275",
+    "doi": "10.15252/embj.2018100300",
+    "organoid_type": "lung",
+    "label": "Figure 1",
+    "caption": "Characterization of airway organoids Transmission electron micrograph of an AO cross section showing the polarized, pseudostratified epithelium containing basal, secretory, brush, and multi‐ciliated cells. Details display apical microvilli and cilia with their characteristic microtubule structure. Scale bars equal 10 μm, 2 μm, and 500 nm. See also Appendix Fig S1A and [Link] , [Link] , [Link] . Scanning electron micrograph of a partially opened AO visualizing its 3D architecture, as well as basal and apical ultrastructure. Details display apical surfaces of secretory and multi‐ciliated cells. Scale bars equal 50 μm (overview) and 2 μm (details). Immunofluorescent sections of AOs showing markers for basal cells (KRT5), cilia (acetylated α‐tubulin), secretory cells (MUC5AC), and club cells (SCGB1A1). KRT5 is present exclusively in basally localized cells, while cilia, MUC5AC, and SCGB1A1 localize luminally. Counterstained is the actin cytoskeleton (red). Scale bar equals 10 μm. See Appendix Fig S1B for IHC images. Luminescent cell viability assay comparing proliferative capacity of two independently generated AO lines at early, mid‐, and late passage numbers. Per group, 3,000 cells were seeded and their expansion was measured at the indicated time points. Error bars represent standard deviations of technical triplicates. Quantification of cell types in AO lines at early and late passage (P5 vs. P19) as determined by immunofluorescence using the indicated markers. The number of basal cells, club cells, ciliated cells, and secretory cells does not differ significantly between early and late passage AOs. Data shown are representatives of at least three independent experiments. Error bars indicate s.e.m.",
+    "s3_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC6376275.1/EMBJ-38-e100300-g002.jpg",
+    "is_protocol_schematic": false,
+    "confirmed_factors": []
+  },
+  {
+    "pmcid": "PMC6376275",
+    "doi": "10.15252/embj.2018100300",
+    "organoid_type": "lung",
+    "label": "Figure 2",
+    "caption": "Airway organoids to study cystic fibrosis Box‐and‐whisker plot showing concentration‐dependent forskolin‐induced swelling of AOs in the absence and presence of CFTR inhibitors CFTRinh‐172 and GlyH101. Upon CFTR inhibition, swelling is noticeably decreased but not absent. Shown are pooled data from three different AO lines used in each of three independent experiments. Whiskers indicate smallest and largest values, boxes indicate 25 th to 75 th percentile, and horizontal solid line indicates median. AUC, area under the curve. Box‐and‐whisker plot showing concentration‐dependent E act ‐induced swelling of AOs, but not rectal organoids (black outlines). Forskolin causes swelling in both organoid types (gray outlines). Shown are pooled data from three different AO and two different rectal organoid lines used in three to four independent experiments. Whiskers indicate smallest and largest values, boxes indicate 25 th to 75 th percentile, and horizontal solid line indicates median. Swelling was linear for 2 h for AOs, but only 1 h for rectal organoids. See Appendix Fig S3A for respective time course plots. Representative histological sections of periodic acid–Schiff (PAS)‐stained organoids from a CF patient with CFTR F508del/F508del mutation. Note the thick layer of PAS‐positive polysaccharides apically lining the airway epithelium. Rectal organoids were generated from rectal biopsies; AOs were generated from broncho‐alveolar lavages (BALs). Scale bars equal 50 μm. See Appendix Fig S3B for PAS‐stained wild‐type and CFTR R334W/R334W organoid sections. Box‐and‐whisker plot showing swelling assays of several CF patient AO lines carrying the indicated CFTR mutations (G542X is a premature stop associated with severe disease and no functional CFTR protein; F508del is the most common CFTR mutation in subjects with CF and severely reduces apical trafficking and function, leading to severe disease (high sweat chloride, high pancreas insufficiency, high pseudomonas infection rate); R334W is a milder CFTR mutation associated as indicated by lower pseudomonas infection rates and pancreas sufficiency with reduced ion channel conductivity, normal apical expression, and some residual function). Forskolin‐induced swelling rarely exceeds vehicle controls in CF AOs, but increases in the presence of the CFTR modulating drugs VX‐770 and VX‐809. E act ‐induced swelling exceeds forskolin‐induced swelling to a similar extent as pre‐treatment with VX‐770 and VX‐809 in four out of five CF AO lines. In contrast, BAL‐derived WT AOs swell following forskolin stimulation independent of the presence of VX‐770 and VX‐809. Of note, E act ‐induced swelling is not observed in this AO line. Shown are pooled data of four to five independent experiments (CF AOs) or two independent experiments (WT AOs). Whiskers indicate smallest and largest values, boxes indicate 25 th to 75 th percentile, and horizontal solid line indicates median. See Appendix Fig S3C for selected time course plots. Whole‐mounted immunofluorescence analysis of BAL AO‐derived ALI cultures. After 3 weeks of differentiation, ALI cultures show ciliated airway epithelium (green, β‐tubulin). Counterstained are the actin cytoskeleton (red) and nuclei (blue). Transepithelial electrical measurements of BAL AO‐derived ALI cultures. Shown are equivalent current ( I eq ) traces of a CFTR wt/wt (gray) and CFTR F508del/F508del donor, treated with vehicle (blue) or VX‐809 and VX‐770 (red). Inhibition of the epithelial sodium channel (ENaC) with benzamil was observed in all traces (declining I eq ). Forskolin increased the current in CFTR wt/wt and CFTR F508del/F50del donor treated with VX‐809 and VX‐770, but not in the vehicle treated. A decline was observed with CFTRinh‐172 in all examined conditions. The bar graphs quantify the peak forskolin activated‐ and CFTRinh‐172 inhibited‐currents. Shown are pooled data of four independent measurements for each donor. Results are shown as mean ± s.d.",
+    "s3_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC6376275.1/EMBJ-38-e100300-g003.jpg",
+    "is_protocol_schematic": false,
+    "confirmed_factors": [
+      "Forskolin"
+    ]
+  },
+  {
+    "pmcid": "PMC6376275",
+    "doi": "10.15252/embj.2018100300",
+    "organoid_type": "lung",
+    "label": "Figure 3",
+    "caption": "Modeling lung cancer using airway organoids Tumor AOs derived from different resected primary lung cancer types recapitulate their respective histopathological features. Examples include adenocarcinoma (41T, white arrowheads: multiple nucleoli, black arrowheads: tubule formation), mucinous adenocarcinoma (42T/36T, arrowheads: mucinous glands, stars: PAS‐positive mucus), adenocarcinoma lepidic type (previously known as broncho‐alveolar carcinoma, 95T, arrowheads: distinct large nuclei), squamous cell carcinoma (65T, arrowheads: multi‐layered, keratinization), and large cell neuroendocrine tumor (46T, arrowheads: large nuclei, p53 immunolabeling). Scale bars equal 50 μm. Tumor AOs derived from metastatic adenocarcinomas give rise to lung cancer in vivo following intratracheal instillation into immunocompromised mice. 30% of injected mice ( n = 12) developed visible tumors 8 weeks after instillation. Tumors show features of adenocarcinomas (HE stainings) and are integrated within murine stroma (human keratin immunolabeling). Scale bars equal 50 μm. WGS reveals largely conserved mutation status of lung cancer genes between matched tumor–organoid pairs (left plot, Appendix Table S1 ). The right plot shows mutation status of selected lung cancer genes in several additional tumor AO lines derived from primary as well as metastatic lung cancer. Of note, ERBB2 mutation frequencies in 52MET and 52MET II tumor AOs were almost identical (67 and 70%) despite originating from independent biopsies taken 3 months apart. See Appendix Table S2 . Heat map of IC 50 values of selected anti‐cancer drugs indicating differential responses of tumor AOs. For example, 46T (mutant TP53 ) is resistant to Nutlin‐3a treatment, 65T (mutant ALK1 ) is resistant to treatment with crizotinib, and 52MET (mutant ERBB2 ) is sensitive to treatment with erlotinib and gefitinib. See Appendix Fig S4F for individual dose–response curves.",
+    "s3_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC6376275.1/EMBJ-38-e100300-g004.jpg",
+    "is_protocol_schematic": false,
+    "confirmed_factors": []
+  },
+  {
+    "pmcid": "PMC6376275",
+    "doi": "10.15252/embj.2018100300",
+    "organoid_type": "lung",
+    "label": "Figure 4",
+    "caption": "Modeling RSV infection with airway organoids Quantitative PCR showing RSV replication kinetics in the indicated AO lines. Representative phase‐contrast/GFP overlays of RSV‐infected AOs (5 days post‐infection). GFP signal is absent following pre‐incubation with palivizumab (fusion blocking antibody) but not control IgG. Scale bars equal 100 μm. Immunohistochemical RSV staining (top) and scanning electron micrograph (bottom) of RSV‐infected AOs (5 days post‐infection) show organoid fusion and blebbing. Scale bars equal 50 μm. 3D reconstructions of immunolabeled AOs 3 days after RSV infection showing (clockwise) cytoskeletal rearrangements, apical extrusion of infected cells, syncytia formation, and organoid fusion. Scale bars equal 50 μm. RSV infection causes increased organoid velocity (Tukey boxplot) and organoid fusion (pie chart). Shown are data from three independent experiments. Horizontal solid line indicates median, box indicate 25 th to 75 th percentile, whiskers indicate 25 th percentile minus 1.5 times inter‐quartile distance (IQR) or 75 th percentile plus 1.5 times IQR, and circles indicate individual values greater than 1.5 times IQR. See also Movie EV4 . Cells within RSV‐infected organoids are more motile than cells in control organoids irrespective of induced organoid rotation. Cell traces above individual Tukey boxplots are from representative organoids. Shown are data from two to three independent experiments. Horizontal solid line indicates median, box indicates 25 th to 75 th percentile, whiskers indicate 25 th percentile minus 1.5 times inter‐quartile distance (IQR) or 75 th percentile plus 1.5 times IQR, and circles indicate individual values greater than 1.5 times IQR. See also Appendix Fig S5A and B , and Movies EV5 and EV6 . GSEA plots showing strong enrichment of indicated gene signatures in transcriptomes of four independently RSV‐ vs. mock‐infected AO lines. NES, normalized enrichment score. See Table EV4 for signatures and leading‐edge genes. Hierarchical clustering of the indicated AO lines displaying the 36 most differentially expressed genes of RSV‐ vs. mock‐infected AO transcripts as well as selected cytokines (see Table EV4 ). Gradients depict the relative maximum and minimum values per transcript. Names and ranks of selected genes involved in migration ( KRT16 , KRT6B ), interferon signaling ( IL1RN , IFI44L ), and viral response ( MX2 , OAS1 ) are indicated. ELISA‐based quantification of cytokines secreted by mock‐ vs. RSV‐infected AOs. Shown are data from two independent experiments. Whiskers indicate smallest and largest values, boxes indicate 25 th to 75 th percentile, and horizontal solid line indicates median. Box‐and‐whisker plot showing increased numbers of primary human neutrophils populating RSV‐ compared to mock‐infected AOs. Shown are data from two independent experiments. Whiskers indicate smallest and largest values, boxes indicate 25 th to 75 th percentile, and horizontal solid line indicates median. See also Movies EV8 and EV9 . Quantitative PCR showing replication kinetics of wild‐type (wt) and mutant RSV lacking NS2 (ΔNS2) in the indicated AO lines. See also Movie EV10 . Inducible overexpression of NS2 causes increased organoid velocity (box‐and‐whisker plot) and fusion (pie chart). Shown are data from three independent experiments. Horizontal solid line indicates median, box indicates 25 th to 75 th percentile, whiskers indicate 25 th percentile minus 1.5 times inter‐quartile distance (IQR) or 75 th percentile plus 1.5 times IQR, and circles indicate individual values greater than 1.5 times IQR. See Appendix Fig S6 , Movie EV11 .",
+    "s3_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC6376275.1/EMBJ-38-e100300-g005.jpg",
+    "is_protocol_schematic": false,
+    "confirmed_factors": []
+  },
+  {
+    "pmcid": "PMC8516798",
+    "doi": "10.1016/j.celrep.2021.109920",
+    "organoid_type": "lung",
+    "label": "fx1.jpg",
+    "caption": "",
+    "s3_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC8516798.2/fx1.jpg",
+    "is_protocol_schematic": false,
+    "confirmed_factors": []
+  },
+  {
+    "pmcid": "PMC8516798",
+    "doi": "10.1016/j.celrep.2021.109920",
+    "organoid_type": "lung",
+    "label": "Figure 1",
+    "caption": "Single-cell RNA-seq analysis of hPSC-AOs (A) Uniform manifold approximation and projection (UMAP) plot illustrating five cell clusters in the hPSC-AOs. n = 1 biological replicate. (B) UMAP and violin plots showing the expression of genes FOXJ1 , MUC5B , KRT5 , and MKI67 . (C) Enrichment analysis of hPSC-AOs using genes highly expressed in adult human ciliated or proximal ciliated cells. (D) Correlation analysis of genes with cell fates in hPSC-AOs and adult human lung cells. (E) Phase contrast image of a representative ciliated-like cell. Scale bar, 30 μm. (F) UMAP and violin plots showing the expression of SARS-CoV-2 entry factors, including ACE2 , CTSL , FURIN , TMPRSS2 , and NRP1 . (G) Representative confocal images of hPSC-AOs co-stained with antibodies recognizing ACE2 and cilia marker acetyl-α-tubulin (AATB). 4′,6-diamidino-2-phenylindole (DAPI) stains nuclei. Scale bar, 20 μm. (H) Representative confocal images of hPSC-AOs co-stained with antibodies recognizing ACE2 and ciliated cell marker FOXJ1. DAPI stains nuclei. Scale bar, 100 μm. See also Figure S1 and Video S1 .",
+    "s3_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC8516798.2/gr1.jpg",
+    "is_protocol_schematic": false,
+    "confirmed_factors": []
+  },
+  {
+    "pmcid": "PMC8516798",
+    "doi": "10.1016/j.celrep.2021.109920",
+    "organoid_type": "lung",
+    "label": "Figure 2",
+    "caption": "hPSC-AOs are permissive to SARS-CoV-2 infection (A) Relative SARS-CoV-2 RNA expression levels in hPSC-AOs at 48 hpi (MOI = 0.2). Total viral RNA from infected hPSC-AOs was analyzed by qRT-PCR for the presence of N transcripts relative to ACTB . (B) Representative confocal images of hPSC-AOs at 48 hpi (MOI = 0.2) co-stained with antibodies recognizing SARS-CoV-2 nucleocapsid (SARS-N) protein and ciliated cell marker FOXJ1. Scale bar, 100 μm. (C) Representative 3D confocal images of hPSC-AOs at 48 hpi (MOI = 0.2) co-stained with antibodies recognizing SARS-N and AATB. Scale bar, 10 μm. (D) Read coverage on viral transcriptome in the mock- and SARS-CoV-2-infected hPSC-AOs (MOI = 0.2). Schematic shows the SARS-CoV-2 genome. Coverage is normalized per million reads. (E and F) PCA (E) and sample clustering (F) on the mock- and SARS-CoV-2-infected hPSC-AOs. (G) Volcano plot showing the gene expression changes between mock- and SARS-CoV-2-infected hPSC-AOs. Data in (A) are presented as mean ± SEM (n = 3 biological replicates). The p values were calculated by unpaired two-tailed Student’s t test. ∗∗∗∗ p < 0.0001. See also Video S2 .",
+    "s3_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC8516798.2/gr2.jpg",
+    "is_protocol_schematic": false,
+    "confirmed_factors": []
+  },
+  {
+    "pmcid": "PMC8516798",
+    "doi": "10.1016/j.celrep.2021.109920",
+    "organoid_type": "lung",
+    "label": "Figure 3",
+    "caption": "An hPSC-AO-based high-throughput chemical screen identifies GW6471 that blocks SARS-CoV-2 infection (A) Primary screening results. The x axis is the compound number. The y axis is the Z score. Red line indicates Z score = −2. (B) Efficacy curve of GW6471. Data are presented as mean ± SD. n = 3 biological replicates. (C) Representative confocal images of control or GW6471-treated hPSC-AOs at 48 hpi (MOI = 0.2). Scale bar, 100 μm. (D) qRT-PCR analysis for viral N subgenomic RNA in hPSC-AOs, which were pretreated with control or 10 μM GW6471 at 48 hpi (MOI = 0.2). Data are presented as mean ± SEM. n = 3 biological replicates. (E and F) Representative confocal images (E) and quantification (F) of SARS-N in hPSC-AOs, which were pretreated with control or 10 μM GW6471 at 48 hpi (MOI = 0.2). Scale bar, 100 μm. Data are presented as mean ± SEM. n = 6 biological replicates. (G) Relative SARS-CoV-2 viral RNA expression levels at 48 hpi in hPSC-AOs infected with SARS-CoV-2 virus (MOI = 0.2) and 24 h later exposed to control or 10 μM GW6471 treatment. Data are presented as mean ± SEM. n = 3 biological replicates. (H and I) Representative confocal images (H) and quantification (I) of SARS-N at 48 hpi of hPSC-AOs infected with SARS-CoV-2 virus (MOI = 0.2) and 24 h later exposed to control or 10 μM GW6471 treatment. Scale bar, 100 μm. Data are presented as mean ± SEM. n = 6 biological replicates. (J) qRT-PCR analysis for viral N single-guide RNA (sgRNA) at 48 hpi of hPSC-AOs, which were pretreated with control or 10 μM GW6471 (variant B.1.351, MOI = 0.2). Data are presented as mean ± SEM. n = 3 biological replicates. (K and L) Representative confocal images (K) and quantification (L) of SARS-N at 48 hpi of hPSC-AOs, which were pretreated with control or 10 μM GW6471 (variant B.1.351, MOI = 0.2). Scale bar, 100 μm. Data are presented as mean ± SEM. n = 6 biological replicates. (M) qRT-PCR analysis for viral N sgRNA at 48 hpi of hPSC-COs, which were pretreated with control or 10 μM GW6471 (MOI = 3). Data are presented as mean ± SEM. n = 3 biological replicates. (N and O) Representative confocal images (N) and quantification (O) at 48 hpi of SARS-N of hPSC-COs, which were pretreated with control or 10 μM GW6471 (MOI = 3). Scale bar, 100 μm. Data are presented as mean ± SEM. n = 6 biological replicates. (P) Relative SARS-CoV-2 viral RNA expression levels at 48 hpi of hPSC-AOs infected with SARS-CoV-2 virus (MOI = 3) and 24 h later followed by control or 10 μM GW6471 treatment. Data are presented as mean ± SEM. n = 3 biological replicates. (Q and R) Representative confocal images (Q) and quantification (R) of SARS-N at 48 hpi of hPSC-AOs infected with SARS-CoV-2 virus (MOI = 3) and 24 h later followed by control or 10 μM GW6471 treatment. Scale bar, 100 μm. Data are presented as mean ± SEM. n = 6 biological replicates. The p values were calculated by unpaired two-tailed Student’s t test. ∗ p < 0.05 and ∗∗∗ p < 0.0001. See also Figures S2 and S3 and Table S1 .",
+    "s3_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC8516798.2/gr3.jpg",
+    "is_protocol_schematic": false,
+    "confirmed_factors": []
+  },
+  {
+    "pmcid": "PMC8516798",
+    "doi": "10.1016/j.celrep.2021.109920",
+    "organoid_type": "lung",
+    "label": "Figure 4",
+    "caption": "GW6471 blocks SARS-CoV-2 infection by inhibiting the HIF1α pathway (A and B) PCA (A) and sample clustering (B) on the control- and 10 μM GW6471-treated hPSC-AOs at 48 hpi (MOI = 0.2). (C) Volcano plot showing the expression changes between control- and 10 μM GW6471-treated hPSC-AOs at 48 hpi (MOI = 0.2). (D) Enriched pathways in GW6471- versus control-treated hPSC-AOs at 48 hpi. (E and F) PCA (E) and sample clustering (F) on the control- and 10 μM GW6471-treated hPSC-COs at 48 hpi (MOI = 1). (G) Volcano plot showing the expression changes between control- and 10 μM GW6471-treated hPSC-COs at 48 hpi (MOI = 1). (H) Enriched pathways in GW6471- versus control-treated hPSC-COs at 48 hpi. (I) qRT-PCR analysis for viral N sgRNA of hPSC-AOs treated with control or 1 μM chetomin at 48 hpi (MOI = 0.2). Data are presented as mean ± SEM. n = 3 biological replicates. (J and K) Representative confocal images (J) and quantification (K) of SARS-N + cells of hPSC-AOs, which were treated with control or 1 μM chetomin at 48 hpi (MOI = 0.2). Scale bar, 100 μm. Data are presented as mean ± SEM. n = 6 biological replicates. (L) qRT-PCR analysis for viral N sgRNA of hPSC-AOs expressing shHIF1α or scrambled shRNA at 48 hpi (MOI = 0.2). Data was presented as mean ± SEM. n = 3 biological replicates. (M and N) Representative confocal images (M) and quantification (N) of SARS-N + cells of hPSC-AOs expressing shHIF1α or scrambled shRNA at 48 hpi (MOI = 0.2). Scale bar, 100 μm. Data are presented as mean ± SEM. n = 6 biological replicates. The p values were calculated by unpaired two-tailed Student’s t test. ∗∗∗ p < 0.001 and ∗∗∗∗ p < 0.001. See also Figures S3 and S4 and Tables S2 and S3 .",
+    "s3_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC8516798.2/gr4.jpg",
+    "is_protocol_schematic": false,
+    "confirmed_factors": []
+  },
+  {
+    "pmcid": "PMC8516798",
+    "doi": "10.1016/j.celrep.2021.109920",
+    "organoid_type": "lung",
+    "label": "Figure 5",
+    "caption": "Metabolic profiling identifies a key role for glycolysis in SARS-CoV-2 infection (A and B) Hierarchical clustering analysis (A) and heatmap (B) of metabolic profiles for mock- or SARS-CoV-2 (MOI = 0.2)-infected hPSC-AOs at 48 hpi. n = 4 biological replicates for mock and N = 3 biological replicates for SARS-CoV-2. (C and D) Hierarchical clustering analysis (C) and heatmap (D) of metabolic profiles for control- or 10 μM GW6471-treated hPSC-AOs at 48 hpi (MOI = 0.2). n = 3 biological replicates. (E) Heatmap of genes encoding enzymes involved in the glycolytic pathway of control- or 10 μM GW6471-treated hPSC-AOs at 48 hpi (MOI = 0.2). n = 3 biological replicates.",
+    "s3_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC8516798.2/gr5.jpg",
+    "is_protocol_schematic": false,
+    "confirmed_factors": []
+  },
+  {
+    "pmcid": "PMC8516798",
+    "doi": "10.1016/j.celrep.2021.109920",
+    "organoid_type": "lung",
+    "label": "Figure 6",
+    "caption": "HIF1α regulates glycolysis in SARS-CoV-2-infected hPSC-AOs (A and B) PCA (A) and sample clustering (B) analysis of control- and 1 μM chetomin-treated hPSC-AOs at 48 hpi (MOI = 0.2). n = 3 biological replicates. (C) Heatmap of genes encoding enzymes involved in the glycolytic pathway of control- or 1 μM chetomin-treated hPSC-AOs at 48 hpi (MOI = 0.2). (D–F) PCA (D), sample clustering (E), and IPA (F) analysis of the hPSC-AOs expressing shHIF1α or scrambled shRNA at 48 hpi (MOI = 0.2). n = 3 biological replicates. (G) Heatmap of genes encoding enzymes involved in the glycolytic pathway in the hPSC-AOs expressing shHIF1α or scrambled shRNA at 48 hpi (MOI = 0.2). (H and I) Hierarchical clustering analysis (H) and heatmap (I) of metabolic profiles of the hPSC-AOs expressing shHIF1α or scrambled shRNA at 48 hpi (MOI = 0.2). n = 3 biological replicates. (J) qRT-PCR analysis for viral N sgRNA at 48 hpi of hPSC-AOs treated with control or 10 μM xanthohumol (MOI = 0.2). Data are presented as mean ± SEM. n = 3 biological replicates. (K and L) Representative confocal images (K) and quantification (L) of SARS-N + cells at 48 hpi of hPSC-AOs, which were treated with control or 10 μM xanthohumol (MOI = 0.2). Scale bar, 100 μm. Data are presented as mean ± SEM. n = 6 biological replicates. (M) qRT-PCR analysis for viral N sgRNA at 48 hpi of hPSC-AOs treated with control or 3 μM TOFA or 3 μM ND-646 (MOI = 0.2). Data are presented as mean ± SEM. n = 3 biological replicates. (N and O) Representative confocal images (N) and quantification (O) of SARS-N + cells at 48 hpi of hPSC-AOs, which were treated with control or 3 μM TOFA or 3 μM ND-646 (MOI = 0.2). Scale bar, 100 μm. Data are presented as mean ± SEM. n = 6 biological replicates. Data are presented as mean ± SEM. The p values were calculated by unpaired two-tailed Student’s t test. ∗ p < 0.05 and ∗∗∗ p < 0.001. See also Figure S4 and Table S4 .",
+    "s3_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC8516798.2/gr6.jpg",
+    "is_protocol_schematic": false,
+    "confirmed_factors": []
+  },
+  {
+    "pmcid": "PMC4370190",
+    "doi": "10.1038/ncomms5047",
+    "organoid_type": "retinal",
+    "label": "Figure 1",
+    "caption": "hiPSC-derived retinal progenitors self-organized into eye field-like domains (EF) and subsequently differentiated into neural retina (NR) and retinal pigment epithelium (RPE) a–d , hiPSC-derived, free-floating aggregates (a) seeded in matrigel-coated dishes acquired an anterior neuroepithelial (AN) fate characterized by SOX1/PAX6 expression (b–c); subsequently, retinal progenitors (LHX2-positive) first appeared in the center of the aggregates (d). e–h , By D12, well-defined EF domains (e, f) expressing PAX6, LHX2 and RX (g, h) could be observed surrounded by AN cells (f). i–l , As differentiation progressed, cells within the EF domains co-expressed VSX2 and MITF (i), and afterward differentiated into a central VSX2/LHX2/PAX6-positive NR domain (j–l) and a peripheral RPE domain expressing MITF but not VSX2 (l). m–q , The NR domain progressively acquired an optic-cup-like shape. r , Efficiency of NR-domain formation among three hiPSC lines (mean ± SD, 3 experiments/time point/cell line). s , RT-PCR analysis showing progressive acquisition of retinal fate. Scale bars: 100µm (a and m–p); 50µm (b–l, and q).",
+    "s3_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC4370190.1/nihms592778f1.jpg",
+    "is_protocol_schematic": false,
+    "confirmed_factors": []
+  },
+  {
+    "pmcid": "PMC4370190",
+    "doi": "10.1038/ncomms5047",
+    "organoid_type": "retinal",
+    "label": "Figure 2",
+    "caption": "Formation of 3-D retinal cups (RCs) a , One NR domain (top panel) is being detached with a tungsten needle (arrowhead in bottom panel). b , FACS analysis of collected NR domains showed enrichment in NR progenitors (VSX2-positive) compared to retinal pigment epithelium (RPE) progenitors (MITF-positive). c , Detached NR domains cultured in suspension formed 3-D RCs, composed of a NR epithelium and RPE (arrow). d , Higher magnification of a typical 3-D RC with a NR epithelium continuous with the adjacent RPE bundled at the tip (arrowheads). e–f , The pseudostratified neural epithelium within the RC showed the typical polarity, with mitosis (PH3-positive) occurring at the apical side, and postmitotic neuronal precursors (HU C/D-positive) accumulating at the basal side. g–i , NR cells proliferated actively (EdU-positive, g) and co-expressed transcription factors characteristic of neural retina progenitor cells (h–i). j–k , Retinal progenitors within the NR epithelium underwent interkinetic nuclear migration. j , Time-lapse imaging of retinal progenitors expressing nuclear GFP. k , 3-D volume rendering of the cells shown in (j). red dot: cell undergoing mitosis; yellow dot: cell nucleus migrating from the apical to the basal side of the neuroepithelium; blue dots: cells undergoing apoptosis. Scale bars: 100 µm (a and c); 50µm (d–i).",
+    "s3_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC4370190.1/nihms592778f2.jpg",
+    "is_protocol_schematic": false,
+    "confirmed_factors": []
+  },
+  {
+    "pmcid": "PMC4370190",
+    "doi": "10.1038/ncomms5047",
+    "organoid_type": "retinal",
+    "label": "Figure 3",
+    "caption": "Retinal progenitors within hiPSC-derived retinal cups underwent spontaneous differentiation Retinal progenitors differentiated following the typical central-to-peripheral pattern (a–c) and acquired early-born cell fates, beginning with generation of ganglion cells (BRN3-positive/EdU-negative, d–f), followed by photoreceptors (OTX2-positive, f), amacrine cells (AP2α-positive, g) and horizontal cells (AP2α/PROX1-positive, arrows in g). Scale bars: 50µm.",
+    "s3_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC4370190.1/nihms592778f3.jpg",
+    "is_protocol_schematic": false,
+    "confirmed_factors": []
+  },
+  {
+    "pmcid": "PMC4370190",
+    "doi": "10.1038/ncomms5047",
+    "organoid_type": "retinal",
+    "label": "Figure 4",
+    "caption": "Long-term suspension culture of hiPSC-derived retinal cups (RCs) a–c , After W7, RCs progressively lost their histological organization due to increasing cell death (caspase 3-positive, a–b), which was avoidable by supplementation with FBS, taurine and retinoic acid from the beginning of W7 onward (c). d–e , Under these conditions, RCs maintained their shape, cellular organization, and steady growth during long-term culture (bars: mean ± SD; 15–20 RCs per time point). f–i , By W13-14, RCs showed distinguishable layers containing the precursors of most of the major neuronal cell types, including ganglion, amacrine and horizontal cells (HU C/D- and PAX6-positive), and photoreceptors (OTX2- and recoverin-positive); as in the developing human retina, cells expressing OTX2 and recoverin were observed in the developing outer nuclear layer as well as in the inner side of the retinal epithelium 69 , 70 . A conspicuous neuroblastic layer containing mitotic retinal progenitors (VSX2/MCM2-positive) was still present by W14 (i). j , Müller cells expressing CRALBP were first seen by W17. Scale bars: 200µm (d); 50µm (a–c and f–j).",
+    "s3_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC4370190.1/nihms592778f4.jpg",
+    "is_protocol_schematic": false,
+    "confirmed_factors": []
+  },
+  {
+    "pmcid": "PMC4370190",
+    "doi": "10.1038/ncomms5047",
+    "organoid_type": "retinal",
+    "label": "Figure 5",
+    "caption": "hiPSC-derived neural retina (NR) progenitors within the 3-D retinal cups recapitulated the spatiotemporal pattern of NR differentiation in vivo a–l , Cells within the RCs differentiated and migrated to their corresponding layers, with ganglion cells (GC; BRN3-positive, a–g; TUJ1-positive, h where (*) indicates a developing nerve-fiber-like layer) appearing first, followed by photoreceptor cells (PRC; OTX2/recoverin-positive, a–c, e–g), amacrine cells (AC; AP2α-positive, i–l), and horizontal cells (HC; PROX1-positive, i–l). m–p , By W21-W23, RCs presented a well-established outer nuclear layer (REC-positive, m–n) delineated by a developing outer plexiform layer (SV2-positive, n) and containing rod-opsin-positive photoreceptors (o), and a developing bipolar cell layer containing bipolar cells (BC; VSX2-positive/MCM2-negative, p) intermingled with remaining retinal progenitor cells (RPC; VSX2-positive/MCM2-positive, p). q , Timeline of retinogenesis in hiPSC-derived 3-D RCs. Scale bars: 100µm (a–d); 20µm (e–p).",
+    "s3_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC4370190.1/nihms592778f5.jpg",
+    "is_protocol_schematic": false,
+    "confirmed_factors": []
+  },
+  {
+    "pmcid": "PMC4370190",
+    "doi": "10.1038/ncomms5047",
+    "organoid_type": "retinal",
+    "label": "Figure 6",
+    "caption": "Effect of retinoic acid on the differentiation of hiPSC-derived photoreceptors a , Two windows of exposure to 1 µM retinoic acid (RA) were tested in combination with slight modifications to the culture media in CB-iPSC6.2-derived retinal cups (RCs). RA treatment in W7-W14 led to low levels of rod-opsin expression in the distal part of photoreceptor cells as observed in the original culture conditions, except for some RCs that showed few cells with rod-opsin expression in the cell bodies at W21. In contrast, RCs treated during W10-W14 showed dispersed cells with strong rod-opsin expression in their cell bodies already at W17, and forming large patches at W21. We did not observe significant differences associated with modifications of the culture media after RA treatment or presence of FBS/Taurine from W5. Similar results were observed in 3 independent experiments, 5 RCs per treatment per time window. b–g , When KA.1- and IMR90-4-derived RCs were subjected to RA treatment in W10-W14, induction of rod-opsin expression was also observed, although less efficiently than in CB-iPSC6.2-derived RCs (3 independent experiments, 8–22 RCs per cell line). Scale bars: 20µm.",
+    "s3_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC4370190.1/nihms592778f6.jpg",
+    "is_protocol_schematic": true,
+    "confirmed_factors": [
+      "Retinoic acid"
+    ]
+  },
+  {
+    "pmcid": "PMC4370190",
+    "doi": "10.1038/ncomms5047",
+    "organoid_type": "retinal",
+    "label": "Figure 7",
+    "caption": "hiPSC-derived rod and cone photoreceptors achieved an advanced level of differentiation including outer-segment disc formation a , During normal development photoreceptor precursors (PRPs) differentiate into rods, L/M-, and S-cones (in green, red and blue color respectively). b , A W22 CB-iPSC6.2-derived retinal cup that has been exposed to 1 µM retinoic acid in W10-W14. c–j , Under this condition, photoreceptors expressing high levels of rod opsin in the entire cell body were first observed by W17 (c), significantly increasing in number and forming large patches by W21 (e–f). S-opsin expression could be observed in some rod-opsin-negative photoreceptors (d, f). High-magnification images of W21 retinal cups showing rods (g), S- (h) and L/M- (i) cones with a morphology and a topological organization similar to those of the in vivo retina 44 , including structures reminiscent of short, nascent outer segments (arrowheads). By W25, elongated structures resembling more developed outer segments were rarely observed (j, arrow). k–n , Transmission-EM analysis revealed the presence of an outer limiting membrane (*), inner segments (arrows), basal bodies (BB), connecting cilia (CC) and stacks of outer-segment-discs (demarcated by arrowheads). BB and CC presented the photoreceptor-specific microtubule arrangement consisting of 9×3+0 and 9×2+0 respectively (inserts in m). C, centriole. Scale bars: 50µm (b, c, and e); 10µm (d, f, and g–j); 0.5µm (k–n); 0.05 µm (m inserts).",
+    "s3_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC4370190.1/nihms592778f7.jpg",
+    "is_protocol_schematic": false,
+    "confirmed_factors": [
+      "Retinoic acid"
+    ]
+  },
+  {
+    "pmcid": "PMC4370190",
+    "doi": "10.1038/ncomms5047",
+    "organoid_type": "retinal",
+    "label": "Figure 8",
+    "caption": "hiPSC-derived photoreceptors expressed proteins of the phototransduction pathway and occasionally showed light response in vitro a , Diagram of rod phototransduction pathway in vivo . b , 3-D retinal cups (RCs) still maintained their structural organization in W27. c–i , Photoreceptors within the RCs showed expression of phototransduction proteins with the appropriate cellular distributions (OS: putative developing outer segments). j–l , Perforated-patch electrophysiological recordings from CB-iPSC6.2-derived photoreceptors, showing the flash-triggered responses (single trial) from two light-sensitive cells (j), the lack of flash response from one light-insensitive cell (k), and collected data from 13 cells (l). Cells were voltage-clamped at −50 mV. Inward current is negative. Flash (indicated by arrow) was 40 ms in duration and 2.46 × 10 5 µW cm −2 in intensity (white light from a mercury arc lamp). In panel l, open circles indicate individual cells, solid circles indicate mean values, and error bars indicate SD. Scale bars: 50µm (b and c); 5µm (d–i).",
+    "s3_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC4370190.1/nihms592778f8.jpg",
+    "is_protocol_schematic": false,
+    "confirmed_factors": []
+  },
+  {
+    "pmcid": "PMC12625545",
+    "doi": "10.1186/s13287-025-04771-y",
+    "organoid_type": "retinal",
+    "label": "Fig. 1",
+    "caption": "Replacement of Matrigel with xeno-free products designed to promote embryoid body attachment and outgrowth. A Schematic of our previously reported retinal differentiation protocol highlighting the animal derived reagent needing to be replaced (i.e., Matrigel coated dishes are used to adhere embryoid bodies at differentiation day 7). At differentiation day 7, embryoid bodies were attached to cell culture surfaces coated with 1 of 4 different substrates: Matrigel B , F , J , N ; or recombinant human laminin 111 (LN), Collagen IV (COL), and nidogen (NID) (C, G, K, O); CELLstart (D, H, L, P); recombinant human laminin 111 (LN111) ( E , I , M , Q ). Representative phase micrograph images of early retinal organoids at differentiation days 40 ( B – E ), 90 ( F – I ) and 180 ( J – O ). Immunohistochemical staining of mature retinal organoids at differentiation day 180 using antibodies targeted against the photoreceptor cell markers OTX2 (green) and recoverin (RCVRN) (red) ( N – Q ). N’-Q’ present high mag insets of the ONL demonstrating presence of OTX2 in all photoreceptor cells. DAPI (blue) was used as a nuclear counterstain. Scale bar = 1 mm ( B–I ), 400 μm ( J – M ) and 50 μm ( N – Q )",
+    "s3_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC12625545.1/13287_2025_4771_Fig1_HTML.jpg",
+    "is_protocol_schematic": true,
+    "confirmed_factors": []
+  },
+  {
+    "pmcid": "PMC12625545",
+    "doi": "10.1186/s13287-025-04771-y",
+    "organoid_type": "retinal",
+    "label": "Fig. 2",
+    "caption": "Replacement of FBS with xeno-free knockout serum replacement. A Schematic of our previously reported retinal differentiation protocol highlighting the animal derived reagent needing to be replaced (i.e., FBS is added to 3DRDM beginning at differentiation day 30). B – I Phase ( B , C & F , G ) and immunohistochemical analysis of retinal organoids at differentiation day 160 that were matured in either FBS ( B – E ) or KSR ( F–I ). For immunohistochemical analysis antibodies targeted against OTX2, RCVRN, and cone arrestin (ARR3) were used (nuclei were counterstained using DAPI). Scale bar = 400 μm ( A , F ), 200 μm ( C , G ) and 25 μm ( D , E , H , I )",
+    "s3_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC12625545.1/13287_2025_4771_Fig2_HTML.jpg",
+    "is_protocol_schematic": true,
+    "confirmed_factors": []
+  },
+  {
+    "pmcid": "PMC12625545",
+    "doi": "10.1186/s13287-025-04771-y",
+    "organoid_type": "retinal",
+    "label": "Fig. 3",
+    "caption": "Reduced oxygen tension enhances reprograming efficiency of difficult to reprogram patient lines. A – D Patient derived dermal fibroblasts cultured at 20% oxygen tension were transduced with sendai viral vectors driving expression of OCT4, SOX2, KLF4 and C-MYC (CytoTune2). At 5 days post-transduction cells were passaged at a density of ~ 2,000 cells per cm 2 into two separate LN521 coated 10 cm cell culture dishes. At 7 days post-transduction one plate of cells was cultured at 5% oxygen tension and the other was cultured at 20% oxygen tension. Plates were imaged every other day using Cell X platform beginning on day 7 (A − 5% O2; B − 20% O2) and continued through day 21 (C − 5% O2; D − 20% O2). ( E-G ) The number ( F ) and diameter ( E , G ) of iPSC colonies present in the entire plate was determined using automated iPSC colony detection and segmentation software. Error bars represent standard error of the mean. Scale bar = 1000 μm",
+    "s3_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC12625545.1/13287_2025_4771_Fig3_HTML.jpg",
+    "is_protocol_schematic": false,
+    "confirmed_factors": []
+  },
+  {
+    "pmcid": "PMC12625545",
+    "doi": "10.1186/s13287-025-04771-y",
+    "organoid_type": "retinal",
+    "label": "Fig. 4",
+    "caption": "Retinal differentiation of iPSCs at 5 or 20% oxygen. A Schematic of the cGMP-compliant retinal differentiation protocol. B – K : Representative micrographs of day 0 iPSCs ( B , G ), day 7 EBs ( C , H ), day 30 attached optic vesicles ( D , I ) and day 70 lifted retinal organoids (E, J, F & K). Immunohistochemical staining of retinal organoids at day 70 ( F , K ) for the photoreceptor cell markers OTX2 (green) and RCVRN (red). DAPI (blue) was used as a nuclear counterstain. L-M TaqMan hPSC Scorecard analysis comparing iPSCs (L) and day 7 embryoid bodies ( M ) at 5% or 20% oxygen. ( N ) Concentration of RNA isolated from day 7 embryoid bodies generated and cultured at 5% or 20% oxygen. Error bars represent standard error of the mean from 3 independent experiments. Scale bar = 400 μm ( B , G ), 1 mm ( C – E and H – J ) and 50 μm ( F , H ). Significance was determined using the two-tailed Student’s t-test. * p <.05",
+    "s3_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC12625545.1/13287_2025_4771_Fig4_HTML.jpg",
+    "is_protocol_schematic": true,
+    "confirmed_factors": []
+  },
+  {
+    "pmcid": "PMC12625545",
+    "doi": "10.1186/s13287-025-04771-y",
+    "organoid_type": "retinal",
+    "label": "Fig. 5",
+    "caption": "Xenotransplanted human iPSC-derived retinal cells take residence in the subretinal space of immunosuppressed Pde6b -null rats at 3-days post-injection. A – F Immunohistochemical analysis of rat retinas at 3 days following subretinal injection of clinical grade human iPSC-derived retinal cells. Antibodies targeting the human nuclear antigen (HNA) ( A - E , used to identify donor cells of human origin), RCVRN ( B - photoreceptor cell marker), OTX2 ( C - photoreceptor and bipolar cell marker), calretinin ( D - ganglion/amacrine cell marker), PKCα ( E & F - bipolar cell marker) and CRALBP ( F - RPE cell marker) were used. Representative panoramic image displaying the extent of the retinal transplant ( A ). Dashed white boxes demarcate areas of higher magnification displayed below the panoramic (i, ii, and iii). G H & E staining demonstrating presence of pigmented donor RPE cells present in the graft. DAPI (blue) was used as a nuclear counterstain. Abbreviations for retinal layers in A: Inner Nuclear Layer (INL), subretinal space (SR), Retinal Pigmented Epithelium (RPE). Scale bars = 200 μm (A) and 50 μm ( B – G )",
+    "s3_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC12625545.1/13287_2025_4771_Fig5_HTML.jpg",
+    "is_protocol_schematic": false,
+    "confirmed_factors": []
+  },
+  {
+    "pmcid": "PMC12625545",
+    "doi": "10.1186/s13287-025-04771-y",
+    "organoid_type": "retinal",
+    "label": "Fig. 6",
+    "caption": "Xenotransplanted human iPSC-derived photoreceptor precursor cells survive within the subretinal space of host degenerative rat retina at 30-days post-transplantation. A – D Immunohistochemical analysis of rat retinas at 30-days following subretinal injection of clinical grade human iPSC-derived retinal cells into Pde6b -null animals. Antibodies targeting the human nuclear antigen (HNA) ( A - C , used to identify donor cells of human origin), RCVRN ( B & D - photoreceptor cell marker), s-Opsin ( C – cone photoreceptor cell marker), PKCα ( E & F - bipolar cell marker), and synaptophysin ( D – synaptic marker) were used. E) Number of cells expressing the markers HNA and RCVRN. F) Percentage of donor cells expressing HNA only or HNA and recoverin. Abbreviations for retinal layers in D: Ganglion Cell Layer (GCL), Inner Plexiform Layer (IPL), Inner Nuclear Layer (INL) and Retinal Pigmented Epithelium (RPE). Scale bars = 200 μm ( A & D ) and 100 μm ( B & C ). Significance was determined using one-way ANOVA with post-hoc comparison. * p < .05, *** p < .001",
+    "s3_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC12625545.1/13287_2025_4771_Fig6_HTML.jpg",
+    "is_protocol_schematic": false,
+    "confirmed_factors": []
+  }
+]
