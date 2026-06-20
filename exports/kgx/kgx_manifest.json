@@ -1,32 +1,33 @@
 {
-  "generated_at": "2026-06-20T21:26:39.766078+00:00",
+  "generated_at": "2026-06-20T23:22:40.351385+00:00",
   "predicate": "biolink:mentions",
   "primary_knowledge_source": "infores:organoid-protocol-atlas",
   "knowledge_level": "prediction",
   "agent_type": "automated_agent",
-  "n_papers": 105,
-  "n_nodes": 216,
+  "n_papers": 463,
+  "n_nodes": 787,
   "n_nodes_by_category": {
-    "biolink:Publication": 105,
-    "biolink:Gene": 57,
-    "biolink:CellLine": 5,
-    "biolink:SmallMolecule": 42,
-    "biolink:MolecularMixture": 1,
-    "biolink:ChemicalEntity": 2,
-    "biolink:Protein": 4
+    "biolink:Publication": 463,
+    "biolink:SmallMolecule": 110,
+    "biolink:Gene": 152,
+    "biolink:ChemicalEntity": 16,
+    "biolink:CellLine": 25,
+    "biolink:Protein": 16,
+    "biolink:MolecularMixture": 5
   },
-  "n_edges": 489,
+  "n_edges": 2268,
   "n_edges_by_predicate": {
-    "biolink:mentions": 489
+    "biolink:mentions": 2268
   },
-  "n_review_items": 94,
+  "n_review_items": 445,
   "n_review_by_status": {
-    "not_found": 43,
-    "needs_review": 51
+    "needs_review": 298,
+    "not_found": 146,
+    "not_attempted": 1
   },
-  "entities_total": 592,
-  "entities_resolved": 498,
-  "resolved_rate": 0.8412,
+  "entities_total": 2767,
+  "entities_resolved": 2322,
+  "resolved_rate": 0.8392,
   "validation": {
     "ok": true,
     "toolkit": "vendored-allow-list",
