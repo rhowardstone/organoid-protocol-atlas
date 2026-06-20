@@ -32,7 +32,8 @@ sys.path.insert(0, str(REPO / "organoid_demo"))
 
 from schema import (  # noqa: E402
     BaseMedia, Concentration, Evidence, Matrix, OrganoidProtocol,
-    OrganoidType, Reagent, Reporting, SourceCells, SourceCellType,
+    OrganoidType, Passaging, Reagent, Reporting, SourceCells, SourceCellType,
+    TimelineStage,
 )
 
 BUNDLES = REPO / "data" / "evidence_bundles" / "local"
@@ -76,9 +77,18 @@ organoid_type (intestinal|gastric|cerebral|kidney|liver|lung|retinal|pancreatic|
 source_cells: {{cell_type (iPSC|ESC|adult_stem_cell|primary_tissue|other), species}},
 matrix: {{name}}, base_media: {{name}},
 signaling_factors: [{{name, role, value, unit, evidence_quote}}],
-media_supplements: [{{name}}].
+media_supplements: [{{name}}],
+passaging: {{method, split_ratio, interval_days}},
+timeline: [{{name, day_start, day_end}}],
+assay_endpoints: [string].
 RULES:
 - evidence_quote MUST be copied verbatim (exact substring) from the text.
+- passaging.method e.g. "mechanical" or "enzymatic (TrypLE)"; split_ratio e.g. "1:4";
+  interval_days an integer (days between passages). Omit a field if not stated.
+- timeline = ordered differentiation/maturation stages, e.g.
+  {{"name":"definitive endoderm","day_start":0,"day_end":3}}. Integers for days; omit if unknown.
+- assay_endpoints = how the organoid is validated (markers/readouts), e.g.
+  "Lgr5 expression", "PAX6 immunostaining", "forskolin swelling".
 - signaling_factors = morphogens / growth factors / pathway agonists or inhibitors
   (e.g. EGF, Noggin, R-spondin, Wnt3a, FGF4, FGF9, ActivinA, CHIR99021, SB431542, Y-27632).
 - viability supplements (B27, N2, FBS, nicotinamide, N-acetylcysteine, Pen/Strep) go in
@@ -131,9 +141,26 @@ def to_protocol(doi: str, m: dict, evidence: str) -> tuple[OrganoidProtocol, dic
         return Reagent(name=str(d.get("name", "")).strip(), role=d.get("role"),
                        concentration=conc, evidence=ev)
 
+    def _int(x):
+        try:
+            return int(x)
+        except (ValueError, TypeError):
+            return None
+
     sc = m.get("source_cells") or {}
     mx = m.get("matrix") or {}
     bm = m.get("base_media") or {}
+    pg = m.get("passaging") or {}
+    passaging = Passaging(
+        method=pg.get("method"), split_ratio=pg.get("split_ratio"),
+        interval_days=_int(pg.get("interval_days")),
+        reporting=(Reporting.REPORTED if (pg.get("method") or pg.get("split_ratio")
+                   or pg.get("interval_days")) else Reporting.NOT_REPORTED))
+    timeline = [TimelineStage(name=str(t["name"]).strip(), day_start=_int(t.get("day_start")),
+                              day_end=_int(t.get("day_end")))
+                for t in (m.get("timeline") or []) if isinstance(t, dict) and t.get("name")]
+    endpoints = [str(x).strip() for x in (m.get("assay_endpoints") or []) if x]
+
     proto = OrganoidProtocol(
         source_doi=doi,
         extractor_version=f"tier1_local::{MODEL}",
@@ -147,6 +174,9 @@ def to_protocol(doi: str, m: dict, evidence: str) -> tuple[OrganoidProtocol, dic
         signaling_factors=[reagent(d) for d in (m.get("signaling_factors") or []) if d.get("name")],
         media_supplements=[Reagent(name=str(s.get("name") if isinstance(s, dict) else s).strip())
                            for s in (m.get("media_supplements") or []) if s],
+        passaging=passaging,
+        timeline=timeline,
+        assay_endpoints=endpoints,
     )
     return proto, {"reagents": total, "grounded": grounded}
 
