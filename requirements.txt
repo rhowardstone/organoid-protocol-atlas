@@ -3,3 +3,4 @@ pydantic>=2          # schema / OrganoidProtocol contract
 lxml>=5              # Tier-0 JATS parsing (pipeline/tier0_extract.py)
 Pillow>=10           # Tier-2 figure handling (pipeline/tier2_vision.py)
 datasette>=0.65      # serve layer (serve/run.sh, public deploy) — was missing (issue #5)
+requests>=2.28      # Europe PMC discovery + SRI grounding HTTP (pipeline/discover_candidates.py, ground.py)

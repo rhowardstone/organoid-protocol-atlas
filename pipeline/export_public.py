@@ -30,14 +30,26 @@ OUT = REPO / "exports" / "public"
 TABLES = ("protocols", "reagents")
 
 
+def is_public_license(license: str | None) -> bool:
+    """Public-redistributable iff CC0 or CC-BY (incl. -SA) and NOT NonCommercial (NC)
+    or NoDerivatives (ND). Excludes author-manuscript / unknown / CC-BY-NC /
+    CC-BY-NC-ND / CC-BY-ND. (NC/ND content isn't freely redistributable for a public
+    Translator resource; ND also forbids the KG derivative.) Per codex PR #24 finding 2."""
+    s = (license or "").upper().strip().replace(" ", "-").replace("_", "-")
+    if "NC" in s or "ND" in s:
+        return False
+    return s.startswith("CC-BY") or s.startswith("CC0")
+
+
 def main():
     OUT.mkdir(parents=True, exist_ok=True)
     conn = sqlite3.connect(DB)
     conn.row_factory = sqlite3.Row
-    cc = [r[0] for r in conn.execute(
-        "SELECT pmcid FROM protocols WHERE license LIKE 'CC%'")]
+    cc = sorted({r["pmcid"] for r in conn.execute("SELECT pmcid, license FROM protocols")
+                 if is_public_license(r["license"])})
     ph = ",".join("?" * len(cc))
-    manifest = {"license_filter": "CC*", "n_papers": len(cc), "papers": sorted(cc), "tables": {}}
+    manifest = {"license_filter": "CC0/CC-BY (no NC/ND)", "n_papers": len(cc),
+                "papers": sorted(cc), "tables": {}}
     for t in TABLES:
         rows = conn.execute(f"SELECT * FROM {t} WHERE pmcid IN ({ph})", cc).fetchall()
         with open(OUT / f"{t}.jsonl", "w") as f:
