@@ -68,6 +68,27 @@ code, .col-doi, .col-pmcid { font-family: var(--mono); font-size: 0.85em; }
 .apa-badge.no { color: var(--bad); border-color: #fecaca; background: #fef2f2; }
 .apa-badge.fig { color: #7c3aed; border-color: #ddd6fe; background: #f5f3ff; }
 
+/* --- morphogen-grammar heatmap --- */
+.apa-hm-head { max-width: 1100px; margin: 1.5rem auto .4rem; padding: 0 1.2rem; }
+.apa-hm-head h1 { font-size: 1.7rem; margin: .2rem 0 .4rem; letter-spacing: -.01em; }
+.apa-sub { color: var(--muted); font-size: .92rem; line-height: 1.55; }
+.apa-hm-controls { display: flex; align-items: center; gap: 1rem; margin: .9rem 0 .2rem; flex-wrap: wrap; }
+.apa-hm-controls select { font-family: var(--font); padding: 3px 6px; border: 1px solid var(--border); border-radius: 6px; background: var(--paper); color: var(--ink); }
+.apa-hm-wrap { max-width: 1100px; margin: .6rem auto 3rem; padding: 0 1.2rem; overflow-x: auto; }
+.apa-hm { display: grid; grid-template-columns: minmax(120px, 180px) repeat(var(--cols), minmax(64px, 1fr)); gap: 3px; align-items: stretch; }
+.hm-cell { display: flex; align-items: center; justify-content: center; min-height: 30px; border-radius: 5px; font-size: .82rem; position: relative; }
+.hm-corner { background: transparent; }
+.hm-coltext { background: var(--paper-3); color: var(--ink); font-weight: 600; text-transform: capitalize; font-size: .78rem; padding: 4px; text-align: center; }
+.hm-coltext:hover { background: var(--accent); color: #fff; }
+.hm-rowtext { background: var(--paper); color: var(--ink); justify-content: flex-start; padding: 0 8px; font-weight: 500; font-size: .8rem; border: 1px solid var(--border); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.hm-rowtext:hover { border-color: var(--accent); color: var(--accent); }
+.hm-empty { background: var(--paper-2); border: 1px solid var(--border); }
+.hm-on { background: color-mix(in srgb, var(--accent) calc(var(--i) * 100%), #ffffff); color: #fff; font-weight: 600; font-family: var(--mono); transition: transform .08s; }
+.hm-on:hover { transform: scale(1.08); z-index: 2; box-shadow: 0 2px 8px rgba(14,116,144,.35); color: #fff; }
+.hm-on .hm-n { mix-blend-mode: normal; }
+.hm-on[style*="--i:0.1"], .hm-on[style*="--i:0.2"], .hm-on[style*="--i:0.3"] { color: var(--ink); }
+.hm-fig { position: absolute; top: -3px; right: -1px; font-size: .6rem; filter: drop-shadow(0 0 1px #fff); }
+
 /* ---------- Recipe card (protocol row page) ---------- */
 .apa-recipe { max-width: 980px; margin: 1.5rem auto; padding: 0 1.5rem; }
 .apa-recipe h1 { font-size: 1.7rem; margin: .2rem 0 .2rem; }

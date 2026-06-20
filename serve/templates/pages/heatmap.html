@@ -1,0 +1,103 @@
+{% extends "default:base.html" %}
+{% block title %}Morphogen grammar — Organoid Protocol Atlas{% endblock %}
+{% block body_class %}index{% endblock %}
+
+{% block content %}
+<div class="apa-topbar">
+  <span class="dot"></span> <a href="/">ORGANOID PROTOCOL ATLAS</a>
+  <span class="dot"></span> <a href="/atlas/protocols">Protocols</a>
+  <span class="dot"></span> <a href="/atlas/signaling_by_type">Compare</a>
+</div>
+
+<div class="apa-hm-head">
+  <div class="apa-kicker">The morphogen grammar</div>
+  <h1>Which signaling factors define each organoid system</h1>
+  <p class="apa-sub">Every cell is a canonical signaling factor used in a given organoid type, across the
+  corpus. Colour = number of protocols using it; <span class="apa-badge fig">📷</span> = the factor is also
+  confirmed in a paper's figure schematic (Tier-2 vision). Click a cell to see the protocols and doses.</p>
+  <div class="apa-hm-controls">
+    <label>Show factors used in at least
+      <select id="minTypes">
+        <option value="1">1 type</option>
+        <option value="2" selected>2 types</option>
+        <option value="3">3 types</option>
+        <option value="4">4 types</option>
+      </select>
+    </label>
+    <span id="hmStat" class="apa-sub"></span>
+  </div>
+</div>
+
+<div id="hmWrap" class="apa-hm-wrap"><p class="apa-sub">Loading matrix…</p></div>
+
+<script>
+const esc = s => (s==null?'':String(s)).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const j = async u => (await fetch(u)).json();
+
+let ROWS = [];   // raw signaling reagent rows
+let TYPES = [];
+
+function build(minTypes){
+  // matrix[canonical][type] = {n, confirmed, doses:Set}
+  const m = {}, typeSet = new Set();
+  for (const r of ROWS){
+    const c = r.canonical || r.name, t = r.organoid_type;
+    if (!c || !t) continue;
+    typeSet.add(t);
+    (m[c] = m[c] || {})[t] = m[c][t] || {n:0, confirmed:0, doses:new Set()};
+    const cell = m[c][t]; cell.n++;
+    if (r.figure_confirmed) cell.confirmed++;
+    if (r.value!=null){ const u=r.canonical_unit||r.unit||''; cell.doses.add(`${r.value}${u&&u!=='not stated'?' '+u:''}`); }
+  }
+  TYPES = [...typeSet].sort();
+  let rows = Object.entries(m).map(([c, byT]) => ({
+    canon: c,
+    nTypes: Object.keys(byT).length,
+    total: Object.values(byT).reduce((a,b)=>a+b.n,0),
+    byT,
+  }));
+  rows = rows.filter(r => r.nTypes >= minTypes)
+             .sort((a,b) => b.nTypes - a.nTypes || b.total - a.total || a.canon.localeCompare(b.canon));
+  return rows;
+}
+
+const maxN = rows => Math.max(1, ...rows.flatMap(r => Object.values(r.byT).map(c => c.n)));
+
+function render(minTypes){
+  const rows = build(minTypes);
+  const mN = maxN(rows);
+  document.getElementById('hmStat').textContent =
+    `${rows.length} factors × ${TYPES.length} organoid types`;
+
+  const head = `<div class="hm-cell hm-corner"></div>` +
+    TYPES.map(t => `<a class="hm-cell hm-coltext" href="/atlas/protocols?organoid_type__exact=${encodeURIComponent(t)}" title="${esc(t)} protocols">${esc(t)}</a>`).join('');
+
+  const body = rows.map(r => {
+    const label = `<a class="hm-cell hm-rowtext" href="/atlas/reagents?canonical__exact=${encodeURIComponent(r.canon)}" title="${esc(r.canon)} — used in ${r.nTypes} types">${esc(r.canon)}</a>`;
+    const cells = TYPES.map(t => {
+      const c = r.byT[t];
+      if (!c) return `<div class="hm-cell hm-empty"></div>`;
+      const intensity = 0.18 + 0.82 * (c.n / mN);
+      const doses = [...c.doses].slice(0,6).join(' · ') || 'dose not stated';
+      const fig = c.confirmed ? '<span class="hm-fig">📷</span>' : '';
+      const tip = `${r.canon} · ${t}\n${c.n} protocol${c.n>1?'s':''}${c.confirmed?` · ${c.confirmed} figure-confirmed`:''}\n${doses}`;
+      return `<a class="hm-cell hm-on" style="--i:${intensity.toFixed(3)}"
+        href="/atlas/reagents?canonical__exact=${encodeURIComponent(r.canon)}&organoid_type__exact=${encodeURIComponent(t)}"
+        title="${esc(tip)}"><span class="hm-n">${c.n}</span>${fig}</a>`;
+    }).join('');
+    return label + cells;
+  }).join('');
+
+  document.getElementById('hmWrap').innerHTML =
+    `<div class="apa-hm" style="--cols:${TYPES.length}">${head}${body}</div>`;
+}
+
+(async () => {
+  try {
+    ROWS = await j('/atlas/reagents.json?_shape=array&_size=max&kind__exact=signaling');
+  } catch(e){ document.getElementById('hmWrap').innerHTML = '<p>Could not load the matrix.</p>'; return; }
+  render(parseInt(document.getElementById('minTypes').value, 10));
+  document.getElementById('minTypes').addEventListener('change', e => render(parseInt(e.target.value,10)));
+})();
+</script>
+{% endblock %}

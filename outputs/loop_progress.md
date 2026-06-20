@@ -53,3 +53,19 @@
   don't merge "looks better"). Vision-broad outputs kept as local experimental artifacts.
 - Next: scale flagging beyond caption cues (some schematics have terse captions); consider
   Qwen2.5-VL for harder OCR; then frontend parity (#8: Q&A / heatmap / dark mode).
+
+## Iteration 6 — 2026-06-20 — Morphogen-grammar heatmap (frontend parity #8, part 1)
+- Built /heatmap: a Datasette custom page (serve/templates/pages/heatmap.html) rendering
+  the signature view — canonical signaling factor (rows) × organoid type (cols), colour =
+  #protocols, 📷 = figure-confirmed (Tier-2). Client-side aggregation from the reagents JSON
+  API; cells link to the filtered reagents view; row/col headers drill down; a "used in ≥N
+  types" control. Styled in serve/static/atlas.css (CSS grid + color-mix intensity ramp),
+  on-brand with the existing theme. Linked from index topbar + a feature card.
+- USING the viz surfaced a real normalization bug: "Retinoic acid" and "all-trans retinoic
+  acid" were separate rows. Fixed in normalize.CANON (alltransretinoicacid/atra -> Retinoic
+  acid). Rebuilt: 65 -> 64 canonical signaling; Retinoic acid now unifies 4 surface forms.
+- The grammar is legible at a glance: Noggin (7/8), Wnt3a/Activin A/EGF (6), CHIR/FGF2/
+  R-spondin1/Y-27632 (5) are near-universal; FGF10/A83-01 cluster on endodermal systems;
+  SB431542/SAG on neural. Tests green.
+- Next (frontend parity cont.): dark mode toggle, then a grounded AI Q&A ask-proxy on the
+  local model (must cite evidence spans — missing evidence beats false evidence).
