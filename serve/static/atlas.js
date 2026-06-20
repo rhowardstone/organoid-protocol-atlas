@@ -1,3 +1,13 @@
+// Replace the default Datasette favicon with the organoid-cluster icon, site-wide.
+(function () {
+  document.querySelectorAll("link[rel~='icon']").forEach((l) => l.remove());
+  const link = document.createElement("link");
+  link.rel = "icon";
+  link.type = "image/svg+xml";
+  link.href = "/static/favicon.svg";
+  document.head.appendChild(link);
+})();
+
 // Global theme toggle (dark / light), persisted in localStorage. Loaded on every
 // Datasette page via extra_js_urls. Applies before paint where possible to avoid flash.
 (function () {
