@@ -117,3 +117,26 @@
   synthetic text — CI-safe, no corpus needed). Full suite green (7).
 - Next: build Tier-3 fetch+extract+attribute on the verified-resolvable subset (provenance =
   the CITED paper's DOI, clearly labeled "inherited via reference"); then design polish #2.
+
+## Iteration 9 — 2026-06-20 — Tier-3 resolve+verify; honest STOP on auto-ingestion (#9)
+- Built pipeline/tier3_resolve.py: resolves NAMED culture-protocol delegations to the cited
+  paper's PMCID via a FIELDED Europe PMC query (AUTH:/PUB_YEAR:), then VERIFIES before trust.
+- Finding 1 — named citations are rare here: only PMC6376275 (lung/EMBO) uses parenthesized
+  "(Author, year)" form (Sato 2011, Dekkers 2013, Koo 2011); the rest use numbered superscript
+  refs, which need fragile marker->reference-list mapping and are deliberately NOT auto-resolved
+  (would risk false provenance). Also fixed an nbsp/space bug in the named-citation regex
+  ("Sato et\xa0al , 2011 )").
+- Finding 2 — auto-resolution is UNSAFE (the important one): my first verification gate
+  (author+year+loose topic) resolved "Koo 2011" to a MAMMARY-gland paper. Strengthened the gate
+  to require an organoid/intestinal/Lgr5/crypt term in the TITLE; Koo now correctly falls to
+  UNVERIFIED, Sato->Lgr5/crypt paper and Dekkers->CFTR-organoid paper verify. But residual
+  ambiguity remains (two valid "Sato 2011" organoid papers exist; the resolver can't know which
+  one the authors cited).
+- DECISION (STOP-AND-ASK per invariants): Tier-3 output is a HUMAN-REVIEW QUEUE
+  (outputs/tier3/resolved.json), NOT auto-ingested into the authoritative KG. Auto-attributing
+  an inherited protocol to a resolved DOI would fabricate provenance given the Koo-class false
+  positives + Sato-class ambiguity. Recommend: surface "this paper delegates its protocol to
+  [ref]" as a flagged provenance note for the delegating papers, and only ingest inherited
+  protocols after human confirmation. Needs supervisor OK before any KG ingestion.
+- Committed detection + resolve/verify + 8 CI-safe unit tests (gating logic, no network/corpus).
+  Full suite green (10).

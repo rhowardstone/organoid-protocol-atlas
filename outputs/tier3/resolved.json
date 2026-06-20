@@ -1,0 +1,44 @@
+{
+  "n": 3,
+  "verified": 2,
+  "fetchable_oa": 1,
+  "resolved": [
+    {
+      "source_pmcid": "PMC6376275",
+      "source_organoid_type": "lung",
+      "cited_author": "Sato",
+      "cited_year": "2011",
+      "context": "ted. Intestinal organoids were cultured as previously described (Sato et al , 2011 ). Unless specified, airway organoids were analyze",
+      "cited_pmcid": "PMC3547360",
+      "cited_doi": "10.1038/nature09637",
+      "cited_title": "Paneth cells constitute the niche for Lgr5 stem cells in intestinal crypts.",
+      "cited_authors": "Sato T, van Es JH, Snippert HJ, Stange DE, Vries RG, van den",
+      "cited_journal": "Nature",
+      "is_open_access": false,
+      "verified": true
+    },
+    {
+      "source_pmcid": "PMC6376275",
+      "source_organoid_type": "lung",
+      "cited_author": "Dekkers",
+      "cited_year": "2013",
+      "context": "Organoid swelling assays were performed as previously described (Dekkers et al , 2013 ). Intestinal organoids were cultured for 7 day",
+      "cited_pmcid": "PMC3915567",
+      "cited_doi": "10.4161/rdis.27112",
+      "cited_title": "Novel opportunities for CFTR-targeting drug development using organoids.",
+      "cited_authors": "Dekkers JF, van der Ent CK, Beekman JM.",
+      "cited_journal": "Rare Dis",
+      "is_open_access": true,
+      "verified": true
+    },
+    {
+      "source_pmcid": "PMC6376275",
+      "source_organoid_type": "lung",
+      "cited_author": "Koo",
+      "cited_year": "2011",
+      "context": "us was generated and organoids infected as previously described (Koo et al , 2011 ). Infected organoids were selected with 1 \u03bcg ml \u22121",
+      "verified": false,
+      "note": "no verified Europe PMC match"
+    }
+  ]
+}
