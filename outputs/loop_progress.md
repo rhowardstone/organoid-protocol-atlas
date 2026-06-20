@@ -242,3 +242,18 @@
 - Now ranges merge correctly: e.g. gastric EGF 50–100 ng/mL (med 75) across McCracken+Broda;
   cerebral SB431542 5–10 µM (med 7.5); lung FGF10 100–500 ng/mL. Kidney CHIR honestly shows
   "+1 other" (only 1 µM value; the other is the flagged 10 mM suspect). +5 normalize tests (17).
+
+## Iteration 18 — 2026-06-20 — Supervisor workflow live; schema v0.3 PR-A opened
+- Supervisor (codex+GitHub) now active. Adopted the gate: non-trivial changes via branch+PR;
+  each iteration first pulls supervisor notes from GitHub (issues/PRs). Recorded in memory
+  (project-supervisor-workflow.md).
+- Responded to issue #2 (schema v0.3 proposal) and #3 (Tier-3 policy ack). User approved both.
+- Opened PR #4 (branch schema-v0.3-fields) — schema v0.3 PR-A, CONTRACT ONLY:
+  CultureConditions{temperature_c,co2_pct,o2_pct} + SourceCells.rrid + Reporting.NOT_EXTRACTED
+  (honest-unknown default) + schema_version 0.2->0.3. No extraction/KG/UI wiring. Acceptance
+  gate unchanged (eval baseline still passes); +5 contract tests (22 total). Awaiting review.
+- Earlier this turn (pre-gate, on master): Tier-1 num_ctx=16384 + 24k window fix (Broda 6->10
+  grounded factors; grounding 0.817).
+- Next (when PR #4 merges -> PR-B extraction wiring + eval gold fixtures); meanwhile the
+  Tier-3 states(verified|unresolved|rejected)+unverified-delegation-UI-note PR (issue #3, no
+  ingestion).
