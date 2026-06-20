@@ -30,7 +30,7 @@ import csv
 import hashlib
 import json
 import sys
-from concurrent.futures import ThreadPoolExecutor
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -156,20 +156,18 @@ def run_batch(cands, min_grounding, dry_run, workers=1):
     new_rows) and all writes (stage_accepted's per-paper bundle/pred, the corpus append in
     main) happen single-threaded after the pool drains. The dry-run write boundary is
     preserved at any worker count: stage_accepted still writes nothing under dry_run."""
-    if workers > 1:
-        print(f"extracting with {workers} concurrent workers", flush=True)
-        with ThreadPoolExecutor(max_workers=workers) as ex:
-            results = list(ex.map(process_one, cands))
-    else:
-        results = [process_one(c) for c in cands]
-
     accepted, rejected, new_rows = [], [], []
-    for r in results:
+
+    def handle(r):
+        """Apply QC + stage one result. Runs single-threaded (in the iterator that
+        drains the pool), so list mutation and file writes are race-free; streaming
+        means each paper's bundle/prediction is persisted as soon as it finishes
+        (crash-safe over long batches) and progress is logged live."""
         reason = verdict(r, min_grounding)
         if reason:
             rejected.append({"pmcid": r["pmcid"], "reason": reason})
             print(f"  REJECT {r['pmcid']}: {reason}", flush=True)
-            continue
+            return
         row = stage_accepted(r, dry_run)
         if row:
             new_rows.append(row)
@@ -177,6 +175,15 @@ def run_batch(cands, min_grounding, dry_run, workers=1):
                                            "grounded", "grounding_rate", "methods_chars")})
         print(f"  ACCEPT {r['pmcid']} ({r['organoid_type']}): {r['n_signaling']} sig, "
               f"grounding {r['grounding_rate']}", flush=True)
+
+    if workers > 1:
+        print(f"extracting with {workers} concurrent workers", flush=True)
+        with ThreadPoolExecutor(max_workers=workers) as ex:
+            for fut in as_completed([ex.submit(process_one, c) for c in cands]):
+                handle(fut.result())
+    else:
+        for c in cands:
+            handle(process_one(c))
 
     # Deterministic output regardless of completion order under concurrency.
     accepted.sort(key=lambda a: a["pmcid"])
