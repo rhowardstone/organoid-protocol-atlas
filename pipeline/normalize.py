@@ -55,7 +55,8 @@ CANON = {
     "retinoicacid": "Retinoic acid", "ra": "Retinoic acid",
     "alltransretinoicacid": "Retinoic acid", "atra": "Retinoic acid",
     "dexamethasone": "Dexamethasone", "forskolin": "Forskolin",
-    "pge2": "PGE2", "prostaglandine2": "PGE2", "heparin": "Heparin",
+    "pge2": "PGE2", "prostaglandine2": "PGE2", "prostaglandinee2": "PGE2",
+    "prostaglandine2pge2": "PGE2", "heparin": "Heparin",
     "sag": "SAG", "purmorphamine": "Purmorphamine", "dapt": "DAPT", "shh": "SHH",
 }
 

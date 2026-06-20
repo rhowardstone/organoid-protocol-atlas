@@ -1,0 +1,86 @@
+{% extends "default:base.html" %}
+{% block title %}Consensus recipes — Organoid Protocol Atlas{% endblock %}
+{% block body_class %}index{% endblock %}
+
+{% block content %}
+<div class="apa-topbar">
+  <span class="dot"></span> <a href="/">ORGANOID PROTOCOL ATLAS</a>
+  <span class="dot"></span> <a href="/heatmap">Morphogen grammar</a>
+  <span class="dot"></span> <a href="/ask">Ask</a>
+</div>
+
+<div class="apa-hm-head">
+  <div class="apa-kicker">Consensus recipes</div>
+  <h1>The canonical recipe for each organoid system</h1>
+  <p class="apa-sub">For every organoid type, how often each signaling factor appears across that
+  type's protocols — the <strong>core cocktail</strong> (used by most protocols) versus
+  <strong>variable</strong> additions. Frequencies are computed from the corpus, not asserted;
+  each factor links to its evidence. Types with only one or two protocols are labelled as such —
+  a single paper is not a consensus.</p>
+</div>
+
+<div id="consensus" class="apa-cons-wrap"><p class="apa-sub">Loading…</p></div>
+
+<script>
+const esc = s => (s==null?'':String(s)).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const j = async u => (await fetch(u)).json();
+
+function modalDose(doses){
+  if(!doses.length) return '';
+  const c = {}; for(const d of doses) c[d]=(c[d]||0)+1;
+  const best = Object.entries(c).sort((a,b)=>b[1]-a[1]);
+  const uniq = Object.keys(c).length;
+  return best[0][0] + (uniq>1 ? ` <span class="cons-varies">(+${uniq-1} other${uniq>2?'s':''})</span>` : '');
+}
+
+(async () => {
+  let protos, sig;
+  try {
+    protos = await j('/atlas/protocols.json?_shape=array&_size=max');
+    sig = await j('/atlas/reagents.json?_shape=array&_size=max&kind__exact=signaling');
+  } catch(e){ document.getElementById('consensus').innerHTML='<p>Could not load.</p>'; return; }
+
+  const nByType = {};
+  for(const p of protos) nByType[p.organoid_type]=(nByType[p.organoid_type]||0)+1;
+
+  // per type -> per canonical -> {pmcids:Set, doses:[], fig:bool}
+  const m = {};
+  for(const r of sig){
+    const t=r.organoid_type, c=r.canonical||r.name; if(!t||!c) continue;
+    (m[t]=m[t]||{}); (m[t][c]=m[t][c]||{pmcids:new Set(),doses:[],fig:false});
+    const cell=m[t][c]; cell.pmcids.add(r.pmcid);
+    if(r.figure_confirmed) cell.fig=true;
+    if(r.value!=null){ const u=r.canonical_unit||r.unit||''; cell.doses.push(`${r.value}${u&&u!=='not stated'?' '+u:''}`); }
+  }
+
+  const types = Object.keys(m).sort((a,b)=>(nByType[b]||0)-(nByType[a]||0)||a.localeCompare(b));
+  let html='';
+  for(const t of types){
+    const n = nByType[t]||0;
+    const rows = Object.entries(m[t]).map(([c,d])=>({c, k:d.pmcids.size, doses:d.doses, fig:d.fig}))
+      .sort((a,b)=>b.k-a.k || a.c.localeCompare(b.c));
+    const core = rows.filter(r=>r.k/n>=0.5);
+    const variable = rows.filter(r=>r.k/n<0.5);
+    const note = n<=1 ? `<span class="cons-warn">single protocol — not a consensus</span>`
+               : n===2 ? `<span class="cons-warn">only ${n} protocols — provisional</span>`
+               : `${core.length} core · ${variable.length} variable factors`;
+
+    const rowHtml = r => {
+      const pct = Math.round(100*r.k/n);
+      return `<div class="cons-row">
+        <a class="cons-name" href="/atlas/reagents?canonical__exact=${encodeURIComponent(r.c)}&organoid_type__exact=${encodeURIComponent(t)}">${esc(r.c)}</a>${r.fig?' <span class="apa-badge fig">📷</span>':''}
+        <div class="cons-bar"><div class="cons-fill" style="width:${pct}%"></div><span class="cons-pct">${r.k}/${n}</span></div>
+        <div class="cons-dose">${modalDose(r.doses)}</div>
+      </div>`;
+    };
+
+    html += `<section class="apa-cons-card">
+      <div class="cons-head"><h2>${esc(t)} organoid</h2><span class="cons-meta">${note}</span></div>
+      ${core.length?`<div class="cons-grouplabel">Core cocktail</div>${core.map(rowHtml).join('')}`:''}
+      ${variable.length?`<div class="cons-grouplabel variable">Variable additions</div>${variable.map(rowHtml).join('')}`:''}
+    </section>`;
+  }
+  document.getElementById('consensus').innerHTML = html;
+})();
+</script>
+{% endblock %}

@@ -150,6 +150,24 @@ code, .col-doi, .col-pmcid { font-family: var(--mono); font-size: 0.85em; }
 .src-quote { color: var(--ink); font-size: .9rem; line-height: 1.5; margin: .3rem 0; opacity: .85; }
 .src-doi { font-family: var(--mono); font-size: .78rem; }
 
+/* --- Consensus recipes --- */
+.apa-cons-wrap { max-width: 1100px; margin: .6rem auto 3rem; padding: 0 1.2rem;
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); gap: 1rem; align-items: start; }
+.apa-cons-card { background: var(--paper); border: 1px solid var(--border); border-radius: 12px; padding: 1rem 1.1rem; }
+.cons-head { display: flex; align-items: baseline; justify-content: space-between; gap: .5rem; margin-bottom: .6rem; border-bottom: 1px solid var(--border); padding-bottom: .5rem; }
+.cons-head h2 { font-size: 1.15rem; margin: 0; text-transform: capitalize; }
+.cons-meta { font-size: .74rem; color: var(--muted); font-family: var(--mono); }
+.cons-warn { color: var(--warn); }
+.cons-grouplabel { font-family: var(--mono); font-size: .68rem; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); margin: .7rem 0 .35rem; }
+.cons-grouplabel.variable { color: var(--muted); }
+.cons-row { display: grid; grid-template-columns: minmax(90px, 1.1fr) 1.3fr auto; align-items: center; gap: .5rem; padding: 2px 0; font-size: .85rem; }
+.cons-name { font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.cons-bar { position: relative; background: var(--paper-3); border-radius: 4px; height: 16px; overflow: hidden; }
+.cons-fill { position: absolute; inset: 0 auto 0 0; background: color-mix(in srgb, var(--accent) 70%, transparent); border-radius: 4px; }
+.cons-pct { position: absolute; right: 5px; top: 0; font-size: .68rem; font-family: var(--mono); line-height: 16px; color: var(--ink); }
+.cons-dose { font-family: var(--mono); font-size: .72rem; color: var(--muted); text-align: right; white-space: nowrap; }
+.cons-varies { opacity: .7; }
+
 /* ---------- Recipe card (protocol row page) ---------- */
 .apa-recipe { max-width: 980px; margin: 1.5rem auto; padding: 0 1.5rem; }
 .apa-recipe h1 { font-size: 1.7rem; margin: .2rem 0 .2rem; }

@@ -151,3 +151,16 @@
   to var(--ink); verified computed colour now light (rgb(230,237,243)) with yellow highlights
   still legible. Datasette table views + custom pages otherwise theme cleanly.
 - Tests green.
+
+## Iteration 11 — 2026-06-20 — NEW category: consensus recipes (/consensus) (#11)
+- Built /consensus: per organoid type, the canonical recipe synthesized from the corpus —
+  each canonical signaling factor's usage frequency across that type's protocols, split into
+  CORE cocktail (used by >=50%) vs VARIABLE additions, with the modal dose (+N others) and a
+  link to the evidence. Client-side aggregation from protocols + signaling reagents JSON.
+- Grounded + honest: shows k/n per factor; small-n types are labelled, not overstated
+  ("single protocol — not a consensus" for retinal n=1; "only 2 protocols — provisional" for
+  gastric). Verified content: intestinal core = EGF/Noggin/R-spondin1 (3/3) + Wnt3a (2/3) —
+  the canonical ENR cocktail. Works in light + dark.
+- Normalization win surfaced by the view: "Prostaglandine E2" now collapses to PGE2 (CANON);
+  64 -> 63 canonical signaling factors. Rebuilt KG. Tests green (10).
+- Linked from index topbar + a feature card.
