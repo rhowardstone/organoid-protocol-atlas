@@ -72,7 +72,7 @@ def norm_unit(u: str | None) -> str | None:
     return UNIT_CANON.get(u.strip().lower(), u.strip())
 
 
-def build_evidence_text(bundle: dict, cap: int = 9000) -> str:
+def build_evidence_text(bundle: dict, cap: int = 24000) -> str:
     parts = [bundle.get("methods_text", "")]
     for f in bundle.get("figures", []):
         if f.get("caption"):
@@ -120,8 +120,12 @@ TEXT:
 def call_ollama(prompt: str) -> dict:
     req = urllib.request.Request(
         OLLAMA,
+        # num_ctx must be set explicitly — ollama's default context (~4k) silently
+        # truncates long protocol papers (e.g. Broda 40k methods), losing the
+        # concentrations stated in later steps. 16k tokens covers the 24k-char window.
         data=json.dumps({"model": MODEL, "prompt": prompt, "format": "json",
-                         "stream": False, "options": {"temperature": 0}}).encode(),
+                         "stream": False,
+                         "options": {"temperature": 0, "num_ctx": 16384}}).encode(),
         headers={"Content-Type": "application/json"},
     )
     resp = json.load(urllib.request.urlopen(req, timeout=600))["response"]

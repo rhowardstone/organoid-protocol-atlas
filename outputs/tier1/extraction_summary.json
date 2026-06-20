@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-20T17:07:44+00:00",
+  "generated_at": "2026-06-20T17:57:42+00:00",
   "model": "gemma3:12b",
   "papers": 28,
   "rows": [
@@ -326,19 +326,6 @@
       "grounding_rate": 1.0
     },
     {
-      "pmcid": "PMC7951181",
-      "doi": "10.1038/s41596-018-0080-z",
-      "organoid_type": "gastric",
-      "model": "gemma3:12b",
-      "n_signaling_factors": 6,
-      "n_supplements": 0,
-      "matrix": "hESC-qualified Matrigel",
-      "base_media": "mTeSR1 medium",
-      "reagents_grounded": 6,
-      "reagents_total": 6,
-      "grounding_rate": 1.0
-    },
-    {
       "pmcid": "PMC12625545",
       "doi": "10.1186/s13287-025-04771-y",
       "organoid_type": "retinal",
@@ -350,6 +337,19 @@
       "reagents_grounded": 1,
       "reagents_total": 2,
       "grounding_rate": 0.5
+    },
+    {
+      "pmcid": "PMC7951181",
+      "doi": "10.1038/s41596-018-0080-z",
+      "organoid_type": "gastric",
+      "model": "gemma3:12b",
+      "n_signaling_factors": 10,
+      "n_supplements": 6,
+      "matrix": "Matrigel",
+      "base_media": "mTeSR1",
+      "reagents_grounded": 10,
+      "reagents_total": 10,
+      "grounding_rate": 1.0
     }
   ]
 }
