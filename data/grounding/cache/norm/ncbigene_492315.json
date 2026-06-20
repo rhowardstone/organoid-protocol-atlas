@@ -1,0 +1,179 @@
+{
+  "NCBIGene:492315": {
+    "id": {
+      "identifier": "NCBIGene:492315",
+      "label": "BMP7"
+    },
+    "equivalent_identifiers": [
+      {
+        "identifier": "NCBIGene:492315",
+        "label": "BMP7",
+        "taxa": [
+          "NCBITaxon:9823"
+        ]
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCG00000007501"
+      },
+      {
+        "identifier": "RGD:14019134"
+      },
+      {
+        "identifier": "UniProtKB:A0A8D0PUH2",
+        "label": "A0A8D0PUH2_PIG Bone morphogenetic protein 7 (trembl)",
+        "taxa": [
+          "NCBITaxon:9823"
+        ]
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00015039204"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00015039204.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00025046289"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00025046289.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00030030767"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00030030767.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00040004457"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00040004457.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00045022813"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00045022813.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00050023934"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00050023934.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00055014399"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00055014399.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00060024102"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00060024102.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00065042978"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00065042978.1"
+      },
+      {
+        "identifier": "UniProtKB:A0A8D0Q1I3",
+        "label": "A0A8D0Q1I3_PIG Bone morphogenetic protein 7 (trembl)",
+        "taxa": [
+          "NCBITaxon:9823"
+        ]
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00015039164"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00015039164.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00025046277"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00025046277.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00045022771"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00045022771.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00050023933"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00050023933.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00055014381"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00055014381.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00060024101"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00060024101.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00065042976"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00065042976.1"
+      },
+      {
+        "identifier": "UniProtKB:A5GFN1",
+        "label": "A5GFN1_PIG Bone morphogenetic protein 7 (trembl)",
+        "taxa": [
+          "NCBITaxon:9823"
+        ]
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00000029077"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00000029077.1"
+      },
+      {
+        "identifier": "UniProtKB:A5GFN2",
+        "label": "A5GFN2_PIG Bone morphogenetic protein 7 (trembl)",
+        "taxa": [
+          "NCBITaxon:9823"
+        ]
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00000007993"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00000007993.5"
+      }
+    ],
+    "taxa": [
+      "NCBITaxon:9823"
+    ],
+    "type": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ]
+  }
+}

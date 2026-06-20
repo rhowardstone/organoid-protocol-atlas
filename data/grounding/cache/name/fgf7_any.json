@@ -1,0 +1,750 @@
+[
+  {
+    "curie": "NCBIGene:397281",
+    "label": "FGF7",
+    "highlighting": {},
+    "synonyms": [
+      "kgf",
+      "FGF7",
+      "keratinocyte growth factor",
+      "fibroblast growth factor 7",
+      "A0A287A969_PIG Fibroblast growth factor (trembl)",
+      "A0A8D0MQA4_PIG Fibroblast growth factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9823"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 4469.7466,
+    "clique_identifier_count": 29
+  },
+  {
+    "curie": "NCBIGene:403915",
+    "label": "FGF7",
+    "highlighting": {},
+    "synonyms": [
+      "KGF",
+      "FGF7",
+      "FGF-7",
+      "HBGF-7",
+      "keratinocyte growth factor",
+      "fibroblast growth factor 7",
+      "heparin-binding growth factor 7",
+      "FGF7_CANLF Fibroblast growth factor 7 (sprot)"
+    ],
+    "taxa": [
+      "NCBITaxon:9615"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 3370.7756,
+    "clique_identifier_count": 12
+  },
+  {
+    "curie": "NCBIGene:14178",
+    "label": "Fgf7",
+    "highlighting": {},
+    "synonyms": [
+      "Kgf",
+      "Fgf7",
+      "FGF-7",
+      "Fgf5b",
+      "HBGF-7",
+      "Keratinocyte growth factor",
+      "fibroblast growth factor 7",
+      "fibroblast growth factor 5b",
+      "heparin-binding growth factor 7",
+      "Fgf-7",
+      "mFGF7",
+      "KGF (mouse)",
+      "FGF-7 (mouse)",
+      "HBGF-7 (mouse)",
+      "keratinocyte growth factor (mouse)",
+      "fibroblast growth factor 7 (mouse)",
+      "heparin-binding growth factor 7 (mouse)",
+      "FGF7_MOUSE Fibroblast growth factor 7 (sprot)",
+      "Q544I6_MOUSE Fibroblast growth factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:10090"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 3151.2385,
+    "clique_identifier_count": 10
+  },
+  {
+    "curie": "NCBIGene:2252",
+    "label": "FGF7",
+    "highlighting": {},
+    "synonyms": [
+      "KGF",
+      "FGF7",
+      "FGF-7",
+      "HBGF-7",
+      "FGF7 gene",
+      "FGF7 Gene",
+      "FIBROBLAST GROWTH FACTOR 7",
+      "keratinocyte growth factor",
+      "KERATINOCYTE GROWTH FACTOR",
+      "fibroblast growth factor 7",
+      "heparin-binding growth factor 7",
+      "fibroblast growth factor 7 (keratinocyte growth factor)",
+      "Fibroblast Growth Factor 7 (Keratinocyte Growth Factor) Gene",
+      "hFGF7",
+      "FGF-7 (human)",
+      "HBGF-7 (human)",
+      "KGF protein, human",
+      "FGF7 protein, human",
+      "FGF-7 protein, human",
+      "SDGF-3 protein, human",
+      "Fibroblast Growth Factor 7",
+      "Keratinocyte Growth Factor",
+      "Heparin-Binding Growth Factor 7",
+      "keratinocyte growth factor, human",
+      "fibroblast growth factor 7, human",
+      "fibroblast growth factor 7 (human)",
+      "keratinocyte growth factor (human)",
+      "heparin-binding growth factor 7 (human)",
+      "FGF7_HUMAN Fibroblast growth factor 7 (sprot)"
+    ],
+    "taxa": [
+      "NCBITaxon:9606"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 3025.9849,
+    "clique_identifier_count": 9
+  },
+  {
+    "curie": "NCBIGene:29348",
+    "label": "Fgf7",
+    "highlighting": {},
+    "synonyms": [
+      "Kgf",
+      "Fgf7",
+      "FGF-7",
+      "Fgf5b",
+      "HBGF-7",
+      "KGF/FGF7",
+      "fibroblast growth factor 7",
+      "fibroblast growth factor 5b",
+      "heparin-binding growth factor 7",
+      "Keratinocyte Growth Factor Fgf-7",
+      "A6HPY1_RAT Fibroblast growth factor (trembl)",
+      "G3V775_RAT Fibroblast growth factor (trembl)",
+      "Fgf-7",
+      "rFGF7",
+      "FGF-7 (rat)",
+      "HBGF-7 (rat)",
+      "fibroblast growth factor 7 (rat)",
+      "keratinocyte growth factor (rat)",
+      "heparin-binding growth factor 7 (rat)",
+      "FGF7_RAT Fibroblast growth factor 7 (sprot)"
+    ],
+    "taxa": [
+      "NCBITaxon:10116"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 3025.9849,
+    "clique_identifier_count": 9
+  },
+  {
+    "curie": "NCBIGene:100550759",
+    "label": "FGF7",
+    "highlighting": {},
+    "synonyms": [
+      "FGF7",
+      "fibroblast growth factor 7",
+      "A0A803YL51_MELGA Fibroblast growth factor (trembl)",
+      "G1N5T3_MELGA Fibroblast growth factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9103"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2887.5234,
+    "clique_identifier_count": 8
+  },
+  {
+    "curie": "NCBIGene:493181",
+    "label": "fgf7",
+    "highlighting": {},
+    "synonyms": [
+      "fgf7",
+      "fibroblast growth factor 7",
+      "B3DHR9_DANRE Fibroblast growth factor (trembl)",
+      "Q5TLD5_DANRE Fibroblast growth factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:7955"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2732.7366,
+    "clique_identifier_count": 7
+  },
+  {
+    "curie": "NCBIGene:100008681",
+    "label": "FGF7",
+    "highlighting": {},
+    "synonyms": [
+      "KGF",
+      "FGF7",
+      "FGF5B",
+      "keratinocyte growth factor",
+      "fibroblast growth factor 7",
+      "fibroblast growth factor 5B",
+      "G1SRJ5_RABIT Fibroblast growth factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9986"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2732.7366,
+    "clique_identifier_count": 7
+  },
+  {
+    "curie": "NCBIGene:101690825",
+    "label": "FGF7",
+    "highlighting": {},
+    "synonyms": [
+      "FGF7",
+      "fibroblast growth factor 7",
+      "A0A8U0MQZ0_MUSPF Fibroblast growth factor (trembl)",
+      "A0A8U0TDL6_MUSPF Fibroblast growth factor (trembl)",
+      "M3YLN9_MUSPF Fibroblast growth factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9669"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2732.7366,
+    "clique_identifier_count": 7
+  },
+  {
+    "curie": "NCBIGene:102178454",
+    "label": "FGF7",
+    "highlighting": {},
+    "synonyms": [
+      "FGF7",
+      "fibroblast growth factor 7",
+      "A0A452ER05_CAPHI Fibroblast growth factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9925"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2732.7366,
+    "clique_identifier_count": 7
+  },
+  {
+    "curie": "NCBIGene:103353214",
+    "label": "fgf7",
+    "highlighting": {},
+    "synonyms": [
+      "fgf7",
+      "fibroblast growth factor 7",
+      "A0A3B5B0H7_9TELE Fibroblast growth factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:144197"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2732.7366,
+    "clique_identifier_count": 7
+  },
+  {
+    "curie": "NCBIGene:109963361",
+    "label": "fgf7",
+    "highlighting": {},
+    "synonyms": [
+      "fgf7",
+      "fibroblast growth factor 7",
+      "A0A3Q3QQU6_MONAL Fibroblast growth factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:43700"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2732.7366,
+    "clique_identifier_count": 7
+  },
+  {
+    "curie": "NCBIGene:113900357",
+    "label": "FGF7",
+    "highlighting": {},
+    "synonyms": [
+      "FGF7",
+      "fibroblast growth factor 7",
+      "A0A4W2FXE1_BOBOX Fibroblast growth factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:30522"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2732.7366,
+    "clique_identifier_count": 7
+  },
+  {
+    "curie": "NCBIGene:443095",
+    "label": "FGF7",
+    "highlighting": {},
+    "synonyms": [
+      "KGF",
+      "FGF7",
+      "FGF-7",
+      "HBGF-7",
+      "keratinocyte growth factor",
+      "fibroblast growth factor 7",
+      "heparin-binding growth factor 7",
+      "fibroblast growth factor 7 (keratinocyte growth factor)",
+      "B2MVW3_SHEEP Fibroblast growth factor (trembl)",
+      "W5QIL6_SHEEP Fibroblast growth factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9940"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2557.254,
+    "clique_identifier_count": 6
+  },
+  {
+    "curie": "NCBIGene:101714076",
+    "label": "Fgf7",
+    "highlighting": {},
+    "synonyms": [
+      "Fgf7",
+      "fibroblast growth factor 7",
+      "Keratinocyte growth factor",
+      "A0AAX6T8D6_HETGA Fibroblast growth factor (trembl)",
+      "G5CA45_HETGA Fibroblast growth factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:10181"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2557.254,
+    "clique_identifier_count": 6
+  },
+  {
+    "curie": "NCBIGene:102007739",
+    "label": "Fgf7",
+    "highlighting": {},
+    "synonyms": [
+      "Fgf7",
+      "fibroblast growth factor 7",
+      "A0A8C2V9E2_CHILA Fibroblast growth factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:34839"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2557.254,
+    "clique_identifier_count": 6
+  },
+  {
+    "curie": "NCBIGene:102207559",
+    "label": "fgf7",
+    "highlighting": {},
+    "synonyms": [
+      "fgf7",
+      "fibroblast growth factor 7",
+      "A0A3B4FP12_9CICH Fibroblast growth factor (trembl)",
+      "A0A9Y3RZD1_9CICH Fibroblast growth factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:303518"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2557.254,
+    "clique_identifier_count": 6
+  },
+  {
+    "curie": "NCBIGene:103245650",
+    "label": "FGF7",
+    "highlighting": {},
+    "synonyms": [
+      "FGF7",
+      "fibroblast growth factor 7",
+      "A0A0D9RE41_CHLSB Fibroblast growth factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:60711"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2557.254,
+    "clique_identifier_count": 6
+  },
+  {
+    "curie": "NCBIGene:103676724",
+    "label": "FGF7",
+    "highlighting": {},
+    "synonyms": [
+      "FGF7",
+      "fibroblast growth factor 7",
+      "A0A384DAU4_URSMA Fibroblast growth factor (trembl)",
+      "A0A384DAV2_URSMA Fibroblast growth factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:29073"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2557.254,
+    "clique_identifier_count": 6
+  },
+  {
+    "curie": "NCBIGene:113908965",
+    "label": "FGF7",
+    "highlighting": {},
+    "synonyms": [
+      "FGF7",
+      "fibroblast growth factor 7",
+      "A0A6J2B3B2_ZALCA Fibroblast growth factor (trembl)",
+      "A0A6J2B5Q5_ZALCA Fibroblast growth factor (trembl)",
+      "A0A6J2B6Q2_ZALCA Fibroblast growth factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9704"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2557.254,
+    "clique_identifier_count": 6
+  }
+]

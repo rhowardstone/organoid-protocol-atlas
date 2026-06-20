@@ -1,0 +1,38 @@
+{
+  "UBERON:0002107": {
+    "id": {
+      "identifier": "UBERON:0002107",
+      "label": "liver"
+    },
+    "equivalent_identifiers": [
+      {
+        "identifier": "UBERON:0002107",
+        "label": "liver"
+      },
+      {
+        "identifier": "UMLS:C0023884",
+        "label": "Liver"
+      },
+      {
+        "identifier": "MESH:D008099",
+        "label": "Liver"
+      },
+      {
+        "identifier": "NCIT:C12392",
+        "label": "Liver"
+      }
+    ],
+    "type": [
+      "biolink:GrossAnatomicalStructure",
+      "biolink:AnatomicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:OrganismalEntity",
+      "biolink:SubjectOfInvestigation",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "information_content": 55.4
+  }
+}

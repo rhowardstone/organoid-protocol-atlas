@@ -1,0 +1,376 @@
+{
+  "NCBIGene:397495": {
+    "id": {
+      "identifier": "NCBIGene:397495",
+      "label": "BDNF"
+    },
+    "equivalent_identifiers": [
+      {
+        "identifier": "NCBIGene:397495",
+        "label": "BDNF",
+        "taxa": [
+          "NCBITaxon:9823"
+        ]
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCG00000013333"
+      },
+      {
+        "identifier": "RGD:14295096"
+      },
+      {
+        "identifier": "UniProtKB:A0A287AS34",
+        "label": "A0A287AS34_PIG Brain-derived neurotrophic factor (trembl)",
+        "taxa": [
+          "NCBITaxon:9823"
+        ]
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00000046671"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00000046671.1"
+      },
+      {
+        "identifier": "UniProtKB:A0A4X1SYM5",
+        "label": "A0A4X1SYM5_PIG Brain-derived neurotrophic factor (trembl)",
+        "taxa": [
+          "NCBITaxon:9823"
+        ]
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00015025526"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00015025526.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00030028147"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00030028147.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00050009326"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00050009326.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00060005705"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00060005705.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00070007547"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00070007547.1"
+      },
+      {
+        "identifier": "UniProtKB:P14082",
+        "label": "BDNF_PIG Neurotrophic factor BDNF precursor form (sprot)",
+        "taxa": [
+          "NCBITaxon:9823"
+        ]
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00000014166"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00000014166.2"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00000058570"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00000058570.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00000059903"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00000059903.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00015025177"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00015025177.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00015025291"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00015025291.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00015025409"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00015025409.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00025040736"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00025040736.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00025040777"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00025040777.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00025040821"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00025040821.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00030028100"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00030028100.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00030028109"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00030028109.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00030028130"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00030028130.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00035005789"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00035005789.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00035005798"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00035005798.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00035005804"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00035005804.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00045005429"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00045005429.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00045005430"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00045005430.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00045005432"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00045005432.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00050009286"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00050009286.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00050009295"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00050009295.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00050009311"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00050009311.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00055020262"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00055020262.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00055020284"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00055020284.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00055020294"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00055020294.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00060005698"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00060005698.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00060005700"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00060005700.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00060005702"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00060005702.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00065015033"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00065015033.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00065015035"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00065015035.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00065015036"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00065015036.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00070007563"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00070007563.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00070007572"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00070007572.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00070007590"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00070007590.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00085026743"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00085026749"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00085026752"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00085026754"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00085026758"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00090022760"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00090022763"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00090022764"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00090022767"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00090022768"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00105041346"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00105041363"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00105041378"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00105041390"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00105041447"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00110040670"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00110040677"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00110040682"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00110040685"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00110040706"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00115003662"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00130035117"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00130035128"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00130035141"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00130035154"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00130035192"
+      }
+    ],
+    "taxa": [
+      "NCBITaxon:9823"
+    ],
+    "type": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ]
+  }
+}

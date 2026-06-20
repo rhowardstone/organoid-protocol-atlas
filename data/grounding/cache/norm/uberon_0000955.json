@@ -1,0 +1,42 @@
+{
+  "UBERON:0000955": {
+    "id": {
+      "identifier": "UBERON:0000955",
+      "label": "brain"
+    },
+    "equivalent_identifiers": [
+      {
+        "identifier": "UBERON:0000955",
+        "label": "brain"
+      },
+      {
+        "identifier": "UMLS:C0006104",
+        "label": "Brain"
+      },
+      {
+        "identifier": "UMLS:C1269537",
+        "label": "Entire brain"
+      },
+      {
+        "identifier": "MESH:D001921",
+        "label": "Brain"
+      },
+      {
+        "identifier": "NCIT:C12439",
+        "label": "Brain"
+      }
+    ],
+    "type": [
+      "biolink:GrossAnatomicalStructure",
+      "biolink:AnatomicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:OrganismalEntity",
+      "biolink:SubjectOfInvestigation",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "information_content": 33.7
+  }
+}

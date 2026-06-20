@@ -1,0 +1,40 @@
+{
+  "CHEBI:93891": {
+    "id": {
+      "identifier": "CHEBI:93891",
+      "label": "Forskolin"
+    },
+    "equivalent_identifiers": [
+      {
+        "identifier": "CHEBI:93891",
+        "label": "acetic acid (3-ethenyl-6,10,10b-trihydroxy-3,4a,7,7,10a-pentamethyl-1-oxo-5,6,6a,8,9,10-hexahydro-2H-benzo[f][1]benzopyran-5-yl) ester"
+      },
+      {
+        "identifier": "PUBCHEM.COMPOUND:3413",
+        "label": "Forskolin Racemate"
+      },
+      {
+        "identifier": "CHEMBL.COMPOUND:CHEMBL1358402"
+      },
+      {
+        "identifier": "HMDB:HMDB0252457",
+        "label": "Forskolin"
+      },
+      {
+        "identifier": "INCHIKEY:OHCQJHSOBUTRHG-UHFFFAOYSA-N"
+      }
+    ],
+    "type": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "information_content": 100.0
+  }
+}

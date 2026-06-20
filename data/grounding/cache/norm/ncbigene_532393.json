@@ -1,0 +1,102 @@
+{
+  "NCBIGene:532393": {
+    "id": {
+      "identifier": "NCBIGene:532393",
+      "label": "NTF3"
+    },
+    "equivalent_identifiers": [
+      {
+        "identifier": "NCBIGene:532393",
+        "label": "NTF3",
+        "taxa": [
+          "NCBITaxon:9913"
+        ]
+      },
+      {
+        "identifier": "ENSEMBL:ENSBTAG00070029226"
+      },
+      {
+        "identifier": "UniProtKB:A0AAF6ZED4",
+        "label": "A0AAF6ZED4_BOVIN Neurotrophin-3 (trembl)",
+        "taxa": [
+          "NCBITaxon:9913"
+        ]
+      },
+      {
+        "identifier": "ENSEMBL:ENSBTAP00000040469"
+      },
+      {
+        "identifier": "ENSEMBL:ENSBTAP00000040469.4"
+      },
+      {
+        "identifier": "UniProtKB:Q08DT3",
+        "label": "NTF3_BOVIN Neurotrophin-3 (sprot)",
+        "taxa": [
+          "NCBITaxon:9913"
+        ]
+      },
+      {
+        "identifier": "ENSEMBL:ENSBTAP00000078815"
+      },
+      {
+        "identifier": "ENSEMBL:ENSBTAP00000078815.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSBTAP00000078842"
+      },
+      {
+        "identifier": "ENSEMBL:ENSBTAP00000078842.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSBTAP00000079651"
+      },
+      {
+        "identifier": "ENSEMBL:ENSBTAP00000079651.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSBTAP00000084117"
+      },
+      {
+        "identifier": "ENSEMBL:ENSBTAP00000084117.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSBTAP00000097188"
+      },
+      {
+        "identifier": "ENSEMBL:ENSBTAP00000097188.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSBTAP00000101763"
+      },
+      {
+        "identifier": "ENSEMBL:ENSBTAP00000101763.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSBTAP00000102991"
+      },
+      {
+        "identifier": "ENSEMBL:ENSBTAP00000102991.1"
+      }
+    ],
+    "taxa": [
+      "NCBITaxon:9913"
+    ],
+    "type": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ]
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "CHEBI:75393": {
+    "id": {
+      "identifier": "CHEBI:75393",
+      "label": "Y-27632"
+    },
+    "equivalent_identifiers": [
+      {
+        "identifier": "CHEBI:75393",
+        "label": "Y-27632"
+      },
+      {
+        "identifier": "UNII:0X370ROP6H",
+        "label": "Y-27632"
+      },
+      {
+        "identifier": "CHEMBL.COMPOUND:CHEMBL559147",
+        "label": "Y-27632"
+      },
+      {
+        "identifier": "DRUGBANK:DB08756",
+        "label": "Y-27632"
+      },
+      {
+        "identifier": "GTOPDB:5290",
+        "label": "Y27632"
+      },
+      {
+        "identifier": "INCHIKEY:IYOZTVGMEWJPKR-IJLUTSLNSA-N"
+      }
+    ],
+    "type": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "information_content": 100.0
+  }
+}

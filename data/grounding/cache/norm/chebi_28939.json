@@ -1,0 +1,436 @@
+{
+  "CHEBI:28939": {
+    "id": {
+      "identifier": "CHEBI:28939",
+      "label": "Acetylcysteine"
+    },
+    "equivalent_identifiers": [
+      {
+        "identifier": "CHEBI:28939",
+        "label": "N-acetyl-L-cysteine"
+      },
+      {
+        "identifier": "CHEBI:21548"
+      },
+      {
+        "identifier": "CHEBI:45481"
+      },
+      {
+        "identifier": "CHEBI:2418"
+      },
+      {
+        "identifier": "UNII:WYQ7N0BPYC",
+        "label": "ACETYLCYSTEINE"
+      },
+      {
+        "identifier": "PUBCHEM.COMPOUND:12035",
+        "label": "N-Acetyl-L-Cysteine"
+      },
+      {
+        "identifier": "CHEMBL.COMPOUND:CHEMBL600",
+        "label": "ACETYLCYSTEINE"
+      },
+      {
+        "identifier": "DRUGBANK:DB06151",
+        "label": "Acetylcysteine"
+      },
+      {
+        "identifier": "MESH:D000111",
+        "label": "Acetylcysteine"
+      },
+      {
+        "identifier": "CAS:210-498-3"
+      },
+      {
+        "identifier": "CAS:616-91-1"
+      },
+      {
+        "identifier": "DrugCentral:66",
+        "label": "acetylcysteine"
+      },
+      {
+        "identifier": "GTOPDB:10945",
+        "label": "acetylcysteine"
+      },
+      {
+        "identifier": "HMDB:HMDB0001890",
+        "label": "Acetylcysteine"
+      },
+      {
+        "identifier": "INCHIKEY:PWKSKIMOESPYIA-BYPYZUCNSA-N"
+      },
+      {
+        "identifier": "UMLS:C0001047",
+        "label": "acetylcysteine"
+      },
+      {
+        "identifier": "RXCUI:197"
+      },
+      {
+        "identifier": "CHEBI:28939",
+        "label": "N-acetyl-L-cysteine"
+      },
+      {
+        "identifier": "CHEBI:21548"
+      },
+      {
+        "identifier": "CHEBI:45481"
+      },
+      {
+        "identifier": "CHEBI:2418"
+      },
+      {
+        "identifier": "UNII:WYQ7N0BPYC",
+        "label": "ACETYLCYSTEINE"
+      },
+      {
+        "identifier": "PUBCHEM.COMPOUND:12035",
+        "label": "N-Acetyl-L-Cysteine"
+      },
+      {
+        "identifier": "CHEMBL.COMPOUND:CHEMBL600",
+        "label": "ACETYLCYSTEINE"
+      },
+      {
+        "identifier": "DRUGBANK:DB06151",
+        "label": "Acetylcysteine"
+      },
+      {
+        "identifier": "MESH:D000111",
+        "label": "Acetylcysteine"
+      },
+      {
+        "identifier": "CAS:210-498-3"
+      },
+      {
+        "identifier": "CAS:616-91-1"
+      },
+      {
+        "identifier": "DrugCentral:66",
+        "label": "acetylcysteine"
+      },
+      {
+        "identifier": "GTOPDB:10945",
+        "label": "acetylcysteine"
+      },
+      {
+        "identifier": "HMDB:HMDB0001890",
+        "label": "Acetylcysteine"
+      },
+      {
+        "identifier": "INCHIKEY:PWKSKIMOESPYIA-BYPYZUCNSA-N"
+      },
+      {
+        "identifier": "UMLS:C0001047",
+        "label": "acetylcysteine"
+      },
+      {
+        "identifier": "RXCUI:197"
+      },
+      {
+        "identifier": "CHEBI:231847",
+        "label": "N-Acetylcysteine amide"
+      },
+      {
+        "identifier": "UNII:4N69717RKW",
+        "label": "ACETYLCYSTEINAMIDE"
+      },
+      {
+        "identifier": "PUBCHEM.COMPOUND:10176265",
+        "label": "N-Acetylcysteine amide"
+      },
+      {
+        "identifier": "DRUGBANK:DB14480",
+        "label": "Acetylcysteine amide"
+      },
+      {
+        "identifier": "CAS:38520-57-9"
+      },
+      {
+        "identifier": "INCHIKEY:UJCHIZDEQZMODR-BYPYZUCNSA-N"
+      },
+      {
+        "identifier": "RXCUI:1591923"
+      },
+      {
+        "identifier": "UNII:038D8XOK12",
+        "label": "ACETYLCYSTEINE MAGNESIUM"
+      },
+      {
+        "identifier": "PUBCHEM.COMPOUND:9906338",
+        "label": "Acetylcysteine magnesium"
+      },
+      {
+        "identifier": "PUBCHEM.COMPOUND:145811955",
+        "label": "magnesium;(2R)-2-acetamido-3-sulfanylpropanoate"
+      },
+      {
+        "identifier": "DRUGBANK:DB14080",
+        "label": "Acetylcysteine magnesium"
+      },
+      {
+        "identifier": "CAS:36330-79-7"
+      },
+      {
+        "identifier": "INCHIKEY:CDIFCTOKYOUYOT-SCGRZTRASA-L"
+      },
+      {
+        "identifier": "UMLS:C4283417",
+        "label": "acetylcysteine magnesium"
+      },
+      {
+        "identifier": "RXCUI:1809634"
+      },
+      {
+        "identifier": "UNII:LP811J9FA1",
+        "label": "ACETYLCYSTEINE ZINC"
+      },
+      {
+        "identifier": "PUBCHEM.COMPOUND:12114682",
+        "label": "Acetylcysteine Zinc"
+      },
+      {
+        "identifier": "DRUGBANK:DB14479",
+        "label": "Acetylcysteine zinc"
+      },
+      {
+        "identifier": "CAS:49793-39-7"
+      },
+      {
+        "identifier": "INCHIKEY:KNVKDNCWDNRTOE-SCGRZTRASA-L"
+      },
+      {
+        "identifier": "RXCUI:1490795"
+      },
+      {
+        "identifier": "RXCUI:237163"
+      },
+      {
+        "identifier": "RXCUI:106781"
+      },
+      {
+        "identifier": "UMLS:C0358764",
+        "label": "acetylcysteine 50 MG/ML Ophthalmic Solution"
+      },
+      {
+        "identifier": "RXCUI:106783"
+      },
+      {
+        "identifier": "UMLS:C0358767",
+        "label": "acetylcysteine 200 MG/ML Ophthalmic Solution"
+      },
+      {
+        "identifier": "RXCUI:307718"
+      },
+      {
+        "identifier": "UMLS:C0973805",
+        "label": "acetylcysteine 100 MG/ML Inhalation Solution"
+      },
+      {
+        "identifier": "RXCUI:307719"
+      },
+      {
+        "identifier": "UMLS:C0973812",
+        "label": "acetylcysteine 200 MG/ML Inhalation Solution"
+      },
+      {
+        "identifier": "RXCUI:329165"
+      },
+      {
+        "identifier": "UMLS:C1124265",
+        "label": "acetylcysteine 500 MG"
+      },
+      {
+        "identifier": "RXCUI:340088"
+      },
+      {
+        "identifier": "UMLS:C1140360",
+        "label": "acetylcysteine 200 MG/ML"
+      },
+      {
+        "identifier": "RXCUI:345086"
+      },
+      {
+        "identifier": "UMLS:C1148481",
+        "label": "acetylcysteine 50 MG/ML"
+      },
+      {
+        "identifier": "RXCUI:345092"
+      },
+      {
+        "identifier": "UMLS:C1148491",
+        "label": "acetylcysteine 100 MG/ML"
+      },
+      {
+        "identifier": "RXCUI:370532"
+      },
+      {
+        "identifier": "UMLS:C1244553",
+        "label": "acetylcysteine Oral Tablet"
+      },
+      {
+        "identifier": "RXCUI:377405"
+      },
+      {
+        "identifier": "UMLS:C1251629",
+        "label": "acetylcysteine Ophthalmic Solution"
+      },
+      {
+        "identifier": "RXCUI:404825"
+      },
+      {
+        "identifier": "UMLS:C1330030",
+        "label": "Acetadote"
+      },
+      {
+        "identifier": "RXCUI:429042"
+      },
+      {
+        "identifier": "UMLS:C1358310",
+        "label": "acetylcysteine 600 MG Oral Tablet"
+      },
+      {
+        "identifier": "RXCUI:437272"
+      },
+      {
+        "identifier": "UMLS:C1366600",
+        "label": "acetylcysteine Oral Capsule"
+      },
+      {
+        "identifier": "RXCUI:437279"
+      },
+      {
+        "identifier": "UMLS:C1366607",
+        "label": "acetylcysteine 600 MG"
+      },
+      {
+        "identifier": "RXCUI:465377"
+      },
+      {
+        "identifier": "UMLS:C1443671",
+        "label": "30 ML acetylcysteine 200 MG/ML Injection"
+      },
+      {
+        "identifier": "RXCUI:582117"
+      },
+      {
+        "identifier": "UMLS:C1613501",
+        "label": "acetylcysteine 200 MG/ML [Acetadote]"
+      },
+      {
+        "identifier": "RXCUI:582119"
+      },
+      {
+        "identifier": "UMLS:C1612396",
+        "label": "30 ML acetylcysteine 200 MG/ML Injection [Acetadote]"
+      },
+      {
+        "identifier": "RXCUI:606971"
+      },
+      {
+        "identifier": "UMLS:C1638296",
+        "label": "acetylcysteine 600 MG Oral Capsule"
+      },
+      {
+        "identifier": "RXCUI:664732"
+      },
+      {
+        "identifier": "UMLS:C1812839",
+        "label": "acetylcysteine 500 MG Oral Capsule"
+      },
+      {
+        "identifier": "RXCUI:1153148"
+      },
+      {
+        "identifier": "UMLS:C3207639",
+        "label": "acetylcysteine Inhalant Product"
+      },
+      {
+        "identifier": "RXCUI:1153149"
+      },
+      {
+        "identifier": "UMLS:C3207640",
+        "label": "acetylcysteine Injectable Product"
+      },
+      {
+        "identifier": "RXCUI:1153150"
+      },
+      {
+        "identifier": "UMLS:C1272567",
+        "label": "acetylcysteine Ophthalmic Product"
+      },
+      {
+        "identifier": "RXCUI:1153152"
+      },
+      {
+        "identifier": "UMLS:C3207642",
+        "label": "acetylcysteine Oral Product"
+      },
+      {
+        "identifier": "RXCUI:1153153"
+      },
+      {
+        "identifier": "UMLS:C3207643",
+        "label": "acetylcysteine Pill"
+      },
+      {
+        "identifier": "RXCUI:1168410"
+      },
+      {
+        "identifier": "UMLS:C3222578",
+        "label": "Acetadote Injectable Product"
+      },
+      {
+        "identifier": "RXCUI:1742774"
+      },
+      {
+        "identifier": "UMLS:C4083009",
+        "label": "acetylcysteine single use injection"
+      },
+      {
+        "identifier": "RXCUI:1742776"
+      },
+      {
+        "identifier": "UMLS:C4084201",
+        "label": "acetylcysteine Injection [Acetadote]"
+      },
+      {
+        "identifier": "RXCUI:2108211"
+      },
+      {
+        "identifier": "UMLS:C4745718",
+        "label": "acetylcysteine Inhalation Solution"
+      },
+      {
+        "identifier": "RXCUI:2693998"
+      },
+      {
+        "identifier": "UMLS:C5963713",
+        "label": "acetylcysteine 25 MG/ML"
+      },
+      {
+        "identifier": "RXCUI:2693999"
+      },
+      {
+        "identifier": "UMLS:C5963714",
+        "label": "acetylcysteine 25 MG/ML Ophthalmic Solution"
+      }
+    ],
+    "type": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MolecularMixture",
+      "biolink:ChemicalMixture",
+      "biolink:Drug",
+      "biolink:OntologyClass"
+    ],
+    "information_content": 83.1
+  }
+}

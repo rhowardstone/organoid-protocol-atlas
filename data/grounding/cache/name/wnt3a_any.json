@@ -1,0 +1,713 @@
+[
+  {
+    "curie": "NCBIGene:482208",
+    "label": "WNT3A",
+    "highlighting": {},
+    "synonyms": [
+      "WNT3A",
+      "protein Wnt-3a",
+      "Wnt family member 3A",
+      "A0A8C0NGX3_CANLF Protein Wnt (trembl)",
+      "A0A8I3MWK0_CANLF Protein Wnt (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9615"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 3481.0886,
+    "clique_identifier_count": 13
+  },
+  {
+    "curie": "NCBIGene:89780",
+    "label": "WNT3A",
+    "highlighting": {},
+    "synonyms": [
+      "WNT3A",
+      "WNT3A gene",
+      "protein Wnt-3a",
+      "Wnt family member 3A",
+      "WINGLESS-TYPE MMTV INTEGRATION SITE FAMILY, MEMBER 3A",
+      "wingless-type MMTV integration site family, member 3A",
+      "hWNT3A",
+      "WNT3A protein, human",
+      "protein Wnt-3a (human)",
+      "WNT3A_HUMAN Protein Wnt-3a (sprot)",
+      "wingless-type MMTV integration site family, member 3A protein, human"
+    ],
+    "taxa": [
+      "NCBITaxon:9606"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 3037.2598,
+    "clique_identifier_count": 9
+  },
+  {
+    "curie": "NCBIGene:101155545",
+    "label": "wnt3a",
+    "highlighting": {},
+    "synonyms": [
+      "wnt3a",
+      "protein Wnt-3a",
+      "Wnt family member 3A",
+      "A0A3B3HVS0_ORYLA Protein Wnt (trembl)",
+      "A0A3P9LYM4_ORYLA Protein Wnt (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:8090"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2898.2825,
+    "clique_identifier_count": 8
+  },
+  {
+    "curie": "NCBIGene:111845850",
+    "label": "wnt3a",
+    "highlighting": {},
+    "synonyms": [
+      "wnt3a",
+      "protein Wnt-3a",
+      "Wnt family member 3A",
+      "A0A3B3RRL3_9TELE Protein Wnt (trembl)",
+      "A0A3B3RSX0_9TELE Protein Wnt (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:1676925"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2898.2825,
+    "clique_identifier_count": 8
+  },
+  {
+    "curie": "NCBIGene:22416",
+    "label": "Wnt3a",
+    "highlighting": {},
+    "synonyms": [
+      "vt",
+      "Wnt3a",
+      "Wnt-3a",
+      "protein Wnt-3a",
+      "vestigial tail",
+      "wingless-related MMTV integration site 3A",
+      "wingless-type MMTV integration site family, member 3A",
+      "mWNT3A",
+      "protein Wnt-3a (mouse)",
+      "WNT3A_MOUSE Protein Wnt-3a (sprot)"
+    ],
+    "taxa": [
+      "NCBITaxon:10090"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2742.919,
+    "clique_identifier_count": 7
+  },
+  {
+    "curie": "NCBIGene:395396",
+    "label": "WNT3A",
+    "highlighting": {},
+    "synonyms": [
+      "WNT3A",
+      "WNT-3A",
+      "Protein Wnt",
+      "protein Wnt-3a",
+      "Wnt-3a homolog",
+      "Wnt family member 3A",
+      "wingless-type MMTV integration site family member 3a",
+      "wingless-type MMTV integration site family, member 3A",
+      "A0A8V1A7V3_CHICK Protein Wnt (trembl)",
+      "chick-WNT3A",
+      "protein Wnt-3a (chicken)",
+      "WNT3A_CHICK Protein Wnt-3a (sprot)"
+    ],
+    "taxa": [
+      "NCBITaxon:9031"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2742.919,
+    "clique_identifier_count": 7
+  },
+  {
+    "curie": "NCBIGene:303181",
+    "label": "Wnt3a",
+    "highlighting": {},
+    "synonyms": [
+      "Wnt3a",
+      "protein Wnt-3a",
+      "Wnt family member 3A",
+      "wingless-related MMTV integration site 3A",
+      "wingless-type MMTV integration site family, member 3A",
+      "A0A8I6ADM6_RAT Protein Wnt (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:10116"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2566.7822,
+    "clique_identifier_count": 6
+  },
+  {
+    "curie": "NCBIGene:102016538",
+    "label": "Wnt3a",
+    "highlighting": {},
+    "synonyms": [
+      "Wnt3a",
+      "protein Wnt-3a",
+      "A0A8C2YI97_CHILA Protein Wnt (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:34839"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2566.7822,
+    "clique_identifier_count": 6
+  },
+  {
+    "curie": "NCBIGene:60632",
+    "label": "wnt3a",
+    "highlighting": {},
+    "synonyms": [
+      "wnt3",
+      "wnt3l",
+      "wnt3a",
+      "wnt[a]",
+      "wnt3 l",
+      "Zwnt[a]",
+      "wnt3 like",
+      "protein Wnt-3a",
+      "wingless-type MMTV integration site family, member 3A",
+      "wingless-type MMTV integration site family, member 3 like",
+      "A0A8M2BB70_DANRE Protein Wnt (trembl)",
+      "Q6IYD9_DANRE Protein Wnt (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:7955"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2363.4475,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:696200",
+    "label": "WNT3A",
+    "highlighting": {},
+    "synonyms": [
+      "WNT3A",
+      "protein Wnt-3a",
+      "Wnt family member 3A",
+      "wingless-type MMTV integration site family, member 3A",
+      "F7CJE4_MACMU Protein Wnt (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9544"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2363.4475,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:100354583",
+    "label": "WNT3A",
+    "highlighting": {},
+    "synonyms": [
+      "WNT3A",
+      "protein Wnt-3a",
+      "wingless-type MMTV integration site family, member 3A",
+      "G1SKY6_RABIT Protein Wnt (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9986"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2363.4475,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:100385309",
+    "label": "WNT3A",
+    "highlighting": {},
+    "synonyms": [
+      "WNT3A",
+      "protein Wnt-3a",
+      "A0A5F4W3S5_CALJA Protein Wnt (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9483"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2363.4475,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:100448240",
+    "label": "WNT3A",
+    "highlighting": {},
+    "synonyms": [
+      "WNT3A",
+      "protein Wnt-3a",
+      "H2N3H7_PONAB Protein Wnt (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9601"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2363.4475,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:100473835",
+    "label": "WNT3A",
+    "highlighting": {},
+    "synonyms": [
+      "WNT3A",
+      "protein Wnt-3a",
+      "G1LC69_AILME Protein Wnt (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9646"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2363.4475,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:100606846",
+    "label": "WNT3A",
+    "highlighting": {},
+    "synonyms": [
+      "WNT3A",
+      "protein Wnt-3a",
+      "A0A2I3G281_NOMLE Protein Wnt (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:61853"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2363.4475,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:100615247",
+    "label": "WNT3A",
+    "highlighting": {},
+    "synonyms": [
+      "WNT3A",
+      "protein Wnt-3a",
+      "Wnt family member 3A",
+      "wingless-type MMTV integration site family, member 3A",
+      "H2R817_PANTR Protein Wnt (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9598"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2363.4475,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:100764164",
+    "label": "Wnt3a",
+    "highlighting": {},
+    "synonyms": [
+      "Wnt3a",
+      "Protein Wnt-3a",
+      "protein Wnt-3a",
+      "LOW QUALITY PROTEIN: protein Wnt-3a",
+      "wingless-type MMTV integration site family, member 3A",
+      "A0A8C2M650_CRIGR Protein Wnt (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:10029"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2363.4475,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:100914628",
+    "label": "WNT3A",
+    "highlighting": {},
+    "synonyms": [
+      "WNT3A",
+      "protein Wnt-3a",
+      "A0A7N4PX39_SARHA Protein Wnt (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9305"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2363.4475,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:100964130",
+    "label": "WNT3A",
+    "highlighting": {},
+    "synonyms": [
+      "WNT3A",
+      "protein Wnt-3a",
+      "H0X974_OTOGA Protein Wnt (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:30611"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2363.4475,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:101062356",
+    "label": "wnt3a",
+    "highlighting": {},
+    "synonyms": [
+      "wnt3a",
+      "protein Wnt-3a",
+      "Wnt family member 3A",
+      "A0A674PGJ7_TAKRU Protein Wnt (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:31033"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2363.4475,
+    "clique_identifier_count": 5
+  }
+]

@@ -1,0 +1,496 @@
+[
+  {
+    "curie": "CHEBI:93891",
+    "label": "Forskolin",
+    "highlighting": {},
+    "synonyms": [
+      "Forskolin",
+      "Forskolin Racemate",
+      "Forskolin racemic acid",
+      "3-Ethenyl-6,10,10b-trihydroxy-3,4a,7,7,10a-pentamethyl-1-oxo-dodecahydro-1H-naphtho[2,1-b]pyran-5-yl acetic acid",
+      "acetic acid (3-ethenyl-6,10,10b-trihydroxy-3,4a,7,7,10a-pentamethyl-1-oxo-5,6,6a,8,9,10-hexahydro-2H-benzo[f][1]benzopyran-5-yl) ester"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 3442.1719,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "CHEBI:42471",
+    "label": "Colforsin",
+    "highlighting": {},
+    "synonyms": [
+      "Coleonol",
+      "Coleonolk",
+      "Forskolin",
+      "COLFORSIN",
+      "colforsin",
+      "forskolin",
+      "FORSKOLIN",
+      "Colforsin",
+      "forshkolin",
+      "colforsine",
+      "colforsina",
+      "colforsinum",
+      "7β-acetoxy-8,13-epoxy-1α,6β,9α-trihydroxylabd-14-en-11-one",
+      "7beta-acetoxy-8,13-epoxy-1alpha,6beta,9alpha-trihydroxylabd-14-en-11-one",
+      "1H-Naphtho(2,1-b)pyran-1-one, 5-(acetyloxy)-3-ethenyldodecahydro-6,10,10b-trihydroxy-3,4a,7,7,10a-pentamethyl-",
+      "(3R,4aR,5S,6S,6aS,10S,10aR,10bS)-3-ethenyl-6,10,10b-trihydroxy-3,4a,7,7,10a-pentamethyl-1-oxododecahydro-1H-benzo[f]chromen-5-yl acetate",
+      "N,N-Dimethyl-beta-alanine-5-(acetyloxy)-3-ethenyldodecahydro-10,10b-dihydroxy-3,4a,7,7,10a-pentamethyl-1-oxo-1H-naphtho(2,1-b)pyran-6-yl Ester HCl"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 781.7541,
+    "clique_identifier_count": 12
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:23254517",
+    "label": "Forskolin J",
+    "highlighting": {},
+    "synonyms": [
+      "Forskolin J"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 327.44623,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:177269",
+    "label": "6-(3-Methylaminopropionyl)forskolin",
+    "highlighting": {},
+    "synonyms": [
+      "6-(3-Methylaminopropionyl)forskolin"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:MolecularMixture",
+      "biolink:ChemicalMixture",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 284.81076,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "CHEBI:177504",
+    "label": "Butylphthalide",
+    "highlighting": {},
+    "synonyms": [
+      "l-NBP cpd",
+      "Forskolin",
+      "Colforsin",
+      "L-NBP CPD",
+      "butylphthalide",
+      "BUTYLPHTHALIDE",
+      "Butylphthalide",
+      "3-BUTYLPHTHALIDE",
+      "N-butylphthalide",
+      "N-Butylphthalide",
+      "3-N-Butylphthalide",
+      "3-n-butylphthalide",
+      "PHTHALIDE, 3-BUTYL-",
+      "(±)-3-BUTYLPHTHALIDE",
+      "DL-3-n-butylphthalide",
+      "RAC-3-N-BUTYLPHTHALIDE",
+      "(S)-(-)-3-Butylphthalide",
+      "3-N-BUTYLPHTHALIDE [FHFI]",
+      "3-butyl-3H-2-benzouran-1-one",
+      "(S)-3-Butyl-1(3H)-isobenzofuranone"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 271.26477,
+    "clique_identifier_count": 14
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:12967001",
+    "label": "Forskolin G",
+    "highlighting": {},
+    "synonyms": [
+      "Forskolin G"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 259.495,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:16219250",
+    "label": "Forskolin Hemisuccinate",
+    "highlighting": {},
+    "synonyms": [
+      "Forskolin Hemisuccinate"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 259.495,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:70151734",
+    "label": "Forskolin hydrochloride",
+    "highlighting": {},
+    "synonyms": [
+      "Forskolin hydrochloride"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:MolecularMixture",
+      "biolink:ChemicalMixture",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 259.495,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:86602512",
+    "label": "Forskolin carbonate",
+    "highlighting": {},
+    "synonyms": [
+      "Forskolin carbonate"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:MolecularMixture",
+      "biolink:ChemicalMixture",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 259.495,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "MESH:C068913",
+    "label": "forskolin-agarose",
+    "highlighting": {},
+    "synonyms": [
+      "forskolin-agarose",
+      "forskolin-sepharose"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 259.495,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:4114878",
+    "label": "7-Deacetyl-7-O-hemisuccinyl-Forskolin",
+    "highlighting": {},
+    "synonyms": [
+      "7-Deacetyl-7-O-hemisuccinyl-Forskolin"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 251.999,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:486147",
+    "label": "Aureobasidin A & Forskolin",
+    "highlighting": {},
+    "synonyms": [
+      "Aureobasidin A & Forskolin"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:MolecularMixture",
+      "biolink:ChemicalMixture",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 241.42465,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:539630",
+    "label": "1-Oxo-forskolin",
+    "highlighting": {},
+    "synonyms": [
+      "1-Oxo-forskolin"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 241.42465,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:14756725",
+    "label": "1-Keto-forskolin",
+    "highlighting": {},
+    "synonyms": [
+      "1-Keto-forskolin"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 241.42465,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:131737359",
+    "label": "forskolin IBMX genistein",
+    "highlighting": {},
+    "synonyms": [
+      "forskolin IBMX genistein"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:MolecularMixture",
+      "biolink:ChemicalMixture",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 241.42465,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:169440765",
+    "label": "Forskolin Hemisuccinate-13C4",
+    "highlighting": {},
+    "synonyms": [
+      "Forskolin Hemisuccinate-13C4"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 241.42465,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:133564713",
+    "label": "Forskolin (or Colforsin), derivative of",
+    "highlighting": {},
+    "synonyms": [
+      "Forskolin (or Colforsin), derivative of"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 211.91116,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "MESH:C102849",
+    "label": "7-desacetyl-7-aminoethylaminocarbonyl forskolin",
+    "highlighting": {},
+    "synonyms": [
+      "7-DAEAC-forskolin",
+      "7-desacetyl-7-aminoethylaminocarbonyl forskolin"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 211.91116,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "MESH:C081557",
+    "label": "7-deacetyl-6-(N-acetylglycyl)forskolin",
+    "highlighting": {},
+    "synonyms": [
+      "7-DAGF",
+      "7-deacetyl-6-(N-acetylglycyl)forskolin"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 199.70448,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "MESH:C099386",
+    "label": "7b-deacetyl-7b-(gamma-(morpholino)butyryl)forskolin",
+    "highlighting": {},
+    "synonyms": [
+      "7b-deacetyl-7b-(gamma-(morpholino)butyryl)forskolin"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 188.8275,
+    "clique_identifier_count": 2
+  }
+]

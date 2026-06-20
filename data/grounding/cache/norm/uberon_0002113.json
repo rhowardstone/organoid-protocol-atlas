@@ -1,0 +1,38 @@
+{
+  "UBERON:0002113": {
+    "id": {
+      "identifier": "UBERON:0002113",
+      "label": "kidney"
+    },
+    "equivalent_identifiers": [
+      {
+        "identifier": "UBERON:0002113",
+        "label": "kidney"
+      },
+      {
+        "identifier": "UMLS:C0022646",
+        "label": "Kidney"
+      },
+      {
+        "identifier": "MESH:D007668",
+        "label": "Kidney"
+      },
+      {
+        "identifier": "NCIT:C25225",
+        "label": "Renal"
+      }
+    ],
+    "type": [
+      "biolink:GrossAnatomicalStructure",
+      "biolink:AnatomicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:OrganismalEntity",
+      "biolink:SubjectOfInvestigation",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "information_content": 49.2
+  }
+}

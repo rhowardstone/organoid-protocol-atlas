@@ -1,0 +1,66 @@
+{
+  "NCBIGene:100136118": {
+    "id": {
+      "identifier": "NCBIGene:100136118",
+      "label": "vegf"
+    },
+    "equivalent_identifiers": [
+      {
+        "identifier": "NCBIGene:100136118",
+        "label": "vegf",
+        "taxa": [
+          "NCBITaxon:8022"
+        ]
+      },
+      {
+        "identifier": "ENSEMBL:ENSOMYG00000010298"
+      },
+      {
+        "identifier": "UniProtKB:Q6H8S7",
+        "label": "Q6H8S7_ONCMY Vascular endothelial growth factor (trembl)",
+        "taxa": [
+          "NCBITaxon:8022"
+        ]
+      },
+      {
+        "identifier": "ENSEMBL:ENSOMYP00000021422"
+      },
+      {
+        "identifier": "ENSEMBL:ENSOMYP00000021422.1"
+      },
+      {
+        "identifier": "UniProtKB:Q6H8S8",
+        "label": "Q6H8S8_ONCMY Vascular endothelial growth factor (trembl)",
+        "taxa": [
+          "NCBITaxon:8022"
+        ]
+      },
+      {
+        "identifier": "ENSEMBL:ENSOMYP00000021428"
+      },
+      {
+        "identifier": "ENSEMBL:ENSOMYP00000021428.2"
+      }
+    ],
+    "taxa": [
+      "NCBITaxon:8022"
+    ],
+    "type": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ]
+  }
+}

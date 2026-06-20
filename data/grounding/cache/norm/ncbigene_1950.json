@@ -1,0 +1,96 @@
+{
+  "NCBIGene:1950": {
+    "id": {
+      "identifier": "NCBIGene:1950",
+      "label": "EGF"
+    },
+    "equivalent_identifiers": [
+      {
+        "identifier": "NCBIGene:1950",
+        "label": "EGF",
+        "taxa": [
+          "NCBITaxon:9606"
+        ]
+      },
+      {
+        "identifier": "ENSEMBL:ENSG00000138798"
+      },
+      {
+        "identifier": "HGNC:3229",
+        "label": "EGF"
+      },
+      {
+        "identifier": "OMIM:131530"
+      },
+      {
+        "identifier": "UMLS:C1367721",
+        "label": "EGF gene"
+      },
+      {
+        "identifier": "UniProtKB:A0A494C018",
+        "label": "A0A494C018_HUMAN Pro-epidermal growth factor (trembl)",
+        "taxa": [
+          "NCBITaxon:9606"
+        ]
+      },
+      {
+        "identifier": "ENSEMBL:ENSP00000498337"
+      },
+      {
+        "identifier": "ENSEMBL:ENSP00000498337.1"
+      },
+      {
+        "identifier": "UniProtKB:P01133",
+        "label": "EGF_HUMAN Pro-epidermal growth factor (sprot)",
+        "taxa": [
+          "NCBITaxon:9606"
+        ]
+      },
+      {
+        "identifier": "PR:P01133",
+        "label": "pre-pro-epidermal growth factor (human)"
+      },
+      {
+        "identifier": "UMLS:C0242275",
+        "label": "epidermal growth factor"
+      },
+      {
+        "identifier": "UMLS:C1509244",
+        "label": "human epidermal growth factor"
+      },
+      {
+        "identifier": "UMLS:C2825836",
+        "label": "Recombinant Human Epidermal Growth Factor"
+      },
+      {
+        "identifier": "UMLS:C3897855",
+        "label": "Pro-Epidermal Growth Factor"
+      },
+      {
+        "identifier": "MESH:D004815",
+        "label": "Epidermal Growth Factor"
+      }
+    ],
+    "taxa": [
+      "NCBITaxon:9606"
+    ],
+    "type": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "information_content": 83.1
+  }
+}

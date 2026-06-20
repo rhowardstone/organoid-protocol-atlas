@@ -1,0 +1,245 @@
+[
+  {
+    "curie": "CHEBI:86193",
+    "label": "DAPT",
+    "highlighting": {},
+    "synonyms": [
+      "DAPT",
+      "Dapt",
+      "GSI-IX",
+      "gamma-secretase inhibitor IX",
+      "tert-butyl (2S)-({N-[(3,5-difluorophenyl)acetyl]-L-alanyl}amino)(phenyl)acetate",
+      "tert-butyl (2S)-2-[[(2S)-2-[[2-(3,5-difluorophenyl)acetyl]amino]propanoyl]amino]-2-phenylacetate"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 3640.1995,
+    "clique_identifier_count": 6
+  },
+  {
+    "curie": "CHEBI:91825",
+    "label": "Dapt",
+    "highlighting": {},
+    "synonyms": [
+      "Dapt",
+      "Tert-butyl 2-[2-[[2-(3,5-difluorophenyl)acetyl]amino]propanoylamino]-2-phenyl-acetate",
+      "2-[[2-[[2-(3,5-Difluorophenyl)-1-oxoethyl]amino]-1-oxopropyl]amino]-2-phenylacetate tert-butyl ester",
+      "2-[[2-[[2-(3,5-difluorophenyl)-1-oxoethyl]amino]-1-oxopropyl]amino]-2-phenylacetic acid tert-butyl ester"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 3351.831,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "UNII:949B9ZMO7M",
+    "label": "Diaminopropanol tetraacetic acid",
+    "highlighting": {},
+    "synonyms": [
+      "DAPT",
+      "Diaminopropanol tetraacetic acid",
+      "Diaminohydroxypropanetetraacetic acid",
+      "DIAMINOHYDROXYPROPANETETRAACETIC ACID",
+      "diaminohydroxypropanetetraacetic acid"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 699.4989,
+    "clique_identifier_count": 8
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:6438565",
+    "label": "1,2-dilinolenoyl-3-(4-aminobutyryl)propane-1,2,3-triol",
+    "highlighting": {},
+    "synonyms": [
+      "dapt",
+      "DABPT cpd",
+      "1,2-Dilinolenoyl-3-(4-aminobutyryl)propane-1,2,3-triol",
+      "1,2-dilinolenoyl-3-(4-aminobutyryl)propane-1,2,3-triol"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 669.58984,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:16219261",
+    "label": "DAPT, >=98% (HPLC), solid",
+    "highlighting": {},
+    "synonyms": [
+      "DAPT, >=98% (HPLC), solid"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 314.51758,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "UMLS:C0087554",
+    "label": "(dApT)",
+    "highlighting": {},
+    "synonyms": [
+      "(dApT)"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 195.42754,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "MESH:C000612000",
+    "label": "24-diamino-5-phenylthiazole",
+    "highlighting": {},
+    "synonyms": [
+      "DAPT cpd",
+      "24-diamino-5-phenylthiazole"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 86.54717,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "MESH:C513015",
+    "label": "cis-((3-dehydrocholanoyliden-L-tartrate)-diammineplatinum(II))",
+    "highlighting": {},
+    "synonyms": [
+      "3-DHD-L-T-DAPt(II)",
+      "cis-((3-dehydrocholanoyliden-L-tartrate)-diammineplatinum(II))"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 63.011246,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "MESH:C560455",
+    "label": "N-(4-(3-(3,4-dihydroxyphenyl)acryloyl)phenyl)-2-(thiophen-2-yl)acetamide",
+    "highlighting": {},
+    "synonyms": [
+      "DAPT-acetamide",
+      "N-(4-(3-(3,4-dihydroxyphenyl)acryloyl)phenyl)-2-(thiophen-2-yl)acetamide"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 60.65486,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "MESH:C419410",
+    "label": "N-(N-(3,5-difluorophenacetyl)alanyl)phenylglycine tert-butyl ester",
+    "highlighting": {},
+    "synonyms": [
+      "GSI-IX cpd",
+      "DAPT butylester",
+      "N-(2FPhAc)Ala-phenyl-Gly t-butyl ester",
+      "N-(N-(3,5-difluorophenacetyl)alanyl)phenylglycine t-butyl ester",
+      "N-(N-(3,5-difluorophenylacetyl)alanyl)phenyloglycine t-butyl ester",
+      "N-(N-(3,5-difluorophenacetyl)alanyl)phenylglycine tert-butyl ester"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 30.75334,
+    "clique_identifier_count": 2
+  }
+]

@@ -1,0 +1,27 @@
+{
+  "CHEBI:81351": {
+    "id": {
+      "identifier": "CHEBI:81351",
+      "label": "Activin A"
+    },
+    "equivalent_identifiers": [
+      {
+        "identifier": "CHEBI:81351",
+        "label": "Activin A"
+      },
+      {
+        "identifier": "KEGG.COMPOUND:C17813"
+      }
+    ],
+    "type": [
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "information_content": 100.0
+  }
+}

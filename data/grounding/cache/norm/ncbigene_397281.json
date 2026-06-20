@@ -1,0 +1,129 @@
+{
+  "NCBIGene:397281": {
+    "id": {
+      "identifier": "NCBIGene:397281",
+      "label": "FGF7"
+    },
+    "equivalent_identifiers": [
+      {
+        "identifier": "NCBIGene:397281",
+        "label": "FGF7",
+        "taxa": [
+          "NCBITaxon:9823"
+        ]
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCG00000056997"
+      },
+      {
+        "identifier": "RGD:14082697"
+      },
+      {
+        "identifier": "UniProtKB:A0A287A969",
+        "label": "A0A287A969_PIG Fibroblast growth factor (trembl)",
+        "taxa": [
+          "NCBITaxon:9823"
+        ]
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00000040551"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00000040551.1"
+      },
+      {
+        "identifier": "UniProtKB:A0A8D0MQA4",
+        "label": "A0A8D0MQA4_PIG Fibroblast growth factor (trembl)",
+        "taxa": [
+          "NCBITaxon:9823"
+        ]
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00015007174"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00015007174.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00025007633"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00025007633.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00030012537"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00030012537.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00035017217"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00035017217.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00040028806"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00040028806.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00045024977"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00045024977.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00050034522"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00050034522.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00055008032"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00055008032.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00060005813"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00060005813.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00065000877"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00065000877.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00070014450"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00070014450.1"
+      }
+    ],
+    "taxa": [
+      "NCBITaxon:9823"
+    ],
+    "type": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ]
+  }
+}

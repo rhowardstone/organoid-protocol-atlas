@@ -1,0 +1,1569 @@
+{
+  "CHEBI:41879": {
+    "id": {
+      "identifier": "CHEBI:41879",
+      "label": "Dexamethasone"
+    },
+    "equivalent_identifiers": [
+      {
+        "identifier": "CHEBI:41879",
+        "label": "dexamethasone"
+      },
+      {
+        "identifier": "CHEBI:4461"
+      },
+      {
+        "identifier": "CHEBI:41873"
+      },
+      {
+        "identifier": "UNII:7S5I7G3JQL",
+        "label": "DEXAMETHASONE"
+      },
+      {
+        "identifier": "PUBCHEM.COMPOUND:5743",
+        "label": "Dexamethasone"
+      },
+      {
+        "identifier": "CHEMBL.COMPOUND:CHEMBL384467",
+        "label": "DEXAMETHASONE"
+      },
+      {
+        "identifier": "DRUGBANK:DB01234",
+        "label": "Dexamethasone"
+      },
+      {
+        "identifier": "MESH:D003907",
+        "label": "Dexamethasone"
+      },
+      {
+        "identifier": "CAS:1050677-47-8"
+      },
+      {
+        "identifier": "CAS:200-003-9"
+      },
+      {
+        "identifier": "CAS:23495-06-9"
+      },
+      {
+        "identifier": "CAS:50-02-2"
+      },
+      {
+        "identifier": "DrugCentral:824",
+        "label": "dexamethasone"
+      },
+      {
+        "identifier": "GTOPDB:2768",
+        "label": "dexamethasone"
+      },
+      {
+        "identifier": "GTOPDB:3447",
+        "label": "[3H]dexamethasone"
+      },
+      {
+        "identifier": "HMDB:HMDB0015364",
+        "label": "Dexamethasone"
+      },
+      {
+        "identifier": "KEGG.COMPOUND:C15643"
+      },
+      {
+        "identifier": "INCHIKEY:UREBDLICKHMUKA-CXSFZGCWSA-N"
+      },
+      {
+        "identifier": "UMLS:C0011777",
+        "label": "dexamethasone"
+      },
+      {
+        "identifier": "RXCUI:3264"
+      },
+      {
+        "identifier": "CHEBI:41879",
+        "label": "dexamethasone"
+      },
+      {
+        "identifier": "CHEBI:4461"
+      },
+      {
+        "identifier": "CHEBI:41873"
+      },
+      {
+        "identifier": "UNII:7S5I7G3JQL",
+        "label": "DEXAMETHASONE"
+      },
+      {
+        "identifier": "PUBCHEM.COMPOUND:5743",
+        "label": "Dexamethasone"
+      },
+      {
+        "identifier": "CHEMBL.COMPOUND:CHEMBL384467",
+        "label": "DEXAMETHASONE"
+      },
+      {
+        "identifier": "DRUGBANK:DB01234",
+        "label": "Dexamethasone"
+      },
+      {
+        "identifier": "MESH:D003907",
+        "label": "Dexamethasone"
+      },
+      {
+        "identifier": "CAS:1050677-47-8"
+      },
+      {
+        "identifier": "CAS:200-003-9"
+      },
+      {
+        "identifier": "CAS:23495-06-9"
+      },
+      {
+        "identifier": "CAS:50-02-2"
+      },
+      {
+        "identifier": "DrugCentral:824",
+        "label": "dexamethasone"
+      },
+      {
+        "identifier": "GTOPDB:2768",
+        "label": "dexamethasone"
+      },
+      {
+        "identifier": "GTOPDB:3447",
+        "label": "[3H]dexamethasone"
+      },
+      {
+        "identifier": "HMDB:HMDB0015364",
+        "label": "Dexamethasone"
+      },
+      {
+        "identifier": "KEGG.COMPOUND:C15643"
+      },
+      {
+        "identifier": "INCHIKEY:UREBDLICKHMUKA-CXSFZGCWSA-N"
+      },
+      {
+        "identifier": "UMLS:C0011777",
+        "label": "dexamethasone"
+      },
+      {
+        "identifier": "RXCUI:3264"
+      },
+      {
+        "identifier": "CHEBI:68637",
+        "label": "dexamethasone phosphate"
+      },
+      {
+        "identifier": "UNII:2BP70L44PR",
+        "label": "DEXAMETHASONE PHOSPHATE"
+      },
+      {
+        "identifier": "PUBCHEM.COMPOUND:9400",
+        "label": "Dexamethasone Phosphate"
+      },
+      {
+        "identifier": "CHEMBL.COMPOUND:CHEMBL1201302",
+        "label": "DEXAMETHASONE PHOSPHORIC ACID"
+      },
+      {
+        "identifier": "MESH:C004180",
+        "label": "dexamethasone 21-phosphate"
+      },
+      {
+        "identifier": "CAS:206-232-0"
+      },
+      {
+        "identifier": "CAS:312-93-6"
+      },
+      {
+        "identifier": "DrugCentral:3920",
+        "label": "dexamethasone phosphate"
+      },
+      {
+        "identifier": "INCHIKEY:VQODGRNSFPNSQE-CXSFZGCWSA-N"
+      },
+      {
+        "identifier": "UMLS:C0770565",
+        "label": "dexamethasone phosphate"
+      },
+      {
+        "identifier": "RXCUI:235486"
+      },
+      {
+        "identifier": "CHEBI:4463",
+        "label": "Dexamethasone acetate"
+      },
+      {
+        "identifier": "UNII:E2287TKU04",
+        "label": "DEXAMETHASONE ACETATE, UNSPECIFIED FORM"
+      },
+      {
+        "identifier": "UNII:K7V8P532WP",
+        "label": "DEXAMETHASONE ACETATE ANHYDROUS"
+      },
+      {
+        "identifier": "PUBCHEM.COMPOUND:236702",
+        "label": "Dexamethasone Acetate"
+      },
+      {
+        "identifier": "CHEMBL.COMPOUND:CHEMBL1530428",
+        "label": "DEXAMETHASONE ACETATE"
+      },
+      {
+        "identifier": "CHEMBL.COMPOUND:CHEMBL1651"
+      },
+      {
+        "identifier": "DRUGBANK:DB14649",
+        "label": "Dexamethasone acetate"
+      },
+      {
+        "identifier": "MESH:C018038",
+        "label": "dexamethasone acetate"
+      },
+      {
+        "identifier": "CAS:1177-87-3"
+      },
+      {
+        "identifier": "CAS:214-646-8"
+      },
+      {
+        "identifier": "DrugCentral:826",
+        "label": "dexamethasone acetate"
+      },
+      {
+        "identifier": "KEGG.COMPOUND:C08174"
+      },
+      {
+        "identifier": "INCHIKEY:AKUJBENLRBOFTD-RPRRAYFGSA-N"
+      },
+      {
+        "identifier": "UMLS:C0057598",
+        "label": "dexamethasone acetate"
+      },
+      {
+        "identifier": "RXCUI:22690"
+      },
+      {
+        "identifier": "CHEBI:4463",
+        "label": "Dexamethasone acetate"
+      },
+      {
+        "identifier": "UNII:E2287TKU04",
+        "label": "DEXAMETHASONE ACETATE, UNSPECIFIED FORM"
+      },
+      {
+        "identifier": "UNII:K7V8P532WP",
+        "label": "DEXAMETHASONE ACETATE ANHYDROUS"
+      },
+      {
+        "identifier": "PUBCHEM.COMPOUND:236702",
+        "label": "Dexamethasone Acetate"
+      },
+      {
+        "identifier": "CHEMBL.COMPOUND:CHEMBL1530428",
+        "label": "DEXAMETHASONE ACETATE"
+      },
+      {
+        "identifier": "CHEMBL.COMPOUND:CHEMBL1651"
+      },
+      {
+        "identifier": "DRUGBANK:DB14649",
+        "label": "Dexamethasone acetate"
+      },
+      {
+        "identifier": "MESH:C018038",
+        "label": "dexamethasone acetate"
+      },
+      {
+        "identifier": "CAS:1177-87-3"
+      },
+      {
+        "identifier": "CAS:214-646-8"
+      },
+      {
+        "identifier": "DrugCentral:826",
+        "label": "dexamethasone acetate"
+      },
+      {
+        "identifier": "KEGG.COMPOUND:C08174"
+      },
+      {
+        "identifier": "INCHIKEY:AKUJBENLRBOFTD-RPRRAYFGSA-N"
+      },
+      {
+        "identifier": "UMLS:C0057598",
+        "label": "dexamethasone acetate"
+      },
+      {
+        "identifier": "RXCUI:22690"
+      },
+      {
+        "identifier": "CHEBI:177639",
+        "label": "Dexamethasone 21-(4-Pyridinecarboxylate)"
+      },
+      {
+        "identifier": "UNII:8LGC0BOA71",
+        "label": "DEXAMETHASONE ISONICOTINATE"
+      },
+      {
+        "identifier": "PUBCHEM.COMPOUND:16752",
+        "label": "Dexamethasone Isonicotinate"
+      },
+      {
+        "identifier": "CHEMBL.COMPOUND:CHEMBL3186453"
+      },
+      {
+        "identifier": "DRUGBANK:DB11487",
+        "label": "Dexamethasone isonicotinate"
+      },
+      {
+        "identifier": "MESH:D003908",
+        "label": "Dexamethasone Isonicotinate"
+      },
+      {
+        "identifier": "CAS:218-866-5"
+      },
+      {
+        "identifier": "CAS:2265-64-7"
+      },
+      {
+        "identifier": "DrugCentral:5675",
+        "label": "dexamethasone isonicotinate"
+      },
+      {
+        "identifier": "INCHIKEY:BQTXJHAJMDGOFI-NJLPOHDGSA-N"
+      },
+      {
+        "identifier": "UMLS:C0011779",
+        "label": "dexamethasone isonicotinate"
+      },
+      {
+        "identifier": "RXCUI:3265"
+      },
+      {
+        "identifier": "UNII:K182597N9C",
+        "label": "DEXAMETHASONE PIVALATE"
+      },
+      {
+        "identifier": "PUBCHEM.COMPOUND:63040",
+        "label": "Dexamethasone Pivalate"
+      },
+      {
+        "identifier": "MESH:C022090",
+        "label": "dexamethasone trimethyl acetate"
+      },
+      {
+        "identifier": "CAS:1926-94-9"
+      },
+      {
+        "identifier": "INCHIKEY:XMQRFWOHEPJZPS-JHUFMRCFSA-N"
+      },
+      {
+        "identifier": "UMLS:C0057603",
+        "label": "dexamethasone trimethyl acetate"
+      },
+      {
+        "identifier": "RXCUI:22694"
+      },
+      {
+        "identifier": "CHEBI:4462",
+        "label": "dexamethasone sodium phosphate"
+      },
+      {
+        "identifier": "UNII:AI9376Y64P",
+        "label": "DEXAMETHASONE SODIUM PHOSPHATE"
+      },
+      {
+        "identifier": "PUBCHEM.COMPOUND:16961",
+        "label": "Dexamethasone Sodium Phosphate"
+      },
+      {
+        "identifier": "PUBCHEM.COMPOUND:45357793",
+        "label": "Dexamethasone phosphate disodium"
+      },
+      {
+        "identifier": "CHEMBL.COMPOUND:CHEMBL2021430",
+        "label": "DEXAMETHASONE SODIUM PHOSPHATE"
+      },
+      {
+        "identifier": "CAS:2392-39-4"
+      },
+      {
+        "identifier": "INCHIKEY:PLCQGRYPOISRTQ-FCJDYXGNSA-L"
+      },
+      {
+        "identifier": "CHEBI:4462",
+        "label": "dexamethasone sodium phosphate"
+      },
+      {
+        "identifier": "UNII:AI9376Y64P",
+        "label": "DEXAMETHASONE SODIUM PHOSPHATE"
+      },
+      {
+        "identifier": "PUBCHEM.COMPOUND:16961",
+        "label": "Dexamethasone Sodium Phosphate"
+      },
+      {
+        "identifier": "PUBCHEM.COMPOUND:45357793",
+        "label": "Dexamethasone phosphate disodium"
+      },
+      {
+        "identifier": "CHEMBL.COMPOUND:CHEMBL2021430",
+        "label": "DEXAMETHASONE SODIUM PHOSPHATE"
+      },
+      {
+        "identifier": "CAS:2392-39-4"
+      },
+      {
+        "identifier": "INCHIKEY:PLCQGRYPOISRTQ-FCJDYXGNSA-L"
+      },
+      {
+        "identifier": "UMLS:C1658209",
+        "label": "dexamethasone acetate anhydrous"
+      },
+      {
+        "identifier": "RXCUI:2378841"
+      },
+      {
+        "identifier": "UMLS:C0113286",
+        "label": "dexamethasone sodium phosphate"
+      },
+      {
+        "identifier": "RXCUI:48933"
+      },
+      {
+        "identifier": "RXCUI:105392"
+      },
+      {
+        "identifier": "UMLS:C0356428",
+        "label": "dexamethasone 0.5 MG Oral Tablet [Decadron]"
+      },
+      {
+        "identifier": "RXCUI:197576"
+      },
+      {
+        "identifier": "UMLS:C0688489",
+        "label": "dexamethasone 0.25 MG Oral Tablet"
+      },
+      {
+        "identifier": "RXCUI:197577"
+      },
+      {
+        "identifier": "UMLS:C0688490",
+        "label": "dexamethasone 0.5 MG Oral Tablet"
+      },
+      {
+        "identifier": "RXCUI:197579"
+      },
+      {
+        "identifier": "UMLS:C0688493",
+        "label": "dexamethasone 1 MG Oral Tablet"
+      },
+      {
+        "identifier": "RXCUI:197580"
+      },
+      {
+        "identifier": "UMLS:C0688495",
+        "label": "dexamethasone 1.5 MG Oral Tablet"
+      },
+      {
+        "identifier": "RXCUI:197581"
+      },
+      {
+        "identifier": "UMLS:C0688496",
+        "label": "dexamethasone 2 MG Oral Tablet"
+      },
+      {
+        "identifier": "RXCUI:197582"
+      },
+      {
+        "identifier": "UMLS:C0688497",
+        "label": "dexamethasone 4 MG Oral Tablet"
+      },
+      {
+        "identifier": "RXCUI:197583"
+      },
+      {
+        "identifier": "UMLS:C0688498",
+        "label": "dexamethasone 6 MG Oral Tablet"
+      },
+      {
+        "identifier": "RXCUI:203704"
+      },
+      {
+        "identifier": "UMLS:C0701253",
+        "label": "Dexasone"
+      },
+      {
+        "identifier": "RXCUI:203705"
+      },
+      {
+        "identifier": "UMLS:C0701254",
+        "label": "Maxidex"
+      },
+      {
+        "identifier": "RXCUI:205669"
+      },
+      {
+        "identifier": "UMLS:C0706574",
+        "label": "dexamethasone 1 MG/ML Ophthalmic Suspension [Maxidex]"
+      },
+      {
+        "identifier": "RXCUI:205712"
+      },
+      {
+        "identifier": "UMLS:C0706623",
+        "label": "dexamethasone 4 MG Oral Tablet [Decadron]"
+      },
+      {
+        "identifier": "RXCUI:205717"
+      },
+      {
+        "identifier": "UMLS:C0706628",
+        "label": "dexamethasone 6 MG Oral Tablet [Decadron]"
+      },
+      {
+        "identifier": "RXCUI:226343"
+      },
+      {
+        "identifier": "UMLS:C0731536",
+        "label": "dexamethasone phosphate 1 MG/ML Ophthalmic Solution"
+      },
+      {
+        "identifier": "RXCUI:227682"
+      },
+      {
+        "identifier": "UMLS:C0740057",
+        "label": "Decadron"
+      },
+      {
+        "identifier": "RXCUI:309684"
+      },
+      {
+        "identifier": "UMLS:C0976121",
+        "label": "dexamethasone 1 MG/ML Oral Solution"
+      },
+      {
+        "identifier": "RXCUI:309686"
+      },
+      {
+        "identifier": "UMLS:C0976123",
+        "label": "dexamethasone 0.1 MG/ML Oral Solution"
+      },
+      {
+        "identifier": "RXCUI:309692"
+      },
+      {
+        "identifier": "UMLS:C0976129",
+        "label": "dexamethasone 1 MG/ML Ophthalmic Suspension"
+      },
+      {
+        "identifier": "RXCUI:309696"
+      },
+      {
+        "identifier": "UMLS:C0976133",
+        "label": "dexamethasone phosphate 10 MG/ML Injectable Solution"
+      },
+      {
+        "identifier": "RXCUI:315773"
+      },
+      {
+        "identifier": "UMLS:C0985340",
+        "label": "dexamethasone 0.1 MG/ML"
+      },
+      {
+        "identifier": "RXCUI:315774"
+      },
+      {
+        "identifier": "UMLS:C0985341",
+        "label": "dexamethasone 0.25 MG"
+      },
+      {
+        "identifier": "RXCUI:315775"
+      },
+      {
+        "identifier": "UMLS:C0985342",
+        "label": "dexamethasone 0.5 MG"
+      },
+      {
+        "identifier": "RXCUI:315776"
+      },
+      {
+        "identifier": "UMLS:C0985344",
+        "label": "dexamethasone 1 MG"
+      },
+      {
+        "identifier": "RXCUI:315777"
+      },
+      {
+        "identifier": "UMLS:C0985345",
+        "label": "dexamethasone 1.5 MG"
+      },
+      {
+        "identifier": "RXCUI:315778"
+      },
+      {
+        "identifier": "UMLS:C0985346",
+        "label": "dexamethasone 4 MG"
+      },
+      {
+        "identifier": "RXCUI:315779"
+      },
+      {
+        "identifier": "UMLS:C0985347",
+        "label": "dexamethasone 6 MG"
+      },
+      {
+        "identifier": "RXCUI:317346"
+      },
+      {
+        "identifier": "UMLS:C0992229",
+        "label": "dexamethasone 2 MG"
+      },
+      {
+        "identifier": "RXCUI:317629"
+      },
+      {
+        "identifier": "UMLS:C0993323",
+        "label": "dexamethasone 1 MG/ML"
+      },
+      {
+        "identifier": "RXCUI:332981"
+      },
+      {
+        "identifier": "UMLS:C1129328",
+        "label": "dexamethasone 3 MG/ML"
+      },
+      {
+        "identifier": "RXCUI:332984"
+      },
+      {
+        "identifier": "UMLS:C1129331",
+        "label": "dexamethasone 0.4 MG"
+      },
+      {
+        "identifier": "RXCUI:335766"
+      },
+      {
+        "identifier": "UMLS:C1132809",
+        "label": "dexamethasone 0.02 MG/ACTUAT"
+      },
+      {
+        "identifier": "RXCUI:339981"
+      },
+      {
+        "identifier": "UMLS:C1140013",
+        "label": "dexamethasone 0.001 MG/MG"
+      },
+      {
+        "identifier": "RXCUI:343033"
+      },
+      {
+        "identifier": "UMLS:C1145742",
+        "label": "dexamethasone 0.75 MG Oral Tablet"
+      },
+      {
+        "identifier": "RXCUI:343040"
+      },
+      {
+        "identifier": "UMLS:C1145749",
+        "label": "dexamethasone 0.75 MG Oral Tablet [Decadron]"
+      },
+      {
+        "identifier": "RXCUI:345816"
+      },
+      {
+        "identifier": "UMLS:C1153759",
+        "label": "dexamethasone 0.75 MG"
+      },
+      {
+        "identifier": "RXCUI:363482"
+      },
+      {
+        "identifier": "UMLS:C1237415",
+        "label": "dexamethasone Injectable Solution [Dexasone]"
+      },
+      {
+        "identifier": "RXCUI:365842"
+      },
+      {
+        "identifier": "UMLS:C1239806",
+        "label": "dexamethasone Ophthalmic Suspension [Maxidex]"
+      },
+      {
+        "identifier": "RXCUI:369461"
+      },
+      {
+        "identifier": "UMLS:C1243472",
+        "label": "dexamethasone Oral Tablet [Decadron]"
+      },
+      {
+        "identifier": "RXCUI:371721"
+      },
+      {
+        "identifier": "UMLS:C1245762",
+        "label": "dexamethasone Injectable Suspension"
+      },
+      {
+        "identifier": "RXCUI:371723"
+      },
+      {
+        "identifier": "UMLS:C1245764",
+        "label": "dexamethasone Ophthalmic Suspension"
+      },
+      {
+        "identifier": "RXCUI:371725"
+      },
+      {
+        "identifier": "UMLS:C1245766",
+        "label": "dexamethasone Injectable Solution"
+      },
+      {
+        "identifier": "RXCUI:371728"
+      },
+      {
+        "identifier": "UMLS:C1245769",
+        "label": "dexamethasone Oral Solution"
+      },
+      {
+        "identifier": "RXCUI:371729"
+      },
+      {
+        "identifier": "UMLS:C1245770",
+        "label": "dexamethasone Oral Tablet"
+      },
+      {
+        "identifier": "RXCUI:377418"
+      },
+      {
+        "identifier": "UMLS:C1251642",
+        "label": "dexamethasone Ophthalmic Solution"
+      },
+      {
+        "identifier": "RXCUI:388755"
+      },
+      {
+        "identifier": "UMLS:C1274001",
+        "label": "dexamethasone 1 MG/ML Topical Solution"
+      },
+      {
+        "identifier": "RXCUI:393151"
+      },
+      {
+        "identifier": "UMLS:C1305815",
+        "label": "dexamethasone Topical Solution"
+      },
+      {
+        "identifier": "RXCUI:435681"
+      },
+      {
+        "identifier": "UMLS:C1364979",
+        "label": "dexamethasone 2 MG/ML Injectable Solution"
+      },
+      {
+        "identifier": "RXCUI:438889"
+      },
+      {
+        "identifier": "UMLS:C1368325",
+        "label": "dexamethasone 0.5 MG/ML"
+      },
+      {
+        "identifier": "RXCUI:451789"
+      },
+      {
+        "identifier": "UMLS:C1383382",
+        "label": "dexamethasone 2 MG/ML"
+      },
+      {
+        "identifier": "RXCUI:564044"
+      },
+      {
+        "identifier": "UMLS:C1596485",
+        "label": "dexamethasone 0.5 MG [Decadron]"
+      },
+      {
+        "identifier": "RXCUI:566561"
+      },
+      {
+        "identifier": "UMLS:C1598989",
+        "label": "dexamethasone 1 MG/ML [Maxidex]"
+      },
+      {
+        "identifier": "RXCUI:566603"
+      },
+      {
+        "identifier": "UMLS:C1599031",
+        "label": "dexamethasone 4 MG [Decadron]"
+      },
+      {
+        "identifier": "RXCUI:566608"
+      },
+      {
+        "identifier": "UMLS:C1599036",
+        "label": "dexamethasone 6 MG [Decadron]"
+      },
+      {
+        "identifier": "RXCUI:575233"
+      },
+      {
+        "identifier": "UMLS:C1592957",
+        "label": "dexamethasone 0.75 MG [Decadron]"
+      },
+      {
+        "identifier": "RXCUI:854175"
+      },
+      {
+        "identifier": "UMLS:C2702453",
+        "label": "dexamethasone 0.7 MG"
+      },
+      {
+        "identifier": "RXCUI:854176"
+      },
+      {
+        "identifier": "UMLS:C2702454",
+        "label": "dexamethasone Drug Implant"
+      },
+      {
+        "identifier": "RXCUI:854177"
+      },
+      {
+        "identifier": "UMLS:C2702455",
+        "label": "dexamethasone 0.7 MG Drug Implant"
+      },
+      {
+        "identifier": "RXCUI:854178"
+      },
+      {
+        "identifier": "UMLS:C2702456",
+        "label": "Ozurdex"
+      },
+      {
+        "identifier": "RXCUI:854179"
+      },
+      {
+        "identifier": "UMLS:C2702457",
+        "label": "dexamethasone 0.7 MG [Ozurdex]"
+      },
+      {
+        "identifier": "RXCUI:854180"
+      },
+      {
+        "identifier": "UMLS:C2702458",
+        "label": "dexamethasone Drug Implant [Ozurdex]"
+      },
+      {
+        "identifier": "RXCUI:854181"
+      },
+      {
+        "identifier": "UMLS:C2702459",
+        "label": "dexamethasone 0.7 MG Drug Implant [Ozurdex]"
+      },
+      {
+        "identifier": "RXCUI:880649"
+      },
+      {
+        "identifier": "UMLS:C2725026",
+        "label": "dexamethasone 3 MG/ML Injectable Solution"
+      },
+      {
+        "identifier": "RXCUI:1049383"
+      },
+      {
+        "identifier": "UMLS:C2979939",
+        "label": "Dexium"
+      },
+      {
+        "identifier": "RXCUI:1049384"
+      },
+      {
+        "identifier": "UMLS:C2955003",
+        "label": "dexamethasone 2 MG/ML [Dexium]"
+      },
+      {
+        "identifier": "RXCUI:1049385"
+      },
+      {
+        "identifier": "UMLS:C2955004",
+        "label": "dexamethasone Injectable Solution [Dexium]"
+      },
+      {
+        "identifier": "RXCUI:1049386"
+      },
+      {
+        "identifier": "UMLS:C1585794",
+        "label": "dexamethasone 2 MG/ML Injectable Solution [Dexium]"
+      },
+      {
+        "identifier": "RXCUI:1049399"
+      },
+      {
+        "identifier": "UMLS:C2955010",
+        "label": "dexamethasone sodium phosphate 4 MG/ML"
+      },
+      {
+        "identifier": "RXCUI:1049400"
+      },
+      {
+        "identifier": "UMLS:C2955011",
+        "label": "dexamethasone sodium phosphate 4 MG/ML Injectable Solution"
+      },
+      {
+        "identifier": "RXCUI:1087756"
+      },
+      {
+        "identifier": "UMLS:C2963062",
+        "label": "dexamethasone 2 MG/ML [Dexasone]"
+      },
+      {
+        "identifier": "RXCUI:1087757"
+      },
+      {
+        "identifier": "UMLS:C2963063",
+        "label": "dexamethasone 2 MG/ML Injectable Solution [Dexasone]"
+      },
+      {
+        "identifier": "RXCUI:1087918"
+      },
+      {
+        "identifier": "UMLS:C2977976",
+        "label": "dexamethasone 3 MG/ML [Dexium]"
+      },
+      {
+        "identifier": "RXCUI:1087919"
+      },
+      {
+        "identifier": "UMLS:C2977977",
+        "label": "dexamethasone 3 MG/ML Injectable Solution [Dexium]"
+      },
+      {
+        "identifier": "RXCUI:1116926"
+      },
+      {
+        "identifier": "UMLS:C3194678",
+        "label": "dexamethasone phosphate 4 MG/ML"
+      },
+      {
+        "identifier": "RXCUI:1116927"
+      },
+      {
+        "identifier": "UMLS:C3194679",
+        "label": "dexamethasone phosphate 4 MG/ML Injectable Solution"
+      },
+      {
+        "identifier": "RXCUI:1154529"
+      },
+      {
+        "identifier": "UMLS:C3208999",
+        "label": "dexamethasone Drug Implant Product"
+      },
+      {
+        "identifier": "RXCUI:1154530"
+      },
+      {
+        "identifier": "UMLS:C4750098",
+        "label": "dexamethasone Inhalant Product"
+      },
+      {
+        "identifier": "RXCUI:1154531"
+      },
+      {
+        "identifier": "UMLS:C3209001",
+        "label": "dexamethasone Injectable Product"
+      },
+      {
+        "identifier": "RXCUI:1154533"
+      },
+      {
+        "identifier": "UMLS:C0304706",
+        "label": "dexamethasone Ophthalmic Product"
+      },
+      {
+        "identifier": "RXCUI:1154534"
+      },
+      {
+        "identifier": "UMLS:C3209004",
+        "label": "dexamethasone Oral Liquid Product"
+      },
+      {
+        "identifier": "RXCUI:1154535"
+      },
+      {
+        "identifier": "UMLS:C0360528",
+        "label": "Oral form dexamethasone"
+      },
+      {
+        "identifier": "RXCUI:1154536"
+      },
+      {
+        "identifier": "UMLS:C1329996",
+        "label": "dexamethasone Otic Product"
+      },
+      {
+        "identifier": "RXCUI:1154537"
+      },
+      {
+        "identifier": "UMLS:C3209006",
+        "label": "dexamethasone Pill"
+      },
+      {
+        "identifier": "RXCUI:1154539"
+      },
+      {
+        "identifier": "UMLS:C0360531",
+        "label": "dexamethasone Topical Product"
+      },
+      {
+        "identifier": "RXCUI:1170297"
+      },
+      {
+        "identifier": "UMLS:C3224417",
+        "label": "Decadron Oral Product"
+      },
+      {
+        "identifier": "RXCUI:1170298"
+      },
+      {
+        "identifier": "UMLS:C3224418",
+        "label": "Decadron Pill"
+      },
+      {
+        "identifier": "RXCUI:1175250"
+      },
+      {
+        "identifier": "UMLS:C3229262",
+        "label": "Dexasone Injectable Product"
+      },
+      {
+        "identifier": "RXCUI:1175843"
+      },
+      {
+        "identifier": "UMLS:C3229821",
+        "label": "Dexium Injectable Product"
+      },
+      {
+        "identifier": "RXCUI:1177629"
+      },
+      {
+        "identifier": "UMLS:C3231548",
+        "label": "Ozurdex Drug Implant Product"
+      },
+      {
+        "identifier": "RXCUI:1181604"
+      },
+      {
+        "identifier": "UMLS:C3235443",
+        "label": "Maxidex Ophthalmic Product"
+      },
+      {
+        "identifier": "RXCUI:1249711"
+      },
+      {
+        "identifier": "UMLS:C3281779",
+        "label": "dexamethasone sodium phosphate 0.4 MG/ML"
+      },
+      {
+        "identifier": "RXCUI:1249712"
+      },
+      {
+        "identifier": "UMLS:C3281780",
+        "label": "dexamethasone sodium phosphate 0.4 MG/ML Injectable Solution"
+      },
+      {
+        "identifier": "RXCUI:1374371"
+      },
+      {
+        "identifier": "UMLS:C3556798",
+        "label": "dexamethasone acetate 8 MG/ML"
+      },
+      {
+        "identifier": "RXCUI:1374372"
+      },
+      {
+        "identifier": "UMLS:C0976125",
+        "label": "dexamethasone acetate 8 MG/ML Injectable Suspension"
+      },
+      {
+        "identifier": "RXCUI:1812073"
+      },
+      {
+        "identifier": "UMLS:C4283889",
+        "label": "dexamethasone single use injection"
+      },
+      {
+        "identifier": "RXCUI:1812078"
+      },
+      {
+        "identifier": "UMLS:C4291569",
+        "label": "dexamethasone phosphate 10 MG/ML"
+      },
+      {
+        "identifier": "RXCUI:1812079"
+      },
+      {
+        "identifier": "UMLS:C4281923",
+        "label": "1 ML dexamethasone phosphate 10 MG/ML Injection"
+      },
+      {
+        "identifier": "RXCUI:1812094"
+      },
+      {
+        "identifier": "UMLS:C4291596",
+        "label": "dexamethasone Prefilled Syringe"
+      },
+      {
+        "identifier": "RXCUI:1812095"
+      },
+      {
+        "identifier": "UMLS:C4282340",
+        "label": "1 ML dexamethasone phosphate 4 MG/ML Prefilled Syringe"
+      },
+      {
+        "identifier": "RXCUI:1812194"
+      },
+      {
+        "identifier": "UMLS:C4282341",
+        "label": "1 ML dexamethasone phosphate 4 MG/ML Injection"
+      },
+      {
+        "identifier": "RXCUI:2045403"
+      },
+      {
+        "identifier": "UMLS:C4692159",
+        "label": "dexamethasone 103.4 MG/ML"
+      },
+      {
+        "identifier": "RXCUI:2045404"
+      },
+      {
+        "identifier": "UMLS:C4555777",
+        "label": "0.005 ML dexamethasone 103.4 MG/ML Injection"
+      },
+      {
+        "identifier": "RXCUI:2045405"
+      },
+      {
+        "identifier": "UMLS:C4692160",
+        "label": "Dexycu"
+      },
+      {
+        "identifier": "RXCUI:2045406"
+      },
+      {
+        "identifier": "UMLS:C4692161",
+        "label": "dexamethasone 103.4 MG/ML [Dexycu]"
+      },
+      {
+        "identifier": "RXCUI:2045407"
+      },
+      {
+        "identifier": "UMLS:C4692162",
+        "label": "dexamethasone Injection [Dexycu]"
+      },
+      {
+        "identifier": "RXCUI:2045408"
+      },
+      {
+        "identifier": "UMLS:C4692163",
+        "label": "Dexycu Injectable Product"
+      },
+      {
+        "identifier": "RXCUI:2045409"
+      },
+      {
+        "identifier": "UMLS:C4692164",
+        "label": "0.005 ML dexamethasone 103.4 MG/ML Injection [Dexycu]"
+      },
+      {
+        "identifier": "RXCUI:2099700"
+      },
+      {
+        "identifier": "UMLS:C4734218",
+        "label": "1 ML dexamethasone phosphate 10 MG/ML Prefilled Syringe"
+      },
+      {
+        "identifier": "RXCUI:2108015"
+      },
+      {
+        "identifier": "UMLS:C4745654",
+        "label": "dexamethasone 0.4 MG Drug Implant"
+      },
+      {
+        "identifier": "RXCUI:2108016"
+      },
+      {
+        "identifier": "UMLS:C4745655",
+        "label": "Dextenza"
+      },
+      {
+        "identifier": "RXCUI:2108017"
+      },
+      {
+        "identifier": "UMLS:C4745656",
+        "label": "dexamethasone 0.4 MG [Dextenza]"
+      },
+      {
+        "identifier": "RXCUI:2108018"
+      },
+      {
+        "identifier": "UMLS:C4745657",
+        "label": "dexamethasone Drug Implant [Dextenza]"
+      },
+      {
+        "identifier": "RXCUI:2108019"
+      },
+      {
+        "identifier": "UMLS:C4745658",
+        "label": "Dextenza Drug Implant Product"
+      },
+      {
+        "identifier": "RXCUI:2108020"
+      },
+      {
+        "identifier": "UMLS:C4745659",
+        "label": "dexamethasone 0.4 MG Drug Implant [Dextenza]"
+      },
+      {
+        "identifier": "RXCUI:2261801"
+      },
+      {
+        "identifier": "UMLS:C5233847",
+        "label": "dexamethasone 20 MG"
+      },
+      {
+        "identifier": "RXCUI:2261802"
+      },
+      {
+        "identifier": "UMLS:C5211056",
+        "label": "dexamethasone 20 MG Oral Tablet"
+      },
+      {
+        "identifier": "RXCUI:2265538"
+      },
+      {
+        "identifier": "UMLS:C5222344",
+        "label": "dexamethasone phosphate 1 MG/ML"
+      },
+      {
+        "identifier": "RXCUI:2286256"
+      },
+      {
+        "identifier": "UMLS:C5384295",
+        "label": "Hemady"
+      },
+      {
+        "identifier": "RXCUI:2286257"
+      },
+      {
+        "identifier": "UMLS:C5384363",
+        "label": "dexamethasone 20 MG [Hemady]"
+      },
+      {
+        "identifier": "RXCUI:2286258"
+      },
+      {
+        "identifier": "UMLS:C5384426",
+        "label": "dexamethasone Oral Tablet [Hemady]"
+      },
+      {
+        "identifier": "RXCUI:2286259"
+      },
+      {
+        "identifier": "UMLS:C5384449",
+        "label": "Hemady Oral Product"
+      },
+      {
+        "identifier": "RXCUI:2286260"
+      },
+      {
+        "identifier": "UMLS:C5384450",
+        "label": "Hemady Pill"
+      },
+      {
+        "identifier": "RXCUI:2286261"
+      },
+      {
+        "identifier": "UMLS:C5383444",
+        "label": "dexamethasone 20 MG Oral Tablet [Hemady]"
+      },
+      {
+        "identifier": "RXCUI:2645914"
+      },
+      {
+        "identifier": "UMLS:C5835027",
+        "label": "dexAMETHasone phosphate Prefilled Syringe"
+      },
+      {
+        "identifier": "RXCUI:2646868"
+      },
+      {
+        "identifier": "UMLS:C5835794",
+        "label": "dexAMETHasone acetate Injectable Suspension"
+      },
+      {
+        "identifier": "RXCUI:2647038"
+      },
+      {
+        "identifier": "UMLS:C5835936",
+        "label": "dexAMETHasone sodium phosphate Injectable Solution"
+      },
+      {
+        "identifier": "RXCUI:2647506"
+      },
+      {
+        "identifier": "UMLS:C4730922",
+        "label": "dexAMETHasone sodium phosphate Ophthalmic Solution"
+      },
+      {
+        "identifier": "RXCUI:2647718"
+      },
+      {
+        "identifier": "UMLS:C5836490",
+        "label": "dexAMETHasone phosphate Ophthalmic Solution"
+      },
+      {
+        "identifier": "RXCUI:2649065"
+      },
+      {
+        "identifier": "UMLS:C5837619",
+        "label": "dexAMETHasone phosphate Injection"
+      },
+      {
+        "identifier": "RXCUI:2649374"
+      },
+      {
+        "identifier": "UMLS:C5837867",
+        "label": "dexAMETHasone phosphate Injectable Solution"
+      },
+      {
+        "identifier": "RXCUI:2654538"
+      },
+      {
+        "identifier": "UMLS:C5838404",
+        "label": "dexAMETHasone phosphate Ophthalmic Solution [Ocu-Dex]"
+      },
+      {
+        "identifier": "RXCUI:2654609"
+      },
+      {
+        "identifier": "UMLS:C5838475",
+        "label": "dexAMETHasone sodium phosphate Ophthalmic Solution [Decadron]"
+      },
+      {
+        "identifier": "RXCUI:2655055"
+      },
+      {
+        "identifier": "UMLS:C5838920",
+        "label": "dexAMETHasone sodium phosphate Injectable Solution [Dalalone]"
+      },
+      {
+        "identifier": "RXCUI:2655323"
+      },
+      {
+        "identifier": "UMLS:C5839188",
+        "label": "dexAMETHasone acetate Injectable Suspension [Robadex]"
+      },
+      {
+        "identifier": "RXCUI:2656346"
+      },
+      {
+        "identifier": "UMLS:C5840205",
+        "label": "dexAMETHasone acetate Injectable Suspension [Decadron-LA]"
+      },
+      {
+        "identifier": "RXCUI:2657307"
+      },
+      {
+        "identifier": "UMLS:C5841165",
+        "label": "dexAMETHasone acetate Injectable Suspension [Dalalone]"
+      },
+      {
+        "identifier": "RXCUI:2657749"
+      },
+      {
+        "identifier": "UMLS:C5841606",
+        "label": "dexAMETHasone acetate Injectable Suspension [De-Sone LA]"
+      },
+      {
+        "identifier": "RXCUI:2657828"
+      },
+      {
+        "identifier": "UMLS:C5841685",
+        "label": "dexAMETHasone sodium phosphate Injectable Solution [Hexadrol]"
+      },
+      {
+        "identifier": "RXCUI:2658098"
+      },
+      {
+        "identifier": "UMLS:C5841954",
+        "label": "dexAMETHasone phosphate Ophthalmic Solution [AK-Dex]"
+      },
+      {
+        "identifier": "RXCUI:2658208"
+      },
+      {
+        "identifier": "UMLS:C5842062",
+        "label": "dexAMETHasone sodium phosphate Injectable Solution [Decadron]"
+      },
+      {
+        "identifier": "RXCUI:2658324"
+      },
+      {
+        "identifier": "UMLS:C5842176",
+        "label": "dexAMETHasone phosphate Ophthalmic Solution [Dexasol]"
+      },
+      {
+        "identifier": "RXCUI:2658445"
+      },
+      {
+        "identifier": "UMLS:C5842296",
+        "label": "dexAMETHasone acetate Injectable Suspension [Dexasone]"
+      },
+      {
+        "identifier": "RXCUI:2658716"
+      },
+      {
+        "identifier": "UMLS:C5842567",
+        "label": "dexAMETHasone sodium phosphate Injectable Solution [Dexasone]"
+      },
+      {
+        "identifier": "RXCUI:2658832"
+      },
+      {
+        "identifier": "UMLS:C5842683",
+        "label": "dexAMETHasone acetate Injectable Suspension [Dexacort-LA]"
+      },
+      {
+        "identifier": "RXCUI:2660304"
+      },
+      {
+        "identifier": "UMLS:C5844112",
+        "label": "dexAMETHasone sodium phosphate Topical Product"
+      },
+      {
+        "identifier": "RXCUI:2660306"
+      },
+      {
+        "identifier": "UMLS:C5844114",
+        "label": "dexAMETHasone sodium phosphate Otic Product"
+      },
+      {
+        "identifier": "RXCUI:2660379"
+      },
+      {
+        "identifier": "UMLS:C5844187",
+        "label": "dexAMETHasone phosphate Injectable Product"
+      },
+      {
+        "identifier": "RXCUI:2661354"
+      },
+      {
+        "identifier": "UMLS:C5845160",
+        "label": "dexAMETHasone phosphate Ophthalmic Product"
+      },
+      {
+        "identifier": "RXCUI:2661460"
+      },
+      {
+        "identifier": "UMLS:C5845266",
+        "label": "dexAMETHasone acetate Injectable Product"
+      },
+      {
+        "identifier": "RXCUI:2663011"
+      },
+      {
+        "identifier": "UMLS:C5846815",
+        "label": "dexAMETHasone sodium phosphate Injectable Product"
+      },
+      {
+        "identifier": "RXCUI:2663109"
+      },
+      {
+        "identifier": "UMLS:C5846913",
+        "label": "dexAMETHasone sodium phosphate Ophthalmic Product"
+      },
+      {
+        "identifier": "RXCUI:2691147"
+      },
+      {
+        "identifier": "UMLS:C5942020",
+        "label": "dexamethasone 0.00075 MG/MG"
+      },
+      {
+        "identifier": "RXCUI:2691148"
+      },
+      {
+        "identifier": "UMLS:C5942039",
+        "label": "dexamethasone Topical Ointment"
+      },
+      {
+        "identifier": "RXCUI:2691149"
+      },
+      {
+        "identifier": "UMLS:C5941683",
+        "label": "dexamethasone 0.00075 MG/MG Topical Ointment"
+      },
+      {
+        "identifier": "RXCUI:759481"
+      },
+      {
+        "identifier": "RXCUI:759696"
+      },
+      {
+        "identifier": "RXCUI:759697"
+      },
+      {
+        "identifier": "RXCUI:795716"
+      },
+      {
+        "identifier": "RXCUI:797022"
+      },
+      {
+        "identifier": "RXCUI:797023"
+      },
+      {
+        "identifier": "RXCUI:846192"
+      },
+      {
+        "identifier": "RXCUI:847225"
+      },
+      {
+        "identifier": "RXCUI:1869595"
+      },
+      {
+        "identifier": "RXCUI:1943550"
+      },
+      {
+        "identifier": "RXCUI:1998481"
+      },
+      {
+        "identifier": "RXCUI:1998482"
+      },
+      {
+        "identifier": "RXCUI:2118829"
+      },
+      {
+        "identifier": "RXCUI:2118835"
+      },
+      {
+        "identifier": "RXCUI:2387355"
+      },
+      {
+        "identifier": "RXCUI:2387356"
+      }
+    ],
+    "type": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MolecularMixture",
+      "biolink:ChemicalMixture",
+      "biolink:Drug",
+      "biolink:OntologyClass"
+    ],
+    "information_content": 88.2
+  }
+}

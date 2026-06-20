@@ -1,0 +1,129 @@
+{
+  "NCBIGene:100113425": {
+    "id": {
+      "identifier": "NCBIGene:100113425",
+      "label": "BMP4"
+    },
+    "equivalent_identifiers": [
+      {
+        "identifier": "NCBIGene:100113425",
+        "label": "BMP4",
+        "taxa": [
+          "NCBITaxon:9823"
+        ]
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCG00000005045"
+      },
+      {
+        "identifier": "RGD:14239951"
+      },
+      {
+        "identifier": "UniProtKB:A0A8D0JDV3",
+        "label": "A0A8D0JDV3_PIG Bone morphogenetic protein 4 (trembl)",
+        "taxa": [
+          "NCBITaxon:9823"
+        ]
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00015026419"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00015026419.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00025040143"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00025040143.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00030024135"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00030024135.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00035044443"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00035044443.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00040014679"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00040014679.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00045009972"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00045009972.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00055010681"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00055010681.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00060022807"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00060022807.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00065024021"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00065024021.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00070052535"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00070052535.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00070052536"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00070052536.1"
+      },
+      {
+        "identifier": "UniProtKB:A7LJT9",
+        "label": "A7LJT9_PIG Bone morphogenetic protein 4 (trembl)",
+        "taxa": [
+          "NCBITaxon:9823"
+        ]
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00000005423"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00000005423.2"
+      }
+    ],
+    "taxa": [
+      "NCBITaxon:9823"
+    ],
+    "type": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ]
+  }
+}

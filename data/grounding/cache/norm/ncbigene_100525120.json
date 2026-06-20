@@ -1,0 +1,210 @@
+{
+  "NCBIGene:100525120": {
+    "id": {
+      "identifier": "NCBIGene:100525120",
+      "label": "HGF"
+    },
+    "equivalent_identifiers": [
+      {
+        "identifier": "NCBIGene:100525120",
+        "label": "HGF",
+        "taxa": [
+          "NCBITaxon:9823"
+        ]
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCG00000015403"
+      },
+      {
+        "identifier": "RGD:14209385"
+      },
+      {
+        "identifier": "UniProtKB:A0A287BRN0",
+        "label": "A0A287BRN0_PIG Hepatocyte growth factor (trembl)",
+        "taxa": [
+          "NCBITaxon:9823"
+        ]
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00000058781"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00000058781.3"
+      },
+      {
+        "identifier": "UniProtKB:A0A8D0J077",
+        "label": "A0A8D0J077_PIG Hepatocyte growth factor (trembl)",
+        "taxa": [
+          "NCBITaxon:9823"
+        ]
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00015023759"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00015023759.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00025029598"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00025029598.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00030047111"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00030047111.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00055010903"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00055010903.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00070002442"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00070002442.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00070002453"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00070002453.1"
+      },
+      {
+        "identifier": "UniProtKB:A0A8D1PS51",
+        "label": "A0A8D1PS51_PIG Hepatocyte growth factor (trembl)",
+        "taxa": [
+          "NCBITaxon:9823"
+        ]
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00015023577"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00015023577.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00025029328"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00025029328.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00030047062"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00030047062.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00035018809"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00035018809.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00045040004"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00045040004.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00050030315"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00050030315.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00055010764"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00055010764.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00060019150"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00060019150.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00065032425"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00065032425.1"
+      },
+      {
+        "identifier": "UniProtKB:A0A8D1V606",
+        "label": "A0A8D1V606_PIG Hepatocyte growth factor (trembl)",
+        "taxa": [
+          "NCBITaxon:9823"
+        ]
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00035018802"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00035018802.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00045040191"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00045040191.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00050030322"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00050030322.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00060019158"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00060019158.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00065032429"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00065032429.1"
+      },
+      {
+        "identifier": "UniProtKB:F1SB93",
+        "label": "F1SB93_PIG Hepatocyte growth factor (trembl)",
+        "taxa": [
+          "NCBITaxon:9823"
+        ]
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00000016330"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00000016330.5"
+      }
+    ],
+    "taxa": [
+      "NCBITaxon:9823"
+    ],
+    "type": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ]
+  }
+}

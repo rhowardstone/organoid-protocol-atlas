@@ -1,0 +1,55 @@
+{
+  "CHEBI:233322": {
+    "id": {
+      "identifier": "CHEBI:233322",
+      "label": "A-83-01"
+    },
+    "equivalent_identifiers": [
+      {
+        "identifier": "CHEBI:233322",
+        "label": "3-(6-methylpyridin-2-yl)-N-phenyl-4-(quinolin-4-yl)-1H-pyrazole-1-carbothioamide"
+      },
+      {
+        "identifier": "UNII:X3ZNM7QJ2Q",
+        "label": "A-83-01"
+      },
+      {
+        "identifier": "PUBCHEM.COMPOUND:16218924",
+        "label": "A-83-01"
+      },
+      {
+        "identifier": "CHEMBL.COMPOUND:CHEMBL1170377"
+      },
+      {
+        "identifier": "MESH:C507011",
+        "label": "A-83-01"
+      },
+      {
+        "identifier": "CAS:909910-43-6"
+      },
+      {
+        "identifier": "HMDB:HMDB0247640",
+        "label": "3-(6-Methylpyridin-2-yl)-N-phenyl-4-(quinolin-4-yl)-1H-pyrazole-1-carbothioamide"
+      },
+      {
+        "identifier": "INCHIKEY:HIJMSZGHKQPPJS-UHFFFAOYSA-N"
+      },
+      {
+        "identifier": "UMLS:C1688554",
+        "label": "A-83-01"
+      }
+    ],
+    "type": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "information_content": 100.0
+  }
+}

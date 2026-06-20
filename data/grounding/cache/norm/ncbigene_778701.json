@@ -1,0 +1,53 @@
+{
+  "NCBIGene:778701": {
+    "id": {
+      "identifier": "NCBIGene:778701",
+      "label": "noggin"
+    },
+    "equivalent_identifiers": [
+      {
+        "identifier": "NCBIGene:778701",
+        "label": "noggin",
+        "taxa": [
+          "NCBITaxon:7719"
+        ]
+      },
+      {
+        "identifier": "ENSEMBL:ENSCING00000001156"
+      },
+      {
+        "identifier": "UniProtKB:Q4H336",
+        "label": "Q4H336_CIOIN Noggin (trembl)",
+        "taxa": [
+          "NCBITaxon:7719"
+        ]
+      },
+      {
+        "identifier": "ENSEMBL:ENSCINP00000002170"
+      },
+      {
+        "identifier": "ENSEMBL:ENSCINP00000002170.2"
+      }
+    ],
+    "taxa": [
+      "NCBITaxon:7719"
+    ],
+    "type": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ]
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "NCBIGene:100136517": {
+    "id": {
+      "identifier": "NCBIGene:100136517",
+      "label": "LOC100136517"
+    },
+    "equivalent_identifiers": [
+      {
+        "identifier": "NCBIGene:100136517",
+        "label": "LOC100136517",
+        "taxa": [
+          "NCBITaxon:8030"
+        ]
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSAG00000108388"
+      },
+      {
+        "identifier": "UniProtKB:A0A1S3MZY6",
+        "label": "A0A1S3MZY6_SALSA Insulin-like growth factor I isoform X2 (trembl)",
+        "taxa": [
+          "NCBITaxon:8030"
+        ]
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSAP00020052291"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSAP00075034457"
+      },
+      {
+        "identifier": "UniProtKB:A0A1S3N048",
+        "label": "A0A1S3N048_SALSA Insulin-like growth factor I isoform X1 (trembl)",
+        "taxa": [
+          "NCBITaxon:8030"
+        ]
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSAP00000133367"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSAP00020052480"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSAP00070035129"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSAP00075034521"
+      }
+    ],
+    "taxa": [
+      "NCBITaxon:8030"
+    ],
+    "type": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ]
+  }
+}

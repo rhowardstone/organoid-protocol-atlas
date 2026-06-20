@@ -1,0 +1,772 @@
+[
+  {
+    "curie": "NCBIGene:1950",
+    "label": "EGF",
+    "highlighting": {},
+    "synonyms": [
+      "EGF",
+      "URG",
+      "HOMG4",
+      "EGF gene",
+      "EGF Gene",
+      "UROGASTRONE",
+      "beta-urogastrone",
+      "epidermal growth factor",
+      "EPIDERMAL GROWTH FACTOR",
+      "pro-epidermal growth factor",
+      "Pro-epidermal growth factor",
+      "Epidermal Growth Factor Gene",
+      "epidermal growth factor (beta-urogastrone)",
+      "A0A494C018_HUMAN Pro-epidermal growth factor (trembl)",
+      "egf",
+      "hEGF",
+      "rhEGF",
+      "EGFUG",
+      "ProEGF",
+      "human EGF",
+      "Human EGF",
+      "Nepidermin",
+      "NEPIDERMIN",
+      "nepidermin",
+      "urogastrone",
+      "Urogastrone",
+      "Anthelone U",
+      "beta Urogastrone",
+      "beta-Urogastrone",
+      "Beta-Urogastrone",
+      "Human Urogastrone",
+      "RH-OLIGOPEPTIDE-1",
+      "human EGF (medication)",
+      "Epidermal Growth Factor",
+      "Epidermal growth factor",
+      "Growth Factor, Epidermal",
+      "HUMAN URINARY GASTRIC INHIB",
+      "Pro-Epidermal Growth Factor",
+      "cicatrizing agents human EGF",
+      "EGF - Epidermal growth factor",
+      "human epidermal growth factor",
+      "HUMAN EPIDERMAL GROWTH FACTOR",
+      "epidermal growth factor, human",
+      "Human Urinary Gastric Inhibitor",
+      "Epidermal Growth Factor-Urogastrone",
+      "Epidermal growth factor (substance)",
+      "epidermal growth factor urogastrone",
+      "Growth Factor-Urogastrone, Epidermal",
+      "Alpha-Epidermal Growth Factor (Human)",
+      "pre-pro-epidermal growth factor (human)",
+      "recombinant human epidermal growth factor",
+      "Recombinant Human Epidermal Growth Factor",
+      "EGF_HUMAN Pro-epidermal growth factor (sprot)"
+    ],
+    "taxa": [
+      "NCBITaxon:9606"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 3642.871,
+    "clique_identifier_count": 15
+  },
+  {
+    "curie": "NCBIGene:13645",
+    "label": "Egf",
+    "highlighting": {},
+    "synonyms": [
+      "Egf",
+      "epidermal growth factor",
+      "pro-epidermal growth factor",
+      "Pro-epidermal growth factor precursor (EGF)",
+      "A0A0G2JDT8_MOUSE Epidermal growth factor (trembl)",
+      "A0A0G2JF92_MOUSE Epidermal growth factor (trembl)",
+      "EGF (mouse)",
+      "mpre-pro-EGF",
+      "pro-epidermal growth factor (mouse)",
+      "EGF_MOUSE Pro-epidermal growth factor (sprot)",
+      "Q3UWD7_MOUSE EGF-like domain-containing protein (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:10090"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 3558.0747,
+    "clique_identifier_count": 14
+  },
+  {
+    "curie": "NCBIGene:403657",
+    "label": "EGF",
+    "highlighting": {},
+    "synonyms": [
+      "EGF",
+      "CEGF",
+      "epidermal growth factor",
+      "pro-epidermal growth factor",
+      "epidermal growth factor (beta-urogastrone)",
+      "A0A8C0P5J0_CANLF Pro-epidermal growth factor (trembl)",
+      "A0A8I3Q5L9_CANLF Pro-epidermal growth factor (trembl)",
+      "A0A8I3Q9R0_CANLF Pro-epidermal growth factor (trembl)",
+      "EGF_CANLF Pro-epidermal growth factor (sprot)"
+    ],
+    "taxa": [
+      "NCBITaxon:9615"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 3467.4258,
+    "clique_identifier_count": 13
+  },
+  {
+    "curie": "NCBIGene:25313",
+    "label": "Egf",
+    "highlighting": {},
+    "synonyms": [
+      "Egf",
+      "epidermal growth factor",
+      "pro-epidermal growth factor",
+      "A0A0G2KAF5_RAT Pro-epidermal growth factor (trembl)",
+      "A0A1W2Q6M4_RAT Pro-epidermal growth factor (trembl)",
+      "EGF (rat)",
+      "rpre-pro-EGF",
+      "pro-epidermal growth factor (rat)",
+      "EGF_RAT Pro-epidermal growth factor (sprot)"
+    ],
+    "taxa": [
+      "NCBITaxon:10116"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 3264.889,
+    "clique_identifier_count": 11
+  },
+  {
+    "curie": "NCBIGene:100562822",
+    "label": "egf",
+    "highlighting": {},
+    "synonyms": [
+      "egf",
+      "pro-epidermal growth factor",
+      "A0A803SNT5_ANOCA Epidermal growth factor (trembl)",
+      "A0A803SU34_ANOCA Epidermal growth factor (trembl)",
+      "A0A803TYV4_ANOCA Epidermal growth factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:28377"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 3264.889,
+    "clique_identifier_count": 11
+  },
+  {
+    "curie": "NCBIGene:100588963",
+    "label": "EGF",
+    "highlighting": {},
+    "synonyms": [
+      "EGF",
+      "pro-epidermal growth factor",
+      "A0A2I3GH31_NOMLE Pro-epidermal growth factor (trembl)",
+      "A0A2I3HAR9_NOMLE Pro-epidermal growth factor (trembl)",
+      "G1S3J7_NOMLE Pro-epidermal growth factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:61853"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 3264.889,
+    "clique_identifier_count": 11
+  },
+  {
+    "curie": "NCBIGene:115344703",
+    "label": "EGF",
+    "highlighting": {},
+    "synonyms": [
+      "EGF",
+      "pro-epidermal growth factor",
+      "A0A663EB02_AQUCH Pro-epidermal growth factor (trembl)",
+      "A0A663EB81_AQUCH Pro-epidermal growth factor (trembl)",
+      "A0A663ECD1_AQUCH Pro-epidermal growth factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:223781"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 3264.889,
+    "clique_identifier_count": 11
+  },
+  {
+    "curie": "NCBIGene:397083",
+    "label": "EGF",
+    "highlighting": {},
+    "synonyms": [
+      "EGF",
+      "epidermal growth factor",
+      "pro-epidermal growth factor",
+      "A0A287A231_PIG Pro-epidermal growth factor (trembl)",
+      "A0A8D0QRM1_PIG Pro-epidermal growth factor (trembl)",
+      "EGF_PIG Pro-epidermal growth factor (sprot)"
+    ],
+    "taxa": [
+      "NCBITaxon:9823"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 3150.5657,
+    "clique_identifier_count": 10
+  },
+  {
+    "curie": "NCBIGene:100074960",
+    "label": "EGF",
+    "highlighting": {},
+    "synonyms": [
+      "EGF",
+      "pro-epidermal growth factor",
+      "A0A6I8MYA0_ORNAN Epidermal growth factor (trembl)",
+      "A0A6I8PFP3_ORNAN Epidermal growth factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9258"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2886.907,
+    "clique_identifier_count": 8
+  },
+  {
+    "curie": "NCBIGene:100388651",
+    "label": "EGF",
+    "highlighting": {},
+    "synonyms": [
+      "EGF",
+      "pro-epidermal growth factor",
+      "epidermal growth factor (beta-urogastrone)",
+      "A0A8I3VYH9_CALJA Pro-epidermal growth factor (trembl)",
+      "F6T5D5_CALJA Pro-epidermal growth factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9483"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2886.907,
+    "clique_identifier_count": 8
+  },
+  {
+    "curie": "NCBIGene:100714471",
+    "label": "Egf",
+    "highlighting": {},
+    "synonyms": [
+      "Egf",
+      "pro-epidermal growth factor",
+      "A0A286XI92_CAVPO Pro-epidermal growth factor (trembl)",
+      "A0A286XZ34_CAVPO Pro-epidermal growth factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:10141"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2886.907,
+    "clique_identifier_count": 8
+  },
+  {
+    "curie": "NCBIGene:103004366",
+    "label": "EGF",
+    "highlighting": {},
+    "synonyms": [
+      "EGF",
+      "pro-epidermal growth factor",
+      "A0A384AUM3_BALAS Pro-epidermal growth factor (trembl)",
+      "A0A384AUM5_BALAS Pro-epidermal growth factor (trembl)",
+      "A0A384AUN4_BALAS Pro-epidermal growth factor (trembl)",
+      "A0A384AUY0_BALAS Pro-epidermal growth factor (trembl)",
+      "A0A384AUY5_BALAS Pro-epidermal growth factor (trembl)",
+      "A0A384AVE3_BALAS Pro-epidermal growth factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:310752",
+      "NCBITaxon:9767"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2886.907,
+    "clique_identifier_count": 8
+  },
+  {
+    "curie": "NCBIGene:105571434",
+    "label": "EGF",
+    "highlighting": {},
+    "synonyms": [
+      "EGF",
+      "pro-epidermal growth factor",
+      "A0A2K5NHP8_CERAT Pro-epidermal growth factor (trembl)",
+      "A0A2K5NI11_CERAT Pro-epidermal growth factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9531"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2886.907,
+    "clique_identifier_count": 8
+  },
+  {
+    "curie": "NCBIGene:107313609",
+    "label": "EGF",
+    "highlighting": {},
+    "synonyms": [
+      "EGF",
+      "pro-epidermal growth factor",
+      "A0A8C2T4N2_COTJA Pro-epidermal growth factor (trembl)",
+      "A0A8C2T5W6_COTJA Pro-epidermal growth factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:93934"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2886.907,
+    "clique_identifier_count": 8
+  },
+  {
+    "curie": "NCBIGene:108541026",
+    "label": "EGF",
+    "highlighting": {},
+    "synonyms": [
+      "EGF",
+      "pro-epidermal growth factor",
+      "A0A2K6KYM8_RHIBE Pro-epidermal growth factor (trembl)",
+      "A0A2K6KYP9_RHIBE Pro-epidermal growth factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:61621"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2886.907,
+    "clique_identifier_count": 8
+  },
+  {
+    "curie": "NCBIGene:109248153",
+    "label": "EGF",
+    "highlighting": {},
+    "synonyms": [
+      "EGF",
+      "pro-epidermal growth factor",
+      "A0A9V1E367_PANPR Pro-epidermal growth factor (trembl)",
+      "A0A9V1E384_PANPR Pro-epidermal growth factor (trembl)",
+      "A0A9V1E395_PANPR Pro-epidermal growth factor (trembl)",
+      "A0A9V1E3F0_PANPR Pro-epidermal growth factor (trembl)",
+      "A0A9V1E3H0_PANPR Pro-epidermal growth factor (trembl)",
+      "A0A9W2VFE2_PANPR Pro-epidermal growth factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9691"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2886.907,
+    "clique_identifier_count": 8
+  },
+  {
+    "curie": "NCBIGene:111849374",
+    "label": "egf",
+    "highlighting": {},
+    "synonyms": [
+      "egf",
+      "pro-epidermal growth factor",
+      "A0A3B3R3E0_9TELE EGF-like domain-containing protein (trembl)",
+      "A0A3B3R4N2_9TELE EGF-like domain-containing protein (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:1676925"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2886.907,
+    "clique_identifier_count": 8
+  },
+  {
+    "curie": "NCBIGene:114492590",
+    "label": "EGF",
+    "highlighting": {},
+    "synonyms": [
+      "EGF",
+      "pro-epidermal growth factor",
+      "A0A7E6DPS0_9CHIR Pro-epidermal growth factor (trembl)",
+      "A0A7E6DPT6_9CHIR Pro-epidermal growth factor (trembl)",
+      "A0A7E6DPU9_9CHIR Pro-epidermal growth factor (trembl)",
+      "A0A7E6DQG3_9CHIR Pro-epidermal growth factor (trembl)",
+      "A0A7E6DQG6_9CHIR Pro-epidermal growth factor (trembl)",
+      "A0A7E6DQZ3_9CHIR Pro-epidermal growth factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:89673"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2886.907,
+    "clique_identifier_count": 8
+  },
+  {
+    "curie": "NCBIGene:115903201",
+    "label": "EGF",
+    "highlighting": {},
+    "synonyms": [
+      "EGF",
+      "pro-epidermal growth factor",
+      "A0A8C3M2F3_GEOPR Pro-epidermal growth factor (trembl)",
+      "A0A8C3M9G1_GEOPR Pro-epidermal growth factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:87175"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2886.907,
+    "clique_identifier_count": 8
+  },
+  {
+    "curie": "NCBIGene:117365240",
+    "label": "EGF",
+    "highlighting": {},
+    "synonyms": [
+      "EGF",
+      "pro-epidermal growth factor",
+      "A0A6P8S0H1_GEOSA Pro-epidermal growth factor isoform X1 (trembl)",
+      "A0A6P8S0I1_GEOSA Pro-epidermal growth factor isoform X2 (trembl)",
+      "A0A6P8S0K7_GEOSA Pro-epidermal growth factor isoform X6 (trembl)",
+      "A0A6P8S0K9_GEOSA Pro-epidermal growth factor isoform X4 (trembl)",
+      "A0A6P8S0M4_GEOSA Pro-epidermal growth factor isoform X7 (trembl)",
+      "A0A6P8S1S8_GEOSA Pro-epidermal growth factor isoform X3 (trembl)",
+      "A0A6P8S2M8_GEOSA Pro-epidermal growth factor isoform X5 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:260995"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2886.907,
+    "clique_identifier_count": 8
+  }
+]

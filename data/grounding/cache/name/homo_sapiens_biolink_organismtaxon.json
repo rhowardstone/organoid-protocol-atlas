@@ -1,0 +1,351 @@
+[
+  {
+    "curie": "NCBITaxon:9606",
+    "label": "Humans",
+    "highlighting": {},
+    "synonyms": [
+      "human",
+      "Humans",
+      "Homo sapiens",
+      "Homo sapiens (human)"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:OrganismTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity"
+    ],
+    "score": 546.48914,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "NCBITaxon:2665953",
+    "label": "Homo sapiens environmental sample",
+    "highlighting": {},
+    "synonyms": [
+      "Homo sapiens environmental sample"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:OrganismTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity"
+    ],
+    "score": 268.09814,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "NCBITaxon:1383439",
+    "label": "Homo sapiens/Mus musculus xenograft",
+    "highlighting": {},
+    "synonyms": [
+      "Homo sapiens/Mus musculus xenograft"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:OrganismTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity"
+    ],
+    "score": 251.71101,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "NCBITaxon:1573476",
+    "label": "Homo sapiens/Rattus norvegicus xenograft",
+    "highlighting": {},
+    "synonyms": [
+      "Homo sapiens/Rattus norvegicus xenograft"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:OrganismTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity"
+    ],
+    "score": 251.71101,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "NCBITaxon:741158",
+    "label": "Homo sapiens subsp. 'Denisova' (Denisova hominin)",
+    "highlighting": {},
+    "synonyms": [
+      "Denisovan",
+      "Denisovans",
+      "Homo sp. Altai",
+      "Denisova hominin",
+      "Homo sapiens ssp. Denisova",
+      "Homo sapiens ssp. 'Denisova'",
+      "Homo sapiens subsp. 'Denisova'",
+      "Homo sapiens subsp. 'Denisova' (Denisova hominin)"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:OrganismTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity"
+    ],
+    "score": 237.21176,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "NCBITaxon:63221",
+    "label": "Neanderthals",
+    "highlighting": {},
+    "synonyms": [
+      "Neandertal",
+      "Neandertals",
+      "Neanderthal",
+      "Neanderthals",
+      "Neandertal man",
+      "Neanderthal man",
+      "Neanderthal Man",
+      "Homo neanderthalensis",
+      "Homo sapiens neanderthalensis",
+      "Homo sapiens neanderthalensis (Neandertal)"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:OrganismTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity"
+    ],
+    "score": 226.15106,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "NCBITaxon:1035824",
+    "label": "Trichuris sp. ex Homo sapiens JP-2011",
+    "highlighting": {},
+    "synonyms": [
+      "Trichuris sp. ex Homo sapiens JP-2011"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:OrganismTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity"
+    ],
+    "score": 224.29193,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "NCBITaxon:1131344",
+    "label": "Homo sapiens x Mus musculus hybrid cell line",
+    "highlighting": {},
+    "synonyms": [
+      "Homo sapiens x Mus musculus hybrid cell line"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:OrganismTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity"
+    ],
+    "score": 212.70676,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "NCBITaxon:1849111",
+    "label": "Homo sapiens x Cricetulus griseus hybrid cell line",
+    "highlighting": {},
+    "synonyms": [
+      "Homo sapiens x Cricetulus griseus hybrid cell line"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:OrganismTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity"
+    ],
+    "score": 212.70676,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "NCBITaxon:2045059",
+    "label": "Homo sapiens x Rattus norvegicus fusion cell line",
+    "highlighting": {},
+    "synonyms": [
+      "Homo sapiens x Rattus norvegicus fusion cell line"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:OrganismTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity"
+    ],
+    "score": 212.70676,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "NCBITaxon:2883641",
+    "label": "Homo sapiens x Pan troglodytes tetraploid cell line",
+    "highlighting": {},
+    "synonyms": [
+      "Homo sapiens x Pan troglodytes tetraploid cell line"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:OrganismTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity"
+    ],
+    "score": 212.70676,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "NCBITaxon:270523",
+    "label": "Tetragonula sapiens",
+    "highlighting": {},
+    "synonyms": [
+      "Trigona sapiens",
+      "Tetragonula sapiens"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:OrganismTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity"
+    ],
+    "score": 48.905987,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "NCBITaxon:399796",
+    "label": "Macrobiotus sapiens",
+    "highlighting": {},
+    "synonyms": [
+      "Macrobiotus sapiens"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:OrganismTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity"
+    ],
+    "score": 48.905987,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "UMLS:C1477136",
+    "label": "Tetragonula sapiens",
+    "highlighting": {},
+    "synonyms": [
+      "Trigona sapiens",
+      "Tetragonula sapiens"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:OrganismTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity"
+    ],
+    "score": 48.905987,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "UMLS:C2271139",
+    "label": "Macrobiotus sapiens",
+    "highlighting": {},
+    "synonyms": [
+      "Macrobiotus sapiens"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:OrganismTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity"
+    ],
+    "score": 48.905987,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "NCBITaxon:9605",
+    "label": "Homo (humans)",
+    "highlighting": {},
+    "synonyms": [
+      "Homo",
+      "humans",
+      "Homo (humans)"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:OrganismTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity"
+    ],
+    "score": 47.416443,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "NCBITaxon:2813598",
+    "label": "unclassified Homo",
+    "highlighting": {},
+    "synonyms": [
+      "unclassified Homo"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:OrganismTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity"
+    ],
+    "score": 47.416443,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "NCBITaxon:2813599",
+    "label": "Homo sp.",
+    "highlighting": {},
+    "synonyms": [
+      "Homo sp."
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:OrganismTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity"
+    ],
+    "score": 47.416443,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "UMLS:C1300203",
+    "label": "Genus Homo",
+    "highlighting": {},
+    "synonyms": [
+      "homo",
+      "Homo",
+      "homos",
+      "humans",
+      "Hominoid",
+      "Genus Homo",
+      "Genus Homo (organism)"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:OrganismTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity"
+    ],
+    "score": 47.416443,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "UMLS:C3782468",
+    "label": "Homo heidelbergensis",
+    "highlighting": {},
+    "synonyms": [
+      "Homo heidelbergensis"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:OrganismTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity"
+    ],
+    "score": 47.416443,
+    "clique_identifier_count": 1
+  }
+]

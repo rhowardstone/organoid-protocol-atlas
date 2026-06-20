@@ -1,0 +1,52 @@
+{
+  "CHEBI:75728": {
+    "id": {
+      "identifier": "CHEBI:75728",
+      "label": "SAG"
+    },
+    "equivalent_identifiers": [
+      {
+        "identifier": "CHEBI:75728",
+        "label": "1-stearoyl-2-arachidonoyl-sn-glycerol"
+      },
+      {
+        "identifier": "PUBCHEM.COMPOUND:6438587",
+        "label": "1-Stearoyl-2-arachidonoyl-SN-glycerol"
+      },
+      {
+        "identifier": "MESH:C075809",
+        "label": "1-stearoyl-2-arachidonoylglycerol"
+      },
+      {
+        "identifier": "CAS:65914-84-3"
+      },
+      {
+        "identifier": "GTOPDB:2437",
+        "label": "SAG"
+      },
+      {
+        "identifier": "HMDB:HMDB0007170",
+        "label": "DG(18:0/20:4(5Z,8Z,11Z,14Z)/0:0)"
+      },
+      {
+        "identifier": "INCHIKEY:NSXLMTYRMFVYNT-IUJDHQGTSA-N"
+      },
+      {
+        "identifier": "UMLS:C0170600",
+        "label": "1-stearoyl-2-arachidonoylglycerol"
+      }
+    ],
+    "type": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "information_content": 100.0
+  }
+}

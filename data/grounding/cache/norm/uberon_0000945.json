@@ -1,0 +1,38 @@
+{
+  "UBERON:0000945": {
+    "id": {
+      "identifier": "UBERON:0000945",
+      "label": "stomach"
+    },
+    "equivalent_identifiers": [
+      {
+        "identifier": "UBERON:0000945",
+        "label": "stomach"
+      },
+      {
+        "identifier": "UMLS:C0038351",
+        "label": "Stomach"
+      },
+      {
+        "identifier": "MESH:D013270",
+        "label": "Stomach"
+      },
+      {
+        "identifier": "NCIT:C12391",
+        "label": "Stomach"
+      }
+    ],
+    "type": [
+      "biolink:GrossAnatomicalStructure",
+      "biolink:AnatomicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:OrganismalEntity",
+      "biolink:SubjectOfInvestigation",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "information_content": 59.7
+  }
+}

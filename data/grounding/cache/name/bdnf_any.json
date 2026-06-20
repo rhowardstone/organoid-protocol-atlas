@@ -1,0 +1,749 @@
+[
+  {
+    "curie": "NCBIGene:397495",
+    "label": "BDNF",
+    "highlighting": {},
+    "synonyms": [
+      "BDNF",
+      "proBDNF",
+      "brain derived neurotrophic factor",
+      "brain-derived neurotrophic factor",
+      "neurotrophic factor BDNF precursor form",
+      "A0A287AS34_PIG Brain-derived neurotrophic factor (trembl)",
+      "A0A4X1SYM5_PIG Brain-derived neurotrophic factor (trembl)",
+      "BDNF_PIG Neurotrophic factor BDNF precursor form (sprot)"
+    ],
+    "taxa": [
+      "NCBITaxon:9823"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 6191.106,
+    "clique_identifier_count": 110
+  },
+  {
+    "curie": "NCBIGene:24225",
+    "label": "Bdnf",
+    "highlighting": {},
+    "synonyms": [
+      "Bdnf",
+      "proBDNF",
+      "brain-derived neurotrophic factor",
+      "brain derived neurothrophic factor",
+      "neurotrophic factor BDNF precursor form",
+      "A0A0G2K624_RAT Brain-derived neurotrophic factor (trembl)",
+      "A0A0H2UI28_RAT Brain-derived neurotrophic factor (trembl)",
+      "A6HP01_RAT Brain-derived neurotrophic factor (trembl)",
+      "A6HP02_RAT Brain-derived neurotrophic factor (trembl)",
+      "A6HP04_RAT Brain-derived neurotrophic factor (trembl)",
+      "rBDNF",
+      "proBDNF (rat)",
+      "brain-derived neurotrophic factor (rat)",
+      "neurotrophic factor BDNF precursor form (rat)",
+      "BDNF_RAT Neurotrophic factor BDNF precursor form (sprot)"
+    ],
+    "taxa": [
+      "NCBITaxon:10116"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 4332.6772,
+    "clique_identifier_count": 26
+  },
+  {
+    "curie": "NCBIGene:396186",
+    "label": "BDNF",
+    "highlighting": {},
+    "synonyms": [
+      "BDNF",
+      "proBDNF",
+      "neurotrophic factor",
+      "pre-pro-brain-derived",
+      "brain derived neurotrophic factor",
+      "brain-derived neurotrophic factor",
+      "neurotrophic factor BDNF precursor form",
+      "A0A8V0ZCY1_CHICK Brain-derived neurotrophic factor (trembl)",
+      "K4MNE5_CHICK Brain-derived neurotrophic factor (trembl)",
+      "chick-BDNF",
+      "proBDNF (chicken)",
+      "brain-derived neurotrophic factor (chicken)",
+      "neurotrophic factor BDNF precursor form (chicken)",
+      "BDNF_CHICK Neurotrophic factor BDNF precursor form (sprot)"
+    ],
+    "taxa": [
+      "NCBITaxon:9031"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 4002.3018,
+    "clique_identifier_count": 20
+  },
+  {
+    "curie": "NCBIGene:105022251",
+    "label": "bdnf",
+    "highlighting": {},
+    "synonyms": [
+      "bdnf",
+      "brain-derived neurotrophic factor",
+      "A0A3P8XZ65_ESOLU Brain-derived neurotrophic factor (trembl)",
+      "A0AAY5JXQ6_ESOLU Brain-derived neurotrophic factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:8010"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 4002.3018,
+    "clique_identifier_count": 20
+  },
+  {
+    "curie": "NCBIGene:100009689",
+    "label": "BDNF",
+    "highlighting": {},
+    "synonyms": [
+      "BDNF",
+      "proBDNF",
+      "brain derived neurotrophic factor",
+      "neurotrophic factor BDNF precursor form",
+      "BDNF_HORSE Neurotrophic factor BDNF precursor form (sprot)"
+    ],
+    "taxa": [
+      "NCBITaxon:9796"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 3938.1626,
+    "clique_identifier_count": 19
+  },
+  {
+    "curie": "NCBIGene:120834252",
+    "label": "bdnf",
+    "highlighting": {},
+    "synonyms": [
+      "bdnf",
+      "brain-derived neurotrophic factor",
+      "A0AAQ4NV03_GASAC Brain-derived neurotrophic factor (trembl)",
+      "A0AAQ4PAB6_GASAC Brain-derived neurotrophic factor (trembl)",
+      "A0AAQ4R553_GASAC Brain-derived neurotrophic factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:481459",
+      "NCBITaxon:69293"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 3938.1626,
+    "clique_identifier_count": 19
+  },
+  {
+    "curie": "NCBIGene:106824927",
+    "label": "BDNF",
+    "highlighting": {},
+    "synonyms": [
+      "BDNF",
+      "neurotrophic factor BDNF precursor form",
+      "A0A9L0I9E1_EQUAS Brain-derived neurotrophic factor (trembl)",
+      "A0A9L0JF91_EQUAS Brain-derived neurotrophic factor (trembl)",
+      "A0A9L0K833_EQUAS Brain-derived neurotrophic factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9793"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 3799.6565,
+    "clique_identifier_count": 17
+  },
+  {
+    "curie": "NCBIGene:105572781",
+    "label": "BDNF",
+    "highlighting": {},
+    "synonyms": [
+      "BDNF",
+      "brain-derived neurotrophic factor",
+      "A0A2K5LVH6_CERAT Brain-derived neurotrophic factor (trembl)",
+      "A0A2K5LVI1_CERAT Brain-derived neurotrophic factor (trembl)",
+      "A0A2K5LVI6_CERAT Brain-derived neurotrophic factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9531"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 3469.2808,
+    "clique_identifier_count": 13
+  },
+  {
+    "curie": "NCBIGene:127351860",
+    "label": "bdnf",
+    "highlighting": {},
+    "synonyms": [
+      "bdnf",
+      "brain-derived neurotrophic factor",
+      "A0A8P4KNH4_DICLA Brain-derived neurotrophic factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:13489"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 3469.2808,
+    "clique_identifier_count": 13
+  },
+  {
+    "curie": "NCBIGene:627",
+    "label": "BDNF",
+    "highlighting": {},
+    "synonyms": [
+      "BDNF",
+      "BULN2",
+      "ANON2",
+      "proBDNF",
+      "BDNF gene",
+      "BDNF Gene",
+      "abrineurin",
+      "neurotrophin",
+      "BRAIN-DERIVED NEUROTROPHIC FACTOR",
+      "brain derived neurotrophic factor",
+      "brain-derived neurotrophic factor",
+      "Brain Derived Neurotrophic Factor Gene",
+      "neurotrophic factor BDNF precursor form",
+      "A0A0E3SU01_HUMAN Brain-derived neurotrophic factor (trembl)",
+      "hBDNF",
+      "brineurin",
+      "Abrineurin",
+      "BDNF, human",
+      "proBDNF (human)",
+      "abrineurin (human)",
+      "BDNF protein, human",
+      "Brain Derived Neurotrophic Factor",
+      "Brain-Derived Neurotrophic Factor",
+      "brain-derived neurotrophic factor human",
+      "Brain-Derived Neurotrophic Factor Human",
+      "BRAIN-DERIVED NEUROTROPHIC FACTOR HUMAN",
+      "brain-derived neurotrophic factor, human",
+      "brain-derived neurotrophic factor (human)",
+      "neurotrophic factor BDNF precursor form (human)",
+      "BDNF_HUMAN Neurotrophic factor BDNF precursor form (sprot)",
+      "N-L-Methionylneurotrophic Factor (Human Brain-derived)Dimer",
+      "Neurotrophic Factor (Human Brain-derived), N-L-methionyl-, Dimer"
+    ],
+    "taxa": [
+      "NCBITaxon:9606"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 3371.8591,
+    "clique_identifier_count": 12
+  },
+  {
+    "curie": "NCBIGene:58118",
+    "label": "bdnf",
+    "highlighting": {},
+    "synonyms": [
+      "bdnf",
+      "brain-derived neurotrophic factor",
+      "neurotrophic factor BDNF precursor form",
+      "A0A8M1P735_DANRE Brain-derived neurotrophic factor (trembl)",
+      "A0AB32TV83_DANRE Brain-derived neurotrophic factor (trembl)",
+      "Q6NZ01_DANRE Brain-derived neurotrophic factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:7955"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 3371.8591,
+    "clique_identifier_count": 12
+  },
+  {
+    "curie": "NCBIGene:617701",
+    "label": "BDNF",
+    "highlighting": {},
+    "synonyms": [
+      "BDNF",
+      "proBDNF",
+      "brain derived neurotrophic factor",
+      "neurotrophic factor BDNF precursor form",
+      "A0AAA9T573_BOVIN Brain-derived neurotrophic factor (trembl)",
+      "BDNF_BOVIN Neurotrophic factor BDNF precursor form (sprot)"
+    ],
+    "taxa": [
+      "NCBITaxon:9913"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 3371.8591,
+    "clique_identifier_count": 12
+  },
+  {
+    "curie": "NCBIGene:701245",
+    "label": "BDNF",
+    "highlighting": {},
+    "synonyms": [
+      "BDNF",
+      "proBDNF",
+      "brain derived neurotrophic factor",
+      "brain-derived neurotrophic factor",
+      "neurotrophic factor BDNF precursor form",
+      "A0A1D5QAT2_MACMU Brain-derived neurotrophic factor (trembl)",
+      "F7F914_MACMU Brain-derived neurotrophic factor (trembl)",
+      "I2CTP4_MACMU Brain-derived neurotrophic factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9544"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 3266.6357,
+    "clique_identifier_count": 11
+  },
+  {
+    "curie": "NCBIGene:105893071",
+    "label": "bdnf",
+    "highlighting": {},
+    "synonyms": [
+      "bdnf",
+      "brain-derived neurotrophic factor",
+      "A0A6P8GVU6_CLUHA Brain-derived neurotrophic factor (trembl)",
+      "A0A6P8GXX9_CLUHA Brain-derived neurotrophic factor (trembl)",
+      "A0A6P8H7D6_CLUHA Brain-derived neurotrophic factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:7950"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 3266.6357,
+    "clique_identifier_count": 11
+  },
+  {
+    "curie": "NCBIGene:114461296",
+    "label": "bdnf",
+    "highlighting": {},
+    "synonyms": [
+      "bdnf",
+      "neurotrophic factor BDNF precursor form",
+      "A0A8C5E5Z8_GOUWI Brain-derived neurotrophic factor (trembl)",
+      "A0A8C5E6K3_GOUWI Brain-derived neurotrophic factor (trembl)",
+      "A0A8C5E8E3_GOUWI Brain-derived neurotrophic factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:441366"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 3266.6357,
+    "clique_identifier_count": 11
+  },
+  {
+    "curie": "NCBIGene:100594402",
+    "label": "BDNF",
+    "highlighting": {},
+    "synonyms": [
+      "BDNF",
+      "brain-derived neurotrophic factor",
+      "G1S855_NOMLE Brain-derived neurotrophic factor (trembl)",
+      "G1S858_NOMLE Brain-derived neurotrophic factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:61853"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 3152.2515,
+    "clique_identifier_count": 10
+  },
+  {
+    "curie": "NCBIGene:100934810",
+    "label": "BDNF",
+    "highlighting": {},
+    "synonyms": [
+      "BDNF",
+      "brain-derived neurotrophic factor",
+      "A0A7N4P4N3_SARHA Brain-derived neurotrophic factor (trembl)",
+      "G3WNT9_SARHA Brain-derived neurotrophic factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9305"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 3152.2515,
+    "clique_identifier_count": 10
+  },
+  {
+    "curie": "NCBIGene:101134399",
+    "label": "BDNF",
+    "highlighting": {},
+    "synonyms": [
+      "BDNF",
+      "neurotrophic factor BDNF precursor form",
+      "A0A2I2YAV7_GORGO Brain-derived neurotrophic factor (trembl)",
+      "A0A2I2YYY5_GORGO Brain-derived neurotrophic factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9595"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 3152.2515,
+    "clique_identifier_count": 10
+  },
+  {
+    "curie": "NCBIGene:101167940",
+    "label": "bdnf",
+    "highlighting": {},
+    "synonyms": [
+      "bdnf",
+      "brain-derived neurotrophic factor",
+      "A0A3B3HK33_ORYLA Brain-derived neurotrophic factor (trembl)",
+      "A0A3P9JBJ8_ORYLA Brain-derived neurotrophic factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:8090"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 3152.2515,
+    "clique_identifier_count": 10
+  },
+  {
+    "curie": "NCBIGene:104671126",
+    "label": "BDNF",
+    "highlighting": {},
+    "synonyms": [
+      "BDNF",
+      "brain-derived neurotrophic factor",
+      "A0A2K6QLM6_RHIRO Brain-derived neurotrophic factor (trembl)",
+      "A0A2K6QLN8_RHIRO Brain-derived neurotrophic factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:61622"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 3152.2515,
+    "clique_identifier_count": 10
+  }
+]

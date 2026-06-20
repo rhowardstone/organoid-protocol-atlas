@@ -1,0 +1,59 @@
+{
+  "CHEBI:91387": {
+    "id": {
+      "identifier": "CHEBI:91387",
+      "label": "LDN-193189"
+    },
+    "equivalent_identifiers": [
+      {
+        "identifier": "CHEBI:91387",
+        "label": "4-[6-[4-(1-piperazinyl)phenyl]-3-pyrazolo[1,5-a]pyrimidinyl]quinoline"
+      },
+      {
+        "identifier": "UNII:W69H5YQU9O",
+        "label": "LDN-193189"
+      },
+      {
+        "identifier": "PUBCHEM.COMPOUND:25195294",
+        "label": "4-(6-(4-(Piperazin-1-yl)phenyl)pyrazolo[1,5-a]pyrimidin-3-yl)quinoline"
+      },
+      {
+        "identifier": "CHEMBL.COMPOUND:CHEMBL513147"
+      },
+      {
+        "identifier": "DRUGBANK:DB18051",
+        "label": "LDN-193189"
+      },
+      {
+        "identifier": "MESH:C554430",
+        "label": "LDN 193189"
+      },
+      {
+        "identifier": "CAS:1062368-24-4"
+      },
+      {
+        "identifier": "HMDB:HMDB0244322",
+        "label": "4-(6-(4-(Piperazin-1-yl)phenyl)pyrazolo[1,5-a]pyrimidin-3-yl)quinoline"
+      },
+      {
+        "identifier": "INCHIKEY:CDOVNWNANFFLFJ-UHFFFAOYSA-N"
+      },
+      {
+        "identifier": "UMLS:C2974829",
+        "label": "LDN 193189"
+      }
+    ],
+    "type": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "information_content": 100.0
+  }
+}

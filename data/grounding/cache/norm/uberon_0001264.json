@@ -1,0 +1,42 @@
+{
+  "UBERON:0001264": {
+    "id": {
+      "identifier": "UBERON:0001264",
+      "label": "pancreas"
+    },
+    "equivalent_identifiers": [
+      {
+        "identifier": "UBERON:0001264",
+        "label": "pancreas"
+      },
+      {
+        "identifier": "UMLS:C0030274",
+        "label": "Pancreas"
+      },
+      {
+        "identifier": "MESH:D010179",
+        "label": "Pancreas"
+      },
+      {
+        "identifier": "NCIT:C12393",
+        "label": "Pancreas"
+      },
+      {
+        "identifier": "NCIT:C25726",
+        "label": "Pancreatic"
+      }
+    ],
+    "type": [
+      "biolink:GrossAnatomicalStructure",
+      "biolink:AnatomicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:OrganismalEntity",
+      "biolink:SubjectOfInvestigation",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "information_content": 58.5
+  }
+}
