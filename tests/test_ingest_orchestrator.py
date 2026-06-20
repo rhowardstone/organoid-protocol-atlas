@@ -126,3 +126,59 @@ def test_stage_accepted_real_run_writes_bundle_pred_and_returns_row(tmp_path):
     assert row["pmcid"] == "PMC9" and row["flags"] == "auto-ingested"
     # row carries every corpus column (DictWriter would otherwise raise)
     assert set(row) == set(o.CORPUS_COLS)
+
+
+# --- run_batch: serial vs concurrent path parity + dry-run boundary (offline) ---
+
+def _canned_process_one(cand):
+    """Stand-in for the network/Ollama process_one: accept even-numbered PMCs with
+    high grounding, reject odd ones. Pure + deterministic so serial == concurrent."""
+    n = int(cand["pmcid"].removeprefix("PMC"))
+    if n % 2 == 0:
+        return {"pmcid": cand["pmcid"], "doi": cand.get("doi", ""),
+                "organoid_type": cand.get("organoid_type"), "n_signaling": 4,
+                "grounded": 4, "grounding_rate": 0.9, "methods_chars": 1234,
+                "bundle": {"pmcid": cand["pmcid"]}, "proto": _Proto(), "cand": cand}
+    return {"pmcid": cand["pmcid"], "reason": "low_grounding=0.2"}
+
+
+def test_run_batch_concurrent_matches_serial_partition(monkeypatch):
+    monkeypatch.setattr(o, "process_one", _canned_process_one)
+    cands = [_cand(f"PMC{i}") for i in range(8)]
+
+    a1, r1, n1 = o.run_batch(cands, min_grounding=0.5, dry_run=True, workers=1)
+    a4, r4, n4 = o.run_batch(cands, min_grounding=0.5, dry_run=True, workers=4)
+
+    assert [a["pmcid"] for a in a1] == ["PMC0", "PMC2", "PMC4", "PMC6"]
+    assert [r["pmcid"] for r in r1] == ["PMC1", "PMC3", "PMC5", "PMC7"]
+    # concurrent path produces the SAME (deterministically ordered) partition as serial
+    assert a4 == a1 and r4 == r1 and n4 == n1
+
+
+def test_run_batch_concurrent_dry_run_writes_nothing(monkeypatch, tmp_path):
+    # Point the default write dirs at a tmp sandbox; dry-run must still create nothing.
+    monkeypatch.setattr(o, "LOCAL_DIR", tmp_path / "bundles")
+    monkeypatch.setattr(o, "PRED_DIR", tmp_path / "preds")
+    monkeypatch.setattr(o, "process_one", _canned_process_one)
+    cands = [_cand(f"PMC{i}") for i in range(8)]
+
+    accepted, rejected, new_rows = o.run_batch(cands, min_grounding=0.5, dry_run=True, workers=4)
+
+    assert accepted and rejected          # work happened
+    assert new_rows == []                 # dry-run yields no corpus rows
+    assert not (tmp_path / "bundles").exists()
+    assert not (tmp_path / "preds").exists()
+
+
+def test_run_batch_concurrent_real_run_writes_per_paper(monkeypatch, tmp_path):
+    monkeypatch.setattr(o, "LOCAL_DIR", tmp_path / "bundles")
+    monkeypatch.setattr(o, "PRED_DIR", tmp_path / "preds")
+    monkeypatch.setattr(o, "process_one", _canned_process_one)
+    cands = [_cand(f"PMC{i}") for i in range(8)]
+
+    accepted, rejected, new_rows = o.run_batch(cands, min_grounding=0.5, dry_run=False, workers=4)
+
+    assert [n["pmcid"] for n in new_rows] == ["PMC0", "PMC2", "PMC4", "PMC6"]
+    for pmc in ("PMC0", "PMC2", "PMC4", "PMC6"):
+        assert (tmp_path / "bundles" / f"{pmc}.json").exists()
+        assert (tmp_path / "preds" / f"{pmc}.json").exists()
