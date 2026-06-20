@@ -23,3 +23,12 @@ recipe*.png
 
 # Local Claude project dir
 .claude/
+
+# Local-only, NON-redistributable data (also covered by nested .gitignores; explicit
+# here as belt-and-suspenders so a scaled ingestion batch can never commit full text,
+# figure images, local model predictions, or generated DBs). Per codex #18 review.
+data/evidence_bundles/local/
+data/predictions/local/
+data/figures/local/
+data/public/
+*.db
