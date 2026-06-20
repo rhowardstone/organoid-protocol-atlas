@@ -14,3 +14,9 @@ workspace/evals/transcripts/
 
 # OS
 .DS_Store
+
+# Browser QA scratch / screenshots (may embed methods text)
+.playwright-mcp/
+*.png
+landing*.png
+recipe*.png
