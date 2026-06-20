@@ -11,10 +11,17 @@ services and Cellosaurus, then disk-cached so tests run offline:
   - Cellosaurus         api.cellosaurus.org                       (cell line -> CVCL_ RRID)
 
 Honesty contract (sprint rules #2/#3): grounding_status is one of
-  resolved      — a real service call returned an acceptable CURIE (cached);
+  resolved      — a real service hit whose label/synonym MATCHES the query (cached);
+                  accepted as a real CURIE.
+  needs_review  — a real hit came back but its label/synonyms do NOT match the query
+                  (near-miss / wrong entity, e.g. PGE2 -> 15-Keto-PGE2, TGF-beta1 -> a pig
+                  TGF-beta receptor); kept as a flagged CANDIDATE (flags:[label_mismatch]),
+                  NEVER an accepted CURIE — excluded from downstream KGX/TRAPI.
   not_found     — the service was called and returned nothing acceptable (NEVER guessed);
   not_attempted — offline with no cached response (no call made).
-A CURIE is never invented. Every `resolved` is backed by a cached response on disk.
+A CURIE is never invented, and a real service hit is necessary but NOT sufficient: only a
+verified label/synonym match counts as `resolved` (accepted). Coverage separates
+accepted_resolved from candidates_needs_review. Every `resolved` is cached on disk.
 
 Run:
     python pipeline/ground.py --reagents CHIR99021 EGF Noggin   # ad-hoc
