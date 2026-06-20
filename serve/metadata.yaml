@@ -31,25 +31,25 @@ databases:
           <code>evidence_quote</code> is a verbatim span from the source; <code>grounded=0</code>
           means the model's quote did not exactly match (kept honest, not hidden).</p>
         label_column: name
-        facets: [organoid_type, kind, role, canonical_unit, grounded, suspect_unit]
+        facets: [organoid_type, kind, canonical, role, canonical_unit, grounded, suspect_unit]
         fts_table: reagents_fts
     queries:
       signaling_by_type:
         title: "Signaling factors by organoid type (with citations)"
         description: The core comparison — which morphogens define each organoid system, with evidence.
         sql: |
-          SELECT organoid_type, name, role, value, canonical_unit AS unit, doi, evidence_quote
+          SELECT organoid_type, canonical AS reagent, role, value, canonical_unit AS unit, doi, evidence_quote
           FROM reagents
           WHERE kind = 'signaling'
-          ORDER BY organoid_type, name
+          ORDER BY organoid_type, canonical
       compare_reagent:
         title: "Compare one reagent across protocols"
         description: "Enter a reagent (e.g. EGF, CHIR99021, R-spondin) to see how its use/concentration varies."
         sql: |
-          SELECT name, organoid_type, value, canonical_unit AS unit, doi, evidence_quote
+          SELECT canonical AS reagent, organoid_type, value, canonical_unit AS unit, doi, evidence_quote
           FROM reagents
-          WHERE kind = 'signaling' AND name LIKE '%' || :reagent || '%'
-          ORDER BY name, organoid_type
+          WHERE kind = 'signaling' AND canonical LIKE '%' || :reagent || '%'
+          ORDER BY canonical, organoid_type
       grounding_by_protocol:
         title: "Evidence-grounding coverage by protocol"
         description: How much of each protocol's signaling cocktail is verbatim-grounded.

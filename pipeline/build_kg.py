@@ -23,7 +23,11 @@ from __future__ import annotations
 import csv
 import json
 import sqlite3
+import sys
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from normalize import build_canon_map  # noqa: E402
 
 REPO = Path(__file__).resolve().parent.parent
 PRED = REPO / "data" / "predictions" / "local"
@@ -68,6 +72,7 @@ CREATE TABLE reagents (
     organoid_type TEXT,
     kind TEXT,            -- signaling | supplement | small_molecule
     name TEXT,
+    canonical TEXT,       -- normalized entity (collapses synonyms: bFGF->FGF2, RSPO1->R-spondin1)
     role TEXT,
     value REAL,
     unit TEXT,
@@ -116,6 +121,14 @@ def main():
     conn.executescript(SCHEMA)
     meta = load_corpus_meta()
 
+    # corpus-wide reagent-name normalization map (entity canonicalization)
+    all_names = []
+    for pf in PRED.glob("*.json"):
+        pp = json.loads(pf.read_text())
+        for kk in ("signaling_factors", "media_supplements", "small_molecules"):
+            all_names += [r.get("name") for r in (pp.get(kk) or []) if isinstance(r, dict)]
+    canon_map = build_canon_map(all_names)
+
     n_protocols = n_reagents = 0
     for pf in sorted(PRED.glob("*.json")):
         pmcid = pf.stem
@@ -132,11 +145,12 @@ def main():
                 ev = r.get("evidence") or {}
                 u = (conc.get("canonical_unit") or conc.get("unit") or "").lower()
                 suspect = 1 if (kind == "signaling" and u == "mg/ml") else 0
+                nm = r.get("name")
                 conn.execute(
-                    "INSERT INTO reagents(pmcid,doi,organoid_type,kind,name,role,value,unit,"
-                    "canonical_unit,evidence_quote,grounded,suspect_unit) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)",
+                    "INSERT INTO reagents(pmcid,doi,organoid_type,kind,name,canonical,role,value,unit,"
+                    "canonical_unit,evidence_quote,grounded,suspect_unit) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)",
                     (pmcid, p.get("source_doi"), oty, kind,
-                     r.get("name"), r.get("role"), conc.get("value"), conc.get("unit"),
+                     nm, canon_map.get(nm, nm), r.get("role"), conc.get("value"), conc.get("unit"),
                      conc.get("canonical_unit"), ev.get("quote"), 1 if ev.get("quote") else 0, suspect),
                 )
                 n_reagents += 1

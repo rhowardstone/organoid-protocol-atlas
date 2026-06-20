@@ -19,3 +19,10 @@
 - Fix: (1) removed parrotable examples from the prompt; (2) deterministic substring-grounding — drop any timeline stage / endpoint not appearing verbatim in the source text. Re-ran corpus.
 - Result: parroting collapsed (definitive endoderm 10→1, PAX6 13→1, forskolin 12→0, Lgr5 12→0). Surviving endpoints now paper-specific & correct (liver→ALB/HNF4α, intestinal→CDX2, gastric→PAS staining). timeline 4/25 real (was 15/25 inflated). grounding 0.78.
 - Lesson: never put parrotable concrete examples in an extraction prompt; ground free-text fields by substring. Note: 2/25 extraction errors this run (kept prior); full re-run ~16min, deferred.
+
+## Iteration 4 — 2026-06-20 — Entity normalization (honest reuse call)
+- Inspected craig/scientific_ner: it's a HF NER *tagger* (entity typing), NOT a synonym canonicalizer — wrong tool for collapsing R-spondin variants. Reused the prototype's NAME_CANON *insight* instead of force-fitting; scientific_ner deferred to when we need entity DETECTION on raw text.
+- Built pipeline/normalize.py: curated organoid-reagent CANON map (bFGF=FGF2, RSPO1=R-spondin1, Y-27632 incl 'ROCK inhibitor Y-27632', ...) + corpus-aware collapse of case/space/punct variants. Wired a `canonical` column into the KG; comparison query + per-reagent links + a facet now group by canonical.
+- Result: signaling 85 raw → 65 canonical (20 collapsed). R-spondin1 ← {R-Spondin1,RSPO1,R-spondin 1,R-spondin}; FGF2 ← {FGF2,bFGF}; Activin A, SB431542, A83-01 collapsed; R-spondin3 kept distinct (correct). Browser/JSON-verified.
+- Surfaced real variety: R-spondin1 as recombinant (ng/mL) vs conditioned-medium (%v/v) — a genuine cross-protocol comparison insight.
+- Next: A100 vision (Qwen2.5-VL, solve figure fetch); then frontend parity (Q&A/heatmap/dark mode); ChEBI/PR ontology_id enrichment later.

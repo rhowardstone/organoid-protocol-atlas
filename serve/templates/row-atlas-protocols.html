@@ -55,7 +55,7 @@ function highlight(text, quotes){
 
   const rows = sig.map(r => `
     <tr>
-      <td><a href="/atlas/reagents?name__exact=${encodeURIComponent(r.name)}">${esc(r.name)}</a></td>
+      <td><a href="/atlas/reagents?canonical__exact=${encodeURIComponent(r.canonical || r.name)}">${esc(r.name)}</a></td>
       <td>${esc(r.role==='not stated'?'':r.role)}</td>
       <td>${esc(conc(r))}${r.suspect_unit ? ' <span class="apa-badge no" title="implausible unit — likely extraction error">⚠</span>' : ''}</td>
       <td>${badge(r.grounded)}</td>
