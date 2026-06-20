@@ -50,3 +50,21 @@ def test_hallucinated_rrid_is_dropped():
     m = {"source_cells": {"line_name": "H9", "rrid": "CVCL_9773"}}  # neither in evidence
     p, _ = to_protocol(DOI, m, evidence)
     assert p.source_cells.rrid is None and p.source_cells.line_name is None
+
+
+def test_numeric_grounding_rejects_embedded_digit():
+    # #7 review: co2=7 must NOT ground against the "7" inside "37 °C"
+    evidence = "Organoids were cultured at 37 °C."
+    m = {"culture_conditions": {"co2_pct": 7, "evidence_quote": "cultured at 37 °C"}}
+    p, _ = to_protocol(DOI, m, evidence)
+    assert p.culture_conditions.co2_pct is None
+    assert p.culture_conditions.reporting.value == "not_extracted"
+
+
+def test_line_name_case_mismatch_dropped():
+    # #7 review: model 'h9' must not pass when the source says 'H9' (the stored quote
+    # would otherwise be non-verbatim). Exact substring grounding required.
+    evidence = "The H9 hESC line was maintained on Matrigel."
+    m = {"source_cells": {"line_name": "h9"}}
+    p, _ = to_protocol(DOI, m, evidence)
+    assert p.source_cells.line_name is None

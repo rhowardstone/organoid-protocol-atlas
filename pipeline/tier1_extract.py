@@ -45,6 +45,8 @@ NON_REAGENT_RE = re.compile(
 
 def is_non_reagent(name: str | None) -> bool:
     return bool(name) and bool(NON_REAGENT_RE.search(name))
+
+
 sys.path.insert(0, str(REPO / "organoid_demo"))
 
 from schema import (  # noqa: E402
@@ -208,9 +210,11 @@ def to_protocol(doi: str, m: dict, evidence: str) -> tuple[OrganoidProtocol, dic
         v = _num(cc_in.get(key))
         if v is None or not cq_ok:
             return None
-        # the numeric must actually appear in the quote (int or one-decimal form)
+        # the numeric must appear in the quote as a WHOLE number, not digits embedded
+        # in a larger one (else co2=7 would ground against "37 °C"). #7 review fix.
         forms = {str(int(v)) if v == int(v) else None, str(v), f"{v:g}"} - {None}
-        return v if any(f in cq for f in forms) else None
+        return v if any(re.search(r"(?<![\d.])" + re.escape(f) + r"(?![\d.])", cq)
+                        for f in forms) else None
     temp, co2, o2 = _grounded_num("temperature_c"), _grounded_num("co2_pct"), _grounded_num("o2_pct")
     has_cc = any(x is not None for x in (temp, co2, o2))
     culture_conditions = CultureConditions(
@@ -218,12 +222,13 @@ def to_protocol(doi: str, m: dict, evidence: str) -> tuple[OrganoidProtocol, dic
         reporting=Reporting.REPORTED if has_cc else Reporting.NOT_EXTRACTED,
         evidence=Evidence(source_doi=doi, quote=cq, section="Methods", confidence=0.0) if has_cc else None)
 
-    # v0.3 cell-line identity — grounded (verbatim) line_name + RRID; RRID must not be
-    # an ungrounded convenience field (supervisor note on PR #4).
+    # v0.3 cell-line identity — require EXACT (case-sensitive) substring grounding so the
+    # stored Evidence quote is genuinely verbatim ("h9" is dropped if the source says "H9").
+    # RRID must not be an ungrounded convenience field (PR #4 + #7 review notes).
     ln = (sc.get("line_name") or "").strip() or None
     rrid = (sc.get("rrid") or "").strip() or None
-    ln = ln if (ln and ln.lower() in el) else None
-    rrid = rrid if (rrid and rrid.lower() in el) else None
+    ln = ln if (ln and ln in evidence) else None
+    rrid = rrid if (rrid and rrid in evidence) else None
     sc_ev = Evidence(source_doi=doi, quote=(rrid or ln), section="Methods", confidence=0.0) \
         if (ln or rrid) else None
 
