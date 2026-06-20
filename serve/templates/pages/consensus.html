@@ -3,6 +3,13 @@
 {% block body_class %}index{% endblock %}
 
 {% block content %}
+<style>
+.cons-corpus { display:flex; flex-wrap:wrap; gap:5px; margin:6px 0 0; }
+.cons-cite { font-size:0.72rem; font-family:var(--mono,monospace); color:var(--accent); border:1px solid color-mix(in srgb,var(--accent) 40%,transparent); border-radius:4px; padding:1px 5px; text-decoration:none; white-space:nowrap; }
+.cons-cite:hover { background:color-mix(in srgb,var(--accent) 10%,transparent); }
+.cons-sources { display:flex; flex-wrap:wrap; gap:4px; margin-top:4px; grid-column:1/-1; }
+</style>
+
 <div class="apa-topbar">
   <span class="dot"></span> <a href="/">ORGANOID PROTOCOL ATLAS</a>
   <span class="dot"></span> <a href="/heatmap">Morphogen grammar</a>
@@ -15,8 +22,8 @@
   <p class="apa-sub">For every organoid type, how often each signaling factor appears across that
   type's protocols — the <strong>core cocktail</strong> (used by most protocols) versus
   <strong>variable</strong> additions. Frequencies are computed from the corpus, not asserted;
-  each factor links to its evidence. Types with only one or two protocols are labelled as such —
-  a single paper is not a consensus.</p>
+  each factor row shows every paper that uses it. Types with only one or two protocols are labelled
+  as such — a single paper is not a consensus.</p>
 </div>
 
 <div id="consensus" class="apa-cons-wrap"><p class="apa-sub">Loading…</p></div>
@@ -33,11 +40,10 @@ function modalDose(doses){
   return best[0][0] + (uniq>1 ? ` <span class="cons-varies">(+${uniq-1} other${uniq>2?'s':''})</span>` : '');
 }
 
-const fmt = x => Number(x.toFixed(4)).toString();   // trim float cruft (10.0 -> 10)
+const fmt = x => Number(x.toFixed(4)).toString();
 function median(a){ const s=[...a].sort((x,y)=>x-y), m=s.length>>1;
   return s.length%2 ? s[m] : (s[m-1]+s[m])/2; }
 
-// dose range when >=2 reported concentrations share a (canonical) unit; else modal.
 function doseRange(doses, nums){
   if(nums.length>=2){
     const byU={}; for(const x of nums){ (byU[x.u]=byU[x.u]||[]).push(x.v); }
@@ -52,12 +58,30 @@ function doseRange(doses, nums){
   return modalDose(doses);
 }
 
+function citeLink(p){
+  const href = p.doi ? `https://doi.org/${esc(p.doi)}`
+                     : `https://www.ncbi.nlm.nih.gov/pmc/articles/${esc(p.pmcid)}/`;
+  const label = `${esc(p.first_author||'?')} ${p.year||''}`;
+  return `<a class="cons-cite" href="${href}" target="_blank" rel="noopener" title="${esc(p.first_author||'')} ${p.year||''} · ${esc(p.journal||'')} · ${esc(p.pmcid||'')}">${label}</a>`;
+}
+
 (async () => {
   let protos, sig;
   try {
     protos = await j('/atlas/protocols.json?_shape=array&_size=max');
     sig = await j('/atlas/reagents.json?_shape=array&_size=max&kind__exact=signaling');
   } catch(e){ document.getElementById('consensus').innerHTML='<p>Could not load.</p>'; return; }
+
+  // Build pmcid → protocol lookup
+  const protoMap = {};
+  for(const p of protos) protoMap[p.pmcid] = p;
+
+  // Build type → [protocol, ...] for section-level corpus display
+  const typeProtos = {};
+  for(const p of protos){
+    if(!p.organoid_type) continue;
+    (typeProtos[p.organoid_type] = typeProtos[p.organoid_type] || []).push(p);
+  }
 
   const nByType = {};
   for(const p of protos) nByType[p.organoid_type]=(nByType[p.organoid_type]||0)+1;
@@ -79,25 +103,47 @@ function doseRange(doses, nums){
   let html='';
   for(const t of types){
     const n = nByType[t]||0;
-    const rows = Object.entries(m[t]).map(([c,d])=>({c, k:d.pmcids.size, doses:d.doses, nums:d.nums, fig:d.fig}))
-      .sort((a,b)=>b.k-a.k || a.c.localeCompare(b.c));
+
+    // Resolve and sort the corpus for this type by year
+    const corpusProtos = (typeProtos[t]||[]).slice().sort((a,b)=>(a.year||0)-(b.year||0));
+    const corpusHtml = corpusProtos.map(citeLink).join('');
+
+    const rows = Object.entries(m[t]).map(([c,d])=>{
+      // Resolve papers for this factor, sorted by year
+      const papers = [...d.pmcids].map(pmcid=>protoMap[pmcid]).filter(Boolean)
+                     .sort((a,b)=>(a.year||0)-(b.year||0));
+      return {c, k:d.pmcids.size, doses:d.doses, nums:d.nums, fig:d.fig, papers};
+    }).sort((a,b)=>b.k-a.k || a.c.localeCompare(b.c));
+
     const core = rows.filter(r=>r.k/n>=0.5);
     const variable = rows.filter(r=>r.k/n<0.5);
+
     const note = n<=1 ? `<span class="cons-warn">single protocol — not a consensus</span>`
                : n===2 ? `<span class="cons-warn">only ${n} protocols — provisional</span>`
                : `${core.length} core · ${variable.length} variable factors`;
 
     const rowHtml = r => {
       const pct = Math.round(100*r.k/n);
+      // Per-factor citation line
+      const sources = r.papers.length
+        ? `<div class="cons-sources">${r.papers.map(citeLink).join('')}</div>`
+        : '';
       return `<div class="cons-row">
-        <a class="cons-name" href="/atlas/reagents?canonical__exact=${encodeURIComponent(r.c)}&organoid_type__exact=${encodeURIComponent(t)}">${esc(r.c)}</a>${r.fig?' <span class="apa-badge fig">📷</span>':''}
+        <div class="cons-name-wrap">
+          <a class="cons-name" href="/atlas/reagents?canonical__exact=${encodeURIComponent(r.c)}&organoid_type__exact=${encodeURIComponent(t)}">${esc(r.c)}</a>${r.fig?' <span class="apa-badge fig">📷</span>':''}
+          ${sources}
+        </div>
         <div class="cons-bar"><div class="cons-fill" style="width:${pct}%"></div><span class="cons-pct">${r.k}/${n}</span></div>
         <div class="cons-dose">${doseRange(r.doses, r.nums)}</div>
       </div>`;
     };
 
     html += `<section class="apa-cons-card">
-      <div class="cons-head"><h2>${esc(t)} organoid</h2><span class="cons-meta">${note}</span></div>
+      <div class="cons-head">
+        <h2>${esc(t)} organoid</h2>
+        <span class="cons-meta">${note}</span>
+      </div>
+      <div class="cons-corpus">${corpusHtml}</div>
       ${core.length?`<div class="cons-grouplabel">Core cocktail</div>${core.map(rowHtml).join('')}`:''}
       ${variable.length?`<div class="cons-grouplabel variable">Variable additions</div>${variable.map(rowHtml).join('')}`:''}
     </section>`;
