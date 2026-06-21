@@ -370,3 +370,25 @@ def test_live_kgx_summary_review_queue_present():
     assert rq["total"] >= 1
     assert "by_status" in rq
     assert "top_not_found" in rq
+
+
+# ---------------------------------------------------------------------------
+# concentration-by-type live smoke tests
+# ---------------------------------------------------------------------------
+
+@require_reagents
+def test_live_cbt_egf_returns_200():
+    data, status = ae.handle_concentration_by_type("EGF")
+    assert status == 200
+    assert data["canonical"] == "EGF"
+    assert data["n_organoid_types"] >= 5
+    # intestinal is the largest single organoid type for EGF
+    by_type = data["by_type"]
+    assert "intestinal" in by_type
+    assert "gastric" in by_type
+
+
+@require_reagents
+def test_live_cbt_400_no_query():
+    _, status = ae.handle_concentration_by_type(None)
+    assert status == 400
