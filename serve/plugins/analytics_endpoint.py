@@ -11,6 +11,11 @@ Routes (all return JSON; read-only, no writes):
   GET /analytics/coverage                       -- per-type corpus coverage & completeness report
   GET /analytics/coverage/{organoid_type}       -- coverage for one organoid type
   GET /analytics/reagent?q=TERM                 -- cross-corpus reagent lookup from reagents.jsonl
+  GET /analytics/reagent-network?q=TERM        -- reagent co-occurrence: most co-mentioned reagents
+  GET /analytics/type-similarity               -- pairwise organoid type Jaccard similarity
+  GET /analytics/type-timeseries              -- type publication counts by year (growth trends)
+  GET /analytics/universal-reagents           -- reagents essential to each type (>= N% of protocols)
+  GET /analytics/species-breakdown            -- species distribution per organoid type from protocols.jsonl
   GET /analytics                                -- index of available analytics
 
 All endpoints degrade gracefully — if the pre-computed file doesn't exist they return
@@ -36,6 +41,8 @@ ANALYSIS_DIR = REPO / "outputs" / "analysis"
 COMPARISON_DIR = REPO / "outputs" / "comparison"
 COVERAGE_REPORT_PATH = ANALYSIS_DIR / "coverage_report.json"
 REAGENTS_JSONL = REPO / "exports" / "public" / "reagents.jsonl"
+PROTOCOLS_JSONL = REPO / "exports" / "public" / "protocols.jsonl"
+MANIFEST_PATH = REPO / "exports" / "public" / "manifest.json"
 
 
 # --------------------------------------------------------------------------- #
@@ -107,10 +114,70 @@ def handle_lineage() -> tuple[dict, int]:
         return {"error": "malformed lineage file"}, 500
 
 
+def _load_public_protocol(pmcid: str) -> dict | None:
+    """
+    Build a compare_protocols-compatible protocol dict from committed public JSONL.
+
+    Loads:
+      - Protocol summary from exports/public/protocols.jsonl
+      - Reagents (signaling/supplement/small_molecule) from exports/public/reagents.jsonl
+
+    This is the public-data fallback used by handle_compare when no local prediction
+    or pre-computed comparison file exists. Reagent fields are re-mapped to the
+    schema compare_protocols.compare_protocols() expects.
+    """
+    PROTOCOLS_JSONL = REPO / "exports" / "public" / "protocols.jsonl"
+    if not PROTOCOLS_JSONL.exists() or not REAGENTS_JSONL.exists():
+        return None
+
+    proto: dict | None = None
+    for line in PROTOCOLS_JSONL.read_text().splitlines():
+        if not line.strip():
+            continue
+        rec = json.loads(line)
+        if rec.get("pmcid", "").upper() == pmcid:
+            proto = dict(rec)
+            proto["_source"] = "public_summary"
+            break
+    if proto is None:
+        return None
+
+    # Group reagents from public reagents.jsonl
+    KIND_MAP = {
+        "signaling": "signaling_factors",
+        "supplement": "media_supplements",
+        "small_molecule": "small_molecules",
+    }
+    for key in KIND_MAP.values():
+        proto.setdefault(key, [])
+
+    for line in REAGENTS_JSONL.read_text().splitlines():
+        if not line.strip():
+            continue
+        r = json.loads(line)
+        if r.get("pmcid", "").upper() != pmcid:
+            continue
+        kind = r.get("kind", "")
+        section = KIND_MAP.get(kind)
+        if section is None:
+            continue
+        proto[section].append({
+            "name": r.get("name") or r.get("canonical"),
+            "canonical_name": r.get("canonical"),
+            "role": r.get("role"),
+            "value": r.get("value"),
+            "unit": r.get("canonical_unit") or r.get("unit"),
+            "evidence_quote": r.get("evidence_quote"),
+            "grounding_status": "resolved" if r.get("grounded") else "not_found",
+        })
+
+    return proto
+
+
 def handle_compare(pmcid_a: str, pmcid_b: str) -> tuple[dict, int]:
     """
-    Return protocol comparison. Checks pre-computed cache first.
-    Does NOT compute on-demand in the web process (would need local predictions).
+    Return protocol comparison. Checks pre-computed cache first, then computes
+    on-demand from public JSONL if both PMCIDs are in the public corpus.
     """
     # Sanitize
     for p in (pmcid_a, pmcid_b):
@@ -120,7 +187,7 @@ def handle_compare(pmcid_a: str, pmcid_b: str) -> tuple[dict, int]:
     pmcid_a = pmcid_a.upper()
     pmcid_b = pmcid_b.upper()
 
-    # Check both orderings
+    # Check both orderings (pre-computed cache)
     for a, b in ((pmcid_a, pmcid_b), (pmcid_b, pmcid_a)):
         path = COMPARISON_DIR / f"{a}_vs_{b}.json"
         if path.exists():
@@ -129,10 +196,36 @@ def handle_compare(pmcid_a: str, pmcid_b: str) -> tuple[dict, int]:
             except json.JSONDecodeError:
                 return {"error": "malformed comparison file"}, 500
 
-    return {
-        "error": f"No comparison found for {pmcid_a} vs {pmcid_b}",
-        "hint": f"Run: python pipeline/compare_protocols.py {pmcid_a} {pmcid_b}",
-    }, 404
+    # On-demand comparison from public JSONL
+    try:
+        from compare_protocols import compare_protocols as _compare
+    except ImportError:
+        return {
+            "error": f"No comparison found for {pmcid_a} vs {pmcid_b}",
+            "hint": f"Run: python pipeline/compare_protocols.py {pmcid_a} {pmcid_b}",
+        }, 404
+
+    pa = _load_public_protocol(pmcid_a)
+    pb = _load_public_protocol(pmcid_b)
+
+    if pa is None:
+        return {
+            "error": f"{pmcid_a} not found in public corpus",
+            "hint": f"Run: python pipeline/compare_protocols.py {pmcid_a} {pmcid_b}",
+        }, 404
+    if pb is None:
+        return {
+            "error": f"{pmcid_b} not found in public corpus",
+            "hint": f"Run: python pipeline/compare_protocols.py {pmcid_a} {pmcid_b}",
+        }, 404
+
+    try:
+        result = _compare(pa, pb, pmcid_a, pmcid_b)
+        result["computed_on_demand"] = True
+        result["note"] = "Comparison computed from public JSONL (summary-level); reagents included."
+        return result, 200
+    except Exception as exc:  # noqa: BLE001
+        return {"error": f"Comparison failed: {exc}"}, 500
 
 
 def handle_substitutions(query: str, to_query: str | None, organoid_type: str | None) -> tuple[dict, int]:
@@ -224,6 +317,17 @@ def handle_summary() -> tuple[dict, int]:
     """
     summary: dict = {}
 
+    # Manifest — n_reagents and schema_version let dashboard callers avoid a separate fetch
+    if MANIFEST_PATH.exists():
+        try:
+            mf = json.loads(MANIFEST_PATH.read_text())
+            summary["manifest"] = {
+                "n_reagents": (mf.get("tables") or {}).get("reagents"),
+                "schema_version": mf.get("schema_version"),
+            }
+        except (json.JSONDecodeError, OSError):
+            pass
+
     # Corpus / coverage
     if COVERAGE_REPORT_PATH.exists():
         try:
@@ -301,7 +405,43 @@ def handle_summary() -> tuple[dict, int]:
         except (json.JSONDecodeError, OSError):
             pass
 
-    has_data = bool(summary)
+    # MIOR completeness summary — embed key fields so /analytics/summary callers
+    # get MIOR stats without a second fetch (the full report is still at /analytics/mior)
+    mior_path = ANALYSIS_DIR / "mior_completeness.json"
+    if mior_path.exists():
+        try:
+            mior = json.loads(mior_path.read_text())
+            summary["mior"] = {
+                "avg_mior_completeness": mior.get("avg_mior_completeness"),
+                "n_full": mior.get("n_full"),
+                "n_partial": mior.get("n_partial"),
+                "n_sparse": mior.get("n_sparse"),
+                "n_total": mior.get("n_total"),
+            }
+        except (json.JSONDecodeError, OSError):
+            pass
+
+    # Species snapshot — top-3 cross-corpus species; derived live from protocols.jsonl
+    # so the summary stays fresh without a separate pre-computed artifact.
+    if PROTOCOLS_JSONL.exists():
+        try:
+            sp_counts: dict[str, int] = {}
+            for line in PROTOCOLS_JSONL.read_text().splitlines():
+                if not line.strip():
+                    continue
+                p = json.loads(line)
+                raw = (p.get("species") or "not_stated").strip()
+                sp = _SPECIES_ALIASES.get(raw.lower(), raw.lower())
+                sp_counts[sp] = sp_counts.get(sp, 0) + 1
+            top3 = dict(sorted(sp_counts.items(), key=lambda kv: -kv[1])[:3])
+            summary["species_snapshot"] = top3
+        except (json.JSONDecodeError, OSError):
+            pass
+
+    # manifest, mior, and species_snapshot are live-derived conveniences —
+    # don't count them as analytics data for the has_data gate.
+    _analytics_keys = set(summary) - {"manifest", "mior", "species_snapshot"}
+    has_data = bool(_analytics_keys)
 
     # Analytics inventory — always included so callers know what to generate
     summary["analytics_ready"] = {
@@ -311,6 +451,7 @@ def handle_summary() -> tuple[dict, int]:
         "coverage": COVERAGE_REPORT_PATH.exists(),
         "quality": quality_path.exists(),
         "assay_endpoints": ae_path.exists(),
+        "mior": mior_path.exists(),
     }
 
     if not has_data:
@@ -424,6 +565,284 @@ def handle_reagent(query: str, organoid_type: str | None, min_papers: int) -> tu
     return result, 200
 
 
+def handle_reagent_network(query: str, limit: int) -> tuple[dict, int]:
+    """Reagent co-occurrence network from reagents.jsonl.
+
+    Returns the reagents most commonly co-mentioned in the same papers as
+    the queried reagent.  Useful for "what else is always used with EGF?"
+    """
+    if not query or not query.strip():
+        return {
+            "error": "pass ?q=reagent_name",
+            "example": "/analytics/reagent-network?q=EGF",
+        }, 400
+
+    query = query.strip()[:100]
+    limit = max(1, min(limit, 100))
+
+    if not REAGENTS_JSONL.exists():
+        return {
+            "error": "reagents.jsonl not found",
+            "hint": "Run: python pipeline/export_public.py",
+        }, 404
+
+    q_lower = query.lower()
+    # pass 1 — find PMCIDs where the query reagent appears
+    query_pmcids: set[str] = set()
+    all_rows: list[dict] = []
+    try:
+        for line in REAGENTS_JSONL.read_text().splitlines():
+            if not line.strip():
+                continue
+            r = json.loads(line)
+            all_rows.append(r)
+            name = (r.get("canonical") or r.get("name") or "").lower()
+            if q_lower in name or name in q_lower:
+                pmcid = r.get("pmcid", "")
+                if pmcid:
+                    query_pmcids.add(pmcid)
+    except (json.JSONDecodeError, OSError) as exc:
+        return {"error": f"reagents.jsonl unreadable: {exc}"}, 500
+
+    if not query_pmcids:
+        return {
+            "query": query,
+            "n_papers": 0,
+            "co_occurring": [],
+            "note": "No papers found mentioning this reagent",
+        }, 200
+
+    # pass 2 — count co-occurring reagents in those papers
+    counts: dict[str, int] = {}
+    for r in all_rows:
+        if r.get("pmcid", "") not in query_pmcids:
+            continue
+        name = r.get("canonical") or r.get("name") or ""
+        if not name or name.lower() == q_lower:
+            continue
+        counts[name] = counts.get(name, 0) + 1
+
+    ranked = sorted(counts.items(), key=lambda x: (-x[1], x[0]))[:limit]
+    return {
+        "query": query,
+        "n_papers": len(query_pmcids),
+        "co_occurring": [{"name": n, "papers": c, "rank": i + 1}
+                         for i, (n, c) in enumerate(ranked)],
+    }, 200
+
+
+def handle_universal_reagents(
+    organoid_type: str | None,
+    min_fraction: float,
+) -> tuple[dict, int]:
+    """Return type-essential reagents from reagents.jsonl.
+
+    For each organoid type (or the requested one), returns canonical reagents
+    that appear in at least `min_fraction` of that type's protocols.
+
+    Also returns cross-type universals — reagents appearing in >= half the types
+    (regardless of per-type frequency).
+    """
+    min_fraction = max(0.0, min(min_fraction, 1.0))
+
+    if not REAGENTS_JSONL.exists():
+        return {
+            "error": "reagents.jsonl not found",
+            "hint": "Run: python pipeline/export_public.py",
+        }, 404
+
+    if organoid_type and not re.match(r'^[\w-]+$', organoid_type):
+        return {"error": "invalid organoid_type"}, 400
+
+    papers_by_type: dict[str, set[str]] = {}
+    reagent_papers_by_type: dict[str, dict[str, set[str]]] = {}
+
+    try:
+        for line in REAGENTS_JSONL.read_text().splitlines():
+            if not line.strip():
+                continue
+            r = json.loads(line)
+            ot = (r.get("organoid_type") or r.get("type") or "").strip()
+            pmcid = (r.get("pmcid") or "").strip()
+            canonical = (r.get("canonical") or r.get("name") or "").strip().lower()
+            if not ot or ot == "other" or not pmcid or not canonical:
+                continue
+            papers_by_type.setdefault(ot, set()).add(pmcid)
+            reagent_papers_by_type.setdefault(ot, {}).setdefault(canonical, set()).add(pmcid)
+    except (json.JSONDecodeError, OSError) as exc:
+        return {"error": f"reagents.jsonl unreadable: {exc}"}, 500
+
+    if not papers_by_type:
+        return {"error": "no typed reagent data found", "n_types": 0}, 404
+
+    types_to_process = ([organoid_type] if organoid_type and organoid_type in papers_by_type
+                        else sorted(papers_by_type))
+
+    per_type: dict[str, dict] = {}
+    for t in types_to_process:
+        n_papers = len(papers_by_type[t])
+        essentials = []
+        for canonical, pmcids in reagent_papers_by_type.get(t, {}).items():
+            frac = len(pmcids) / n_papers if n_papers else 0.0
+            if frac >= min_fraction:
+                essentials.append({
+                    "canonical": canonical,
+                    "fraction": round(frac, 4),
+                    "n_papers": len(pmcids),
+                    "n_total_papers": n_papers,
+                })
+        essentials.sort(key=lambda x: (-x["fraction"], x["canonical"]))
+        per_type[t] = {"n_papers": n_papers, "essentials": essentials}
+
+    # Cross-type universals: reagents present in >= 50% of types
+    n_types = len(papers_by_type)
+    reagent_type_count: dict[str, int] = {}
+    for t in papers_by_type:
+        n_p = len(papers_by_type[t])
+        for canonical, pmcids in reagent_papers_by_type.get(t, {}).items():
+            if n_p and len(pmcids) / n_p >= min_fraction:
+                reagent_type_count[canonical] = reagent_type_count.get(canonical, 0) + 1
+    cross_type = sorted(
+        [{"canonical": c, "n_types": cnt}
+         for c, cnt in reagent_type_count.items()
+         if cnt >= n_types / 2],
+        key=lambda x: (-x["n_types"], x["canonical"]),
+    )
+
+    result: dict = {
+        "min_fraction": min_fraction,
+        "n_types_with_data": n_types,
+        "cross_type_universals": cross_type,
+        "per_type": per_type,
+    }
+    if organoid_type:
+        if organoid_type not in papers_by_type:
+            return {
+                "error": f"No reagent data for '{organoid_type}'",
+                "available_types": sorted(papers_by_type),
+            }, 404
+        result["organoid_type"] = organoid_type
+
+    return result, 200
+
+
+def handle_type_timeseries() -> tuple[dict, int]:
+    """Organoid type publication counts by year from protocols.jsonl.
+
+    Shows how each organoid type's presence in the corpus has grown or shifted
+    over time — useful for identifying emerging types and publication trends.
+    """
+    if not PROTOCOLS_JSONL.exists():
+        return {
+            "error": "protocols.jsonl not found",
+            "hint": "Run: python pipeline/export_public.py",
+        }, 404
+
+    by_year: dict[str, dict[str, int]] = {}
+    by_type: dict[str, dict[str, int]] = {}
+    total_by_year: dict[str, int] = {}
+
+    try:
+        for line in PROTOCOLS_JSONL.read_text().splitlines():
+            if not line.strip():
+                continue
+            p = json.loads(line)
+            year = str(p.get("year") or "").strip()
+            otype = (p.get("organoid_type") or "").strip()
+            if not year or not otype or otype == "other":
+                continue
+            by_year.setdefault(year, {}).setdefault(otype, 0)
+            by_year[year][otype] += 1
+            by_type.setdefault(otype, {}).setdefault(year, 0)
+            by_type[otype][year] += 1
+            total_by_year[year] = total_by_year.get(year, 0) + 1
+    except (json.JSONDecodeError, OSError) as exc:
+        return {"error": f"protocols.jsonl unreadable: {exc}"}, 500
+
+    if not by_year:
+        return {"error": "no year data in protocols.jsonl", "n_papers": 0}, 404
+
+    years = sorted(by_year.keys())
+    first_appearance = {
+        t: min(y for y in ys if ys[y] > 0)
+        for t, ys in by_type.items()
+    }
+
+    return {
+        "years": years,
+        "by_year": {y: by_year[y] for y in years},
+        "by_type": {t: by_type[t] for t in sorted(by_type)},
+        "total_by_year": {y: total_by_year[y] for y in years},
+        "first_appearance": dict(sorted(first_appearance.items(), key=lambda x: x[1])),
+    }, 200
+
+
+def handle_type_similarity(top_n: int) -> tuple[dict, int]:
+    """Pairwise organoid type similarity from reagents.jsonl (Jaccard on canonical reagents).
+
+    Returns per-type top-N most similar types with shared reagent count and Jaccard score.
+    Useful for: "which organoid types have the most protocol overlap with cerebral?"
+    """
+    top_n = max(1, min(top_n, 50))
+
+    if not REAGENTS_JSONL.exists():
+        return {
+            "error": "reagents.jsonl not found",
+            "hint": "Run: python pipeline/export_public.py",
+        }, 404
+
+    # Build per-type canonical reagent sets
+    reagents_by_type: dict[str, set[str]] = {}
+    try:
+        for line in REAGENTS_JSONL.read_text().splitlines():
+            if not line.strip():
+                continue
+            r = json.loads(line)
+            otype = r.get("organoid_type") or r.get("type") or ""
+            canonical = (r.get("canonical") or r.get("name") or "").strip().lower()
+            if not otype or not canonical:
+                continue
+            reagents_by_type.setdefault(otype, set()).add(canonical)
+    except (json.JSONDecodeError, OSError) as exc:
+        return {"error": f"reagents.jsonl unreadable: {exc}"}, 500
+
+    if not reagents_by_type:
+        return {"error": "no typed reagents found in reagents.jsonl", "n_types": 0}, 404
+
+    types = sorted(reagents_by_type)
+
+    def jaccard(a: set, b: set) -> float:
+        return len(a & b) / len(a | b) if (a or b) else 0.0
+
+    per_type = {}
+    for t in types:
+        ts = reagents_by_type[t]
+        neighbors = []
+        for u in types:
+            if u == t:
+                continue
+            us = reagents_by_type[u]
+            j = jaccard(ts, us)
+            if j > 0:
+                neighbors.append({
+                    "type": u,
+                    "jaccard": round(j, 4),
+                    "n_shared": len(ts & us),
+                    "n_union": len(ts | us),
+                })
+        neighbors.sort(key=lambda x: (-x["jaccard"], x["type"]))
+        per_type[t] = {
+            "n_reagents": len(ts),
+            "top_similar": neighbors[:top_n],
+        }
+
+    return {
+        "n_types": len(types),
+        "method": "Jaccard similarity on canonical reagent names from reagents.jsonl",
+        "per_type": per_type,
+    }, 200
+
+
 def handle_candidates() -> tuple[dict, int]:
     """Return OA verification status of the candidate pool — how many papers are
     public_ok (CC0/CC-BY), rejected (NC/ND/unknown), or quarantine (API error)."""
@@ -466,6 +885,74 @@ def handle_candidates() -> tuple[dict, int]:
     }, 200
 
 
+_SPECIES_ALIASES: dict[str, str] = {
+    "homo sapiens": "human",
+    "murine": "mouse",
+    "mus musculus": "mouse",
+}
+
+
+def handle_species_breakdown(organoid_type: str | None) -> tuple[dict, int]:
+    """Species distribution per organoid type from protocols.jsonl.
+
+    Normalises legacy aliases (murine→mouse, Homo sapiens→human) and returns
+    per-type counts for human / mouse / other, plus cross-corpus totals.
+    Optional ?type= restricts output to one organoid type.
+    """
+    if not PROTOCOLS_JSONL.exists():
+        return {
+            "error": "protocols.jsonl not found",
+            "hint": "Run: python pipeline/export_public.py",
+        }, 404
+
+    if organoid_type and not re.match(r'^[\w-]+$', organoid_type):
+        return {"error": "invalid organoid_type"}, 400
+
+    per_type: dict[str, dict[str, int]] = {}
+    cross_corpus: dict[str, int] = {}
+
+    try:
+        for line in PROTOCOLS_JSONL.read_text().splitlines():
+            if not line.strip():
+                continue
+            p = json.loads(line)
+            ot = (p.get("organoid_type") or "").strip()
+            if not ot or ot == "other":
+                continue
+            raw = (p.get("species") or "not_stated").strip()
+            sp = _SPECIES_ALIASES.get(raw.lower(), raw.lower())
+            per_type.setdefault(ot, {})
+            per_type[ot][sp] = per_type[ot].get(sp, 0) + 1
+            cross_corpus[sp] = cross_corpus.get(sp, 0) + 1
+    except (json.JSONDecodeError, OSError) as exc:
+        return {"error": f"protocols.jsonl unreadable: {exc}"}, 500
+
+    if not per_type:
+        return {"error": "no organoid type data in protocols.jsonl"}, 404
+
+    if organoid_type:
+        if organoid_type not in per_type:
+            return {
+                "error": f"No data for organoid type '{organoid_type}'",
+                "available_types": sorted(per_type),
+            }, 404
+        return {
+            "organoid_type": organoid_type,
+            "species": per_type[organoid_type],
+        }, 200
+
+    # Sort each type's dict by count descending
+    summary_per_type = {
+        t: dict(sorted(counts.items(), key=lambda kv: -kv[1]))
+        for t, counts in sorted(per_type.items())
+    }
+    return {
+        "cross_corpus": dict(sorted(cross_corpus.items(), key=lambda kv: -kv[1])),
+        "per_type": summary_per_type,
+        "n_types": len(per_type),
+    }, 200
+
+
 def handle_mior() -> tuple[dict, int]:
     """Return pre-computed MIOR completeness report."""
     path = ANALYSIS_DIR / "mior_completeness.json"
@@ -493,6 +980,11 @@ def handle_index() -> tuple[dict, int]:
             "/analytics/coverage": "per-type corpus coverage and completeness report",
             "/analytics/coverage/{organoid_type}": "coverage stats for one organoid type",
             "/analytics/reagent?q=TERM": "cross-corpus reagent lookup: usage, concentrations, evidence quotes",
+            "/analytics/reagent-network?q=TERM": "reagent co-occurrence: which reagents most often appear in the same papers as TERM",
+            "/analytics/type-similarity": "pairwise organoid type similarity (Jaccard on canonical reagent sets) — which types share the most protocol overlap",
+            "/analytics/type-timeseries": "organoid type publication counts by year — growth trends and first-appearance dates from protocols.jsonl",
+            "/analytics/universal-reagents": "type-essential reagents: canonical reagents appearing in >= 50% of protocols for each type; also cross-type universals",
+            "/analytics/species-breakdown": "species distribution per organoid type (human / mouse / other) from protocols.jsonl; optional ?type=kidney",
             "/analytics/assay-endpoints": "assay endpoint cluster summary (per type + cross-type)",
             "/analytics/quality": "per-paper quality scores (gold/silver/bronze) + corpus summary",
             "/analytics/mior": "MIOR completeness report (Minimum Information About an Organoid Research)",
@@ -602,6 +1094,46 @@ async def route_reagent(datasette, request):
     return Response.json(data, status=status)
 
 
+async def route_universal_reagents(datasette, request):
+    organoid_type = request.args.get("type") or None
+    try:
+        min_fraction = float(request.args.get("min_fraction", "0.5"))
+    except (TypeError, ValueError):
+        min_fraction = 0.5
+    data, status = handle_universal_reagents(organoid_type, min_fraction)
+    return Response.json(data, status=status)
+
+
+async def route_type_timeseries(datasette, request):
+    data, status = handle_type_timeseries()
+    return Response.json(data, status=status)
+
+
+async def route_type_similarity(datasette, request):
+    try:
+        top_n = int(request.args.get("top_n", "5"))
+    except (TypeError, ValueError):
+        top_n = 5
+    data, status = handle_type_similarity(top_n)
+    return Response.json(data, status=status)
+
+
+async def route_reagent_network(datasette, request):
+    query = request.args.get("q", "")
+    try:
+        limit = int(request.args.get("limit", "20"))
+    except (TypeError, ValueError):
+        limit = 20
+    data, status = handle_reagent_network(query, limit)
+    return Response.json(data, status=status)
+
+
+async def route_species_breakdown(datasette, request):
+    organoid_type = request.args.get("type") or None
+    data, status = handle_species_breakdown(organoid_type)
+    return Response.json(data, status=status)
+
+
 async def route_candidates(datasette, request):
     data, status = handle_candidates()
     return Response.json(data, status=status)
@@ -626,6 +1158,11 @@ def register_routes():
         (r"^/analytics/coverage$", route_coverage),
         (r"^/analytics/coverage/(?P<organoid_type>[\w-]+)$", route_coverage_type),
         (r"^/analytics/reagent$", route_reagent),
+        (r"^/analytics/reagent-network$", route_reagent_network),
+        (r"^/analytics/type-similarity$", route_type_similarity),
+        (r"^/analytics/type-timeseries$", route_type_timeseries),
+        (r"^/analytics/universal-reagents$", route_universal_reagents),
+        (r"^/analytics/species-breakdown$", route_species_breakdown),
         (r"^/analytics/assay-endpoints$", route_assay_endpoints),
         (r"^/analytics/quality$", route_quality),
         (r"^/analytics/mior$", route_mior),
