@@ -32,3 +32,6 @@ data/predictions/local/
 data/figures/local/
 data/public/
 *.db
+
+# Regenerable semantic-retrieval vectors (R3); rebuilt by semantic_index.py build
+data/index/

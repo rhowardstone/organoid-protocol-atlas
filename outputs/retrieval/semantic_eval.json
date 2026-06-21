@@ -1,0 +1,17 @@
+{
+  "method": "semantic (all-MiniLM-L6-v2) vs lexical (TF-IDF) retrieval over methods text (type label excluded from docs); relevance=same curated organoid_type; precision@10",
+  "n_docs": 860,
+  "n_types": 26,
+  "k": 10,
+  "in_vocab_query": {
+    "semantic_mean_p@k": 0.4731,
+    "lexical_mean_p@k": 0.7077
+  },
+  "paraphrase_query": {
+    "n": 12,
+    "semantic_mean_p@k": 0.575,
+    "lexical_mean_p@k": 0.4583
+  },
+  "finding": "pure dense retrieval does NOT beat lexical on in-vocabulary type queries; its value is recall on paraphrase/synonym queries lacking the keyword -> use HYBRID (lexical precision + semantic recall), as Starling does.",
+  "generated_at": "2026-06-21T14:05:09+00:00"
+}
