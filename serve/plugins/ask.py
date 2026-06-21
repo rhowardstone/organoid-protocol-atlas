@@ -104,6 +104,7 @@ exports. Prefer the JSON endpoints for programmatic use.
 - /analytics/concentration-stats       aggregate concentration distributions per canonical reagent: median, min, max, std; top 50 by n_with_value; ?q=EGF for one reagent
 - /analytics/temporal-reagent-adoption per-reagent temporal adoption: fraction of papers per year using each canonical reagent; ?q=EGF for year-by-year data, ?type=kidney for one type
 - /analytics/kgx-summary               KGX graph state: n_nodes/n_edges by category, resolution rate, review queue breakdown, top not_found/needs_review entities for S1/S2 triage
+- /analytics/concentration-by-type     per-organoid-type concentration stats for one canonical reagent; requires ?q=EGF; shows how dose differs across kidney/intestinal/liver/etc
 - /analytics/failure-modes             failure mode cluster summary across the corpus
 - /analytics/lineage                   DOI→DOI protocol lineage graph
 - /analytics/assay-endpoints           assay endpoint cluster summary (per-type + cross-type)

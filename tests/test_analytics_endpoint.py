@@ -2753,3 +2753,130 @@ def test_kgx_summary_by_kind_counts(tmp_path, monkeypatch):
 def test_kgx_summary_index_entry():
     data, _ = ae.handle_index()
     assert "/analytics/kgx-summary" in data["endpoints"]
+
+
+# ---------------------------------------------------------------------------
+# concentration-by-type tests
+# ---------------------------------------------------------------------------
+
+def _write_reagents_for_cbt(path, rows):
+    """Write minimal reagents.jsonl for concentration-by-type tests."""
+    lines = []
+    for r in rows:
+        lines.append(json.dumps({
+            "canonical": r.get("canonical", "EGF"),
+            "organoid_type": r.get("organoid_type", "kidney"),
+            "value": r.get("value"),
+            "canonical_unit": r.get("canonical_unit"),
+            "unit": r.get("unit"),
+            "name": r.get("name", r.get("canonical", "EGF")),
+        }))
+    path.write_text("\n".join(lines) + "\n")
+
+
+def test_cbt_400_when_no_query(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_cbt(p, [])
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", p)
+    _, status = ae.handle_concentration_by_type(None)
+    assert status == 400
+
+
+def test_cbt_404_no_match(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_cbt(p, [{"canonical": "EGF"}])
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", p)
+    _, status = ae.handle_concentration_by_type("ZZZNOMATCH")
+    assert status == 404
+
+
+def test_cbt_returns_canonical(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_cbt(p, [
+        {"canonical": "EGF", "organoid_type": "kidney", "value": 50.0, "canonical_unit": "ng/mL"},
+    ])
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", p)
+    data, status = ae.handle_concentration_by_type("EGF")
+    assert status == 200
+    assert data["canonical"] == "EGF"
+    assert "by_type" in data
+
+
+def test_cbt_median_correct(tmp_path, monkeypatch):
+    """3 kidney rows at 50, 100, 150 → median 100."""
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_cbt(p, [
+        {"canonical": "EGF", "organoid_type": "kidney", "value": 50.0, "canonical_unit": "ng/mL"},
+        {"canonical": "EGF", "organoid_type": "kidney", "value": 100.0, "canonical_unit": "ng/mL"},
+        {"canonical": "EGF", "organoid_type": "kidney", "value": 150.0, "canonical_unit": "ng/mL"},
+    ])
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", p)
+    data, _ = ae.handle_concentration_by_type("EGF")
+    kidney = data["by_type"]["kidney"]
+    assert kidney["stats_per_unit"]["ng/mL"]["median"] == 100.0
+    assert kidney["stats_per_unit"]["ng/mL"]["min"] == 50.0
+    assert kidney["stats_per_unit"]["ng/mL"]["max"] == 150.0
+
+
+def test_cbt_per_type_isolation(tmp_path, monkeypatch):
+    """kidney and liver should have separate stats."""
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_cbt(p, [
+        {"canonical": "EGF", "organoid_type": "kidney", "value": 50.0, "canonical_unit": "ng/mL"},
+        {"canonical": "EGF", "organoid_type": "liver", "value": 100.0, "canonical_unit": "ng/mL"},
+    ])
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", p)
+    data, _ = ae.handle_concentration_by_type("EGF")
+    assert data["n_organoid_types"] == 2
+    assert data["by_type"]["kidney"]["stats_per_unit"]["ng/mL"]["median"] == 50.0
+    assert data["by_type"]["liver"]["stats_per_unit"]["ng/mL"]["median"] == 100.0
+
+
+def test_cbt_case_insensitive(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_cbt(p, [{"canonical": "FGF2", "organoid_type": "kidney"}])
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", p)
+    data, status = ae.handle_concentration_by_type("fgf2")
+    assert status == 200
+    assert data["canonical"] == "FGF2"
+
+
+def test_cbt_no_value_gives_zero_n_with_value(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_cbt(p, [
+        {"canonical": "EGF", "organoid_type": "kidney", "value": None, "canonical_unit": "ng/mL"},
+    ])
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", p)
+    data, _ = ae.handle_concentration_by_type("EGF")
+    kidney = data["by_type"]["kidney"]
+    assert kidney["n_with_value"] == 0
+
+
+def test_cbt_dominant_unit_is_most_common(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_cbt(p, [
+        {"canonical": "EGF", "organoid_type": "kidney", "value": 50.0, "canonical_unit": "ng/mL"},
+        {"canonical": "EGF", "organoid_type": "kidney", "value": 55.0, "canonical_unit": "ng/mL"},
+        {"canonical": "EGF", "organoid_type": "kidney", "value": 0.05, "canonical_unit": "ug/mL"},
+    ])
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", p)
+    data, _ = ae.handle_concentration_by_type("EGF")
+    assert data["by_type"]["kidney"]["dominant_unit"] == "ng/mL"
+
+
+def test_cbt_all_matches_when_multiple(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_cbt(p, [
+        {"canonical": "EGF", "organoid_type": "kidney"},
+        {"canonical": "EGF-like", "organoid_type": "liver"},
+    ])
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", p)
+    data, _ = ae.handle_concentration_by_type("EGF")
+    assert data["all_matches"] is not None
+    assert "EGF" in data["all_matches"]
+    assert "EGF-like" in data["all_matches"]
+
+
+def test_cbt_index_entry():
+    data, _ = ae.handle_index()
+    assert "/analytics/concentration-by-type" in data["endpoints"]

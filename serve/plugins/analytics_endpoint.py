@@ -26,6 +26,7 @@ Routes (all return JSON; read-only, no writes):
   GET /analytics/concentration-stats         -- aggregate concentration distributions per canonical reagent: median, min, max, n; optional ?q= filter
   GET /analytics/temporal-reagent-adoption   -- per-reagent temporal adoption: fraction of papers per year using each canonical reagent; ?q= for one reagent
   GET /analytics/kgx-summary                 -- KGX graph state: node/edge counts, resolution rate, review queue breakdown, top not-found and needs-review entities
+  GET /analytics/concentration-by-type       -- per-organoid-type concentration stats for one canonical reagent: median/min/max/n per unit per type; requires ?q=
   GET /analytics                                -- index of available analytics
 
 All endpoints degrade gracefully — if the pre-computed file doesn't exist they return
@@ -1885,6 +1886,90 @@ def handle_temporal_reagent_adoption(query: str | None, organoid_type: str | Non
     }, 200
 
 
+def handle_concentration_by_type(query: str | None) -> tuple[dict, int]:
+    """Per-organoid-type concentration breakdown for one canonical reagent.
+
+    Requires ?q= specifying the canonical reagent name (case-insensitive substring match).
+    For the best-matched canonical, returns concentration statistics (median/min/max/n)
+    broken down by organoid type and by canonical unit. Useful for comparing dose ranges
+    across organoid systems (e.g. EGF: 100 ng/mL in intestinal vs 50 ng/mL in kidney).
+    """
+    if not REAGENTS_JSONL.exists():
+        return {"error": "reagents.jsonl not found", "hint": "Run: python pipeline/export_public.py"}, 404
+
+    if not query or not query.strip():
+        return {"error": "pass ?q= canonical reagent name"}, 400
+
+    q_lower = query.strip().lower()
+
+    try:
+        rows = [
+            json.loads(line)
+            for line in REAGENTS_JSONL.read_text().splitlines()
+            if line.strip()
+        ]
+    except (json.JSONDecodeError, OSError) as exc:
+        return {"error": f"reagents.jsonl unreadable: {exc}"}, 500
+
+    # Case-insensitive substring match on canonical name
+    by_canonical: dict[str, list] = {}
+    for r in rows:
+        cname = (r.get("canonical") or r.get("name") or "unknown").strip()
+        if q_lower in cname.lower():
+            by_canonical.setdefault(cname, []).append(r)
+
+    if not by_canonical:
+        return {"error": f"no reagents matching '{query}'"}, 404
+
+    # Prefer exact match; else largest group
+    exact = next((k for k in by_canonical if k.lower() == q_lower), None)
+    canonical_name = exact or max(by_canonical, key=lambda k: len(by_canonical[k]))
+    matched_rows = by_canonical[canonical_name]
+
+    # Group by organoid_type, then by canonical_unit within each type
+    by_type: dict[str, dict[str, list]] = {}
+    for r in matched_rows:
+        ot = r.get("organoid_type") or "unknown"
+        unit = (r.get("canonical_unit") or r.get("unit") or "unknown").strip()
+        v = r.get("value")
+        by_type.setdefault(ot, {}).setdefault(unit, [])
+        if v is not None:
+            try:
+                by_type[ot][unit].append(float(v))
+            except (TypeError, ValueError):
+                pass
+
+    def _stats(vs: list) -> dict:
+        n = len(vs)
+        if n == 0:
+            return {"n": 0, "median": None, "min": None, "max": None}
+        vs_s = sorted(vs)
+        med = vs_s[n // 2] if n % 2 else (vs_s[n // 2 - 1] + vs_s[n // 2]) / 2
+        return {"n": n, "median": round(med, 4), "min": round(min(vs), 4), "max": round(max(vs), 4)}
+
+    per_type_result = {}
+    for ot in sorted(by_type):
+        unit_map = by_type[ot]
+        all_vals = [v for vs in unit_map.values() for v in vs]
+        n_records = sum(len(r.get("canonical") or "") >= 0  # True for all — just count rows
+                        for r in matched_rows if (r.get("organoid_type") or "unknown") == ot)
+        dominant_unit = max(unit_map, key=lambda u: len(unit_map[u])) if unit_map else None
+        per_type_result[ot] = {
+            "n_records": n_records,
+            "n_with_value": len(all_vals),
+            "dominant_unit": dominant_unit,
+            "stats_per_unit": {u: _stats(vs) for u, vs in sorted(unit_map.items()) if vs},
+        }
+
+    return {
+        "canonical": canonical_name,
+        "canonical_query": query,
+        "all_matches": sorted(by_canonical) if len(by_canonical) > 1 else None,
+        "n_organoid_types": len(per_type_result),
+        "by_type": per_type_result,
+    }, 200
+
+
 KGX_DIR = REPO / "exports" / "kgx"
 
 
@@ -2028,6 +2113,7 @@ def handle_index() -> tuple[dict, int]:
             "/analytics/concentration-stats": "aggregate concentration distributions per canonical reagent: median, min, max, std, dominant unit — top 50 by n_with_value; ?q= for one reagent, ?type= for one type",
             "/analytics/temporal-reagent-adoption": "per-reagent temporal adoption: fraction of papers per year using each canonical reagent; ?q= for full year-by-year data, ?type= for one organoid type; without ?q= returns top 20 by peak adoption",
             "/analytics/kgx-summary": "KGX graph state: node/edge counts by category, resolution rate, review queue breakdown (needs_review/not_found/not_attempted), top unresolved entities for S1/S2 triage",
+            "/analytics/concentration-by-type": "per-organoid-type concentration stats for one canonical reagent — median/min/max/n per unit per type; requires ?q=EGF; useful for comparing dose ranges across organoid systems",
             "/analytics/assay-endpoints": "assay endpoint cluster summary (per type + cross-type)",
             "/analytics/quality": "per-paper quality scores (gold/silver/bronze) + corpus summary",
             "/analytics/mior": "MIOR completeness report (Minimum Information About an Organoid Research)",
@@ -2232,6 +2318,12 @@ async def route_temporal_reagent_adoption(datasette, request):
     return Response.json(data, status=status)
 
 
+async def route_concentration_by_type(datasette, request):
+    query = request.args.get("q") or None
+    data, status = handle_concentration_by_type(query)
+    return Response.json(data, status=status)
+
+
 async def route_kgx_summary(datasette, request):
     data, status = handle_kgx_summary()
     return Response.json(data, status=status)
@@ -2275,6 +2367,7 @@ def register_routes():
         (r"^/analytics/grounding-quality$", route_grounding_quality),
         (r"^/analytics/concentration-stats$", route_concentration_stats),
         (r"^/analytics/temporal-reagent-adoption$", route_temporal_reagent_adoption),
+        (r"^/analytics/concentration-by-type$", route_concentration_by_type),
         (r"^/analytics/kgx-summary$", route_kgx_summary),
         (r"^/analytics/assay-endpoints$", route_assay_endpoints),
         (r"^/analytics/quality$", route_quality),
