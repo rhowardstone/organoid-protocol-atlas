@@ -207,6 +207,121 @@ def handle_coverage_type(organoid_type: str) -> tuple[dict, int]:
     }, 200
 
 
+def handle_summary() -> tuple[dict, int]:
+    """
+    High-level corpus summary — reads all pre-computed analytics outputs and
+    returns the most useful metrics in a single response. Intended for dashboard
+    and monitoring use-cases where you want an at-a-glance overview.
+
+    Fields:
+      corpus: n_papers, n_organoid_types, avg_grounding_rate
+      coverage: top_types_by_completeness (top 5)
+      quality: n_gold/silver/bronze, avg_score
+      failure_modes: top_3_clusters
+      assay_endpoints: top_3_assays_by_n_papers
+      reagent_grounding: corpus_pooled_grounding_rate
+      analytics_ready: {artifact: bool} inventory
+    """
+    summary: dict = {}
+
+    # Corpus / coverage
+    if COVERAGE_REPORT_PATH.exists():
+        try:
+            cov = json.loads(COVERAGE_REPORT_PATH.read_text())
+            summary["corpus"] = {
+                "n_papers": cov.get("n_total_papers"),
+                "n_organoid_types": cov.get("n_organoid_types"),
+                "overall_avg_grounding_rate": cov.get("overall_avg_grounding_rate"),
+                "corpus_pooled_grounding_rate": cov.get("corpus_pooled_grounding_rate"),
+            }
+            # Top 5 types by completeness
+            ranked = cov.get("types_by_completeness", [])[:5]
+            summary["top_types_by_completeness"] = [
+                {
+                    "organoid_type": r.get("organoid_type"),
+                    "n_papers": r.get("n_papers"),
+                    "completeness_score": r.get("completeness_score"),
+                    "avg_grounding_rate": r.get("avg_grounding_rate"),
+                }
+                for r in ranked
+            ]
+        except (json.JSONDecodeError, OSError):
+            pass
+
+    # Quality
+    quality_path = ANALYSIS_DIR / "protocol_quality_scores.json"
+    if quality_path.exists():
+        try:
+            q = json.loads(quality_path.read_text())
+            summary["quality"] = {
+                "avg_score": q.get("avg_score"),
+                "n_gold": q.get("n_gold"),
+                "n_silver": q.get("n_silver"),
+                "n_bronze": q.get("n_bronze"),
+                "n_total": q.get("n_total"),
+            }
+        except (json.JSONDecodeError, OSError):
+            pass
+
+    # Failure modes top 3
+    fm_path = ANALYSIS_DIR / "failure_mode_summary.json"
+    if fm_path.exists():
+        try:
+            fm = json.loads(fm_path.read_text())
+            by_type = fm.get("by_type") or {}
+            clusters = []
+            for type_label, type_data in by_type.items():
+                for cluster_label, cluster_data in (type_data.get("clusters") or {}).items():
+                    clusters.append({
+                        "organoid_type": type_label,
+                        "cluster": cluster_label,
+                        "count": cluster_data.get("count", 0),
+                    })
+            clusters.sort(key=lambda x: -x["count"])
+            summary["top_failure_mode_clusters"] = clusters[:3]
+            summary["total_failure_modes"] = fm.get("total_failure_modes")
+        except (json.JSONDecodeError, OSError):
+            pass
+
+    # Assay endpoints top 3
+    ae_path = ANALYSIS_DIR / "assay_endpoint_summary.json"
+    if ae_path.exists():
+        try:
+            ae_data = json.loads(ae_path.read_text())
+            cross = ae_data.get("cross_type_cluster_usage", {})
+            top_assays = sorted(cross.items(), key=lambda kv: -kv[1].get("n_papers", 0))[:3]
+            summary["top_assay_clusters"] = [
+                {
+                    "cluster": k,
+                    "n_papers": v.get("n_papers"),
+                    "n_types": v.get("n_types"),
+                }
+                for k, v in top_assays
+            ]
+        except (json.JSONDecodeError, OSError):
+            pass
+
+    has_data = bool(summary)
+
+    # Analytics inventory — always included so callers know what to generate
+    summary["analytics_ready"] = {
+        "consensus": bool(list(ANALYSIS_DIR.glob("consensus_*.json"))) if ANALYSIS_DIR.exists() else False,
+        "failure_modes": (ANALYSIS_DIR / "failure_mode_summary.json").exists(),
+        "lineage": (ANALYSIS_DIR / "protocol_lineage.json").exists(),
+        "coverage": COVERAGE_REPORT_PATH.exists(),
+        "quality": quality_path.exists(),
+        "assay_endpoints": ae_path.exists(),
+    }
+
+    if not has_data:
+        return {
+            "error": "No analytics outputs available",
+            "hint": "Run: python pipeline/system_status.py to see what to generate",
+        }, 404
+
+    return summary, 200
+
+
 def handle_status() -> tuple[dict, int]:
     """Live system health check from system_status.py pure functions."""
     try:
@@ -325,6 +440,7 @@ def handle_index() -> tuple[dict, int]:
             "/analytics/assay-endpoints": "assay endpoint cluster summary (per type + cross-type)",
             "/analytics/quality": "per-paper quality scores (gold/silver/bronze) + corpus summary",
             "/analytics/status": "live system health check (corpus + analytics artifact inventory)",
+            "/analytics/summary": "high-level dashboard: corpus stats, quality distribution, top types/assays/failures",
         },
         "generate": {
             "consensus": "python pipeline/compute_consensus.py --all",
@@ -394,6 +510,11 @@ async def route_coverage_type(datasette, request):
     return Response.json(data, status=status)
 
 
+async def route_summary(datasette, request):
+    data, status = handle_summary()
+    return Response.json(data, status=status)
+
+
 async def route_status(datasette, request):
     data, status = handle_status()
     return Response.json(data, status=status)
@@ -439,4 +560,5 @@ def register_routes():
         (r"^/analytics/assay-endpoints$", route_assay_endpoints),
         (r"^/analytics/quality$", route_quality),
         (r"^/analytics/status$", route_status),
+        (r"^/analytics/summary$", route_summary),
     ]

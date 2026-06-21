@@ -475,3 +475,63 @@ def test_status_unhealthy_when_corpus_missing(tmp_path, monkeypatch):
 def test_index_includes_status_endpoint():
     data, _ = ae.handle_index()
     assert "/analytics/status" in data["endpoints"]
+
+
+# --------------------------------------------------------------------------- #
+# handle_summary
+# --------------------------------------------------------------------------- #
+
+def test_summary_404_when_no_outputs(tmp_path, monkeypatch):
+    monkeypatch.setattr(ae, "ANALYSIS_DIR", tmp_path)
+    monkeypatch.setattr(ae, "COVERAGE_REPORT_PATH", tmp_path / "nonexistent.json")
+    data, status = ae.handle_summary()
+    assert status == 404
+    assert "hint" in data
+
+
+def test_summary_returns_corpus_when_coverage_present(tmp_path, monkeypatch):
+    monkeypatch.setattr(ae, "ANALYSIS_DIR", tmp_path)
+    monkeypatch.setattr(ae, "COVERAGE_REPORT_PATH", tmp_path / "coverage_report.json")
+    payload = {
+        "n_total_papers": 582,
+        "n_organoid_types": 26,
+        "overall_avg_grounding_rate": 0.87,
+        "corpus_pooled_grounding_rate": 0.86,
+        "types_by_completeness": [
+            {"organoid_type": "cardiac", "n_papers": 59, "completeness_score": 0.85,
+             "avg_grounding_rate": 0.9},
+        ],
+        "by_organoid_type": {},
+    }
+    (tmp_path / "coverage_report.json").write_text(json.dumps(payload))
+    data, status = ae.handle_summary()
+    assert status == 200
+    assert data["corpus"]["n_papers"] == 582
+    assert len(data["top_types_by_completeness"]) == 1
+
+
+def test_summary_includes_quality(tmp_path, monkeypatch):
+    monkeypatch.setattr(ae, "ANALYSIS_DIR", tmp_path)
+    monkeypatch.setattr(ae, "COVERAGE_REPORT_PATH", tmp_path / "nonexistent.json")
+    (tmp_path / "protocol_quality_scores.json").write_text(json.dumps({
+        "avg_score": 0.72, "n_gold": 150, "n_silver": 280, "n_bronze": 152, "n_total": 582,
+    }))
+    data, status = ae.handle_summary()
+    assert status == 200
+    assert data["quality"]["n_gold"] == 150
+
+
+def test_summary_includes_analytics_ready(tmp_path, monkeypatch):
+    monkeypatch.setattr(ae, "ANALYSIS_DIR", tmp_path)
+    monkeypatch.setattr(ae, "COVERAGE_REPORT_PATH", tmp_path / "nonexistent.json")
+    (tmp_path / "protocol_quality_scores.json").write_text('{"avg_score": 0.7}')
+    data, status = ae.handle_summary()
+    assert status == 200
+    assert "analytics_ready" in data
+    assert not data["analytics_ready"]["coverage"]
+    assert data["analytics_ready"]["quality"]
+
+
+def test_index_includes_summary_endpoint():
+    data, _ = ae.handle_index()
+    assert "/analytics/summary" in data["endpoints"]
