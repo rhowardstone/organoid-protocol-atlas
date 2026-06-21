@@ -1223,3 +1223,147 @@ def test_summary_includes_species_snapshot(tmp_path, monkeypatch):
     snap = data["species_snapshot"]
     assert snap.get("human", 0) == 2
     assert snap.get("mouse", 0) == 1
+
+
+# --------------------------------------------------------------------------- #
+# handle_matrix_breakdown
+# --------------------------------------------------------------------------- #
+
+def _write_protocols_for_matrix(path, rows):
+    path.write_text("\n".join(json.dumps(r) for r in rows) + "\n")
+
+
+def test_matrix_breakdown_404_when_jsonl_missing(tmp_path, monkeypatch):
+    monkeypatch.setattr(ae, "PROTOCOLS_JSONL", tmp_path / "missing.jsonl")
+    data, status = ae.handle_matrix_breakdown(None)
+    assert status == 404
+    assert "hint" in data
+
+
+def test_matrix_breakdown_400_for_invalid_type(tmp_path, monkeypatch):
+    p = tmp_path / "protocols.jsonl"
+    _write_protocols_for_matrix(p, [{"organoid_type": "kidney", "matrix": "Matrigel"}])
+    monkeypatch.setattr(ae, "PROTOCOLS_JSONL", p)
+    data, status = ae.handle_matrix_breakdown("../../etc/passwd")
+    assert status == 400
+
+
+def test_matrix_breakdown_returns_all_types(tmp_path, monkeypatch):
+    p = tmp_path / "protocols.jsonl"
+    _write_protocols_for_matrix(p, [
+        {"organoid_type": "kidney",    "matrix": "Matrigel"},
+        {"organoid_type": "cerebral",  "matrix": "Geltrex"},
+        {"organoid_type": "intestinal","matrix": "Matrigel"},
+    ])
+    monkeypatch.setattr(ae, "PROTOCOLS_JSONL", p)
+    data, status = ae.handle_matrix_breakdown(None)
+    assert status == 200
+    assert "per_type" in data
+    assert "kidney" in data["per_type"]
+    assert data["n_types"] == 3
+
+
+def test_matrix_breakdown_cross_corpus_totals(tmp_path, monkeypatch):
+    p = tmp_path / "protocols.jsonl"
+    _write_protocols_for_matrix(p, [
+        {"organoid_type": "kidney",   "matrix": "Matrigel"},
+        {"organoid_type": "kidney",   "matrix": "Matrigel"},
+        {"organoid_type": "cerebral", "matrix": "Geltrex"},
+    ])
+    monkeypatch.setattr(ae, "PROTOCOLS_JSONL", p)
+    data, status = ae.handle_matrix_breakdown(None)
+    assert status == 200
+    assert data["cross_corpus"]["Matrigel"] == 2
+    assert data["cross_corpus"]["Geltrex"] == 1
+
+
+def test_matrix_breakdown_normalises_aliases(tmp_path, monkeypatch):
+    p = tmp_path / "protocols.jsonl"
+    _write_protocols_for_matrix(p, [
+        {"organoid_type": "kidney", "matrix": "matrigel"},
+        {"organoid_type": "kidney", "matrix": "Matrigel™"},
+        {"organoid_type": "kidney", "matrix": "Matrigel TM"},
+        {"organoid_type": "kidney", "matrix": "vitronectin"},
+        {"organoid_type": "kidney", "matrix": "BME"},
+    ])
+    monkeypatch.setattr(ae, "PROTOCOLS_JSONL", p)
+    data, status = ae.handle_matrix_breakdown("kidney")
+    assert status == 200
+    mx = data["matrix"]
+    assert mx.get("Matrigel", 0) == 3, f"expected 3 Matrigel, got {mx}"
+    assert mx.get("Vitronectin", 0) == 1, f"expected 1 Vitronectin, got {mx}"
+    assert mx.get("BME", 0) == 1, f"expected 1 BME, got {mx}"
+
+
+def test_matrix_breakdown_single_type_filter(tmp_path, monkeypatch):
+    p = tmp_path / "protocols.jsonl"
+    _write_protocols_for_matrix(p, [
+        {"organoid_type": "kidney",   "matrix": "Matrigel"},
+        {"organoid_type": "cerebral", "matrix": "Geltrex"},
+    ])
+    monkeypatch.setattr(ae, "PROTOCOLS_JSONL", p)
+    data, status = ae.handle_matrix_breakdown("kidney")
+    assert status == 200
+    assert "organoid_type" in data
+    assert data["organoid_type"] == "kidney"
+    assert "matrix" in data
+    assert "per_type" not in data
+
+
+def test_matrix_breakdown_404_for_unknown_type(tmp_path, monkeypatch):
+    p = tmp_path / "protocols.jsonl"
+    _write_protocols_for_matrix(p, [{"organoid_type": "kidney", "matrix": "Matrigel"}])
+    monkeypatch.setattr(ae, "PROTOCOLS_JSONL", p)
+    data, status = ae.handle_matrix_breakdown("nonexistent")
+    assert status == 404
+    assert "available_types" in data
+
+
+def test_matrix_breakdown_excludes_other_type(tmp_path, monkeypatch):
+    p = tmp_path / "protocols.jsonl"
+    _write_protocols_for_matrix(p, [
+        {"organoid_type": "other",  "matrix": "Matrigel"},
+        {"organoid_type": "kidney", "matrix": "Geltrex"},
+    ])
+    monkeypatch.setattr(ae, "PROTOCOLS_JSONL", p)
+    data, status = ae.handle_matrix_breakdown(None)
+    assert status == 200
+    assert "other" not in data["per_type"]
+    assert data["n_types"] == 1
+
+
+def test_matrix_breakdown_missing_matrix_counted_as_not_stated(tmp_path, monkeypatch):
+    p = tmp_path / "protocols.jsonl"
+    _write_protocols_for_matrix(p, [{"organoid_type": "kidney"}])
+    monkeypatch.setattr(ae, "PROTOCOLS_JSONL", p)
+    data, status = ae.handle_matrix_breakdown("kidney")
+    assert status == 200
+    assert data["matrix"].get("not_stated", 0) == 1
+
+
+def test_matrix_breakdown_index_entry():
+    data, _ = ae.handle_index()
+    assert "/analytics/matrix-breakdown" in data["endpoints"]
+
+
+def test_summary_includes_matrix_snapshot(tmp_path, monkeypatch):
+    monkeypatch.setattr(ae, "ANALYSIS_DIR", tmp_path)
+    monkeypatch.setattr(ae, "COVERAGE_REPORT_PATH", tmp_path / "coverage_report.json")
+    protocols = tmp_path / "protocols.jsonl"
+    _write_protocols_for_matrix(protocols, [
+        {"organoid_type": "kidney",   "matrix": "Matrigel"},
+        {"organoid_type": "cerebral", "matrix": "Matrigel"},
+        {"organoid_type": "cardiac",  "matrix": "Geltrex"},
+    ])
+    monkeypatch.setattr(ae, "PROTOCOLS_JSONL", protocols)
+    (tmp_path / "coverage_report.json").write_text(json.dumps({
+        "n_total_papers": 3, "n_organoid_types": 3,
+        "overall_avg_grounding_rate": 0.9, "corpus_pooled_grounding_rate": 0.88,
+        "types_by_completeness": [],
+    }))
+    data, status = ae.handle_summary()
+    assert status == 200
+    assert "matrix_snapshot" in data
+    snap = data["matrix_snapshot"]
+    assert snap.get("Matrigel", 0) == 2
+    assert snap.get("Geltrex", 0) == 1

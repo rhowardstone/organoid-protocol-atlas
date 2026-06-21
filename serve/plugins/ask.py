@@ -94,6 +94,7 @@ exports. Prefer the JSON endpoints for programmatic use.
 - /analytics/type-timeseries           publication counts by year and organoid type (growth trends, first-appearance)
 - /analytics/universal-reagents        canonical reagents in >= 50% of protocols per type; also cross-type universals
 - /analytics/species-breakdown         species distribution per organoid type (human / mouse / other); ?type=kidney for one type
+- /analytics/matrix-breakdown          extracellular matrix usage per organoid type (Matrigel / Geltrex / Vitronectin / ...); ?type=kidney for one type
 - /analytics/failure-modes             failure mode cluster summary across the corpus
 - /analytics/lineage                   DOI→DOI protocol lineage graph
 - /analytics/assay-endpoints           assay endpoint cluster summary (per-type + cross-type)
