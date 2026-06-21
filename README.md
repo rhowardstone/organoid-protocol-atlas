@@ -37,7 +37,7 @@ paper (PMC)
   └─ S2       Biolink-validated KGX export (nodes.tsv + edges.tsv + kgx_manifest.json)
   └─ entity normalization (bFGF≡FGF2, RSPO1≡R-spondin1, …)
   └─ analytics pipeline → coverage · quality · consensus · failure modes · lineage · assay endpoints
-  └─ REST API (Datasette plugin, 14 endpoints)
+  └─ REST API (Datasette plugin, 17 routes)
 ```
 
 ## Analytics API
@@ -54,6 +54,7 @@ GET /analytics/coverage                 per-type corpus coverage and completenes
 GET /analytics/coverage/{type}          coverage for one organoid type
 GET /analytics/quality                  per-paper quality scores (gold ≥ 0.80 / silver ≥ 0.55 / bronze)
 GET /analytics/reagent?q=TERM           cross-corpus reagent lookup: usage, concentrations, evidence quotes
+GET /analytics/reagent-network?q=TERM  reagent co-occurrence: which reagents most often appear in the same papers
 GET /analytics/assay-endpoints          assay endpoint cluster summary (12 clusters, per-type + cross-type)
 GET /analytics/failure-modes            failure mode cluster summary across the corpus
 GET /analytics/lineage                  DOI→DOI protocol lineage graph (ProtocolModification data)
@@ -146,7 +147,7 @@ serve/
   run.sh                     serve the atlas (Datasette + plugins)
   metadata.yaml              facets + canned queries
   plugins/
-    analytics_endpoint.py    15-route analytics REST API (pure handlers + thin Datasette wrappers)
+    analytics_endpoint.py    17-route analytics REST API (pure handlers + thin Datasette wrappers)
     ask.py                   grounded Q&A (RAG over FTS → local model)
   templates/                 landing, recipe cards, /heatmap, /consensus
   static/atlas.css|js        theme + dark-mode toggle
@@ -168,7 +169,7 @@ outputs/
   analysis/                  pre-computed analytics (coverage, quality, consensus, etc.)
   kgx/                       KGX graph export
   comparison/                pre-computed protocol diffs
-tests/                       offline test suite (711 tests, no network, no GPU)
+tests/                       offline test suite (718 tests, no network, no GPU)
 docs/                        SUPERVISOR_CHECKLIST.md, PLAN, RESEARCH_BRIEF
 ```
 
@@ -197,7 +198,7 @@ python pipeline/aggregate_failure_modes.py
 python pipeline/build_lineage.py
 python pipeline/aggregate_assay_endpoints.py
 
-make test                               # run offline test suite (711 tests)
+make test                               # run offline test suite (718 tests)
 make validate-batch                     # pre-PR check: tests + prediction schema + evidence
 # or: pytest -q
 ```

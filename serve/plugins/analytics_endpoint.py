@@ -11,6 +11,7 @@ Routes (all return JSON; read-only, no writes):
   GET /analytics/coverage                       -- per-type corpus coverage & completeness report
   GET /analytics/coverage/{organoid_type}       -- coverage for one organoid type
   GET /analytics/reagent?q=TERM                 -- cross-corpus reagent lookup from reagents.jsonl
+  GET /analytics/reagent-network?q=TERM        -- reagent co-occurrence: most co-mentioned reagents
   GET /analytics                                -- index of available analytics
 
 All endpoints degrade gracefully — if the pre-computed file doesn't exist they return
@@ -541,6 +542,72 @@ def handle_reagent(query: str, organoid_type: str | None, min_papers: int) -> tu
     return result, 200
 
 
+def handle_reagent_network(query: str, limit: int) -> tuple[dict, int]:
+    """Reagent co-occurrence network from reagents.jsonl.
+
+    Returns the reagents most commonly co-mentioned in the same papers as
+    the queried reagent.  Useful for "what else is always used with EGF?"
+    """
+    if not query or not query.strip():
+        return {
+            "error": "pass ?q=reagent_name",
+            "example": "/analytics/reagent-network?q=EGF",
+        }, 400
+
+    query = query.strip()[:100]
+    limit = max(1, min(limit, 100))
+
+    if not REAGENTS_JSONL.exists():
+        return {
+            "error": "reagents.jsonl not found",
+            "hint": "Run: python pipeline/export_public.py",
+        }, 404
+
+    q_lower = query.lower()
+    # pass 1 — find PMCIDs where the query reagent appears
+    query_pmcids: set[str] = set()
+    all_rows: list[dict] = []
+    try:
+        for line in REAGENTS_JSONL.read_text().splitlines():
+            if not line.strip():
+                continue
+            r = json.loads(line)
+            all_rows.append(r)
+            name = (r.get("canonical") or r.get("name") or "").lower()
+            if q_lower in name or name in q_lower:
+                pmcid = r.get("pmcid", "")
+                if pmcid:
+                    query_pmcids.add(pmcid)
+    except (json.JSONDecodeError, OSError) as exc:
+        return {"error": f"reagents.jsonl unreadable: {exc}"}, 500
+
+    if not query_pmcids:
+        return {
+            "query": query,
+            "n_papers": 0,
+            "co_occurring": [],
+            "note": "No papers found mentioning this reagent",
+        }, 200
+
+    # pass 2 — count co-occurring reagents in those papers
+    counts: dict[str, int] = {}
+    for r in all_rows:
+        if r.get("pmcid", "") not in query_pmcids:
+            continue
+        name = r.get("canonical") or r.get("name") or ""
+        if not name or name.lower() == q_lower:
+            continue
+        counts[name] = counts.get(name, 0) + 1
+
+    ranked = sorted(counts.items(), key=lambda x: (-x[1], x[0]))[:limit]
+    return {
+        "query": query,
+        "n_papers": len(query_pmcids),
+        "co_occurring": [{"name": n, "papers": c, "rank": i + 1}
+                         for i, (n, c) in enumerate(ranked)],
+    }, 200
+
+
 def handle_candidates() -> tuple[dict, int]:
     """Return OA verification status of the candidate pool — how many papers are
     public_ok (CC0/CC-BY), rejected (NC/ND/unknown), or quarantine (API error)."""
@@ -610,6 +677,7 @@ def handle_index() -> tuple[dict, int]:
             "/analytics/coverage": "per-type corpus coverage and completeness report",
             "/analytics/coverage/{organoid_type}": "coverage stats for one organoid type",
             "/analytics/reagent?q=TERM": "cross-corpus reagent lookup: usage, concentrations, evidence quotes",
+            "/analytics/reagent-network?q=TERM": "reagent co-occurrence: which reagents most often appear in the same papers as TERM",
             "/analytics/assay-endpoints": "assay endpoint cluster summary (per type + cross-type)",
             "/analytics/quality": "per-paper quality scores (gold/silver/bronze) + corpus summary",
             "/analytics/mior": "MIOR completeness report (Minimum Information About an Organoid Research)",
@@ -719,6 +787,16 @@ async def route_reagent(datasette, request):
     return Response.json(data, status=status)
 
 
+async def route_reagent_network(datasette, request):
+    query = request.args.get("q", "")
+    try:
+        limit = int(request.args.get("limit", "20"))
+    except (TypeError, ValueError):
+        limit = 20
+    data, status = handle_reagent_network(query, limit)
+    return Response.json(data, status=status)
+
+
 async def route_candidates(datasette, request):
     data, status = handle_candidates()
     return Response.json(data, status=status)
@@ -743,6 +821,7 @@ def register_routes():
         (r"^/analytics/coverage$", route_coverage),
         (r"^/analytics/coverage/(?P<organoid_type>[\w-]+)$", route_coverage_type),
         (r"^/analytics/reagent$", route_reagent),
+        (r"^/analytics/reagent-network$", route_reagent_network),
         (r"^/analytics/assay-endpoints$", route_assay_endpoints),
         (r"^/analytics/quality$", route_quality),
         (r"^/analytics/mior$", route_mior),

@@ -719,3 +719,94 @@ def test_candidates_with_oa_results(tmp_path, monkeypatch):
 def test_candidates_index_entry():
     data, _ = ae.handle_index()
     assert "/analytics/candidates" in data["endpoints"]
+
+
+# --------------------------------------------------------------------------- #
+# handle_reagent_network
+# --------------------------------------------------------------------------- #
+
+def _write_reagents_jsonl(path, rows):
+    path.write_text("\n".join(json.dumps(r) for r in rows))
+
+
+def test_reagent_network_400_when_no_query(tmp_path, monkeypatch):
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", tmp_path / "reagents.jsonl")
+    data, status = ae.handle_reagent_network("", 20)
+    assert status == 400
+    assert "error" in data
+
+
+def test_reagent_network_404_when_jsonl_missing(tmp_path, monkeypatch):
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", tmp_path / "reagents.jsonl")
+    data, status = ae.handle_reagent_network("EGF", 20)
+    assert status == 404
+    assert "hint" in data
+
+
+def test_reagent_network_empty_when_no_match(tmp_path, monkeypatch):
+    reagents = tmp_path / "reagents.jsonl"
+    _write_reagents_jsonl(reagents, [
+        {"pmcid": "PMC001", "canonical": "WNT3A", "name": "WNT3A"},
+    ])
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", reagents)
+    data, status = ae.handle_reagent_network("EGF", 20)
+    assert status == 200
+    assert data["n_papers"] == 0
+    assert data["co_occurring"] == []
+
+
+def test_reagent_network_returns_cooccurring_reagents(tmp_path, monkeypatch):
+    reagents = tmp_path / "reagents.jsonl"
+    rows = [
+        # PMC001 has EGF + WNT3A + Noggin
+        {"pmcid": "PMC001", "canonical": "EGF",    "name": "EGF"},
+        {"pmcid": "PMC001", "canonical": "WNT3A",  "name": "WNT3A"},
+        {"pmcid": "PMC001", "canonical": "Noggin", "name": "Noggin"},
+        # PMC002 has EGF + WNT3A
+        {"pmcid": "PMC002", "canonical": "EGF",   "name": "EGF"},
+        {"pmcid": "PMC002", "canonical": "WNT3A", "name": "WNT3A"},
+        # PMC003 has only WNT3A (should not contribute to EGF co-occurrence)
+        {"pmcid": "PMC003", "canonical": "WNT3A", "name": "WNT3A"},
+    ]
+    _write_reagents_jsonl(reagents, rows)
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", reagents)
+    data, status = ae.handle_reagent_network("EGF", 20)
+    assert status == 200
+    assert data["n_papers"] == 2
+    names = [r["name"] for r in data["co_occurring"]]
+    assert "WNT3A" in names
+    assert "Noggin" in names
+    # EGF itself must not appear in its own network
+    assert "EGF" not in names
+    # WNT3A appears in 2 EGF papers; Noggin in 1 — WNT3A should rank higher
+    assert names[0] == "WNT3A"
+
+
+def test_reagent_network_respects_limit(tmp_path, monkeypatch):
+    reagents = tmp_path / "reagents.jsonl"
+    rows = [{"pmcid": "PMC001", "canonical": "EGF", "name": "EGF"}]
+    for i in range(10):
+        rows.append({"pmcid": "PMC001", "canonical": f"R{i:02d}", "name": f"R{i:02d}"})
+    _write_reagents_jsonl(reagents, rows)
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", reagents)
+    data, status = ae.handle_reagent_network("EGF", 3)
+    assert status == 200
+    assert len(data["co_occurring"]) == 3
+
+
+def test_reagent_network_rank_field(tmp_path, monkeypatch):
+    reagents = tmp_path / "reagents.jsonl"
+    rows = [
+        {"pmcid": "PMC001", "canonical": "EGF",   "name": "EGF"},
+        {"pmcid": "PMC001", "canonical": "WNT3A", "name": "WNT3A"},
+    ]
+    _write_reagents_jsonl(reagents, rows)
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", reagents)
+    data, status = ae.handle_reagent_network("EGF", 20)
+    assert status == 200
+    assert data["co_occurring"][0]["rank"] == 1
+
+
+def test_reagent_network_index_entry():
+    data, _ = ae.handle_index()
+    assert "/analytics/reagent-network?q=TERM" in data["endpoints"]
