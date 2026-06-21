@@ -24,6 +24,7 @@ import argparse
 import json
 import re
 import sys
+import time
 import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
@@ -60,6 +61,24 @@ PRED_DIR = REPO / "data" / "predictions" / "local"
 OUT_DIR = REPO / "outputs" / "tier1"
 OLLAMA = "http://localhost:11434/api/generate"
 MODEL = "gemma3:12b"
+
+MAX_RETRIES = 3
+RETRY_DELAY_S = 5
+
+
+def with_retry(fn, *args, max_retries=MAX_RETRIES, delay=RETRY_DELAY_S, **kwargs):
+    """Retry fn on TimeoutError or ConnectionError (transient failures). Other errors propagate."""
+    last_exc = None
+    for attempt in range(max_retries):
+        try:
+            return fn(*args, **kwargs)
+        except (TimeoutError, ConnectionError, OSError) as e:
+            last_exc = e
+            if attempt < max_retries - 1:
+                print(f"  retrying ({attempt+1}/{max_retries}) after {delay}s: {e}", flush=True)
+                time.sleep(delay)
+    raise last_exc
+
 
 UNIT_CANON = {
     "ng/ml": "ng/mL", "ng/mleg": "ng/mL", "ug/ml": "ug/mL", "µg/ml": "ug/mL",
@@ -100,7 +119,9 @@ signaling_factors: [{{name, role, value, unit, evidence_quote}}],
 media_supplements: [{{name}}],
 passaging: {{method, split_ratio, interval_days}},
 timeline: [{{name, day_start, day_end}}],
-assay_endpoints: [string].
+assay_endpoints: [string],
+failure_modes: [{{description, condition}}],
+modifications: [{{cited_doi, change_description}}].
 RULES:
 - evidence_quote MUST be copied verbatim (exact substring) from the text.
 - culture_conditions: numeric temperature_c / co2_pct / o2_pct ONLY if the text states them
@@ -120,6 +141,8 @@ RULES:
   media_supplements, NOT signaling_factors.
 - treat R-spondin / R-spondin1 / RSPO1 as ONE entity (list once).
 - if a field is not stated, omit it; never invent a value.
+- failure_modes: list any explicit warnings, failure conditions, or critical steps the paper warns about (e.g. "temperature above 37°C reduces efficiency", "avoid repeated freeze-thaw"). Empty [] if none stated.
+- modifications: if the paper explicitly says it modified a prior protocol, capture the prior protocol's DOI (if mentioned) and what changed. Empty [] if this is an original protocol or no modifications are stated.
 
 TEXT:
 {evidence}"""
@@ -258,6 +281,8 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--limit", type=int, default=0)
     ap.add_argument("--only", default="", help="comma-separated PMCIDs (incremental extraction)")
+    ap.add_argument("--retry-errors", action="store_true",
+                    help="Re-extract only rows with 'error' in the existing summary")
     args = ap.parse_args()
     PRED_DIR.mkdir(parents=True, exist_ok=True)
     OUT_DIR.mkdir(parents=True, exist_ok=True)
@@ -269,6 +294,13 @@ def main():
     elif args.limit:
         bundles = bundles[: args.limit]
 
+    summary_path = OUT_DIR / "extraction_summary.json"
+    if args.retry_errors and summary_path.exists():
+        existing = json.loads(summary_path.read_text())
+        error_pmcids = {s["pmcid"] for s in existing.get("rows", []) if "error" in s}
+        bundles = [b for b in bundles if b.stem in error_pmcids]
+        print(f"Retrying {len(bundles)} error records: {sorted(error_pmcids)}")
+
     summary = []
     for i, bp in enumerate(bundles, 1):
         bundle = json.loads(bp.read_text())
@@ -276,7 +308,7 @@ def main():
         print(f"[{i}/{len(bundles)}] {pmcid} ({bundle['organoid_type']}) ...", flush=True)
         evidence = build_evidence_text(bundle)
         try:
-            m = call_ollama(PROMPT.format(evidence=evidence))
+            m = with_retry(call_ollama, PROMPT.format(evidence=evidence))
             proto, g = to_protocol(doi, m, evidence)
             # organoid_type is curated in the corpus manifest (baked into the bundle) ->
             # trust it, not the LLM's guess.
@@ -289,6 +321,14 @@ def main():
             continue
         (PRED_DIR / f"{pmcid}.json").write_text(proto.model_dump_json(indent=2))
         rate = round(g["grounded"] / g["reagents"], 3) if g["reagents"] else None
+        failure_modes = [
+            {"description": fm.get("description", ""), "condition": fm.get("condition")}
+            for fm in (m.get("failure_modes") or []) if fm.get("description")
+        ]
+        modifications = [
+            {"cited_doi": mod.get("cited_doi"), "change_description": mod.get("change_description", "")}
+            for mod in (m.get("modifications") or []) if mod.get("change_description")
+        ]
         summary.append({
             "pmcid": pmcid, "doi": doi, "organoid_type": proto.organoid_type.value,
             "model": MODEL, "n_signaling_factors": len(proto.signaling_factors),
@@ -296,10 +336,11 @@ def main():
             "matrix": proto.matrix.name, "base_media": proto.base_media.name,
             "reagents_grounded": g["grounded"], "reagents_total": g["reagents"],
             "grounding_rate": rate,
+            "failure_modes": failure_modes,
+            "modifications": modifications,
         })
 
     # incremental (--only): merge fresh rows into the existing summary, keeping the rest
-    summary_path = OUT_DIR / "extraction_summary.json"
     if only and summary_path.exists():
         prior = json.loads(summary_path.read_text()).get("rows", [])
         done = {s["pmcid"] for s in summary}
