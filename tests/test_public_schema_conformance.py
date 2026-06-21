@@ -23,7 +23,8 @@ REAGENT_REQUIRED = {
     "pmcid", "doi", "name", "kind", "role",
     "grounded", "evidence_quote",
 }
-VALID_KINDS = {"signaling_factor", "supplement", "matrix", "base_media", "other"}
+# build_kg.py maps signaling_factors→"signaling", small_molecules→"small_molecule"
+VALID_KINDS = {"signaling", "supplement", "small_molecule"}
 VALID_ROLES = {"component", "primary", "supplement", "inhibitor", "activator",
                "small_molecule", "scaffold", "other", None}
 PUBLIC_LICENSE_OK = {"CC-BY", "CC0", "CC-BY-SA"}
@@ -128,6 +129,18 @@ def test_reagents_have_required_keys():
             if key not in row:
                 missing_by_field[key] = missing_by_field.get(key, 0) + 1
     assert not missing_by_field, f"Missing required keys: {missing_by_field}"
+
+
+def test_reagents_kind_values_are_valid():
+    """Reagent 'kind' must be one of the three values build_kg.py emits.
+    Guards against schema drift between build_kg.py and the exported JSONL."""
+    rows = _load_jsonl(REAGENTS_JSONL)
+    bad = [(r.get("pmcid"), r.get("kind"))
+           for r in rows if r.get("kind") not in VALID_KINDS]
+    assert not bad, (
+        f"{len(bad)} rows have invalid 'kind' values: {bad[:5]}. "
+        f"Expected one of {VALID_KINDS}"
+    )
 
 
 def test_reagents_evidence_quote_is_snippet_only():

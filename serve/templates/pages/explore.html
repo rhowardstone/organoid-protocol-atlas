@@ -62,14 +62,16 @@
   <span class="dot"></span>
   <a href="/consensus">Consensus</a>
   <span class="dot"></span>
-  <a href="/heatmap">Morphogen grammar</a>
+  <a href="/heatmap">Heatmap</a>
+  <span class="dot"></span>
+  <a href="/dashboard">Dashboard</a>
   <span class="dot"></span>
   <a href="/ask">Ask</a>
 </div>
 
 <div class="exp-hero">
   <h1>Explore protocols</h1>
-  <p>10 peer-reviewed organoid differentiation protocols with 122 annotated signaling factors, supplements, and matrix reagents.</p>
+  <p id="hero-desc">Evidence-grounded organoid differentiation protocols — source cells, matrix, media, and signaling cocktail, each value backed by a verbatim quote and DOI.</p>
 
   <div class="exp-controls">
     <input class="exp-search" id="search" type="search" placeholder="Search protocol, author, factor…" autocomplete="off">
@@ -91,12 +93,35 @@ const esc = s => (s==null?'':String(s)).replace(/[&<>"]/g, c => ({'&':'&amp;','<
 const $ = id => document.getElementById(id);
 
 const TYPE_COLOR = {
-  'cerebral':   '#7c3aed',
-  'kidney':     '#0e7490',
-  'liver':      '#b45309',
-  'lung':       '#1d4ed8',
-  'pancreatic': '#c2410c',
-  'retinal':    '#6d28d9',
+  // Original 8
+  'cerebral':            '#7c3aed',
+  'kidney':              '#0e7490',
+  'liver':               '#b45309',
+  'lung':                '#1d4ed8',
+  'pancreatic':          '#c2410c',
+  'retinal':             '#6d28d9',
+  'intestinal':          '#15803d',
+  'gastric':             '#9333ea',
+  // Expanded 17
+  'cardiac':             '#dc2626',
+  'tumor':               '#374151',
+  'vascular':            '#0891b2',
+  'cholangiocyte':       '#d97706',
+  'skin':                '#b45309',
+  'mammary':             '#db2777',
+  'endometrial':         '#e11d48',
+  'bone':                '#92400e',
+  'prostate':            '#1d4ed8',
+  'inner-ear':           '#7c3aed',
+  'salivary-gland':      '#0f766e',
+  'bladder':             '#4338ca',
+  'neuromuscular':       '#0e7490',
+  'esophageal':          '#b91c1c',
+  'blood-brain-barrier': '#1e40af',
+  'thyroid':             '#065f46',
+  'fallopian-tube':      '#9d174d',
+  // Legacy alias
+  'hepatic':             '#b45309',
 };
 function typeColor(t){ return TYPE_COLOR[t] || '#64748b'; }
 
@@ -271,6 +296,13 @@ function reagentCard(r, i){
   }
 
   for(const proto of protos) protosByPmcid[proto.pmcid] = proto;
+
+  // Update hero description with live corpus counts
+  const nTypes = new Set(protos.map(p => p.organoid_type).filter(Boolean)).size;
+  const desc = document.getElementById('hero-desc');
+  if (desc) {
+    desc.textContent = `${protos.length.toLocaleString()} evidence-grounded organoid protocols across ${nTypes} systems, with ${reagents.length.toLocaleString()} annotated reagent rows — each value backed by a verbatim quote and DOI.`;
+  }
 
   buildChips();
   render();
