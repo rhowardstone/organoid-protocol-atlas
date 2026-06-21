@@ -37,6 +37,7 @@ Routes (all return JSON; read-only, no writes):
   GET /analytics/reagent-cooccurrence        -- pairwise signaling-factor co-occurrence: top 100 pairs by n_papers with Jaccard; ?q= for one canonical; ?type= filter; live from reagents.jsonl
   GET /analytics/supplement-breakdown        -- per-type and cross-type breakdown of supplements (kind=supplement): top 50 globally, cross-type list, per-type top 10; ?q= and ?type= filters; live from reagents.jsonl
   GET /analytics/role-breakdown              -- normalized functional role distribution for signaling reagents: signaling_factor/growth_factor/differentiation/inhibitor/agonist etc.; ?q= for one role; ?type= filter; live from reagents.jsonl
+  GET /analytics/type-reagent-heatmap        -- type × canonical usage matrix: top_n canonicals × all types, each cell = n_papers; ?kind= filter; ?top_n= (default 20); live from reagents.jsonl
   GET /analytics                                -- index of available analytics
 
 All endpoints degrade gracefully — if the pre-computed file doesn't exist they return
@@ -3192,6 +3193,83 @@ def handle_role_breakdown(
     }, 200
 
 
+def handle_type_reagent_heatmap(
+    kind: str | None,
+    top_n: int = 20,
+) -> tuple[dict, int]:
+    """Type × canonical reagent usage matrix for heatmap visualization.
+
+    Returns a matrix-ready structure: top_n canonical reagents (columns)
+    ordered by total n_papers, and per-organoid-type row vectors of n_papers.
+
+    ?kind=signaling|supplement|all — which kind to include (default: signaling).
+    ?top_n= — number of canonical columns (default 20, max 50).
+    """
+    if not REAGENTS_JSONL.exists():
+        return {
+            "error": "reagents.jsonl not found",
+            "hint": "Run: python pipeline/export_public.py",
+        }, 404
+
+    kind = (kind or "signaling").lower()
+    if kind not in ("signaling", "supplement", "all"):
+        return {
+            "error": f"Invalid kind {kind!r}; must be signaling, supplement, or all",
+        }, 400
+    top_n = min(max(1, top_n), 50)
+
+    reagents = [
+        json.loads(line)
+        for line in REAGENTS_JSONL.read_text().splitlines()
+        if line.strip()
+    ]
+    if kind != "all":
+        rows = [r for r in reagents if r.get("kind") == kind and r.get("canonical")]
+    else:
+        rows = [r for r in reagents if r.get("canonical")]
+
+    # Build: (type, canonical) → set of pmcids
+    from collections import defaultdict
+    tc_papers: dict[tuple, set] = defaultdict(set)
+    for r in rows:
+        tc_papers[(r.get("organoid_type", "unknown"), r["canonical"])].add(r["pmcid"])
+
+    # Global n_papers per canonical (across all types, deduplicated)
+    canon_papers_global: dict[str, set] = defaultdict(set)
+    for (typ, canon), papers in tc_papers.items():
+        canon_papers_global[canon].update(papers)
+
+    # Top N canonicals by total n_papers
+    top_canonicals = sorted(
+        canon_papers_global.keys(),
+        key=lambda c: (-len(canon_papers_global[c]), c),
+    )[:top_n]
+
+    # All organoid types, sorted by total n_papers descending
+    type_papers_total: dict[str, set] = defaultdict(set)
+    for (typ, canon), papers in tc_papers.items():
+        type_papers_total[typ].update(papers)
+    all_types = sorted(type_papers_total.keys(), key=lambda t: -len(type_papers_total[t]))
+
+    # Build matrix rows
+    matrix = [
+        {
+            "organoid_type": typ,
+            "n_papers_total": len(type_papers_total[typ]),
+            "values": [len(tc_papers.get((typ, c), set())) for c in top_canonicals],
+        }
+        for typ in all_types
+    ]
+
+    return {
+        "kind": kind,
+        "top_n": top_n,
+        "n_types": len(all_types),
+        "canonicals": top_canonicals,
+        "matrix": matrix,
+    }, 200
+
+
 def handle_index() -> tuple[dict, int]:
     """Analytics endpoint index."""
     return {
@@ -3231,6 +3309,7 @@ def handle_index() -> tuple[dict, int]:
             "/analytics/reagent-cooccurrence": "pairwise signaling-factor co-occurrence: top pairs by n_papers with Jaccard similarity; ?q=EGF for all partners of one canonical; ?type= for one organoid type; ?min_papers= threshold (default 3)",
             "/analytics/supplement-breakdown": "per-type and cross-type breakdown of supplement (kind=supplement) canonicals: global top 50 by n_papers, cross-type list (>= min_types organoid types), per-type top 10; ?q=GlutaMAX for one canonical; ?type=kidney for one type; ?min_types= threshold (default 10)",
             "/analytics/role-breakdown": "normalized functional role distribution for signaling (kind=signaling) reagents: signaling_factor/growth_factor/differentiation/inhibitor/supplement/treatment/agonist/conditioned_medium/proliferation/other/not_stated; ?q=differentiation for top canonicals with that role; ?type= filter",
+            "/analytics/type-reagent-heatmap": "organoid type × canonical reagent usage matrix for visualization: top_n canonicals (columns) × all types (rows), each cell = n_papers; ?kind=signaling|supplement|all (default signaling); ?top_n= (default 20, max 50)",
             "/analytics/assay-endpoints": "assay endpoint cluster summary (per type + cross-type)",
             "/analytics/quality": "per-paper quality scores (gold/silver/bronze) + corpus summary",
             "/analytics/mior": "MIOR completeness report (Minimum Information About an Organoid Research)",
@@ -3486,6 +3565,16 @@ async def route_type_maturity(datasette, request):
     return Response.json(data, status=status)
 
 
+async def route_type_reagent_heatmap(datasette, request):
+    kind = request.args.get("kind") or None
+    try:
+        top_n = int(request.args.get("top_n") or 20)
+    except (TypeError, ValueError):
+        top_n = 20
+    data, status = handle_type_reagent_heatmap(kind, top_n)
+    return Response.json(data, status=status)
+
+
 async def route_role_breakdown(datasette, request):
     query = request.args.get("q") or None
     organoid_type = request.args.get("type") or None
@@ -3576,6 +3665,7 @@ def register_routes():
         (r"^/analytics/reagent-cooccurrence$", route_reagent_cooccurrence),
         (r"^/analytics/supplement-breakdown$", route_supplement_breakdown),
         (r"^/analytics/role-breakdown$", route_role_breakdown),
+        (r"^/analytics/type-reagent-heatmap$", route_type_reagent_heatmap),
         (r"^/analytics/journal-breakdown$", route_journal_breakdown),
         (r"^/analytics/concentration-by-type$", route_concentration_by_type),
         (r"^/analytics/kgx-summary$", route_kgx_summary),
