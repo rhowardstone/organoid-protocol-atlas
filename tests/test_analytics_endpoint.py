@@ -1929,3 +1929,151 @@ def test_reporting_gaps_per_type_present(tmp_path, monkeypatch):
     assert "cerebral" in data["per_type"]
     assert data["per_type"]["kidney"]["fields"]["species"]["reported"] == 1
     assert data["per_type"]["cerebral"]["fields"]["species"]["reported"] == 0
+
+
+# ===========================================================================
+# handle_year_trend tests
+# ===========================================================================
+
+def _write_protocols_for_year(path, rows):
+    """Write minimal protocols.jsonl rows for year-trend tests."""
+    lines = []
+    for r in rows:
+        obj = {
+            "organoid_type": r.get("organoid_type", "kidney"),
+            "year": r.get("year"),
+            "n_signaling_factors": r.get("n_signaling_factors"),
+            "grounding_rate": r.get("grounding_rate"),
+            "species": r.get("species"),
+            "matrix": r.get("matrix"),
+            "base_media": r.get("base_media"),
+            "passaging": r.get("passaging"),
+            "timeline": r.get("timeline"),
+        }
+        lines.append(json.dumps(obj))
+    path.write_text("\n".join(lines) + "\n")
+
+
+def test_year_trend_404_when_jsonl_missing(tmp_path, monkeypatch):
+    monkeypatch.setattr(ae, "PROTOCOLS_JSONL", tmp_path / "missing.jsonl")
+    data, status = ae.handle_year_trend()
+    assert status == 404
+    assert "error" in data
+
+
+def test_year_trend_returns_200_with_valid_data(tmp_path, monkeypatch):
+    p = tmp_path / "protocols.jsonl"
+    _write_protocols_for_year(p, [{"year": 2023}, {"year": 2024}])
+    monkeypatch.setattr(ae, "PROTOCOLS_JSONL", p)
+    data, status = ae.handle_year_trend()
+    assert status == 200
+    assert "years" in data
+    assert "n_years" in data
+    assert "year_range" in data
+
+
+def test_year_trend_groups_by_year(tmp_path, monkeypatch):
+    p = tmp_path / "protocols.jsonl"
+    _write_protocols_for_year(p, [
+        {"year": 2022}, {"year": 2022},
+        {"year": 2023},
+    ])
+    monkeypatch.setattr(ae, "PROTOCOLS_JSONL", p)
+    data, _ = ae.handle_year_trend()
+    assert "2022" in data["years"]
+    assert "2023" in data["years"]
+    assert data["years"]["2022"]["n_papers"] == 2
+    assert data["years"]["2023"]["n_papers"] == 1
+
+
+def test_year_trend_avg_signaling_factors_correct(tmp_path, monkeypatch):
+    p = tmp_path / "protocols.jsonl"
+    _write_protocols_for_year(p, [
+        {"year": 2024, "n_signaling_factors": 4},
+        {"year": 2024, "n_signaling_factors": 6},
+    ])
+    monkeypatch.setattr(ae, "PROTOCOLS_JSONL", p)
+    data, _ = ae.handle_year_trend()
+    assert data["years"]["2024"]["avg_signaling_factors"] == 5.0
+
+
+def test_year_trend_avg_grounding_rate_correct(tmp_path, monkeypatch):
+    p = tmp_path / "protocols.jsonl"
+    _write_protocols_for_year(p, [
+        {"year": 2024, "grounding_rate": 0.8},
+        {"year": 2024, "grounding_rate": 0.6},
+    ])
+    monkeypatch.setattr(ae, "PROTOCOLS_JSONL", p)
+    data, _ = ae.handle_year_trend()
+    assert abs(data["years"]["2024"]["avg_grounding_rate"] - 0.7) < 1e-4
+
+
+def test_year_trend_reporting_rates_correct(tmp_path, monkeypatch):
+    p = tmp_path / "protocols.jsonl"
+    _write_protocols_for_year(p, [
+        {"year": 2024, "species": "human", "matrix": None},
+        {"year": 2024, "species": "mouse", "matrix": "Matrigel"},
+    ])
+    monkeypatch.setattr(ae, "PROTOCOLS_JSONL", p)
+    data, _ = ae.handle_year_trend()
+    rr = data["years"]["2024"]["reporting_rates"]
+    assert rr["species"] == 1.0
+    assert rr["matrix"] == 0.5
+
+
+def test_year_trend_skips_rows_without_year(tmp_path, monkeypatch):
+    p = tmp_path / "protocols.jsonl"
+    _write_protocols_for_year(p, [
+        {"year": None, "n_signaling_factors": 5},
+        {"year": 2024, "n_signaling_factors": 3},
+    ])
+    monkeypatch.setattr(ae, "PROTOCOLS_JSONL", p)
+    data, _ = ae.handle_year_trend()
+    assert list(data["years"].keys()) == ["2024"]
+    assert data["n_years"] == 1
+
+
+def test_year_trend_year_range_correct(tmp_path, monkeypatch):
+    p = tmp_path / "protocols.jsonl"
+    _write_protocols_for_year(p, [
+        {"year": 2019}, {"year": 2023}, {"year": 2021},
+    ])
+    monkeypatch.setattr(ae, "PROTOCOLS_JSONL", p)
+    data, _ = ae.handle_year_trend()
+    assert data["year_range"] == ["2019", "2023"]
+
+
+def test_year_trend_missing_sf_gives_none(tmp_path, monkeypatch):
+    p = tmp_path / "protocols.jsonl"
+    _write_protocols_for_year(p, [{"year": 2024}])
+    monkeypatch.setattr(ae, "PROTOCOLS_JSONL", p)
+    data, _ = ae.handle_year_trend()
+    assert data["years"]["2024"]["avg_signaling_factors"] is None
+    assert data["years"]["2024"]["avg_grounding_rate"] is None
+
+
+def test_year_trend_years_sorted_chronologically(tmp_path, monkeypatch):
+    p = tmp_path / "protocols.jsonl"
+    _write_protocols_for_year(p, [
+        {"year": 2023}, {"year": 2021}, {"year": 2022},
+    ])
+    monkeypatch.setattr(ae, "PROTOCOLS_JSONL", p)
+    data, _ = ae.handle_year_trend()
+    assert list(data["years"].keys()) == ["2021", "2022", "2023"]
+
+
+def test_year_trend_index_entry():
+    data, _ = ae.handle_index()
+    assert "/analytics/year-trend" in data["endpoints"]
+
+
+def test_year_trend_not_stated_matrix_not_counted_as_reported(tmp_path, monkeypatch):
+    p = tmp_path / "protocols.jsonl"
+    _write_protocols_for_year(p, [
+        {"year": 2024, "matrix": "not_stated"},
+        {"year": 2024, "matrix": "Matrigel"},
+    ])
+    monkeypatch.setattr(ae, "PROTOCOLS_JSONL", p)
+    data, _ = ae.handle_year_trend()
+    rr = data["years"]["2024"]["reporting_rates"]
+    assert rr["matrix"] == 0.5

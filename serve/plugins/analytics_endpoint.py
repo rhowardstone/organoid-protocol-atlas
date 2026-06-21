@@ -21,6 +21,7 @@ Routes (all return JSON; read-only, no writes):
   GET /analytics/source-cell-breakdown        -- source cell type distribution per organoid type (iPSC / adult_stem_cell / primary_tissue / ESC)
   GET /analytics/protocol-complexity          -- per-type protocol complexity: avg signaling factors, supplements, grounding rate
   GET /analytics/reporting-gaps              -- field reporting rates across the corpus (species/matrix/base_media/passaging/timeline) — transparency audit
+  GET /analytics/year-trend                  -- yearly trends: paper count, avg signaling factors, avg grounding rate, field reporting rates
   GET /analytics                                -- index of available analytics
 
 All endpoints degrade gracefully — if the pre-computed file doesn't exist they return
@@ -1426,6 +1427,89 @@ def handle_reporting_gaps(organoid_type: str | None) -> tuple[dict, int]:
     }, 200
 
 
+def handle_year_trend() -> tuple[dict, int]:
+    """Yearly trends in publication volume, protocol complexity, and reporting quality.
+
+    Aggregates per-year from protocols.jsonl: paper count, avg n_signaling_factors,
+    avg grounding_rate, and field reporting rates (species/matrix/base_media/
+    passaging/timeline). Shows how the field has evolved and whether reporting
+    completeness has improved over time.
+    """
+    if not PROTOCOLS_JSONL.exists():
+        return {
+            "error": "protocols.jsonl not found",
+            "hint": "Run: python pipeline/export_public.py",
+        }, 404
+
+    _REPORT_FIELDS = ["species", "matrix", "base_media", "passaging", "timeline"]
+
+    def _is_reported(val) -> bool:
+        if val is None:
+            return False
+        return str(val).strip().lower() not in ("", "not_stated", "not_reported")
+
+    by_year: dict[str, dict] = {}
+
+    try:
+        for line in PROTOCOLS_JSONL.read_text().splitlines():
+            if not line.strip():
+                continue
+            p = json.loads(line)
+            yr = str(p.get("year") or "").strip()
+            if not yr:
+                continue
+            if yr not in by_year:
+                by_year[yr] = {
+                    "n_papers": 0,
+                    "_sf": [],
+                    "_gr": [],
+                    **{f: {"reported": 0, "total": 0} for f in _REPORT_FIELDS},
+                }
+            by_year[yr]["n_papers"] += 1
+            nsf = p.get("n_signaling_factors")
+            if nsf is not None:
+                try:
+                    by_year[yr]["_sf"].append(float(nsf))
+                except (TypeError, ValueError):
+                    pass
+            gr = p.get("grounding_rate")
+            if gr is not None:
+                try:
+                    by_year[yr]["_gr"].append(float(gr))
+                except (TypeError, ValueError):
+                    pass
+            for f in _REPORT_FIELDS:
+                by_year[yr][f]["total"] += 1
+                if _is_reported(p.get(f)):
+                    by_year[yr][f]["reported"] += 1
+    except (json.JSONDecodeError, OSError) as exc:
+        return {"error": f"protocols.jsonl unreadable: {exc}"}, 500
+
+    if not by_year:
+        return {"error": "no year data in protocols.jsonl"}, 404
+
+    def _finalize(yd: dict) -> dict:
+        sf_list = yd.pop("_sf")
+        gr_list = yd.pop("_gr")
+        result = {
+            "n_papers": yd["n_papers"],
+            "avg_signaling_factors": round(sum(sf_list) / len(sf_list), 2) if sf_list else None,
+            "avg_grounding_rate": round(sum(gr_list) / len(gr_list), 4) if gr_list else None,
+            "reporting_rates": {
+                f: round(yd[f]["reported"] / yd[f]["total"], 4) if yd[f]["total"] else None
+                for f in _REPORT_FIELDS
+            },
+        }
+        return result
+
+    years_sorted = sorted(by_year)
+    return {
+        "years": {yr: _finalize(by_year[yr]) for yr in years_sorted},
+        "n_years": len(years_sorted),
+        "year_range": [years_sorted[0], years_sorted[-1]],
+    }, 200
+
+
 def handle_mior() -> tuple[dict, int]:
     """Return pre-computed MIOR completeness report."""
     path = ANALYSIS_DIR / "mior_completeness.json"
@@ -1463,6 +1547,7 @@ def handle_index() -> tuple[dict, int]:
             "/analytics/source-cell-breakdown": "source cell type distribution per organoid type (iPSC / adult_stem_cell / primary_tissue / ESC); optional ?type=kidney",
             "/analytics/protocol-complexity": "per-type protocol complexity: avg n_signaling_factors, n_supplements, n_figure_confirmed, grounding_rate with min/max/n; ranked by complexity",
             "/analytics/reporting-gaps": "field reporting rates across the corpus (species/matrix/base_media/source_cell_type/passaging/timeline) — transparency audit; optional ?type=kidney",
+            "/analytics/year-trend": "yearly trends: paper count, avg n_signaling_factors, avg grounding_rate, field reporting rates by year — shows how the field has evolved",
             "/analytics/assay-endpoints": "assay endpoint cluster summary (per type + cross-type)",
             "/analytics/quality": "per-paper quality scores (gold/silver/bronze) + corpus summary",
             "/analytics/mior": "MIOR completeness report (Minimum Information About an Organoid Research)",
@@ -1642,6 +1727,11 @@ async def route_reporting_gaps(datasette, request):
     return Response.json(data, status=status)
 
 
+async def route_year_trend(datasette, request):
+    data, status = handle_year_trend()
+    return Response.json(data, status=status)
+
+
 async def route_candidates(datasette, request):
     data, status = handle_candidates()
     return Response.json(data, status=status)
@@ -1676,6 +1766,7 @@ def register_routes():
         (r"^/analytics/source-cell-breakdown$", route_source_cell_breakdown),
         (r"^/analytics/protocol-complexity$", route_protocol_complexity),
         (r"^/analytics/reporting-gaps$", route_reporting_gaps),
+        (r"^/analytics/year-trend$", route_year_trend),
         (r"^/analytics/assay-endpoints$", route_assay_endpoints),
         (r"^/analytics/quality$", route_quality),
         (r"^/analytics/mior$", route_mior),
