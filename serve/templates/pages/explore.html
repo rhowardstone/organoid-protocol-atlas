@@ -1,121 +1,317 @@
 {% extends "default:base.html" %}
-{% block title %}Explore — Organoid Protocol Atlas{% endblock %}
+{% block title %}Explore protocols — Organoid Protocol Atlas{% endblock %}
 {% block body_class %}index{% endblock %}
 
-{% block extra_head %}{{ super() }}
-<style>
-.apa-xp-head { max-width: 1100px; margin: 1.5rem auto .4rem; padding: 0 1.2rem; }
-.apa-xp-head h1 { font-size: 1.7rem; margin: .2rem 0 .4rem; letter-spacing: -.01em; }
-.apa-xp-search { display: flex; gap: .5rem; margin: 1rem 0 .6rem; max-width: 640px; }
-.apa-xp-search input { flex: 1; font-family: var(--font); font-size: 1rem; padding: 12px 15px;
-  border: 1px solid var(--border); border-radius: 10px; background: var(--paper); color: var(--ink); }
-.apa-xp-search input:focus { outline: none; border-color: var(--accent);
-  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 18%, transparent); }
-.apa-xp-filters { display: flex; flex-wrap: wrap; gap: .9rem 1.4rem; margin: .6rem 0 1rem; align-items: center; }
-.apa-xp-fgroup { display: flex; flex-wrap: wrap; gap: .35rem; align-items: center; }
-.apa-xp-fgroup .lbl { font-family: var(--mono); font-size: .66rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-right: .2rem; }
-.apa-chip { font-size: .8rem; padding: 3px 11px; border-radius: 999px; border: 1px solid var(--border);
-  background: var(--paper-3); color: var(--ink); cursor: pointer; user-select: none; text-transform: capitalize; }
-.apa-chip.on { background: var(--accent); color: #fff; border-color: var(--accent); }
-.apa-xp-count { color: var(--muted); font-size: .85rem; margin-left: auto; }
-.apa-xp-wrap { max-width: 1100px; margin: 0 auto 3rem; padding: 0 1.2rem;
-  display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: .8rem; align-items: start; }
-.apa-xp-card { background: var(--paper); border: 1px solid var(--border); border-left: 3px solid var(--accent);
-  border-radius: 10px; padding: .7rem .85rem; }
-.apa-xp-card .nm { font-weight: 600; font-size: 1rem; }
-.apa-xp-card .nm a { color: var(--ink); } .apa-xp-card .nm a:hover { color: var(--accent); }
-.apa-xp-meta { font-family: var(--mono); font-size: .74rem; color: var(--muted); margin: .25rem 0; }
-.apa-xp-type { display: inline-block; font-size: .68rem; padding: 1px 7px; border-radius: 5px;
-  background: var(--paper-3); color: var(--accent); text-transform: capitalize; font-weight: 600; }
-.apa-xp-quote { font-size: .85rem; line-height: 1.5; color: var(--ink); opacity: .85; margin: .35rem 0; }
-.apa-xp-doi { font-family: var(--mono); font-size: .72rem; }
-.apa-xp-empty { color: var(--muted); padding: 2rem 0; text-align: center; }
-</style>{% endblock %}
-
 {% block content %}
+<style>
+/* ── Explore page layout ── */
+.exp-hero { max-width:900px; margin:2.5rem auto 0; padding:0 1.5rem; }
+.exp-hero h1 { font-size:2rem; font-weight:700; margin:0 0 .35rem; }
+.exp-hero p { color:var(--muted); font-size:.9rem; margin:0 0 1.2rem; }
+.exp-controls { display:flex; align-items:center; gap:.6rem; flex-wrap:wrap; margin-bottom:1.2rem; }
+.exp-search { flex:1; min-width:160px; padding:.5rem .75rem; border:1px solid var(--border); border-radius:8px; font-size:.9rem; background:var(--paper); color:var(--ink); font-family:var(--font); }
+.exp-search:focus { outline:none; border-color:var(--accent); }
+.exp-tabs { display:flex; gap:4px; background:var(--paper-3); border-radius:8px; padding:3px; }
+.exp-tab { padding:.3rem .85rem; border-radius:6px; font-size:.8rem; font-family:var(--mono); cursor:pointer; border:none; background:transparent; color:var(--muted); transition:.15s; }
+.exp-tab.active { background:var(--paper); color:var(--ink); font-weight:600; box-shadow:0 1px 3px rgba(0,0,0,.08); }
+.exp-chips { display:flex; gap:6px; flex-wrap:wrap; }
+.chip { padding:.28rem .7rem; border-radius:20px; font-size:.75rem; font-family:var(--mono); cursor:pointer; border:1px solid transparent; background:var(--paper-3); color:var(--muted); transition:.12s; white-space:nowrap; }
+.chip.active { color:#fff; border-color:transparent; }
+.chip:hover:not(.active) { border-color:var(--border); color:var(--ink); }
+
+/* gap-as-border grid */
+.exp-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(320px,1fr)); gap:1px; background:var(--border); border-radius:14px; overflow:hidden; margin:0 auto; max-width:1200px; padding:0 1.5rem; }
+.exp-grid > * { background:var(--paper); }
+
+/* Protocol card */
+.proto-card { padding:1.1rem 1.2rem; display:flex; flex-direction:column; gap:.55rem; animation:fadeUp .4s ease both; }
+.proto-card:hover { background:var(--paper-3); }
+@keyframes fadeUp { from{opacity:0;transform:translateY(6px)} to{opacity:1;transform:none} }
+.proto-type { font-size:.68rem; font-family:var(--mono); font-weight:600; letter-spacing:.07em; text-transform:uppercase; padding:2px 7px; border-radius:3px; color:#fff; display:inline-block; width:fit-content; }
+.proto-meta { font-size:.78rem; color:var(--muted); }
+.proto-title { font-size:.92rem; font-weight:600; display:flex; align-items:baseline; gap:.4rem; }
+.proto-title a { color:var(--ink); text-decoration:none; }
+.proto-title a:hover { color:var(--accent); }
+.proto-arrow { font-size:.75rem; color:var(--muted); font-family:var(--mono); }
+.proto-factors { display:flex; flex-wrap:wrap; gap:4px; }
+.proto-factor { font-size:.7rem; font-family:var(--mono); padding:1px 6px; border-radius:3px; border:1px solid var(--border); background:var(--paper-3); color:var(--muted); white-space:nowrap; }
+.proto-factor.grounded { border-color:color-mix(in srgb,var(--accent) 40%,transparent); background:color-mix(in srgb,var(--accent) 8%,transparent); color:var(--accent); }
+.proto-stats { display:flex; gap:.8rem; font-size:.72rem; font-family:var(--mono); color:var(--muted); flex-wrap:wrap; }
+.proto-stat strong { color:var(--ink); }
+
+/* Reagent card (existing-style, condensed) */
+.reagent-card { padding:.9rem 1.1rem; display:flex; flex-direction:column; gap:.3rem; animation:fadeUp .4s ease both; }
+.reagent-card:hover { background:var(--paper-3); }
+.reagent-name { font-weight:600; font-size:.88rem; }
+.reagent-meta { font-size:.75rem; color:var(--muted); font-family:var(--mono); }
+.reagent-dose { font-size:.72rem; font-family:var(--mono); color:var(--accent); }
+
+/* Empty / loading */
+.exp-empty { grid-column:1/-1; padding:3rem; text-align:center; color:var(--muted); font-size:.9rem; }
+.exp-stat { font-family:var(--mono); font-size:.75rem; color:var(--muted); }
+.exp-stat strong { color:var(--ink); }
+
+/* pending counter */
+.exp-pending { position:fixed; bottom:1.5rem; right:1.5rem; background:var(--ink); color:var(--paper); font-family:var(--mono); font-size:.72rem; padding:.35rem .8rem; border-radius:20px; opacity:.85; transition:.2s; pointer-events:none; }
+.exp-pending.hidden { opacity:0; }
+</style>
+
 <div class="apa-topbar">
-  <span class="dot"></span> <a href="/">ORGANOID PROTOCOL ATLAS</a>
-  <span class="dot"></span> <a href="/heatmap">Morphogen grammar</a>
-  <span class="dot"></span> <a href="/consensus">Consensus</a>
-  <span class="dot"></span> <a href="/ask">Ask</a>
+  <span class="dot"></span>
+  <a href="/">ORGANOID PROTOCOL ATLAS</a>
+  <span class="dot"></span>
+  <a href="/consensus">Consensus</a>
+  <span class="dot"></span>
+  <a href="/heatmap">Heatmap</a>
+  <span class="dot"></span>
+  <a href="/dashboard">Dashboard</a>
+  <span class="dot"></span>
+  <a href="/ask">Ask</a>
 </div>
 
-<div class="apa-xp-head">
-  <div class="apa-kicker">Explore</div>
-  <h1>Search the reagent &amp; protocol evidence</h1>
-  <p class="apa-sub">Every row is an extracted reagent with its organoid system, dose, evidence
-  snippet, and a DOI back to the source. Type to search; click chips to filter. Each card links to
-  the full recipe card.</p>
+<div class="exp-hero">
+  <h1>Explore protocols</h1>
+  <p id="hero-desc">Evidence-grounded organoid differentiation protocols — source cells, matrix, media, and signaling cocktail, each value backed by a verbatim quote and DOI.</p>
 
-  <div class="apa-xp-search">
-    <input id="q" type="search" placeholder="search reagents, roles, evidence… (e.g. CHIR99021, Wnt, ROCK inhibitor)" autocomplete="off">
-  </div>
-  <div class="apa-xp-filters">
-    <div class="apa-xp-fgroup"><span class="lbl">Type</span><span id="fType"></span></div>
-    <div class="apa-xp-fgroup"><span class="lbl">Kind</span><span id="fKind"></span></div>
-    <div class="apa-xp-fgroup"><span class="lbl">Evidence</span>
-      <span class="apa-chip" data-f="grounded">grounded</span>
-      <span class="apa-chip" data-f="figure">📷 figure-confirmed</span>
+  <div class="exp-controls">
+    <input class="exp-search" id="search" type="search" placeholder="Search protocol, author, factor…" autocomplete="off">
+    <div class="exp-tabs">
+      <button class="exp-tab active" id="tab-proto" onclick="setView('proto')">Protocols</button>
+      <button class="exp-tab" id="tab-reagent" onclick="setView('reagent')">Reagents</button>
     </div>
-    <span id="count" class="apa-xp-count"></span>
   </div>
+
+  <div class="exp-chips" id="chips"></div>
+  <div class="exp-stat" id="count" style="margin-top:.6rem"></div>
 </div>
-<div id="results" class="apa-xp-wrap"></div>
+
+<div class="exp-grid" id="grid" style="margin-top:1rem"></div>
+<div class="exp-pending hidden" id="pending"></div>
 
 <script>
 const esc = s => (s==null?'':String(s)).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-let ROWS = [], Q = "", fType = new Set(), fKind = new Set(), fGround = false, fFig = false;
+const $ = id => document.getElementById(id);
 
-function chips(el, values, set){
-  el.innerHTML = values.map(v => `<span class="apa-chip" data-v="${esc(v)}">${esc(v)}</span>`).join('');
-  el.querySelectorAll('.apa-chip').forEach(c => c.addEventListener('click', () => {
-    const v = c.dataset.v; set.has(v) ? set.delete(v) : set.add(v); c.classList.toggle('on'); render();
-  }));
+const TYPE_COLOR = {
+  // Original 8
+  'cerebral':            '#7c3aed',
+  'kidney':              '#0e7490',
+  'liver':               '#b45309',
+  'lung':                '#1d4ed8',
+  'pancreatic':          '#c2410c',
+  'retinal':             '#6d28d9',
+  'intestinal':          '#15803d',
+  'gastric':             '#9333ea',
+  // Expanded 17
+  'cardiac':             '#dc2626',
+  'tumor':               '#374151',
+  'vascular':            '#0891b2',
+  'cholangiocyte':       '#d97706',
+  'skin':                '#b45309',
+  'mammary':             '#db2777',
+  'endometrial':         '#e11d48',
+  'bone':                '#92400e',
+  'prostate':            '#1d4ed8',
+  'inner-ear':           '#7c3aed',
+  'salivary-gland':      '#0f766e',
+  'bladder':             '#4338ca',
+  'neuromuscular':       '#0e7490',
+  'esophageal':          '#b91c1c',
+  'blood-brain-barrier': '#1e40af',
+  'thyroid':             '#065f46',
+  'fallopian-tube':      '#9d174d',
+  // Legacy alias
+  'hepatic':             '#b45309',
+};
+function typeColor(t){ return TYPE_COLOR[t] || '#64748b'; }
+
+// ── Pending counter ──
+let pending = 0;
+function incPending(){ pending++; updatePending(); }
+function decPending(){ pending = Math.max(0, pending-1); updatePending(); }
+function updatePending(){
+  const el = $('pending');
+  if(pending > 0){ el.textContent = `Loading ${pending} resource${pending>1?'s':''}…`; el.classList.remove('hidden'); }
+  else { el.classList.add('hidden'); }
 }
 
-function match(r){
-  if (fType.size && !fType.has(r.organoid_type)) return false;
-  if (fKind.size && !fKind.has(r.kind)) return false;
-  if (fGround && !r.grounded) return false;
-  if (fFig && !r.figure_confirmed) return false;
-  if (!Q) return true;
-  const hay = `${r.name} ${r.canonical||''} ${r.role||''} ${r.organoid_type} ${r.evidence_quote||''}`.toLowerCase();
-  return Q.split(/\s+/).every(t => hay.includes(t));
+// ── State ──
+let view = 'proto';
+let activeType = null;
+let query = '';
+let protos = [], reagents = [];
+let protosByPmcid = {};        // pmcid → protocol
+let signaling = {};            // pmcid → [canonical, ...]
+
+function setView(v){
+  view = v;
+  $('tab-proto').classList.toggle('active', v==='proto');
+  $('tab-reagent').classList.toggle('active', v==='reagent');
+  render();
 }
 
-function card(r){
-  const dose = (r.value!=null) ? `${r.value} ${esc(r.canonical_unit||r.unit||'')}`.trim() : '';
-  const fig = r.figure_confirmed ? ' <span class="apa-badge fig">📷</span>' : '';
-  const gb = r.grounded ? '<span class="apa-badge ok">grounded</span>' : '<span class="apa-badge no">ungrounded</span>';
-  return `<div class="apa-xp-card">
-    <div class="nm"><a href="/atlas/reagents?canonical__exact=${encodeURIComponent(r.canonical||r.name)}">${esc(r.name)}</a>${fig}</div>
-    <div class="apa-xp-meta"><span class="apa-xp-type">${esc(r.organoid_type)}</span>
-      ${r.canonical && r.canonical!==r.name ? ' · '+esc(r.canonical) : ''}${dose ? ' · '+dose : ''}
-      ${r.role && r.role!=='not stated' ? ' · '+esc(r.role) : ''} ${gb}</div>
-    ${r.evidence_quote ? `<div class="apa-xp-quote">“${esc(r.evidence_quote)}”</div>` : ''}
-    <a class="apa-xp-doi" href="/atlas/protocols/${esc(r.pmcid)}">${esc(r.pmcid)}</a>
-    ${r.doi ? ` · <a class="apa-xp-doi" href="https://doi.org/${esc(r.doi)}" target="_blank" rel="noopener">${esc(r.doi)}</a>` : ''}
+// ── Chips ──
+function buildChips(){
+  const types = [...new Set(protos.map(p=>p.organoid_type).filter(Boolean))].sort();
+  const el = $('chips');
+  el.innerHTML = types.map(t => {
+    const c = typeColor(t);
+    return `<button class="chip${activeType===t?' active':''}" data-type="${esc(t)}"
+      style="${activeType===t?`background:${c};border-color:${c}`:`--c:${c}`}"
+      onclick="toggleType('${esc(t)}')">${esc(t)}</button>`;
+  }).join('');
+}
+
+function toggleType(t){
+  activeType = activeType===t ? null : t;
+  buildChips();
+  render();
+}
+
+// ── Match ──
+function matchProto(p, q){
+  if(!q) return true;
+  const lower = q.toLowerCase();
+  const factors = (signaling[p.pmcid]||[]).join(' ').toLowerCase();
+  return (p.first_author||'').toLowerCase().includes(lower)
+      || (p.journal||'').toLowerCase().includes(lower)
+      || (p.organoid_type||'').toLowerCase().includes(lower)
+      || (p.source_cell_type||'').toLowerCase().includes(lower)
+      || (p.base_media||'').toLowerCase().includes(lower)
+      || (p.matrix||'').toLowerCase().includes(lower)
+      || String(p.year||'').includes(lower)
+      || factors.includes(lower);
+}
+
+function matchReagent(r, q){
+  if(!q) return true;
+  const lower = q.toLowerCase();
+  return (r.name||'').toLowerCase().includes(lower)
+      || (r.canonical||'').toLowerCase().includes(lower)
+      || (r.kind||'').toLowerCase().includes(lower)
+      || (r.organoid_type||'').toLowerCase().includes(lower);
+}
+
+// ── Render ──
+function render(){
+  const g = $('grid');
+  const cnt = $('count');
+  let items;
+
+  if(view === 'proto'){
+    items = protos
+      .filter(p => !activeType || p.organoid_type===activeType)
+      .filter(p => matchProto(p, query));
+    cnt.innerHTML = `Showing <strong>${items.length}</strong> of <strong>${protos.length}</strong> protocols`;
+    g.innerHTML = items.length
+      ? items.map((p,i) => protoCard(p,i)).join('')
+      : '<div class="exp-empty">No protocols match.</div>';
+  } else {
+    items = reagents
+      .filter(r => !activeType || r.organoid_type===activeType)
+      .filter(r => matchReagent(r, query));
+    cnt.innerHTML = `Showing <strong>${items.length}</strong> of <strong>${reagents.length}</strong> reagents`;
+    g.innerHTML = items.length
+      ? items.map((r,i) => reagentCard(r,i)).join('')
+      : '<div class="exp-empty">No reagents match.</div>';
+  }
+}
+
+// ── Protocol card ──
+function protoCard(p, i){
+  const c = typeColor(p.organoid_type||'');
+  const factors = signaling[p.pmcid] || [];
+  const grounded = p.reagents_grounded || 0;
+  const total = p.reagents_total || 0;
+  const gRate = total ? Math.round(100*(grounded/total)) : 0;
+
+  const factorPills = factors.slice(0,8).map(f =>
+    `<span class="proto-factor grounded">${esc(f)}</span>`
+  ).join('') + (factors.length>8
+    ? `<span class="proto-factor">+${factors.length-8} more</span>`
+    : '');
+
+  const doiHref = p.doi ? `https://doi.org/${esc(p.doi)}`
+                        : `https://www.ncbi.nlm.nih.gov/pmc/articles/${esc(p.pmcid)}/`;
+
+  return `<div class="proto-card" style="animation-delay:${i*0.045}s">
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:.4rem">
+      <span class="proto-type" style="background:${c}">${esc(p.organoid_type||'unknown')}</span>
+      ${p.gold_candidate ? '<span class="apa-badge" style="font-size:.65rem">★ gold</span>' : ''}
+    </div>
+    <div class="proto-title">
+      <a href="/atlas/protocols/${esc(p.pmcid)}" title="${esc(p.doi||p.pmcid)}">${esc(p.first_author||'?')} ${p.year||''}</a>
+      <span class="proto-arrow">· ${esc(p.journal||'')}</span>
+    </div>
+    <div class="proto-meta">${esc(p.source_cell_type||'—')} → ${esc(p.organoid_type||'?')} organoid</div>
+    ${factorPills ? `<div class="proto-factors">${factorPills}</div>` : ''}
+    <div class="proto-stats">
+      <span><strong>${p.n_signaling_factors||0}</strong> signaling factors</span>
+      <span><strong>${gRate}%</strong> grounded</span>
+      ${p.matrix ? `<span>matrix: <strong>${esc(p.matrix)}</strong></span>` : ''}
+      ${p.timeline ? `<span>timeline: <strong>${esc(p.timeline)}</strong></span>` : ''}
+    </div>
+    <div style="font-size:.72rem;font-family:var(--mono);color:var(--muted)">
+      <a href="${doiHref}" target="_blank" rel="noopener" style="color:var(--muted)">${esc(p.pmcid||'')}</a>
+      · <a href="/atlas/protocols/${esc(p.pmcid)}" style="color:var(--accent)">full record →</a>
+    </div>
   </div>`;
 }
 
-function render(){
-  const hits = ROWS.filter(match);
-  document.getElementById('count').textContent = `${hits.length} of ${ROWS.length} reagents`;
-  const out = document.getElementById('results');
-  out.innerHTML = hits.length ? hits.slice(0, 300).map(card).join('')
-    : `<div class="apa-xp-empty">No reagents match — try a broader term or clear filters.</div>`;
+// ── Reagent card ──
+function reagentCard(r, i){
+  const c = typeColor(r.organoid_type||'');
+  const dose = r.value != null
+    ? `${r.value}${r.canonical_unit&&r.canonical_unit!=='not stated'?' '+esc(r.canonical_unit):''}`
+    : '';
+  return `<div class="reagent-card" style="animation-delay:${i*0.03}s">
+    <div style="display:flex;align-items:baseline;gap:.4rem">
+      <span class="reagent-name">${esc(r.canonical||r.name||'?')}</span>
+      ${r.figure_confirmed ? '<span class="apa-badge fig" style="font-size:.65rem">📷</span>' : ''}
+    </div>
+    <div class="reagent-meta">
+      <span style="color:${c};font-weight:600">${esc(r.organoid_type||'')}</span>
+      · ${esc(r.kind||'')}
+      ${r.pmcid ? `· <a href="/atlas/protocols/${esc(r.pmcid)}" style="color:var(--muted)">${esc(r.pmcid)}</a>` : ''}
+    </div>
+    ${dose ? `<div class="reagent-dose">${esc(dose)}</div>` : ''}
+  </div>`;
 }
 
+// ── Boot ──
 (async () => {
-  try { ROWS = await (await fetch('/atlas/reagents.json?_shape=array&_size=max')).json(); }
-  catch(e){ document.getElementById('results').innerHTML = '<div class="apa-xp-empty">Could not load reagents.</div>'; return; }
-  chips(document.getElementById('fType'), [...new Set(ROWS.map(r=>r.organoid_type).filter(Boolean))].sort(), fType);
-  chips(document.getElementById('fKind'), [...new Set(ROWS.map(r=>r.kind).filter(Boolean))].sort(), fKind);
-  document.querySelectorAll('.apa-xp-filters .apa-chip[data-f]').forEach(c => c.addEventListener('click', () => {
-    if (c.dataset.f==='grounded'){ fGround=!fGround; } else { fFig=!fFig; } c.classList.toggle('on'); render();
-  }));
-  document.getElementById('q').addEventListener('input', e => { Q = e.target.value.trim().toLowerCase(); render(); });
+  const j = async u => { incPending(); try { return await (await fetch(u)).json(); } finally { decPending(); } };
+  const [p, r, s] = await Promise.all([
+    j('/atlas/protocols.json?_shape=array&_size=max'),
+    j('/atlas/reagents.json?_shape=array&_size=max'),
+    j('/atlas/reagents.json?_shape=array&_size=max&kind__exact=signaling'),
+  ]);
+  protos = p || [];
+  reagents = r || [];
+
+  // Build signaling factor map: pmcid → [canonical, ...]
+  for(const row of (s||[])){
+    if(!row.pmcid || !row.canonical) continue;
+    (signaling[row.pmcid] = signaling[row.pmcid] || []).push(row.canonical);
+  }
+
+  for(const proto of protos) protosByPmcid[proto.pmcid] = proto;
+
+  // Update hero description with live corpus counts
+  const nTypes = new Set(protos.map(p => p.organoid_type).filter(Boolean)).size;
+  const desc = document.getElementById('hero-desc');
+  if (desc) {
+    desc.textContent = `${protos.length.toLocaleString()} evidence-grounded organoid protocols across ${nTypes} systems, with ${reagents.length.toLocaleString()} annotated reagent rows — each value backed by a verbatim quote and DOI.`;
+  }
+
+  buildChips();
   render();
 })();
+
+// ── Search ──
+$('search').addEventListener('input', e => {
+  query = e.target.value.trim();
+  render();
+});
 </script>
 {% endblock %}

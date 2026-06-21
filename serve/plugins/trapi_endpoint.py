@@ -244,8 +244,11 @@ def _home_html(graph) -> str:
 <div class="apa-topbar">
   <span class="dot"></span> <a href="/">ORGANOID PROTOCOL ATLAS</a>
   <span class="dot"></span> <a href="/atlas/protocols">Protocols</a>
-  <span class="dot"></span> <a href="/heatmap">Morphogen grammar</a>
-  <span class="dot"></span> <a href="/llms.txt">llms.txt</a>
+  <span class="dot"></span> <a href="/explore">Explore</a>
+  <span class="dot"></span> <a href="/heatmap">Heatmap</a>
+  <span class="dot"></span> <a href="/consensus">Consensus</a>
+  <span class="dot"></span> <a href="/dashboard">Dashboard</a>
+  <span class="dot"></span> <a href="/ask">Ask</a>
 </div>
 
 <div class="apa-ask-head">

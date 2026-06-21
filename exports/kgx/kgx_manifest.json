@@ -1,0 +1,36 @@
+{
+  "generated_at": "2026-06-21T02:21:07.450889+00:00",
+  "predicate": "biolink:mentions",
+  "primary_knowledge_source": "infores:organoid-protocol-atlas",
+  "knowledge_level": "prediction",
+  "agent_type": "automated_agent",
+  "n_papers": 860,
+  "n_nodes": 1385,
+  "n_nodes_by_category": {
+    "biolink:Publication": 860,
+    "biolink:Gene": 269,
+    "biolink:MolecularMixture": 13,
+    "biolink:SmallMolecule": 161,
+    "biolink:Protein": 21,
+    "biolink:ChemicalEntity": 26,
+    "biolink:CellLine": 35
+  },
+  "n_edges": 4122,
+  "n_edges_by_predicate": {
+    "biolink:mentions": 4122
+  },
+  "n_review_items": 839,
+  "n_review_by_status": {
+    "needs_review": 564,
+    "not_found": 273,
+    "not_attempted": 2
+  },
+  "entities_total": 5078,
+  "entities_resolved": 4239,
+  "resolved_rate": 0.8348,
+  "validation": {
+    "ok": true,
+    "toolkit": "vendored-allow-list",
+    "errors": []
+  }
+}
