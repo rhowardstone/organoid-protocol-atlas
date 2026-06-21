@@ -31,6 +31,7 @@ Routes (all return JSON; read-only, no writes):
   GET /analytics/type-comparison             -- side-by-side organoid type comparison: shared/unique canonical reagents, Jaccard score, per-kind breakdown; requires ?a= and ?b=
   GET /analytics/concentration-deviation     -- dose inconsistency ranking: canonical reagents sorted by coefficient of variation (std/mean) per dominant unit; min_n= threshold (default 3)
   GET /analytics/reagent-prevalence          -- type-breadth ranking: canonical reagents sorted by n_organoid_types they appear in; ?q= for per-type breakdown of one canonical; ?min_types= threshold
+  GET /analytics/protocol-outliers           -- per-type outlier detection on n_signaling_factors: complex and minimal protocols (z-score threshold, default 1.5); ?type= for one type
   GET /analytics                                -- index of available analytics
 
 All endpoints degrade gracefully — if the pre-computed file doesn't exist they return
@@ -2234,6 +2235,107 @@ def handle_reagent_prevalence(query: str | None, min_types: int = 1) -> tuple[di
     }, 200
 
 
+def handle_protocol_outliers(organoid_type: str | None, z_thresh: float = 1.5) -> tuple[dict, int]:
+    """Per-type outlier detection on n_signaling_factors.
+
+    For each organoid type, computes mean and std of n_signaling_factors across papers,
+    then flags papers as 'complex' (n_sf > mean + z_thresh*std) or 'minimal'
+    (n_sf < mean - z_thresh*std, floor 1). Returns per-type statistics with the
+    outlier paper lists (pmcid, doi, year, n_signaling_factors, z_score).
+
+    Without ?type=: returns all types sorted by mean n_sf desc.
+    With ?type=kidney: returns full outlier detail for one type.
+
+    Optional ?z_thresh= to change sensitivity (default 1.5).
+    """
+    if not PROTOCOLS_JSONL.exists():
+        return {"error": "protocols.jsonl not found", "hint": "Run: python pipeline/export_public.py"}, 404
+
+    try:
+        rows = [
+            json.loads(line)
+            for line in PROTOCOLS_JSONL.read_text().splitlines()
+            if line.strip()
+        ]
+    except (json.JSONDecodeError, OSError) as exc:
+        return {"error": f"protocols.jsonl unreadable: {exc}"}, 500
+
+    from collections import defaultdict
+
+    # Group by type; collect (n_sf, pmcid, doi, year) tuples
+    by_type: dict[str, list] = defaultdict(list)
+    for r in rows:
+        sf = r.get("n_signaling_factors")
+        if sf is None:
+            continue
+        ot = (r.get("organoid_type") or "unknown").strip()
+        by_type[ot].append({
+            "pmcid": r.get("pmcid"),
+            "doi": r.get("doi"),
+            "year": r.get("year"),
+            "n_signaling_factors": sf,
+        })
+
+    def _type_stats(paper_list: list) -> dict:
+        sfs = [p["n_signaling_factors"] for p in paper_list]
+        n = len(sfs)
+        mean = sum(sfs) / n
+        if n >= 2:
+            variance = sum((x - mean) ** 2 for x in sfs) / (n - 1)
+            std = math.sqrt(variance)
+        else:
+            std = 0.0
+        threshold_hi = mean + z_thresh * std
+        threshold_lo = max(1.0, mean - z_thresh * std)
+        complex_papers = []
+        minimal_papers = []
+        for p in paper_list:
+            sf = p["n_signaling_factors"]
+            z = (sf - mean) / std if std > 0 else 0.0
+            if sf > threshold_hi:
+                complex_papers.append({**p, "z_score": round(z, 2)})
+            elif sf < threshold_lo:
+                minimal_papers.append({**p, "z_score": round(z, 2)})
+        complex_papers.sort(key=lambda x: -x["n_signaling_factors"])
+        minimal_papers.sort(key=lambda x: x["n_signaling_factors"])
+        return {
+            "n_papers": n,
+            "mean_n_sf": round(mean, 2),
+            "std_n_sf": round(std, 2),
+            "threshold_complex": round(threshold_hi, 2),
+            "threshold_minimal": round(threshold_lo, 2),
+            "n_complex": len(complex_papers),
+            "n_minimal": len(minimal_papers),
+            "complex_protocols": complex_papers,
+            "minimal_protocols": minimal_papers,
+        }
+
+    if organoid_type and organoid_type.strip():
+        ot = organoid_type.strip().lower()
+        # case-insensitive match
+        matched = next((k for k in by_type if k.lower() == ot), None)
+        if matched is None:
+            return {"error": f"no protocols found for organoid_type '{organoid_type}'"}, 404
+        stats = _type_stats(by_type[matched])
+        return {"organoid_type": matched, "z_thresh": z_thresh, **stats}, 200
+
+    # Cross-corpus: all types
+    per_type = {}
+    for ot, papers in by_type.items():
+        per_type[ot] = _type_stats(papers)
+
+    # Summary sorted by mean_n_sf desc
+    ranking = sorted(per_type, key=lambda t: per_type[t]["mean_n_sf"], reverse=True)
+
+    return {
+        "z_thresh": z_thresh,
+        "n_types": len(per_type),
+        "n_papers_total": sum(v["n_papers"] for v in per_type.values()),
+        "ranking_by_mean_sf": ranking,
+        "per_type": per_type,
+    }, 200
+
+
 def handle_concentration_deviation(min_n: int = 3) -> tuple[dict, int]:
     """Dose inconsistency ranking: canonical reagents sorted by coefficient of variation.
 
@@ -2499,6 +2601,7 @@ def handle_index() -> tuple[dict, int]:
             "/analytics/type-comparison": "side-by-side organoid type comparison: shared/unique canonical reagents, Jaccard score, per-kind breakdown; requires ?a=intestinal&b=cerebral",
             "/analytics/concentration-deviation": "dose inconsistency ranking: canonical reagents sorted by coefficient of variation (std/mean) across records with numeric values; ?min_n= to set sample threshold (default 3)",
             "/analytics/reagent-prevalence": "type-breadth ranking: canonical reagents sorted by number of organoid types they appear in; cross_field (>=20 types) + specialist (<=2 types) sub-lists; ?q=EGF for per-type breakdown; ?min_types= threshold",
+            "/analytics/protocol-outliers": "per-type outlier detection on n_signaling_factors: complex (high SF count) and minimal (low SF count) protocols per organoid type, with z-scores; ?type=kidney for one type; ?z_thresh= to adjust sensitivity (default 1.5)",
             "/analytics/assay-endpoints": "assay endpoint cluster summary (per type + cross-type)",
             "/analytics/quality": "per-paper quality scores (gold/silver/bronze) + corpus summary",
             "/analytics/mior": "MIOR completeness report (Minimum Information About an Organoid Research)",
@@ -2732,6 +2835,16 @@ async def route_reagent_prevalence(datasette, request):
     return Response.json(data, status=status)
 
 
+async def route_protocol_outliers(datasette, request):
+    organoid_type = request.args.get("type") or None
+    try:
+        z_thresh = float(request.args.get("z_thresh") or 1.5)
+    except (TypeError, ValueError):
+        z_thresh = 1.5
+    data, status = handle_protocol_outliers(organoid_type, z_thresh)
+    return Response.json(data, status=status)
+
+
 async def route_concentration_deviation(datasette, request):
     try:
         min_n = int(request.args.get("min_n") or 3)
@@ -2787,6 +2900,7 @@ def register_routes():
         (r"^/analytics/type-comparison$", route_type_comparison),
         (r"^/analytics/concentration-deviation$", route_concentration_deviation),
         (r"^/analytics/reagent-prevalence$", route_reagent_prevalence),
+        (r"^/analytics/protocol-outliers$", route_protocol_outliers),
         (r"^/analytics/journal-breakdown$", route_journal_breakdown),
         (r"^/analytics/concentration-by-type$", route_concentration_by_type),
         (r"^/analytics/kgx-summary$", route_kgx_summary),
