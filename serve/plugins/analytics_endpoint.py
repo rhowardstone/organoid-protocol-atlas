@@ -41,6 +41,7 @@ Routes (all return JSON; read-only, no writes):
   GET /analytics/canonical-name-variants     -- normalization complexity report: canonical → all raw names that map to it; top 30 by n_variants; ?q= for one canonical; live from reagents.jsonl
   GET /analytics/concentration-unit-distribution -- unit inconsistency report: canonicals using >1 unit system; top 30 by n_units; ?q= for one canonical with min/median/max per unit; live from reagents.jsonl
   GET /analytics/protocol-size-distribution  -- full histogram of n_signaling_factors and n_supplements per paper; global + per-type mean/median/std; ?type= for one type; live from protocols.jsonl
+  GET /analytics/evidence-quote-coverage     -- per-type and per-kind rate of verbatim evidence quotes in reagent records; ?type= for one type with top canonicals; ?kind=signaling|supplement filter; live from reagents.jsonl
   GET /analytics                                -- index of available analytics
 
 All endpoints degrade gracefully — if the pre-computed file doesn't exist they return
@@ -3548,6 +3549,142 @@ def handle_protocol_size_distribution(
     }, 200
 
 
+def handle_evidence_quote_coverage(organoid_type=None, kind=None):
+    """Route 47: per-type and per-kind rate of verbatim evidence quotes in reagent records.
+
+    Without filters: global rate, by_kind breakdown (signaling/supplement),
+    per_type list sorted by coverage_rate desc.
+    With ?type=kidney: coverage for that type only, plus top 20 canonicals by coverage_rate.
+    With ?kind=signaling: restrict all stats to that kind.
+    """
+    reagents = [
+        json.loads(line)
+        for line in REAGENTS_JSONL.read_text().splitlines()
+        if line.strip()
+    ]
+
+    # Apply kind filter
+    valid_kinds = {"signaling", "supplement"}
+    if kind and kind not in valid_kinds:
+        return {"error": f"?kind= must be one of {sorted(valid_kinds)}"}, 400
+    if kind:
+        reagents = [r for r in reagents if r.get("kind") == kind]
+
+    def _has_quote(r):
+        q = r.get("evidence_quote")
+        return bool(q and str(q).strip())
+
+    if organoid_type:
+        subset = [r for r in reagents if r.get("organoid_type") == organoid_type]
+        if not subset:
+            known = sorted({r.get("organoid_type", "") for r in reagents} - {""})
+            return {
+                "error": f"No reagents for type '{organoid_type}'",
+                "known_types": known,
+            }, 404
+
+        n_total = len(subset)
+        n_with_quote = sum(1 for r in subset if _has_quote(r))
+        coverage_rate = round(n_with_quote / n_total, 4) if n_total else 0.0
+
+        # by_kind breakdown
+        by_kind = {}
+        for k in ("signaling", "supplement"):
+            ks = [r for r in subset if r.get("kind") == k]
+            n_k = len(ks)
+            n_k_q = sum(1 for r in ks if _has_quote(r))
+            by_kind[k] = {
+                "n_with_quote": n_k_q,
+                "n_total": n_k,
+                "coverage_rate": round(n_k_q / n_k, 4) if n_k else None,
+            }
+
+        # Top 20 canonicals by coverage_rate (min 3 records)
+        from collections import defaultdict
+        canon_map = defaultdict(lambda: [0, 0])
+        for r in subset:
+            c = r.get("canonical", "")
+            if not c:
+                continue
+            canon_map[c][1] += 1
+            if _has_quote(r):
+                canon_map[c][0] += 1
+        canon_rows = []
+        for c, (n_q, n_t) in canon_map.items():
+            if n_t >= 3:
+                canon_rows.append({
+                    "canonical": c,
+                    "n_with_quote": n_q,
+                    "n_total": n_t,
+                    "coverage_rate": round(n_q / n_t, 4),
+                })
+        canon_rows.sort(key=lambda x: (-x["coverage_rate"], -x["n_total"]))
+
+        return {
+            "organoid_type": organoid_type,
+            "kind_filter": kind,
+            "n_with_quote": n_with_quote,
+            "n_total": n_total,
+            "coverage_rate": coverage_rate,
+            "by_kind": by_kind,
+            "top_canonicals_by_coverage": canon_rows[:20],
+        }, 200
+
+    # Global view
+    n_total = len(reagents)
+    n_with_quote = sum(1 for r in reagents if _has_quote(r))
+    overall_rate = round(n_with_quote / n_total, 4) if n_total else 0.0
+
+    # by_kind global breakdown
+    by_kind = {}
+    for k in ("signaling", "supplement"):
+        ks = [r for r in reagents if r.get("kind") == k]
+        n_k = len(ks)
+        n_k_q = sum(1 for r in ks if _has_quote(r))
+        by_kind[k] = {
+            "n_with_quote": n_k_q,
+            "n_total": n_k,
+            "coverage_rate": round(n_k_q / n_k, 4) if n_k else None,
+        }
+
+    # per_type breakdown
+    from collections import defaultdict
+    type_map = defaultdict(lambda: {"signaling": [0, 0], "supplement": [0, 0]})
+    for r in reagents:
+        typ = r.get("organoid_type", "")
+        k = r.get("kind", "")
+        if not typ or k not in ("signaling", "supplement"):
+            continue
+        type_map[typ][k][1] += 1
+        if _has_quote(r):
+            type_map[typ][k][0] += 1
+
+    per_type = []
+    for typ in sorted(type_map):
+        sig = type_map[typ]["signaling"]
+        sup = type_map[typ]["supplement"]
+        n_t = sig[1] + sup[1]
+        n_q = sig[0] + sup[0]
+        per_type.append({
+            "organoid_type": typ,
+            "n_with_quote": n_q,
+            "n_total": n_t,
+            "coverage_rate": round(n_q / n_t, 4) if n_t else None,
+            "signaling_rate": round(sig[0] / sig[1], 4) if sig[1] else None,
+            "supplement_rate": round(sup[0] / sup[1], 4) if sup[1] else None,
+        })
+    per_type.sort(key=lambda x: (-(x["coverage_rate"] or 0), x["organoid_type"]))
+
+    return {
+        "kind_filter": kind,
+        "n_with_quote": n_with_quote,
+        "n_total": n_total,
+        "overall_coverage_rate": overall_rate,
+        "by_kind": by_kind,
+        "per_type": per_type,
+    }, 200
+
+
 def handle_index() -> tuple[dict, int]:
     """Analytics endpoint index."""
     return {
@@ -3591,6 +3728,7 @@ def handle_index() -> tuple[dict, int]:
             "/analytics/canonical-name-variants": "normalization complexity report: for each canonical, all distinct raw names that map to it; top 30 most-ambiguous sorted by n_variants; ?q=FGF2 for one canonical; ?min_variants= floor (default 2)",
             "/analytics/concentration-unit-distribution": "unit inconsistency report: canonicals using multiple concentration unit systems; top 30 by n_units; ?q=EGF for full unit breakdown with min/median/max per unit; ?min_n= records threshold (default 3)",
             "/analytics/protocol-size-distribution": "full distribution of protocol sizes: histogram of n_signaling_factors and n_supplements per paper (global + per-type mean/median/std); ?type=kidney for one type with full histograms",
+            "/analytics/evidence-quote-coverage": "per-type and per-kind rate of verbatim evidence quotes in reagent records; overall_coverage_rate + by_kind breakdown; per_type sorted by coverage_rate; ?type=kidney for top canonicals by coverage; ?kind=signaling|supplement filter",
             "/analytics/assay-endpoints": "assay endpoint cluster summary (per type + cross-type)",
             "/analytics/quality": "per-paper quality scores (gold/silver/bronze) + corpus summary",
             "/analytics/mior": "MIOR completeness report (Minimum Information About an Organoid Research)",
@@ -3852,6 +3990,13 @@ async def route_protocol_size_distribution(datasette, request):
     return Response.json(data, status=status)
 
 
+async def route_evidence_quote_coverage(datasette, request):
+    organoid_type = request.args.get("type") or None
+    kind = request.args.get("kind") or None
+    data, status = handle_evidence_quote_coverage(organoid_type, kind)
+    return Response.json(data, status=status)
+
+
 async def route_concentration_unit_distribution(datasette, request):
     query = request.args.get("q") or None
     try:
@@ -3976,6 +4121,7 @@ def register_routes():
         (r"^/analytics/canonical-name-variants$", route_canonical_name_variants),
         (r"^/analytics/concentration-unit-distribution$", route_concentration_unit_distribution),
         (r"^/analytics/protocol-size-distribution$", route_protocol_size_distribution),
+        (r"^/analytics/evidence-quote-coverage$", route_evidence_quote_coverage),
         (r"^/analytics/journal-breakdown$", route_journal_breakdown),
         (r"^/analytics/concentration-by-type$", route_concentration_by_type),
         (r"^/analytics/kgx-summary$", route_kgx_summary),

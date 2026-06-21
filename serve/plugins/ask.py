@@ -119,6 +119,7 @@ exports. Prefer the JSON endpoints for programmatic use.
 - /analytics/canonical-name-variants   normalization complexity: for each canonical, all raw names that map to it; top 30 most-ambiguous by n_variants; ?q=FGF2 for one canonical; ?min_variants= threshold
 - /analytics/concentration-unit-distribution  unit inconsistency report: canonicals using multiple unit systems; top 30 by n_units; ?q=EGF for full unit breakdown with min/median/max per unit; ?min_n= threshold
 - /analytics/protocol-size-distribution  full histogram of n_signaling_factors and n_supplements per paper; global + per-type mean/median/std; ?type=kidney for one type with full histograms
+- /analytics/evidence-quote-coverage   per-type and per-kind rate of verbatim evidence quotes in reagent records; overall_coverage_rate + by_kind breakdown + per_type sorted by coverage_rate; ?type=kidney for top canonicals; ?kind=signaling|supplement filter
 - /analytics/failure-modes             failure mode cluster summary across the corpus
 - /analytics/lineage                   DOI→DOI protocol lineage graph
 - /analytics/assay-endpoints           assay endpoint cluster summary (per-type + cross-type)
