@@ -362,6 +362,7 @@ async function load() {
     ['/analytics/canonical-name-variants', 'Normalization complexity: for each canonical, all raw names that map to it; top 30 most-ambiguous by n_variants; ?q=FGF2 for one canonical; ?min_variants= threshold (default 2)'],
     ['/analytics/concentration-unit-distribution', 'Unit inconsistency report: canonicals using multiple concentration unit systems; top 30 by n_units; ?q=EGF for full breakdown with min/median/max per unit; ?min_n= threshold'],
     ['/analytics/protocol-size-distribution', 'Full distribution of protocol sizes: histogram of n_signaling_factors and n_supplements per paper; global + per-type mean/median/std; ?type=kidney for one type'],
+    ['/analytics/evidence-quote-coverage', 'Per-type and per-kind rate of verbatim evidence quotes in reagent records; overall_coverage_rate + by_kind breakdown; per_type sorted by coverage_rate; ?type= for top canonicals; ?kind=signaling|supplement'],
     ['/analytics/mior',                 'MIOR completeness report (12 items, 5 modules)'],
     ['/analytics/assay-endpoints',      'Assay endpoint cluster summary (per-type + cross-type)'],
     ['/analytics/failure-modes',        'Failure mode cluster summary across the corpus'],

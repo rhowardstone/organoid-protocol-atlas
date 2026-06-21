@@ -692,3 +692,27 @@ def test_live_ps_intestinal():
     assert status == 200
     assert data["signaling_factors"]["n_papers"] >= 30
     assert data["signaling_factors"]["mean"] >= 4.0
+
+
+@require_reagents
+def test_live_eq_global_coverage():
+    data, status = ae.handle_evidence_quote_coverage(None, None)
+    assert status == 200
+    assert data["n_total"] >= 5000
+    # Corpus has ~53% coverage; allow wide range for corpus growth
+    assert data["overall_coverage_rate"] >= 0.3
+    assert data["overall_coverage_rate"] <= 1.0
+    assert "by_kind" in data
+    assert "per_type" in data
+    assert len(data["per_type"]) >= 20
+
+
+@require_reagents
+def test_live_eq_intestinal_type_filter():
+    data, status = ae.handle_evidence_quote_coverage("intestinal", None)
+    assert status == 200
+    assert data["organoid_type"] == "intestinal"
+    assert data["n_total"] >= 100
+    assert "top_canonicals_by_coverage" in data
+    # signaling_rate and supplement_rate present in by_kind
+    assert data["by_kind"]["signaling"]["n_total"] >= 50

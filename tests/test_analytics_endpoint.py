@@ -4849,3 +4849,141 @@ def test_ps_kidney_mean_sf(tmp_path, monkeypatch):
 def test_ps_index_entry():
     data, _ = ae.handle_index()
     assert "/analytics/protocol-size-distribution" in data["endpoints"]
+
+
+# --------------------------------------------------------------------------- #
+# handle_evidence_quote_coverage  (route 47)
+# --------------------------------------------------------------------------- #
+
+_EQ_ROWS = [
+    # organoid_type, kind, canonical, evidence_quote
+    {"organoid_type": "intestinal", "kind": "signaling", "canonical": "EGF", "evidence_quote": "EGF 50 ng/mL"},
+    {"organoid_type": "intestinal", "kind": "signaling", "canonical": "EGF", "evidence_quote": "50 ng/mL EGF"},
+    {"organoid_type": "intestinal", "kind": "signaling", "canonical": "Wnt3a", "evidence_quote": None},
+    {"organoid_type": "intestinal", "kind": "supplement", "canonical": "GlutaMAX", "evidence_quote": "GlutaMAX 2 mM"},
+    {"organoid_type": "intestinal", "kind": "supplement", "canonical": "HEPES", "evidence_quote": None},
+    {"organoid_type": "kidney", "kind": "signaling", "canonical": "EGF", "evidence_quote": "EGF added at 50"},
+    {"organoid_type": "kidney", "kind": "signaling", "canonical": "FGF2", "evidence_quote": None},
+    {"organoid_type": "kidney", "kind": "supplement", "canonical": "GlutaMAX", "evidence_quote": None},
+]
+
+
+def _write_reagents_for_eq(path, rows):
+    path.write_text("\n".join(json.dumps(r) for r in rows))
+
+
+def _patch_eq(monkeypatch, path):
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", path)
+
+
+def test_eq_global_overall_rate(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_eq(p, _EQ_ROWS)
+    _patch_eq(monkeypatch, p)
+    data, status = ae.handle_evidence_quote_coverage(None, None)
+    assert status == 200
+    # 4 have quotes out of 8: overall = 0.5
+    assert abs(data["overall_coverage_rate"] - 0.5) < 0.01
+    assert data["n_with_quote"] == 4
+    assert data["n_total"] == 8
+
+
+def test_eq_by_kind_signaling(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_eq(p, _EQ_ROWS)
+    _patch_eq(monkeypatch, p)
+    data, _ = ae.handle_evidence_quote_coverage(None, None)
+    sig = data["by_kind"]["signaling"]
+    # EGF×2 (quotes), Wnt3a×1 (no quote), EGF×1 (quote), FGF2×1 (no quote) = 5 signaling, 3 with quote
+    assert sig["n_total"] == 5
+    assert sig["n_with_quote"] == 3
+    assert abs(sig["coverage_rate"] - 3/5) < 0.01
+
+
+def test_eq_by_kind_supplement(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_eq(p, _EQ_ROWS)
+    _patch_eq(monkeypatch, p)
+    data, _ = ae.handle_evidence_quote_coverage(None, None)
+    sup = data["by_kind"]["supplement"]
+    # GlutaMAX×1 (quote), HEPES×1 (no), GlutaMAX×1 (no) = 3 total, 1 with quote
+    assert sup["n_total"] == 3
+    assert sup["n_with_quote"] == 1
+
+
+def test_eq_per_type_intestinal_rate(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_eq(p, _EQ_ROWS)
+    _patch_eq(monkeypatch, p)
+    data, _ = ae.handle_evidence_quote_coverage(None, None)
+    per_type = {e["organoid_type"]: e for e in data["per_type"]}
+    assert "intestinal" in per_type
+    it = per_type["intestinal"]
+    # intestinal: 5 total, 3 with quote (EGF×2, GlutaMAX×1)
+    assert it["n_total"] == 5
+    assert it["n_with_quote"] == 3
+    assert abs(it["coverage_rate"] - 3/5) < 0.01
+
+
+def test_eq_per_type_sorted_desc(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_eq(p, _EQ_ROWS)
+    _patch_eq(monkeypatch, p)
+    data, _ = ae.handle_evidence_quote_coverage(None, None)
+    rates = [e["coverage_rate"] for e in data["per_type"] if e["coverage_rate"] is not None]
+    assert rates == sorted(rates, reverse=True)
+
+
+def test_eq_type_filter_intestinal(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_eq(p, _EQ_ROWS)
+    _patch_eq(monkeypatch, p)
+    data, status = ae.handle_evidence_quote_coverage("intestinal", None)
+    assert status == 200
+    assert data["organoid_type"] == "intestinal"
+    assert data["n_total"] == 5
+    assert data["n_with_quote"] == 3
+
+
+def test_eq_type_filter_top_canonicals_present(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_eq(p, _EQ_ROWS)
+    _patch_eq(monkeypatch, p)
+    data, _ = ae.handle_evidence_quote_coverage("intestinal", None)
+    assert "top_canonicals_by_coverage" in data
+    # EGF has 2/2 = 1.0, min 3 threshold not met for EGF (only 2 records) — list may be empty
+    # But structure check always works
+    assert isinstance(data["top_canonicals_by_coverage"], list)
+
+
+def test_eq_kind_filter_signaling_only(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_eq(p, _EQ_ROWS)
+    _patch_eq(monkeypatch, p)
+    data, status = ae.handle_evidence_quote_coverage(None, "signaling")
+    assert status == 200
+    assert data["kind_filter"] == "signaling"
+    # Only signaling rows: 5 total, 3 with quote
+    assert data["n_total"] == 5
+    assert data["n_with_quote"] == 3
+
+
+def test_eq_kind_filter_invalid_returns_400(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_eq(p, _EQ_ROWS)
+    _patch_eq(monkeypatch, p)
+    _, status = ae.handle_evidence_quote_coverage(None, "BADKIND")
+    assert status == 400
+
+
+def test_eq_unknown_type_returns_404(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_eq(p, _EQ_ROWS)
+    _patch_eq(monkeypatch, p)
+    _, status = ae.handle_evidence_quote_coverage("NOTYPE_XYZ", None)
+    assert status == 404
+
+
+def test_eq_index_entry():
+    data, _ = ae.handle_index()
+    assert "/analytics/evidence-quote-coverage" in data["endpoints"]
