@@ -1788,3 +1788,144 @@ def test_protocol_complexity_n_papers_counts_correctly(tmp_path, monkeypatch):
     data, status = ae.handle_protocol_complexity("kidney")
     assert status == 200
     assert data["n_papers"] == 3
+
+# ---------------------------------------------------------------------------
+# /analytics/reporting-gaps
+# ---------------------------------------------------------------------------
+
+def _write_protocols_for_gaps(path, rows):
+    path.write_text("\n".join(json.dumps(r) for r in rows) + "\n")
+
+
+def test_reporting_gaps_404_when_jsonl_missing(tmp_path, monkeypatch):
+    monkeypatch.setattr(ae, "PROTOCOLS_JSONL", tmp_path / "missing.jsonl")
+    data, status = ae.handle_reporting_gaps(None)
+    assert status == 404
+    assert "hint" in data
+
+
+def test_reporting_gaps_400_for_invalid_type(tmp_path, monkeypatch):
+    p = tmp_path / "protocols.jsonl"
+    _write_protocols_for_gaps(p, [{"organoid_type": "kidney", "species": "human"}])
+    monkeypatch.setattr(ae, "PROTOCOLS_JSONL", p)
+    data, status = ae.handle_reporting_gaps("bad type!")
+    assert status == 400
+
+
+def test_reporting_gaps_returns_all_fields(tmp_path, monkeypatch):
+    p = tmp_path / "protocols.jsonl"
+    _write_protocols_for_gaps(p, [
+        {"organoid_type": "kidney", "species": "human", "matrix": None,
+         "base_media": None, "source_cell_type": "iPSC", "passaging": None, "timeline": None},
+    ])
+    monkeypatch.setattr(ae, "PROTOCOLS_JSONL", p)
+    data, status = ae.handle_reporting_gaps(None)
+    assert status == 200
+    cc = data["cross_corpus"]
+    for f in ["species", "matrix", "base_media", "source_cell_type", "passaging", "timeline"]:
+        assert f in cc
+
+
+def test_reporting_gaps_correct_rates(tmp_path, monkeypatch):
+    p = tmp_path / "protocols.jsonl"
+    _write_protocols_for_gaps(p, [
+        {"organoid_type": "kidney", "species": "human",   "matrix": "Matrigel"},
+        {"organoid_type": "kidney", "species": "mouse",   "matrix": None},
+        {"organoid_type": "kidney", "species": None,      "matrix": None},
+        {"organoid_type": "kidney", "species": "human",   "matrix": "Geltrex"},
+    ])
+    monkeypatch.setattr(ae, "PROTOCOLS_JSONL", p)
+    data, status = ae.handle_reporting_gaps(None)
+    assert status == 200
+    cc = data["cross_corpus"]
+    assert cc["species"]["reported"] == 3
+    assert cc["species"]["not_stated"] == 1
+    assert abs(cc["species"]["reporting_rate"] - 0.75) < 0.01
+    assert cc["matrix"]["reported"] == 2
+    assert cc["matrix"]["not_stated"] == 2
+
+
+def test_reporting_gaps_not_stated_string_treated_as_missing(tmp_path, monkeypatch):
+    p = tmp_path / "protocols.jsonl"
+    _write_protocols_for_gaps(p, [
+        {"organoid_type": "kidney", "species": "not_stated"},
+        {"organoid_type": "kidney", "species": "human"},
+    ])
+    monkeypatch.setattr(ae, "PROTOCOLS_JSONL", p)
+    data, status = ae.handle_reporting_gaps(None)
+    assert status == 200
+    assert data["cross_corpus"]["species"]["reported"] == 1
+    assert data["cross_corpus"]["species"]["not_stated"] == 1
+
+
+def test_reporting_gaps_single_type_filter(tmp_path, monkeypatch):
+    p = tmp_path / "protocols.jsonl"
+    _write_protocols_for_gaps(p, [
+        {"organoid_type": "kidney",   "species": "human",  "matrix": "Matrigel"},
+        {"organoid_type": "cerebral", "species": "mouse",  "matrix": None},
+    ])
+    monkeypatch.setattr(ae, "PROTOCOLS_JSONL", p)
+    data, status = ae.handle_reporting_gaps("kidney")
+    assert status == 200
+    assert data["organoid_type"] == "kidney"
+    assert data["n_papers"] == 1
+    assert "per_type" not in data
+    assert data["fields"]["species"]["reported"] == 1
+
+
+def test_reporting_gaps_404_for_unknown_type(tmp_path, monkeypatch):
+    p = tmp_path / "protocols.jsonl"
+    _write_protocols_for_gaps(p, [{"organoid_type": "kidney", "species": "human"}])
+    monkeypatch.setattr(ae, "PROTOCOLS_JSONL", p)
+    data, status = ae.handle_reporting_gaps("unknowntype")
+    assert status == 404
+    assert "available_types" in data
+
+
+def test_reporting_gaps_excludes_other_type(tmp_path, monkeypatch):
+    p = tmp_path / "protocols.jsonl"
+    _write_protocols_for_gaps(p, [
+        {"organoid_type": "other",  "species": "human"},
+        {"organoid_type": "kidney", "species": "mouse"},
+    ])
+    monkeypatch.setattr(ae, "PROTOCOLS_JSONL", p)
+    data, status = ae.handle_reporting_gaps(None)
+    assert status == 200
+    assert "other" not in data["per_type"]
+    assert data["n_types"] == 1
+    assert data["n_papers"] == 1
+
+
+def test_reporting_gaps_ranking_by_gap(tmp_path, monkeypatch):
+    p = tmp_path / "protocols.jsonl"
+    # species always present, timeline never
+    _write_protocols_for_gaps(p, [
+        {"organoid_type": "kidney", "species": "human", "timeline": None},
+        {"organoid_type": "kidney", "species": "mouse", "timeline": None},
+    ])
+    monkeypatch.setattr(ae, "PROTOCOLS_JSONL", p)
+    data, status = ae.handle_reporting_gaps(None)
+    assert status == 200
+    ranked = data["ranking_by_gap"]
+    # timeline (rate=0) should be ranked before species (rate=1.0)
+    assert ranked.index("timeline") < ranked.index("species")
+
+
+def test_reporting_gaps_index_entry():
+    data, _ = ae.handle_index()
+    assert "/analytics/reporting-gaps" in data["endpoints"]
+
+
+def test_reporting_gaps_per_type_present(tmp_path, monkeypatch):
+    p = tmp_path / "protocols.jsonl"
+    _write_protocols_for_gaps(p, [
+        {"organoid_type": "kidney",   "species": "human"},
+        {"organoid_type": "cerebral", "species": None},
+    ])
+    monkeypatch.setattr(ae, "PROTOCOLS_JSONL", p)
+    data, status = ae.handle_reporting_gaps(None)
+    assert status == 200
+    assert "kidney" in data["per_type"]
+    assert "cerebral" in data["per_type"]
+    assert data["per_type"]["kidney"]["fields"]["species"]["reported"] == 1
+    assert data["per_type"]["cerebral"]["fields"]["species"]["reported"] == 0

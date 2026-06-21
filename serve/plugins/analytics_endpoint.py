@@ -20,6 +20,7 @@ Routes (all return JSON; read-only, no writes):
   GET /analytics/base-media-breakdown         -- base media usage per organoid type from protocols.jsonl
   GET /analytics/source-cell-breakdown        -- source cell type distribution per organoid type (iPSC / adult_stem_cell / primary_tissue / ESC)
   GET /analytics/protocol-complexity          -- per-type protocol complexity: avg signaling factors, supplements, grounding rate
+  GET /analytics/reporting-gaps              -- field reporting rates across the corpus (species/matrix/base_media/passaging/timeline) — transparency audit
   GET /analytics                                -- index of available analytics
 
 All endpoints degrade gracefully — if the pre-computed file doesn't exist they return
@@ -1331,6 +1332,100 @@ def handle_protocol_complexity(organoid_type: str | None) -> tuple[dict, int]:
     }, 200
 
 
+def handle_reporting_gaps(organoid_type: str | None) -> tuple[dict, int]:
+    """Field reporting rates across protocols.jsonl — transparency audit.
+
+    Shows what fraction of papers report each key protocol field (species,
+    matrix, base_media, source_cell_type, passaging, timeline). Helps
+    researchers understand systematic reporting gaps in the literature and
+    in our extraction. Optional ?type=kidney for one organoid type.
+    """
+    if not PROTOCOLS_JSONL.exists():
+        return {
+            "error": "protocols.jsonl not found",
+            "hint": "Run: python pipeline/export_public.py",
+        }, 404
+
+    if organoid_type and not re.match(r'^[\w-]+$', organoid_type):
+        return {"error": "invalid organoid_type"}, 400
+
+    # Fields to audit; values of None/""/not_stated count as not-reported.
+    _AUDIT_FIELDS = [
+        "species", "matrix", "base_media", "source_cell_type", "passaging", "timeline",
+    ]
+
+    def _is_reported(val) -> bool:
+        if val is None:
+            return False
+        s = str(val).strip().lower()
+        return s not in ("", "not_stated", "not_reported")
+
+    def _field_stats(rows: list[dict]) -> dict:
+        n = len(rows)
+        if n == 0:
+            return {}
+        stats: dict[str, dict] = {}
+        for f in _AUDIT_FIELDS:
+            rep = sum(1 for r in rows if _is_reported(r.get(f)))
+            stats[f] = {
+                "reported": rep,
+                "not_stated": n - rep,
+                "total": n,
+                "reporting_rate": round(rep / n, 4),
+            }
+        return stats
+
+    # Build per-type bucket.
+    by_type: dict[str, list] = {}
+    all_rows: list[dict] = []
+
+    try:
+        for line in PROTOCOLS_JSONL.read_text().splitlines():
+            if not line.strip():
+                continue
+            p = json.loads(line)
+            ot = (p.get("organoid_type") or "").strip()
+            if not ot or ot == "other":
+                continue
+            by_type.setdefault(ot, []).append(p)
+            all_rows.append(p)
+    except (json.JSONDecodeError, OSError) as exc:
+        return {"error": f"protocols.jsonl unreadable: {exc}"}, 500
+
+    if not by_type:
+        return {"error": "no organoid type data in protocols.jsonl"}, 404
+
+    if organoid_type:
+        if organoid_type not in by_type:
+            return {
+                "error": f"No data for organoid type '{organoid_type}'",
+                "available_types": sorted(by_type),
+            }, 404
+        rows_for_type = by_type[organoid_type]
+        return {
+            "organoid_type": organoid_type,
+            "n_papers": len(rows_for_type),
+            "fields": _field_stats(rows_for_type),
+        }, 200
+
+    cross_corpus = _field_stats(all_rows)
+    per_type = {t: {"n_papers": len(rs), "fields": _field_stats(rs)} for t, rs in sorted(by_type.items())}
+
+    # Rank fields by cross-corpus reporting gap (lowest rate = biggest gap).
+    ranked_gaps = sorted(
+        cross_corpus.keys(),
+        key=lambda f: cross_corpus[f]["reporting_rate"],
+    )
+
+    return {
+        "n_papers": len(all_rows),
+        "n_types": len(by_type),
+        "cross_corpus": cross_corpus,
+        "ranking_by_gap": ranked_gaps,
+        "per_type": per_type,
+    }, 200
+
+
 def handle_mior() -> tuple[dict, int]:
     """Return pre-computed MIOR completeness report."""
     path = ANALYSIS_DIR / "mior_completeness.json"
@@ -1367,6 +1462,7 @@ def handle_index() -> tuple[dict, int]:
             "/analytics/base-media-breakdown": "base media usage per organoid type (DMEM/F12 / mTeSR1 / Advanced DMEM/F12 / ...) with alias normalisation; optional ?type=kidney",
             "/analytics/source-cell-breakdown": "source cell type distribution per organoid type (iPSC / adult_stem_cell / primary_tissue / ESC); optional ?type=kidney",
             "/analytics/protocol-complexity": "per-type protocol complexity: avg n_signaling_factors, n_supplements, n_figure_confirmed, grounding_rate with min/max/n; ranked by complexity",
+            "/analytics/reporting-gaps": "field reporting rates across the corpus (species/matrix/base_media/source_cell_type/passaging/timeline) — transparency audit; optional ?type=kidney",
             "/analytics/assay-endpoints": "assay endpoint cluster summary (per type + cross-type)",
             "/analytics/quality": "per-paper quality scores (gold/silver/bronze) + corpus summary",
             "/analytics/mior": "MIOR completeness report (Minimum Information About an Organoid Research)",
@@ -1540,6 +1636,12 @@ async def route_protocol_complexity(datasette, request):
     return Response.json(data, status=status)
 
 
+async def route_reporting_gaps(datasette, request):
+    organoid_type = request.args.get("type") or None
+    data, status = handle_reporting_gaps(organoid_type)
+    return Response.json(data, status=status)
+
+
 async def route_candidates(datasette, request):
     data, status = handle_candidates()
     return Response.json(data, status=status)
@@ -1573,6 +1675,7 @@ def register_routes():
         (r"^/analytics/base-media-breakdown$", route_base_media_breakdown),
         (r"^/analytics/source-cell-breakdown$", route_source_cell_breakdown),
         (r"^/analytics/protocol-complexity$", route_protocol_complexity),
+        (r"^/analytics/reporting-gaps$", route_reporting_gaps),
         (r"^/analytics/assay-endpoints$", route_assay_endpoints),
         (r"^/analytics/quality$", route_quality),
         (r"^/analytics/mior$", route_mior),

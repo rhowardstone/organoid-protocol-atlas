@@ -98,6 +98,7 @@ exports. Prefer the JSON endpoints for programmatic use.
 - /analytics/base-media-breakdown      base media usage per organoid type (DMEM/F12 / mTeSR1 / Advanced DMEM/F12 / ...); ?type=kidney for one type
 - /analytics/source-cell-breakdown     source cell type distribution per organoid type (iPSC / adult_stem_cell / primary_tissue / ESC); ?type=kidney for one type
 - /analytics/protocol-complexity       per-type protocol complexity: avg n_signaling_factors, n_supplements, n_figure_confirmed, grounding_rate; ranked by complexity; ?type=kidney for one type
+- /analytics/reporting-gaps            field reporting rates (species/matrix/base_media/source_cell_type/passaging/timeline) — transparency audit of systematic gaps; ?type=kidney for one type
 - /analytics/failure-modes             failure mode cluster summary across the corpus
 - /analytics/lineage                   DOI→DOI protocol lineage graph
 - /analytics/assay-endpoints           assay endpoint cluster summary (per-type + cross-type)
