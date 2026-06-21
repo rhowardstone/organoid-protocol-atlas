@@ -96,6 +96,7 @@ exports. Prefer the JSON endpoints for programmatic use.
 - /analytics/species-breakdown         species distribution per organoid type (human / mouse / other); ?type=kidney for one type
 - /analytics/matrix-breakdown          extracellular matrix usage per organoid type (Matrigel / Geltrex / Vitronectin / ...); ?type=kidney for one type
 - /analytics/base-media-breakdown      base media usage per organoid type (DMEM/F12 / mTeSR1 / Advanced DMEM/F12 / ...); ?type=kidney for one type
+- /analytics/source-cell-breakdown     source cell type distribution per organoid type (iPSC / adult_stem_cell / primary_tissue / ESC); ?type=kidney for one type
 - /analytics/failure-modes             failure mode cluster summary across the corpus
 - /analytics/lineage                   DOI→DOI protocol lineage graph
 - /analytics/assay-endpoints           assay endpoint cluster summary (per-type + cross-type)
