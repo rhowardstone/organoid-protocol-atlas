@@ -1,0 +1,21 @@
+{
+  "_comment": "What entities does Publication PMC:12084451 mention? Pin the publication (subject), leave the object qnode open. Single-hop biolink:mentions.",
+  "message": {
+    "query_graph": {
+      "nodes": {
+        "pub": {
+          "ids": ["PMC:12084451"],
+          "categories": ["biolink:Publication"]
+        },
+        "thing": {}
+      },
+      "edges": {
+        "e0": {
+          "subject": "pub",
+          "object": "thing",
+          "predicates": ["biolink:mentions"]
+        }
+      }
+    }
+  }
+}

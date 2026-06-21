@@ -1,0 +1,22 @@
+{
+  "_comment": "Category-constrained variant: which biolink:SmallMolecule objects does Publication PMC:12084451 mention? Pin the publication, constrain the open qnode to biolink:SmallMolecule.",
+  "message": {
+    "query_graph": {
+      "nodes": {
+        "pub": {
+          "ids": ["PMC:12084451"]
+        },
+        "molecule": {
+          "categories": ["biolink:SmallMolecule"]
+        }
+      },
+      "edges": {
+        "e0": {
+          "subject": "pub",
+          "object": "molecule",
+          "predicates": ["biolink:mentions"]
+        }
+      }
+    }
+  }
+}
