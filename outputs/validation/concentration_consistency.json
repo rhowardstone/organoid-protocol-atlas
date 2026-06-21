@@ -1,0 +1,1842 @@
+{
+  "method": "cross-paper concentration consistency (median \u00b110x threshold)",
+  "n_groups": 138,
+  "n_records_with_concentration": 1247,
+  "n_flagged_outliers": 49,
+  "outlier_rate": 0.0393,
+  "threshold": 10.0,
+  "groups": [
+    {
+      "canonical": "FGF9",
+      "unit": "ng/mL",
+      "n": 13,
+      "median": 200.0,
+      "min": 5.0,
+      "max": 200.0,
+      "n_outliers": 6
+    },
+    {
+      "canonical": "Noggin",
+      "unit": "ng/mL",
+      "n": 67,
+      "median": 100.0,
+      "min": 5.0,
+      "max": 1000.0,
+      "n_outliers": 5
+    },
+    {
+      "canonical": "Activin A",
+      "unit": "ng/mL",
+      "n": 39,
+      "median": 100.0,
+      "min": 1.0,
+      "max": 100.0,
+      "n_outliers": 3
+    },
+    {
+      "canonical": "BMP4",
+      "unit": "ng/mL",
+      "n": 35,
+      "median": 25.0,
+      "min": 1.25,
+      "max": 450.0,
+      "n_outliers": 3
+    },
+    {
+      "canonical": "Retinoic acid",
+      "unit": "uM",
+      "n": 23,
+      "median": 1.0,
+      "min": 0.01,
+      "max": 50.0,
+      "n_outliers": 3
+    },
+    {
+      "canonical": "A83-01",
+      "unit": "nM",
+      "n": 21,
+      "median": 500.0,
+      "min": 1.0,
+      "max": 500.0,
+      "n_outliers": 2
+    },
+    {
+      "canonical": "FGF2",
+      "unit": "ng/mL",
+      "n": 76,
+      "median": 16.25,
+      "min": 4.0,
+      "max": 250.0,
+      "n_outliers": 2
+    },
+    {
+      "canonical": "cAMP",
+      "unit": "uM",
+      "n": 6,
+      "median": 1.0,
+      "min": 1.0,
+      "max": 200.0,
+      "n_outliers": 2
+    },
+    {
+      "canonical": "Activin A",
+      "unit": "pM",
+      "n": 2,
+      "median": 4.04,
+      "min": 0.08,
+      "max": 8.0,
+      "n_outliers": 1
+    },
+    {
+      "canonical": "BMP4",
+      "unit": "pM",
+      "n": 2,
+      "median": 18.18,
+      "min": 0.36,
+      "max": 36.0,
+      "n_outliers": 1
+    },
+    {
+      "canonical": "Dorsomorphin",
+      "unit": "uM",
+      "n": 4,
+      "median": 3.5,
+      "min": 2.0,
+      "max": 50.0,
+      "n_outliers": 1
+    },
+    {
+      "canonical": "EGF",
+      "unit": "ng/mL",
+      "n": 98,
+      "median": 50.0,
+      "min": 2.0,
+      "max": 200.0,
+      "n_outliers": 1
+    },
+    {
+      "canonical": "FGF10",
+      "unit": "nM",
+      "n": 2,
+      "median": 251.25,
+      "min": 2.5,
+      "max": 500.0,
+      "n_outliers": 1
+    },
+    {
+      "canonical": "FGF4",
+      "unit": "ng/mL",
+      "n": 6,
+      "median": 500.0,
+      "min": 20.0,
+      "max": 500.0,
+      "n_outliers": 1
+    },
+    {
+      "canonical": "GM-CSF",
+      "unit": "ng/mL",
+      "n": 2,
+      "median": 10.5,
+      "min": 1.0,
+      "max": 20.0,
+      "n_outliers": 1
+    },
+    {
+      "canonical": "IFN-\u03b3",
+      "unit": "ng/mL",
+      "n": 5,
+      "median": 5.0,
+      "min": 1.0,
+      "max": 200.0,
+      "n_outliers": 1
+    },
+    {
+      "canonical": "IL-4",
+      "unit": "ng/mL",
+      "n": 2,
+      "median": 205.0,
+      "min": 10.0,
+      "max": 400.0,
+      "n_outliers": 1
+    },
+    {
+      "canonical": "IL-6",
+      "unit": "ng/mL",
+      "n": 4,
+      "median": 30.0,
+      "min": 0.05,
+      "max": 100.0,
+      "n_outliers": 1
+    },
+    {
+      "canonical": "LDN-193189",
+      "unit": "uM",
+      "n": 13,
+      "median": 0.5,
+      "min": 0.1,
+      "max": 10.0,
+      "n_outliers": 1
+    },
+    {
+      "canonical": "Noggin",
+      "unit": "ug/mL",
+      "n": 3,
+      "median": 50.0,
+      "min": 0.1,
+      "max": 100.0,
+      "n_outliers": 1
+    },
+    {
+      "canonical": "R-spondin1",
+      "unit": "ng/mL",
+      "n": 26,
+      "median": 450.0,
+      "min": 10.0,
+      "max": 500.0,
+      "n_outliers": 1
+    },
+    {
+      "canonical": "R-spondin1",
+      "unit": "ug/mL",
+      "n": 6,
+      "median": 1.0,
+      "min": 0.7,
+      "max": 500.0,
+      "n_outliers": 1
+    },
+    {
+      "canonical": "Retinoic acid",
+      "unit": "nM",
+      "n": 11,
+      "median": 16.0,
+      "min": 0.5,
+      "max": 50.0,
+      "n_outliers": 1
+    },
+    {
+      "canonical": "Rosiglitazone",
+      "unit": "uM",
+      "n": 2,
+      "median": 25.5,
+      "min": 1.0,
+      "max": 50.0,
+      "n_outliers": 1
+    },
+    {
+      "canonical": "SB431542",
+      "unit": "uM",
+      "n": 30,
+      "median": 10.0,
+      "min": 0.5,
+      "max": 25.0,
+      "n_outliers": 1
+    },
+    {
+      "canonical": "T3",
+      "unit": "ng/mL",
+      "n": 2,
+      "median": 21.0,
+      "min": 2.0,
+      "max": 40.0,
+      "n_outliers": 1
+    },
+    {
+      "canonical": "VEGF",
+      "unit": "ng/mL",
+      "n": 9,
+      "median": 50.0,
+      "min": 0.5,
+      "max": 100.0,
+      "n_outliers": 1
+    },
+    {
+      "canonical": "VEGF-A",
+      "unit": "ng/mL",
+      "n": 8,
+      "median": 100.0,
+      "min": 0.5,
+      "max": 100.0,
+      "n_outliers": 1
+    },
+    {
+      "canonical": "Y-27632",
+      "unit": "mM",
+      "n": 2,
+      "median": 5.25,
+      "min": 0.5,
+      "max": 10.0,
+      "n_outliers": 1
+    },
+    {
+      "canonical": "doxycycline",
+      "unit": "ng/mL",
+      "n": 4,
+      "median": 10.0,
+      "min": 2.0,
+      "max": 500.0,
+      "n_outliers": 1
+    },
+    {
+      "canonical": "rhWnt3a",
+      "unit": "ng/mL",
+      "n": 2,
+      "median": 260.0,
+      "min": 20.0,
+      "max": 500.0,
+      "n_outliers": 1
+    },
+    {
+      "canonical": "17-\u03b2-Estradiol",
+      "unit": "ng/mL",
+      "n": 2,
+      "median": 49.949999999999996,
+      "min": 33.3,
+      "max": 66.6,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "8-Br-cAMP",
+      "unit": "uM",
+      "n": 3,
+      "median": 300.0,
+      "min": 200.0,
+      "max": 300.0,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "A83-01",
+      "unit": "uM",
+      "n": 18,
+      "median": 1.5,
+      "min": 0.2,
+      "max": 10.0,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "BDNF",
+      "unit": "ng/mL",
+      "n": 7,
+      "median": 20.0,
+      "min": 10.0,
+      "max": 20.0,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "BMP-2",
+      "unit": "ng/mL",
+      "n": 5,
+      "median": 50.0,
+      "min": 10.0,
+      "max": 100.0,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "BMP4",
+      "unit": "nM",
+      "n": 6,
+      "median": 1.5,
+      "min": 1.5,
+      "max": 3.0,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "BMP7",
+      "unit": "ng/mL",
+      "n": 6,
+      "median": 37.5,
+      "min": 10.0,
+      "max": 100.0,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "C59",
+      "unit": "uM",
+      "n": 2,
+      "median": 6.0,
+      "min": 2.0,
+      "max": 10.0,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "CHIR99021",
+      "unit": "uM",
+      "n": 92,
+      "median": 3.0,
+      "min": 1.0,
+      "max": 18.0,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "DAPT",
+      "unit": "uM",
+      "n": 9,
+      "median": 10.0,
+      "min": 2.0,
+      "max": 10.0,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "DHT",
+      "unit": "nM",
+      "n": 3,
+      "median": 10.0,
+      "min": 1.0,
+      "max": 10.0,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "DKK1",
+      "unit": "ng/mL",
+      "n": 2,
+      "median": 175.0,
+      "min": 100.0,
+      "max": 250.0,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "Dexamethasone",
+      "unit": "nM",
+      "n": 6,
+      "median": 75.0,
+      "min": 10.0,
+      "max": 100.0,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "Dexamethasone",
+      "unit": "uM",
+      "n": 4,
+      "median": 1.0,
+      "min": 1.0,
+      "max": 1.0,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "E2",
+      "unit": "nM",
+      "n": 3,
+      "median": 10.0,
+      "min": 10.0,
+      "max": 10.0,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "EGF",
+      "unit": "ug/mL",
+      "n": 2,
+      "median": 35.0,
+      "min": 20.0,
+      "max": 50.0,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "FGF",
+      "unit": "ng/mL",
+      "n": 3,
+      "median": 20.0,
+      "min": 10.0,
+      "max": 200.0,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "FGF10",
+      "unit": "ng/mL",
+      "n": 62,
+      "median": 100.0,
+      "min": 10.0,
+      "max": 500.0,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "FGF19",
+      "unit": "ng/mL",
+      "n": 2,
+      "median": 100.0,
+      "min": 100.0,
+      "max": 100.0,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "FGF2",
+      "unit": "nM",
+      "n": 4,
+      "median": 2.5,
+      "min": 1.0,
+      "max": 5.0,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "FGF2",
+      "unit": "ng/uL",
+      "n": 3,
+      "median": 10.0,
+      "min": 5.0,
+      "max": 10.0,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "FGF7",
+      "unit": "nM",
+      "n": 2,
+      "median": 1.75,
+      "min": 1.0,
+      "max": 2.5,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "FGF7",
+      "unit": "ng/mL",
+      "n": 8,
+      "median": 25.0,
+      "min": 5.0,
+      "max": 100.0,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "FGFb",
+      "unit": "ng/mL",
+      "n": 2,
+      "median": 15.0,
+      "min": 10.0,
+      "max": 20.0,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "FSK",
+      "unit": "uM",
+      "n": 2,
+      "median": 5.5,
+      "min": 1.0,
+      "max": 10.0,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "Follistatin",
+      "unit": "ng/mL",
+      "n": 2,
+      "median": 20.0,
+      "min": 20.0,
+      "max": 20.0,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "Forskolin",
+      "unit": "uM",
+      "n": 18,
+      "median": 10.0,
+      "min": 2.0,
+      "max": 25.0,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "GDNF",
+      "unit": "ng/mL",
+      "n": 3,
+      "median": 10.0,
+      "min": 2.0,
+      "max": 10.0,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "Gastrin",
+      "unit": "nM",
+      "n": 12,
+      "median": 10.0,
+      "min": 1.0,
+      "max": 10.0,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "Gastrin I",
+      "unit": "nM",
+      "n": 3,
+      "median": 10.0,
+      "min": 1.0,
+      "max": 10.0,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "HGF",
+      "unit": "ng/mL",
+      "n": 25,
+      "median": 25.0,
+      "min": 10.0,
+      "max": 100.0,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "HGF",
+      "unit": "ng/uL",
+      "n": 2,
+      "median": 10.0,
+      "min": 10.0,
+      "max": 10.0,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "Heparin",
+      "unit": "ug/mL",
+      "n": 7,
+      "median": 1.0,
+      "min": 1.0,
+      "max": 4.0,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "IGF",
+      "unit": "ng/mL",
+      "n": 2,
+      "median": 35.0,
+      "min": 20.0,
+      "max": 50.0,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "IGF-1",
+      "unit": "ng/mL",
+      "n": 7,
+      "median": 20.0,
+      "min": 2.0,
+      "max": 100.0,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "IL-11",
+      "unit": "ng/mL",
+      "n": 2,
+      "median": 60.0,
+      "min": 20.0,
+      "max": 100.0,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "IL-17A",
+      "unit": "ng/mL",
+      "n": 2,
+      "median": 275.0,
+      "min": 50.0,
+      "max": 500.0,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "IL-2",
+      "unit": "IU/mL",
+      "n": 2,
+      "median": 3500.0,
+      "min": 1000.0,
+      "max": 6000.0,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "IL-2",
+      "unit": "U/mL",
+      "n": 2,
+      "median": 175.0,
+      "min": 150.0,
+      "max": 200.0,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "IL-3",
+      "unit": "ng/mL",
+      "n": 2,
+      "median": 5.5,
+      "min": 1.0,
+      "max": 10.0,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "IWP2",
+      "unit": "uM",
+      "n": 8,
+      "median": 2.75,
+      "min": 1.0,
+      "max": 5.0,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "IWP4",
+      "unit": "uM",
+      "n": 3,
+      "median": 2.0,
+      "min": 1.0,
+      "max": 5.0,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "IWR1",
+      "unit": "uM",
+      "n": 3,
+      "median": 5.0,
+      "min": 3.0,
+      "max": 5.0,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "KGF",
+      "unit": "ng/mL",
+      "n": 4,
+      "median": 35.0,
+      "min": 10.0,
+      "max": 100.0,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "LDN-193,189 hydrochloride",
+      "unit": "nM",
+      "n": 2,
+      "median": 55.0,
+      "min": 10.0,
+      "max": 100.0,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "LDN-193189",
+      "unit": "nM",
+      "n": 10,
+      "median": 100.0,
+      "min": 10.0,
+      "max": 600.0,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "LY411575",
+      "unit": "uM",
+      "n": 3,
+      "median": 5.0,
+      "min": 5.0,
+      "max": 10.0,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "M-CSF",
+      "unit": "ng/mL",
+      "n": 4,
+      "median": 40.0,
+      "min": 20.0,
+      "max": 80.0,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "N-acetylcysteine",
+      "unit": "mM",
+      "n": 3,
+      "median": 1.25,
+      "min": 1.0,
+      "max": 1.56,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "N-acetylcysteine",
+      "unit": "uM",
+      "n": 2,
+      "median": 1.5,
+      "min": 1.0,
+      "max": 2.0,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "NT-3",
+      "unit": "ng/mL",
+      "n": 3,
+      "median": 20.0,
+      "min": 20.0,
+      "max": 20.0,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "Nicotinamide",
+      "unit": "mM",
+      "n": 4,
+      "median": 10.0,
+      "min": 10.0,
+      "max": 10.0,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "Noggin",
+      "unit": "%",
+      "n": 11,
+      "median": 10.0,
+      "min": 1.0,
+      "max": 50.0,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "P4",
+      "unit": "uM",
+      "n": 2,
+      "median": 1.0,
+      "min": 1.0,
+      "max": 1.0,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "PD0325901",
+      "unit": "uM",
+      "n": 2,
+      "median": 1.2,
+      "min": 0.4,
+      "max": 2.0,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "PGE2",
+      "unit": "uM",
+      "n": 3,
+      "median": 1.0,
+      "min": 1.0,
+      "max": 3.0,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "R-spondin1",
+      "unit": "%",
+      "n": 21,
+      "median": 10.0,
+      "min": 1.0,
+      "max": 50.0,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "R-spondin1",
+      "unit": "% conditioned medium",
+      "n": 2,
+      "median": 10.0,
+      "min": 10.0,
+      "max": 10.0,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "ROCKi",
+      "unit": "uM",
+      "n": 2,
+      "median": 35.0,
+      "min": 20.0,
+      "max": 50.0,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "SAG",
+      "unit": "nM",
+      "n": 3,
+      "median": 100.0,
+      "min": 100.0,
+      "max": 100.0,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "SANT-1",
+      "unit": "uM",
+      "n": 2,
+      "median": 0.25,
+      "min": 0.25,
+      "max": 0.25,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "SB202190",
+      "unit": "nM",
+      "n": 2,
+      "median": 500.0,
+      "min": 500.0,
+      "max": 500.0,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "SB202190",
+      "unit": "uM",
+      "n": 9,
+      "median": 10.0,
+      "min": 1.0,
+      "max": 10.0,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "SCF",
+      "unit": "ng/mL",
+      "n": 3,
+      "median": 100.0,
+      "min": 50.0,
+      "max": 100.0,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "SHH",
+      "unit": "ng/mL",
+      "n": 3,
+      "median": 34.0,
+      "min": 5.0,
+      "max": 100.0,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "SMAD inhibitor SB431542",
+      "unit": "uM",
+      "n": 2,
+      "median": 7.5,
+      "min": 5.0,
+      "max": 10.0,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "SU5402",
+      "unit": "uM",
+      "n": 4,
+      "median": 5.0,
+      "min": 2.0,
+      "max": 10.0,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "T3",
+      "unit": "nM",
+      "n": 2,
+      "median": 20.0,
+      "min": 20.0,
+      "max": 20.0,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "T3",
+      "unit": "uM",
+      "n": 3,
+      "median": 1.0,
+      "min": 0.1,
+      "max": 1.0,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "TGF-\u03b2",
+      "unit": "ng/mL",
+      "n": 4,
+      "median": 16.25,
+      "min": 10.0,
+      "max": 25.0,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "TGF-\u03b2 R kinase Inhibitor IV",
+      "unit": "uM",
+      "n": 2,
+      "median": 1.25,
+      "min": 0.5,
+      "max": 2.0,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "TGF-\u03b2 inhibitor A 83-01",
+      "unit": "uM",
+      "n": 2,
+      "median": 2.75,
+      "min": 0.5,
+      "max": 5.0,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "TGF-\u03b21",
+      "unit": "ng/mL",
+      "n": 4,
+      "median": 10.0,
+      "min": 5.0,
+      "max": 20.0,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "TGF-\u03b23",
+      "unit": "ng/mL",
+      "n": 2,
+      "median": 10.0,
+      "min": 10.0,
+      "max": 10.0,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "TGF\u03b2/Alk inhibitor A83-01",
+      "unit": "uM",
+      "n": 2,
+      "median": 0.5,
+      "min": 0.5,
+      "max": 0.5,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "TGF\u03b2i",
+      "unit": "uM",
+      "n": 3,
+      "median": 1.0,
+      "min": 0.2,
+      "max": 2.0,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "THSD4",
+      "unit": "ng/mL",
+      "n": 2,
+      "median": 135.0,
+      "min": 70.0,
+      "max": 200.0,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "TNF-\u03b1",
+      "unit": "ng/mL",
+      "n": 4,
+      "median": 50.0,
+      "min": 10.0,
+      "max": 100.0,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "TPO",
+      "unit": "ng/mL",
+      "n": 3,
+      "median": 50.0,
+      "min": 25.0,
+      "max": 100.0,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "WNT1A",
+      "unit": "ng/mL",
+      "n": 2,
+      "median": 20.0,
+      "min": 20.0,
+      "max": 20.0,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "WNT4",
+      "unit": "ng/mL",
+      "n": 2,
+      "median": 100.0,
+      "min": 100.0,
+      "max": 100.0,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "Wnt-C59",
+      "unit": "uM",
+      "n": 3,
+      "median": 2.0,
+      "min": 2.0,
+      "max": 4.0,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "Wnt10B",
+      "unit": "ng/mL",
+      "n": 2,
+      "median": 750.0,
+      "min": 500.0,
+      "max": 1000.0,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "Wnt3a",
+      "unit": "%",
+      "n": 15,
+      "median": 30.0,
+      "min": 10.0,
+      "max": 50.0,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "Wnt3a",
+      "unit": "ng/mL",
+      "n": 11,
+      "median": 100.0,
+      "min": 20.0,
+      "max": 500.0,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "XAV939",
+      "unit": "uM",
+      "n": 2,
+      "median": 2.0,
+      "min": 2.0,
+      "max": 2.0,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "XXI",
+      "unit": "uM",
+      "n": 2,
+      "median": 1.0,
+      "min": 1.0,
+      "max": 1.0,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "Y-27632",
+      "unit": "uM",
+      "n": 121,
+      "median": 10.0,
+      "min": 2.0,
+      "max": 50.0,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "blebbistatin",
+      "unit": "uM",
+      "n": 4,
+      "median": 10.0,
+      "min": 10.0,
+      "max": 10.0,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "cholera toxin",
+      "unit": "ng/mL",
+      "n": 3,
+      "median": 100.0,
+      "min": 50.0,
+      "max": 100.0,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "dihydrotestosterone",
+      "unit": "nM",
+      "n": 4,
+      "median": 1.0,
+      "min": 1.0,
+      "max": 1.0,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "doxycycline",
+      "unit": "ug/mL",
+      "n": 4,
+      "median": 1.0,
+      "min": 1.0,
+      "max": 1.0,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "gamma secretase inhibitor IX",
+      "unit": "uM",
+      "n": 2,
+      "median": 10.0,
+      "min": 10.0,
+      "max": 10.0,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "hEGF",
+      "unit": "ng/mL",
+      "n": 9,
+      "median": 50.0,
+      "min": 20.0,
+      "max": 100.0,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "hFGF10",
+      "unit": "ng/mL",
+      "n": 2,
+      "median": 75.0,
+      "min": 50.0,
+      "max": 100.0,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "human EGF",
+      "unit": "ng/mL",
+      "n": 2,
+      "median": 30.0,
+      "min": 10.0,
+      "max": 50.0,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "hydrocortisone",
+      "unit": "nM",
+      "n": 2,
+      "median": 55.0,
+      "min": 10.0,
+      "max": 100.0,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "hydrocortisone",
+      "unit": "ug/mL",
+      "n": 3,
+      "median": 0.5,
+      "min": 0.5,
+      "max": 1.0,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "insulin",
+      "unit": "ug/mL",
+      "n": 3,
+      "median": 10.0,
+      "min": 10.0,
+      "max": 10.0,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "oncostatin M",
+      "unit": "ng/mL",
+      "n": 6,
+      "median": 20.0,
+      "min": 10.0,
+      "max": 40.0,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "progesterone",
+      "unit": "ng/mL",
+      "n": 2,
+      "median": 116.5,
+      "min": 33.0,
+      "max": 200.0,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "progesterone",
+      "unit": "uM",
+      "n": 2,
+      "median": 1.0,
+      "min": 1.0,
+      "max": 1.0,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "prolactin",
+      "unit": "ng/mL",
+      "n": 2,
+      "median": 110.0,
+      "min": 20.0,
+      "max": 200.0,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "rhTSH",
+      "unit": "mU/ml",
+      "n": 2,
+      "median": 1.0,
+      "min": 1.0,
+      "max": 1.0,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "smoothened agonist",
+      "unit": "nM",
+      "n": 3,
+      "median": 100.0,
+      "min": 100.0,
+      "max": 100.0,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "transferrin",
+      "unit": "ug/mL",
+      "n": 2,
+      "median": 7.5,
+      "min": 5.0,
+      "max": 10.0,
+      "n_outliers": 0
+    },
+    {
+      "canonical": "valproic acid",
+      "unit": "mM",
+      "n": 3,
+      "median": 1.0,
+      "min": 1.0,
+      "max": 1.0,
+      "n_outliers": 0
+    }
+  ],
+  "flagged": [
+    {
+      "id": 401,
+      "pmcid": "PMC10606128",
+      "organoid_type": "prostate",
+      "name": "A83-01",
+      "value": 1.0,
+      "evidence_quote": "A83-01 1 nM",
+      "canonical": "A83-01",
+      "unit": "nM",
+      "ratio_to_median": 0.002,
+      "median": 500.0
+    },
+    {
+      "id": 7620,
+      "pmcid": "PMC8673718",
+      "organoid_type": "blood-brain-barrier",
+      "name": "Il-6",
+      "value": 0.05,
+      "evidence_quote": "0.05\u00a0ng/ml Il-6",
+      "canonical": "IL-6",
+      "unit": "ng/mL",
+      "ratio_to_median": 0.002,
+      "median": 30.0
+    },
+    {
+      "id": 6650,
+      "pmcid": "PMC6065407",
+      "organoid_type": "gastric",
+      "name": "Noggin",
+      "value": 0.1,
+      "evidence_quote": "recombinant Noggin protein (0.1\u2009\u03bcg/ml, Peprotech)",
+      "canonical": "Noggin",
+      "unit": "ug/mL",
+      "ratio_to_median": 0.002,
+      "median": 50.0
+    },
+    {
+      "id": 3406,
+      "pmcid": "PMC12607406",
+      "organoid_type": "intestinal",
+      "name": "R-spondin 1",
+      "value": 500.0,
+      "evidence_quote": "This medium contained 1 mg/mL epidermal growth factor (EGF, HY-P7109, MedChemExpress), 100 \u03bcg/mL Noggin (HY-P700143AF, M",
+      "canonical": "R-spondin1",
+      "unit": "ug/mL",
+      "ratio_to_median": 500.0,
+      "median": 1.0
+    },
+    {
+      "id": 6413,
+      "pmcid": "PMC4922542",
+      "organoid_type": "cardiac",
+      "name": "VEGF-A",
+      "value": 0.5,
+      "evidence_quote": "VEGF-A; 0.5\u2009ng ml \u22121",
+      "canonical": "VEGF-A",
+      "unit": "ng/mL",
+      "ratio_to_median": 0.005,
+      "median": 100.0
+    },
+    {
+      "id": 2729,
+      "pmcid": "PMC12340003",
+      "organoid_type": "cerebral",
+      "name": "cAMP",
+      "value": 200.0,
+      "evidence_quote": "200 \u00b5M cAMP (73886, STEMCELL Technologies)",
+      "canonical": "cAMP",
+      "unit": "uM",
+      "ratio_to_median": 200.0,
+      "median": 1.0
+    },
+    {
+      "id": 2164,
+      "pmcid": "PMC12084451",
+      "organoid_type": "gastric",
+      "name": "A83-01",
+      "value": 5.0,
+      "evidence_quote": "A83-01 (5 nM, Selleck)",
+      "canonical": "A83-01",
+      "unit": "nM",
+      "ratio_to_median": 0.01,
+      "median": 500.0
+    },
+    {
+      "id": 4174,
+      "pmcid": "PMC12842532",
+      "organoid_type": "cardiac",
+      "name": "Activin A",
+      "value": 1.0,
+      "evidence_quote": "1 ng/mL of Activin A",
+      "canonical": "Activin A",
+      "unit": "ng/mL",
+      "ratio_to_median": 0.01,
+      "median": 100.0
+    },
+    {
+      "id": 1212,
+      "pmcid": "PMC11443931",
+      "organoid_type": "mammary",
+      "name": "FGF10",
+      "value": 2.5,
+      "evidence_quote": "growth factors containing 2.5\u00a0nmol/L FGF2",
+      "canonical": "FGF10",
+      "unit": "nM",
+      "ratio_to_median": 0.01,
+      "median": 251.25
+    },
+    {
+      "id": 3343,
+      "pmcid": "PMC12574287",
+      "organoid_type": "lung",
+      "name": "retinoic acid",
+      "value": 0.01,
+      "evidence_quote": "supplemented with retinoic acid (0.01\u00a0\u00b5M; Sigma-Aldrich)",
+      "canonical": "Retinoic acid",
+      "unit": "uM",
+      "ratio_to_median": 0.01,
+      "median": 1.0
+    },
+    {
+      "id": 6644,
+      "pmcid": "PMC6033897",
+      "organoid_type": "cardiac",
+      "name": "VEGF",
+      "value": 0.5,
+      "evidence_quote": "VEGF (0.5\u2009ng\u2009ml \u22121 )",
+      "canonical": "VEGF",
+      "unit": "ng/mL",
+      "ratio_to_median": 0.01,
+      "median": 50.0
+    },
+    {
+      "id": 4510,
+      "pmcid": "PMC12929407",
+      "organoid_type": "lung",
+      "name": "cAMP",
+      "value": 100.0,
+      "evidence_quote": "100 \u03bcM cAMP",
+      "canonical": "cAMP",
+      "unit": "uM",
+      "ratio_to_median": 100.0,
+      "median": 1.0
+    },
+    {
+      "id": 3533,
+      "pmcid": "PMC12657418",
+      "organoid_type": "cardiac",
+      "name": "Activin A",
+      "value": 1.5,
+      "evidence_quote": "1.5 ng/mL Activin A",
+      "canonical": "Activin A",
+      "unit": "ng/mL",
+      "ratio_to_median": 0.015,
+      "median": 100.0
+    },
+    {
+      "id": 7462,
+      "pmcid": "PMC8390749",
+      "organoid_type": "cardiac",
+      "name": "Activin A",
+      "value": 0.08,
+      "evidence_quote": "",
+      "canonical": "Activin A",
+      "unit": "pM",
+      "ratio_to_median": 0.02,
+      "median": 4.04
+    },
+    {
+      "id": 7461,
+      "pmcid": "PMC8390749",
+      "organoid_type": "cardiac",
+      "name": "BMP4",
+      "value": 0.36,
+      "evidence_quote": "with BMP4 at 0.36 pM",
+      "canonical": "BMP4",
+      "unit": "pM",
+      "ratio_to_median": 0.02,
+      "median": 18.18
+    },
+    {
+      "id": 2357,
+      "pmcid": "PMC12202271",
+      "organoid_type": "cerebral",
+      "name": "retinoic acid",
+      "value": 50.0,
+      "evidence_quote": "50 \u00b5M retinoic acid",
+      "canonical": "Retinoic acid",
+      "unit": "uM",
+      "ratio_to_median": 50.0,
+      "median": 1.0
+    },
+    {
+      "id": 5078,
+      "pmcid": "PMC13050545",
+      "organoid_type": "prostate",
+      "name": "doxycycline",
+      "value": 500.0,
+      "evidence_quote": "",
+      "canonical": "doxycycline",
+      "unit": "ng/mL",
+      "ratio_to_median": 50.0,
+      "median": 10.0
+    },
+    {
+      "id": 4633,
+      "pmcid": "PMC12960935",
+      "organoid_type": "hepatic",
+      "name": "R-SPO1",
+      "value": 10.0,
+      "evidence_quote": "",
+      "canonical": "R-spondin1",
+      "unit": "ng/mL",
+      "ratio_to_median": 0.022,
+      "median": 450.0
+    },
+    {
+      "id": 5338,
+      "pmcid": "PMC13123169",
+      "organoid_type": "tumor",
+      "name": "IFN\u03b3",
+      "value": 200.0,
+      "evidence_quote": "tumor organoids were stimulated with 200\u2009ng/mL IFN\u03b3 to enhance antigen presentation.",
+      "canonical": "IFN-\u03b3",
+      "unit": "ng/mL",
+      "ratio_to_median": 40.0,
+      "median": 5.0
+    },
+    {
+      "id": 5931,
+      "pmcid": "PMC13241417",
+      "organoid_type": "hepatic",
+      "name": "FGF9",
+      "value": 5.0,
+      "evidence_quote": "",
+      "canonical": "FGF9",
+      "unit": "ng/mL",
+      "ratio_to_median": 0.025,
+      "median": 200.0
+    },
+    {
+      "id": 494,
+      "pmcid": "PMC10645425",
+      "organoid_type": "neuromuscular",
+      "name": "retinoic acid",
+      "value": 0.5,
+      "evidence_quote": "10 nM retinoic acid",
+      "canonical": "Retinoic acid",
+      "unit": "nM",
+      "ratio_to_median": 0.031,
+      "median": 16.0
+    },
+    {
+      "id": 393,
+      "pmcid": "PMC10594814",
+      "organoid_type": "bladder",
+      "name": "Rosiglitazone",
+      "value": 1.0,
+      "evidence_quote": "",
+      "canonical": "Rosiglitazone",
+      "unit": "uM",
+      "ratio_to_median": 0.039,
+      "median": 25.5
+    },
+    {
+      "id": 7983,
+      "pmcid": "PMC9773542",
+      "organoid_type": "cardiac",
+      "name": "EGF",
+      "value": 2.0,
+      "evidence_quote": "2\u00a0ng/ml EGF",
+      "canonical": "EGF",
+      "unit": "ng/mL",
+      "ratio_to_median": 0.04,
+      "median": 50.0
+    },
+    {
+      "id": 3385,
+      "pmcid": "PMC12592637",
+      "organoid_type": "hepatic",
+      "name": "fibroblast growth factor 4",
+      "value": 20.0,
+      "evidence_quote": "20 ng/ml fibroblast growth factor 4",
+      "canonical": "FGF4",
+      "unit": "ng/mL",
+      "ratio_to_median": 0.04,
+      "median": 500.0
+    },
+    {
+      "id": 7843,
+      "pmcid": "PMC9103168",
+      "organoid_type": "neuromuscular",
+      "name": "IL-4",
+      "value": 10.0,
+      "evidence_quote": "IL-4 (10 ng/mL)",
+      "canonical": "IL-4",
+      "unit": "ng/mL",
+      "ratio_to_median": 0.049,
+      "median": 205.0
+    },
+    {
+      "id": 4173,
+      "pmcid": "PMC12842532",
+      "organoid_type": "cardiac",
+      "name": "BMP4",
+      "value": 1.25,
+      "evidence_quote": "1.25 ng/mL BMP4",
+      "canonical": "BMP4",
+      "unit": "ng/mL",
+      "ratio_to_median": 0.05,
+      "median": 25.0
+    },
+    {
+      "id": 813,
+      "pmcid": "PMC11069262",
+      "organoid_type": "kidney",
+      "name": "FGF9",
+      "value": 10.0,
+      "evidence_quote": "Then 10\u00a0ng/ml Fibroblast growth factor 9 (FGF9) Protein (R&D Systems,) was added in BM for 2 days.",
+      "canonical": "FGF9",
+      "unit": "ng/mL",
+      "ratio_to_median": 0.05,
+      "median": 200.0
+    },
+    {
+      "id": 3295,
+      "pmcid": "PMC12561403",
+      "organoid_type": "kidney",
+      "name": "FGF9",
+      "value": 10.0,
+      "evidence_quote": "addition of 10\u00a0ng\u00a0mL \u22121 FGF9",
+      "canonical": "FGF9",
+      "unit": "ng/mL",
+      "ratio_to_median": 0.05,
+      "median": 200.0
+    },
+    {
+      "id": 4216,
+      "pmcid": "PMC12864042",
+      "organoid_type": "kidney",
+      "name": "FGF9",
+      "value": 10.0,
+      "evidence_quote": "",
+      "canonical": "FGF9",
+      "unit": "ng/mL",
+      "ratio_to_median": 0.05,
+      "median": 200.0
+    },
+    {
+      "id": 4266,
+      "pmcid": "PMC12892906",
+      "organoid_type": "kidney",
+      "name": "FGF-9",
+      "value": 10.0,
+      "evidence_quote": "From day 7 to day 14, FGF-9 was added at 10 ng/mL (R&D Systems)",
+      "canonical": "FGF9",
+      "unit": "ng/mL",
+      "ratio_to_median": 0.05,
+      "median": 200.0
+    },
+    {
+      "id": 5378,
+      "pmcid": "PMC13130776",
+      "organoid_type": "hepatic",
+      "name": "FGF9",
+      "value": 10.0,
+      "evidence_quote": "supplemented with 10 ng/ml FGF9",
+      "canonical": "FGF9",
+      "unit": "ng/mL",
+      "ratio_to_median": 0.05,
+      "median": 200.0
+    },
+    {
+      "id": 7915,
+      "pmcid": "PMC9672366",
+      "organoid_type": "inner-ear",
+      "name": "LDN-193189",
+      "value": 10.0,
+      "evidence_quote": "",
+      "canonical": "LDN-193189",
+      "unit": "uM",
+      "ratio_to_median": 20.0,
+      "median": 0.5
+    },
+    {
+      "id": 811,
+      "pmcid": "PMC11069262",
+      "organoid_type": "kidney",
+      "name": "noggin",
+      "value": 5.0,
+      "evidence_quote": "On the following day, 10\u00a0\u00b5M CHIR-99021 (Selleckchem) and 5 ng/ml noggin (PeproTech) were applied for 4 days with refresh",
+      "canonical": "Noggin",
+      "unit": "ng/mL",
+      "ratio_to_median": 0.05,
+      "median": 100.0
+    },
+    {
+      "id": 1027,
+      "pmcid": "PMC11263033",
+      "organoid_type": "salivary-gland",
+      "name": "noggin",
+      "value": 5.0,
+      "evidence_quote": "",
+      "canonical": "Noggin",
+      "unit": "ng/mL",
+      "ratio_to_median": 0.05,
+      "median": 100.0
+    },
+    {
+      "id": 5376,
+      "pmcid": "PMC13130776",
+      "organoid_type": "hepatic",
+      "name": "noggin",
+      "value": 5.0,
+      "evidence_quote": "",
+      "canonical": "Noggin",
+      "unit": "ng/mL",
+      "ratio_to_median": 0.05,
+      "median": 100.0
+    },
+    {
+      "id": 5928,
+      "pmcid": "PMC13241417",
+      "organoid_type": "hepatic",
+      "name": "noggin",
+      "value": 5.0,
+      "evidence_quote": "",
+      "canonical": "Noggin",
+      "unit": "ng/mL",
+      "ratio_to_median": 0.05,
+      "median": 100.0
+    },
+    {
+      "id": 6950,
+      "pmcid": "PMC6884507",
+      "organoid_type": "kidney",
+      "name": "NOGGIN",
+      "value": 5.0,
+      "evidence_quote": "CHIR99021 (10\u2009\u03bcM) and NOGGIN (5\u2009ng/mL) in APEL2 medium for 4 days",
+      "canonical": "Noggin",
+      "unit": "ng/mL",
+      "ratio_to_median": 0.05,
+      "median": 100.0
+    },
+    {
+      "id": 4676,
+      "pmcid": "PMC12963012",
+      "organoid_type": "pancreatic",
+      "name": "retinoic acid",
+      "value": 0.05,
+      "evidence_quote": "SANT-1, 0.05\u2005\u00b5M retinoic acid",
+      "canonical": "Retinoic acid",
+      "unit": "uM",
+      "ratio_to_median": 0.05,
+      "median": 1.0
+    },
+    {
+      "id": 3410,
+      "pmcid": "PMC12607406",
+      "organoid_type": "intestinal",
+      "name": "SB431542",
+      "value": 0.5,
+      "evidence_quote": "",
+      "canonical": "SB431542",
+      "unit": "uM",
+      "ratio_to_median": 0.05,
+      "median": 10.0
+    },
+    {
+      "id": 4717,
+      "pmcid": "PMC12969023",
+      "organoid_type": "retinal",
+      "name": "BMP-4",
+      "value": 450.0,
+      "evidence_quote": "supplemented with 1.5 mM Recombinant Human BMP-4",
+      "canonical": "BMP4",
+      "unit": "ng/mL",
+      "ratio_to_median": 18.0,
+      "median": 25.0
+    },
+    {
+      "id": 2569,
+      "pmcid": "PMC12292610",
+      "organoid_type": "lung",
+      "name": "FGF2",
+      "value": 250.0,
+      "evidence_quote": "Airway organoids were generated using 250 ng/mL FGF2 (PeproTech, Cat# 100-18B), 100 ng/mL FGF10 (PeproTech, Cat# 100-26)",
+      "canonical": "FGF2",
+      "unit": "ng/mL",
+      "ratio_to_median": 15.385,
+      "median": 16.25
+    },
+    {
+      "id": 8000,
+      "pmcid": "PMC9876421",
+      "organoid_type": "vascular",
+      "name": "dorsomorphin",
+      "value": 50.0,
+      "evidence_quote": "50\u2009\u03bcM dorsomorphin",
+      "canonical": "Dorsomorphin",
+      "unit": "uM",
+      "ratio_to_median": 14.286,
+      "median": 3.5
+    },
+    {
+      "id": 3532,
+      "pmcid": "PMC12657418",
+      "organoid_type": "cardiac",
+      "name": "BMP4",
+      "value": 1.875,
+      "evidence_quote": "1.875 ng/mL BMP4",
+      "canonical": "BMP4",
+      "unit": "ng/mL",
+      "ratio_to_median": 0.075,
+      "median": 25.0
+    },
+    {
+      "id": 5796,
+      "pmcid": "PMC13214524",
+      "organoid_type": "intestinal",
+      "name": "rhWnt3a",
+      "value": 20.0,
+      "evidence_quote": "",
+      "canonical": "rhWnt3a",
+      "unit": "ng/mL",
+      "ratio_to_median": 0.077,
+      "median": 260.0
+    },
+    {
+      "id": 2975,
+      "pmcid": "PMC12402132",
+      "organoid_type": "kidney",
+      "name": "FGF-2",
+      "value": 200.0,
+      "evidence_quote": "FGF-2 200\u2009ng/mL Peprotech Asia 100-18B",
+      "canonical": "FGF2",
+      "unit": "ng/mL",
+      "ratio_to_median": 12.308,
+      "median": 16.25
+    },
+    {
+      "id": 2470,
+      "pmcid": "PMC12259470",
+      "organoid_type": "cardiac",
+      "name": "activin A",
+      "value": 9.0,
+      "evidence_quote": "9\u2009ng ml \u22121 activin A (Thermo Fisher Scientific)",
+      "canonical": "Activin A",
+      "unit": "ng/mL",
+      "ratio_to_median": 0.09,
+      "median": 100.0
+    },
+    {
+      "id": 7619,
+      "pmcid": "PMC8673718",
+      "organoid_type": "blood-brain-barrier",
+      "name": "GM-CSF",
+      "value": 1.0,
+      "evidence_quote": "1\u00a0ng/ml GM-CSF",
+      "canonical": "GM-CSF",
+      "unit": "ng/mL",
+      "ratio_to_median": 0.095,
+      "median": 10.5
+    },
+    {
+      "id": 5426,
+      "pmcid": "PMC13143278",
+      "organoid_type": "cerebral",
+      "name": "T3",
+      "value": 2.0,
+      "evidence_quote": "continuously grown in the presence of 2 ng/ml T3 (Sigma-Aldrich).",
+      "canonical": "T3",
+      "unit": "ng/mL",
+      "ratio_to_median": 0.095,
+      "median": 21.0
+    },
+    {
+      "id": 5013,
+      "pmcid": "PMC13031808",
+      "organoid_type": "retinal",
+      "name": "ROCK inhibitor Y-27632",
+      "value": 0.5,
+      "evidence_quote": "20 \u00b5M ROCK inhibitor Y-27632 (Tocris, 1254)",
+      "canonical": "Y-27632",
+      "unit": "mM",
+      "ratio_to_median": 0.095,
+      "median": 5.25
+    }
+  ]
+}
