@@ -6984,3 +6984,248 @@ def test_bmc_imputation_coverage_ratio(tmp_path, monkeypatch):
 def test_bmc_index_entry():
     data, _ = ae.handle_index()
     assert "/analytics/base-media-cooccurrence" in data["endpoints"]
+
+
+# ---------------------------------------------------------------------------
+# Route 61 — /analytics/within-type-dose-range (WTDR)
+# ---------------------------------------------------------------------------
+_WTDR_REAGENTS = [
+    # FGF2 in kidney — wide range (6–200 ng/mL = 33×)
+    {"canonical": "FGF2", "organoid_type": "kidney", "canonical_unit": "ng/mL", "value": 6.0},
+    {"canonical": "FGF2", "organoid_type": "kidney", "canonical_unit": "ng/mL", "value": 20.0},
+    {"canonical": "FGF2", "organoid_type": "kidney", "canonical_unit": "ng/mL", "value": 200.0},
+    # FGF2 in intestinal — narrow range (50–100 ng/mL = 2×)
+    {"canonical": "FGF2", "organoid_type": "intestinal", "canonical_unit": "ng/mL", "value": 50.0},
+    {"canonical": "FGF2", "organoid_type": "intestinal", "canonical_unit": "ng/mL", "value": 100.0},
+    {"canonical": "FGF2", "organoid_type": "intestinal", "canonical_unit": "ng/mL", "value": 75.0},
+    # BMP4 in retinal — convergent (all 1.5 nM)
+    {"canonical": "BMP4", "organoid_type": "retinal", "canonical_unit": "nM", "value": 1.5},
+    {"canonical": "BMP4", "organoid_type": "retinal", "canonical_unit": "nM", "value": 1.5},
+    {"canonical": "BMP4", "organoid_type": "retinal", "canonical_unit": "nM", "value": 1.5},
+    # Reagent with null value — must be excluded
+    {"canonical": "EGF", "organoid_type": "kidney", "canonical_unit": "ng/mL", "value": None},
+]
+
+
+def _write_wtdr(tmp_path, reagents):
+    rp = tmp_path / "reagents.jsonl"
+    rp.write_text("\n".join(json.dumps(r) for r in reagents))
+    return rp
+
+
+def _patch_wtdr(monkeypatch, rp):
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", rp)
+
+
+def test_wtdr_returns_200(tmp_path, monkeypatch):
+    rp = _write_wtdr(tmp_path, _WTDR_REAGENTS)
+    _patch_wtdr(monkeypatch, rp)
+    data, status = ae.handle_within_type_dose_range()
+    assert status == 200
+
+
+def test_wtdr_top_level_keys(tmp_path, monkeypatch):
+    rp = _write_wtdr(tmp_path, _WTDR_REAGENTS)
+    _patch_wtdr(monkeypatch, rp)
+    data, _ = ae.handle_within_type_dose_range()
+    for k in ("description", "min_n", "n_combos", "results"):
+        assert k in data
+
+
+def test_wtdr_sorted_by_fold_range_desc(tmp_path, monkeypatch):
+    rp = _write_wtdr(tmp_path, _WTDR_REAGENTS)
+    _patch_wtdr(monkeypatch, rp)
+    data, _ = ae.handle_within_type_dose_range()
+    folds = [r["fold_range"] for r in data["results"] if r["fold_range"] is not None]
+    assert folds == sorted(folds, reverse=True)
+
+
+def test_wtdr_fgf2_kidney_fold_range(tmp_path, monkeypatch):
+    rp = _write_wtdr(tmp_path, _WTDR_REAGENTS)
+    _patch_wtdr(monkeypatch, rp)
+    data, _ = ae.handle_within_type_dose_range(query="FGF2", organoid_type="kidney")
+    assert data["results"], "no results for FGF2 kidney"
+    top = data["results"][0]
+    assert top["min"] == pytest.approx(6.0)
+    assert top["max"] == pytest.approx(200.0)
+    assert top["fold_range"] == pytest.approx(200.0 / 6.0, rel=0.01)
+    assert "33" in top["headline"]
+
+
+def test_wtdr_bmp4_retinal_fold_1(tmp_path, monkeypatch):
+    rp = _write_wtdr(tmp_path, _WTDR_REAGENTS)
+    _patch_wtdr(monkeypatch, rp)
+    data, _ = ae.handle_within_type_dose_range(query="BMP4", organoid_type="retinal")
+    assert data["results"]
+    top = data["results"][0]
+    assert top["fold_range"] == pytest.approx(1.0)
+    assert top["cv"] == pytest.approx(0.0)
+
+
+def test_wtdr_query_filter(tmp_path, monkeypatch):
+    rp = _write_wtdr(tmp_path, _WTDR_REAGENTS)
+    _patch_wtdr(monkeypatch, rp)
+    data, _ = ae.handle_within_type_dose_range(query="BMP4")
+    for r in data["results"]:
+        assert "BMP4" in r["canonical"]
+
+
+def test_wtdr_type_filter(tmp_path, monkeypatch):
+    rp = _write_wtdr(tmp_path, _WTDR_REAGENTS)
+    _patch_wtdr(monkeypatch, rp)
+    data, _ = ae.handle_within_type_dose_range(organoid_type="retinal")
+    for r in data["results"]:
+        assert r["organoid_type"] == "retinal"
+
+
+def test_wtdr_min_n_excludes_small_groups(tmp_path, monkeypatch):
+    rp = _write_wtdr(tmp_path, _WTDR_REAGENTS)
+    _patch_wtdr(monkeypatch, rp)
+    data, _ = ae.handle_within_type_dose_range(min_n=10)
+    assert data["results"] == []
+
+
+def test_wtdr_excludes_null_values(tmp_path, monkeypatch):
+    rp = _write_wtdr(tmp_path, _WTDR_REAGENTS)
+    _patch_wtdr(monkeypatch, rp)
+    data, _ = ae.handle_within_type_dose_range(query="EGF")
+    assert data["results"] == []
+
+
+def test_wtdr_404_missing_reagents(tmp_path, monkeypatch):
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", tmp_path / "missing.jsonl")
+    data, status = ae.handle_within_type_dose_range()
+    assert status == 404
+
+
+def test_wtdr_index_entry():
+    data, _ = ae.handle_index()
+    assert "/analytics/within-type-dose-range" in data["endpoints"]
+
+
+# ---------------------------------------------------------------------------
+# Route 62 — /analytics/convergence-leaders (CL)
+# ---------------------------------------------------------------------------
+_CL_PROTOCOLS = [
+    # 3 years of data per PMC
+    {"pmcid": "PMC1", "year": 2018}, {"pmcid": "PMC2", "year": 2018}, {"pmcid": "PMC3", "year": 2018},
+    {"pmcid": "PMC4", "year": 2020}, {"pmcid": "PMC5", "year": 2020}, {"pmcid": "PMC6", "year": 2020},
+    {"pmcid": "PMC7", "year": 2022}, {"pmcid": "PMC8", "year": 2022}, {"pmcid": "PMC9", "year": 2022},
+]
+
+_CL_REAGENTS = [
+    # BMP4: 2018=high CV (spread 1-100), 2020=medium, 2022=converged (all ~1.5) → converging
+    {"pmcid": "PMC1", "canonical": "BMP4", "value": 1.0},
+    {"pmcid": "PMC2", "canonical": "BMP4", "value": 50.0},
+    {"pmcid": "PMC3", "canonical": "BMP4", "value": 100.0},
+    {"pmcid": "PMC4", "canonical": "BMP4", "value": 1.5},
+    {"pmcid": "PMC5", "canonical": "BMP4", "value": 2.0},
+    {"pmcid": "PMC6", "canonical": "BMP4", "value": 1.0},
+    {"pmcid": "PMC7", "canonical": "BMP4", "value": 1.5},
+    {"pmcid": "PMC8", "canonical": "BMP4", "value": 1.5},
+    {"pmcid": "PMC9", "canonical": "BMP4", "value": 1.5},
+    # FGF2: 2018=low CV, 2022=high CV → diverging
+    {"pmcid": "PMC1", "canonical": "FGF2", "value": 10.0},
+    {"pmcid": "PMC2", "canonical": "FGF2", "value": 10.0},
+    {"pmcid": "PMC3", "canonical": "FGF2", "value": 10.0},
+    {"pmcid": "PMC4", "canonical": "FGF2", "value": 10.0},
+    {"pmcid": "PMC5", "canonical": "FGF2", "value": 10.0},
+    {"pmcid": "PMC6", "canonical": "FGF2", "value": 10.0},
+    {"pmcid": "PMC7", "canonical": "FGF2", "value": 5.0},
+    {"pmcid": "PMC8", "canonical": "FGF2", "value": 200.0},
+    {"pmcid": "PMC9", "canonical": "FGF2", "value": 10.0},
+]
+
+
+def _write_cl(tmp_path, protocols, reagents):
+    pp = tmp_path / "protocols.jsonl"
+    rp = tmp_path / "reagents.jsonl"
+    pp.write_text("\n".join(json.dumps(r) for r in protocols))
+    rp.write_text("\n".join(json.dumps(r) for r in reagents))
+    return pp, rp
+
+
+def _patch_cl(monkeypatch, pp, rp):
+    monkeypatch.setattr(ae, "PROTOCOLS_JSONL", pp)
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", rp)
+
+
+def test_cl_returns_200(tmp_path, monkeypatch):
+    pp, rp = _write_cl(tmp_path, _CL_PROTOCOLS, _CL_REAGENTS)
+    _patch_cl(monkeypatch, pp, rp)
+    data, status = ae.handle_convergence_leaders()
+    assert status == 200
+
+
+def test_cl_top_level_keys(tmp_path, monkeypatch):
+    pp, rp = _write_cl(tmp_path, _CL_PROTOCOLS, _CL_REAGENTS)
+    _patch_cl(monkeypatch, pp, rp)
+    data, _ = ae.handle_convergence_leaders()
+    for k in ("converging", "diverging", "n_stable", "n_converging", "n_diverging", "n_canonicals_with_data"):
+        assert k in data
+
+
+def test_cl_bmp4_is_converging(tmp_path, monkeypatch):
+    pp, rp = _write_cl(tmp_path, _CL_PROTOCOLS, _CL_REAGENTS)
+    _patch_cl(monkeypatch, pp, rp)
+    data, _ = ae.handle_convergence_leaders(min_years=3, min_n=3)
+    canonicals = [r["canonical"] for r in data["converging"]]
+    assert "BMP4" in canonicals
+
+
+def test_cl_fgf2_is_diverging(tmp_path, monkeypatch):
+    pp, rp = _write_cl(tmp_path, _CL_PROTOCOLS, _CL_REAGENTS)
+    _patch_cl(monkeypatch, pp, rp)
+    data, _ = ae.handle_convergence_leaders(min_years=3, min_n=3)
+    canonicals = [r["canonical"] for r in data["diverging"]]
+    assert "FGF2" in canonicals
+
+
+def test_cl_converging_sorted_by_cv_drop(tmp_path, monkeypatch):
+    pp, rp = _write_cl(tmp_path, _CL_PROTOCOLS, _CL_REAGENTS)
+    _patch_cl(monkeypatch, pp, rp)
+    data, _ = ae.handle_convergence_leaders(min_years=3, min_n=3)
+    drops = [r["cv_drop"] for r in data["converging"]]
+    assert drops == sorted(drops, reverse=True)
+
+
+def test_cl_min_years_filter(tmp_path, monkeypatch):
+    pp, rp = _write_cl(tmp_path, _CL_PROTOCOLS, _CL_REAGENTS)
+    _patch_cl(monkeypatch, pp, rp)
+    # require 5 years — our data only has 3, so no results
+    data, _ = ae.handle_convergence_leaders(min_years=5, min_n=3)
+    assert data["n_canonicals_with_data"] == 0
+    assert data["converging"] == []
+    assert data["diverging"] == []
+
+
+def test_cl_entry_keys(tmp_path, monkeypatch):
+    pp, rp = _write_cl(tmp_path, _CL_PROTOCOLS, _CL_REAGENTS)
+    _patch_cl(monkeypatch, pp, rp)
+    data, _ = ae.handle_convergence_leaders(min_years=3, min_n=3)
+    for entry in data["converging"]:
+        for k in ("canonical", "n_years_with_data", "first_year_cv", "last_year_cv", "cv_change", "trend", "cv_drop"):
+            assert k in entry, f"missing key {k} in converging entry"
+
+
+def test_cl_404_missing_reagents(tmp_path, monkeypatch):
+    pp = tmp_path / "protocols.jsonl"
+    pp.write_text("")
+    monkeypatch.setattr(ae, "PROTOCOLS_JSONL", pp)
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", tmp_path / "missing.jsonl")
+    data, status = ae.handle_convergence_leaders()
+    assert status == 404
+
+
+def test_cl_404_missing_protocols(tmp_path, monkeypatch):
+    rp = tmp_path / "reagents.jsonl"
+    rp.write_text("")
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", rp)
+    monkeypatch.setattr(ae, "PROTOCOLS_JSONL", tmp_path / "missing.jsonl")
+    data, status = ae.handle_convergence_leaders()
+    assert status == 404
+
+
+def test_cl_index_entry():
+    data, _ = ae.handle_index()
+    assert "/analytics/convergence-leaders" in data["endpoints"]
