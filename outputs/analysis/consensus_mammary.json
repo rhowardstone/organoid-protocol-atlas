@@ -1,0 +1,146 @@
+{
+  "organoid_type": "mammary",
+  "n_protocols": 14,
+  "base_media": {
+    "top": "DMEM/F12",
+    "distribution": [
+      {
+        "value": "DMEM/F12",
+        "count": 2,
+        "fraction": 0.222
+      },
+      {
+        "value": "breast cancer organoid culture medium",
+        "count": 1,
+        "fraction": 0.111
+      },
+      {
+        "value": "Advanced DMEM/F12",
+        "count": 1,
+        "fraction": 0.111
+      },
+      {
+        "value": "triple+ Adv medium (Advanced DMEM/F12 supplemented with 1\u00d7 Glutamax, 10\u2009mM HEPES, and Pen-Strep)",
+        "count": 1,
+        "fraction": 0.111
+      },
+      {
+        "value": "DMEM",
+        "count": 1,
+        "fraction": 0.111
+      },
+      {
+        "value": "MEGM",
+        "count": 1,
+        "fraction": 0.111
+      },
+      {
+        "value": "growth\u2013factor\u2013supplemented medium",
+        "count": 1,
+        "fraction": 0.111
+      },
+      {
+        "value": "organ-specific culture media",
+        "count": 1,
+        "fraction": 0.111
+      }
+    ],
+    "n_reported": 9,
+    "n_missing": 5
+  },
+  "matrix": {
+    "top": "Matrigel",
+    "distribution": [
+      {
+        "value": "Matrigel",
+        "count": 6,
+        "fraction": 0.545
+      },
+      {
+        "value": "basement membrane extract",
+        "count": 2,
+        "fraction": 0.182
+      },
+      {
+        "value": "Matrigel growth factor reduced (GFR) basement membrane matrix",
+        "count": 1,
+        "fraction": 0.091
+      },
+      {
+        "value": "rat tail collagen I",
+        "count": 1,
+        "fraction": 0.091
+      },
+      {
+        "value": "Cultrex Reduced Growth Factor Basement Membrane Extract",
+        "count": 1,
+        "fraction": 0.091
+      }
+    ],
+    "n_reported": 11,
+    "n_missing": 3
+  },
+  "source_cell_type": {
+    "top": "adult_stem_cell",
+    "distribution": [
+      {
+        "value": "adult_stem_cell",
+        "count": 8,
+        "fraction": 0.571
+      },
+      {
+        "value": "primary_tissue",
+        "count": 4,
+        "fraction": 0.286
+      },
+      {
+        "value": "iPSC",
+        "count": 1,
+        "fraction": 0.071
+      },
+      {
+        "value": "other",
+        "count": 1,
+        "fraction": 0.071
+      }
+    ],
+    "n_reported": 14,
+    "n_missing": 0
+  },
+  "species": {
+    "top": "human",
+    "distribution": [
+      {
+        "value": "human",
+        "count": 7,
+        "fraction": 0.583
+      },
+      {
+        "value": "mouse",
+        "count": 2,
+        "fraction": 0.167
+      },
+      {
+        "value": "goat",
+        "count": 2,
+        "fraction": 0.167
+      },
+      {
+        "value": "sheep",
+        "count": 1,
+        "fraction": 0.083
+      }
+    ],
+    "n_reported": 12,
+    "n_missing": 2
+  },
+  "signaling_factors": [],
+  "media_supplements": [],
+  "small_molecules": [],
+  "timeline": {
+    "n_protocols_with_timeline": 1,
+    "stages": []
+  },
+  "universal_reagents": [],
+  "high_variability_reagents": []
+}

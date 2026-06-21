@@ -1,0 +1,161 @@
+{
+  "organoid_type": "prostate",
+  "n_protocols": 16,
+  "base_media": {
+    "top": "mTeSR1",
+    "distribution": [
+      {
+        "value": "mTeSR1",
+        "count": 2,
+        "fraction": 0.167
+      },
+      {
+        "value": "mouse prostate organoid medium",
+        "count": 2,
+        "fraction": 0.167
+      },
+      {
+        "value": "adDMEM/F12",
+        "count": 2,
+        "fraction": 0.167
+      },
+      {
+        "value": "advanced DMEM + P/S, GlutaMAX, HEPES",
+        "count": 1,
+        "fraction": 0.083
+      },
+      {
+        "value": "AdDMEM 4+",
+        "count": 1,
+        "fraction": 0.083
+      },
+      {
+        "value": "Advanced Dulbecco\u2019s Modified Eagle\u2019s Medium (DMEM)/F-12",
+        "count": 1,
+        "fraction": 0.083
+      },
+      {
+        "value": "Advanced DMEM/F12",
+        "count": 1,
+        "fraction": 0.083
+      },
+      {
+        "value": "DMEM/F12",
+        "count": 1,
+        "fraction": 0.083
+      },
+      {
+        "value": "adDMEM",
+        "count": 1,
+        "fraction": 0.083
+      }
+    ],
+    "n_reported": 12,
+    "n_missing": 4
+  },
+  "matrix": {
+    "top": "Matrigel",
+    "distribution": [
+      {
+        "value": "Matrigel",
+        "count": 10,
+        "fraction": 0.667
+      },
+      {
+        "value": "Corning Matrigel",
+        "count": 1,
+        "fraction": 0.067
+      },
+      {
+        "value": "matrigel",
+        "count": 1,
+        "fraction": 0.067
+      },
+      {
+        "value": "Corning",
+        "count": 1,
+        "fraction": 0.067
+      },
+      {
+        "value": "basement membrane extract (Matrigel, Corning)",
+        "count": 1,
+        "fraction": 0.067
+      },
+      {
+        "value": "Matrigel\u00ae Growth Factor Reduced (GFR) Basement Membrane Matrix",
+        "count": 1,
+        "fraction": 0.067
+      }
+    ],
+    "n_reported": 15,
+    "n_missing": 1
+  },
+  "source_cell_type": {
+    "top": "adult_stem_cell",
+    "distribution": [
+      {
+        "value": "adult_stem_cell",
+        "count": 8,
+        "fraction": 0.5
+      },
+      {
+        "value": "iPSC",
+        "count": 4,
+        "fraction": 0.25
+      },
+      {
+        "value": "primary_tissue",
+        "count": 4,
+        "fraction": 0.25
+      }
+    ],
+    "n_reported": 16,
+    "n_missing": 0
+  },
+  "species": {
+    "top": "mouse",
+    "distribution": [
+      {
+        "value": "mouse",
+        "count": 5,
+        "fraction": 0.385
+      },
+      {
+        "value": "human",
+        "count": 4,
+        "fraction": 0.308
+      },
+      {
+        "value": "Rattus norvegicus",
+        "count": 1,
+        "fraction": 0.077
+      },
+      {
+        "value": "Mouse",
+        "count": 1,
+        "fraction": 0.077
+      },
+      {
+        "value": "Murine",
+        "count": 1,
+        "fraction": 0.077
+      },
+      {
+        "value": "murine",
+        "count": 1,
+        "fraction": 0.077
+      }
+    ],
+    "n_reported": 13,
+    "n_missing": 3
+  },
+  "signaling_factors": [],
+  "media_supplements": [],
+  "small_molecules": [],
+  "timeline": {
+    "n_protocols_with_timeline": 0,
+    "stages": []
+  },
+  "universal_reagents": [],
+  "high_variability_reagents": []
+}

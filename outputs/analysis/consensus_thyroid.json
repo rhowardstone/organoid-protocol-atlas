@@ -1,0 +1,161 @@
+{
+  "organoid_type": "thyroid",
+  "n_protocols": 20,
+  "base_media": {
+    "top": "mouse stem cell medium",
+    "distribution": [
+      {
+        "value": "mouse stem cell medium",
+        "count": 1,
+        "fraction": 0.111
+      },
+      {
+        "value": "DMEM",
+        "count": 1,
+        "fraction": 0.111
+      },
+      {
+        "value": "DMEM:F12",
+        "count": 1,
+        "fraction": 0.111
+      },
+      {
+        "value": "LIF minus mouse ES medium",
+        "count": 1,
+        "fraction": 0.111
+      },
+      {
+        "value": "AdDMEM/F12",
+        "count": 1,
+        "fraction": 0.111
+      },
+      {
+        "value": "Coon\u2019s modified Ham\u2019s F-12",
+        "count": 1,
+        "fraction": 0.111
+      },
+      {
+        "value": "Advanced DMEM/F-12",
+        "count": 1,
+        "fraction": 0.111
+      },
+      {
+        "value": "mTeSR medium",
+        "count": 1,
+        "fraction": 0.111
+      },
+      {
+        "value": "RPMI 1640",
+        "count": 1,
+        "fraction": 0.111
+      }
+    ],
+    "n_reported": 9,
+    "n_missing": 11
+  },
+  "matrix": {
+    "top": "Matrigel",
+    "distribution": [
+      {
+        "value": "Matrigel",
+        "count": 8,
+        "fraction": 0.667
+      },
+      {
+        "value": "fibrin",
+        "count": 1,
+        "fraction": 0.083
+      },
+      {
+        "value": "laminin-rich Matrigel",
+        "count": 1,
+        "fraction": 0.083
+      },
+      {
+        "value": "Basement Membrane Matrigel",
+        "count": 1,
+        "fraction": 0.083
+      },
+      {
+        "value": "Cultrex Pathclear Reduced Growth Factor BME",
+        "count": 1,
+        "fraction": 0.083
+      }
+    ],
+    "n_reported": 12,
+    "n_missing": 8
+  },
+  "source_cell_type": {
+    "top": "adult_stem_cell",
+    "distribution": [
+      {
+        "value": "adult_stem_cell",
+        "count": 5,
+        "fraction": 0.25
+      },
+      {
+        "value": "iPSC",
+        "count": 5,
+        "fraction": 0.25
+      },
+      {
+        "value": "ESC",
+        "count": 5,
+        "fraction": 0.25
+      },
+      {
+        "value": "primary_tissue",
+        "count": 3,
+        "fraction": 0.15
+      },
+      {
+        "value": "other",
+        "count": 2,
+        "fraction": 0.1
+      }
+    ],
+    "n_reported": 20,
+    "n_missing": 0
+  },
+  "species": {
+    "top": "human",
+    "distribution": [
+      {
+        "value": "human",
+        "count": 11,
+        "fraction": 0.55
+      },
+      {
+        "value": "mouse",
+        "count": 6,
+        "fraction": 0.3
+      },
+      {
+        "value": "Sprague Dawley rat",
+        "count": 1,
+        "fraction": 0.05
+      },
+      {
+        "value": "murine",
+        "count": 1,
+        "fraction": 0.05
+      },
+      {
+        "value": "rat",
+        "count": 1,
+        "fraction": 0.05
+      }
+    ],
+    "n_reported": 20,
+    "n_missing": 0
+  },
+  "signaling_factors": [],
+  "media_supplements": [],
+  "small_molecules": [],
+  "timeline": {
+    "n_protocols_with_timeline": 3,
+    "stages": []
+  },
+  "universal_reagents": [],
+  "high_variability_reagents": []
+}
