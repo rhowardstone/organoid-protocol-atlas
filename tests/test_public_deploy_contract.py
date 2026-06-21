@@ -213,3 +213,34 @@ def test_public_manifest_n_types_matches_protocols_jsonl():
         f"manifest.n_types={manifest['n_types']} but protocols.jsonl has "
         f"{len(types_in_data)} distinct non-empty organoid_type values: {sorted(types_in_data)}"
     )
+
+
+def test_corpus_has_no_hepatic_label():
+    """corpus.tsv must contain no 'hepatic' organoid_type entries —
+    all should have been normalised to 'liver' by relabel_organoid_type.py.
+    Re-run: python pipeline/relabel_organoid_type.py"""
+    corpus_tsv = ROOT / "data" / "corpus" / "corpus.tsv"
+    hepatic_rows = [
+        r["pmcid"]
+        for r in csv.DictReader(corpus_tsv.open(encoding="utf-8-sig"), delimiter="\t")
+        if r.get("organoid_type") == "hepatic"
+    ]
+    assert not hepatic_rows, (
+        f"{len(hepatic_rows)} corpus.tsv rows still have organoid_type='hepatic'; "
+        f"run pipeline/relabel_organoid_type.py to normalise: {hepatic_rows[:5]}"
+    )
+
+
+def test_public_jsonl_has_no_hepatic_label():
+    """protocols.jsonl must contain no 'hepatic' organoid_type entries.
+    Re-run pipeline/export_public.py after relabel_organoid_type.py."""
+    protocols_jsonl = ROOT / "exports" / "public" / "protocols.jsonl"
+    hepatic = [
+        json.loads(ln).get("pmcid")
+        for ln in protocols_jsonl.read_text().splitlines()
+        if ln.strip() and json.loads(ln).get("organoid_type") == "hepatic"
+    ]
+    assert not hepatic, (
+        f"{len(hepatic)} protocols.jsonl rows have organoid_type='hepatic'; "
+        f"re-run pipeline/export_public.py after relabel_organoid_type.py: {hepatic[:5]}"
+    )
