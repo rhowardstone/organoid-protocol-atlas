@@ -1,0 +1,689 @@
+{
+  "method": "R2 concentration-unit validity (normalize.concentration_class) over public reagents with a numeric value; suspect = in_vivo_dose|volume|percent|other (review-queue signal, not auto-delete)",
+  "n_with_value": 1574,
+  "class_counts": {
+    "concentration": 1488,
+    "percent": 65,
+    "other": 16,
+    "missing": 2,
+    "in_vivo_dose": 2,
+    "volume": 1
+  },
+  "suspect_total": 84,
+  "suspect_rate": 0.0534,
+  "suspect": [
+    {
+      "id": 5759,
+      "name": "NRG1",
+      "unit": "\u00b5g/kg",
+      "value": 20.0,
+      "class": "in_vivo_dose",
+      "pmcid": "PMC13207643"
+    },
+    {
+      "id": 1576,
+      "name": "afatinib",
+      "unit": "mg/kg",
+      "value": 10.0,
+      "class": "in_vivo_dose",
+      "pmcid": "PMC11735410"
+    },
+    {
+      "id": 4379,
+      "name": "17\u03b2-Estradiol",
+      "unit": "-8 M",
+      "value": 10.0,
+      "class": "other",
+      "pmcid": "PMC12909605"
+    },
+    {
+      "id": 613,
+      "name": "8-Br-cAMP",
+      "unit": "\u00b5mol",
+      "value": 0.3,
+      "class": "other",
+      "pmcid": "PMC10786723"
+    },
+    {
+      "id": 7397,
+      "name": "8-Br-cAMP",
+      "unit": "nmol",
+      "value": 0.3,
+      "class": "other",
+      "pmcid": "PMC8202408"
+    },
+    {
+      "id": 713,
+      "name": "EGF",
+      "unit": "ng",
+      "value": 500.0,
+      "class": "other",
+      "pmcid": "PMC10944495"
+    },
+    {
+      "id": 2694,
+      "name": "Epo",
+      "unit": "unit/ml",
+      "value": 2.0,
+      "class": "other",
+      "pmcid": "PMC12325982"
+    },
+    {
+      "id": 3782,
+      "name": "IFN\u03b3",
+      "unit": "units/mL",
+      "value": 100.0,
+      "class": "other",
+      "pmcid": "PMC12749961"
+    },
+    {
+      "id": 715,
+      "name": "IGF-1",
+      "unit": "\u00b5g",
+      "value": 1.0,
+      "class": "other",
+      "pmcid": "PMC10944495"
+    },
+    {
+      "id": 1504,
+      "name": "IL-33",
+      "unit": "ng per mouse",
+      "value": 250.0,
+      "class": "other",
+      "pmcid": "PMC11685411"
+    },
+    {
+      "id": 7195,
+      "name": "LIF",
+      "unit": "units/ml",
+      "value": 1000.0,
+      "class": "other",
+      "pmcid": "PMC7471119"
+    },
+    {
+      "id": 714,
+      "name": "Noggin",
+      "unit": "\u00b5g",
+      "value": 1.0,
+      "class": "other",
+      "pmcid": "PMC10944495"
+    },
+    {
+      "id": 6333,
+      "name": "R-Spondin",
+      "unit": "\u03bc g/mL",
+      "value": 1.0,
+      "class": "other",
+      "pmcid": "PMC4677245"
+    },
+    {
+      "id": 7433,
+      "name": "TSH",
+      "unit": "uU/mL",
+      "value": 500.0,
+      "class": "other",
+      "pmcid": "PMC8283971"
+    },
+    {
+      "id": 7953,
+      "name": "VEGF",
+      "unit": "\u03bcg",
+      "value": 50.0,
+      "class": "other",
+      "pmcid": "PMC9715615"
+    },
+    {
+      "id": 716,
+      "name": "bFGF",
+      "unit": "ng",
+      "value": 500.0,
+      "class": "other",
+      "pmcid": "PMC10944495"
+    },
+    {
+      "id": 7659,
+      "name": "dexamethasone",
+      "unit": "-7 m",
+      "value": 10.0,
+      "class": "other",
+      "pmcid": "PMC8844474"
+    },
+    {
+      "id": 4976,
+      "name": "mouse epidermal growth factor",
+      "unit": "ng/liter",
+      "value": 50.0,
+      "class": "other",
+      "pmcid": "PMC13025031"
+    },
+    {
+      "id": 4129,
+      "name": "A-83-01",
+      "unit": "%",
+      "value": 0.04,
+      "class": "percent",
+      "pmcid": "PMC12830083"
+    },
+    {
+      "id": 4077,
+      "name": "FBS",
+      "unit": "%",
+      "value": 10.0,
+      "class": "percent",
+      "pmcid": "PMC12825330"
+    },
+    {
+      "id": 398,
+      "name": "Noggin",
+      "unit": "%",
+      "value": 25.0,
+      "class": "percent",
+      "pmcid": "PMC10606128"
+    },
+    {
+      "id": 858,
+      "name": "Noggin",
+      "unit": "%",
+      "value": 50.0,
+      "class": "percent",
+      "pmcid": "PMC11103887"
+    },
+    {
+      "id": 1200,
+      "name": "Noggin",
+      "unit": "%",
+      "value": 2.0,
+      "class": "percent",
+      "pmcid": "PMC11430971"
+    },
+    {
+      "id": 1569,
+      "name": "Noggin",
+      "unit": "%",
+      "value": 10.0,
+      "class": "percent",
+      "pmcid": "PMC11735410"
+    },
+    {
+      "id": 2234,
+      "name": "Noggin",
+      "unit": "%",
+      "value": 10.0,
+      "class": "percent",
+      "pmcid": "PMC12119492"
+    },
+    {
+      "id": 2305,
+      "name": "Noggin",
+      "unit": "%",
+      "value": 10.0,
+      "class": "percent",
+      "pmcid": "PMC12167974"
+    },
+    {
+      "id": 4130,
+      "name": "Noggin",
+      "unit": "%",
+      "value": 2.0,
+      "class": "percent",
+      "pmcid": "PMC12830083"
+    },
+    {
+      "id": 5096,
+      "name": "Noggin",
+      "unit": "%",
+      "value": 10.0,
+      "class": "percent",
+      "pmcid": "PMC13052877"
+    },
+    {
+      "id": 6931,
+      "name": "Noggin",
+      "unit": "%",
+      "value": 20.0,
+      "class": "percent",
+      "pmcid": "PMC6853918"
+    },
+    {
+      "id": 7084,
+      "name": "Noggin",
+      "unit": "%",
+      "value": 1.0,
+      "class": "percent",
+      "pmcid": "PMC7253462"
+    },
+    {
+      "id": 7761,
+      "name": "Noggin",
+      "unit": "%",
+      "value": 4.0,
+      "class": "percent",
+      "pmcid": "PMC9023604"
+    },
+    {
+      "id": 870,
+      "name": "Noggin/R-Spondin-conditioned medium",
+      "unit": "%",
+      "value": 2.0,
+      "class": "percent",
+      "pmcid": "PMC11118668"
+    },
+    {
+      "id": 857,
+      "name": "R-Spondin",
+      "unit": "%",
+      "value": 50.0,
+      "class": "percent",
+      "pmcid": "PMC11103887"
+    },
+    {
+      "id": 2306,
+      "name": "R-Spondin",
+      "unit": "%",
+      "value": 5.0,
+      "class": "percent",
+      "pmcid": "PMC12167974"
+    },
+    {
+      "id": 6753,
+      "name": "R-Spondin Conditioned Media",
+      "unit": "%",
+      "value": 10.0,
+      "class": "percent",
+      "pmcid": "PMC6324774"
+    },
+    {
+      "id": 1678,
+      "name": "R-Spondin1",
+      "unit": "% conditioned medium",
+      "value": 10.0,
+      "class": "percent",
+      "pmcid": "PMC11772605"
+    },
+    {
+      "id": 397,
+      "name": "R-spondin",
+      "unit": "%",
+      "value": 10.0,
+      "class": "percent",
+      "pmcid": "PMC10606128"
+    },
+    {
+      "id": 1203,
+      "name": "R-spondin",
+      "unit": "%",
+      "value": 2.0,
+      "class": "percent",
+      "pmcid": "PMC11430971"
+    },
+    {
+      "id": 1570,
+      "name": "R-spondin",
+      "unit": "%",
+      "value": 10.0,
+      "class": "percent",
+      "pmcid": "PMC11735410"
+    },
+    {
+      "id": 1794,
+      "name": "R-spondin",
+      "unit": "%",
+      "value": 25.0,
+      "class": "percent",
+      "pmcid": "PMC11812335"
+    },
+    {
+      "id": 4131,
+      "name": "R-spondin",
+      "unit": "%",
+      "value": 10.0,
+      "class": "percent",
+      "pmcid": "PMC12830083"
+    },
+    {
+      "id": 5095,
+      "name": "R-spondin",
+      "unit": "%",
+      "value": 10.0,
+      "class": "percent",
+      "pmcid": "PMC13052877"
+    },
+    {
+      "id": 7083,
+      "name": "R-spondin",
+      "unit": "%",
+      "value": 20.0,
+      "class": "percent",
+      "pmcid": "PMC7253462"
+    },
+    {
+      "id": 7760,
+      "name": "R-spondin",
+      "unit": "%",
+      "value": 2.0,
+      "class": "percent",
+      "pmcid": "PMC9023604"
+    },
+    {
+      "id": 7483,
+      "name": "R-spondin 1",
+      "unit": "%",
+      "value": 10.0,
+      "class": "percent",
+      "pmcid": "PMC8397473"
+    },
+    {
+      "id": 7504,
+      "name": "R-spondin 1",
+      "unit": "%",
+      "value": 10.0,
+      "class": "percent",
+      "pmcid": "PMC8420044"
+    },
+    {
+      "id": 2235,
+      "name": "R-spondin1",
+      "unit": "%",
+      "value": 10.0,
+      "class": "percent",
+      "pmcid": "PMC12119492"
+    },
+    {
+      "id": 2860,
+      "name": "R-spondin1",
+      "unit": "%",
+      "value": 10.0,
+      "class": "percent",
+      "pmcid": "PMC12369845"
+    },
+    {
+      "id": 3548,
+      "name": "R-spondin1",
+      "unit": "%",
+      "value": 10.0,
+      "class": "percent",
+      "pmcid": "PMC12662972"
+    },
+    {
+      "id": 3563,
+      "name": "R-spondin1",
+      "unit": "%",
+      "value": 10.0,
+      "class": "percent",
+      "pmcid": "PMC12665103"
+    },
+    {
+      "id": 3870,
+      "name": "R-spondin1",
+      "unit": "%",
+      "value": 10.0,
+      "class": "percent",
+      "pmcid": "PMC12771668"
+    },
+    {
+      "id": 8030,
+      "name": "R-spondin1",
+      "unit": "% conditioned medium",
+      "value": 10.0,
+      "class": "percent",
+      "pmcid": "PMC9932530"
+    },
+    {
+      "id": 6170,
+      "name": "RSPO1",
+      "unit": "%",
+      "value": 10.0,
+      "class": "percent",
+      "pmcid": "PMC3801438"
+    },
+    {
+      "id": 6649,
+      "name": "RSPO1",
+      "unit": "% v/v",
+      "value": 20.0,
+      "class": "percent",
+      "pmcid": "PMC6065407"
+    },
+    {
+      "id": 6930,
+      "name": "RSPO1",
+      "unit": "%",
+      "value": 10.0,
+      "class": "percent",
+      "pmcid": "PMC6853918"
+    },
+    {
+      "id": 7013,
+      "name": "RSPO1",
+      "unit": "%",
+      "value": 10.0,
+      "class": "percent",
+      "pmcid": "PMC7043048"
+    },
+    {
+      "id": 7881,
+      "name": "RSPO1",
+      "unit": "%",
+      "value": 1.0,
+      "class": "percent",
+      "pmcid": "PMC9174290"
+    },
+    {
+      "id": 4979,
+      "name": "Rspo1-conditioned medium",
+      "unit": "%",
+      "value": 20.0,
+      "class": "percent",
+      "pmcid": "PMC13025031"
+    },
+    {
+      "id": 4132,
+      "name": "WNT-3A",
+      "unit": "%",
+      "value": 12.0,
+      "class": "percent",
+      "pmcid": "PMC12830083"
+    },
+    {
+      "id": 7087,
+      "name": "WNT3a",
+      "unit": "%",
+      "value": 50.0,
+      "class": "percent",
+      "pmcid": "PMC7253462"
+    },
+    {
+      "id": 2236,
+      "name": "Wnt",
+      "unit": "%",
+      "value": 50.0,
+      "class": "percent",
+      "pmcid": "PMC12119492"
+    },
+    {
+      "id": 6754,
+      "name": "Wnt Conditioned Media",
+      "unit": "%",
+      "value": 50.0,
+      "class": "percent",
+      "pmcid": "PMC6324774"
+    },
+    {
+      "id": 6853,
+      "name": "Wnt-3A",
+      "unit": "%",
+      "value": 50.0,
+      "class": "percent",
+      "pmcid": "PMC6595382"
+    },
+    {
+      "id": 7484,
+      "name": "Wnt3A",
+      "unit": "%",
+      "value": 50.0,
+      "class": "percent",
+      "pmcid": "PMC8397473"
+    },
+    {
+      "id": 7759,
+      "name": "Wnt3A",
+      "unit": "%",
+      "value": 30.0,
+      "class": "percent",
+      "pmcid": "PMC9023604"
+    },
+    {
+      "id": 1126,
+      "name": "Wnt3a",
+      "unit": "%",
+      "value": 10.0,
+      "class": "percent",
+      "pmcid": "PMC11346288"
+    },
+    {
+      "id": 1783,
+      "name": "Wnt3a",
+      "unit": "%",
+      "value": 30.0,
+      "class": "percent",
+      "pmcid": "PMC11810045"
+    },
+    {
+      "id": 1793,
+      "name": "Wnt3a",
+      "unit": "%",
+      "value": 50.0,
+      "class": "percent",
+      "pmcid": "PMC11812335"
+    },
+    {
+      "id": 2707,
+      "name": "Wnt3a",
+      "unit": "%",
+      "value": 50.0,
+      "class": "percent",
+      "pmcid": "PMC12327626"
+    },
+    {
+      "id": 2867,
+      "name": "Wnt3a",
+      "unit": "%",
+      "value": 30.0,
+      "class": "percent",
+      "pmcid": "PMC12369845"
+    },
+    {
+      "id": 3560,
+      "name": "Wnt3a",
+      "unit": "%",
+      "value": 30.0,
+      "class": "percent",
+      "pmcid": "PMC12665103"
+    },
+    {
+      "id": 3871,
+      "name": "Wnt3a",
+      "unit": "%",
+      "value": 30.0,
+      "class": "percent",
+      "pmcid": "PMC12771668"
+    },
+    {
+      "id": 4030,
+      "name": "Wnt3a",
+      "unit": "%",
+      "value": 50.0,
+      "class": "percent",
+      "pmcid": "PMC12811363"
+    },
+    {
+      "id": 6495,
+      "name": "Wnt3a",
+      "unit": "%",
+      "value": 50.0,
+      "class": "percent",
+      "pmcid": "PMC5607351"
+    },
+    {
+      "id": 6648,
+      "name": "Wnt3a",
+      "unit": "% v/v",
+      "value": 50.0,
+      "class": "percent",
+      "pmcid": "PMC6065407"
+    },
+    {
+      "id": 7503,
+      "name": "Wnt3a",
+      "unit": "%",
+      "value": 20.0,
+      "class": "percent",
+      "pmcid": "PMC8420044"
+    },
+    {
+      "id": 8031,
+      "name": "Wnt3a",
+      "unit": "% conditioned medium",
+      "value": 50.0,
+      "class": "percent",
+      "pmcid": "PMC9932530"
+    },
+    {
+      "id": 4977,
+      "name": "Wnt3a-conditioned medium",
+      "unit": "%",
+      "value": 50.0,
+      "class": "percent",
+      "pmcid": "PMC13025031"
+    },
+    {
+      "id": 7485,
+      "name": "afamin/Wnt3A",
+      "unit": "%",
+      "value": 5.0,
+      "class": "percent",
+      "pmcid": "PMC8397473"
+    },
+    {
+      "id": 4128,
+      "name": "mouse EGF",
+      "unit": "%",
+      "value": 0.01,
+      "class": "percent",
+      "pmcid": "PMC12830083"
+    },
+    {
+      "id": 4978,
+      "name": "noggin-conditioned medium",
+      "unit": "%",
+      "value": 10.0,
+      "class": "percent",
+      "pmcid": "PMC13025031"
+    },
+    {
+      "id": 7594,
+      "name": "retinoic acid",
+      "unit": "%",
+      "value": 10.0,
+      "class": "percent",
+      "pmcid": "PMC8669127"
+    },
+    {
+      "id": 7595,
+      "name": "taurine",
+      "unit": "%",
+      "value": 10.0,
+      "class": "percent",
+      "pmcid": "PMC8669127"
+    },
+    {
+      "id": 8001,
+      "name": "SB-431542",
+      "unit": "\u03bcl",
+      "value": 50.0,
+      "class": "volume",
+      "pmcid": "PMC9876421"
+    }
+  ],
+  "generated_at": "2026-06-21T13:50:16+00:00"
+}

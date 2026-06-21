@@ -100,14 +100,63 @@ def canon_unit(u: str | None) -> str | None:
         return None
     s = u.strip().replace("μ", "u").replace("µ", "u").replace("−", "-")
     low = s.lower()
-    m = re.match(r"^(ng|ug|mg|pg|g)\s*[/·.]?\s*ml(?:\s*[-–]?\s*1)?$", low)
+    # mass per volume: support /mL, /uL, /L (e.g. "ng/uL", "ng ml -1")
+    m = re.match(r"^(ng|ug|mg|pg|g)\s*[/·.]?\s*(ml|ul|l)(?:\s*[-–]?\s*1)?$", low)
     if m:
-        return {"ng": "ng/mL", "ug": "ug/mL", "mg": "mg/mL", "pg": "pg/mL", "g": "g/mL"}[m.group(1)]
+        num = {"ng": "ng", "ug": "ug", "mg": "mg", "pg": "pg", "g": "g"}[m.group(1)]
+        den = {"ml": "mL", "ul": "uL", "l": "L"}[m.group(2)]
+        return f"{num}/{den}"
+    # activity per volume (enzymes/hormones): U/mL, mU/mL, IU/mL
+    a = re.match(r"^(u|mu|iu|kiu)\s*[/·.]?\s*ml(?:\s*[-–]?\s*1)?$", low)
+    if a:
+        return {"u": "U/mL", "mu": "mU/mL", "iu": "IU/mL", "kiu": "kIU/mL"}[a.group(1)]
     molar = {"um": "uM", "umol/l": "uM", "nm": "nM", "nmol/l": "nM",
-             "mm": "mM", "mmol/l": "mM", "m": "M", "mol/l": "M", "pm": "pM"}
-    if low in molar:
-        return molar[low]
+             "mm": "mM", "mmol/l": "mM", "m": "M", "mol/l": "M", "pm": "pM", "fm": "fM"}
+    low_ns = low.replace(" ", "")  # tolerate spaced molar like "n m" -> nM
+    if low_ns in molar:
+        return molar[low_ns]
     return s  # percent variants etc. kept verbatim (carry meaning, e.g. % v/v)
+
+
+# Concentration-unit VALIDITY classes (R2 — validity filter motivated by the #39
+# evidence-fidelity judge, which caught in-vivo doses and volumes mis-extracted as
+# culture concentrations). Separates real culture concentrations from:
+#   in_vivo_dose : mass-per-bodyweight dosing (mg/kg, mg kg-1 day-1) — animal, not culture
+#   volume       : a bare dispensed volume (50 µl) — an amount pipetted, not a concentration
+#   percent      : bare % — ambiguous (v/v, conditioned-medium fraction, or a stray statistic)
+# These three are SUSPECT as reagent concentrations and should be flagged for review.
+_INVIVO_RE = re.compile(r"(?:^|[^a-z])(?:p|n|u|µ|μ|m)?g\s*[ ·/-]*\s*kg(?:\b|\s*-?\s*1)|/kg|\bmpk\b", re.I)
+_VOLUME_RE = re.compile(r"^(?:p|n|u|m)?l$")  # pl/nl/ul/ml/l (after micro-sign fold), bare volume
+
+CONC_OK = {"M", "mM", "uM", "nM", "pM", "fM",
+           "ng/mL", "ug/mL", "mg/mL", "pg/mL", "g/mL", "ng/uL", "ug/uL", "pg/uL", "mg/uL",
+           "ng/L", "ug/L", "mg/L", "g/L",
+           "U/mL", "mU/mL", "IU/mL", "kIU/mL"}
+
+
+def concentration_class(unit: str | None) -> str:
+    """Classify a reagent's concentration unit for VALIDITY (not just canonicalization):
+    'concentration' (a real culture conc), 'in_vivo_dose', 'volume', 'percent',
+    'missing', or 'other'. The first non-'concentration'/'missing' classes are suspect."""
+    if not unit or not str(unit).strip():
+        return "missing"
+    s = str(unit).strip()
+    if _INVIVO_RE.search(s):
+        return "in_vivo_dose"
+    base = s.replace("μ", "u").replace("µ", "u").replace("−", "-").lower()
+    if _VOLUME_RE.match(base):
+        return "volume"
+    if "%" in s:
+        return "percent"
+    if (canon_unit(s) or s) in CONC_OK:
+        return "concentration"
+    return "other"
+
+
+def is_suspect_concentration(unit: str | None) -> bool:
+    """True if the unit is not a valid culture concentration (in-vivo dose / volume /
+    bare percent / unrecognized) — a flag for the review queue, not an auto-delete."""
+    return concentration_class(unit) in ("in_vivo_dose", "volume", "percent", "other")
 
 
 def build_canon_map(names) -> dict:
