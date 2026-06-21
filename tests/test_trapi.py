@@ -192,6 +192,89 @@ def test_real_kg_loads_and_answers():
         assert nid in g.nodes
 
 
+# --- CURIE compliance -------------------------------------------------------
+def test_edge_attr_curies_are_single_colon():
+    """Every EDGE_ATTR_CURIE value must be a valid CURIE (exactly one colon)."""
+    for col, curie in trapi.EDGE_ATTR_CURIE.items():
+        assert curie.count(":") == 1, (
+            f"EDGE_ATTR_CURIE[{col!r}] = {curie!r} — invalid CURIE (must have exactly one colon)"
+        )
+
+
+def test_build_kg_edge_no_double_colon_attribute_type_ids():
+    """_build_kg_edge must not produce attribute_type_ids with two colons."""
+    edge = {
+        "id": "e_test",
+        "subject": "PMC:1",
+        "predicate": "biolink:mentions",
+        "object": "CHEBI:100",
+        "primary_knowledge_source": "infores:test",
+        "knowledge_level": "prediction",
+        "agent_type": "automated_agent",
+        "publications": "PMID:12345",
+        "role": "catalyst",
+        "concentration_value": "10.0",
+        "concentration_unit": "ng/mL",
+        "organoid_type": "intestinal",
+        "evidence": "EGF was used at 10 ng/mL",
+    }
+    result = trapi._build_kg_edge(edge)
+    for attr in result["attributes"]:
+        tid = attr["attribute_type_id"]
+        assert tid.count(":") == 1, f"Attribute type_id has two colons: {tid!r}"
+
+
+def test_build_kg_edge_primary_knowledge_source_not_in_attributes():
+    """primary_knowledge_source belongs in sources, not attributes."""
+    edge = {
+        "id": "e_test",
+        "subject": "PMC:1",
+        "predicate": "biolink:mentions",
+        "object": "CHEBI:100",
+        "primary_knowledge_source": "infores:test",
+        "knowledge_level": "prediction",
+    }
+    result = trapi._build_kg_edge(edge)
+    attr_type_ids = {a["attribute_type_id"] for a in result["attributes"]}
+    # No attribute should reference primary_knowledge_source
+    for tid in attr_type_ids:
+        assert "primary_knowledge_source" not in tid
+    # But it must appear in sources
+    assert any(
+        s.get("resource_role") == "primary_knowledge_source"
+        for s in result["sources"]
+    )
+
+
+def test_build_kg_edge_standard_biolink_attributes_used():
+    """knowledge_level, agent_type, publications use biolink: prefix."""
+    edge = {
+        "id": "e_test",
+        "subject": "PMC:1",
+        "predicate": "biolink:mentions",
+        "object": "CHEBI:100",
+        "primary_knowledge_source": "infores:test",
+        "knowledge_level": "prediction",
+        "agent_type": "automated_agent",
+        "publications": "PMID:99",
+    }
+    result = trapi._build_kg_edge(edge)
+    by_value = {a["value"]: a["attribute_type_id"] for a in result["attributes"]}
+    assert by_value["prediction"] == "biolink:knowledge_level"
+    assert by_value["automated_agent"] == "biolink:agent_type"
+    assert by_value["PMID:99"] == "biolink:publications"
+
+
+def test_full_response_no_double_colon_attribute_type_ids():
+    """End-to-end: TRAPI answer over the fake graph has no double-colon attribute_type_ids."""
+    g = _fake_graph()
+    resp = _q_answer(g, {"ids": ["PMC:1"]}, {})
+    for _eid, edge in resp["message"]["knowledge_graph"]["edges"].items():
+        for attr in edge.get("attributes", []):
+            tid = attr["attribute_type_id"]
+            assert tid.count(":") == 1, f"Double-colon attribute_type_id in response: {tid!r}"
+
+
 # --- helper -----------------------------------------------------------------
 def _q_answer(g, subj_q, obj_q, predicates=None):
     return trapi.answer(_query(subj_q, obj_q, predicates), g)

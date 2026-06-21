@@ -57,17 +57,21 @@ DEFAULT_EDGES = REPO / "exports" / "kgx" / "edges.tsv"
 RESOURCE_ID = "infores:organoid-protocol-atlas"
 
 NODE_COLUMNS = ["id", "category", "name", "provided_by"]
-EDGE_ATTR_COLUMNS = [
-    "knowledge_level",
-    "agent_type",
-    "primary_knowledge_source",
-    "publications",
-    "role",
-    "concentration_value",
-    "concentration_unit",
-    "organoid_type",
-    "evidence",
-]
+
+# Maps KGX edge column name → valid TRAPI attribute_type_id CURIE.
+# "primary_knowledge_source" is omitted: it belongs in the sources block,
+# not in attributes. Standard Biolink properties use the biolink: prefix;
+# OPA-specific properties use the OPA: prefix (one colon — valid CURIE).
+EDGE_ATTR_CURIE: dict[str, str] = {
+    "knowledge_level": "biolink:knowledge_level",
+    "agent_type": "biolink:agent_type",
+    "publications": "biolink:publications",
+    "role": "OPA:role",
+    "concentration_value": "OPA:concentration_value",
+    "concentration_unit": "OPA:concentration_unit",
+    "organoid_type": "OPA:organoid_type",
+    "evidence": "OPA:evidence",
+}
 
 
 # ---------------------------------------------------------------------------
@@ -151,12 +155,12 @@ def _build_kg_edge(edge: dict) -> dict:
     namespaced under this resource so we don't over-claim Biolink slot semantics).
     """
     attributes = []
-    for col in EDGE_ATTR_COLUMNS:
+    for col, curie in EDGE_ATTR_CURIE.items():
         val = edge.get(col)
         if val not in (None, ""):
             attributes.append(
                 {
-                    "attribute_type_id": f"{RESOURCE_ID}:{col}",
+                    "attribute_type_id": curie,
                     "value": val,
                 }
             )
