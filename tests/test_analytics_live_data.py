@@ -413,3 +413,19 @@ def test_live_journal_breakdown_nature_comms_present():
     # Nature Communications is reliably present in the corpus
     cc = data["cross_corpus"]
     assert any("nature communications" in j.lower() for j in cc)
+
+
+# ---------------------------------------------------------------------------
+# type-comparison live smoke tests
+# ---------------------------------------------------------------------------
+
+@require_reagents
+def test_live_type_comparison_intestinal_cerebral():
+    data, status = ae.handle_type_comparison("intestinal", "cerebral")
+    assert status == 200
+    assert data["n_shared"] >= 5
+    assert data["jaccard_similarity"] > 0
+    assert data["jaccard_similarity"] < 1.0
+    # EGF appears in both
+    shared_names = {r["canonical"].lower() for r in data["shared"]}
+    assert any("egf" in n for n in shared_names)

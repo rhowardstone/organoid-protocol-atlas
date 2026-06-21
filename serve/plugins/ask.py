@@ -106,6 +106,7 @@ exports. Prefer the JSON endpoints for programmatic use.
 - /analytics/kgx-summary               KGX graph state: n_nodes/n_edges by category, resolution rate, review queue breakdown, top not_found/needs_review entities for S1/S2 triage
 - /analytics/concentration-by-type     per-organoid-type concentration stats for one canonical reagent; requires ?q=EGF; shows how dose differs across kidney/intestinal/liver/etc
 - /analytics/journal-breakdown          journal contribution counts: cross-corpus top 50 + per-type top 5; ?type=kidney for full single-type breakdown
+- /analytics/type-comparison           side-by-side organoid type comparison: shared/unique canonical reagents, Jaccard similarity, per-kind breakdown; ?a=intestinal&b=cerebral
 - /analytics/failure-modes             failure mode cluster summary across the corpus
 - /analytics/lineage                   DOI→DOI protocol lineage graph
 - /analytics/assay-endpoints           assay endpoint cluster summary (per-type + cross-type)

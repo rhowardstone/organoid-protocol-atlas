@@ -2977,3 +2977,120 @@ def test_jb_per_type_top5_present(tmp_path, monkeypatch):
 def test_jb_index_entry():
     data, _ = ae.handle_index()
     assert "/analytics/journal-breakdown" in data["endpoints"]
+
+
+# ---------------------------------------------------------------------------
+# type-comparison tests
+# ---------------------------------------------------------------------------
+
+def _write_reagents_for_tc(path, rows):
+    lines = []
+    for r in rows:
+        lines.append(json.dumps({
+            "canonical": r.get("canonical", "EGF"),
+            "organoid_type": r.get("organoid_type", "kidney"),
+            "kind": r.get("kind", "signaling"),
+            "name": r.get("name", r.get("canonical", "EGF")),
+        }))
+    path.write_text("\n".join(lines) + "\n")
+
+
+def test_tc_400_missing_params(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_tc(p, [])
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", p)
+    _, s = ae.handle_type_comparison(None, "cerebral")
+    assert s == 400
+    _, s2 = ae.handle_type_comparison("intestinal", None)
+    assert s2 == 400
+
+
+def test_tc_400_same_type(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_tc(p, [{"organoid_type": "kidney", "canonical": "EGF"}])
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", p)
+    _, s = ae.handle_type_comparison("kidney", "kidney")
+    assert s == 400
+
+
+def test_tc_400_invalid_type(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_tc(p, [])
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", p)
+    _, s = ae.handle_type_comparison("kidney", "../evil")
+    assert s == 400
+
+
+def test_tc_shared_and_unique(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_tc(p, [
+        {"canonical": "EGF", "organoid_type": "kidney"},
+        {"canonical": "EGF", "organoid_type": "liver"},
+        {"canonical": "FGF2", "organoid_type": "kidney"},
+        {"canonical": "Wnt3a", "organoid_type": "liver"},
+    ])
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", p)
+    data, status = ae.handle_type_comparison("kidney", "liver")
+    assert status == 200
+    shared = {r["canonical"] for r in data["shared"]}
+    only_a = {r["canonical"] for r in data["only_a"]}
+    only_b = {r["canonical"] for r in data["only_b"]}
+    assert "EGF" in shared
+    assert "FGF2" in only_a
+    assert "Wnt3a" in only_b
+
+
+def test_tc_jaccard_correct(tmp_path, monkeypatch):
+    """2 shared out of 4 total → Jaccard = 0.5."""
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_tc(p, [
+        {"canonical": "A", "organoid_type": "x"},
+        {"canonical": "B", "organoid_type": "x"},
+        {"canonical": "A", "organoid_type": "y"},
+        {"canonical": "C", "organoid_type": "y"},
+    ])
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", p)
+    data, _ = ae.handle_type_comparison("x", "y")
+    assert data["n_shared"] == 1
+    assert data["n_union"] == 3
+    assert abs(data["jaccard_similarity"] - round(1/3, 4)) < 0.001
+
+
+def test_tc_404_unknown_type(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_tc(p, [{"canonical": "EGF", "organoid_type": "kidney"}])
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", p)
+    _, s = ae.handle_type_comparison("kidney", "liver")
+    assert s == 404
+
+
+def test_tc_pmcid_dedup_counts_records_not_pmcids(tmp_path, monkeypatch):
+    """n_records should count rows, not unique PMCIDs."""
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_tc(p, [
+        {"canonical": "EGF", "organoid_type": "kidney"},
+        {"canonical": "EGF", "organoid_type": "kidney"},
+        {"canonical": "EGF", "organoid_type": "liver"},
+    ])
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", p)
+    data, _ = ae.handle_type_comparison("kidney", "liver")
+    shared_egf = next(r for r in data["shared"] if r["canonical"] == "EGF")
+    # kidney has 2 EGF records
+    assert shared_egf["n_records"] == 2
+
+
+def test_tc_kind_breakdown_shared(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_tc(p, [
+        {"canonical": "EGF", "organoid_type": "kidney", "kind": "signaling"},
+        {"canonical": "EGF", "organoid_type": "liver", "kind": "supplement"},
+    ])
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", p)
+    data, _ = ae.handle_type_comparison("kidney", "liver")
+    kb = data["kind_breakdown_shared"]
+    assert "signaling" in kb or "supplement" in kb
+
+
+def test_tc_index_entry():
+    data, _ = ae.handle_index()
+    assert "/analytics/type-comparison" in data["endpoints"]
