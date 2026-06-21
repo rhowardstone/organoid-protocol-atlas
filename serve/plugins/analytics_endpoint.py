@@ -39,6 +39,7 @@ Routes (all return JSON; read-only, no writes):
   GET /analytics/role-breakdown              -- normalized functional role distribution for signaling reagents: signaling_factor/growth_factor/differentiation/inhibitor/agonist etc.; ?q= for one role; ?type= filter; live from reagents.jsonl
   GET /analytics/type-reagent-heatmap        -- type × canonical usage matrix: top_n canonicals × all types, each cell = n_papers; ?kind= filter; ?top_n= (default 20); live from reagents.jsonl
   GET /analytics/canonical-name-variants     -- normalization complexity report: canonical → all raw names that map to it; top 30 by n_variants; ?q= for one canonical; live from reagents.jsonl
+  GET /analytics/concentration-unit-distribution -- unit inconsistency report: canonicals using >1 unit system; top 30 by n_units; ?q= for one canonical with min/median/max per unit; live from reagents.jsonl
   GET /analytics                                -- index of available analytics
 
 All endpoints degrade gracefully — if the pre-computed file doesn't exist they return
@@ -3346,6 +3347,113 @@ def handle_canonical_name_variants(
     }, 200
 
 
+def handle_concentration_unit_distribution(
+    query: str | None,
+    min_n: int = 3,
+) -> tuple[dict, int]:
+    """Concentration unit inconsistency report: which canonicals use multiple unit systems.
+
+    Without ?q=: top 30 canonicals by n_units descending (most unit-inconsistent),
+    filtered to those with >= min_n total concentration records.
+    With ?q=EGF: full unit distribution for one canonical including min/median/max per unit.
+    ?min_n=: minimum concentration records to include a canonical (default 3).
+    """
+    if not REAGENTS_JSONL.exists():
+        return {
+            "error": "reagents.jsonl not found",
+            "hint": "Run: python pipeline/export_public.py",
+        }, 404
+
+    reagents = [
+        json.loads(line)
+        for line in REAGENTS_JSONL.read_text().splitlines()
+        if line.strip()
+    ]
+
+    from collections import defaultdict
+    # canonical → unit → list of numeric values
+    canon_unit_values: dict[str, dict[str, list]] = defaultdict(lambda: defaultdict(list))
+    for r in reagents:
+        c = r.get("canonical")
+        u = r.get("canonical_unit")
+        v = r.get("value")
+        if c and u and v is not None:
+            try:
+                canon_unit_values[c][u].append(float(v))
+            except (TypeError, ValueError):
+                pass
+
+    def _median(vals: list) -> float:
+        s = sorted(vals)
+        n = len(s)
+        return s[n // 2] if n % 2 else (s[n // 2 - 1] + s[n // 2]) / 2.0
+
+    if query:
+        q_lower = query.lower()
+        if query in canon_unit_values:
+            target = query
+        else:
+            matched = [c for c in canon_unit_values if q_lower in c.lower()]
+            if not matched:
+                return {
+                    "error": f"No canonical with concentration data matching {query!r}",
+                    "hint": "use /analytics/concentration-stats to see all canonicals with values",
+                }, 404
+            target = matched[0]
+
+        unit_dict = canon_unit_values[target]
+        n_total = sum(len(v) for v in unit_dict.values())
+        units = sorted(
+            [
+                {
+                    "unit": u,
+                    "n_records": len(vals),
+                    "pct": round(len(vals) / n_total * 100, 1),
+                    "min": round(min(vals), 4),
+                    "median": round(_median(vals), 4),
+                    "max": round(max(vals), 4),
+                }
+                for u, vals in unit_dict.items()
+            ],
+            key=lambda x: -x["n_records"],
+        )
+        dominant = units[0]["unit"] if units else None
+        return {
+            "canonical": target,
+            "n_units": len(unit_dict),
+            "n_records_total": n_total,
+            "is_unit_consistent": len(unit_dict) == 1,
+            "dominant_unit": dominant,
+            "units": units,
+        }, 200
+
+    # Global: multi-unit canonicals
+    multi_unit = []
+    for c, unit_dict in canon_unit_values.items():
+        n_total = sum(len(v) for v in unit_dict.values())
+        if n_total < min_n:
+            continue
+        dominant = max(unit_dict, key=lambda u: len(unit_dict[u]))
+        multi_unit.append({
+            "canonical": c,
+            "n_units": len(unit_dict),
+            "n_records_total": n_total,
+            "dominant_unit": dominant,
+            "dominant_pct": round(len(unit_dict[dominant]) / n_total * 100, 1),
+        })
+    multi_unit.sort(key=lambda x: (-x["n_units"], -x["n_records_total"]))
+
+    n_canonicals_total = sum(1 for u in canon_unit_values.values() if sum(len(v) for v in u.values()) >= min_n)
+
+    return {
+        "n_canonicals_with_values": n_canonicals_total,
+        "n_multi_unit": sum(1 for e in multi_unit if e["n_units"] > 1),
+        "min_n": min_n,
+        "multi_unit_canonicals": [e for e in multi_unit if e["n_units"] > 1][:30],
+        "single_unit_count": sum(1 for e in multi_unit if e["n_units"] == 1),
+    }, 200
+
+
 def handle_index() -> tuple[dict, int]:
     """Analytics endpoint index."""
     return {
@@ -3387,6 +3495,7 @@ def handle_index() -> tuple[dict, int]:
             "/analytics/role-breakdown": "normalized functional role distribution for signaling (kind=signaling) reagents: signaling_factor/growth_factor/differentiation/inhibitor/supplement/treatment/agonist/conditioned_medium/proliferation/other/not_stated; ?q=differentiation for top canonicals with that role; ?type= filter",
             "/analytics/type-reagent-heatmap": "organoid type × canonical reagent usage matrix for visualization: top_n canonicals (columns) × all types (rows), each cell = n_papers; ?kind=signaling|supplement|all (default signaling); ?top_n= (default 20, max 50)",
             "/analytics/canonical-name-variants": "normalization complexity report: for each canonical, all distinct raw names that map to it; top 30 most-ambiguous sorted by n_variants; ?q=FGF2 for one canonical; ?min_variants= floor (default 2)",
+            "/analytics/concentration-unit-distribution": "unit inconsistency report: canonicals using multiple concentration unit systems; top 30 by n_units; ?q=EGF for full unit breakdown with min/median/max per unit; ?min_n= records threshold (default 3)",
             "/analytics/assay-endpoints": "assay endpoint cluster summary (per type + cross-type)",
             "/analytics/quality": "per-paper quality scores (gold/silver/bronze) + corpus summary",
             "/analytics/mior": "MIOR completeness report (Minimum Information About an Organoid Research)",
@@ -3642,6 +3751,16 @@ async def route_type_maturity(datasette, request):
     return Response.json(data, status=status)
 
 
+async def route_concentration_unit_distribution(datasette, request):
+    query = request.args.get("q") or None
+    try:
+        min_n = int(request.args.get("min_n") or 3)
+    except (TypeError, ValueError):
+        min_n = 3
+    data, status = handle_concentration_unit_distribution(query, min_n)
+    return Response.json(data, status=status)
+
+
 async def route_canonical_name_variants(datasette, request):
     query = request.args.get("q") or None
     try:
@@ -3754,6 +3873,7 @@ def register_routes():
         (r"^/analytics/role-breakdown$", route_role_breakdown),
         (r"^/analytics/type-reagent-heatmap$", route_type_reagent_heatmap),
         (r"^/analytics/canonical-name-variants$", route_canonical_name_variants),
+        (r"^/analytics/concentration-unit-distribution$", route_concentration_unit_distribution),
         (r"^/analytics/journal-breakdown$", route_journal_breakdown),
         (r"^/analytics/concentration-by-type$", route_concentration_by_type),
         (r"^/analytics/kgx-summary$", route_kgx_summary),
