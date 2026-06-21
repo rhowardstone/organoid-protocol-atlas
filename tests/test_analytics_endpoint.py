@@ -3797,3 +3797,166 @@ def test_tm_by_tier_groups_present(tmp_path, monkeypatch):
 def test_tm_index_entry():
     data, _ = ae.handle_index()
     assert "/analytics/type-maturity" in data["endpoints"]
+
+
+# ---------------------------------------------------------------------------
+# Route 40: /analytics/reagent-cooccurrence
+# ---------------------------------------------------------------------------
+
+def _write_reagents_for_rc(path, rows):
+    base = {
+        "pmcid": "PMC1", "organoid_type": "intestinal",
+        "kind": "signaling", "canonical": "EGF",
+        "name": "EGF", "value": None, "unit": None,
+        "canonical_unit": None, "grounded": False,
+        "evidence_quote": None, "figure_confirmed": False,
+        "suspect_unit": False, "role": None, "doi": None, "id": "r1",
+    }
+    path.write_text("\n".join(json.dumps({**base, **r}) for r in rows))
+
+
+def _patch_rc(monkeypatch, path):
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", path)
+
+
+# Fixture: PMC1 (intestinal): EGF + Noggin + CHIR99021
+#          PMC2 (intestinal): EGF + Noggin
+#          PMC3 (kidney):     EGF + CHIR99021
+#          PMC4 (intestinal): supplement B27 (excluded from signaling filter)
+#          PMC5 (intestinal): EGF + Noggin + CHIR99021
+# Co-occurrence (signaling only, papers PMC1/2/3/5):
+#   EGF + Noggin: PMC1,PMC2,PMC5 → 3; union=4 → jaccard=0.75
+#   EGF + CHIR99021: PMC1,PMC3,PMC5 → 3; union=4 → jaccard=0.75
+#   Noggin + CHIR99021: PMC1,PMC5 → 2; union=4 → jaccard=0.5
+_RC_ROWS = [
+    {"pmcid": "PMC1", "organoid_type": "intestinal", "kind": "signaling", "canonical": "EGF"},
+    {"pmcid": "PMC1", "organoid_type": "intestinal", "kind": "signaling", "canonical": "Noggin"},
+    {"pmcid": "PMC1", "organoid_type": "intestinal", "kind": "signaling", "canonical": "CHIR99021"},
+    {"pmcid": "PMC2", "organoid_type": "intestinal", "kind": "signaling", "canonical": "EGF"},
+    {"pmcid": "PMC2", "organoid_type": "intestinal", "kind": "signaling", "canonical": "Noggin"},
+    {"pmcid": "PMC3", "organoid_type": "kidney", "kind": "signaling", "canonical": "EGF"},
+    {"pmcid": "PMC3", "organoid_type": "kidney", "kind": "signaling", "canonical": "CHIR99021"},
+    {"pmcid": "PMC4", "organoid_type": "intestinal", "kind": "supplement", "canonical": "B27"},
+    {"pmcid": "PMC5", "organoid_type": "intestinal", "kind": "signaling", "canonical": "EGF"},
+    {"pmcid": "PMC5", "organoid_type": "intestinal", "kind": "signaling", "canonical": "Noggin"},
+    {"pmcid": "PMC5", "organoid_type": "intestinal", "kind": "signaling", "canonical": "CHIR99021"},
+]
+
+
+def test_rc_returns_200(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_rc(p, _RC_ROWS)
+    _patch_rc(monkeypatch, p)
+    data, status = ae.handle_reagent_cooccurrence(None, None, min_papers=3)
+    assert status == 200
+    assert "top_pairs" in data
+    assert "n_papers_total" in data
+    assert "n_canonicals" in data
+
+
+def test_rc_n_papers_total(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_rc(p, _RC_ROWS)
+    _patch_rc(monkeypatch, p)
+    # PMC4 has only supplement so it contributes no signaling rows,
+    # but PMC1,2,3,5 each have at least one signaling → 4 papers
+    data, _ = ae.handle_reagent_cooccurrence(None, None, min_papers=1)
+    assert data["n_papers_total"] == 4
+
+
+def test_rc_top_pair_n_papers(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_rc(p, _RC_ROWS)
+    _patch_rc(monkeypatch, p)
+    data, _ = ae.handle_reagent_cooccurrence(None, None, min_papers=3)
+    assert len(data["top_pairs"]) == 2
+    assert data["top_pairs"][0]["n_papers"] == 3
+
+
+def test_rc_jaccard_correct(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_rc(p, _RC_ROWS)
+    _patch_rc(monkeypatch, p)
+    data, _ = ae.handle_reagent_cooccurrence(None, None, min_papers=3)
+    # Both EGF+Noggin and EGF+CHIR99021 have inter=3, union=4 → 0.75
+    jaccards = {p["jaccard"] for p in data["top_pairs"]}
+    assert 0.75 in jaccards
+
+
+def test_rc_min_papers_excludes_pairs(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_rc(p, _RC_ROWS)
+    _patch_rc(monkeypatch, p)
+    # Noggin+CHIR99021 has n_papers=2; with min_papers=3, only 2 pairs remain
+    data, _ = ae.handle_reagent_cooccurrence(None, None, min_papers=4)
+    assert data["n_pairs"] == 0
+    assert data["top_pairs"] == []
+
+
+def test_rc_query_egf_returns_partners(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_rc(p, _RC_ROWS)
+    _patch_rc(monkeypatch, p)
+    data, status = ae.handle_reagent_cooccurrence("EGF", None)
+    assert status == 200
+    assert data["query_canonical"] == "EGF"
+    assert "co_occurring" in data
+    assert data["n_co_occurring"] == 2
+    canonicals = {r["canonical"] for r in data["co_occurring"]}
+    assert "Noggin" in canonicals
+    assert "CHIR99021" in canonicals
+
+
+def test_rc_query_egf_n_papers_noggin(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_rc(p, _RC_ROWS)
+    _patch_rc(monkeypatch, p)
+    data, _ = ae.handle_reagent_cooccurrence("EGF", None)
+    noggin = next(r for r in data["co_occurring"] if r["canonical"] == "Noggin")
+    assert noggin["n_papers"] == 3
+    assert noggin["jaccard"] == 0.75
+
+
+def test_rc_query_unknown_returns_404(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_rc(p, _RC_ROWS)
+    _patch_rc(monkeypatch, p)
+    _, status = ae.handle_reagent_cooccurrence("NOSUCHCANONICAL_XYZ", None)
+    assert status == 404
+
+
+def test_rc_type_filter(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_rc(p, _RC_ROWS)
+    _patch_rc(monkeypatch, p)
+    # kidney: only PMC3 with EGF+CHIR99021 → 1 paper, 1 pair (inter=1 < min_papers=3)
+    data, _ = ae.handle_reagent_cooccurrence(None, "kidney", min_papers=3)
+    assert data["n_papers_total"] == 1
+    assert data["n_pairs"] == 0
+
+
+def test_rc_type_filter_with_query(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_rc(p, _RC_ROWS)
+    _patch_rc(monkeypatch, p)
+    # kidney + ?q=EGF → only CHIR99021 co-occurs (n_papers=1)
+    data, status = ae.handle_reagent_cooccurrence("EGF", "kidney")
+    assert status == 200
+    assert data["n_papers_total"] == 1
+    assert data["n_co_occurring"] == 1
+    assert data["co_occurring"][0]["canonical"] == "CHIR99021"
+    assert data["co_occurring"][0]["n_papers"] == 1
+
+
+def test_rc_supplements_excluded(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_rc(p, _RC_ROWS)
+    _patch_rc(monkeypatch, p)
+    data, _ = ae.handle_reagent_cooccurrence("B27", None)
+    # B27 is supplement kind → not in canonical_papers → 404
+    assert data.get("error") is not None
+
+
+def test_rc_index_entry():
+    data, _ = ae.handle_index()
+    assert "/analytics/reagent-cooccurrence" in data["endpoints"]

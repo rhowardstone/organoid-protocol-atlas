@@ -34,6 +34,7 @@ Routes (all return JSON; read-only, no writes):
   GET /analytics/protocol-outliers           -- per-type outlier detection on n_signaling_factors: complex and minimal protocols (z-score threshold, default 1.5); ?type= for one type
   GET /analytics/grounding-distribution      -- per-paper grounding rate histogram (10 buckets 0-100%); per-type mean; top/bottom 20 papers; ?type= for one type; live from protocols.jsonl
   GET /analytics/type-maturity               -- field maturity classification per organoid type: first_year, n_years_active, trajectory (accelerating/stable/slowing), maturity_tier; live from protocols.jsonl
+  GET /analytics/reagent-cooccurrence        -- pairwise signaling-factor co-occurrence: top 100 pairs by n_papers with Jaccard; ?q= for one canonical; ?type= filter; live from reagents.jsonl
   GET /analytics                                -- index of available analytics
 
 All endpoints degrade gracefully — if the pre-computed file doesn't exist they return
@@ -2786,6 +2787,126 @@ def handle_mior() -> tuple[dict, int]:
         return {"error": "malformed MIOR completeness file"}, 500
 
 
+def handle_reagent_cooccurrence(
+    query: str | None,
+    organoid_type: str | None,
+    min_papers: int = 3,
+) -> tuple[dict, int]:
+    """Pairwise signaling-factor co-occurrence analysis.
+
+    Without ?q=: returns top 100 pairs by n_papers with min_papers threshold.
+    With ?q=EGF: returns all canonicals that co-occur with EGF, sorted by n_papers.
+    ?type= filters to one organoid type.
+    """
+    from itertools import combinations
+
+    if not REAGENTS_JSONL.exists():
+        return {
+            "error": "reagents.jsonl not found",
+            "hint": "Run: python pipeline/export_public.py",
+        }, 404
+
+    reagents = [
+        json.loads(line)
+        for line in REAGENTS_JSONL.read_text().splitlines()
+        if line.strip()
+    ]
+    rows = [r for r in reagents if r.get("kind") == "signaling" and r.get("canonical")]
+    if organoid_type:
+        rows = [r for r in rows if r.get("organoid_type") == organoid_type]
+
+    # Canonical set per paper (deduplicated)
+    paper_canonicals: dict[str, set] = {}
+    for r in rows:
+        pmcid = r["pmcid"]
+        if pmcid not in paper_canonicals:
+            paper_canonicals[pmcid] = set()
+        paper_canonicals[pmcid].add(r["canonical"])
+
+    n_papers_total = len(paper_canonicals)
+    if n_papers_total == 0:
+        return {
+            "n_papers_total": 0,
+            "n_canonicals": 0,
+            "organoid_type": organoid_type,
+            "top_pairs": [],
+        }, 200
+
+    # Papers per canonical
+    canonical_papers: dict[str, set] = {}
+    for pmcid, canons in paper_canonicals.items():
+        for c in canons:
+            if c not in canonical_papers:
+                canonical_papers[c] = set()
+            canonical_papers[c].add(pmcid)
+
+    if query:
+        # Exact match first, then case-insensitive substring
+        q_lower = query.lower()
+        if query in canonical_papers:
+            target = query
+        else:
+            matched = [c for c in canonical_papers if q_lower in c.lower()]
+            if not matched:
+                return {
+                    "error": f"No signaling canonical matching {query!r}",
+                    "hint": "use /analytics/reagent-prevalence to browse available canonicals",
+                }, 404
+            target = matched[0]
+
+        target_papers = canonical_papers[target]
+        pairs = []
+        for other, other_papers in canonical_papers.items():
+            if other == target:
+                continue
+            inter = len(target_papers & other_papers)
+            if inter == 0:
+                continue
+            union = len(target_papers | other_papers)
+            pairs.append({
+                "canonical": other,
+                "n_papers": inter,
+                "n_papers_target": len(target_papers),
+                "n_papers_other": len(other_papers),
+                "jaccard": round(inter / union, 4),
+            })
+        pairs.sort(key=lambda x: (-x["n_papers"], -x["jaccard"]))
+        return {
+            "query_canonical": target,
+            "n_papers_total": n_papers_total,
+            "organoid_type": organoid_type,
+            "n_co_occurring": len(pairs),
+            "co_occurring": pairs[:50],
+        }, 200
+
+    # Global top pairs
+    canons = list(canonical_papers.keys())
+    pairs = []
+    for a, b in combinations(canons, 2):
+        inter = len(canonical_papers[a] & canonical_papers[b])
+        if inter < min_papers:
+            continue
+        union = len(canonical_papers[a] | canonical_papers[b])
+        pairs.append({
+            "canonical_a": a,
+            "canonical_b": b,
+            "n_papers": inter,
+            "n_papers_a": len(canonical_papers[a]),
+            "n_papers_b": len(canonical_papers[b]),
+            "jaccard": round(inter / union, 4),
+        })
+    pairs.sort(key=lambda x: (-x["n_papers"], -x["jaccard"]))
+
+    return {
+        "n_papers_total": n_papers_total,
+        "n_canonicals": len(canons),
+        "organoid_type": organoid_type,
+        "min_papers": min_papers,
+        "n_pairs": len(pairs),
+        "top_pairs": pairs[:100],
+    }, 200
+
+
 def handle_index() -> tuple[dict, int]:
     """Analytics endpoint index."""
     return {
@@ -2822,6 +2943,7 @@ def handle_index() -> tuple[dict, int]:
             "/analytics/protocol-outliers": "per-type outlier detection on n_signaling_factors: complex (high SF count) and minimal (low SF count) protocols per organoid type, with z-scores; ?type=kidney for one type; ?z_thresh= to adjust sensitivity (default 1.5)",
             "/analytics/grounding-distribution": "per-paper grounding rate histogram (10 buckets 0-100%), per-type mean ranking, top/bottom 20 papers; ?type=kidney for one type; live from protocols.jsonl",
             "/analytics/type-maturity": "field maturity classification per organoid type: first_year, n_years_active, n_papers_total, trajectory (accelerating/stable/slowing), maturity_tier (established/developing/emerging); ?type=kidney for one type",
+            "/analytics/reagent-cooccurrence": "pairwise signaling-factor co-occurrence: top pairs by n_papers with Jaccard similarity; ?q=EGF for all partners of one canonical; ?type= for one organoid type; ?min_papers= threshold (default 3)",
             "/analytics/assay-endpoints": "assay endpoint cluster summary (per type + cross-type)",
             "/analytics/quality": "per-paper quality scores (gold/silver/bronze) + corpus summary",
             "/analytics/mior": "MIOR completeness report (Minimum Information About an Organoid Research)",
@@ -3077,6 +3199,17 @@ async def route_type_maturity(datasette, request):
     return Response.json(data, status=status)
 
 
+async def route_reagent_cooccurrence(datasette, request):
+    query = request.args.get("q") or None
+    organoid_type = request.args.get("type") or None
+    try:
+        min_papers = int(request.args.get("min_papers") or 3)
+    except (TypeError, ValueError):
+        min_papers = 3
+    data, status = handle_reagent_cooccurrence(query, organoid_type, min_papers)
+    return Response.json(data, status=status)
+
+
 async def route_concentration_deviation(datasette, request):
     try:
         min_n = int(request.args.get("min_n") or 3)
@@ -3135,6 +3268,7 @@ def register_routes():
         (r"^/analytics/protocol-outliers$", route_protocol_outliers),
         (r"^/analytics/grounding-distribution$", route_grounding_distribution),
         (r"^/analytics/type-maturity$", route_type_maturity),
+        (r"^/analytics/reagent-cooccurrence$", route_reagent_cooccurrence),
         (r"^/analytics/journal-breakdown$", route_journal_breakdown),
         (r"^/analytics/concentration-by-type$", route_concentration_by_type),
         (r"^/analytics/kgx-summary$", route_kgx_summary),

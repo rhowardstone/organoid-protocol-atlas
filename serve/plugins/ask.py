@@ -112,6 +112,7 @@ exports. Prefer the JSON endpoints for programmatic use.
 - /analytics/protocol-outliers         per-type outlier detection on n_signaling_factors: complex and minimal protocols with z-scores; ?type=kidney for one type; ?z_thresh= sensitivity
 - /analytics/grounding-distribution    per-paper grounding rate histogram (10 buckets), per-type mean ranking, top/bottom 20 papers; ?type=kidney for one type; live from protocols.jsonl
 - /analytics/type-maturity             field maturity per organoid type: first_year, trajectory (accelerating/stable/slowing), maturity_tier (established/developing/emerging); ?type=kidney
+- /analytics/reagent-cooccurrence      pairwise signaling-factor co-occurrence: top pairs by n_papers with Jaccard similarity; ?q=EGF for all partners of one canonical; ?type= for one organoid type; ?min_papers= threshold
 - /analytics/failure-modes             failure mode cluster summary across the corpus
 - /analytics/lineage                   DOI→DOI protocol lineage graph
 - /analytics/assay-endpoints           assay endpoint cluster summary (per-type + cross-type)

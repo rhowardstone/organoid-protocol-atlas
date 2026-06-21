@@ -559,3 +559,23 @@ def test_live_tm_intestinal_details():
     assert data["first_year"] <= 2020
     assert data["n_papers_total"] >= 20
     assert data["trajectory"] in ("accelerating", "stable", "slowing", "insufficient_data")
+
+
+@require_reagents
+def test_live_rc_returns_200():
+    data, status = ae.handle_reagent_cooccurrence(None, None, min_papers=3)
+    assert status == 200
+    assert data["n_papers_total"] >= 100
+    assert data["n_canonicals"] >= 50
+    assert len(data["top_pairs"]) >= 10
+
+
+@require_reagents
+def test_live_rc_egf_has_partners():
+    data, status = ae.handle_reagent_cooccurrence("EGF", None)
+    assert status == 200
+    assert data["query_canonical"] == "EGF"
+    assert data["n_co_occurring"] >= 10
+    canonicals = {r["canonical"] for r in data["co_occurring"]}
+    # EGF and Noggin are both core intestinal factors — expect them to co-occur
+    assert "Noggin" in canonicals
