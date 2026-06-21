@@ -45,6 +45,13 @@ class Evidence(BaseModel):
     quote: str = Field(..., description="Verbatim source span supporting the value.")
     section: Optional[str] = Field(None, description="e.g. 'Methods', 'Supplementary'.")
     page: Optional[int] = None
+    # v0.4: sentence-level provenance within a section. Enables sub-section
+    # grounding when a section contains multiple claims (e.g. a Methods paragraph
+    # with 8 distinct facts). Zero-indexed within the section.
+    sentence_id: Optional[int] = Field(
+        None,
+        description="Zero-indexed sentence position within the section, for sub-section grounding.",
+    )
     # Extractor's self-reported confidence. Calibration of this number against
     # the gold set is itself an evaluation target.
     confidence: float = Field(0.0, ge=0.0, le=1.0)
@@ -56,16 +63,16 @@ class Reporting(str, Enum):
     The distinction that matters for honesty: NOT_REPORTED asserts the paper does
     not state the value (only safe when the relevant section was actually read);
     NOT_EXTRACTED admits we may have missed it (section out of window / uncertain).
-    Default to NOT_EXTRACTED when unsure — under-claim rather than fabricate absence.
+    Default to NOT_EXTRACTED when unsure -- under-claim rather than fabricate absence.
     """
     REPORTED = "reported"
-    NOT_REPORTED = "not_reported"     # paper genuinely omits it — a measurable gap
-    NOT_EXTRACTED = "not_extracted"   # we did not capture it (uncertain) — honest unknown
+    NOT_REPORTED = "not_reported"     # paper genuinely omits it -- a measurable gap
+    NOT_EXTRACTED = "not_extracted"   # we did not capture it (uncertain) -- honest unknown
     NOT_APPLICABLE = "not_applicable"
 
 
 # --------------------------------------------------------------------------- #
-# Controlled vocabularies (stubs — the ontology-grounding layer plugs in here)
+# Controlled vocabularies (stubs -- the ontology-grounding layer plugs in here)
 # --------------------------------------------------------------------------- #
 
 class OrganoidType(str, Enum):
@@ -130,13 +137,13 @@ class SourceCells(BaseModel):
 
 
 class CultureConditions(BaseModel):
-    """v0.3: physical culture environment — a genuine protocol discriminator.
+    """v0.3: physical culture environment -- a genuine protocol discriminator.
 
     Oxygen tension especially: some brain-organoid protocols required ~40% O2 and
     later ones explicitly removed it. Numerics are usually stated cleanly. Defaults
     to NOT_EXTRACTED (honest unknown) until an extractor populates + grounds them.
     """
-    temperature_c: Optional[float] = Field(None, description="Incubation temperature, °C (usually 37).")
+    temperature_c: Optional[float] = Field(None, description="Incubation temperature, degC (usually 37).")
     co2_pct: Optional[float] = Field(None, description="CO2 percentage (usually 5).")
     o2_pct: Optional[float] = Field(None, description="O2 percentage (e.g. 20/ambient, or hypoxic/40).")
     reporting: Reporting = Reporting.NOT_EXTRACTED
@@ -155,7 +162,7 @@ class BaseMedia(BaseModel):
     The basal culture medium. Modeled like Matrix (not a bare string) so that
     absence is typed and the value can carry provenance. This is the field the
     kidney case exercises: the source omits it (`not_reported`), which is a
-    finding — distinct from the extractor simply missing it.
+    finding -- distinct from the extractor simply missing it.
     """
     name: Optional[str] = Field(None, description="e.g. 'Advanced DMEM/F12', 'mTeSR1'.")
     reporting: Reporting = Reporting.REPORTED
@@ -176,6 +183,49 @@ class Passaging(BaseModel):
     split_ratio: Optional[str] = Field(None, description="e.g. '1:4'.")
     interval_days: Optional[int] = None
     reporting: Reporting = Reporting.REPORTED
+    evidence: Optional[Evidence] = None
+
+
+# --------------------------------------------------------------------------- #
+# v0.4: Protocol intelligence models
+# --------------------------------------------------------------------------- #
+
+class FailureMode(BaseModel):
+    """A known pitfall or critical step that can derail the protocol.
+
+    Captures the "what goes wrong and why" that methods sections sometimes
+    mention in passing -- and that extractors should surface explicitly rather
+    than lose in the prose. Motivated by Starling paper analysis: failure modes
+    and substitution warnings are high-value protocol intelligence that generic
+    biomedical fact extraction silently discards.
+    """
+    description: str = Field(
+        ...,
+        description="What goes wrong -- the failure outcome (e.g. 'organoids detach from Matrigel')",
+    )
+    condition: Optional[str] = Field(
+        None,
+        description="When / under what conditions this failure occurs (e.g. 'if Matrigel concentration <2%').",
+    )
+    evidence: Optional[Evidence] = None
+
+
+class ProtocolModification(BaseModel):
+    """A documented delta between this protocol and a prior cited protocol.
+
+    Papers rarely start from scratch; they modify an existing protocol.
+    Capturing what changed (and from what base) enables protocol lineage
+    reconstruction and makes substitution decisions explicit rather than
+    implicit. The cited_doi anchors the base protocol in the literature graph.
+    """
+    cited_doi: Optional[str] = Field(
+        None,
+        description="DOI of the base/prior protocol this modification departs from.",
+    )
+    change_description: str = Field(
+        ...,
+        description="What was changed relative to the cited protocol (e.g. 'replaced Noggin with LDN-193189')",
+    )
     evidence: Optional[Evidence] = None
 
 
@@ -207,8 +257,18 @@ class OrganoidProtocol(BaseModel):
         description="What the protocol validates against (markers, imaging, function).",
     )
 
+    # v0.4: protocol intelligence fields -- failure modes and modification lineage
+    failure_modes: list[FailureMode] = Field(
+        default_factory=list,
+        description="Known pitfalls and critical steps that can derail the protocol.",
+    )
+    modifications: list[ProtocolModification] = Field(
+        default_factory=list,
+        description="Documented deltas from cited prior protocols (protocol lineage).",
+    )
+
     # Extraction-level metadata for evaluation
-    schema_version: str = "0.3"
+    schema_version: str = "0.4"
     extractor_version: Optional[str] = None
     notes: Optional[str] = None
 
@@ -230,11 +290,24 @@ if __name__ == "__main__":
                     source_doi="10.1038/nature07935",
                     quote="...supplemented with EGF (50 ng/ml)...",
                     section="Methods",
+                    sentence_id=2,
                     confidence=0.92,
                 ),
             ),
             Reagent(name="R-spondin1", role="Wnt agonist"),
             Reagent(name="Noggin", role="BMP inhibitor"),
+        ],
+        failure_modes=[
+            FailureMode(
+                description="Organoids fail to form crypt domains",
+                condition="if R-spondin1 concentration falls below 200 ng/mL",
+            ),
+        ],
+        modifications=[
+            ProtocolModification(
+                cited_doi="10.1038/nmeth.1940",
+                change_description="Replaced conditioned medium with recombinant R-spondin1",
+            ),
         ],
         assay_endpoints=["Lgr5 expression", "crypt-villus morphology"],
     )
