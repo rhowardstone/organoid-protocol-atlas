@@ -207,6 +207,20 @@ def handle_coverage_type(organoid_type: str) -> tuple[dict, int]:
     }, 200
 
 
+def handle_assay_endpoints() -> tuple[dict, int]:
+    """Return pre-computed assay endpoint cluster summary."""
+    path = ANALYSIS_DIR / "assay_endpoint_summary.json"
+    if not path.exists():
+        return {
+            "error": "Assay endpoint summary not computed",
+            "hint": "Run: python pipeline/aggregate_assay_endpoints.py",
+        }, 404
+    try:
+        return json.loads(path.read_text()), 200
+    except json.JSONDecodeError:
+        return {"error": "malformed assay endpoint summary file"}, 500
+
+
 def handle_reagent(query: str, organoid_type: str | None, min_papers: int) -> tuple[dict, int]:
     """Cross-corpus reagent lookup from reagents.jsonl."""
     if not query or not query.strip():
@@ -249,6 +263,7 @@ def handle_index() -> tuple[dict, int]:
             "/analytics/coverage": "per-type corpus coverage and completeness report",
             "/analytics/coverage/{organoid_type}": "coverage stats for one organoid type",
             "/analytics/reagent?q=TERM": "cross-corpus reagent lookup: usage, concentrations, evidence quotes",
+            "/analytics/assay-endpoints": "assay endpoint cluster summary (per type + cross-type)",
         },
         "generate": {
             "consensus": "python pipeline/compute_consensus.py --all",
@@ -256,6 +271,7 @@ def handle_index() -> tuple[dict, int]:
             "lineage": "python pipeline/build_lineage.py",
             "compare": "python pipeline/compare_protocols.py PMC111 PMC222",
             "coverage": "python pipeline/generate_coverage_report.py",
+            "assay_endpoints": "python pipeline/aggregate_assay_endpoints.py",
         },
     }, 200
 
@@ -316,6 +332,11 @@ async def route_coverage_type(datasette, request):
     return Response.json(data, status=status)
 
 
+async def route_assay_endpoints(datasette, request):
+    data, status = handle_assay_endpoints()
+    return Response.json(data, status=status)
+
+
 async def route_reagent(datasette, request):
     query = request.args.get("q", "")
     organoid_type = request.args.get("type") or None
@@ -341,4 +362,5 @@ def register_routes():
         (r"^/analytics/coverage$", route_coverage),
         (r"^/analytics/coverage/(?P<organoid_type>[\w-]+)$", route_coverage_type),
         (r"^/analytics/reagent$", route_reagent),
+        (r"^/analytics/assay-endpoints$", route_assay_endpoints),
     ]
