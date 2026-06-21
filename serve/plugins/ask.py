@@ -124,6 +124,7 @@ exports. Prefer the JSON endpoints for programmatic use.
 - /analytics/kind-ambiguity            canonicals that appear in both signaling and supplement kinds; sorted by minority_fraction; ?q=Y-27632 for per-type kind breakdown; ?min_n= threshold (default 3)
 - /analytics/canonical-type-adoption   reagent diffusion: n distinct organoid types using each canonical by year; first_year, n_types_current, year_peak; ?q=EGF for per-year type list + cumulative; ?min_types= threshold (default 5)
 - /analytics/unit-normalization-report audit of raw unit string → canonical_unit clusters (e.g. 'uM' ← [μM, µM, µm, uM, μmol/L, ...]); sorted by n_raw_strings; ?q=uM for detailed breakdown + top canonicals
+- /analytics/source-cell-reagent-profile  characteristic reagents by source_cell_type (iPSC/adult_stem_cell/primary_tissue/ESC); top 20 per source + pairwise Jaccard; ?source=iPSC for top 30 with exclusive_to_source flags; ?min_papers= threshold (default 3)
 - /analytics/failure-modes             failure mode cluster summary across the corpus
 - /analytics/lineage                   DOI→DOI protocol lineage graph
 - /analytics/assay-endpoints           assay endpoint cluster summary (per-type + cross-type)
