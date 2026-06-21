@@ -424,6 +424,20 @@ def handle_reagent(query: str, organoid_type: str | None, min_papers: int) -> tu
     return result, 200
 
 
+def handle_mior() -> tuple[dict, int]:
+    """Return pre-computed MIOR completeness report."""
+    path = ANALYSIS_DIR / "mior_completeness.json"
+    if not path.exists():
+        return {
+            "error": "MIOR completeness report not computed",
+            "hint": "Run: python pipeline/score_mior.py",
+        }, 404
+    try:
+        return json.loads(path.read_text()), 200
+    except json.JSONDecodeError:
+        return {"error": "malformed MIOR completeness file"}, 500
+
+
 def handle_index() -> tuple[dict, int]:
     """Analytics endpoint index."""
     return {
@@ -439,6 +453,7 @@ def handle_index() -> tuple[dict, int]:
             "/analytics/reagent?q=TERM": "cross-corpus reagent lookup: usage, concentrations, evidence quotes",
             "/analytics/assay-endpoints": "assay endpoint cluster summary (per type + cross-type)",
             "/analytics/quality": "per-paper quality scores (gold/silver/bronze) + corpus summary",
+            "/analytics/mior": "MIOR completeness report (Minimum Information About an Organoid Research)",
             "/analytics/status": "live system health check (corpus + analytics artifact inventory)",
             "/analytics/summary": "high-level dashboard: corpus stats, quality distribution, top types/assays/failures",
         },
@@ -450,6 +465,7 @@ def handle_index() -> tuple[dict, int]:
             "coverage": "python pipeline/generate_coverage_report.py",
             "assay_endpoints": "python pipeline/aggregate_assay_endpoints.py",
             "quality": "python pipeline/score_protocol_quality.py",
+            "mior": "python pipeline/score_mior.py",
         },
     }, 200
 
@@ -543,6 +559,11 @@ async def route_reagent(datasette, request):
     return Response.json(data, status=status)
 
 
+async def route_mior(datasette, request):
+    data, status = handle_mior()
+    return Response.json(data, status=status)
+
+
 @hookimpl
 def register_routes():
     return [
@@ -559,6 +580,7 @@ def register_routes():
         (r"^/analytics/reagent$", route_reagent),
         (r"^/analytics/assay-endpoints$", route_assay_endpoints),
         (r"^/analytics/quality$", route_quality),
+        (r"^/analytics/mior$", route_mior),
         (r"^/analytics/status$", route_status),
         (r"^/analytics/summary$", route_summary),
     ]
