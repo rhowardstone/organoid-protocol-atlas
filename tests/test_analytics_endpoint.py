@@ -207,3 +207,86 @@ def test_substitutions_truncates_long_query():
         data, status = ae.handle_substitutions(long_q, None, None)
     assert status == 200
     assert len(data["query"]) <= 100
+
+
+# --------------------------------------------------------------------------- #
+# handle_coverage
+# --------------------------------------------------------------------------- #
+
+def test_coverage_returns_data(tmp_path, monkeypatch):
+    monkeypatch.setattr(ae, "COVERAGE_REPORT_PATH", tmp_path / "coverage_report.json")
+    payload = {
+        "n_total_papers": 582,
+        "n_organoid_types": 26,
+        "overall_avg_grounding_rate": 0.87,
+        "corpus_pooled_grounding_rate": 0.86,
+        "types_by_completeness": [],
+        "by_organoid_type": {"cardiac": {"n_papers": 59, "completeness_score": 0.75}},
+    }
+    (tmp_path / "coverage_report.json").write_text(json.dumps(payload))
+    data, status = ae.handle_coverage()
+    assert status == 200
+    assert data["n_total_papers"] == 582
+    assert data["n_organoid_types"] == 26
+
+
+def test_coverage_404_when_missing(tmp_path, monkeypatch):
+    monkeypatch.setattr(ae, "COVERAGE_REPORT_PATH", tmp_path / "nonexistent.json")
+    data, status = ae.handle_coverage()
+    assert status == 404
+    assert "hint" in data
+
+
+# --------------------------------------------------------------------------- #
+# handle_coverage_type
+# --------------------------------------------------------------------------- #
+
+def test_coverage_type_returns_specific_type(tmp_path, monkeypatch):
+    monkeypatch.setattr(ae, "COVERAGE_REPORT_PATH", tmp_path / "coverage_report.json")
+    payload = {
+        "n_total_papers": 582,
+        "n_organoid_types": 26,
+        "overall_avg_grounding_rate": 0.87,
+        "corpus_pooled_grounding_rate": 0.86,
+        "types_by_completeness": [],
+        "by_organoid_type": {
+            "cardiac": {"n_papers": 59, "completeness_score": 0.75,
+                        "avg_grounding_rate": 0.9},
+        },
+    }
+    (tmp_path / "coverage_report.json").write_text(json.dumps(payload))
+    data, status = ae.handle_coverage_type("cardiac")
+    assert status == 200
+    assert data["organoid_type"] == "cardiac"
+    assert data["n_papers"] == 59
+    assert "corpus_summary" in data
+
+
+def test_coverage_type_404_when_type_missing(tmp_path, monkeypatch):
+    monkeypatch.setattr(ae, "COVERAGE_REPORT_PATH", tmp_path / "coverage_report.json")
+    payload = {
+        "n_total_papers": 10,
+        "n_organoid_types": 1,
+        "overall_avg_grounding_rate": 0.9,
+        "corpus_pooled_grounding_rate": 0.9,
+        "types_by_completeness": [],
+        "by_organoid_type": {"cardiac": {"n_papers": 10, "completeness_score": 0.7}},
+    }
+    (tmp_path / "coverage_report.json").write_text(json.dumps(payload))
+    data, status = ae.handle_coverage_type("retinal")
+    assert status == 404
+    assert "available" in data
+
+
+def test_coverage_type_rejects_invalid(tmp_path, monkeypatch):
+    monkeypatch.setattr(ae, "COVERAGE_REPORT_PATH", tmp_path / "coverage_report.json")
+    _, status = ae.handle_coverage_type("../../etc/passwd")
+    assert status == 400
+
+
+def test_index_includes_coverage_endpoints():
+    data, status = ae.handle_index()
+    assert status == 200
+    assert "/analytics/coverage" in data["endpoints"]
+    assert "/analytics/coverage/{organoid_type}" in data["endpoints"]
+    assert "coverage" in data["generate"]

@@ -8,6 +8,8 @@ Routes (all return JSON; read-only, no writes):
   GET /analytics/failure-modes                  -- failure mode cluster summary
   GET /analytics/lineage                        -- DOI→DOI protocol lineage graph
   GET /analytics/substitutions?q=Matrigel       -- search ProtocolModification records
+  GET /analytics/coverage                       -- per-type corpus coverage & completeness report
+  GET /analytics/coverage/{organoid_type}       -- coverage for one organoid type
   GET /analytics                                -- index of available analytics
 
 All endpoints degrade gracefully — if the pre-computed file doesn't exist they return
@@ -31,6 +33,7 @@ if str(PIPELINE) not in sys.path:
 
 ANALYSIS_DIR = REPO / "outputs" / "analysis"
 COMPARISON_DIR = REPO / "outputs" / "comparison"
+COVERAGE_REPORT_PATH = ANALYSIS_DIR / "coverage_report.json"
 
 
 # --------------------------------------------------------------------------- #
@@ -161,6 +164,47 @@ def handle_substitutions(query: str, to_query: str | None, organoid_type: str | 
     }, 200
 
 
+def handle_coverage() -> tuple[dict, int]:
+    """Return pre-computed corpus coverage report (all types)."""
+    if not COVERAGE_REPORT_PATH.exists():
+        return {
+            "error": "Coverage report not computed",
+            "hint": "Run: python pipeline/generate_coverage_report.py",
+        }, 404
+    try:
+        return json.loads(COVERAGE_REPORT_PATH.read_text()), 200
+    except json.JSONDecodeError:
+        return {"error": "malformed coverage report file"}, 500
+
+
+def handle_coverage_type(organoid_type: str) -> tuple[dict, int]:
+    """Return coverage stats for a single organoid type."""
+    if not re.match(r'^[\w-]+$', organoid_type):
+        return {"error": "invalid organoid_type"}, 400
+
+    data, status = handle_coverage()
+    if status != 200:
+        return data, status
+
+    by_type = data.get("by_organoid_type", {})
+    otype_lower = organoid_type.lower()
+    if otype_lower not in by_type:
+        return {
+            "error": f"No coverage data for '{organoid_type}'",
+            "available": sorted(by_type.keys()),
+        }, 404
+
+    return {
+        "organoid_type": otype_lower,
+        **by_type[otype_lower],
+        "corpus_summary": {
+            "n_total_papers": data.get("n_total_papers"),
+            "n_organoid_types": data.get("n_organoid_types"),
+            "overall_avg_grounding_rate": data.get("overall_avg_grounding_rate"),
+        },
+    }, 200
+
+
 def handle_index() -> tuple[dict, int]:
     """Analytics endpoint index."""
     return {
@@ -171,12 +215,15 @@ def handle_index() -> tuple[dict, int]:
             "/analytics/lineage": "DOI→DOI protocol lineage graph (ProtocolModification data)",
             "/analytics/compare/{pmcid_a}/{pmcid_b}": "protocol diff between two papers",
             "/analytics/substitutions?q=TERM": "search ProtocolModification records for reagent substitutions",
+            "/analytics/coverage": "per-type corpus coverage and completeness report",
+            "/analytics/coverage/{organoid_type}": "coverage stats for one organoid type",
         },
         "generate": {
             "consensus": "python pipeline/compute_consensus.py --all",
             "failure_modes": "python pipeline/aggregate_failure_modes.py",
             "lineage": "python pipeline/build_lineage.py",
             "compare": "python pipeline/compare_protocols.py PMC111 PMC222",
+            "coverage": "python pipeline/generate_coverage_report.py",
         },
     }, 200
 
@@ -226,6 +273,17 @@ async def route_substitutions(datasette, request):
     return Response.json(data, status=status)
 
 
+async def route_coverage(datasette, request):
+    data, status = handle_coverage()
+    return Response.json(data, status=status)
+
+
+async def route_coverage_type(datasette, request):
+    organoid_type = request.url_vars.get("organoid_type", "")
+    data, status = handle_coverage_type(organoid_type)
+    return Response.json(data, status=status)
+
+
 @hookimpl
 def register_routes():
     return [
@@ -237,4 +295,6 @@ def register_routes():
         (r"^/analytics/compare/(?P<pmcid_a>PMC\d+)/(?P<pmcid_b>PMC\d+)$",
          route_compare),
         (r"^/analytics/substitutions$", route_substitutions),
+        (r"^/analytics/coverage$", route_coverage),
+        (r"^/analytics/coverage/(?P<organoid_type>[\w-]+)$", route_coverage_type),
     ]
