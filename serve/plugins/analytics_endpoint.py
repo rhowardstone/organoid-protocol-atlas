@@ -422,36 +422,24 @@ def handle_summary() -> tuple[dict, int]:
         except (json.JSONDecodeError, OSError):
             pass
 
-    # Species snapshot — top-3 cross-corpus species; derived live from protocols.jsonl
-    # so the summary stays fresh without a separate pre-computed artifact.
+    # Species + matrix snapshots — single pass over protocols.jsonl for both.
+    # Derived live so the summary stays fresh without a separate pre-computed artifact.
     if PROTOCOLS_JSONL.exists():
         try:
             sp_counts: dict[str, int] = {}
-            for line in PROTOCOLS_JSONL.read_text().splitlines():
-                if not line.strip():
-                    continue
-                p = json.loads(line)
-                raw = (p.get("species") or "not_stated").strip()
-                sp = _SPECIES_ALIASES.get(raw.lower(), raw.lower())
-                sp_counts[sp] = sp_counts.get(sp, 0) + 1
-            top3 = dict(sorted(sp_counts.items(), key=lambda kv: -kv[1])[:3])
-            summary["species_snapshot"] = top3
-        except (json.JSONDecodeError, OSError):
-            pass
-
-    # Matrix snapshot — top-3 cross-corpus matrices, live from protocols.jsonl
-    if PROTOCOLS_JSONL.exists():
-        try:
             mx_counts: dict[str, int] = {}
             for line in PROTOCOLS_JSONL.read_text().splitlines():
                 if not line.strip():
                     continue
                 p = json.loads(line)
-                raw = (p.get("matrix") or "not_stated").strip()
-                mx = _MATRIX_ALIASES.get(raw.lower(), raw)
+                raw_sp = (p.get("species") or "not_stated").strip()
+                sp = _SPECIES_ALIASES.get(raw_sp.lower(), raw_sp.lower())
+                sp_counts[sp] = sp_counts.get(sp, 0) + 1
+                raw_mx = (p.get("matrix") or "not_stated").strip()
+                mx = _MATRIX_ALIASES.get(raw_mx.lower(), raw_mx)
                 mx_counts[mx] = mx_counts.get(mx, 0) + 1
-            top3_mx = dict(sorted(mx_counts.items(), key=lambda kv: -kv[1])[:3])
-            summary["matrix_snapshot"] = top3_mx
+            summary["species_snapshot"] = dict(sorted(sp_counts.items(), key=lambda kv: -kv[1])[:3])
+            summary["matrix_snapshot"] = dict(sorted(mx_counts.items(), key=lambda kv: -kv[1])[:3])
         except (json.JSONDecodeError, OSError):
             pass
 
