@@ -37,8 +37,8 @@ Source: https://github.com/rhowardstone/organoid-protocol-atlas
 
 ## What is available here
 
-This public deployment contains the CC-licensed public subset: 578 papers, 578
-protocol rows, and 5423 public reagent/protocol rows. It does not redistribute
+This public deployment contains the CC-licensed public subset: 582 papers, 582
+protocol rows, and 5458 public reagent/protocol rows. It does not redistribute
 full methods text or paper bodies. Evidence fields are short citation snippets
 kept so users and agents can trace claims back to the source paper.
 
