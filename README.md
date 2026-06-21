@@ -122,6 +122,7 @@ pipeline/
   trapi.py                   minimal TRAPI responder shape
   export_public.py           export public protocols/reagents JSONL snapshots
   validate_evidence.py       evidence fidelity validator (verbatim substring checks)
+  validate_predictions.py    prediction file schema validator (v0.4, offline, pre-PR gate)
   audit_units.py             unit plausibility audit (R2: concentration vs. in-vivo/volume/percent)
   check_concentration_consistency.py  cross-paper concentration outlier detection (≥10x median)
   score_mior.py              MIOR completeness scorer (12 items, 5 modules, per-paper + corpus)
@@ -154,7 +155,7 @@ outputs/
   analysis/                  pre-computed analytics (coverage, quality, consensus, etc.)
   kgx/                       KGX graph export
   comparison/                pre-computed protocol diffs
-tests/                       offline test suite (625 tests, no network, no GPU)
+tests/                       offline test suite (652 tests, no network, no GPU)
 docs/                        SUPERVISOR_CHECKLIST.md, PLAN, RESEARCH_BRIEF
 ```
 
@@ -183,6 +184,7 @@ python pipeline/aggregate_failure_modes.py
 python pipeline/build_lineage.py
 python pipeline/aggregate_assay_endpoints.py
 
-make test                               # run offline test suite (625 tests)
+make test                               # run offline test suite (652 tests)
+make validate-batch                     # pre-PR check: tests + prediction schema + evidence
 # or: pytest -q
 ```

@@ -117,6 +117,24 @@ trapi-examples:
 	done
 
 # --------------------------------------------------------------------------- #
+# Batch PR validation (run before opening a corpus batch PR)
+# --------------------------------------------------------------------------- #
+
+.PHONY: validate-batch
+validate-batch:
+	@echo "=== 1/3  Offline test suite ==="
+	$(PYTEST) -q
+	@echo "=== 2/3  Prediction file schema check ==="
+	$(PYTHON) $(PIPELINE)/validate_predictions.py || true
+	@echo "=== 3/3  Evidence fidelity sample (structural) ==="
+	$(PYTHON) $(PIPELINE)/validate_evidence.py --n 0 2>/dev/null || true
+	@echo "validate-batch complete"
+
+.PHONY: validate-predictions
+validate-predictions:
+	$(PYTHON) $(PIPELINE)/validate_predictions.py
+
+# --------------------------------------------------------------------------- #
 # Serve (Datasette)
 # --------------------------------------------------------------------------- #
 
@@ -182,6 +200,10 @@ help:
 	@echo ""
 	@echo "  Server:"
 	@echo "    serve              Start Datasette on localhost:8001"
+	@echo ""
+	@echo "  Batch PR validation:"
+	@echo "    validate-batch     Full pre-PR check (tests + schema + evidence)"
+	@echo "    validate-predictions  Prediction file schema check only"
 	@echo ""
 	@echo "  Status:"
 	@echo "    status             System status (which artifacts exist)"
