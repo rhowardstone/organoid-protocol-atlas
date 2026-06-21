@@ -35,14 +35,32 @@ def audit(rows):
                 "value": r.get("value"), "class": nz.concentration_class(r.get("unit")),
                 "pmcid": r.get("pmcid")}
                for r in withv if nz.is_suspect_concentration(r.get("unit"))]
+
+    # UCUM coverage: how many concentration-class records map to a UCUM code
+    conc_rows = [r for r in withv if nz.concentration_class(r.get("unit")) == "concentration"]
+    ucum_mapped = [r for r in conc_rows if nz.ucum_unit(r.get("unit")) is not None]
+    ucum_by_canon: dict[str, str] = {}
+    for r in conc_rows:
+        canon = nz.canon_unit(r.get("unit"))
+        if canon:
+            ucum = nz.ucum_unit(r.get("unit"))
+            ucum_by_canon[canon] = ucum or "(unmapped)"
+
     return {
         "method": "R2 concentration-unit validity (normalize.concentration_class) over "
                   "public reagents with a numeric value; suspect = in_vivo_dose|volume|"
-                  "percent|other (review-queue signal, not auto-delete)",
+                  "percent|other (review-queue signal, not auto-delete). "
+                  "ucum_unit() maps canonical units to UCUM expressions.",
         "n_with_value": len(withv),
         "class_counts": dict(counts),
         "suspect_total": len(suspect),
         "suspect_rate": round(len(suspect) / len(withv), 4) if withv else 0.0,
+        "ucum_coverage": {
+            "n_concentration_class": len(conc_rows),
+            "n_ucum_mapped": len(ucum_mapped),
+            "ucum_rate": round(len(ucum_mapped) / len(conc_rows), 4) if conc_rows else None,
+            "canon_to_ucum": ucum_by_canon,
+        },
         "suspect": sorted(suspect, key=lambda s: (s["class"], str(s["name"]))),
     }
 
