@@ -101,6 +101,7 @@ exports. Prefer the JSON endpoints for programmatic use.
 - /analytics/reporting-gaps            field reporting rates (species/matrix/base_media/source_cell_type/passaging/timeline) — transparency audit of systematic gaps; ?type=kidney for one type
 - /analytics/year-trend                yearly trends: paper count, avg n_signaling_factors, avg grounding_rate, field reporting rates by publication year
 - /analytics/grounding-quality         reagent grounding coverage: grounding_rate, evidence_quote_rate, suspect_unit_count by type and by kind; top ungrounded names for S1 prioritization
+- /analytics/concentration-stats       aggregate concentration distributions per canonical reagent: median, min, max, std; top 50 by n_with_value; ?q=EGF for one reagent
 - /analytics/failure-modes             failure mode cluster summary across the corpus
 - /analytics/lineage                   DOI→DOI protocol lineage graph
 - /analytics/assay-endpoints           assay endpoint cluster summary (per-type + cross-type)

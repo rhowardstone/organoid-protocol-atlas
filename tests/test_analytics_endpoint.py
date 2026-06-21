@@ -2252,3 +2252,168 @@ def test_grounding_quality_suspect_unit_counted(tmp_path, monkeypatch):
     monkeypatch.setattr(ae, "REAGENTS_JSONL", p)
     data, _ = ae.handle_grounding_quality(None)
     assert data["cross_corpus"]["n_suspect_unit"] == 1
+
+
+# ===========================================================================
+# handle_concentration_stats tests
+# ===========================================================================
+
+def _write_reagents_for_cs(path, rows):
+    """Write minimal reagents.jsonl rows for concentration-stats tests."""
+    lines = []
+    for r in rows:
+        obj = {
+            "organoid_type": r.get("organoid_type", "kidney"),
+            "kind": r.get("kind", "signaling"),
+            "canonical": r.get("canonical", "EGF"),
+            "name": r.get("name"),
+            "value": r.get("value"),
+            "unit": r.get("unit"),
+            "canonical_unit": r.get("canonical_unit"),
+            "grounded": r.get("grounded", 1),
+            "evidence_quote": r.get("evidence_quote"),
+            "suspect_unit": r.get("suspect_unit", 0),
+        }
+        lines.append(json.dumps(obj))
+    path.write_text("\n".join(lines) + "\n")
+
+
+def test_cs_404_when_jsonl_missing(tmp_path, monkeypatch):
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", tmp_path / "missing.jsonl")
+    data, status = ae.handle_concentration_stats(None, None)
+    assert status == 404
+
+
+def test_cs_returns_top_reagents(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_cs(p, [
+        {"canonical": "EGF", "value": 50.0, "canonical_unit": "ng/mL"},
+        {"canonical": "EGF", "value": 100.0, "canonical_unit": "ng/mL"},
+        {"canonical": "FGF2", "value": 10.0, "canonical_unit": "ng/mL"},
+    ])
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", p)
+    data, status = ae.handle_concentration_stats(None, None)
+    assert status == 200
+    assert "top_reagents" in data
+    top_names = [r["canonical"] for r in data["top_reagents"]]
+    assert "EGF" in top_names
+
+
+def test_cs_median_correct(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_cs(p, [
+        {"canonical": "EGF", "value": 10.0, "canonical_unit": "ng/mL"},
+        {"canonical": "EGF", "value": 50.0, "canonical_unit": "ng/mL"},
+        {"canonical": "EGF", "value": 100.0, "canonical_unit": "ng/mL"},
+    ])
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", p)
+    data, _ = ae.handle_concentration_stats("EGF", None)
+    assert data["canonical"] == "EGF"
+    stats = data["stats_per_unit"]["ng/mL"]
+    assert stats["median"] == 50.0
+    assert stats["min"] == 10.0
+    assert stats["max"] == 100.0
+    assert stats["n"] == 3
+
+
+def test_cs_query_filter_case_insensitive(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_cs(p, [
+        {"canonical": "EGF", "value": 50.0, "canonical_unit": "ng/mL"},
+        {"canonical": "FGF2", "value": 10.0, "canonical_unit": "ng/mL"},
+    ])
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", p)
+    data, status = ae.handle_concentration_stats("egf", None)
+    assert status == 200
+    assert data["canonical"] == "EGF"
+
+
+def test_cs_query_404_when_no_match(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_cs(p, [{"canonical": "EGF", "value": 50.0}])
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", p)
+    data, status = ae.handle_concentration_stats("notexist", None)
+    assert status == 404
+
+
+def test_cs_type_filter(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_cs(p, [
+        {"organoid_type": "kidney", "canonical": "EGF", "value": 50.0, "canonical_unit": "ng/mL"},
+        {"organoid_type": "liver", "canonical": "EGF", "value": 100.0, "canonical_unit": "ng/mL"},
+    ])
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", p)
+    data, status = ae.handle_concentration_stats(None, "kidney")
+    assert status == 200
+    top = data["top_reagents"]
+    assert len(top) == 1
+    assert top[0]["canonical"] == "EGF"
+    assert top[0]["stats_per_unit"]["ng/mL"]["n"] == 1
+
+
+def test_cs_no_value_gives_zero_n_with_value(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_cs(p, [
+        {"canonical": "EGF", "value": None},
+        {"canonical": "EGF", "value": None},
+    ])
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", p)
+    data, _ = ae.handle_concentration_stats("EGF", None)
+    assert data["n_with_value"] == 0
+    assert data["stats_per_unit"] == {}
+
+
+def test_cs_organoid_types_listed(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_cs(p, [
+        {"organoid_type": "kidney", "canonical": "EGF", "value": 50.0, "canonical_unit": "ng/mL"},
+        {"organoid_type": "liver", "canonical": "EGF", "value": 50.0, "canonical_unit": "ng/mL"},
+    ])
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", p)
+    data, _ = ae.handle_concentration_stats("EGF", None)
+    assert set(data["organoid_types"]) == {"kidney", "liver"}
+
+
+def test_cs_400_for_invalid_type(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_cs(p, [])
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", p)
+    data, status = ae.handle_concentration_stats(None, "../evil")
+    assert status == 400
+
+
+def test_cs_top_by_n_with_value_order(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    rows = (
+        [{"canonical": "EGF", "value": float(i), "canonical_unit": "ng/mL"} for i in range(5)] +
+        [{"canonical": "FGF2", "value": float(i), "canonical_unit": "ng/mL"} for i in range(3)]
+    )
+    _write_reagents_for_cs(p, rows)
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", p)
+    data, _ = ae.handle_concentration_stats(None, None)
+    assert data["top_reagents"][0]["canonical"] == "EGF"
+
+
+def test_cs_dominant_unit_is_most_common(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_cs(p, [
+        {"canonical": "EGF", "value": 50.0, "canonical_unit": "ng/mL"},
+        {"canonical": "EGF", "value": 51.0, "canonical_unit": "ng/mL"},
+        {"canonical": "EGF", "value": 0.05, "canonical_unit": "ug/mL"},
+    ])
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", p)
+    data, _ = ae.handle_concentration_stats("EGF", None)
+    assert data["dominant_unit"] == "ng/mL"
+
+
+def test_cs_index_entry():
+    data, _ = ae.handle_index()
+    assert "/analytics/concentration-stats" in data["endpoints"]
+
+
+def test_cs_std_zero_for_single_value(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_cs(p, [{"canonical": "EGF", "value": 50.0, "canonical_unit": "ng/mL"}])
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", p)
+    data, _ = ae.handle_concentration_stats("EGF", None)
+    assert data["stats_per_unit"]["ng/mL"]["std"] == 0.0

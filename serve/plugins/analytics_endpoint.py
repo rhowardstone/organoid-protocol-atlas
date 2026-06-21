@@ -23,6 +23,7 @@ Routes (all return JSON; read-only, no writes):
   GET /analytics/reporting-gaps              -- field reporting rates across the corpus (species/matrix/base_media/passaging/timeline) — transparency audit
   GET /analytics/year-trend                  -- yearly trends: paper count, avg signaling factors, avg grounding rate, field reporting rates
   GET /analytics/grounding-quality           -- reagent grounding coverage: resolved vs ungrounded, by type and by kind; top ungrounded canonical names
+  GET /analytics/concentration-stats         -- aggregate concentration distributions per canonical reagent: median, min, max, n; optional ?q= filter
   GET /analytics                                -- index of available analytics
 
 All endpoints degrade gracefully — if the pre-computed file doesn't exist they return
@@ -1612,6 +1613,121 @@ def handle_grounding_quality(organoid_type: str | None) -> tuple[dict, int]:
     return result, 200
 
 
+def handle_concentration_stats(query: str | None, organoid_type: str | None) -> tuple[dict, int]:
+    """Aggregate concentration statistics per canonical reagent from reagents.jsonl.
+
+    Groups all reagents by `canonical` name (falling back to `name`), then for each
+    group computes: median/min/max/std value (within-unit), n_with_value, n_total,
+    organoid_types where used, and most common unit. Optional ?q= filters to one
+    canonical name; optional ?type= restricts to one organoid type.
+
+    Returns the top 50 canonical reagents by n_with_value when ?q= is absent,
+    sorted by n_with_value descending. Returns a single-reagent object when ?q= is present.
+    """
+    if not REAGENTS_JSONL.exists():
+        return {
+            "error": "reagents.jsonl not found",
+            "hint": "Run: python pipeline/export_public.py",
+        }, 404
+
+    if organoid_type is not None and not re.match(r'^[\w-]+$', organoid_type):
+        return {"error": "invalid organoid_type"}, 400
+
+    query_norm = (query or "").strip()[:100].lower() if query else None
+
+    try:
+        rows = [
+            json.loads(line)
+            for line in REAGENTS_JSONL.read_text().splitlines()
+            if line.strip()
+        ]
+    except (json.JSONDecodeError, OSError) as exc:
+        return {"error": f"reagents.jsonl unreadable: {exc}"}, 500
+
+    if organoid_type:
+        rows = [r for r in rows if r.get("organoid_type") == organoid_type]
+        if not rows:
+            return {
+                "error": f"no reagents found for organoid_type '{organoid_type}'",
+                "hint": "check /analytics/coverage for available types",
+            }, 404
+
+    # Group rows by canonical name
+    by_name: dict[str, list] = {}
+    for r in rows:
+        cname = (r.get("canonical") or r.get("name") or "unknown").strip()
+        by_name.setdefault(cname, []).append(r)
+
+    def _conc_stats(reagent_rows: list) -> dict:
+        n_total = len(reagent_rows)
+        vals_by_unit: dict[str, list] = {}
+        for r in reagent_rows:
+            v = r.get("value")
+            u = (r.get("canonical_unit") or r.get("unit") or "unknown").strip()
+            if v is not None:
+                try:
+                    vals_by_unit.setdefault(u, []).append(float(v))
+                except (TypeError, ValueError):
+                    pass
+
+        n_with_value = sum(len(vs) for vs in vals_by_unit.values())
+        otypes = sorted({r.get("organoid_type") or "unknown" for r in reagent_rows})
+
+        # Dominant unit by count
+        dominant_unit = max(vals_by_unit, key=lambda u: len(vals_by_unit[u])) if vals_by_unit else None
+
+        stats_per_unit = {}
+        for u, vs in sorted(vals_by_unit.items()):
+            n = len(vs)
+            vs_sorted = sorted(vs)
+            median = vs_sorted[n // 2] if n % 2 else (vs_sorted[n // 2 - 1] + vs_sorted[n // 2]) / 2
+            mean = sum(vs) / n
+            variance = sum((v - mean) ** 2 for v in vs) / n if n > 1 else 0.0
+            std = variance ** 0.5
+            stats_per_unit[u] = {
+                "n": n,
+                "median": round(median, 4),
+                "min": round(min(vs), 4),
+                "max": round(max(vs), 4),
+                "std": round(std, 4),
+            }
+
+        return {
+            "n_total": n_total,
+            "n_with_value": n_with_value,
+            "dominant_unit": dominant_unit,
+            "stats_per_unit": stats_per_unit,
+            "organoid_types": otypes,
+        }
+
+    if query_norm:
+        # Single-reagent lookup — case-insensitive substring match
+        matches = {name: r for name, r in by_name.items() if query_norm in name.lower()}
+        if not matches:
+            return {
+                "error": f"no reagents matching '{query_norm}'",
+                "hint": "use /analytics/reagent?q=TERM for FTS lookup",
+            }, 404
+        # Exact match preferred; else most-common match
+        exact = next((k for k in matches if k.lower() == query_norm), None)
+        canonical_name = exact or max(matches, key=lambda k: len(matches[k]))
+        return {
+            "canonical": canonical_name,
+            **_conc_stats(matches[canonical_name]),
+            "all_matches": sorted(matches) if len(matches) > 1 else None,
+        }, 200
+
+    # Return top-50 by n_with_value
+    all_stats = {name: _conc_stats(r) for name, r in by_name.items()}
+    top = sorted(all_stats, key=lambda k: all_stats[k]["n_with_value"], reverse=True)[:50]
+    return {
+        "top_reagents": [{"canonical": name, **all_stats[name]} for name in top],
+        "n_canonical_names": len(all_stats),
+        "n_types": len({r.get("organoid_type") for r in rows}),
+        "organoid_type_filter": organoid_type,
+    }, 200
+
+
 def handle_mior() -> tuple[dict, int]:
     """Return pre-computed MIOR completeness report."""
     path = ANALYSIS_DIR / "mior_completeness.json"
@@ -1651,6 +1767,7 @@ def handle_index() -> tuple[dict, int]:
             "/analytics/reporting-gaps": "field reporting rates across the corpus (species/matrix/base_media/source_cell_type/passaging/timeline) — transparency audit; optional ?type=kidney",
             "/analytics/year-trend": "yearly trends: paper count, avg n_signaling_factors, avg grounding_rate, field reporting rates by year — shows how the field has evolved",
             "/analytics/grounding-quality": "reagent grounding coverage: grounding_rate, evidence_quote_rate, suspect_unit_count — by type and by kind; top ungrounded canonical names for S1 prioritisation",
+            "/analytics/concentration-stats": "aggregate concentration distributions per canonical reagent: median, min, max, std, dominant unit — top 50 by n_with_value; ?q= for one reagent, ?type= for one type",
             "/analytics/assay-endpoints": "assay endpoint cluster summary (per type + cross-type)",
             "/analytics/quality": "per-paper quality scores (gold/silver/bronze) + corpus summary",
             "/analytics/mior": "MIOR completeness report (Minimum Information About an Organoid Research)",
@@ -1841,6 +1958,13 @@ async def route_grounding_quality(datasette, request):
     return Response.json(data, status=status)
 
 
+async def route_concentration_stats(datasette, request):
+    query = request.args.get("q") or None
+    organoid_type = request.args.get("type") or None
+    data, status = handle_concentration_stats(query, organoid_type)
+    return Response.json(data, status=status)
+
+
 async def route_candidates(datasette, request):
     data, status = handle_candidates()
     return Response.json(data, status=status)
@@ -1877,6 +2001,7 @@ def register_routes():
         (r"^/analytics/reporting-gaps$", route_reporting_gaps),
         (r"^/analytics/year-trend$", route_year_trend),
         (r"^/analytics/grounding-quality$", route_grounding_quality),
+        (r"^/analytics/concentration-stats$", route_concentration_stats),
         (r"^/analytics/assay-endpoints$", route_assay_endpoints),
         (r"^/analytics/quality$", route_quality),
         (r"^/analytics/mior$", route_mior),
