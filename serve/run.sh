@@ -20,4 +20,6 @@ exec datasette serve "$DB" \
   --template-dir serve/templates \
   --static static:serve/static \
   --plugins-dir serve/plugins \
-  --port "$PORT"
+  --port "$PORT" \
+  --setting max_returned_rows 10000 \
+  --setting allow_csv_stream on
