@@ -1,0 +1,101 @@
+{
+  "organoid_type": "cholangiocyte",
+  "n_protocols": 10,
+  "base_media": {
+    "top": "DMEM GlutaMAX",
+    "distribution": [
+      {
+        "value": "DMEM GlutaMAX",
+        "count": 1,
+        "fraction": 0.2
+      },
+      {
+        "value": "ReproCELL serum-free medium",
+        "count": 1,
+        "fraction": 0.2
+      },
+      {
+        "value": "Advanced DMEM/F12 (AD)",
+        "count": 1,
+        "fraction": 0.2
+      },
+      {
+        "value": "Advanced DMEM/F-12",
+        "count": 1,
+        "fraction": 0.2
+      },
+      {
+        "value": "DMEM/F12",
+        "count": 1,
+        "fraction": 0.2
+      }
+    ],
+    "n_reported": 5,
+    "n_missing": 5
+  },
+  "matrix": {
+    "top": "Matrigel",
+    "distribution": [
+      {
+        "value": "Matrigel",
+        "count": 5,
+        "fraction": 0.833
+      },
+      {
+        "value": "basement membrane extract",
+        "count": 1,
+        "fraction": 0.167
+      }
+    ],
+    "n_reported": 6,
+    "n_missing": 4
+  },
+  "source_cell_type": {
+    "top": "adult_stem_cell",
+    "distribution": [
+      {
+        "value": "adult_stem_cell",
+        "count": 7,
+        "fraction": 0.7
+      },
+      {
+        "value": "iPSC",
+        "count": 3,
+        "fraction": 0.3
+      }
+    ],
+    "n_reported": 10,
+    "n_missing": 0
+  },
+  "species": {
+    "top": "human",
+    "distribution": [
+      {
+        "value": "human",
+        "count": 7,
+        "fraction": 0.778
+      },
+      {
+        "value": "murine",
+        "count": 1,
+        "fraction": 0.111
+      },
+      {
+        "value": "mouse",
+        "count": 1,
+        "fraction": 0.111
+      }
+    ],
+    "n_reported": 9,
+    "n_missing": 1
+  },
+  "signaling_factors": [],
+  "media_supplements": [],
+  "small_molecules": [],
+  "timeline": {
+    "n_protocols_with_timeline": 2,
+    "stages": []
+  },
+  "universal_reagents": [],
+  "high_variability_reagents": []
+}

@@ -1,0 +1,131 @@
+{
+  "organoid_type": "skin",
+  "n_protocols": 12,
+  "base_media": {
+    "top": "mTeSR Plus medium",
+    "distribution": [
+      {
+        "value": "mTeSR Plus medium",
+        "count": 1,
+        "fraction": 0.167
+      },
+      {
+        "value": "William'E medium",
+        "count": 1,
+        "fraction": 0.167
+      },
+      {
+        "value": "DMEM",
+        "count": 1,
+        "fraction": 0.167
+      },
+      {
+        "value": "KSFM",
+        "count": 1,
+        "fraction": 0.167
+      },
+      {
+        "value": "mTeSR1",
+        "count": 1,
+        "fraction": 0.167
+      },
+      {
+        "value": "Dulbecco\u2019s modified Eagle medium (DMEM) HIGH",
+        "count": 1,
+        "fraction": 0.167
+      }
+    ],
+    "n_reported": 6,
+    "n_missing": 6
+  },
+  "matrix": {
+    "top": "Matrigel",
+    "distribution": [
+      {
+        "value": "Matrigel",
+        "count": 4,
+        "fraction": 0.444
+      },
+      {
+        "value": "hydrogel",
+        "count": 1,
+        "fraction": 0.111
+      },
+      {
+        "value": "type I collagen hydrogel",
+        "count": 1,
+        "fraction": 0.111
+      },
+      {
+        "value": "basement membrane extract",
+        "count": 1,
+        "fraction": 0.111
+      },
+      {
+        "value": "GelMA",
+        "count": 1,
+        "fraction": 0.111
+      },
+      {
+        "value": "vitronectin",
+        "count": 1,
+        "fraction": 0.111
+      }
+    ],
+    "n_reported": 9,
+    "n_missing": 3
+  },
+  "source_cell_type": {
+    "top": "iPSC",
+    "distribution": [
+      {
+        "value": "iPSC",
+        "count": 7,
+        "fraction": 0.583
+      },
+      {
+        "value": "adult_stem_cell",
+        "count": 2,
+        "fraction": 0.167
+      },
+      {
+        "value": "other",
+        "count": 2,
+        "fraction": 0.167
+      },
+      {
+        "value": "primary_tissue",
+        "count": 1,
+        "fraction": 0.083
+      }
+    ],
+    "n_reported": 12,
+    "n_missing": 0
+  },
+  "species": {
+    "top": "human",
+    "distribution": [
+      {
+        "value": "human",
+        "count": 10,
+        "fraction": 0.909
+      },
+      {
+        "value": "mouse",
+        "count": 1,
+        "fraction": 0.091
+      }
+    ],
+    "n_reported": 11,
+    "n_missing": 1
+  },
+  "signaling_factors": [],
+  "media_supplements": [],
+  "small_molecules": [],
+  "timeline": {
+    "n_protocols_with_timeline": 2,
+    "stages": []
+  },
+  "universal_reagents": [],
+  "high_variability_reagents": []
+}

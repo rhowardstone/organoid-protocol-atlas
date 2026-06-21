@@ -1,0 +1,161 @@
+{
+  "organoid_type": "kidney",
+  "n_protocols": 30,
+  "base_media": {
+    "top": "mTeSR1",
+    "distribution": [
+      {
+        "value": "mTeSR1",
+        "count": 6,
+        "fraction": 0.261
+      },
+      {
+        "value": "E8 medium",
+        "count": 2,
+        "fraction": 0.087
+      },
+      {
+        "value": "DMEM",
+        "count": 2,
+        "fraction": 0.087
+      },
+      {
+        "value": "StemFlex",
+        "count": 1,
+        "fraction": 0.043
+      },
+      {
+        "value": "complete Essential 8 medium",
+        "count": 1,
+        "fraction": 0.043
+      },
+      {
+        "value": "DMEM/F12",
+        "count": 1,
+        "fraction": 0.043
+      },
+      {
+        "value": "BPEL",
+        "count": 1,
+        "fraction": 0.043
+      },
+      {
+        "value": "aRPMI 1640",
+        "count": 1,
+        "fraction": 0.043
+      },
+      {
+        "value": "mTeSR Plus",
+        "count": 1,
+        "fraction": 0.043
+      },
+      {
+        "value": "E6",
+        "count": 1,
+        "fraction": 0.043
+      }
+    ],
+    "n_reported": 23,
+    "n_missing": 7
+  },
+  "matrix": {
+    "top": "Matrigel",
+    "distribution": [
+      {
+        "value": "Matrigel",
+        "count": 8,
+        "fraction": 0.308
+      },
+      {
+        "value": "Geltrex",
+        "count": 4,
+        "fraction": 0.154
+      },
+      {
+        "value": "BME",
+        "count": 2,
+        "fraction": 0.077
+      },
+      {
+        "value": "GelTrex",
+        "count": 2,
+        "fraction": 0.077
+      },
+      {
+        "value": "Sodium alginate hydrogel",
+        "count": 1,
+        "fraction": 0.038
+      },
+      {
+        "value": "Geltrex LDEV-Free human embryonic stem cell (hESC)-qualified basement membrane matrix",
+        "count": 1,
+        "fraction": 0.038
+      },
+      {
+        "value": "vitronectin",
+        "count": 1,
+        "fraction": 0.038
+      },
+      {
+        "value": "Matrigel hESC-Qualified Matrix",
+        "count": 1,
+        "fraction": 0.038
+      },
+      {
+        "value": "GelMA",
+        "count": 1,
+        "fraction": 0.038
+      },
+      {
+        "value": "Vitronectin",
+        "count": 1,
+        "fraction": 0.038
+      }
+    ],
+    "n_reported": 26,
+    "n_missing": 4
+  },
+  "source_cell_type": {
+    "top": "iPSC",
+    "distribution": [
+      {
+        "value": "iPSC",
+        "count": 24,
+        "fraction": 0.8
+      },
+      {
+        "value": "adult_stem_cell",
+        "count": 6,
+        "fraction": 0.2
+      }
+    ],
+    "n_reported": 30,
+    "n_missing": 0
+  },
+  "species": {
+    "top": "human",
+    "distribution": [
+      {
+        "value": "human",
+        "count": 26,
+        "fraction": 0.963
+      },
+      {
+        "value": "mouse",
+        "count": 1,
+        "fraction": 0.037
+      }
+    ],
+    "n_reported": 27,
+    "n_missing": 3
+  },
+  "signaling_factors": [],
+  "media_supplements": [],
+  "small_molecules": [],
+  "timeline": {
+    "n_protocols_with_timeline": 12,
+    "stages": []
+  },
+  "universal_reagents": [],
+  "high_variability_reagents": []
+}

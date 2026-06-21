@@ -1,0 +1,91 @@
+{
+  "organoid_type": "tumor",
+  "n_protocols": 9,
+  "base_media": {
+    "top": "Advanced DMEM/F-12",
+    "distribution": [
+      {
+        "value": "Advanced DMEM/F-12",
+        "count": 2,
+        "fraction": 0.333
+      },
+      {
+        "value": "Advanced DMEM/F12",
+        "count": 2,
+        "fraction": 0.333
+      },
+      {
+        "value": "DMEM/F12",
+        "count": 1,
+        "fraction": 0.167
+      },
+      {
+        "value": "hepatocyte culture media",
+        "count": 1,
+        "fraction": 0.167
+      }
+    ],
+    "n_reported": 6,
+    "n_missing": 3
+  },
+  "matrix": {
+    "top": "Matrigel",
+    "distribution": [
+      {
+        "value": "Matrigel",
+        "count": 5,
+        "fraction": 0.714
+      },
+      {
+        "value": "collagen",
+        "count": 1,
+        "fraction": 0.143
+      },
+      {
+        "value": "GFR matrigel",
+        "count": 1,
+        "fraction": 0.143
+      }
+    ],
+    "n_reported": 7,
+    "n_missing": 2
+  },
+  "source_cell_type": {
+    "top": "primary_tissue",
+    "distribution": [
+      {
+        "value": "primary_tissue",
+        "count": 7,
+        "fraction": 0.778
+      },
+      {
+        "value": "iPSC",
+        "count": 2,
+        "fraction": 0.222
+      }
+    ],
+    "n_reported": 9,
+    "n_missing": 0
+  },
+  "species": {
+    "top": "human",
+    "distribution": [
+      {
+        "value": "human",
+        "count": 6,
+        "fraction": 1.0
+      }
+    ],
+    "n_reported": 6,
+    "n_missing": 3
+  },
+  "signaling_factors": [],
+  "media_supplements": [],
+  "small_molecules": [],
+  "timeline": {
+    "n_protocols_with_timeline": 0,
+    "stages": []
+  },
+  "universal_reagents": [],
+  "high_variability_reagents": []
+}

@@ -1,0 +1,171 @@
+{
+  "organoid_type": "retinal",
+  "n_protocols": 37,
+  "base_media": {
+    "top": "mTeSR1",
+    "distribution": [
+      {
+        "value": "mTeSR1",
+        "count": 10,
+        "fraction": 0.312
+      },
+      {
+        "value": "E8 medium",
+        "count": 3,
+        "fraction": 0.094
+      },
+      {
+        "value": "mTeSR Plus",
+        "count": 2,
+        "fraction": 0.062
+      },
+      {
+        "value": "StemFit medium",
+        "count": 1,
+        "fraction": 0.031
+      },
+      {
+        "value": "mTeSR Plus medium",
+        "count": 1,
+        "fraction": 0.031
+      },
+      {
+        "value": "GMEM",
+        "count": 1,
+        "fraction": 0.031
+      },
+      {
+        "value": "StemFlex",
+        "count": 1,
+        "fraction": 0.031
+      },
+      {
+        "value": "Gibco StemFlex",
+        "count": 1,
+        "fraction": 0.031
+      },
+      {
+        "value": "mTeSR\u21221",
+        "count": 1,
+        "fraction": 0.031
+      },
+      {
+        "value": "ESCM",
+        "count": 1,
+        "fraction": 0.031
+      }
+    ],
+    "n_reported": 32,
+    "n_missing": 5
+  },
+  "matrix": {
+    "top": "Matrigel",
+    "distribution": [
+      {
+        "value": "Matrigel",
+        "count": 21,
+        "fraction": 0.636
+      },
+      {
+        "value": "truncated recombinant human vitronectin",
+        "count": 2,
+        "fraction": 0.061
+      },
+      {
+        "value": "laminin 511-E8 fragment",
+        "count": 1,
+        "fraction": 0.03
+      },
+      {
+        "value": "Vitronectin XF",
+        "count": 1,
+        "fraction": 0.03
+      },
+      {
+        "value": "rLaminin-521",
+        "count": 1,
+        "fraction": 0.03
+      },
+      {
+        "value": "Geltrex",
+        "count": 1,
+        "fraction": 0.03
+      },
+      {
+        "value": "recombinant human extracellular matrix (ECM) mix",
+        "count": 1,
+        "fraction": 0.03
+      },
+      {
+        "value": "recombinant, truncated human vitronectin",
+        "count": 1,
+        "fraction": 0.03
+      },
+      {
+        "value": "Vitronectin",
+        "count": 1,
+        "fraction": 0.03
+      },
+      {
+        "value": "Laminin-521",
+        "count": 1,
+        "fraction": 0.03
+      }
+    ],
+    "n_reported": 33,
+    "n_missing": 4
+  },
+  "source_cell_type": {
+    "top": "iPSC",
+    "distribution": [
+      {
+        "value": "iPSC",
+        "count": 34,
+        "fraction": 0.919
+      },
+      {
+        "value": "other",
+        "count": 2,
+        "fraction": 0.054
+      },
+      {
+        "value": "ESC",
+        "count": 1,
+        "fraction": 0.027
+      }
+    ],
+    "n_reported": 37,
+    "n_missing": 0
+  },
+  "species": {
+    "top": "human",
+    "distribution": [
+      {
+        "value": "human",
+        "count": 34,
+        "fraction": 0.944
+      },
+      {
+        "value": "mouse",
+        "count": 1,
+        "fraction": 0.028
+      },
+      {
+        "value": "Oryzias latipes",
+        "count": 1,
+        "fraction": 0.028
+      }
+    ],
+    "n_reported": 36,
+    "n_missing": 1
+  },
+  "signaling_factors": [],
+  "media_supplements": [],
+  "small_molecules": [],
+  "timeline": {
+    "n_protocols_with_timeline": 26,
+    "stages": []
+  },
+  "universal_reagents": [],
+  "high_variability_reagents": []
+}

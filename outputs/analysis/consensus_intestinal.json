@@ -1,0 +1,211 @@
+{
+  "organoid_type": "intestinal",
+  "n_protocols": 35,
+  "base_media": {
+    "top": "Advanced DMEM/F12",
+    "distribution": [
+      {
+        "value": "Advanced DMEM/F12",
+        "count": 5,
+        "fraction": 0.227
+      },
+      {
+        "value": "IntestiCult\u2122 Organoid Growth Medium",
+        "count": 2,
+        "fraction": 0.091
+      },
+      {
+        "value": "DMEM:F12",
+        "count": 2,
+        "fraction": 0.091
+      },
+      {
+        "value": "Advanced D-MEM/F-12",
+        "count": 1,
+        "fraction": 0.045
+      },
+      {
+        "value": "WRNE-Nico",
+        "count": 1,
+        "fraction": 0.045
+      },
+      {
+        "value": "organoid culture media",
+        "count": 1,
+        "fraction": 0.045
+      },
+      {
+        "value": "DMEM/F12",
+        "count": 1,
+        "fraction": 0.045
+      },
+      {
+        "value": "ENR growth medium",
+        "count": 1,
+        "fraction": 0.045
+      },
+      {
+        "value": "advanced Dulbecco\u2019s modified Eagle\u2019s medium (DMEM)/F12",
+        "count": 1,
+        "fraction": 0.045
+      },
+      {
+        "value": "IntestiCult OGM",
+        "count": 1,
+        "fraction": 0.045
+      }
+    ],
+    "n_reported": 22,
+    "n_missing": 13
+  },
+  "matrix": {
+    "top": "Matrigel",
+    "distribution": [
+      {
+        "value": "Matrigel",
+        "count": 19,
+        "fraction": 0.633
+      },
+      {
+        "value": "collagen",
+        "count": 1,
+        "fraction": 0.033
+      },
+      {
+        "value": "Laminin 511",
+        "count": 1,
+        "fraction": 0.033
+      },
+      {
+        "value": "ECM",
+        "count": 1,
+        "fraction": 0.033
+      },
+      {
+        "value": "Matrigel\u2122",
+        "count": 1,
+        "fraction": 0.033
+      },
+      {
+        "value": "basement membrane extract",
+        "count": 1,
+        "fraction": 0.033
+      },
+      {
+        "value": "Cultrex basement membrane extract",
+        "count": 1,
+        "fraction": 0.033
+      },
+      {
+        "value": "Cultrex Basement Membrane Extract, Type 2",
+        "count": 1,
+        "fraction": 0.033
+      },
+      {
+        "value": "Cultrex UltiMatrix RGF BME",
+        "count": 1,
+        "fraction": 0.033
+      },
+      {
+        "value": "MAGIC matrix",
+        "count": 1,
+        "fraction": 0.033
+      }
+    ],
+    "n_reported": 30,
+    "n_missing": 5
+  },
+  "source_cell_type": {
+    "top": "adult_stem_cell",
+    "distribution": [
+      {
+        "value": "adult_stem_cell",
+        "count": 19,
+        "fraction": 0.543
+      },
+      {
+        "value": "iPSC",
+        "count": 9,
+        "fraction": 0.257
+      },
+      {
+        "value": "primary_tissue",
+        "count": 6,
+        "fraction": 0.171
+      },
+      {
+        "value": "other",
+        "count": 1,
+        "fraction": 0.029
+      }
+    ],
+    "n_reported": 35,
+    "n_missing": 0
+  },
+  "species": {
+    "top": "human",
+    "distribution": [
+      {
+        "value": "human",
+        "count": 16,
+        "fraction": 0.485
+      },
+      {
+        "value": "murine",
+        "count": 4,
+        "fraction": 0.121
+      },
+      {
+        "value": "mouse",
+        "count": 4,
+        "fraction": 0.121
+      },
+      {
+        "value": "chicken",
+        "count": 2,
+        "fraction": 0.061
+      },
+      {
+        "value": "duck",
+        "count": 1,
+        "fraction": 0.03
+      },
+      {
+        "value": "canine",
+        "count": 1,
+        "fraction": 0.03
+      },
+      {
+        "value": "Mus musculus",
+        "count": 1,
+        "fraction": 0.03
+      },
+      {
+        "value": "cat",
+        "count": 1,
+        "fraction": 0.03
+      },
+      {
+        "value": "Porcine",
+        "count": 1,
+        "fraction": 0.03
+      },
+      {
+        "value": "porcine",
+        "count": 1,
+        "fraction": 0.03
+      }
+    ],
+    "n_reported": 33,
+    "n_missing": 2
+  },
+  "signaling_factors": [],
+  "media_supplements": [],
+  "small_molecules": [],
+  "timeline": {
+    "n_protocols_with_timeline": 6,
+    "stages": []
+  },
+  "universal_reagents": [],
+  "high_variability_reagents": []
+}

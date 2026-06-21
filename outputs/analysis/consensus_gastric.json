@@ -1,0 +1,181 @@
+{
+  "organoid_type": "gastric",
+  "n_protocols": 35,
+  "base_media": {
+    "top": "advanced DMEM/F12",
+    "distribution": [
+      {
+        "value": "advanced DMEM/F12",
+        "count": 4,
+        "fraction": 0.2
+      },
+      {
+        "value": "Advanced DMEM/F12",
+        "count": 3,
+        "fraction": 0.15
+      },
+      {
+        "value": "DMEM/F12",
+        "count": 3,
+        "fraction": 0.15
+      },
+      {
+        "value": "ADEM/F12",
+        "count": 1,
+        "fraction": 0.05
+      },
+      {
+        "value": "Advanced DMEM (AD++)",
+        "count": 1,
+        "fraction": 0.05
+      },
+      {
+        "value": "DMEM/F12 advanced medium",
+        "count": 1,
+        "fraction": 0.05
+      },
+      {
+        "value": "advanced DMEM/F12 medium",
+        "count": 1,
+        "fraction": 0.05
+      },
+      {
+        "value": "Epithelial Organoid Basal Medium",
+        "count": 1,
+        "fraction": 0.05
+      },
+      {
+        "value": "Dulbecco\u2019s phosphate-buffered saline (PBS)",
+        "count": 1,
+        "fraction": 0.05
+      },
+      {
+        "value": "AdDMEM/F12",
+        "count": 1,
+        "fraction": 0.05
+      }
+    ],
+    "n_reported": 20,
+    "n_missing": 15
+  },
+  "matrix": {
+    "top": "Matrigel",
+    "distribution": [
+      {
+        "value": "Matrigel",
+        "count": 19,
+        "fraction": 0.679
+      },
+      {
+        "value": "Matrigel Matrix, Growth Factor Reduced Phenol Red-Free",
+        "count": 1,
+        "fraction": 0.036
+      },
+      {
+        "value": "Organoid Culture ECM",
+        "count": 1,
+        "fraction": 0.036
+      },
+      {
+        "value": "matrigel",
+        "count": 1,
+        "fraction": 0.036
+      },
+      {
+        "value": "Corning Matrigel Matrix",
+        "count": 1,
+        "fraction": 0.036
+      },
+      {
+        "value": "collagen I",
+        "count": 1,
+        "fraction": 0.036
+      },
+      {
+        "value": "Cultrex BME RGF type 2 (BME-2)",
+        "count": 1,
+        "fraction": 0.036
+      },
+      {
+        "value": "Matrigel\u2122",
+        "count": 1,
+        "fraction": 0.036
+      },
+      {
+        "value": "collagen-based matrix",
+        "count": 1,
+        "fraction": 0.036
+      },
+      {
+        "value": "laminin-rich extracellular matrix",
+        "count": 1,
+        "fraction": 0.036
+      }
+    ],
+    "n_reported": 28,
+    "n_missing": 7
+  },
+  "source_cell_type": {
+    "top": "adult_stem_cell",
+    "distribution": [
+      {
+        "value": "adult_stem_cell",
+        "count": 19,
+        "fraction": 0.543
+      },
+      {
+        "value": "iPSC",
+        "count": 8,
+        "fraction": 0.229
+      },
+      {
+        "value": "primary_tissue",
+        "count": 6,
+        "fraction": 0.171
+      },
+      {
+        "value": "other",
+        "count": 2,
+        "fraction": 0.057
+      }
+    ],
+    "n_reported": 35,
+    "n_missing": 0
+  },
+  "species": {
+    "top": "human",
+    "distribution": [
+      {
+        "value": "human",
+        "count": 24,
+        "fraction": 0.706
+      },
+      {
+        "value": "mouse",
+        "count": 8,
+        "fraction": 0.235
+      },
+      {
+        "value": "Mus musculus",
+        "count": 1,
+        "fraction": 0.029
+      },
+      {
+        "value": "murine",
+        "count": 1,
+        "fraction": 0.029
+      }
+    ],
+    "n_reported": 34,
+    "n_missing": 1
+  },
+  "signaling_factors": [],
+  "media_supplements": [],
+  "small_molecules": [],
+  "timeline": {
+    "n_protocols_with_timeline": 1,
+    "stages": []
+  },
+  "universal_reagents": [],
+  "high_variability_reagents": []
+}

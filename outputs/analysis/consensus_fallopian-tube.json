@@ -1,0 +1,126 @@
+{
+  "organoid_type": "fallopian-tube",
+  "n_protocols": 16,
+  "base_media": {
+    "top": "DMEM",
+    "distribution": [
+      {
+        "value": "DMEM",
+        "count": 2,
+        "fraction": 0.286
+      },
+      {
+        "value": "ADF",
+        "count": 1,
+        "fraction": 0.143
+      },
+      {
+        "value": "mTeSR\u00ae1 medium",
+        "count": 1,
+        "fraction": 0.143
+      },
+      {
+        "value": "AdDF+++",
+        "count": 1,
+        "fraction": 0.143
+      },
+      {
+        "value": "M-TE-N1",
+        "count": 1,
+        "fraction": 0.143
+      },
+      {
+        "value": "DMEM/F12",
+        "count": 1,
+        "fraction": 0.143
+      }
+    ],
+    "n_reported": 7,
+    "n_missing": 9
+  },
+  "matrix": {
+    "top": "Matrigel",
+    "distribution": [
+      {
+        "value": "Matrigel",
+        "count": 7,
+        "fraction": 0.7
+      },
+      {
+        "value": "Matrigel\u2122 Matrix",
+        "count": 1,
+        "fraction": 0.1
+      },
+      {
+        "value": "collagen",
+        "count": 1,
+        "fraction": 0.1
+      },
+      {
+        "value": "Basement Membrane Extract",
+        "count": 1,
+        "fraction": 0.1
+      }
+    ],
+    "n_reported": 10,
+    "n_missing": 6
+  },
+  "source_cell_type": {
+    "top": "adult_stem_cell",
+    "distribution": [
+      {
+        "value": "adult_stem_cell",
+        "count": 6,
+        "fraction": 0.375
+      },
+      {
+        "value": "iPSC",
+        "count": 6,
+        "fraction": 0.375
+      },
+      {
+        "value": "primary_tissue",
+        "count": 3,
+        "fraction": 0.188
+      },
+      {
+        "value": "ESC",
+        "count": 1,
+        "fraction": 0.062
+      }
+    ],
+    "n_reported": 16,
+    "n_missing": 0
+  },
+  "species": {
+    "top": "human",
+    "distribution": [
+      {
+        "value": "human",
+        "count": 9,
+        "fraction": 0.75
+      },
+      {
+        "value": "mouse",
+        "count": 2,
+        "fraction": 0.167
+      },
+      {
+        "value": "murine",
+        "count": 1,
+        "fraction": 0.083
+      }
+    ],
+    "n_reported": 12,
+    "n_missing": 4
+  },
+  "signaling_factors": [],
+  "media_supplements": [],
+  "small_molecules": [],
+  "timeline": {
+    "n_protocols_with_timeline": 1,
+    "stages": []
+  },
+  "universal_reagents": [],
+  "high_variability_reagents": []
+}

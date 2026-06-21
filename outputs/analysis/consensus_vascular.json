@@ -1,0 +1,121 @@
+{
+  "organoid_type": "vascular",
+  "n_protocols": 20,
+  "base_media": {
+    "top": "mTeSR1",
+    "distribution": [
+      {
+        "value": "mTeSR1",
+        "count": 3,
+        "fraction": 0.375
+      },
+      {
+        "value": "StemMACS iPS Brew medium",
+        "count": 1,
+        "fraction": 0.125
+      },
+      {
+        "value": "lung epithelial-optimized media",
+        "count": 1,
+        "fraction": 0.125
+      },
+      {
+        "value": "mTeSR Plus",
+        "count": 1,
+        "fraction": 0.125
+      },
+      {
+        "value": "TeSR E8 medium",
+        "count": 1,
+        "fraction": 0.125
+      },
+      {
+        "value": "E8 medium",
+        "count": 1,
+        "fraction": 0.125
+      }
+    ],
+    "n_reported": 8,
+    "n_missing": 12
+  },
+  "matrix": {
+    "top": "Matrigel",
+    "distribution": [
+      {
+        "value": "Matrigel",
+        "count": 9,
+        "fraction": 0.643
+      },
+      {
+        "value": "Collagen I-Matrigel",
+        "count": 2,
+        "fraction": 0.143
+      },
+      {
+        "value": "matrigel",
+        "count": 1,
+        "fraction": 0.071
+      },
+      {
+        "value": "collagen type I\u2013Matrigel",
+        "count": 1,
+        "fraction": 0.071
+      },
+      {
+        "value": "Col1-Mat",
+        "count": 1,
+        "fraction": 0.071
+      }
+    ],
+    "n_reported": 14,
+    "n_missing": 6
+  },
+  "source_cell_type": {
+    "top": "iPSC",
+    "distribution": [
+      {
+        "value": "iPSC",
+        "count": 16,
+        "fraction": 0.8
+      },
+      {
+        "value": "ESC",
+        "count": 2,
+        "fraction": 0.1
+      },
+      {
+        "value": "other",
+        "count": 1,
+        "fraction": 0.05
+      },
+      {
+        "value": "primary_tissue",
+        "count": 1,
+        "fraction": 0.05
+      }
+    ],
+    "n_reported": 20,
+    "n_missing": 0
+  },
+  "species": {
+    "top": "human",
+    "distribution": [
+      {
+        "value": "human",
+        "count": 17,
+        "fraction": 1.0
+      }
+    ],
+    "n_reported": 17,
+    "n_missing": 3
+  },
+  "signaling_factors": [],
+  "media_supplements": [],
+  "small_molecules": [],
+  "timeline": {
+    "n_protocols_with_timeline": 3,
+    "stages": []
+  },
+  "universal_reagents": [],
+  "high_variability_reagents": []
+}
