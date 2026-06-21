@@ -530,6 +530,29 @@ def test_summary_includes_analytics_ready(tmp_path, monkeypatch):
     assert "analytics_ready" in data
     assert not data["analytics_ready"]["coverage"]
     assert data["analytics_ready"]["quality"]
+    assert "mior" in data["analytics_ready"]
+
+
+def test_summary_includes_mior_when_present(tmp_path, monkeypatch):
+    """Summary endpoint embeds MIOR stats so callers avoid a second fetch."""
+    monkeypatch.setattr(ae, "ANALYSIS_DIR", tmp_path)
+    monkeypatch.setattr(ae, "COVERAGE_REPORT_PATH", tmp_path / "nonexistent.json")
+    (tmp_path / "protocol_quality_scores.json").write_text('{"avg_score": 0.7}')
+    mior_payload = {
+        "avg_mior_completeness": 0.63,
+        "n_full": 120,
+        "n_partial": 280,
+        "n_sparse": 182,
+        "n_total": 582,
+    }
+    (tmp_path / "mior_completeness.json").write_text(json.dumps(mior_payload))
+    data, status = ae.handle_summary()
+    assert status == 200
+    assert "mior" in data
+    assert data["mior"]["avg_mior_completeness"] == 0.63
+    assert data["mior"]["n_full"] == 120
+    assert data["mior"]["n_total"] == 582
+    assert data["analytics_ready"]["mior"]
 
 
 def test_index_includes_summary_endpoint():

@@ -301,6 +301,22 @@ def handle_summary() -> tuple[dict, int]:
         except (json.JSONDecodeError, OSError):
             pass
 
+    # MIOR completeness summary — embed key fields so /analytics/summary callers
+    # get MIOR stats without a second fetch (the full report is still at /analytics/mior)
+    mior_path = ANALYSIS_DIR / "mior_completeness.json"
+    if mior_path.exists():
+        try:
+            mior = json.loads(mior_path.read_text())
+            summary["mior"] = {
+                "avg_mior_completeness": mior.get("avg_mior_completeness"),
+                "n_full": mior.get("n_full"),
+                "n_partial": mior.get("n_partial"),
+                "n_sparse": mior.get("n_sparse"),
+                "n_total": mior.get("n_total"),
+            }
+        except (json.JSONDecodeError, OSError):
+            pass
+
     has_data = bool(summary)
 
     # Analytics inventory — always included so callers know what to generate
@@ -311,6 +327,7 @@ def handle_summary() -> tuple[dict, int]:
         "coverage": COVERAGE_REPORT_PATH.exists(),
         "quality": quality_path.exists(),
         "assay_endpoints": ae_path.exists(),
+        "mior": mior_path.exists(),
     }
 
     if not has_data:

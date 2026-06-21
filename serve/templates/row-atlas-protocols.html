@@ -6,7 +6,11 @@
 <div class="apa-topbar">
   <span class="dot"></span> <a href="/">ORGANOID PROTOCOL ATLAS</a>
   <span class="dot"></span> <a href="/atlas/protocols">All protocols</a>
-  <span class="dot"></span> <a href="/atlas/signaling_by_type">Compare</a>
+  <span class="dot"></span> <a href="/explore">Explore</a>
+  <span class="dot"></span> <a href="/heatmap">Heatmap</a>
+  <span class="dot"></span> <a href="/consensus">Consensus</a>
+  <span class="dot"></span> <a href="/dashboard">Dashboard</a>
+  <span class="dot"></span> <a href="/ask">Ask</a>
 </div>
 
 <div class="apa-recipe" id="recipe"><p style="color:var(--muted)">Loading protocol…</p></div>
@@ -41,6 +45,7 @@ function highlight(text, quotes){
   try { [src] = await j(`/atlas/sources/${encodeURIComponent(pmcid)}.json?_shape=array`); } catch (e) {}
   const sig = reags.filter(r => r.kind === 'signaling');
   const sup = reags.filter(r => r.kind === 'supplement');
+  const sm  = reags.filter(r => r.kind === 'small_molecule');
   const cite = `<a href="https://doi.org/${esc(p.doi)}" target="_blank" rel="noopener">${esc(p.doi)}</a>`;
   const title = `${esc((p.organoid_type||'').toUpperCase())} organoid · ${esc(p.first_author||'')} ${esc(p.year||'')}`;
 
@@ -77,6 +82,19 @@ function highlight(text, quotes){
     ${p.assay_endpoints ? `<p style="font-size:.9rem"><strong>Validation / endpoints:</strong> ${esc(p.assay_endpoints)}</p>` : ''}
     ${sup.length ? `<h3 style="margin:1.2rem 0 .3rem">Media supplements <span style="color:var(--muted);font-weight:400">(${sup.length})</span></h3>
       <p style="font-size:.9rem">${sup.map(r=>esc(r.name)).join(' · ')}</p>` : ''}
+    ${sm.length ? `<h3 style="margin:1.2rem 0 .3rem">Small molecules <span style="color:var(--muted);font-weight:400">(${sm.length})</span></h3>
+      <table class="apa-cocktail">
+        <thead><tr><th>Reagent</th><th>Role</th><th>Conc.</th><th>Evidence</th><th>Verbatim span</th></tr></thead>
+        <tbody>${sm.map(r => `
+          <tr>
+            <td><a href="/atlas/reagents?canonical__exact=${encodeURIComponent(r.canonical || r.name)}">${esc(r.name)}</a>${r.figure_confirmed ? ' <span class="apa-badge fig" title="confirmed in figure">📷 figure</span>' : ''}</td>
+            <td>${esc(r.role==='not stated'?'':r.role)}</td>
+            <td>${esc(conc(r))}${r.suspect_unit ? ' <span class="apa-badge no">⚠</span>' : ''}</td>
+            <td>${badge(r.grounded)}</td>
+            <td class="quote">${r.evidence_quote?('"'+esc(r.evidence_quote)+'"'):''}</td>
+          </tr>`).join('')}
+        </tbody>
+      </table>` : ''}
     <p style="margin-top:1.5rem"><a href="/atlas/protocols">← all protocols</a></p>
   `;
 

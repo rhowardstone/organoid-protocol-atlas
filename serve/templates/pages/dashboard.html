@@ -187,8 +187,9 @@ async function load() {
     const q = summary.quality || {};
     setText('s-gold', q.n_gold != null ? q.n_gold : '—');
   }
-  if (mior) {
-    const avg = mior.avg_mior_completeness;
+  const miorStatSrc = mior ?? (summary && summary.mior ? summary.mior : null);
+  if (miorStatSrc) {
+    const avg = miorStatSrc.avg_mior_completeness;
     setText('s-mior', avg != null ? (avg * 100).toFixed(1) + '%' : '—');
   }
   // Reagent count from manifest
@@ -196,7 +197,7 @@ async function load() {
     const mfRes = await fetch('/exports/public/manifest.json');
     if (mfRes.ok) {
       const mf = await mfRes.json();
-      setText('s-reagents', mf.n_reagents ?? mf.reagents ?? '—');
+      setText('s-reagents', mf.tables?.reagents ?? '—');
     }
   } catch(_) {}
 
@@ -222,8 +223,12 @@ async function load() {
   }
 
   // ── MIOR bar ──────────────────────────────────────────────────────────
+  // summary.mior carries the key fields as a convenience; fall back to it when
+  // /analytics/mior itself returns 404 (not yet generated)
   const miorEl = document.getElementById('mior-bar');
-  if (mior) {
+  const miorData = mior ?? (summary && summary.mior ? summary.mior : null);
+  if (miorData) {
+    const mior = miorData;  // shadow — rest of block uses `mior` unchanged
     const n = mior.n_total || 1;
     const nFull    = mior.n_full    || 0;
     const nPartial = mior.n_partial || 0;
