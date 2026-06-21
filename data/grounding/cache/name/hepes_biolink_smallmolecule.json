@@ -1,0 +1,77 @@
+[
+  {
+    "curie": "CHEBI:42334",
+    "label": "HEPES",
+    "highlighting": {},
+    "synonyms": [
+      "hepe",
+      "hepes",
+      "Hepes",
+      "HEPES",
+      "CID 3275884",
+      "HEPES Solution",
+      "15(R)-hydroperoxy-EPE",
+      "Hydroxyethylpiperazine Ethane Sulfonic Acid",
+      "HYDROXYETHYLPIPERAZINE ETHANE SULFONIC ACID",
+      "hydroxyethylpiperazine ethane sulfonic acid",
+      "4-(2-Hydroxyethyl)-1-piperazineethane sulfonate",
+      "4-(2-HYDROXYETHYL)-1-piperazine ethanesulfonate",
+      "4-(2-Hydroxyethyl)-1-piperazineethane sulphonate",
+      "4-(2-HYDROXYETHYL)-1-piperazine ethanesulphonate",
+      "4-(2-Hydroxyethyl)-1-piperazineethanesulfonic acid",
+      "4-(2-HYDROXYETHYL)-1-PIPERAZINE ETHANESULFONIC ACID",
+      "2-[4-(2-Hydroxyethyl)piperazin-1-yl]ethanesulfonate",
+      "4-(2-HYDROXYETHYL)-1-piperazine ethanesulfonIC ACID",
+      "4-(2-Hydroxyethyl)-1-piperazineethane sulfonic acid",
+      "1-Piperazineethanesulfonic acid, 4-(2-hydroxyethyl)-",
+      "Hydroxyethyl Piperazine Ethanesulfonic Acid Solution",
+      "4-(2-Hydroxyethyl)-1-piperazineethane sulphonic acid",
+      "N 2 Hydroxyethylpiperazine N' 2' ethanesulfonic Acid",
+      "N-2-Hydroxyethylpiperazine-N'-2'-ethanesulfonic Acid",
+      "2-[4-(2-Hydroxyethyl)piperazin-1-yl]ethanesulphonate",
+      "4-(2-HYDROXYETHYL)-1-piperazine ethanesulphonic acid",
+      "2-[4-(2-hydroxyethyl)piperazin-1-yl]ethanesulfonic acid",
+      "2-[4-(2-Hydroxyethyl)piperazin-1-yl]ethanesulphonic acid",
+      "2-[4-(2-hydroxyethyl)piperazin-4-ium-1-yl]ethanesulfonate",
+      "2-[4-(2-Hydroxyethyl)piperazin-4-ium-1-yl]ethanesulfonate"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 6650.963,
+    "clique_identifier_count": 34
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:71309498",
+    "label": "HEPES-d18",
+    "highlighting": {},
+    "synonyms": [
+      "HEPES-d18"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 333.7648,
+    "clique_identifier_count": 3
+  }
+]
