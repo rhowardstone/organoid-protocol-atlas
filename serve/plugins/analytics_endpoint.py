@@ -10,6 +10,7 @@ Routes (all return JSON; read-only, no writes):
   GET /analytics/substitutions?q=Matrigel       -- search ProtocolModification records
   GET /analytics/coverage                       -- per-type corpus coverage & completeness report
   GET /analytics/coverage/{organoid_type}       -- coverage for one organoid type
+  GET /analytics/reagent?q=TERM                 -- cross-corpus reagent lookup from reagents.jsonl
   GET /analytics                                -- index of available analytics
 
 All endpoints degrade gracefully — if the pre-computed file doesn't exist they return
@@ -34,6 +35,7 @@ if str(PIPELINE) not in sys.path:
 ANALYSIS_DIR = REPO / "outputs" / "analysis"
 COMPARISON_DIR = REPO / "outputs" / "comparison"
 COVERAGE_REPORT_PATH = ANALYSIS_DIR / "coverage_report.json"
+REAGENTS_JSONL = REPO / "exports" / "public" / "reagents.jsonl"
 
 
 # --------------------------------------------------------------------------- #
@@ -205,6 +207,35 @@ def handle_coverage_type(organoid_type: str) -> tuple[dict, int]:
     }, 200
 
 
+def handle_reagent(query: str, organoid_type: str | None, min_papers: int) -> tuple[dict, int]:
+    """Cross-corpus reagent lookup from reagents.jsonl."""
+    if not query or not query.strip():
+        return {
+            "error": "pass ?q=reagent_name",
+            "example": "/analytics/reagent?q=EGF",
+        }, 400
+
+    query = query.strip()[:100]
+
+    if not REAGENTS_JSONL.exists():
+        return {
+            "error": "reagents.jsonl not found",
+            "path": str(REAGENTS_JSONL),
+        }, 404
+
+    try:
+        import reagent_lookup as rl
+    except ImportError:
+        return {"error": "reagent_lookup module not available"}, 500
+
+    records = rl.load_reagents(REAGENTS_JSONL)
+    if not records:
+        return {"error": "reagents.jsonl is empty", "n_records": 0}, 404
+
+    result = rl.lookup(records, query, organoid_type, min_papers)
+    return result, 200
+
+
 def handle_index() -> tuple[dict, int]:
     """Analytics endpoint index."""
     return {
@@ -217,6 +248,7 @@ def handle_index() -> tuple[dict, int]:
             "/analytics/substitutions?q=TERM": "search ProtocolModification records for reagent substitutions",
             "/analytics/coverage": "per-type corpus coverage and completeness report",
             "/analytics/coverage/{organoid_type}": "coverage stats for one organoid type",
+            "/analytics/reagent?q=TERM": "cross-corpus reagent lookup: usage, concentrations, evidence quotes",
         },
         "generate": {
             "consensus": "python pipeline/compute_consensus.py --all",
@@ -284,6 +316,17 @@ async def route_coverage_type(datasette, request):
     return Response.json(data, status=status)
 
 
+async def route_reagent(datasette, request):
+    query = request.args.get("q", "")
+    organoid_type = request.args.get("type") or None
+    try:
+        min_papers = int(request.args.get("min_papers", "1"))
+    except (TypeError, ValueError):
+        min_papers = 1
+    data, status = handle_reagent(query, organoid_type, min_papers)
+    return Response.json(data, status=status)
+
+
 @hookimpl
 def register_routes():
     return [
@@ -297,4 +340,5 @@ def register_routes():
         (r"^/analytics/substitutions$", route_substitutions),
         (r"^/analytics/coverage$", route_coverage),
         (r"^/analytics/coverage/(?P<organoid_type>[\w-]+)$", route_coverage_type),
+        (r"^/analytics/reagent$", route_reagent),
     ]
