@@ -1,0 +1,39 @@
+{
+  "CHEBI:125649": {
+    "id": {
+      "identifier": "CHEBI:125649",
+      "label": "IWP-2"
+    },
+    "equivalent_identifiers": [
+      {
+        "identifier": "CHEBI:125649",
+        "label": "IWP-2"
+      },
+      {
+        "identifier": "PUBCHEM.COMPOUND:2155128",
+        "label": "N-(6-methylbenzo[d]thiazol-2-yl)-2-((4-oxo-3-phenyl-3,4,6,7-tetrahydrothieno[3,2-d]pyrimidin-2-yl)thio)acetamide"
+      },
+      {
+        "identifier": "CHEMBL.COMPOUND:CHEMBL1257064"
+      },
+      {
+        "identifier": "CAS:686770-61-6"
+      },
+      {
+        "identifier": "INCHIKEY:WRKPZSMRWPJJDH-UHFFFAOYSA-N"
+      }
+    ],
+    "type": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "information_content": 100.0
+  }
+}

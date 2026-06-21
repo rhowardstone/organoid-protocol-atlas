@@ -1,0 +1,38 @@
+{
+  "PUBCHEM.COMPOUND:6878030": {
+    "id": {
+      "identifier": "PUBCHEM.COMPOUND:6878030",
+      "label": "SANT-1"
+    },
+    "equivalent_identifiers": [
+      {
+        "identifier": "PUBCHEM.COMPOUND:6878030",
+        "label": "Sant-1"
+      },
+      {
+        "identifier": "CHEMBL.COMPOUND:CHEMBL515916"
+      },
+      {
+        "identifier": "CAS:304909-07-7"
+      },
+      {
+        "identifier": "GTOPDB:10330",
+        "label": "SANT-1"
+      },
+      {
+        "identifier": "INCHIKEY:FOORCIAZMIWALX-JJIBRWJFSA-N"
+      }
+    ],
+    "type": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ]
+  }
+}

@@ -1,0 +1,522 @@
+[
+  {
+    "curie": "PUBCHEM.COMPOUND:6878030",
+    "label": "SANT-1",
+    "highlighting": {},
+    "synonyms": [
+      "SANT-1",
+      "Sant-1"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 3608.89,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "MESH:C468919",
+    "label": "SANT-1 compound",
+    "highlighting": {},
+    "synonyms": [
+      "SANT-1 compound"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 253.61172,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "UNII:GYK6BKF2M2",
+    "label": "SANT 1",
+    "highlighting": {},
+    "synonyms": [
+      "SANT 1"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 171.98782,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "NCBIGene:542591",
+    "label": "LOC542591",
+    "highlighting": {},
+    "synonyms": [
+      "tacs1",
+      "SANT 1",
+      "IDP3792",
+      "LOC542591",
+      "CL42008_-1",
+      "CL42008_-1a",
+      "GRMZM2G111906",
+      "cl42008_-1(187)",
+      "terminal acidic SANT 1",
+      "Q5EUJ4_MAIZE Terminal acidic SANT 1 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:4577"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 137.69997,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "UniProtKB:A0A4X1TMT5",
+    "label": "A0A4X1TMT5_PIG ELM2 and SANT domain-containing protein 1 (trembl)",
+    "highlighting": {},
+    "synonyms": [
+      "A0A4X1TMT5_PIG ELM2 and SANT domain-containing protein 1 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9823"
+    ],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 134.27739,
+    "clique_identifier_count": 13
+  },
+  {
+    "curie": "UniProtKB:A0A1D6LMP0",
+    "label": "A0A1D6LMP0_MAIZE Terminal acidic SANT 1 (trembl)",
+    "highlighting": {},
+    "synonyms": [
+      "A0A1D6LMP0_MAIZE Terminal acidic SANT 1 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:4577"
+    ],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 132.35994,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "UniProtKB:A0A1Y5I0F7",
+    "label": "A0A1Y5I0F7_OSTTA Terminal acidic SANT 1 (trembl)",
+    "highlighting": {},
+    "synonyms": [
+      "A0A1Y5I0F7_OSTTA Terminal acidic SANT 1 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:70448"
+    ],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 132.35994,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "UniProtKB:A0A1D6LMN9",
+    "label": "A0A1D6LMN9_MAIZE Terminal acidic SANT 1 (trembl)",
+    "highlighting": {},
+    "synonyms": [
+      "A0A1D6LMN9_MAIZE Terminal acidic SANT 1 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:4577"
+    ],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 132.35994,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "UniProtKB:A0A1D6LMN5",
+    "label": "A0A1D6LMN5_MAIZE Terminal acidic SANT 1 (trembl)",
+    "highlighting": {},
+    "synonyms": [
+      "A0A1D6LMN5_MAIZE Terminal acidic SANT 1 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:4577"
+    ],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 132.35994,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "UniProtKB:A0A1D6LMN8",
+    "label": "A0A1D6LMN8_MAIZE Terminal acidic SANT 1 (trembl)",
+    "highlighting": {},
+    "synonyms": [
+      "A0A1D6LMN8_MAIZE Terminal acidic SANT 1 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:4577"
+    ],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 132.35994,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "UniProtKB:Q5MJ84",
+    "label": "Q5MJ84_MAIZE Terminal acidic SANT 1 (Fragment) (trembl)",
+    "highlighting": {},
+    "synonyms": [
+      "Q5MJ84_MAIZE Terminal acidic SANT 1 (Fragment) (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:4577"
+    ],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 125.150894,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "UniProtKB:Q5MJ82",
+    "label": "Q5MJ82_MAIZE Terminal acidic SANT 1 (Fragment) (trembl)",
+    "highlighting": {},
+    "synonyms": [
+      "Q5MJ82_MAIZE Terminal acidic SANT 1 (Fragment) (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:4577"
+    ],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 125.150894,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "UniProtKB:Q5MJ83",
+    "label": "Q5MJ83_MAIZE Terminal acidic SANT 1 (Fragment) (trembl)",
+    "highlighting": {},
+    "synonyms": [
+      "Q5MJ83_MAIZE Terminal acidic SANT 1 (Fragment) (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:4577"
+    ],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 125.150894,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "UniProtKB:A0A8D0ZFH8",
+    "label": "A0A8D0ZFH8_PIG Myb/SANT-like DNA-binding domain-containing protein (trembl)",
+    "highlighting": {},
+    "synonyms": [
+      "A0A8D0ZFH8_PIG Myb/SANT-like DNA-binding domain-containing protein (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9823"
+    ],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 121.68323,
+    "clique_identifier_count": 19
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:1367095",
+    "label": "SANT-2",
+    "highlighting": {},
+    "synonyms": [
+      "SANT-2",
+      "Sant-2"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 116.35869,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "UniProtKB:A0A8D1H458",
+    "label": "A0A8D1H458_PIG Myb/SANT-like DNA-binding domain-containing protein 3 (trembl)",
+    "highlighting": {},
+    "synonyms": [
+      "A0A8D1H458_PIG Myb/SANT-like DNA-binding domain-containing protein 3 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9823"
+    ],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 116.24128,
+    "clique_identifier_count": 19
+  },
+  {
+    "curie": "UniProtKB:A0A8C5NK62",
+    "label": "A0A8C5NK62_JUNHY Myb/SANT-like DNA-binding domain-containing protein 1 (trembl)",
+    "highlighting": {},
+    "synonyms": [
+      "A0A8C5NK62_JUNHY Myb/SANT-like DNA-binding domain-containing protein 1 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:40217"
+    ],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 115.12525,
+    "clique_identifier_count": 11
+  },
+  {
+    "curie": "UniProtKB:A0A8D0XMJ4",
+    "label": "A0A8D0XMJ4_PIG Myb/SANT-like DNA-binding domain-containing protein 3 (trembl)",
+    "highlighting": {},
+    "synonyms": [
+      "A0A8D0XMJ4_PIG Myb/SANT-like DNA-binding domain-containing protein 3 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9823"
+    ],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 107.5828,
+    "clique_identifier_count": 15
+  },
+  {
+    "curie": "UniProtKB:A0A8C1T9Z9",
+    "label": "A0A8C1T9Z9_CYPCA Myb/SANT-like DNA-binding domain-containing protein (trembl)",
+    "highlighting": {},
+    "synonyms": [
+      "A0A8C1T9Z9_CYPCA Myb/SANT-like DNA-binding domain-containing protein (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:7962"
+    ],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 107.1955,
+    "clique_identifier_count": 13
+  },
+  {
+    "curie": "UniProtKB:A0A8D1PPW7",
+    "label": "A0A8D1PPW7_PIG Myb/SANT-like DNA-binding domain-containing protein (trembl)",
+    "highlighting": {},
+    "synonyms": [
+      "A0A8D1PPW7_PIG Myb/SANT-like DNA-binding domain-containing protein (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9823"
+    ],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 107.1955,
+    "clique_identifier_count": 13
+  }
+]

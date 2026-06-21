@@ -77,6 +77,29 @@ SMALL_MOLECULES = {
     "dexamethasone", "gastrin", "su5402", "tgfbi", "valproicacid", "thiazovivin",
 }
 
+# Curated query ALIASES: normalized free-text -> canonical query string, for common
+# typos / missing-space / hyphen / descriptor-prefix variants that SRI misses. The
+# CURIE is STILL resolved live by name_lookup + the _verify gate against the aliased
+# string (never hardcoded), so this fixes recall WITHOUT fabricating CURIEs. Each
+# entry was confirmed to resolve to the correct chemical (see tests):
+#   ActivinA->CHEBI:81351  CHIR99201(typo)->CHEBI:91091  FSK->CHEBI:93891(forskolin)
+#   "ROCK inhibitor Y-27632"->CHEBI:75393  A8301->CHEBI:233322  SANT-1->PUBCHEM:6878030
+#   SB431542->CHEBI:91108  IWP2->CHEBI:125649  PGE2->CHEBI:606564(prostaglandin E2)
+# Excluded on purpose: gene/protein family terms (TGF-beta, BMP4, sonic hedgehog)
+# resolve to species-ambiguous non-human cliques -> they MUST stay needs_review/
+# not_found for human review, not be force-aliased (the PR #9 lesson).
+ALIASES = {
+    "activina": "Activin A",
+    "chir99201": "CHIR99021",
+    "fsk": "forskolin",
+    "rockinhibitory27632": "Y-27632",
+    "a8301": "A 83-01",
+    "sant1": "SANT-1",
+    "sb431542": "SB 431542",
+    "iwp2": "IWP-2",
+    "pge2": "prostaglandin E2",
+}
+
 
 def _slug(s: str) -> str:
     return re.sub(r"[^a-z0-9]+", "_", (s or "").lower()).strip("_") or "_"
@@ -162,9 +185,18 @@ def ground_entity(name: str, kind: str = "reagent", offline: bool = False) -> di
            "flags": []}
     if not name:
         return rec
+    # Curated alias: fix common typo/spacing/descriptor variants before lookup. The
+    # aliased string is what we look up AND verify against; the original stays in
+    # rec["query"] for provenance. CURIE still comes from SRI + _verify (no fabrication).
+    lookup = name
+    akey = re.sub(r"[^a-z0-9]", "", name.lower())
+    if kind == "reagent" and akey in ALIASES:
+        lookup = ALIASES[akey]
+        rec["flags"].append(f"alias:{lookup}")
+        akey = re.sub(r"[^a-z0-9]", "", lookup.lower())
     prefixes = KIND_PREFIXES.get(kind, ())
     types = KIND_BIOLINK.get(kind, [None])
-    if kind == "reagent" and re.sub(r"[^a-z0-9]", "", name.lower()) in SMALL_MOLECULES:
+    if kind == "reagent" and akey in SMALL_MOLECULES:
         # known small molecule: constrain to chemicals so abbreviations don't collide
         # with gene symbols (SAG/PGE2). Accept only chemical CURIEs.
         types = ["biolink:ChemicalEntity"]
@@ -172,7 +204,7 @@ def ground_entity(name: str, kind: str = "reagent", offline: bool = False) -> di
     called = False
     candidate = None   # first prefix-acceptable hit that FAILED label/synonym verify
     for bt in types:
-        hits = name_lookup(name, biolink_type=bt, offline=offline)
+        hits = name_lookup(lookup, biolink_type=bt, offline=offline)
         if hits is None:
             continue              # offline + uncached for this type
         called = True
@@ -180,7 +212,7 @@ def ground_entity(name: str, kind: str = "reagent", offline: bool = False) -> di
             curie = h.get("curie")
             if not curie or (prefixes and curie.split(":")[0] not in prefixes):
                 continue
-            if _verify(name, h):  # query matches label/synonym -> ACCEPT
+            if _verify(lookup, h):  # query matches label/synonym -> ACCEPT
                 rec.update(grounding_status="resolved", curie=curie,
                            label=h.get("label"), source="sri-name-resolver",
                            biolink_category=_category(curie, offline) or

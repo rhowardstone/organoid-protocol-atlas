@@ -1,0 +1,553 @@
+[
+  {
+    "curie": "CHEBI:91108",
+    "label": "SB 431542",
+    "highlighting": {},
+    "synonyms": [
+      "SB431542",
+      "SB-431542",
+      "SB 431542",
+      "4-(5-Benzo(1,3)dioxol-5-yl-4-pyridin-2-yl-1H-imidazol-2-yl)benzamide",
+      "4-(4-(1,3-Benzodioxole-5-yl)-5-(2-pyridyl)-1H-imidazole-2-yl)benzamide",
+      "4-[4-(2H-1,3-benzodioxol-5-yl)-5-(pyridin-2-yl)-1H-imidazol-2-yl]benzamide",
+      "4-(4-(Benzo[d][1,3]dioxol-5-yl)-5-(pyridin-2-yl)-1H-imidazol-2-yl)benzamide",
+      "4-(4-(benzo[d][1,3]dioxol-5-yl)-5-(pyridin-2-yl)-1H-imidazol-2-yl)benzamide"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 4814.6704,
+    "clique_identifier_count": 8
+  },
+  {
+    "curie": "MESH:C459179",
+    "label": "4-(5-benzo(1,3)dioxol-5-yl-4-pyridin-2-yl-1H-imidazol-2-yl)benzamide",
+    "highlighting": {},
+    "synonyms": [
+      "SB431542",
+      "SB 431542",
+      "SB-431542",
+      "4-(5-benzo(1,3)dioxol-5-yl-4-pyridin-2-yl-1H-imidazol-2-yl)benzamide"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 557.03467,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "CHEBI:79090",
+    "label": "SB-202190",
+    "highlighting": {},
+    "synonyms": [
+      "SB202190",
+      "SB 202190",
+      "SB-202190",
+      "Sb-202190",
+      "4-(4-Fluorophenyl)-2-(4-hydroxyphenyl)-5-(4-pyridyl)imidazole",
+      "4-(4-fluorophenyl)-2-(4-hydroxyphenyl)-5-(4-pyridyl)imidazole",
+      "4-[4-(4-fluorophenyl)-5-(pyridin-4-yl)-1H-imidazol-2-yl]phenol",
+      "phenol, 4-(4-(4-fluorophenyl)-5-(4-pyridinyl)-1h-imidazol-2-yl)-"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 215.9229,
+    "clique_identifier_count": 11
+  },
+  {
+    "curie": "CHEBI:8977",
+    "label": "SB 206553",
+    "highlighting": {},
+    "synonyms": [
+      "SB206553",
+      "SB 206553",
+      "SB-206553",
+      "3,5-Dihydro-5-methyl-N-3-pyridinylbenzo(1,2-b:4,5-b')dipyrrole-1(2H)-carboxamide",
+      "benzo(1,2-b:4,5-b')dipyrrole-1(2H)-carboxamide, 3,5-dihydro-5-methyl-N-3-pyridinyl-"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 208.36215,
+    "clique_identifier_count": 10
+  },
+  {
+    "curie": "CHEBI:8979",
+    "label": "SB 228357",
+    "highlighting": {},
+    "synonyms": [
+      "SB228357",
+      "SB-228357",
+      "SB 228357"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 208.36215,
+    "clique_identifier_count": 10
+  },
+  {
+    "curie": "CHEBI:8980",
+    "label": "SB 243213",
+    "highlighting": {},
+    "synonyms": [
+      "SB-243213",
+      "SB 243213",
+      "SB-243213 FREE BASE",
+      "5-methyl-1-((2-((2-methyl-3-pyridyl)oxy)pyridyl)carbamoyl)-6-trifluoromethylindoline"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 208.36215,
+    "clique_identifier_count": 10
+  },
+  {
+    "curie": "CHEBI:90705",
+    "label": "SB 203580",
+    "highlighting": {},
+    "synonyms": [
+      "SB203580",
+      "SB 203580",
+      "Sb-203580",
+      "SB-203580",
+      "ADEZMAPIMOD",
+      "4-(4-Fluorophenyl)-2-(4-methylsulfinylphenyl)-5-(4-pyridyl)-1H-imidazole",
+      "4-(4-Fluorophenyl)-2-(4-methylsulphinylphenyl)-5-(4-pyridyl)-1H-imidazole",
+      "4-{4-(4-fluorophenyl)-2-[4-(methanesulfinyl)phenyl]-1H-imidazol-5-yl}pyridine"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 208.36215,
+    "clique_identifier_count": 10
+  },
+  {
+    "curie": "CHEBI:91107",
+    "label": "SB 415286",
+    "highlighting": {},
+    "synonyms": [
+      "SB415286",
+      "SB-415286",
+      "SB 415286",
+      "3-(3-chloro-4-hydroxyanilino)-4-(2-nitrophenyl)-1H-pyrrole-2,5-dione",
+      "3-(3-Chloro-4-hydroxyphenylamino)-4-(4-nitrophenyl)-1H-pyrrole-2,5-dione",
+      "3-(3-chloro-4-hydroxyphenylamino)-4-(4-nitrophenyl)-1H-pyrrole-2,5-dione"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 208.36215,
+    "clique_identifier_count": 10
+  },
+  {
+    "curie": "CHEBI:91500",
+    "label": "SB-218078",
+    "highlighting": {},
+    "synonyms": [
+      "LSM-1274",
+      "SB-218078",
+      "SB 218078",
+      "9,10,11,12-tetrahydro-9,12-epoxy-1h-diindolo(1,2,3-fg:3',2',1'-kl)pyrrolo(3,4-i)(1,6)benzodiazocine-1,3(2h)-dione",
+      "9,12-epoxy-1h-diindolo(1,2,3-fg:3',2',1'-kl)pyrrolo(3,4-i)(1,6)benzodiazocine-1,3(2h)-dione, 9,10,11,12-tetrahydro-"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 208.36215,
+    "clique_identifier_count": 10
+  },
+  {
+    "curie": "CHEBI:92426",
+    "label": "SB-269970",
+    "highlighting": {},
+    "synonyms": [
+      "SB269970",
+      "SB-269970",
+      "SB 269970",
+      "[3H]SB269970",
+      "3-[[(2R)-2-[2-(4-methyl-1-piperidinyl)ethyl]-1-pyrrolidinyl]sulfonyl]phenol"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 208.36215,
+    "clique_identifier_count": 10
+  },
+  {
+    "curie": "CHEBI:92941",
+    "label": "SB 408124",
+    "highlighting": {},
+    "synonyms": [
+      "SB408124",
+      "SB-408124",
+      "SB 408124",
+      "1-(6,8-difluoro-2-methyl-4-quinolinyl)-3-[4-(dimethylamino)phenyl]urea",
+      "N-(6,8-Difluoro-2-methyl-4-quinolinyl)-N'-[4-(dimethylamino)phenyl]urea"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 208.36215,
+    "clique_identifier_count": 10
+  },
+  {
+    "curie": "CHEBI:231716",
+    "label": "SB-743921",
+    "highlighting": {},
+    "synonyms": [
+      "SB-921",
+      "GSK-921",
+      "SB743921",
+      "SB-743921",
+      "GSK743921",
+      "SB 743921",
+      "Sb-743921",
+      "GSK 743921",
+      "GSK-743921",
+      "SB-743921 free base",
+      "N-(3-aminopropyl)-N-[(1R)-1-(3-benzyl-7-chloro-4-oxochromen-2-yl)-2-methylpropyl]-4-methylbenzamide",
+      "N-(3-aminopropyl)-N-[(1R)-1-(3-benzyl-7-chloro-4-oxo-4H-chromen-2-yl)-2-methylpropyl]-4-methylbenzamide"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 208.36215,
+    "clique_identifier_count": 10
+  },
+  {
+    "curie": "CHEBI:8978",
+    "label": "SB 221284",
+    "highlighting": {},
+    "synonyms": [
+      "SB 221284",
+      "SB-221284"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 200.08029,
+    "clique_identifier_count": 9
+  },
+  {
+    "curie": "CHEBI:64069",
+    "label": "SB 224289",
+    "highlighting": {},
+    "synonyms": [
+      "SB224289",
+      "SB-224289",
+      "SB 224289",
+      "(1'-methyl-6,7-dihydro-5h-spiro(furo(2,3-f)indole-3,4'-piperidin)-5-yl)(2'-methyl-4'-(5-methyl-1,2,4-oxadiazol-3-yl)biphenyl-4-yl)methanone",
+      "(1'-methyl-6,7-dihydro-5H-spiro[furo[2,3-f]indole-3,4'-piperidin]-5-yl)[2'-methyl-4'-(5-methyl-1,2,4-oxadiazol-3-yl)biphenyl-4-yl]methanone",
+      "(4-(2-methyl-4-(5-methyl-1,2,4-oxadiazol-3-yl)phenyl)phenyl)-(1'-methylspiro(6,7-dihydro-2h-furo(2,3-f)indole-3,4'-piperidine)-5-yl)methanone",
+      "6,7-dihydro-1'-methyl-5-((2'-methyl-4'-(5-methyl-1,2,4-oxadiazol-3-yl)-1,1'-biphenyl-4-yl)carbonyl)spiro(2h-furo(2,3-f)indole-3(5h),4'-piperidine)",
+      "(2'-methyl-4'-(5-methyl-1,2,4-oxadiazol-3-yl)-(1,1'-biphenyl)-4-yl)(1'-methyl-6,7-dihydrospiro(furo(2,3-f)indole-3,4'-piperidin)-5(2h)-yl)methanone",
+      "Spiro(2h-furo(2,3-f)indole-3(5h),4'-piperidine), 6,7-dihydro-1'-methyl-5-((2'-methyl-4'-(5-methyl-1,2,4-oxadiazol-3-yl)(1,1'-biphenyl)-4-yl)carbonyl)-",
+      "Methanone, (2'-methyl-4'-(5-methyl-1,2,4-oxadiazol-3-yl)(1,1'-biphenyl)-4-yl)(2,5,6,7-tetrahydro-1'-methylspiro(3h-furo(2,3-f)indole-3,4'-piperidin)-5-yl)-"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 200.08029,
+    "clique_identifier_count": 9
+  },
+  {
+    "curie": "CHEBI:91421",
+    "label": "SB 216763",
+    "highlighting": {},
+    "synonyms": [
+      "SB216763",
+      "SB-216763",
+      "SB 216763",
+      "3-(2,4-dichlorophenyl)-4-(1-methyl-3-indolyl)pyrrole-2,5-dione",
+      "3-(2,4-dichlorophenyl)-4-(1-methyl-1H-indol-3-yl)-1H-pyrrole-2,5-dione",
+      "3-(2,4-Dichlorophenyl)-4-(1-methyl-1H-indol-3-yl)-1H-pyrrole-2,5-dione"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 200.08029,
+    "clique_identifier_count": 9
+  },
+  {
+    "curie": "CHEBI:91586",
+    "label": "SB 205384",
+    "highlighting": {},
+    "synonyms": [
+      "SB 205384",
+      "SB-205384",
+      "But-2-ynyl 4-amino-7-hydroxy-2-methyl-5,6,7,8-tetrahydro-[1]benzothiolo[2,3-b]pyridine-3-carboxylate",
+      "4-amino-7-hydroxy-2-methyl-5,6,7,8-tetrahydro-[1]benzothiolo[2,3-b]pyridine-3-carboxylic acid but-2-ynyl ester"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 200.08029,
+    "clique_identifier_count": 9
+  },
+  {
+    "curie": "UNII:L3SK5KX24S",
+    "label": "SB 271046",
+    "highlighting": {},
+    "synonyms": [
+      "SB 271046",
+      "SB-271046",
+      "5-Chloro-N-(4-methoxy-3-piperazin-1-ylphenyl)-3-methyl-2-benzothiophenesulfonamide",
+      "5-chloro-N-(4-methoxy-3-(piperazin-1-yl)phenyl)-3-methylbenzo[b]thiophene-2-sulfonamide",
+      "5-Chloro-N-(4-methoxy-3-(piperazin-1-yl)phenyl)-3-methylbenzo[b]thiophene-2-sulfonamide",
+      "5-Chloro-N-(4-methoxy-3-(piperazin-1-yl)phenyl)-3-methylbenzo[b]thiophene-2-sulphonamide"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 200.08029,
+    "clique_identifier_count": 9
+  },
+  {
+    "curie": "UNII:T74V9O0Y2W",
+    "label": "SB-705498",
+    "highlighting": {},
+    "synonyms": [
+      "SB705498",
+      "SB 705498",
+      "SB-705498",
+      "Sb-705498"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 200.08029,
+    "clique_identifier_count": 9
+  },
+  {
+    "curie": "CHEBI:8976",
+    "label": "SB 200646",
+    "highlighting": {},
+    "synonyms": [
+      "MIP-urea",
+      "SB 200646",
+      "N-(1-Methyl-5-indolyl)-N'-(3-pyridyl)urea",
+      "N-(1-methyl-5-indolyl)-N'-(3-pyridyl)urea",
+      "N-(1-Methyl-1H-indol-5-yl)-N'-3-pyridinylurea"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 190.92513,
+    "clique_identifier_count": 8
+  },
+  {
+    "curie": "CHEBI:92079",
+    "label": "SB 222200",
+    "highlighting": {},
+    "synonyms": [
+      "SB 222200",
+      "SB-222200",
+      "3-methyl-2-phenyl-N-[(1S)-1-phenylpropyl]-4-quinolinecarboxamide"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 190.92513,
+    "clique_identifier_count": 8
+  }
+]

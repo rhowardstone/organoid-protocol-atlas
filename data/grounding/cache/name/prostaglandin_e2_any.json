@@ -1,0 +1,609 @@
+[
+  {
+    "curie": "UMLS:C3813211",
+    "label": "Prostaglandin E2",
+    "highlighting": {},
+    "synonyms": [
+      "PGE2",
+      "PGE(2)",
+      "Prostaglandin E2",
+      "Prostaglandin E(2)",
+      "(5Z,13E)-(15S)-11alpha,15-Dihydroxy-9-Oxoprost-13-Enoate",
+      "(5Z,13E)-(15S)-11alpha,15-Dihydroxy-9-Oxoprosta-5,13-Dienoate",
+      "(5Z,13E,15S)-11alpha,15-Dihydroxy-9-Oxoprosta-5,13-Dien-1-Oic Acid",
+      "(5Z,11alpha,13E,15S)-11,15-Dihydroxy-9-Oxoprosta-5,13-Dien-1-Oic Acid",
+      "7-(3-Hydroxy-2-(3-Hydroxy-1-Octenyl)-5-Oxocyclopentyl)-5-Heptenoic Acid",
+      "Prosta-5,13-Dien-1-Oic Acid, (5Z,11-Alpha,13E,15S)-11,15-Dihydroxy-9-Oxo-",
+      "Prosta-5,13-Dien-1-Oic Acid, 11,15-Dihydroxy-9-Oxo-, (5Z,11alpha,13E,15S)-",
+      "5-Heptenoic Acid, 7-(3-Hydroxy-2-(3-Hydroxy-1-Octenyl)-5-Oxocyclopentyl)- (8CI)",
+      "(Z)-7-((1R,2R,3R)-3-Hydroxy-2-((S,E)-3-Hydroxyoct-1-Enyl)-5-Oxocyclopentyl)Hept-5-Enoic Acid",
+      "(E,Z)-(1R,2R,3R)-7-(3-Hydroxy-2-((3S)-(3-Hydroxy-1-Octenyl))-5-Oxocyclopentyl)-5-Heptenoic Acid"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 1441.1929,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "UniProtKB:A0A4X1WDD2",
+    "label": "A0A4X1WDD2_PIG Prostaglandin E2 receptor EP2 subtype (trembl)",
+    "highlighting": {},
+    "synonyms": [
+      "A0A4X1WDD2_PIG Prostaglandin E2 receptor EP2 subtype (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9823"
+    ],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 948.2266,
+    "clique_identifier_count": 21
+  },
+  {
+    "curie": "UniProtKB:A0A8D0IKY0",
+    "label": "A0A8D0IKY0_PIG Prostaglandin E2 receptor EP3 subtype (trembl)",
+    "highlighting": {},
+    "synonyms": [
+      "A0A8D0IKY0_PIG Prostaglandin E2 receptor EP3 subtype (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9823"
+    ],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 918.9887,
+    "clique_identifier_count": 19
+  },
+  {
+    "curie": "UniProtKB:A0A8D0I9Y3",
+    "label": "A0A8D0I9Y3_PIG Prostaglandin E2 receptor EP3 subtype (trembl)",
+    "highlighting": {},
+    "synonyms": [
+      "A0A8D0I9Y3_PIG Prostaglandin E2 receptor EP3 subtype (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9823"
+    ],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 850.5358,
+    "clique_identifier_count": 15
+  },
+  {
+    "curie": "CHEBI:606564",
+    "label": "prostaglandin E2(1-)",
+    "highlighting": {},
+    "synonyms": [
+      "prostaglandin E2",
+      "prostaglandin E2(1-)",
+      "prostaglandin E2 anion",
+      "(5Z,13E,15S)-11alpha,15-dihydroxy-9-oxoprosta-5,13-dien-1-oate"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 846.4026,
+    "clique_identifier_count": 4
+  },
+  {
+    "curie": "CHEBI:138793",
+    "label": "Prostaglandin E2 ethanolamide",
+    "highlighting": {},
+    "synonyms": [
+      "PGE2-EA",
+      "Prostamide E2",
+      "PGE2 ethanolamide",
+      "PGE(2) ethanolamide",
+      "Dinoprostone Ethanolamide",
+      "dinoprostone ethanolamide",
+      "Prostaglandin E2 ethanolamide",
+      "prostaglandin E2 ethanolamide",
+      "prostaglandin E(2) ethanolamide"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 815.5869,
+    "clique_identifier_count": 7
+  },
+  {
+    "curie": "CHEBI:131888",
+    "label": "8-epi-prostaglandin E2",
+    "highlighting": {},
+    "synonyms": [
+      "8-epi-PGE2",
+      "8-Iso-pge2",
+      "8-Epi-pge2",
+      "8-iso-PGE2",
+      "8-isoprostaglandin E2",
+      "8-ISOPROSTAGLANDIN E2",
+      "8-Isoprostaglandin E2",
+      "8-Isoprostaglandin e2",
+      "8-epi-prostaglandin E2",
+      "(5Z,8b,11a,13E,15S)-11,15-Dihydroxy-9-oxo-prosta-5,13-dien-1-Oate",
+      "7-[3-Hydroxy-2-(3-hydroxy-1-octenyl)-5-oxocyclopentyl]-5-heptenoate",
+      "(5Z,8b,11a,13E,15S)-11,15-Dihydroxy-9-oxo-prosta-5,13-dien-1-Oic acid",
+      "7-[3-Hydroxy-2-(3-hydroxy-1-octenyl)-5-oxocyclopentyl]-5-heptenoic acid",
+      "(5Z,8beta,11alpha,13E,15S)-11,15-dihydroxy-9-oxoprosta-5,13-dien-1-oic acid"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 805.6785,
+    "clique_identifier_count": 8
+  },
+  {
+    "curie": "CHEBI:15550",
+    "label": "13,14-dihydro-15-oxo-prostaglandin E2",
+    "highlighting": {},
+    "synonyms": [
+      "PGEM",
+      "dhk-PGE2",
+      "DHK-PGE2",
+      "KH(2)PGE(2)",
+      "13,14-dihydro-15-keto-PGE2",
+      "15-Keto-13,14-dihydro-PGE2",
+      "15-Keto-13,14-dihydro-pge2",
+      "13,14-Dihydro-15-keto-PGE2",
+      "15-keto-13,14-dihydro-PGE2",
+      "13,14-Dihydro-15-keto-pge2",
+      "PGEM (13,14-dihydro-15-keto-pge2)",
+      "PGEM (13,14-dihydro-15-keto-PGE2)",
+      "13,14-Dihydro-15-ketoprostaglandin e2",
+      "13,14-Dihydro-15-ketoprostaglandin E2",
+      "13,14-dihydro-15-ketoprostaglandin E2",
+      "15-Keto-13,14-dihydroprostaglandin e2",
+      "13,14-dihydro-15-oxo-prostaglandin E2",
+      "15-keto-13,14-dihydroprostaglandin E2",
+      "15-Keto-13,14-dihydroprostaglandin E2",
+      "11-alpha-Hydroxy-9,15-dioxoprost-5-enoate",
+      "(5Z)-11alpha-Hydroxy-9,15-dioxoprostanoate",
+      "(5Z)-(15S)-11a-Hydroxy-9,15-dioxoprostanoate",
+      "(5Z)-(15S)-11Α-hydroxy-9,15-dioxoprostanoate",
+      "11-alpha-Hydroxy-9,15-dioxoprost-5-enoic acid",
+      "(5Z)-(15S)-11Α-hydroxy-9,15-dioxoprostanoic acid",
+      "(5Z)-(15S)-11alpha-Hydroxy-9,15-dioxoprostanoate",
+      "(5Z)-(15S)-11a-Hydroxy-9,15-dioxoprostanoic acid",
+      "(5Z)-11alpha-hydroxy-9,15-dioxoprost-5-enoic acid",
+      "(5Z)-(15S)-11alpha-Hydroxy-9,15-dioxoprostanoic acid",
+      "15-Keto-13,14-dihydroprostaglandin e2, (11alpha)-isomer",
+      "prost-5-en-1-oic acid, 11-hydroxy-9,15-dioxo-, (5Z,11 alpha)-"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 777.96484,
+    "clique_identifier_count": 10
+  },
+  {
+    "curie": "CHEBI:228529",
+    "label": "Bicyclo Prostaglandin E2",
+    "highlighting": {},
+    "synonyms": [
+      "PGE2-M",
+      "PGEM-II",
+      "DKDBCYPGE2",
+      "bicyclo-PGEM",
+      "Bicyclo Prostaglandin E2",
+      "11-deoxy-15-keto-13,14-dihydro-11 beta, 16-cyclo-PGE2",
+      "11-deoxy-13,14-dihydro-15-keto-11 beta,16 xi-cyclo-PGE2",
+      "11-deoxy-15-keto-13,14-dihydro-11 beta,16-cycloprostaglandin E2",
+      "5-Heptenoic acid, 7-(4-butyloctahydro-2,5-dioxo-1H-inden-1-yl)-",
+      "(E)-7-(4-butyl-2,5-dioxo-3,3a,4,6,7,7a-hexahydro-1H-inden-1-yl)hept-5-enoic acid"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 763.214,
+    "clique_identifier_count": 6
+  },
+  {
+    "curie": "CHEBI:197137",
+    "label": "Prostaglandin E2 methyl ester",
+    "highlighting": {},
+    "synonyms": [
+      "PGE2 methyl ester",
+      "Prostaglandin E2 methyl ester",
+      "prostaglandin E2 methyl ester",
+      "methyl (Z)-7-[(1R,2R,3R)-3-hydroxy-2-[(E,3S)-3-hydroxyoct-1-enyl]-5-oxocyclopentyl]hept-5-enoate"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 713.52655,
+    "clique_identifier_count": 6
+  },
+  {
+    "curie": "CHEBI:87820",
+    "label": "17-phenyl-18,19,20-trinor-prostaglandin E2",
+    "highlighting": {},
+    "synonyms": [
+      "CL 116147",
+      "17-PH-Trinor-pge2",
+      "17-Phenyltrinor-pge2",
+      "17-phenyltrinor-PGE2",
+      "17-phenyl-ω-trinor-PGE2",
+      "17-Phenyl-omega-trinor-pge2",
+      "17-phenyl-omega-trinor-PGE2",
+      "17-Phenyl-omega-trinor pge2",
+      "17-Phenyl-18,19,20-trinor-pge2",
+      "17-phenyl-18,19,20-trinor-PGE2",
+      "17-Phenyltrinorprostaglandin e2",
+      "17-phenyltrinor-prostaglandin E2",
+      "17-Phenyltrinor-prostaglandin e2",
+      "17-phenyl-omega-trinor-prostaglandin E2",
+      "17-Phenyl-omega-trinor-prostaglandin e2",
+      "17-phenyl-18,19,20-trinor-prostaglandin E2",
+      "(5Z)-7-{(1R,2R,3R)-3-hydroxy-2-[(1E,3S)-3-hydroxy-5-phenylpent-1-en-1-yl]-5-oxocyclopentyl}hept-5-enoic acid"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 674.6468,
+    "clique_identifier_count": 7
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:6441080",
+    "label": "20-isopropylidene prostaglandin E2",
+    "highlighting": {},
+    "synonyms": [
+      "20-isopropylidene PGE2",
+      "20-isopropylidene prostaglandin E2",
+      "20-Isopropylidene prostaglandin E2",
+      "5-Heptenoic acid, 7-(3-hydroxy-2-(3-hydroxy-9-methyl-1,8-decadienyl)-5-oxocyclopentyl)-, (1R-(1alpha(Z),2beta(1E,3S*),3alpha))-"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 657.00256,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:6443778",
+    "label": "16-methyl prostaglandin E2",
+    "highlighting": {},
+    "synonyms": [
+      "16-methyl PGE2",
+      "16-methyl prostaglandin E2",
+      "Prosta-5,13-dien-1-oic acid, 11,15-dihydroxy-16-methyl-9-oxo-, (5Z,11alpha,13E,15S)-"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 657.00256,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:6443995",
+    "label": "prostaglandin E2 azidophenacyl ester",
+    "highlighting": {},
+    "synonyms": [
+      "azido-PGE2",
+      "PGE2 azidophenacyl ester",
+      "prostaglandin E2 azidophenacyl ester",
+      "Prostaglandin E2 azidophenacyl ester"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 657.00256,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:6450019",
+    "label": "8,12-epi-prostaglandin E2",
+    "highlighting": {},
+    "synonyms": [
+      "8,12-epi-PGE2",
+      "8,12-epi-prostaglandin E2"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 657.00256,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:9576943",
+    "label": "prostaglandin E2 methyl oxime",
+    "highlighting": {},
+    "synonyms": [
+      "PGE2 methyl oxime",
+      "prostaglandin E2 methyl oxime",
+      "Prostaglandin E2 methyl oxime"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 657.00256,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "UNII:T3D76GXW94",
+    "label": "15-epi-Prostaglandin E2",
+    "highlighting": {},
+    "synonyms": [
+      "15-EPI-PROSTAGLANDIN E2",
+      "15-epi-Prostaglandin E2"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 657.00256,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "UniProtKB:A0A8C0PWN5",
+    "label": "A0A8C0PWN5_CANLF Prostaglandin E2 receptor EP3 subtype (trembl)",
+    "highlighting": {},
+    "synonyms": [
+      "A0A8C0PWN5_CANLF Prostaglandin E2 receptor EP3 subtype (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9615"
+    ],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 637.9019,
+    "clique_identifier_count": 7
+  },
+  {
+    "curie": "CHEBI:137172",
+    "label": "prostaglandin E2 2-glyceryl ester",
+    "highlighting": {},
+    "synonyms": [
+      "2-glyceryl-PGE2",
+      "2-Glyceryl-pge2",
+      "MG(0:0/PGE2/0:0)",
+      "2-Glyceryl-prostaglandin e2",
+      "2-glyceryl-prostaglandin E2",
+      "2-glyceryl-Prostaglandin E2",
+      "prostaglandin E2 2-glyceryl ester",
+      "9-oxo-11R,15S-Dihydroxy-5Z,13E-prostadienoate 2-glyceryl ester",
+      "9-oxo-11R,15S-Dihydroxy-5Z,13E-prostadienoic acid 2-glyceryl ester",
+      "9-oxo-11R,15S-dihydroxy-5Z,13E-prostadienoic acid 2-glyceryl ester",
+      "1,3-dihydroxypropan-2-yl (5Z,11alpha,13E,15S)-11,15-dihydroxy-9-oxoprosta-5,13-dien-1-oate"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 616.84424,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:396811",
+    "label": "PTGER3",
+    "highlighting": {},
+    "synonyms": [
+      "PTGER3",
+      "prostanoid EP3 receptor",
+      "PGE receptor EP3 subtype",
+      "PGE2 receptor EP3 subtype",
+      "prostaglandin E receptor 3",
+      "prostaglandin E2 receptor EP3 subtype",
+      "prostaglandin E receptor 3 (subtype EP3)",
+      "A0A4X1U816_PIG Prostaglandin E2 receptor EP3 subtype (trembl)",
+      "A0A4X1UAE7_PIG Prostaglandin E2 receptor EP3 subtype (trembl)",
+      "A0A4X1UDA1_PIG Prostaglandin E2 receptor EP3 subtype (trembl)",
+      "A0A8D0MGR0_PIG Prostaglandin E2 receptor EP3 subtype (trembl)",
+      "A0A8D0MJ21_PIG Prostaglandin E2 receptor EP3 subtype (trembl)",
+      "PE2R3_PIG Prostaglandin E2 receptor EP3 subtype (sprot)"
+    ],
+    "taxa": [
+      "NCBITaxon:9823"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 601.1371,
+    "clique_identifier_count": 55
+  }
+]
