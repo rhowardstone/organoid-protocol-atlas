@@ -619,3 +619,23 @@ def test_live_rb_differentiation_has_canonicals():
     # BMP4 is a key differentiation factor in many organoid types
     canon_names = {c["canonical"] for c in data["top_canonicals"]}
     assert len(canon_names) >= 3
+
+
+@require_reagents
+def test_live_th_returns_200():
+    data, status = ae.handle_type_reagent_heatmap(None, top_n=20)
+    assert status == 200
+    assert data["n_types"] >= 15
+    assert len(data["canonicals"]) == 20
+    assert data["canonicals"][0] in ("EGF", "Y-27632", "R-spondin1", "Noggin")
+
+
+@require_reagents
+def test_live_th_intestinal_has_egf():
+    data, status = ae.handle_type_reagent_heatmap("signaling", top_n=10)
+    assert status == 200
+    if "EGF" in data["canonicals"]:
+        egf_idx = data["canonicals"].index("EGF")
+        intestinal = next((r for r in data["matrix"] if r["organoid_type"] == "intestinal"), None)
+        if intestinal:
+            assert intestinal["values"][egf_idx] >= 5

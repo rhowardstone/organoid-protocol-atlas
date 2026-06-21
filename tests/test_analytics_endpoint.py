@@ -4274,3 +4274,143 @@ def test_rb_query_unknown_role_returns_404(tmp_path, monkeypatch):
 def test_rb_index_entry():
     data, _ = ae.handle_index()
     assert "/analytics/role-breakdown" in data["endpoints"]
+
+
+# ---------------------------------------------------------------------------
+# Route 43: /analytics/type-reagent-heatmap
+# ---------------------------------------------------------------------------
+
+def _write_reagents_for_th(path, rows):
+    base = {
+        "pmcid": "PMC1", "organoid_type": "intestinal",
+        "kind": "signaling", "canonical": "EGF",
+        "name": "EGF", "role": None,
+        "value": None, "unit": None, "canonical_unit": None,
+        "grounded": False, "evidence_quote": None,
+        "figure_confirmed": False, "suspect_unit": False,
+        "doi": None, "id": "r1",
+    }
+    path.write_text("\n".join(json.dumps({**base, **r}) for r in rows))
+
+
+def _patch_th(monkeypatch, path):
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", path)
+
+
+# Fixture: 2 types, 3 canonicals
+# intestinal: EGF(PMC1,PMC2), Noggin(PMC1), CHIR99021(PMC2)
+# kidney:     EGF(PMC3), CHIR99021(PMC3)
+# supplement: B27 (intestinal, kind=supplement)
+# Global signaling canon order by n_papers: EGF=3, Noggin=1, CHIR99021=2 → sorted: EGF, CHIR99021, Noggin
+_TH_ROWS = [
+    {"pmcid": "PMC1", "organoid_type": "intestinal", "kind": "signaling", "canonical": "EGF"},
+    {"pmcid": "PMC1", "organoid_type": "intestinal", "kind": "signaling", "canonical": "Noggin"},
+    {"pmcid": "PMC2", "organoid_type": "intestinal", "kind": "signaling", "canonical": "EGF"},
+    {"pmcid": "PMC2", "organoid_type": "intestinal", "kind": "signaling", "canonical": "CHIR99021"},
+    {"pmcid": "PMC3", "organoid_type": "kidney",     "kind": "signaling", "canonical": "EGF"},
+    {"pmcid": "PMC3", "organoid_type": "kidney",     "kind": "signaling", "canonical": "CHIR99021"},
+    {"pmcid": "PMC4", "organoid_type": "intestinal", "kind": "supplement","canonical": "B27"},
+]
+
+
+def test_th_returns_200(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_th(p, _TH_ROWS)
+    _patch_th(monkeypatch, p)
+    data, status = ae.handle_type_reagent_heatmap(None)
+    assert status == 200
+    assert "canonicals" in data
+    assert "matrix" in data
+    assert "n_types" in data
+
+
+def test_th_top_canonical_is_egf(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_th(p, _TH_ROWS)
+    _patch_th(monkeypatch, p)
+    # EGF appears in PMC1,PMC2,PMC3 = 3 papers globally → should be first
+    data, _ = ae.handle_type_reagent_heatmap(None, top_n=3)
+    assert data["canonicals"][0] == "EGF"
+
+
+def test_th_matrix_shape(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_th(p, _TH_ROWS)
+    _patch_th(monkeypatch, p)
+    data, _ = ae.handle_type_reagent_heatmap(None, top_n=3)
+    assert data["n_types"] == 2
+    assert len(data["matrix"]) == 2
+    # Each row has len(canonicals) values
+    for row in data["matrix"]:
+        assert len(row["values"]) == 3
+
+
+def test_th_intestinal_egf_count(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_th(p, _TH_ROWS)
+    _patch_th(monkeypatch, p)
+    data, _ = ae.handle_type_reagent_heatmap(None, top_n=3)
+    intestinal = next(r for r in data["matrix"] if r["organoid_type"] == "intestinal")
+    egf_idx = data["canonicals"].index("EGF")
+    assert intestinal["values"][egf_idx] == 2  # PMC1, PMC2
+
+
+def test_th_supplement_filter(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_th(p, _TH_ROWS)
+    _patch_th(monkeypatch, p)
+    data, _ = ae.handle_type_reagent_heatmap("supplement", top_n=5)
+    assert data["kind"] == "supplement"
+    # Only B27 is supplement → 1 canonical
+    assert "B27" in data["canonicals"]
+    assert "EGF" not in data["canonicals"]
+
+
+def test_th_kind_all_includes_both(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_th(p, _TH_ROWS)
+    _patch_th(monkeypatch, p)
+    data, _ = ae.handle_type_reagent_heatmap("all", top_n=10)
+    assert "EGF" in data["canonicals"]
+    assert "B27" in data["canonicals"]
+
+
+def test_th_top_n_capped_at_50(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_th(p, _TH_ROWS)
+    _patch_th(monkeypatch, p)
+    data, _ = ae.handle_type_reagent_heatmap(None, top_n=100)
+    # Only 3 signaling canonicals in fixture → top_n capped at n_available
+    assert len(data["canonicals"]) == 3
+    assert data["top_n"] == 50  # parameter stored as min(100, 50)
+
+
+def test_th_invalid_kind_returns_400(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_th(p, _TH_ROWS)
+    _patch_th(monkeypatch, p)
+    _, status = ae.handle_type_reagent_heatmap("badkind", top_n=5)
+    assert status == 400
+
+
+def test_th_types_sorted_by_n_papers(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_th(p, _TH_ROWS)
+    _patch_th(monkeypatch, p)
+    data, _ = ae.handle_type_reagent_heatmap(None, top_n=3)
+    # intestinal: PMC1,PMC2 = 2 papers; kidney: PMC3 = 1 paper → intestinal first
+    assert data["matrix"][0]["organoid_type"] == "intestinal"
+
+
+def test_th_n_papers_total_in_row(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_th(p, _TH_ROWS)
+    _patch_th(monkeypatch, p)
+    data, _ = ae.handle_type_reagent_heatmap(None, top_n=3)
+    intestinal = next(r for r in data["matrix"] if r["organoid_type"] == "intestinal")
+    assert intestinal["n_papers_total"] == 2  # PMC1, PMC2
+
+
+def test_th_index_entry():
+    data, _ = ae.handle_index()
+    assert "/analytics/type-reagent-heatmap" in data["endpoints"]
