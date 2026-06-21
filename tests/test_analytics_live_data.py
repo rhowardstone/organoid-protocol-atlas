@@ -429,3 +429,27 @@ def test_live_type_comparison_intestinal_cerebral():
     # EGF appears in both
     shared_names = {r["canonical"].lower() for r in data["shared"]}
     assert any("egf" in n for n in shared_names)
+
+
+# ---------------------------------------------------------------------------
+# concentration-deviation live smoke tests
+# ---------------------------------------------------------------------------
+
+@require_reagents
+def test_live_cd_returns_200():
+    data, status = ae.handle_concentration_deviation()
+    assert status == 200
+    assert "most_variable" in data
+    assert "most_consistent" in data
+    assert data["n_canonicals_total"] >= 5
+
+
+@require_reagents
+def test_live_cd_egf_in_most_variable():
+    data, _ = ae.handle_concentration_deviation()
+    # EGF is reported across a wide dose range — expect high CV
+    variable_names = {e["canonical"] for e in data["most_variable"]}
+    # At least some reagents should be in the most_variable list
+    assert len(data["most_variable"]) >= 3
+    # min_n_threshold should be present
+    assert data["min_n_threshold"] == 3

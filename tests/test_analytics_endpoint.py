@@ -3094,3 +3094,146 @@ def test_tc_kind_breakdown_shared(tmp_path, monkeypatch):
 def test_tc_index_entry():
     data, _ = ae.handle_index()
     assert "/analytics/type-comparison" in data["endpoints"]
+
+
+# ---------------------------------------------------------------------------
+# /analytics/concentration-deviation unit tests
+# ---------------------------------------------------------------------------
+
+def _write_reagents_for_cd(path, rows):
+    path.write_text("\n".join(json.dumps(r) for r in rows) + "\n")
+
+
+def _patch_cd(monkeypatch, path):
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", path)
+
+
+def test_cd_404_missing_file(tmp_path, monkeypatch):
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", tmp_path / "missing.jsonl")
+    _, status = ae.handle_concentration_deviation()
+    assert status == 404
+
+
+def test_cd_200_empty_corpus(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_cd(p, [])
+    _patch_cd(monkeypatch, p)
+    data, status = ae.handle_concentration_deviation()
+    assert status == 200
+    assert data["n_canonicals_total"] == 0
+    assert data["most_variable"] == []
+    assert data["most_consistent"] == []
+
+
+def test_cd_excludes_below_min_n(tmp_path, monkeypatch):
+    # Only 2 records for EGF — below default min_n=3
+    rows = [
+        {"canonical": "EGF", "value": 10, "canonical_unit": "ng/mL"},
+        {"canonical": "EGF", "value": 100, "canonical_unit": "ng/mL"},
+    ]
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_cd(p, rows)
+    _patch_cd(monkeypatch, p)
+    data, status = ae.handle_concentration_deviation()
+    assert status == 200
+    assert data["n_canonicals_total"] == 0
+    assert data["n_excluded_too_few"] == 1
+
+
+def test_cd_includes_above_min_n(tmp_path, monkeypatch):
+    rows = [
+        {"canonical": "EGF", "value": v, "canonical_unit": "ng/mL"}
+        for v in [10, 50, 500]
+    ]
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_cd(p, rows)
+    _patch_cd(monkeypatch, p)
+    data, status = ae.handle_concentration_deviation()
+    assert status == 200
+    assert data["n_canonicals_total"] == 1
+    entry = data["most_variable"][0]
+    assert entry["canonical"] == "EGF"
+    assert entry["n_with_value"] == 3
+    assert entry["dominant_unit"] == "ng/mL"
+    assert entry["cv"] > 0
+
+
+def test_cd_cv_correct(tmp_path, monkeypatch):
+    # Values: 1, 2, 3 → mean=2, std≈0.8165, cv≈0.4082
+    rows = [
+        {"canonical": "CHIR", "value": 1.0, "canonical_unit": "uM"},
+        {"canonical": "CHIR", "value": 2.0, "canonical_unit": "uM"},
+        {"canonical": "CHIR", "value": 3.0, "canonical_unit": "uM"},
+    ]
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_cd(p, rows)
+    _patch_cd(monkeypatch, p)
+    data, _ = ae.handle_concentration_deviation()
+    entry = data["most_variable"][0]
+    assert abs(entry["cv"] - 0.5) < 0.001   # sample std=1, mean=2 → cv=0.5
+    assert entry["mean"] == 2.0
+    assert entry["median"] == 2.0
+
+
+def test_cd_most_variable_sorted_desc(tmp_path, monkeypatch):
+    # EGF: 10, 50, 500 → high CV; CHIR: 1, 1, 1 → CV=0
+    rows = (
+        [{"canonical": "EGF", "value": v, "canonical_unit": "ng/mL"} for v in [10, 50, 500]]
+        + [{"canonical": "CHIR", "value": 1.0, "canonical_unit": "uM"},
+           {"canonical": "CHIR", "value": 1.0, "canonical_unit": "uM"},
+           {"canonical": "CHIR", "value": 1.0, "canonical_unit": "uM"}]
+    )
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_cd(p, rows)
+    _patch_cd(monkeypatch, p)
+    data, _ = ae.handle_concentration_deviation()
+    names = [e["canonical"] for e in data["most_variable"]]
+    assert names[0] == "EGF"  # higher CV first
+
+
+def test_cd_most_consistent_only_low_cv(tmp_path, monkeypatch):
+    # CHIR: identical values → CV=0 (consistent); EGF: spread → CV > 0.5
+    rows = (
+        [{"canonical": "EGF", "value": v, "canonical_unit": "ng/mL"} for v in [1, 100, 10000]]
+        + [{"canonical": "CHIR", "value": 3.0, "canonical_unit": "uM"} for _ in range(3)]
+    )
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_cd(p, rows)
+    _patch_cd(monkeypatch, p)
+    data, _ = ae.handle_concentration_deviation()
+    consistent = data["most_consistent"]
+    # CHIR should be in consistent (CV=0); EGF should NOT (CV >> 0.5)
+    consistent_names = {e["canonical"] for e in consistent}
+    assert "CHIR" in consistent_names
+    assert "EGF" not in consistent_names
+
+
+def test_cd_dominant_unit_by_count(tmp_path, monkeypatch):
+    # 3 records in ng/mL, 1 in uM → ng/mL is dominant
+    rows = (
+        [{"canonical": "EGF", "value": v, "canonical_unit": "ng/mL"} for v in [10, 50, 100]]
+        + [{"canonical": "EGF", "value": 1.0, "canonical_unit": "uM"}]
+    )
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_cd(p, rows)
+    _patch_cd(monkeypatch, p)
+    data, _ = ae.handle_concentration_deviation()
+    entry = data["most_variable"][0]
+    assert entry["dominant_unit"] == "ng/mL"
+    assert entry["n_with_value"] == 3  # only dominant-unit values
+
+
+def test_cd_min_n_param(tmp_path, monkeypatch):
+    # With min_n=5, EGF with 3 values should be excluded
+    rows = [{"canonical": "EGF", "value": v, "canonical_unit": "ng/mL"} for v in [10, 50, 100]]
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_cd(p, rows)
+    _patch_cd(monkeypatch, p)
+    data, _ = ae.handle_concentration_deviation(min_n=5)
+    assert data["n_canonicals_total"] == 0
+    assert data["min_n_threshold"] == 5
+
+
+def test_cd_index_entry():
+    data, _ = ae.handle_index()
+    assert "/analytics/concentration-deviation" in data["endpoints"]
