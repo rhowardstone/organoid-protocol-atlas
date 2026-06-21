@@ -2647,3 +2647,109 @@ def test_tra_peak_year_correct(tmp_path, monkeypatch):
 def test_tra_index_entry():
     data, _ = ae.handle_index()
     assert "/analytics/temporal-reagent-adoption" in data["endpoints"]
+
+
+# ---------------------------------------------------------------------------
+# kgx-summary tests
+# ---------------------------------------------------------------------------
+
+def _write_kgx_fixtures(kgx_dir, manifest_data, review_rows=None):
+    """Write minimal KGX artifacts for kgx-summary tests."""
+    kgx_dir.mkdir(parents=True, exist_ok=True)
+    (kgx_dir / "kgx_manifest.json").write_text(json.dumps(manifest_data))
+    if review_rows is not None:
+        (kgx_dir / "review_items.jsonl").write_text(
+            "\n".join(json.dumps(r) for r in review_rows) + "\n"
+        )
+
+
+def _patch_kgx_dir(monkeypatch, tmp_path):
+    kgx_dir = tmp_path / "kgx"
+    monkeypatch.setattr(ae, "KGX_DIR", kgx_dir)
+    return kgx_dir
+
+
+def test_kgx_summary_404_when_manifest_missing(tmp_path, monkeypatch):
+    kgx_dir = _patch_kgx_dir(monkeypatch, tmp_path)
+    kgx_dir.mkdir()
+    _, status = ae.handle_kgx_summary()
+    assert status == 404
+
+
+def test_kgx_summary_returns_manifest_fields(tmp_path, monkeypatch):
+    kgx_dir = _patch_kgx_dir(monkeypatch, tmp_path)
+    _write_kgx_fixtures(kgx_dir, {
+        "n_nodes": 100,
+        "n_edges": 50,
+        "entities_total": 120,
+        "entities_resolved": 90,
+        "resolved_rate": 0.75,
+        "validation": {"ok": True},
+    })
+    data, status = ae.handle_kgx_summary()
+    assert status == 200
+    assert data["n_nodes"] == 100
+    assert data["n_edges"] == 50
+    assert data["resolved_rate"] == 0.75
+    assert data["validation"]["ok"] is True
+
+
+def test_kgx_summary_no_review_jsonl(tmp_path, monkeypatch):
+    kgx_dir = _patch_kgx_dir(monkeypatch, tmp_path)
+    _write_kgx_fixtures(kgx_dir, {"n_nodes": 10, "n_edges": 5})
+    data, status = ae.handle_kgx_summary()
+    assert status == 200
+    assert data["review_queue"] is None
+    assert "hint_review" in data
+
+
+def test_kgx_summary_review_queue_counts(tmp_path, monkeypatch):
+    kgx_dir = _patch_kgx_dir(monkeypatch, tmp_path)
+    review_rows = [
+        {"query": "EGF", "grounding_status": "needs_review", "flags": ["label_mismatch"], "kind": "reagent"},
+        {"query": "TGF-b", "grounding_status": "not_found", "flags": [], "kind": "reagent"},
+        {"query": "WTC-11", "grounding_status": "not_found", "flags": [], "kind": "cell_line"},
+        {"query": "FGF2", "grounding_status": "not_attempted", "flags": ["error:TimeoutError"], "kind": "reagent"},
+    ]
+    _write_kgx_fixtures(kgx_dir, {"n_nodes": 10}, review_rows)
+    data, status = ae.handle_kgx_summary()
+    assert status == 200
+    rq = data["review_queue"]
+    assert rq["total"] == 4
+    assert rq["by_status"]["needs_review"] == 1
+    assert rq["by_status"]["not_found"] == 2
+    assert rq["by_status"]["not_attempted"] == 1
+
+
+def test_kgx_summary_top_not_found(tmp_path, monkeypatch):
+    kgx_dir = _patch_kgx_dir(monkeypatch, tmp_path)
+    review_rows = [
+        {"query": "TGF-β", "grounding_status": "not_found", "flags": [], "kind": "reagent"},
+        {"query": "TGF-β", "grounding_status": "not_found", "flags": [], "kind": "reagent"},
+        {"query": "WTC-11", "grounding_status": "not_found", "flags": [], "kind": "cell_line"},
+    ]
+    _write_kgx_fixtures(kgx_dir, {"n_nodes": 10}, review_rows)
+    data, status = ae.handle_kgx_summary()
+    rq = data["review_queue"]
+    # TGF-β should be first (count=2)
+    assert rq["top_not_found"][0]["query"] == "TGF-β"
+    assert rq["top_not_found"][0]["count"] == 2
+
+
+def test_kgx_summary_by_kind_counts(tmp_path, monkeypatch):
+    kgx_dir = _patch_kgx_dir(monkeypatch, tmp_path)
+    review_rows = [
+        {"query": "EGF", "grounding_status": "not_found", "flags": [], "kind": "reagent"},
+        {"query": "WTC-11", "grounding_status": "not_found", "flags": [], "kind": "cell_line"},
+        {"query": "FGF2", "grounding_status": "not_found", "flags": [], "kind": "reagent"},
+    ]
+    _write_kgx_fixtures(kgx_dir, {"n_nodes": 10}, review_rows)
+    data, status = ae.handle_kgx_summary()
+    rq = data["review_queue"]
+    assert rq["by_kind"]["reagent"] == 2
+    assert rq["by_kind"]["cell_line"] == 1
+
+
+def test_kgx_summary_index_entry():
+    data, _ = ae.handle_index()
+    assert "/analytics/kgx-summary" in data["endpoints"]

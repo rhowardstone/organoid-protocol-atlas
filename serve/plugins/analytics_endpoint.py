@@ -25,6 +25,7 @@ Routes (all return JSON; read-only, no writes):
   GET /analytics/grounding-quality           -- reagent grounding coverage: resolved vs ungrounded, by type and by kind; top ungrounded canonical names
   GET /analytics/concentration-stats         -- aggregate concentration distributions per canonical reagent: median, min, max, n; optional ?q= filter
   GET /analytics/temporal-reagent-adoption   -- per-reagent temporal adoption: fraction of papers per year using each canonical reagent; ?q= for one reagent
+  GET /analytics/kgx-summary                 -- KGX graph state: node/edge counts, resolution rate, review queue breakdown, top not-found and needs-review entities
   GET /analytics                                -- index of available analytics
 
 All endpoints degrade gracefully — if the pre-computed file doesn't exist they return
@@ -1884,6 +1885,107 @@ def handle_temporal_reagent_adoption(query: str | None, organoid_type: str | Non
     }, 200
 
 
+KGX_DIR = REPO / "exports" / "kgx"
+
+
+def handle_kgx_summary() -> tuple[dict, int]:
+    """KGX graph state from committed exports/kgx artifacts.
+
+    Reads kgx_manifest.json for node/edge counts and resolution metrics, then
+    reads review_items.jsonl for a breakdown of grounding review queue status.
+    Surfaces top not_found and needs_review entities for S1/S2 sprint triage.
+    Returns 404 when the KGX export hasn't been generated yet.
+    """
+    from collections import Counter as _Counter
+
+    manifest_path = KGX_DIR / "kgx_manifest.json"
+    review_path = KGX_DIR / "review_items.jsonl"
+
+    if not manifest_path.exists():
+        return {
+            "error": "KGX manifest not found",
+            "hint": "Run: python pipeline/export_kgx.py",
+        }, 404
+
+    try:
+        manifest = json.loads(manifest_path.read_text())
+    except (json.JSONDecodeError, OSError) as exc:
+        return {"error": f"kgx_manifest.json unreadable: {exc}"}, 500
+
+    result: dict = {
+        "generated_at": manifest.get("generated_at"),
+        "n_papers": manifest.get("n_papers", 0),
+        "n_nodes": manifest.get("n_nodes", 0),
+        "n_edges": manifest.get("n_edges", 0),
+        "n_nodes_by_category": manifest.get("n_nodes_by_category", {}),
+        "n_edges_by_predicate": manifest.get("n_edges_by_predicate", {}),
+        "entities_total": manifest.get("entities_total", 0),
+        "entities_resolved": manifest.get("entities_resolved", 0),
+        "resolved_rate": manifest.get("resolved_rate"),
+        "validation": manifest.get("validation", {}),
+        "predicate": manifest.get("predicate"),
+        "knowledge_level": manifest.get("knowledge_level"),
+    }
+
+    if not review_path.exists():
+        result["review_queue"] = None
+        result["hint_review"] = "Run: python pipeline/export_kgx.py to generate review_items.jsonl"
+        return result, 200
+
+    try:
+        review_rows = [
+            json.loads(line)
+            for line in review_path.read_text().splitlines()
+            if line.strip()
+        ]
+    except (json.JSONDecodeError, OSError) as exc:
+        result["review_queue_error"] = str(exc)
+        return result, 200
+
+    status_counts = dict(_Counter(r.get("grounding_status") for r in review_rows))
+    flag_counts = dict(_Counter(f for r in review_rows for f in r.get("flags", [])))
+    kind_counts = dict(_Counter(r.get("kind") for r in review_rows))
+
+    # Top not_found: most common query strings that SRI couldn't resolve
+    not_found = [r for r in review_rows if r.get("grounding_status") == "not_found"]
+    top_not_found = [
+        {"query": q, "count": c, "kind": kind_counts.get("reagent")}
+        for q, c in _Counter(r["query"] for r in not_found).most_common(20)
+    ]
+    # Re-annotate with the actual kind per query
+    nf_kind: dict[str, list] = {}
+    for r in not_found:
+        nf_kind.setdefault(r.get("query", ""), []).append(r.get("kind", "unknown"))
+    top_not_found = [
+        {"query": q, "count": c, "kinds": list(set(nf_kind.get(q, [])))}
+        for q, c in _Counter(r["query"] for r in not_found).most_common(20)
+    ]
+
+    # Top needs_review: most common label mismatches (SRI returned a CURIE but label differs)
+    nr_rows = [r for r in review_rows if r.get("grounding_status") == "needs_review"]
+    top_needs_review = [
+        {
+            "query": r.get("query"),
+            "curie": r.get("curie"),
+            "label": r.get("label"),
+            "flags": r.get("flags", []),
+            "kind": r.get("kind"),
+            "field": r.get("field"),
+        }
+        for r in nr_rows[:20]
+    ]
+
+    result["review_queue"] = {
+        "total": len(review_rows),
+        "by_status": status_counts,
+        "by_kind": kind_counts,
+        "by_flag": flag_counts,
+        "top_not_found": top_not_found,
+        "top_needs_review": top_needs_review,
+    }
+    return result, 200
+
+
 def handle_mior() -> tuple[dict, int]:
     """Return pre-computed MIOR completeness report."""
     path = ANALYSIS_DIR / "mior_completeness.json"
@@ -1925,6 +2027,7 @@ def handle_index() -> tuple[dict, int]:
             "/analytics/grounding-quality": "reagent grounding coverage: grounding_rate, evidence_quote_rate, suspect_unit_count — by type and by kind; top ungrounded canonical names for S1 prioritisation",
             "/analytics/concentration-stats": "aggregate concentration distributions per canonical reagent: median, min, max, std, dominant unit — top 50 by n_with_value; ?q= for one reagent, ?type= for one type",
             "/analytics/temporal-reagent-adoption": "per-reagent temporal adoption: fraction of papers per year using each canonical reagent; ?q= for full year-by-year data, ?type= for one organoid type; without ?q= returns top 20 by peak adoption",
+            "/analytics/kgx-summary": "KGX graph state: node/edge counts by category, resolution rate, review queue breakdown (needs_review/not_found/not_attempted), top unresolved entities for S1/S2 triage",
             "/analytics/assay-endpoints": "assay endpoint cluster summary (per type + cross-type)",
             "/analytics/quality": "per-paper quality scores (gold/silver/bronze) + corpus summary",
             "/analytics/mior": "MIOR completeness report (Minimum Information About an Organoid Research)",
@@ -2129,6 +2232,11 @@ async def route_temporal_reagent_adoption(datasette, request):
     return Response.json(data, status=status)
 
 
+async def route_kgx_summary(datasette, request):
+    data, status = handle_kgx_summary()
+    return Response.json(data, status=status)
+
+
 async def route_candidates(datasette, request):
     data, status = handle_candidates()
     return Response.json(data, status=status)
@@ -2167,6 +2275,7 @@ def register_routes():
         (r"^/analytics/grounding-quality$", route_grounding_quality),
         (r"^/analytics/concentration-stats$", route_concentration_stats),
         (r"^/analytics/temporal-reagent-adoption$", route_temporal_reagent_adoption),
+        (r"^/analytics/kgx-summary$", route_kgx_summary),
         (r"^/analytics/assay-endpoints$", route_assay_endpoints),
         (r"^/analytics/quality$", route_quality),
         (r"^/analytics/mior$", route_mior),
