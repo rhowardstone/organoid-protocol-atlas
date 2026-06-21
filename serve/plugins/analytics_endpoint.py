@@ -35,6 +35,7 @@ Routes (all return JSON; read-only, no writes):
   GET /analytics/grounding-distribution      -- per-paper grounding rate histogram (10 buckets 0-100%); per-type mean; top/bottom 20 papers; ?type= for one type; live from protocols.jsonl
   GET /analytics/type-maturity               -- field maturity classification per organoid type: first_year, n_years_active, trajectory (accelerating/stable/slowing), maturity_tier; live from protocols.jsonl
   GET /analytics/reagent-cooccurrence        -- pairwise signaling-factor co-occurrence: top 100 pairs by n_papers with Jaccard; ?q= for one canonical; ?type= filter; live from reagents.jsonl
+  GET /analytics/supplement-breakdown        -- per-type and cross-type breakdown of supplements (kind=supplement): top 50 globally, cross-type list, per-type top 10; ?q= and ?type= filters; live from reagents.jsonl
   GET /analytics                                -- index of available analytics
 
 All endpoints degrade gracefully — if the pre-computed file doesn't exist they return
@@ -2907,6 +2908,158 @@ def handle_reagent_cooccurrence(
     }, 200
 
 
+def handle_supplement_breakdown(
+    query: str | None,
+    organoid_type: str | None,
+    min_types: int = 10,
+) -> tuple[dict, int]:
+    """Per-type and cross-type breakdown of supplements (kind=supplement).
+
+    Without params: global top 50 by n_papers, cross-type list (>= min_types),
+    and per-type top 10.
+    ?q=GlutaMAX: per-type breakdown for one canonical (substring match).
+    ?type=kidney: full breakdown for one organoid type.
+    ?min_types=: threshold for cross_type_supplements (default 10).
+    """
+    if not REAGENTS_JSONL.exists():
+        return {
+            "error": "reagents.jsonl not found",
+            "hint": "Run: python pipeline/export_public.py",
+        }, 404
+
+    reagents = [
+        json.loads(line)
+        for line in REAGENTS_JSONL.read_text().splitlines()
+        if line.strip()
+    ]
+    rows = [r for r in reagents if r.get("kind") == "supplement" and r.get("canonical")]
+
+    # Group: organoid_type → canonical → set of pmcids
+    from collections import defaultdict
+    type_canon_papers: dict[str, dict[str, set]] = defaultdict(lambda: defaultdict(set))
+    for r in rows:
+        type_canon_papers[r["organoid_type"]][r["canonical"]].add(r["pmcid"])
+
+    # All canonicals → deduplicated paper set across types
+    canonical_papers: dict[str, set] = defaultdict(set)
+    for typ, canon_dict in type_canon_papers.items():
+        for canon, papers in canon_dict.items():
+            canonical_papers[canon].update(papers)
+
+    # Papers with at least one supplement record
+    all_suppl_papers: set = set()
+    for papers in canonical_papers.values():
+        all_suppl_papers.update(papers)
+
+    # n_types per canonical
+    canonical_ntypes: dict[str, int] = {
+        c: sum(1 for typ in type_canon_papers if c in type_canon_papers[typ])
+        for c in canonical_papers
+    }
+
+    if query:
+        q_lower = query.lower()
+        if query in canonical_papers:
+            target = query
+        else:
+            matched = [c for c in canonical_papers if q_lower in c.lower()]
+            if not matched:
+                return {
+                    "error": f"No supplement canonical matching {query!r}",
+                    "hint": "use /analytics/supplement-breakdown without ?q= to browse",
+                }, 404
+            target = matched[0]
+
+        per_type = sorted(
+            [
+                {
+                    "organoid_type": typ,
+                    "n_papers": len(type_canon_papers[typ].get(target, set())),
+                }
+                for typ in type_canon_papers
+                if target in type_canon_papers[typ]
+            ],
+            key=lambda x: -x["n_papers"],
+        )
+        return {
+            "query_canonical": target,
+            "n_papers_total": len(canonical_papers[target]),
+            "n_types": canonical_ntypes[target],
+            "per_type": per_type,
+        }, 200
+
+    if organoid_type:
+        if organoid_type not in type_canon_papers:
+            return {
+                "error": f"No supplement data for organoid type {organoid_type!r}",
+                "hint": "use /analytics/supplement-breakdown without ?type= to see all types",
+            }, 404
+        canon_dict = type_canon_papers[organoid_type]
+        top_supps = sorted(
+            [
+                {
+                    "canonical": c,
+                    "n_papers": len(papers),
+                    "n_types_total": canonical_ntypes.get(c, 1),
+                }
+                for c, papers in canon_dict.items()
+            ],
+            key=lambda x: -x["n_papers"],
+        )
+        return {
+            "organoid_type": organoid_type,
+            "n_papers": len(set(p for papers in canon_dict.values() for p in papers)),
+            "n_supplement_canonicals": len(canon_dict),
+            "top_supplements": top_supps[:50],
+        }, 200
+
+    # Global view
+    cross_type = sorted(
+        [
+            {
+                "canonical": c,
+                "n_types": canonical_ntypes[c],
+                "n_papers": len(canonical_papers[c]),
+            }
+            for c in canonical_papers
+            if canonical_ntypes[c] >= min_types
+        ],
+        key=lambda x: (-x["n_types"], -x["n_papers"]),
+    )
+
+    top_supps = sorted(
+        [
+            {
+                "canonical": c,
+                "n_papers": len(canonical_papers[c]),
+                "n_types": canonical_ntypes[c],
+            }
+            for c in canonical_papers
+        ],
+        key=lambda x: (-x["n_papers"], -x["n_types"]),
+    )
+
+    per_type = {
+        typ: sorted(
+            [{"canonical": c, "n_papers": len(papers)} for c, papers in canon_dict.items()],
+            key=lambda x: -x["n_papers"],
+        )[:10]
+        for typ, canon_dict in sorted(
+            type_canon_papers.items(),
+            key=lambda kv: -sum(len(v) for v in kv[1].values()),
+        )
+    }
+
+    return {
+        "n_papers_with_supplements": len(all_suppl_papers),
+        "n_supplement_canonicals": len(canonical_papers),
+        "min_types_threshold": min_types,
+        "cross_type_supplements": cross_type,
+        "top_supplements": top_supps[:50],
+        "per_type": per_type,
+    }, 200
+
+
 def handle_index() -> tuple[dict, int]:
     """Analytics endpoint index."""
     return {
@@ -2944,6 +3097,7 @@ def handle_index() -> tuple[dict, int]:
             "/analytics/grounding-distribution": "per-paper grounding rate histogram (10 buckets 0-100%), per-type mean ranking, top/bottom 20 papers; ?type=kidney for one type; live from protocols.jsonl",
             "/analytics/type-maturity": "field maturity classification per organoid type: first_year, n_years_active, n_papers_total, trajectory (accelerating/stable/slowing), maturity_tier (established/developing/emerging); ?type=kidney for one type",
             "/analytics/reagent-cooccurrence": "pairwise signaling-factor co-occurrence: top pairs by n_papers with Jaccard similarity; ?q=EGF for all partners of one canonical; ?type= for one organoid type; ?min_papers= threshold (default 3)",
+            "/analytics/supplement-breakdown": "per-type and cross-type breakdown of supplement (kind=supplement) canonicals: global top 50 by n_papers, cross-type list (>= min_types organoid types), per-type top 10; ?q=GlutaMAX for one canonical; ?type=kidney for one type; ?min_types= threshold (default 10)",
             "/analytics/assay-endpoints": "assay endpoint cluster summary (per type + cross-type)",
             "/analytics/quality": "per-paper quality scores (gold/silver/bronze) + corpus summary",
             "/analytics/mior": "MIOR completeness report (Minimum Information About an Organoid Research)",
@@ -3199,6 +3353,17 @@ async def route_type_maturity(datasette, request):
     return Response.json(data, status=status)
 
 
+async def route_supplement_breakdown(datasette, request):
+    query = request.args.get("q") or None
+    organoid_type = request.args.get("type") or None
+    try:
+        min_types = int(request.args.get("min_types") or 10)
+    except (TypeError, ValueError):
+        min_types = 10
+    data, status = handle_supplement_breakdown(query, organoid_type, min_types)
+    return Response.json(data, status=status)
+
+
 async def route_reagent_cooccurrence(datasette, request):
     query = request.args.get("q") or None
     organoid_type = request.args.get("type") or None
@@ -3269,6 +3434,7 @@ def register_routes():
         (r"^/analytics/grounding-distribution$", route_grounding_distribution),
         (r"^/analytics/type-maturity$", route_type_maturity),
         (r"^/analytics/reagent-cooccurrence$", route_reagent_cooccurrence),
+        (r"^/analytics/supplement-breakdown$", route_supplement_breakdown),
         (r"^/analytics/journal-breakdown$", route_journal_breakdown),
         (r"^/analytics/concentration-by-type$", route_concentration_by_type),
         (r"^/analytics/kgx-summary$", route_kgx_summary),

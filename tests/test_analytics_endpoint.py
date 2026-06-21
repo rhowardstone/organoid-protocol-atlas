@@ -3960,3 +3960,166 @@ def test_rc_supplements_excluded(tmp_path, monkeypatch):
 def test_rc_index_entry():
     data, _ = ae.handle_index()
     assert "/analytics/reagent-cooccurrence" in data["endpoints"]
+
+
+# ---------------------------------------------------------------------------
+# Route 41: /analytics/supplement-breakdown
+# ---------------------------------------------------------------------------
+
+def _write_reagents_for_sb(path, rows):
+    base = {
+        "pmcid": "PMC1", "organoid_type": "intestinal",
+        "kind": "supplement", "canonical": "GlutaMAX",
+        "name": "GlutaMAX", "value": None, "unit": None,
+        "canonical_unit": None, "grounded": False,
+        "evidence_quote": None, "figure_confirmed": False,
+        "suspect_unit": False, "role": None, "doi": None, "id": "r1",
+    }
+    path.write_text("\n".join(json.dumps({**base, **r}) for r in rows))
+
+
+def _patch_sb(monkeypatch, path):
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", path)
+
+
+# Fixture: 3 types × various supplements
+# intestinal: PMC1={GlutaMAX,B27}, PMC2={GlutaMAX,HEPES}
+# kidney:     PMC3={GlutaMAX,B27},  PMC4={N2}
+# cerebral:   PMC5={B27,N2},        PMC6={GlutaMAX}
+# signaling record (should be excluded):
+#   PMC7 intestinal kind=signaling EGF
+_SB_ROWS = [
+    # intestinal
+    {"pmcid": "PMC1", "organoid_type": "intestinal", "kind": "supplement", "canonical": "GlutaMAX"},
+    {"pmcid": "PMC1", "organoid_type": "intestinal", "kind": "supplement", "canonical": "B27"},
+    {"pmcid": "PMC2", "organoid_type": "intestinal", "kind": "supplement", "canonical": "GlutaMAX"},
+    {"pmcid": "PMC2", "organoid_type": "intestinal", "kind": "supplement", "canonical": "HEPES"},
+    # kidney
+    {"pmcid": "PMC3", "organoid_type": "kidney", "kind": "supplement", "canonical": "GlutaMAX"},
+    {"pmcid": "PMC3", "organoid_type": "kidney", "kind": "supplement", "canonical": "B27"},
+    {"pmcid": "PMC4", "organoid_type": "kidney", "kind": "supplement", "canonical": "N2"},
+    # cerebral
+    {"pmcid": "PMC5", "organoid_type": "cerebral", "kind": "supplement", "canonical": "B27"},
+    {"pmcid": "PMC5", "organoid_type": "cerebral", "kind": "supplement", "canonical": "N2"},
+    {"pmcid": "PMC6", "organoid_type": "cerebral", "kind": "supplement", "canonical": "GlutaMAX"},
+    # signaling (excluded)
+    {"pmcid": "PMC7", "organoid_type": "intestinal", "kind": "signaling", "canonical": "EGF"},
+]
+# Expected:
+#   GlutaMAX: PMC1,2,3,6 → 4 papers, 3 types
+#   B27:      PMC1,3,5   → 3 papers, 3 types
+#   N2:       PMC4,5     → 2 papers, 2 types
+#   HEPES:    PMC2       → 1 paper,  1 type
+#   n_papers_with_supplements: PMC1..PMC6 = 6
+
+
+def test_sb_returns_200(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_sb(p, _SB_ROWS)
+    _patch_sb(monkeypatch, p)
+    data, status = ae.handle_supplement_breakdown(None, None)
+    assert status == 200
+    assert "top_supplements" in data
+    assert "cross_type_supplements" in data
+    assert "per_type" in data
+
+
+def test_sb_n_papers_with_supplements(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_sb(p, _SB_ROWS)
+    _patch_sb(monkeypatch, p)
+    data, _ = ae.handle_supplement_breakdown(None, None)
+    assert data["n_papers_with_supplements"] == 6
+
+
+def test_sb_top_supplement_is_glutamax(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_sb(p, _SB_ROWS)
+    _patch_sb(monkeypatch, p)
+    data, _ = ae.handle_supplement_breakdown(None, None)
+    assert data["top_supplements"][0]["canonical"] == "GlutaMAX"
+    assert data["top_supplements"][0]["n_papers"] == 4
+
+
+def test_sb_cross_type_threshold(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_sb(p, _SB_ROWS)
+    _patch_sb(monkeypatch, p)
+    # With min_types=3, only GlutaMAX and B27 qualify (each in 3 types)
+    data, _ = ae.handle_supplement_breakdown(None, None, min_types=3)
+    names = {s["canonical"] for s in data["cross_type_supplements"]}
+    assert "GlutaMAX" in names
+    assert "B27" in names
+    assert "N2" not in names  # N2 only in 2 types
+    assert "HEPES" not in names  # HEPES only in 1 type
+
+
+def test_sb_signaling_excluded(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_sb(p, _SB_ROWS)
+    _patch_sb(monkeypatch, p)
+    data, _ = ae.handle_supplement_breakdown(None, None)
+    all_canonicals = {s["canonical"] for s in data["top_supplements"]}
+    assert "EGF" not in all_canonicals  # signaling, not supplement
+
+
+def test_sb_query_glutamax(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_sb(p, _SB_ROWS)
+    _patch_sb(monkeypatch, p)
+    data, status = ae.handle_supplement_breakdown("GlutaMAX", None)
+    assert status == 200
+    assert data["query_canonical"] == "GlutaMAX"
+    assert data["n_papers_total"] == 4
+    assert data["n_types"] == 3
+    types_covered = {e["organoid_type"] for e in data["per_type"]}
+    assert "intestinal" in types_covered
+    assert "kidney" in types_covered
+    assert "cerebral" in types_covered
+
+
+def test_sb_query_unknown_returns_404(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_sb(p, _SB_ROWS)
+    _patch_sb(monkeypatch, p)
+    _, status = ae.handle_supplement_breakdown("NOSUCHSUPPLEMENT_XYZ", None)
+    assert status == 404
+
+
+def test_sb_type_filter_kidney(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_sb(p, _SB_ROWS)
+    _patch_sb(monkeypatch, p)
+    data, status = ae.handle_supplement_breakdown(None, "kidney")
+    assert status == 200
+    assert data["organoid_type"] == "kidney"
+    # kidney: PMC3={GlutaMAX,B27}, PMC4={N2} → 2 papers
+    assert data["n_papers"] == 2
+    assert data["n_supplement_canonicals"] == 3
+    top_names = [s["canonical"] for s in data["top_supplements"]]
+    assert "N2" in top_names
+
+
+def test_sb_type_filter_unknown_returns_404(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_sb(p, _SB_ROWS)
+    _patch_sb(monkeypatch, p)
+    _, status = ae.handle_supplement_breakdown(None, "notype_xyz")
+    assert status == 404
+
+
+def test_sb_per_type_present(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_sb(p, _SB_ROWS)
+    _patch_sb(monkeypatch, p)
+    data, _ = ae.handle_supplement_breakdown(None, None)
+    assert "intestinal" in data["per_type"]
+    assert "kidney" in data["per_type"]
+    assert "cerebral" in data["per_type"]
+    # intestinal top: GlutaMAX appears in 2 papers (PMC1, PMC2) → should be first
+    assert data["per_type"]["intestinal"][0]["canonical"] == "GlutaMAX"
+
+
+def test_sb_index_entry():
+    data, _ = ae.handle_index()
+    assert "/analytics/supplement-breakdown" in data["endpoints"]

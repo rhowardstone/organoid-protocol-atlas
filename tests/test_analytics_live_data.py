@@ -579,3 +579,22 @@ def test_live_rc_egf_has_partners():
     canonicals = {r["canonical"] for r in data["co_occurring"]}
     # EGF and Noggin are both core intestinal factors — expect them to co-occur
     assert "Noggin" in canonicals
+
+
+@require_reagents
+def test_live_sb_returns_200():
+    data, status = ae.handle_supplement_breakdown(None, None)
+    assert status == 200
+    assert data["n_papers_with_supplements"] >= 100
+    assert data["n_supplement_canonicals"] >= 20
+    assert len(data["cross_type_supplements"]) >= 3
+    assert data["top_supplements"][0]["canonical"] in ("GlutaMAX", "B27", "penicillin/streptomycin")
+
+
+@require_reagents
+def test_live_sb_glutamax_cross_type():
+    data, status = ae.handle_supplement_breakdown("GlutaMAX", None)
+    assert status == 200
+    assert data["query_canonical"] == "GlutaMAX"
+    assert data["n_types"] >= 10
+    assert data["n_papers_total"] >= 50
