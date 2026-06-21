@@ -424,6 +424,48 @@ def handle_reagent(query: str, organoid_type: str | None, min_papers: int) -> tu
     return result, 200
 
 
+def handle_candidates() -> tuple[dict, int]:
+    """Return OA verification status of the candidate pool — how many papers are
+    public_ok (CC0/CC-BY), rejected (NC/ND/unknown), or quarantine (API error)."""
+    import csv as _csv
+    oa_results = REPO / "data" / "corpus" / "oa_verified" / "oa_results.json"
+    incoming = REPO / "data" / "corpus" / "incoming"
+    # Count candidates across all pool files
+    pool_counts: dict[str, int] = {}
+    if incoming.exists():
+        for p in sorted(incoming.glob("organoid_corpus_candidates_*.csv")):
+            try:
+                rows = list(_csv.DictReader(p.open(encoding="utf-8-sig")))
+                pool_counts[p.name] = len(rows)
+            except OSError:
+                pass
+    total_candidates = sum(pool_counts.values())
+
+    if oa_results.exists():
+        try:
+            oa = json.loads(oa_results.read_text())
+        except json.JSONDecodeError:
+            return {"error": "malformed oa_results.json"}, 500
+        return {
+            "total_candidates": total_candidates,
+            "pools": pool_counts,
+            "oa_verified": {
+                "pool_size": oa.get("pool_size", 0),
+                "public_ok": oa.get("public_ok", 0),
+                "rejected": oa.get("rejected", 0),
+                "quarantine": oa.get("quarantine", 0),
+                "license_mismatches": oa.get("license_mismatches", 0),
+            },
+            "public_pmcids_sample": (oa.get("public_pmcids") or [])[:10],
+        }, 200
+    return {
+        "total_candidates": total_candidates,
+        "pools": pool_counts,
+        "oa_verified": None,
+        "hint": "Run: python pipeline/verify_oa_license.py to generate oa_results.json",
+    }, 200
+
+
 def handle_mior() -> tuple[dict, int]:
     """Return pre-computed MIOR completeness report."""
     path = ANALYSIS_DIR / "mior_completeness.json"
@@ -454,6 +496,7 @@ def handle_index() -> tuple[dict, int]:
             "/analytics/assay-endpoints": "assay endpoint cluster summary (per type + cross-type)",
             "/analytics/quality": "per-paper quality scores (gold/silver/bronze) + corpus summary",
             "/analytics/mior": "MIOR completeness report (Minimum Information About an Organoid Research)",
+            "/analytics/candidates": "OA/license verification status of the candidate pools (issue #14 pipeline)",
             "/analytics/status": "live system health check (corpus + analytics artifact inventory)",
             "/analytics/summary": "high-level dashboard: corpus stats, quality distribution, top types/assays/failures",
         },
@@ -559,6 +602,11 @@ async def route_reagent(datasette, request):
     return Response.json(data, status=status)
 
 
+async def route_candidates(datasette, request):
+    data, status = handle_candidates()
+    return Response.json(data, status=status)
+
+
 async def route_mior(datasette, request):
     data, status = handle_mior()
     return Response.json(data, status=status)
@@ -581,6 +629,7 @@ def register_routes():
         (r"^/analytics/assay-endpoints$", route_assay_endpoints),
         (r"^/analytics/quality$", route_quality),
         (r"^/analytics/mior$", route_mior),
+        (r"^/analytics/candidates$", route_candidates),
         (r"^/analytics/status$", route_status),
         (r"^/analytics/summary$", route_summary),
     ]
