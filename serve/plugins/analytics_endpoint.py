@@ -15,6 +15,7 @@ Routes (all return JSON; read-only, no writes):
   GET /analytics/type-similarity               -- pairwise organoid type Jaccard similarity
   GET /analytics/type-timeseries              -- type publication counts by year (growth trends)
   GET /analytics/universal-reagents           -- reagents essential to each type (>= N% of protocols)
+  GET /analytics/species-breakdown            -- species distribution per organoid type from protocols.jsonl
   GET /analytics                                -- index of available analytics
 
 All endpoints degrade gracefully — if the pre-computed file doesn't exist they return
@@ -420,8 +421,26 @@ def handle_summary() -> tuple[dict, int]:
         except (json.JSONDecodeError, OSError):
             pass
 
-    # manifest and mior are convenience extras — don't count them as analytics data
-    _analytics_keys = set(summary) - {"manifest", "mior"}
+    # Species snapshot — top-3 cross-corpus species; derived live from protocols.jsonl
+    # so the summary stays fresh without a separate pre-computed artifact.
+    if PROTOCOLS_JSONL.exists():
+        try:
+            sp_counts: dict[str, int] = {}
+            for line in PROTOCOLS_JSONL.read_text().splitlines():
+                if not line.strip():
+                    continue
+                p = json.loads(line)
+                raw = (p.get("species") or "not_stated").strip()
+                sp = _SPECIES_ALIASES.get(raw.lower(), raw.lower())
+                sp_counts[sp] = sp_counts.get(sp, 0) + 1
+            top3 = dict(sorted(sp_counts.items(), key=lambda kv: -kv[1])[:3])
+            summary["species_snapshot"] = top3
+        except (json.JSONDecodeError, OSError):
+            pass
+
+    # manifest, mior, and species_snapshot are live-derived conveniences —
+    # don't count them as analytics data for the has_data gate.
+    _analytics_keys = set(summary) - {"manifest", "mior", "species_snapshot"}
     has_data = bool(_analytics_keys)
 
     # Analytics inventory — always included so callers know what to generate
@@ -866,6 +885,74 @@ def handle_candidates() -> tuple[dict, int]:
     }, 200
 
 
+_SPECIES_ALIASES: dict[str, str] = {
+    "homo sapiens": "human",
+    "murine": "mouse",
+    "mus musculus": "mouse",
+}
+
+
+def handle_species_breakdown(organoid_type: str | None) -> tuple[dict, int]:
+    """Species distribution per organoid type from protocols.jsonl.
+
+    Normalises legacy aliases (murine→mouse, Homo sapiens→human) and returns
+    per-type counts for human / mouse / other, plus cross-corpus totals.
+    Optional ?type= restricts output to one organoid type.
+    """
+    if not PROTOCOLS_JSONL.exists():
+        return {
+            "error": "protocols.jsonl not found",
+            "hint": "Run: python pipeline/export_public.py",
+        }, 404
+
+    if organoid_type and not re.match(r'^[\w-]+$', organoid_type):
+        return {"error": "invalid organoid_type"}, 400
+
+    per_type: dict[str, dict[str, int]] = {}
+    cross_corpus: dict[str, int] = {}
+
+    try:
+        for line in PROTOCOLS_JSONL.read_text().splitlines():
+            if not line.strip():
+                continue
+            p = json.loads(line)
+            ot = (p.get("organoid_type") or "").strip()
+            if not ot or ot == "other":
+                continue
+            raw = (p.get("species") or "not_stated").strip()
+            sp = _SPECIES_ALIASES.get(raw.lower(), raw.lower())
+            per_type.setdefault(ot, {})
+            per_type[ot][sp] = per_type[ot].get(sp, 0) + 1
+            cross_corpus[sp] = cross_corpus.get(sp, 0) + 1
+    except (json.JSONDecodeError, OSError) as exc:
+        return {"error": f"protocols.jsonl unreadable: {exc}"}, 500
+
+    if not per_type:
+        return {"error": "no organoid type data in protocols.jsonl"}, 404
+
+    if organoid_type:
+        if organoid_type not in per_type:
+            return {
+                "error": f"No data for organoid type '{organoid_type}'",
+                "available_types": sorted(per_type),
+            }, 404
+        return {
+            "organoid_type": organoid_type,
+            "species": per_type[organoid_type],
+        }, 200
+
+    # Sort each type's dict by count descending
+    summary_per_type = {
+        t: dict(sorted(counts.items(), key=lambda kv: -kv[1]))
+        for t, counts in sorted(per_type.items())
+    }
+    return {
+        "cross_corpus": dict(sorted(cross_corpus.items(), key=lambda kv: -kv[1])),
+        "per_type": summary_per_type,
+        "n_types": len(per_type),
+    }, 200
+
+
 def handle_mior() -> tuple[dict, int]:
     """Return pre-computed MIOR completeness report."""
     path = ANALYSIS_DIR / "mior_completeness.json"
@@ -897,6 +984,7 @@ def handle_index() -> tuple[dict, int]:
             "/analytics/type-similarity": "pairwise organoid type similarity (Jaccard on canonical reagent sets) — which types share the most protocol overlap",
             "/analytics/type-timeseries": "organoid type publication counts by year — growth trends and first-appearance dates from protocols.jsonl",
             "/analytics/universal-reagents": "type-essential reagents: canonical reagents appearing in >= 50% of protocols for each type; also cross-type universals",
+            "/analytics/species-breakdown": "species distribution per organoid type (human / mouse / other) from protocols.jsonl; optional ?type=kidney",
             "/analytics/assay-endpoints": "assay endpoint cluster summary (per type + cross-type)",
             "/analytics/quality": "per-paper quality scores (gold/silver/bronze) + corpus summary",
             "/analytics/mior": "MIOR completeness report (Minimum Information About an Organoid Research)",
@@ -1040,6 +1128,12 @@ async def route_reagent_network(datasette, request):
     return Response.json(data, status=status)
 
 
+async def route_species_breakdown(datasette, request):
+    organoid_type = request.args.get("type") or None
+    data, status = handle_species_breakdown(organoid_type)
+    return Response.json(data, status=status)
+
+
 async def route_candidates(datasette, request):
     data, status = handle_candidates()
     return Response.json(data, status=status)
@@ -1068,6 +1162,7 @@ def register_routes():
         (r"^/analytics/type-similarity$", route_type_similarity),
         (r"^/analytics/type-timeseries$", route_type_timeseries),
         (r"^/analytics/universal-reagents$", route_universal_reagents),
+        (r"^/analytics/species-breakdown$", route_species_breakdown),
         (r"^/analytics/assay-endpoints$", route_assay_endpoints),
         (r"^/analytics/quality$", route_quality),
         (r"^/analytics/mior$", route_mior),
