@@ -303,3 +303,37 @@ def test_live_concentration_stats_top_by_n_with_value():
     # Y-27632 and EGF should be among the most reported
     top_names = {r["canonical"] for r in data["top_reagents"][:10]}
     assert len(top_names & {"Y-27632", "EGF", "CHIR99021", "FGF2"}) >= 2
+
+
+# ---------------------------------------------------------------------------
+# temporal-reagent-adoption live smoke tests
+# ---------------------------------------------------------------------------
+
+@require_reagents
+def test_live_tra_no_query_returns_200():
+    data, status = ae.handle_temporal_reagent_adoption(None, None)
+    assert status == 200
+    assert "top_reagents_by_peak_adoption" in data
+    assert len(data["top_reagents_by_peak_adoption"]) >= 5
+    assert data["n_canonicals_total"] >= 100
+
+
+@require_reagents
+def test_live_tra_egf_known():
+    data, status = ae.handle_temporal_reagent_adoption("EGF", None)
+    assert status == 200
+    assert data["canonical"] == "EGF"
+    assert data["n_pmcids_using"] >= 50
+    yrs = data["years"]
+    assert len(yrs) >= 5
+    # EGF has been used across multiple years; peak adoption should be > 0
+    assert data["trend"]["peak_adoption"] is not None
+    assert data["trend"]["peak_adoption"] > 0
+
+
+@require_reagents
+def test_live_tra_type_filter_kidney():
+    data, status = ae.handle_temporal_reagent_adoption("EGF", "kidney")
+    assert status == 200
+    assert data["organoid_type_filter"] == "kidney"
+    assert data["n_pmcids_using"] >= 1

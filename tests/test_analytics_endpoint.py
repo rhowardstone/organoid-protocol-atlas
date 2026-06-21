@@ -2417,3 +2417,216 @@ def test_cs_std_zero_for_single_value(tmp_path, monkeypatch):
     monkeypatch.setattr(ae, "REAGENTS_JSONL", p)
     data, _ = ae.handle_concentration_stats("EGF", None)
     assert data["stats_per_unit"]["ng/mL"]["std"] == 0.0
+
+
+# ---------------------------------------------------------------------------
+# temporal-reagent-adoption tests
+# ---------------------------------------------------------------------------
+
+def _write_tra_fixtures(proto_path, reagent_path, protocol_rows, reagent_rows):
+    """Write minimal protocols.jsonl and reagents.jsonl for TRA tests."""
+    proto_lines = []
+    for r in protocol_rows:
+        proto_lines.append(json.dumps({
+            "pmcid": r["pmcid"],
+            "organoid_type": r.get("organoid_type", "kidney"),
+            "year": r.get("year"),
+        }))
+    proto_path.write_text("\n".join(proto_lines) + "\n")
+
+    reagent_lines = []
+    for r in reagent_rows:
+        reagent_lines.append(json.dumps({
+            "pmcid": r["pmcid"],
+            "canonical": r.get("canonical", "EGF"),
+            "organoid_type": r.get("organoid_type", "kidney"),
+            "name": r.get("name", r.get("canonical", "EGF")),
+        }))
+    reagent_path.write_text("\n".join(reagent_lines) + "\n")
+
+
+def test_tra_404_missing_reagents(tmp_path, monkeypatch):
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", tmp_path / "missing.jsonl")
+    monkeypatch.setattr(ae, "PROTOCOLS_JSONL", tmp_path / "proto.jsonl")
+    _, status = ae.handle_temporal_reagent_adoption("EGF", None)
+    assert status == 404
+
+
+def test_tra_404_missing_protocols(tmp_path, monkeypatch):
+    rp = tmp_path / "reagents.jsonl"
+    rp.write_text("")
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", rp)
+    monkeypatch.setattr(ae, "PROTOCOLS_JSONL", tmp_path / "missing.jsonl")
+    _, status = ae.handle_temporal_reagent_adoption("EGF", None)
+    assert status == 404
+
+
+def test_tra_query_returns_canonical(tmp_path, monkeypatch):
+    pp = tmp_path / "proto.jsonl"
+    rp = tmp_path / "reagents.jsonl"
+    _write_tra_fixtures(pp, rp,
+        [{"pmcid": "PMC1", "year": "2020"}, {"pmcid": "PMC2", "year": "2021"}],
+        [{"pmcid": "PMC1", "canonical": "EGF"}])
+    monkeypatch.setattr(ae, "PROTOCOLS_JSONL", pp)
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", rp)
+    data, status = ae.handle_temporal_reagent_adoption("EGF", None)
+    assert status == 200
+    assert data["canonical"] == "EGF"
+    assert "years" in data
+    assert "trend" in data
+
+
+def test_tra_adoption_fraction_correct(tmp_path, monkeypatch):
+    """2 papers in 2021, 1 uses EGF → adoption 0.5."""
+    pp = tmp_path / "proto.jsonl"
+    rp = tmp_path / "reagents.jsonl"
+    _write_tra_fixtures(pp, rp,
+        [{"pmcid": "PMC1", "year": "2021"}, {"pmcid": "PMC2", "year": "2021"}],
+        [{"pmcid": "PMC1", "canonical": "EGF"}])
+    monkeypatch.setattr(ae, "PROTOCOLS_JSONL", pp)
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", rp)
+    data, _ = ae.handle_temporal_reagent_adoption("EGF", None)
+    assert data["years"]["2021"]["n_papers_total"] == 2
+    assert data["years"]["2021"]["n_papers_with_reagent"] == 1
+    assert data["years"]["2021"]["adoption_fraction"] == 0.5
+
+
+def test_tra_pmcid_deduplication(tmp_path, monkeypatch):
+    """Same PMCID appearing multiple times in reagents.jsonl counts once."""
+    pp = tmp_path / "proto.jsonl"
+    rp = tmp_path / "reagents.jsonl"
+    _write_tra_fixtures(pp, rp,
+        [{"pmcid": "PMC1", "year": "2020"}],
+        [{"pmcid": "PMC1", "canonical": "EGF"}, {"pmcid": "PMC1", "canonical": "EGF"}])
+    monkeypatch.setattr(ae, "PROTOCOLS_JSONL", pp)
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", rp)
+    data, _ = ae.handle_temporal_reagent_adoption("EGF", None)
+    assert data["n_pmcids_using"] == 1
+    assert data["years"]["2020"]["n_papers_with_reagent"] == 1
+
+
+def test_tra_case_insensitive_query(tmp_path, monkeypatch):
+    pp = tmp_path / "proto.jsonl"
+    rp = tmp_path / "reagents.jsonl"
+    _write_tra_fixtures(pp, rp,
+        [{"pmcid": "PMC1", "year": "2020"}],
+        [{"pmcid": "PMC1", "canonical": "FGF2"}])
+    monkeypatch.setattr(ae, "PROTOCOLS_JSONL", pp)
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", rp)
+    data, status = ae.handle_temporal_reagent_adoption("fgf2", None)
+    assert status == 200
+    assert data["canonical"] == "FGF2"
+
+
+def test_tra_404_no_match(tmp_path, monkeypatch):
+    pp = tmp_path / "proto.jsonl"
+    rp = tmp_path / "reagents.jsonl"
+    _write_tra_fixtures(pp, rp,
+        [{"pmcid": "PMC1", "year": "2020"}],
+        [{"pmcid": "PMC1", "canonical": "EGF"}])
+    monkeypatch.setattr(ae, "PROTOCOLS_JSONL", pp)
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", rp)
+    _, status = ae.handle_temporal_reagent_adoption("ZZZNOMATCH", None)
+    assert status == 404
+
+
+def test_tra_400_invalid_type(tmp_path, monkeypatch):
+    pp = tmp_path / "proto.jsonl"
+    rp = tmp_path / "reagents.jsonl"
+    _write_tra_fixtures(pp, rp, [], [])
+    monkeypatch.setattr(ae, "PROTOCOLS_JSONL", pp)
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", rp)
+    _, status = ae.handle_temporal_reagent_adoption("EGF", "../evil")
+    assert status == 400
+
+
+def test_tra_type_filter_restricts_corpus(tmp_path, monkeypatch):
+    """?type=kidney should exclude liver papers from n_papers_total."""
+    pp = tmp_path / "proto.jsonl"
+    rp = tmp_path / "reagents.jsonl"
+    _write_tra_fixtures(pp, rp,
+        [{"pmcid": "PMC1", "year": "2020", "organoid_type": "kidney"},
+         {"pmcid": "PMC2", "year": "2020", "organoid_type": "liver"}],
+        [{"pmcid": "PMC1", "canonical": "EGF", "organoid_type": "kidney"},
+         {"pmcid": "PMC2", "canonical": "EGF", "organoid_type": "liver"}])
+    monkeypatch.setattr(ae, "PROTOCOLS_JSONL", pp)
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", rp)
+    data, status = ae.handle_temporal_reagent_adoption("EGF", "kidney")
+    assert status == 200
+    # only kidney papers: 1 total, 1 with EGF
+    assert data["years"]["2020"]["n_papers_total"] == 1
+    assert data["years"]["2020"]["n_papers_with_reagent"] == 1
+
+
+def test_tra_trend_rising(tmp_path, monkeypatch):
+    """Adoption that rises from early to recent years should have direction='rising'."""
+    pp = tmp_path / "proto.jsonl"
+    rp = tmp_path / "reagents.jsonl"
+    # 3 papers per year, 2013-2021
+    proto_rows = [{"pmcid": f"PMC{yr}{i}", "year": str(yr)} for yr in range(2013, 2022) for i in range(3)]
+    # EGF used in 0 papers in 2013-2015, then 3/3 in 2019-2021
+    egf_pmcids = {f"PMC{yr}{i}" for yr in range(2019, 2022) for i in range(3)}
+    reagent_rows = [{"pmcid": p, "canonical": "EGF"} for p in egf_pmcids]
+    _write_tra_fixtures(pp, rp, proto_rows, reagent_rows)
+    monkeypatch.setattr(ae, "PROTOCOLS_JSONL", pp)
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", rp)
+    data, _ = ae.handle_temporal_reagent_adoption("EGF", None)
+    assert data["trend"]["direction"] == "rising"
+    assert data["trend"]["early_adoption_avg"] == 0.0
+    assert data["trend"]["recent_adoption_avg"] == 1.0
+
+
+def test_tra_trend_falling(tmp_path, monkeypatch):
+    """Adoption that drops from early to recent should have direction='falling'."""
+    pp = tmp_path / "proto.jsonl"
+    rp = tmp_path / "reagents.jsonl"
+    proto_rows = [{"pmcid": f"PMC{yr}{i}", "year": str(yr)} for yr in range(2013, 2022) for i in range(3)]
+    egf_pmcids = {f"PMC{yr}{i}" for yr in range(2013, 2016) for i in range(3)}
+    reagent_rows = [{"pmcid": p, "canonical": "EGF"} for p in egf_pmcids]
+    _write_tra_fixtures(pp, rp, proto_rows, reagent_rows)
+    monkeypatch.setattr(ae, "PROTOCOLS_JSONL", pp)
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", rp)
+    data, _ = ae.handle_temporal_reagent_adoption("EGF", None)
+    assert data["trend"]["direction"] == "falling"
+
+
+def test_tra_no_query_returns_top_reagents(tmp_path, monkeypatch):
+    """Without ?q=, returns top 20 by peak adoption."""
+    pp = tmp_path / "proto.jsonl"
+    rp = tmp_path / "reagents.jsonl"
+    _write_tra_fixtures(pp, rp,
+        [{"pmcid": "PMC1", "year": "2020"}, {"pmcid": "PMC2", "year": "2020"}],
+        [{"pmcid": "PMC1", "canonical": "EGF"}, {"pmcid": "PMC1", "canonical": "FGF2"},
+         {"pmcid": "PMC2", "canonical": "FGF2"}])
+    monkeypatch.setattr(ae, "PROTOCOLS_JSONL", pp)
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", rp)
+    data, status = ae.handle_temporal_reagent_adoption(None, None)
+    assert status == 200
+    assert "top_reagents_by_peak_adoption" in data
+    assert "n_canonicals_total" in data
+    top_names = [r["canonical"] for r in data["top_reagents_by_peak_adoption"]]
+    # FGF2 used in both papers → peak adoption 1.0; EGF used in 1 of 2 → 0.5
+    assert top_names[0] == "FGF2"
+
+
+def test_tra_peak_year_correct(tmp_path, monkeypatch):
+    """peak_year is the year with highest adoption fraction."""
+    pp = tmp_path / "proto.jsonl"
+    rp = tmp_path / "reagents.jsonl"
+    _write_tra_fixtures(pp, rp,
+        [{"pmcid": "PMC1", "year": "2020"}, {"pmcid": "PMC2", "year": "2020"},
+         {"pmcid": "PMC3", "year": "2021"}, {"pmcid": "PMC4", "year": "2021"},
+         {"pmcid": "PMC5", "year": "2021"}],
+        [{"pmcid": "PMC1", "canonical": "EGF"}, {"pmcid": "PMC2", "canonical": "EGF"},
+         {"pmcid": "PMC3", "canonical": "EGF"}])
+    monkeypatch.setattr(ae, "PROTOCOLS_JSONL", pp)
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", rp)
+    data, _ = ae.handle_temporal_reagent_adoption("EGF", None)
+    # 2020: 2/2 = 1.0; 2021: 1/3 = 0.33
+    assert data["trend"]["peak_year"] == "2020"
+    assert data["trend"]["peak_adoption"] == 1.0
+
+
+def test_tra_index_entry():
+    data, _ = ae.handle_index()
+    assert "/analytics/temporal-reagent-adoption" in data["endpoints"]

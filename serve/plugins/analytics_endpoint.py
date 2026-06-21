@@ -24,6 +24,7 @@ Routes (all return JSON; read-only, no writes):
   GET /analytics/year-trend                  -- yearly trends: paper count, avg signaling factors, avg grounding rate, field reporting rates
   GET /analytics/grounding-quality           -- reagent grounding coverage: resolved vs ungrounded, by type and by kind; top ungrounded canonical names
   GET /analytics/concentration-stats         -- aggregate concentration distributions per canonical reagent: median, min, max, n; optional ?q= filter
+  GET /analytics/temporal-reagent-adoption   -- per-reagent temporal adoption: fraction of papers per year using each canonical reagent; ?q= for one reagent
   GET /analytics                                -- index of available analytics
 
 All endpoints degrade gracefully — if the pre-computed file doesn't exist they return
@@ -1728,6 +1729,157 @@ def handle_concentration_stats(query: str | None, organoid_type: str | None) -> 
     }, 200
 
 
+def handle_temporal_reagent_adoption(query: str | None, organoid_type: str | None) -> tuple[dict, int]:
+    """Per-reagent temporal adoption from reagents.jsonl joined with protocols.jsonl.
+
+    For each publication year, computes what fraction of papers published that year
+    used the queried canonical reagent. Requires ?q= to name the canonical reagent
+    (case-insensitive substring match). Optional ?type= restricts to one organoid type.
+
+    Without ?q=, returns the top 20 reagents by peak annual adoption fraction with
+    their trend direction — useful for discovering what to query next.
+    """
+    if not REAGENTS_JSONL.exists():
+        return {"error": "reagents.jsonl not found", "hint": "Run: python pipeline/export_public.py"}, 404
+    if not PROTOCOLS_JSONL.exists():
+        return {"error": "protocols.jsonl not found", "hint": "Run: python pipeline/export_public.py"}, 404
+
+    if organoid_type is not None and not re.match(r'^[\w-]+$', organoid_type):
+        return {"error": "invalid organoid_type"}, 400
+
+    # Build PMCID -> year map (and optional type filter set) from protocols.jsonl
+    pmcid_year: dict[str, str] = {}
+    pmcid_type: dict[str, str] = {}
+    try:
+        for line in PROTOCOLS_JSONL.read_text().splitlines():
+            if not line.strip():
+                continue
+            p = json.loads(line)
+            pmcid = p.get("pmcid")
+            yr = p.get("year")
+            ot = p.get("organoid_type") or ""
+            if pmcid and yr:
+                pmcid_year[pmcid] = str(yr)
+                pmcid_type[pmcid] = ot
+    except (json.JSONDecodeError, OSError) as exc:
+        return {"error": f"protocols.jsonl unreadable: {exc}"}, 500
+
+    # Apply type filter to the paper universe
+    if organoid_type:
+        valid_pmcids = {p for p, t in pmcid_type.items() if t == organoid_type}
+    else:
+        valid_pmcids = set(pmcid_year)
+
+    if not valid_pmcids:
+        return {"error": f"no papers found for organoid_type '{organoid_type}'"}, 404
+
+    # Year -> n_papers_total in the (optionally filtered) corpus
+    from collections import Counter as _Counter
+    year_total: dict[str, int] = _Counter(pmcid_year[p] for p in valid_pmcids)
+
+    # Load reagents
+    try:
+        reagent_rows = [
+            json.loads(line)
+            for line in REAGENTS_JSONL.read_text().splitlines()
+            if line.strip()
+        ]
+    except (json.JSONDecodeError, OSError) as exc:
+        return {"error": f"reagents.jsonl unreadable: {exc}"}, 500
+
+    def _adoption_for_canonical(rows: list) -> dict:
+        """Given reagent rows for one canonical, return per-year adoption data."""
+        pmcids_using = {r["pmcid"] for r in rows if r.get("pmcid") in valid_pmcids}
+        years_data = {}
+        for yr in sorted(year_total):
+            papers_this_yr = {p for p in valid_pmcids if pmcid_year.get(p) == yr}
+            n_total = len(papers_this_yr)
+            n_with = len(papers_this_yr & pmcids_using)
+            years_data[yr] = {
+                "n_papers_total": n_total,
+                "n_papers_with_reagent": n_with,
+                "adoption_fraction": round(n_with / n_total, 3) if n_total else None,
+            }
+
+        year_list = sorted(year_total)
+        fracs = [years_data[y]["adoption_fraction"] for y in year_list
+                 if years_data[y]["adoption_fraction"] is not None]
+
+        early = [years_data[y]["adoption_fraction"] for y in year_list[:3]
+                 if years_data[y]["adoption_fraction"] is not None]
+        recent = [years_data[y]["adoption_fraction"] for y in year_list[-3:]
+                  if years_data[y]["adoption_fraction"] is not None]
+        early_avg = round(sum(early) / len(early), 3) if early else None
+        recent_avg = round(sum(recent) / len(recent), 3) if recent else None
+        peak_frac = max(fracs) if fracs else None
+        peak_yr = next((y for y in year_list if years_data[y]["adoption_fraction"] == peak_frac), None)
+
+        direction = "stable"
+        if early_avg is not None and recent_avg is not None:
+            delta = recent_avg - early_avg
+            if delta > 0.05:
+                direction = "rising"
+            elif delta < -0.05:
+                direction = "falling"
+
+        return {
+            "years": years_data,
+            "n_years": len(year_list),
+            "trend": {
+                "first_year": year_list[0] if year_list else None,
+                "last_year": year_list[-1] if year_list else None,
+                "peak_year": peak_yr,
+                "peak_adoption": peak_frac,
+                "early_adoption_avg": early_avg,
+                "recent_adoption_avg": recent_avg,
+                "direction": direction,
+            },
+            "n_pmcids_using": len(pmcids_using),
+        }
+
+    # Group all reagent rows by canonical name
+    by_canonical: dict[str, list] = {}
+    for r in reagent_rows:
+        cname = (r.get("canonical") or r.get("name") or "unknown").strip()
+        by_canonical.setdefault(cname, []).append(r)
+
+    if query:
+        q_lower = query.strip().lower()
+        matches = {k: v for k, v in by_canonical.items() if q_lower in k.lower()}
+        if not matches:
+            return {"error": f"no reagents matching '{query}'"}, 404
+        exact = next((k for k in matches if k.lower() == q_lower), None)
+        canonical_name = exact or max(matches, key=lambda k: len(matches[k]))
+        result = {
+            "canonical": canonical_name,
+            "canonical_query": query,
+            "organoid_type_filter": organoid_type,
+            "all_matches": sorted(matches) if len(matches) > 1 else None,
+            **_adoption_for_canonical(matches[canonical_name]),
+        }
+        return result, 200
+
+    # No query: return top 20 by peak adoption fraction
+    summaries = []
+    for cname, rows in by_canonical.items():
+        ad = _adoption_for_canonical(rows)
+        peak = ad["trend"]["peak_adoption"] or 0
+        if peak > 0:
+            summaries.append({
+                "canonical": cname,
+                "n_pmcids_using": ad["n_pmcids_using"],
+                "trend": ad["trend"],
+            })
+    summaries.sort(key=lambda s: -(s["trend"]["peak_adoption"] or 0))
+    return {
+        "organoid_type_filter": organoid_type,
+        "top_reagents_by_peak_adoption": summaries[:20],
+        "n_canonicals_total": len(by_canonical),
+        "corpus_years": sorted(year_total.keys()),
+        "hint": "pass ?q=TERM to get full year-by-year adoption data for one reagent",
+    }, 200
+
+
 def handle_mior() -> tuple[dict, int]:
     """Return pre-computed MIOR completeness report."""
     path = ANALYSIS_DIR / "mior_completeness.json"
@@ -1768,6 +1920,7 @@ def handle_index() -> tuple[dict, int]:
             "/analytics/year-trend": "yearly trends: paper count, avg n_signaling_factors, avg grounding_rate, field reporting rates by year — shows how the field has evolved",
             "/analytics/grounding-quality": "reagent grounding coverage: grounding_rate, evidence_quote_rate, suspect_unit_count — by type and by kind; top ungrounded canonical names for S1 prioritisation",
             "/analytics/concentration-stats": "aggregate concentration distributions per canonical reagent: median, min, max, std, dominant unit — top 50 by n_with_value; ?q= for one reagent, ?type= for one type",
+            "/analytics/temporal-reagent-adoption": "per-reagent temporal adoption: fraction of papers per year using each canonical reagent; ?q= for full year-by-year data, ?type= for one organoid type; without ?q= returns top 20 by peak adoption",
             "/analytics/assay-endpoints": "assay endpoint cluster summary (per type + cross-type)",
             "/analytics/quality": "per-paper quality scores (gold/silver/bronze) + corpus summary",
             "/analytics/mior": "MIOR completeness report (Minimum Information About an Organoid Research)",
@@ -1965,6 +2118,13 @@ async def route_concentration_stats(datasette, request):
     return Response.json(data, status=status)
 
 
+async def route_temporal_reagent_adoption(datasette, request):
+    query = request.args.get("q") or None
+    organoid_type = request.args.get("type") or None
+    data, status = handle_temporal_reagent_adoption(query, organoid_type)
+    return Response.json(data, status=status)
+
+
 async def route_candidates(datasette, request):
     data, status = handle_candidates()
     return Response.json(data, status=status)
@@ -2002,6 +2162,7 @@ def register_routes():
         (r"^/analytics/year-trend$", route_year_trend),
         (r"^/analytics/grounding-quality$", route_grounding_quality),
         (r"^/analytics/concentration-stats$", route_concentration_stats),
+        (r"^/analytics/temporal-reagent-adoption$", route_temporal_reagent_adoption),
         (r"^/analytics/assay-endpoints$", route_assay_endpoints),
         (r"^/analytics/quality$", route_quality),
         (r"^/analytics/mior$", route_mior),
