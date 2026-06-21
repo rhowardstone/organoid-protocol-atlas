@@ -1,0 +1,36 @@
+{
+  "CHEBI:606564": {
+    "id": {
+      "identifier": "CHEBI:606564",
+      "label": "prostaglandin E2(1-)"
+    },
+    "equivalent_identifiers": [
+      {
+        "identifier": "CHEBI:606564",
+        "label": "prostaglandin E2(1-)"
+      },
+      {
+        "identifier": "PUBCHEM.COMPOUND:11865423",
+        "label": "prostaglandin E2(1-)"
+      },
+      {
+        "identifier": "CAS:960003-10-5"
+      },
+      {
+        "identifier": "INCHIKEY:XEYBRNLFEZDVAW-ARSRFYASSA-M"
+      }
+    ],
+    "type": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "information_content": 88.2
+  }
+}

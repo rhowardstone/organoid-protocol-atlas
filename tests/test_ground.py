@@ -44,12 +44,16 @@ def test_cell_line_resolves_to_cellosaurus_rrid():
     assert ground.ground_cell_line("WA09", **OFF)["curie"] == "Cellosaurus:CVCL_9773"
 
 
-def test_near_miss_metabolite_is_not_accepted_resolved():
-    # PR #9 review regression: PGE2 -> 15-Keto-PGE2 is a near-miss; must NOT count as
-    # accepted `resolved` (would poison KGX). Candidate, flagged, for human review.
+def test_pge2_now_resolves_correctly_via_curated_alias():
+    # PR #9 found raw "PGE2" -> 15-Keto-PGE2 (near-miss, held as needs_review). The
+    # curated ALIAS "pge2" -> "prostaglandin E2" now makes SRI return the correct
+    # compound, which _verify accepts -> resolved. The CURIE still comes from SRI
+    # (not hardcoded); see test_ground_aliases. The near-miss-not-accepted guard is
+    # still enforced for un-aliased terms by test_wrong_entity below.
     r = ground.ground_entity("PGE2", "reagent", **OFF)
-    assert r["grounding_status"] == "needs_review" != "resolved"
-    assert "label_mismatch" in r["flags"]
+    assert r["grounding_status"] == "resolved"
+    assert r["curie"] == "CHEBI:606564"
+    assert "alias:prostaglandin E2" in r["flags"]
 
 
 def test_wrong_entity_is_not_accepted_resolved():
