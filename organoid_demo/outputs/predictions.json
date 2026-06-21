@@ -5,6 +5,7 @@
     "source_cells": {
       "cell_type": "adult_stem_cell",
       "line_name": null,
+      "rrid": null,
       "species": "Mus musculus",
       "reporting": "reported",
       "evidence": null
@@ -18,6 +19,7 @@
         "quote": "Isolated mouse small intestinal crypts were embedded in Matrigel and overlaid with Advanced DMEM/F12 supplemented with EGF (50 ng/ml), Noggin (100 ng/ml) and R-spondin1 (500 ng/ml).",
         "section": "Methods",
         "page": null,
+        "sentence_id": null,
         "confidence": 0.85
       }
     },
@@ -29,6 +31,7 @@
         "quote": "Isolated mouse small intestinal crypts were embedded in Matrigel and overlaid with Advanced DMEM/F12 supplemented with EGF (50 ng/ml), Noggin (100 ng/ml) and R-spondin1 (500 ng/ml).",
         "section": "Methods",
         "page": null,
+        "sentence_id": null,
         "confidence": 0.8
       }
     },
@@ -50,6 +53,7 @@
           "quote": "Isolated mouse small intestinal crypts were embedded in Matrigel and overlaid with Advanced DMEM/F12 supplemented with EGF (50 ng/ml), Noggin (100 ng/ml) and R-spondin1 (500 ng/ml).",
           "section": "Methods",
           "page": null,
+          "sentence_id": null,
           "confidence": 0.9
         }
       },
@@ -69,6 +73,7 @@
           "quote": "Isolated mouse small intestinal crypts were embedded in Matrigel and overlaid with Advanced DMEM/F12 supplemented with EGF (50 ng/ml), Noggin (100 ng/ml) and R-spondin1 (500 ng/ml).",
           "section": "Methods",
           "page": null,
+          "sentence_id": null,
           "confidence": 0.9
         }
       },
@@ -88,6 +93,7 @@
           "quote": "Isolated mouse small intestinal crypts were embedded in Matrigel and overlaid with Advanced DMEM/F12 supplemented with EGF (50 ng/ml), Noggin (100 ng/ml) and R-spondin1 (500 ng/ml).",
           "section": "Methods",
           "page": null,
+          "sentence_id": null,
           "confidence": 0.9
         }
       },
@@ -107,6 +113,7 @@
           "quote": "Isolated mouse small intestinal crypts were embedded in Matrigel and overlaid with Advanced DMEM/F12 supplemented with EGF (50 ng/ml), Noggin (100 ng/ml) and R-spondin1 (500 ng/ml).",
           "section": "Methods",
           "page": null,
+          "sentence_id": null,
           "confidence": 0.9
         }
       }
@@ -120,11 +127,20 @@
       "reporting": "reported",
       "evidence": null
     },
+    "culture_conditions": {
+      "temperature_c": null,
+      "co2_pct": null,
+      "o2_pct": null,
+      "reporting": "not_extracted",
+      "evidence": null
+    },
     "assay_endpoints": [
       "Lgr5",
       "crypt-villus morphology"
     ],
-    "schema_version": "0.2",
+    "failure_modes": [],
+    "modifications": [],
+    "schema_version": "0.4",
     "extractor_version": "rule_based_v1",
     "notes": null
   },
@@ -134,6 +150,7 @@
     "source_cells": {
       "cell_type": "ESC",
       "line_name": null,
+      "rrid": null,
       "species": "Homo sapiens",
       "reporting": "reported",
       "evidence": {
@@ -141,6 +158,7 @@
         "quote": "Human embryonic stem cells were aggregated to form embryoid bodies in low-bFGF medium, then transferred to neural induction medium.",
         "section": "Methods",
         "page": null,
+        "sentence_id": null,
         "confidence": 0.6
       }
     },
@@ -153,6 +171,7 @@
         "quote": "Neuroepithelial tissues were embedded in Matrigel droplets and cultured in differentiation medium containing B27 and N2 without added growth factors.",
         "section": "Methods",
         "page": null,
+        "sentence_id": null,
         "confidence": 0.85
       }
     },
@@ -164,6 +183,7 @@
         "quote": "Human embryonic stem cells were aggregated to form embryoid bodies in low-bFGF medium, then transferred to neural induction medium.",
         "section": "Methods",
         "page": null,
+        "sentence_id": null,
         "confidence": 0.8
       }
     },
@@ -180,6 +200,7 @@
           "quote": "Human embryonic stem cells were aggregated to form embryoid bodies in low-bFGF medium, then transferred to neural induction medium.",
           "section": "Methods",
           "page": null,
+          "sentence_id": null,
           "confidence": 0.7
         }
       },
@@ -194,6 +215,7 @@
           "quote": "Neuroepithelial tissues were embedded in Matrigel droplets and cultured in differentiation medium containing B27 and N2 without added growth factors.",
           "section": "Methods",
           "page": null,
+          "sentence_id": null,
           "confidence": 0.7
         }
       },
@@ -208,6 +230,7 @@
           "quote": "Neuroepithelial tissues were embedded in Matrigel droplets and cultured in differentiation medium containing B27 and N2 without added growth factors.",
           "section": "Methods",
           "page": null,
+          "sentence_id": null,
           "confidence": 0.7
         }
       }
@@ -221,12 +244,21 @@
       "reporting": "reported",
       "evidence": null
     },
+    "culture_conditions": {
+      "temperature_c": null,
+      "co2_pct": null,
+      "o2_pct": null,
+      "reporting": "not_extracted",
+      "evidence": null
+    },
     "assay_endpoints": [
       "PAX6",
       "SOX2",
       "immunostaining"
     ],
-    "schema_version": "0.2",
+    "failure_modes": [],
+    "modifications": [],
+    "schema_version": "0.4",
     "extractor_version": "rule_based_v1",
     "notes": null
   },
@@ -236,6 +268,7 @@
     "source_cells": {
       "cell_type": "iPSC",
       "line_name": null,
+      "rrid": null,
       "species": "Homo sapiens",
       "reporting": "reported",
       "evidence": {
@@ -243,6 +276,7 @@
         "quote": "Cells were aggregated and cultured for 7 days, with a brief CHIR99021 pulse on day 7.",
         "section": "Methods",
         "page": null,
+        "sentence_id": null,
         "confidence": 0.6
       }
     },
@@ -275,6 +309,7 @@
           "quote": "Human iPSCs (line CRL1502) were treated with CHIR99021 (8 uM) for 4 days to induce posterior primitive streak, followed by FGF9 (200 ng/ml) and heparin (1 ug/ml) to promote intermediate mesoderm.",
           "section": "Methods",
           "page": null,
+          "sentence_id": null,
           "confidence": 0.9
         }
       },
@@ -294,6 +329,7 @@
           "quote": "Human iPSCs (line CRL1502) were treated with CHIR99021 (8 uM) for 4 days to induce posterior primitive streak, followed by FGF9 (200 ng/ml) and heparin (1 ug/ml) to promote intermediate mesoderm.",
           "section": "Methods",
           "page": null,
+          "sentence_id": null,
           "confidence": 0.9
         }
       },
@@ -313,6 +349,7 @@
           "quote": "Human iPSCs (line CRL1502) were treated with CHIR99021 (8 uM) for 4 days to induce posterior primitive streak, followed by FGF9 (200 ng/ml) and heparin (1 ug/ml) to promote intermediate mesoderm.",
           "section": "Methods",
           "page": null,
+          "sentence_id": null,
           "confidence": 0.9
         }
       }
@@ -326,12 +363,21 @@
       "reporting": "reported",
       "evidence": null
     },
+    "culture_conditions": {
+      "temperature_c": null,
+      "co2_pct": null,
+      "o2_pct": null,
+      "reporting": "not_extracted",
+      "evidence": null
+    },
     "assay_endpoints": [
       "WT1",
       "PAX2",
       "nephrin"
     ],
-    "schema_version": "0.2",
+    "failure_modes": [],
+    "modifications": [],
+    "schema_version": "0.4",
     "extractor_version": "rule_based_v1",
     "notes": null
   }
