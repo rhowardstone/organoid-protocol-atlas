@@ -894,3 +894,87 @@ def test_type_similarity_n_reagents_field(tmp_path, monkeypatch):
 def test_type_similarity_index_entry():
     data, _ = ae.handle_index()
     assert "/analytics/type-similarity" in data["endpoints"]
+
+
+# --------------------------------------------------------------------------- #
+# handle_type_timeseries
+# --------------------------------------------------------------------------- #
+
+def _write_protocols_jsonl(path, rows):
+    path.write_text("\n".join(json.dumps(r) for r in rows))
+
+
+def test_type_timeseries_404_when_jsonl_missing(tmp_path, monkeypatch):
+    monkeypatch.setattr(ae, "PROTOCOLS_JSONL", tmp_path / "protocols.jsonl")
+    data, status = ae.handle_type_timeseries()
+    assert status == 404
+    assert "hint" in data
+
+
+def test_type_timeseries_returns_years_and_types(tmp_path, monkeypatch):
+    protos = tmp_path / "protocols.jsonl"
+    rows = [
+        {"pmcid": "PMC001", "organoid_type": "cardiac",   "year": 2021},
+        {"pmcid": "PMC002", "organoid_type": "cerebral",  "year": 2021},
+        {"pmcid": "PMC003", "organoid_type": "cardiac",   "year": 2022},
+        {"pmcid": "PMC004", "organoid_type": "intestinal","year": 2022},
+    ]
+    _write_protocols_jsonl(protos, rows)
+    monkeypatch.setattr(ae, "PROTOCOLS_JSONL", protos)
+    data, status = ae.handle_type_timeseries()
+    assert status == 200
+    assert "2021" in data["years"]
+    assert "2022" in data["years"]
+    assert data["by_year"]["2021"]["cardiac"] == 1
+    assert data["by_year"]["2022"]["cardiac"] == 1
+    assert data["by_year"]["2022"]["intestinal"] == 1
+    assert data["total_by_year"]["2021"] == 2
+    assert data["total_by_year"]["2022"] == 2
+
+
+def test_type_timeseries_by_type(tmp_path, monkeypatch):
+    protos = tmp_path / "protocols.jsonl"
+    rows = [
+        {"pmcid": "PMC001", "organoid_type": "cardiac", "year": 2020},
+        {"pmcid": "PMC002", "organoid_type": "cardiac", "year": 2021},
+    ]
+    _write_protocols_jsonl(protos, rows)
+    monkeypatch.setattr(ae, "PROTOCOLS_JSONL", protos)
+    data, status = ae.handle_type_timeseries()
+    assert status == 200
+    assert data["by_type"]["cardiac"]["2020"] == 1
+    assert data["by_type"]["cardiac"]["2021"] == 1
+
+
+def test_type_timeseries_first_appearance(tmp_path, monkeypatch):
+    protos = tmp_path / "protocols.jsonl"
+    rows = [
+        {"pmcid": "PMC001", "organoid_type": "cardiac",  "year": 2018},
+        {"pmcid": "PMC002", "organoid_type": "cerebral", "year": 2014},
+        {"pmcid": "PMC003", "organoid_type": "cardiac",  "year": 2020},
+    ]
+    _write_protocols_jsonl(protos, rows)
+    monkeypatch.setattr(ae, "PROTOCOLS_JSONL", protos)
+    data, status = ae.handle_type_timeseries()
+    assert status == 200
+    assert data["first_appearance"]["cardiac"] == "2018"
+    assert data["first_appearance"]["cerebral"] == "2014"
+
+
+def test_type_timeseries_excludes_other(tmp_path, monkeypatch):
+    protos = tmp_path / "protocols.jsonl"
+    rows = [
+        {"pmcid": "PMC001", "organoid_type": "other",  "year": 2022},
+        {"pmcid": "PMC002", "organoid_type": "cardiac", "year": 2022},
+    ]
+    _write_protocols_jsonl(protos, rows)
+    monkeypatch.setattr(ae, "PROTOCOLS_JSONL", protos)
+    data, status = ae.handle_type_timeseries()
+    assert status == 200
+    assert "other" not in data["by_type"]
+    assert data["total_by_year"]["2022"] == 1
+
+
+def test_type_timeseries_index_entry():
+    data, _ = ae.handle_index()
+    assert "/analytics/type-timeseries" in data["endpoints"]

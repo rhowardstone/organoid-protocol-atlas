@@ -37,7 +37,7 @@ paper (PMC)
   └─ S2       Biolink-validated KGX export (nodes.tsv + edges.tsv + kgx_manifest.json)
   └─ entity normalization (bFGF≡FGF2, RSPO1≡R-spondin1, …)
   └─ analytics pipeline → coverage · quality · consensus · failure modes · lineage · assay endpoints
-  └─ REST API (Datasette plugin, 18 routes)
+  └─ REST API (Datasette plugin, 19 routes)
 ```
 
 ## Analytics API
@@ -56,6 +56,7 @@ GET /analytics/quality                  per-paper quality scores (gold ≥ 0.80 
 GET /analytics/reagent?q=TERM           cross-corpus reagent lookup: usage, concentrations, evidence quotes
 GET /analytics/reagent-network?q=TERM  reagent co-occurrence: which reagents most often appear in the same papers
 GET /analytics/type-similarity          pairwise organoid type Jaccard similarity on canonical reagent sets
+GET /analytics/type-timeseries          organoid type publication counts by year — growth trends + first-appearance dates
 GET /analytics/assay-endpoints          assay endpoint cluster summary (12 clusters, per-type + cross-type)
 GET /analytics/failure-modes            failure mode cluster summary across the corpus
 GET /analytics/lineage                  DOI→DOI protocol lineage graph (ProtocolModification data)
@@ -170,7 +171,7 @@ outputs/
   analysis/                  pre-computed analytics (coverage, quality, consensus, etc.)
   kgx/                       KGX graph export
   comparison/                pre-computed protocol diffs
-tests/                       offline test suite (724 tests, no network, no GPU)
+tests/                       offline test suite (730 tests, no network, no GPU)
 docs/                        SUPERVISOR_CHECKLIST.md, PLAN, RESEARCH_BRIEF
 ```
 
@@ -199,7 +200,7 @@ python pipeline/aggregate_failure_modes.py
 python pipeline/build_lineage.py
 python pipeline/aggregate_assay_endpoints.py
 
-make test                               # run offline test suite (724 tests)
+make test                               # run offline test suite (730 tests)
 make validate-batch                     # pre-PR check: tests + prediction schema + evidence
 # or: pytest -q
 ```
