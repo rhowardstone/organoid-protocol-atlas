@@ -65,7 +65,7 @@ def main():
         for m in members:
             ratio = m["value"] / med
             if ratio > OUTLIER_THRESHOLD or ratio < (1 / OUTLIER_THRESHOLD):
-                outliers.append({**m, "ratio_to_median": round(ratio, 3), "median": med})
+                outliers.append({**m, "canonical": canon, "unit": unit, "ratio_to_median": round(ratio, 3), "median": med})
         group_stats.append({
             "canonical": canon, "unit": unit, "n": len(members),
             "median": med, "min": min(vals), "max": max(vals),
