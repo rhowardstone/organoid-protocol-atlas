@@ -360,6 +360,7 @@ async function load() {
     ['/analytics/role-breakdown',       'Normalized functional role distribution for signaling reagents: signaling_factor / growth_factor / differentiation / inhibitor / agonist etc.; ?q=differentiation for top canonicals; ?type= filter'],
     ['/analytics/type-reagent-heatmap', 'Type × canonical reagent usage matrix: top N canonicals (columns) × all types (rows), each cell = n_papers; ?kind=signaling|supplement|all (default signaling); ?top_n= (default 20, max 50)'],
     ['/analytics/canonical-name-variants', 'Normalization complexity: for each canonical, all raw names that map to it; top 30 most-ambiguous by n_variants; ?q=FGF2 for one canonical; ?min_variants= threshold (default 2)'],
+    ['/analytics/concentration-unit-distribution', 'Unit inconsistency report: canonicals using multiple concentration unit systems; top 30 by n_units; ?q=EGF for full breakdown with min/median/max per unit; ?min_n= threshold'],
     ['/analytics/mior',                 'MIOR completeness report (12 items, 5 modules)'],
     ['/analytics/assay-endpoints',      'Assay endpoint cluster summary (per-type + cross-type)'],
     ['/analytics/failure-modes',        'Failure mode cluster summary across the corpus'],

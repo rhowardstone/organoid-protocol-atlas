@@ -4556,3 +4556,150 @@ def test_nv_noggin_excluded_from_global(tmp_path, monkeypatch):
 def test_nv_index_entry():
     data, _ = ae.handle_index()
     assert "/analytics/canonical-name-variants" in data["endpoints"]
+
+
+# ---------------------------------------------------------------------------
+# Route 45: /analytics/concentration-unit-distribution
+# ---------------------------------------------------------------------------
+
+def _write_reagents_for_cu(path, rows):
+    base = {
+        "pmcid": "PMC1", "organoid_type": "intestinal",
+        "kind": "signaling", "canonical": "EGF",
+        "name": "EGF", "role": None,
+        "value": 50.0, "unit": "ng/mL", "canonical_unit": "ng/mL",
+        "grounded": False, "evidence_quote": None,
+        "figure_confirmed": False, "suspect_unit": False,
+        "doi": None, "id": "r1",
+    }
+    path.write_text("\n".join(json.dumps({**base, **r}) for r in rows))
+
+
+def _patch_cu(monkeypatch, path):
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", path)
+
+
+# Fixture:
+# EGF: 3×ng/mL (50,100,200), 1×uM (0.5) → 2 units, 4 records
+# FGF2: 2×ng/mL (20,30) → 1 unit, 2 records
+# Noggin: 1×ng/mL (100) → only 1 record (below min_n=3 default)
+_CU_ROWS = [
+    {"canonical": "EGF",   "canonical_unit": "ng/mL", "value": 50.0,  "pmcid": "PMC1"},
+    {"canonical": "EGF",   "canonical_unit": "ng/mL", "value": 100.0, "pmcid": "PMC2"},
+    {"canonical": "EGF",   "canonical_unit": "ng/mL", "value": 200.0, "pmcid": "PMC3"},
+    {"canonical": "EGF",   "canonical_unit": "uM",    "value": 0.5,   "pmcid": "PMC4"},
+    {"canonical": "FGF2",  "canonical_unit": "ng/mL", "value": 20.0,  "pmcid": "PMC1"},
+    {"canonical": "FGF2",  "canonical_unit": "ng/mL", "value": 30.0,  "pmcid": "PMC2"},
+    {"canonical": "Noggin","canonical_unit": "ng/mL", "value": 100.0, "pmcid": "PMC1"},
+]
+
+
+def test_cu_returns_200(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_cu(p, _CU_ROWS)
+    _patch_cu(monkeypatch, p)
+    data, status = ae.handle_concentration_unit_distribution(None)
+    assert status == 200
+    assert "multi_unit_canonicals" in data
+    assert "n_canonicals_with_values" in data
+    assert "n_multi_unit" in data
+
+
+def test_cu_egf_is_multi_unit(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_cu(p, _CU_ROWS)
+    _patch_cu(monkeypatch, p)
+    data, _ = ae.handle_concentration_unit_distribution(None, min_n=1)
+    names = [e["canonical"] for e in data["multi_unit_canonicals"]]
+    assert "EGF" in names
+    egf = next(e for e in data["multi_unit_canonicals"] if e["canonical"] == "EGF")
+    assert egf["n_units"] == 2
+    assert egf["dominant_unit"] == "ng/mL"
+    assert egf["dominant_pct"] == 75.0  # 3/4
+
+
+def test_cu_fgf2_not_in_multi_unit(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_cu(p, _CU_ROWS)
+    _patch_cu(monkeypatch, p)
+    data, _ = ae.handle_concentration_unit_distribution(None, min_n=1)
+    names = [e["canonical"] for e in data["multi_unit_canonicals"]]
+    assert "FGF2" not in names  # only 1 unit
+
+
+def test_cu_min_n_filters_noggin(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_cu(p, _CU_ROWS)
+    _patch_cu(monkeypatch, p)
+    # Noggin has 1 record < min_n=3 → not in n_canonicals_with_values
+    data, _ = ae.handle_concentration_unit_distribution(None, min_n=3)
+    # EGF has 4 records (≥3), FGF2 has 2 (≥3? No, 2<3) → actually EGF only has 4≥3
+    # FGF2: 2 < 3 → also excluded
+    assert data["n_canonicals_with_values"] == 1  # only EGF qualifies
+
+
+def test_cu_query_egf(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_cu(p, _CU_ROWS)
+    _patch_cu(monkeypatch, p)
+    data, status = ae.handle_concentration_unit_distribution("EGF")
+    assert status == 200
+    assert data["canonical"] == "EGF"
+    assert data["n_units"] == 2
+    assert data["n_records_total"] == 4
+    assert data["is_unit_consistent"] is False
+    assert data["dominant_unit"] == "ng/mL"
+
+
+def test_cu_query_egf_median_correct(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_cu(p, _CU_ROWS)
+    _patch_cu(monkeypatch, p)
+    data, _ = ae.handle_concentration_unit_distribution("EGF")
+    ng_unit = next(u for u in data["units"] if u["unit"] == "ng/mL")
+    # Values: 50, 100, 200 → median = 100
+    assert ng_unit["median"] == 100.0
+    assert ng_unit["min"] == 50.0
+    assert ng_unit["max"] == 200.0
+    assert ng_unit["n_records"] == 3
+    assert ng_unit["pct"] == 75.0
+
+
+def test_cu_query_fgf2_consistent(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_cu(p, _CU_ROWS)
+    _patch_cu(monkeypatch, p)
+    data, status = ae.handle_concentration_unit_distribution("FGF2")
+    assert status == 200
+    assert data["is_unit_consistent"] is True
+    assert data["n_units"] == 1
+
+
+def test_cu_query_unknown_returns_404(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_cu(p, _CU_ROWS)
+    _patch_cu(monkeypatch, p)
+    _, status = ae.handle_concentration_unit_distribution("NOSUCHCANON_XYZ")
+    assert status == 404
+
+
+def test_cu_n_multi_unit(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_cu(p, _CU_ROWS)
+    _patch_cu(monkeypatch, p)
+    data, _ = ae.handle_concentration_unit_distribution(None, min_n=1)
+    assert data["n_multi_unit"] == 1  # only EGF
+
+
+def test_cu_pct_sums_to_100(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_cu(p, _CU_ROWS)
+    _patch_cu(monkeypatch, p)
+    data, _ = ae.handle_concentration_unit_distribution("EGF")
+    total_pct = sum(u["pct"] for u in data["units"])
+    assert abs(total_pct - 100.0) < 0.01
+
+
+def test_cu_index_entry():
+    data, _ = ae.handle_index()
+    assert "/analytics/concentration-unit-distribution" in data["endpoints"]

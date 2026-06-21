@@ -656,3 +656,22 @@ def test_live_nv_y27632_most_ambiguous():
     assert status == 200
     assert data["n_variants"] >= 5
     assert "Y-27632" in data["names"]
+
+
+@require_reagents
+def test_live_cu_returns_200():
+    data, status = ae.handle_concentration_unit_distribution(None)
+    assert status == 200
+    assert data["n_canonicals_with_values"] >= 50
+    assert data["n_multi_unit"] >= 10
+    assert len(data["multi_unit_canonicals"]) >= 5
+
+
+@require_reagents
+def test_live_cu_r_spondin1_multi_unit():
+    # R-spondin1 uses both ng/mL (purified protein) and % (conditioned medium)
+    data, status = ae.handle_concentration_unit_distribution("R-spondin1")
+    assert status == 200
+    assert data["n_units"] >= 2
+    unit_names = {u["unit"] for u in data["units"]}
+    assert "ng/mL" in unit_names
