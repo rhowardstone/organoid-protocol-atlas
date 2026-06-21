@@ -85,6 +85,23 @@ def test_protocols_reagents_totals_consistent():
     assert not bad, f"reagents_grounded > reagents_total: {bad[:5]}"
 
 
+def test_protocols_organoid_type_is_specific():
+    """No protocol row should have organoid_type == 'other' in the public export.
+
+    build_kg.py and export_public.py both use corpus.tsv as the authoritative
+    type source (line: oty = cm.get("organoid_type") or p.get("organoid_type")).
+    If corpus.tsv is populated from the discovery CSV at ingest time, 'other'
+    should never appear. This test guards against marathon_ingest.py forgetting
+    to copy the discovery CSV type into corpus.tsv for new papers.
+    """
+    rows = _load_jsonl(PROTOCOLS_JSONL)
+    other = [r["pmcid"] for r in rows if r.get("organoid_type") == "other"]
+    assert not other, (
+        f"{len(other)} rows have organoid_type='other' — ingest likely failed to "
+        f"propagate the discovery-CSV type into corpus.tsv: {other[:5]}"
+    )
+
+
 def test_protocols_no_duplicate_pmcids():
     rows = _load_jsonl(PROTOCOLS_JSONL)
     pmcids = [r["pmcid"] for r in rows]
