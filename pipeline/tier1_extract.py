@@ -51,10 +51,14 @@ def is_non_reagent(name: str | None) -> bool:
 sys.path.insert(0, str(REPO / "organoid_demo"))
 
 from schema import (  # noqa: E402
-    BaseMedia, Concentration, CultureConditions, Evidence, Matrix, OrganoidProtocol,
-    OrganoidType, Passaging, Reagent, Reporting, SourceCells, SourceCellType,
-    TimelineStage,
+    BaseMedia, Concentration, CultureConditions, Evidence, FailureMode, Matrix,
+    OrganoidProtocol, OrganoidType, Passaging, ProtocolModification, Reagent, Reporting,
+    SourceCells, SourceCellType, TimelineStage,
 )
+
+# A real DOI ("10.<registrant>/<suffix>"). The model frequently emits a bare reference
+# index (e.g. "21") for a cited prior protocol; those must NOT become lineage edges.
+DOI_RE = re.compile(r"10\.\d{4,9}/\S+")
 
 BUNDLES = REPO / "data" / "evidence_bundles" / "local"
 PRED_DIR = REPO / "data" / "predictions" / "local"
@@ -120,8 +124,8 @@ media_supplements: [{{name}}],
 passaging: {{method, split_ratio, interval_days}},
 timeline: [{{name, day_start, day_end}}],
 assay_endpoints: [string],
-failure_modes: [{{description, condition}}],
-modifications: [{{cited_doi, change_description}}].
+failure_modes: [{{description, condition, evidence_quote}}],
+modifications: [{{cited_doi, change_description, evidence_quote}}].
 RULES:
 - evidence_quote MUST be copied verbatim (exact substring) from the text.
 - culture_conditions: numeric temperature_c / co2_pct / o2_pct ONLY if the text states them
@@ -141,8 +145,8 @@ RULES:
   media_supplements, NOT signaling_factors.
 - treat R-spondin / R-spondin1 / RSPO1 as ONE entity (list once).
 - if a field is not stated, omit it; never invent a value.
-- failure_modes: list any explicit warnings, failure conditions, or critical steps the paper warns about (e.g. "temperature above 37°C reduces efficiency", "avoid repeated freeze-thaw"). Empty [] if none stated.
-- modifications: if the paper explicitly says it modified a prior protocol, capture the prior protocol's DOI (if mentioned) and what changed. Empty [] if this is an original protocol or no modifications are stated.
+- failure_modes: list any explicit warnings, failure conditions, or critical steps the paper warns about (e.g. "temperature above 37°C reduces efficiency", "avoid repeated freeze-thaw"). evidence_quote = the verbatim span stating it. Empty [] if none stated.
+- modifications: if the paper explicitly says it modified a prior protocol, capture the prior protocol's DOI (cited_doi = the full DOI string ONLY if it appears verbatim in THIS text; null otherwise — never a bare reference number, never invented) and what changed; evidence_quote = the verbatim span. Empty [] if this is an original protocol or no modifications are stated.
 
 TEXT:
 {evidence}"""
@@ -168,6 +172,47 @@ def _enum(cls, val, default):
         return cls(val)
     except (ValueError, TypeError):
         return default
+
+
+def build_failure_modes(m: dict, doi: str, evidence: str) -> list[FailureMode]:
+    """Failure modes the model reported. Keep any with a non-empty description; attach a
+    verbatim Evidence quote when the model supplied one that is a real substring of the
+    source (a quote that is NOT verbatim is dropped, never stored as false evidence)."""
+    out = []
+    for fm in (m.get("failure_modes") or []):
+        if not isinstance(fm, dict):
+            continue
+        desc = str(fm.get("description") or "").strip()
+        if not desc:
+            continue
+        q = (fm.get("evidence_quote") or "").strip()
+        ev = Evidence(source_doi=doi, quote=q, section="Methods", confidence=0.0) \
+            if (q and q in evidence) else None
+        cond = (fm.get("condition") or "").strip() or None
+        out.append(FailureMode(description=desc, condition=cond, evidence=ev))
+    return out
+
+
+def build_modifications(m: dict, doi: str, evidence: str) -> list[ProtocolModification]:
+    """Protocol modifications the model reported. Require a change_description; keep
+    cited_doi ONLY if it is a real DOI (a bare reference index like "21" is dropped so
+    it cannot become a fabricated lineage edge)."""
+    out = []
+    for mod in (m.get("modifications") or []):
+        if not isinstance(mod, dict):
+            continue
+        change = str(mod.get("change_description") or "").strip()
+        if not change:
+            continue
+        # cited_doi must be a real DOI AND appear verbatim in the source — this kills both
+        # bare reference indices ("21") and example DOIs parroted from the prompt.
+        cd = str(mod.get("cited_doi") or "").strip()
+        cited = cd if (DOI_RE.fullmatch(cd) and cd in evidence) else None
+        q = (mod.get("evidence_quote") or "").strip()
+        ev = Evidence(source_doi=doi, quote=q, section="Methods", confidence=0.0) \
+            if (q and q in evidence) else None
+        out.append(ProtocolModification(cited_doi=cited, change_description=change, evidence=ev))
+    return out
 
 
 def to_protocol(doi: str, m: dict, evidence: str) -> tuple[OrganoidProtocol, dict]:
@@ -273,6 +318,8 @@ def to_protocol(doi: str, m: dict, evidence: str) -> tuple[OrganoidProtocol, dic
         passaging=passaging,
         timeline=timeline,
         assay_endpoints=endpoints,
+        failure_modes=build_failure_modes(m, doi, evidence),
+        modifications=build_modifications(m, doi, evidence),
     )
     return proto, {"reagents": total, "grounded": grounded}
 
@@ -321,13 +368,14 @@ def main():
             continue
         (PRED_DIR / f"{pmcid}.json").write_text(proto.model_dump_json(indent=2))
         rate = round(g["grounded"] / g["reagents"], 3) if g["reagents"] else None
+        # mirror the GATED values stored on the prediction (DOI-checked, evidence-grounded)
         failure_modes = [
-            {"description": fm.get("description", ""), "condition": fm.get("condition")}
-            for fm in (m.get("failure_modes") or []) if fm.get("description")
+            {"description": fm.description, "condition": fm.condition}
+            for fm in proto.failure_modes
         ]
         modifications = [
-            {"cited_doi": mod.get("cited_doi"), "change_description": mod.get("change_description", "")}
-            for mod in (m.get("modifications") or []) if mod.get("change_description")
+            {"cited_doi": mod.cited_doi, "change_description": mod.change_description}
+            for mod in proto.modifications
         ]
         summary.append({
             "pmcid": pmcid, "doi": doi, "organoid_type": proto.organoid_type.value,
