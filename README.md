@@ -37,7 +37,7 @@ paper (PMC)
   └─ S2       Biolink-validated KGX export (nodes.tsv + edges.tsv + kgx_manifest.json)
   └─ entity normalization (bFGF≡FGF2, RSPO1≡R-spondin1, …)
   └─ analytics pipeline → coverage · quality · consensus · failure modes · lineage · assay endpoints
-  └─ REST API (Datasette plugin, 56 routes)
+  └─ REST API (Datasette plugin, 60 routes)
 ```
 
 ## Analytics API
@@ -94,6 +94,10 @@ GET /analytics/protocol-completeness    per-paper completeness scores (0-6) acro
 GET /analytics/cross-type-concentration-variance  canonicals where dose differs most across organoid types; sorted by max/min per-type-median ratio; ?q= for per-canonical detail; ?min_n= (default 3)
 GET /analytics/reagent-type-enrichment  enrichment ratio (type-rate / global-rate) per canonical per type; ?type=retinal top enriched (taurine 14.85x, blebbistatin 11.83x); ?q= all types; global=top 50; ?min_n= (default 3)
 GET /analytics/grounding-inconsistency  S1 target: 91 canonicals grounded in some papers but ungrounded in others (Y-27632 32%, GlutaMAX 98%); ?sort=total|rate|n_ungrounded; ?min_n= (default 5)
+GET /analytics/canonical-merge-candidates  canonical names likely referring to the same entity (top 100 groups by combined record count); ?min_records= threshold (default 3)
+GET /analytics/grounding-by-kind        grounding rate by reagent kind (signaling vs supplement): reveals 0% supplement grounding gap; ?type= ?kind=
+GET /analytics/temporal-variance        concentration CV trends over time for a canonical reagent; ?q=CHIR99021 required; ?min_n= (default 3)
+GET /analytics/base-media-cooccurrence  conditional P(base_media | source_cell_type) + imputation candidates; ?source= for one cell type
 GET /analytics/assay-endpoints          assay endpoint cluster summary (12 clusters, per-type + cross-type)
 GET /analytics/failure-modes            failure mode cluster summary across the corpus
 GET /analytics/lineage                  DOI→DOI protocol lineage graph (ProtocolModification data)
@@ -186,7 +190,7 @@ serve/
   run.sh                     serve the atlas (Datasette + plugins)
   metadata.yaml              facets + canned queries
   plugins/
-    analytics_endpoint.py    52-route analytics REST API (pure handlers + thin Datasette wrappers)
+    analytics_endpoint.py    60-route analytics REST API (pure handlers + thin Datasette wrappers)
     ask.py                   grounded Q&A (RAG over FTS → local model)
   templates/                 landing, recipe cards, /heatmap, /consensus
   static/atlas.css|js        theme + dark-mode toggle
@@ -208,7 +212,7 @@ outputs/
   analysis/                  pre-computed analytics (coverage, quality, consensus, etc.)
   kgx/                       KGX graph export
   comparison/                pre-computed protocol diffs
-tests/                       offline test suite (1230 tests, no network, no GPU)
+tests/                       offline test suite (1278 tests, no network, no GPU)
 docs/                        SUPERVISOR_CHECKLIST.md, PLAN, RESEARCH_BRIEF
 ```
 
@@ -237,7 +241,7 @@ python pipeline/aggregate_failure_modes.py
 python pipeline/build_lineage.py
 python pipeline/aggregate_assay_endpoints.py
 
-make test                               # run offline test suite (1230 tests)
+make test                               # run offline test suite (1278 tests)
 make validate-batch                     # pre-PR check: tests + prediction schema + evidence
 # or: pytest -q
 ```
