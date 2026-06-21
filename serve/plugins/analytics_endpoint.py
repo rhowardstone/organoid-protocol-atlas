@@ -7,6 +7,7 @@ Routes (all return JSON; read-only, no writes):
   GET /analytics/compare/{pmcid_a}/{pmcid_b}   -- protocol diff (loads cached or computes on-demand)
   GET /analytics/failure-modes                  -- failure mode cluster summary
   GET /analytics/lineage                        -- DOI→DOI protocol lineage graph
+  GET /analytics/substitutions?q=Matrigel       -- search ProtocolModification records
   GET /analytics                                -- index of available analytics
 
 All endpoints degrade gracefully — if the pre-computed file doesn't exist they return
@@ -129,6 +130,37 @@ def handle_compare(pmcid_a: str, pmcid_b: str) -> tuple[dict, int]:
     }, 404
 
 
+def handle_substitutions(query: str, to_query: str | None, organoid_type: str | None) -> tuple[dict, int]:
+    """Search ProtocolModification records for substitutions involving a reagent term."""
+    if not query or not query.strip():
+        return {"error": "pass ?q=reagent_name", "example": "/analytics/substitutions?q=Matrigel"}, 400
+    # Sanitize: max 100 chars, printable only
+    query = query.strip()[:100]
+    if to_query:
+        to_query = to_query.strip()[:100]
+
+    try:
+        import find_substitutions as fs
+    except ImportError:
+        return {"error": "find_substitutions module not available"}, 500
+
+    modifications = fs.load_all_modifications()
+    if organoid_type:
+        modifications = [m for m in modifications
+                         if m.get("organoid_type", "").lower() == organoid_type.lower()]
+
+    hits = fs.search_substitutions(modifications, query, to_query)
+    return {
+        "query": query,
+        "to_query": to_query,
+        "organoid_type": organoid_type,
+        "n_hits": len(hits),
+        "results": hits,
+        "hint": ("No modification records loaded — run: python pipeline/tier1_extract.py"
+                 if not modifications else None),
+    }, 200
+
+
 def handle_index() -> tuple[dict, int]:
     """Analytics endpoint index."""
     return {
@@ -138,6 +170,7 @@ def handle_index() -> tuple[dict, int]:
             "/analytics/failure-modes": "failure mode cluster summary across all corpus papers",
             "/analytics/lineage": "DOI→DOI protocol lineage graph (ProtocolModification data)",
             "/analytics/compare/{pmcid_a}/{pmcid_b}": "protocol diff between two papers",
+            "/analytics/substitutions?q=TERM": "search ProtocolModification records for reagent substitutions",
         },
         "generate": {
             "consensus": "python pipeline/compute_consensus.py --all",
@@ -185,6 +218,14 @@ async def route_compare(datasette, request):
     return Response.json(data, status=status)
 
 
+async def route_substitutions(datasette, request):
+    query = request.args.get("q", "")
+    to_query = request.args.get("to") or None
+    organoid_type = request.args.get("type") or None
+    data, status = handle_substitutions(query, to_query, organoid_type)
+    return Response.json(data, status=status)
+
+
 @hookimpl
 def register_routes():
     return [
@@ -195,4 +236,5 @@ def register_routes():
         (r"^/analytics/lineage$", route_lineage),
         (r"^/analytics/compare/(?P<pmcid_a>PMC\d+)/(?P<pmcid_b>PMC\d+)$",
          route_compare),
+        (r"^/analytics/substitutions$", route_substitutions),
     ]

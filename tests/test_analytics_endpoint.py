@@ -174,3 +174,36 @@ def test_compare_normalizes_case(tmp_path, monkeypatch):
     # lowercase input
     data, status = ae.handle_compare("pmc111", "pmc222")
     assert status == 200
+
+
+# --------------------------------------------------------------------------- #
+# handle_substitutions
+# --------------------------------------------------------------------------- #
+
+def test_substitutions_requires_query():
+    data, status = ae.handle_substitutions("", None, None)
+    assert status == 400
+    assert "error" in data
+
+
+def test_substitutions_empty_when_no_records(monkeypatch):
+    """With no modification records, returns empty results (not an error)."""
+    import find_substitutions as fs
+    monkeypatch.setattr(fs, "PRED_DIR", Path("/tmp/nonexistent_pred"))
+    monkeypatch.setattr(fs, "SUMMARY_PATH", Path("/tmp/nonexistent_sum.json"))
+    data, status = ae.handle_substitutions("Matrigel", None, None)
+    assert status == 200
+    assert data["n_hits"] == 0
+    assert "hint" in data
+
+
+def test_substitutions_truncates_long_query():
+    """Query longer than 100 chars is truncated (no error)."""
+    long_q = "x" * 200
+    # No records but should not crash
+    import find_substitutions as fs
+    from unittest.mock import patch
+    with patch.object(fs, "load_all_modifications", return_value=[]):
+        data, status = ae.handle_substitutions(long_q, None, None)
+    assert status == 200
+    assert len(data["query"]) <= 100
