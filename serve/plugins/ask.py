@@ -60,6 +60,15 @@ Public, license-safe Datasette deployment of the Organoid Protocol Atlas.
 Base URL: https://organoid-protocol-atlas.onrender.com
 Source: https://github.com/rhowardstone/organoid-protocol-atlas
 
+## Deployment note (important for agents)
+
+This service runs on Render's free tier. After a period of inactivity the server
+sleeps and the first request receives a 503 or a connection timeout while it wakes
+(typically 20-60 seconds). If your first fetch fails, retry after 60 seconds before
+concluding the service is unavailable. DNS resolves correctly; the issue is server
+sleep, not DNS. Do NOT fabricate data if the first attempt fails — retry once or
+twice, then report the service as temporarily unavailable.
+
 ## What is available here
 
 This public deployment contains the CC-licensed public subset: {_N_PAPERS} papers, {_N_PROTOCOLS}
@@ -129,6 +138,10 @@ exports. Prefer the JSON endpoints for programmatic use.
 - /analytics/cross-type-concentration-variance  canonicals with highest inter-type dose disagreement (max/min per-type-median ratio); ?q=Activin+A for per-unit breakdown; ?min_n= (default 3); ?min_types= (default 2)
 - /analytics/reagent-type-enrichment   enrichment ratio (type-rate/global-rate) per canonical per type; ?type=retinal for top enriched; ?q=taurine for which types over-use it; global=top 50 pairs; ?min_n= (default 3)
 - /analytics/grounding-inconsistency   S1 grounding-gap targets: canonicals grounded in some papers but ungrounded in others; ?min_n= (default 5); ?sort=total|rate|n_ungrounded
+- /analytics/canonical-merge-candidates  canonical names likely referring to the same entity (normalize: strip supplement/protein/human/recombinant); top 100 groups by combined record count; ?min_records= threshold (default 3)
+- /analytics/grounding-by-kind         grounding rate by reagent kind (signaling vs supplement): n_grounded, n_ungrounded, grounding_rate, top_ungrounded per kind; ?type= for one organoid type; ?kind= for one kind; reveals 0%% supplement grounding gap
+- /analytics/temporal-variance         concentration CV trends over time for a canonical reagent: yearly mean/std/CV, trend label (converging/diverging/stable); ?q=CHIR99021 (required); ?min_n= per-year threshold (default 3)
+- /analytics/base-media-cooccurrence   conditional P(base_media | source_cell_type) from complete papers; imputation candidates (papers with cell_type but missing base_media); ?source= for one cell type
 - /analytics/failure-modes             failure mode cluster summary across the corpus
 - /analytics/lineage                   DOI→DOI protocol lineage graph
 - /analytics/assay-endpoints           assay endpoint cluster summary (per-type + cross-type)
