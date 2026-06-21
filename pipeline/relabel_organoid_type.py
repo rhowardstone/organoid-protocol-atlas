@@ -49,10 +49,12 @@ def map_discovery(dtype: str) -> str | None:
 
 
 def resolve_type(extractor_type: str, discovery_type: str) -> str:
-    """The label to keep: trust a specific extractor call; rescue 'other' from discovery."""
+    """The label to keep: normalize aliases first, then trust a specific extractor call;
+    rescue 'other' from discovery."""
     et = (extractor_type or "").strip().lower()
-    if et and et != "other":
-        return et                              # text-derived specific label wins
+    et = ALIASES.get(et, et)                  # normalize legacy aliases (hepatic→liver)
+    if et and et != "other" and et in VALID:
+        return et                              # text-derived specific (normalised) label wins
     return map_discovery(discovery_type) or (et or "other")
 
 

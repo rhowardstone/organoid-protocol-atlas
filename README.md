@@ -17,7 +17,7 @@ Everything runs on a **local A100** (models via [ollama](https://ollama.com)) �
 
 ## Corpus
 
-- **582 papers · 26 organoid types** (intestinal, cerebral, cardiac, kidney, liver, lung,
+- **582 papers · 25 organoid types** (intestinal, cerebral, cardiac, kidney, liver, lung,
   pancreatic, thyroid, retinal, gastric, and more)
 - **5,458 grounded reagent records** across the full corpus
 - Schema v0.4: `FailureMode`, `ProtocolModification`, `Evidence.sentence_id`
@@ -157,7 +157,7 @@ serve/
   static/atlas.css|js        theme + dark-mode toggle
 exports/
   public/
-    protocols.jsonl          582 papers, 26 organoid types (public snapshot)
+    protocols.jsonl          582 papers, 25 organoid types (public snapshot)
     reagents.jsonl           5,458 grounded reagent records
     manifest.json            counts + schema version
   kgx/
