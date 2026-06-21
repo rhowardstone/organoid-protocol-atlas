@@ -1367,3 +1367,148 @@ def test_summary_includes_matrix_snapshot(tmp_path, monkeypatch):
     snap = data["matrix_snapshot"]
     assert snap.get("Matrigel", 0) == 2
     assert snap.get("Geltrex", 0) == 1
+
+
+# --------------------------------------------------------------------------- #
+# handle_base_media_breakdown
+# --------------------------------------------------------------------------- #
+
+def _write_protocols_for_bm(path, rows):
+    path.write_text("\n".join(json.dumps(r) for r in rows) + "\n")
+
+
+def test_base_media_breakdown_404_when_jsonl_missing(tmp_path, monkeypatch):
+    monkeypatch.setattr(ae, "PROTOCOLS_JSONL", tmp_path / "missing.jsonl")
+    data, status = ae.handle_base_media_breakdown(None)
+    assert status == 404
+    assert "hint" in data
+
+
+def test_base_media_breakdown_400_for_invalid_type(tmp_path, monkeypatch):
+    p = tmp_path / "protocols.jsonl"
+    _write_protocols_for_bm(p, [{"organoid_type": "kidney", "base_media": "DMEM/F12"}])
+    monkeypatch.setattr(ae, "PROTOCOLS_JSONL", p)
+    data, status = ae.handle_base_media_breakdown("../../etc/passwd")
+    assert status == 400
+
+
+def test_base_media_breakdown_returns_all_types(tmp_path, monkeypatch):
+    p = tmp_path / "protocols.jsonl"
+    _write_protocols_for_bm(p, [
+        {"organoid_type": "kidney",    "base_media": "DMEM/F12"},
+        {"organoid_type": "cerebral",  "base_media": "mTeSR1"},
+        {"organoid_type": "intestinal","base_media": "Advanced DMEM/F12"},
+    ])
+    monkeypatch.setattr(ae, "PROTOCOLS_JSONL", p)
+    data, status = ae.handle_base_media_breakdown(None)
+    assert status == 200
+    assert "per_type" in data
+    assert "kidney" in data["per_type"]
+    assert data["n_types"] == 3
+
+
+def test_base_media_breakdown_cross_corpus_totals(tmp_path, monkeypatch):
+    p = tmp_path / "protocols.jsonl"
+    _write_protocols_for_bm(p, [
+        {"organoid_type": "kidney",   "base_media": "DMEM/F12"},
+        {"organoid_type": "kidney",   "base_media": "DMEM/F12"},
+        {"organoid_type": "cerebral", "base_media": "mTeSR1"},
+    ])
+    monkeypatch.setattr(ae, "PROTOCOLS_JSONL", p)
+    data, status = ae.handle_base_media_breakdown(None)
+    assert status == 200
+    assert data["cross_corpus"]["DMEM/F12"] == 2
+    assert data["cross_corpus"]["mTeSR1"] == 1
+
+
+def test_base_media_breakdown_normalises_aliases(tmp_path, monkeypatch):
+    p = tmp_path / "protocols.jsonl"
+    _write_protocols_for_bm(p, [
+        {"organoid_type": "kidney", "base_media": "advanced DMEM/F12"},
+        {"organoid_type": "kidney", "base_media": "Advanced DMEM/F-12"},
+        {"organoid_type": "kidney", "base_media": "AdDMEM/F12"},
+        {"organoid_type": "kidney", "base_media": "DMEM/F-12"},
+        {"organoid_type": "kidney", "base_media": "RPMI 1640"},
+        {"organoid_type": "kidney", "base_media": "RPMI-1640"},
+    ])
+    monkeypatch.setattr(ae, "PROTOCOLS_JSONL", p)
+    data, status = ae.handle_base_media_breakdown("kidney")
+    assert status == 200
+    bm = data["base_media"]
+    assert bm.get("Advanced DMEM/F12", 0) == 3, f"expected 3 Advanced DMEM/F12, got {bm}"
+    assert bm.get("DMEM/F12", 0) == 1, f"expected 1 DMEM/F12, got {bm}"
+    assert bm.get("RPMI 1640", 0) == 2, f"expected 2 RPMI 1640, got {bm}"
+
+
+def test_base_media_breakdown_single_type_filter(tmp_path, monkeypatch):
+    p = tmp_path / "protocols.jsonl"
+    _write_protocols_for_bm(p, [
+        {"organoid_type": "kidney",   "base_media": "DMEM/F12"},
+        {"organoid_type": "cerebral", "base_media": "mTeSR1"},
+    ])
+    monkeypatch.setattr(ae, "PROTOCOLS_JSONL", p)
+    data, status = ae.handle_base_media_breakdown("kidney")
+    assert status == 200
+    assert "organoid_type" in data
+    assert data["organoid_type"] == "kidney"
+    assert "base_media" in data
+    assert "per_type" not in data
+
+
+def test_base_media_breakdown_404_for_unknown_type(tmp_path, monkeypatch):
+    p = tmp_path / "protocols.jsonl"
+    _write_protocols_for_bm(p, [{"organoid_type": "kidney", "base_media": "DMEM/F12"}])
+    monkeypatch.setattr(ae, "PROTOCOLS_JSONL", p)
+    data, status = ae.handle_base_media_breakdown("nonexistent")
+    assert status == 404
+    assert "available_types" in data
+
+
+def test_base_media_breakdown_excludes_other_type(tmp_path, monkeypatch):
+    p = tmp_path / "protocols.jsonl"
+    _write_protocols_for_bm(p, [
+        {"organoid_type": "other",  "base_media": "DMEM"},
+        {"organoid_type": "kidney", "base_media": "mTeSR1"},
+    ])
+    monkeypatch.setattr(ae, "PROTOCOLS_JSONL", p)
+    data, status = ae.handle_base_media_breakdown(None)
+    assert status == 200
+    assert "other" not in data["per_type"]
+    assert data["n_types"] == 1
+
+
+def test_base_media_breakdown_missing_counted_as_not_stated(tmp_path, monkeypatch):
+    p = tmp_path / "protocols.jsonl"
+    _write_protocols_for_bm(p, [{"organoid_type": "kidney"}])
+    monkeypatch.setattr(ae, "PROTOCOLS_JSONL", p)
+    data, status = ae.handle_base_media_breakdown("kidney")
+    assert status == 200
+    assert data["base_media"].get("not_stated", 0) == 1
+
+
+def test_base_media_breakdown_index_entry():
+    data, _ = ae.handle_index()
+    assert "/analytics/base-media-breakdown" in data["endpoints"]
+
+
+def test_summary_includes_base_media_snapshot(tmp_path, monkeypatch):
+    monkeypatch.setattr(ae, "ANALYSIS_DIR", tmp_path)
+    monkeypatch.setattr(ae, "COVERAGE_REPORT_PATH", tmp_path / "coverage_report.json")
+    protocols = tmp_path / "protocols.jsonl"
+    _write_protocols_for_bm(protocols, [
+        {"organoid_type": "kidney",   "base_media": "DMEM/F12"},
+        {"organoid_type": "cerebral", "base_media": "DMEM/F12"},
+        {"organoid_type": "cardiac",  "base_media": "mTeSR1"},
+    ])
+    monkeypatch.setattr(ae, "PROTOCOLS_JSONL", protocols)
+    (tmp_path / "coverage_report.json").write_text(json.dumps({
+        "n_total_papers": 3, "n_organoid_types": 3,
+        "overall_avg_grounding_rate": 0.9, "corpus_pooled_grounding_rate": 0.88,
+        "types_by_completeness": [],
+    }))
+    data, status = ae.handle_summary()
+    assert status == 200
+    assert "base_media_snapshot" in data
+    snap = data["base_media_snapshot"]
+    assert snap.get("DMEM/F12", 0) == 2
+    assert snap.get("mTeSR1", 0) == 1

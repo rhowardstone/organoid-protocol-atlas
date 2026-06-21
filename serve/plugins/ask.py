@@ -95,6 +95,7 @@ exports. Prefer the JSON endpoints for programmatic use.
 - /analytics/universal-reagents        canonical reagents in >= 50% of protocols per type; also cross-type universals
 - /analytics/species-breakdown         species distribution per organoid type (human / mouse / other); ?type=kidney for one type
 - /analytics/matrix-breakdown          extracellular matrix usage per organoid type (Matrigel / Geltrex / Vitronectin / ...); ?type=kidney for one type
+- /analytics/base-media-breakdown      base media usage per organoid type (DMEM/F12 / mTeSR1 / Advanced DMEM/F12 / ...); ?type=kidney for one type
 - /analytics/failure-modes             failure mode cluster summary across the corpus
 - /analytics/lineage                   DOI→DOI protocol lineage graph
 - /analytics/assay-endpoints           assay endpoint cluster summary (per-type + cross-type)
