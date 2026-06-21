@@ -1,0 +1,30 @@
+{
+  "method": "Starling-style frontier-judge evidence-span fidelity (QC signal, NOT human gold; S3 remains ground truth)",
+  "judge": "Claude frontier subagents (5 adversarial judges, ~24 records each)",
+  "sample": "deterministic organoid-type-stratified, n=120, from exports/public/reagents.jsonl (records with concentration + evidence_quote; 1380 eligible)",
+  "generated_at": "2026-06-21T13:32:00+00:00",
+  "counts": {
+    "total": 120,
+    "supported": 112,
+    "partial": 5,
+    "unsupported": 3,
+    "invalid": 0
+  },
+  "supported_rate": 0.9333,
+  "supported_or_partial_rate": 0.975,
+  "unsupported_rate": 0.025,
+  "flagged_unsupported": [
+    {
+      "id": 1576,
+      "reason": "in-vivo dose mg kg-1 day-1, not culture concentration; role wrong"
+    },
+    {
+      "id": 1213,
+      "reason": "quote has FGF2 2.5 nmol/L, not EGF 50 ng/mL"
+    },
+    {
+      "id": 7595,
+      "reason": "10% is photoreceptor increase, not taurine concentration"
+    }
+  ]
+}

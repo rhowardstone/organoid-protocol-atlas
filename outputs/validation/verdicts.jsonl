@@ -1,0 +1,120 @@
+{"id": 1576, "verdict": "unsupported", "reason": "in-vivo dose mg kg-1 day-1, not culture concentration; role wrong"}
+{"id": 7850, "verdict": "supported", "reason": "quote states 10 µM Y-27632"}
+{"id": 6106, "verdict": "supported", "reason": "quote states TGF-β3, 10 ng/mL"}
+{"id": 4858, "verdict": "supported", "reason": "quote states VEGFA (50 ng/mL)"}
+{"id": 4769, "verdict": "supported", "reason": "quote states EGF, 20ng/ml"}
+{"id": 1532, "verdict": "supported", "reason": "quote states 50 ng/mL EGF"}
+{"id": 6036, "verdict": "supported", "reason": "quote states 200 ng/mL EphrinA1-Fc"}
+{"id": 518, "verdict": "supported", "reason": "quote states 250 nM of LDN193189"}
+{"id": 7741, "verdict": "supported", "reason": "quote states 100 ng/ml BMP4"}
+{"id": 2236, "verdict": "partial", "reason": "50% refers to conditioned medium, not Wnt protein concentration"}
+{"id": 6117, "verdict": "supported", "reason": "quote states 5 μM A83-01"}
+{"id": 7538, "verdict": "supported", "reason": "quote states 1000 U/mL leukemia inhibitory factor"}
+{"id": 2707, "verdict": "partial", "reason": "50% refers to conditioned medium, not Wnt3a protein concentration"}
+{"id": 5854, "verdict": "supported", "reason": "quote states 100 ng/mL FGF-10"}
+{"id": 7654, "verdict": "supported", "reason": "quote states 10 µm Y27632 (formatting)"}
+{"id": 4730, "verdict": "supported", "reason": "quote states 1 μM IWP-4"}
+{"id": 623, "verdict": "supported", "reason": "quote states 33.3 ng/mL 17-β-Estradiol"}
+{"id": 491, "verdict": "supported", "reason": "quote states 3 μM CHIR99021"}
+{"id": 3638, "verdict": "supported", "reason": "quote states human EGF (50 ng/ml)"}
+{"id": 1681, "verdict": "supported", "reason": "quote states 16 nM ATRA"}
+{"id": 1547, "verdict": "supported", "reason": "quote states 10 µM blebbistatin"}
+{"id": 1122, "verdict": "supported", "reason": "quote states 500 nM A83-01"}
+{"id": 1889, "verdict": "supported", "reason": "quote states 10 ng/mL Hydrocortisone"}
+{"id": 7396, "verdict": "supported", "reason": "quote states 1μg/ml of Doxycycline"}
+{"id": 5338, "verdict": "supported", "reason": "quote states 200 ng/mL IFNγ"}
+{"id": 7467, "verdict": "supported", "reason": "quote states 100 ng/mL VEGF-A"}
+{"id": 392, "verdict": "supported", "reason": "quote states 500 nM A83-01"}
+{"id": 7849, "verdict": "supported", "reason": "quote states 4 ng/mL bFGF"}
+{"id": 5667, "verdict": "supported", "reason": "quote states 30 ng/mL MCSF"}
+{"id": 2397, "verdict": "supported", "reason": "quote states 25 ng/mL VEGF"}
+{"id": 2353, "verdict": "supported", "reason": "quote states 20 ng/mL EGF"}
+{"id": 1706, "verdict": "supported", "reason": "quote states 100 ng/mL HGF"}
+{"id": 4376, "verdict": "supported", "reason": "quote states A83-01 0.5 µM"}
+{"id": 520, "verdict": "supported", "reason": "quote states 1 µM IWP2"}
+{"id": 6477, "verdict": "supported", "reason": "quote states 3 µM CHIR99021"}
+{"id": 6652, "verdict": "supported", "reason": "quote states FGF10 100 ng/ml"}
+{"id": 3563, "verdict": "supported", "reason": "quote states 10% R-spondin1 medium"}
+{"id": 7542, "verdict": "supported", "reason": "quote states 1 µM TGFβi"}
+{"id": 4780, "verdict": "supported", "reason": "quote states 1000 IU/mL IFN-λ1"}
+{"id": 2017, "verdict": "supported", "reason": "quote states 10 ng/ml Activin A"}
+{"id": 7663, "verdict": "supported", "reason": "quote states 250 nM SANT-1"}
+{"id": 6083, "verdict": "supported", "reason": "quote states 200 ng/mL Noggin"}
+{"id": 634, "verdict": "supported", "reason": "quote states 500 nmol/L SB202190"}
+{"id": 7840, "verdict": "supported", "reason": "quote states 10 ng/mL HGF"}
+{"id": 7757, "verdict": "supported", "reason": "quote states 10 ng/ml FGF10"}
+{"id": 1149, "verdict": "supported", "reason": "quote states 3 µM CHIR"}
+{"id": 1449, "verdict": "supported", "reason": "quote states 5 µM SU5402"}
+{"id": 7882, "verdict": "supported", "reason": "quote states 100 ng/mL RSPO1"}
+{"id": 1595, "verdict": "supported", "reason": "quote states Y-27632 at 10 µM"}
+{"id": 7703, "verdict": "supported", "reason": "EGF 50 ng/mL matches quote"}
+{"id": 5820, "verdict": "supported", "reason": "hFGF10 100 ng/mL matches quote"}
+{"id": 447, "verdict": "supported", "reason": "bFGF 4 ng/mL matches quote"}
+{"id": 508, "verdict": "supported", "reason": "FGF2 12.5 ng/ml matches quote"}
+{"id": 7622, "verdict": "supported", "reason": "IL-15 20 ng/ml matches quote"}
+{"id": 2696, "verdict": "supported", "reason": "IL-3 1 ng/ml matches quote"}
+{"id": 2398, "verdict": "supported", "reason": "Y-27632 10 µM matches; role wrong (inhibitor not agonist)"}
+{"id": 4767, "verdict": "supported", "reason": "Y-27632 10 µM matches quote"}
+{"id": 1780, "verdict": "supported", "reason": "HGF 25 ng/ml matches quote"}
+{"id": 2588, "verdict": "supported", "reason": "HGF 50 ng/mL matches quote"}
+{"id": 760, "verdict": "supported", "reason": "EGF 50 ng/ml matches quote"}
+{"id": 7744, "verdict": "supported", "reason": "Follistatin 20 ng/ml matches quote"}
+{"id": 6852, "verdict": "supported", "reason": "mNoggin 100 ng/ml matches quote"}
+{"id": 6135, "verdict": "supported", "reason": "FGF10 100 ng/mL matches quote"}
+{"id": 2106, "verdict": "supported", "reason": "purmorphamine 1 µM matches quote"}
+{"id": 1743, "verdict": "supported", "reason": "Noggin 100 ng/mL matches quote"}
+{"id": 3298, "verdict": "partial", "reason": "quote gives ambiguous range '1 or 10 µM'"}
+{"id": 6577, "verdict": "supported", "reason": "GlutaMAX 2 mM matches quote"}
+{"id": 6881, "verdict": "supported", "reason": "bFGF 20 ng/ml matches quote"}
+{"id": 1213, "verdict": "unsupported", "reason": "quote has FGF2 2.5 nmol/L, not EGF 50 ng/mL"}
+{"id": 7971, "verdict": "supported", "reason": "FGF-2 10 ng/mL matches quote"}
+{"id": 2677, "verdict": "supported", "reason": "Vitamin C 0.25 mM matches quote"}
+{"id": 398, "verdict": "supported", "reason": "Noggin conditioned medium 25% matches quote"}
+{"id": 556, "verdict": "supported", "reason": "BMP4 55 ng ml-1 stated directly"}
+{"id": 8027, "verdict": "supported", "reason": "10 µM Y-27632 stated directly"}
+{"id": 1588, "verdict": "supported", "reason": "FLT3 ligand 100 ng/ml stated directly"}
+{"id": 615, "verdict": "supported", "reason": "1 µM 4-Hydroxytamoxifen stated directly"}
+{"id": 2848, "verdict": "supported", "reason": "100 ng/mL EGF stated directly"}
+{"id": 662, "verdict": "supported", "reason": "100 ng/ml VEGF-A stated directly"}
+{"id": 538, "verdict": "supported", "reason": "1000 ng/mL Wnt10B stated directly"}
+{"id": 7620, "verdict": "supported", "reason": "0.05 ng/ml Il-6 stated directly"}
+{"id": 2695, "verdict": "supported", "reason": "10 ng/ml stem cell factor stated directly"}
+{"id": 7099, "verdict": "supported", "reason": "1.5 µM CHIR99021 stated directly"}
+{"id": 7074, "verdict": "supported", "reason": "10 ng/mL BDNF stated directly"}
+{"id": 691, "verdict": "supported", "reason": "EGF 50 ng/mL stated directly"}
+{"id": 7941, "verdict": "supported", "reason": "10 nM Retinoic acid stated directly"}
+{"id": 3664, "verdict": "partial", "reason": "500 bound to R-Spondin only by list position 100/500/100"}
+{"id": 6345, "verdict": "supported", "reason": "100 ng ml-1 human FGF10 stated directly"}
+{"id": 2167, "verdict": "supported", "reason": "PD0325901 2 µM stated directly"}
+{"id": 4636, "verdict": "supported", "reason": "100 ng/mL BMP7 stated directly"}
+{"id": 3420, "verdict": "supported", "reason": "2 µM TGF-β RI kinase inhibitor stated directly"}
+{"id": 4978, "verdict": "supported", "reason": "10% noggin-conditioned medium stated directly"}
+{"id": 5067, "verdict": "supported", "reason": "1 µg/mL heparin stated directly"}
+{"id": 470, "verdict": "supported", "reason": "10 nM gastrin stated directly"}
+{"id": 3133, "verdict": "supported", "reason": "100 ng mL-1 Activin A stated directly"}
+{"id": 260, "verdict": "supported", "reason": "100 ng/mL Noggin stated directly"}
+{"id": 5110, "verdict": "supported", "reason": "Y-27632 at 10 µM stated directly"}
+{"id": 2678, "verdict": "supported", "reason": "quote states 0.25 μM Sant1"}
+{"id": 3183, "verdict": "supported", "reason": "quote states 10 μM Y-27632"}
+{"id": 5129, "verdict": "supported", "reason": "quote states 20µM ROCKi"}
+{"id": 8029, "verdict": "supported", "reason": "quote states 1 µM A8301"}
+{"id": 4002, "verdict": "supported", "reason": "quote states 50 μg/ml fibroblast growth factor"}
+{"id": 7595, "verdict": "unsupported", "reason": "10% is photoreceptor increase, not taurine concentration"}
+{"id": 4142, "verdict": "supported", "reason": "quote states 10 ng/ml EGF"}
+{"id": 8001, "verdict": "partial", "reason": "50 μl is a volume, not a concentration"}
+{"id": 1574, "verdict": "supported", "reason": "quote states 1 mg/ml stock concentration"}
+{"id": 7615, "verdict": "supported", "reason": "quote states 25 ng/ml TPO"}
+{"id": 5027, "verdict": "supported", "reason": "quote states 50 ng/ml BMP2"}
+{"id": 5941, "verdict": "supported", "reason": "quote states 5 µM IWR-1"}
+{"id": 6956, "verdict": "supported", "reason": "quote states SAG 100nM"}
+{"id": 1781, "verdict": "supported", "reason": "quote states 25 ng/ml Noggin"}
+{"id": 5963, "verdict": "supported", "reason": "quote states 1 μM P4"}
+{"id": 3663, "verdict": "supported", "reason": "Wnt is first value 100 ng/mL"}
+{"id": 6483, "verdict": "supported", "reason": "quote states 33 ng/ml progesterone"}
+{"id": 192, "verdict": "supported", "reason": "quote states 100 ng/mL TNFα"}
+{"id": 3755, "verdict": "supported", "reason": "quote states 100 ng/mL DKK-1"}
+{"id": 3419, "verdict": "supported", "reason": "quote states 100 μg/mL 2-phospho-L-ascorbic acid"}
+{"id": 1744, "verdict": "supported", "reason": "quote states 500 ng/mL R-spondin1"}
+{"id": 4212, "verdict": "supported", "reason": "quote states FGF2 10 ng/ml"}
+{"id": 6579, "verdict": "supported", "reason": "quote states 100 nM hydrocortisone"}
+{"id": 4508, "verdict": "supported", "reason": "quote states 3 μM CHIR99021"}
