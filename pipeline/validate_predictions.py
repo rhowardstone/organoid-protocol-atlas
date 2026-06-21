@@ -174,8 +174,15 @@ def validate_file(path: Path) -> Result:
         r.error(f"source_doi {doi!r} does not start with '10.' — not a valid DOI")
 
     # --- organoid_type ---
-    VALID_TYPES = {"intestinal", "gastric", "cerebral", "kidney", "liver",
-                   "lung", "retinal", "pancreatic", "other"}
+    VALID_TYPES = {
+        "intestinal", "gastric", "cerebral", "kidney", "liver",
+        "lung", "retinal", "pancreatic",
+        "tumor", "cardiac", "vascular", "cholangiocyte", "skin",
+        "mammary", "endometrial", "bone", "prostate", "inner-ear",
+        "salivary-gland", "bladder", "neuromuscular", "esophageal",
+        "blood-brain-barrier", "thyroid", "fallopian-tube",
+        "other",
+    }
     ot = data.get("organoid_type", "other")
     if ot not in VALID_TYPES:
         r.warn(f"organoid_type {ot!r} not in known set {sorted(VALID_TYPES)}")
