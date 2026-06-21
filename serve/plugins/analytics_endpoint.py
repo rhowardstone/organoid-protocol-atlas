@@ -22,6 +22,7 @@ Routes (all return JSON; read-only, no writes):
   GET /analytics/protocol-complexity          -- per-type protocol complexity: avg signaling factors, supplements, grounding rate
   GET /analytics/reporting-gaps              -- field reporting rates across the corpus (species/matrix/base_media/passaging/timeline) — transparency audit
   GET /analytics/year-trend                  -- yearly trends: paper count, avg signaling factors, avg grounding rate, field reporting rates
+  GET /analytics/grounding-quality           -- reagent grounding coverage: resolved vs ungrounded, by type and by kind; top ungrounded canonical names
   GET /analytics                                -- index of available analytics
 
 All endpoints degrade gracefully — if the pre-computed file doesn't exist they return
@@ -1510,6 +1511,107 @@ def handle_year_trend() -> tuple[dict, int]:
     }, 200
 
 
+def handle_grounding_quality(organoid_type: str | None) -> tuple[dict, int]:
+    """Reagent grounding coverage from reagents.jsonl.
+
+    Reports grounding_rate (fraction of reagents with grounded=1), evidence_quote_rate
+    (fraction with a verbatim evidence quote), and suspect_unit_count. Broken down
+    cross-corpus, per organoid type, and by reagent kind (signaling/supplement/
+    small_molecule/matrix). Also surfaces the top ungrounded canonical names to
+    prioritise future SRI grounding work (Issue #8 S1).
+
+    Optional: ?type=kidney filters to one organoid type.
+    """
+    if not REAGENTS_JSONL.exists():
+        return {
+            "error": "reagents.jsonl not found",
+            "hint": "Run: python pipeline/export_public.py",
+        }, 404
+
+    if organoid_type is not None and not re.match(r'^[\w-]+$', organoid_type):
+        return {"error": "invalid organoid_type"}, 400
+
+    try:
+        rows = [
+            json.loads(line)
+            for line in REAGENTS_JSONL.read_text().splitlines()
+            if line.strip()
+        ]
+    except (json.JSONDecodeError, OSError) as exc:
+        return {"error": f"reagents.jsonl unreadable: {exc}"}, 500
+
+    if organoid_type:
+        rows = [r for r in rows if r.get("organoid_type") == organoid_type]
+        if not rows:
+            return {
+                "error": f"no reagents found for organoid_type '{organoid_type}'",
+                "hint": "check /analytics/coverage for available types",
+            }, 404
+
+    def _stats(subset: list[dict]) -> dict:
+        n = len(subset)
+        if n == 0:
+            return {"n_reagents": 0, "n_grounded": 0, "grounding_rate": None,
+                    "n_with_quote": 0, "evidence_quote_rate": None, "n_suspect_unit": 0}
+        n_grounded = sum(1 for r in subset if r.get("grounded"))
+        n_quote = sum(1 for r in subset if r.get("evidence_quote"))
+        n_suspect = sum(1 for r in subset if r.get("suspect_unit"))
+        return {
+            "n_reagents": n,
+            "n_grounded": n_grounded,
+            "grounding_rate": round(n_grounded / n, 4),
+            "n_with_quote": n_quote,
+            "evidence_quote_rate": round(n_quote / n, 4),
+            "n_suspect_unit": n_suspect,
+        }
+
+    cross = _stats(rows)
+
+    # per organoid type
+    by_type: dict[str, list] = {}
+    for r in rows:
+        ot = r.get("organoid_type") or "unknown"
+        by_type.setdefault(ot, []).append(r)
+    per_type = {ot: _stats(subset) for ot, subset in sorted(by_type.items())}
+
+    # by reagent kind
+    by_kind: dict[str, list] = {}
+    for r in rows:
+        k = r.get("kind") or "unknown"
+        by_kind.setdefault(k, []).append(r)
+    by_kind_stats = {k: _stats(subset) for k, subset in sorted(by_kind.items())}
+
+    # top ungrounded canonical names (for S1 grounding prioritization)
+    ungrounded = [r.get("canonical") or r.get("name") or "unknown"
+                  for r in rows if not r.get("grounded")]
+    from collections import Counter
+    top_ungrounded = [
+        {"canonical": name, "count": cnt}
+        for name, cnt in Counter(ungrounded).most_common(20)
+    ]
+
+    ranking_by_grounding_rate = sorted(
+        [ot for ot in per_type if per_type[ot]["n_reagents"] >= 5],
+        key=lambda ot: per_type[ot]["grounding_rate"] or 0,
+        reverse=True,
+    )
+
+    result: dict = {
+        "cross_corpus": cross,
+        "per_type": per_type if organoid_type is None else None,
+        "by_kind": by_kind_stats,
+        "top_ungrounded": top_ungrounded,
+        "n_types": len(per_type),
+    }
+    if organoid_type is None:
+        result["ranking_by_grounding_rate"] = ranking_by_grounding_rate
+    else:
+        result["organoid_type"] = organoid_type
+        del result["per_type"]
+
+    return result, 200
+
+
 def handle_mior() -> tuple[dict, int]:
     """Return pre-computed MIOR completeness report."""
     path = ANALYSIS_DIR / "mior_completeness.json"
@@ -1548,6 +1650,7 @@ def handle_index() -> tuple[dict, int]:
             "/analytics/protocol-complexity": "per-type protocol complexity: avg n_signaling_factors, n_supplements, n_figure_confirmed, grounding_rate with min/max/n; ranked by complexity",
             "/analytics/reporting-gaps": "field reporting rates across the corpus (species/matrix/base_media/source_cell_type/passaging/timeline) — transparency audit; optional ?type=kidney",
             "/analytics/year-trend": "yearly trends: paper count, avg n_signaling_factors, avg grounding_rate, field reporting rates by year — shows how the field has evolved",
+            "/analytics/grounding-quality": "reagent grounding coverage: grounding_rate, evidence_quote_rate, suspect_unit_count — by type and by kind; top ungrounded canonical names for S1 prioritisation",
             "/analytics/assay-endpoints": "assay endpoint cluster summary (per type + cross-type)",
             "/analytics/quality": "per-paper quality scores (gold/silver/bronze) + corpus summary",
             "/analytics/mior": "MIOR completeness report (Minimum Information About an Organoid Research)",
@@ -1732,6 +1835,12 @@ async def route_year_trend(datasette, request):
     return Response.json(data, status=status)
 
 
+async def route_grounding_quality(datasette, request):
+    organoid_type = request.args.get("type") or None
+    data, status = handle_grounding_quality(organoid_type)
+    return Response.json(data, status=status)
+
+
 async def route_candidates(datasette, request):
     data, status = handle_candidates()
     return Response.json(data, status=status)
@@ -1767,6 +1876,7 @@ def register_routes():
         (r"^/analytics/protocol-complexity$", route_protocol_complexity),
         (r"^/analytics/reporting-gaps$", route_reporting_gaps),
         (r"^/analytics/year-trend$", route_year_trend),
+        (r"^/analytics/grounding-quality$", route_grounding_quality),
         (r"^/analytics/assay-endpoints$", route_assay_endpoints),
         (r"^/analytics/quality$", route_quality),
         (r"^/analytics/mior$", route_mior),

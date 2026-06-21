@@ -2077,3 +2077,178 @@ def test_year_trend_not_stated_matrix_not_counted_as_reported(tmp_path, monkeypa
     data, _ = ae.handle_year_trend()
     rr = data["years"]["2024"]["reporting_rates"]
     assert rr["matrix"] == 0.5
+
+
+# ===========================================================================
+# handle_grounding_quality tests
+# ===========================================================================
+
+def _write_reagents_for_gq(path, rows):
+    """Write minimal reagents.jsonl rows for grounding-quality tests."""
+    lines = []
+    for r in rows:
+        obj = {
+            "organoid_type": r.get("organoid_type", "kidney"),
+            "kind": r.get("kind", "signaling"),
+            "canonical": r.get("canonical", "EGF"),
+            "name": r.get("name", "EGF"),
+            "grounded": r.get("grounded", 1),
+            "evidence_quote": r.get("evidence_quote"),
+            "suspect_unit": r.get("suspect_unit", 0),
+        }
+        lines.append(json.dumps(obj))
+    path.write_text("\n".join(lines) + "\n")
+
+
+def test_grounding_quality_404_when_jsonl_missing(tmp_path, monkeypatch):
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", tmp_path / "missing.jsonl")
+    data, status = ae.handle_grounding_quality(None)
+    assert status == 404
+    assert "error" in data
+
+
+def test_grounding_quality_returns_200(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_gq(p, [{"grounded": 1}, {"grounded": 0}])
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", p)
+    data, status = ae.handle_grounding_quality(None)
+    assert status == 200
+    assert "cross_corpus" in data
+    assert "by_kind" in data
+    assert "top_ungrounded" in data
+    assert "ranking_by_grounding_rate" in data
+
+
+def test_grounding_quality_rate_correct(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_gq(p, [
+        {"grounded": 1}, {"grounded": 1}, {"grounded": 0},
+    ])
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", p)
+    data, _ = ae.handle_grounding_quality(None)
+    cc = data["cross_corpus"]
+    assert cc["n_reagents"] == 3
+    assert cc["n_grounded"] == 2
+    assert abs(cc["grounding_rate"] - 2/3) < 1e-4
+
+
+def test_grounding_quality_evidence_quote_rate(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_gq(p, [
+        {"grounded": 1, "evidence_quote": "EGF 50 ng/mL"},
+        {"grounded": 0, "evidence_quote": None},
+    ])
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", p)
+    data, _ = ae.handle_grounding_quality(None)
+    assert data["cross_corpus"]["evidence_quote_rate"] == 0.5
+    assert data["cross_corpus"]["n_with_quote"] == 1
+
+
+def test_grounding_quality_by_kind_breakdown(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_gq(p, [
+        {"kind": "signaling", "grounded": 1},
+        {"kind": "signaling", "grounded": 0},
+        {"kind": "supplement", "grounded": 1},
+    ])
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", p)
+    data, _ = ae.handle_grounding_quality(None)
+    bk = data["by_kind"]
+    assert "signaling" in bk
+    assert "supplement" in bk
+    assert bk["signaling"]["n_reagents"] == 2
+    assert bk["signaling"]["grounding_rate"] == 0.5
+    assert bk["supplement"]["grounding_rate"] == 1.0
+
+
+def test_grounding_quality_per_type(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_gq(p, [
+        {"organoid_type": "kidney", "grounded": 1},
+        {"organoid_type": "liver", "grounded": 0},
+    ])
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", p)
+    data, _ = ae.handle_grounding_quality(None)
+    assert "per_type" in data
+    assert "kidney" in data["per_type"]
+    assert "liver" in data["per_type"]
+    assert data["per_type"]["kidney"]["grounding_rate"] == 1.0
+    assert data["per_type"]["liver"]["grounding_rate"] == 0.0
+
+
+def test_grounding_quality_top_ungrounded(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_gq(p, [
+        {"canonical": "DMSO", "grounded": 0},
+        {"canonical": "DMSO", "grounded": 0},
+        {"canonical": "BSA", "grounded": 0},
+        {"canonical": "EGF", "grounded": 1},
+    ])
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", p)
+    data, _ = ae.handle_grounding_quality(None)
+    top = data["top_ungrounded"]
+    assert len(top) >= 1
+    assert top[0]["canonical"] == "DMSO"
+    assert top[0]["count"] == 2
+
+
+def test_grounding_quality_single_type_filter(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_gq(p, [
+        {"organoid_type": "kidney", "grounded": 1},
+        {"organoid_type": "liver", "grounded": 0},
+    ])
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", p)
+    data, status = ae.handle_grounding_quality("kidney")
+    assert status == 200
+    assert data["organoid_type"] == "kidney"
+    assert "per_type" not in data
+    assert "ranking_by_grounding_rate" not in data
+    assert data["cross_corpus"]["n_reagents"] == 1
+
+
+def test_grounding_quality_404_for_unknown_type(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_gq(p, [{"organoid_type": "kidney"}])
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", p)
+    data, status = ae.handle_grounding_quality("unknowntype")
+    assert status == 404
+    assert "error" in data
+
+
+def test_grounding_quality_400_for_invalid_type(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_gq(p, [])
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", p)
+    data, status = ae.handle_grounding_quality("../evil")
+    assert status == 400
+
+
+def test_grounding_quality_ranking_order(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    rows = (
+        [{"organoid_type": "kidney", "grounded": 1}] * 10 +
+        [{"organoid_type": "liver", "grounded": 0}] * 10
+    )
+    _write_reagents_for_gq(p, rows)
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", p)
+    data, _ = ae.handle_grounding_quality(None)
+    ranking = data["ranking_by_grounding_rate"]
+    assert ranking[0] == "kidney"
+    assert ranking[-1] == "liver"
+
+
+def test_grounding_quality_index_entry():
+    data, _ = ae.handle_index()
+    assert "/analytics/grounding-quality" in data["endpoints"]
+
+
+def test_grounding_quality_suspect_unit_counted(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_gq(p, [
+        {"grounded": 1, "suspect_unit": 1},
+        {"grounded": 1, "suspect_unit": 0},
+    ])
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", p)
+    data, _ = ae.handle_grounding_quality(None)
+    assert data["cross_corpus"]["n_suspect_unit"] == 1
