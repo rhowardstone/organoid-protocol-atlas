@@ -921,3 +921,29 @@ def test_live_rte_global():
     assert len(data["top_enriched"]) >= 20
     # All enrichment ratios > 1.0
     assert all(e["enrichment_ratio"] > 1.0 for e in data["top_enriched"])
+
+
+# ---------------------------------------------------------------------------
+# Route 56 — /analytics/grounding-inconsistency live smoke tests
+# ---------------------------------------------------------------------------
+@require_reagents
+def test_live_gi_default():
+    data, status = ae.handle_grounding_inconsistency(5, "total")
+    assert status == 200
+    assert data["n_inconsistent_canonicals"] >= 50
+    # Sorted desc by n_total_papers
+    totals = [e["n_total_papers"] for e in data["canonicals"]]
+    assert totals == sorted(totals, reverse=True)
+    # Y-27632 is the largest inconsistent canonical in the corpus
+    top_canon = data["canonicals"][0]["canonical"]
+    assert top_canon in ("Y-27632", "R-spondin1", "EGF", "Noggin")
+
+
+@require_reagents
+def test_live_gi_sort_rate():
+    data, status = ae.handle_grounding_inconsistency(5, "rate")
+    assert status == 200
+    rates = [e["ungrounded_rate"] for e in data["canonicals"]]
+    assert rates == sorted(rates, reverse=True)
+    # Top by rate: GlutaMAX or B27 (both ~99% ungrounded)
+    assert data["canonicals"][0]["ungrounded_rate"] >= 0.9

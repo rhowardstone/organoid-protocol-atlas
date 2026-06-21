@@ -50,6 +50,7 @@ Routes (all return JSON; read-only, no writes):
   GET /analytics/protocol-completeness       -- per-paper completeness scores (0-6) across species/matrix/base_media/passaging/timeline/assay_endpoints; histogram + per-type ranking + top/bottom 20 papers; ?type= for one type; live from protocols.jsonl
   GET /analytics/cross-type-concentration-variance -- canonicals where dose differs most across organoid types; sorted by max/min median ratio; ?q= for per-canonical+unit breakdown; ?min_n= per-type record threshold; live from reagents.jsonl
   GET /analytics/reagent-type-enrichment       -- per-type enrichment ratios: (type-rate / global-rate) for each canonical; ?type=retinal for top enriched; ?q=taurine for which types over-use it; global returns top 50 pairs; ?min_n= threshold; live from both JSONLs
+  GET /analytics/grounding-inconsistency       -- canonicals grounded in some papers but not others (S1 grounding gap targets); sorted by n_total_papers; ?min_n= threshold; ?sort=total|rate|n_ungrounded; live from reagents.jsonl
   GET /analytics                                -- index of available analytics
 
 All endpoints degrade gracefully — if the pre-computed file doesn't exist they return
@@ -3692,6 +3693,91 @@ def handle_source_cell_reagent_profile(source=None, min_papers=3):
     }, 200
 
 
+def handle_grounding_inconsistency(
+    min_n: int = 5,
+    sort_by: str = "total",
+) -> tuple[dict, int]:
+    """Route 56: canonicals that appear both grounded and ungrounded across papers.
+
+    S1 grounding-gap signal: high-n canonicals with a large ungrounded_rate are
+    the highest-priority targets for automated re-grounding. Returns each canonical
+    with n_grounded_papers, n_ungrounded_papers, n_total_papers, ungrounded_rate.
+
+    sort_by: 'total' (most papers first), 'rate' (highest ungrounded fraction first),
+             'n_ungrounded' (most ungrounded-paper count first).
+    """
+    if not REAGENTS_JSONL.exists():
+        return {
+            "error": "reagents.jsonl not found",
+            "hint": "Run: python pipeline/export_public.py",
+        }, 404
+
+    if sort_by not in ("total", "rate", "n_ungrounded"):
+        return {"error": "sort_by must be 'total', 'rate', or 'n_ungrounded'"}, 400
+
+    from collections import defaultdict
+
+    try:
+        reagents = [
+            json.loads(line)
+            for line in REAGENTS_JSONL.read_text().splitlines()
+            if line.strip()
+        ]
+    except (json.JSONDecodeError, OSError) as exc:
+        return {"error": f"reagents.jsonl unreadable: {exc}"}, 500
+
+    canon_grounded: dict = defaultdict(set)
+    canon_ungrounded: dict = defaultdict(set)
+    canon_types: dict = defaultdict(set)
+
+    for r in reagents:
+        c = r.get("canonical", "")
+        doi = r.get("doi", "")
+        grounded = r.get("grounded", 0)
+        typ = r.get("organoid_type", "")
+        if not c or not doi:
+            continue
+        if grounded:
+            canon_grounded[c].add(doi)
+        else:
+            canon_ungrounded[c].add(doi)
+        if typ:
+            canon_types[c].add(typ)
+
+    rows = []
+    all_canons = set(canon_grounded.keys()) | set(canon_ungrounded.keys())
+    for c in all_canons:
+        ng = len(canon_grounded.get(c, set()))
+        nu = len(canon_ungrounded.get(c, set()))
+        total = ng + nu
+        if total < min_n or ng == 0 or nu == 0:
+            continue
+        rows.append({
+            "canonical": c,
+            "n_grounded_papers": ng,
+            "n_ungrounded_papers": nu,
+            "n_total_papers": total,
+            "ungrounded_rate": round(nu / total, 4),
+            "n_types": len(canon_types.get(c, set())),
+        })
+
+    if sort_by == "total":
+        rows.sort(key=lambda x: -x["n_total_papers"])
+    elif sort_by == "rate":
+        rows.sort(key=lambda x: -x["ungrounded_rate"])
+    else:
+        rows.sort(key=lambda x: -x["n_ungrounded_papers"])
+
+    n_inconsistent_records = sum(r["n_ungrounded_papers"] for r in rows)
+    return {
+        "n_inconsistent_canonicals": len(rows),
+        "n_inconsistent_ungrounded_records": n_inconsistent_records,
+        "min_n_papers": min_n,
+        "sort_by": sort_by,
+        "canonicals": rows,
+    }, 200
+
+
 def handle_reagent_type_enrichment(
     organoid_type: str | None,
     query: str | None,
@@ -4691,6 +4777,7 @@ def handle_index() -> tuple[dict, int]:
             "/analytics/protocol-completeness": "per-paper completeness scores (0-6) across 6 optionally-reported fields (species/matrix/base_media/passaging/timeline/assay_endpoints); global score histogram + per-type ranking + top/bottom 20 papers; ?type= for one type",
             "/analytics/cross-type-concentration-variance": "canonicals where the consensus dose differs most across organoid types; sorted by max/min per-type-median ratio; ?q=Activin+A for per-unit detail; ?min_n= per-type record threshold (default 3); ?min_types= (default 2)",
             "/analytics/reagent-type-enrichment": "enrichment ratio (type-rate / global-rate) for each canonical within each organoid type; ?type=retinal for top enriched canonicals; ?q=taurine for which types over-use it; global = top 50 pairs; ?min_n= threshold (default 3)",
+            "/analytics/grounding-inconsistency": "S1 grounding-gap targets: canonicals grounded in some papers but ungrounded in others; n_grounded + n_ungrounded + rate; ?min_n= (default 5); ?sort=total|rate|n_ungrounded",
             "/analytics/assay-endpoints": "assay endpoint cluster summary (per type + cross-type)",
             "/analytics/quality": "per-paper quality scores (gold/silver/bronze) + corpus summary",
             "/analytics/mior": "MIOR completeness report (Minimum Information About an Organoid Research)",
@@ -5006,6 +5093,16 @@ async def route_source_cell_reagent_profile(datasette, request):
     return Response.json(data, status=status)
 
 
+async def route_grounding_inconsistency(datasette, request):
+    try:
+        min_n = int(request.args.get("min_n") or 5)
+    except (TypeError, ValueError):
+        min_n = 5
+    sort_by = request.args.get("sort") or "total"
+    data, status = handle_grounding_inconsistency(min_n, sort_by)
+    return Response.json(data, status=status)
+
+
 async def route_reagent_type_enrichment(datasette, request):
     organoid_type = request.args.get("type") or None
     query = request.args.get("q") or None
@@ -5170,6 +5267,7 @@ def register_routes():
         (r"^/analytics/protocol-completeness$", route_protocol_completeness),
         (r"^/analytics/cross-type-concentration-variance$", route_cross_type_concentration_variance),
         (r"^/analytics/reagent-type-enrichment$", route_reagent_type_enrichment),
+        (r"^/analytics/grounding-inconsistency$", route_grounding_inconsistency),
         (r"^/analytics/journal-breakdown$", route_journal_breakdown),
         (r"^/analytics/concentration-by-type$", route_concentration_by_type),
         (r"^/analytics/kgx-summary$", route_kgx_summary),
