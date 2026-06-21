@@ -1,3 +1,4 @@
+import csv
 import json
 import sys
 from pathlib import Path
@@ -73,4 +74,45 @@ def test_evidence_quote_cap_enforced():
     assert not over, (
         f"{len(over)} reagent rows exceed PUBLIC_SNIPPET_MAX={PUBLIC_SNIPPET_MAX}: "
         f"{over[:3]}"
+    )
+
+
+def test_public_manifest_includes_all_corpus_cc_papers():
+    """Every CC-eligible paper in corpus.tsv must be in the public manifest.
+    Catches the case where export_public.py is re-run and accidentally drops CC papers,
+    or where corpus.tsv is updated with new CC papers but the export isn't regenerated."""
+    sys.path.insert(0, str(ROOT / "pipeline"))
+    from export_public import is_public_license
+    corpus_tsv = ROOT / "data" / "corpus" / "corpus.tsv"
+    cc_pmcids = {
+        r["pmcid"]
+        for r in csv.DictReader(corpus_tsv.open(encoding="utf-8-sig"), delimiter="\t")
+        if is_public_license(r.get("license"))
+    }
+    manifest = json.loads((ROOT / "exports/public/manifest.json").read_text())
+    manifest_pmcids = set(manifest["papers"])
+    missing = cc_pmcids - manifest_pmcids
+    assert not missing, (
+        f"{len(missing)} CC-eligible papers from corpus.tsv absent from public manifest "
+        f"(run pipeline/export_public.py to regenerate): {sorted(missing)[:5]}"
+    )
+
+
+def test_public_manifest_excludes_non_cc_corpus_papers():
+    """No NC/ND/author-manuscript paper in corpus.tsv may appear in the public manifest.
+    Guards the license-clean public export contract."""
+    sys.path.insert(0, str(ROOT / "pipeline"))
+    from export_public import is_public_license
+    corpus_tsv = ROOT / "data" / "corpus" / "corpus.tsv"
+    non_cc = {
+        r["pmcid"]
+        for r in csv.DictReader(corpus_tsv.open(encoding="utf-8-sig"), delimiter="\t")
+        if not is_public_license(r.get("license"))
+    }
+    manifest = json.loads((ROOT / "exports/public/manifest.json").read_text())
+    manifest_pmcids = set(manifest["papers"])
+    violation = non_cc & manifest_pmcids
+    assert not violation, (
+        f"{len(violation)} non-CC papers from corpus.tsv found in public manifest "
+        f"(license policy violation): {sorted(violation)[:5]}"
     )
