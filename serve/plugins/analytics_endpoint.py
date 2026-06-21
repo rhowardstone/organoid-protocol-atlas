@@ -13,6 +13,7 @@ Routes (all return JSON; read-only, no writes):
   GET /analytics/reagent?q=TERM                 -- cross-corpus reagent lookup from reagents.jsonl
   GET /analytics/reagent-network?q=TERM        -- reagent co-occurrence: most co-mentioned reagents
   GET /analytics/type-similarity               -- pairwise organoid type Jaccard similarity
+  GET /analytics/type-timeseries              -- type publication counts by year (growth trends)
   GET /analytics                                -- index of available analytics
 
 All endpoints degrade gracefully — if the pre-computed file doesn't exist they return
@@ -38,6 +39,7 @@ ANALYSIS_DIR = REPO / "outputs" / "analysis"
 COMPARISON_DIR = REPO / "outputs" / "comparison"
 COVERAGE_REPORT_PATH = ANALYSIS_DIR / "coverage_report.json"
 REAGENTS_JSONL = REPO / "exports" / "public" / "reagents.jsonl"
+PROTOCOLS_JSONL = REPO / "exports" / "public" / "protocols.jsonl"
 MANIFEST_PATH = REPO / "exports" / "public" / "manifest.json"
 
 
@@ -609,6 +611,57 @@ def handle_reagent_network(query: str, limit: int) -> tuple[dict, int]:
     }, 200
 
 
+def handle_type_timeseries() -> tuple[dict, int]:
+    """Organoid type publication counts by year from protocols.jsonl.
+
+    Shows how each organoid type's presence in the corpus has grown or shifted
+    over time — useful for identifying emerging types and publication trends.
+    """
+    if not PROTOCOLS_JSONL.exists():
+        return {
+            "error": "protocols.jsonl not found",
+            "hint": "Run: python pipeline/export_public.py",
+        }, 404
+
+    by_year: dict[str, dict[str, int]] = {}
+    by_type: dict[str, dict[str, int]] = {}
+    total_by_year: dict[str, int] = {}
+
+    try:
+        for line in PROTOCOLS_JSONL.read_text().splitlines():
+            if not line.strip():
+                continue
+            p = json.loads(line)
+            year = str(p.get("year") or "").strip()
+            otype = (p.get("organoid_type") or "").strip()
+            if not year or not otype or otype == "other":
+                continue
+            by_year.setdefault(year, {}).setdefault(otype, 0)
+            by_year[year][otype] += 1
+            by_type.setdefault(otype, {}).setdefault(year, 0)
+            by_type[otype][year] += 1
+            total_by_year[year] = total_by_year.get(year, 0) + 1
+    except (json.JSONDecodeError, OSError) as exc:
+        return {"error": f"protocols.jsonl unreadable: {exc}"}, 500
+
+    if not by_year:
+        return {"error": "no year data in protocols.jsonl", "n_papers": 0}, 404
+
+    years = sorted(by_year.keys())
+    first_appearance = {
+        t: min(y for y in ys if ys[y] > 0)
+        for t, ys in by_type.items()
+    }
+
+    return {
+        "years": years,
+        "by_year": {y: by_year[y] for y in years},
+        "by_type": {t: by_type[t] for t in sorted(by_type)},
+        "total_by_year": {y: total_by_year[y] for y in years},
+        "first_appearance": dict(sorted(first_appearance.items(), key=lambda x: x[1])),
+    }, 200
+
+
 def handle_type_similarity(top_n: int) -> tuple[dict, int]:
     """Pairwise organoid type similarity from reagents.jsonl (Jaccard on canonical reagents).
 
@@ -746,6 +799,7 @@ def handle_index() -> tuple[dict, int]:
             "/analytics/reagent?q=TERM": "cross-corpus reagent lookup: usage, concentrations, evidence quotes",
             "/analytics/reagent-network?q=TERM": "reagent co-occurrence: which reagents most often appear in the same papers as TERM",
             "/analytics/type-similarity": "pairwise organoid type similarity (Jaccard on canonical reagent sets) — which types share the most protocol overlap",
+            "/analytics/type-timeseries": "organoid type publication counts by year — growth trends and first-appearance dates from protocols.jsonl",
             "/analytics/assay-endpoints": "assay endpoint cluster summary (per type + cross-type)",
             "/analytics/quality": "per-paper quality scores (gold/silver/bronze) + corpus summary",
             "/analytics/mior": "MIOR completeness report (Minimum Information About an Organoid Research)",
@@ -855,6 +909,11 @@ async def route_reagent(datasette, request):
     return Response.json(data, status=status)
 
 
+async def route_type_timeseries(datasette, request):
+    data, status = handle_type_timeseries()
+    return Response.json(data, status=status)
+
+
 async def route_type_similarity(datasette, request):
     try:
         top_n = int(request.args.get("top_n", "5"))
@@ -900,6 +959,7 @@ def register_routes():
         (r"^/analytics/reagent$", route_reagent),
         (r"^/analytics/reagent-network$", route_reagent_network),
         (r"^/analytics/type-similarity$", route_type_similarity),
+        (r"^/analytics/type-timeseries$", route_type_timeseries),
         (r"^/analytics/assay-endpoints$", route_assay_endpoints),
         (r"^/analytics/quality$", route_quality),
         (r"^/analytics/mior$", route_mior),
