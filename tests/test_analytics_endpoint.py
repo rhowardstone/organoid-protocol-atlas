@@ -373,3 +373,72 @@ def test_index_includes_assay_endpoint():
     data, _ = ae.handle_index()
     assert "/analytics/assay-endpoints" in data["endpoints"]
     assert "assay_endpoints" in data["generate"]
+
+
+# --------------------------------------------------------------------------- #
+# handle_quality
+# --------------------------------------------------------------------------- #
+
+def _quality_payload():
+    return {
+        "n_total": 582,
+        "avg_score": 0.72,
+        "n_gold": 150,
+        "n_silver": 280,
+        "n_bronze": 152,
+        "gold_threshold": 0.80,
+        "silver_threshold": 0.55,
+        "by_organoid_type": {"cardiac": {"n_papers": 59, "avg_score": 0.75}},
+        "scores": [
+            {"pmcid": "PMC001", "organoid_type": "cardiac",
+             "quality_score": 0.9, "quality_tier": "gold", "score_components": {}},
+            {"pmcid": "PMC002", "organoid_type": "retinal",
+             "quality_score": 0.6, "quality_tier": "silver", "score_components": {}},
+        ],
+    }
+
+
+def test_quality_returns_data(tmp_path, monkeypatch):
+    monkeypatch.setattr(ae, "ANALYSIS_DIR", tmp_path)
+    (tmp_path / "protocol_quality_scores.json").write_text(json.dumps(_quality_payload()))
+    data, status = ae.handle_quality(None, None)
+    assert status == 200
+    assert data["n_total"] == 582
+    assert data["n_results"] == 2
+
+
+def test_quality_404_when_missing(tmp_path, monkeypatch):
+    monkeypatch.setattr(ae, "ANALYSIS_DIR", tmp_path)
+    data, status = ae.handle_quality(None, None)
+    assert status == 404
+    assert "hint" in data
+
+
+def test_quality_filters_by_type(tmp_path, monkeypatch):
+    monkeypatch.setattr(ae, "ANALYSIS_DIR", tmp_path)
+    (tmp_path / "protocol_quality_scores.json").write_text(json.dumps(_quality_payload()))
+    data, status = ae.handle_quality("cardiac", None)
+    assert status == 200
+    assert data["n_results"] == 1
+    assert data["scores"][0]["organoid_type"] == "cardiac"
+
+
+def test_quality_filters_by_tier(tmp_path, monkeypatch):
+    monkeypatch.setattr(ae, "ANALYSIS_DIR", tmp_path)
+    (tmp_path / "protocol_quality_scores.json").write_text(json.dumps(_quality_payload()))
+    data, status = ae.handle_quality(None, "gold")
+    assert status == 200
+    assert all(r["quality_tier"] == "gold" for r in data["scores"])
+
+
+def test_quality_rejects_invalid_tier(tmp_path, monkeypatch):
+    monkeypatch.setattr(ae, "ANALYSIS_DIR", tmp_path)
+    (tmp_path / "protocol_quality_scores.json").write_text(json.dumps(_quality_payload()))
+    _, status = ae.handle_quality(None, "platinum")
+    assert status == 400
+
+
+def test_index_includes_quality_endpoint():
+    data, _ = ae.handle_index()
+    assert "/analytics/quality" in data["endpoints"]
+    assert "quality" in data["generate"]

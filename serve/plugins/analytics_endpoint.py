@@ -207,6 +207,48 @@ def handle_coverage_type(organoid_type: str) -> tuple[dict, int]:
     }, 200
 
 
+def handle_quality(organoid_type: str | None, tier: str | None) -> tuple[dict, int]:
+    """
+    Return pre-computed protocol quality scores.
+    Optional ?type= and ?tier=gold|silver|bronze filters.
+    """
+    path = ANALYSIS_DIR / "protocol_quality_scores.json"
+    if not path.exists():
+        return {
+            "error": "Protocol quality scores not computed",
+            "hint": "Run: python pipeline/score_protocol_quality.py",
+        }, 404
+    try:
+        data = json.loads(path.read_text())
+    except json.JSONDecodeError:
+        return {"error": "malformed quality scores file"}, 500
+
+    # Apply filters
+    scores = data.get("scores", [])
+    if organoid_type:
+        otype = organoid_type.strip().lower()
+        scores = [r for r in scores if (r.get("organoid_type") or "").lower() == otype]
+    if tier:
+        tier = tier.strip().lower()
+        if tier not in ("gold", "silver", "bronze"):
+            return {"error": "invalid tier; use gold, silver, or bronze"}, 400
+        scores = [r for r in scores if r.get("quality_tier") == tier]
+
+    return {
+        "n_total": data.get("n_total"),
+        "avg_score": data.get("avg_score"),
+        "n_gold": data.get("n_gold"),
+        "n_silver": data.get("n_silver"),
+        "n_bronze": data.get("n_bronze"),
+        "gold_threshold": data.get("gold_threshold"),
+        "silver_threshold": data.get("silver_threshold"),
+        "organoid_type_filter": organoid_type,
+        "tier_filter": tier,
+        "n_results": len(scores),
+        "scores": scores[:200],  # cap to keep response reasonable
+    }, 200
+
+
 def handle_assay_endpoints() -> tuple[dict, int]:
     """Return pre-computed assay endpoint cluster summary."""
     path = ANALYSIS_DIR / "assay_endpoint_summary.json"
@@ -264,6 +306,7 @@ def handle_index() -> tuple[dict, int]:
             "/analytics/coverage/{organoid_type}": "coverage stats for one organoid type",
             "/analytics/reagent?q=TERM": "cross-corpus reagent lookup: usage, concentrations, evidence quotes",
             "/analytics/assay-endpoints": "assay endpoint cluster summary (per type + cross-type)",
+            "/analytics/quality": "per-paper quality scores (gold/silver/bronze) + corpus summary",
         },
         "generate": {
             "consensus": "python pipeline/compute_consensus.py --all",
@@ -272,6 +315,7 @@ def handle_index() -> tuple[dict, int]:
             "compare": "python pipeline/compare_protocols.py PMC111 PMC222",
             "coverage": "python pipeline/generate_coverage_report.py",
             "assay_endpoints": "python pipeline/aggregate_assay_endpoints.py",
+            "quality": "python pipeline/score_protocol_quality.py",
         },
     }, 200
 
@@ -332,6 +376,13 @@ async def route_coverage_type(datasette, request):
     return Response.json(data, status=status)
 
 
+async def route_quality(datasette, request):
+    organoid_type = request.args.get("type") or None
+    tier = request.args.get("tier") or None
+    data, status = handle_quality(organoid_type, tier)
+    return Response.json(data, status=status)
+
+
 async def route_assay_endpoints(datasette, request):
     data, status = handle_assay_endpoints()
     return Response.json(data, status=status)
@@ -363,4 +414,5 @@ def register_routes():
         (r"^/analytics/coverage/(?P<organoid_type>[\w-]+)$", route_coverage_type),
         (r"^/analytics/reagent$", route_reagent),
         (r"^/analytics/assay-endpoints$", route_assay_endpoints),
+        (r"^/analytics/quality$", route_quality),
     ]
