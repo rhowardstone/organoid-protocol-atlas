@@ -76,6 +76,7 @@ class Reporting(str, Enum):
 # --------------------------------------------------------------------------- #
 
 class OrganoidType(str, Enum):
+    # original 8 specific systems
     INTESTINAL = "intestinal"
     GASTRIC = "gastric"
     CEREBRAL = "cerebral"
@@ -84,6 +85,26 @@ class OrganoidType(str, Enum):
     LUNG = "lung"
     RETINAL = "retinal"
     PANCREATIC = "pancreatic"
+    # expanded systems — the discovery harvester surfaces these in volume (tumor,
+    # cardiac, …); without them the extractor collapses ~37% of papers to OTHER.
+    # Values match the discovery vocabulary so relabel_organoid_type maps cleanly.
+    TUMOR = "tumor"
+    CARDIAC = "cardiac"
+    VASCULAR = "vascular"
+    CHOLANGIOCYTE = "cholangiocyte"
+    SKIN = "skin"
+    MAMMARY = "mammary"
+    ENDOMETRIAL = "endometrial"
+    BONE = "bone"
+    PROSTATE = "prostate"
+    INNER_EAR = "inner-ear"
+    SALIVARY_GLAND = "salivary-gland"
+    BLADDER = "bladder"
+    NEUROMUSCULAR = "neuromuscular"
+    ESOPHAGEAL = "esophageal"
+    BLOOD_BRAIN_BARRIER = "blood-brain-barrier"
+    THYROID = "thyroid"
+    FALLOPIAN_TUBE = "fallopian-tube"
     OTHER = "other"
 
 

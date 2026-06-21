@@ -115,7 +115,7 @@ def build_evidence_text(bundle: dict, cap: int = 24000) -> str:
 
 PROMPT = """You extract an organoid culture protocol from the text into JSON.
 Return ONLY JSON with keys:
-organoid_type (intestinal|gastric|cerebral|kidney|liver|lung|retinal|pancreatic|other),
+organoid_type (intestinal|gastric|cerebral|kidney|liver|lung|retinal|pancreatic|tumor|cardiac|vascular|cholangiocyte|skin|mammary|endometrial|bone|prostate|inner-ear|salivary-gland|bladder|neuromuscular|esophageal|blood-brain-barrier|thyroid|fallopian-tube|other),
 source_cells: {{cell_type (iPSC|ESC|adult_stem_cell|primary_tissue|other), species, line_name, rrid}},
 matrix: {{name}}, base_media: {{name}},
 culture_conditions: {{temperature_c, co2_pct, o2_pct, evidence_quote}},
