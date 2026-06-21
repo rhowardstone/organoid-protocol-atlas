@@ -572,3 +572,49 @@ def test_mior_500_on_bad_json(tmp_path, monkeypatch):
 def test_index_includes_mior_endpoint():
     data, _ = ae.handle_index()
     assert "/analytics/mior" in data["endpoints"]
+
+
+# --------------------------------------------------------------------------- #
+# handle_candidates
+# --------------------------------------------------------------------------- #
+
+def test_candidates_returns_pool_counts(tmp_path, monkeypatch):
+    incoming = tmp_path / "data" / "corpus" / "incoming"
+    incoming.mkdir(parents=True)
+    # Write a small candidate CSV
+    csv_text = "organoid_type,doi,pmcid,license\ncardiac,10.1/a,PMC001,CC-BY\ncardiac,10.1/b,PMC002,CC-BY-NC\n"
+    (incoming / "organoid_corpus_candidates_180.csv").write_text(csv_text)
+    monkeypatch.setattr(ae, "REPO", tmp_path)
+    data, status = ae.handle_candidates()
+    assert status == 200
+    assert data["total_candidates"] == 2
+    assert "organoid_corpus_candidates_180.csv" in data["pools"]
+    assert data["oa_verified"] is None
+    assert "hint" in data
+
+
+def test_candidates_with_oa_results(tmp_path, monkeypatch):
+    incoming = tmp_path / "data" / "corpus" / "incoming"
+    incoming.mkdir(parents=True)
+    (incoming / "organoid_corpus_candidates_180.csv").write_text(
+        "organoid_type,doi,pmcid,license\ncardiac,10.1/a,PMC001,CC-BY\n"
+    )
+    oa_dir = tmp_path / "data" / "corpus" / "oa_verified"
+    oa_dir.mkdir(parents=True)
+    oa_payload = {
+        "pool_size": 1, "public_ok": 1, "rejected": 0,
+        "quarantine": 0, "license_mismatches": 0,
+        "public_pmcids": ["PMC001"], "rejected_pmcids": [],
+        "quarantine_pmcids": [], "mismatch_details": [],
+    }
+    (oa_dir / "oa_results.json").write_text(json.dumps(oa_payload))
+    monkeypatch.setattr(ae, "REPO", tmp_path)
+    data, status = ae.handle_candidates()
+    assert status == 200
+    assert data["oa_verified"]["public_ok"] == 1
+    assert "PMC001" in data["public_pmcids_sample"]
+
+
+def test_candidates_index_entry():
+    data, _ = ae.handle_index()
+    assert "/analytics/candidates" in data["endpoints"]
