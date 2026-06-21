@@ -14,6 +14,7 @@ Routes (all return JSON; read-only, no writes):
   GET /analytics/reagent-network?q=TERM        -- reagent co-occurrence: most co-mentioned reagents
   GET /analytics/type-similarity               -- pairwise organoid type Jaccard similarity
   GET /analytics/type-timeseries              -- type publication counts by year (growth trends)
+  GET /analytics/universal-reagents           -- reagents essential to each type (>= N% of protocols)
   GET /analytics                                -- index of available analytics
 
 All endpoints degrade gracefully — if the pre-computed file doesn't exist they return
@@ -611,6 +612,101 @@ def handle_reagent_network(query: str, limit: int) -> tuple[dict, int]:
     }, 200
 
 
+def handle_universal_reagents(
+    organoid_type: str | None,
+    min_fraction: float,
+) -> tuple[dict, int]:
+    """Return type-essential reagents from reagents.jsonl.
+
+    For each organoid type (or the requested one), returns canonical reagents
+    that appear in at least `min_fraction` of that type's protocols.
+
+    Also returns cross-type universals — reagents appearing in >= half the types
+    (regardless of per-type frequency).
+    """
+    min_fraction = max(0.0, min(min_fraction, 1.0))
+
+    if not REAGENTS_JSONL.exists():
+        return {
+            "error": "reagents.jsonl not found",
+            "hint": "Run: python pipeline/export_public.py",
+        }, 404
+
+    if organoid_type and not re.match(r'^[\w-]+$', organoid_type):
+        return {"error": "invalid organoid_type"}, 400
+
+    papers_by_type: dict[str, set[str]] = {}
+    reagent_papers_by_type: dict[str, dict[str, set[str]]] = {}
+
+    try:
+        for line in REAGENTS_JSONL.read_text().splitlines():
+            if not line.strip():
+                continue
+            r = json.loads(line)
+            ot = (r.get("organoid_type") or r.get("type") or "").strip()
+            pmcid = (r.get("pmcid") or "").strip()
+            canonical = (r.get("canonical") or r.get("name") or "").strip().lower()
+            if not ot or ot == "other" or not pmcid or not canonical:
+                continue
+            papers_by_type.setdefault(ot, set()).add(pmcid)
+            reagent_papers_by_type.setdefault(ot, {}).setdefault(canonical, set()).add(pmcid)
+    except (json.JSONDecodeError, OSError) as exc:
+        return {"error": f"reagents.jsonl unreadable: {exc}"}, 500
+
+    if not papers_by_type:
+        return {"error": "no typed reagent data found", "n_types": 0}, 404
+
+    types_to_process = ([organoid_type] if organoid_type and organoid_type in papers_by_type
+                        else sorted(papers_by_type))
+
+    per_type: dict[str, dict] = {}
+    for t in types_to_process:
+        n_papers = len(papers_by_type[t])
+        essentials = []
+        for canonical, pmcids in reagent_papers_by_type.get(t, {}).items():
+            frac = len(pmcids) / n_papers if n_papers else 0.0
+            if frac >= min_fraction:
+                essentials.append({
+                    "canonical": canonical,
+                    "fraction": round(frac, 4),
+                    "n_papers": len(pmcids),
+                    "n_total_papers": n_papers,
+                })
+        essentials.sort(key=lambda x: (-x["fraction"], x["canonical"]))
+        per_type[t] = {"n_papers": n_papers, "essentials": essentials}
+
+    # Cross-type universals: reagents present in >= 50% of types
+    n_types = len(papers_by_type)
+    reagent_type_count: dict[str, int] = {}
+    for t in papers_by_type:
+        n_p = len(papers_by_type[t])
+        for canonical, pmcids in reagent_papers_by_type.get(t, {}).items():
+            if n_p and len(pmcids) / n_p >= min_fraction:
+                reagent_type_count[canonical] = reagent_type_count.get(canonical, 0) + 1
+    cross_type = sorted(
+        [{"canonical": c, "n_types": cnt}
+         for c, cnt in reagent_type_count.items()
+         if cnt >= n_types / 2],
+        key=lambda x: (-x["n_types"], x["canonical"]),
+    )
+
+    result: dict = {
+        "min_fraction": min_fraction,
+        "n_types_with_data": n_types,
+        "cross_type_universals": cross_type,
+        "per_type": per_type,
+    }
+    if organoid_type:
+        if organoid_type not in papers_by_type:
+            return {
+                "error": f"No reagent data for '{organoid_type}'",
+                "available_types": sorted(papers_by_type),
+            }, 404
+        result["organoid_type"] = organoid_type
+
+    return result, 200
+
+
 def handle_type_timeseries() -> tuple[dict, int]:
     """Organoid type publication counts by year from protocols.jsonl.
 
@@ -800,6 +896,7 @@ def handle_index() -> tuple[dict, int]:
             "/analytics/reagent-network?q=TERM": "reagent co-occurrence: which reagents most often appear in the same papers as TERM",
             "/analytics/type-similarity": "pairwise organoid type similarity (Jaccard on canonical reagent sets) — which types share the most protocol overlap",
             "/analytics/type-timeseries": "organoid type publication counts by year — growth trends and first-appearance dates from protocols.jsonl",
+            "/analytics/universal-reagents": "type-essential reagents: canonical reagents appearing in >= 50% of protocols for each type; also cross-type universals",
             "/analytics/assay-endpoints": "assay endpoint cluster summary (per type + cross-type)",
             "/analytics/quality": "per-paper quality scores (gold/silver/bronze) + corpus summary",
             "/analytics/mior": "MIOR completeness report (Minimum Information About an Organoid Research)",
@@ -909,6 +1006,16 @@ async def route_reagent(datasette, request):
     return Response.json(data, status=status)
 
 
+async def route_universal_reagents(datasette, request):
+    organoid_type = request.args.get("type") or None
+    try:
+        min_fraction = float(request.args.get("min_fraction", "0.5"))
+    except (TypeError, ValueError):
+        min_fraction = 0.5
+    data, status = handle_universal_reagents(organoid_type, min_fraction)
+    return Response.json(data, status=status)
+
+
 async def route_type_timeseries(datasette, request):
     data, status = handle_type_timeseries()
     return Response.json(data, status=status)
@@ -960,6 +1067,7 @@ def register_routes():
         (r"^/analytics/reagent-network$", route_reagent_network),
         (r"^/analytics/type-similarity$", route_type_similarity),
         (r"^/analytics/type-timeseries$", route_type_timeseries),
+        (r"^/analytics/universal-reagents$", route_universal_reagents),
         (r"^/analytics/assay-endpoints$", route_assay_endpoints),
         (r"^/analytics/quality$", route_quality),
         (r"^/analytics/mior$", route_mior),
