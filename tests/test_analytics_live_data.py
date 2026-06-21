@@ -716,3 +716,26 @@ def test_live_eq_intestinal_type_filter():
     assert "top_canonicals_by_coverage" in data
     # signaling_rate and supplement_rate present in by_kind
     assert data["by_kind"]["signaling"]["n_total"] >= 50
+
+
+@require_reagents
+def test_live_cvr_global_returns_200():
+    data, status = ae.handle_concentration_value_rate(None, 5, None)
+    assert status == 200
+    assert data["n_canonicals_evaluated"] >= 50
+    # EGF and Wnt3a are always in the corpus
+    names = {e["canonical"] for e in data["highest_reporters"] + data["lowest_reporters"]}
+    assert len(names) >= 5
+    # B27 supplement has 0/100+ records with numeric value — always in lowest
+    lowest_names = {e["canonical"] for e in data["lowest_reporters"]}
+    assert "B27" in lowest_names or "penicillin/streptomycin" in lowest_names
+
+
+@require_reagents
+def test_live_cvr_egf_per_type():
+    data, status = ae.handle_concentration_value_rate("EGF", 3, None)
+    assert status == 200
+    assert data["canonical"] == "EGF"
+    assert data["n_total"] >= 100
+    assert data["overall_value_rate"] >= 0.3
+    assert len(data["per_type"]) >= 10

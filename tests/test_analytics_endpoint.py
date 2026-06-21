@@ -4987,3 +4987,145 @@ def test_eq_unknown_type_returns_404(tmp_path, monkeypatch):
 def test_eq_index_entry():
     data, _ = ae.handle_index()
     assert "/analytics/evidence-quote-coverage" in data["endpoints"]
+
+
+# --------------------------------------------------------------------------- #
+# handle_concentration_value_rate  (route 48)
+# --------------------------------------------------------------------------- #
+
+_CVR_ROWS = [
+    # canonical, kind, value (numeric or None/empty)
+    {"canonical": "EGF",      "kind": "signaling", "organoid_type": "intestinal", "value": "50"},
+    {"canonical": "EGF",      "kind": "signaling", "organoid_type": "intestinal", "value": "50"},
+    {"canonical": "EGF",      "kind": "signaling", "organoid_type": "kidney",     "value": None},
+    {"canonical": "EGF",      "kind": "signaling", "organoid_type": "kidney",     "value": ""},
+    {"canonical": "EGF",      "kind": "signaling", "organoid_type": "lung",       "value": "25"},
+    {"canonical": "Wnt3a",    "kind": "signaling", "organoid_type": "intestinal", "value": None},
+    {"canonical": "Wnt3a",    "kind": "signaling", "organoid_type": "intestinal", "value": None},
+    {"canonical": "Wnt3a",    "kind": "signaling", "organoid_type": "intestinal", "value": None},
+    {"canonical": "Wnt3a",    "kind": "signaling", "organoid_type": "intestinal", "value": None},
+    {"canonical": "Wnt3a",    "kind": "signaling", "organoid_type": "intestinal", "value": None},
+    {"canonical": "GlutaMAX", "kind": "supplement","organoid_type": "intestinal", "value": "2"},
+    {"canonical": "GlutaMAX", "kind": "supplement","organoid_type": "kidney",     "value": "2"},
+    {"canonical": "GlutaMAX", "kind": "supplement","organoid_type": "lung",       "value": "1"},
+    {"canonical": "GlutaMAX", "kind": "supplement","organoid_type": "gastric",    "value": "2"},
+    {"canonical": "GlutaMAX", "kind": "supplement","organoid_type": "cardiac",    "value": None},
+]
+
+
+def _write_reagents_for_cvr(path, rows):
+    path.write_text("\n".join(json.dumps(r) for r in rows))
+
+
+def _patch_cvr(monkeypatch, path):
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", path)
+
+
+def test_cvr_global_structure(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_cvr(p, _CVR_ROWS)
+    _patch_cvr(monkeypatch, p)
+    data, status = ae.handle_concentration_value_rate(None, 3, None)
+    assert status == 200
+    assert "highest_reporters" in data
+    assert "lowest_reporters" in data
+    assert "n_canonicals_evaluated" in data
+
+
+def test_cvr_highest_reporters_top(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_cvr(p, _CVR_ROWS)
+    _patch_cvr(monkeypatch, p)
+    data, _ = ae.handle_concentration_value_rate(None, 3, None)
+    # GlutaMAX: 4/5 = 0.80; EGF: 3/5 = 0.60; Wnt3a: 0/5 = 0.0
+    top = data["highest_reporters"]
+    assert top[0]["canonical"] in ("GlutaMAX", "EGF")
+    assert top[0]["value_rate"] >= top[-1]["value_rate"]
+
+
+def test_cvr_lowest_reporters_bottom(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_cvr(p, _CVR_ROWS)
+    _patch_cvr(monkeypatch, p)
+    data, _ = ae.handle_concentration_value_rate(None, 3, None)
+    # Wnt3a: 0/5 = 0.0 should be at top of lowest_reporters
+    bottom = data["lowest_reporters"]
+    assert bottom[0]["canonical"] == "Wnt3a"
+    assert bottom[0]["value_rate"] == 0.0
+
+
+def test_cvr_overall_value_rate(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_cvr(p, _CVR_ROWS)
+    _patch_cvr(monkeypatch, p)
+    data, _ = ae.handle_concentration_value_rate(None, 3, None)
+    # EGF: 3/5, Wnt3a: 0/5, GlutaMAX: 4/5 → total 7/15 ≈ 0.467
+    assert abs(data["overall_value_rate"] - 7/15) < 0.01
+
+
+def test_cvr_min_n_filter(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_cvr(p, _CVR_ROWS)
+    _patch_cvr(monkeypatch, p)
+    # min_n=10 → none pass (all have 5 records)
+    data, _ = ae.handle_concentration_value_rate(None, 10, None)
+    assert data["n_canonicals_evaluated"] == 0
+
+
+def test_cvr_query_egf_per_type(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_cvr(p, _CVR_ROWS)
+    _patch_cvr(monkeypatch, p)
+    data, status = ae.handle_concentration_value_rate("EGF", 3, None)
+    assert status == 200
+    assert data["canonical"] == "EGF"
+    assert data["n_total"] == 5
+    assert data["n_with_value"] == 3
+    assert abs(data["overall_value_rate"] - 3/5) < 0.01
+    # per_type: intestinal(2/2), kidney(0/2), lung(1/1)
+    per_type = {e["organoid_type"]: e for e in data["per_type"]}
+    assert per_type["intestinal"]["n_with_value"] == 2
+    assert per_type["kidney"]["n_with_value"] == 0
+    assert per_type["lung"]["n_with_value"] == 1
+
+
+def test_cvr_query_unknown_returns_404(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_cvr(p, _CVR_ROWS)
+    _patch_cvr(monkeypatch, p)
+    _, status = ae.handle_concentration_value_rate("NOSUCHCANONICAL_XYZ", 3, None)
+    assert status == 404
+
+
+def test_cvr_kind_filter_supplement(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_cvr(p, _CVR_ROWS)
+    _patch_cvr(monkeypatch, p)
+    data, status = ae.handle_concentration_value_rate(None, 3, "supplement")
+    assert status == 200
+    assert data["kind_filter"] == "supplement"
+    # Only GlutaMAX passes min_n=3: 4/5 = 0.80
+    assert data["n_canonicals_evaluated"] == 1
+    assert data["highest_reporters"][0]["canonical"] == "GlutaMAX"
+
+
+def test_cvr_kind_filter_invalid_returns_400(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_cvr(p, _CVR_ROWS)
+    _patch_cvr(monkeypatch, p)
+    _, status = ae.handle_concentration_value_rate(None, 3, "BADKIND")
+    assert status == 400
+
+
+def test_cvr_per_type_sorted_by_rate_desc(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_cvr(p, _CVR_ROWS)
+    _patch_cvr(monkeypatch, p)
+    data, _ = ae.handle_concentration_value_rate("EGF", 3, None)
+    rates = [e["value_rate"] for e in data["per_type"] if e["value_rate"] is not None]
+    assert rates == sorted(rates, reverse=True)
+
+
+def test_cvr_index_entry():
+    data, _ = ae.handle_index()
+    assert "/analytics/concentration-value-rate" in data["endpoints"]
