@@ -122,6 +122,7 @@ exports. Prefer the JSON endpoints for programmatic use.
 - /analytics/evidence-quote-coverage   per-type and per-kind rate of verbatim evidence quotes in reagent records; overall_coverage_rate + by_kind breakdown + per_type sorted by coverage_rate; ?type=kidney for top canonicals; ?kind=signaling|supplement filter
 - /analytics/concentration-value-rate  canonicals ranked by fraction of records with a numeric dose value; highest_reporters + lowest_reporters (top 30 each); ?q=Wnt3a for per-type breakdown; ?min_n= threshold (default 5); ?kind= filter
 - /analytics/kind-ambiguity            canonicals that appear in both signaling and supplement kinds; sorted by minority_fraction; ?q=Y-27632 for per-type kind breakdown; ?min_n= threshold (default 3)
+- /analytics/canonical-type-adoption   reagent diffusion: n distinct organoid types using each canonical by year; first_year, n_types_current, year_peak; ?q=EGF for per-year type list + cumulative; ?min_types= threshold (default 5)
 - /analytics/failure-modes             failure mode cluster summary across the corpus
 - /analytics/lineage                   DOI→DOI protocol lineage graph
 - /analytics/assay-endpoints           assay endpoint cluster summary (per-type + cross-type)

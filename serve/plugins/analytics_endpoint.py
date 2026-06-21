@@ -44,6 +44,7 @@ Routes (all return JSON; read-only, no writes):
   GET /analytics/evidence-quote-coverage     -- per-type and per-kind rate of verbatim evidence quotes in reagent records; ?type= for one type with top canonicals; ?kind=signaling|supplement filter; live from reagents.jsonl
   GET /analytics/concentration-value-rate   -- canonicals ranked by fraction of records with a numeric dose value; highest_reporters + lowest_reporters lists; ?q= for per-type breakdown; ?min_n= threshold; ?kind= filter; live from reagents.jsonl
   GET /analytics/kind-ambiguity            -- canonicals that appear in both signaling and supplement kinds; sorted by ambiguity (minority_fraction); ?q= for per-type kind breakdown; ?min_n= threshold; live from reagents.jsonl
+  GET /analytics/canonical-type-adoption   -- reagent diffusion: n_organoid_types using each canonical by year (first_year, n_types_current, year_peak); ?q= for per-year type list; ?min_types= filter; live from both JSONLs
   GET /analytics                                -- index of available analytics
 
 All endpoints degrade gracefully — if the pre-computed file doesn't exist they return
@@ -3551,6 +3552,119 @@ def handle_protocol_size_distribution(
     }, 200
 
 
+def handle_canonical_type_adoption(query=None, min_types=5):
+    """Route 50: reagent diffusion — how many distinct organoid types use each canonical per year.
+
+    Builds a doi→year map from protocols.jsonl, then for each canonical tracks
+    which types adopt it each year. Surfaces reagents that spread broadly across
+    the field vs those that remain type-specific.
+
+    Without ?q=: returns top 50 by n_types_current (all canonicals with >= min_types types),
+    with first_year, n_types_current, year_peak (year of most new-type adoptions).
+    With ?q=EGF: per-year list of organoid types + cumulative n_types.
+    """
+    protocols = [
+        json.loads(line)
+        for line in PROTOCOLS_JSONL.read_text().splitlines()
+        if line.strip()
+    ]
+    reagents = [
+        json.loads(line)
+        for line in REAGENTS_JSONL.read_text().splitlines()
+        if line.strip()
+    ]
+
+    # Build doi→year index
+    doi_year: dict[str, int] = {}
+    for p in protocols:
+        doi = p.get("doi", "")
+        y = p.get("year")
+        if doi and y:
+            try:
+                doi_year[doi] = int(y)
+            except (TypeError, ValueError):
+                pass
+
+    from collections import defaultdict
+
+    if query:
+        # Per-year type list for one canonical
+        canon_lower = query.lower()
+        subset = [r for r in reagents if (r.get("canonical") or "").lower() == canon_lower]
+        if not subset:
+            return {"error": f"No reagents found for canonical '{query}'"}, 404
+
+        year_types: dict[int, set] = {}
+        for r in subset:
+            doi = r.get("doi", "")
+            typ = r.get("organoid_type", "")
+            y = doi_year.get(doi)
+            if y and typ:
+                year_types.setdefault(y, set()).add(typ)
+
+        all_types: set = set()
+        by_year = []
+        for y in sorted(year_types):
+            new_types = sorted(year_types[y] - all_types)
+            all_types.update(year_types[y])
+            by_year.append({
+                "year": y,
+                "n_types_this_year": len(year_types[y]),
+                "types_this_year": sorted(year_types[y]),
+                "new_types": new_types,
+                "n_new_types": len(new_types),
+                "cumulative_n_types": len(all_types),
+            })
+
+        year_of_peak = max(year_types, key=lambda y: len(year_types[y])) if year_types else None
+
+        return {
+            "canonical": query,
+            "n_types_current": len(all_types),
+            "first_year": min(year_types) if year_types else None,
+            "year_peak": year_of_peak,
+            "by_year": by_year,
+        }, 200
+
+    # Global ranking
+    canon_year_types: dict[str, dict[int, set]] = {}
+    for r in reagents:
+        c = r.get("canonical", "")
+        doi = r.get("doi", "")
+        typ = r.get("organoid_type", "")
+        y = doi_year.get(doi)
+        if not c or not typ or not y:
+            continue
+        canon_year_types.setdefault(c, {})
+        canon_year_types[c].setdefault(y, set()).add(typ)
+
+    rows = []
+    for c, by_year in canon_year_types.items():
+        all_types: set = set()
+        for types in by_year.values():
+            all_types.update(types)
+        n_types = len(all_types)
+        if n_types < min_types:
+            continue
+        first_year = min(by_year)
+        year_peak = max(by_year, key=lambda y: len(by_year[y]))
+        rows.append({
+            "canonical": c,
+            "n_types_current": n_types,
+            "first_year": first_year,
+            "year_peak": year_peak,
+            "n_years_active": max(by_year) - first_year + 1,
+        })
+
+    rows.sort(key=lambda x: (-x["n_types_current"], x["first_year"]))
+
+    return {
+        "min_types": min_types,
+        "n_canonicals": len(rows),
+        "top_by_type_breadth": rows[:50],
+    }, 200
+
+
 def handle_kind_ambiguity(query=None, min_n=3):
     """Route 49: canonicals that appear in both signaling and supplement kinds.
 
@@ -3946,6 +4060,7 @@ def handle_index() -> tuple[dict, int]:
             "/analytics/evidence-quote-coverage": "per-type and per-kind rate of verbatim evidence quotes in reagent records; overall_coverage_rate + by_kind breakdown; per_type sorted by coverage_rate; ?type=kidney for top canonicals by coverage; ?kind=signaling|supplement filter",
             "/analytics/concentration-value-rate": "canonicals ranked by fraction of records with a numeric dose value; highest_reporters (well-dosed) + lowest_reporters (commonly used but rarely dosed); ?q=Wnt3a for per-type breakdown; ?min_n= threshold (default 5); ?kind= filter",
             "/analytics/kind-ambiguity": "canonicals that appear in both signaling and supplement kinds; sorted by minority_fraction (ambiguity score); highlights normalization targets; ?q=Y-27632 for per-type kind breakdown; ?min_n= threshold (default 3)",
+            "/analytics/canonical-type-adoption": "reagent diffusion: for each canonical, tracks n distinct organoid types using it per year (first_year, n_types_current, year_peak = most new-type adoptions); ?q=EGF for per-year type list; ?min_types= threshold (default 5)",
             "/analytics/assay-endpoints": "assay endpoint cluster summary (per type + cross-type)",
             "/analytics/quality": "per-paper quality scores (gold/silver/bronze) + corpus summary",
             "/analytics/mior": "MIOR completeness report (Minimum Information About an Organoid Research)",
@@ -4235,6 +4350,16 @@ async def route_kind_ambiguity(datasette, request):
     return Response.json(data, status=status)
 
 
+async def route_canonical_type_adoption(datasette, request):
+    query = request.args.get("q") or None
+    try:
+        min_types = int(request.args.get("min_types") or 5)
+    except (TypeError, ValueError):
+        min_types = 5
+    data, status = handle_canonical_type_adoption(query, min_types)
+    return Response.json(data, status=status)
+
+
 async def route_concentration_unit_distribution(datasette, request):
     query = request.args.get("q") or None
     try:
@@ -4362,6 +4487,7 @@ def register_routes():
         (r"^/analytics/evidence-quote-coverage$", route_evidence_quote_coverage),
         (r"^/analytics/concentration-value-rate$", route_concentration_value_rate),
         (r"^/analytics/kind-ambiguity$", route_kind_ambiguity),
+        (r"^/analytics/canonical-type-adoption$", route_canonical_type_adoption),
         (r"^/analytics/journal-breakdown$", route_journal_breakdown),
         (r"^/analytics/concentration-by-type$", route_concentration_by_type),
         (r"^/analytics/kgx-summary$", route_kgx_summary),

@@ -5280,3 +5280,179 @@ def test_ka_count_fields_present(tmp_path, monkeypatch):
 def test_ka_index_entry():
     data, _ = ae.handle_index()
     assert "/analytics/kind-ambiguity" in data["endpoints"]
+
+
+# --------------------------------------------------------------------------- #
+# handle_canonical_type_adoption  (route 50)
+# --------------------------------------------------------------------------- #
+
+_CTA_PROTOS = [
+    {"doi": "10.1/a", "year": 2019, "organoid_type": "intestinal"},
+    {"doi": "10.1/b", "year": 2020, "organoid_type": "kidney"},
+    {"doi": "10.1/c", "year": 2020, "organoid_type": "cerebral"},
+    {"doi": "10.1/d", "year": 2021, "organoid_type": "cardiac"},
+    {"doi": "10.1/e", "year": 2021, "organoid_type": "lung"},
+    {"doi": "10.1/f", "year": 2022, "organoid_type": "gastric"},
+]
+
+_CTA_REAGENTS = [
+    # EGF: appears in 5 types → intestinal(2019), kidney+cerebral(2020), cardiac(2021), lung(2021), gastric(2022)
+    {"canonical": "EGF", "doi": "10.1/a", "organoid_type": "intestinal", "kind": "signaling"},
+    {"canonical": "EGF", "doi": "10.1/b", "organoid_type": "kidney",     "kind": "signaling"},
+    {"canonical": "EGF", "doi": "10.1/c", "organoid_type": "cerebral",   "kind": "signaling"},
+    {"canonical": "EGF", "doi": "10.1/d", "organoid_type": "cardiac",    "kind": "signaling"},
+    {"canonical": "EGF", "doi": "10.1/e", "organoid_type": "lung",       "kind": "signaling"},
+    # Wnt3a: only 2 types (below min_types=5 default)
+    {"canonical": "Wnt3a", "doi": "10.1/a", "organoid_type": "intestinal", "kind": "signaling"},
+    {"canonical": "Wnt3a", "doi": "10.1/f", "organoid_type": "gastric",    "kind": "signaling"},
+    # CHIR: 6 types (all)
+    {"canonical": "CHIR99021", "doi": "10.1/a", "organoid_type": "intestinal", "kind": "signaling"},
+    {"canonical": "CHIR99021", "doi": "10.1/b", "organoid_type": "kidney",     "kind": "signaling"},
+    {"canonical": "CHIR99021", "doi": "10.1/c", "organoid_type": "cerebral",   "kind": "signaling"},
+    {"canonical": "CHIR99021", "doi": "10.1/d", "organoid_type": "cardiac",    "kind": "signaling"},
+    {"canonical": "CHIR99021", "doi": "10.1/e", "organoid_type": "lung",       "kind": "signaling"},
+    {"canonical": "CHIR99021", "doi": "10.1/f", "organoid_type": "gastric",    "kind": "signaling"},
+]
+
+
+def _write_protos_for_cta(path, rows):
+    path.write_text("\n".join(json.dumps(r) for r in rows))
+
+
+def _patch_cta(monkeypatch, p_path, r_path):
+    monkeypatch.setattr(ae, "PROTOCOLS_JSONL", p_path)
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", r_path)
+
+
+def test_cta_global_structure(tmp_path, monkeypatch):
+    pp = tmp_path / "protocols.jsonl"
+    rp = tmp_path / "reagents.jsonl"
+    _write_protos_for_cta(pp, _CTA_PROTOS)
+    _write_protos_for_cta(rp, _CTA_REAGENTS)
+    _patch_cta(monkeypatch, pp, rp)
+    data, status = ae.handle_canonical_type_adoption(None, 5)
+    assert status == 200
+    assert "top_by_type_breadth" in data
+    assert "n_canonicals" in data
+
+
+def test_cta_min_types_filter(tmp_path, monkeypatch):
+    pp = tmp_path / "protocols.jsonl"
+    rp = tmp_path / "reagents.jsonl"
+    _write_protos_for_cta(pp, _CTA_PROTOS)
+    _write_protos_for_cta(rp, _CTA_REAGENTS)
+    _patch_cta(monkeypatch, pp, rp)
+    # min_types=5: EGF(5), CHIR(6) pass; Wnt3a(2) excluded
+    data, _ = ae.handle_canonical_type_adoption(None, 5)
+    names = {e["canonical"] for e in data["top_by_type_breadth"]}
+    assert "Wnt3a" not in names
+    assert "EGF" in names
+    assert "CHIR99021" in names
+
+
+def test_cta_chir_n_types_correct(tmp_path, monkeypatch):
+    pp = tmp_path / "protocols.jsonl"
+    rp = tmp_path / "reagents.jsonl"
+    _write_protos_for_cta(pp, _CTA_PROTOS)
+    _write_protos_for_cta(rp, _CTA_REAGENTS)
+    _patch_cta(monkeypatch, pp, rp)
+    data, _ = ae.handle_canonical_type_adoption(None, 5)
+    by_name = {e["canonical"]: e for e in data["top_by_type_breadth"]}
+    assert by_name["CHIR99021"]["n_types_current"] == 6
+    assert by_name["CHIR99021"]["first_year"] == 2019
+
+
+def test_cta_sorted_by_n_types_desc(tmp_path, monkeypatch):
+    pp = tmp_path / "protocols.jsonl"
+    rp = tmp_path / "reagents.jsonl"
+    _write_protos_for_cta(pp, _CTA_PROTOS)
+    _write_protos_for_cta(rp, _CTA_REAGENTS)
+    _patch_cta(monkeypatch, pp, rp)
+    data, _ = ae.handle_canonical_type_adoption(None, 5)
+    counts = [e["n_types_current"] for e in data["top_by_type_breadth"]]
+    assert counts == sorted(counts, reverse=True)
+    # CHIR(6) should rank above EGF(5)
+    assert data["top_by_type_breadth"][0]["canonical"] == "CHIR99021"
+
+
+def test_cta_query_egf_per_year(tmp_path, monkeypatch):
+    pp = tmp_path / "protocols.jsonl"
+    rp = tmp_path / "reagents.jsonl"
+    _write_protos_for_cta(pp, _CTA_PROTOS)
+    _write_protos_for_cta(rp, _CTA_REAGENTS)
+    _patch_cta(monkeypatch, pp, rp)
+    data, status = ae.handle_canonical_type_adoption("EGF", 5)
+    assert status == 200
+    assert data["canonical"] == "EGF"
+    assert data["n_types_current"] == 5
+    assert data["first_year"] == 2019
+    assert isinstance(data["by_year"], list)
+    assert len(data["by_year"]) >= 3  # 2019, 2020, 2021
+
+
+def test_cta_query_by_year_cumulative(tmp_path, monkeypatch):
+    pp = tmp_path / "protocols.jsonl"
+    rp = tmp_path / "reagents.jsonl"
+    _write_protos_for_cta(pp, _CTA_PROTOS)
+    _write_protos_for_cta(rp, _CTA_REAGENTS)
+    _patch_cta(monkeypatch, pp, rp)
+    data, _ = ae.handle_canonical_type_adoption("EGF", 5)
+    by_year = {e["year"]: e for e in data["by_year"]}
+    # 2019: intestinal (1 new)
+    assert by_year[2019]["n_new_types"] == 1
+    # 2020: kidney + cerebral (2 new)
+    assert by_year[2020]["n_new_types"] == 2
+    # cumulative at end of 2020 = 3
+    assert by_year[2020]["cumulative_n_types"] == 3
+
+
+def test_cta_query_unknown_returns_404(tmp_path, monkeypatch):
+    pp = tmp_path / "protocols.jsonl"
+    rp = tmp_path / "reagents.jsonl"
+    _write_protos_for_cta(pp, _CTA_PROTOS)
+    _write_protos_for_cta(rp, _CTA_REAGENTS)
+    _patch_cta(monkeypatch, pp, rp)
+    _, status = ae.handle_canonical_type_adoption("NOSUCHCANONICAL_XYZ", 5)
+    assert status == 404
+
+
+def test_cta_year_peak_present(tmp_path, monkeypatch):
+    pp = tmp_path / "protocols.jsonl"
+    rp = tmp_path / "reagents.jsonl"
+    _write_protos_for_cta(pp, _CTA_PROTOS)
+    _write_protos_for_cta(rp, _CTA_REAGENTS)
+    _patch_cta(monkeypatch, pp, rp)
+    data, _ = ae.handle_canonical_type_adoption("EGF", 5)
+    # 2020 has 2 types adopted (kidney + cerebral) → peak year
+    assert data["year_peak"] == 2020
+
+
+def test_cta_n_years_active_chir(tmp_path, monkeypatch):
+    pp = tmp_path / "protocols.jsonl"
+    rp = tmp_path / "reagents.jsonl"
+    _write_protos_for_cta(pp, _CTA_PROTOS)
+    _write_protos_for_cta(rp, _CTA_REAGENTS)
+    _patch_cta(monkeypatch, pp, rp)
+    data, _ = ae.handle_canonical_type_adoption(None, 5)
+    by_name = {e["canonical"]: e for e in data["top_by_type_breadth"]}
+    # CHIR: 2019–2022 = 4 years
+    assert by_name["CHIR99021"]["n_years_active"] == 4
+
+
+def test_cta_index_entry():
+    data, _ = ae.handle_index()
+    assert "/analytics/canonical-type-adoption" in data["endpoints"]
+
+
+def test_cta_new_types_list_correct(tmp_path, monkeypatch):
+    pp = tmp_path / "protocols.jsonl"
+    rp = tmp_path / "reagents.jsonl"
+    _write_protos_for_cta(pp, _CTA_PROTOS)
+    _write_protos_for_cta(rp, _CTA_REAGENTS)
+    _patch_cta(monkeypatch, pp, rp)
+    data, _ = ae.handle_canonical_type_adoption("EGF", 5)
+    by_year = {e["year"]: e for e in data["by_year"]}
+    # 2019: only intestinal first adopted
+    assert "intestinal" in by_year[2019]["new_types"]
+    # 2020 new types: kidney and cerebral
+    assert set(by_year[2020]["new_types"]) == {"kidney", "cerebral"}

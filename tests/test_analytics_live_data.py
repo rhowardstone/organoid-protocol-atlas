@@ -760,3 +760,26 @@ def test_live_ka_y27632_per_type():
     assert data["n_supplement"] >= 10
     assert data["global_dominant_kind"] == "signaling"
     assert len(data["per_type"]) >= 10
+
+
+@require_protocols
+@require_reagents
+def test_live_cta_global_returns_200():
+    data, status = ae.handle_canonical_type_adoption(None, 5)
+    assert status == 200
+    assert data["n_canonicals"] >= 20
+    # EGF and CHIR99021 spread to 20+ types
+    names = {e["canonical"] for e in data["top_by_type_breadth"]}
+    assert "EGF" in names
+    assert data["top_by_type_breadth"][0]["n_types_current"] >= 15
+
+
+@require_protocols
+@require_reagents
+def test_live_cta_egf_per_year():
+    data, status = ae.handle_canonical_type_adoption("EGF", 5)
+    assert status == 200
+    assert data["canonical"] == "EGF"
+    assert data["n_types_current"] >= 15
+    assert data["first_year"] <= 2018
+    assert len(data["by_year"]) >= 5
