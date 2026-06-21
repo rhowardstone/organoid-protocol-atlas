@@ -270,3 +270,34 @@ def test_validate_modification_valid_passes(tmp_path):
     p = _write_json(tmp_path, data)
     res = validate_file(p)
     assert res.ok
+
+
+def test_validate_new_organoid_types_do_not_warn(tmp_path):
+    """New types added in schema v0.4 expansion must not produce unknown-type warnings."""
+    new_types = [
+        "cardiac", "tumor", "vascular", "cholangiocyte", "skin", "mammary",
+        "endometrial", "bone", "prostate", "inner-ear", "salivary-gland",
+        "bladder", "neuromuscular", "esophageal", "blood-brain-barrier",
+        "thyroid", "fallopian-tube",
+    ]
+    import json as _json
+    for otype in new_types:
+        p = tmp_path / f"{otype}.json"
+        p.write_text(_json.dumps(_minimal_protocol(organoid_type=otype)))
+        res = validate_file(p)
+        type_warns = [w for w in res.warnings if "not in known set" in w]
+        assert not type_warns, f"organoid_type={otype!r} should be in VALID_TYPES but got warning: {type_warns}"
+
+
+def test_validate_completely_unknown_organoid_type_warns(tmp_path):
+    """A completely unknown organoid type should produce a warning (Pydantic also errors — both are expected)."""
+    import json as _json
+    p = tmp_path / "unknown_type.json"
+    p.write_text(_json.dumps(_minimal_protocol(organoid_type="hamster-brain-chip")))
+    res = validate_file(p)
+    assert any("not in known set" in w for w in res.warnings), (
+        "Expected an unknown-type warning for 'hamster-brain-chip'"
+    )
+    # Pydantic correctly rejects invalid enum values — that's a co-occurring error, not a problem
+    pydantic_errors = [e for e in res.errors if "Pydantic" in e]
+    assert pydantic_errors, "Expected a Pydantic enum rejection error for truly unknown type"
