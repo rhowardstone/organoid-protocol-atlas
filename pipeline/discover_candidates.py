@@ -257,8 +257,11 @@ def load_existing_keys() -> tuple[set[str], set[str]]:
         with open(CORPUS, newline="") as f:
             for row in csv.DictReader(f, delimiter="\t"):
                 _add(row.get("pmcid", ""), row.get("doi", ""))
-    if POOL_180.exists():
-        with open(POOL_180, newline="") as f:
+    # Dedup against EVERY existing candidate pool (180/generated/gen2/gen3/hybrid/...),
+    # not just the 180 pool — otherwise a broad re-harvest re-emits papers already pooled
+    # (the gen2/gen3 dedup gap surfaced in the hybrid saturation-breaker analysis, PR #66).
+    for pool in sorted(POOL_180.parent.glob("organoid_corpus_candidates_*.csv")):
+        with open(pool, newline="") as f:
             for row in csv.DictReader(f):
                 _add(row.get("pmcid", ""), row.get("doi", ""))
     return pmcids, dois
@@ -343,7 +346,10 @@ def main():
                     help="cap on total unique new candidates emitted (0 = no cap)")
     ap.add_argument("--page-size", type=int, default=100, help="Europe PMC page size (default 100)")
     ap.add_argument("--sleep", type=float, default=0.34, help="delay between pages (politeness)")
+    ap.add_argument("--output", "-o", default=str(OUT),
+                    help="output candidate CSV (default: organoid_corpus_candidates_generated.csv)")
     args = ap.parse_args()
+    out_path = Path(args.output)
 
     seen_pmcids, seen_dois = load_existing_keys()
     print(f"Dedup baseline: {len(seen_pmcids)} pmcids, {len(seen_dois)} dois "
@@ -379,8 +385,8 @@ def main():
             print("  reached --max-total cap", flush=True)
             break
 
-    OUT.parent.mkdir(parents=True, exist_ok=True)
-    with open(OUT, "w", newline="") as f:
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    with open(out_path, "w", newline="") as f:
         w = csv.DictWriter(f, fieldnames=HEADER)
         w.writeheader()
         w.writerows(emitted)
@@ -395,7 +401,7 @@ def main():
     print("License distribution:")
     for k, v in lic.most_common():
         print(f"  {k:10s} {v}")
-    print(f"\nWrote {OUT}")
+    print(f"\nWrote {out_path}")
 
 
 if __name__ == "__main__":

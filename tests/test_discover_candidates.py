@@ -174,6 +174,29 @@ def test_is_new_true_for_fresh():
     assert dc.is_new(row, {"PMC0000000"}, {"10.9/other"}) is True
 
 
+def test_load_existing_keys_globs_all_pools(tmp_path, monkeypatch):
+    """load_existing_keys must dedup against EVERY candidate pool in the incoming dir
+    (180/generated/gen2/gen3/hybrid/...), not only the 180 pool — the gen2/gen3 dedup
+    gap that let the hybrid pool re-surface keyword-discoverable papers (PR #66)."""
+    inc = tmp_path / "incoming"
+    inc.mkdir()
+    # two distinct candidate pools + the curated 180 pool, each with a unique pmcid
+    (inc / "organoid_corpus_candidates_180.csv").write_text(
+        "pmcid,doi\nPMC180,10.1/a\n")
+    (inc / "organoid_corpus_candidates_gen3.csv").write_text(
+        "pmcid,doi\nPMC_GEN3,10.1/g3\n")
+    (inc / "organoid_corpus_candidates_hybrid.csv").write_text(
+        "pmcid,doi\nPMC_HYB,10.1/hy\n")
+    corpus = tmp_path / "corpus.tsv"
+    corpus.write_text("pmcid\tdoi\nPMC_CORP\t10.1/corp\n")
+    monkeypatch.setattr(dc, "CORPUS", corpus)
+    monkeypatch.setattr(dc, "POOL_180", inc / "organoid_corpus_candidates_180.csv")
+
+    pmcids, dois = dc.load_existing_keys()
+    assert {"PMC180", "PMC_GEN3", "PMC_HYB", "PMC_CORP"} <= pmcids   # ALL pools seen
+    assert {"10.1/a", "10.1/g3", "10.1/hy", "10.1/corp"} <= dois
+
+
 def test_is_new_ignores_empty_doi():
     no_doi = dict(SAMPLE, doi="")
     row = dc.build_row(no_doi, "cardiac")
