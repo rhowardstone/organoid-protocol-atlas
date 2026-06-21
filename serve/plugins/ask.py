@@ -128,6 +128,7 @@ exports. Prefer the JSON endpoints for programmatic use.
 - /analytics/protocol-completeness     per-paper completeness scores (0-6) across species/matrix/base_media/passaging/timeline/assay_endpoints; histogram + per-type ranking + top/bottom 20 papers; ?type= for one type
 - /analytics/cross-type-concentration-variance  canonicals with highest inter-type dose disagreement (max/min per-type-median ratio); ?q=Activin+A for per-unit breakdown; ?min_n= (default 3); ?min_types= (default 2)
 - /analytics/reagent-type-enrichment   enrichment ratio (type-rate/global-rate) per canonical per type; ?type=retinal for top enriched; ?q=taurine for which types over-use it; global=top 50 pairs; ?min_n= (default 3)
+- /analytics/grounding-inconsistency   S1 grounding-gap targets: canonicals grounded in some papers but ungrounded in others; ?min_n= (default 5); ?sort=total|rate|n_ungrounded
 - /analytics/failure-modes             failure mode cluster summary across the corpus
 - /analytics/lineage                   DOI→DOI protocol lineage graph
 - /analytics/assay-endpoints           assay endpoint cluster summary (per-type + cross-type)

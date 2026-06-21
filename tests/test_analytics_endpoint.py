@@ -6255,3 +6255,150 @@ def test_rte_unknown_canonical_returns_404(tmp_path, monkeypatch):
 def test_rte_index_entry():
     data, _ = ae.handle_index()
     assert "/analytics/reagent-type-enrichment" in data["endpoints"]
+
+# ---------------------------------------------------------------------------
+# Route 56 — /analytics/grounding-inconsistency (GI)
+# ---------------------------------------------------------------------------
+_GI_REAGENTS = [
+    # Y-27632: 6 grounded + 4 ungrounded = 40% ungrounded (total=10 >= min_n=5)
+    *[{"canonical": "Y-27632", "doi": f"10.1/g{i}", "organoid_type": "intestinal",
+       "grounded": 1, "kind": "signaling"} for i in range(6)],
+    *[{"canonical": "Y-27632", "doi": f"10.1/u{i}", "organoid_type": "retinal",
+       "grounded": 0, "kind": "signaling"} for i in range(4)],
+    # EGF: 8 grounded + 2 ungrounded = 20% ungrounded (total=10)
+    *[{"canonical": "EGF", "doi": f"10.1/eg{i}", "organoid_type": "intestinal",
+       "grounded": 1, "kind": "signaling"} for i in range(8)],
+    *[{"canonical": "EGF", "doi": f"10.1/eu{i}", "organoid_type": "cardiac",
+       "grounded": 0, "kind": "signaling"} for i in range(2)],
+    # GlutaMAX: 1 grounded + 8 ungrounded = 89% ungrounded (total=9)
+    {"canonical": "GlutaMAX", "doi": "10.1/glg0", "organoid_type": "liver",
+     "grounded": 1, "kind": "supplement"},
+    *[{"canonical": "GlutaMAX", "doi": f"10.1/glu{i}", "organoid_type": "liver",
+       "grounded": 0, "kind": "supplement"} for i in range(8)],
+    # Noggin: ALL grounded (not inconsistent, should not appear)
+    *[{"canonical": "Noggin", "doi": f"10.1/nog{i}", "organoid_type": "intestinal",
+       "grounded": 1, "kind": "signaling"} for i in range(10)],
+    # SmallCanon: 2 grounded + 2 ungrounded but total=4 < min_n=5 → excluded
+    *[{"canonical": "SmallCanon", "doi": f"10.1/sc{i}", "organoid_type": "kidney",
+       "grounded": i % 2, "kind": "signaling"} for i in range(4)],
+]
+
+
+def _write_gi_reagents(path, rows):
+    path.write_text("\n".join(json.dumps(r) for r in rows))
+
+
+def _patch_gi(monkeypatch, rp):
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", rp)
+
+
+def test_gi_returns_200(tmp_path, monkeypatch):
+    rp = tmp_path / "reagents.jsonl"
+    _write_gi_reagents(rp, _GI_REAGENTS)
+    _patch_gi(monkeypatch, rp)
+    data, status = ae.handle_grounding_inconsistency(5, "total")
+    assert status == 200
+
+
+def test_gi_keys(tmp_path, monkeypatch):
+    rp = tmp_path / "reagents.jsonl"
+    _write_gi_reagents(rp, _GI_REAGENTS)
+    _patch_gi(monkeypatch, rp)
+    data, _ = ae.handle_grounding_inconsistency(5, "total")
+    for k in ("n_inconsistent_canonicals", "n_inconsistent_ungrounded_records",
+              "min_n_papers", "sort_by", "canonicals"):
+        assert k in data, f"missing key: {k}"
+
+
+def test_gi_excludes_all_grounded(tmp_path, monkeypatch):
+    # Noggin is all-grounded → should not appear
+    rp = tmp_path / "reagents.jsonl"
+    _write_gi_reagents(rp, _GI_REAGENTS)
+    _patch_gi(monkeypatch, rp)
+    data, _ = ae.handle_grounding_inconsistency(5, "total")
+    canon_names = {e["canonical"] for e in data["canonicals"]}
+    assert "Noggin" not in canon_names
+
+
+def test_gi_excludes_below_min_n(tmp_path, monkeypatch):
+    # SmallCanon has total=4 < min_n=5
+    rp = tmp_path / "reagents.jsonl"
+    _write_gi_reagents(rp, _GI_REAGENTS)
+    _patch_gi(monkeypatch, rp)
+    data, _ = ae.handle_grounding_inconsistency(5, "total")
+    canon_names = {e["canonical"] for e in data["canonicals"]}
+    assert "SmallCanon" not in canon_names
+
+
+def test_gi_canonical_count(tmp_path, monkeypatch):
+    # Y-27632, EGF, GlutaMAX should be the 3 inconsistent ones with >=5 papers
+    rp = tmp_path / "reagents.jsonl"
+    _write_gi_reagents(rp, _GI_REAGENTS)
+    _patch_gi(monkeypatch, rp)
+    data, _ = ae.handle_grounding_inconsistency(5, "total")
+    assert data["n_inconsistent_canonicals"] == 3
+
+
+def test_gi_sort_total_desc(tmp_path, monkeypatch):
+    rp = tmp_path / "reagents.jsonl"
+    _write_gi_reagents(rp, _GI_REAGENTS)
+    _patch_gi(monkeypatch, rp)
+    data, _ = ae.handle_grounding_inconsistency(5, "total")
+    totals = [e["n_total_papers"] for e in data["canonicals"]]
+    assert totals == sorted(totals, reverse=True)
+
+
+def test_gi_sort_rate(tmp_path, monkeypatch):
+    rp = tmp_path / "reagents.jsonl"
+    _write_gi_reagents(rp, _GI_REAGENTS)
+    _patch_gi(monkeypatch, rp)
+    data, _ = ae.handle_grounding_inconsistency(5, "rate")
+    rates = [e["ungrounded_rate"] for e in data["canonicals"]]
+    assert rates == sorted(rates, reverse=True)
+    # GlutaMAX should be first (89%)
+    assert data["canonicals"][0]["canonical"] == "GlutaMAX"
+
+
+def test_gi_sort_n_ungrounded(tmp_path, monkeypatch):
+    rp = tmp_path / "reagents.jsonl"
+    _write_gi_reagents(rp, _GI_REAGENTS)
+    _patch_gi(monkeypatch, rp)
+    data, _ = ae.handle_grounding_inconsistency(5, "n_ungrounded")
+    ns = [e["n_ungrounded_papers"] for e in data["canonicals"]]
+    assert ns == sorted(ns, reverse=True)
+
+
+def test_gi_y27632_values(tmp_path, monkeypatch):
+    rp = tmp_path / "reagents.jsonl"
+    _write_gi_reagents(rp, _GI_REAGENTS)
+    _patch_gi(monkeypatch, rp)
+    data, _ = ae.handle_grounding_inconsistency(5, "total")
+    by_canon = {e["canonical"]: e for e in data["canonicals"]}
+    y = by_canon["Y-27632"]
+    assert y["n_grounded_papers"] == 6
+    assert y["n_ungrounded_papers"] == 4
+    assert y["n_total_papers"] == 10
+    assert y["ungrounded_rate"] == 0.4
+
+
+def test_gi_n_types_counts_distinct(tmp_path, monkeypatch):
+    # Y-27632: intestinal + retinal = 2 types
+    rp = tmp_path / "reagents.jsonl"
+    _write_gi_reagents(rp, _GI_REAGENTS)
+    _patch_gi(monkeypatch, rp)
+    data, _ = ae.handle_grounding_inconsistency(5, "total")
+    by_canon = {e["canonical"]: e for e in data["canonicals"]}
+    assert by_canon["Y-27632"]["n_types"] == 2
+
+
+def test_gi_invalid_sort_returns_400(tmp_path, monkeypatch):
+    rp = tmp_path / "reagents.jsonl"
+    _write_gi_reagents(rp, _GI_REAGENTS)
+    _patch_gi(monkeypatch, rp)
+    _, status = ae.handle_grounding_inconsistency(5, "invalid_sort")
+    assert status == 400
+
+
+def test_gi_index_entry():
+    data, _ = ae.handle_index()
+    assert "/analytics/grounding-inconsistency" in data["endpoints"]

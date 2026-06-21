@@ -371,6 +371,7 @@ async function load() {
     ['/analytics/protocol-completeness', 'Per-paper completeness scores (0-6) across species/matrix/base_media/passaging/timeline/assay_endpoints; histogram + per-type ranking + top/bottom 20 papers; ?type= for one type'],
     ['/analytics/cross-type-concentration-variance', 'Canonicals with highest inter-type dose disagreement (max/min per-type-median ratio); ?q=Activin+A for per-unit breakdown; ?min_n= threshold; ?min_types= (default 2)'],
     ['/analytics/reagent-type-enrichment', 'Enrichment ratio (type-rate/global-rate) per canonical per type; ?type=retinal for top enriched (e.g. taurine 14.85x); ?q=taurine for all types; global=top 50 pairs; ?min_n= (default 3)'],
+    ['/analytics/grounding-inconsistency', 'S1 grounding-gap targets: canonicals grounded in some papers but ungrounded in others; sorted by total papers; ?sort=total|rate|n_ungrounded; ?min_n= (default 5)'],
     ['/analytics/mior',                 'MIOR completeness report (12 items, 5 modules)'],
     ['/analytics/assay-endpoints',      'Assay endpoint cluster summary (per-type + cross-type)'],
     ['/analytics/failure-modes',        'Failure mode cluster summary across the corpus'],
