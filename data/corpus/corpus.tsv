@@ -859,3 +859,7 @@ bladder		PMC9887100	Ha	2023	BMB reports	tbd	tbd	CC-BY-NC	yes	tbd	no	auto-ingeste
 blood-brain-barrier	10.3390/ijms24032710	PMC9916529	Chaulagain	2023	International journal of molecular sciences	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.857
 salivary-gland	10.3389/fmolb.2023.1100541	PMC9932530	Schaafsma	2023	Frontiers in molecular biosciences	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.889
 thyroid	10.3390/nu15040887	PMC9967305	Yu	2023	Nutrients	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.857
+retinal	10.1038/s41598-018-32871-8	PMC6162218	Fligor	2018	Scientific reports	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+pancreatic	10.1038/s41467-019-12472-3	PMC6776618	Lebreton	2019	Nature communications	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+vascular	10.3389/fbioe.2020.00278	PMC7182037	Markou	2020	Frontiers in bioengineering and biotechnology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.667
+cardiac	10.3389/fgene.2021.767621	PMC8591288	Matsui	2021	Frontiers in genetics	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
