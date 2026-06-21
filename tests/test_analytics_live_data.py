@@ -270,3 +270,36 @@ def test_live_grounding_quality_signaling_ranked_high():
     # signaling factors are most likely to have been curated; should be present
     assert "signaling" in bk
     assert bk["signaling"]["n_reagents"] > 100
+
+
+# ---------------------------------------------------------------------------
+# concentration-stats live smoke tests
+# ---------------------------------------------------------------------------
+
+@require_reagents
+def test_live_concentration_stats_returns_200():
+    data, status = ae.handle_concentration_stats(None, None)
+    assert status == 200
+    assert "top_reagents" in data
+    assert len(data["top_reagents"]) >= 10
+
+
+@require_reagents
+def test_live_concentration_stats_egf_known():
+    data, status = ae.handle_concentration_stats("EGF", None)
+    assert status == 200
+    assert data["canonical"] == "EGF"
+    assert data["n_with_value"] >= 50
+    # EGF is predominantly used in ng/mL
+    assert "ng/mL" in data["stats_per_unit"]
+    stats = data["stats_per_unit"]["ng/mL"]
+    # Typical EGF dose is 1-500 ng/mL; median should be in this range
+    assert 1 <= stats["median"] <= 500
+
+
+@require_reagents
+def test_live_concentration_stats_top_by_n_with_value():
+    data, _ = ae.handle_concentration_stats(None, None)
+    # Y-27632 and EGF should be among the most reported
+    top_names = {r["canonical"] for r in data["top_reagents"][:10]}
+    assert len(top_names & {"Y-27632", "EGF", "CHIR99021", "FGF2"}) >= 2
