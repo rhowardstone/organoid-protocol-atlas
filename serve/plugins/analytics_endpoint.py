@@ -108,10 +108,70 @@ def handle_lineage() -> tuple[dict, int]:
         return {"error": "malformed lineage file"}, 500
 
 
+def _load_public_protocol(pmcid: str) -> dict | None:
+    """
+    Build a compare_protocols-compatible protocol dict from committed public JSONL.
+
+    Loads:
+      - Protocol summary from exports/public/protocols.jsonl
+      - Reagents (signaling/supplement/small_molecule) from exports/public/reagents.jsonl
+
+    This is the public-data fallback used by handle_compare when no local prediction
+    or pre-computed comparison file exists. Reagent fields are re-mapped to the
+    schema compare_protocols.compare_protocols() expects.
+    """
+    PROTOCOLS_JSONL = REPO / "exports" / "public" / "protocols.jsonl"
+    if not PROTOCOLS_JSONL.exists() or not REAGENTS_JSONL.exists():
+        return None
+
+    proto: dict | None = None
+    for line in PROTOCOLS_JSONL.read_text().splitlines():
+        if not line.strip():
+            continue
+        rec = json.loads(line)
+        if rec.get("pmcid", "").upper() == pmcid:
+            proto = dict(rec)
+            proto["_source"] = "public_summary"
+            break
+    if proto is None:
+        return None
+
+    # Group reagents from public reagents.jsonl
+    KIND_MAP = {
+        "signaling": "signaling_factors",
+        "supplement": "media_supplements",
+        "small_molecule": "small_molecules",
+    }
+    for key in KIND_MAP.values():
+        proto.setdefault(key, [])
+
+    for line in REAGENTS_JSONL.read_text().splitlines():
+        if not line.strip():
+            continue
+        r = json.loads(line)
+        if r.get("pmcid", "").upper() != pmcid:
+            continue
+        kind = r.get("kind", "")
+        section = KIND_MAP.get(kind)
+        if section is None:
+            continue
+        proto[section].append({
+            "name": r.get("name") or r.get("canonical"),
+            "canonical_name": r.get("canonical"),
+            "role": r.get("role"),
+            "value": r.get("value"),
+            "unit": r.get("canonical_unit") or r.get("unit"),
+            "evidence_quote": r.get("evidence_quote"),
+            "grounding_status": "resolved" if r.get("grounded") else "not_found",
+        })
+
+    return proto
+
+
 def handle_compare(pmcid_a: str, pmcid_b: str) -> tuple[dict, int]:
     """
-    Return protocol comparison. Checks pre-computed cache first.
-    Does NOT compute on-demand in the web process (would need local predictions).
+    Return protocol comparison. Checks pre-computed cache first, then computes
+    on-demand from public JSONL if both PMCIDs are in the public corpus.
     """
     # Sanitize
     for p in (pmcid_a, pmcid_b):
@@ -121,7 +181,7 @@ def handle_compare(pmcid_a: str, pmcid_b: str) -> tuple[dict, int]:
     pmcid_a = pmcid_a.upper()
     pmcid_b = pmcid_b.upper()
 
-    # Check both orderings
+    # Check both orderings (pre-computed cache)
     for a, b in ((pmcid_a, pmcid_b), (pmcid_b, pmcid_a)):
         path = COMPARISON_DIR / f"{a}_vs_{b}.json"
         if path.exists():
@@ -130,10 +190,36 @@ def handle_compare(pmcid_a: str, pmcid_b: str) -> tuple[dict, int]:
             except json.JSONDecodeError:
                 return {"error": "malformed comparison file"}, 500
 
-    return {
-        "error": f"No comparison found for {pmcid_a} vs {pmcid_b}",
-        "hint": f"Run: python pipeline/compare_protocols.py {pmcid_a} {pmcid_b}",
-    }, 404
+    # On-demand comparison from public JSONL
+    try:
+        from compare_protocols import compare_protocols as _compare
+    except ImportError:
+        return {
+            "error": f"No comparison found for {pmcid_a} vs {pmcid_b}",
+            "hint": f"Run: python pipeline/compare_protocols.py {pmcid_a} {pmcid_b}",
+        }, 404
+
+    pa = _load_public_protocol(pmcid_a)
+    pb = _load_public_protocol(pmcid_b)
+
+    if pa is None:
+        return {
+            "error": f"{pmcid_a} not found in public corpus",
+            "hint": f"Run: python pipeline/compare_protocols.py {pmcid_a} {pmcid_b}",
+        }, 404
+    if pb is None:
+        return {
+            "error": f"{pmcid_b} not found in public corpus",
+            "hint": f"Run: python pipeline/compare_protocols.py {pmcid_a} {pmcid_b}",
+        }, 404
+
+    try:
+        result = _compare(pa, pb, pmcid_a, pmcid_b)
+        result["computed_on_demand"] = True
+        result["note"] = "Comparison computed from public JSONL (summary-level); reagents included."
+        return result, 200
+    except Exception as exc:  # noqa: BLE001
+        return {"error": f"Comparison failed: {exc}"}, 500
 
 
 def handle_substitutions(query: str, to_query: str | None, organoid_type: str | None) -> tuple[dict, int]:

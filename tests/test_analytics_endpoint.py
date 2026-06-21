@@ -176,6 +176,64 @@ def test_compare_normalizes_case(tmp_path, monkeypatch):
     assert status == 200
 
 
+def test_load_public_protocol_returns_none_when_jsonl_missing(tmp_path, monkeypatch):
+    """_load_public_protocol returns None gracefully when JSONL files aren't present."""
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", tmp_path / "missing_reagents.jsonl")
+    result = ae._load_public_protocol("PMC999")
+    assert result is None
+
+
+def test_load_public_protocol_builds_protocol_with_reagents(tmp_path, monkeypatch):
+    """_load_public_protocol assembles signaling_factors + supplements from reagents.jsonl."""
+    proto_jsonl = tmp_path / "protocols.jsonl"
+    reag_jsonl = tmp_path / "reagents.jsonl"
+    proto_jsonl.write_text(
+        json.dumps({"pmcid": "PMC123", "organoid_type": "kidney", "doi": "10.1/x", "license": "CC-BY"}) + "\n"
+    )
+    reag_jsonl.write_text(
+        json.dumps({"pmcid": "PMC123", "name": "EGF", "canonical": "EGF",
+                    "kind": "signaling", "role": "component", "value": 10.0,
+                    "canonical_unit": "ng/mL", "evidence_quote": "EGF 10 ng/mL",
+                    "grounded": True}) + "\n" +
+        json.dumps({"pmcid": "PMC123", "name": "B27", "canonical": "B27",
+                    "kind": "supplement", "role": "supplement", "value": None,
+                    "canonical_unit": None, "evidence_quote": "B27 supplement",
+                    "grounded": False}) + "\n"
+    )
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", reag_jsonl)
+    # Patch PROTOCOLS_JSONL path used inside _load_public_protocol
+    import unittest.mock as mock
+    with mock.patch.object(ae.Path, "__new__",
+                           side_effect=lambda cls, *a: proto_jsonl if "protocols.jsonl" in str(a) else ae.Path(*a)):
+        pass  # can't easily mock open-file path; test indirectly via compare
+
+    # Direct approach: monkeypatch REPO so PROTOCOLS_JSONL resolves correctly
+    original = ae.REPO
+    monkeypatch.setattr(ae, "REPO", tmp_path)
+    (tmp_path / "exports").mkdir(exist_ok=True)
+    (tmp_path / "exports" / "public").mkdir(exist_ok=True)
+    (tmp_path / "exports" / "public" / "protocols.jsonl").write_text(
+        json.dumps({"pmcid": "PMC123", "organoid_type": "kidney"}) + "\n"
+    )
+    (tmp_path / "exports" / "public" / "reagents.jsonl").write_text(
+        json.dumps({"pmcid": "PMC123", "name": "EGF", "canonical": "EGF",
+                    "kind": "signaling", "role": "component", "value": 10.0,
+                    "canonical_unit": "ng/mL", "evidence_quote": "EGF 10 ng/mL",
+                    "grounded": True}) + "\n"
+    )
+    # Need to re-derive PROTOCOLS_JSONL in the function — it uses a local constant
+    # Instead, test via the REAGENTS_JSONL monkeypatch + a tmp protocols JSONL
+    # The function constructs PROTOCOLS_JSONL = REPO / "exports" / "public" / "protocols.jsonl"
+    # so patching REPO is the right approach
+    result = ae._load_public_protocol("PMC123")
+    assert result is not None
+    assert result["organoid_type"] == "kidney"
+    assert result["_source"] == "public_summary"
+    sig = result.get("signaling_factors", [])
+    assert len(sig) == 1
+    assert sig[0]["name"] == "EGF"
+
+
 # --------------------------------------------------------------------------- #
 # handle_substitutions
 # --------------------------------------------------------------------------- #
