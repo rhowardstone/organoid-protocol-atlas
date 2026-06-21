@@ -102,6 +102,10 @@ TYPE_QUERIES = {
                    '"forebrain organoid"', '"neural organoids"'),
     "retinal": _q('"retinal organoid"', '"optic cup organoid"', '"optic vesicle organoid"',
                   '"retinal organoids"', '"eye organoid"'),
+    # cholangiocyte (bile-duct) is more specific than hepatic — list it FIRST so a
+    # paper matching both is labelled cholangiocyte (assign_type takes the first match).
+    "cholangiocyte": _q('"cholangiocyte organoid"', '"bile duct organoid"',
+                        '"biliary organoid"', '"intrahepatic cholangiocyte organoid"'),
     "hepatic": _q('"liver organoid"', '"hepatic organoid"', '"hepatobiliary organoid"',
                   '"liver organoids"', '"hepatocyte organoid"'),
     "kidney": _q('"kidney organoid"', '"renal organoid"', '"nephron organoid"',
@@ -121,8 +125,6 @@ TYPE_QUERIES = {
                    '"blood-vessel organoid"', '"vascularized organoid"'),
     "blood-brain-barrier": _q('"blood-brain barrier organoid"', '"blood brain barrier organoid"',
                               '"BBB organoid"', '"neurovascular organoid"'),
-    "cholangiocyte": _q('"cholangiocyte organoid"', '"bile duct organoid"',
-                        '"biliary organoid"', '"intrahepatic cholangiocyte organoid"'),
     "thyroid": _q('"thyroid organoid"', '"thyroid follicular organoid"'),
     "salivary-gland": _q('"salivary gland organoid"', '"salivary organoid"',
                          '"submandibular gland organoid"'),

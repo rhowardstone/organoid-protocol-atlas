@@ -123,7 +123,7 @@ def test_type_queries_ordering_specific_before_broad():
     # cholangiocyte must be considered before hepatic so bile-duct papers keep
     # the specific label rather than being swallowed by the broad liver query.
     keys = list(dc.TYPE_QUERIES)
-    assert keys.index("cholangiocyte") > keys.index("hepatic") or True  # order is by spec
+    assert keys.index("cholangiocyte") < keys.index("hepatic")
     # the documented rule is "earlier key wins"; assert the keys we rely on exist
     for t in ("cardiac", "intestinal", "cerebral", "tumor", "vascular",
               "blood-brain-barrier", "cholangiocyte"):
