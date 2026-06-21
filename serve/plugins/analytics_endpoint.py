@@ -28,6 +28,7 @@ Routes (all return JSON; read-only, no writes):
   GET /analytics/kgx-summary                 -- KGX graph state: node/edge counts, resolution rate, review queue breakdown, top not-found and needs-review entities
   GET /analytics/concentration-by-type       -- per-organoid-type concentration stats for one canonical reagent: median/min/max/n per unit per type; requires ?q=
   GET /analytics/journal-breakdown           -- journal contribution counts cross-corpus and per organoid type; optional ?type= for one type
+  GET /analytics/type-comparison             -- side-by-side organoid type comparison: shared/unique canonical reagents, Jaccard score, per-kind breakdown; requires ?a= and ?b=
   GET /analytics                                -- index of available analytics
 
 All endpoints degrade gracefully — if the pre-computed file doesn't exist they return
@@ -1887,6 +1888,107 @@ def handle_temporal_reagent_adoption(query: str | None, organoid_type: str | Non
     }, 200
 
 
+def handle_type_comparison(type_a: str | None, type_b: str | None) -> tuple[dict, int]:
+    """Side-by-side comparison of two organoid types' canonical reagent profiles.
+
+    Returns shared canonical reagents (appearing in both types), reagents unique
+    to each type, Jaccard similarity, and per-reagent-kind breakdown. Requires
+    ?a= and ?b= specifying the two organoid type names.
+    Complements /analytics/type-similarity (which gives Jaccard scores for all pairs)
+    by surfacing the actual reagent lists, not just the score.
+    """
+    if not REAGENTS_JSONL.exists():
+        return {"error": "reagents.jsonl not found", "hint": "Run: python pipeline/export_public.py"}, 404
+
+    for val in (type_a, type_b):
+        if not val or not val.strip():
+            return {"error": "pass ?a= and ?b= specifying two organoid types"}, 400
+        if not re.match(r'^[\w-]+$', val):
+            return {"error": f"invalid organoid_type: '{val}'"}, 400
+
+    type_a = type_a.strip()
+    type_b = type_b.strip()
+
+    if type_a == type_b:
+        return {"error": "?a= and ?b= must be different organoid types"}, 400
+
+    # Build per-type: {canonical_lower -> {canonical_display, kinds: set, n_records}}
+    def _norm(name: str) -> str:
+        return (name or "").strip().lower()
+
+    type_data: dict[str, dict[str, dict]] = {type_a: {}, type_b: {}}
+
+    try:
+        for line in REAGENTS_JSONL.read_text().splitlines():
+            if not line.strip():
+                continue
+            r = json.loads(line)
+            ot = r.get("organoid_type") or ""
+            if ot not in (type_a, type_b):
+                continue
+            cname_display = (r.get("canonical") or r.get("name") or "unknown").strip()
+            cname_lower = _norm(cname_display)
+            kind = r.get("kind") or "unknown"
+            bucket = type_data[ot]
+            if cname_lower not in bucket:
+                bucket[cname_lower] = {"canonical": cname_display, "kinds": set(), "n_records": 0}
+            bucket[cname_lower]["kinds"].add(kind)
+            bucket[cname_lower]["n_records"] += 1
+    except (json.JSONDecodeError, OSError) as exc:
+        return {"error": f"reagents.jsonl unreadable: {exc}"}, 500
+
+    set_a = set(type_data[type_a])
+    set_b = set(type_data[type_b])
+
+    if not set_a:
+        return {"error": f"no reagents found for organoid_type '{type_a}'"}, 404
+    if not set_b:
+        return {"error": f"no reagents found for organoid_type '{type_b}'"}, 404
+
+    shared_keys = set_a & set_b
+    only_a_keys = set_a - set_b
+    only_b_keys = set_b - set_a
+    union_keys = set_a | set_b
+
+    jaccard = round(len(shared_keys) / len(union_keys), 4) if union_keys else 0.0
+
+    def _format(keys: set, bucket: dict) -> list:
+        return sorted(
+            [{"canonical": bucket[k]["canonical"],
+              "kinds": sorted(bucket[k]["kinds"]),
+              "n_records": bucket[k]["n_records"]}
+             for k in keys],
+            key=lambda x: -x["n_records"],
+        )
+
+    def _kind_breakdown(keys: set, bucket_a: dict, bucket_b: dict) -> dict:
+        all_kinds: set = set()
+        for k in keys:
+            all_kinds |= bucket_a.get(k, {}).get("kinds", set())
+            all_kinds |= bucket_b.get(k, {}).get("kinds", set())
+        result = {}
+        for kind in sorted(all_kinds):
+            result[kind] = {
+                "n_in_a": sum(1 for k in keys if kind in bucket_a.get(k, {}).get("kinds", set())),
+                "n_in_b": sum(1 for k in keys if kind in bucket_b.get(k, {}).get("kinds", set())),
+            }
+        return result
+
+    return {
+        "type_a": type_a,
+        "type_b": type_b,
+        "jaccard_similarity": jaccard,
+        "n_shared": len(shared_keys),
+        "n_only_a": len(only_a_keys),
+        "n_only_b": len(only_b_keys),
+        "n_union": len(union_keys),
+        "shared": _format(shared_keys, type_data[type_a]),
+        "only_a": _format(only_a_keys, type_data[type_a]),
+        "only_b": _format(only_b_keys, type_data[type_b]),
+        "kind_breakdown_shared": _kind_breakdown(shared_keys, type_data[type_a], type_data[type_b]),
+    }, 200
+
+
 def handle_journal_breakdown(organoid_type: str | None) -> tuple[dict, int]:
     """Journal contribution counts from protocols.jsonl.
 
@@ -2180,6 +2282,7 @@ def handle_index() -> tuple[dict, int]:
             "/analytics/kgx-summary": "KGX graph state: node/edge counts by category, resolution rate, review queue breakdown (needs_review/not_found/not_attempted), top unresolved entities for S1/S2 triage",
             "/analytics/concentration-by-type": "per-organoid-type concentration stats for one canonical reagent — median/min/max/n per unit per type; requires ?q=EGF; useful for comparing dose ranges across organoid systems",
             "/analytics/journal-breakdown": "journal contribution counts: cross-corpus top 50 + per-type top 5; optional ?type=kidney for full breakdown of one type — audits corpus composition and journal bias",
+            "/analytics/type-comparison": "side-by-side organoid type comparison: shared/unique canonical reagents, Jaccard score, per-kind breakdown; requires ?a=intestinal&b=cerebral",
             "/analytics/assay-endpoints": "assay endpoint cluster summary (per type + cross-type)",
             "/analytics/quality": "per-paper quality scores (gold/silver/bronze) + corpus summary",
             "/analytics/mior": "MIOR completeness report (Minimum Information About an Organoid Research)",
@@ -2384,6 +2487,13 @@ async def route_temporal_reagent_adoption(datasette, request):
     return Response.json(data, status=status)
 
 
+async def route_type_comparison(datasette, request):
+    type_a = request.args.get("a") or None
+    type_b = request.args.get("b") or None
+    data, status = handle_type_comparison(type_a, type_b)
+    return Response.json(data, status=status)
+
+
 async def route_journal_breakdown(datasette, request):
     organoid_type = request.args.get("type") or None
     data, status = handle_journal_breakdown(organoid_type)
@@ -2439,6 +2549,7 @@ def register_routes():
         (r"^/analytics/grounding-quality$", route_grounding_quality),
         (r"^/analytics/concentration-stats$", route_concentration_stats),
         (r"^/analytics/temporal-reagent-adoption$", route_temporal_reagent_adoption),
+        (r"^/analytics/type-comparison$", route_type_comparison),
         (r"^/analytics/journal-breakdown$", route_journal_breakdown),
         (r"^/analytics/concentration-by-type$", route_concentration_by_type),
         (r"^/analytics/kgx-summary$", route_kgx_summary),

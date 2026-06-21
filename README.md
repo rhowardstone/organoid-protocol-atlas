@@ -37,7 +37,7 @@ paper (PMC)
   └─ S2       Biolink-validated KGX export (nodes.tsv + edges.tsv + kgx_manifest.json)
   └─ entity normalization (bFGF≡FGF2, RSPO1≡R-spondin1, …)
   └─ analytics pipeline → coverage · quality · consensus · failure modes · lineage · assay endpoints
-  └─ REST API (Datasette plugin, 33 routes)
+  └─ REST API (Datasette plugin, 34 routes)
 ```
 
 ## Analytics API
@@ -71,6 +71,7 @@ GET /analytics/temporal-reagent-adoption per-reagent temporal adoption: fraction
 GET /analytics/kgx-summary             KGX graph state: node/edge counts by category, resolution rate, review queue breakdown (needs_review/not_found), top unresolved entities
 GET /analytics/concentration-by-type   per-organoid-type concentration stats for one canonical reagent — median/min/max/n per unit per type; ?q=EGF required
 GET /analytics/journal-breakdown        journal contribution counts: cross-corpus top 50 + per-type top 5; ?type=kidney for full breakdown of one type
+GET /analytics/type-comparison          side-by-side organoid type comparison: shared/unique canonical reagents, Jaccard, per-kind breakdown; ?a=intestinal&b=cerebral
 GET /analytics/assay-endpoints          assay endpoint cluster summary (12 clusters, per-type + cross-type)
 GET /analytics/failure-modes            failure mode cluster summary across the corpus
 GET /analytics/lineage                  DOI→DOI protocol lineage graph (ProtocolModification data)
@@ -163,7 +164,7 @@ serve/
   run.sh                     serve the atlas (Datasette + plugins)
   metadata.yaml              facets + canned queries
   plugins/
-    analytics_endpoint.py    33-route analytics REST API (pure handlers + thin Datasette wrappers)
+    analytics_endpoint.py    34-route analytics REST API (pure handlers + thin Datasette wrappers)
     ask.py                   grounded Q&A (RAG over FTS → local model)
   templates/                 landing, recipe cards, /heatmap, /consensus
   static/atlas.css|js        theme + dark-mode toggle
@@ -185,7 +186,7 @@ outputs/
   analysis/                  pre-computed analytics (coverage, quality, consensus, etc.)
   kgx/                       KGX graph export
   comparison/                pre-computed protocol diffs
-tests/                       offline test suite (915 tests, no network, no GPU)
+tests/                       offline test suite (925 tests, no network, no GPU)
 docs/                        SUPERVISOR_CHECKLIST.md, PLAN, RESEARCH_BRIEF
 ```
 
