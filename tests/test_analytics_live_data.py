@@ -837,3 +837,31 @@ def test_live_scr_ipsc_source_filter():
     assert isinstance(by_canon["CHIR99021"]["exclusive_to_source"], bool)
     # top canonical has n_papers >= 50 (CHIR or Y-27632 each appear in 100+ iPSC papers)
     assert data["top_canonicals"][0]["n_papers"] >= 50
+
+
+# ---------------------------------------------------------------------------
+# Route 53 — /analytics/protocol-completeness live smoke tests
+# ---------------------------------------------------------------------------
+@require_protocols
+def test_live_pc_global():
+    data, status = ae.handle_protocol_completeness(None)
+    assert status == 200
+    assert data["n_protocols"] >= 500
+    assert data["max_score"] == 6
+    # species is the most-reported field (>= 85%)
+    rates = data["field_reporting_rates"]
+    assert rates["species"] >= 0.85
+    # per_type is sorted desc by mean_score
+    means = [e["mean_score"] for e in data["per_type"]]
+    assert means == sorted(means, reverse=True)
+
+
+@require_protocols
+def test_live_pc_type_filter():
+    data, status = ae.handle_protocol_completeness("intestinal")
+    assert status == 200
+    assert data["organoid_type"] == "intestinal"
+    assert data["n_protocols"] >= 30
+    # papers are sorted by score desc
+    scores = [p["score"] for p in data["papers"]]
+    assert scores == sorted(scores, reverse=True)

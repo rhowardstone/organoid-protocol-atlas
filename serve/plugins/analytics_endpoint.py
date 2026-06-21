@@ -47,6 +47,7 @@ Routes (all return JSON; read-only, no writes):
   GET /analytics/canonical-type-adoption   -- reagent diffusion: n_organoid_types using each canonical by year (first_year, n_types_current, year_peak); ?q= for per-year type list; ?min_types= filter; live from both JSONLs
   GET /analytics/unit-normalization-report  -- shows how raw unit strings cluster into canonical_unit groups (ng/mL←[ng/mL,ng/ml,ng ml-1], uM←[μM,µM,µm,...]); sorted by n_raw_strings; ?q= for one canonical_unit; live from reagents.jsonl
   GET /analytics/source-cell-reagent-profile -- characteristic reagents by source_cell_type (iPSC/adult_stem_cell/primary_tissue/ESC); top 20 canonicals per source; pairwise Jaccard; ?source= for one source type; live from both JSONLs
+  GET /analytics/protocol-completeness       -- per-paper completeness scores (0-6) across species/matrix/base_media/passaging/timeline/assay_endpoints; histogram + per-type ranking + top/bottom 20 papers; ?type= for one type; live from protocols.jsonl
   GET /analytics                                -- index of available analytics
 
 All endpoints degrade gracefully — if the pre-computed file doesn't exist they return
@@ -3689,6 +3690,132 @@ def handle_source_cell_reagent_profile(source=None, min_papers=3):
     }, 200
 
 
+def handle_protocol_completeness(organoid_type: str | None) -> tuple[dict, int]:
+    """Route 53: per-paper completeness scores (0-6) across 6 protocol fields.
+
+    Scored fields: species, matrix, base_media, passaging, timeline, assay_endpoints.
+    Each field present and non-empty earns +1.
+
+    Without ?type=: global score histogram, per-type mean, top/bottom 20 papers.
+    With ?type=intestinal: histogram + per-paper list sorted by score desc.
+    """
+    if not PROTOCOLS_JSONL.exists():
+        return {
+            "error": "protocols.jsonl not found",
+            "hint": "Run: python pipeline/export_public.py",
+        }, 404
+
+    if organoid_type and not re.match(r'^[\w-]+$', organoid_type):
+        return {"error": "invalid organoid_type"}, 400
+
+    _SCORED_FIELDS = ["species", "matrix", "base_media", "passaging", "timeline", "assay_endpoints"]
+
+    def _is_present(val) -> bool:
+        if val is None:
+            return False
+        s = str(val).strip().lower()
+        return s not in ("", "not_stated", "not_reported")
+
+    def _score(p: dict) -> int:
+        return sum(1 for f in _SCORED_FIELDS if _is_present(p.get(f)))
+
+    try:
+        protos = [
+            json.loads(line)
+            for line in PROTOCOLS_JSONL.read_text().splitlines()
+            if line.strip()
+        ]
+    except (json.JSONDecodeError, OSError) as exc:
+        return {"error": f"protocols.jsonl unreadable: {exc}"}, 500
+
+    protos = [p for p in protos if p.get("organoid_type") and p.get("organoid_type") != "other"]
+
+    if organoid_type:
+        subset = [p for p in protos if p.get("organoid_type") == organoid_type]
+        if not subset:
+            return {"error": f"no protocols found for organoid_type={organoid_type!r}"}, 404
+
+        scored = sorted(
+            [{"doi": p.get("doi", ""), "score": _score(p),
+              "missing_fields": [f for f in _SCORED_FIELDS if not _is_present(p.get(f))]}
+             for p in subset],
+            key=lambda x: -x["score"],
+        )
+        scores = [x["score"] for x in scored]
+        n = len(subset)
+        field_rates = {
+            f: round(sum(1 for p in subset if _is_present(p.get(f))) / n, 4)
+            for f in _SCORED_FIELDS
+        }
+        hist = [
+            {"score": s, "n_protocols": scores.count(s), "fraction": round(scores.count(s) / n, 4)}
+            for s in range(len(_SCORED_FIELDS) + 1)
+            if scores.count(s) > 0
+        ]
+        return {
+            "organoid_type": organoid_type,
+            "n_protocols": n,
+            "scored_fields": _SCORED_FIELDS,
+            "max_score": len(_SCORED_FIELDS),
+            "mean_score": round(sum(scores) / n, 4),
+            "field_reporting_rates": field_rates,
+            "score_histogram": hist,
+            "papers": scored,
+        }, 200
+
+    # Global mode
+    from collections import defaultdict
+
+    all_scored = []
+    type_bucket: dict = defaultdict(list)
+    field_total = {f: 0 for f in _SCORED_FIELDS}
+    n_total = len(protos)
+
+    for p in protos:
+        sc = _score(p)
+        ot = p.get("organoid_type", "")
+        all_scored.append({
+            "doi": p.get("doi", ""),
+            "organoid_type": ot,
+            "score": sc,
+            "missing_fields": [f for f in _SCORED_FIELDS if not _is_present(p.get(f))],
+        })
+        type_bucket[ot].append(sc)
+        for f in _SCORED_FIELDS:
+            if _is_present(p.get(f)):
+                field_total[f] += 1
+
+    score_counts: dict = {}
+    for x in all_scored:
+        sc = x["score"]
+        score_counts[sc] = score_counts.get(sc, 0) + 1
+
+    hist = [
+        {"score": s, "n_protocols": score_counts.get(s, 0),
+         "fraction": round(score_counts.get(s, 0) / n_total, 4)}
+        for s in range(len(_SCORED_FIELDS) + 1)
+    ]
+    per_type = sorted(
+        [{"organoid_type": ot, "n_protocols": len(ss),
+          "mean_score": round(sum(ss) / len(ss), 4),
+          "median_score": sorted(ss)[len(ss) // 2]}
+         for ot, ss in type_bucket.items()],
+        key=lambda x: -x["mean_score"],
+    )
+    all_sorted = sorted(all_scored, key=lambda x: -x["score"])
+    return {
+        "n_protocols": n_total,
+        "scored_fields": _SCORED_FIELDS,
+        "max_score": len(_SCORED_FIELDS),
+        "mean_score": round(sum(x["score"] for x in all_scored) / n_total, 4),
+        "field_reporting_rates": {f: round(c / n_total, 4) for f, c in field_total.items()},
+        "score_histogram": hist,
+        "per_type": per_type,
+        "top_papers": all_sorted[:20],
+        "bottom_papers": all_sorted[-20:],
+    }, 200
+
+
 def handle_unit_normalization_report(query=None):
     """Route 51: how raw unit strings cluster into canonical_unit groups.
 
@@ -4292,6 +4419,7 @@ def handle_index() -> tuple[dict, int]:
             "/analytics/canonical-type-adoption": "reagent diffusion: for each canonical, tracks n distinct organoid types using it per year (first_year, n_types_current, year_peak = most new-type adoptions); ?q=EGF for per-year type list; ?min_types= threshold (default 5)",
             "/analytics/unit-normalization-report": "audit of raw unit string → canonical_unit normalization clusters: e.g. 'uM' ← [μM, µM, µm, μmol/L, ...]; sorted by n_raw_strings; ?q=uM for detailed breakdown + top canonicals using that unit",
             "/analytics/source-cell-reagent-profile": "characteristic canonical reagents by source_cell_type (iPSC / adult_stem_cell / primary_tissue / ESC); top 20 per source + pairwise Jaccard similarity; ?source=iPSC for top 30 with exclusivity scores; ?min_papers= threshold (default 3)",
+            "/analytics/protocol-completeness": "per-paper completeness scores (0-6) across 6 optionally-reported fields (species/matrix/base_media/passaging/timeline/assay_endpoints); global score histogram + per-type ranking + top/bottom 20 papers; ?type= for one type",
             "/analytics/assay-endpoints": "assay endpoint cluster summary (per type + cross-type)",
             "/analytics/quality": "per-paper quality scores (gold/silver/bronze) + corpus summary",
             "/analytics/mior": "MIOR completeness report (Minimum Information About an Organoid Research)",
@@ -4607,6 +4735,12 @@ async def route_source_cell_reagent_profile(datasette, request):
     return Response.json(data, status=status)
 
 
+async def route_protocol_completeness(datasette, request):
+    organoid_type = request.args.get("type") or None
+    data, status = handle_protocol_completeness(organoid_type)
+    return Response.json(data, status=status)
+
+
 async def route_concentration_unit_distribution(datasette, request):
     query = request.args.get("q") or None
     try:
@@ -4737,6 +4871,7 @@ def register_routes():
         (r"^/analytics/canonical-type-adoption$", route_canonical_type_adoption),
         (r"^/analytics/unit-normalization-report$", route_unit_normalization_report),
         (r"^/analytics/source-cell-reagent-profile$", route_source_cell_reagent_profile),
+        (r"^/analytics/protocol-completeness$", route_protocol_completeness),
         (r"^/analytics/journal-breakdown$", route_journal_breakdown),
         (r"^/analytics/concentration-by-type$", route_concentration_by_type),
         (r"^/analytics/kgx-summary$", route_kgx_summary),

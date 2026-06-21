@@ -5777,3 +5777,162 @@ def test_scr_eqf_top_for_adult_stem_cell(tmp_path, monkeypatch):
 def test_scr_index_entry():
     data, _ = ae.handle_index()
     assert "/analytics/source-cell-reagent-profile" in data["endpoints"]
+
+# ---------------------------------------------------------------------------
+# Route 53 — /analytics/protocol-completeness (PC)
+# ---------------------------------------------------------------------------
+_PC_PROTOS = [
+    # score=6: all fields present
+    {"doi": "10.1/r1", "organoid_type": "retinal",    "species": "human", "matrix": "Matrigel",
+     "base_media": "DMEM", "passaging": "Accutase", "timeline": "7d", "assay_endpoints": "immunofluorescence"},
+    # score=5: missing passaging
+    {"doi": "10.1/r2", "organoid_type": "retinal",    "species": "human", "matrix": "Matrigel",
+     "base_media": "DMEM", "passaging": None, "timeline": "7d", "assay_endpoints": "RNA-seq"},
+    # score=4: missing passaging + timeline
+    {"doi": "10.1/i1", "organoid_type": "intestinal", "species": "human", "matrix": "BME",
+     "base_media": "DMEM", "passaging": None, "timeline": None, "assay_endpoints": "western blot"},
+    # score=2: only species + matrix
+    {"doi": "10.1/i2", "organoid_type": "intestinal", "species": "mouse", "matrix": "Matrigel",
+     "base_media": None, "passaging": None, "timeline": None, "assay_endpoints": None},
+    # score=0: nothing reported
+    {"doi": "10.1/c1", "organoid_type": "cardiac",    "species": None, "matrix": None,
+     "base_media": None, "passaging": None, "timeline": None, "assay_endpoints": None},
+    # score=1: only species
+    {"doi": "10.1/c2", "organoid_type": "cardiac",    "species": "human", "matrix": None,
+     "base_media": None, "passaging": None, "timeline": None, "assay_endpoints": None},
+    # score=3: species+matrix+base_media, no type="other" should be excluded
+    {"doi": "10.1/o1", "organoid_type": "other",      "species": "human", "matrix": "Matrigel",
+     "base_media": "DMEM", "passaging": None, "timeline": None, "assay_endpoints": None},
+]
+
+
+def _write_pc_protos(path, rows):
+    path.write_text("\n".join(json.dumps(r) for r in rows))
+
+
+def _patch_pc(monkeypatch, pp):
+    monkeypatch.setattr(ae, "PROTOCOLS_JSONL", pp)
+
+
+def test_pc_global_returns_200(tmp_path, monkeypatch):
+    pp = tmp_path / "protocols.jsonl"
+    _write_pc_protos(pp, _PC_PROTOS)
+    _patch_pc(monkeypatch, pp)
+    data, status = ae.handle_protocol_completeness(None)
+    assert status == 200
+
+
+def test_pc_global_keys(tmp_path, monkeypatch):
+    pp = tmp_path / "protocols.jsonl"
+    _write_pc_protos(pp, _PC_PROTOS)
+    _patch_pc(monkeypatch, pp)
+    data, _ = ae.handle_protocol_completeness(None)
+    for k in ("n_protocols", "scored_fields", "max_score", "mean_score",
+              "field_reporting_rates", "score_histogram", "per_type",
+              "top_papers", "bottom_papers"):
+        assert k in data, f"missing key: {k}"
+
+
+def test_pc_excludes_other_type(tmp_path, monkeypatch):
+    # The row with organoid_type="other" should not be counted
+    pp = tmp_path / "protocols.jsonl"
+    _write_pc_protos(pp, _PC_PROTOS)
+    _patch_pc(monkeypatch, pp)
+    data, _ = ae.handle_protocol_completeness(None)
+    assert data["n_protocols"] == 6  # 7 rows - 1 "other" = 6
+
+
+def test_pc_score_histogram_covers_0_and_6(tmp_path, monkeypatch):
+    pp = tmp_path / "protocols.jsonl"
+    _write_pc_protos(pp, _PC_PROTOS)
+    _patch_pc(monkeypatch, pp)
+    data, _ = ae.handle_protocol_completeness(None)
+    hist_scores = {e["score"] for e in data["score_histogram"]}
+    assert 0 in hist_scores and 6 in hist_scores
+
+
+def test_pc_mean_score_in_range(tmp_path, monkeypatch):
+    pp = tmp_path / "protocols.jsonl"
+    _write_pc_protos(pp, _PC_PROTOS)
+    _patch_pc(monkeypatch, pp)
+    data, _ = ae.handle_protocol_completeness(None)
+    assert 0.0 <= data["mean_score"] <= 6.0
+
+
+def test_pc_species_reporting_rate_highest(tmp_path, monkeypatch):
+    # species is reported in 5 of 6 valid rows (r1,r2,i1 has human; i2 mouse; c2 human; c1=None)
+    pp = tmp_path / "protocols.jsonl"
+    _write_pc_protos(pp, _PC_PROTOS)
+    _patch_pc(monkeypatch, pp)
+    data, _ = ae.handle_protocol_completeness(None)
+    rates = data["field_reporting_rates"]
+    assert rates["species"] >= rates["timeline"]
+
+
+def test_pc_per_type_sorted_desc(tmp_path, monkeypatch):
+    pp = tmp_path / "protocols.jsonl"
+    _write_pc_protos(pp, _PC_PROTOS)
+    _patch_pc(monkeypatch, pp)
+    data, _ = ae.handle_protocol_completeness(None)
+    means = [e["mean_score"] for e in data["per_type"]]
+    assert means == sorted(means, reverse=True)
+
+
+def test_pc_top_paper_score_geq_bottom(tmp_path, monkeypatch):
+    pp = tmp_path / "protocols.jsonl"
+    _write_pc_protos(pp, _PC_PROTOS)
+    _patch_pc(monkeypatch, pp)
+    data, _ = ae.handle_protocol_completeness(None)
+    assert data["top_papers"][0]["score"] >= data["bottom_papers"][-1]["score"]
+
+
+def test_pc_type_filter_returns_200(tmp_path, monkeypatch):
+    pp = tmp_path / "protocols.jsonl"
+    _write_pc_protos(pp, _PC_PROTOS)
+    _patch_pc(monkeypatch, pp)
+    data, status = ae.handle_protocol_completeness("retinal")
+    assert status == 200
+    assert data["organoid_type"] == "retinal"
+
+
+def test_pc_type_filter_has_papers_key(tmp_path, monkeypatch):
+    pp = tmp_path / "protocols.jsonl"
+    _write_pc_protos(pp, _PC_PROTOS)
+    _patch_pc(monkeypatch, pp)
+    data, _ = ae.handle_protocol_completeness("retinal")
+    assert "papers" in data
+    assert len(data["papers"]) == 2
+
+
+def test_pc_type_filter_papers_sorted_desc(tmp_path, monkeypatch):
+    pp = tmp_path / "protocols.jsonl"
+    _write_pc_protos(pp, _PC_PROTOS)
+    _patch_pc(monkeypatch, pp)
+    data, _ = ae.handle_protocol_completeness("retinal")
+    scores = [p["score"] for p in data["papers"]]
+    assert scores == sorted(scores, reverse=True)
+    assert scores[0] == 6  # r1 has all 6 fields
+
+
+def test_pc_missing_fields_correct(tmp_path, monkeypatch):
+    pp = tmp_path / "protocols.jsonl"
+    _write_pc_protos(pp, _PC_PROTOS)
+    _patch_pc(monkeypatch, pp)
+    data, _ = ae.handle_protocol_completeness("retinal")
+    # r2 has score=5, missing passaging
+    paper_r2 = next(p for p in data["papers"] if p["doi"] == "10.1/r2")
+    assert "passaging" in paper_r2["missing_fields"]
+    assert len(paper_r2["missing_fields"]) == 1
+
+
+def test_pc_unknown_type_returns_404(tmp_path, monkeypatch):
+    pp = tmp_path / "protocols.jsonl"
+    _write_pc_protos(pp, _PC_PROTOS)
+    _patch_pc(monkeypatch, pp)
+    _, status = ae.handle_protocol_completeness("NOTYPE_XYZ")
+    assert status == 404
+
+
+def test_pc_index_entry():
+    data, _ = ae.handle_index()
+    assert "/analytics/protocol-completeness" in data["endpoints"]
