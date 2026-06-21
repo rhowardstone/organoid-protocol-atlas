@@ -48,6 +48,7 @@ Routes (all return JSON; read-only, no writes):
   GET /analytics/unit-normalization-report  -- shows how raw unit strings cluster into canonical_unit groups (ng/mL←[ng/mL,ng/ml,ng ml-1], uM←[μM,µM,µm,...]); sorted by n_raw_strings; ?q= for one canonical_unit; live from reagents.jsonl
   GET /analytics/source-cell-reagent-profile -- characteristic reagents by source_cell_type (iPSC/adult_stem_cell/primary_tissue/ESC); top 20 canonicals per source; pairwise Jaccard; ?source= for one source type; live from both JSONLs
   GET /analytics/protocol-completeness       -- per-paper completeness scores (0-6) across species/matrix/base_media/passaging/timeline/assay_endpoints; histogram + per-type ranking + top/bottom 20 papers; ?type= for one type; live from protocols.jsonl
+  GET /analytics/cross-type-concentration-variance -- canonicals where dose differs most across organoid types; sorted by max/min median ratio; ?q= for per-canonical+unit breakdown; ?min_n= per-type record threshold; live from reagents.jsonl
   GET /analytics                                -- index of available analytics
 
 All endpoints degrade gracefully — if the pre-computed file doesn't exist they return
@@ -3690,6 +3691,127 @@ def handle_source_cell_reagent_profile(source=None, min_papers=3):
     }, 200
 
 
+def handle_cross_type_concentration_variance(
+    query: str | None,
+    min_n: int = 3,
+    min_types: int = 2,
+) -> tuple[dict, int]:
+    """Route 54: canonicals where dose differs most across organoid types.
+
+    For each canonical+canonical_unit pair, finds the max/min ratio of per-type
+    medians across types with >= min_n records. High ratio = strong evidence of
+    dose disagreement across the field.
+
+    Without ?q=: global list sorted by max_to_min_ratio desc.
+    With ?q=Activin A: per-unit breakdown with per-type median/min/max/n.
+    """
+    import statistics
+
+    if not REAGENTS_JSONL.exists():
+        return {
+            "error": "reagents.jsonl not found",
+            "hint": "Run: python pipeline/export_public.py",
+        }, 404
+
+    try:
+        reagents = [
+            json.loads(line)
+            for line in REAGENTS_JSONL.read_text().splitlines()
+            if line.strip()
+        ]
+    except (json.JSONDecodeError, OSError) as exc:
+        return {"error": f"reagents.jsonl unreadable: {exc}"}, 500
+
+    from collections import defaultdict
+
+    # canonical → unit → type → [values]
+    cv: dict = defaultdict(lambda: defaultdict(lambda: defaultdict(list)))
+
+    for r in reagents:
+        c = r.get("canonical", "")
+        u = r.get("canonical_unit") or r.get("unit") or ""
+        typ = r.get("organoid_type", "")
+        v = r.get("value")
+        if not (c and u and typ and v is not None):
+            continue
+        try:
+            fv = float(str(v))
+            if fv > 0:
+                cv[c][u][typ].append(fv)
+        except (ValueError, TypeError):
+            pass
+
+    if query:
+        # Per-canonical detail: return all units
+        if query not in cv:
+            return {"error": f"no concentration data found for canonical={query!r}"}, 404
+        units_out = []
+        for u, types in cv[query].items():
+            valid = {typ: vals for typ, vals in types.items() if len(vals) >= min_n}
+            if len(valid) < min_types:
+                continue
+            per_type = sorted(
+                [{"organoid_type": typ,
+                  "n_records": len(vals),
+                  "median": round(statistics.median(vals), 4),
+                  "min": round(min(vals), 4),
+                  "max": round(max(vals), 4)}
+                 for typ, vals in valid.items()],
+                key=lambda x: -x["median"],
+            )
+            medians = [e["median"] for e in per_type]
+            max_med, min_med = max(medians), min(medians)
+            ratio = round(max_med / min_med, 2) if min_med > 0 else None
+            units_out.append({
+                "canonical_unit": u,
+                "n_types": len(valid),
+                "max_to_min_ratio": ratio,
+                "high_type": per_type[0]["organoid_type"],
+                "low_type": per_type[-1]["organoid_type"],
+                "per_type": per_type,
+            })
+        units_out.sort(key=lambda x: -(x["max_to_min_ratio"] or 0))
+        return {
+            "canonical": query,
+            "min_n_per_type": min_n,
+            "min_types": min_types,
+            "n_units": len(units_out),
+            "units": units_out,
+        }, 200
+
+    # Global mode: all canonical+unit pairs
+    pairs = []
+    for c, units in cv.items():
+        for u, types in units.items():
+            valid = {typ: vals for typ, vals in types.items() if len(vals) >= min_n}
+            if len(valid) < min_types:
+                continue
+            medians = {typ: statistics.median(vals) for typ, vals in valid.items()}
+            max_med = max(medians.values())
+            min_med = min(medians.values())
+            if min_med <= 0:
+                continue
+            ratio = round(max_med / min_med, 2)
+            sorted_types = sorted(medians.items(), key=lambda x: -x[1])
+            pairs.append({
+                "canonical": c,
+                "canonical_unit": u,
+                "n_types": len(valid),
+                "max_to_min_ratio": ratio,
+                "high_type": sorted_types[0][0],
+                "low_type": sorted_types[-1][0],
+                "per_type_median": {t: round(m, 4) for t, m in sorted_types},
+            })
+
+    pairs.sort(key=lambda x: -x["max_to_min_ratio"])
+    return {
+        "n_canonical_unit_pairs": len(pairs),
+        "min_n_per_type": min_n,
+        "min_types": min_types,
+        "top_variance": pairs,
+    }, 200
+
+
 def handle_protocol_completeness(organoid_type: str | None) -> tuple[dict, int]:
     """Route 53: per-paper completeness scores (0-6) across 6 protocol fields.
 
@@ -4420,6 +4542,7 @@ def handle_index() -> tuple[dict, int]:
             "/analytics/unit-normalization-report": "audit of raw unit string → canonical_unit normalization clusters: e.g. 'uM' ← [μM, µM, µm, μmol/L, ...]; sorted by n_raw_strings; ?q=uM for detailed breakdown + top canonicals using that unit",
             "/analytics/source-cell-reagent-profile": "characteristic canonical reagents by source_cell_type (iPSC / adult_stem_cell / primary_tissue / ESC); top 20 per source + pairwise Jaccard similarity; ?source=iPSC for top 30 with exclusivity scores; ?min_papers= threshold (default 3)",
             "/analytics/protocol-completeness": "per-paper completeness scores (0-6) across 6 optionally-reported fields (species/matrix/base_media/passaging/timeline/assay_endpoints); global score histogram + per-type ranking + top/bottom 20 papers; ?type= for one type",
+            "/analytics/cross-type-concentration-variance": "canonicals where the consensus dose differs most across organoid types; sorted by max/min per-type-median ratio; ?q=Activin+A for per-unit detail; ?min_n= per-type record threshold (default 3); ?min_types= (default 2)",
             "/analytics/assay-endpoints": "assay endpoint cluster summary (per type + cross-type)",
             "/analytics/quality": "per-paper quality scores (gold/silver/bronze) + corpus summary",
             "/analytics/mior": "MIOR completeness report (Minimum Information About an Organoid Research)",
@@ -4735,6 +4858,20 @@ async def route_source_cell_reagent_profile(datasette, request):
     return Response.json(data, status=status)
 
 
+async def route_cross_type_concentration_variance(datasette, request):
+    query = request.args.get("q") or None
+    try:
+        min_n = int(request.args.get("min_n") or 3)
+    except (TypeError, ValueError):
+        min_n = 3
+    try:
+        min_types = int(request.args.get("min_types") or 2)
+    except (TypeError, ValueError):
+        min_types = 2
+    data, status = handle_cross_type_concentration_variance(query, min_n, min_types)
+    return Response.json(data, status=status)
+
+
 async def route_protocol_completeness(datasette, request):
     organoid_type = request.args.get("type") or None
     data, status = handle_protocol_completeness(organoid_type)
@@ -4872,6 +5009,7 @@ def register_routes():
         (r"^/analytics/unit-normalization-report$", route_unit_normalization_report),
         (r"^/analytics/source-cell-reagent-profile$", route_source_cell_reagent_profile),
         (r"^/analytics/protocol-completeness$", route_protocol_completeness),
+        (r"^/analytics/cross-type-concentration-variance$", route_cross_type_concentration_variance),
         (r"^/analytics/journal-breakdown$", route_journal_breakdown),
         (r"^/analytics/concentration-by-type$", route_concentration_by_type),
         (r"^/analytics/kgx-summary$", route_kgx_summary),

@@ -865,3 +865,29 @@ def test_live_pc_type_filter():
     # papers are sorted by score desc
     scores = [p["score"] for p in data["papers"]]
     assert scores == sorted(scores, reverse=True)
+
+
+# ---------------------------------------------------------------------------
+# Route 54 — /analytics/cross-type-concentration-variance live smoke tests
+# ---------------------------------------------------------------------------
+@require_reagents
+def test_live_ctcv_global():
+    data, status = ae.handle_cross_type_concentration_variance(None, 3, 2)
+    assert status == 200
+    assert data["n_canonical_unit_pairs"] >= 5
+    # Sorted desc
+    ratios = [e["max_to_min_ratio"] for e in data["top_variance"]]
+    assert ratios == sorted(ratios, reverse=True)
+    # Top entry ratio >= 5x (Activin A ~19x in corpus)
+    assert data["top_variance"][0]["max_to_min_ratio"] >= 5.0
+
+
+@require_reagents
+def test_live_ctcv_activin_a_query():
+    data, status = ae.handle_cross_type_concentration_variance("Activin A", 3, 2)
+    assert status == 200
+    assert data["canonical"] == "Activin A"
+    assert data["n_units"] >= 1
+    unit_data = data["units"][0]
+    assert unit_data["n_types"] >= 2
+    assert unit_data["max_to_min_ratio"] >= 5.0

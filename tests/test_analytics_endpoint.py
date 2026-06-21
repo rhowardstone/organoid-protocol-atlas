@@ -5936,3 +5936,149 @@ def test_pc_unknown_type_returns_404(tmp_path, monkeypatch):
 def test_pc_index_entry():
     data, _ = ae.handle_index()
     assert "/analytics/protocol-completeness" in data["endpoints"]
+
+# ---------------------------------------------------------------------------
+# Route 54 — /analytics/cross-type-concentration-variance (CTCV)
+# ---------------------------------------------------------------------------
+_CTCV_REAGENTS = [
+    # Activin A ng/mL: lung=100 (4 records), cardiac=10 (3 records) → ratio=10x
+    *[{"canonical": "Activin A", "canonical_unit": "ng/mL", "organoid_type": "lung",
+       "kind": "signaling", "value": 100, "unit": "ng/mL", "doi": f"10.1/lung{i}"}
+      for i in range(4)],
+    *[{"canonical": "Activin A", "canonical_unit": "ng/mL", "organoid_type": "cardiac",
+       "kind": "signaling", "value": 10, "unit": "ng/mL", "doi": f"10.1/card{i}"}
+      for i in range(3)],
+    # EGF ng/mL: intestinal=50 (5 records), retinal=10 (3 records) → ratio=5x
+    *[{"canonical": "EGF", "canonical_unit": "ng/mL", "organoid_type": "intestinal",
+       "kind": "signaling", "value": 50, "unit": "ng/mL", "doi": f"10.1/int{i}"}
+      for i in range(5)],
+    *[{"canonical": "EGF", "canonical_unit": "ng/mL", "organoid_type": "retinal",
+       "kind": "signaling", "value": 10, "unit": "ng/mL", "doi": f"10.1/ret{i}"}
+      for i in range(3)],
+    # Y-27632 uM: only 1 type with enough records (should not appear in global)
+    *[{"canonical": "Y-27632", "canonical_unit": "uM", "organoid_type": "liver",
+       "kind": "signaling", "value": 10, "unit": "uM", "doi": f"10.1/liv{i}"}
+      for i in range(3)],
+    # Noggin ng/mL: 2 records each type (< min_n=3, should not appear)
+    {"canonical": "Noggin", "canonical_unit": "ng/mL", "organoid_type": "kidney",
+     "kind": "signaling", "value": 100, "unit": "ng/mL", "doi": "10.1/kid0"},
+    {"canonical": "Noggin", "canonical_unit": "ng/mL", "organoid_type": "liver",
+     "kind": "signaling", "value": 10, "unit": "ng/mL", "doi": "10.1/liv10"},
+]
+
+
+def _write_ctcv_reagents(path, rows):
+    path.write_text("\n".join(json.dumps(r) for r in rows))
+
+
+def _patch_ctcv(monkeypatch, rp):
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", rp)
+
+
+def test_ctcv_global_returns_200(tmp_path, monkeypatch):
+    rp = tmp_path / "reagents.jsonl"
+    _write_ctcv_reagents(rp, _CTCV_REAGENTS)
+    _patch_ctcv(monkeypatch, rp)
+    data, status = ae.handle_cross_type_concentration_variance(None, 3, 2)
+    assert status == 200
+
+
+def test_ctcv_global_keys(tmp_path, monkeypatch):
+    rp = tmp_path / "reagents.jsonl"
+    _write_ctcv_reagents(rp, _CTCV_REAGENTS)
+    _patch_ctcv(monkeypatch, rp)
+    data, _ = ae.handle_cross_type_concentration_variance(None, 3, 2)
+    for k in ("n_canonical_unit_pairs", "min_n_per_type", "min_types", "top_variance"):
+        assert k in data, f"missing key: {k}"
+
+
+def test_ctcv_pair_count_correct(tmp_path, monkeypatch):
+    # Y-27632 only 1 type with >=3 records → excluded; Noggin <3 per type → excluded
+    # Activin A and EGF should be present
+    rp = tmp_path / "reagents.jsonl"
+    _write_ctcv_reagents(rp, _CTCV_REAGENTS)
+    _patch_ctcv(monkeypatch, rp)
+    data, _ = ae.handle_cross_type_concentration_variance(None, 3, 2)
+    assert data["n_canonical_unit_pairs"] == 2
+
+
+def test_ctcv_sorted_desc_by_ratio(tmp_path, monkeypatch):
+    rp = tmp_path / "reagents.jsonl"
+    _write_ctcv_reagents(rp, _CTCV_REAGENTS)
+    _patch_ctcv(monkeypatch, rp)
+    data, _ = ae.handle_cross_type_concentration_variance(None, 3, 2)
+    ratios = [e["max_to_min_ratio"] for e in data["top_variance"]]
+    assert ratios == sorted(ratios, reverse=True)
+
+
+def test_ctcv_activin_a_highest_ratio(tmp_path, monkeypatch):
+    rp = tmp_path / "reagents.jsonl"
+    _write_ctcv_reagents(rp, _CTCV_REAGENTS)
+    _patch_ctcv(monkeypatch, rp)
+    data, _ = ae.handle_cross_type_concentration_variance(None, 3, 2)
+    top = data["top_variance"][0]
+    assert top["canonical"] == "Activin A"
+    assert top["max_to_min_ratio"] == 10.0
+
+
+def test_ctcv_activin_a_high_low_type(tmp_path, monkeypatch):
+    rp = tmp_path / "reagents.jsonl"
+    _write_ctcv_reagents(rp, _CTCV_REAGENTS)
+    _patch_ctcv(monkeypatch, rp)
+    data, _ = ae.handle_cross_type_concentration_variance(None, 3, 2)
+    top = data["top_variance"][0]
+    assert top["high_type"] == "lung"
+    assert top["low_type"] == "cardiac"
+
+
+def test_ctcv_min_n_filter(tmp_path, monkeypatch):
+    # With min_n=5: Activin A cardiac (3 records) excluded, so Activin A dropped
+    # EGF intestinal (5 records) + retinal (3 records → excluded) → EGF also dropped
+    rp = tmp_path / "reagents.jsonl"
+    _write_ctcv_reagents(rp, _CTCV_REAGENTS)
+    _patch_ctcv(monkeypatch, rp)
+    data, _ = ae.handle_cross_type_concentration_variance(None, 5, 2)
+    assert data["n_canonical_unit_pairs"] == 0
+
+
+def test_ctcv_query_mode_returns_200(tmp_path, monkeypatch):
+    rp = tmp_path / "reagents.jsonl"
+    _write_ctcv_reagents(rp, _CTCV_REAGENTS)
+    _patch_ctcv(monkeypatch, rp)
+    data, status = ae.handle_cross_type_concentration_variance("Activin A", 3, 2)
+    assert status == 200
+    assert data["canonical"] == "Activin A"
+
+
+def test_ctcv_query_per_type_sorted_desc(tmp_path, monkeypatch):
+    rp = tmp_path / "reagents.jsonl"
+    _write_ctcv_reagents(rp, _CTCV_REAGENTS)
+    _patch_ctcv(monkeypatch, rp)
+    data, _ = ae.handle_cross_type_concentration_variance("Activin A", 3, 2)
+    unit_data = data["units"][0]
+    medians = [e["median"] for e in unit_data["per_type"]]
+    assert medians == sorted(medians, reverse=True)
+
+
+def test_ctcv_query_includes_n_records(tmp_path, monkeypatch):
+    rp = tmp_path / "reagents.jsonl"
+    _write_ctcv_reagents(rp, _CTCV_REAGENTS)
+    _patch_ctcv(monkeypatch, rp)
+    data, _ = ae.handle_cross_type_concentration_variance("EGF", 3, 2)
+    unit_data = data["units"][0]
+    by_type = {e["organoid_type"]: e for e in unit_data["per_type"]}
+    assert by_type["intestinal"]["n_records"] == 5
+    assert by_type["retinal"]["n_records"] == 3
+
+
+def test_ctcv_unknown_query_returns_404(tmp_path, monkeypatch):
+    rp = tmp_path / "reagents.jsonl"
+    _write_ctcv_reagents(rp, _CTCV_REAGENTS)
+    _patch_ctcv(monkeypatch, rp)
+    _, status = ae.handle_cross_type_concentration_variance("NONEXISTENT_XYZ", 3, 2)
+    assert status == 404
+
+
+def test_ctcv_index_entry():
+    data, _ = ae.handle_index()
+    assert "/analytics/cross-type-concentration-variance" in data["endpoints"]
