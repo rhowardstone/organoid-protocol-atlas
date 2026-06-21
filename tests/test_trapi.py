@@ -10,13 +10,22 @@ Single-hop only (multi-hop is future work).
 
 import json
 import sys
+import warnings as _warnings
 from pathlib import Path
+
+import pytest
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "pipeline"))
 import trapi  # noqa: E402
 
 REPO = Path(__file__).resolve().parent.parent
 EXAMPLES = REPO / "pipeline" / "trapi_examples"
+
+try:
+    from reasoner_validator.validator import TRAPIResponseValidator as _Validator
+    _HAS_VALIDATOR = True
+except ImportError:
+    _HAS_VALIDATOR = False
 
 
 # --- tiny inline fake graph -------------------------------------------------
@@ -273,6 +282,26 @@ def test_full_response_no_double_colon_attribute_type_ids():
         for attr in edge.get("attributes", []):
             tid = attr["attribute_type_id"]
             assert tid.count(":") == 1, f"Double-colon attribute_type_id in response: {tid!r}"
+
+
+# --- reasoner-validator compliance (optional, offline) ----------------------
+@pytest.mark.skipif(not _HAS_VALIDATOR, reason="reasoner-validator not installed")
+def test_reasoner_validator_no_errors_on_real_kg():
+    """reasoner-validator must report zero errors (only warnings allowed)."""
+    nodes_tsv = REPO / "exports" / "kgx" / "nodes.tsv"
+    edges_tsv = REPO / "exports" / "kgx" / "edges.tsv"
+    if not nodes_tsv.exists() or not edges_tsv.exists():
+        pytest.skip("committed KGX not present")
+    g = trapi.load_kg(nodes_tsv, edges_tsv)
+    req = json.loads((EXAMPLES / "01_publication_mentions.json").read_text())
+    resp = trapi.answer(req, g)
+    with _warnings.catch_warnings():
+        _warnings.simplefilter("ignore")
+        v = _Validator(trapi_version="1.4.2")
+        v.check_compliance_of_trapi_response(response=resp)
+    # get_errors() returns dict of {test_name: {code: {...}}} — must be empty
+    errors = v.get_errors()
+    assert not errors, f"reasoner-validator ERRORS: {json.dumps(errors, indent=2)[:2000]}"
 
 
 # --- helper -----------------------------------------------------------------
