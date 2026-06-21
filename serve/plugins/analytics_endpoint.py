@@ -51,6 +51,10 @@ Routes (all return JSON; read-only, no writes):
   GET /analytics/cross-type-concentration-variance -- canonicals where dose differs most across organoid types; sorted by max/min median ratio; ?q= for per-canonical+unit breakdown; ?min_n= per-type record threshold; live from reagents.jsonl
   GET /analytics/reagent-type-enrichment       -- per-type enrichment ratios: (type-rate / global-rate) for each canonical; ?type=retinal for top enriched; ?q=taurine for which types over-use it; global returns top 50 pairs; ?min_n= threshold; live from both JSONLs
   GET /analytics/grounding-inconsistency       -- canonicals grounded in some papers but not others (S1 grounding gap targets); sorted by n_total_papers; ?min_n= threshold; ?sort=total|rate|n_ungrounded; live from reagents.jsonl
+  GET /analytics/canonical-merge-candidates    -- canonical names normalizing to the same form (B27/"B27 supplement", NAC variants); S1 dedup targets; ?min_records= threshold; live from reagents.jsonl
+  GET /analytics/grounding-by-kind             -- grounding rate split by reagent kind (signaling vs supplement); top ungrounded per kind; ?type= for one type; live from reagents.jsonl
+  GET /analytics/temporal-variance             -- dosing CV per canonical by publication year; trend label (converging/stable/diverging); ?q= for one canonical; ?min_n= (default 3); live from both JSONLs
+  GET /analytics/base-media-cooccurrence       -- base_media × source_cell_type co-occurrence; conditional P(media|cell_type) for imputing missing 41.8% base media; ?source= for one cell type; live from protocols.jsonl
   GET /analytics                                -- index of available analytics
 
 All endpoints degrade gracefully — if the pre-computed file doesn't exist they return
@@ -3693,6 +3697,318 @@ def handle_source_cell_reagent_profile(source=None, min_papers=3):
     }, 200
 
 
+def handle_grounding_by_kind(
+    organoid_type: str | None = None,
+) -> tuple[dict, int]:
+    """Route 57: grounding rate broken down by reagent kind (signaling vs supplement).
+
+    S1 grounding-gap signal: surfaces the contrast between signaling factors (highly
+    grounded) and supplements (near-zero grounding). Returns by_kind summary with top
+    ungrounded canonicals per kind, plus per_type breakdown when no ?type= filter.
+    """
+    if not REAGENTS_JSONL.exists():
+        return {
+            "error": "reagents.jsonl not found",
+            "hint": "Run: python pipeline/export_public.py",
+        }, 404
+
+    kind_stats: dict[str, dict] = {}
+    type_kind: dict[str, dict[str, dict]] = {}
+
+    with open(REAGENTS_JSONL) as f:
+        for line in f:
+            line = line.strip()
+            if not line:
+                continue
+            try:
+                r = json.loads(line)
+            except json.JSONDecodeError:
+                continue
+
+            otype = (r.get("organoid_type") or "").strip()
+            if organoid_type and otype != organoid_type:
+                continue
+
+            kind = (r.get("kind") or "unknown").strip()
+            canonical = (r.get("canonical") or "").strip()
+            gs = (r.get("grounding_status") or "").strip()
+            grounded = gs == "grounded"
+
+            if kind not in kind_stats:
+                kind_stats[kind] = {
+                    "n_grounded": 0,
+                    "n_ungrounded": 0,
+                    "n_total": 0,
+                    "_top_ungrounded": {},
+                }
+            kind_stats[kind]["n_total"] += 1
+            if grounded:
+                kind_stats[kind]["n_grounded"] += 1
+            else:
+                kind_stats[kind]["n_ungrounded"] += 1
+                if canonical:
+                    kind_stats[kind]["_top_ungrounded"][canonical] = (
+                        kind_stats[kind]["_top_ungrounded"].get(canonical, 0) + 1
+                    )
+
+            if not organoid_type and otype:
+                if otype not in type_kind:
+                    type_kind[otype] = {}
+                if kind not in type_kind[otype]:
+                    type_kind[otype][kind] = {"n_grounded": 0, "n_total": 0}
+                type_kind[otype][kind]["n_total"] += 1
+                if grounded:
+                    type_kind[otype][kind]["n_grounded"] += 1
+
+    by_kind: dict[str, dict] = {}
+    for kind, stats in kind_stats.items():
+        n_total = stats["n_total"]
+        n_grounded = stats["n_grounded"]
+        grounding_rate = round(n_grounded / n_total, 4) if n_total > 0 else 0.0
+        top_ungrounded = sorted(
+            [{"canonical": k, "n": v} for k, v in stats["_top_ungrounded"].items()],
+            key=lambda x: -x["n"],
+        )[:20]
+        by_kind[kind] = {
+            "n_total": n_total,
+            "n_grounded": n_grounded,
+            "n_ungrounded": stats["n_ungrounded"],
+            "grounding_rate": grounding_rate,
+            "top_ungrounded": top_ungrounded,
+        }
+
+    per_type: list[dict] | None = None
+    if not organoid_type:
+        per_type = []
+        for otype, kinds in sorted(type_kind.items()):
+            row: dict = {"organoid_type": otype}
+            for kind, ks in kinds.items():
+                n_t = ks["n_total"]
+                n_g = ks["n_grounded"]
+                row[f"{kind}_grounding_rate"] = round(n_g / n_t, 4) if n_t > 0 else 0.0
+                row[f"{kind}_n_total"] = n_t
+            per_type.append(row)
+
+    return {
+        "organoid_type_filter": organoid_type,
+        "by_kind": by_kind,
+        "per_type": per_type,
+    }, 200
+
+
+def handle_temporal_variance(
+    query: str | None = None,
+    min_n: int = 3,
+) -> tuple[dict, int]:
+    """Route 58: coefficient of variation per canonical reagent grouped by publication year.
+
+    Tracks whether dosing variance crystallises over time. For each canonical (or a
+    single ?q= canonical), returns per-year n/mean/std/CV and a trend label
+    ('converging' if CV fell >0.2 from first to last year, 'diverging' if it rose,
+    'stable' otherwise). Top 30 most-chaotic canonicals returned without ?q=.
+
+    Proposed by Gemini as 'temporal crystallization of dosing consensus'.
+    """
+    if not REAGENTS_JSONL.exists():
+        return {"error": "reagents.jsonl not found", "hint": "Run: python pipeline/export_public.py"}, 404
+    if not PROTOCOLS_JSONL.exists():
+        return {"error": "protocols.jsonl not found", "hint": "Run: python pipeline/export_public.py"}, 404
+
+    pmcid_year: dict[str, int] = {}
+    with open(PROTOCOLS_JSONL) as f:
+        for line in f:
+            line = line.strip()
+            if not line:
+                continue
+            try:
+                p = json.loads(line)
+            except json.JSONDecodeError:
+                continue
+            pmcid = (p.get("pmcid") or "").strip()
+            year = p.get("year")
+            if pmcid and year:
+                try:
+                    pmcid_year[pmcid] = int(year)
+                except (TypeError, ValueError):
+                    pass
+
+    canonical_year_vals: dict[str, dict[int, list[float]]] = {}
+    with open(REAGENTS_JSONL) as f:
+        for line in f:
+            line = line.strip()
+            if not line:
+                continue
+            try:
+                r = json.loads(line)
+            except json.JSONDecodeError:
+                continue
+            canonical = (r.get("canonical") or "").strip()
+            if not canonical:
+                continue
+            if query and query.lower() not in canonical.lower():
+                continue
+            pmcid = (r.get("pmcid") or "").strip()
+            year = pmcid_year.get(pmcid)
+            if not year:
+                continue
+            cv_raw = r.get("concentration_value")
+            if cv_raw is None:
+                continue
+            try:
+                val = float(cv_raw)
+            except (TypeError, ValueError):
+                continue
+            if val <= 0:
+                continue
+            if canonical not in canonical_year_vals:
+                canonical_year_vals[canonical] = {}
+            if year not in canonical_year_vals[canonical]:
+                canonical_year_vals[canonical][year] = []
+            canonical_year_vals[canonical][year].append(val)
+
+    results: list[dict] = []
+    for canonical, year_vals in canonical_year_vals.items():
+        yearly: list[dict] = []
+        for year in sorted(year_vals.keys()):
+            vals = year_vals[year]
+            if len(vals) < min_n:
+                continue
+            mean_v = sum(vals) / len(vals)
+            if mean_v == 0:
+                continue
+            variance = sum((v - mean_v) ** 2 for v in vals) / len(vals)
+            std_v = variance ** 0.5
+            yearly.append({
+                "year": year,
+                "n": len(vals),
+                "mean": round(mean_v, 4),
+                "std": round(std_v, 4),
+                "cv": round(std_v / mean_v, 4),
+            })
+        if not yearly:
+            continue
+        cv_series = [y["cv"] for y in yearly]
+        trend = "stable"
+        if len(cv_series) >= 2:
+            delta = cv_series[-1] - cv_series[0]
+            if delta < -0.2:
+                trend = "converging"
+            elif delta > 0.2:
+                trend = "diverging"
+        results.append({
+            "canonical": canonical,
+            "n_years_with_data": len(yearly),
+            "trend": trend,
+            "first_year_cv": cv_series[0],
+            "last_year_cv": cv_series[-1],
+            "yearly": yearly,
+        })
+
+    results.sort(key=lambda x: -x["first_year_cv"])
+    if query:
+        return {"query": query, "min_n": min_n, "results": results}, 200
+    return {"min_n": min_n, "top_n": 30, "results": results[:30]}, 200
+
+
+def handle_base_media_cooccurrence(
+    source_cell: str | None = None,
+) -> tuple[dict, int]:
+    """Route 59: base_media × source_cell_type co-occurrence for media imputation.
+
+    Since source_cell_type is 100% reported and base_media is only 58.2% present,
+    the conditional distribution P(base_media | source_cell_type) built from papers
+    with complete reporting can be used to impute missing media in the remaining 41.8%.
+
+    Returns: conditional probability table + overall co-occurrence matrix + imputation
+    candidates (papers with source_cell_type but no base_media, with predicted media).
+
+    Proposed by Gemini as 'dark matter imputation of base media'.
+    """
+    if not PROTOCOLS_JSONL.exists():
+        return {"error": "protocols.jsonl not found", "hint": "Run: python pipeline/export_public.py"}, 404
+
+    # source_cell → base_media → count
+    cooccurrence: dict[str, dict[str, int]] = {}
+    # papers missing base_media: {pmcid, organoid_type, source_cell_type}
+    missing_media: list[dict] = []
+
+    with open(PROTOCOLS_JSONL) as f:
+        for line in f:
+            line = line.strip()
+            if not line:
+                continue
+            try:
+                p = json.loads(line)
+            except json.JSONDecodeError:
+                continue
+
+            sc = (p.get("source_cell_type") or "").strip()
+            bm = (p.get("base_media") or "").strip()
+            pmcid = (p.get("pmcid") or "").strip()
+            otype = (p.get("organoid_type") or "").strip()
+
+            if not sc or sc == "not_stated":
+                continue
+            if source_cell and sc != source_cell:
+                continue
+
+            if bm and bm != "not_stated":
+                if sc not in cooccurrence:
+                    cooccurrence[sc] = {}
+                cooccurrence[sc][bm] = cooccurrence[sc].get(bm, 0) + 1
+            else:
+                missing_media.append({
+                    "pmcid": pmcid,
+                    "organoid_type": otype,
+                    "source_cell_type": sc,
+                })
+
+    # Build conditional probability table
+    conditional: list[dict] = []
+    for sc, media_counts in sorted(cooccurrence.items()):
+        total = sum(media_counts.values())
+        top_media = sorted(
+            [{"base_media": bm, "n": n, "probability": round(n / total, 4)}
+             for bm, n in media_counts.items()],
+            key=lambda x: -x["n"],
+        )[:10]
+        conditional.append({
+            "source_cell_type": sc,
+            "n_papers_with_media": total,
+            "top_media": top_media,
+            "modal_media": top_media[0]["base_media"] if top_media else None,
+            "modal_probability": top_media[0]["probability"] if top_media else None,
+        })
+
+    # Annotate missing-media papers with predicted media
+    conditional_map = {c["source_cell_type"]: c for c in conditional}
+    imputation_candidates: list[dict] = []
+    for row in missing_media:
+        sc = row["source_cell_type"]
+        if sc in conditional_map:
+            c = conditional_map[sc]
+            imputation_candidates.append({
+                **row,
+                "predicted_media": c["modal_media"],
+                "prediction_confidence": c["modal_probability"],
+                "n_training_papers": c["n_papers_with_media"],
+            })
+        else:
+            imputation_candidates.append({**row, "predicted_media": None, "prediction_confidence": None})
+
+    n_imputable = sum(1 for r in imputation_candidates if r["predicted_media"] is not None)
+
+    return {
+        "source_cell_filter": source_cell,
+        "n_papers_with_both": sum(c["n_papers_with_media"] for c in conditional),
+        "n_papers_missing_media": len(missing_media),
+        "n_imputable": n_imputable,
+        "imputation_coverage": round(n_imputable / len(missing_media), 4) if missing_media else 0.0,
+        "conditional_distribution": conditional,
+        "imputation_candidates": imputation_candidates[:50],
+    }, 200
+
+
 def handle_grounding_inconsistency(
     min_n: int = 5,
     sort_by: str = "total",
@@ -4725,6 +5041,131 @@ def handle_evidence_quote_coverage(organoid_type=None, kind=None):
     }, 200
 
 
+def handle_canonical_merge_candidates(min_records: int = 3) -> tuple[dict, int]:
+    """Route 57: canonical reagent names that likely refer to the same entity.
+
+    Normalizes each canonical by lowercasing, removing common adjectives
+    (human, recombinant, murine), stripping suffix words (supplement, protein,
+    factor), and collapsing punctuation/whitespace. Groups canonicals that share
+    a normalized form — these are S1 merge/deduplication targets (B27 vs "B27
+    supplement", N-acetylcysteine vs N-acetyl-L-cysteine, etc.).
+
+    Returns groups sorted by combined record count (most impactful first),
+    with per-canonical record counts, organoid types, and grounding rates.
+
+    Optional: ?min_records= sets minimum total records across the group (default 3).
+    """
+    if not REAGENTS_JSONL.exists():
+        return {
+            "error": "reagents.jsonl not found",
+            "hint": "Run: python pipeline/export_public.py",
+        }, 404
+
+    if min_records < 1:
+        return {"error": "min_records must be >= 1"}, 400
+
+    import re as _re
+    from collections import defaultdict
+
+    try:
+        rows = [
+            json.loads(line)
+            for line in REAGENTS_JSONL.read_text().splitlines()
+            if line.strip()
+        ]
+    except (json.JSONDecodeError, OSError) as exc:
+        return {"error": f"reagents.jsonl unreadable: {exc}"}, 500
+
+    _STRIP_WORDS = frozenset({
+        "human", "murine", "mouse", "rat", "rabbit",
+        "recombinant", "rh", "supplement", "protein",
+        "factor", "reagent", "grade", "sterile", "solution",
+    })
+    _PUNCT = _re.compile(r'[\s\-_/()\[\],\.]+')
+    _PREFIX = _re.compile(r'^(rh?[\-\s]|recombinant[\s]+human[\s]+|human[\s]+)')
+
+    def _normalize(name: str) -> str:
+        s = name.lower().strip()
+        s = _PREFIX.sub('', s)
+        tokens = [t for t in _PUNCT.split(s) if t and t not in _STRIP_WORDS]
+        return ' '.join(tokens)
+
+    # aggregate per-canonical stats
+    canonical_stats: dict[str, dict] = {}
+    for row in rows:
+        canon = row.get("canonical") or row.get("name") or "unknown"
+        if canon not in canonical_stats:
+            canonical_stats[canon] = {
+                "n_records": 0,
+                "n_grounded": 0,
+                "organoid_types": set(),
+                "kinds": set(),
+            }
+        s = canonical_stats[canon]
+        s["n_records"] += 1
+        if row.get("grounded"):
+            s["n_grounded"] += 1
+        ot = row.get("organoid_type")
+        if ot:
+            s["organoid_types"].add(ot)
+        k = row.get("kind")
+        if k:
+            s["kinds"].add(k)
+
+    # group canonicals by normalized form
+    norm_groups: dict[str, list] = defaultdict(list)
+    for canon in canonical_stats:
+        norm = _normalize(canon)
+        norm_groups[norm].append(canon)
+
+    # surface groups with 2+ distinct canonicals above min_records
+    candidates = []
+    for norm, canons in norm_groups.items():
+        if len(canons) < 2:
+            continue
+        members = []
+        total_records = 0
+        all_types: set = set()
+        for canon in sorted(canons):
+            st = canonical_stats[canon]
+            members.append({
+                "canonical": canon,
+                "n_records": st["n_records"],
+                "n_grounded": st["n_grounded"],
+                "grounding_rate": (
+                    round(st["n_grounded"] / st["n_records"], 4)
+                    if st["n_records"] else None
+                ),
+                "n_organoid_types": len(st["organoid_types"]),
+                "kinds": sorted(st["kinds"]),
+            })
+            total_records += st["n_records"]
+            all_types |= st["organoid_types"]
+
+        if total_records < min_records:
+            continue
+
+        candidates.append({
+            "normalized_form": norm,
+            "n_canonicals": len(canons),
+            "total_records": total_records,
+            "n_organoid_types": len(all_types),
+            "members": members,
+        })
+
+    candidates.sort(key=lambda x: x["total_records"], reverse=True)
+
+    return {
+        "n_candidates": len(candidates),
+        "min_records": min_records,
+        "description": (
+            "Canonical names normalizing to the same form — probable S1 merge/"
+            "deduplication targets. Sorted by combined record count (most impactful first)."
+        ),
+        "candidates": candidates[:100],
+    }, 200
+
+
 def handle_index() -> tuple[dict, int]:
     """Analytics endpoint index."""
     return {
@@ -4778,6 +5219,10 @@ def handle_index() -> tuple[dict, int]:
             "/analytics/cross-type-concentration-variance": "canonicals where the consensus dose differs most across organoid types; sorted by max/min per-type-median ratio; ?q=Activin+A for per-unit detail; ?min_n= per-type record threshold (default 3); ?min_types= (default 2)",
             "/analytics/reagent-type-enrichment": "enrichment ratio (type-rate / global-rate) for each canonical within each organoid type; ?type=retinal for top enriched canonicals; ?q=taurine for which types over-use it; global = top 50 pairs; ?min_n= threshold (default 3)",
             "/analytics/grounding-inconsistency": "S1 grounding-gap targets: canonicals grounded in some papers but ungrounded in others; n_grounded + n_ungrounded + rate; ?min_n= (default 5); ?sort=total|rate|n_ungrounded",
+            "/analytics/canonical-merge-candidates": "S1 dedup targets: canonical names normalizing to the same form (B27 vs 'B27 supplement', NAC variants); sorted by combined record count; ?min_records= (default 3); live from reagents.jsonl",
+            "/analytics/grounding-by-kind": "S1 grounding coverage split by reagent kind (signaling vs supplement); top 20 ungrounded canonicals per kind; ?type= for one organoid type; live from reagents.jsonl",
+            "/analytics/temporal-variance": "dosing CV per canonical grouped by publication year; trend label (converging/stable/diverging); ?q= for one canonical; ?min_n= per-year record threshold (default 3); live from both JSONLs",
+            "/analytics/base-media-cooccurrence": "base_media × source_cell_type co-occurrence for media imputation; conditional P(base_media | source_cell_type) from 58.2% complete papers; imputation candidates for the missing 41.8%; ?source= for one cell type; live from protocols.jsonl",
             "/analytics/assay-endpoints": "assay endpoint cluster summary (per type + cross-type)",
             "/analytics/quality": "per-paper quality scores (gold/silver/bronze) + corpus summary",
             "/analytics/mior": "MIOR completeness report (Minimum Information About an Organoid Research)",
@@ -5093,6 +5538,28 @@ async def route_source_cell_reagent_profile(datasette, request):
     return Response.json(data, status=status)
 
 
+async def route_grounding_by_kind(datasette, request):
+    organoid_type = request.args.get("type") or None
+    data, status = handle_grounding_by_kind(organoid_type)
+    return Response.json(data, status=status)
+
+
+async def route_temporal_variance(datasette, request):
+    query = request.args.get("q") or None
+    try:
+        min_n = int(request.args.get("min_n") or 3)
+    except (TypeError, ValueError):
+        min_n = 3
+    data, status = handle_temporal_variance(query, min_n)
+    return Response.json(data, status=status)
+
+
+async def route_base_media_cooccurrence(datasette, request):
+    source_cell = request.args.get("source") or None
+    data, status = handle_base_media_cooccurrence(source_cell)
+    return Response.json(data, status=status)
+
+
 async def route_grounding_inconsistency(datasette, request):
     try:
         min_n = int(request.args.get("min_n") or 5)
@@ -5217,6 +5684,15 @@ async def route_mior(datasette, request):
     return Response.json(data, status=status)
 
 
+async def route_canonical_merge_candidates(datasette, request):
+    try:
+        min_records = int(request.args.get("min_records") or 3)
+    except (TypeError, ValueError):
+        min_records = 3
+    data, status = handle_canonical_merge_candidates(min_records)
+    return Response.json(data, status=status)
+
+
 @hookimpl
 def register_routes():
     return [
@@ -5268,6 +5744,10 @@ def register_routes():
         (r"^/analytics/cross-type-concentration-variance$", route_cross_type_concentration_variance),
         (r"^/analytics/reagent-type-enrichment$", route_reagent_type_enrichment),
         (r"^/analytics/grounding-inconsistency$", route_grounding_inconsistency),
+        (r"^/analytics/canonical-merge-candidates$", route_canonical_merge_candidates),
+        (r"^/analytics/grounding-by-kind$", route_grounding_by_kind),
+        (r"^/analytics/temporal-variance$", route_temporal_variance),
+        (r"^/analytics/base-media-cooccurrence$", route_base_media_cooccurrence),
         (r"^/analytics/journal-breakdown$", route_journal_breakdown),
         (r"^/analytics/concentration-by-type$", route_concentration_by_type),
         (r"^/analytics/kgx-summary$", route_kgx_summary),
