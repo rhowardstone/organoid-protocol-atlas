@@ -37,7 +37,7 @@ paper (PMC)
   └─ S2       Biolink-validated KGX export (nodes.tsv + edges.tsv + kgx_manifest.json)
   └─ entity normalization (bFGF≡FGF2, RSPO1≡R-spondin1, …)
   └─ analytics pipeline → coverage · quality · consensus · failure modes · lineage · assay endpoints
-  └─ REST API (Datasette plugin, 38 routes)
+  └─ REST API (Datasette plugin, 39 routes)
 ```
 
 ## Analytics API
@@ -76,6 +76,7 @@ GET /analytics/concentration-deviation  dose inconsistency ranking: canonical re
 GET /analytics/reagent-prevalence       type-breadth ranking: canonicals sorted by n_organoid_types they appear in; cross_field + specialist sub-lists; ?q=EGF for per-type breakdown; ?min_types= threshold
 GET /analytics/protocol-outliers        per-type outlier detection on n_signaling_factors: complex/minimal protocols with z-scores; ?type=kidney for one type; ?z_thresh= sensitivity (default 1.5)
 GET /analytics/grounding-distribution   per-paper grounding rate histogram (10 buckets), per-type mean ranking, top/bottom 20 papers; ?type=kidney for one type; live from protocols.jsonl
+GET /analytics/type-maturity            field maturity per organoid type: first_year, n_years_active, trajectory (accelerating/stable/slowing), maturity_tier (established/developing/emerging)
 GET /analytics/assay-endpoints          assay endpoint cluster summary (12 clusters, per-type + cross-type)
 GET /analytics/failure-modes            failure mode cluster summary across the corpus
 GET /analytics/lineage                  DOI→DOI protocol lineage graph (ProtocolModification data)
@@ -168,7 +169,7 @@ serve/
   run.sh                     serve the atlas (Datasette + plugins)
   metadata.yaml              facets + canned queries
   plugins/
-    analytics_endpoint.py    38-route analytics REST API (pure handlers + thin Datasette wrappers)
+    analytics_endpoint.py    39-route analytics REST API (pure handlers + thin Datasette wrappers)
     ask.py                   grounded Q&A (RAG over FTS → local model)
   templates/                 landing, recipe cards, /heatmap, /consensus
   static/atlas.css|js        theme + dark-mode toggle
@@ -219,7 +220,7 @@ python pipeline/aggregate_failure_modes.py
 python pipeline/build_lineage.py
 python pipeline/aggregate_assay_endpoints.py
 
-make test                               # run offline test suite (987 tests)
+make test                               # run offline test suite (1000 tests)
 make validate-batch                     # pre-PR check: tests + prediction schema + evidence
 # or: pytest -q
 ```

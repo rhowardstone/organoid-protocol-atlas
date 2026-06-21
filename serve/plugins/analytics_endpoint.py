@@ -33,6 +33,7 @@ Routes (all return JSON; read-only, no writes):
   GET /analytics/reagent-prevalence          -- type-breadth ranking: canonical reagents sorted by n_organoid_types they appear in; ?q= for per-type breakdown of one canonical; ?min_types= threshold
   GET /analytics/protocol-outliers           -- per-type outlier detection on n_signaling_factors: complex and minimal protocols (z-score threshold, default 1.5); ?type= for one type
   GET /analytics/grounding-distribution      -- per-paper grounding rate histogram (10 buckets 0-100%); per-type mean; top/bottom 20 papers; ?type= for one type; live from protocols.jsonl
+  GET /analytics/type-maturity               -- field maturity classification per organoid type: first_year, n_years_active, trajectory (accelerating/stable/slowing), maturity_tier; live from protocols.jsonl
   GET /analytics                                -- index of available analytics
 
 All endpoints degrade gracefully — if the pre-computed file doesn't exist they return
@@ -2444,6 +2445,115 @@ def handle_grounding_distribution(organoid_type: str | None) -> tuple[dict, int]
     }, 200
 
 
+def handle_type_maturity(organoid_type: str | None) -> tuple[dict, int]:
+    """Field maturity classification per organoid type.
+
+    For each organoid type, computes:
+      - first_year: earliest paper year in the corpus
+      - last_year: most recent paper year
+      - n_years_active: last_year - first_year + 1
+      - n_papers_total: total papers
+      - papers_by_year: yearly paper count dict
+      - trajectory: 'accelerating' / 'stable' / 'slowing' — ratio of
+        second-half vs first-half avg annual publication rate
+      - maturity_tier: 'established' (>=50 papers OR first_year<=2017),
+        'developing' (20-49 OR 2018-2021), 'emerging' (<20 AND >=2022)
+
+    Without ?type=: all types sorted by n_papers_total desc.
+    With ?type=kidney: full detail for one type.
+    """
+    if not PROTOCOLS_JSONL.exists():
+        return {"error": "protocols.jsonl not found", "hint": "Run: python pipeline/export_public.py"}, 404
+
+    try:
+        rows = [
+            json.loads(line)
+            for line in PROTOCOLS_JSONL.read_text().splitlines()
+            if line.strip()
+        ]
+    except (json.JSONDecodeError, OSError) as exc:
+        return {"error": f"protocols.jsonl unreadable: {exc}"}, 500
+
+    from collections import defaultdict, Counter as _Counter
+
+    type_year_counts: dict[str, dict[int, int]] = defaultdict(lambda: defaultdict(int))
+    for r in rows:
+        ot = (r.get("organoid_type") or "unknown").strip()
+        yr_raw = r.get("year")
+        if yr_raw and str(yr_raw).isdigit():
+            type_year_counts[ot][int(yr_raw)] += 1
+
+    def _type_record(ot: str, year_counts: dict[int, int]) -> dict:
+        years = sorted(year_counts)
+        first_yr = years[0]
+        last_yr = years[-1]
+        n_active = last_yr - first_yr + 1
+        n_total = sum(year_counts.values())
+        papers_by_year = {str(y): year_counts[y] for y in years}
+
+        # Trajectory: compare avg annual rate in the first half vs second half
+        if len(years) >= 4:
+            mid = len(years) // 2
+            first_half = years[:mid]
+            second_half = years[mid:]
+            avg_first = sum(year_counts[y] for y in first_half) / len(first_half)
+            avg_second = sum(year_counts[y] for y in second_half) / len(second_half)
+            ratio = avg_second / avg_first if avg_first > 0 else 1.0
+            if ratio > 1.3:
+                trajectory = "accelerating"
+            elif ratio < 0.75:
+                trajectory = "slowing"
+            else:
+                trajectory = "stable"
+        else:
+            trajectory = "insufficient_data"
+
+        # Maturity tier
+        if n_total >= 50 or first_yr <= 2017:
+            tier = "established"
+        elif n_total >= 20 or first_yr <= 2021:
+            tier = "developing"
+        else:
+            tier = "emerging"
+
+        return {
+            "organoid_type": ot,
+            "first_year": first_yr,
+            "last_year": last_yr,
+            "n_years_active": n_active,
+            "n_papers_total": n_total,
+            "papers_by_year": papers_by_year,
+            "trajectory": trajectory,
+            "maturity_tier": tier,
+        }
+
+    if organoid_type and organoid_type.strip():
+        ot_lower = organoid_type.strip().lower()
+        matched = next((k for k in type_year_counts if k.lower() == ot_lower), None)
+        if matched is None:
+            return {"error": f"no protocols found for organoid_type '{organoid_type}'"}, 404
+        return _type_record(matched, type_year_counts[matched]), 200
+
+    records = [_type_record(ot, yc) for ot, yc in type_year_counts.items()]
+    records.sort(key=lambda x: x["n_papers_total"], reverse=True)
+
+    # Summary groupings
+    by_tier: dict[str, list] = {"established": [], "developing": [], "emerging": []}
+    by_trajectory: dict[str, list] = {"accelerating": [], "stable": [], "slowing": [],
+                                       "insufficient_data": []}
+    for rec in records:
+        by_tier.setdefault(rec["maturity_tier"], []).append(rec["organoid_type"])
+        by_trajectory.setdefault(rec["trajectory"], []).append(rec["organoid_type"])
+
+    return {
+        "n_types": len(records),
+        "n_papers_total": sum(r["n_papers_total"] for r in records),
+        "by_tier": by_tier,
+        "by_trajectory": by_trajectory,
+        "all_types": records,
+    }, 200
+
+
 def handle_concentration_deviation(min_n: int = 3) -> tuple[dict, int]:
     """Dose inconsistency ranking: canonical reagents sorted by coefficient of variation.
 
@@ -2711,6 +2821,7 @@ def handle_index() -> tuple[dict, int]:
             "/analytics/reagent-prevalence": "type-breadth ranking: canonical reagents sorted by number of organoid types they appear in; cross_field (>=20 types) + specialist (<=2 types) sub-lists; ?q=EGF for per-type breakdown; ?min_types= threshold",
             "/analytics/protocol-outliers": "per-type outlier detection on n_signaling_factors: complex (high SF count) and minimal (low SF count) protocols per organoid type, with z-scores; ?type=kidney for one type; ?z_thresh= to adjust sensitivity (default 1.5)",
             "/analytics/grounding-distribution": "per-paper grounding rate histogram (10 buckets 0-100%), per-type mean ranking, top/bottom 20 papers; ?type=kidney for one type; live from protocols.jsonl",
+            "/analytics/type-maturity": "field maturity classification per organoid type: first_year, n_years_active, n_papers_total, trajectory (accelerating/stable/slowing), maturity_tier (established/developing/emerging); ?type=kidney for one type",
             "/analytics/assay-endpoints": "assay endpoint cluster summary (per type + cross-type)",
             "/analytics/quality": "per-paper quality scores (gold/silver/bronze) + corpus summary",
             "/analytics/mior": "MIOR completeness report (Minimum Information About an Organoid Research)",
@@ -2960,6 +3071,12 @@ async def route_grounding_distribution(datasette, request):
     return Response.json(data, status=status)
 
 
+async def route_type_maturity(datasette, request):
+    organoid_type = request.args.get("type") or None
+    data, status = handle_type_maturity(organoid_type)
+    return Response.json(data, status=status)
+
+
 async def route_concentration_deviation(datasette, request):
     try:
         min_n = int(request.args.get("min_n") or 3)
@@ -3017,6 +3134,7 @@ def register_routes():
         (r"^/analytics/reagent-prevalence$", route_reagent_prevalence),
         (r"^/analytics/protocol-outliers$", route_protocol_outliers),
         (r"^/analytics/grounding-distribution$", route_grounding_distribution),
+        (r"^/analytics/type-maturity$", route_type_maturity),
         (r"^/analytics/journal-breakdown$", route_journal_breakdown),
         (r"^/analytics/concentration-by-type$", route_concentration_by_type),
         (r"^/analytics/kgx-summary$", route_kgx_summary),
