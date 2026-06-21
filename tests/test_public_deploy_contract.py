@@ -7,31 +7,66 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 
 
+def _load_manifest():
+    return json.loads((ROOT / "exports/public/manifest.json").read_text())
+
+
 def test_public_manifest_counts_match_render_copy():
-    manifest = json.loads((ROOT / "exports/public/manifest.json").read_text())
+    manifest = _load_manifest()
 
     assert manifest["license_filter"] == "CC0/CC-BY (no NC/ND)"
     assert manifest["n_papers"] == 582
     assert manifest["tables"] == {"protocols": 582, "reagents": 5458}
 
 
-def test_public_landing_page_does_not_claim_local_corpus_counts():
+def test_public_landing_page_uses_manifest_template_vars():
+    """Landing page must use Jinja2 template vars from manifest, not hardcoded counts."""
     html = (ROOT / "serve/templates/index.html").read_text()
 
-    assert "582</div><div class=\"l\">public protocols" in html
-    assert "5458</div><div class=\"l\">public rows" in html
+    assert "{{ public_counts.n_papers }}" in html
+    assert "{{ public_counts.n_reagents }}" in html
     assert "0</div><div class=\"l\">full-text bodies" in html
     assert "/llms.txt" in html
+    # No hardcoded corpus counts that would go stale
     assert "28</div><div class=\"l\">protocols extracted" not in html
     assert "311</div><div class=\"l\">reagents" not in html
+
+
+def test_llms_txt_counts_match_manifest():
+    """ask.py must build LLMS_TXT from the manifest, not hardcode stale counts."""
+    sys.path.insert(0, str(ROOT / "serve" / "plugins"))
+    # Reload to pick up current module state
+    import importlib
+    import importlib.util
+    spec = importlib.util.spec_from_file_location(
+        "ask", ROOT / "serve" / "plugins" / "ask.py"
+    )
+    mod = importlib.util.module_from_spec(spec)
+    # ask.py imports datasette which may not be installed — check gracefully
+    try:
+        spec.loader.exec_module(mod)
+    except ImportError:
+        import pytest
+        pytest.skip("datasette not installed")
+
+    manifest = _load_manifest()
+    n_papers = manifest["n_papers"]
+    n_reagents = manifest["tables"].get("reagents", 0)
+    llms = mod.LLMS_TXT
+
+    assert str(n_papers) in llms, f"n_papers={n_papers} not in LLMS_TXT"
+    assert str(n_reagents) in llms, f"n_reagents={n_reagents} not in LLMS_TXT"
+    assert "does not redistribute" in llms
+    # Counts must be consistent — no stale "10 papers" from old demo
+    assert "papers: 10" not in llms
+    assert "protocols: 10" not in llms
 
 
 def test_llms_txt_route_documents_public_api_and_limits():
     plugin = (ROOT / "serve/plugins/ask.py").read_text()
 
     assert "LLMS_TXT" in plugin
-    assert "582 papers, 582" in plugin
-    assert "5458 public reagent/protocol rows" in plugin
+    assert "_build_llms_txt" in plugin
     assert "does not redistribute" in plugin
     assert "/atlas/protocols.json" in plugin
     assert "/atlas/reagents.json" in plugin

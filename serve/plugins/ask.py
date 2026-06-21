@@ -19,6 +19,7 @@ import json
 import re
 import os
 import urllib.request
+from pathlib import Path
 
 from datasette import hookimpl, Response
 
@@ -28,7 +29,29 @@ OLLAMA = os.environ.get("OLLAMA_URL", "http://localhost:11434/api/generate")
 MODEL = os.environ.get("OLLAMA_MODEL", "llama3.1:8b")
 TOP_K = 12
 
-LLMS_TXT = """# Organoid Protocol Atlas
+# Load public corpus counts from the committed manifest so llms.txt and the
+# landing page stay in sync with the actual export — never hand-maintained.
+_MANIFEST_PATH = Path(__file__).resolve().parents[2] / "exports" / "public" / "manifest.json"
+try:
+    _manifest = json.loads(_MANIFEST_PATH.read_text())
+except (FileNotFoundError, json.JSONDecodeError):
+    _manifest = {"n_papers": 0, "tables": {}}
+
+_N_PAPERS = _manifest.get("n_papers", 0)
+_N_PROTOCOLS = _manifest.get("tables", {}).get("protocols", _N_PAPERS)
+_N_REAGENTS = _manifest.get("tables", {}).get("reagents", 0)
+_N_ROWS = _N_PROTOCOLS + _N_REAGENTS
+
+# Expose manifest to Jinja2 templates (index.html uses {{ public_counts.n_papers }})
+PUBLIC_COUNTS = {
+    "n_papers": _N_PAPERS,
+    "n_protocols": _N_PROTOCOLS,
+    "n_reagents": _N_REAGENTS,
+}
+
+
+def _build_llms_txt() -> str:
+    return f"""# Organoid Protocol Atlas
 
 Public, license-safe Datasette deployment of the Organoid Protocol Atlas.
 
@@ -37,13 +60,13 @@ Source: https://github.com/rhowardstone/organoid-protocol-atlas
 
 ## What is available here
 
-This public deployment contains the CC-licensed public subset: 582 papers, 582
-protocol rows, and 5458 public reagent/protocol rows. It does not redistribute
+This public deployment contains the CC-licensed public subset: {_N_PAPERS} papers, {_N_PROTOCOLS}
+protocol rows, and {_N_REAGENTS} public reagent/protocol rows. It does not redistribute
 full methods text or paper bodies. Evidence fields are short citation snippets
 kept so users and agents can trace claims back to the source paper.
 
-The larger local pipeline tracks a verified 28-paper corpus and additional
-candidate papers, but those are not all public on this hosted deployment.
+The larger local pipeline tracks a verified corpus and additional candidate papers,
+but those are not all public on this hosted deployment.
 
 ## Useful endpoints
 
@@ -68,11 +91,14 @@ exports. Prefer the JSON endpoints for programmatic use.
 
 ## Public subset counts
 
-- papers: 10
-- protocols: 10
-- reagent/protocol rows: 122
+- papers: {_N_PAPERS}
+- protocols: {_N_PROTOCOLS}
+- reagent/protocol rows: {_N_REAGENTS}
 - full text redistributed: no
 """
+
+
+LLMS_TXT = _build_llms_txt()
 
 # organoid types we can detect in a question to bias retrieval
 _TYPES = ["intestinal", "gastric", "cerebral", "kidney", "liver", "lung",
@@ -215,3 +241,9 @@ async def llms_txt(datasette, request):
 @hookimpl
 def register_routes():
     return [(r"^/-/ask$", ask), (r"^/llms\.txt$", llms_txt)]
+
+
+@hookimpl
+def extra_template_vars(datasette, request):
+    """Inject manifest-derived counts into every Jinja2 template context."""
+    return {"public_counts": PUBLIC_COUNTS}
