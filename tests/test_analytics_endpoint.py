@@ -5456,3 +5456,144 @@ def test_cta_new_types_list_correct(tmp_path, monkeypatch):
     assert "intestinal" in by_year[2019]["new_types"]
     # 2020 new types: kidney and cerebral
     assert set(by_year[2020]["new_types"]) == {"kidney", "cerebral"}
+
+
+# --------------------------------------------------------------------------- #
+# handle_unit_normalization_report  (route 51)
+# --------------------------------------------------------------------------- #
+
+_UNR_ROWS = [
+    # canonical_unit 'uM' ← 3 raw strings: μM, µM, uM
+    {"canonical": "EGF",     "canonical_unit": "uM",    "unit": "μM",  "organoid_type": "intestinal"},
+    {"canonical": "EGF",     "canonical_unit": "uM",    "unit": "µM",  "organoid_type": "intestinal"},
+    {"canonical": "EGF",     "canonical_unit": "uM",    "unit": "uM",  "organoid_type": "kidney"},
+    {"canonical": "CHIR",    "canonical_unit": "uM",    "unit": "μM",  "organoid_type": "cardiac"},
+    {"canonical": "CHIR",    "canonical_unit": "uM",    "unit": "µM",  "organoid_type": "lung"},
+    # canonical_unit 'ng/mL' ← 2 raw strings: ng/mL, ng/ml
+    {"canonical": "Noggin",  "canonical_unit": "ng/mL", "unit": "ng/mL", "organoid_type": "intestinal"},
+    {"canonical": "Noggin",  "canonical_unit": "ng/mL", "unit": "ng/ml", "organoid_type": "kidney"},
+    {"canonical": "FGF2",    "canonical_unit": "ng/mL", "unit": "ng/mL", "organoid_type": "cerebral"},
+    # No canonical_unit (should not appear in report)
+    {"canonical": "Wnt3a",   "canonical_unit": "",      "unit": "ng/mL", "organoid_type": "intestinal"},
+    {"canonical": "Wnt3a",   "canonical_unit": None,    "unit": "ng/mL", "organoid_type": "kidney"},
+]
+
+
+def _write_reagents_for_unr(path, rows):
+    path.write_text("\n".join(json.dumps(r) for r in rows))
+
+
+def _patch_unr(monkeypatch, path):
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", path)
+
+
+def test_unr_global_structure(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_unr(p, _UNR_ROWS)
+    _patch_unr(monkeypatch, p)
+    data, status = ae.handle_unit_normalization_report(None)
+    assert status == 200
+    assert "unit_clusters" in data
+    assert "n_canonical_units" in data
+    assert "coverage_rate" in data
+
+
+def test_unr_coverage_rate(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_unr(p, _UNR_ROWS)
+    _patch_unr(monkeypatch, p)
+    data, _ = ae.handle_unit_normalization_report(None)
+    # 8 have canonical_unit, 2 don't → 8/10 = 0.80
+    assert abs(data["coverage_rate"] - 0.8) < 0.01
+    assert data["n_total_reagents"] == 10
+    assert data["n_with_canonical_unit"] == 8
+
+
+def test_unr_uM_cluster_n_raw(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_unr(p, _UNR_ROWS)
+    _patch_unr(monkeypatch, p)
+    data, _ = ae.handle_unit_normalization_report(None)
+    by_cu = {e["canonical_unit"]: e for e in data["unit_clusters"]}
+    # uM has 3 distinct raw strings
+    assert by_cu["uM"]["n_raw_strings"] == 3
+    assert by_cu["uM"]["n_records"] == 5
+
+
+def test_unr_sorted_by_n_raw_desc(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_unr(p, _UNR_ROWS)
+    _patch_unr(monkeypatch, p)
+    data, _ = ae.handle_unit_normalization_report(None)
+    n_raws = [e["n_raw_strings"] for e in data["unit_clusters"]]
+    assert n_raws == sorted(n_raws, reverse=True)
+    # uM(3 raw) before ng/mL(2 raw)
+    assert data["unit_clusters"][0]["canonical_unit"] == "uM"
+
+
+def test_unr_ng_ml_cluster(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_unr(p, _UNR_ROWS)
+    _patch_unr(monkeypatch, p)
+    data, _ = ae.handle_unit_normalization_report(None)
+    by_cu = {e["canonical_unit"]: e for e in data["unit_clusters"]}
+    assert by_cu["ng/mL"]["n_raw_strings"] == 2
+    assert "ng/mL" in by_cu["ng/mL"]["raw_strings"]
+    assert "ng/ml" in by_cu["ng/mL"]["raw_strings"]
+
+
+def test_unr_query_uM_detail(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_unr(p, _UNR_ROWS)
+    _patch_unr(monkeypatch, p)
+    data, status = ae.handle_unit_normalization_report("uM")
+    assert status == 200
+    assert data["canonical_unit"] == "uM"
+    assert data["n_records"] == 5
+    assert data["n_raw_strings"] == 3
+    raw_names = [e["raw_unit"] for e in data["raw_strings"]]
+    assert "μM" in raw_names
+    assert "µM" in raw_names
+    assert "uM" in raw_names
+
+
+def test_unr_query_top_canonicals(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_unr(p, _UNR_ROWS)
+    _patch_unr(monkeypatch, p)
+    data, _ = ae.handle_unit_normalization_report("uM")
+    top = {e["canonical"] for e in data["top_canonicals"]}
+    # EGF(3 records) and CHIR(2 records) both use uM
+    assert "EGF" in top
+    assert "CHIR" in top
+
+
+def test_unr_query_unknown_returns_404(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_unr(p, _UNR_ROWS)
+    _patch_unr(monkeypatch, p)
+    _, status = ae.handle_unit_normalization_report("NOSUCHUNIT_XYZ")
+    assert status == 404
+
+
+def test_unr_no_cu_excluded(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_unr(p, _UNR_ROWS)
+    _patch_unr(monkeypatch, p)
+    data, _ = ae.handle_unit_normalization_report(None)
+    # Wnt3a has no canonical_unit so '' cluster should not appear
+    cu_names = {e["canonical_unit"] for e in data["unit_clusters"]}
+    assert "" not in cu_names
+
+
+def test_unr_n_canonical_units(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_unr(p, _UNR_ROWS)
+    _patch_unr(monkeypatch, p)
+    data, _ = ae.handle_unit_normalization_report(None)
+    assert data["n_canonical_units"] == 2  # uM and ng/mL
+
+
+def test_unr_index_entry():
+    data, _ = ae.handle_index()
+    assert "/analytics/unit-normalization-report" in data["endpoints"]

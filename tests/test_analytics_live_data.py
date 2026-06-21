@@ -783,3 +783,26 @@ def test_live_cta_egf_per_year():
     assert data["n_types_current"] >= 15
     assert data["first_year"] <= 2018
     assert len(data["by_year"]) >= 5
+
+
+@require_reagents
+def test_live_unr_global_returns_200():
+    data, status = ae.handle_unit_normalization_report(None)
+    assert status == 200
+    assert data["n_canonical_units"] >= 5
+    assert data["coverage_rate"] > 0.1
+    by_cu = {e["canonical_unit"]: e for e in data["unit_clusters"]}
+    # uM is the most ambiguous cluster (10 raw strings in live data)
+    assert "uM" in by_cu
+    assert by_cu["uM"]["n_raw_strings"] >= 5
+
+
+@require_reagents
+def test_live_unr_uM_query():
+    data, status = ae.handle_unit_normalization_report("uM")
+    assert status == 200
+    assert data["canonical_unit"] == "uM"
+    assert data["n_records"] >= 100
+    # μM and µM are always present
+    raw_names = {e["raw_unit"] for e in data["raw_strings"]}
+    assert "μM" in raw_names or "µM" in raw_names
