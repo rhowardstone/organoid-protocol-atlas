@@ -66,15 +66,19 @@ def handle_consensus_list() -> tuple[dict, int]:
     available = []
     for f in files:
         otype = f.stem.replace("consensus_", "")
+        if otype == "all":
+            continue  # consensus_all.json is the aggregate LIST, not a per-type dict
         try:
             d = json.loads(f.read_text())
-            available.append({
-                "organoid_type": otype,
-                "n_protocols": d.get("n_protocols", 0),
-                "url": f"/analytics/consensus/{otype}",
-            })
         except json.JSONDecodeError:
-            pass
+            continue
+        if not isinstance(d, dict):
+            continue  # defensive: only per-type dicts expose n_protocols (avoids 500)
+        available.append({
+            "organoid_type": otype,
+            "n_protocols": d.get("n_protocols", 0),
+            "url": f"/analytics/consensus/{otype}",
+        })
     return {"available": available}, 200
 
 
