@@ -859,3 +859,46 @@ bladder		PMC9887100	Ha	2023	BMB reports	tbd	tbd	CC-BY-NC	yes	tbd	no	auto-ingeste
 blood-brain-barrier	10.3390/ijms24032710	PMC9916529	Chaulagain	2023	International journal of molecular sciences	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.857
 salivary-gland	10.3389/fmolb.2023.1100541	PMC9932530	Schaafsma	2023	Frontiers in molecular biosciences	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.889
 thyroid	10.3390/nu15040887	PMC9967305	Yu	2023	Nutrients	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.857
+cardiac	10.1038/s41598-022-22225-w	PMC9579206	Ergir	2022	Scientific reports	tbd	tbd	CC-BY	yes	tbd	tbd	tbd	auto: europepmc CITED/recency pull
+cardiac	10.1038/s41598-020-76062-w	PMC7645446	Abulaiti	2020	Scientific reports	tbd	tbd	CC-BY	yes	tbd	tbd	tbd	auto: europepmc CITED/recency pull
+cardiac	10.3389/fpubh.2018.00103	PMC5932352	Forsythe	2018	Frontiers in public health	tbd	tbd	CC-BY	yes	tbd	tbd	tbd	auto: europepmc CITED/recency pull
+cardiac	10.3389/fgene.2021.767621	PMC8591288	Matsui	2021	Frontiers in genetics	tbd	tbd	CC-BY	yes	tbd	tbd	tbd	auto: europepmc CITED/recency pull
+cardiac	10.1002/smll.202504493	PMC12895230	Mousavi	2026	Small	tbd	tbd	CC-BY	yes	tbd	tbd	tbd	auto: europepmc CITED/recency pull
+cardiac	10.3390/cells15111019	PMC13256626	Hosny	2026	Cells	tbd	tbd	CC-BY	yes	tbd	tbd	tbd	auto: europepmc CITED/recency pull
+cerebral	10.1038/s41467-021-24775-5	PMC8342542	Cho	2021	Nature communications	tbd	tbd	CC-BY	yes	tbd	yes	tbd	auto: europepmc CITED/recency pull
+cerebral	10.1038/s41467-020-19264-0	PMC7608683	Zhao	2020	Nature communications	tbd	tbd	CC-BY	yes	tbd	yes	tbd	auto: europepmc CITED/recency pull
+cerebral	10.1038/s41586-021-03209-8	PMC8494642	Ziffra	2021	Nature	tbd	tbd	CC-BY	yes	tbd	yes	tbd	auto: europepmc CITED/recency pull
+gastric	10.1038/s41467-019-13605-4	PMC6906306	Giobbe	2019	Nature communications	tbd	tbd	CC-BY	yes	tbd	yes	tbd	auto: europepmc CITED/recency pull
+gastric	10.1038/s41467-022-29279-4	PMC8967832	Kim	2022	Nature communications	tbd	tbd	CC-BY	yes	tbd	yes	tbd	auto: europepmc CITED/recency pull
+gastric	10.1038/s41423-019-0339-5	PMC6952403	Takahashi-Kanemitsu	2020	Cellular & molecular immunology	tbd	tbd	CC-BY	yes	tbd	tbd	tbd	auto: europepmc CITED/recency pull
+gastric	10.1186/s13059-014-0428-9	PMC4145231	Nadauld	2014	Genome biology	tbd	tbd	CC-BY	yes	tbd	tbd	tbd	auto: europepmc CITED/recency pull
+gastric	10.1186/s13046-018-0993-y	PMC6302516	Zhang	2018	Journal of experimental & clinical cancer research	tbd	tbd	CC-BY	yes	tbd	tbd	tbd	auto: europepmc CITED/recency pull
+gastric	10.1242/dmm.027649	PMC5312008	Burkitt	2017	Disease models & mechanisms	tbd	tbd	CC-BY	yes	tbd	tbd	tbd	auto: europepmc CITED/recency pull
+intestinal	10.3390/ijms23031105	PMC8835596	Portincasa	2022	International journal of molecular sciences	tbd	tbd	CC-BY	yes	tbd	yes	high-cited	auto: europepmc CITED/recency pull
+intestinal	10.1038/s41586-021-03852-1	PMC8426186	Elmentaite	2021	Nature	tbd	tbd	CC-BY	yes	tbd	yes	high-cited	auto: europepmc CITED/recency pull
+intestinal	10.1038/ncomms11535	PMC4865890	Shah	2016	Nature communications	tbd	tbd	CC-BY	yes	tbd	yes	tbd	auto: europepmc CITED/recency pull
+intestinal	10.1038/s41467-020-15831-7	PMC7181728	Tajik	2020	Nature communications	tbd	tbd	CC-BY	yes	tbd	yes	tbd	auto: europepmc CITED/recency pull
+intestinal	10.3390/cells9081909	PMC7463717	Schoultz	2020	Cells	tbd	tbd	CC-BY	yes	tbd	yes	tbd	auto: europepmc CITED/recency pull
+kidney	10.1038/s41467-018-07594-z	PMC6279764	Hale	2018	Nature communications	tbd	tbd	CC-BY	yes	tbd	tbd	tbd	auto: europepmc CITED/recency pull
+kidney	10.1186/s13073-019-0615-0	PMC6345028	Combes	2019	Genome medicine	tbd	tbd	CC-BY	yes	tbd	tbd	tbd	auto: europepmc CITED/recency pull
+kidney	10.1038/s41467-019-12872-5	PMC6910926	Barry	2019	Nature communications	tbd	tbd	CC-BY	yes	tbd	tbd	tbd	auto: europepmc CITED/recency pull
+liver	10.3389/fphar.2021.671640	PMC8134740	Acharya	2021	Frontiers in pharmacology	tbd	tbd	CC-BY	yes	tbd	tbd	tbd	auto: europepmc CITED/recency pull
+liver	10.3390/mi10030165	PMC6470849	Yu	2019	Micromachines	tbd	tbd	CC-BY	yes	tbd	tbd	tbd	auto: europepmc CITED/recency pull
+liver	10.1038/s41467-021-26410-9	PMC8536785	Guan	2021	Nature communications	tbd	tbd	CC-BY	yes	tbd	tbd	tbd	auto: europepmc CITED/recency pull
+liver	10.1038/s41598-018-21200-8	PMC5811529	Mazzocchi	2018	Scientific reports	tbd	tbd	CC-BY	yes	tbd	tbd	tbd	auto: europepmc CITED/recency pull
+lung	10.1038/s41586-023-05874-3	PMC7614604	Hill	2023	Nature	tbd	tbd	CC-BY	yes	tbd	yes	high-cited	auto: europepmc CITED/recency pull
+pancreatic	10.1177/2472555218766842	PMC6013403	Hou	2018	SLAS discovery	tbd	tbd	CC-BY	yes	tbd	tbd	tbd	auto: europepmc CITED/recency pull
+pancreatic	10.1038/s41467-019-12472-3	PMC6776618	Lebreton	2019	Nature communications	tbd	tbd	CC-BY	yes	tbd	tbd	tbd	auto: europepmc CITED/recency pull
+pancreatic	10.1002/advs.201903739	PMC7284190	Liu	2020	Advanced science	tbd	tbd	CC-BY	yes	tbd	tbd	tbd	auto: europepmc CITED/recency pull
+pancreatic	10.15252/emmm.202012616	PMC7799357	Nalbach	2021	EMBO molecular medicine	tbd	tbd	CC-BY	yes	tbd	tbd	tbd	auto: europepmc CITED/recency pull
+retinal	10.1038/s41598-018-32871-8	PMC6162218	Fligor	2018	Scientific reports	tbd	tbd	CC-BY	yes	tbd	tbd	tbd	auto: europepmc CITED/recency pull
+retinal	10.1016/j.stemcr.2018.02.003	PMC5998840	Deng	2018	Stem cell reports	tbd	tbd	CC-BY	yes	tbd	tbd	tbd	auto: europepmc CITED/recency pull
+retinal	10.1016/j.ajhg.2020.09.002	PMC7675008	de	2020	American journal of human genetics	tbd	tbd	CC-BY	yes	tbd	tbd	tbd	auto: europepmc CITED/recency pull
+retinal	10.1002/stem.2963	PMC6519347	Collin	2019	Stem cells	tbd	tbd	CC-BY	yes	tbd	tbd	tbd	auto: europepmc CITED/recency pull
+retinal	10.7554/elife.22689	PMC5380436	Sidhaye	2017	eLife	tbd	tbd	CC-BY	yes	tbd	tbd	tbd	auto: europepmc CITED/recency pull
+vascular	10.3389/fbioe.2020.00278	PMC7182037	Markou	2020	Frontiers in bioengineering and biotechnology	tbd	tbd	CC-BY	yes	tbd	tbd	tbd	auto: europepmc CITED/recency pull
+vascular	10.3390/ijms22147284	PMC8306829	Méndez-Barbero	2021	International journal of molecular sciences	tbd	tbd	CC-BY	yes	tbd	tbd	tbd	auto: europepmc CITED/recency pull
+vascular	10.3389/fcell.2021.696668	PMC8495170	Prasad	2021	Frontiers in cell and developmental biology	tbd	tbd	CC-BY	yes	tbd	tbd	tbd	auto: europepmc CITED/recency pull
+vascular	10.1186/s13046-023-02926-4	PMC10724947	Bhattacharya	2023	Journal of experimental & clinical cancer research	tbd	tbd	CC-BY	yes	tbd	tbd	tbd	auto: europepmc CITED/recency pull
+vascular	10.1007/s00018-023-04951-0	PMC10560197	Gaston-Breton	2023	Cellular and molecular life sciences	tbd	tbd	CC-BY	yes	tbd	tbd	tbd	auto: europepmc CITED/recency pull
+vascular	10.1002/adhm.202502108	PMC12683213	Mostina	2025	Advanced healthcare materials	tbd	tbd	CC-BY	yes	tbd	tbd	tbd	auto: europepmc CITED/recency pull
