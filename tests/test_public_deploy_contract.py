@@ -187,3 +187,29 @@ def test_public_manifest_paper_list_matches_n_papers():
         f"manifest.papers has {len(manifest['papers'])} entries "
         f"but n_papers={manifest['n_papers']}"
     )
+
+
+def test_public_manifest_has_schema_version():
+    """Manifest must declare schema_version so consumers can detect breaking changes."""
+    manifest = _load_manifest()
+    assert "schema_version" in manifest, "manifest.json is missing 'schema_version'"
+    assert manifest["schema_version"] == "0.4", (
+        f"Expected schema_version '0.4', got {manifest['schema_version']!r}"
+    )
+
+
+def test_public_manifest_n_types_matches_protocols_jsonl():
+    """manifest.n_types must match the actual count of distinct organoid_type values
+    in protocols.jsonl — guards against stale manifests after corpus batch merges."""
+    manifest = _load_manifest()
+    assert "n_types" in manifest, "manifest.json is missing 'n_types'"
+    protocols_jsonl = ROOT / "exports" / "public" / "protocols.jsonl"
+    types_in_data = {
+        json.loads(ln).get("organoid_type")
+        for ln in protocols_jsonl.read_text().splitlines()
+        if ln.strip()
+    } - {None, ""}
+    assert manifest["n_types"] == len(types_in_data), (
+        f"manifest.n_types={manifest['n_types']} but protocols.jsonl has "
+        f"{len(types_in_data)} distinct non-empty organoid_type values: {sorted(types_in_data)}"
+    )
