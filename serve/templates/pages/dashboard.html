@@ -336,6 +336,8 @@ async function load() {
     ['/analytics/substitutions?q=TERM', 'Search ProtocolModification records for reagent substitutions'],
     ['/analytics/candidates',           'OA/license verification status of candidate pool'],
     ['/analytics/status',               'Live system health (corpus + artifact inventory)'],
+    ['/trapi',                          'TRAPI 1.5 query interface (POST /trapi/query) over the committed Biolink KGX graph'],
+    ['/trapi/meta_knowledge_graph',     'KGX schema: node categories, predicates, edge counts'],
   ];
   epEl.innerHTML = ENDPOINTS.map(([path, desc]) => {
     const href = path.includes('{') ? null : path;
