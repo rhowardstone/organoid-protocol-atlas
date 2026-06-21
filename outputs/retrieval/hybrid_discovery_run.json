@@ -1,0 +1,60 @@
+{
+  "method": "hybrid_discover run WITH abstracts (limit-per-type 25): semantic re-ranking of EPMC candidates vs lexical order; deduped vs 864-corpus + prior pools",
+  "n_new_candidates": 187,
+  "n_semantically_scored": 186,
+  "cc_licensed": 187,
+  "mean_sem_score": 0.5835,
+  "top30_by_semantic_mean_lex_rank": 4.47,
+  "rescued_count_in_top30 (high semantic but lexical rank>3 -> keyword top-3 would miss)": 16,
+  "rescued_examples": [
+    {
+      "type": "cardiac",
+      "pmcid": "PMC11346450",
+      "sem": 0.779,
+      "lex_rank": 7
+    },
+    {
+      "type": "bone",
+      "pmcid": "PMC12407368",
+      "sem": 0.77,
+      "lex_rank": 8
+    },
+    {
+      "type": "cerebral",
+      "pmcid": "PMC12149405",
+      "sem": 0.763,
+      "lex_rank": 4
+    },
+    {
+      "type": "tumor",
+      "pmcid": "PMC12771672",
+      "sem": 0.752,
+      "lex_rank": 14
+    },
+    {
+      "type": "cardiac",
+      "pmcid": "PMC13107919",
+      "sem": 0.735,
+      "lex_rank": 4
+    },
+    {
+      "type": "thyroid",
+      "pmcid": "PMC8072035",
+      "sem": 0.734,
+      "lex_rank": 6
+    },
+    {
+      "type": "cardiac",
+      "pmcid": "PMC11726960",
+      "sem": 0.732,
+      "lex_rank": 6
+    },
+    {
+      "type": "kidney",
+      "pmcid": "PMC11458617",
+      "sem": 0.722,
+      "lex_rank": 6
+    }
+  ],
+  "generated_at": "2026-06-21T15:02:48+00:00"
+}
