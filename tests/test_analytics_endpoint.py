@@ -6082,3 +6082,176 @@ def test_ctcv_unknown_query_returns_404(tmp_path, monkeypatch):
 def test_ctcv_index_entry():
     data, _ = ae.handle_index()
     assert "/analytics/cross-type-concentration-variance" in data["endpoints"]
+
+# ---------------------------------------------------------------------------
+# Route 55 — /analytics/reagent-type-enrichment (RTE)
+# ---------------------------------------------------------------------------
+# 20 intestinal papers (doi 10.1/int_0..19), 10 retinal papers (10.1/ret_0..9)
+# Global: 30 papers total
+# taurine: 8 retinal, 1 intestinal → enriched in retinal
+# EGF: 15 intestinal, 4 retinal → enriched in intestinal
+# Noggin: 8 intestinal, 4 retinal → slightly intestinal
+_RTE_PROTOS = (
+    [{"doi": f"10.1/int_{i}", "organoid_type": "intestinal"} for i in range(20)]
+    + [{"doi": f"10.1/ret_{i}", "organoid_type": "retinal"} for i in range(10)]
+)
+_RTE_REAGENTS = (
+    # taurine: 8 retinal (high enrichment), 1 intestinal
+    [{"canonical": "taurine", "doi": f"10.1/ret_{i}", "organoid_type": "retinal",
+      "kind": "supplement"} for i in range(8)]
+    + [{"canonical": "taurine", "doi": "10.1/int_0", "organoid_type": "intestinal",
+        "kind": "supplement"}]
+    # EGF: 15 intestinal (enriched), 4 retinal
+    + [{"canonical": "EGF", "doi": f"10.1/int_{i}", "organoid_type": "intestinal",
+        "kind": "signaling"} for i in range(15)]
+    + [{"canonical": "EGF", "doi": f"10.1/ret_{i}", "organoid_type": "retinal",
+        "kind": "signaling"} for i in range(4)]
+    # Noggin: 8 intestinal, 4 retinal (mild enrichment in intestinal)
+    + [{"canonical": "Noggin", "doi": f"10.1/int_{i}", "organoid_type": "intestinal",
+        "kind": "signaling"} for i in range(8)]
+    + [{"canonical": "Noggin", "doi": f"10.1/ret_{i}", "organoid_type": "retinal",
+        "kind": "signaling"} for i in range(4)]
+)
+
+
+def _write_rte(pp, rp, protos, reagents):
+    pp.write_text("\n".join(json.dumps(r) for r in protos))
+    rp.write_text("\n".join(json.dumps(r) for r in reagents))
+
+
+def _patch_rte(monkeypatch, pp, rp):
+    monkeypatch.setattr(ae, "PROTOCOLS_JSONL", pp)
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", rp)
+
+
+def test_rte_global_returns_200(tmp_path, monkeypatch):
+    pp = tmp_path / "protocols.jsonl"
+    rp = tmp_path / "reagents.jsonl"
+    _write_rte(pp, rp, _RTE_PROTOS, _RTE_REAGENTS)
+    _patch_rte(monkeypatch, pp, rp)
+    data, status = ae.handle_reagent_type_enrichment(None, None, 3)
+    assert status == 200
+
+
+def test_rte_global_keys(tmp_path, monkeypatch):
+    pp = tmp_path / "protocols.jsonl"
+    rp = tmp_path / "reagents.jsonl"
+    _write_rte(pp, rp, _RTE_PROTOS, _RTE_REAGENTS)
+    _patch_rte(monkeypatch, pp, rp)
+    data, _ = ae.handle_reagent_type_enrichment(None, None, 3)
+    for k in ("n_total_protocols", "n_types", "min_n_papers", "top_enriched"):
+        assert k in data, f"missing key: {k}"
+
+
+def test_rte_global_sorted_desc(tmp_path, monkeypatch):
+    pp = tmp_path / "protocols.jsonl"
+    rp = tmp_path / "reagents.jsonl"
+    _write_rte(pp, rp, _RTE_PROTOS, _RTE_REAGENTS)
+    _patch_rte(monkeypatch, pp, rp)
+    data, _ = ae.handle_reagent_type_enrichment(None, None, 3)
+    ratios = [e["enrichment_ratio"] for e in data["top_enriched"]]
+    assert ratios == sorted(ratios, reverse=True)
+
+
+def test_rte_taurine_enriched_in_retinal(tmp_path, monkeypatch):
+    # taurine: 8/10 retinal, 9/30 global → ratio = (0.8)/(0.3) = 2.67
+    pp = tmp_path / "protocols.jsonl"
+    rp = tmp_path / "reagents.jsonl"
+    _write_rte(pp, rp, _RTE_PROTOS, _RTE_REAGENTS)
+    _patch_rte(monkeypatch, pp, rp)
+    data, _ = ae.handle_reagent_type_enrichment(None, None, 3)
+    top = {(e["canonical"], e["organoid_type"]): e for e in data["top_enriched"]}
+    assert ("taurine", "retinal") in top
+    assert top[("taurine", "retinal")]["enrichment_ratio"] > 2.0
+
+
+def test_rte_type_filter_returns_200(tmp_path, monkeypatch):
+    pp = tmp_path / "protocols.jsonl"
+    rp = tmp_path / "reagents.jsonl"
+    _write_rte(pp, rp, _RTE_PROTOS, _RTE_REAGENTS)
+    _patch_rte(monkeypatch, pp, rp)
+    data, status = ae.handle_reagent_type_enrichment("retinal", None, 3)
+    assert status == 200
+    assert data["organoid_type"] == "retinal"
+
+
+def test_rte_type_filter_sorted_desc(tmp_path, monkeypatch):
+    pp = tmp_path / "protocols.jsonl"
+    rp = tmp_path / "reagents.jsonl"
+    _write_rte(pp, rp, _RTE_PROTOS, _RTE_REAGENTS)
+    _patch_rte(monkeypatch, pp, rp)
+    data, _ = ae.handle_reagent_type_enrichment("retinal", None, 3)
+    ratios = [e["enrichment_ratio"] for e in data["enriched"]]
+    assert ratios == sorted(ratios, reverse=True)
+
+
+def test_rte_type_filter_taurine_top(tmp_path, monkeypatch):
+    # taurine is the most enriched in retinal
+    pp = tmp_path / "protocols.jsonl"
+    rp = tmp_path / "reagents.jsonl"
+    _write_rte(pp, rp, _RTE_PROTOS, _RTE_REAGENTS)
+    _patch_rte(monkeypatch, pp, rp)
+    data, _ = ae.handle_reagent_type_enrichment("retinal", None, 3)
+    assert data["enriched"][0]["canonical"] == "taurine"
+
+
+def test_rte_type_filter_has_n_type_protocols(tmp_path, monkeypatch):
+    pp = tmp_path / "protocols.jsonl"
+    rp = tmp_path / "reagents.jsonl"
+    _write_rte(pp, rp, _RTE_PROTOS, _RTE_REAGENTS)
+    _patch_rte(monkeypatch, pp, rp)
+    data, _ = ae.handle_reagent_type_enrichment("intestinal", None, 3)
+    assert data["n_type_protocols"] == 20
+    assert data["n_total_protocols"] == 30
+
+
+def test_rte_query_mode_returns_200(tmp_path, monkeypatch):
+    pp = tmp_path / "protocols.jsonl"
+    rp = tmp_path / "reagents.jsonl"
+    _write_rte(pp, rp, _RTE_PROTOS, _RTE_REAGENTS)
+    _patch_rte(monkeypatch, pp, rp)
+    data, status = ae.handle_reagent_type_enrichment(None, "taurine", 3)
+    assert status == 200
+    assert data["canonical"] == "taurine"
+
+
+def test_rte_query_by_type_sorted_desc(tmp_path, monkeypatch):
+    pp = tmp_path / "protocols.jsonl"
+    rp = tmp_path / "reagents.jsonl"
+    _write_rte(pp, rp, _RTE_PROTOS, _RTE_REAGENTS)
+    _patch_rte(monkeypatch, pp, rp)
+    data, _ = ae.handle_reagent_type_enrichment(None, "taurine", 1)
+    ratios = [e["enrichment_ratio"] for e in data["by_type"]]
+    assert ratios == sorted(ratios, reverse=True)
+
+
+def test_rte_query_retinal_highest_for_taurine(tmp_path, monkeypatch):
+    pp = tmp_path / "protocols.jsonl"
+    rp = tmp_path / "reagents.jsonl"
+    _write_rte(pp, rp, _RTE_PROTOS, _RTE_REAGENTS)
+    _patch_rte(monkeypatch, pp, rp)
+    data, _ = ae.handle_reagent_type_enrichment(None, "taurine", 1)
+    assert data["by_type"][0]["organoid_type"] == "retinal"
+
+
+def test_rte_unknown_type_returns_404(tmp_path, monkeypatch):
+    pp = tmp_path / "protocols.jsonl"
+    rp = tmp_path / "reagents.jsonl"
+    _write_rte(pp, rp, _RTE_PROTOS, _RTE_REAGENTS)
+    _patch_rte(monkeypatch, pp, rp)
+    _, status = ae.handle_reagent_type_enrichment("NOSUCHTYPE_XYZ", None, 3)
+    assert status == 404
+
+
+def test_rte_unknown_canonical_returns_404(tmp_path, monkeypatch):
+    pp = tmp_path / "protocols.jsonl"
+    rp = tmp_path / "reagents.jsonl"
+    _write_rte(pp, rp, _RTE_PROTOS, _RTE_REAGENTS)
+    _patch_rte(monkeypatch, pp, rp)
+    _, status = ae.handle_reagent_type_enrichment(None, "NOSUCHCANON_XYZ", 3)
+    assert status == 404
+
+
+def test_rte_index_entry():
+    data, _ = ae.handle_index()
+    assert "/analytics/reagent-type-enrichment" in data["endpoints"]
