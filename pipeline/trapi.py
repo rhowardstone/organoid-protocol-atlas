@@ -179,11 +179,160 @@ def _build_kg_edge(edge: dict) -> dict:
     }
 
 
-def answer(trapi_message: dict, graph: Graph) -> dict:
-    """Answer a single-hop TRAPI query against the loaded KGX.
+def _answer_hub_two_hop(qnodes: dict, qedges: dict, graph: Graph, query_graph: dict) -> dict:
+    """Two-hop hub pattern (3 qnodes, 2 qedges sharing one qnode).
 
-    Returns a TRAPI 1.5 response message. An unmatched / unsupported query returns
-    an empty results list (never raises for a well-formed single-hop request).
+    Identifies the hub qnode (appears in both edges), finds all KG nodes
+    that can serve as the hub, then for each hub returns every (leaf_a, leaf_b)
+    pair connected through it.
+
+    Primary use-case for this KGX: "find all entities co-mentioned with X in
+    any paper" — hub=Publication, leaf_a pinned to X, leaf_b free.
+    """
+    qedge_list = list(qedges.items())
+    qeid_0, qedge_0 = qedge_list[0]
+    qeid_1, qedge_1 = qedge_list[1]
+
+    e0_nids = {qedge_0["subject"], qedge_0["object"]}
+    e1_nids = {qedge_1["subject"], qedge_1["object"]}
+    hub_set = e0_nids & e1_nids
+
+    # Must be exactly one shared qnode (the hub).
+    if len(hub_set) != 1:
+        return _wrap(query_graph, {}, {}, [])
+    hub_qid = next(iter(hub_set))
+
+    # Determine which leaf each edge connects to the hub.
+    # (e0 → leaf_a, e1 → leaf_b — we detect roles for each edge)
+    def _leaf_of(qedge, hub_qid):
+        """Return (leaf_qid, hub_is_subject_in_edge)."""
+        if qedge["subject"] == hub_qid:
+            return qedge["object"], True
+        return qedge["subject"], False
+
+    leaf_a_qid, hub_is_subj_in_e0 = _leaf_of(qedge_0, hub_qid)
+    leaf_b_qid, hub_is_subj_in_e1 = _leaf_of(qedge_1, hub_qid)
+
+    hub_q = qnodes.get(hub_qid, {})
+    leaf_a_q = qnodes.get(leaf_a_qid, {})
+    leaf_b_q = qnodes.get(leaf_b_qid, {})
+    preds_0 = qedge_0.get("predicates")
+    preds_1 = qedge_1.get("predicates")
+
+    def _edges_for_hub_leaf(hub_nid, leaf_q, hub_is_subj, predicates):
+        """Yield (eid, leaf_node) pairs where the hub connects to a matching leaf."""
+        if hub_is_subj:
+            for eid in graph.by_subject.get(hub_nid, []):
+                e = graph.edges[eid]
+                if not _predicate_ok(e, predicates):
+                    continue
+                leaf_node = graph.nodes.get(e["object"])
+                if leaf_node and _qnode_matches(leaf_node, leaf_q):
+                    yield eid, leaf_node
+        else:
+            for eid in graph.by_object.get(hub_nid, []):
+                e = graph.edges[eid]
+                if not _predicate_ok(e, predicates):
+                    continue
+                leaf_node = graph.nodes.get(e["subject"])
+                if leaf_node and _qnode_matches(leaf_node, leaf_q):
+                    yield eid, leaf_node
+
+    # Collect candidate hub KG nodes via the pinned leaf_a IDs (if any),
+    # then cross with leaf_b.  If neither leaf is pinned, scan all hub candidates.
+    pinned_a = [i for i in (leaf_a_q.get("ids") or []) if i in graph.nodes]
+    pinned_b = [i for i in (leaf_b_q.get("ids") or []) if i in graph.nodes]
+
+    # Build hub_nid → [(eid_to_a, leaf_a_node)] mapping
+    hub_to_a: dict[str, list] = {}
+    if pinned_a:
+        for aid in pinned_a:
+            idx = graph.by_object if hub_is_subj_in_e0 else graph.by_subject
+            for eid in idx.get(aid, []):
+                e = graph.edges[eid]
+                if not _predicate_ok(e, preds_0):
+                    continue
+                hub_nid = e["subject"] if hub_is_subj_in_e0 else e["object"]
+                hub_node = graph.nodes.get(hub_nid)
+                leaf_a_node = graph.nodes.get(aid)
+                if hub_node and leaf_a_node and _qnode_matches(hub_node, hub_q) and _qnode_matches(leaf_a_node, leaf_a_q):
+                    hub_to_a.setdefault(hub_nid, []).append((eid, leaf_a_node))
+    else:
+        # No pinned leaf_a: discover hubs from pinned_b side or scan all
+        if pinned_b:
+            idx = graph.by_object if hub_is_subj_in_e1 else graph.by_subject
+            for bid in pinned_b:
+                for eid in idx.get(bid, []):
+                    e = graph.edges[eid]
+                    hub_nid = e["subject"] if hub_is_subj_in_e1 else e["object"]
+                    hub_node = graph.nodes.get(hub_nid)
+                    if hub_node and _qnode_matches(hub_node, hub_q):
+                        hub_to_a.setdefault(hub_nid, [])
+        else:
+            # Fully open query: collect all matching hub nodes from edge traversal
+            for hub_nid, hub_node in graph.nodes.items():
+                if _qnode_matches(hub_node, hub_q):
+                    hub_to_a[hub_nid] = []
+
+    kg_nodes: dict[str, dict] = {}
+    kg_edges: dict[str, dict] = {}
+    results: list[dict] = []
+
+    for hub_nid, a_pairs in hub_to_a.items():
+        hub_node = graph.nodes.get(hub_nid)
+        if hub_node is None:
+            continue
+
+        # If leaf_a was unpinned, find all edges from this hub to leaf_a matches
+        if not a_pairs:
+            a_pairs = list(_edges_for_hub_leaf(hub_nid, leaf_a_q, hub_is_subj_in_e0, preds_0))
+
+        # Find all edges from this hub to leaf_b matches
+        b_pairs = list(_edges_for_hub_leaf(hub_nid, leaf_b_q, hub_is_subj_in_e1, preds_1))
+        if not a_pairs or not b_pairs:
+            continue
+
+        kg_nodes[hub_nid] = _build_kg_node(hub_node)
+
+        for eid_a, leaf_a_node in a_pairs:
+            for eid_b, leaf_b_node in b_pairs:
+                # Skip trivial self-mention: same entity bound to both leaf qnodes.
+                # Co-mention queries should not include "X co-mentioned with X".
+                if leaf_a_node["id"] == leaf_b_node["id"] and leaf_a_qid != leaf_b_qid:
+                    continue
+
+                kg_nodes[leaf_a_node["id"]] = _build_kg_node(leaf_a_node)
+                kg_nodes[leaf_b_node["id"]] = _build_kg_node(leaf_b_node)
+                kg_edges[eid_a] = _build_kg_edge(graph.edges[eid_a])
+                kg_edges[eid_b] = _build_kg_edge(graph.edges[eid_b])
+                results.append({
+                    "node_bindings": {
+                        hub_qid: [{"id": hub_nid}],
+                        leaf_a_qid: [{"id": leaf_a_node["id"]}],
+                        leaf_b_qid: [{"id": leaf_b_node["id"]}],
+                    },
+                    "analyses": [{
+                        "resource_id": RESOURCE_ID,
+                        "edge_bindings": {
+                            qeid_0: [{"id": eid_a}],
+                            qeid_1: [{"id": eid_b}],
+                        },
+                    }],
+                })
+
+    return _wrap(query_graph, kg_nodes, kg_edges, results)
+
+
+def answer(trapi_message: dict, graph: Graph) -> dict:
+    """Answer a TRAPI query (single-hop or 2-hop hub) against the loaded KGX.
+
+    Supported patterns:
+      Single-hop  (1 qedge, 2 qnodes): standard subject → predicate → object.
+      Two-hop hub (2 qedge, 3 qnodes): both edges share one qnode (the hub).
+        Examples: leaf_a ← hub → leaf_b  (co-mentions via a shared publication).
+
+    Returns a TRAPI 1.5 response message. Unsupported or unmatched queries
+    return empty results — never raises for a well-formed request.
     """
     message = (trapi_message or {}).get("message", {}) or {}
     query_graph = message.get("query_graph", {}) or {}
@@ -194,8 +343,10 @@ def answer(trapi_message: dict, graph: Graph) -> dict:
     kg_edges: dict[str, dict] = {}
     results: list[dict] = []
 
-    # Only single-hop (exactly one qedge over two qnodes) is supported. Anything
-    # else returns empty results rather than fabricating an answer.
+    if len(qedges) == 2 and len(qnodes) == 3:
+        return _answer_hub_two_hop(qnodes, qedges, graph, query_graph)
+
+    # Single-hop: exactly one qedge over two qnodes. Anything else returns empty.
     if len(qedges) != 1 or len(qnodes) != 2:
         return _wrap(query_graph, kg_nodes, kg_edges, results)
 

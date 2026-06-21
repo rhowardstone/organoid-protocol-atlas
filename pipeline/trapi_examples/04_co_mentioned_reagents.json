@@ -1,0 +1,28 @@
+{
+  "_comment": "Two-hop hub: what entities are co-mentioned with CHEBI:137694 in the same publication? Hub = any Publication. leaf_a pinned to CHEBI:137694, leaf_b open. Returns other entities sharing a paper with this reagent.",
+  "message": {
+    "query_graph": {
+      "nodes": {
+        "pub": {
+          "categories": ["biolink:Publication"]
+        },
+        "anchor": {
+          "ids": ["CHEBI:137694"]
+        },
+        "comention": {}
+      },
+      "edges": {
+        "e0": {
+          "subject": "pub",
+          "object": "anchor",
+          "predicates": ["biolink:mentions"]
+        },
+        "e1": {
+          "subject": "pub",
+          "object": "comention",
+          "predicates": ["biolink:mentions"]
+        }
+      }
+    }
+  }
+}
