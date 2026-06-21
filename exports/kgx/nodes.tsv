@@ -42,11 +42,18 @@ CHEBI:91387	biolink:SmallMolecule	LDN-193189	infores:organoid-protocol-atlas
 NCBIGene:397086	biolink:Gene	TNF	infores:organoid-protocol-atlas
 PMC:10407810	biolink:Publication	PMC10407810	infores:organoid-protocol-atlas
 PMC:10466470	biolink:Publication	PMC10466470	infores:organoid-protocol-atlas
+PMC:10493503	biolink:Publication	PMC10493503	infores:organoid-protocol-atlas
+CHEBI:233322	biolink:SmallMolecule	A-83-01	infores:organoid-protocol-atlas
 PMC:10499607	biolink:Publication	PMC10499607	infores:organoid-protocol-atlas
 NCBIGene:608860	biolink:Gene	SHH	infores:organoid-protocol-atlas
 NCBIGene:135818427	biolink:Gene	LOC135818427	infores:organoid-protocol-atlas
 NCBIGene:211286	biolink:Gene	Cln5	infores:organoid-protocol-atlas
 Cellosaurus:CVCL_1240	biolink:CellLine	H9	infores:organoid-protocol-atlas
+PMC:10506403	biolink:Publication	PMC10506403	infores:organoid-protocol-atlas
+CHEBI:93891	biolink:SmallMolecule	Forskolin	infores:organoid-protocol-atlas
+PUBCHEM.COMPOUND:155011957	biolink:SmallMolecule	TGF-beta	infores:organoid-protocol-atlas
+CHEBI:91108	biolink:SmallMolecule	SB 431542	infores:organoid-protocol-atlas
+CHEBI:137113	biolink:SmallMolecule	JQ1	infores:organoid-protocol-atlas
 PMC:10520631	biolink:Publication	PMC10520631	infores:organoid-protocol-atlas
 NCBIGene:100520560	biolink:Gene	WNT2B	infores:organoid-protocol-atlas
 PMC:10635827	biolink:Publication	PMC10635827	infores:organoid-protocol-atlas
@@ -54,9 +61,7 @@ NCBIGene:2777530	biolink:Gene	hegF	infores:organoid-protocol-atlas
 NCBIGene:2252	biolink:Gene	FGF7	infores:organoid-protocol-atlas
 NCBIGene:2255	biolink:Gene	FGF10	infores:organoid-protocol-atlas
 NCBIGene:3082	biolink:Gene	HGF	infores:organoid-protocol-atlas
-CHEBI:233322	biolink:SmallMolecule	A-83-01	infores:organoid-protocol-atlas
 PMC:10645385	biolink:Publication	PMC10645385	infores:organoid-protocol-atlas
-PUBCHEM.COMPOUND:155011957	biolink:SmallMolecule	TGF-beta	infores:organoid-protocol-atlas
 NCBIGene:6036390	biolink:Gene	Smox	infores:organoid-protocol-atlas
 PMC:10673726	biolink:Publication	PMC10673726	infores:organoid-protocol-atlas
 NCBIGene:22416	biolink:Gene	Wnt3a	infores:organoid-protocol-atlas
@@ -69,6 +74,10 @@ PUBCHEM.COMPOUND:57519544	biolink:SmallMolecule	Wnt-C59	infores:organoid-protoco
 PMC:10739970	biolink:Publication	PMC10739970	infores:organoid-protocol-atlas
 NCBIGene:492315	biolink:Gene	BMP7	infores:organoid-protocol-atlas
 PMC:10775018	biolink:Publication	PMC10775018	infores:organoid-protocol-atlas
+PMC:10781881	biolink:Publication	PMC10781881	infores:organoid-protocol-atlas
+NCBIGene:397491	biolink:Gene	IGF1	infores:organoid-protocol-atlas
+NCBIGene:100525120	biolink:Gene	HGF	infores:organoid-protocol-atlas
+NCBIGene:851442	biolink:Gene	IWR1	infores:organoid-protocol-atlas
 PMC:10873332	biolink:Publication	PMC10873332	infores:organoid-protocol-atlas
 NCBIGene:4155959	biolink:Gene	fgf-2	infores:organoid-protocol-atlas
 PMC:10894554	biolink:Publication	PMC10894554	infores:organoid-protocol-atlas
@@ -77,6 +86,7 @@ PMC:10915962	biolink:Publication	PMC10915962	infores:organoid-protocol-atlas
 NCBIGene:396717	biolink:Gene	FGF9	infores:organoid-protocol-atlas
 PMC:10944495	biolink:Publication	PMC10944495	infores:organoid-protocol-atlas
 NCBIGene:100136517	biolink:Gene	LOC100136517	infores:organoid-protocol-atlas
+PMC:10954298	biolink:Publication	PMC10954298	infores:organoid-protocol-atlas
 PMC:10999936	biolink:Publication	PMC10999936	infores:organoid-protocol-atlas
 PR:000008534	biolink:Protein	hepatocyte growth factor	infores:organoid-protocol-atlas
 PR:000000168	biolink:Protein	bone morphogenetic protein 7	infores:organoid-protocol-atlas
@@ -96,7 +106,6 @@ PMC:11186971	biolink:Publication	PMC11186971	infores:organoid-protocol-atlas
 NCBIGene:100529167	biolink:Gene	wnt2bb	infores:organoid-protocol-atlas
 MESH:C066845	biolink:ChemicalEntity	pleiotrophin	infores:organoid-protocol-atlas
 PR:000010265	biolink:Protein	midkine	infores:organoid-protocol-atlas
-NCBIGene:100525120	biolink:Gene	HGF	infores:organoid-protocol-atlas
 PMC:11190488	biolink:Publication	PMC11190488	infores:organoid-protocol-atlas
 NCBIGene:100322894	biolink:Gene	GDNF	infores:organoid-protocol-atlas
 NCBIGene:2253	biolink:Gene	FGF8	infores:organoid-protocol-atlas
@@ -115,9 +124,7 @@ PMC:11274427	biolink:Publication	PMC11274427	infores:organoid-protocol-atlas
 CHEBI:92773	biolink:SmallMolecule	Y 27632	infores:organoid-protocol-atlas
 PMC:11304926	biolink:Publication	PMC11304926	infores:organoid-protocol-atlas
 NCBIGene:100169660	biolink:Gene	tnfa	infores:organoid-protocol-atlas
-CHEBI:93891	biolink:SmallMolecule	Forskolin	infores:organoid-protocol-atlas
 PMC:11315325	biolink:Publication	PMC11315325	infores:organoid-protocol-atlas
-CHEBI:91108	biolink:SmallMolecule	SB 431542	infores:organoid-protocol-atlas
 Cellosaurus:CVCL_LJ39	biolink:CellLine	1231A3	infores:organoid-protocol-atlas
 PMC:11358266	biolink:Publication	PMC11358266	infores:organoid-protocol-atlas
 Cellosaurus:CVCL_C1DY	biolink:CellLine	Ff-I01s04	infores:organoid-protocol-atlas
@@ -129,6 +136,8 @@ NCBIGene:396721	biolink:Gene	IL13	infores:organoid-protocol-atlas
 PMC:11418062	biolink:Publication	PMC11418062	infores:organoid-protocol-atlas
 NCBIGene:397495	biolink:Gene	BDNF	infores:organoid-protocol-atlas
 NCBIGene:5067522	biolink:Gene	NT3	infores:organoid-protocol-atlas
+PMC:11477044	biolink:Publication	PMC11477044	infores:organoid-protocol-atlas
+CHEBI:80240	biolink:SmallMolecule	Endothelin-1	infores:organoid-protocol-atlas
 PMC:11520781	biolink:Publication	PMC11520781	infores:organoid-protocol-atlas
 PMC:11535291	biolink:Publication	PMC11535291	infores:organoid-protocol-atlas
 PMC:11574267	biolink:Publication	PMC11574267	infores:organoid-protocol-atlas
@@ -138,6 +147,8 @@ PMC:11576200	biolink:Publication	PMC11576200	infores:organoid-protocol-atlas
 NCBIGene:100738655	biolink:Gene	WNT9B	infores:organoid-protocol-atlas
 NCBIGene:3503951	biolink:Gene	atrA	infores:organoid-protocol-atlas
 PMC:11612215	biolink:Publication	PMC11612215	infores:organoid-protocol-atlas
+PMC:11620051	biolink:Publication	PMC11620051	infores:organoid-protocol-atlas
+PUBCHEM.COMPOUND:90488854	biolink:MolecularMixture	endo-IWR 1	infores:organoid-protocol-atlas
 PMC:11629183	biolink:Publication	PMC11629183	infores:organoid-protocol-atlas
 PMC:11632457	biolink:Publication	PMC11632457	infores:organoid-protocol-atlas
 CHEBI:75379	biolink:SmallMolecule	blebbistatin	infores:organoid-protocol-atlas
@@ -147,13 +158,15 @@ CHEBI:63449	biolink:SmallMolecule	SU5402	infores:organoid-protocol-atlas
 Cellosaurus:CVCL_RH85	biolink:CellLine	UiPSC-001	infores:organoid-protocol-atlas
 PMC:11662859	biolink:Publication	PMC11662859	infores:organoid-protocol-atlas
 NCBIGene:285758	biolink:Gene	MROCKI	infores:organoid-protocol-atlas
-NCBIGene:851442	biolink:Gene	IWR1	infores:organoid-protocol-atlas
 PMC:11682736	biolink:Publication	PMC11682736	infores:organoid-protocol-atlas
 Cellosaurus:CVCL_C639	biolink:CellLine	CC3	infores:organoid-protocol-atlas
+PMC:11699091	biolink:Publication	PMC11699091	infores:organoid-protocol-atlas
+PMC:11719415	biolink:Publication	PMC11719415	infores:organoid-protocol-atlas
 PMC:11719574	biolink:Publication	PMC11719574	infores:organoid-protocol-atlas
 CHEBI:138438	biolink:SmallMolecule	3-chloro-N-[trans-4-(methylamino)cyclohexyl]-N-[3-(pyridin-4-yl)benzyl]-1-benzothiophene-2-carboxamide	infores:organoid-protocol-atlas
 PMC:11723681	biolink:Publication	PMC11723681	infores:organoid-protocol-atlas
 PUBCHEM.COMPOUND:91898398	biolink:SmallMolecule	Gastrin I	infores:organoid-protocol-atlas
+PMC:11743075	biolink:Publication	PMC11743075	infores:organoid-protocol-atlas
 PMC:11744189	biolink:Publication	PMC11744189	infores:organoid-protocol-atlas
 CHEBI:28939	biolink:SmallMolecule	Acetylcysteine	infores:organoid-protocol-atlas
 PMC:11764187	biolink:Publication	PMC11764187	infores:organoid-protocol-atlas
@@ -183,6 +196,8 @@ PMC:11910075	biolink:Publication	PMC11910075	infores:organoid-protocol-atlas
 PMC:11926186	biolink:Publication	PMC11926186	infores:organoid-protocol-atlas
 NCBIGene:443074	biolink:Gene	FGF10	infores:organoid-protocol-atlas
 PMC:11945118	biolink:Publication	PMC11945118	infores:organoid-protocol-atlas
+PMC:11960529	biolink:Publication	PMC11960529	infores:organoid-protocol-atlas
+PMC:11962860	biolink:Publication	PMC11962860	infores:organoid-protocol-atlas
 PMC:11966913	biolink:Publication	PMC11966913	infores:organoid-protocol-atlas
 NCBIGene:78965	biolink:Gene	Csf1	infores:organoid-protocol-atlas
 PMC:11990004	biolink:Publication	PMC11990004	infores:organoid-protocol-atlas
@@ -190,8 +205,12 @@ NCBIGene:22943	biolink:Gene	DKK1	infores:organoid-protocol-atlas
 NCBIGene:1270	biolink:Gene	CNTF	infores:organoid-protocol-atlas
 CHEBI:78273	biolink:SmallMolecule	9-cis-retinal	infores:organoid-protocol-atlas
 PMC:11993987	biolink:Publication	PMC11993987	infores:organoid-protocol-atlas
+PMC:11994664	biolink:Publication	PMC11994664	infores:organoid-protocol-atlas
 PMC:11998602	biolink:Publication	PMC11998602	infores:organoid-protocol-atlas
+PMC:12000699	biolink:Publication	PMC12000699	infores:organoid-protocol-atlas
+Cellosaurus:CVCL_E080	biolink:CellLine	WA25	infores:organoid-protocol-atlas
 PMC:12018802	biolink:Publication	PMC12018802	infores:organoid-protocol-atlas
+PMC:12020871	biolink:Publication	PMC12020871	infores:organoid-protocol-atlas
 PMC:12030824	biolink:Publication	PMC12030824	infores:organoid-protocol-atlas
 NCBIGene:100155208	biolink:Gene	RSPO3	infores:organoid-protocol-atlas
 PMC:12055624	biolink:Publication	PMC12055624	infores:organoid-protocol-atlas
@@ -235,8 +254,13 @@ CHEBI:50211	biolink:SmallMolecule	retinol	infores:organoid-protocol-atlas
 CHEBI:78510	biolink:SmallMolecule	Dorsomorphin	infores:organoid-protocol-atlas
 Cellosaurus:CVCL_K092	biolink:CellLine	409B2	infores:organoid-protocol-atlas
 PMC:12216864	biolink:Publication	PMC12216864	infores:organoid-protocol-atlas
+PMC:12230479	biolink:Publication	PMC12230479	infores:organoid-protocol-atlas
+Cellosaurus:CVCL_A065	biolink:CellLine	201B6	infores:organoid-protocol-atlas
+PMC:12232214	biolink:Publication	PMC12232214	infores:organoid-protocol-atlas
 PMC:12247448	biolink:Publication	PMC12247448	infores:organoid-protocol-atlas
 PMC:12256518	biolink:Publication	PMC12256518	infores:organoid-protocol-atlas
+PMC:12259470	biolink:Publication	PMC12259470	infores:organoid-protocol-atlas
+PUBCHEM.COMPOUND:89558344	biolink:SmallMolecule	MK-8722	infores:organoid-protocol-atlas
 PMC:12281010	biolink:Publication	PMC12281010	infores:organoid-protocol-atlas
 PMC:12288960	biolink:Publication	PMC12288960	infores:organoid-protocol-atlas
 PMC:12292610	biolink:Publication	PMC12292610	infores:organoid-protocol-atlas
@@ -250,6 +274,8 @@ PMC:12312423	biolink:Publication	PMC12312423	infores:organoid-protocol-atlas
 PR:000007495	biolink:Protein	fibroblast growth factor 4	infores:organoid-protocol-atlas
 PMC:12314479	biolink:Publication	PMC12314479	infores:organoid-protocol-atlas
 CHEBI:176783	biolink:ChemicalEntity	vitamin C	infores:organoid-protocol-atlas
+PMC:12325324	biolink:Publication	PMC12325324	infores:organoid-protocol-atlas
+NCBIGene:733059	biolink:Gene	Bmp-2	infores:organoid-protocol-atlas
 PMC:12327626	biolink:Publication	PMC12327626	infores:organoid-protocol-atlas
 PMC:12336816	biolink:Publication	PMC12336816	infores:organoid-protocol-atlas
 PMC:12338369	biolink:Publication	PMC12338369	infores:organoid-protocol-atlas
@@ -287,16 +313,22 @@ CHEBI:60311	biolink:MolecularMixture	thyroid hormone	infores:organoid-protocol-a
 PMC:12427660	biolink:Publication	PMC12427660	infores:organoid-protocol-atlas
 NCBIGene:474356	biolink:Gene	IL3	infores:organoid-protocol-atlas
 NCBIGene:100873160	biolink:Gene	il34	infores:organoid-protocol-atlas
+PMC:12428058	biolink:Publication	PMC12428058	infores:organoid-protocol-atlas
+PMC:12428614	biolink:Publication	PMC12428614	infores:organoid-protocol-atlas
+NCBIGene:3084	biolink:Gene	NRG1	infores:organoid-protocol-atlas
 PMC:12429095	biolink:Publication	PMC12429095	infores:organoid-protocol-atlas
 PMC:12434145	biolink:Publication	PMC12434145	infores:organoid-protocol-atlas
 NCBIGene:33226	biolink:Gene	lwr	infores:organoid-protocol-atlas
 PMC:12445665	biolink:Publication	PMC12445665	infores:organoid-protocol-atlas
+PMC:12446705	biolink:Publication	PMC12446705	infores:organoid-protocol-atlas
 PMC:12447339	biolink:Publication	PMC12447339	infores:organoid-protocol-atlas
 NCBIGene:494460	biolink:Gene	CXCL12	infores:organoid-protocol-atlas
 CHEBI:75401	biolink:SmallMolecule	quinpirole	infores:organoid-protocol-atlas
 CHEBI:31073	biolink:SmallMolecule	NBQX	infores:organoid-protocol-atlas
 CHEBI:3092	biolink:SmallMolecule	Bicuculline	infores:organoid-protocol-atlas
 PMC:12449818	biolink:Publication	PMC12449818	infores:organoid-protocol-atlas
+PMC:12451373	biolink:Publication	PMC12451373	infores:organoid-protocol-atlas
+NCBIGene:100127359	biolink:Gene	MTOR	infores:organoid-protocol-atlas
 PMC:12456021	biolink:Publication	PMC12456021	infores:organoid-protocol-atlas
 NCBIGene:51372312	biolink:Gene	tpa	infores:organoid-protocol-atlas
 CHEBI:64103	biolink:MolecularMixture	sodium butyrate	infores:organoid-protocol-atlas
@@ -304,7 +336,6 @@ PMC:12456137	biolink:Publication	PMC12456137	infores:organoid-protocol-atlas
 PMC:12463091	biolink:Publication	PMC12463091	infores:organoid-protocol-atlas
 NCBIGene:104680243	biolink:Gene	TPO	infores:organoid-protocol-atlas
 PMC:12464001	biolink:Publication	PMC12464001	infores:organoid-protocol-atlas
-Cellosaurus:CVCL_A065	biolink:CellLine	201B6	infores:organoid-protocol-atlas
 PMC:12465241	biolink:Publication	PMC12465241	infores:organoid-protocol-atlas
 MESH:C000716071	biolink:ChemicalEntity	ML-792	infores:organoid-protocol-atlas
 Cellosaurus:CVCL_2167	biolink:CellLine	ES-R1	infores:organoid-protocol-atlas
@@ -317,9 +348,13 @@ NCBIGene:6774	biolink:Gene	STAT3	infores:organoid-protocol-atlas
 PMC:12487822	biolink:Publication	PMC12487822	infores:organoid-protocol-atlas
 PMC:12489359	biolink:Publication	PMC12489359	infores:organoid-protocol-atlas
 Cellosaurus:CVCL_A3IZ	biolink:CellLine	HPS2496	infores:organoid-protocol-atlas
+PMC:12506531	biolink:Publication	PMC12506531	infores:organoid-protocol-atlas
+NCBIGene:3911	biolink:Gene	LAMA5	infores:organoid-protocol-atlas
+PUBCHEM.COMPOUND:44284481	biolink:SmallMolecule	ENDOTHELIN	infores:organoid-protocol-atlas
 PMC:12523766	biolink:Publication	PMC12523766	infores:organoid-protocol-atlas
 PMC:12545897	biolink:Publication	PMC12545897	infores:organoid-protocol-atlas
 PMC:12548413	biolink:Publication	PMC12548413	infores:organoid-protocol-atlas
+PMC:12561129	biolink:Publication	PMC12561129	infores:organoid-protocol-atlas
 PMC:12561403	biolink:Publication	PMC12561403	infores:organoid-protocol-atlas
 CHEBI:131686	biolink:SmallMolecule	CFTRinh-172	infores:organoid-protocol-atlas
 PMC:12563409	biolink:Publication	PMC12563409	infores:organoid-protocol-atlas
@@ -335,6 +370,7 @@ PMC:12575888	biolink:Publication	PMC12575888	infores:organoid-protocol-atlas
 PUBCHEM.COMPOUND:54671203	biolink:SmallMolecule	doxycycline	infores:organoid-protocol-atlas
 PMC:12577290	biolink:Publication	PMC12577290	infores:organoid-protocol-atlas
 NCBIGene:4838	biolink:Gene	NODAL	infores:organoid-protocol-atlas
+PMC:12577484	biolink:Publication	PMC12577484	infores:organoid-protocol-atlas
 PMC:12594919	biolink:Publication	PMC12594919	infores:organoid-protocol-atlas
 PMC:12607406	biolink:Publication	PMC12607406	infores:organoid-protocol-atlas
 PMC:12617557	biolink:Publication	PMC12617557	infores:organoid-protocol-atlas
@@ -344,7 +380,6 @@ CHEBI:5801	biolink:SmallMolecule	Hydroxychloroquine	infores:organoid-protocol-at
 PMC:12625545	biolink:Publication	PMC12625545	infores:organoid-protocol-atlas
 PMC:12631937	biolink:Publication	PMC12631937	infores:organoid-protocol-atlas
 PMC:12648008	biolink:Publication	PMC12648008	infores:organoid-protocol-atlas
-NCBIGene:397491	biolink:Gene	IGF1	infores:organoid-protocol-atlas
 PMC:12650645	biolink:Publication	PMC12650645	infores:organoid-protocol-atlas
 PMC:12653128	biolink:Publication	PMC12653128	infores:organoid-protocol-atlas
 NCBIGene:100327037	biolink:Gene	WNT4	infores:organoid-protocol-atlas
@@ -353,6 +388,9 @@ PMC:12658161	biolink:Publication	PMC12658161	infores:organoid-protocol-atlas
 NCBIGene:103043023	biolink:Gene	nkx2.1	infores:organoid-protocol-atlas
 PMC:12665103	biolink:Publication	PMC12665103	infores:organoid-protocol-atlas
 PUBCHEM.COMPOUND:6878030	biolink:SmallMolecule	SANT-1	infores:organoid-protocol-atlas
+PMC:12665400	biolink:Publication	PMC12665400	infores:organoid-protocol-atlas
+NCBIGene:2260	biolink:Gene	FGFR1	infores:organoid-protocol-atlas
+NCBIGene:490455	biolink:Gene	NPR1	infores:organoid-protocol-atlas
 PMC:12678949	biolink:Publication	PMC12678949	infores:organoid-protocol-atlas
 PMC:12683206	biolink:Publication	PMC12683206	infores:organoid-protocol-atlas
 PMC:12686538	biolink:Publication	PMC12686538	infores:organoid-protocol-atlas
@@ -380,6 +418,8 @@ PMC:12765093	biolink:Publication	PMC12765093	infores:organoid-protocol-atlas
 PMC:12767103	biolink:Publication	PMC12767103	infores:organoid-protocol-atlas
 PMC:12771668	biolink:Publication	PMC12771668	infores:organoid-protocol-atlas
 PMC:12777511	biolink:Publication	PMC12777511	infores:organoid-protocol-atlas
+PMC:12779562	biolink:Publication	PMC12779562	infores:organoid-protocol-atlas
+PMC:12784959	biolink:Publication	PMC12784959	infores:organoid-protocol-atlas
 PMC:12790724	biolink:Publication	PMC12790724	infores:organoid-protocol-atlas
 PMC:12795959	biolink:Publication	PMC12795959	infores:organoid-protocol-atlas
 CHEBI:64211	biolink:SmallMolecule	8-Br-cAMP	infores:organoid-protocol-atlas
@@ -466,6 +506,8 @@ CHEBI:131902	biolink:SmallMolecule	N-acetyl-beta-D-galactosaminyl-(1->4)-N-acety
 CHEBI:17234	biolink:SmallMolecule	D-glucose	infores:organoid-protocol-atlas
 CHEBI:192686	biolink:SmallMolecule	indolactam V	infores:organoid-protocol-atlas
 PMC:12955914	biolink:Publication	PMC12955914	infores:organoid-protocol-atlas
+PMC:12957250	biolink:Publication	PMC12957250	infores:organoid-protocol-atlas
+PUBCHEM.COMPOUND:10417379	biolink:SmallMolecule	chetomin	infores:organoid-protocol-atlas
 PMC:12960935	biolink:Publication	PMC12960935	infores:organoid-protocol-atlas
 PMC:12963012	biolink:Publication	PMC12963012	infores:organoid-protocol-atlas
 NCBIGene:45796459	biolink:Gene	nac	infores:organoid-protocol-atlas
@@ -593,6 +635,7 @@ PMC:13184248	biolink:Publication	PMC13184248	infores:organoid-protocol-atlas
 PMC:13186046	biolink:Publication	PMC13186046	infores:organoid-protocol-atlas
 NCBIGene:606826	biolink:Gene	GDF11	infores:organoid-protocol-atlas
 PMC:13206403	biolink:Publication	PMC13206403	infores:organoid-protocol-atlas
+PMC:13207643	biolink:Publication	PMC13207643	infores:organoid-protocol-atlas
 PMC:13208207	biolink:Publication	PMC13208207	infores:organoid-protocol-atlas
 NCBIGene:100518350	biolink:Gene	FUNDC1	infores:organoid-protocol-atlas
 PMC:13213298	biolink:Publication	PMC13213298	infores:organoid-protocol-atlas
@@ -616,6 +659,7 @@ PMC:13236901	biolink:Publication	PMC13236901	infores:organoid-protocol-atlas
 PMC:13241417	biolink:Publication	PMC13241417	infores:organoid-protocol-atlas
 CHEBI:132086	biolink:SmallMolecule	BMS-493	infores:organoid-protocol-atlas
 PUBCHEM.COMPOUND:118989588	biolink:MolecularMixture	Heparin sodium salt	infores:organoid-protocol-atlas
+PMC:13241447	biolink:Publication	PMC13241447	infores:organoid-protocol-atlas
 PMC:13241776	biolink:Publication	PMC13241776	infores:organoid-protocol-atlas
 PMC:13241826	biolink:Publication	PMC13241826	infores:organoid-protocol-atlas
 PMC:13241891	biolink:Publication	PMC13241891	infores:organoid-protocol-atlas
@@ -778,11 +822,19 @@ PMC:8433138	biolink:Publication	PMC8433138	infores:organoid-protocol-atlas
 PMC:8516798	biolink:Publication	PMC8516798	infores:organoid-protocol-atlas
 UNII:TD4NBA239W	biolink:ChemicalEntity	DORSOMORPHIN DIHYDROCHLORIDE	infores:organoid-protocol-atlas
 PMC:8664924	biolink:Publication	PMC8664924	infores:organoid-protocol-atlas
+PMC:8675211	biolink:Publication	PMC8675211	infores:organoid-protocol-atlas
 PMC:8844474	biolink:Publication	PMC8844474	infores:organoid-protocol-atlas
 PMC:8948571	biolink:Publication	PMC8948571	infores:organoid-protocol-atlas
 PMC:9023604	biolink:Publication	PMC9023604	infores:organoid-protocol-atlas
 PMC:9103066	biolink:Publication	PMC9103066	infores:organoid-protocol-atlas
 PMC:9127490	biolink:Publication	PMC9127490	infores:organoid-protocol-atlas
 PMC:9130892	biolink:Publication	PMC9130892	infores:organoid-protocol-atlas
+PMC:9261984	biolink:Publication	PMC9261984	infores:organoid-protocol-atlas
 PMC:9287064	biolink:Publication	PMC9287064	infores:organoid-protocol-atlas
+PMC:9469666	biolink:Publication	PMC9469666	infores:organoid-protocol-atlas
+PMC:9715615	biolink:Publication	PMC9715615	infores:organoid-protocol-atlas
+PMC:9773542	biolink:Publication	PMC9773542	infores:organoid-protocol-atlas
+CHEBI:9574	biolink:ChemicalEntity	Thrombin	infores:organoid-protocol-atlas
+PR:000006003	biolink:Protein	cardiotrophin-1	infores:organoid-protocol-atlas
+NCBIGene:403424	biolink:Gene	EDN1	infores:organoid-protocol-atlas
 PMC:9959977	biolink:Publication	PMC9959977	infores:organoid-protocol-atlas
