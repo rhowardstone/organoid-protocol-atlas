@@ -52,6 +52,7 @@ PUBLIC_COUNTS = {
 
 
 def _build_llms_txt() -> str:
+    _n_types = _manifest.get("n_types", 0)
     return f"""# Organoid Protocol Atlas
 
 Public, license-safe Datasette deployment of the Organoid Protocol Atlas.
@@ -62,48 +63,75 @@ Source: https://github.com/rhowardstone/organoid-protocol-atlas
 ## What is available here
 
 This public deployment contains the CC-licensed public subset: {_N_PAPERS} papers, {_N_PROTOCOLS}
-protocol rows, and {_N_REAGENTS} public reagent/protocol rows. It does not redistribute
-full methods text or paper bodies. Evidence fields are short citation snippets
-kept so users and agents can trace claims back to the source paper.
+protocol rows, and {_N_REAGENTS} public reagent rows across {_n_types} organoid systems.
+It does not redistribute full methods text or paper bodies. Evidence fields are short verbatim snippets
+kept so agents can trace claims back to the source paper and DOI.
 
 The larger local pipeline tracks a verified corpus and additional candidate papers,
-but those are not all public on this hosted deployment.
+but those are not all public on this hosted deployment. Schema version: 0.4.
 
-## Useful endpoints
+## Table endpoints (Datasette JSON API)
 
 - /atlas/protocols.json?_shape=array&_size=max
 - /atlas/reagents.json?_shape=array&_size=max
 - /atlas/reagents.json?_shape=array&_size=max&kind__exact=signaling
-- /-/ask?q=which%20factors%20define%20kidney%20organoids%3F
+- /atlas/reagents.json?_shape=array&kind__exact=signaling&organoid_type__exact=kidney
 
 Datasette table pages also support faceting, filtering, sorting, and JSON
 exports. Prefer the JSON endpoints for programmatic use.
+
+## Analytics REST endpoints (pre-computed, read-only)
+
+- /analytics/summary          high-level corpus stats, quality distribution, top types
+- /analytics/coverage         per-type corpus coverage and completeness (grounding rate, MIOR)
+- /analytics/coverage/{type}  coverage for one organoid type (e.g. /analytics/coverage/kidney)
+- /analytics/consensus/{type} consensus concentrations and reagents for one type
+- /analytics/quality          per-paper quality scores (gold / silver / bronze tiers)
+- /analytics/mior             MIOR completeness report (12-item, 5-module per paper)
+- /analytics/reagent?q=EGF    cross-corpus reagent lookup with concentrations and evidence quotes
+- /analytics/failure-modes    failure mode cluster summary across the corpus
+- /analytics/lineage          DOI→DOI protocol lineage graph
+- /analytics/assay-endpoints  assay endpoint cluster summary (per-type + cross-type)
+- /analytics                  index of all analytics endpoints with generate commands
+
+## Grounded Q&A
+
+- /-/ask?q=which%20factors%20define%20kidney%20organoids%3F
+
+Natural-language synthesis is only available when the deployment can reach a local model;
+otherwise the endpoint returns retrieved evidence rows without model synthesis.
 
 ## Evidence rules for agents
 
 - Treat rows as extracted literature evidence, not clinical or wet-lab advice.
 - Cite PMCID and DOI values from returned rows whenever making a claim.
 - Do not infer that a factor is absent from biology because it is absent here.
-- Respect grounding fields and evidence snippets; missing evidence beats false
-  certainty.
-- Natural-language synthesis from /-/ask is only available when the deployment
-  can reach the local model; otherwise the endpoint returns retrieved evidence
-  rows without model synthesis.
+- Respect grounding fields and evidence snippets; missing evidence beats false certainty.
+- evidence_quote fields are verbatim substrings of the source paper's methods section.
 
 ## Public subset counts
 
 - papers: {_N_PAPERS}
+- organoid_types: {_n_types}
 - protocols: {_N_PROTOCOLS}
-- reagent/protocol rows: {_N_REAGENTS}
+- reagent rows: {_N_REAGENTS}
+- schema_version: 0.4
 - full text redistributed: no
 """
 
 
 LLMS_TXT = _build_llms_txt()
 
-# organoid types we can detect in a question to bias retrieval
-_TYPES = ["intestinal", "gastric", "cerebral", "kidney", "liver", "lung",
-          "retinal", "pancreatic"]
+# organoid types we can detect in a question to bias retrieval (all 26 schema types)
+_TYPES = [
+    "intestinal", "gastric", "cerebral", "kidney", "liver", "lung",
+    "retinal", "pancreatic",
+    "tumor", "cardiac", "vascular", "cholangiocyte", "skin", "mammary",
+    "endometrial", "bone", "prostate", "inner-ear", "salivary-gland",
+    "bladder", "neuromuscular", "esophageal", "blood-brain-barrier",
+    "thyroid", "fallopian-tube",
+    "hepatic",  # legacy alias in corpus; normalizes to liver post-marathon
+]
 
 # generic words that shouldn't drive retrieval (they match half the corpus)
 _STOP = {
