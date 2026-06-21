@@ -27,6 +27,7 @@ Routes (all return JSON; read-only, no writes):
   GET /analytics/temporal-reagent-adoption   -- per-reagent temporal adoption: fraction of papers per year using each canonical reagent; ?q= for one reagent
   GET /analytics/kgx-summary                 -- KGX graph state: node/edge counts, resolution rate, review queue breakdown, top not-found and needs-review entities
   GET /analytics/concentration-by-type       -- per-organoid-type concentration stats for one canonical reagent: median/min/max/n per unit per type; requires ?q=
+  GET /analytics/journal-breakdown           -- journal contribution counts cross-corpus and per organoid type; optional ?type= for one type
   GET /analytics                                -- index of available analytics
 
 All endpoints degrade gracefully — if the pre-computed file doesn't exist they return
@@ -1886,6 +1887,70 @@ def handle_temporal_reagent_adoption(query: str | None, organoid_type: str | Non
     }, 200
 
 
+def handle_journal_breakdown(organoid_type: str | None) -> tuple[dict, int]:
+    """Journal contribution counts from protocols.jsonl.
+
+    Returns cross-corpus journal counts (top 50 by n_papers) and, for each
+    organoid type, the top 5 contributing journals. Optional ?type= restricts
+    output to a single organoid type with its full journal breakdown.
+    Useful for auditing corpus composition bias.
+    """
+    if not PROTOCOLS_JSONL.exists():
+        return {"error": "protocols.jsonl not found", "hint": "Run: python pipeline/export_public.py"}, 404
+
+    if organoid_type is not None and not re.match(r'^[\w-]+$', organoid_type):
+        return {"error": "invalid organoid_type"}, 400
+
+    from collections import Counter as _Counter
+
+    per_type: dict[str, dict[str, int]] = {}
+    cross_corpus: dict[str, int] = {}
+
+    try:
+        for line in PROTOCOLS_JSONL.read_text().splitlines():
+            if not line.strip():
+                continue
+            p = json.loads(line)
+            ot = (p.get("organoid_type") or "").strip()
+            journal = (p.get("journal") or "unknown").strip()
+            if not ot or ot == "other":
+                continue
+            cross_corpus[journal] = cross_corpus.get(journal, 0) + 1
+            per_type.setdefault(ot, {})
+            per_type[ot][journal] = per_type[ot].get(journal, 0) + 1
+    except (json.JSONDecodeError, OSError) as exc:
+        return {"error": f"protocols.jsonl unreadable: {exc}"}, 500
+
+    if not per_type:
+        return {"error": "no organoid type data in protocols.jsonl"}, 404
+
+    if organoid_type:
+        if organoid_type not in per_type:
+            return {"error": f"no data for organoid_type '{organoid_type}'",
+                    "available_types": sorted(per_type)}, 404
+        return {
+            "organoid_type": organoid_type,
+            "journals": dict(sorted(per_type[organoid_type].items(), key=lambda kv: -kv[1])),
+            "n_journals": len(per_type[organoid_type]),
+            "n_papers": sum(per_type[organoid_type].values()),
+        }, 200
+
+    # Sort cross-corpus top 50
+    top_journals = sorted(cross_corpus, key=lambda j: -cross_corpus[j])[:50]
+    # Per-type top 5 journals
+    per_type_top5 = {
+        ot: [{"journal": j, "n_papers": cnt}
+             for j, cnt in sorted(per_type[ot].items(), key=lambda kv: -kv[1])[:5]]
+        for ot in sorted(per_type)
+    }
+    return {
+        "cross_corpus": {j: cross_corpus[j] for j in top_journals},
+        "n_journals_total": len(cross_corpus),
+        "n_types": len(per_type),
+        "per_type_top5": per_type_top5,
+    }, 200
+
+
 def handle_concentration_by_type(query: str | None) -> tuple[dict, int]:
     """Per-organoid-type concentration breakdown for one canonical reagent.
 
@@ -2114,6 +2179,7 @@ def handle_index() -> tuple[dict, int]:
             "/analytics/temporal-reagent-adoption": "per-reagent temporal adoption: fraction of papers per year using each canonical reagent; ?q= for full year-by-year data, ?type= for one organoid type; without ?q= returns top 20 by peak adoption",
             "/analytics/kgx-summary": "KGX graph state: node/edge counts by category, resolution rate, review queue breakdown (needs_review/not_found/not_attempted), top unresolved entities for S1/S2 triage",
             "/analytics/concentration-by-type": "per-organoid-type concentration stats for one canonical reagent — median/min/max/n per unit per type; requires ?q=EGF; useful for comparing dose ranges across organoid systems",
+            "/analytics/journal-breakdown": "journal contribution counts: cross-corpus top 50 + per-type top 5; optional ?type=kidney for full breakdown of one type — audits corpus composition and journal bias",
             "/analytics/assay-endpoints": "assay endpoint cluster summary (per type + cross-type)",
             "/analytics/quality": "per-paper quality scores (gold/silver/bronze) + corpus summary",
             "/analytics/mior": "MIOR completeness report (Minimum Information About an Organoid Research)",
@@ -2318,6 +2384,12 @@ async def route_temporal_reagent_adoption(datasette, request):
     return Response.json(data, status=status)
 
 
+async def route_journal_breakdown(datasette, request):
+    organoid_type = request.args.get("type") or None
+    data, status = handle_journal_breakdown(organoid_type)
+    return Response.json(data, status=status)
+
+
 async def route_concentration_by_type(datasette, request):
     query = request.args.get("q") or None
     data, status = handle_concentration_by_type(query)
@@ -2367,6 +2439,7 @@ def register_routes():
         (r"^/analytics/grounding-quality$", route_grounding_quality),
         (r"^/analytics/concentration-stats$", route_concentration_stats),
         (r"^/analytics/temporal-reagent-adoption$", route_temporal_reagent_adoption),
+        (r"^/analytics/journal-breakdown$", route_journal_breakdown),
         (r"^/analytics/concentration-by-type$", route_concentration_by_type),
         (r"^/analytics/kgx-summary$", route_kgx_summary),
         (r"^/analytics/assay-endpoints$", route_assay_endpoints),

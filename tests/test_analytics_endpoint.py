@@ -2880,3 +2880,100 @@ def test_cbt_all_matches_when_multiple(tmp_path, monkeypatch):
 def test_cbt_index_entry():
     data, _ = ae.handle_index()
     assert "/analytics/concentration-by-type" in data["endpoints"]
+
+
+# ---------------------------------------------------------------------------
+# journal-breakdown tests
+# ---------------------------------------------------------------------------
+
+def _write_protocols_for_jb(path, rows):
+    """Write minimal protocols.jsonl for journal-breakdown tests."""
+    lines = []
+    for r in rows:
+        lines.append(json.dumps({
+            "organoid_type": r.get("organoid_type", "kidney"),
+            "journal": r.get("journal", "Nature"),
+        }))
+    path.write_text("\n".join(lines) + "\n")
+
+
+def test_jb_404_missing_protocols(tmp_path, monkeypatch):
+    monkeypatch.setattr(ae, "PROTOCOLS_JSONL", tmp_path / "missing.jsonl")
+    _, status = ae.handle_journal_breakdown(None)
+    assert status == 404
+
+
+def test_jb_400_invalid_type(tmp_path, monkeypatch):
+    p = tmp_path / "protocols.jsonl"
+    _write_protocols_for_jb(p, [])
+    monkeypatch.setattr(ae, "PROTOCOLS_JSONL", p)
+    _, status = ae.handle_journal_breakdown("../evil")
+    assert status == 400
+
+
+def test_jb_cross_corpus_counts(tmp_path, monkeypatch):
+    p = tmp_path / "protocols.jsonl"
+    _write_protocols_for_jb(p, [
+        {"organoid_type": "kidney", "journal": "Nature"},
+        {"organoid_type": "liver", "journal": "Nature"},
+        {"organoid_type": "kidney", "journal": "Cell"},
+    ])
+    monkeypatch.setattr(ae, "PROTOCOLS_JSONL", p)
+    data, status = ae.handle_journal_breakdown(None)
+    assert status == 200
+    assert data["cross_corpus"]["Nature"] == 2
+    assert data["cross_corpus"]["Cell"] == 1
+    assert data["n_journals_total"] == 2
+
+
+def test_jb_top_journal_first(tmp_path, monkeypatch):
+    p = tmp_path / "protocols.jsonl"
+    _write_protocols_for_jb(p, [
+        {"journal": "A"},
+        {"journal": "B"}, {"journal": "B"}, {"journal": "B"},
+    ])
+    monkeypatch.setattr(ae, "PROTOCOLS_JSONL", p)
+    data, _ = ae.handle_journal_breakdown(None)
+    journals = list(data["cross_corpus"].keys())
+    assert journals[0] == "B"
+
+
+def test_jb_single_type(tmp_path, monkeypatch):
+    p = tmp_path / "protocols.jsonl"
+    _write_protocols_for_jb(p, [
+        {"organoid_type": "kidney", "journal": "Nature"},
+        {"organoid_type": "kidney", "journal": "Cell"},
+        {"organoid_type": "liver", "journal": "Science"},
+    ])
+    monkeypatch.setattr(ae, "PROTOCOLS_JSONL", p)
+    data, status = ae.handle_journal_breakdown("kidney")
+    assert status == 200
+    assert data["organoid_type"] == "kidney"
+    assert data["n_papers"] == 2
+    assert "Science" not in data["journals"]
+
+
+def test_jb_404_unknown_type(tmp_path, monkeypatch):
+    p = tmp_path / "protocols.jsonl"
+    _write_protocols_for_jb(p, [{"organoid_type": "kidney"}])
+    monkeypatch.setattr(ae, "PROTOCOLS_JSONL", p)
+    _, status = ae.handle_journal_breakdown("neuromuscular")
+    assert status == 404
+
+
+def test_jb_per_type_top5_present(tmp_path, monkeypatch):
+    p = tmp_path / "protocols.jsonl"
+    rows = [
+        {"organoid_type": "kidney", "journal": f"J{i}"} for i in range(7)
+    ] + [{"organoid_type": "liver", "journal": "Nature"}]
+    _write_protocols_for_jb(p, rows)
+    monkeypatch.setattr(ae, "PROTOCOLS_JSONL", p)
+    data, status = ae.handle_journal_breakdown(None)
+    assert status == 200
+    kidney_top = data["per_type_top5"]["kidney"]
+    assert len(kidney_top) <= 5
+
+
+def test_jb_index_entry():
+    data, _ = ae.handle_index()
+    assert "/analytics/journal-breakdown" in data["endpoints"]

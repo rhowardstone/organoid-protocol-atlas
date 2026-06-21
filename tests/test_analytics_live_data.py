@@ -392,3 +392,24 @@ def test_live_cbt_egf_returns_200():
 def test_live_cbt_400_no_query():
     _, status = ae.handle_concentration_by_type(None)
     assert status == 400
+
+
+# ---------------------------------------------------------------------------
+# journal-breakdown live smoke tests
+# ---------------------------------------------------------------------------
+
+@require_protocols
+def test_live_journal_breakdown_returns_200():
+    data, status = ae.handle_journal_breakdown(None)
+    assert status == 200
+    assert "cross_corpus" in data
+    assert data["n_journals_total"] >= 50
+    assert data["n_types"] >= 10
+
+
+@require_protocols
+def test_live_journal_breakdown_nature_comms_present():
+    data, _ = ae.handle_journal_breakdown(None)
+    # Nature Communications is reliably present in the corpus
+    cc = data["cross_corpus"]
+    assert any("nature communications" in j.lower() for j in cc)
