@@ -1,0 +1,84 @@
+{
+  "generated_at": "2026-06-21T23:14:59.187179Z",
+  "trapi_version": "v1.4.2",
+  "validator": "reasoner-validator==4.0.2",
+  "kgx_manifest": "exports/kgx/kgx_manifest.json",
+  "n_examples_run": 4,
+  "n_pass": 4,
+  "n_fail": 0,
+  "total_errors": 0,
+  "total_warnings": 1872,
+  "warning_summary": {
+    "warning.query_graph.edge.predicate.non_canonical": 5,
+    "warning.knowledge_graph.edge.attribute.type_id.non_biolink_prefix": 1500,
+    "warning.knowledge_graph.edge.predicate.non_canonical": 364,
+    "warning.knowledge_graph.node.id.unmapped_prefix": 3,
+    "warning.knowledge_graph.nodes.dangling": 0
+  },
+  "warning_notes": {
+    "warning.query_graph.edge.predicate.non_canonical": "biolink:mentions is a valid Biolink 3 predicate but not in the canonical symmetric-predicate list; acceptable for a literature-evidence KG",
+    "warning.knowledge_graph.edge.predicate.non_canonical": "same as above for KG edges",
+    "warning.knowledge_graph.edge.attribute.type_id.non_biolink_prefix": "edge attributes use custom type_ids (e.g. OPA:pmcid); future work to map to standard Biolink attribute types"
+  },
+  "verdict": "PASS \u2014 0 errors across all 4 example queries; warnings are informational (non-canonical predicate, non-Biolink attribute prefixes)",
+  "query_results": [
+    {
+      "example": "01_publication_mentions.json",
+      "kg_nodes": 19,
+      "kg_edges": 18,
+      "results": 18,
+      "n_errors": 0,
+      "n_warnings": 102,
+      "warning_codes": [
+        "warning.query_graph.edge.predicate.non_canonical",
+        "warning.knowledge_graph.edge.attribute.type_id.non_biolink_prefix",
+        "warning.knowledge_graph.edge.predicate.non_canonical"
+      ],
+      "pass": true
+    },
+    {
+      "example": "02_reagent_publications.json",
+      "kg_nodes": 201,
+      "kg_edges": 200,
+      "results": 200,
+      "n_errors": 0,
+      "n_warnings": 1004,
+      "warning_codes": [
+        "warning.query_graph.edge.predicate.non_canonical",
+        "warning.knowledge_graph.edge.attribute.type_id.non_biolink_prefix",
+        "warning.knowledge_graph.edge.predicate.non_canonical"
+      ],
+      "pass": true
+    },
+    {
+      "example": "03_publication_smallmolecules.json",
+      "kg_nodes": 11,
+      "kg_edges": 10,
+      "results": 10,
+      "n_errors": 0,
+      "n_warnings": 57,
+      "warning_codes": [
+        "warning.query_graph.edge.predicate.non_canonical",
+        "warning.knowledge_graph.edge.attribute.type_id.non_biolink_prefix",
+        "warning.knowledge_graph.edge.predicate.non_canonical"
+      ],
+      "pass": true
+    },
+    {
+      "example": "04_co_mentioned_reagents.json",
+      "kg_nodes": 86,
+      "kg_edges": 136,
+      "results": 111,
+      "n_errors": 0,
+      "n_warnings": 709,
+      "warning_codes": [
+        "warning.query_graph.edge.predicate.non_canonical",
+        "warning.knowledge_graph.node.id.unmapped_prefix",
+        "warning.knowledge_graph.edge.attribute.type_id.non_biolink_prefix",
+        "warning.knowledge_graph.edge.predicate.non_canonical",
+        "warning.knowledge_graph.nodes.dangling"
+      ],
+      "pass": true
+    }
+  ]
+}
