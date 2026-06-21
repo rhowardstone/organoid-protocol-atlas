@@ -63,6 +63,18 @@ GET /analytics/mior                     MIOR completeness per paper + corpus (12
 GET /analytics/candidates               OA/license verification status of candidate pool (issue #14)
 ```
 
+### TRAPI (Translator Reasoner API 1.5)
+
+```
+POST /trapi/query                       single-hop Biolink query over the committed KGX graph
+GET  /trapi/meta_knowledge_graph        KGX summary: node categories, predicates, edge counts
+GET  /trapi                             HTML explainer + interactive try-it console
+```
+
+The TRAPI endpoint serves the committed `exports/kgx/{nodes,edges}.tsv` as a live-queryable
+[TRAPI 1.5](https://github.com/NCATSTranslator/ReasonerAPI) graph. Nodes carry Biolink CURIEs
+resolved via SRI; edges use `biolink:mentions` predicates. See `serve/plugins/trapi_endpoint.py`.
+
 Generate all analytics outputs:
 
 ```bash
@@ -156,7 +168,7 @@ outputs/
   analysis/                  pre-computed analytics (coverage, quality, consensus, etc.)
   kgx/                       KGX graph export
   comparison/                pre-computed protocol diffs
-tests/                       offline test suite (694 tests, no network, no GPU)
+tests/                       offline test suite (697 tests, no network, no GPU)
 docs/                        SUPERVISOR_CHECKLIST.md, PLAN, RESEARCH_BRIEF
 ```
 
@@ -185,7 +197,7 @@ python pipeline/aggregate_failure_modes.py
 python pipeline/build_lineage.py
 python pipeline/aggregate_assay_endpoints.py
 
-make test                               # run offline test suite (694 tests)
+make test                               # run offline test suite (697 tests)
 make validate-batch                     # pre-PR check: tests + prediction schema + evidence
 # or: pytest -q
 ```

@@ -94,6 +94,17 @@ exports. Prefer the JSON endpoints for programmatic use.
 - /analytics/assay-endpoints  assay endpoint cluster summary (per-type + cross-type)
 - /analytics                  index of all analytics endpoints with generate commands
 
+## TRAPI (Translator Reasoner API 1.5)
+
+The committed KGX graph (exports/kgx/nodes.tsv + edges.tsv) is live-queryable via TRAPI.
+
+- POST /trapi/query                — single-hop Biolink query (TRAPI 1.5 request/response)
+- GET  /trapi/meta_knowledge_graph — node categories, predicates, and edge counts
+- GET  /trapi                      — HTML explainer and interactive console
+
+Nodes carry SRI-resolved Biolink CURIEs; edges use biolink:mentions predicates connecting
+organoid_protocol → reagent, with provenance back to the source PMCID and DOI.
+
 ## Grounded Q&A
 
 - /-/ask?q=which%20factors%20define%20kidney%20organoids%3F
