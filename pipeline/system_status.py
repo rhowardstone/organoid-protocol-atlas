@@ -68,6 +68,11 @@ ANALYTICS_ARTIFACTS = [
         OUTPUTS / "assay_endpoint_summary.json",
         "python pipeline/aggregate_assay_endpoints.py",
     ),
+    AnalyticsArtifact(
+        "protocol_quality_scores",
+        OUTPUTS / "protocol_quality_scores.json",
+        "python pipeline/score_protocol_quality.py",
+    ),
 ]
 
 
