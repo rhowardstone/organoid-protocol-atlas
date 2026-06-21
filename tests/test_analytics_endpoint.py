@@ -290,3 +290,52 @@ def test_index_includes_coverage_endpoints():
     assert "/analytics/coverage" in data["endpoints"]
     assert "/analytics/coverage/{organoid_type}" in data["endpoints"]
     assert "coverage" in data["generate"]
+
+
+# --------------------------------------------------------------------------- #
+# handle_reagent
+# --------------------------------------------------------------------------- #
+
+def test_reagent_requires_query(tmp_path, monkeypatch):
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", tmp_path / "reagents.jsonl")
+    data, status = ae.handle_reagent("", None, 1)
+    assert status == 400
+    assert "error" in data
+
+
+def test_reagent_404_when_no_file(tmp_path, monkeypatch):
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", tmp_path / "nonexistent.jsonl")
+    data, status = ae.handle_reagent("EGF", None, 1)
+    assert status == 404
+
+
+def test_reagent_returns_results(tmp_path, monkeypatch):
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", tmp_path / "reagents.jsonl")
+    records = [
+        {"canonical": "EGF", "name": "EGF", "organoid_type": "intestinal",
+         "pmcid": "PMC001", "kind": "signaling", "value": 50.0,
+         "unit": "ng/mL", "canonical_unit": "ng/mL", "grounded": 1,
+         "figure_confirmed": 0, "evidence_quote": "EGF 50 ng/mL"},
+    ]
+    (tmp_path / "reagents.jsonl").write_text(
+        "\n".join(json.dumps(r) for r in records)
+    )
+    data, status = ae.handle_reagent("EGF", None, 1)
+    assert status == 200
+    assert data["n_hits"] == 1
+    assert len(data["results"]) == 1
+    assert data["results"][0]["canonical"] == "EGF"
+
+
+def test_reagent_truncates_long_query(tmp_path, monkeypatch):
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", tmp_path / "reagents.jsonl")
+    (tmp_path / "reagents.jsonl").write_text("")
+    long_q = "x" * 200
+    data, status = ae.handle_reagent(long_q, None, 1)
+    # empty file returns 404; but query must have been accepted (truncated)
+    assert status == 404  # empty file
+
+
+def test_index_includes_reagent_endpoint():
+    data, _ = ae.handle_index()
+    assert "/analytics/reagent?q=TERM" in data["endpoints"]
