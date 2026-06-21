@@ -151,3 +151,27 @@ def test_public_manifest_excludes_non_cc_corpus_papers():
         f"{len(violation)} non-CC papers from corpus.tsv found in public manifest "
         f"(license policy violation): {sorted(violation)[:5]}"
     )
+
+
+def test_public_jsonl_line_counts_match_manifest():
+    """protocols.jsonl and reagents.jsonl line counts must match manifest.tables values.
+    Catches stale manifests (export run but manifest not regenerated, or vice versa)."""
+    manifest = _load_manifest()
+    tables = manifest.get("tables", {})
+    for table_name, expected_count in tables.items():
+        jsonl_path = ROOT / "exports" / "public" / f"{table_name}.jsonl"
+        actual_count = sum(1 for ln in jsonl_path.read_text().splitlines() if ln.strip())
+        assert actual_count == expected_count, (
+            f"exports/public/{table_name}.jsonl has {actual_count} non-empty lines "
+            f"but manifest.tables.{table_name}={expected_count} — "
+            f"re-run pipeline/export_public.py to sync"
+        )
+
+
+def test_public_manifest_paper_list_matches_n_papers():
+    """manifest.papers list length must equal manifest.n_papers."""
+    manifest = _load_manifest()
+    assert len(manifest["papers"]) == manifest["n_papers"], (
+        f"manifest.papers has {len(manifest['papers'])} entries "
+        f"but n_papers={manifest['n_papers']}"
+    )
