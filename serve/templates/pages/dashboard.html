@@ -187,18 +187,23 @@ async function load() {
     const q = summary.quality || {};
     setText('s-gold', q.n_gold != null ? q.n_gold : '—');
   }
-  if (mior) {
-    const avg = mior.avg_mior_completeness;
+  const miorStatSrc = mior ?? (summary && summary.mior ? summary.mior : null);
+  if (miorStatSrc) {
+    const avg = miorStatSrc.avg_mior_completeness;
     setText('s-mior', avg != null ? (avg * 100).toFixed(1) + '%' : '—');
   }
-  // Reagent count from manifest
-  try {
-    const mfRes = await fetch('/exports/public/manifest.json');
-    if (mfRes.ok) {
-      const mf = await mfRes.json();
-      setText('s-reagents', mf.n_reagents ?? mf.reagents ?? '—');
-    }
-  } catch(_) {}
+  // Reagent count — prefer summary.manifest (no extra fetch needed)
+  const nReagents = (summary && summary.manifest && summary.manifest.n_reagents != null)
+    ? summary.manifest.n_reagents
+    : null;
+  if (nReagents != null) {
+    setText('s-reagents', nReagents);
+  } else {
+    try {
+      const mfRes = await fetch('/exports/public/manifest.json');
+      if (mfRes.ok) { const mf = await mfRes.json(); setText('s-reagents', mf.tables?.reagents ?? '—'); }
+    } catch(_) {}
+  }
 
   // ── Quality bar ───────────────────────────────────────────────────────
   const qEl = document.getElementById('quality-bar');
@@ -222,8 +227,12 @@ async function load() {
   }
 
   // ── MIOR bar ──────────────────────────────────────────────────────────
+  // summary.mior carries the key fields as a convenience; fall back to it when
+  // /analytics/mior itself returns 404 (not yet generated)
   const miorEl = document.getElementById('mior-bar');
-  if (mior) {
+  const miorData = mior ?? (summary && summary.mior ? summary.mior : null);
+  if (miorData) {
+    const mior = miorData;  // shadow — rest of block uses `mior` unchanged
     const n = mior.n_total || 1;
     const nFull    = mior.n_full    || 0;
     const nPartial = mior.n_partial || 0;
@@ -322,7 +331,12 @@ async function load() {
     ['/analytics/quality',              'Per-paper quality scores (gold / silver / bronze)'],
     ['/analytics/consensus',            'List available per-type consensus files'],
     ['/analytics/consensus/{type}',     'Consensus concentrations + reagents + timeline for one type'],
-    ['/analytics/reagent?q=EGF',        'Cross-corpus reagent lookup: usage, concentrations, evidence quotes'],
+    ['/analytics/reagent?q=EGF',             'Cross-corpus reagent lookup: usage, concentrations, evidence quotes'],
+    ['/analytics/reagent-network?q=EGF',    'Reagent co-occurrence: which reagents most often appear in the same papers'],
+    ['/analytics/type-similarity',          'Pairwise organoid type similarity (Jaccard on canonical reagent sets)'],
+    ['/analytics/type-timeseries',          'Publication counts by year + organoid type — growth trends and first-appearance dates'],
+    ['/analytics/universal-reagents',       'Canonical reagents in >= 50% of protocols per type — the protocol essentials + cross-type universals'],
+    ['/analytics/species-breakdown',        'Species distribution per organoid type (human / mouse / other) — corpus-wide and per type'],
     ['/analytics/mior',                 'MIOR completeness report (12 items, 5 modules)'],
     ['/analytics/assay-endpoints',      'Assay endpoint cluster summary (per-type + cross-type)'],
     ['/analytics/failure-modes',        'Failure mode cluster summary across the corpus'],
@@ -331,6 +345,8 @@ async function load() {
     ['/analytics/substitutions?q=TERM', 'Search ProtocolModification records for reagent substitutions'],
     ['/analytics/candidates',           'OA/license verification status of candidate pool'],
     ['/analytics/status',               'Live system health (corpus + artifact inventory)'],
+    ['/trapi',                          'TRAPI 1.5 query interface (POST /trapi/query) over the committed Biolink KGX graph'],
+    ['/trapi/meta_knowledge_graph',     'KGX schema: node categories, predicates, edge counts'],
   ];
   epEl.innerHTML = ENDPOINTS.map(([path, desc]) => {
     const href = path.includes('{') ? null : path;
