@@ -12,6 +12,7 @@ Routes (all return JSON; read-only, no writes):
   GET /analytics/coverage/{organoid_type}       -- coverage for one organoid type
   GET /analytics/reagent?q=TERM                 -- cross-corpus reagent lookup from reagents.jsonl
   GET /analytics/reagent-network?q=TERM        -- reagent co-occurrence: most co-mentioned reagents
+  GET /analytics/type-similarity               -- pairwise organoid type Jaccard similarity
   GET /analytics                                -- index of available analytics
 
 All endpoints degrade gracefully — if the pre-computed file doesn't exist they return
@@ -608,6 +609,72 @@ def handle_reagent_network(query: str, limit: int) -> tuple[dict, int]:
     }, 200
 
 
+def handle_type_similarity(top_n: int) -> tuple[dict, int]:
+    """Pairwise organoid type similarity from reagents.jsonl (Jaccard on canonical reagents).
+
+    Returns per-type top-N most similar types with shared reagent count and Jaccard score.
+    Useful for: "which organoid types have the most protocol overlap with cerebral?"
+    """
+    top_n = max(1, min(top_n, 50))
+
+    if not REAGENTS_JSONL.exists():
+        return {
+            "error": "reagents.jsonl not found",
+            "hint": "Run: python pipeline/export_public.py",
+        }, 404
+
+    # Build per-type canonical reagent sets
+    reagents_by_type: dict[str, set[str]] = {}
+    try:
+        for line in REAGENTS_JSONL.read_text().splitlines():
+            if not line.strip():
+                continue
+            r = json.loads(line)
+            otype = r.get("organoid_type") or r.get("type") or ""
+            canonical = (r.get("canonical") or r.get("name") or "").strip().lower()
+            if not otype or not canonical:
+                continue
+            reagents_by_type.setdefault(otype, set()).add(canonical)
+    except (json.JSONDecodeError, OSError) as exc:
+        return {"error": f"reagents.jsonl unreadable: {exc}"}, 500
+
+    if not reagents_by_type:
+        return {"error": "no typed reagents found in reagents.jsonl", "n_types": 0}, 404
+
+    types = sorted(reagents_by_type)
+
+    def jaccard(a: set, b: set) -> float:
+        return len(a & b) / len(a | b) if (a or b) else 0.0
+
+    per_type = {}
+    for t in types:
+        ts = reagents_by_type[t]
+        neighbors = []
+        for u in types:
+            if u == t:
+                continue
+            us = reagents_by_type[u]
+            j = jaccard(ts, us)
+            if j > 0:
+                neighbors.append({
+                    "type": u,
+                    "jaccard": round(j, 4),
+                    "n_shared": len(ts & us),
+                    "n_union": len(ts | us),
+                })
+        neighbors.sort(key=lambda x: (-x["jaccard"], x["type"]))
+        per_type[t] = {
+            "n_reagents": len(ts),
+            "top_similar": neighbors[:top_n],
+        }
+
+    return {
+        "n_types": len(types),
+        "method": "Jaccard similarity on canonical reagent names from reagents.jsonl",
+        "per_type": per_type,
+    }, 200
+
+
 def handle_candidates() -> tuple[dict, int]:
     """Return OA verification status of the candidate pool — how many papers are
     public_ok (CC0/CC-BY), rejected (NC/ND/unknown), or quarantine (API error)."""
@@ -678,6 +745,7 @@ def handle_index() -> tuple[dict, int]:
             "/analytics/coverage/{organoid_type}": "coverage stats for one organoid type",
             "/analytics/reagent?q=TERM": "cross-corpus reagent lookup: usage, concentrations, evidence quotes",
             "/analytics/reagent-network?q=TERM": "reagent co-occurrence: which reagents most often appear in the same papers as TERM",
+            "/analytics/type-similarity": "pairwise organoid type similarity (Jaccard on canonical reagent sets) — which types share the most protocol overlap",
             "/analytics/assay-endpoints": "assay endpoint cluster summary (per type + cross-type)",
             "/analytics/quality": "per-paper quality scores (gold/silver/bronze) + corpus summary",
             "/analytics/mior": "MIOR completeness report (Minimum Information About an Organoid Research)",
@@ -787,6 +855,15 @@ async def route_reagent(datasette, request):
     return Response.json(data, status=status)
 
 
+async def route_type_similarity(datasette, request):
+    try:
+        top_n = int(request.args.get("top_n", "5"))
+    except (TypeError, ValueError):
+        top_n = 5
+    data, status = handle_type_similarity(top_n)
+    return Response.json(data, status=status)
+
+
 async def route_reagent_network(datasette, request):
     query = request.args.get("q", "")
     try:
@@ -822,6 +899,7 @@ def register_routes():
         (r"^/analytics/coverage/(?P<organoid_type>[\w-]+)$", route_coverage_type),
         (r"^/analytics/reagent$", route_reagent),
         (r"^/analytics/reagent-network$", route_reagent_network),
+        (r"^/analytics/type-similarity$", route_type_similarity),
         (r"^/analytics/assay-endpoints$", route_assay_endpoints),
         (r"^/analytics/quality$", route_quality),
         (r"^/analytics/mior$", route_mior),

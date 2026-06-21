@@ -810,3 +810,87 @@ def test_reagent_network_rank_field(tmp_path, monkeypatch):
 def test_reagent_network_index_entry():
     data, _ = ae.handle_index()
     assert "/analytics/reagent-network?q=TERM" in data["endpoints"]
+
+
+# --------------------------------------------------------------------------- #
+# handle_type_similarity
+# --------------------------------------------------------------------------- #
+
+def test_type_similarity_404_when_jsonl_missing(tmp_path, monkeypatch):
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", tmp_path / "reagents.jsonl")
+    data, status = ae.handle_type_similarity(5)
+    assert status == 404
+    assert "hint" in data
+
+
+def test_type_similarity_returns_all_types(tmp_path, monkeypatch):
+    reagents = tmp_path / "reagents.jsonl"
+    rows = [
+        {"pmcid": "PMC001", "organoid_type": "cerebral",   "canonical": "EGF"},
+        {"pmcid": "PMC001", "organoid_type": "cerebral",   "canonical": "WNT3A"},
+        {"pmcid": "PMC002", "organoid_type": "intestinal", "canonical": "EGF"},
+        {"pmcid": "PMC002", "organoid_type": "intestinal", "canonical": "Noggin"},
+        {"pmcid": "PMC003", "organoid_type": "kidney",     "canonical": "Noggin"},
+    ]
+    reagents.write_text("\n".join(json.dumps(r) for r in rows))
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", reagents)
+    data, status = ae.handle_type_similarity(5)
+    assert status == 200
+    assert data["n_types"] == 3
+    assert "cerebral" in data["per_type"]
+    assert "intestinal" in data["per_type"]
+    assert "kidney" in data["per_type"]
+
+
+def test_type_similarity_jaccard_correct(tmp_path, monkeypatch):
+    reagents = tmp_path / "reagents.jsonl"
+    rows = [
+        # cerebral: {EGF, WNT3A}; intestinal: {EGF, Noggin}
+        # Jaccard = |{EGF}| / |{EGF,WNT3A,Noggin}| = 1/3 ≈ 0.333
+        {"pmcid": "PMC001", "organoid_type": "cerebral",   "canonical": "EGF"},
+        {"pmcid": "PMC001", "organoid_type": "cerebral",   "canonical": "WNT3A"},
+        {"pmcid": "PMC002", "organoid_type": "intestinal", "canonical": "EGF"},
+        {"pmcid": "PMC002", "organoid_type": "intestinal", "canonical": "Noggin"},
+    ]
+    reagents.write_text("\n".join(json.dumps(r) for r in rows))
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", reagents)
+    data, status = ae.handle_type_similarity(5)
+    assert status == 200
+    # cerebral's top_similar should list intestinal with jaccard ≈ 0.333
+    top = data["per_type"]["cerebral"]["top_similar"]
+    assert len(top) == 1
+    assert top[0]["type"] == "intestinal"
+    assert abs(top[0]["jaccard"] - 1/3) < 0.001
+    assert top[0]["n_shared"] == 1
+
+
+def test_type_similarity_respects_top_n(tmp_path, monkeypatch):
+    reagents = tmp_path / "reagents.jsonl"
+    rows = []
+    for i in range(5):
+        t = f"type{i}"
+        rows.append({"pmcid": f"PMC{i:03d}", "organoid_type": t, "canonical": "EGF"})
+    reagents.write_text("\n".join(json.dumps(r) for r in rows))
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", reagents)
+    data, status = ae.handle_type_similarity(2)
+    assert status == 200
+    for t in data["per_type"].values():
+        assert len(t["top_similar"]) <= 2
+
+
+def test_type_similarity_n_reagents_field(tmp_path, monkeypatch):
+    reagents = tmp_path / "reagents.jsonl"
+    rows = [
+        {"pmcid": "PMC001", "organoid_type": "cerebral", "canonical": "EGF"},
+        {"pmcid": "PMC001", "organoid_type": "cerebral", "canonical": "WNT3A"},
+    ]
+    reagents.write_text("\n".join(json.dumps(r) for r in rows))
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", reagents)
+    data, status = ae.handle_type_similarity(5)
+    assert status == 200
+    assert data["per_type"]["cerebral"]["n_reagents"] == 2
+
+
+def test_type_similarity_index_entry():
+    data, _ = ae.handle_index()
+    assert "/analytics/type-similarity" in data["endpoints"]
