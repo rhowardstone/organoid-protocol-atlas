@@ -37,7 +37,7 @@ paper (PMC)
   └─ S2       Biolink-validated KGX export (nodes.tsv + edges.tsv + kgx_manifest.json)
   └─ entity normalization (bFGF≡FGF2, RSPO1≡R-spondin1, …)
   └─ analytics pipeline → coverage · quality · consensus · failure modes · lineage · assay endpoints
-  └─ REST API (Datasette plugin, 24 routes)
+  └─ REST API (Datasette plugin, 25 routes)
 ```
 
 ## Analytics API
@@ -62,6 +62,7 @@ GET /analytics/species-breakdown        species distribution per organoid type (
 GET /analytics/matrix-breakdown         extracellular matrix usage per organoid type (Matrigel / Geltrex / Vitronectin / ...) with alias normalisation
 GET /analytics/base-media-breakdown     base media usage per organoid type (DMEM/F12 / mTeSR1 / Advanced DMEM/F12 / ...) with alias normalisation
 GET /analytics/source-cell-breakdown    source cell type distribution per organoid type (iPSC / adult_stem_cell / primary_tissue / ESC)
+GET /analytics/protocol-complexity      per-type protocol complexity: avg signaling factors / supplements / figure-confirmation / grounding rate
 GET /analytics/assay-endpoints          assay endpoint cluster summary (12 clusters, per-type + cross-type)
 GET /analytics/failure-modes            failure mode cluster summary across the corpus
 GET /analytics/lineage                  DOI→DOI protocol lineage graph (ProtocolModification data)
@@ -154,7 +155,7 @@ serve/
   run.sh                     serve the atlas (Datasette + plugins)
   metadata.yaml              facets + canned queries
   plugins/
-    analytics_endpoint.py    24-route analytics REST API (pure handlers + thin Datasette wrappers)
+    analytics_endpoint.py    25-route analytics REST API (pure handlers + thin Datasette wrappers)
     ask.py                   grounded Q&A (RAG over FTS → local model)
   templates/                 landing, recipe cards, /heatmap, /consensus
   static/atlas.css|js        theme + dark-mode toggle
@@ -176,7 +177,7 @@ outputs/
   analysis/                  pre-computed analytics (coverage, quality, consensus, etc.)
   kgx/                       KGX graph export
   comparison/                pre-computed protocol diffs
-tests/                       offline test suite (783 tests, no network, no GPU)
+tests/                       offline test suite (794 tests, no network, no GPU)
 docs/                        SUPERVISOR_CHECKLIST.md, PLAN, RESEARCH_BRIEF
 ```
 
@@ -205,7 +206,7 @@ python pipeline/aggregate_failure_modes.py
 python pipeline/build_lineage.py
 python pipeline/aggregate_assay_endpoints.py
 
-make test                               # run offline test suite (783 tests)
+make test                               # run offline test suite (794 tests)
 make validate-batch                     # pre-PR check: tests + prediction schema + evidence
 # or: pytest -q
 ```

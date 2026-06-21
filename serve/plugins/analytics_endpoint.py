@@ -19,6 +19,7 @@ Routes (all return JSON; read-only, no writes):
   GET /analytics/matrix-breakdown             -- extracellular matrix usage per organoid type from protocols.jsonl
   GET /analytics/base-media-breakdown         -- base media usage per organoid type from protocols.jsonl
   GET /analytics/source-cell-breakdown        -- source cell type distribution per organoid type (iPSC / adult_stem_cell / primary_tissue / ESC)
+  GET /analytics/protocol-complexity          -- per-type protocol complexity: avg signaling factors, supplements, grounding rate
   GET /analytics                                -- index of available analytics
 
 All endpoints degrade gracefully — if the pre-computed file doesn't exist they return
@@ -1246,6 +1247,90 @@ def handle_source_cell_breakdown(organoid_type: str | None) -> tuple[dict, int]:
     }, 200
 
 
+def handle_protocol_complexity(organoid_type: str | None) -> tuple[dict, int]:
+    """Per-type protocol complexity metrics from protocols.jsonl.
+
+    Aggregates n_signaling_factors, n_supplements, n_figure_confirmed, and
+    grounding_rate per organoid type. Returns mean, min, max, and n for each
+    field so callers can assess which types require the most complex protocols.
+    Optional ?type=kidney to return stats for one type.
+    """
+    if not PROTOCOLS_JSONL.exists():
+        return {
+            "error": "protocols.jsonl not found",
+            "hint": "Run: python pipeline/export_public.py",
+        }, 404
+
+    if organoid_type and not re.match(r'^[\w-]+$', organoid_type):
+        return {"error": "invalid organoid_type"}, 400
+
+    # Accumulate per-type lists for each metric.
+    _FIELDS = ["n_signaling_factors", "n_supplements", "n_figure_confirmed", "grounding_rate"]
+    buckets: dict[str, dict[str, list]] = {}
+
+    try:
+        for line in PROTOCOLS_JSONL.read_text().splitlines():
+            if not line.strip():
+                continue
+            p = json.loads(line)
+            ot = (p.get("organoid_type") or "").strip()
+            if not ot or ot == "other":
+                continue
+            buckets.setdefault(ot, {f: [] for f in _FIELDS})
+            for f in _FIELDS:
+                v = p.get(f)
+                if v is not None:
+                    try:
+                        buckets[ot][f].append(float(v))
+                    except (TypeError, ValueError):
+                        pass
+    except (json.JSONDecodeError, OSError) as exc:
+        return {"error": f"protocols.jsonl unreadable: {exc}"}, 500
+
+    if not buckets:
+        return {"error": "no organoid type data in protocols.jsonl"}, 404
+
+    def _stats(vals: list) -> dict | None:
+        if not vals:
+            return None
+        return {
+            "mean": round(sum(vals) / len(vals), 3),
+            "min": min(vals),
+            "max": max(vals),
+            "n": len(vals),
+        }
+
+    def _type_summary(ot: str) -> dict:
+        b = buckets[ot]
+        # paper count = longest field list (grounding_rate is always present)
+        n_papers = max(len(b[f]) for f in _FIELDS) if b else 0
+        return {
+            "n_papers": n_papers,
+            **{f: _stats(b[f]) for f in _FIELDS},
+        }
+
+    if organoid_type:
+        if organoid_type not in buckets:
+            return {
+                "error": f"No data for organoid type '{organoid_type}'",
+                "available_types": sorted(buckets),
+            }, 404
+        return {"organoid_type": organoid_type, **_type_summary(organoid_type)}, 200
+
+    per_type = {t: _type_summary(t) for t in sorted(buckets)}
+    # cross-corpus ranking by avg n_signaling_factors
+    ranked = sorted(
+        [(t, s["n_signaling_factors"]["mean"]) for t, s in per_type.items()
+         if s["n_signaling_factors"]],
+        key=lambda x: -x[1],
+    )
+    return {
+        "per_type": per_type,
+        "n_types": len(per_type),
+        "ranking_by_avg_signaling_factors": [t for t, _ in ranked],
+    }, 200
+
+
 def handle_mior() -> tuple[dict, int]:
     """Return pre-computed MIOR completeness report."""
     path = ANALYSIS_DIR / "mior_completeness.json"
@@ -1281,6 +1366,7 @@ def handle_index() -> tuple[dict, int]:
             "/analytics/matrix-breakdown": "extracellular matrix usage per organoid type (Matrigel / Geltrex / Vitronectin / ...) with alias normalisation; optional ?type=kidney",
             "/analytics/base-media-breakdown": "base media usage per organoid type (DMEM/F12 / mTeSR1 / Advanced DMEM/F12 / ...) with alias normalisation; optional ?type=kidney",
             "/analytics/source-cell-breakdown": "source cell type distribution per organoid type (iPSC / adult_stem_cell / primary_tissue / ESC); optional ?type=kidney",
+            "/analytics/protocol-complexity": "per-type protocol complexity: avg n_signaling_factors, n_supplements, n_figure_confirmed, grounding_rate with min/max/n; ranked by complexity",
             "/analytics/assay-endpoints": "assay endpoint cluster summary (per type + cross-type)",
             "/analytics/quality": "per-paper quality scores (gold/silver/bronze) + corpus summary",
             "/analytics/mior": "MIOR completeness report (Minimum Information About an Organoid Research)",
@@ -1448,6 +1534,12 @@ async def route_source_cell_breakdown(datasette, request):
     return Response.json(data, status=status)
 
 
+async def route_protocol_complexity(datasette, request):
+    organoid_type = request.args.get("type") or None
+    data, status = handle_protocol_complexity(organoid_type)
+    return Response.json(data, status=status)
+
+
 async def route_candidates(datasette, request):
     data, status = handle_candidates()
     return Response.json(data, status=status)
@@ -1480,6 +1572,7 @@ def register_routes():
         (r"^/analytics/matrix-breakdown$", route_matrix_breakdown),
         (r"^/analytics/base-media-breakdown$", route_base_media_breakdown),
         (r"^/analytics/source-cell-breakdown$", route_source_cell_breakdown),
+        (r"^/analytics/protocol-complexity$", route_protocol_complexity),
         (r"^/analytics/assay-endpoints$", route_assay_endpoints),
         (r"^/analytics/quality$", route_quality),
         (r"^/analytics/mior$", route_mior),

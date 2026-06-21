@@ -1651,3 +1651,140 @@ def test_summary_includes_source_cell_snapshot(tmp_path, monkeypatch):
     snap = data["source_cell_snapshot"]
     assert snap.get("iPSC", 0) == 2
     assert snap.get("adult_stem_cell", 0) == 1
+
+# ---------------------------------------------------------------------------
+# /analytics/protocol-complexity
+# ---------------------------------------------------------------------------
+
+def _write_protocols_for_complexity(path, rows):
+    path.write_text("\n".join(json.dumps(r) for r in rows) + "\n")
+
+
+def test_protocol_complexity_404_when_jsonl_missing(tmp_path, monkeypatch):
+    monkeypatch.setattr(ae, "PROTOCOLS_JSONL", tmp_path / "missing.jsonl")
+    data, status = ae.handle_protocol_complexity(None)
+    assert status == 404
+    assert "hint" in data
+
+
+def test_protocol_complexity_400_for_invalid_type(tmp_path, monkeypatch):
+    p = tmp_path / "protocols.jsonl"
+    _write_protocols_for_complexity(p, [{"organoid_type": "kidney", "n_signaling_factors": 5}])
+    monkeypatch.setattr(ae, "PROTOCOLS_JSONL", p)
+    data, status = ae.handle_protocol_complexity("bad type!")
+    assert status == 400
+
+
+def test_protocol_complexity_returns_all_types(tmp_path, monkeypatch):
+    p = tmp_path / "protocols.jsonl"
+    _write_protocols_for_complexity(p, [
+        {"organoid_type": "kidney",   "n_signaling_factors": 4, "n_supplements": 2, "grounding_rate": 0.9},
+        {"organoid_type": "cerebral", "n_signaling_factors": 8, "n_supplements": 4, "grounding_rate": 0.8},
+    ])
+    monkeypatch.setattr(ae, "PROTOCOLS_JSONL", p)
+    data, status = ae.handle_protocol_complexity(None)
+    assert status == 200
+    assert "kidney" in data["per_type"]
+    assert "cerebral" in data["per_type"]
+    assert data["n_types"] == 2
+
+
+def test_protocol_complexity_stats_correct(tmp_path, monkeypatch):
+    p = tmp_path / "protocols.jsonl"
+    _write_protocols_for_complexity(p, [
+        {"organoid_type": "kidney", "n_signaling_factors": 4, "grounding_rate": 0.8},
+        {"organoid_type": "kidney", "n_signaling_factors": 6, "grounding_rate": 1.0},
+    ])
+    monkeypatch.setattr(ae, "PROTOCOLS_JSONL", p)
+    data, status = ae.handle_protocol_complexity("kidney")
+    assert status == 200
+    sf = data["n_signaling_factors"]
+    assert sf["mean"] == 5.0
+    assert sf["min"] == 4
+    assert sf["max"] == 6
+    assert sf["n"] == 2
+    gr = data["grounding_rate"]
+    assert abs(gr["mean"] - 0.9) < 0.01
+
+
+def test_protocol_complexity_ranking_by_signaling_factors(tmp_path, monkeypatch):
+    p = tmp_path / "protocols.jsonl"
+    _write_protocols_for_complexity(p, [
+        {"organoid_type": "kidney",   "n_signaling_factors": 3},
+        {"organoid_type": "cerebral", "n_signaling_factors": 8},
+        {"organoid_type": "cardiac",  "n_signaling_factors": 5},
+    ])
+    monkeypatch.setattr(ae, "PROTOCOLS_JSONL", p)
+    data, status = ae.handle_protocol_complexity(None)
+    assert status == 200
+    ranking = data["ranking_by_avg_signaling_factors"]
+    # cerebral (8) > cardiac (5) > kidney (3)
+    assert ranking.index("cerebral") < ranking.index("cardiac")
+    assert ranking.index("cardiac") < ranking.index("kidney")
+
+
+def test_protocol_complexity_single_type_filter(tmp_path, monkeypatch):
+    p = tmp_path / "protocols.jsonl"
+    _write_protocols_for_complexity(p, [
+        {"organoid_type": "kidney",   "n_signaling_factors": 5},
+        {"organoid_type": "cerebral", "n_signaling_factors": 9},
+    ])
+    monkeypatch.setattr(ae, "PROTOCOLS_JSONL", p)
+    data, status = ae.handle_protocol_complexity("kidney")
+    assert status == 200
+    assert data["organoid_type"] == "kidney"
+    assert "per_type" not in data
+    assert data["n_signaling_factors"]["mean"] == 5.0
+
+
+def test_protocol_complexity_404_for_unknown_type(tmp_path, monkeypatch):
+    p = tmp_path / "protocols.jsonl"
+    _write_protocols_for_complexity(p, [{"organoid_type": "kidney", "n_signaling_factors": 5}])
+    monkeypatch.setattr(ae, "PROTOCOLS_JSONL", p)
+    data, status = ae.handle_protocol_complexity("unknowntype")
+    assert status == 404
+    assert "available_types" in data
+
+
+def test_protocol_complexity_excludes_other_type(tmp_path, monkeypatch):
+    p = tmp_path / "protocols.jsonl"
+    _write_protocols_for_complexity(p, [
+        {"organoid_type": "other",  "n_signaling_factors": 5},
+        {"organoid_type": "kidney", "n_signaling_factors": 3},
+    ])
+    monkeypatch.setattr(ae, "PROTOCOLS_JSONL", p)
+    data, status = ae.handle_protocol_complexity(None)
+    assert status == 200
+    assert "other" not in data["per_type"]
+    assert data["n_types"] == 1
+
+
+def test_protocol_complexity_missing_fields_skipped(tmp_path, monkeypatch):
+    p = tmp_path / "protocols.jsonl"
+    _write_protocols_for_complexity(p, [
+        {"organoid_type": "kidney"},  # no n_signaling_factors etc.
+    ])
+    monkeypatch.setattr(ae, "PROTOCOLS_JSONL", p)
+    data, status = ae.handle_protocol_complexity("kidney")
+    assert status == 200
+    # Fields with no data return None stats
+    assert data["n_signaling_factors"] is None
+    assert data["n_papers"] == 0  # no fields populated → max(list_lengths) == 0
+
+
+def test_protocol_complexity_index_entry():
+    data, _ = ae.handle_index()
+    assert "/analytics/protocol-complexity" in data["endpoints"]
+
+
+def test_protocol_complexity_n_papers_counts_correctly(tmp_path, monkeypatch):
+    p = tmp_path / "protocols.jsonl"
+    _write_protocols_for_complexity(p, [
+        {"organoid_type": "kidney", "n_signaling_factors": 3, "grounding_rate": 0.9},
+        {"organoid_type": "kidney", "n_signaling_factors": 7, "grounding_rate": 0.8},
+        {"organoid_type": "kidney", "n_signaling_factors": 5, "grounding_rate": 1.0},
+    ])
+    monkeypatch.setattr(ae, "PROTOCOLS_JSONL", p)
+    data, status = ae.handle_protocol_complexity("kidney")
+    assert status == 200
+    assert data["n_papers"] == 3
