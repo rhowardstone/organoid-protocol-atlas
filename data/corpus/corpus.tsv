@@ -863,3 +863,223 @@ retinal	10.1038/s41598-018-32871-8	PMC6162218	Fligor	2018	Scientific reports	tbd
 pancreatic	10.1038/s41467-019-12472-3	PMC6776618	Lebreton	2019	Nature communications	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
 vascular	10.3389/fbioe.2020.00278	PMC7182037	Markou	2020	Frontiers in bioengineering and biotechnology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.667
 cardiac	10.3389/fgene.2021.767621	PMC8591288	Matsui	2021	Frontiers in genetics	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+cardiac	10.7150/thno.116749	PMC12680599	Hua	2026	Theranostics	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.5
+cardiac	10.3390/biomedicines14040919	PMC13113045	Litvinenko	2026	Biomedicines	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.5
+intestinal	10.1016/j.jcmgh.2025.101628	PMC12630347	Malonga	2026	Cellular and molecular gastroenterology and hepatology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.75
+intestinal	10.1016/j.jcmgh.2025.101642	PMC12634853	Scharr	2026	Cellular and molecular gastroenterology and hepatology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.1016/j.jcmgh.2025.101656	PMC12681879	Urbauer	2026	Cellular and molecular gastroenterology and hepatology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.1111/acel.70333	PMC12746702	Dipali	2026	Aging cell	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.1038/s41422-025-01206-4	PMC12765898	Ma	2026	Cell research	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+cardiac	10.1111/cpr.70070	PMC12774625	Bai	2026	Cell proliferation	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.1002/jpn3.70230	PMC12780477	Foster	2026	Journal of pediatric gastroenterology and nutrition	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+cardiac	10.1093/ehjopen/oeaf161	PMC12796640	van der Wilt	2026	European heart journal open	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.1016/j.xpro.2025.104292	PMC12800398	Skarp	2026	STAR protocols	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.1080/19490976.2025.2587405	PMC12810044	Yang	2026	Gut microbes	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.1016/j.redox.2026.104008	PMC12814091	Xu	2026	Redox biology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.75
+intestinal	10.1038/s43587-025-01022-w	PMC12823409	Eskiocak	2026	Nature aging	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.1002/jev2.70226	PMC12825024	Yang	2026	Journal of extracellular vesicles	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.1002/smtd.202500425	PMC12825328	Dai	2026	Small methods	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.1016/j.isci.2025.114418	PMC12829128	Hensel	2026	iScience	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.3390/ani16020173	PMC12837591	Móritz	2026	Animals : an open access journal from MDPI	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.3390/cancers18020337	PMC12838907	Benelli	2026	Cancers	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.3390/biomedicines14010148	PMC12839308	Triantafillidis	2026	Biomedicines	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.833
+cardiac	10.3390/cells15020177	PMC12839770	Neagu	2026	Cells	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+cardiac	10.3390/cells15020187	PMC12840452	Panahi	2026	Cells	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.75
+intestinal	10.1038/s44355-026-00054-2	PMC12864041	Chapman	2026	Npj gut and liver	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+cardiac	10.1186/s40246-025-00907-6	PMC12866568	Forbes	2026	Human genomics	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.5
+cardiac	10.1002/advs.202511671	PMC12866807	Hong	2026	Advanced science (Weinheim, Baden-Wurttemberg, Germany)	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.1186/s12964-025-02611-3	PMC12870730	Fantová	2026	Cell communication and signaling : CCS	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+cardiac	10.19102/icrm.2025.17016	PMC12880192	Bushmen	2026	The Journal of innovations in cardiac rhythm management	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.1007/s00204-025-04215-9	PMC12886239	Aalderink	2026	Archives of toxicology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.1172/jci.insight.181032	PMC12892898	Callahan	2026	JCI insight	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.3389/fimmu.2026.1766513	PMC12894275	Marafini	2026	Frontiers in immunology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.75
+intestinal	10.3389/fonc.2026.1777843	PMC12907199	Trapani	2026	Frontiers in oncology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.1111/nyas.70152	PMC12917929	Groeneweg	2026	Annals of the New York Academy of Sciences	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.3389/fphys.2026.1738447	PMC12920202	Pauer	2026	Frontiers in physiology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.833
+intestinal	10.1002/adhm.202503287	PMC12927530	Möhl	2026	Advanced healthcare materials	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.1002/adhm.202503201	PMC12927538	Jain	2026	Advanced healthcare materials	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal		PMC12937285		2026	Animals : an open access journal from MDPI	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.3390/antiox15020157	PMC12937471	Ni	2026	Antioxidants (Basel, Switzerland)	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal		PMC12937759	Inoue	2026	Biomedicines	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+cardiac	10.3390/jcdd13020074	PMC12941982	McLane	2026	Journal of cardiovascular development and disease	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.3390/mi17020199	PMC12942585	Sabahi-Kaviani	2026	Micromachines	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.1038/s41419-026-08486-7	PMC12949245	Zhang	2026	Cell death & disease	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.1038/s41598-026-39409-3	PMC12949246	Khasanov	2026	Scientific reports	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.3389/fimmu.2026.1745174	PMC12956527	Feng	2026	Frontiers in immunology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.3389/fimmu.2026.1780865	PMC12976005	Chen	2026	Frontiers in immunology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.667
+intestinal	10.1016/j.stem.2026.01.006	PMC12979008	Maimets	2026	Cell stem cell	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.1038/s44319-026-00699-3	PMC12979657	Zhang	2026	EMBO reports	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal		PMC12984945	Radojević	2026	International journal of molecular sciences	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+cardiac	10.1186/s12964-026-02696-4	PMC12990571	Setyaningsih	2026	Cell communication and signaling : CCS	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.5
+intestinal	10.1007/s00281-026-01068-x	PMC12992469	Erkert	2026	Seminars in immunopathology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.1096/fj.202600261r	PMC13001814	Alfredsson	2026	FASEB journal : official publication of the Federation of American Societies for Experimental Biology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.1080/19490976.2026.2644983	PMC13003899	Narimatsu	2026	Gut microbes	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.1242/dmm.052860	PMC13035061	Clevers	2026	Disease models & mechanisms	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.1038/s41467-026-69734-0	PMC13035814	Kim	2026	Nature communications	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.1158/2767-9764.crc-25-0599	PMC13037773	Traichel	2026	Cancer research communications	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.833
+intestinal	10.1172/jci186032	PMC13038214	Ma	2026	The Journal of clinical investigation	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.75
+intestinal	10.1038/s41419-026-08560-0	PMC13039175	Bastem Akan	2026	Cell death & disease	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+cardiac	10.1002/advs.202508376	PMC13042400	Qin	2026	Advanced science (Weinheim, Baden-Wurttemberg, Germany)	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.5
+intestinal	10.1128/mbio.02466-25	PMC13059709	Lee	2026	mBio	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.7554/elife.95639	PMC13068435	Yue	2026	eLife	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.5
+intestinal	10.1007/s00011-026-02236-3	PMC13068725	King	2026	Inflammation research : official journal of the European Histamine Research Society ... [et al.]	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.75
+cardiac	10.1038/s44321-026-00391-y	PMC13083917	Chimata	2026	EMBO molecular medicine	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.1016/j.jpet.2026.103815	PMC13084658	Chen	2026	The Journal of pharmacology and experimental therapeutics	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.1128/msystems.01304-25	PMC13098192	Mikhaleva	2026	mSystems	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.875
+intestinal	10.1038/s41419-026-08733-x	PMC13100165	Chen	2026	Cell death & disease	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.5
+intestinal	10.1007/s00125-026-06688-4	PMC13109135	Phuah	2026	Diabetologia	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.1093/lifemeta/loag003	PMC13110118	Ma	2026	Life metabolism	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+cardiac	10.3390/genes17040414	PMC13115850	Feng	2026	Genes	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.6
+intestinal	10.3390/microorganisms14040751	PMC13118500	Stepanyan	2026	Microorganisms	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.3389/fphys.2026.1764088	PMC13126562	Yoo	2026	Frontiers in physiology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.1172/jci.insight.190690	PMC13135407	Pandyarajan	2026	JCI insight	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.1016/j.jcmgh.2026.101769	PMC13138201	Patel	2026	Cellular and molecular gastroenterology and hepatology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.75
+intestinal	10.1128/spectrum.03472-25	PMC13141834	Cataldo	2026	Microbiology spectrum	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.1038/s42003-026-09830-5	PMC13144487	Hirdaramani	2026	Communications biology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.1093/lifemeta/loaf045	PMC13148159	Yu	2026	Life metabolism	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.3390/cells15090832	PMC13162929	Lee	2026	Cells	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.75
+intestinal	10.3390/molecules31091520	PMC13164929	Ying	2026	Molecules (Basel, Switzerland)	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.667
+intestinal	10.1186/s13287-026-05006-4	PMC13173943	Dalleywater	2026	Stem cell research & therapy	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.1002/adhm.202505483	PMC13175293	Bernheim-Dennery	2026	Advanced healthcare materials	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.3389/fphar.2026.1706106	PMC13175875	Alzain	2026	Frontiers in pharmacology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.8
+intestinal	10.1002/cti2.70099	PMC13175919	Castelijn	2026	Clinical & translational immunology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.1039/d6ra02741e	PMC13178093	Samal	2026	RSC advances	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.1172/jci192074	PMC13178647	Hua	2026	The Journal of clinical investigation	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.5
+intestinal	10.1038/s44321-026-00409-5	PMC13179355	Shostak	2026	EMBO molecular medicine	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.1038/s41419-026-08744-8	PMC13180983	di Blasio	2026	Cell death & disease	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.34133/bmr.0369	PMC13181168	Xie	2026	Biomaterials research	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.1038/s41598-026-46184-8	PMC13184080	Chan	2026	Scientific reports	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.1128/jvi.00250-26	PMC13185576	Futatsusako	2026	Journal of virology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.625
+intestinal	10.1002/ijc.70453	PMC13193477	Zieger	2026	International journal of cancer	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.3389/fimmu.2026.1761539	PMC13194361	Kaden	2026	Frontiers in immunology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.1016/j.mucimm.2025.11.013	PMC13195368	Coman	2026	Mucosal immunology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.1016/j.jcmgh.2026.101771	PMC13196031	Silva	2026	Cellular and molecular gastroenterology and hepatology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.1016/j.jcmgh.2026.101774	PMC13196144	Hamdan	2026	Cellular and molecular gastroenterology and hepatology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.7554/elife.107154	PMC13197165	Gros	2026	eLife	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.1016/j.celrep.2026.117186	PMC13201213	Bellec	2026	Cell reports	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.3390/bioengineering13050518	PMC13203710	Blenkinsop	2026	Bioengineering (Basel, Switzerland)	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.3390/ani16101492	PMC13203795	Song	2026	Animals : an open access journal from MDPI	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.3390/biomedicines14051102	PMC13204169	Nikolaev	2026	Biomedicines	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+cardiac	10.3390/biom16050754	PMC13204177	Khalilitousi	2026	Biomolecules	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+cardiac	10.3390/genes17050584	PMC13205507	Gagliardi	2026	Genes	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+cardiac	10.3390/ijms27104583	PMC13206827	Rihani	2026	International journal of molecular sciences	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.3390/nano16100629	PMC13209662	Jeon	2026	Nanomaterials (Basel, Switzerland)	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+cardiac	10.1038/s41467-026-71334-x	PMC13212716	Cohen	2026	Nature communications	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.3390/ncrna12030014	PMC13214805	Chung	2026	Non-coding RNA	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.667
+cardiac	10.1038/s42003-026-10353-2	PMC13216529	Zeigler	2026	Communications biology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.1155/mi/9968648	PMC13240458	Sun	2026	Mediators of inflammation	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.5
+intestinal	10.4014/jmb.2604.04017	PMC13246296	Kim	2026	Journal of microbiology and biotechnology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.1128/mbio.00340-26	PMC13251463	Casazza	2026	mBio	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.1038/s44319-025-00662-8	PMC7618517	Lowell	2026	EMBO reports	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+cardiac	10.1016/j.ijpara.2025.12.004	PMC7618624	Smith	2026	International journal for parasitology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+cerebral	10.4103/nrr.nrr-d-25-00111	PMC12694639	Quezada	2026	Neural regeneration research	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+hepatic	10.1016/j.jhep.2025.08.038	PMC12765605	Yamaguchi	2026	Journal of hepatology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.5
+cerebral	10.1016/j.jare.2025.03.055	PMC12766203	Horschitz	2026	Journal of advanced research	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.667
+cerebral	10.1016/j.isci.2025.114339	PMC12774698	Ferrer	2026	iScience	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+cerebral	10.1007/s12015-025-10981-x	PMC12795914	Yamashita	2026	Stem cell reviews and reports	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.667
+retinal	10.1038/s41419-025-08191-x	PMC12805002	Ye	2026	Cell death & disease	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+kidney	10.1002/advs.202512873	PMC12806548	Walter	2026	Advanced science (Weinheim, Baden-Wurttemberg, Germany)	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+cerebral	10.1038/s41467-026-68428-x	PMC12808108	Bertin	2026	Nature communications	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.75
+intestinal	10.1073/pnas.2510950123	PMC12818434	Turcotte	2026	Proceedings of the National Academy of Sciences of the United States of America	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+cerebral	10.1371/journal.ppat.1013867	PMC12818742	Beauchemin	2026	PLoS pathogens	tbd	tbd	CC0	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+cerebral	10.1016/j.xpro.2025.104324	PMC12819030	El-Debs	2026	STAR protocols	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.5
+cerebral	10.1002/mco2.70497	PMC12828075	Guo	2026	MedComm	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.611
+hepatic	10.1016/j.onehlt.2026.101321	PMC12828834	Xu	2026	One health (Amsterdam, Netherlands)	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+cerebral	10.1039/d5sm01116g	PMC12834241	Zhang	2026	Soft matter	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+cerebral	10.1007/s00401-026-02981-z	PMC12835040	Jin	2026	Acta neuropathologica	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+kidney	10.3390/cancers18020254	PMC12839147	Abdullah	2026	Cancers	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+hepatic	10.3390/ijms27020633	PMC12840978	Panchuk	2026	International journal of molecular sciences	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+cerebral	10.3390/molecules31020320	PMC12844234	Niziński	2026	Molecules (Basel, Switzerland)	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+cerebral	10.3390/ph19010105	PMC12844866	Lengacher	2026	Pharmaceuticals (Basel, Switzerland)	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+cerebral	10.1038/s44319-025-00647-7	PMC12852704	Niehaus	2026	EMBO reports	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.5
+cerebral	10.1002/advs.202519579	PMC12866691	Yin	2026	Advanced science (Weinheim, Baden-Wurttemberg, Germany)	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+cerebral	10.1002/advs.202510641	PMC12866710	Zhu	2026	Advanced science (Weinheim, Baden-Wurttemberg, Germany)	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+hepatic	10.1038/s41598-025-34762-1	PMC12873437	Wang	2026	Scientific reports	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+cerebral	10.1186/s12987-025-00754-6	PMC12874909	Boutom	2026	Fluids and barriers of the CNS	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+cerebral	10.1038/s41467-025-67779-1	PMC12877092	Budinger	2026	Nature communications	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.909
+cerebral	10.1111/jne.70142	PMC12879281	Eachus	2026	Journal of neuroendocrinology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.75
+cerebral	10.1002/smll.202509401	PMC12895221	Bourdon	2026	Small (Weinheim an der Bergstrasse, Germany)	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+hepatic	10.1038/s41588-025-02496-5	PMC12900645	Krishna	2026	Nature genetics	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+cerebral	10.1007/s10571-026-01673-2	PMC12901785	Wang	2026	Cellular and molecular neurobiology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+cerebral	10.1016/j.stemcr.2025.102786	PMC12903088	Almeida	2026	Stem cell reports	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.556
+cerebral	10.1038/s41592-025-02927-5	PMC12904787	Sanchís-Calleja	2026	Nature methods	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.889
+kidney	10.1515/medgen-2025-2053	PMC12910339	Hilger	2026	Medizinische Genetik : Mitteilungsblatt des Berufsverbandes Medizinische Genetik e.V	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+cerebral	10.1177/0271678x261419964	PMC12913052	Davies	2026	Journal of cerebral blood flow and metabolism : official journal of the International Society of Cerebral Blood Flow and Metabolism	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.5
+kidney	10.1016/j.xpro.2026.104362	PMC12915182	Perticari	2026	STAR protocols	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+cerebral	10.1016/j.omton.2026.201134	PMC12915223	Kourtesakis	2026	Molecular therapy. Oncology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.6
+cerebral	10.1038/s41380-025-03272-x	PMC12916286	Huber	2026	Molecular psychiatry	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.5
+cerebral	10.1093/braincomms/fcag029	PMC12926509	Leckey	2026	Brain communications	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+hepatic		PMC12938165	Huang	2026	Antioxidants (Basel, Switzerland)	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+cerebral	10.3390/cancers18040668	PMC12939352	Salmeron-Moreno	2026	Cancers	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+hepatic	10.3390/cimb48020165	PMC12939559	Nair	2026	Current issues in molecular biology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+cerebral	10.1038/s41419-026-08476-9	PMC12948981	Baggiani	2026	Cell death & disease	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+cerebral	10.1002/advs.202514421	PMC12955927	Nguyen	2026	Advanced science (Weinheim, Baden-Wurttemberg, Germany)	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+cerebral	10.3389/fncel.2026.1769911	PMC12956682	Municio	2026	Frontiers in cellular neuroscience	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+cerebral	10.1002/advs.202507323	PMC12970244	Chang	2026	Advanced science (Weinheim, Baden-Wurttemberg, Germany)	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.5
+cerebral	10.1002/advs.202513135	PMC12970248	Han	2026	Advanced science (Weinheim, Baden-Wurttemberg, Germany)	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+retinal		PMC12984247		2026	Cells	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+cerebral	10.3390/cells15050424	PMC12984660	Carey	2026	Cells	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+cerebral		PMC12984708	Salmeron-Moreno	2026	Cells	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+cerebral	10.1038/s12276-025-01626-7	PMC12992551	Kim	2026	Experimental & molecular medicine	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.857
+cerebral	10.1038/s41586-025-10047-5	PMC12999519	Gordon	2026	Nature	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.5
+kidney	10.7150/jca.127511	PMC13003542	Chen	2026	Journal of Cancer	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+hepatic	10.1038/s41591-025-04169-6	PMC13004691	Li	2026	Nature medicine	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+retinal	10.1038/s41598-026-40503-9	PMC13004974	Harjuntausta	2026	Scientific reports	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.75
+cerebral	10.3389/fncel.2026.1774547	PMC13006222	Chen	2026	Frontiers in cellular neuroscience	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.667
+hepatic		PMC13006397	Li	2026	Cell reports. Medicine	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+cerebral	10.3389/fimmu.2026.1743806	PMC13006641	Liang	2026	Frontiers in immunology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+cerebral	10.3389/fncel.2026.1794559	PMC13008676	Petralla	2026	Frontiers in cellular neuroscience	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+retinal	10.3389/fendo.2026.1762255	PMC13008746	Zhu	2026	Frontiers in endocrinology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.875
+cerebral	10.1093/brain/awaf340	PMC13016731	Ljubikj	2026	Brain : a journal of neurology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+cerebral	10.1038/s44319-026-00718-3	PMC13021958	Pampols-Perez	2026	EMBO reports	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+cerebral	10.1038/s41398-026-03890-1	PMC13022181	Perets	2026	Translational psychiatry	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.5
+cerebral	10.1038/s44319-026-00719-2	PMC13022303	Lampersperger	2026	EMBO reports	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+hepatic	10.3390/bioengineering13030335	PMC13024264	Ma	2026	Bioengineering (Basel, Switzerland)	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+cerebral	10.1038/s41597-026-06881-5	PMC13031948	Martins	2026	Scientific data	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+cerebral	10.1038/s41420-026-02995-2	PMC13039969	Chi	2026	Cell death discovery	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+cerebral	10.1002/advs.202514783	PMC13042409	Labra	2026	Advanced science (Weinheim, Baden-Wurttemberg, Germany)	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.571
+hepatic	10.1002/1878-0261.70119	PMC13042547	Karabicici	2026	Molecular oncology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.857
+kidney	10.1186/s13073-026-01615-z	PMC13049728	Skoczek	2026	Genome medicine	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.5
+cerebral	10.1016/j.xpro.2026.104463	PMC13054417	Guzman	2026	STAR protocols	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.714
+cerebral	10.2174/011570159x368403250618054913	PMC13054744	Liu	2026	Current neuropharmacology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+cerebral	10.1038/s41593-026-02226-y	PMC13058728	Liu	2026	Nature neuroscience	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.5
+cerebral	10.1039/d6ra01285j	PMC13058803	Sprengel	2026	RSC advances	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.667
+cerebral	10.3389/fncel.2026.1787173	PMC13065703	Izhiman	2026	Frontiers in cellular neuroscience	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+cerebral	10.3389/fphar.2026.1781376	PMC13066287	Guo	2026	Frontiers in pharmacology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+kidney	10.1186/s12882-026-04877-2	PMC13067571	Wruck	2026	BMC nephrology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.571
+cerebral	10.1093/neuonc/noaf271	PMC13070497	Zhou	2026	Neuro-oncology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+retinal	10.3390/ijms27073123	PMC13072725	Yang	2026	International journal of molecular sciences	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.5
+cerebral	10.3390/ijms27073322	PMC13074184	Li	2026	International journal of molecular sciences	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+retinal	10.1007/s10633-025-10053-y	PMC13083353	Elbagoury	2026	Documenta ophthalmologica. Advances in ophthalmology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+cerebral	10.1038/s41467-026-71391-2	PMC13096141	Menacho	2026	Nature communications	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+cerebral	10.1038/s41380-025-03429-8	PMC13099384	Tisch	2026	Molecular psychiatry	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+hepatic	10.1186/s12920-026-02332-7	PMC13107761	Arriaga-González	2026	BMC medical genomics	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+cerebral	10.1016/j.nbd.2026.107281	PMC13110928	Pré	2026	Neurobiology of disease	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.8
+kidney	10.3389/fphar.2026.1797220	PMC13111255	Yin	2026	Frontiers in pharmacology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+kidney	10.3390/cells15080712	PMC13115377	Batool	2026	Cells	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+retinal	10.3390/genes17040392	PMC13115896	Rowe	2026	Genes	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.875
+kidney	10.20407/fmj.2025-044	PMC13129716	Itabashi	2026	Fujita medical journal	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+cerebral	10.7554/elife.109708	PMC13132546	Hammond	2026	eLife	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.6
+hepatic	10.1055/a-2779-4984	PMC13134922	Weinfurtner	2026	Seminars in liver disease	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+hepatic	10.3389/fcimb.2026.1799319	PMC13143968	Zhang	2026	Frontiers in cellular and infection microbiology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+cerebral	10.1038/s12276-026-01684-5	PMC13144494	Shin	2026	Experimental & molecular medicine	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.8
+cerebral	10.1038/s41420-026-03085-z	PMC13150035	Parodi	2026	Cell death discovery	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+cerebral	10.1016/j.isci.2026.115819	PMC13157081	Dakhel	2026	iScience	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.667
+kidney	10.1093/hmg/ddaf205	PMC13158232	Zheng	2026	Human molecular genetics	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+cerebral	10.1093/hmg/ddaf185	PMC13158238	Chen	2026	Human molecular genetics	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.667
+cerebral	10.1002/advs.202515887	PMC13159138	Afshar-Saber	2026	Advanced science (Weinheim, Baden-Wurttemberg, Germany)	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+cerebral	10.1007/s11095-026-04058-8	PMC13179269	Nguyen	2026	Pharmaceutical research	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.75
+cerebral	10.3389/fimmu.2026.1780328	PMC13180613	Li	2026	Frontiers in immunology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.667
+cerebral	10.1084/jem.20251801	PMC13182777	Song	2026	The Journal of experimental medicine	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.917
+cerebral	10.1186/s12943-026-02612-x	PMC13192117	Leva	2026	Molecular cancer	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+retinal	10.3390/antiox15050647	PMC13203161	Gopi	2026	Antioxidants (Basel, Switzerland)	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+hepatic	10.3390/cells15100905	PMC13204467	Szkolnicka	2026	Cells	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.875
+retinal	10.3390/ijms27104573	PMC13207989	Li	2026	International journal of molecular sciences	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.5
+kidney	10.1242/dmm.052997	PMC13225216	Bogani	2026	Disease models & mechanisms	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+cerebral	10.1186/s11689-026-09699-9	PMC13227629	Koetsier	2026	Journal of neurodevelopmental disorders	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+hepatic	10.1038/s41598-026-40490-x	PMC13233857	Leszczynska	2026	Scientific reports	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+cerebral	10.1038/s42003-026-09948-6	PMC13250125	Villani	2026	Communications biology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+hepatic	10.1038/s41392-026-02722-4	PMC13254210	Tang	2026	Signal transduction and targeted therapy	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+cerebral	10.1016/j.ebiom.2026.106337	PMC13261711	eBioMedicine	2026	EBioMedicine	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+cerebral	10.1002/1878-0261.70128	PMC7618758	Vaquié	2026	Molecular oncology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.667
+cerebral	10.1016/j.devcel.2026.01.003	PMC7619060	Miller	2026	Developmental cell	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0

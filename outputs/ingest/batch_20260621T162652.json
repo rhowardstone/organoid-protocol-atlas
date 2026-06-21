@@ -1,0 +1,60 @@
+{
+  "generated_at": "2026-06-21T16:26:52+00:00",
+  "provenance": {
+    "command": "python pipeline/ingest_orchestrator.py --limit 5 --min-grounding 0.5 --cc-only --dry-run --workers 1 --candidates data/corpus/incoming/organoid_corpus_candidates_mega.csv",
+    "model": "gemma3:12b",
+    "candidates_file": "organoid_corpus_candidates_mega.csv",
+    "candidates_sha256_16": "e8b5c11ed732feb7",
+    "min_grounding": 0.5,
+    "cc_only": true,
+    "dry_run": true,
+    "workers": 1
+  },
+  "candidates_considered": 5,
+  "accepted": 4,
+  "rejected": 1,
+  "accepted_papers": [
+    {
+      "pmcid": "PMC12326074",
+      "doi": "10.3389/fphar.2025.1611342",
+      "organoid_type": "cardiac",
+      "n_signaling": 9,
+      "grounded": 9,
+      "grounding_rate": 1.0,
+      "methods_chars": 13221
+    },
+    {
+      "pmcid": "PMC12488735",
+      "doi": "10.3389/fcell.2025.1659884",
+      "organoid_type": "cardiac",
+      "n_signaling": 6,
+      "grounded": 4,
+      "grounding_rate": 0.667,
+      "methods_chars": 70589
+    },
+    {
+      "pmcid": "PMC12653891",
+      "doi": "10.3390/jcdd12110434",
+      "organoid_type": "cardiac",
+      "n_signaling": 8,
+      "grounded": 5,
+      "grounding_rate": 0.625,
+      "methods_chars": 61190
+    },
+    {
+      "pmcid": "PMC13113045",
+      "doi": "10.3390/biomedicines14040919",
+      "organoid_type": "cardiac",
+      "n_signaling": 4,
+      "grounded": 2,
+      "grounding_rate": 0.5,
+      "methods_chars": 15112
+    }
+  ],
+  "rejected_papers": [
+    {
+      "pmcid": "PMC12109445",
+      "reason": "no_signaling"
+    }
+  ]
+}
