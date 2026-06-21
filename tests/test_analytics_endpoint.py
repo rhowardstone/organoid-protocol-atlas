@@ -442,3 +442,36 @@ def test_index_includes_quality_endpoint():
     data, _ = ae.handle_index()
     assert "/analytics/quality" in data["endpoints"]
     assert "quality" in data["generate"]
+
+
+# --------------------------------------------------------------------------- #
+# handle_status
+# --------------------------------------------------------------------------- #
+
+def test_status_returns_structure(tmp_path, monkeypatch):
+    """handle_status returns a dict with 'healthy' key."""
+    import system_status as ss
+    monkeypatch.setattr(ss, "PROTOCOLS_JSONL", tmp_path / "protocols.jsonl")
+    monkeypatch.setattr(ss, "OUTPUTS", tmp_path)
+    monkeypatch.setattr(ss, "MANIFEST", tmp_path / "manifest.json")
+    monkeypatch.setattr(ss, "ANALYTICS_ARTIFACTS", [])
+    # No protocols.jsonl → corpus not ok → unhealthy
+    data, status = ae.handle_status()
+    assert "healthy" in data
+    assert status in (200, 503)
+
+
+def test_status_unhealthy_when_corpus_missing(tmp_path, monkeypatch):
+    import system_status as ss
+    monkeypatch.setattr(ss, "PROTOCOLS_JSONL", tmp_path / "protocols.jsonl")
+    monkeypatch.setattr(ss, "OUTPUTS", tmp_path)
+    monkeypatch.setattr(ss, "MANIFEST", tmp_path / "manifest.json")
+    monkeypatch.setattr(ss, "ANALYTICS_ARTIFACTS", [])
+    data, status = ae.handle_status()
+    assert not data["healthy"]
+    assert status == 503
+
+
+def test_index_includes_status_endpoint():
+    data, _ = ae.handle_index()
+    assert "/analytics/status" in data["endpoints"]

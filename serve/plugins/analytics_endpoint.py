@@ -207,6 +207,23 @@ def handle_coverage_type(organoid_type: str) -> tuple[dict, int]:
     }, 200
 
 
+def handle_status() -> tuple[dict, int]:
+    """Live system health check from system_status.py pure functions."""
+    try:
+        import system_status as ss
+    except ImportError:
+        return {"error": "system_status module not available"}, 500
+
+    corpus = ss.check_corpus(ss.PROTOCOLS_JSONL)
+    artifacts = ss.check_analytics_artifacts(ss.ANALYTICS_ARTIFACTS)
+    consensus = ss.check_consensus_files()
+    manifest = ss.check_manifest(ss.MANIFEST)
+    status = ss.compute_status(corpus, artifacts, consensus, manifest)
+
+    http_status = 200 if (status["healthy"] and consensus["n_files"] > 0) else 503
+    return status, http_status
+
+
 def handle_quality(organoid_type: str | None, tier: str | None) -> tuple[dict, int]:
     """
     Return pre-computed protocol quality scores.
@@ -307,6 +324,7 @@ def handle_index() -> tuple[dict, int]:
             "/analytics/reagent?q=TERM": "cross-corpus reagent lookup: usage, concentrations, evidence quotes",
             "/analytics/assay-endpoints": "assay endpoint cluster summary (per type + cross-type)",
             "/analytics/quality": "per-paper quality scores (gold/silver/bronze) + corpus summary",
+            "/analytics/status": "live system health check (corpus + analytics artifact inventory)",
         },
         "generate": {
             "consensus": "python pipeline/compute_consensus.py --all",
@@ -376,6 +394,11 @@ async def route_coverage_type(datasette, request):
     return Response.json(data, status=status)
 
 
+async def route_status(datasette, request):
+    data, status = handle_status()
+    return Response.json(data, status=status)
+
+
 async def route_quality(datasette, request):
     organoid_type = request.args.get("type") or None
     tier = request.args.get("tier") or None
@@ -415,4 +438,5 @@ def register_routes():
         (r"^/analytics/reagent$", route_reagent),
         (r"^/analytics/assay-endpoints$", route_assay_endpoints),
         (r"^/analytics/quality$", route_quality),
+        (r"^/analytics/status$", route_status),
     ]
