@@ -156,9 +156,11 @@ def test_no_fabricated_ids():
                 assert b["id"] in kg["nodes"]
 
 
-def test_multihop_returns_empty():
+def test_linear_chain_two_hop_returns_empty():
     g = _fake_graph()
-    # three qnodes / two qedges -> unsupported -> empty (not an error)
+    # Linear chain a→b→c: the hub (b) is an Entity node with no outgoing edges
+    # in the fake graph, so b_pairs is empty and results are empty.
+    # (The hub pattern IS attempted but finds no paths.)
     req = {
         "message": {
             "query_graph": {
@@ -166,6 +168,108 @@ def test_multihop_returns_empty():
                 "edges": {
                     "e0": {"subject": "a", "object": "b"},
                     "e1": {"subject": "b", "object": "c"},
+                },
+            }
+        }
+    }
+    resp = trapi.answer(req, g)
+    assert resp["message"]["results"] == []
+
+
+def test_two_hop_hub_co_mentions():
+    """Hub pattern: find entities co-mentioned in the same paper as CHEBI:100."""
+    g = _fake_graph()
+    # PMC:1 mentions CHEBI:100, NCBIGene:9, CHEBI:200.
+    # Query: what entities are co-mentioned with CHEBI:100?
+    # hub=PMC:1, leaf_a=CHEBI:100 (pinned), leaf_b=free
+    req = {
+        "message": {
+            "query_graph": {
+                "nodes": {
+                    "pub": {},
+                    "a": {"ids": ["CHEBI:100"]},
+                    "b": {},
+                },
+                "edges": {
+                    "e0": {"subject": "pub", "object": "a"},
+                    "e1": {"subject": "pub", "object": "b"},
+                },
+            }
+        }
+    }
+    resp = trapi.answer(req, g)
+    results = resp["message"]["results"]
+    # Should find NCBIGene:9 and CHEBI:200 (not CHEBI:100 itself — no self-mention)
+    b_ids = {r["node_bindings"]["b"][0]["id"] for r in results}
+    assert "NCBIGene:9" in b_ids
+    assert "CHEBI:200" in b_ids
+    assert "CHEBI:100" not in b_ids
+
+
+def test_two_hop_hub_no_fabrication():
+    """Hub results must reference only real graph nodes and edges."""
+    g = _fake_graph()
+    req = {
+        "message": {
+            "query_graph": {
+                "nodes": {"pub": {}, "a": {"ids": ["CHEBI:100"]}, "b": {}},
+                "edges": {
+                    "e0": {"subject": "pub", "object": "a"},
+                    "e1": {"subject": "pub", "object": "b"},
+                },
+            }
+        }
+    }
+    resp = trapi.answer(req, g)
+    kg = resp["message"]["knowledge_graph"]
+    for nid in kg["nodes"]:
+        assert nid in g.nodes
+    for eid, edge in kg["edges"].items():
+        assert eid in g.edges
+        assert edge["subject"] in g.nodes
+        assert edge["object"] in g.nodes
+    for r in resp["message"]["results"]:
+        for binds in r["node_bindings"].values():
+            for b in binds:
+                assert b["id"] in kg["nodes"]
+
+
+def test_two_hop_hub_both_leaves_pinned():
+    """Both leaves pinned: are CHEBI:100 and CHEBI:200 co-mentioned?"""
+    g = _fake_graph()
+    req = {
+        "message": {
+            "query_graph": {
+                "nodes": {
+                    "pub": {},
+                    "a": {"ids": ["CHEBI:100"]},
+                    "b": {"ids": ["CHEBI:200"]},
+                },
+                "edges": {
+                    "e0": {"subject": "pub", "object": "a"},
+                    "e1": {"subject": "pub", "object": "b"},
+                },
+            }
+        }
+    }
+    resp = trapi.answer(req, g)
+    results = resp["message"]["results"]
+    assert len(results) >= 1
+    # Hub must be PMC:1 (the only publication in the fake graph)
+    assert all(r["node_bindings"]["pub"][0]["id"] == "PMC:1" for r in results)
+
+
+def test_two_hop_hub_unsupported_pattern_returns_empty():
+    """4-node queries (unsupported) still return empty — not an error."""
+    g = _fake_graph()
+    req = {
+        "message": {
+            "query_graph": {
+                "nodes": {"a": {}, "b": {}, "c": {}, "d": {}},
+                "edges": {
+                    "e0": {"subject": "a", "object": "b"},
+                    "e1": {"subject": "b", "object": "c"},
+                    "e2": {"subject": "c", "object": "d"},
                 },
             }
         }
