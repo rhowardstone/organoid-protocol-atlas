@@ -535,3 +535,40 @@ def test_summary_includes_analytics_ready(tmp_path, monkeypatch):
 def test_index_includes_summary_endpoint():
     data, _ = ae.handle_index()
     assert "/analytics/summary" in data["endpoints"]
+
+
+# --------------------------------------------------------------------------- #
+# handle_mior
+# --------------------------------------------------------------------------- #
+
+def test_mior_404_when_missing(tmp_path, monkeypatch):
+    monkeypatch.setattr(ae, "ANALYSIS_DIR", tmp_path)
+    data, status = ae.handle_mior()
+    assert status == 404
+    assert "hint" in data
+
+
+def test_mior_returns_data_when_present(tmp_path, monkeypatch):
+    monkeypatch.setattr(ae, "ANALYSIS_DIR", tmp_path)
+    payload = {
+        "n_total": 582,
+        "avg_mior_completeness": 0.73,
+        "n_full": 150, "n_partial": 300, "n_sparse": 132,
+    }
+    (tmp_path / "mior_completeness.json").write_text(json.dumps(payload))
+    data, status = ae.handle_mior()
+    assert status == 200
+    assert data["n_total"] == 582
+    assert data["avg_mior_completeness"] == pytest.approx(0.73)
+
+
+def test_mior_500_on_bad_json(tmp_path, monkeypatch):
+    monkeypatch.setattr(ae, "ANALYSIS_DIR", tmp_path)
+    (tmp_path / "mior_completeness.json").write_text("not json{{{")
+    data, status = ae.handle_mior()
+    assert status == 500
+
+
+def test_index_includes_mior_endpoint():
+    data, _ = ae.handle_index()
+    assert "/analytics/mior" in data["endpoints"]

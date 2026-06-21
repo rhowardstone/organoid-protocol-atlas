@@ -73,6 +73,11 @@ ANALYTICS_ARTIFACTS = [
         OUTPUTS / "protocol_quality_scores.json",
         "python pipeline/score_protocol_quality.py",
     ),
+    AnalyticsArtifact(
+        "mior_completeness",
+        OUTPUTS / "mior_completeness.json",
+        "python pipeline/score_mior.py",
+    ),
 ]
 
 
