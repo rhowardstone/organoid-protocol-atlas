@@ -42,6 +42,7 @@ Routes (all return JSON; read-only, no writes):
   GET /analytics/concentration-unit-distribution -- unit inconsistency report: canonicals using >1 unit system; top 30 by n_units; ?q= for one canonical with min/median/max per unit; live from reagents.jsonl
   GET /analytics/protocol-size-distribution  -- full histogram of n_signaling_factors and n_supplements per paper; global + per-type mean/median/std; ?type= for one type; live from protocols.jsonl
   GET /analytics/evidence-quote-coverage     -- per-type and per-kind rate of verbatim evidence quotes in reagent records; ?type= for one type with top canonicals; ?kind=signaling|supplement filter; live from reagents.jsonl
+  GET /analytics/concentration-value-rate   -- canonicals ranked by fraction of records with a numeric dose value; highest_reporters + lowest_reporters lists; ?q= for per-type breakdown; ?min_n= threshold; ?kind= filter; live from reagents.jsonl
   GET /analytics                                -- index of available analytics
 
 All endpoints degrade gracefully — if the pre-computed file doesn't exist they return
@@ -3549,6 +3550,117 @@ def handle_protocol_size_distribution(
     }, 200
 
 
+def handle_concentration_value_rate(query=None, min_n=5, kind=None):
+    """Route 48: canonicals ranked by fraction of records that carry a numeric dose value.
+
+    Different from /analytics/concentration-stats (which ranks by absolute n_with_value).
+    This surfaces 'commonly used but rarely dosed' reagents (high n_total, low rate)
+    and 'well-reported' ones (high rate).
+
+    Without ?q=: returns highest_reporters and lowest_reporters lists (top 30 each)
+    for canonicals with >= min_n records.
+    With ?q=CANONICAL: per-type value rate breakdown for that canonical.
+    Optional ?kind=signaling|supplement filter.
+    Optional ?min_n= threshold (default 5).
+    """
+    reagents = [
+        json.loads(line)
+        for line in REAGENTS_JSONL.read_text().splitlines()
+        if line.strip()
+    ]
+
+    valid_kinds = {"signaling", "supplement"}
+    if kind and kind not in valid_kinds:
+        return {"error": f"?kind= must be one of {sorted(valid_kinds)}"}, 400
+    if kind:
+        reagents = [r for r in reagents if r.get("kind") == kind]
+
+    def _has_value(r):
+        v = r.get("value")
+        if v in (None, "", "None"):
+            return False
+        try:
+            float(str(v))
+            return True
+        except (TypeError, ValueError):
+            return False
+
+    if query:
+        # Per-type breakdown for one canonical
+        subset = [r for r in reagents if (r.get("canonical") or "").lower() == query.lower()]
+        if not subset:
+            return {"error": f"No reagents found for canonical '{query}'"}, 404
+
+        type_map: dict[str, list[int]] = {}
+        for r in subset:
+            typ = r.get("organoid_type", "unknown")
+            type_map.setdefault(typ, [0, 0])
+            type_map[typ][1] += 1
+            if _has_value(r):
+                type_map[typ][0] += 1
+
+        per_type = []
+        for typ in sorted(type_map):
+            n_v, n_t = type_map[typ]
+            per_type.append({
+                "organoid_type": typ,
+                "n_with_value": n_v,
+                "n_total": n_t,
+                "value_rate": round(n_v / n_t, 4) if n_t else None,
+            })
+        per_type.sort(key=lambda x: (-(x["value_rate"] or 0), x["organoid_type"]))
+
+        n_v_total = sum(e["n_with_value"] for e in per_type)
+        n_t_total = sum(e["n_total"] for e in per_type)
+        return {
+            "canonical": query,
+            "kind_filter": kind,
+            "n_with_value": n_v_total,
+            "n_total": n_t_total,
+            "overall_value_rate": round(n_v_total / n_t_total, 4) if n_t_total else 0.0,
+            "per_type": per_type,
+        }, 200
+
+    # Global ranking
+    canon_map: dict[str, list[int]] = {}
+    for r in reagents:
+        c = r.get("canonical", "")
+        if not c:
+            continue
+        canon_map.setdefault(c, [0, 0])
+        canon_map[c][1] += 1
+        if _has_value(r):
+            canon_map[c][0] += 1
+
+    ranked = []
+    for c, (n_v, n_t) in canon_map.items():
+        if n_t < min_n:
+            continue
+        ranked.append({
+            "canonical": c,
+            "n_with_value": n_v,
+            "n_total": n_t,
+            "value_rate": round(n_v / n_t, 4),
+        })
+
+    ranked.sort(key=lambda x: (-x["value_rate"], -x["n_total"]))
+    highest = ranked[:30]
+    ranked.sort(key=lambda x: (x["value_rate"], -x["n_total"]))
+    lowest = ranked[:30]
+
+    n_all_v = sum(e["n_with_value"] for e in ranked)
+    n_all_t = sum(e["n_total"] for e in ranked)
+
+    return {
+        "kind_filter": kind,
+        "min_n": min_n,
+        "n_canonicals_evaluated": len(ranked),
+        "overall_value_rate": round(n_all_v / n_all_t, 4) if n_all_t else 0.0,
+        "highest_reporters": highest,
+        "lowest_reporters": lowest,
+    }, 200
+
+
 def handle_evidence_quote_coverage(organoid_type=None, kind=None):
     """Route 47: per-type and per-kind rate of verbatim evidence quotes in reagent records.
 
@@ -3729,6 +3841,7 @@ def handle_index() -> tuple[dict, int]:
             "/analytics/concentration-unit-distribution": "unit inconsistency report: canonicals using multiple concentration unit systems; top 30 by n_units; ?q=EGF for full unit breakdown with min/median/max per unit; ?min_n= records threshold (default 3)",
             "/analytics/protocol-size-distribution": "full distribution of protocol sizes: histogram of n_signaling_factors and n_supplements per paper (global + per-type mean/median/std); ?type=kidney for one type with full histograms",
             "/analytics/evidence-quote-coverage": "per-type and per-kind rate of verbatim evidence quotes in reagent records; overall_coverage_rate + by_kind breakdown; per_type sorted by coverage_rate; ?type=kidney for top canonicals by coverage; ?kind=signaling|supplement filter",
+            "/analytics/concentration-value-rate": "canonicals ranked by fraction of records with a numeric dose value; highest_reporters (well-dosed) + lowest_reporters (commonly used but rarely dosed); ?q=Wnt3a for per-type breakdown; ?min_n= threshold (default 5); ?kind= filter",
             "/analytics/assay-endpoints": "assay endpoint cluster summary (per type + cross-type)",
             "/analytics/quality": "per-paper quality scores (gold/silver/bronze) + corpus summary",
             "/analytics/mior": "MIOR completeness report (Minimum Information About an Organoid Research)",
@@ -3997,6 +4110,17 @@ async def route_evidence_quote_coverage(datasette, request):
     return Response.json(data, status=status)
 
 
+async def route_concentration_value_rate(datasette, request):
+    query = request.args.get("q") or None
+    kind = request.args.get("kind") or None
+    try:
+        min_n = int(request.args.get("min_n") or 5)
+    except (TypeError, ValueError):
+        min_n = 5
+    data, status = handle_concentration_value_rate(query, min_n, kind)
+    return Response.json(data, status=status)
+
+
 async def route_concentration_unit_distribution(datasette, request):
     query = request.args.get("q") or None
     try:
@@ -4122,6 +4246,7 @@ def register_routes():
         (r"^/analytics/concentration-unit-distribution$", route_concentration_unit_distribution),
         (r"^/analytics/protocol-size-distribution$", route_protocol_size_distribution),
         (r"^/analytics/evidence-quote-coverage$", route_evidence_quote_coverage),
+        (r"^/analytics/concentration-value-rate$", route_concentration_value_rate),
         (r"^/analytics/journal-breakdown$", route_journal_breakdown),
         (r"^/analytics/concentration-by-type$", route_concentration_by_type),
         (r"^/analytics/kgx-summary$", route_kgx_summary),
