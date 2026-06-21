@@ -9,8 +9,8 @@ Europe PMC full text).
 
 What it does
 ------------
-  - Runs one tuned query per organoid type (cardiac, intestinal, cerebral,
-    retinal, hepatic, kidney, lung, gastric, pancreatic) so the organoid_type
+  - Runs one tuned query per organoid type across a BROAD set of well-established
+    human/mammalian organoid systems (see TYPE_QUERIES) so the organoid_type
     column can be assigned from the query that found a paper.
   - Restricts to OPEN_ACCESS:Y AND HAS_FT:Y AND IN_EPMC:Y and keeps only rows
     that carry a PMCID — those are the ones Tier 0 can pull JATS for.
@@ -18,6 +18,11 @@ What it does
   - DEDUPES against the existing corpus (data/corpus/corpus.tsv) AND the
     already-curated candidate pool (organoid_corpus_candidates_180.csv), by
     BOTH pmcid and doi. Only genuinely new candidates are emitted.
+  - DEDUPES ACROSS the (now overlapping) type queries within a single run: a
+    paper that matches more than one type is emitted ONCE, labelled with the
+    FIRST type whose query surfaced it. TYPE_QUERIES is an ordered mapping with
+    more-specific / higher-value types listed before broader synonym queries, so
+    "first match wins" == "most-specific type wins". See assign_type().
   - Writes data/corpus/incoming/organoid_corpus_candidates_generated.csv with
     the exact 18-column candidate header.
 
@@ -61,29 +66,98 @@ HEADER = [
 # Common filter applied to every type query: open access, full text, in Europe PMC.
 _OA = '(OPEN_ACCESS:Y AND HAS_FT:Y AND IN_EPMC:Y)'
 
-# One tuned query per organoid type. Each restricts to protocol/differentiation/
-# culture/generation language so hits are method-bearing, and to the organ-specific
-# organoid vocabulary so organoid_type can be assigned from the query.
+# The protocol/method clause shared by every type query. It restricts hits to
+# method-bearing papers (protocols, differentiation, culture, generation, etc.)
+# rather than generic mentions, keeping quality high as we broaden coverage.
+_METHOD = ('(protocol OR "differentiation protocol" OR "step-by-step" '
+           'OR differentiation OR culture OR generation OR establishment OR derivation)')
+
+
+def _q(*terms: str) -> str:
+    """Build a type query: (organoid synonyms) AND (method clause).
+
+    `terms` are the organoid-specific synonyms; each is OR-ed together. They
+    should be specific organoid terminology (e.g. '"cardiac organoid"') so hits
+    are real organoid-protocol papers, not generic cell culture.
+    """
+    syn = " OR ".join(terms)
+    return f'(({syn}) AND {_METHOD})'
+
+
+# One tuned query per organoid type, across a broad set of well-established
+# human/mammalian organoid systems. ORDER MATTERS: more-specific / higher-value
+# types come first, so when a paper matches several queries the first (most
+# specific) type wins — see assign_type() and the module docstring.
+#
+# Each value restricts to the organ-specific organoid vocabulary so organoid_type
+# can be assigned from the query that found the paper.
 TYPE_QUERIES = {
-    "cardiac": '(("cardiac organoid" OR "heart organoid" OR "cardiac microtissue" OR cardioid) '
-               'AND (protocol OR "differentiation protocol" OR differentiation OR culture OR generation))',
-    "intestinal": '(("intestinal organoid" OR "gut organoid" OR "intestinal organoids" OR enteroid OR colonoid) '
-                  'AND (protocol OR "differentiation protocol" OR differentiation OR culture OR generation))',
-    "cerebral": '(("cerebral organoid" OR "brain organoid" OR "neural organoid" OR "cortical organoid") '
-                'AND (protocol OR "differentiation protocol" OR differentiation OR culture OR generation))',
-    "retinal": '(("retinal organoid" OR "optic cup organoid" OR "optic vesicle organoid" OR "retinal organoids") '
-               'AND (protocol OR "differentiation protocol" OR differentiation OR culture OR generation))',
-    "hepatic": '(("liver organoid" OR "hepatic organoid" OR "hepatobiliary organoid" OR cholangiocyte organoid) '
-               'AND (protocol OR "differentiation protocol" OR differentiation OR culture OR generation))',
-    "kidney": '(("kidney organoid" OR "renal organoid" OR nephron organoid OR "kidney organoids") '
-              'AND (protocol OR "differentiation protocol" OR differentiation OR culture OR generation))',
-    "lung": '(("lung organoid" OR "airway organoid" OR "alveolar organoid" OR "lung organoids" OR bronchial organoid) '
-            'AND (protocol OR "differentiation protocol" OR differentiation OR culture OR generation))',
-    "gastric": '(("gastric organoid" OR "stomach organoid" OR "gastric organoids") '
-               'AND (protocol OR "differentiation protocol" OR differentiation OR culture OR generation))',
-    "pancreatic": '(("pancreatic organoid" OR "pancreas organoid" OR "islet organoid" OR "pancreatic organoids") '
-                  'AND (protocol OR "differentiation protocol" OR differentiation OR culture OR generation))',
+    # --- original high-value types (now with broadened synonyms) ---
+    "cardiac": _q('"cardiac organoid"', '"heart organoid"', '"cardiac organoids"',
+                  '"cardiac microtissue"', 'cardioid'),
+    "intestinal": _q('"intestinal organoid"', '"gut organoid"', '"intestinal organoids"',
+                     'enteroid', 'colonoid', '"small intestinal organoid"'),
+    "cerebral": _q('"cerebral organoid"', '"brain organoid"', '"neural organoid"',
+                   '"cortical organoid"', '"midbrain organoid"', '"cerebellar organoid"',
+                   '"forebrain organoid"', '"neural organoids"'),
+    "retinal": _q('"retinal organoid"', '"optic cup organoid"', '"optic vesicle organoid"',
+                  '"retinal organoids"', '"eye organoid"'),
+    # cholangiocyte (bile-duct) is more specific than hepatic — list it FIRST so a
+    # paper matching both is labelled cholangiocyte (assign_type takes the first match).
+    "cholangiocyte": _q('"cholangiocyte organoid"', '"bile duct organoid"',
+                        '"biliary organoid"', '"intrahepatic cholangiocyte organoid"'),
+    "hepatic": _q('"liver organoid"', '"hepatic organoid"', '"hepatobiliary organoid"',
+                  '"liver organoids"', '"hepatocyte organoid"'),
+    "kidney": _q('"kidney organoid"', '"renal organoid"', '"nephron organoid"',
+                 '"kidney organoids"', '"renal organoids"'),
+    "lung": _q('"lung organoid"', '"airway organoid"', '"alveolar organoid"',
+               '"lung organoids"', '"bronchial organoid"', '"lung bud organoid"'),
+    "gastric": _q('"gastric organoid"', '"stomach organoid"', '"gastric organoids"',
+                  '"antral organoid"', '"fundic organoid"'),
+    "pancreatic": _q('"pancreatic organoid"', '"pancreas organoid"', '"islet organoid"',
+                     '"pancreatic organoids"'),
+
+    # --- newly added organoid systems ---
+    "tumor": _q('tumoroid', '"tumor organoid"', '"tumour organoid"',
+                '"patient-derived organoid"', '"patient derived organoid"',
+                '"cancer organoid"'),
+    "vascular": _q('"vascular organoid"', '"blood vessel organoid"',
+                   '"blood-vessel organoid"', '"vascularized organoid"'),
+    "blood-brain-barrier": _q('"blood-brain barrier organoid"', '"blood brain barrier organoid"',
+                              '"BBB organoid"', '"neurovascular organoid"'),
+    "thyroid": _q('"thyroid organoid"', '"thyroid follicular organoid"'),
+    "salivary-gland": _q('"salivary gland organoid"', '"salivary organoid"',
+                         '"submandibular gland organoid"'),
+    "prostate": _q('"prostate organoid"', '"prostatic organoid"'),
+    "endometrial": _q('"endometrial organoid"', '"uterine organoid"',
+                      '"endometrium organoid"'),
+    "mammary": _q('"mammary organoid"', '"breast organoid"', '"mammary gland organoid"'),
+    "inner-ear": _q('"inner ear organoid"', '"otic organoid"', '"inner-ear organoid"',
+                    '"cochlear organoid"'),
+    "esophageal": _q('"esophageal organoid"', '"oesophageal organoid"',
+                     '"esophagus organoid"'),
+    "bladder": _q('"bladder organoid"', '"urothelial organoid"',
+                  '"urinary bladder organoid"'),
+    "skin": _q('"skin organoid"', '"epidermal organoid"', '"hair follicle organoid"'),
+    "bone": _q('"bone organoid"', '"skeletal organoid"', '"osteogenic organoid"',
+               '"bone marrow organoid"'),
+    "neuromuscular": _q('"neuromuscular organoid"', '"muscle organoid"',
+                        '"skeletal muscle organoid"', '"myogenic organoid"'),
+    "fallopian-tube": _q('"fallopian tube organoid"', '"oviduct organoid"',
+                         '"fallopian-tube organoid"'),
 }
+
+
+def assign_type(matched_types: list[str]) -> str | None:
+    """Given the types whose queries matched a paper (in TYPE_QUERIES order),
+    return the single type to label it with: the FIRST (most-specific) one.
+
+    Returns None if the list is empty. This is the across-query dedup rule made
+    explicit and unit-testable; the driver enforces it implicitly by iterating
+    TYPE_QUERIES in order and skipping papers already emitted under an earlier
+    type.
+    """
+    return matched_types[0] if matched_types else None
 
 
 # --------------------------------------------------------------------------- #
