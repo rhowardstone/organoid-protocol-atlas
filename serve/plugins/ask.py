@@ -79,15 +79,44 @@ kept so agents can trace claims back to the source paper and DOI.
 The larger local pipeline tracks a verified corpus and additional candidate papers,
 but those are not all public on this hosted deployment. Schema version: 0.4.
 
-## Table endpoints (Datasette JSON API)
+## Quick start for agents (3 calls to orient yourself)
+
+1. Corpus overview — what's here, how many papers and reagents:
+   GET /analytics/summary
+
+2. Reporting gaps — which protocol fields journals fail to require:
+   GET /analytics/reporting-gaps
+
+3. Dose disagreement ranking — reagents with the highest within-corpus concentration CV:
+   GET /analytics/concentration-deviation
+
+Then drill into one organoid type:
+   GET /analytics/consensus/kidney     (consensus reagents + median concentrations)
+   GET /analytics/coverage/kidney      (completeness, grounding rate, MIOR score)
+
+## Full corpus downloads (no pagination limit)
+
+These static files contain every record; they are served as-is and are not row-capped:
+
+- /exports/public/protocols.jsonl   — all {_N_PAPERS} papers, one JSON object per line
+- /exports/public/reagents.jsonl    — all {_N_REAGENTS} reagent records, one JSON object per line
+- /exports/public/manifest.json     — counts, schema version, generated timestamp
+
+These are the fastest way to do full-corpus analysis. Do not scrape the Datasette
+table pages row-by-row — use these files or the /analytics/* endpoints instead.
+
+## Table endpoints (Datasette JSON/CSV API)
+
+For ad-hoc filtered queries and exploration:
 
 - /atlas/protocols.json?_shape=array&_size=max
 - /atlas/reagents.json?_shape=array&_size=max
 - /atlas/reagents.json?_shape=array&_size=max&kind__exact=signaling
 - /atlas/reagents.json?_shape=array&kind__exact=signaling&organoid_type__exact=kidney
 
-Datasette table pages also support faceting, filtering, sorting, and JSON
-exports. Prefer the JSON endpoints for programmatic use.
+For full-table streaming with no row cap, append ?_stream=1 to the CSV URL:
+- /atlas/protocols.csv?_stream=1    — all protocol rows streamed (no limit)
+- /atlas/reagents.csv?_stream=1     — all reagent rows streamed (no limit)
 
 ## Analytics REST endpoints (pre-computed, read-only)
 
