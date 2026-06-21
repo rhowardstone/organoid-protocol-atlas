@@ -339,3 +339,37 @@ def test_reagent_truncates_long_query(tmp_path, monkeypatch):
 def test_index_includes_reagent_endpoint():
     data, _ = ae.handle_index()
     assert "/analytics/reagent?q=TERM" in data["endpoints"]
+
+
+# --------------------------------------------------------------------------- #
+# handle_assay_endpoints
+# --------------------------------------------------------------------------- #
+
+def test_assay_endpoints_returns_data(tmp_path, monkeypatch):
+    monkeypatch.setattr(ae, "ANALYSIS_DIR", tmp_path)
+    payload = {
+        "n_total_papers": 582,
+        "n_with_assay_endpoints": 342,
+        "coverage_fraction": 0.587,
+        "cross_type_cluster_usage": {},
+        "by_organoid_type": {},
+        "raw_top_terms": [],
+    }
+    (tmp_path / "assay_endpoint_summary.json").write_text(json.dumps(payload))
+    data, status = ae.handle_assay_endpoints()
+    assert status == 200
+    assert data["n_total_papers"] == 582
+    assert data["coverage_fraction"] == pytest.approx(0.587)
+
+
+def test_assay_endpoints_404_when_missing(tmp_path, monkeypatch):
+    monkeypatch.setattr(ae, "ANALYSIS_DIR", tmp_path)
+    data, status = ae.handle_assay_endpoints()
+    assert status == 404
+    assert "hint" in data
+
+
+def test_index_includes_assay_endpoint():
+    data, _ = ae.handle_index()
+    assert "/analytics/assay-endpoints" in data["endpoints"]
+    assert "assay_endpoints" in data["generate"]
