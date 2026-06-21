@@ -46,6 +46,7 @@ Routes (all return JSON; read-only, no writes):
   GET /analytics/kind-ambiguity            -- canonicals that appear in both signaling and supplement kinds; sorted by ambiguity (minority_fraction); ?q= for per-type kind breakdown; ?min_n= threshold; live from reagents.jsonl
   GET /analytics/canonical-type-adoption   -- reagent diffusion: n_organoid_types using each canonical by year (first_year, n_types_current, year_peak); ?q= for per-year type list; ?min_types= filter; live from both JSONLs
   GET /analytics/unit-normalization-report  -- shows how raw unit strings cluster into canonical_unit groups (ng/mL←[ng/mL,ng/ml,ng ml-1], uM←[μM,µM,µm,...]); sorted by n_raw_strings; ?q= for one canonical_unit; live from reagents.jsonl
+  GET /analytics/source-cell-reagent-profile -- characteristic reagents by source_cell_type (iPSC/adult_stem_cell/primary_tissue/ESC); top 20 canonicals per source; pairwise Jaccard; ?source= for one source type; live from both JSONLs
   GET /analytics                                -- index of available analytics
 
 All endpoints degrade gracefully — if the pre-computed file doesn't exist they return
@@ -3553,6 +3554,141 @@ def handle_protocol_size_distribution(
     }, 200
 
 
+def handle_source_cell_reagent_profile(source=None, min_papers=3):
+    """Route 52: characteristic canonical reagents by source_cell_type.
+
+    Joins protocols.jsonl (source_cell_type) with reagents.jsonl (canonical)
+    to produce per-source_cell_type reagent profiles. iPSC protocols use very
+    different signaling than adult_stem_cell protocols (CHIR99021/FGF2/BMP4
+    vs EGF/R-spondin1/Noggin).
+
+    Without ?source=: global summary for all source types — top 20 canonicals,
+    n_papers per source, pairwise Jaccard similarity between source types.
+    With ?source=iPSC: detailed profile for one source type with top 30
+    canonicals, uniqueness scores vs other sources.
+    """
+    protocols = [
+        json.loads(line)
+        for line in PROTOCOLS_JSONL.read_text().splitlines()
+        if line.strip()
+    ]
+    reagents = [
+        json.loads(line)
+        for line in REAGENTS_JSONL.read_text().splitlines()
+        if line.strip()
+    ]
+
+    # Build doi→source_cell_type index
+    doi_source: dict[str, str] = {}
+    for p in protocols:
+        doi = p.get("doi", "")
+        sct = p.get("source_cell_type", "")
+        if doi and sct:
+            doi_source[doi] = sct
+
+    from collections import defaultdict
+
+    # For each source type: set of dois + canonical counter
+    source_dois: dict[str, set] = {}
+    source_canon: dict[str, defaultdict] = {}
+    for r in reagents:
+        doi = r.get("doi", "")
+        c = r.get("canonical", "")
+        sct = doi_source.get(doi, "")
+        if not sct or not c:
+            continue
+        source_dois.setdefault(sct, set()).add(doi)
+        source_canon.setdefault(sct, defaultdict(set))
+        source_canon[sct][c].add(doi)
+
+    valid_sources = sorted(source_dois.keys())
+
+    if source:
+        if source not in source_dois:
+            return {
+                "error": f"No protocols found for source_cell_type '{source}'",
+                "known_sources": valid_sources,
+            }, 404
+
+        n_papers = len(source_dois[source])
+        canon_counts = {
+            c: len(dois) for c, dois in source_canon[source].items()
+        }
+
+        # Compute uniqueness: fraction of this source's canon dois NOT in other sources
+        other_source_dois = set()
+        for sct, dois in source_dois.items():
+            if sct != source:
+                other_source_dois.update(dois)
+
+        # Which canonicals appear in other source types?
+        other_source_canons: set[str] = set()
+        for sct, cmap in source_canon.items():
+            if sct != source:
+                other_source_canons.update(
+                    c for c, dois in cmap.items() if len(dois) >= min_papers
+                )
+
+        top_canonicals = []
+        for c, n_p in sorted(canon_counts.items(), key=lambda x: -x[1]):
+            if n_p < min_papers:
+                continue
+            top_canonicals.append({
+                "canonical": c,
+                "n_papers": n_p,
+                "exclusive_to_source": c not in other_source_canons,
+            })
+
+        top_canonicals.sort(key=lambda x: -x["n_papers"])
+
+        return {
+            "source_cell_type": source,
+            "n_papers": n_papers,
+            "min_papers": min_papers,
+            "top_canonicals": top_canonicals[:30],
+        }, 200
+
+    # Global summary
+    per_source = []
+    for sct in valid_sources:
+        n_papers = len(source_dois[sct])
+        top_20 = sorted(
+            [(c, len(dois)) for c, dois in source_canon[sct].items()],
+            key=lambda x: -x[1]
+        )[:20]
+        per_source.append({
+            "source_cell_type": sct,
+            "n_papers": n_papers,
+            "top_canonicals": [{"canonical": c, "n_papers": n} for c, n in top_20],
+        })
+
+    # Pairwise Jaccard on canonical sets (canonicals with >= min_papers)
+    source_sets = {
+        sct: {c for c, dois in source_canon[sct].items() if len(dois) >= min_papers}
+        for sct in valid_sources
+    }
+    pairwise = []
+    for i, a in enumerate(valid_sources):
+        for b in valid_sources[i + 1:]:
+            sa, sb = source_sets[a], source_sets[b]
+            union = sa | sb
+            jaccard = round(len(sa & sb) / len(union), 4) if union else 0.0
+            pairwise.append({
+                "source_a": a,
+                "source_b": b,
+                "jaccard": jaccard,
+                "shared_n": len(sa & sb),
+            })
+
+    pairwise.sort(key=lambda x: -x["jaccard"])
+
+    return {
+        "min_papers": min_papers,
+        "per_source": per_source,
+        "pairwise_jaccard": pairwise,
+    }, 200
+
+
 def handle_unit_normalization_report(query=None):
     """Route 51: how raw unit strings cluster into canonical_unit groups.
 
@@ -4155,6 +4291,7 @@ def handle_index() -> tuple[dict, int]:
             "/analytics/kind-ambiguity": "canonicals that appear in both signaling and supplement kinds; sorted by minority_fraction (ambiguity score); highlights normalization targets; ?q=Y-27632 for per-type kind breakdown; ?min_n= threshold (default 3)",
             "/analytics/canonical-type-adoption": "reagent diffusion: for each canonical, tracks n distinct organoid types using it per year (first_year, n_types_current, year_peak = most new-type adoptions); ?q=EGF for per-year type list; ?min_types= threshold (default 5)",
             "/analytics/unit-normalization-report": "audit of raw unit string → canonical_unit normalization clusters: e.g. 'uM' ← [μM, µM, µm, μmol/L, ...]; sorted by n_raw_strings; ?q=uM for detailed breakdown + top canonicals using that unit",
+            "/analytics/source-cell-reagent-profile": "characteristic canonical reagents by source_cell_type (iPSC / adult_stem_cell / primary_tissue / ESC); top 20 per source + pairwise Jaccard similarity; ?source=iPSC for top 30 with exclusivity scores; ?min_papers= threshold (default 3)",
             "/analytics/assay-endpoints": "assay endpoint cluster summary (per type + cross-type)",
             "/analytics/quality": "per-paper quality scores (gold/silver/bronze) + corpus summary",
             "/analytics/mior": "MIOR completeness report (Minimum Information About an Organoid Research)",
@@ -4460,6 +4597,16 @@ async def route_unit_normalization_report(datasette, request):
     return Response.json(data, status=status)
 
 
+async def route_source_cell_reagent_profile(datasette, request):
+    source = request.args.get("source") or None
+    try:
+        min_papers = int(request.args.get("min_papers") or 3)
+    except (TypeError, ValueError):
+        min_papers = 3
+    data, status = handle_source_cell_reagent_profile(source, min_papers)
+    return Response.json(data, status=status)
+
+
 async def route_concentration_unit_distribution(datasette, request):
     query = request.args.get("q") or None
     try:
@@ -4589,6 +4736,7 @@ def register_routes():
         (r"^/analytics/kind-ambiguity$", route_kind_ambiguity),
         (r"^/analytics/canonical-type-adoption$", route_canonical_type_adoption),
         (r"^/analytics/unit-normalization-report$", route_unit_normalization_report),
+        (r"^/analytics/source-cell-reagent-profile$", route_source_cell_reagent_profile),
         (r"^/analytics/journal-breakdown$", route_journal_breakdown),
         (r"^/analytics/concentration-by-type$", route_concentration_by_type),
         (r"^/analytics/kgx-summary$", route_kgx_summary),

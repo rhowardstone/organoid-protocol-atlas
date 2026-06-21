@@ -37,7 +37,7 @@ paper (PMC)
   └─ S2       Biolink-validated KGX export (nodes.tsv + edges.tsv + kgx_manifest.json)
   └─ entity normalization (bFGF≡FGF2, RSPO1≡R-spondin1, …)
   └─ analytics pipeline → coverage · quality · consensus · failure modes · lineage · assay endpoints
-  └─ REST API (Datasette plugin, 51 routes)
+  └─ REST API (Datasette plugin, 52 routes)
 ```
 
 ## Analytics API
@@ -89,6 +89,7 @@ GET /analytics/concentration-value-rate  canonicals ranked by fraction of record
 GET /analytics/kind-ambiguity           canonicals appearing in both signaling and supplement kinds; sorted by minority_fraction; ?q=Y-27632 for per-type kind breakdown; ?min_n= threshold (default 3)
 GET /analytics/canonical-type-adoption  reagent diffusion: n distinct organoid types using each canonical by year; first_year, n_types_current, year_peak; ?q=EGF for per-year type list + cumulative; ?min_types= threshold (default 5)
 GET /analytics/unit-normalization-report  audit of raw unit → canonical_unit clusters; sorted by n_raw_strings (most ambiguous first); ?q=uM for detailed raw strings + top canonicals using that unit
+GET /analytics/source-cell-reagent-profile  characteristic reagents by source_cell_type; top 20 per source + pairwise Jaccard; ?source=iPSC for top 30 + exclusive_to_source flags; ?min_papers= threshold (default 3)
 GET /analytics/assay-endpoints          assay endpoint cluster summary (12 clusters, per-type + cross-type)
 GET /analytics/failure-modes            failure mode cluster summary across the corpus
 GET /analytics/lineage                  DOI→DOI protocol lineage graph (ProtocolModification data)
@@ -181,7 +182,7 @@ serve/
   run.sh                     serve the atlas (Datasette + plugins)
   metadata.yaml              facets + canned queries
   plugins/
-    analytics_endpoint.py    51-route analytics REST API (pure handlers + thin Datasette wrappers)
+    analytics_endpoint.py    52-route analytics REST API (pure handlers + thin Datasette wrappers)
     ask.py                   grounded Q&A (RAG over FTS → local model)
   templates/                 landing, recipe cards, /heatmap, /consensus
   static/atlas.css|js        theme + dark-mode toggle
@@ -203,7 +204,7 @@ outputs/
   analysis/                  pre-computed analytics (coverage, quality, consensus, etc.)
   kgx/                       KGX graph export
   comparison/                pre-computed protocol diffs
-tests/                       offline test suite (1157 tests, no network, no GPU)
+tests/                       offline test suite (1170 tests, no network, no GPU)
 docs/                        SUPERVISOR_CHECKLIST.md, PLAN, RESEARCH_BRIEF
 ```
 
@@ -232,7 +233,7 @@ python pipeline/aggregate_failure_modes.py
 python pipeline/build_lineage.py
 python pipeline/aggregate_assay_endpoints.py
 
-make test                               # run offline test suite (1157 tests)
+make test                               # run offline test suite (1170 tests)
 make validate-batch                     # pre-PR check: tests + prediction schema + evidence
 # or: pytest -q
 ```

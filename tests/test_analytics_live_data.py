@@ -806,3 +806,34 @@ def test_live_unr_uM_query():
     # μM and µM are always present
     raw_names = {e["raw_unit"] for e in data["raw_strings"]}
     assert "μM" in raw_names or "µM" in raw_names
+
+
+@require_protocols
+@require_reagents
+def test_live_scr_global_returns_200():
+    data, status = ae.handle_source_cell_reagent_profile(None, 3)
+    assert status == 200
+    sources = {e["source_cell_type"] for e in data["per_source"]}
+    assert "iPSC" in sources
+    assert "adult_stem_cell" in sources
+    # iPSC top canonical should be CHIR99021 or Y-27632
+    ipsc = next(e for e in data["per_source"] if e["source_cell_type"] == "iPSC")
+    assert ipsc["n_papers"] >= 50
+    top_name = ipsc["top_canonicals"][0]["canonical"]
+    assert top_name in ("CHIR99021", "Y-27632", "EGF", "FGF2")
+
+
+@require_protocols
+@require_reagents
+def test_live_scr_ipsc_source_filter():
+    data, status = ae.handle_source_cell_reagent_profile("iPSC", 3)
+    assert status == 200
+    assert data["source_cell_type"] == "iPSC"
+    assert data["n_papers"] >= 50
+    # CHIR99021 is the defining iPSC reagent
+    by_canon = {e["canonical"]: e for e in data["top_canonicals"]}
+    assert "CHIR99021" in by_canon
+    # exclusive_to_source is a bool (may be True or False depending on corpus)
+    assert isinstance(by_canon["CHIR99021"]["exclusive_to_source"], bool)
+    # top canonical has n_papers >= 50 (CHIR or Y-27632 each appear in 100+ iPSC papers)
+    assert data["top_canonicals"][0]["n_papers"] >= 50

@@ -5597,3 +5597,183 @@ def test_unr_n_canonical_units(tmp_path, monkeypatch):
 def test_unr_index_entry():
     data, _ = ae.handle_index()
     assert "/analytics/unit-normalization-report" in data["endpoints"]
+
+
+# --------------------------------------------------------------------------- #
+# handle_source_cell_reagent_profile  (route 52)
+# --------------------------------------------------------------------------- #
+
+_SCR_PROTOS = [
+    # iPSC papers
+    {"doi": "10.1/ipsc1", "organoid_type": "cardiac",    "source_cell_type": "iPSC"},
+    {"doi": "10.1/ipsc2", "organoid_type": "cardiac",    "source_cell_type": "iPSC"},
+    {"doi": "10.1/ipsc3", "organoid_type": "cerebral",   "source_cell_type": "iPSC"},
+    {"doi": "10.1/ipsc4", "organoid_type": "kidney",     "source_cell_type": "iPSC"},
+    # adult_stem_cell papers
+    {"doi": "10.1/asc1",  "organoid_type": "intestinal", "source_cell_type": "adult_stem_cell"},
+    {"doi": "10.1/asc2",  "organoid_type": "intestinal", "source_cell_type": "adult_stem_cell"},
+    {"doi": "10.1/asc3",  "organoid_type": "liver",      "source_cell_type": "adult_stem_cell"},
+]
+
+_SCR_REAGENTS = [
+    # iPSC characteristic: CHIR99021 in all 4 papers
+    {"doi": "10.1/ipsc1", "canonical": "CHIR99021", "organoid_type": "cardiac",    "kind": "signaling"},
+    {"doi": "10.1/ipsc2", "canonical": "CHIR99021", "organoid_type": "cardiac",    "kind": "signaling"},
+    {"doi": "10.1/ipsc3", "canonical": "CHIR99021", "organoid_type": "cerebral",   "kind": "signaling"},
+    {"doi": "10.1/ipsc4", "canonical": "CHIR99021", "organoid_type": "kidney",     "kind": "signaling"},
+    # Y-27632 shared (iPSC and adult_stem_cell)
+    {"doi": "10.1/ipsc1", "canonical": "Y-27632",   "organoid_type": "cardiac",    "kind": "signaling"},
+    {"doi": "10.1/asc1",  "canonical": "Y-27632",   "organoid_type": "intestinal", "kind": "signaling"},
+    {"doi": "10.1/asc2",  "canonical": "Y-27632",   "organoid_type": "intestinal", "kind": "signaling"},
+    # EGF: adult_stem_cell only, 3 papers
+    {"doi": "10.1/asc1",  "canonical": "EGF",       "organoid_type": "intestinal", "kind": "signaling"},
+    {"doi": "10.1/asc2",  "canonical": "EGF",       "organoid_type": "intestinal", "kind": "signaling"},
+    {"doi": "10.1/asc3",  "canonical": "EGF",       "organoid_type": "liver",      "kind": "signaling"},
+]
+
+
+def _write_protos_for_scr(path, rows):
+    path.write_text("\n".join(json.dumps(r) for r in rows))
+
+
+def _patch_scr(monkeypatch, pp, rp):
+    monkeypatch.setattr(ae, "PROTOCOLS_JSONL", pp)
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", rp)
+
+
+def test_scr_global_structure(tmp_path, monkeypatch):
+    pp = tmp_path / "protocols.jsonl"
+    rp = tmp_path / "reagents.jsonl"
+    _write_protos_for_scr(pp, _SCR_PROTOS)
+    _write_protos_for_scr(rp, _SCR_REAGENTS)
+    _patch_scr(monkeypatch, pp, rp)
+    data, status = ae.handle_source_cell_reagent_profile(None, 3)
+    assert status == 200
+    assert "per_source" in data
+    assert "pairwise_jaccard" in data
+
+
+def test_scr_n_papers_correct(tmp_path, monkeypatch):
+    pp = tmp_path / "protocols.jsonl"
+    rp = tmp_path / "reagents.jsonl"
+    _write_protos_for_scr(pp, _SCR_PROTOS)
+    _write_protos_for_scr(rp, _SCR_REAGENTS)
+    _patch_scr(monkeypatch, pp, rp)
+    data, _ = ae.handle_source_cell_reagent_profile(None, 3)
+    by_source = {e["source_cell_type"]: e for e in data["per_source"]}
+    assert by_source["iPSC"]["n_papers"] == 4
+    assert by_source["adult_stem_cell"]["n_papers"] == 3
+
+
+def test_scr_ipsc_top_canonical(tmp_path, monkeypatch):
+    pp = tmp_path / "protocols.jsonl"
+    rp = tmp_path / "reagents.jsonl"
+    _write_protos_for_scr(pp, _SCR_PROTOS)
+    _write_protos_for_scr(rp, _SCR_REAGENTS)
+    _patch_scr(monkeypatch, pp, rp)
+    data, _ = ae.handle_source_cell_reagent_profile(None, 3)
+    by_source = {e["source_cell_type"]: e for e in data["per_source"]}
+    ipsc_top = by_source["iPSC"]["top_canonicals"]
+    # CHIR99021 in 4/4 iPSC papers → top
+    assert ipsc_top[0]["canonical"] == "CHIR99021"
+    assert ipsc_top[0]["n_papers"] == 4
+
+
+def test_scr_pairwise_jaccard_present(tmp_path, monkeypatch):
+    pp = tmp_path / "protocols.jsonl"
+    rp = tmp_path / "reagents.jsonl"
+    _write_protos_for_scr(pp, _SCR_PROTOS)
+    _write_protos_for_scr(rp, _SCR_REAGENTS)
+    _patch_scr(monkeypatch, pp, rp)
+    data, _ = ae.handle_source_cell_reagent_profile(None, 1)
+    pj = data["pairwise_jaccard"]
+    assert len(pj) >= 1
+    # Sources are sorted alphabetically so pair is ('adult_stem_cell', 'iPSC')
+    pair_keys = {frozenset((e["source_a"], e["source_b"])) for e in pj}
+    assert frozenset(("iPSC", "adult_stem_cell")) in pair_keys
+
+
+def test_scr_jaccard_y27632_shared(tmp_path, monkeypatch):
+    pp = tmp_path / "protocols.jsonl"
+    rp = tmp_path / "reagents.jsonl"
+    _write_protos_for_scr(pp, _SCR_PROTOS)
+    _write_protos_for_scr(rp, _SCR_REAGENTS)
+    _patch_scr(monkeypatch, pp, rp)
+    # min_papers=1: Y-27632 appears in both iPSC and adult_stem_cell
+    data, _ = ae.handle_source_cell_reagent_profile(None, 1)
+    # source_a/source_b are alphabetically sorted, so find the pair regardless of order
+    pair = next(
+        (e for e in data["pairwise_jaccard"]
+         if frozenset((e["source_a"], e["source_b"])) == frozenset(("iPSC", "adult_stem_cell"))),
+        None
+    )
+    assert pair is not None
+    assert pair["jaccard"] > 0
+    # Y-27632 shared → shared_n >= 1
+    assert pair["shared_n"] >= 1
+
+
+def test_scr_source_filter_ipsc(tmp_path, monkeypatch):
+    pp = tmp_path / "protocols.jsonl"
+    rp = tmp_path / "reagents.jsonl"
+    _write_protos_for_scr(pp, _SCR_PROTOS)
+    _write_protos_for_scr(rp, _SCR_REAGENTS)
+    _patch_scr(monkeypatch, pp, rp)
+    data, status = ae.handle_source_cell_reagent_profile("iPSC", 1)
+    assert status == 200
+    assert data["source_cell_type"] == "iPSC"
+    assert data["n_papers"] == 4
+    assert "top_canonicals" in data
+
+
+def test_scr_source_filter_exclusivity(tmp_path, monkeypatch):
+    pp = tmp_path / "protocols.jsonl"
+    rp = tmp_path / "reagents.jsonl"
+    _write_protos_for_scr(pp, _SCR_PROTOS)
+    _write_protos_for_scr(rp, _SCR_REAGENTS)
+    _patch_scr(monkeypatch, pp, rp)
+    data, _ = ae.handle_source_cell_reagent_profile("iPSC", 1)
+    by_canon = {e["canonical"]: e for e in data["top_canonicals"]}
+    # CHIR99021 only in iPSC papers → exclusive_to_source = True
+    assert by_canon["CHIR99021"]["exclusive_to_source"] is True
+    # Y-27632 also in adult_stem_cell → exclusive_to_source = False
+    assert by_canon["Y-27632"]["exclusive_to_source"] is False
+
+
+def test_scr_unknown_source_returns_404(tmp_path, monkeypatch):
+    pp = tmp_path / "protocols.jsonl"
+    rp = tmp_path / "reagents.jsonl"
+    _write_protos_for_scr(pp, _SCR_PROTOS)
+    _write_protos_for_scr(rp, _SCR_REAGENTS)
+    _patch_scr(monkeypatch, pp, rp)
+    _, status = ae.handle_source_cell_reagent_profile("NOSOURCE_XYZ", 1)
+    assert status == 404
+
+
+def test_scr_min_papers_filter(tmp_path, monkeypatch):
+    pp = tmp_path / "protocols.jsonl"
+    rp = tmp_path / "reagents.jsonl"
+    _write_protos_for_scr(pp, _SCR_PROTOS)
+    _write_protos_for_scr(rp, _SCR_REAGENTS)
+    _patch_scr(monkeypatch, pp, rp)
+    # min_papers=5 → no canonical passes for adult_stem_cell (max is 3)
+    data, _ = ae.handle_source_cell_reagent_profile("adult_stem_cell", 5)
+    assert data["top_canonicals"] == []
+
+
+def test_scr_eqf_top_for_adult_stem_cell(tmp_path, monkeypatch):
+    pp = tmp_path / "protocols.jsonl"
+    rp = tmp_path / "reagents.jsonl"
+    _write_protos_for_scr(pp, _SCR_PROTOS)
+    _write_protos_for_scr(rp, _SCR_REAGENTS)
+    _patch_scr(monkeypatch, pp, rp)
+    data, _ = ae.handle_source_cell_reagent_profile("adult_stem_cell", 1)
+    # EGF in all 3 adult_stem_cell papers
+    by_canon = {e["canonical"]: e for e in data["top_canonicals"]}
+    assert "EGF" in by_canon
+    assert by_canon["EGF"]["n_papers"] == 3
+
+
+def test_scr_index_entry():
+    data, _ = ae.handle_index()
+    assert "/analytics/source-cell-reagent-profile" in data["endpoints"]
