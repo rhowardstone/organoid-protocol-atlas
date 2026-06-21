@@ -54,8 +54,17 @@ def main():
     cc = sorted({r["pmcid"] for r in conn.execute("SELECT pmcid, license FROM protocols")
                  if is_public_license(r["license"])})
     ph = ",".join("?" * len(cc))
-    manifest = {"license_filter": "CC0/CC-BY (no NC/ND)", "n_papers": len(cc),
-                "papers": sorted(cc), "tables": {}}
+    n_types = len({r["organoid_type"] for r in
+                   conn.execute("SELECT organoid_type FROM protocols WHERE pmcid IN ({})".format(ph), cc)
+                   if r["organoid_type"]})
+    manifest = {
+        "license_filter": "CC0/CC-BY (no NC/ND)",
+        "schema_version": "0.4",
+        "n_papers": len(cc),
+        "n_types": n_types,
+        "papers": sorted(cc),
+        "tables": {},
+    }
     for t in TABLES:
         rows = conn.execute(f"SELECT * FROM {t} WHERE pmcid IN ({ph})", cc).fetchall()
         with open(OUT / f"{t}.jsonl", "w") as f:

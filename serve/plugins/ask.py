@@ -47,6 +47,7 @@ PUBLIC_COUNTS = {
     "n_papers": _N_PAPERS,
     "n_protocols": _N_PROTOCOLS,
     "n_reagents": _N_REAGENTS,
+    "n_types": _manifest.get("n_types", 0),
 }
 
 

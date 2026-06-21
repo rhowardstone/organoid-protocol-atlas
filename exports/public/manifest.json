@@ -1,6 +1,12 @@
 {
   "license_filter": "CC0/CC-BY (no NC/ND)",
+  "schema_version": "0.4",
   "n_papers": 582,
+  "n_types": 26,
+  "tables": {
+    "protocols": 582,
+    "reagents": 5458
+  },
   "papers": [
     "PMC10029057",
     "PMC10045189",
@@ -584,9 +590,5 @@
     "PMC9932530",
     "PMC9959977",
     "PMC9967305"
-  ],
-  "tables": {
-    "protocols": 582,
-    "reagents": 5458
-  }
+  ]
 }

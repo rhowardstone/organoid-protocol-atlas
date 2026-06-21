@@ -1,0 +1,355 @@
+{% extends "default:base.html" %}
+{% block title %}Analytics Dashboard — Organoid Protocol Atlas{% endblock %}
+{% block body_class %}index{% endblock %}
+
+{% block content %}
+<div class="apa-topbar">
+  <span class="dot"></span> <a href="/">ORGANOID PROTOCOL ATLAS</a>
+  <span class="dot"></span> <a href="/atlas/protocols">Protocols</a>
+  <span class="dot"></span> <a href="/heatmap">Heatmap</a>
+  <span class="dot"></span> <a href="/consensus">Consensus</a>
+  <span class="dot"></span> <a href="/explore">Explore</a>
+  <span class="dot"></span> <a href="/dashboard">Dashboard</a>
+  <span class="dot"></span> <a href="/ask">Ask</a>
+</div>
+
+<div class="apa-hero">
+  <div class="apa-kicker">Corpus analytics</div>
+  <h1>Protocol Atlas Dashboard</h1>
+  <p class="lead">Live metrics across the full corpus — grounding coverage, quality tiers, MIOR
+  completeness, and the organoid-type distribution — all derived from committed, reproducible
+  pipeline artifacts.</p>
+</div>
+
+<div id="dash-body" style="max-width:1180px;margin:0 auto;padding:0 1.5rem 3rem;">
+
+  <!-- Corpus stats row -->
+  <div class="apa-stats" id="stat-row" style="margin-bottom:1.5rem;">
+    <div class="apa-stat"><div class="n" id="s-papers">—</div><div class="l">papers in corpus</div></div>
+    <div class="apa-stat"><div class="n" id="s-types">—</div><div class="l">organoid systems</div></div>
+    <div class="apa-stat"><div class="n" id="s-reagents">—</div><div class="l">grounded reagent rows</div></div>
+    <div class="apa-stat"><div class="n" id="s-grounding">—</div><div class="l">avg grounding rate</div></div>
+    <div class="apa-stat"><div class="n" id="s-mior">—</div><div class="l">avg MIOR completeness</div></div>
+    <div class="apa-stat"><div class="n" id="s-gold">—</div><div class="l">gold-tier protocols</div></div>
+  </div>
+
+  <!-- Quality + MIOR side by side -->
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.5rem;">
+
+    <div class="apa-section-card">
+      <div class="apa-section-title">Quality distribution</div>
+      <div id="quality-bar" class="dash-bar-wrap">
+        <div class="dash-loading">Loading…</div>
+      </div>
+      <div id="quality-detail" style="margin-top:.8rem;font-size:.82rem;color:var(--muted);"></div>
+      <a href="/analytics/quality" class="dash-api-link">→ /analytics/quality</a>
+    </div>
+
+    <div class="apa-section-card">
+      <div class="apa-section-title">MIOR completeness</div>
+      <div id="mior-bar" class="dash-bar-wrap">
+        <div class="dash-loading">Loading…</div>
+      </div>
+      <div id="mior-detail" style="margin-top:.8rem;font-size:.82rem;color:var(--muted);"></div>
+      <a href="/analytics/mior" class="dash-api-link">→ /analytics/mior</a>
+    </div>
+
+  </div>
+
+  <!-- Top organoid types -->
+  <div class="apa-section-card" style="margin-bottom:1.5rem;">
+    <div class="apa-section-title">Top organoid systems by completeness</div>
+    <div id="types-table" class="dash-loading">Loading…</div>
+    <a href="/analytics/coverage" class="dash-api-link">→ /analytics/coverage</a>
+  </div>
+
+  <!-- Top assay endpoints -->
+  <div class="apa-section-card" style="margin-bottom:1.5rem;">
+    <div class="apa-section-title">Most common assay endpoints</div>
+    <div id="assay-table" class="dash-loading">Loading…</div>
+    <a href="/analytics/assay-endpoints" class="dash-api-link">→ /analytics/assay-endpoints</a>
+  </div>
+
+  <!-- Analytics API index -->
+  <div class="apa-section-card">
+    <div class="apa-section-title">Analytics endpoints</div>
+    <div class="dash-endpoint-grid" id="endpoint-grid">
+      <div class="dash-loading">Loading…</div>
+    </div>
+  </div>
+
+</div>
+
+<style>
+.apa-section-card {
+  background: var(--paper);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.2rem 1.4rem;
+}
+.apa-section-title {
+  font-family: var(--mono);
+  font-size: .72rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: .9rem;
+}
+.dash-loading { color: var(--muted); font-size: .85rem; }
+.dash-error { color: var(--bad); font-size: .85rem; }
+
+/* Stacked bar for quality/MIOR */
+.dash-bar-wrap { margin: .4rem 0; }
+.dash-stacked-bar {
+  display: flex;
+  height: 28px;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+.dash-bar-seg { height: 100%; display: flex; align-items: center; justify-content: center;
+  font-size: .68rem; font-family: var(--mono); color: #fff; font-weight: 600; min-width: 2px;
+  transition: flex .3s;
+}
+.dash-bar-gold   { background: #c77c1e; }
+.dash-bar-silver { background: #64748b; }
+.dash-bar-bronze { background: #7c553a; }
+.dash-bar-full   { background: var(--good); }
+.dash-bar-partial{ background: var(--warn); }
+.dash-bar-sparse { background: var(--bad); }
+
+/* Type table */
+.dash-type-table { width: 100%; border-collapse: collapse; font-size: .83rem; }
+.dash-type-table th { font-family: var(--mono); font-size: .68rem; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--muted); text-align: left; padding: .4rem .6rem .4rem 0;
+  border-bottom: 1px solid var(--border); }
+.dash-type-table td { padding: .45rem .6rem .45rem 0; border-bottom: 1px solid var(--border); vertical-align: middle; }
+.dash-type-table tr:last-child td { border-bottom: none; }
+.dash-mini-bar { display: inline-block; height: 8px; border-radius: 3px;
+  background: var(--accent); vertical-align: middle; margin-left: .5rem; }
+
+/* Endpoint grid */
+.dash-endpoint-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: .6rem;
+  margin-top: .2rem;
+}
+.dash-endpoint-item {
+  background: var(--paper-2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: .6rem .8rem;
+  font-size: .78rem;
+}
+.dash-endpoint-item a {
+  font-family: var(--mono);
+  font-size: .72rem;
+  font-weight: 600;
+  display: block;
+  margin-bottom: .2rem;
+}
+.dash-endpoint-item .dash-ep-desc { color: var(--muted); }
+.dash-api-link { font-family: var(--mono); font-size: .7rem; color: var(--muted); display: block; margin-top: .7rem; }
+.dash-api-link:hover { color: var(--accent); }
+
+@media (max-width:720px) {
+  div[style*="grid-template-columns:1fr 1fr"] { display: block !important; }
+  div[style*="grid-template-columns:1fr 1fr"] > * { margin-bottom: 1rem; }
+}
+</style>
+
+<script>
+const esc = s => (s == null ? '' : String(s))
+  .replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const pct = (n, d) => d > 0 ? Math.round(n / d * 100) : 0;
+const fmt = n => n == null ? '—' : (typeof n === 'number' && n < 1 && n > 0)
+  ? (n * 100).toFixed(1) + '%' : String(n);
+
+async function load() {
+  // Parallel fetches
+  const [summaryRes, miorRes, coverageRes] = await Promise.all([
+    fetch('/analytics/summary'),
+    fetch('/analytics/mior'),
+    fetch('/analytics/coverage'),
+  ]);
+  const summary = summaryRes.ok ? await summaryRes.json() : null;
+  const mior    = miorRes.ok    ? await miorRes.json()    : null;
+  const cov     = coverageRes.ok? await coverageRes.json(): null;
+
+  // ── Stat row ──────────────────────────────────────────────────────────
+  if (summary) {
+    const c = summary.corpus || {};
+    setText('s-papers',   c.n_papers);
+    setText('s-types',    c.n_organoid_types);
+    setText('s-grounding', c.overall_avg_grounding_rate != null
+      ? (c.overall_avg_grounding_rate * 100).toFixed(1) + '%' : '—');
+    const q = summary.quality || {};
+    setText('s-gold', q.n_gold != null ? q.n_gold : '—');
+  }
+  if (mior) {
+    const avg = mior.avg_mior_completeness;
+    setText('s-mior', avg != null ? (avg * 100).toFixed(1) + '%' : '—');
+  }
+  // Reagent count from manifest
+  try {
+    const mfRes = await fetch('/exports/public/manifest.json');
+    if (mfRes.ok) {
+      const mf = await mfRes.json();
+      setText('s-reagents', mf.n_reagents ?? mf.reagents ?? '—');
+    }
+  } catch(_) {}
+
+  // ── Quality bar ───────────────────────────────────────────────────────
+  const qEl = document.getElementById('quality-bar');
+  if (summary && summary.quality) {
+    const q = summary.quality;
+    const n = q.n_total || 1;
+    const gp = pct(q.n_gold,   n), sp = pct(q.n_silver, n), bp = pct(q.n_bronze, n);
+    qEl.innerHTML = `
+      <div class="dash-stacked-bar">
+        <div class="dash-bar-seg dash-bar-gold"   style="flex:${q.n_gold}"   title="Gold ${q.n_gold}"  >${q.n_gold > 10 ? gp+'%' : ''}</div>
+        <div class="dash-bar-seg dash-bar-silver" style="flex:${q.n_silver}" title="Silver ${q.n_silver}">${q.n_silver > 10 ? sp+'%' : ''}</div>
+        <div class="dash-bar-seg dash-bar-bronze" style="flex:${q.n_bronze}" title="Bronze ${q.n_bronze}">${q.n_bronze > 10 ? bp+'%' : ''}</div>
+      </div>`;
+    document.getElementById('quality-detail').innerHTML =
+      `<span style="color:var(--warn)">■</span> Gold ${q.n_gold} &nbsp;
+       <span style="color:var(--muted)">■</span> Silver ${q.n_silver} &nbsp;
+       <span style="color:#7c553a">■</span> Bronze ${q.n_bronze} &nbsp;·&nbsp;
+       avg score ${q.avg_score != null ? (q.avg_score*100).toFixed(1)+'%' : '—'}`;
+  } else {
+    qEl.innerHTML = '<div class="dash-error">Quality scores unavailable — run: python pipeline/score_protocol_quality.py</div>';
+  }
+
+  // ── MIOR bar ──────────────────────────────────────────────────────────
+  const miorEl = document.getElementById('mior-bar');
+  if (mior) {
+    const n = mior.n_total || 1;
+    const nFull    = mior.n_full    || 0;
+    const nPartial = mior.n_partial || 0;
+    const nSparse  = mior.n_sparse  || 0;
+    miorEl.innerHTML = `
+      <div class="dash-stacked-bar">
+        <div class="dash-bar-seg dash-bar-full"    style="flex:${nFull}"    title="Full ${nFull}"   >${nFull > 10 ? pct(nFull,n)+'%' : ''}</div>
+        <div class="dash-bar-seg dash-bar-partial" style="flex:${nPartial}" title="Partial ${nPartial}">${nPartial > 10 ? pct(nPartial,n)+'%' : ''}</div>
+        <div class="dash-bar-seg dash-bar-sparse"  style="flex:${nSparse}"  title="Sparse ${nSparse}" >${nSparse > 10 ? pct(nSparse,n)+'%' : ''}</div>
+      </div>`;
+    const avg = mior.avg_mior_completeness;
+    document.getElementById('mior-detail').innerHTML =
+      `<span style="color:var(--good)">■</span> Full ${nFull} &nbsp;
+       <span style="color:var(--warn)">■</span> Partial ${nPartial} &nbsp;
+       <span style="color:var(--bad)">■</span> Sparse ${nSparse} &nbsp;·&nbsp;
+       avg ${avg != null ? (avg*100).toFixed(1)+'%' : '—'}`;
+  } else {
+    miorEl.innerHTML = '<div class="dash-error">MIOR data unavailable — run: python pipeline/score_mior.py</div>';
+  }
+
+  // ── Top organoid types table ──────────────────────────────────────────
+  const typesEl = document.getElementById('types-table');
+  const topTypes = (summary && summary.top_types_by_completeness) || [];
+  if (topTypes.length) {
+    const maxScore = Math.max(...topTypes.map(r => r.completeness_score || 0));
+    typesEl.innerHTML = `
+      <table class="dash-type-table">
+        <thead><tr>
+          <th>Type</th><th>Papers</th><th>Completeness</th><th>Grounding</th>
+        </tr></thead>
+        <tbody>${topTypes.map(r => `
+          <tr>
+            <td><a href="/analytics/coverage/${esc(r.organoid_type)}">${esc(r.organoid_type)}</a></td>
+            <td>${r.n_papers ?? '—'}</td>
+            <td>
+              ${r.completeness_score != null ? (r.completeness_score*100).toFixed(1)+'%' : '—'}
+              <span class="dash-mini-bar" style="width:${Math.round((r.completeness_score||0)/maxScore*80)}px"></span>
+            </td>
+            <td>${r.avg_grounding_rate != null ? (r.avg_grounding_rate*100).toFixed(1)+'%' : '—'}</td>
+          </tr>`).join('')}
+        </tbody>
+      </table>`;
+  } else if (cov && cov.by_organoid_type) {
+    // Fallback: build from coverage report
+    const rows = Object.entries(cov.by_organoid_type)
+      .map(([k, v]) => ({organoid_type: k, ...v}))
+      .sort((a, b) => (b.completeness_score||0) - (a.completeness_score||0))
+      .slice(0, 8);
+    const maxScore = Math.max(...rows.map(r => r.completeness_score || 0));
+    typesEl.innerHTML = `
+      <table class="dash-type-table">
+        <thead><tr><th>Type</th><th>Papers</th><th>Completeness</th><th>Grounding</th></tr></thead>
+        <tbody>${rows.map(r => `
+          <tr>
+            <td><a href="/analytics/coverage/${esc(r.organoid_type)}">${esc(r.organoid_type)}</a></td>
+            <td>${r.n_papers ?? '—'}</td>
+            <td>${r.completeness_score != null ? (r.completeness_score*100).toFixed(1)+'%' : '—'}
+              <span class="dash-mini-bar" style="width:${Math.round((r.completeness_score||0)/maxScore*80)}px"></span>
+            </td>
+            <td>${r.avg_grounding_rate != null ? (r.avg_grounding_rate*100).toFixed(1)+'%' : '—'}</td>
+          </tr>`).join('')}
+        </tbody>
+      </table>`;
+  } else {
+    typesEl.innerHTML = '<div class="dash-error">Coverage data unavailable — run: python pipeline/generate_coverage_report.py</div>';
+  }
+
+  // ── Top assay clusters ────────────────────────────────────────────────
+  const assayEl = document.getElementById('assay-table');
+  const topAssays = (summary && summary.top_assay_clusters) || [];
+  if (topAssays.length) {
+    const maxN = Math.max(...topAssays.map(r => r.n_papers || 0));
+    assayEl.innerHTML = `
+      <table class="dash-type-table">
+        <thead><tr><th>Cluster</th><th>Papers</th><th>Types</th></tr></thead>
+        <tbody>${topAssays.map(r => `
+          <tr>
+            <td>${esc((r.cluster||'').replace(/_/g,' '))}</td>
+            <td>${r.n_papers ?? '—'}
+              <span class="dash-mini-bar" style="width:${Math.round((r.n_papers||0)/maxN*80)}px"></span>
+            </td>
+            <td>${r.n_types ?? '—'}</td>
+          </tr>`).join('')}
+        </tbody>
+      </table>`;
+  } else {
+    assayEl.innerHTML = '<div class="dash-error">Assay data unavailable — run: python pipeline/aggregate_assay_endpoints.py</div>';
+  }
+
+  // ── Analytics endpoint index ──────────────────────────────────────────
+  const epEl = document.getElementById('endpoint-grid');
+  const ENDPOINTS = [
+    ['/analytics/summary',              'High-level dashboard: corpus stats + quality + top types'],
+    ['/analytics/coverage',             'Per-type corpus coverage and completeness report'],
+    ['/analytics/coverage/{type}',      'Coverage for one organoid type'],
+    ['/analytics/quality',              'Per-paper quality scores (gold / silver / bronze)'],
+    ['/analytics/consensus',            'List available per-type consensus files'],
+    ['/analytics/consensus/{type}',     'Consensus concentrations + reagents + timeline for one type'],
+    ['/analytics/reagent?q=EGF',        'Cross-corpus reagent lookup: usage, concentrations, evidence quotes'],
+    ['/analytics/mior',                 'MIOR completeness report (12 items, 5 modules)'],
+    ['/analytics/assay-endpoints',      'Assay endpoint cluster summary (per-type + cross-type)'],
+    ['/analytics/failure-modes',        'Failure mode cluster summary across the corpus'],
+    ['/analytics/lineage',              'DOI→DOI protocol lineage graph (ProtocolModification)'],
+    ['/analytics/compare/{a}/{b}',      'Protocol diff between two PMCIDs (pre-computed cache)'],
+    ['/analytics/substitutions?q=TERM', 'Search ProtocolModification records for reagent substitutions'],
+    ['/analytics/candidates',           'OA/license verification status of candidate pool'],
+    ['/analytics/status',               'Live system health (corpus + artifact inventory)'],
+  ];
+  epEl.innerHTML = ENDPOINTS.map(([path, desc]) => {
+    const href = path.includes('{') ? null : path;
+    const label = esc(path);
+    return `<div class="dash-endpoint-item">
+      ${href ? `<a href="${esc(href)}">${label}</a>` : `<span style="font-family:var(--mono);font-size:.72rem;font-weight:600">${label}</span>`}
+      <div class="dash-ep-desc">${esc(desc)}</div>
+    </div>`;
+  }).join('');
+}
+
+function setText(id, val) {
+  const el = document.getElementById(id);
+  if (el) el.textContent = val == null ? '—' : String(val);
+}
+
+load().catch(err => {
+  document.getElementById('dash-body').innerHTML =
+    `<div style="color:var(--bad);padding:2rem">Failed to load analytics: ${esc(String(err))}</div>`;
+});
+</script>
+{% endblock %}

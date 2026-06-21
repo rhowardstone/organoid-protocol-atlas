@@ -8,8 +8,9 @@
   <span class="dot"></span> ORGANOID PROTOCOL ATLAS
   <span class="dot"></span> <a href="/explore">Explore</a>
   <span class="dot"></span> <a href="/figures">Figures</a>
-  <span class="dot"></span> <a href="/heatmap">Morphogen grammar</a>
+  <span class="dot"></span> <a href="/heatmap">Heatmap</a>
   <span class="dot"></span> <a href="/consensus">Consensus</a>
+  <span class="dot"></span> <a href="/dashboard">Dashboard</a>
   <span class="dot"></span> <a href="/ask">Ask</a>
   <span class="dot"></span> <a href="/llms.txt">llms.txt</a>
   <span class="dot"></span> <a href="https://github.com/rhowardstone/organoid-protocol-atlas">Source</a>
@@ -35,7 +36,7 @@
 <div class="apa-stats">
   <div class="apa-stat"><div class="n">{{ public_counts.n_papers }}</div><div class="l">public protocols</div></div>
   <div class="apa-stat"><div class="n">{{ public_counts.n_reagents }}</div><div class="l">public rows</div></div>
-  <div class="apa-stat"><div class="n">26</div><div class="l">organoid systems</div></div>
+  <div class="apa-stat"><div class="n">{{ public_counts.n_types or '26' }}</div><div class="l">organoid systems</div></div>
   <div class="apa-stat"><div class="n">CC</div><div class="l">public license filter</div></div>
   <div class="apa-stat"><div class="n">0</div><div class="l">full-text bodies</div></div>
   <div class="apa-stat"><div class="n">1</div><div class="l">agent guide at /llms.txt</div></div>
