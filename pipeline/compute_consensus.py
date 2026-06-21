@@ -122,7 +122,7 @@ def compute_reagent_consensus(
         if vals:
             med = median(vals)
             mean = sum(vals) / len(vals)
-            stddev = math.sqrt(sum((v - mean) ** 2 for v in vals) / len(vals)) if len(vals) > 1 else 0.0
+            stddev = math.sqrt(sum((v - mean) ** 2 for v in vals) / (len(vals) - 1)) if len(vals) > 1 else 0.0
             cv = (stddev / mean) if mean > 0 else None  # coefficient of variation
             conc_summary = {
                 "median": round(med, 4),
