@@ -337,3 +337,36 @@ def test_live_tra_type_filter_kidney():
     assert status == 200
     assert data["organoid_type_filter"] == "kidney"
     assert data["n_pmcids_using"] >= 1
+
+
+# ---------------------------------------------------------------------------
+# kgx-summary live smoke tests
+# ---------------------------------------------------------------------------
+
+def require_kgx(func):
+    from pathlib import Path
+    return pytest.mark.skipif(
+        not (REPO / "exports" / "kgx" / "kgx_manifest.json").exists(),
+        reason="kgx_manifest.json absent"
+    )(func)
+
+
+@require_kgx
+def test_live_kgx_summary_returns_200():
+    data, status = ae.handle_kgx_summary()
+    assert status == 200
+    assert data["n_nodes"] >= 100
+    assert data["n_edges"] >= 100
+    assert data["resolved_rate"] is not None
+    assert data["resolved_rate"] > 0.5
+
+
+@require_kgx
+def test_live_kgx_summary_review_queue_present():
+    data, _ = ae.handle_kgx_summary()
+    rq = data.get("review_queue")
+    if rq is None:
+        pytest.skip("review_items.jsonl absent")
+    assert rq["total"] >= 1
+    assert "by_status" in rq
+    assert "top_not_found" in rq
