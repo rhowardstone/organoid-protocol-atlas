@@ -1,0 +1,38 @@
+{
+  "method": "discover_candidates.py mega-harvest: 27 tuned organoid-type queries (quoted synonyms + method clause) over Europe PMC OA full-text, cursorMark paginated, deduped against ALL existing candidate pools + corpus",
+  "n_new_candidates": 18483,
+  "license": {
+    "CC-BY": 13132,
+    "CC-BY-NC": 4877,
+    "unknown": 438,
+    "CC0": 36
+  },
+  "public_licensable_cc0_ccby": 13168,
+  "by_type": {
+    "intestinal": 4570,
+    "tumor": 3729,
+    "cerebral": 2808,
+    "hepatic": 1249,
+    "lung": 1219,
+    "cardiac": 1217,
+    "retinal": 1139,
+    "kidney": 1020,
+    "pancreatic": 387,
+    "gastric": 328,
+    "skin": 156,
+    "mammary": 114,
+    "endometrial": 108,
+    "bone": 98,
+    "cholangiocyte": 76,
+    "prostate": 76,
+    "vascular": 69,
+    "inner-ear": 54,
+    "salivary-gland": 23,
+    "bladder": 14,
+    "neuromuscular": 11,
+    "esophageal": 10,
+    "blood-brain-barrier": 7,
+    "thyroid": 1
+  },
+  "epmc_ceiling_note": "Europe PMC has 14,273 organoid-protocol OA full-text papers by combined-query hitCount; per-type union harvested 18,483 NEW (broader synonym coverage). 57,749 organoid OA full-text papers exist if the method-precision clause is dropped."
+}
