@@ -19,6 +19,7 @@ import json
 import re
 import os
 import urllib.request
+from pathlib import Path
 
 from datasette import hookimpl, Response
 
@@ -28,7 +29,31 @@ OLLAMA = os.environ.get("OLLAMA_URL", "http://localhost:11434/api/generate")
 MODEL = os.environ.get("OLLAMA_MODEL", "llama3.1:8b")
 TOP_K = 12
 
-LLMS_TXT = """# Organoid Protocol Atlas
+# Load public corpus counts from the committed manifest so llms.txt and the
+# landing page stay in sync with the actual export — never hand-maintained.
+_MANIFEST_PATH = Path(__file__).resolve().parents[2] / "exports" / "public" / "manifest.json"
+try:
+    _manifest = json.loads(_MANIFEST_PATH.read_text())
+except (FileNotFoundError, json.JSONDecodeError):
+    _manifest = {"n_papers": 0, "tables": {}}
+
+_N_PAPERS = _manifest.get("n_papers", 0)
+_N_PROTOCOLS = _manifest.get("tables", {}).get("protocols", _N_PAPERS)
+_N_REAGENTS = _manifest.get("tables", {}).get("reagents", 0)
+_N_ROWS = _N_PROTOCOLS + _N_REAGENTS
+
+# Expose manifest to Jinja2 templates (index.html uses {{ public_counts.n_papers }})
+PUBLIC_COUNTS = {
+    "n_papers": _N_PAPERS,
+    "n_protocols": _N_PROTOCOLS,
+    "n_reagents": _N_REAGENTS,
+    "n_types": _manifest.get("n_types", 0),
+}
+
+
+def _build_llms_txt() -> str:
+    _n_types = _manifest.get("n_types", 0)
+    return f"""# Organoid Protocol Atlas
 
 Public, license-safe Datasette deployment of the Organoid Protocol Atlas.
 
@@ -37,46 +62,95 @@ Source: https://github.com/rhowardstone/organoid-protocol-atlas
 
 ## What is available here
 
-This public deployment contains the CC-licensed public subset: 578 papers, 578
-protocol rows, and 5423 public reagent/protocol rows. It does not redistribute
-full methods text or paper bodies. Evidence fields are short citation snippets
-kept so users and agents can trace claims back to the source paper.
+This public deployment contains the CC-licensed public subset: {_N_PAPERS} papers, {_N_PROTOCOLS}
+protocol rows, and {_N_REAGENTS} public reagent rows across {_n_types} organoid systems.
+It does not redistribute full methods text or paper bodies. Evidence fields are short verbatim snippets
+kept so agents can trace claims back to the source paper and DOI.
 
-The larger local pipeline tracks a verified 28-paper corpus and additional
-candidate papers, but those are not all public on this hosted deployment.
+The larger local pipeline tracks a verified corpus and additional candidate papers,
+but those are not all public on this hosted deployment. Schema version: 0.4.
 
-## Useful endpoints
+## Table endpoints (Datasette JSON API)
 
 - /atlas/protocols.json?_shape=array&_size=max
 - /atlas/reagents.json?_shape=array&_size=max
 - /atlas/reagents.json?_shape=array&_size=max&kind__exact=signaling
-- /-/ask?q=which%20factors%20define%20kidney%20organoids%3F
+- /atlas/reagents.json?_shape=array&kind__exact=signaling&organoid_type__exact=kidney
 
 Datasette table pages also support faceting, filtering, sorting, and JSON
 exports. Prefer the JSON endpoints for programmatic use.
+
+## Analytics REST endpoints (pre-computed, read-only)
+
+- /analytics/summary          high-level corpus stats, quality distribution, top types
+- /analytics/coverage         per-type corpus coverage and completeness (grounding rate, MIOR)
+- /analytics/coverage/{type}  coverage for one organoid type (e.g. /analytics/coverage/kidney)
+- /analytics/consensus/{type} consensus concentrations and reagents for one type
+- /analytics/quality          per-paper quality scores (gold / silver / bronze tiers)
+- /analytics/mior             MIOR completeness report (12-item, 5-module per paper)
+- /analytics/reagent?q=EGF             cross-corpus reagent lookup with concentrations and evidence quotes
+- /analytics/reagent-network?q=EGF     co-occurring reagents: which reagents appear in the same papers as EGF
+- /analytics/type-similarity           pairwise Jaccard similarity between organoid types (canonical reagent sets)
+- /analytics/type-timeseries           publication counts by year and organoid type (growth trends, first-appearance)
+- /analytics/universal-reagents        canonical reagents in >= 50% of protocols per type; also cross-type universals
+- /analytics/species-breakdown         species distribution per organoid type (human / mouse / other); ?type=kidney for one type
+- /analytics/matrix-breakdown          extracellular matrix usage per organoid type (Matrigel / Geltrex / Vitronectin / ...); ?type=kidney for one type
+- /analytics/base-media-breakdown      base media usage per organoid type (DMEM/F12 / mTeSR1 / Advanced DMEM/F12 / ...); ?type=kidney for one type
+- /analytics/failure-modes             failure mode cluster summary across the corpus
+- /analytics/lineage                   DOI→DOI protocol lineage graph
+- /analytics/assay-endpoints           assay endpoint cluster summary (per-type + cross-type)
+- /analytics/candidates                OA/license verification status of the candidate pool
+- /analytics                           index of all analytics endpoints with generate commands
+
+## TRAPI (Translator Reasoner API 1.5)
+
+The committed KGX graph (exports/kgx/nodes.tsv + edges.tsv) is live-queryable via TRAPI.
+
+- POST /trapi/query                — single-hop Biolink query (TRAPI 1.5 request/response)
+- GET  /trapi/meta_knowledge_graph — node categories, predicates, and edge counts
+- GET  /trapi                      — HTML explainer and interactive console
+
+Nodes carry SRI-resolved Biolink CURIEs; edges use biolink:mentions predicates connecting
+organoid_protocol → reagent, with provenance back to the source PMCID and DOI.
+
+## Grounded Q&A
+
+- /-/ask?q=which%20factors%20define%20kidney%20organoids%3F
+
+Natural-language synthesis is only available when the deployment can reach a local model;
+otherwise the endpoint returns retrieved evidence rows without model synthesis.
 
 ## Evidence rules for agents
 
 - Treat rows as extracted literature evidence, not clinical or wet-lab advice.
 - Cite PMCID and DOI values from returned rows whenever making a claim.
 - Do not infer that a factor is absent from biology because it is absent here.
-- Respect grounding fields and evidence snippets; missing evidence beats false
-  certainty.
-- Natural-language synthesis from /-/ask is only available when the deployment
-  can reach the local model; otherwise the endpoint returns retrieved evidence
-  rows without model synthesis.
+- Respect grounding fields and evidence snippets; missing evidence beats false certainty.
+- evidence_quote fields are verbatim substrings of the source paper's methods section.
 
 ## Public subset counts
 
-- papers: 10
-- protocols: 10
-- reagent/protocol rows: 122
+- papers: {_N_PAPERS}
+- organoid_types: {_n_types}
+- protocols: {_N_PROTOCOLS}
+- reagent rows: {_N_REAGENTS}
+- schema_version: 0.4
 - full text redistributed: no
 """
 
-# organoid types we can detect in a question to bias retrieval
-_TYPES = ["intestinal", "gastric", "cerebral", "kidney", "liver", "lung",
-          "retinal", "pancreatic"]
+
+LLMS_TXT = _build_llms_txt()
+
+# organoid types we can detect in a question to bias retrieval (all 26 schema types)
+_TYPES = [
+    "intestinal", "gastric", "cerebral", "kidney", "liver", "lung",
+    "retinal", "pancreatic",
+    "tumor", "cardiac", "vascular", "cholangiocyte", "skin", "mammary",
+    "endometrial", "bone", "prostate", "inner-ear", "salivary-gland",
+    "bladder", "neuromuscular", "esophageal", "blood-brain-barrier",
+    "thyroid", "fallopian-tube",
+    "hepatic",  # legacy alias in corpus; normalizes to liver post-marathon
+]
 
 # generic words that shouldn't drive retrieval (they match half the corpus)
 _STOP = {
@@ -215,3 +289,9 @@ async def llms_txt(datasette, request):
 @hookimpl
 def register_routes():
     return [(r"^/-/ask$", ask), (r"^/llms\.txt$", llms_txt)]
+
+
+@hookimpl
+def extra_template_vars(datasette, request):
+    """Inject manifest-derived counts into every Jinja2 template context."""
+    return {"public_counts": PUBLIC_COUNTS}

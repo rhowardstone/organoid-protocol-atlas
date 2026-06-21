@@ -16,6 +16,8 @@ Routes (all return JSON; read-only, no writes):
   GET /analytics/type-timeseries              -- type publication counts by year (growth trends)
   GET /analytics/universal-reagents           -- reagents essential to each type (>= N% of protocols)
   GET /analytics/species-breakdown            -- species distribution per organoid type from protocols.jsonl
+  GET /analytics/matrix-breakdown             -- extracellular matrix usage per organoid type from protocols.jsonl
+  GET /analytics/base-media-breakdown         -- base media usage per organoid type from protocols.jsonl
   GET /analytics                                -- index of available analytics
 
 All endpoints degrade gracefully — if the pre-computed file doesn't exist they return
@@ -421,26 +423,36 @@ def handle_summary() -> tuple[dict, int]:
         except (json.JSONDecodeError, OSError):
             pass
 
-    # Species snapshot — top-3 cross-corpus species; derived live from protocols.jsonl
-    # so the summary stays fresh without a separate pre-computed artifact.
+    # Species + matrix + base_media snapshots — single pass over protocols.jsonl.
+    # Derived live so the summary stays fresh without a separate pre-computed artifact.
     if PROTOCOLS_JSONL.exists():
         try:
             sp_counts: dict[str, int] = {}
+            mx_counts: dict[str, int] = {}
+            bm_counts: dict[str, int] = {}
             for line in PROTOCOLS_JSONL.read_text().splitlines():
                 if not line.strip():
                     continue
                 p = json.loads(line)
-                raw = (p.get("species") or "not_stated").strip()
-                sp = _SPECIES_ALIASES.get(raw.lower(), raw.lower())
+                raw_sp = (p.get("species") or "not_stated").strip()
+                sp = _SPECIES_ALIASES.get(raw_sp.lower(), raw_sp.lower())
                 sp_counts[sp] = sp_counts.get(sp, 0) + 1
-            top3 = dict(sorted(sp_counts.items(), key=lambda kv: -kv[1])[:3])
-            summary["species_snapshot"] = top3
+                raw_mx = (p.get("matrix") or "not_stated").strip()
+                mx = _MATRIX_ALIASES.get(raw_mx.lower(), raw_mx)
+                mx_counts[mx] = mx_counts.get(mx, 0) + 1
+                raw_bm = (p.get("base_media") or "not_stated").strip()
+                bm = _BASE_MEDIA_ALIASES.get(raw_bm.lower(), raw_bm)
+                bm_counts[bm] = bm_counts.get(bm, 0) + 1
+            summary["species_snapshot"] = dict(sorted(sp_counts.items(), key=lambda kv: -kv[1])[:3])
+            summary["matrix_snapshot"] = dict(sorted(mx_counts.items(), key=lambda kv: -kv[1])[:3])
+            summary["base_media_snapshot"] = dict(sorted(bm_counts.items(), key=lambda kv: -kv[1])[:3])
         except (json.JSONDecodeError, OSError):
             pass
 
-    # manifest, mior, and species_snapshot are live-derived conveniences —
-    # don't count them as analytics data for the has_data gate.
-    _analytics_keys = set(summary) - {"manifest", "mior", "species_snapshot"}
+    # Live-derived convenience fields — excluded from has_data gate.
+    _analytics_keys = set(summary) - {
+        "manifest", "mior", "species_snapshot", "matrix_snapshot", "base_media_snapshot"
+    }
     has_data = bool(_analytics_keys)
 
     # Analytics inventory — always included so callers know what to generate
@@ -953,6 +965,193 @@ def handle_species_breakdown(organoid_type: str | None) -> tuple[dict, int]:
     }, 200
 
 
+_MATRIX_ALIASES: dict[str, str] = {
+    # Matrigel variants
+    "matrigel": "Matrigel",
+    "matrigel™": "Matrigel",
+    "matrigel tm": "Matrigel",
+    "corning matrigel": "Matrigel",
+    "corning matrigel hc": "Matrigel",
+    "growth factor reduced matrigel": "Matrigel",
+    "growth factor-reduced matrigel": "Matrigel",
+    # Geltrex
+    "geltrex": "Geltrex",
+    "geltrex ldev-free": "Geltrex",
+    # Basement membrane extract
+    "bme": "BME",
+    "basement membrane extract": "BME",
+    "cultrex basement membrane extract, type 2": "BME",
+    "cultrex bme": "BME",
+    "cultrex pathclear bme": "BME",
+    # Vitronectin
+    "vitronectin": "Vitronectin",
+    "vitronectin xf": "Vitronectin",
+    # Collagen
+    "collagen": "collagen",
+    "collagen i": "collagen",
+    "collagen i-matrigel": "collagen+Matrigel",
+    # Laminin
+    "laminin": "laminin",
+    "laminin-511": "laminin",
+    "laminin 511": "laminin",
+}
+
+
+def handle_matrix_breakdown(organoid_type: str | None) -> tuple[dict, int]:
+    """Extracellular matrix usage per organoid type from protocols.jsonl.
+
+    Normalises common variants (Matrigel™/Corning Matrigel → Matrigel, BME variants → BME,
+    vitronectin XF → Vitronectin, Laminin 511 → laminin) and returns per-type matrix
+    distribution plus cross-corpus totals. Optional ?type=kidney for one type.
+    """
+    if not PROTOCOLS_JSONL.exists():
+        return {
+            "error": "protocols.jsonl not found",
+            "hint": "Run: python pipeline/export_public.py",
+        }, 404
+
+    if organoid_type and not re.match(r'^[\w-]+$', organoid_type):
+        return {"error": "invalid organoid_type"}, 400
+
+    per_type: dict[str, dict[str, int]] = {}
+    cross_corpus: dict[str, int] = {}
+
+    try:
+        for line in PROTOCOLS_JSONL.read_text().splitlines():
+            if not line.strip():
+                continue
+            p = json.loads(line)
+            ot = (p.get("organoid_type") or "").strip()
+            if not ot or ot == "other":
+                continue
+            raw = (p.get("matrix") or "not_stated").strip()
+            mx = _MATRIX_ALIASES.get(raw.lower(), raw)
+            per_type.setdefault(ot, {})
+            per_type[ot][mx] = per_type[ot].get(mx, 0) + 1
+            cross_corpus[mx] = cross_corpus.get(mx, 0) + 1
+    except (json.JSONDecodeError, OSError) as exc:
+        return {"error": f"protocols.jsonl unreadable: {exc}"}, 500
+
+    if not per_type:
+        return {"error": "no organoid type data in protocols.jsonl"}, 404
+
+    if organoid_type:
+        if organoid_type not in per_type:
+            return {
+                "error": f"No data for organoid type '{organoid_type}'",
+                "available_types": sorted(per_type),
+            }, 404
+        return {
+            "organoid_type": organoid_type,
+            "matrix": dict(sorted(per_type[organoid_type].items(), key=lambda kv: -kv[1])),
+        }, 200
+
+    summary_per_type = {
+        t: dict(sorted(counts.items(), key=lambda kv: -kv[1]))
+        for t, counts in sorted(per_type.items())
+    }
+    return {
+        "cross_corpus": dict(sorted(cross_corpus.items(), key=lambda kv: -kv[1])),
+        "per_type": summary_per_type,
+        "n_types": len(per_type),
+    }, 200
+
+
+_BASE_MEDIA_ALIASES: dict[str, str] = {
+    # Advanced DMEM/F12 variants
+    "advanced dmem/f12": "Advanced DMEM/F12",
+    "advanced dmem/f-12": "Advanced DMEM/F12",
+    "advanced dmem-f12": "Advanced DMEM/F12",
+    "addmem/f12": "Advanced DMEM/F12",
+    "adf": "Advanced DMEM/F12",
+    # DMEM/F12 variants
+    "dmem/f12": "DMEM/F12",
+    "dmem/f-12": "DMEM/F12",
+    "dmem:f12": "DMEM/F12",
+    "dmem/f12 (1:1)": "DMEM/F12",
+    # mTeSR variants
+    "mtesr plus medium": "mTeSR Plus",
+    "mtesr plus": "mTeSR Plus",
+    "mtesr1": "mTeSR1",
+    "mtesr 1": "mTeSR1",
+    # E8 variants
+    "e8 medium": "Essential 8",
+    "essential 8": "Essential 8",
+    "essential 8 flex medium": "Essential 8",
+    "tesr-e8": "Essential 8",
+    "tesr e8": "Essential 8",
+    # RPMI variants
+    "rpmi 1640": "RPMI 1640",
+    "rpmi-1640": "RPMI 1640",
+    "rpmi": "RPMI 1640",
+    # DMEM variants
+    "dmem": "DMEM",
+    "high-glucose dmem": "DMEM",
+    # StemFlex
+    "stemflex": "StemFlex",
+    "stemflex medium": "StemFlex",
+}
+
+
+def handle_base_media_breakdown(organoid_type: str | None) -> tuple[dict, int]:
+    """Base media usage per organoid type from protocols.jsonl.
+
+    Normalises common variant names (Advanced DMEM/F-12 → Advanced DMEM/F12,
+    DMEM:F12 → DMEM/F12, mTeSR Plus medium → mTeSR Plus, Essential 8 variants,
+    RPMI variants). Optional ?type=kidney for one type.
+    """
+    if not PROTOCOLS_JSONL.exists():
+        return {
+            "error": "protocols.jsonl not found",
+            "hint": "Run: python pipeline/export_public.py",
+        }, 404
+
+    if organoid_type and not re.match(r'^[\w-]+$', organoid_type):
+        return {"error": "invalid organoid_type"}, 400
+
+    per_type: dict[str, dict[str, int]] = {}
+    cross_corpus: dict[str, int] = {}
+
+    try:
+        for line in PROTOCOLS_JSONL.read_text().splitlines():
+            if not line.strip():
+                continue
+            p = json.loads(line)
+            ot = (p.get("organoid_type") or "").strip()
+            if not ot or ot == "other":
+                continue
+            raw = (p.get("base_media") or "not_stated").strip()
+            bm = _BASE_MEDIA_ALIASES.get(raw.lower(), raw)
+            per_type.setdefault(ot, {})
+            per_type[ot][bm] = per_type[ot].get(bm, 0) + 1
+            cross_corpus[bm] = cross_corpus.get(bm, 0) + 1
+    except (json.JSONDecodeError, OSError) as exc:
+        return {"error": f"protocols.jsonl unreadable: {exc}"}, 500
+
+    if not per_type:
+        return {"error": "no organoid type data in protocols.jsonl"}, 404
+
+    if organoid_type:
+        if organoid_type not in per_type:
+            return {
+                "error": f"No data for organoid type '{organoid_type}'",
+                "available_types": sorted(per_type),
+            }, 404
+        return {
+            "organoid_type": organoid_type,
+            "base_media": dict(sorted(per_type[organoid_type].items(), key=lambda kv: -kv[1])),
+        }, 200
+
+    return {
+        "cross_corpus": dict(sorted(cross_corpus.items(), key=lambda kv: -kv[1])),
+        "per_type": {
+            t: dict(sorted(counts.items(), key=lambda kv: -kv[1]))
+            for t, counts in sorted(per_type.items())
+        },
+        "n_types": len(per_type),
+    }, 200
+
+
 def handle_mior() -> tuple[dict, int]:
     """Return pre-computed MIOR completeness report."""
     path = ANALYSIS_DIR / "mior_completeness.json"
@@ -985,6 +1184,8 @@ def handle_index() -> tuple[dict, int]:
             "/analytics/type-timeseries": "organoid type publication counts by year — growth trends and first-appearance dates from protocols.jsonl",
             "/analytics/universal-reagents": "type-essential reagents: canonical reagents appearing in >= 50% of protocols for each type; also cross-type universals",
             "/analytics/species-breakdown": "species distribution per organoid type (human / mouse / other) from protocols.jsonl; optional ?type=kidney",
+            "/analytics/matrix-breakdown": "extracellular matrix usage per organoid type (Matrigel / Geltrex / Vitronectin / ...) with alias normalisation; optional ?type=kidney",
+            "/analytics/base-media-breakdown": "base media usage per organoid type (DMEM/F12 / mTeSR1 / Advanced DMEM/F12 / ...) with alias normalisation; optional ?type=kidney",
             "/analytics/assay-endpoints": "assay endpoint cluster summary (per type + cross-type)",
             "/analytics/quality": "per-paper quality scores (gold/silver/bronze) + corpus summary",
             "/analytics/mior": "MIOR completeness report (Minimum Information About an Organoid Research)",
@@ -1134,6 +1335,18 @@ async def route_species_breakdown(datasette, request):
     return Response.json(data, status=status)
 
 
+async def route_matrix_breakdown(datasette, request):
+    organoid_type = request.args.get("type") or None
+    data, status = handle_matrix_breakdown(organoid_type)
+    return Response.json(data, status=status)
+
+
+async def route_base_media_breakdown(datasette, request):
+    organoid_type = request.args.get("type") or None
+    data, status = handle_base_media_breakdown(organoid_type)
+    return Response.json(data, status=status)
+
+
 async def route_candidates(datasette, request):
     data, status = handle_candidates()
     return Response.json(data, status=status)
@@ -1163,6 +1376,8 @@ def register_routes():
         (r"^/analytics/type-timeseries$", route_type_timeseries),
         (r"^/analytics/universal-reagents$", route_universal_reagents),
         (r"^/analytics/species-breakdown$", route_species_breakdown),
+        (r"^/analytics/matrix-breakdown$", route_matrix_breakdown),
+        (r"^/analytics/base-media-breakdown$", route_base_media_breakdown),
         (r"^/analytics/assay-endpoints$", route_assay_endpoints),
         (r"^/analytics/quality$", route_quality),
         (r"^/analytics/mior$", route_mior),
