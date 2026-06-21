@@ -116,6 +116,7 @@ exports. Prefer the JSON endpoints for programmatic use.
 - /analytics/supplement-breakdown      per-type and cross-type breakdown of supplement canonicals: global top 50, cross-type list, per-type top 10; ?q=GlutaMAX for one canonical; ?type=kidney for one type; ?min_types= threshold
 - /analytics/role-breakdown            normalized functional role distribution for signaling reagents: signaling_factor/growth_factor/differentiation/inhibitor/agonist etc.; ?q=differentiation for top canonicals; ?type= filter
 - /analytics/type-reagent-heatmap      organoid type × canonical usage matrix: top_n canonicals (columns) × all types (rows), cell = n_papers; ?kind=signaling|supplement|all; ?top_n= (default 20)
+- /analytics/canonical-name-variants   normalization complexity: for each canonical, all raw names that map to it; top 30 most-ambiguous by n_variants; ?q=FGF2 for one canonical; ?min_variants= threshold
 - /analytics/failure-modes             failure mode cluster summary across the corpus
 - /analytics/lineage                   DOI→DOI protocol lineage graph
 - /analytics/assay-endpoints           assay endpoint cluster summary (per-type + cross-type)
