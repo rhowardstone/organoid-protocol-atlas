@@ -40,6 +40,7 @@ Routes (all return JSON; read-only, no writes):
   GET /analytics/type-reagent-heatmap        -- type × canonical usage matrix: top_n canonicals × all types, each cell = n_papers; ?kind= filter; ?top_n= (default 20); live from reagents.jsonl
   GET /analytics/canonical-name-variants     -- normalization complexity report: canonical → all raw names that map to it; top 30 by n_variants; ?q= for one canonical; live from reagents.jsonl
   GET /analytics/concentration-unit-distribution -- unit inconsistency report: canonicals using >1 unit system; top 30 by n_units; ?q= for one canonical with min/median/max per unit; live from reagents.jsonl
+  GET /analytics/protocol-size-distribution  -- full histogram of n_signaling_factors and n_supplements per paper; global + per-type mean/median/std; ?type= for one type; live from protocols.jsonl
   GET /analytics                                -- index of available analytics
 
 All endpoints degrade gracefully — if the pre-computed file doesn't exist they return
@@ -3454,6 +3455,99 @@ def handle_concentration_unit_distribution(
     }, 200
 
 
+def handle_protocol_size_distribution(
+    organoid_type: str | None,
+) -> tuple[dict, int]:
+    """Full distribution of protocol sizes (n_signaling_factors + n_supplements) per paper.
+
+    Complements /analytics/protocol-complexity (averages) and /analytics/protocol-outliers
+    (extremes) by showing the full shape of the distribution.
+
+    Without ?type=: global histogram + per-type summary (mean, median, min, max, std).
+    With ?type=kidney: full histograms for one type only.
+    """
+    if not PROTOCOLS_JSONL.exists():
+        return {
+            "error": "protocols.jsonl not found",
+            "hint": "Run: python pipeline/export_public.py",
+        }, 404
+
+    protocols = [
+        json.loads(line)
+        for line in PROTOCOLS_JSONL.read_text().splitlines()
+        if line.strip()
+    ]
+
+    def _stats(vals: list) -> dict:
+        if not vals:
+            return {"mean": None, "median": None, "std": None, "min": None, "max": None, "n_papers": 0}
+        n = len(vals)
+        mean = sum(vals) / n
+        s = sorted(vals)
+        median = float(s[n // 2] if n % 2 else (s[n // 2 - 1] + s[n // 2]) / 2.0)
+        variance = sum((x - mean) ** 2 for x in vals) / (n - 1) if n > 1 else 0.0
+        return {
+            "mean": round(mean, 2),
+            "median": median,
+            "std": round(variance ** 0.5, 2),
+            "min": min(vals),
+            "max": max(vals),
+            "n_papers": n,
+        }
+
+    def _histogram(vals: list) -> list:
+        from collections import Counter
+        counts = Counter(vals)
+        return [{"value": v, "n_papers": counts[v]} for v in sorted(counts)]
+
+    if organoid_type:
+        rows = [r for r in protocols if r.get("organoid_type") == organoid_type]
+        if not rows:
+            return {
+                "error": f"No protocols for organoid type {organoid_type!r}",
+                "hint": "use /analytics/protocol-size-distribution without ?type= to see all types",
+            }, 404
+        sf_vals = [r["n_signaling_factors"] for r in rows if r.get("n_signaling_factors") is not None]
+        supp_vals = [r["n_supplements"] for r in rows if r.get("n_supplements") is not None]
+        return {
+            "organoid_type": organoid_type,
+            "signaling_factors": {**_stats(sf_vals), "histogram": _histogram(sf_vals)},
+            "supplements": {**_stats(supp_vals), "histogram": _histogram(supp_vals)},
+        }, 200
+
+    # Global
+    sf_vals = [r["n_signaling_factors"] for r in protocols if r.get("n_signaling_factors") is not None]
+    supp_vals = [r["n_supplements"] for r in protocols if r.get("n_supplements") is not None]
+
+    from collections import defaultdict
+    type_sf: dict[str, list] = defaultdict(list)
+    type_supp: dict[str, list] = defaultdict(list)
+    for r in protocols:
+        typ = r.get("organoid_type", "unknown")
+        if r.get("n_signaling_factors") is not None:
+            type_sf[typ].append(r["n_signaling_factors"])
+        if r.get("n_supplements") is not None:
+            type_supp[typ].append(r["n_supplements"])
+
+    per_type = {
+        typ: {
+            "mean_sf": round(sum(sf) / len(sf), 2) if sf else None,
+            "median_sf": float(sorted(sf)[len(sf) // 2]) if sf else None,
+            "mean_supp": round(sum(supp) / len(supp), 2) if supp else None,
+            "n_papers": max(len(sf), len(supp)),
+        }
+        for typ in sorted(set(list(type_sf.keys()) + list(type_supp.keys())))
+        for sf, supp in [(type_sf.get(typ, []), type_supp.get(typ, []))]
+    }
+
+    return {
+        "n_papers_total": len(protocols),
+        "signaling_factors": {**_stats(sf_vals), "histogram": _histogram(sf_vals)},
+        "supplements": {**_stats(supp_vals), "histogram": _histogram(supp_vals)},
+        "per_type": per_type,
+    }, 200
+
+
 def handle_index() -> tuple[dict, int]:
     """Analytics endpoint index."""
     return {
@@ -3496,6 +3590,7 @@ def handle_index() -> tuple[dict, int]:
             "/analytics/type-reagent-heatmap": "organoid type × canonical reagent usage matrix for visualization: top_n canonicals (columns) × all types (rows), each cell = n_papers; ?kind=signaling|supplement|all (default signaling); ?top_n= (default 20, max 50)",
             "/analytics/canonical-name-variants": "normalization complexity report: for each canonical, all distinct raw names that map to it; top 30 most-ambiguous sorted by n_variants; ?q=FGF2 for one canonical; ?min_variants= floor (default 2)",
             "/analytics/concentration-unit-distribution": "unit inconsistency report: canonicals using multiple concentration unit systems; top 30 by n_units; ?q=EGF for full unit breakdown with min/median/max per unit; ?min_n= records threshold (default 3)",
+            "/analytics/protocol-size-distribution": "full distribution of protocol sizes: histogram of n_signaling_factors and n_supplements per paper (global + per-type mean/median/std); ?type=kidney for one type with full histograms",
             "/analytics/assay-endpoints": "assay endpoint cluster summary (per type + cross-type)",
             "/analytics/quality": "per-paper quality scores (gold/silver/bronze) + corpus summary",
             "/analytics/mior": "MIOR completeness report (Minimum Information About an Organoid Research)",
@@ -3751,6 +3846,12 @@ async def route_type_maturity(datasette, request):
     return Response.json(data, status=status)
 
 
+async def route_protocol_size_distribution(datasette, request):
+    organoid_type = request.args.get("type") or None
+    data, status = handle_protocol_size_distribution(organoid_type)
+    return Response.json(data, status=status)
+
+
 async def route_concentration_unit_distribution(datasette, request):
     query = request.args.get("q") or None
     try:
@@ -3874,6 +3975,7 @@ def register_routes():
         (r"^/analytics/type-reagent-heatmap$", route_type_reagent_heatmap),
         (r"^/analytics/canonical-name-variants$", route_canonical_name_variants),
         (r"^/analytics/concentration-unit-distribution$", route_concentration_unit_distribution),
+        (r"^/analytics/protocol-size-distribution$", route_protocol_size_distribution),
         (r"^/analytics/journal-breakdown$", route_journal_breakdown),
         (r"^/analytics/concentration-by-type$", route_concentration_by_type),
         (r"^/analytics/kgx-summary$", route_kgx_summary),

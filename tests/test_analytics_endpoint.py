@@ -4703,3 +4703,149 @@ def test_cu_pct_sums_to_100(tmp_path, monkeypatch):
 def test_cu_index_entry():
     data, _ = ae.handle_index()
     assert "/analytics/concentration-unit-distribution" in data["endpoints"]
+
+
+# ---------------------------------------------------------------------------
+# Route 46: /analytics/protocol-size-distribution
+# ---------------------------------------------------------------------------
+
+def _write_protos_for_ps(path, rows):
+    base = {
+        "pmcid": "PMC1", "organoid_type": "intestinal",
+        "n_signaling_factors": 5, "n_supplements": 2,
+        "n_figure_confirmed": 0, "grounding_rate": 0.5,
+        "reagents_grounded": 3, "reagents_total": 6,
+        "species": "human", "matrix": None, "base_media": None,
+        "source_cell_type": "iPSC", "passaging": None, "timeline": None,
+        "assay_endpoints": None, "year": "2020", "doi": None,
+        "journal": "Nature", "license": "CC-BY", "gold_candidate": "no",
+        "extractor": "tier1", "base_media_reporting": "reported",
+        "first_author": "Smith J",
+    }
+    path.write_text("\n".join(json.dumps({**base, **r}) for r in rows))
+
+
+def _patch_ps(monkeypatch, path):
+    monkeypatch.setattr(ae, "PROTOCOLS_JSONL", path)
+
+
+# Fixture:
+# intestinal: PMC1 (sf=5, supp=2), PMC2 (sf=3, supp=1), PMC3 (sf=7, supp=3)
+# kidney:     PMC4 (sf=4, supp=2), PMC5 (sf=10, supp=4)
+_PS_ROWS = [
+    {"pmcid": "PMC1", "organoid_type": "intestinal", "n_signaling_factors": 5, "n_supplements": 2},
+    {"pmcid": "PMC2", "organoid_type": "intestinal", "n_signaling_factors": 3, "n_supplements": 1},
+    {"pmcid": "PMC3", "organoid_type": "intestinal", "n_signaling_factors": 7, "n_supplements": 3},
+    {"pmcid": "PMC4", "organoid_type": "kidney",     "n_signaling_factors": 4, "n_supplements": 2},
+    {"pmcid": "PMC5", "organoid_type": "kidney",     "n_signaling_factors": 10, "n_supplements": 4},
+]
+
+
+def test_ps_returns_200(tmp_path, monkeypatch):
+    p = tmp_path / "protocols.jsonl"
+    _write_protos_for_ps(p, _PS_ROWS)
+    _patch_ps(monkeypatch, p)
+    data, status = ae.handle_protocol_size_distribution(None)
+    assert status == 200
+    assert "signaling_factors" in data
+    assert "supplements" in data
+    assert "per_type" in data
+
+
+def test_ps_n_papers_total(tmp_path, monkeypatch):
+    p = tmp_path / "protocols.jsonl"
+    _write_protos_for_ps(p, _PS_ROWS)
+    _patch_ps(monkeypatch, p)
+    data, _ = ae.handle_protocol_size_distribution(None)
+    assert data["n_papers_total"] == 5
+
+
+def test_ps_sf_mean_correct(tmp_path, monkeypatch):
+    p = tmp_path / "protocols.jsonl"
+    _write_protos_for_ps(p, _PS_ROWS)
+    _patch_ps(monkeypatch, p)
+    # (5+3+7+4+10)/5 = 29/5 = 5.8
+    data, _ = ae.handle_protocol_size_distribution(None)
+    assert abs(data["signaling_factors"]["mean"] - 5.8) < 0.01
+
+
+def test_ps_sf_histogram_present(tmp_path, monkeypatch):
+    p = tmp_path / "protocols.jsonl"
+    _write_protos_for_ps(p, _PS_ROWS)
+    _patch_ps(monkeypatch, p)
+    data, _ = ae.handle_protocol_size_distribution(None)
+    hist = data["signaling_factors"]["histogram"]
+    assert isinstance(hist, list)
+    assert len(hist) >= 3  # at least 3 distinct values (3,4,5,7,10)
+    # All histogram entries should have value and n_papers
+    for entry in hist:
+        assert "value" in entry and "n_papers" in entry
+
+
+def test_ps_sf_stats_correct(tmp_path, monkeypatch):
+    p = tmp_path / "protocols.jsonl"
+    _write_protos_for_ps(p, _PS_ROWS)
+    _patch_ps(monkeypatch, p)
+    data, _ = ae.handle_protocol_size_distribution(None)
+    sf = data["signaling_factors"]
+    assert sf["min"] == 3
+    assert sf["max"] == 10
+    assert sf["n_papers"] == 5
+
+
+def test_ps_per_type_present(tmp_path, monkeypatch):
+    p = tmp_path / "protocols.jsonl"
+    _write_protos_for_ps(p, _PS_ROWS)
+    _patch_ps(monkeypatch, p)
+    data, _ = ae.handle_protocol_size_distribution(None)
+    assert "intestinal" in data["per_type"]
+    assert "kidney" in data["per_type"]
+    # intestinal mean_sf = (5+3+7)/3 = 5.0
+    assert abs(data["per_type"]["intestinal"]["mean_sf"] - 5.0) < 0.01
+
+
+def test_ps_type_filter_intestinal(tmp_path, monkeypatch):
+    p = tmp_path / "protocols.jsonl"
+    _write_protos_for_ps(p, _PS_ROWS)
+    _patch_ps(monkeypatch, p)
+    data, status = ae.handle_protocol_size_distribution("intestinal")
+    assert status == 200
+    assert data["organoid_type"] == "intestinal"
+    assert data["signaling_factors"]["n_papers"] == 3
+    assert data["signaling_factors"]["min"] == 3
+    assert data["signaling_factors"]["max"] == 7
+    # Histograms present for type view
+    assert "histogram" in data["signaling_factors"]
+
+
+def test_ps_type_filter_unknown_returns_404(tmp_path, monkeypatch):
+    p = tmp_path / "protocols.jsonl"
+    _write_protos_for_ps(p, _PS_ROWS)
+    _patch_ps(monkeypatch, p)
+    _, status = ae.handle_protocol_size_distribution("NOTYPE_XYZ")
+    assert status == 404
+
+
+def test_ps_supplement_stats_correct(tmp_path, monkeypatch):
+    p = tmp_path / "protocols.jsonl"
+    _write_protos_for_ps(p, _PS_ROWS)
+    _patch_ps(monkeypatch, p)
+    # supplements: (2+1+3+2+4)/5 = 12/5 = 2.4
+    data, _ = ae.handle_protocol_size_distribution(None)
+    assert abs(data["supplements"]["mean"] - 2.4) < 0.01
+    assert data["supplements"]["min"] == 1
+    assert data["supplements"]["max"] == 4
+
+
+def test_ps_kidney_mean_sf(tmp_path, monkeypatch):
+    p = tmp_path / "protocols.jsonl"
+    _write_protos_for_ps(p, _PS_ROWS)
+    _patch_ps(monkeypatch, p)
+    data, _ = ae.handle_protocol_size_distribution(None)
+    # kidney mean_sf = (4+10)/2 = 7.0
+    assert abs(data["per_type"]["kidney"]["mean_sf"] - 7.0) < 0.01
+
+
+def test_ps_index_entry():
+    data, _ = ae.handle_index()
+    assert "/analytics/protocol-size-distribution" in data["endpoints"]

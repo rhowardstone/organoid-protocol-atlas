@@ -675,3 +675,20 @@ def test_live_cu_r_spondin1_multi_unit():
     assert data["n_units"] >= 2
     unit_names = {u["unit"] for u in data["units"]}
     assert "ng/mL" in unit_names
+
+
+@require_protocols
+def test_live_ps_returns_200():
+    data, status = ae.handle_protocol_size_distribution(None)
+    assert status == 200
+    assert data["n_papers_total"] >= 500
+    assert data["signaling_factors"]["mean"] >= 3.0
+    assert len(data["signaling_factors"]["histogram"]) >= 5
+
+
+@require_protocols
+def test_live_ps_intestinal():
+    data, status = ae.handle_protocol_size_distribution("intestinal")
+    assert status == 200
+    assert data["signaling_factors"]["n_papers"] >= 30
+    assert data["signaling_factors"]["mean"] >= 4.0
