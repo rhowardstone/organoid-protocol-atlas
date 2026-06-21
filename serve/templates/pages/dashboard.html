@@ -152,6 +152,8 @@
 .dash-endpoint-item .dash-ep-desc { color: var(--muted); }
 .dash-api-link { font-family: var(--mono); font-size: .7rem; color: var(--muted); display: block; margin-top: .7rem; }
 .dash-api-link:hover { color: var(--accent); }
+.dash-stats-link { font-size: .7rem; color: var(--muted); text-decoration: none; margin-left: .3rem; opacity: .55; }
+.dash-stats-link:hover { color: var(--accent); opacity: 1; }
 
 @media (max-width:720px) {
   div[style*="grid-template-columns:1fr 1fr"] { display: block !important; }
@@ -265,8 +267,9 @@ async function load() {
         </tr></thead>
         <tbody>${topTypes.map(r => `
           <tr>
-            <td><a href="/analytics/coverage/${esc(r.organoid_type)}">${esc(r.organoid_type)}</a></td>
-            <td>${r.n_papers ?? '—'}</td>
+            <td><a href="/atlas/protocols?organoid_type__exact=${encodeURIComponent(r.organoid_type)}" title="Drill down to the source papers for ${esc(r.organoid_type)}">${esc(r.organoid_type)}</a>
+              <a class="dash-stats-link" href="/analytics/coverage/${esc(r.organoid_type)}" title="coverage JSON">&#9656;</a></td>
+            <td><a href="/atlas/protocols?organoid_type__exact=${encodeURIComponent(r.organoid_type)}">${r.n_papers ?? '—'}</a></td>
             <td>
               ${r.completeness_score != null ? (r.completeness_score*100).toFixed(1)+'%' : '—'}
               <span class="dash-mini-bar" style="width:${Math.round((r.completeness_score||0)/maxScore*80)}px"></span>
@@ -287,8 +290,9 @@ async function load() {
         <thead><tr><th>Type</th><th>Papers</th><th>Completeness</th><th>Grounding</th></tr></thead>
         <tbody>${rows.map(r => `
           <tr>
-            <td><a href="/analytics/coverage/${esc(r.organoid_type)}">${esc(r.organoid_type)}</a></td>
-            <td>${r.n_papers ?? '—'}</td>
+            <td><a href="/atlas/protocols?organoid_type__exact=${encodeURIComponent(r.organoid_type)}" title="Drill down to the source papers for ${esc(r.organoid_type)}">${esc(r.organoid_type)}</a>
+              <a class="dash-stats-link" href="/analytics/coverage/${esc(r.organoid_type)}" title="coverage JSON">&#9656;</a></td>
+            <td><a href="/atlas/protocols?organoid_type__exact=${encodeURIComponent(r.organoid_type)}">${r.n_papers ?? '—'}</a></td>
             <td>${r.completeness_score != null ? (r.completeness_score*100).toFixed(1)+'%' : '—'}
               <span class="dash-mini-bar" style="width:${Math.round((r.completeness_score||0)/maxScore*80)}px"></span>
             </td>
