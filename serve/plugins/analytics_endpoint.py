@@ -43,6 +43,7 @@ Routes (all return JSON; read-only, no writes):
   GET /analytics/protocol-size-distribution  -- full histogram of n_signaling_factors and n_supplements per paper; global + per-type mean/median/std; ?type= for one type; live from protocols.jsonl
   GET /analytics/evidence-quote-coverage     -- per-type and per-kind rate of verbatim evidence quotes in reagent records; ?type= for one type with top canonicals; ?kind=signaling|supplement filter; live from reagents.jsonl
   GET /analytics/concentration-value-rate   -- canonicals ranked by fraction of records with a numeric dose value; highest_reporters + lowest_reporters lists; ?q= for per-type breakdown; ?min_n= threshold; ?kind= filter; live from reagents.jsonl
+  GET /analytics/kind-ambiguity            -- canonicals that appear in both signaling and supplement kinds; sorted by ambiguity (minority_fraction); ?q= for per-type kind breakdown; ?min_n= threshold; live from reagents.jsonl
   GET /analytics                                -- index of available analytics
 
 All endpoints degrade gracefully — if the pre-computed file doesn't exist they return
@@ -3550,6 +3551,108 @@ def handle_protocol_size_distribution(
     }, 200
 
 
+def handle_kind_ambiguity(query=None, min_n=3):
+    """Route 49: canonicals that appear in both signaling and supplement kinds.
+
+    Sorted by minority_fraction (how often the minority kind appears) to surface
+    true ambiguity vs. rare mis-classifications. High minority_fraction means a
+    canonical is routinely classified as both — likely a normalization target.
+
+    Without ?q=: returns all dual-kind canonicals with >= min_n total records,
+    sorted by minority_fraction desc.
+    With ?q=CANONICAL: per-type kind breakdown for that canonical.
+    """
+    reagents = [
+        json.loads(line)
+        for line in REAGENTS_JSONL.read_text().splitlines()
+        if line.strip()
+    ]
+
+    if query:
+        subset = [r for r in reagents if (r.get("canonical") or "").lower() == query.lower()]
+        if not subset:
+            return {"error": f"No reagents found for canonical '{query}'"}, 404
+
+        from collections import defaultdict
+        type_kind: dict[str, dict[str, int]] = {}
+        for r in subset:
+            typ = r.get("organoid_type", "unknown")
+            k = r.get("kind", "unknown")
+            type_kind.setdefault(typ, {"signaling": 0, "supplement": 0})
+            if k in ("signaling", "supplement"):
+                type_kind[typ][k] += 1
+
+        per_type = []
+        for typ in sorted(type_kind):
+            sig = type_kind[typ]["signaling"]
+            sup = type_kind[typ]["supplement"]
+            total = sig + sup
+            dominant = "signaling" if sig >= sup else "supplement"
+            minority = total - max(sig, sup)
+            per_type.append({
+                "organoid_type": typ,
+                "n_signaling": sig,
+                "n_supplement": sup,
+                "n_total": total,
+                "dominant_kind": dominant,
+                "minority_fraction": round(minority / total, 4) if total else 0.0,
+            })
+        per_type.sort(key=lambda x: (-x["minority_fraction"], x["organoid_type"]))
+
+        n_sig = sum(e["n_signaling"] for e in per_type)
+        n_sup = sum(e["n_supplement"] for e in per_type)
+        n_tot = n_sig + n_sup
+        return {
+            "canonical": query,
+            "min_n": min_n,
+            "n_signaling": n_sig,
+            "n_supplement": n_sup,
+            "n_total": n_tot,
+            "global_dominant_kind": "signaling" if n_sig >= n_sup else "supplement",
+            "global_minority_fraction": round(min(n_sig, n_sup) / n_tot, 4) if n_tot else 0.0,
+            "per_type": per_type,
+        }, 200
+
+    # Global view
+    from collections import defaultdict
+    canon_map: dict[str, dict[str, int]] = {}
+    for r in reagents:
+        c = r.get("canonical", "")
+        k = r.get("kind", "")
+        if not c or k not in ("signaling", "supplement"):
+            continue
+        canon_map.setdefault(c, {"signaling": 0, "supplement": 0})
+        canon_map[c][k] += 1
+
+    dual_kind = []
+    for c, counts in canon_map.items():
+        sig = counts["signaling"]
+        sup = counts["supplement"]
+        if sig == 0 or sup == 0:
+            continue
+        total = sig + sup
+        if total < min_n:
+            continue
+        minority = min(sig, sup)
+        dominant = "signaling" if sig >= sup else "supplement"
+        dual_kind.append({
+            "canonical": c,
+            "n_signaling": sig,
+            "n_supplement": sup,
+            "n_total": total,
+            "dominant_kind": dominant,
+            "minority_fraction": round(minority / total, 4),
+        })
+
+    dual_kind.sort(key=lambda x: (-x["minority_fraction"], -x["n_total"]))
+
+    return {
+        "min_n": min_n,
+        "n_dual_kind_canonicals": len(dual_kind),
+        "dual_kind_canonicals": dual_kind,
+    }, 200
+
+
 def handle_concentration_value_rate(query=None, min_n=5, kind=None):
     """Route 48: canonicals ranked by fraction of records that carry a numeric dose value.
 
@@ -3842,6 +3945,7 @@ def handle_index() -> tuple[dict, int]:
             "/analytics/protocol-size-distribution": "full distribution of protocol sizes: histogram of n_signaling_factors and n_supplements per paper (global + per-type mean/median/std); ?type=kidney for one type with full histograms",
             "/analytics/evidence-quote-coverage": "per-type and per-kind rate of verbatim evidence quotes in reagent records; overall_coverage_rate + by_kind breakdown; per_type sorted by coverage_rate; ?type=kidney for top canonicals by coverage; ?kind=signaling|supplement filter",
             "/analytics/concentration-value-rate": "canonicals ranked by fraction of records with a numeric dose value; highest_reporters (well-dosed) + lowest_reporters (commonly used but rarely dosed); ?q=Wnt3a for per-type breakdown; ?min_n= threshold (default 5); ?kind= filter",
+            "/analytics/kind-ambiguity": "canonicals that appear in both signaling and supplement kinds; sorted by minority_fraction (ambiguity score); highlights normalization targets; ?q=Y-27632 for per-type kind breakdown; ?min_n= threshold (default 3)",
             "/analytics/assay-endpoints": "assay endpoint cluster summary (per type + cross-type)",
             "/analytics/quality": "per-paper quality scores (gold/silver/bronze) + corpus summary",
             "/analytics/mior": "MIOR completeness report (Minimum Information About an Organoid Research)",
@@ -4121,6 +4225,16 @@ async def route_concentration_value_rate(datasette, request):
     return Response.json(data, status=status)
 
 
+async def route_kind_ambiguity(datasette, request):
+    query = request.args.get("q") or None
+    try:
+        min_n = int(request.args.get("min_n") or 3)
+    except (TypeError, ValueError):
+        min_n = 3
+    data, status = handle_kind_ambiguity(query, min_n)
+    return Response.json(data, status=status)
+
+
 async def route_concentration_unit_distribution(datasette, request):
     query = request.args.get("q") or None
     try:
@@ -4247,6 +4361,7 @@ def register_routes():
         (r"^/analytics/protocol-size-distribution$", route_protocol_size_distribution),
         (r"^/analytics/evidence-quote-coverage$", route_evidence_quote_coverage),
         (r"^/analytics/concentration-value-rate$", route_concentration_value_rate),
+        (r"^/analytics/kind-ambiguity$", route_kind_ambiguity),
         (r"^/analytics/journal-breakdown$", route_journal_breakdown),
         (r"^/analytics/concentration-by-type$", route_concentration_by_type),
         (r"^/analytics/kgx-summary$", route_kgx_summary),

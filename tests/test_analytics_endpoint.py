@@ -5129,3 +5129,154 @@ def test_cvr_per_type_sorted_by_rate_desc(tmp_path, monkeypatch):
 def test_cvr_index_entry():
     data, _ = ae.handle_index()
     assert "/analytics/concentration-value-rate" in data["endpoints"]
+
+
+# --------------------------------------------------------------------------- #
+# handle_kind_ambiguity  (route 49)
+# --------------------------------------------------------------------------- #
+
+_KA_ROWS = [
+    # Y-27632: 4 signaling, 2 supplement → minority_fraction = 2/6 = 0.333
+    {"canonical": "Y-27632", "kind": "signaling", "organoid_type": "intestinal"},
+    {"canonical": "Y-27632", "kind": "signaling", "organoid_type": "intestinal"},
+    {"canonical": "Y-27632", "kind": "signaling", "organoid_type": "kidney"},
+    {"canonical": "Y-27632", "kind": "signaling", "organoid_type": "lung"},
+    {"canonical": "Y-27632", "kind": "supplement", "organoid_type": "cardiac"},
+    {"canonical": "Y-27632", "kind": "supplement", "organoid_type": "cerebral"},
+    # EGF: 3 signaling, 0 supplement → NOT dual-kind (should NOT appear)
+    {"canonical": "EGF",     "kind": "signaling", "organoid_type": "intestinal"},
+    {"canonical": "EGF",     "kind": "signaling", "organoid_type": "intestinal"},
+    {"canonical": "EGF",     "kind": "signaling", "organoid_type": "kidney"},
+    # Nicotinamide: 2 signaling, 4 supplement → minority_fraction = 2/6 = 0.333
+    {"canonical": "Nicotinamide", "kind": "supplement", "organoid_type": "intestinal"},
+    {"canonical": "Nicotinamide", "kind": "supplement", "organoid_type": "intestinal"},
+    {"canonical": "Nicotinamide", "kind": "supplement", "organoid_type": "kidney"},
+    {"canonical": "Nicotinamide", "kind": "supplement", "organoid_type": "lung"},
+    {"canonical": "Nicotinamide", "kind": "signaling",  "organoid_type": "cardiac"},
+    {"canonical": "Nicotinamide", "kind": "signaling",  "organoid_type": "cerebral"},
+]
+
+
+def _write_reagents_for_ka(path, rows):
+    path.write_text("\n".join(json.dumps(r) for r in rows))
+
+
+def _patch_ka(monkeypatch, path):
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", path)
+
+
+def test_ka_global_returns_200(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_ka(p, _KA_ROWS)
+    _patch_ka(monkeypatch, p)
+    data, status = ae.handle_kind_ambiguity(None, 3)
+    assert status == 200
+    assert "dual_kind_canonicals" in data
+    assert "n_dual_kind_canonicals" in data
+
+
+def test_ka_egf_excluded(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_ka(p, _KA_ROWS)
+    _patch_ka(monkeypatch, p)
+    data, _ = ae.handle_kind_ambiguity(None, 3)
+    names = {e["canonical"] for e in data["dual_kind_canonicals"]}
+    # EGF is pure signaling — must NOT appear
+    assert "EGF" not in names
+    # Y-27632 and Nicotinamide are dual-kind — must appear
+    assert "Y-27632" in names
+    assert "Nicotinamide" in names
+
+
+def test_ka_minority_fraction_values(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_ka(p, _KA_ROWS)
+    _patch_ka(monkeypatch, p)
+    data, _ = ae.handle_kind_ambiguity(None, 3)
+    by_name = {e["canonical"]: e for e in data["dual_kind_canonicals"]}
+    # Y-27632: 4 sig, 2 sup → minority=2/6 ≈ 0.333
+    assert abs(by_name["Y-27632"]["minority_fraction"] - 2/6) < 0.01
+    assert by_name["Y-27632"]["dominant_kind"] == "signaling"
+    # Nicotinamide: 4 sup, 2 sig → minority=2/6 ≈ 0.333
+    assert abs(by_name["Nicotinamide"]["minority_fraction"] - 2/6) < 0.01
+    assert by_name["Nicotinamide"]["dominant_kind"] == "supplement"
+
+
+def test_ka_sorted_by_minority_fraction_desc(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_ka(p, _KA_ROWS)
+    _patch_ka(monkeypatch, p)
+    data, _ = ae.handle_kind_ambiguity(None, 3)
+    fracs = [e["minority_fraction"] for e in data["dual_kind_canonicals"]]
+    assert fracs == sorted(fracs, reverse=True)
+
+
+def test_ka_min_n_excludes_sparse(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_ka(p, _KA_ROWS)
+    _patch_ka(monkeypatch, p)
+    # min_n=10 → Y-27632 and Nicotinamide both have only 6 records → excluded
+    data, _ = ae.handle_kind_ambiguity(None, 10)
+    assert data["n_dual_kind_canonicals"] == 0
+
+
+def test_ka_query_y27632_per_type(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_ka(p, _KA_ROWS)
+    _patch_ka(monkeypatch, p)
+    data, status = ae.handle_kind_ambiguity("Y-27632", 3)
+    assert status == 200
+    assert data["canonical"] == "Y-27632"
+    assert data["n_signaling"] == 4
+    assert data["n_supplement"] == 2
+    assert data["n_total"] == 6
+    assert data["global_dominant_kind"] == "signaling"
+    assert abs(data["global_minority_fraction"] - 2/6) < 0.01
+
+
+def test_ka_query_per_type_structure(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_ka(p, _KA_ROWS)
+    _patch_ka(monkeypatch, p)
+    data, _ = ae.handle_kind_ambiguity("Y-27632", 3)
+    per_type = {e["organoid_type"]: e for e in data["per_type"]}
+    # intestinal: 2 signaling, 0 supplement
+    assert per_type["intestinal"]["n_signaling"] == 2
+    assert per_type["intestinal"]["n_supplement"] == 0
+    # cardiac: 0 signaling, 1 supplement
+    assert per_type["cardiac"]["n_supplement"] == 1
+
+
+def test_ka_query_unknown_returns_404(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_ka(p, _KA_ROWS)
+    _patch_ka(monkeypatch, p)
+    _, status = ae.handle_kind_ambiguity("NOSUCHCANONICAL_XYZ", 3)
+    assert status == 404
+
+
+def test_ka_n_dual_kind_correct(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_ka(p, _KA_ROWS)
+    _patch_ka(monkeypatch, p)
+    data, _ = ae.handle_kind_ambiguity(None, 3)
+    assert data["n_dual_kind_canonicals"] == 2
+
+
+def test_ka_count_fields_present(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_ka(p, _KA_ROWS)
+    _patch_ka(monkeypatch, p)
+    data, _ = ae.handle_kind_ambiguity(None, 3)
+    for e in data["dual_kind_canonicals"]:
+        assert "canonical" in e
+        assert "n_signaling" in e
+        assert "n_supplement" in e
+        assert "n_total" in e
+        assert "dominant_kind" in e
+        assert "minority_fraction" in e
+
+
+def test_ka_index_entry():
+    data, _ = ae.handle_index()
+    assert "/analytics/kind-ambiguity" in data["endpoints"]

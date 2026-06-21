@@ -739,3 +739,24 @@ def test_live_cvr_egf_per_type():
     assert data["n_total"] >= 100
     assert data["overall_value_rate"] >= 0.3
     assert len(data["per_type"]) >= 10
+
+
+@require_reagents
+def test_live_ka_global_returns_200():
+    data, status = ae.handle_kind_ambiguity(None, 3)
+    assert status == 200
+    assert data["n_dual_kind_canonicals"] >= 20
+    names = {e["canonical"] for e in data["dual_kind_canonicals"]}
+    # Y-27632 is the largest dual-kind canonical (149 signaling, 47 supplement)
+    assert "Y-27632" in names
+
+
+@require_reagents
+def test_live_ka_y27632_per_type():
+    data, status = ae.handle_kind_ambiguity("Y-27632", 3)
+    assert status == 200
+    assert data["canonical"] == "Y-27632"
+    assert data["n_signaling"] >= 100
+    assert data["n_supplement"] >= 10
+    assert data["global_dominant_kind"] == "signaling"
+    assert len(data["per_type"]) >= 10
