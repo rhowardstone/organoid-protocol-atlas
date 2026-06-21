@@ -121,6 +121,7 @@ exports. Prefer the JSON endpoints for programmatic use.
 - /analytics/protocol-size-distribution  full histogram of n_signaling_factors and n_supplements per paper; global + per-type mean/median/std; ?type=kidney for one type with full histograms
 - /analytics/evidence-quote-coverage   per-type and per-kind rate of verbatim evidence quotes in reagent records; overall_coverage_rate + by_kind breakdown + per_type sorted by coverage_rate; ?type=kidney for top canonicals; ?kind=signaling|supplement filter
 - /analytics/concentration-value-rate  canonicals ranked by fraction of records with a numeric dose value; highest_reporters + lowest_reporters (top 30 each); ?q=Wnt3a for per-type breakdown; ?min_n= threshold (default 5); ?kind= filter
+- /analytics/kind-ambiguity            canonicals that appear in both signaling and supplement kinds; sorted by minority_fraction; ?q=Y-27632 for per-type kind breakdown; ?min_n= threshold (default 3)
 - /analytics/failure-modes             failure mode cluster summary across the corpus
 - /analytics/lineage                   DOI→DOI protocol lineage graph
 - /analytics/assay-endpoints           assay endpoint cluster summary (per-type + cross-type)
