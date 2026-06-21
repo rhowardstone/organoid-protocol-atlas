@@ -1,4 +1,5 @@
 import json
+import sys
 from pathlib import Path
 
 
@@ -45,7 +46,6 @@ def test_public_ask_page_is_honest_without_model():
 
 
 def test_is_public_license_excludes_nc_nd_and_nonfree():
-    import sys
     sys.path.insert(0, str(ROOT / "pipeline"))
     from export_public import is_public_license
     # freely redistributable -> public
@@ -55,3 +55,22 @@ def test_is_public_license_excludes_nc_nd_and_nonfree():
     for lic in ["CC-BY-NC", "CC-BY-NC-ND", "CC-BY-ND", "author-manuscript",
                 "unknown", "", None]:
         assert not is_public_license(lic), lic
+
+
+def test_evidence_quote_cap_enforced():
+    """Committed reagents.jsonl must respect PUBLIC_SNIPPET_MAX (no full method paragraphs)."""
+    sys.path.insert(0, str(ROOT / "pipeline"))
+    from export_public import PUBLIC_SNIPPET_MAX
+    reagents_path = ROOT / "exports/public/reagents.jsonl"
+    over = []
+    for line in reagents_path.read_text().splitlines():
+        if not line.strip():
+            continue
+        r = json.loads(line)
+        eq = r.get("evidence_quote") or ""
+        if len(eq) > PUBLIC_SNIPPET_MAX:
+            over.append(eq[:80])
+    assert not over, (
+        f"{len(over)} reagent rows exceed PUBLIC_SNIPPET_MAX={PUBLIC_SNIPPET_MAX}: "
+        f"{over[:3]}"
+    )
