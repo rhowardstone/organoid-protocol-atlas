@@ -1,0 +1,2776 @@
+{
+  "n_total_papers": 582,
+  "n_organoid_types": 26,
+  "overall_avg_grounding_rate": 0.8954,
+  "corpus_pooled_grounding_rate": 0.8768,
+  "types_by_completeness": [
+    {
+      "organoid_type": "retinal",
+      "n_papers": 37,
+      "avg_grounding_rate": 0.8765,
+      "pooled_grounding_rate": 0.8562,
+      "reagents_grounded_total": 131,
+      "reagents_total_sum": 153,
+      "n_with_signaling_factors": 37,
+      "n_with_timeline": 26,
+      "n_with_base_media": 32,
+      "n_with_matrix": 33,
+      "n_with_passaging": 25,
+      "n_with_assay_endpoints": 33,
+      "n_figure_confirmed_total": 0,
+      "n_species": 3,
+      "top_species": [
+        {
+          "species": "human",
+          "count": 34
+        },
+        {
+          "species": "mouse",
+          "count": 1
+        },
+        {
+          "species": "oryzias latipes",
+          "count": 1
+        }
+      ],
+      "n_source_cell_types": 2,
+      "source_cell_types": [
+        {
+          "type": "ipsc",
+          "count": 34
+        },
+        {
+          "type": "esc",
+          "count": 1
+        }
+      ],
+      "year_range": [
+        2014,
+        2026
+      ],
+      "grounding_distribution": {
+        "poor_lt50": 0,
+        "moderate_50_80": 9,
+        "good_80_100": 7,
+        "perfect_100": 21
+      },
+      "completeness_score": 0.8835
+    },
+    {
+      "organoid_type": "kidney",
+      "n_papers": 30,
+      "avg_grounding_rate": 0.8925,
+      "pooled_grounding_rate": 0.8596,
+      "reagents_grounded_total": 147,
+      "reagents_total_sum": 171,
+      "n_with_signaling_factors": 30,
+      "n_with_timeline": 12,
+      "n_with_base_media": 23,
+      "n_with_matrix": 26,
+      "n_with_passaging": 17,
+      "n_with_assay_endpoints": 24,
+      "n_figure_confirmed_total": 2,
+      "n_species": 2,
+      "top_species": [
+        {
+          "species": "human",
+          "count": 26
+        },
+        {
+          "species": "mouse",
+          "count": 1
+        }
+      ],
+      "n_source_cell_types": 2,
+      "source_cell_types": [
+        {
+          "type": "ipsc",
+          "count": 24
+        },
+        {
+          "type": "adult_stem_cell",
+          "count": 6
+        }
+      ],
+      "year_range": [
+        2015,
+        2026
+      ],
+      "grounding_distribution": {
+        "poor_lt50": 0,
+        "moderate_50_80": 8,
+        "good_80_100": 3,
+        "perfect_100": 19
+      },
+      "completeness_score": 0.8529
+    },
+    {
+      "organoid_type": "pancreatic",
+      "n_papers": 35,
+      "avg_grounding_rate": 0.927,
+      "pooled_grounding_rate": 0.9155,
+      "reagents_grounded_total": 195,
+      "reagents_total_sum": 213,
+      "n_with_signaling_factors": 35,
+      "n_with_timeline": 4,
+      "n_with_base_media": 23,
+      "n_with_matrix": 29,
+      "n_with_passaging": 13,
+      "n_with_assay_endpoints": 22,
+      "n_figure_confirmed_total": 0,
+      "n_species": 5,
+      "top_species": [
+        {
+          "species": "human",
+          "count": 22
+        },
+        {
+          "species": "mouse",
+          "count": 5
+        },
+        {
+          "species": "porcine",
+          "count": 2
+        }
+      ],
+      "n_source_cell_types": 4,
+      "source_cell_types": [
+        {
+          "type": "adult_stem_cell",
+          "count": 20
+        },
+        {
+          "type": "ipsc",
+          "count": 10
+        },
+        {
+          "type": "primary_tissue",
+          "count": 2
+        },
+        {
+          "type": "esc",
+          "count": 1
+        }
+      ],
+      "year_range": [
+        2013,
+        2026
+      ],
+      "grounding_distribution": {
+        "poor_lt50": 0,
+        "moderate_50_80": 5,
+        "good_80_100": 6,
+        "perfect_100": 24
+      },
+      "completeness_score": 0.8369
+    },
+    {
+      "organoid_type": "intestinal",
+      "n_papers": 35,
+      "avg_grounding_rate": 0.9235,
+      "pooled_grounding_rate": 0.8841,
+      "reagents_grounded_total": 145,
+      "reagents_total_sum": 164,
+      "n_with_signaling_factors": 35,
+      "n_with_timeline": 6,
+      "n_with_base_media": 22,
+      "n_with_matrix": 30,
+      "n_with_passaging": 16,
+      "n_with_assay_endpoints": 21,
+      "n_figure_confirmed_total": 0,
+      "n_species": 10,
+      "top_species": [
+        {
+          "species": "human",
+          "count": 16
+        },
+        {
+          "species": "murine",
+          "count": 4
+        },
+        {
+          "species": "mouse",
+          "count": 4
+        }
+      ],
+      "n_source_cell_types": 3,
+      "source_cell_types": [
+        {
+          "type": "adult_stem_cell",
+          "count": 19
+        },
+        {
+          "type": "ipsc",
+          "count": 9
+        },
+        {
+          "type": "primary_tissue",
+          "count": 6
+        }
+      ],
+      "year_range": [
+        2018,
+        2026
+      ],
+      "grounding_distribution": {
+        "poor_lt50": 0,
+        "moderate_50_80": 5,
+        "good_80_100": 5,
+        "perfect_100": 25
+      },
+      "completeness_score": 0.8362
+    },
+    {
+      "organoid_type": "prostate",
+      "n_papers": 16,
+      "avg_grounding_rate": 0.8629,
+      "pooled_grounding_rate": 0.8765,
+      "reagents_grounded_total": 71,
+      "reagents_total_sum": 81,
+      "n_with_signaling_factors": 16,
+      "n_with_timeline": 0,
+      "n_with_base_media": 12,
+      "n_with_matrix": 15,
+      "n_with_passaging": 10,
+      "n_with_assay_endpoints": 5,
+      "n_figure_confirmed_total": 0,
+      "n_species": 4,
+      "top_species": [
+        {
+          "species": "mouse",
+          "count": 6
+        },
+        {
+          "species": "human",
+          "count": 4
+        },
+        {
+          "species": "murine",
+          "count": 2
+        }
+      ],
+      "n_source_cell_types": 3,
+      "source_cell_types": [
+        {
+          "type": "adult_stem_cell",
+          "count": 8
+        },
+        {
+          "type": "ipsc",
+          "count": 4
+        },
+        {
+          "type": "primary_tissue",
+          "count": 4
+        }
+      ],
+      "year_range": [
+        2023,
+        2026
+      ],
+      "grounding_distribution": {
+        "poor_lt50": 0,
+        "moderate_50_80": 4,
+        "good_80_100": 3,
+        "perfect_100": 9
+      },
+      "completeness_score": 0.8305
+    },
+    {
+      "organoid_type": "hepatic",
+      "n_papers": 29,
+      "avg_grounding_rate": 0.9004,
+      "pooled_grounding_rate": 0.8978,
+      "reagents_grounded_total": 202,
+      "reagents_total_sum": 225,
+      "n_with_signaling_factors": 29,
+      "n_with_timeline": 5,
+      "n_with_base_media": 21,
+      "n_with_matrix": 23,
+      "n_with_passaging": 17,
+      "n_with_assay_endpoints": 17,
+      "n_figure_confirmed_total": 0,
+      "n_species": 4,
+      "top_species": [
+        {
+          "species": "human",
+          "count": 23
+        },
+        {
+          "species": "mouse",
+          "count": 2
+        },
+        {
+          "species": "canis lupus familiaris",
+          "count": 1
+        }
+      ],
+      "n_source_cell_types": 3,
+      "source_cell_types": [
+        {
+          "type": "ipsc",
+          "count": 15
+        },
+        {
+          "type": "adult_stem_cell",
+          "count": 10
+        },
+        {
+          "type": "primary_tissue",
+          "count": 3
+        }
+      ],
+      "year_range": [
+        2023,
+        2026
+      ],
+      "grounding_distribution": {
+        "poor_lt50": 0,
+        "moderate_50_80": 7,
+        "good_80_100": 4,
+        "perfect_100": 18
+      },
+      "completeness_score": 0.8298
+    },
+    {
+      "organoid_type": "esophageal",
+      "n_papers": 13,
+      "avg_grounding_rate": 0.945,
+      "pooled_grounding_rate": 0.9265,
+      "reagents_grounded_total": 63,
+      "reagents_total_sum": 68,
+      "n_with_signaling_factors": 13,
+      "n_with_timeline": 1,
+      "n_with_base_media": 10,
+      "n_with_matrix": 11,
+      "n_with_passaging": 5,
+      "n_with_assay_endpoints": 7,
+      "n_figure_confirmed_total": 0,
+      "n_species": 2,
+      "top_species": [
+        {
+          "species": "human",
+          "count": 6
+        },
+        {
+          "species": "mouse",
+          "count": 5
+        }
+      ],
+      "n_source_cell_types": 4,
+      "source_cell_types": [
+        {
+          "type": "adult_stem_cell",
+          "count": 6
+        },
+        {
+          "type": "primary_tissue",
+          "count": 4
+        },
+        {
+          "type": "ipsc",
+          "count": 2
+        },
+        {
+          "type": "esc",
+          "count": 1
+        }
+      ],
+      "year_range": [
+        2021,
+        2026
+      ],
+      "grounding_distribution": {
+        "poor_lt50": 0,
+        "moderate_50_80": 2,
+        "good_80_100": 0,
+        "perfect_100": 11
+      },
+      "completeness_score": 0.8235
+    },
+    {
+      "organoid_type": "gastric",
+      "n_papers": 35,
+      "avg_grounding_rate": 0.945,
+      "pooled_grounding_rate": 0.9327,
+      "reagents_grounded_total": 194,
+      "reagents_total_sum": 208,
+      "n_with_signaling_factors": 35,
+      "n_with_timeline": 1,
+      "n_with_base_media": 20,
+      "n_with_matrix": 28,
+      "n_with_passaging": 10,
+      "n_with_assay_endpoints": 17,
+      "n_figure_confirmed_total": 0,
+      "n_species": 4,
+      "top_species": [
+        {
+          "species": "human",
+          "count": 24
+        },
+        {
+          "species": "mouse",
+          "count": 8
+        },
+        {
+          "species": "mus musculus",
+          "count": 1
+        }
+      ],
+      "n_source_cell_types": 3,
+      "source_cell_types": [
+        {
+          "type": "adult_stem_cell",
+          "count": 19
+        },
+        {
+          "type": "ipsc",
+          "count": 8
+        },
+        {
+          "type": "primary_tissue",
+          "count": 6
+        }
+      ],
+      "year_range": [
+        2016,
+        2026
+      ],
+      "grounding_distribution": {
+        "poor_lt50": 0,
+        "moderate_50_80": 4,
+        "good_80_100": 2,
+        "perfect_100": 29
+      },
+      "completeness_score": 0.8177
+    },
+    {
+      "organoid_type": "endometrial",
+      "n_papers": 20,
+      "avg_grounding_rate": 0.9257,
+      "pooled_grounding_rate": 0.907,
+      "reagents_grounded_total": 117,
+      "reagents_total_sum": 129,
+      "n_with_signaling_factors": 20,
+      "n_with_timeline": 2,
+      "n_with_base_media": 13,
+      "n_with_matrix": 16,
+      "n_with_passaging": 11,
+      "n_with_assay_endpoints": 12,
+      "n_figure_confirmed_total": 0,
+      "n_species": 5,
+      "top_species": [
+        {
+          "species": "human",
+          "count": 14
+        },
+        {
+          "species": "mouse",
+          "count": 1
+        },
+        {
+          "species": "sheep",
+          "count": 1
+        }
+      ],
+      "n_source_cell_types": 3,
+      "source_cell_types": [
+        {
+          "type": "adult_stem_cell",
+          "count": 13
+        },
+        {
+          "type": "primary_tissue",
+          "count": 3
+        },
+        {
+          "type": "ipsc",
+          "count": 3
+        }
+      ],
+      "year_range": [
+        2022,
+        2026
+      ],
+      "grounding_distribution": {
+        "poor_lt50": 0,
+        "moderate_50_80": 3,
+        "good_80_100": 1,
+        "perfect_100": 16
+      },
+      "completeness_score": 0.8052
+    },
+    {
+      "organoid_type": "lung",
+      "n_papers": 33,
+      "avg_grounding_rate": 0.8545,
+      "pooled_grounding_rate": 0.8038,
+      "reagents_grounded_total": 168,
+      "reagents_total_sum": 209,
+      "n_with_signaling_factors": 33,
+      "n_with_timeline": 4,
+      "n_with_base_media": 18,
+      "n_with_matrix": 27,
+      "n_with_passaging": 12,
+      "n_with_assay_endpoints": 18,
+      "n_figure_confirmed_total": 5,
+      "n_species": 6,
+      "top_species": [
+        {
+          "species": "human",
+          "count": 24
+        },
+        {
+          "species": "mouse",
+          "count": 4
+        },
+        {
+          "species": "murine",
+          "count": 1
+        }
+      ],
+      "n_source_cell_types": 3,
+      "source_cell_types": [
+        {
+          "type": "ipsc",
+          "count": 15
+        },
+        {
+          "type": "adult_stem_cell",
+          "count": 15
+        },
+        {
+          "type": "esc",
+          "count": 1
+        }
+      ],
+      "year_range": [
+        2015,
+        2026
+      ],
+      "grounding_distribution": {
+        "poor_lt50": 1,
+        "moderate_50_80": 9,
+        "good_80_100": 1,
+        "perfect_100": 22
+      },
+      "completeness_score": 0.7955
+    },
+    {
+      "organoid_type": "salivary-gland",
+      "n_papers": 16,
+      "avg_grounding_rate": 0.8598,
+      "pooled_grounding_rate": 0.8491,
+      "reagents_grounded_total": 90,
+      "reagents_total_sum": 106,
+      "n_with_signaling_factors": 16,
+      "n_with_timeline": 3,
+      "n_with_base_media": 11,
+      "n_with_matrix": 13,
+      "n_with_passaging": 7,
+      "n_with_assay_endpoints": 7,
+      "n_figure_confirmed_total": 0,
+      "n_species": 4,
+      "top_species": [
+        {
+          "species": "human",
+          "count": 10
+        },
+        {
+          "species": "mouse",
+          "count": 4
+        },
+        {
+          "species": "rat",
+          "count": 1
+        }
+      ],
+      "n_source_cell_types": 4,
+      "source_cell_types": [
+        {
+          "type": "adult_stem_cell",
+          "count": 9
+        },
+        {
+          "type": "ipsc",
+          "count": 4
+        },
+        {
+          "type": "primary_tissue",
+          "count": 2
+        },
+        {
+          "type": "esc",
+          "count": 1
+        }
+      ],
+      "year_range": [
+        2021,
+        2026
+      ],
+      "grounding_distribution": {
+        "poor_lt50": 0,
+        "moderate_50_80": 4,
+        "good_80_100": 4,
+        "perfect_100": 8
+      },
+      "completeness_score": 0.7924
+    },
+    {
+      "organoid_type": "cerebral",
+      "n_papers": 38,
+      "avg_grounding_rate": 0.8803,
+      "pooled_grounding_rate": 0.8601,
+      "reagents_grounded_total": 166,
+      "reagents_total_sum": 193,
+      "n_with_signaling_factors": 38,
+      "n_with_timeline": 12,
+      "n_with_base_media": 20,
+      "n_with_matrix": 29,
+      "n_with_passaging": 14,
+      "n_with_assay_endpoints": 25,
+      "n_figure_confirmed_total": 0,
+      "n_species": 2,
+      "top_species": [
+        {
+          "species": "human",
+          "count": 34
+        },
+        {
+          "species": "mouse",
+          "count": 1
+        }
+      ],
+      "n_source_cell_types": 3,
+      "source_cell_types": [
+        {
+          "type": "ipsc",
+          "count": 36
+        },
+        {
+          "type": "primary_tissue",
+          "count": 1
+        },
+        {
+          "type": "adult_stem_cell",
+          "count": 1
+        }
+      ],
+      "year_range": [
+        2018,
+        2026
+      ],
+      "grounding_distribution": {
+        "poor_lt50": 0,
+        "moderate_50_80": 11,
+        "good_80_100": 5,
+        "perfect_100": 22
+      },
+      "completeness_score": 0.7919
+    },
+    {
+      "organoid_type": "mammary",
+      "n_papers": 14,
+      "avg_grounding_rate": 0.883,
+      "pooled_grounding_rate": 0.8889,
+      "reagents_grounded_total": 80,
+      "reagents_total_sum": 90,
+      "n_with_signaling_factors": 14,
+      "n_with_timeline": 1,
+      "n_with_base_media": 9,
+      "n_with_matrix": 11,
+      "n_with_passaging": 7,
+      "n_with_assay_endpoints": 10,
+      "n_figure_confirmed_total": 0,
+      "n_species": 4,
+      "top_species": [
+        {
+          "species": "human",
+          "count": 7
+        },
+        {
+          "species": "mouse",
+          "count": 2
+        },
+        {
+          "species": "goat",
+          "count": 2
+        }
+      ],
+      "n_source_cell_types": 3,
+      "source_cell_types": [
+        {
+          "type": "adult_stem_cell",
+          "count": 8
+        },
+        {
+          "type": "primary_tissue",
+          "count": 4
+        },
+        {
+          "type": "ipsc",
+          "count": 1
+        }
+      ],
+      "year_range": [
+        2022,
+        2026
+      ],
+      "grounding_distribution": {
+        "poor_lt50": 0,
+        "moderate_50_80": 4,
+        "good_80_100": 3,
+        "perfect_100": 7
+      },
+      "completeness_score": 0.7769
+    },
+    {
+      "organoid_type": "neuromuscular",
+      "n_papers": 16,
+      "avg_grounding_rate": 0.9002,
+      "pooled_grounding_rate": 0.8812,
+      "reagents_grounded_total": 89,
+      "reagents_total_sum": 101,
+      "n_with_signaling_factors": 16,
+      "n_with_timeline": 4,
+      "n_with_base_media": 10,
+      "n_with_matrix": 12,
+      "n_with_passaging": 6,
+      "n_with_assay_endpoints": 8,
+      "n_figure_confirmed_total": 0,
+      "n_species": 2,
+      "top_species": [
+        {
+          "species": "human",
+          "count": 14
+        },
+        {
+          "species": "mouse",
+          "count": 1
+        }
+      ],
+      "n_source_cell_types": 2,
+      "source_cell_types": [
+        {
+          "type": "ipsc",
+          "count": 15
+        },
+        {
+          "type": "adult_stem_cell",
+          "count": 1
+        }
+      ],
+      "year_range": [
+        2022,
+        2026
+      ],
+      "grounding_distribution": {
+        "poor_lt50": 0,
+        "moderate_50_80": 3,
+        "good_80_100": 3,
+        "perfect_100": 10
+      },
+      "completeness_score": 0.7755
+    },
+    {
+      "organoid_type": "cardiac",
+      "n_papers": 59,
+      "avg_grounding_rate": 0.8833,
+      "pooled_grounding_rate": 0.8556,
+      "reagents_grounded_total": 237,
+      "reagents_total_sum": 277,
+      "n_with_signaling_factors": 59,
+      "n_with_timeline": 6,
+      "n_with_base_media": 27,
+      "n_with_matrix": 37,
+      "n_with_passaging": 19,
+      "n_with_assay_endpoints": 35,
+      "n_figure_confirmed_total": 0,
+      "n_species": 3,
+      "top_species": [
+        {
+          "species": "human",
+          "count": 48
+        },
+        {
+          "species": "mouse",
+          "count": 3
+        },
+        {
+          "species": "rat",
+          "count": 1
+        }
+      ],
+      "n_source_cell_types": 3,
+      "source_cell_types": [
+        {
+          "type": "ipsc",
+          "count": 50
+        },
+        {
+          "type": "esc",
+          "count": 2
+        },
+        {
+          "type": "adult_stem_cell",
+          "count": 1
+        }
+      ],
+      "year_range": [
+        2015,
+        2026
+      ],
+      "grounding_distribution": {
+        "poor_lt50": 0,
+        "moderate_50_80": 18,
+        "good_80_100": 4,
+        "perfect_100": 37
+      },
+      "completeness_score": 0.7707
+    },
+    {
+      "organoid_type": "liver",
+      "n_papers": 10,
+      "avg_grounding_rate": 0.9536,
+      "pooled_grounding_rate": 0.9219,
+      "reagents_grounded_total": 59,
+      "reagents_total_sum": 64,
+      "n_with_signaling_factors": 10,
+      "n_with_timeline": 1,
+      "n_with_base_media": 5,
+      "n_with_matrix": 9,
+      "n_with_passaging": 5,
+      "n_with_assay_endpoints": 7,
+      "n_figure_confirmed_total": 0,
+      "n_species": 3,
+      "top_species": [
+        {
+          "species": "human",
+          "count": 6
+        },
+        {
+          "species": "mouse",
+          "count": 3
+        },
+        {
+          "species": "homo sapiens",
+          "count": 1
+        }
+      ],
+      "n_source_cell_types": 2,
+      "source_cell_types": [
+        {
+          "type": "adult_stem_cell",
+          "count": 5
+        },
+        {
+          "type": "ipsc",
+          "count": 5
+        }
+      ],
+      "year_range": [
+        2018,
+        2023
+      ],
+      "grounding_distribution": {
+        "poor_lt50": 0,
+        "moderate_50_80": 1,
+        "good_80_100": 1,
+        "perfect_100": 8
+      },
+      "completeness_score": 0.7707
+    },
+    {
+      "organoid_type": "bladder",
+      "n_papers": 13,
+      "avg_grounding_rate": 0.8923,
+      "pooled_grounding_rate": 0.85,
+      "reagents_grounded_total": 51,
+      "reagents_total_sum": 60,
+      "n_with_signaling_factors": 13,
+      "n_with_timeline": 1,
+      "n_with_base_media": 8,
+      "n_with_matrix": 10,
+      "n_with_passaging": 4,
+      "n_with_assay_endpoints": 9,
+      "n_figure_confirmed_total": 0,
+      "n_species": 2,
+      "top_species": [
+        {
+          "species": "human",
+          "count": 6
+        },
+        {
+          "species": "mouse",
+          "count": 6
+        }
+      ],
+      "n_source_cell_types": 3,
+      "source_cell_types": [
+        {
+          "type": "adult_stem_cell",
+          "count": 8
+        },
+        {
+          "type": "primary_tissue",
+          "count": 4
+        },
+        {
+          "type": "ipsc",
+          "count": 1
+        }
+      ],
+      "year_range": [
+        2019,
+        2026
+      ],
+      "grounding_distribution": {
+        "poor_lt50": 0,
+        "moderate_50_80": 3,
+        "good_80_100": 1,
+        "perfect_100": 9
+      },
+      "completeness_score": 0.7668
+    },
+    {
+      "organoid_type": "tumor",
+      "n_papers": 9,
+      "avg_grounding_rate": 0.9081,
+      "pooled_grounding_rate": 0.9273,
+      "reagents_grounded_total": 51,
+      "reagents_total_sum": 55,
+      "n_with_signaling_factors": 9,
+      "n_with_timeline": 0,
+      "n_with_base_media": 6,
+      "n_with_matrix": 7,
+      "n_with_passaging": 4,
+      "n_with_assay_endpoints": 4,
+      "n_figure_confirmed_total": 0,
+      "n_species": 1,
+      "top_species": [
+        {
+          "species": "human",
+          "count": 6
+        }
+      ],
+      "n_source_cell_types": 2,
+      "source_cell_types": [
+        {
+          "type": "primary_tissue",
+          "count": 7
+        },
+        {
+          "type": "ipsc",
+          "count": 2
+        }
+      ],
+      "year_range": [
+        2025,
+        2026
+      ],
+      "grounding_distribution": {
+        "poor_lt50": 0,
+        "moderate_50_80": 2,
+        "good_80_100": 1,
+        "perfect_100": 6
+      },
+      "completeness_score": 0.7659
+    },
+    {
+      "organoid_type": "skin",
+      "n_papers": 12,
+      "avg_grounding_rate": 0.959,
+      "pooled_grounding_rate": 0.9298,
+      "reagents_grounded_total": 53,
+      "reagents_total_sum": 57,
+      "n_with_signaling_factors": 12,
+      "n_with_timeline": 2,
+      "n_with_base_media": 6,
+      "n_with_matrix": 9,
+      "n_with_passaging": 4,
+      "n_with_assay_endpoints": 6,
+      "n_figure_confirmed_total": 0,
+      "n_species": 2,
+      "top_species": [
+        {
+          "species": "human",
+          "count": 10
+        },
+        {
+          "species": "mouse",
+          "count": 1
+        }
+      ],
+      "n_source_cell_types": 3,
+      "source_cell_types": [
+        {
+          "type": "ipsc",
+          "count": 7
+        },
+        {
+          "type": "adult_stem_cell",
+          "count": 2
+        },
+        {
+          "type": "primary_tissue",
+          "count": 1
+        }
+      ],
+      "year_range": [
+        2023,
+        2026
+      ],
+      "grounding_distribution": {
+        "poor_lt50": 0,
+        "moderate_50_80": 0,
+        "good_80_100": 3,
+        "perfect_100": 9
+      },
+      "completeness_score": 0.7497
+    },
+    {
+      "organoid_type": "vascular",
+      "n_papers": 20,
+      "avg_grounding_rate": 0.8653,
+      "pooled_grounding_rate": 0.8425,
+      "reagents_grounded_total": 107,
+      "reagents_total_sum": 127,
+      "n_with_signaling_factors": 20,
+      "n_with_timeline": 3,
+      "n_with_base_media": 8,
+      "n_with_matrix": 14,
+      "n_with_passaging": 7,
+      "n_with_assay_endpoints": 7,
+      "n_figure_confirmed_total": 0,
+      "n_species": 1,
+      "top_species": [
+        {
+          "species": "human",
+          "count": 17
+        }
+      ],
+      "n_source_cell_types": 3,
+      "source_cell_types": [
+        {
+          "type": "ipsc",
+          "count": 16
+        },
+        {
+          "type": "esc",
+          "count": 2
+        },
+        {
+          "type": "primary_tissue",
+          "count": 1
+        }
+      ],
+      "year_range": [
+        2020,
+        2026
+      ],
+      "grounding_distribution": {
+        "poor_lt50": 0,
+        "moderate_50_80": 6,
+        "good_80_100": 2,
+        "perfect_100": 12
+      },
+      "completeness_score": 0.7232
+    },
+    {
+      "organoid_type": "thyroid",
+      "n_papers": 20,
+      "avg_grounding_rate": 0.8709,
+      "pooled_grounding_rate": 0.9189,
+      "reagents_grounded_total": 102,
+      "reagents_total_sum": 111,
+      "n_with_signaling_factors": 20,
+      "n_with_timeline": 3,
+      "n_with_base_media": 9,
+      "n_with_matrix": 12,
+      "n_with_passaging": 8,
+      "n_with_assay_endpoints": 13,
+      "n_figure_confirmed_total": 0,
+      "n_species": 5,
+      "top_species": [
+        {
+          "species": "human",
+          "count": 11
+        },
+        {
+          "species": "mouse",
+          "count": 6
+        },
+        {
+          "species": "sprague dawley rat",
+          "count": 1
+        }
+      ],
+      "n_source_cell_types": 4,
+      "source_cell_types": [
+        {
+          "type": "adult_stem_cell",
+          "count": 5
+        },
+        {
+          "type": "ipsc",
+          "count": 5
+        },
+        {
+          "type": "esc",
+          "count": 5
+        },
+        {
+          "type": "primary_tissue",
+          "count": 3
+        }
+      ],
+      "year_range": [
+        2020,
+        2026
+      ],
+      "grounding_distribution": {
+        "poor_lt50": 0,
+        "moderate_50_80": 6,
+        "good_80_100": 2,
+        "perfect_100": 12
+      },
+      "completeness_score": 0.7143
+    },
+    {
+      "organoid_type": "inner-ear",
+      "n_papers": 21,
+      "avg_grounding_rate": 0.824,
+      "pooled_grounding_rate": 0.8013,
+      "reagents_grounded_total": 121,
+      "reagents_total_sum": 151,
+      "n_with_signaling_factors": 21,
+      "n_with_timeline": 2,
+      "n_with_base_media": 7,
+      "n_with_matrix": 15,
+      "n_with_passaging": 5,
+      "n_with_assay_endpoints": 8,
+      "n_figure_confirmed_total": 0,
+      "n_species": 3,
+      "top_species": [
+        {
+          "species": "human",
+          "count": 11
+        },
+        {
+          "species": "mouse",
+          "count": 5
+        },
+        {
+          "species": "mus musculus",
+          "count": 1
+        }
+      ],
+      "n_source_cell_types": 3,
+      "source_cell_types": [
+        {
+          "type": "ipsc",
+          "count": 14
+        },
+        {
+          "type": "adult_stem_cell",
+          "count": 4
+        },
+        {
+          "type": "esc",
+          "count": 1
+        }
+      ],
+      "year_range": [
+        2020,
+        2026
+      ],
+      "grounding_distribution": {
+        "poor_lt50": 0,
+        "moderate_50_80": 9,
+        "good_80_100": 3,
+        "perfect_100": 9
+      },
+      "completeness_score": 0.7065
+    },
+    {
+      "organoid_type": "fallopian-tube",
+      "n_papers": 16,
+      "avg_grounding_rate": 0.8551,
+      "pooled_grounding_rate": 0.875,
+      "reagents_grounded_total": 70,
+      "reagents_total_sum": 80,
+      "n_with_signaling_factors": 16,
+      "n_with_timeline": 1,
+      "n_with_base_media": 7,
+      "n_with_matrix": 10,
+      "n_with_passaging": 7,
+      "n_with_assay_endpoints": 7,
+      "n_figure_confirmed_total": 0,
+      "n_species": 3,
+      "top_species": [
+        {
+          "species": "human",
+          "count": 9
+        },
+        {
+          "species": "mouse",
+          "count": 2
+        },
+        {
+          "species": "murine",
+          "count": 1
+        }
+      ],
+      "n_source_cell_types": 4,
+      "source_cell_types": [
+        {
+          "type": "adult_stem_cell",
+          "count": 6
+        },
+        {
+          "type": "ipsc",
+          "count": 6
+        },
+        {
+          "type": "primary_tissue",
+          "count": 3
+        },
+        {
+          "type": "esc",
+          "count": 1
+        }
+      ],
+      "year_range": [
+        2015,
+        2026
+      ],
+      "grounding_distribution": {
+        "poor_lt50": 0,
+        "moderate_50_80": 5,
+        "good_80_100": 1,
+        "perfect_100": 10
+      },
+      "completeness_score": 0.7039
+    },
+    {
+      "organoid_type": "cholangiocyte",
+      "n_papers": 10,
+      "avg_grounding_rate": 0.8707,
+      "pooled_grounding_rate": 0.8393,
+      "reagents_grounded_total": 47,
+      "reagents_total_sum": 56,
+      "n_with_signaling_factors": 10,
+      "n_with_timeline": 2,
+      "n_with_base_media": 5,
+      "n_with_matrix": 6,
+      "n_with_passaging": 5,
+      "n_with_assay_endpoints": 7,
+      "n_figure_confirmed_total": 0,
+      "n_species": 3,
+      "top_species": [
+        {
+          "species": "human",
+          "count": 7
+        },
+        {
+          "species": "murine",
+          "count": 1
+        },
+        {
+          "species": "mouse",
+          "count": 1
+        }
+      ],
+      "n_source_cell_types": 2,
+      "source_cell_types": [
+        {
+          "type": "adult_stem_cell",
+          "count": 7
+        },
+        {
+          "type": "ipsc",
+          "count": 3
+        }
+      ],
+      "year_range": [
+        2023,
+        2026
+      ],
+      "grounding_distribution": {
+        "poor_lt50": 0,
+        "moderate_50_80": 4,
+        "good_80_100": 1,
+        "perfect_100": 5
+      },
+      "completeness_score": 0.6941
+    },
+    {
+      "organoid_type": "bone",
+      "n_papers": 11,
+      "avg_grounding_rate": 0.9243,
+      "pooled_grounding_rate": 0.9333,
+      "reagents_grounded_total": 56,
+      "reagents_total_sum": 60,
+      "n_with_signaling_factors": 11,
+      "n_with_timeline": 0,
+      "n_with_base_media": 3,
+      "n_with_matrix": 7,
+      "n_with_passaging": 1,
+      "n_with_assay_endpoints": 4,
+      "n_figure_confirmed_total": 0,
+      "n_species": 3,
+      "top_species": [
+        {
+          "species": "human",
+          "count": 9
+        },
+        {
+          "species": "mouse",
+          "count": 1
+        },
+        {
+          "species": "murine",
+          "count": 1
+        }
+      ],
+      "n_source_cell_types": 2,
+      "source_cell_types": [
+        {
+          "type": "ipsc",
+          "count": 8
+        },
+        {
+          "type": "adult_stem_cell",
+          "count": 1
+        }
+      ],
+      "year_range": [
+        2023,
+        2026
+      ],
+      "grounding_distribution": {
+        "poor_lt50": 0,
+        "moderate_50_80": 3,
+        "good_80_100": 0,
+        "perfect_100": 8
+      },
+      "completeness_score": 0.6708
+    },
+    {
+      "organoid_type": "blood-brain-barrier",
+      "n_papers": 14,
+      "avg_grounding_rate": 0.8964,
+      "pooled_grounding_rate": 0.8947,
+      "reagents_grounded_total": 85,
+      "reagents_total_sum": 95,
+      "n_with_signaling_factors": 14,
+      "n_with_timeline": 1,
+      "n_with_base_media": 4,
+      "n_with_matrix": 8,
+      "n_with_passaging": 3,
+      "n_with_assay_endpoints": 9,
+      "n_figure_confirmed_total": 0,
+      "n_species": 1,
+      "top_species": [
+        {
+          "species": "human",
+          "count": 12
+        }
+      ],
+      "n_source_cell_types": 2,
+      "source_cell_types": [
+        {
+          "type": "ipsc",
+          "count": 13
+        },
+        {
+          "type": "primary_tissue",
+          "count": 1
+        }
+      ],
+      "year_range": [
+        2019,
+        2025
+      ],
+      "grounding_distribution": {
+        "poor_lt50": 0,
+        "moderate_50_80": 3,
+        "good_80_100": 4,
+        "perfect_100": 7
+      },
+      "completeness_score": 0.6653
+    }
+  ],
+  "by_organoid_type": {
+    "bladder": {
+      "n_papers": 13,
+      "avg_grounding_rate": 0.8923,
+      "pooled_grounding_rate": 0.85,
+      "reagents_grounded_total": 51,
+      "reagents_total_sum": 60,
+      "n_with_signaling_factors": 13,
+      "n_with_timeline": 1,
+      "n_with_base_media": 8,
+      "n_with_matrix": 10,
+      "n_with_passaging": 4,
+      "n_with_assay_endpoints": 9,
+      "n_figure_confirmed_total": 0,
+      "n_species": 2,
+      "top_species": [
+        {
+          "species": "human",
+          "count": 6
+        },
+        {
+          "species": "mouse",
+          "count": 6
+        }
+      ],
+      "n_source_cell_types": 3,
+      "source_cell_types": [
+        {
+          "type": "adult_stem_cell",
+          "count": 8
+        },
+        {
+          "type": "primary_tissue",
+          "count": 4
+        },
+        {
+          "type": "ipsc",
+          "count": 1
+        }
+      ],
+      "year_range": [
+        2019,
+        2026
+      ],
+      "grounding_distribution": {
+        "poor_lt50": 0,
+        "moderate_50_80": 3,
+        "good_80_100": 1,
+        "perfect_100": 9
+      },
+      "completeness_score": 0.7668
+    },
+    "blood-brain-barrier": {
+      "n_papers": 14,
+      "avg_grounding_rate": 0.8964,
+      "pooled_grounding_rate": 0.8947,
+      "reagents_grounded_total": 85,
+      "reagents_total_sum": 95,
+      "n_with_signaling_factors": 14,
+      "n_with_timeline": 1,
+      "n_with_base_media": 4,
+      "n_with_matrix": 8,
+      "n_with_passaging": 3,
+      "n_with_assay_endpoints": 9,
+      "n_figure_confirmed_total": 0,
+      "n_species": 1,
+      "top_species": [
+        {
+          "species": "human",
+          "count": 12
+        }
+      ],
+      "n_source_cell_types": 2,
+      "source_cell_types": [
+        {
+          "type": "ipsc",
+          "count": 13
+        },
+        {
+          "type": "primary_tissue",
+          "count": 1
+        }
+      ],
+      "year_range": [
+        2019,
+        2025
+      ],
+      "grounding_distribution": {
+        "poor_lt50": 0,
+        "moderate_50_80": 3,
+        "good_80_100": 4,
+        "perfect_100": 7
+      },
+      "completeness_score": 0.6653
+    },
+    "bone": {
+      "n_papers": 11,
+      "avg_grounding_rate": 0.9243,
+      "pooled_grounding_rate": 0.9333,
+      "reagents_grounded_total": 56,
+      "reagents_total_sum": 60,
+      "n_with_signaling_factors": 11,
+      "n_with_timeline": 0,
+      "n_with_base_media": 3,
+      "n_with_matrix": 7,
+      "n_with_passaging": 1,
+      "n_with_assay_endpoints": 4,
+      "n_figure_confirmed_total": 0,
+      "n_species": 3,
+      "top_species": [
+        {
+          "species": "human",
+          "count": 9
+        },
+        {
+          "species": "mouse",
+          "count": 1
+        },
+        {
+          "species": "murine",
+          "count": 1
+        }
+      ],
+      "n_source_cell_types": 2,
+      "source_cell_types": [
+        {
+          "type": "ipsc",
+          "count": 8
+        },
+        {
+          "type": "adult_stem_cell",
+          "count": 1
+        }
+      ],
+      "year_range": [
+        2023,
+        2026
+      ],
+      "grounding_distribution": {
+        "poor_lt50": 0,
+        "moderate_50_80": 3,
+        "good_80_100": 0,
+        "perfect_100": 8
+      },
+      "completeness_score": 0.6708
+    },
+    "cardiac": {
+      "n_papers": 59,
+      "avg_grounding_rate": 0.8833,
+      "pooled_grounding_rate": 0.8556,
+      "reagents_grounded_total": 237,
+      "reagents_total_sum": 277,
+      "n_with_signaling_factors": 59,
+      "n_with_timeline": 6,
+      "n_with_base_media": 27,
+      "n_with_matrix": 37,
+      "n_with_passaging": 19,
+      "n_with_assay_endpoints": 35,
+      "n_figure_confirmed_total": 0,
+      "n_species": 3,
+      "top_species": [
+        {
+          "species": "human",
+          "count": 48
+        },
+        {
+          "species": "mouse",
+          "count": 3
+        },
+        {
+          "species": "rat",
+          "count": 1
+        }
+      ],
+      "n_source_cell_types": 3,
+      "source_cell_types": [
+        {
+          "type": "ipsc",
+          "count": 50
+        },
+        {
+          "type": "esc",
+          "count": 2
+        },
+        {
+          "type": "adult_stem_cell",
+          "count": 1
+        }
+      ],
+      "year_range": [
+        2015,
+        2026
+      ],
+      "grounding_distribution": {
+        "poor_lt50": 0,
+        "moderate_50_80": 18,
+        "good_80_100": 4,
+        "perfect_100": 37
+      },
+      "completeness_score": 0.7707
+    },
+    "cerebral": {
+      "n_papers": 38,
+      "avg_grounding_rate": 0.8803,
+      "pooled_grounding_rate": 0.8601,
+      "reagents_grounded_total": 166,
+      "reagents_total_sum": 193,
+      "n_with_signaling_factors": 38,
+      "n_with_timeline": 12,
+      "n_with_base_media": 20,
+      "n_with_matrix": 29,
+      "n_with_passaging": 14,
+      "n_with_assay_endpoints": 25,
+      "n_figure_confirmed_total": 0,
+      "n_species": 2,
+      "top_species": [
+        {
+          "species": "human",
+          "count": 34
+        },
+        {
+          "species": "mouse",
+          "count": 1
+        }
+      ],
+      "n_source_cell_types": 3,
+      "source_cell_types": [
+        {
+          "type": "ipsc",
+          "count": 36
+        },
+        {
+          "type": "primary_tissue",
+          "count": 1
+        },
+        {
+          "type": "adult_stem_cell",
+          "count": 1
+        }
+      ],
+      "year_range": [
+        2018,
+        2026
+      ],
+      "grounding_distribution": {
+        "poor_lt50": 0,
+        "moderate_50_80": 11,
+        "good_80_100": 5,
+        "perfect_100": 22
+      },
+      "completeness_score": 0.7919
+    },
+    "cholangiocyte": {
+      "n_papers": 10,
+      "avg_grounding_rate": 0.8707,
+      "pooled_grounding_rate": 0.8393,
+      "reagents_grounded_total": 47,
+      "reagents_total_sum": 56,
+      "n_with_signaling_factors": 10,
+      "n_with_timeline": 2,
+      "n_with_base_media": 5,
+      "n_with_matrix": 6,
+      "n_with_passaging": 5,
+      "n_with_assay_endpoints": 7,
+      "n_figure_confirmed_total": 0,
+      "n_species": 3,
+      "top_species": [
+        {
+          "species": "human",
+          "count": 7
+        },
+        {
+          "species": "murine",
+          "count": 1
+        },
+        {
+          "species": "mouse",
+          "count": 1
+        }
+      ],
+      "n_source_cell_types": 2,
+      "source_cell_types": [
+        {
+          "type": "adult_stem_cell",
+          "count": 7
+        },
+        {
+          "type": "ipsc",
+          "count": 3
+        }
+      ],
+      "year_range": [
+        2023,
+        2026
+      ],
+      "grounding_distribution": {
+        "poor_lt50": 0,
+        "moderate_50_80": 4,
+        "good_80_100": 1,
+        "perfect_100": 5
+      },
+      "completeness_score": 0.6941
+    },
+    "endometrial": {
+      "n_papers": 20,
+      "avg_grounding_rate": 0.9257,
+      "pooled_grounding_rate": 0.907,
+      "reagents_grounded_total": 117,
+      "reagents_total_sum": 129,
+      "n_with_signaling_factors": 20,
+      "n_with_timeline": 2,
+      "n_with_base_media": 13,
+      "n_with_matrix": 16,
+      "n_with_passaging": 11,
+      "n_with_assay_endpoints": 12,
+      "n_figure_confirmed_total": 0,
+      "n_species": 5,
+      "top_species": [
+        {
+          "species": "human",
+          "count": 14
+        },
+        {
+          "species": "mouse",
+          "count": 1
+        },
+        {
+          "species": "sheep",
+          "count": 1
+        }
+      ],
+      "n_source_cell_types": 3,
+      "source_cell_types": [
+        {
+          "type": "adult_stem_cell",
+          "count": 13
+        },
+        {
+          "type": "primary_tissue",
+          "count": 3
+        },
+        {
+          "type": "ipsc",
+          "count": 3
+        }
+      ],
+      "year_range": [
+        2022,
+        2026
+      ],
+      "grounding_distribution": {
+        "poor_lt50": 0,
+        "moderate_50_80": 3,
+        "good_80_100": 1,
+        "perfect_100": 16
+      },
+      "completeness_score": 0.8052
+    },
+    "esophageal": {
+      "n_papers": 13,
+      "avg_grounding_rate": 0.945,
+      "pooled_grounding_rate": 0.9265,
+      "reagents_grounded_total": 63,
+      "reagents_total_sum": 68,
+      "n_with_signaling_factors": 13,
+      "n_with_timeline": 1,
+      "n_with_base_media": 10,
+      "n_with_matrix": 11,
+      "n_with_passaging": 5,
+      "n_with_assay_endpoints": 7,
+      "n_figure_confirmed_total": 0,
+      "n_species": 2,
+      "top_species": [
+        {
+          "species": "human",
+          "count": 6
+        },
+        {
+          "species": "mouse",
+          "count": 5
+        }
+      ],
+      "n_source_cell_types": 4,
+      "source_cell_types": [
+        {
+          "type": "adult_stem_cell",
+          "count": 6
+        },
+        {
+          "type": "primary_tissue",
+          "count": 4
+        },
+        {
+          "type": "ipsc",
+          "count": 2
+        },
+        {
+          "type": "esc",
+          "count": 1
+        }
+      ],
+      "year_range": [
+        2021,
+        2026
+      ],
+      "grounding_distribution": {
+        "poor_lt50": 0,
+        "moderate_50_80": 2,
+        "good_80_100": 0,
+        "perfect_100": 11
+      },
+      "completeness_score": 0.8235
+    },
+    "fallopian-tube": {
+      "n_papers": 16,
+      "avg_grounding_rate": 0.8551,
+      "pooled_grounding_rate": 0.875,
+      "reagents_grounded_total": 70,
+      "reagents_total_sum": 80,
+      "n_with_signaling_factors": 16,
+      "n_with_timeline": 1,
+      "n_with_base_media": 7,
+      "n_with_matrix": 10,
+      "n_with_passaging": 7,
+      "n_with_assay_endpoints": 7,
+      "n_figure_confirmed_total": 0,
+      "n_species": 3,
+      "top_species": [
+        {
+          "species": "human",
+          "count": 9
+        },
+        {
+          "species": "mouse",
+          "count": 2
+        },
+        {
+          "species": "murine",
+          "count": 1
+        }
+      ],
+      "n_source_cell_types": 4,
+      "source_cell_types": [
+        {
+          "type": "adult_stem_cell",
+          "count": 6
+        },
+        {
+          "type": "ipsc",
+          "count": 6
+        },
+        {
+          "type": "primary_tissue",
+          "count": 3
+        },
+        {
+          "type": "esc",
+          "count": 1
+        }
+      ],
+      "year_range": [
+        2015,
+        2026
+      ],
+      "grounding_distribution": {
+        "poor_lt50": 0,
+        "moderate_50_80": 5,
+        "good_80_100": 1,
+        "perfect_100": 10
+      },
+      "completeness_score": 0.7039
+    },
+    "gastric": {
+      "n_papers": 35,
+      "avg_grounding_rate": 0.945,
+      "pooled_grounding_rate": 0.9327,
+      "reagents_grounded_total": 194,
+      "reagents_total_sum": 208,
+      "n_with_signaling_factors": 35,
+      "n_with_timeline": 1,
+      "n_with_base_media": 20,
+      "n_with_matrix": 28,
+      "n_with_passaging": 10,
+      "n_with_assay_endpoints": 17,
+      "n_figure_confirmed_total": 0,
+      "n_species": 4,
+      "top_species": [
+        {
+          "species": "human",
+          "count": 24
+        },
+        {
+          "species": "mouse",
+          "count": 8
+        },
+        {
+          "species": "mus musculus",
+          "count": 1
+        }
+      ],
+      "n_source_cell_types": 3,
+      "source_cell_types": [
+        {
+          "type": "adult_stem_cell",
+          "count": 19
+        },
+        {
+          "type": "ipsc",
+          "count": 8
+        },
+        {
+          "type": "primary_tissue",
+          "count": 6
+        }
+      ],
+      "year_range": [
+        2016,
+        2026
+      ],
+      "grounding_distribution": {
+        "poor_lt50": 0,
+        "moderate_50_80": 4,
+        "good_80_100": 2,
+        "perfect_100": 29
+      },
+      "completeness_score": 0.8177
+    },
+    "hepatic": {
+      "n_papers": 29,
+      "avg_grounding_rate": 0.9004,
+      "pooled_grounding_rate": 0.8978,
+      "reagents_grounded_total": 202,
+      "reagents_total_sum": 225,
+      "n_with_signaling_factors": 29,
+      "n_with_timeline": 5,
+      "n_with_base_media": 21,
+      "n_with_matrix": 23,
+      "n_with_passaging": 17,
+      "n_with_assay_endpoints": 17,
+      "n_figure_confirmed_total": 0,
+      "n_species": 4,
+      "top_species": [
+        {
+          "species": "human",
+          "count": 23
+        },
+        {
+          "species": "mouse",
+          "count": 2
+        },
+        {
+          "species": "canis lupus familiaris",
+          "count": 1
+        }
+      ],
+      "n_source_cell_types": 3,
+      "source_cell_types": [
+        {
+          "type": "ipsc",
+          "count": 15
+        },
+        {
+          "type": "adult_stem_cell",
+          "count": 10
+        },
+        {
+          "type": "primary_tissue",
+          "count": 3
+        }
+      ],
+      "year_range": [
+        2023,
+        2026
+      ],
+      "grounding_distribution": {
+        "poor_lt50": 0,
+        "moderate_50_80": 7,
+        "good_80_100": 4,
+        "perfect_100": 18
+      },
+      "completeness_score": 0.8298
+    },
+    "inner-ear": {
+      "n_papers": 21,
+      "avg_grounding_rate": 0.824,
+      "pooled_grounding_rate": 0.8013,
+      "reagents_grounded_total": 121,
+      "reagents_total_sum": 151,
+      "n_with_signaling_factors": 21,
+      "n_with_timeline": 2,
+      "n_with_base_media": 7,
+      "n_with_matrix": 15,
+      "n_with_passaging": 5,
+      "n_with_assay_endpoints": 8,
+      "n_figure_confirmed_total": 0,
+      "n_species": 3,
+      "top_species": [
+        {
+          "species": "human",
+          "count": 11
+        },
+        {
+          "species": "mouse",
+          "count": 5
+        },
+        {
+          "species": "mus musculus",
+          "count": 1
+        }
+      ],
+      "n_source_cell_types": 3,
+      "source_cell_types": [
+        {
+          "type": "ipsc",
+          "count": 14
+        },
+        {
+          "type": "adult_stem_cell",
+          "count": 4
+        },
+        {
+          "type": "esc",
+          "count": 1
+        }
+      ],
+      "year_range": [
+        2020,
+        2026
+      ],
+      "grounding_distribution": {
+        "poor_lt50": 0,
+        "moderate_50_80": 9,
+        "good_80_100": 3,
+        "perfect_100": 9
+      },
+      "completeness_score": 0.7065
+    },
+    "intestinal": {
+      "n_papers": 35,
+      "avg_grounding_rate": 0.9235,
+      "pooled_grounding_rate": 0.8841,
+      "reagents_grounded_total": 145,
+      "reagents_total_sum": 164,
+      "n_with_signaling_factors": 35,
+      "n_with_timeline": 6,
+      "n_with_base_media": 22,
+      "n_with_matrix": 30,
+      "n_with_passaging": 16,
+      "n_with_assay_endpoints": 21,
+      "n_figure_confirmed_total": 0,
+      "n_species": 10,
+      "top_species": [
+        {
+          "species": "human",
+          "count": 16
+        },
+        {
+          "species": "murine",
+          "count": 4
+        },
+        {
+          "species": "mouse",
+          "count": 4
+        }
+      ],
+      "n_source_cell_types": 3,
+      "source_cell_types": [
+        {
+          "type": "adult_stem_cell",
+          "count": 19
+        },
+        {
+          "type": "ipsc",
+          "count": 9
+        },
+        {
+          "type": "primary_tissue",
+          "count": 6
+        }
+      ],
+      "year_range": [
+        2018,
+        2026
+      ],
+      "grounding_distribution": {
+        "poor_lt50": 0,
+        "moderate_50_80": 5,
+        "good_80_100": 5,
+        "perfect_100": 25
+      },
+      "completeness_score": 0.8362
+    },
+    "kidney": {
+      "n_papers": 30,
+      "avg_grounding_rate": 0.8925,
+      "pooled_grounding_rate": 0.8596,
+      "reagents_grounded_total": 147,
+      "reagents_total_sum": 171,
+      "n_with_signaling_factors": 30,
+      "n_with_timeline": 12,
+      "n_with_base_media": 23,
+      "n_with_matrix": 26,
+      "n_with_passaging": 17,
+      "n_with_assay_endpoints": 24,
+      "n_figure_confirmed_total": 2,
+      "n_species": 2,
+      "top_species": [
+        {
+          "species": "human",
+          "count": 26
+        },
+        {
+          "species": "mouse",
+          "count": 1
+        }
+      ],
+      "n_source_cell_types": 2,
+      "source_cell_types": [
+        {
+          "type": "ipsc",
+          "count": 24
+        },
+        {
+          "type": "adult_stem_cell",
+          "count": 6
+        }
+      ],
+      "year_range": [
+        2015,
+        2026
+      ],
+      "grounding_distribution": {
+        "poor_lt50": 0,
+        "moderate_50_80": 8,
+        "good_80_100": 3,
+        "perfect_100": 19
+      },
+      "completeness_score": 0.8529
+    },
+    "liver": {
+      "n_papers": 10,
+      "avg_grounding_rate": 0.9536,
+      "pooled_grounding_rate": 0.9219,
+      "reagents_grounded_total": 59,
+      "reagents_total_sum": 64,
+      "n_with_signaling_factors": 10,
+      "n_with_timeline": 1,
+      "n_with_base_media": 5,
+      "n_with_matrix": 9,
+      "n_with_passaging": 5,
+      "n_with_assay_endpoints": 7,
+      "n_figure_confirmed_total": 0,
+      "n_species": 3,
+      "top_species": [
+        {
+          "species": "human",
+          "count": 6
+        },
+        {
+          "species": "mouse",
+          "count": 3
+        },
+        {
+          "species": "homo sapiens",
+          "count": 1
+        }
+      ],
+      "n_source_cell_types": 2,
+      "source_cell_types": [
+        {
+          "type": "adult_stem_cell",
+          "count": 5
+        },
+        {
+          "type": "ipsc",
+          "count": 5
+        }
+      ],
+      "year_range": [
+        2018,
+        2023
+      ],
+      "grounding_distribution": {
+        "poor_lt50": 0,
+        "moderate_50_80": 1,
+        "good_80_100": 1,
+        "perfect_100": 8
+      },
+      "completeness_score": 0.7707
+    },
+    "lung": {
+      "n_papers": 33,
+      "avg_grounding_rate": 0.8545,
+      "pooled_grounding_rate": 0.8038,
+      "reagents_grounded_total": 168,
+      "reagents_total_sum": 209,
+      "n_with_signaling_factors": 33,
+      "n_with_timeline": 4,
+      "n_with_base_media": 18,
+      "n_with_matrix": 27,
+      "n_with_passaging": 12,
+      "n_with_assay_endpoints": 18,
+      "n_figure_confirmed_total": 5,
+      "n_species": 6,
+      "top_species": [
+        {
+          "species": "human",
+          "count": 24
+        },
+        {
+          "species": "mouse",
+          "count": 4
+        },
+        {
+          "species": "murine",
+          "count": 1
+        }
+      ],
+      "n_source_cell_types": 3,
+      "source_cell_types": [
+        {
+          "type": "ipsc",
+          "count": 15
+        },
+        {
+          "type": "adult_stem_cell",
+          "count": 15
+        },
+        {
+          "type": "esc",
+          "count": 1
+        }
+      ],
+      "year_range": [
+        2015,
+        2026
+      ],
+      "grounding_distribution": {
+        "poor_lt50": 1,
+        "moderate_50_80": 9,
+        "good_80_100": 1,
+        "perfect_100": 22
+      },
+      "completeness_score": 0.7955
+    },
+    "mammary": {
+      "n_papers": 14,
+      "avg_grounding_rate": 0.883,
+      "pooled_grounding_rate": 0.8889,
+      "reagents_grounded_total": 80,
+      "reagents_total_sum": 90,
+      "n_with_signaling_factors": 14,
+      "n_with_timeline": 1,
+      "n_with_base_media": 9,
+      "n_with_matrix": 11,
+      "n_with_passaging": 7,
+      "n_with_assay_endpoints": 10,
+      "n_figure_confirmed_total": 0,
+      "n_species": 4,
+      "top_species": [
+        {
+          "species": "human",
+          "count": 7
+        },
+        {
+          "species": "mouse",
+          "count": 2
+        },
+        {
+          "species": "goat",
+          "count": 2
+        }
+      ],
+      "n_source_cell_types": 3,
+      "source_cell_types": [
+        {
+          "type": "adult_stem_cell",
+          "count": 8
+        },
+        {
+          "type": "primary_tissue",
+          "count": 4
+        },
+        {
+          "type": "ipsc",
+          "count": 1
+        }
+      ],
+      "year_range": [
+        2022,
+        2026
+      ],
+      "grounding_distribution": {
+        "poor_lt50": 0,
+        "moderate_50_80": 4,
+        "good_80_100": 3,
+        "perfect_100": 7
+      },
+      "completeness_score": 0.7769
+    },
+    "neuromuscular": {
+      "n_papers": 16,
+      "avg_grounding_rate": 0.9002,
+      "pooled_grounding_rate": 0.8812,
+      "reagents_grounded_total": 89,
+      "reagents_total_sum": 101,
+      "n_with_signaling_factors": 16,
+      "n_with_timeline": 4,
+      "n_with_base_media": 10,
+      "n_with_matrix": 12,
+      "n_with_passaging": 6,
+      "n_with_assay_endpoints": 8,
+      "n_figure_confirmed_total": 0,
+      "n_species": 2,
+      "top_species": [
+        {
+          "species": "human",
+          "count": 14
+        },
+        {
+          "species": "mouse",
+          "count": 1
+        }
+      ],
+      "n_source_cell_types": 2,
+      "source_cell_types": [
+        {
+          "type": "ipsc",
+          "count": 15
+        },
+        {
+          "type": "adult_stem_cell",
+          "count": 1
+        }
+      ],
+      "year_range": [
+        2022,
+        2026
+      ],
+      "grounding_distribution": {
+        "poor_lt50": 0,
+        "moderate_50_80": 3,
+        "good_80_100": 3,
+        "perfect_100": 10
+      },
+      "completeness_score": 0.7755
+    },
+    "pancreatic": {
+      "n_papers": 35,
+      "avg_grounding_rate": 0.927,
+      "pooled_grounding_rate": 0.9155,
+      "reagents_grounded_total": 195,
+      "reagents_total_sum": 213,
+      "n_with_signaling_factors": 35,
+      "n_with_timeline": 4,
+      "n_with_base_media": 23,
+      "n_with_matrix": 29,
+      "n_with_passaging": 13,
+      "n_with_assay_endpoints": 22,
+      "n_figure_confirmed_total": 0,
+      "n_species": 5,
+      "top_species": [
+        {
+          "species": "human",
+          "count": 22
+        },
+        {
+          "species": "mouse",
+          "count": 5
+        },
+        {
+          "species": "porcine",
+          "count": 2
+        }
+      ],
+      "n_source_cell_types": 4,
+      "source_cell_types": [
+        {
+          "type": "adult_stem_cell",
+          "count": 20
+        },
+        {
+          "type": "ipsc",
+          "count": 10
+        },
+        {
+          "type": "primary_tissue",
+          "count": 2
+        },
+        {
+          "type": "esc",
+          "count": 1
+        }
+      ],
+      "year_range": [
+        2013,
+        2026
+      ],
+      "grounding_distribution": {
+        "poor_lt50": 0,
+        "moderate_50_80": 5,
+        "good_80_100": 6,
+        "perfect_100": 24
+      },
+      "completeness_score": 0.8369
+    },
+    "prostate": {
+      "n_papers": 16,
+      "avg_grounding_rate": 0.8629,
+      "pooled_grounding_rate": 0.8765,
+      "reagents_grounded_total": 71,
+      "reagents_total_sum": 81,
+      "n_with_signaling_factors": 16,
+      "n_with_timeline": 0,
+      "n_with_base_media": 12,
+      "n_with_matrix": 15,
+      "n_with_passaging": 10,
+      "n_with_assay_endpoints": 5,
+      "n_figure_confirmed_total": 0,
+      "n_species": 4,
+      "top_species": [
+        {
+          "species": "mouse",
+          "count": 6
+        },
+        {
+          "species": "human",
+          "count": 4
+        },
+        {
+          "species": "murine",
+          "count": 2
+        }
+      ],
+      "n_source_cell_types": 3,
+      "source_cell_types": [
+        {
+          "type": "adult_stem_cell",
+          "count": 8
+        },
+        {
+          "type": "ipsc",
+          "count": 4
+        },
+        {
+          "type": "primary_tissue",
+          "count": 4
+        }
+      ],
+      "year_range": [
+        2023,
+        2026
+      ],
+      "grounding_distribution": {
+        "poor_lt50": 0,
+        "moderate_50_80": 4,
+        "good_80_100": 3,
+        "perfect_100": 9
+      },
+      "completeness_score": 0.8305
+    },
+    "retinal": {
+      "n_papers": 37,
+      "avg_grounding_rate": 0.8765,
+      "pooled_grounding_rate": 0.8562,
+      "reagents_grounded_total": 131,
+      "reagents_total_sum": 153,
+      "n_with_signaling_factors": 37,
+      "n_with_timeline": 26,
+      "n_with_base_media": 32,
+      "n_with_matrix": 33,
+      "n_with_passaging": 25,
+      "n_with_assay_endpoints": 33,
+      "n_figure_confirmed_total": 0,
+      "n_species": 3,
+      "top_species": [
+        {
+          "species": "human",
+          "count": 34
+        },
+        {
+          "species": "mouse",
+          "count": 1
+        },
+        {
+          "species": "oryzias latipes",
+          "count": 1
+        }
+      ],
+      "n_source_cell_types": 2,
+      "source_cell_types": [
+        {
+          "type": "ipsc",
+          "count": 34
+        },
+        {
+          "type": "esc",
+          "count": 1
+        }
+      ],
+      "year_range": [
+        2014,
+        2026
+      ],
+      "grounding_distribution": {
+        "poor_lt50": 0,
+        "moderate_50_80": 9,
+        "good_80_100": 7,
+        "perfect_100": 21
+      },
+      "completeness_score": 0.8835
+    },
+    "salivary-gland": {
+      "n_papers": 16,
+      "avg_grounding_rate": 0.8598,
+      "pooled_grounding_rate": 0.8491,
+      "reagents_grounded_total": 90,
+      "reagents_total_sum": 106,
+      "n_with_signaling_factors": 16,
+      "n_with_timeline": 3,
+      "n_with_base_media": 11,
+      "n_with_matrix": 13,
+      "n_with_passaging": 7,
+      "n_with_assay_endpoints": 7,
+      "n_figure_confirmed_total": 0,
+      "n_species": 4,
+      "top_species": [
+        {
+          "species": "human",
+          "count": 10
+        },
+        {
+          "species": "mouse",
+          "count": 4
+        },
+        {
+          "species": "rat",
+          "count": 1
+        }
+      ],
+      "n_source_cell_types": 4,
+      "source_cell_types": [
+        {
+          "type": "adult_stem_cell",
+          "count": 9
+        },
+        {
+          "type": "ipsc",
+          "count": 4
+        },
+        {
+          "type": "primary_tissue",
+          "count": 2
+        },
+        {
+          "type": "esc",
+          "count": 1
+        }
+      ],
+      "year_range": [
+        2021,
+        2026
+      ],
+      "grounding_distribution": {
+        "poor_lt50": 0,
+        "moderate_50_80": 4,
+        "good_80_100": 4,
+        "perfect_100": 8
+      },
+      "completeness_score": 0.7924
+    },
+    "skin": {
+      "n_papers": 12,
+      "avg_grounding_rate": 0.959,
+      "pooled_grounding_rate": 0.9298,
+      "reagents_grounded_total": 53,
+      "reagents_total_sum": 57,
+      "n_with_signaling_factors": 12,
+      "n_with_timeline": 2,
+      "n_with_base_media": 6,
+      "n_with_matrix": 9,
+      "n_with_passaging": 4,
+      "n_with_assay_endpoints": 6,
+      "n_figure_confirmed_total": 0,
+      "n_species": 2,
+      "top_species": [
+        {
+          "species": "human",
+          "count": 10
+        },
+        {
+          "species": "mouse",
+          "count": 1
+        }
+      ],
+      "n_source_cell_types": 3,
+      "source_cell_types": [
+        {
+          "type": "ipsc",
+          "count": 7
+        },
+        {
+          "type": "adult_stem_cell",
+          "count": 2
+        },
+        {
+          "type": "primary_tissue",
+          "count": 1
+        }
+      ],
+      "year_range": [
+        2023,
+        2026
+      ],
+      "grounding_distribution": {
+        "poor_lt50": 0,
+        "moderate_50_80": 0,
+        "good_80_100": 3,
+        "perfect_100": 9
+      },
+      "completeness_score": 0.7497
+    },
+    "thyroid": {
+      "n_papers": 20,
+      "avg_grounding_rate": 0.8709,
+      "pooled_grounding_rate": 0.9189,
+      "reagents_grounded_total": 102,
+      "reagents_total_sum": 111,
+      "n_with_signaling_factors": 20,
+      "n_with_timeline": 3,
+      "n_with_base_media": 9,
+      "n_with_matrix": 12,
+      "n_with_passaging": 8,
+      "n_with_assay_endpoints": 13,
+      "n_figure_confirmed_total": 0,
+      "n_species": 5,
+      "top_species": [
+        {
+          "species": "human",
+          "count": 11
+        },
+        {
+          "species": "mouse",
+          "count": 6
+        },
+        {
+          "species": "sprague dawley rat",
+          "count": 1
+        }
+      ],
+      "n_source_cell_types": 4,
+      "source_cell_types": [
+        {
+          "type": "adult_stem_cell",
+          "count": 5
+        },
+        {
+          "type": "ipsc",
+          "count": 5
+        },
+        {
+          "type": "esc",
+          "count": 5
+        },
+        {
+          "type": "primary_tissue",
+          "count": 3
+        }
+      ],
+      "year_range": [
+        2020,
+        2026
+      ],
+      "grounding_distribution": {
+        "poor_lt50": 0,
+        "moderate_50_80": 6,
+        "good_80_100": 2,
+        "perfect_100": 12
+      },
+      "completeness_score": 0.7143
+    },
+    "tumor": {
+      "n_papers": 9,
+      "avg_grounding_rate": 0.9081,
+      "pooled_grounding_rate": 0.9273,
+      "reagents_grounded_total": 51,
+      "reagents_total_sum": 55,
+      "n_with_signaling_factors": 9,
+      "n_with_timeline": 0,
+      "n_with_base_media": 6,
+      "n_with_matrix": 7,
+      "n_with_passaging": 4,
+      "n_with_assay_endpoints": 4,
+      "n_figure_confirmed_total": 0,
+      "n_species": 1,
+      "top_species": [
+        {
+          "species": "human",
+          "count": 6
+        }
+      ],
+      "n_source_cell_types": 2,
+      "source_cell_types": [
+        {
+          "type": "primary_tissue",
+          "count": 7
+        },
+        {
+          "type": "ipsc",
+          "count": 2
+        }
+      ],
+      "year_range": [
+        2025,
+        2026
+      ],
+      "grounding_distribution": {
+        "poor_lt50": 0,
+        "moderate_50_80": 2,
+        "good_80_100": 1,
+        "perfect_100": 6
+      },
+      "completeness_score": 0.7659
+    },
+    "vascular": {
+      "n_papers": 20,
+      "avg_grounding_rate": 0.8653,
+      "pooled_grounding_rate": 0.8425,
+      "reagents_grounded_total": 107,
+      "reagents_total_sum": 127,
+      "n_with_signaling_factors": 20,
+      "n_with_timeline": 3,
+      "n_with_base_media": 8,
+      "n_with_matrix": 14,
+      "n_with_passaging": 7,
+      "n_with_assay_endpoints": 7,
+      "n_figure_confirmed_total": 0,
+      "n_species": 1,
+      "top_species": [
+        {
+          "species": "human",
+          "count": 17
+        }
+      ],
+      "n_source_cell_types": 3,
+      "source_cell_types": [
+        {
+          "type": "ipsc",
+          "count": 16
+        },
+        {
+          "type": "esc",
+          "count": 2
+        },
+        {
+          "type": "primary_tissue",
+          "count": 1
+        }
+      ],
+      "year_range": [
+        2020,
+        2026
+      ],
+      "grounding_distribution": {
+        "poor_lt50": 0,
+        "moderate_50_80": 6,
+        "good_80_100": 2,
+        "perfect_100": 12
+      },
+      "completeness_score": 0.7232
+    }
+  }
+}

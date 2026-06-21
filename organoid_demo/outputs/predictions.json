@@ -5,6 +5,7 @@
     "source_cells": {
       "cell_type": "adult_stem_cell",
       "line_name": null,
+      "rrid": null,
       "species": "Mus musculus",
       "reporting": "reported",
       "evidence": null
@@ -120,11 +121,18 @@
       "reporting": "reported",
       "evidence": null
     },
+    "culture_conditions": {
+      "temperature_c": null,
+      "co2_pct": null,
+      "o2_pct": null,
+      "reporting": "not_extracted",
+      "evidence": null
+    },
     "assay_endpoints": [
       "Lgr5",
       "crypt-villus morphology"
     ],
-    "schema_version": "0.2",
+    "schema_version": "0.3",
     "extractor_version": "rule_based_v1",
     "notes": null
   },
@@ -134,6 +142,7 @@
     "source_cells": {
       "cell_type": "ESC",
       "line_name": null,
+      "rrid": null,
       "species": "Homo sapiens",
       "reporting": "reported",
       "evidence": {
@@ -221,12 +230,19 @@
       "reporting": "reported",
       "evidence": null
     },
+    "culture_conditions": {
+      "temperature_c": null,
+      "co2_pct": null,
+      "o2_pct": null,
+      "reporting": "not_extracted",
+      "evidence": null
+    },
     "assay_endpoints": [
       "PAX6",
       "SOX2",
       "immunostaining"
     ],
-    "schema_version": "0.2",
+    "schema_version": "0.3",
     "extractor_version": "rule_based_v1",
     "notes": null
   },
@@ -236,6 +252,7 @@
     "source_cells": {
       "cell_type": "iPSC",
       "line_name": null,
+      "rrid": null,
       "species": "Homo sapiens",
       "reporting": "reported",
       "evidence": {
@@ -326,12 +343,19 @@
       "reporting": "reported",
       "evidence": null
     },
+    "culture_conditions": {
+      "temperature_c": null,
+      "co2_pct": null,
+      "o2_pct": null,
+      "reporting": "not_extracted",
+      "evidence": null
+    },
     "assay_endpoints": [
       "WT1",
       "PAX2",
       "nephrin"
     ],
-    "schema_version": "0.2",
+    "schema_version": "0.3",
     "extractor_version": "rule_based_v1",
     "notes": null
   }

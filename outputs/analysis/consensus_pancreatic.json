@@ -1,0 +1,186 @@
+{
+  "organoid_type": "pancreatic",
+  "n_protocols": 35,
+  "base_media": {
+    "top": "DMEM/F12",
+    "distribution": [
+      {
+        "value": "DMEM/F12",
+        "count": 5,
+        "fraction": 0.217
+      },
+      {
+        "value": "Advanced DMEM/F12",
+        "count": 4,
+        "fraction": 0.174
+      },
+      {
+        "value": "DMEM",
+        "count": 3,
+        "fraction": 0.13
+      },
+      {
+        "value": "advanced DMEM/F12",
+        "count": 2,
+        "fraction": 0.087
+      },
+      {
+        "value": "PrEBM",
+        "count": 1,
+        "fraction": 0.043
+      },
+      {
+        "value": "mTeSR1",
+        "count": 1,
+        "fraction": 0.043
+      },
+      {
+        "value": "RPMI 1640",
+        "count": 1,
+        "fraction": 0.043
+      },
+      {
+        "value": "mTesr1",
+        "count": 1,
+        "fraction": 0.043
+      },
+      {
+        "value": "RPMI 1,640",
+        "count": 1,
+        "fraction": 0.043
+      },
+      {
+        "value": "mTeSR+",
+        "count": 1,
+        "fraction": 0.043
+      }
+    ],
+    "n_reported": 23,
+    "n_missing": 12
+  },
+  "matrix": {
+    "top": "Matrigel",
+    "distribution": [
+      {
+        "value": "Matrigel",
+        "count": 21,
+        "fraction": 0.724
+      },
+      {
+        "value": "growth factor-reduced matrigel",
+        "count": 1,
+        "fraction": 0.034
+      },
+      {
+        "value": "Matrigel TM",
+        "count": 1,
+        "fraction": 0.034
+      },
+      {
+        "value": "pancreatic ECM",
+        "count": 1,
+        "fraction": 0.034
+      },
+      {
+        "value": "Cultrex RGF basement membrane extract Type 2",
+        "count": 1,
+        "fraction": 0.034
+      },
+      {
+        "value": "matrix gel",
+        "count": 1,
+        "fraction": 0.034
+      },
+      {
+        "value": "agarose",
+        "count": 1,
+        "fraction": 0.034
+      },
+      {
+        "value": "GFR-Matrigel",
+        "count": 1,
+        "fraction": 0.034
+      },
+      {
+        "value": "BME 2-RGF",
+        "count": 1,
+        "fraction": 0.034
+      }
+    ],
+    "n_reported": 29,
+    "n_missing": 6
+  },
+  "source_cell_type": {
+    "top": "adult_stem_cell",
+    "distribution": [
+      {
+        "value": "adult_stem_cell",
+        "count": 20,
+        "fraction": 0.571
+      },
+      {
+        "value": "iPSC",
+        "count": 10,
+        "fraction": 0.286
+      },
+      {
+        "value": "other",
+        "count": 2,
+        "fraction": 0.057
+      },
+      {
+        "value": "primary_tissue",
+        "count": 2,
+        "fraction": 0.057
+      },
+      {
+        "value": "ESC",
+        "count": 1,
+        "fraction": 0.029
+      }
+    ],
+    "n_reported": 35,
+    "n_missing": 0
+  },
+  "species": {
+    "top": "human",
+    "distribution": [
+      {
+        "value": "human",
+        "count": 22,
+        "fraction": 0.71
+      },
+      {
+        "value": "mouse",
+        "count": 5,
+        "fraction": 0.161
+      },
+      {
+        "value": "porcine",
+        "count": 2,
+        "fraction": 0.065
+      },
+      {
+        "value": "Canis familiaris",
+        "count": 1,
+        "fraction": 0.032
+      },
+      {
+        "value": "Homo sapiens",
+        "count": 1,
+        "fraction": 0.032
+      }
+    ],
+    "n_reported": 31,
+    "n_missing": 4
+  },
+  "signaling_factors": [],
+  "media_supplements": [],
+  "small_molecules": [],
+  "timeline": {
+    "n_protocols_with_timeline": 4,
+    "stages": []
+  },
+  "universal_reagents": [],
+  "high_variability_reagents": []
+}

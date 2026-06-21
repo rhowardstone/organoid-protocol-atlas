@@ -1,0 +1,171 @@
+{
+  "organoid_type": "cardiac",
+  "n_protocols": 59,
+  "base_media": {
+    "top": "DMEM/F12",
+    "distribution": [
+      {
+        "value": "DMEM/F12",
+        "count": 3,
+        "fraction": 0.111
+      },
+      {
+        "value": "E8 medium",
+        "count": 3,
+        "fraction": 0.111
+      },
+      {
+        "value": "Essential 8 Flex medium",
+        "count": 2,
+        "fraction": 0.074
+      },
+      {
+        "value": "mTeSR Plus",
+        "count": 2,
+        "fraction": 0.074
+      },
+      {
+        "value": "mTeSR1",
+        "count": 2,
+        "fraction": 0.074
+      },
+      {
+        "value": "StemFlex",
+        "count": 1,
+        "fraction": 0.037
+      },
+      {
+        "value": "ReproTESR",
+        "count": 1,
+        "fraction": 0.037
+      },
+      {
+        "value": "alpha minimum essential medium",
+        "count": 1,
+        "fraction": 0.037
+      },
+      {
+        "value": "DMEM",
+        "count": 1,
+        "fraction": 0.037
+      },
+      {
+        "value": "mTESR",
+        "count": 1,
+        "fraction": 0.037
+      }
+    ],
+    "n_reported": 27,
+    "n_missing": 32
+  },
+  "matrix": {
+    "top": "Matrigel",
+    "distribution": [
+      {
+        "value": "Matrigel",
+        "count": 27,
+        "fraction": 0.73
+      },
+      {
+        "value": "Geltrex",
+        "count": 2,
+        "fraction": 0.054
+      },
+      {
+        "value": "Matrigel\u2122",
+        "count": 2,
+        "fraction": 0.054
+      },
+      {
+        "value": "collagen type I",
+        "count": 1,
+        "fraction": 0.027
+      },
+      {
+        "value": "decellularized extracellular matrix",
+        "count": 1,
+        "fraction": 0.027
+      },
+      {
+        "value": "collagen I and Matrigel",
+        "count": 1,
+        "fraction": 0.027
+      },
+      {
+        "value": "extracellular matrix (ECM)",
+        "count": 1,
+        "fraction": 0.027
+      },
+      {
+        "value": "Laminin",
+        "count": 1,
+        "fraction": 0.027
+      },
+      {
+        "value": "LN/ET gel",
+        "count": 1,
+        "fraction": 0.027
+      }
+    ],
+    "n_reported": 37,
+    "n_missing": 22
+  },
+  "source_cell_type": {
+    "top": "iPSC",
+    "distribution": [
+      {
+        "value": "iPSC",
+        "count": 50,
+        "fraction": 0.847
+      },
+      {
+        "value": "other",
+        "count": 6,
+        "fraction": 0.102
+      },
+      {
+        "value": "ESC",
+        "count": 2,
+        "fraction": 0.034
+      },
+      {
+        "value": "adult_stem_cell",
+        "count": 1,
+        "fraction": 0.017
+      }
+    ],
+    "n_reported": 59,
+    "n_missing": 0
+  },
+  "species": {
+    "top": "human",
+    "distribution": [
+      {
+        "value": "human",
+        "count": 48,
+        "fraction": 0.923
+      },
+      {
+        "value": "mouse",
+        "count": 3,
+        "fraction": 0.058
+      },
+      {
+        "value": "rat",
+        "count": 1,
+        "fraction": 0.019
+      }
+    ],
+    "n_reported": 52,
+    "n_missing": 7
+  },
+  "signaling_factors": [],
+  "media_supplements": [],
+  "small_molecules": [],
+  "timeline": {
+    "n_protocols_with_timeline": 6,
+    "stages": []
+  },
+  "universal_reagents": [],
+  "high_variability_reagents": []
+}

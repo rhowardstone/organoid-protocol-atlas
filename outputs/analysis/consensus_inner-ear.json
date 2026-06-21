@@ -1,0 +1,126 @@
+{
+  "organoid_type": "inner-ear",
+  "n_protocols": 21,
+  "base_media": {
+    "top": "DMEM/F12",
+    "distribution": [
+      {
+        "value": "DMEM/F12",
+        "count": 2,
+        "fraction": 0.286
+      },
+      {
+        "value": "mTeSR1",
+        "count": 1,
+        "fraction": 0.143
+      },
+      {
+        "value": "DMEM/F-12",
+        "count": 1,
+        "fraction": 0.143
+      },
+      {
+        "value": "Essential 8 medium",
+        "count": 1,
+        "fraction": 0.143
+      },
+      {
+        "value": "DMEM",
+        "count": 1,
+        "fraction": 0.143
+      },
+      {
+        "value": "Essential 8 Flex (E8f) medium",
+        "count": 1,
+        "fraction": 0.143
+      }
+    ],
+    "n_reported": 7,
+    "n_missing": 14
+  },
+  "matrix": {
+    "top": "Matrigel",
+    "distribution": [
+      {
+        "value": "Matrigel",
+        "count": 12,
+        "fraction": 0.8
+      },
+      {
+        "value": "Matrigel Basement Membrane Matrix",
+        "count": 1,
+        "fraction": 0.067
+      },
+      {
+        "value": "vitronectin",
+        "count": 1,
+        "fraction": 0.067
+      },
+      {
+        "value": "truncated recombinant human Vitronectin-N",
+        "count": 1,
+        "fraction": 0.067
+      }
+    ],
+    "n_reported": 15,
+    "n_missing": 6
+  },
+  "source_cell_type": {
+    "top": "iPSC",
+    "distribution": [
+      {
+        "value": "iPSC",
+        "count": 14,
+        "fraction": 0.667
+      },
+      {
+        "value": "adult_stem_cell",
+        "count": 4,
+        "fraction": 0.19
+      },
+      {
+        "value": "other",
+        "count": 2,
+        "fraction": 0.095
+      },
+      {
+        "value": "ESC",
+        "count": 1,
+        "fraction": 0.048
+      }
+    ],
+    "n_reported": 21,
+    "n_missing": 0
+  },
+  "species": {
+    "top": "human",
+    "distribution": [
+      {
+        "value": "human",
+        "count": 11,
+        "fraction": 0.647
+      },
+      {
+        "value": "mouse",
+        "count": 5,
+        "fraction": 0.294
+      },
+      {
+        "value": "Mus musculus",
+        "count": 1,
+        "fraction": 0.059
+      }
+    ],
+    "n_reported": 17,
+    "n_missing": 4
+  },
+  "signaling_factors": [],
+  "media_supplements": [],
+  "small_molecules": [],
+  "timeline": {
+    "n_protocols_with_timeline": 2,
+    "stages": []
+  },
+  "universal_reagents": [],
+  "high_variability_reagents": []
+}

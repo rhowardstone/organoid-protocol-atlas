@@ -1,0 +1,121 @@
+{
+  "organoid_type": "liver",
+  "n_protocols": 10,
+  "base_media": {
+    "top": "AdvDMEM+++ (AdDMEM/F-12 medium supplemented with 1\u00d7\u2009GlutaMAX, 10\u2009mM HEPES and 100\u2009U\u2009ml \u20131 penicillin/streptomycin solution)",
+    "distribution": [
+      {
+        "value": "AdvDMEM+++ (AdDMEM/F-12 medium supplemented with 1\u00d7\u2009GlutaMAX, 10\u2009mM HEPES and 100\u2009U\u2009ml \u20131 penicillin/streptomycin solution)",
+        "count": 1,
+        "fraction": 0.2
+      },
+      {
+        "value": "DMEM/F-12",
+        "count": 1,
+        "fraction": 0.2
+      },
+      {
+        "value": "Williams E medium (WEM)",
+        "count": 1,
+        "fraction": 0.2
+      },
+      {
+        "value": "Advanced DMEM",
+        "count": 1,
+        "fraction": 0.2
+      },
+      {
+        "value": "mTeSR1",
+        "count": 1,
+        "fraction": 0.2
+      }
+    ],
+    "n_reported": 5,
+    "n_missing": 5
+  },
+  "matrix": {
+    "top": "Matrigel",
+    "distribution": [
+      {
+        "value": "Matrigel",
+        "count": 4,
+        "fraction": 0.444
+      },
+      {
+        "value": "BME (Cultrex)",
+        "count": 1,
+        "fraction": 0.111
+      },
+      {
+        "value": "collagen",
+        "count": 1,
+        "fraction": 0.111
+      },
+      {
+        "value": "PEG-RGD",
+        "count": 1,
+        "fraction": 0.111
+      },
+      {
+        "value": "Matrigel\u00ae",
+        "count": 1,
+        "fraction": 0.111
+      },
+      {
+        "value": "Cultrex Reduced Growth Factor Basement Membrane Extract, Type 2, Pathclear",
+        "count": 1,
+        "fraction": 0.111
+      }
+    ],
+    "n_reported": 9,
+    "n_missing": 1
+  },
+  "source_cell_type": {
+    "top": "adult_stem_cell",
+    "distribution": [
+      {
+        "value": "adult_stem_cell",
+        "count": 5,
+        "fraction": 0.5
+      },
+      {
+        "value": "iPSC",
+        "count": 5,
+        "fraction": 0.5
+      }
+    ],
+    "n_reported": 10,
+    "n_missing": 0
+  },
+  "species": {
+    "top": "human",
+    "distribution": [
+      {
+        "value": "human",
+        "count": 6,
+        "fraction": 0.6
+      },
+      {
+        "value": "mouse",
+        "count": 3,
+        "fraction": 0.3
+      },
+      {
+        "value": "Homo sapiens",
+        "count": 1,
+        "fraction": 0.1
+      }
+    ],
+    "n_reported": 10,
+    "n_missing": 0
+  },
+  "signaling_factors": [],
+  "media_supplements": [],
+  "small_molecules": [],
+  "timeline": {
+    "n_protocols_with_timeline": 1,
+    "stages": []
+  },
+  "universal_reagents": [],
+  "high_variability_reagents": []
+}
