@@ -1,0 +1,516 @@
+{
+  "generated_at": "2026-06-20T23:50:07+00:00",
+  "provenance": {
+    "command": "python pipeline/ingest_orchestrator.py --limit 79 --min-grounding 0.5 --workers 4 --candidates data/corpus/incoming/organoid_corpus_candidates_gen2.csv",
+    "model": "gemma3:12b",
+    "candidates_file": "organoid_corpus_candidates_gen2.csv",
+    "candidates_sha256_16": "66b2414390cca125",
+    "min_grounding": 0.5,
+    "cc_only": false,
+    "dry_run": false,
+    "workers": 4
+  },
+  "candidates_considered": 79,
+  "accepted": 36,
+  "rejected": 43,
+  "accepted_papers": [
+    {
+      "pmcid": "PMC10493503",
+      "doi": "10.1016/j.bioactmat.2023.08.023",
+      "organoid_type": "cardiac",
+      "n_signaling": 5,
+      "grounded": 3,
+      "grounding_rate": 0.6,
+      "methods_chars": 28329
+    },
+    {
+      "pmcid": "PMC10506403",
+      "doi": "",
+      "organoid_type": "cardiac",
+      "n_signaling": 9,
+      "grounded": 7,
+      "grounding_rate": 0.778,
+      "methods_chars": 11576
+    },
+    {
+      "pmcid": "PMC10781881",
+      "doi": "10.1016/j.csbj.2023.06.005",
+      "organoid_type": "cardiac",
+      "n_signaling": 13,
+      "grounded": 8,
+      "grounding_rate": 0.615,
+      "methods_chars": 28093
+    },
+    {
+      "pmcid": "PMC10954298",
+      "doi": "10.1515/mr-2023-0059",
+      "organoid_type": "cardiac",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 54888
+    },
+    {
+      "pmcid": "PMC11477044",
+      "doi": "10.3390/ijms251910690",
+      "organoid_type": "cardiac",
+      "n_signaling": 3,
+      "grounded": 3,
+      "grounding_rate": 1.0,
+      "methods_chars": 27123
+    },
+    {
+      "pmcid": "PMC11620051",
+      "doi": "10.1016/j.heliyon.2024.e38714",
+      "organoid_type": "cardiac",
+      "n_signaling": 3,
+      "grounded": 2,
+      "grounding_rate": 0.667,
+      "methods_chars": 9360
+    },
+    {
+      "pmcid": "PMC11699091",
+      "doi": "10.1007/s00018-024-05557-w",
+      "organoid_type": "cardiac",
+      "n_signaling": 6,
+      "grounded": 6,
+      "grounding_rate": 1.0,
+      "methods_chars": 35520
+    },
+    {
+      "pmcid": "PMC11719415",
+      "doi": "10.1016/j.mtbio.2024.101396",
+      "organoid_type": "cardiac",
+      "n_signaling": 4,
+      "grounded": 4,
+      "grounding_rate": 1.0,
+      "methods_chars": 72534
+    },
+    {
+      "pmcid": "PMC11743075",
+      "doi": "10.1186/s12933-025-02598-8",
+      "organoid_type": "cardiac",
+      "n_signaling": 2,
+      "grounded": 2,
+      "grounding_rate": 1.0,
+      "methods_chars": 38545
+    },
+    {
+      "pmcid": "PMC11960529",
+      "doi": "10.1016/j.stemcr.2025.102422",
+      "organoid_type": "cardiac",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 8441
+    },
+    {
+      "pmcid": "PMC11962860",
+      "doi": "10.1039/d4lc01000k",
+      "organoid_type": "cardiac",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 19820
+    },
+    {
+      "pmcid": "PMC11994664",
+      "doi": "10.3389/fcell.2025.1564889",
+      "organoid_type": "cardiac",
+      "n_signaling": 3,
+      "grounded": 3,
+      "grounding_rate": 1.0,
+      "methods_chars": 45186
+    },
+    {
+      "pmcid": "PMC12000699",
+      "doi": "10.1016/j.reth.2025.01.001",
+      "organoid_type": "cardiac",
+      "n_signaling": 6,
+      "grounded": 5,
+      "grounding_rate": 0.833,
+      "methods_chars": 37127
+    },
+    {
+      "pmcid": "PMC12020871",
+      "doi": "10.1016/j.jmccpl.2025.100298",
+      "organoid_type": "cardiac",
+      "n_signaling": 4,
+      "grounded": 3,
+      "grounding_rate": 0.75,
+      "methods_chars": 30737
+    },
+    {
+      "pmcid": "PMC12230479",
+      "doi": "10.1016/j.xjon.2025.03.006",
+      "organoid_type": "cardiac",
+      "n_signaling": 2,
+      "grounded": 2,
+      "grounding_rate": 1.0,
+      "methods_chars": 8737
+    },
+    {
+      "pmcid": "PMC12232214",
+      "doi": "10.1002/adma.202417327",
+      "organoid_type": "cardiac",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 3022
+    },
+    {
+      "pmcid": "PMC12259470",
+      "doi": "10.1038/s44161-025-00669-3",
+      "organoid_type": "cardiac",
+      "n_signaling": 6,
+      "grounded": 4,
+      "grounding_rate": 0.667,
+      "methods_chars": 49838
+    },
+    {
+      "pmcid": "PMC12325324",
+      "doi": "10.3389/fbioe.2025.1629608",
+      "organoid_type": "cardiac",
+      "n_signaling": 2,
+      "grounded": 2,
+      "grounding_rate": 1.0,
+      "methods_chars": 59596
+    },
+    {
+      "pmcid": "PMC12428058",
+      "doi": "10.3390/cells14171396",
+      "organoid_type": "cardiac",
+      "n_signaling": 6,
+      "grounded": 4,
+      "grounding_rate": 0.667,
+      "methods_chars": 91980
+    },
+    {
+      "pmcid": "PMC12428614",
+      "doi": "10.3390/cells14171390",
+      "organoid_type": "cardiac",
+      "n_signaling": 11,
+      "grounded": 7,
+      "grounding_rate": 0.636,
+      "methods_chars": 59520
+    },
+    {
+      "pmcid": "PMC12446705",
+      "doi": "10.1002/mco2.70392",
+      "organoid_type": "cardiac",
+      "n_signaling": 11,
+      "grounded": 11,
+      "grounding_rate": 1.0,
+      "methods_chars": 14564
+    },
+    {
+      "pmcid": "PMC12451373",
+      "doi": "10.1016/j.mtbio.2025.102274",
+      "organoid_type": "cardiac",
+      "n_signaling": 3,
+      "grounded": 2,
+      "grounding_rate": 0.667,
+      "methods_chars": 38823
+    },
+    {
+      "pmcid": "PMC12506531",
+      "doi": "10.1016/j.isci.2025.113531",
+      "organoid_type": "cardiac",
+      "n_signaling": 4,
+      "grounded": 4,
+      "grounding_rate": 1.0,
+      "methods_chars": 103518
+    },
+    {
+      "pmcid": "PMC12561129",
+      "doi": "10.3390/bioengineering12101037",
+      "organoid_type": "cardiac",
+      "n_signaling": 3,
+      "grounded": 3,
+      "grounding_rate": 1.0,
+      "methods_chars": 40691
+    },
+    {
+      "pmcid": "PMC12577484",
+      "doi": "10.1016/j.scr.2025.103819",
+      "organoid_type": "cardiac",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 13262
+    },
+    {
+      "pmcid": "PMC12665400",
+      "doi": "10.1016/j.jacbts.2025.101363",
+      "organoid_type": "cardiac",
+      "n_signaling": 4,
+      "grounded": 2,
+      "grounding_rate": 0.5,
+      "methods_chars": 6524
+    },
+    {
+      "pmcid": "PMC12779562",
+      "doi": "10.1038/s44385-025-00048-4",
+      "organoid_type": "cardiac",
+      "n_signaling": 8,
+      "grounded": 5,
+      "grounding_rate": 0.625,
+      "methods_chars": 36641
+    },
+    {
+      "pmcid": "PMC12784959",
+      "doi": "10.3390/cells15010007",
+      "organoid_type": "cardiac",
+      "n_signaling": 4,
+      "grounded": 4,
+      "grounding_rate": 1.0,
+      "methods_chars": 63578
+    },
+    {
+      "pmcid": "PMC12957250",
+      "doi": "10.3389/fbioe.2026.1717996",
+      "organoid_type": "cardiac",
+      "n_signaling": 7,
+      "grounded": 7,
+      "grounding_rate": 1.0,
+      "methods_chars": 9971
+    },
+    {
+      "pmcid": "PMC13207643",
+      "doi": "10.3390/ijms27104616",
+      "organoid_type": "cardiac",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 24787
+    },
+    {
+      "pmcid": "PMC13241447",
+      "doi": "10.1007/s12015-026-11127-3",
+      "organoid_type": "cardiac",
+      "n_signaling": 3,
+      "grounded": 2,
+      "grounding_rate": 0.667,
+      "methods_chars": 22735
+    },
+    {
+      "pmcid": "PMC8675211",
+      "doi": "10.3389/fcell.2021.788955",
+      "organoid_type": "cardiac",
+      "n_signaling": 5,
+      "grounded": 3,
+      "grounding_rate": 0.6,
+      "methods_chars": 30573
+    },
+    {
+      "pmcid": "PMC9261984",
+      "doi": "10.3389/fcell.2022.936084",
+      "organoid_type": "cardiac",
+      "n_signaling": 3,
+      "grounded": 3,
+      "grounding_rate": 1.0,
+      "methods_chars": 20240
+    },
+    {
+      "pmcid": "PMC9469666",
+      "doi": "10.1016/j.heliyon.2022.e10365",
+      "organoid_type": "cardiac",
+      "n_signaling": 4,
+      "grounded": 3,
+      "grounding_rate": 0.75,
+      "methods_chars": 62391
+    },
+    {
+      "pmcid": "PMC9715615",
+      "doi": "10.3389/fbioe.2022.1059243",
+      "organoid_type": "cardiac",
+      "n_signaling": 5,
+      "grounded": 4,
+      "grounding_rate": 0.8,
+      "methods_chars": 6484
+    },
+    {
+      "pmcid": "PMC9773542",
+      "doi": "10.1186/s13287-022-03215-1",
+      "organoid_type": "cardiac",
+      "n_signaling": 8,
+      "grounded": 8,
+      "grounding_rate": 1.0,
+      "methods_chars": 16708
+    }
+  ],
+  "rejected_papers": [
+    {
+      "pmcid": "PMC10002991",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC10403216",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10425540",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC11251028",
+      "reason": "low_grounding=0.333"
+    },
+    {
+      "pmcid": "PMC11306051",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC11314410",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC11346450",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC11362591",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC11396807",
+      "reason": "low_grounding=0.444"
+    },
+    {
+      "pmcid": "PMC11592345",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC11644437",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC11726960",
+      "reason": "low_grounding=0.286"
+    },
+    {
+      "pmcid": "PMC11740338",
+      "reason": "low_grounding=0.353"
+    },
+    {
+      "pmcid": "PMC11882745",
+      "reason": "low_grounding=0.231"
+    },
+    {
+      "pmcid": "PMC11955871",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC12011886",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12292913",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12367874",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12389403",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12466161",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12546991",
+      "reason": "low_grounding=0.333"
+    },
+    {
+      "pmcid": "PMC12634667",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12692318",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12797737",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12841096",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC13003744",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC13023869",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC13043231",
+      "reason": "low_grounding=0.25"
+    },
+    {
+      "pmcid": "PMC13095430",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC13107919",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC13120518",
+      "reason": "low_grounding=0.333"
+    },
+    {
+      "pmcid": "PMC13127091",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC13147764",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC13150603",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC13165920",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC13186086",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC13204734",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC13228570",
+      "reason": "no_methods"
+    },
+    {
+      "pmcid": "PMC13231838",
+      "reason": "low_grounding=0.375"
+    },
+    {
+      "pmcid": "PMC13248853",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC8804169",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8965483",
+      "reason": "low_grounding=0.333"
+    },
+    {
+      "pmcid": "PMC9779514",
+      "reason": "low_grounding=0.333"
+    }
+  ]
+}
