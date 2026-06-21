@@ -486,3 +486,27 @@ def test_live_rp_b27_is_cross_field():
     cross = {e["canonical"] for e in data["cross_field"]}
     # B27, FGF2, GlutaMAX appear in all 25 types
     assert len(cross & {"B27", "FGF2", "GlutaMAX"}) >= 2
+
+
+# ---------------------------------------------------------------------------
+# protocol-outliers live smoke tests
+# ---------------------------------------------------------------------------
+
+@require_protocols
+def test_live_po_returns_200():
+    data, status = ae.handle_protocol_outliers(None)
+    assert status == 200
+    assert data["n_types"] >= 10
+    assert data["n_papers_total"] >= 100
+    assert "per_type" in data
+
+
+@require_protocols
+def test_live_po_intestinal_has_outliers():
+    data, status = ae.handle_protocol_outliers("intestinal")
+    assert status == 200
+    assert data["organoid_type"] == "intestinal"
+    assert data["n_papers"] >= 20
+    assert data["mean_n_sf"] > 0
+    # At least one complex or minimal outlier in a large enough corpus
+    assert data["n_complex"] + data["n_minimal"] >= 1

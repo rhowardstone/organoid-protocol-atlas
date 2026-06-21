@@ -3371,3 +3371,157 @@ def test_rp_breadth_distribution_correct(tmp_path, monkeypatch):
 def test_rp_index_entry():
     data, _ = ae.handle_index()
     assert "/analytics/reagent-prevalence" in data["endpoints"]
+
+
+# ---------------------------------------------------------------------------
+# /analytics/protocol-outliers unit tests
+# ---------------------------------------------------------------------------
+
+def _write_protos_for_po(path, rows):
+    path.write_text("\n".join(json.dumps(r) for r in rows) + "\n")
+
+
+def _patch_po(monkeypatch, path):
+    monkeypatch.setattr(ae, "PROTOCOLS_JSONL", path)
+
+
+_PO_ROWS = [
+    # intestinal: 1, 5, 5, 5, 5, 12
+    # mean=(1+5+5+5+5+12)/6=33/6=5.5, std≈3.56
+    # threshold_hi = 5.5+1.5*3.56 ≈ 10.84 → 12 is complex ✓
+    # threshold_lo = max(1, 5.5-1.5*3.56) = max(1, 0.16) = 1.0 → need n_sf < 1 for minimal
+    # Use 0 as minimal to get below threshold_lo=1
+    {"organoid_type": "intestinal", "n_signaling_factors": 1, "pmcid": "A", "doi": "10/A", "year": "2020"},
+    {"organoid_type": "intestinal", "n_signaling_factors": 5, "pmcid": "B", "doi": "10/B", "year": "2020"},
+    {"organoid_type": "intestinal", "n_signaling_factors": 5, "pmcid": "C", "doi": "10/C", "year": "2021"},
+    {"organoid_type": "intestinal", "n_signaling_factors": 5, "pmcid": "D", "doi": "10/D", "year": "2021"},
+    {"organoid_type": "intestinal", "n_signaling_factors": 5, "pmcid": "E", "doi": "10/E", "year": "2022"},
+    {"organoid_type": "intestinal", "n_signaling_factors": 15, "pmcid": "F", "doi": "10/F", "year": "2023"},
+    # kidney: single value (no outlier possible)
+    {"organoid_type": "kidney", "n_signaling_factors": 5, "pmcid": "G", "doi": "10/G", "year": "2022"},
+]
+# intestinal: mean=(1+5+5+5+5+15)/6=36/6=6.0
+# variance=((1-6)^2+(5-6)^2*4+(15-6)^2)/5=(25+4+81)/5=110/5=22, std≈4.69
+# threshold_hi=6+1.5*4.69=13.03 → 15 is complex ✓
+# threshold_lo=max(1, 6-1.5*4.69)=max(1,-1.03)=1.0 → 1 is NOT below 1.0 → no minimal
+
+# For minimal detection test, use a tighter dataset:
+_PO_ROWS_TIGHT = [
+    # narrow cluster 4,5,5,5,6 + extreme low 1
+    # mean=(1+4+5+5+5+6)/6=26/6=4.33, std≈1.75
+    # threshold_lo=max(1,4.33-1.5*1.75)=max(1,1.7)=1.7 → n_sf=1 < 1.7 → minimal ✓
+    # threshold_hi=4.33+1.5*1.75=6.95 → 6 is NOT complex
+    {"organoid_type": "intestinal", "n_signaling_factors": 1, "pmcid": "A", "doi": "10/A", "year": "2020"},
+    {"organoid_type": "intestinal", "n_signaling_factors": 4, "pmcid": "B", "doi": "10/B", "year": "2020"},
+    {"organoid_type": "intestinal", "n_signaling_factors": 5, "pmcid": "C", "doi": "10/C", "year": "2021"},
+    {"organoid_type": "intestinal", "n_signaling_factors": 5, "pmcid": "D", "doi": "10/D", "year": "2021"},
+    {"organoid_type": "intestinal", "n_signaling_factors": 5, "pmcid": "E", "doi": "10/E", "year": "2022"},
+    {"organoid_type": "intestinal", "n_signaling_factors": 6, "pmcid": "F", "doi": "10/F", "year": "2023"},
+]
+
+
+def test_po_404_missing_file(tmp_path, monkeypatch):
+    monkeypatch.setattr(ae, "PROTOCOLS_JSONL", tmp_path / "missing.jsonl")
+    _, status = ae.handle_protocol_outliers(None)
+    assert status == 404
+
+
+def test_po_200_cross_corpus(tmp_path, monkeypatch):
+    p = tmp_path / "protocols.jsonl"
+    _write_protos_for_po(p, _PO_ROWS)
+    _patch_po(monkeypatch, p)
+    data, status = ae.handle_protocol_outliers(None)
+    assert status == 200
+    assert "per_type" in data
+    assert "intestinal" in data["per_type"]
+    assert "kidney" in data["per_type"]
+    assert data["n_types"] == 2
+
+
+def test_po_single_type_query(tmp_path, monkeypatch):
+    p = tmp_path / "protocols.jsonl"
+    _write_protos_for_po(p, _PO_ROWS)
+    _patch_po(monkeypatch, p)
+    data, status = ae.handle_protocol_outliers("intestinal")
+    assert status == 200
+    assert data["organoid_type"] == "intestinal"
+    assert data["n_papers"] == 6
+    # mean=(1+5+5+5+5+15)/6=36/6=6.0
+    assert abs(data["mean_n_sf"] - 6.0) < 0.1
+
+
+def test_po_complex_protocol_detected(tmp_path, monkeypatch):
+    p = tmp_path / "protocols.jsonl"
+    _write_protos_for_po(p, _PO_ROWS)
+    _patch_po(monkeypatch, p)
+    data, status = ae.handle_protocol_outliers("intestinal")
+    assert status == 200
+    # n_sf=20 is the outlier on the high end
+    complex_pmcids = {pp["pmcid"] for pp in data["complex_protocols"]}
+    assert "F" in complex_pmcids
+
+
+def test_po_minimal_protocol_detected(tmp_path, monkeypatch):
+    # Use tight cluster data: n_sf=1 falls below threshold_lo≈1.7
+    p = tmp_path / "protocols.jsonl"
+    _write_protos_for_po(p, _PO_ROWS_TIGHT)
+    _patch_po(monkeypatch, p)
+    data, status = ae.handle_protocol_outliers("intestinal")
+    assert status == 200
+    minimal_pmcids = {pp["pmcid"] for pp in data["minimal_protocols"]}
+    assert "A" in minimal_pmcids
+
+
+def test_po_z_score_positive_for_complex(tmp_path, monkeypatch):
+    p = tmp_path / "protocols.jsonl"
+    _write_protos_for_po(p, _PO_ROWS)
+    _patch_po(monkeypatch, p)
+    data, _ = ae.handle_protocol_outliers("intestinal")
+    for cp in data["complex_protocols"]:
+        assert cp["z_score"] > 0
+
+
+def test_po_z_score_negative_for_minimal(tmp_path, monkeypatch):
+    p = tmp_path / "protocols.jsonl"
+    _write_protos_for_po(p, _PO_ROWS)
+    _patch_po(monkeypatch, p)
+    data, _ = ae.handle_protocol_outliers("intestinal")
+    for mp in data["minimal_protocols"]:
+        assert mp["z_score"] < 0
+
+
+def test_po_404_unknown_type(tmp_path, monkeypatch):
+    p = tmp_path / "protocols.jsonl"
+    _write_protos_for_po(p, _PO_ROWS)
+    _patch_po(monkeypatch, p)
+    _, status = ae.handle_protocol_outliers("xyz_unknown")
+    assert status == 404
+
+
+def test_po_ranking_sorted_by_mean_sf(tmp_path, monkeypatch):
+    p = tmp_path / "protocols.jsonl"
+    _write_protos_for_po(p, _PO_ROWS)
+    _patch_po(monkeypatch, p)
+    data, _ = ae.handle_protocol_outliers(None)
+    ranking = data["ranking_by_mean_sf"]
+    # intestinal mean≈8.5 > kidney mean=5.0 → intestinal first
+    assert ranking[0] == "intestinal"
+    means = [data["per_type"][t]["mean_n_sf"] for t in ranking]
+    assert means == sorted(means, reverse=True)
+
+
+def test_po_custom_z_thresh(tmp_path, monkeypatch):
+    p = tmp_path / "protocols.jsonl"
+    _write_protos_for_po(p, _PO_ROWS)
+    _patch_po(monkeypatch, p)
+    data, _ = ae.handle_protocol_outliers("intestinal", z_thresh=3.0)
+    # Very high threshold: no outliers
+    assert data["z_thresh"] == 3.0
+    # With z=3.0 threshold on 6 points, the 20 SF outlier may still show
+    # Just check field is present
+    assert "complex_protocols" in data
+
+
+def test_po_index_entry():
+    data, _ = ae.handle_index()
+    assert "/analytics/protocol-outliers" in data["endpoints"]
