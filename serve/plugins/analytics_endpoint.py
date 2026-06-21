@@ -32,6 +32,7 @@ Routes (all return JSON; read-only, no writes):
   GET /analytics/concentration-deviation     -- dose inconsistency ranking: canonical reagents sorted by coefficient of variation (std/mean) per dominant unit; min_n= threshold (default 3)
   GET /analytics/reagent-prevalence          -- type-breadth ranking: canonical reagents sorted by n_organoid_types they appear in; ?q= for per-type breakdown of one canonical; ?min_types= threshold
   GET /analytics/protocol-outliers           -- per-type outlier detection on n_signaling_factors: complex and minimal protocols (z-score threshold, default 1.5); ?type= for one type
+  GET /analytics/grounding-distribution      -- per-paper grounding rate histogram (10 buckets 0-100%); per-type mean; top/bottom 20 papers; ?type= for one type; live from protocols.jsonl
   GET /analytics                                -- index of available analytics
 
 All endpoints degrade gracefully — if the pre-computed file doesn't exist they return
@@ -2336,6 +2337,113 @@ def handle_protocol_outliers(organoid_type: str | None, z_thresh: float = 1.5) -
     }, 200
 
 
+def handle_grounding_distribution(organoid_type: str | None) -> tuple[dict, int]:
+    """Per-paper grounding rate histogram, live from protocols.jsonl.
+
+    Without ?type=: cross-corpus histogram (10 buckets: 0-10%, 10-20%, ..., 90-100%),
+    per-type mean grounding rate (ranked best→worst), top 20 / bottom 20 papers by
+    grounding_rate, and overall corpus mean/median.
+
+    With ?type=kidney: full distribution detail for one organoid type, plus its top/bottom
+    10 papers.
+
+    Grounding rate = reagents_grounded / reagents_total per paper (from protocols.jsonl).
+    Papers with reagents_total=0 or grounding_rate=None are excluded.
+    """
+    if not PROTOCOLS_JSONL.exists():
+        return {"error": "protocols.jsonl not found", "hint": "Run: python pipeline/export_public.py"}, 404
+
+    try:
+        rows = [
+            json.loads(line)
+            for line in PROTOCOLS_JSONL.read_text().splitlines()
+            if line.strip()
+        ]
+    except (json.JSONDecodeError, OSError) as exc:
+        return {"error": f"protocols.jsonl unreadable: {exc}"}, 500
+
+    from collections import defaultdict
+
+    def _parse_paper(r: dict) -> dict | None:
+        gr = r.get("grounding_rate")
+        if gr is None:
+            return None
+        try:
+            gr = float(gr)
+        except (TypeError, ValueError):
+            return None
+        if gr < 0 or gr > 1:
+            return None
+        return {
+            "pmcid": r.get("pmcid"),
+            "doi": r.get("doi"),
+            "year": r.get("year"),
+            "organoid_type": (r.get("organoid_type") or "unknown").strip(),
+            "grounding_rate": round(gr, 4),
+            "reagents_grounded": r.get("reagents_grounded"),
+            "reagents_total": r.get("reagents_total"),
+        }
+
+    def _histogram(papers: list) -> dict:
+        buckets = {f"{i*10}-{(i+1)*10}%": 0 for i in range(10)}
+        for p in papers:
+            bucket_idx = min(9, int(p["grounding_rate"] * 10))
+            label = f"{bucket_idx*10}-{(bucket_idx+1)*10}%"
+            buckets[label] += 1
+        return buckets
+
+    def _stats(papers: list) -> dict:
+        n = len(papers)
+        if n == 0:
+            return {"n": 0, "mean": None, "median": None}
+        vals = sorted(p["grounding_rate"] for p in papers)
+        mean = round(sum(vals) / n, 4)
+        median = vals[n // 2] if n % 2 else round((vals[n // 2 - 1] + vals[n // 2]) / 2, 4)
+        return {"n": n, "mean": mean, "median": median}
+
+    all_papers = [p for r in rows for p in [_parse_paper(r)] if p is not None]
+
+    if organoid_type and organoid_type.strip():
+        ot = organoid_type.strip().lower()
+        type_papers = [p for p in all_papers if p["organoid_type"].lower() == ot]
+        if not type_papers:
+            return {"error": f"no grounding data for organoid_type '{organoid_type}'"}, 404
+        ot_display = type_papers[0]["organoid_type"]
+        top10 = sorted(type_papers, key=lambda x: -x["grounding_rate"])[:10]
+        bot10 = sorted(type_papers, key=lambda x: x["grounding_rate"])[:10]
+        return {
+            "organoid_type": ot_display,
+            **_stats(type_papers),
+            "histogram": _histogram(type_papers),
+            "top_10_by_grounding_rate": top10,
+            "bottom_10_by_grounding_rate": bot10,
+        }, 200
+
+    # Cross-corpus
+    by_type: dict[str, list] = defaultdict(list)
+    for p in all_papers:
+        by_type[p["organoid_type"]].append(p)
+
+    per_type_mean = {
+        ot: round(sum(p["grounding_rate"] for p in ps) / len(ps), 4)
+        for ot, ps in by_type.items()
+    }
+    ranking = sorted(per_type_mean, key=per_type_mean.get, reverse=True)
+
+    top20 = sorted(all_papers, key=lambda x: -x["grounding_rate"])[:20]
+    bot20 = sorted(all_papers, key=lambda x: x["grounding_rate"])[:20]
+
+    return {
+        **_stats(all_papers),
+        "n_types": len(by_type),
+        "histogram": _histogram(all_papers),
+        "ranking_by_mean_grounding_rate": ranking,
+        "per_type_mean": per_type_mean,
+        "top_20_by_grounding_rate": top20,
+        "bottom_20_by_grounding_rate": bot20,
+    }, 200
+
+
 def handle_concentration_deviation(min_n: int = 3) -> tuple[dict, int]:
     """Dose inconsistency ranking: canonical reagents sorted by coefficient of variation.
 
@@ -2602,6 +2710,7 @@ def handle_index() -> tuple[dict, int]:
             "/analytics/concentration-deviation": "dose inconsistency ranking: canonical reagents sorted by coefficient of variation (std/mean) across records with numeric values; ?min_n= to set sample threshold (default 3)",
             "/analytics/reagent-prevalence": "type-breadth ranking: canonical reagents sorted by number of organoid types they appear in; cross_field (>=20 types) + specialist (<=2 types) sub-lists; ?q=EGF for per-type breakdown; ?min_types= threshold",
             "/analytics/protocol-outliers": "per-type outlier detection on n_signaling_factors: complex (high SF count) and minimal (low SF count) protocols per organoid type, with z-scores; ?type=kidney for one type; ?z_thresh= to adjust sensitivity (default 1.5)",
+            "/analytics/grounding-distribution": "per-paper grounding rate histogram (10 buckets 0-100%), per-type mean ranking, top/bottom 20 papers; ?type=kidney for one type; live from protocols.jsonl",
             "/analytics/assay-endpoints": "assay endpoint cluster summary (per type + cross-type)",
             "/analytics/quality": "per-paper quality scores (gold/silver/bronze) + corpus summary",
             "/analytics/mior": "MIOR completeness report (Minimum Information About an Organoid Research)",
@@ -2845,6 +2954,12 @@ async def route_protocol_outliers(datasette, request):
     return Response.json(data, status=status)
 
 
+async def route_grounding_distribution(datasette, request):
+    organoid_type = request.args.get("type") or None
+    data, status = handle_grounding_distribution(organoid_type)
+    return Response.json(data, status=status)
+
+
 async def route_concentration_deviation(datasette, request):
     try:
         min_n = int(request.args.get("min_n") or 3)
@@ -2901,6 +3016,7 @@ def register_routes():
         (r"^/analytics/concentration-deviation$", route_concentration_deviation),
         (r"^/analytics/reagent-prevalence$", route_reagent_prevalence),
         (r"^/analytics/protocol-outliers$", route_protocol_outliers),
+        (r"^/analytics/grounding-distribution$", route_grounding_distribution),
         (r"^/analytics/journal-breakdown$", route_journal_breakdown),
         (r"^/analytics/concentration-by-type$", route_concentration_by_type),
         (r"^/analytics/kgx-summary$", route_kgx_summary),

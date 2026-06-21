@@ -110,6 +110,7 @@ exports. Prefer the JSON endpoints for programmatic use.
 - /analytics/concentration-deviation   dose inconsistency ranking: canonical reagents sorted by coefficient of variation (std/mean); most_variable and most_consistent lists; ?min_n= threshold
 - /analytics/reagent-prevalence        type-breadth ranking: canonicals sorted by n_organoid_types; cross_field (>=20 types) + specialist (<=2 types) sub-lists; ?q=EGF for per-type breakdown
 - /analytics/protocol-outliers         per-type outlier detection on n_signaling_factors: complex and minimal protocols with z-scores; ?type=kidney for one type; ?z_thresh= sensitivity
+- /analytics/grounding-distribution    per-paper grounding rate histogram (10 buckets), per-type mean ranking, top/bottom 20 papers; ?type=kidney for one type; live from protocols.jsonl
 - /analytics/failure-modes             failure mode cluster summary across the corpus
 - /analytics/lineage                   DOI→DOI protocol lineage graph
 - /analytics/assay-endpoints           assay endpoint cluster summary (per-type + cross-type)
