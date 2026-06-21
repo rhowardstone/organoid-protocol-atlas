@@ -60,6 +60,7 @@ GET /analytics/lineage                  DOI→DOI protocol lineage graph (Protoc
 GET /analytics/compare/{a}/{b}          protocol diff between two papers (pre-computed cache)
 GET /analytics/substitutions?q=TERM    search ProtocolModification records for reagent substitutions
 GET /analytics/mior                     MIOR completeness per paper + corpus (12 items, 5 modules)
+GET /analytics/candidates               OA/license verification status of candidate pool (issue #14)
 ```
 
 Generate all analytics outputs:
