@@ -59,17 +59,22 @@ GET /analytics/failure-modes            failure mode cluster summary across the 
 GET /analytics/lineage                  DOI→DOI protocol lineage graph (ProtocolModification data)
 GET /analytics/compare/{a}/{b}          protocol diff between two papers (pre-computed cache)
 GET /analytics/substitutions?q=TERM    search ProtocolModification records for reagent substitutions
+GET /analytics/mior                     MIOR completeness per paper + corpus (12 items, 5 modules)
 ```
 
 Generate all analytics outputs:
 
 ```bash
+make all-analytics                              # regenerate everything in dependency order
+# or individually:
 python pipeline/generate_coverage_report.py     # → outputs/analysis/coverage_report.json
 python pipeline/score_protocol_quality.py       # → outputs/analysis/protocol_quality_scores.json
 python pipeline/compute_consensus.py --all      # → outputs/analysis/consensus_*.json
 python pipeline/aggregate_failure_modes.py      # → outputs/analysis/failure_mode_summary.json
 python pipeline/build_lineage.py                # → outputs/analysis/protocol_lineage.json
 python pipeline/aggregate_assay_endpoints.py    # → outputs/analysis/assay_endpoint_summary.json
+python pipeline/score_mior.py                   # → outputs/analysis/mior_completeness.json
+python pipeline/check_concentration_consistency.py  # → outputs/validation/concentration_consistency.json
 python pipeline/system_status.py                # check what's missing
 ```
 
@@ -116,14 +121,17 @@ pipeline/
   trapi.py                   minimal TRAPI responder shape
   export_public.py           export public protocols/reagents JSONL snapshots
   validate_evidence.py       evidence fidelity validator (verbatim substring checks)
-  audit_units.py             unit plausibility audit
-  check_concentration_consistency.py  cross-paper concentration outlier detection
+  audit_units.py             unit plausibility audit (R2: concentration vs. in-vivo/volume/percent)
+  check_concentration_consistency.py  cross-paper concentration outlier detection (≥10x median)
+  score_mior.py              MIOR completeness scorer (12 items, 5 modules, per-paper + corpus)
+  score_protocol_quality.py  per-paper quality scorer (gold/silver/bronze)
+  ground_predictions.py      S1→S2 handoff: ground prediction entities, write sidecars
   discover_candidates.py     keyword-based candidate discovery
 serve/
   run.sh                     serve the atlas (Datasette + plugins)
   metadata.yaml              facets + canned queries
   plugins/
-    analytics_endpoint.py    14-route analytics REST API (pure handlers + thin Datasette wrappers)
+    analytics_endpoint.py    15-route analytics REST API (pure handlers + thin Datasette wrappers)
     ask.py                   grounded Q&A (RAG over FTS → local model)
   templates/                 landing, recipe cards, /heatmap, /consensus
   static/atlas.css|js        theme + dark-mode toggle
@@ -145,7 +153,7 @@ outputs/
   analysis/                  pre-computed analytics (coverage, quality, consensus, etc.)
   kgx/                       KGX graph export
   comparison/                pre-computed protocol diffs
-tests/                       offline test suite (358 tests, no network, no GPU)
+tests/                       offline test suite (570 tests, no network, no GPU)
 docs/                        SUPERVISOR_CHECKLIST.md, PLAN, RESEARCH_BRIEF
 ```
 
@@ -174,5 +182,6 @@ python pipeline/aggregate_failure_modes.py
 python pipeline/build_lineage.py
 python pipeline/aggregate_assay_endpoints.py
 
-pytest -q                               # run offline test suite
+make test                               # run offline test suite (570 tests)
+# or: pytest -q
 ```
