@@ -49,6 +49,7 @@ Routes (all return JSON; read-only, no writes):
   GET /analytics/source-cell-reagent-profile -- characteristic reagents by source_cell_type (iPSC/adult_stem_cell/primary_tissue/ESC); top 20 canonicals per source; pairwise Jaccard; ?source= for one source type; live from both JSONLs
   GET /analytics/protocol-completeness       -- per-paper completeness scores (0-6) across species/matrix/base_media/passaging/timeline/assay_endpoints; histogram + per-type ranking + top/bottom 20 papers; ?type= for one type; live from protocols.jsonl
   GET /analytics/cross-type-concentration-variance -- canonicals where dose differs most across organoid types; sorted by max/min median ratio; ?q= for per-canonical+unit breakdown; ?min_n= per-type record threshold; live from reagents.jsonl
+  GET /analytics/reagent-type-enrichment       -- per-type enrichment ratios: (type-rate / global-rate) for each canonical; ?type=retinal for top enriched; ?q=taurine for which types over-use it; global returns top 50 pairs; ?min_n= threshold; live from both JSONLs
   GET /analytics                                -- index of available analytics
 
 All endpoints degrade gracefully — if the pre-computed file doesn't exist they return
@@ -3691,6 +3692,152 @@ def handle_source_cell_reagent_profile(source=None, min_papers=3):
     }, 200
 
 
+def handle_reagent_type_enrichment(
+    organoid_type: str | None,
+    query: str | None,
+    min_n: int = 3,
+) -> tuple[dict, int]:
+    """Route 55: enrichment ratio of each canonical within an organoid type.
+
+    Enrichment = (n_type_papers / n_type_total) / (n_global_papers / n_global_total).
+    High ratio means the canonical is used much more in this type than average.
+
+    With ?type=retinal: top enriched canonicals for that type (>=min_n papers in type).
+    With ?q=taurine: which types over-use this canonical (enrichment_ratio sorted desc).
+    No params: top 50 canonical+type pairs by enrichment across the corpus.
+    """
+    if not PROTOCOLS_JSONL.exists():
+        return {
+            "error": "protocols.jsonl not found",
+            "hint": "Run: python pipeline/export_public.py",
+        }, 404
+    if not REAGENTS_JSONL.exists():
+        return {
+            "error": "reagents.jsonl not found",
+            "hint": "Run: python pipeline/export_public.py",
+        }, 404
+
+    if organoid_type and not re.match(r'^[\w-]+$', organoid_type):
+        return {"error": "invalid organoid_type"}, 400
+
+    from collections import defaultdict
+
+    try:
+        protos = [
+            json.loads(line)
+            for line in PROTOCOLS_JSONL.read_text().splitlines()
+            if line.strip()
+        ]
+        reagents = [
+            json.loads(line)
+            for line in REAGENTS_JSONL.read_text().splitlines()
+            if line.strip()
+        ]
+    except (json.JSONDecodeError, OSError) as exc:
+        return {"error": f"data unreadable: {exc}"}, 500
+
+    # Build type → doi sets and global doi set
+    doi_type: dict = {}
+    for p in protos:
+        doi = p.get("doi", "")
+        typ = p.get("organoid_type", "")
+        if doi and typ and typ != "other":
+            doi_type[doi] = typ
+
+    type_doi_set: dict = defaultdict(set)
+    for doi, typ in doi_type.items():
+        type_doi_set[typ].add(doi)
+    n_global = len(doi_type)
+
+    # Per canonical: global doi set + per-type doi set
+    canon_global: dict = defaultdict(set)
+    canon_type_doi: dict = defaultdict(lambda: defaultdict(set))
+    canon_kind: dict = {}
+
+    for r in reagents:
+        c = r.get("canonical", "")
+        doi = r.get("doi", "")
+        typ = r.get("organoid_type", "")
+        kind = r.get("kind", "")
+        if c and doi and doi in doi_type:
+            canon_global[c].add(doi)
+            canon_type_doi[c][typ].add(doi)
+            if c not in canon_kind and kind:
+                canon_kind[c] = kind
+
+    def _enrich_row(c: str, typ: str) -> dict | None:
+        n_type_papers = len(canon_type_doi[c].get(typ, set()))
+        if n_type_papers < min_n:
+            return None
+        n_type_total = len(type_doi_set[typ])
+        n_global_papers = len(canon_global[c])
+        if n_global == 0 or n_type_total == 0 or n_global_papers == 0:
+            return None
+        type_rate = n_type_papers / n_type_total
+        global_rate = n_global_papers / n_global
+        ratio = round(type_rate / global_rate, 4) if global_rate > 0 else None
+        return {
+            "canonical": c,
+            "organoid_type": typ,
+            "n_type_papers": n_type_papers,
+            "n_global_papers": n_global_papers,
+            "n_type_protocols": n_type_total,
+            "type_rate": round(type_rate, 4),
+            "global_rate": round(global_rate, 4),
+            "enrichment_ratio": ratio,
+            "kind": canon_kind.get(c, ""),
+        }
+
+    if organoid_type:
+        if organoid_type not in type_doi_set:
+            return {"error": f"no protocols found for organoid_type={organoid_type!r}"}, 404
+        rows = []
+        for c in canon_global:
+            row = _enrich_row(c, organoid_type)
+            if row and row["enrichment_ratio"] is not None:
+                rows.append(row)
+        rows.sort(key=lambda x: -x["enrichment_ratio"])
+        return {
+            "organoid_type": organoid_type,
+            "n_type_protocols": len(type_doi_set[organoid_type]),
+            "n_total_protocols": n_global,
+            "min_n_papers": min_n,
+            "enriched": rows,
+        }, 200
+
+    if query:
+        if query not in canon_global:
+            return {"error": f"no records found for canonical={query!r}"}, 404
+        rows = []
+        for typ in type_doi_set:
+            row = _enrich_row(query, typ)
+            if row and row["enrichment_ratio"] is not None:
+                rows.append(row)
+        rows.sort(key=lambda x: -x["enrichment_ratio"])
+        return {
+            "canonical": query,
+            "n_global_papers": len(canon_global[query]),
+            "n_total_protocols": n_global,
+            "min_n_papers": min_n,
+            "by_type": rows,
+        }, 200
+
+    # Global mode: top 50 pairs
+    all_rows = []
+    for c in canon_global:
+        for typ in type_doi_set:
+            row = _enrich_row(c, typ)
+            if row and row["enrichment_ratio"] is not None and row["enrichment_ratio"] > 1.0:
+                all_rows.append(row)
+    all_rows.sort(key=lambda x: -x["enrichment_ratio"])
+    return {
+        "n_total_protocols": n_global,
+        "n_types": len(type_doi_set),
+        "min_n_papers": min_n,
+        "top_enriched": all_rows[:50],
+    }, 200
+
+
 def handle_cross_type_concentration_variance(
     query: str | None,
     min_n: int = 3,
@@ -4543,6 +4690,7 @@ def handle_index() -> tuple[dict, int]:
             "/analytics/source-cell-reagent-profile": "characteristic canonical reagents by source_cell_type (iPSC / adult_stem_cell / primary_tissue / ESC); top 20 per source + pairwise Jaccard similarity; ?source=iPSC for top 30 with exclusivity scores; ?min_papers= threshold (default 3)",
             "/analytics/protocol-completeness": "per-paper completeness scores (0-6) across 6 optionally-reported fields (species/matrix/base_media/passaging/timeline/assay_endpoints); global score histogram + per-type ranking + top/bottom 20 papers; ?type= for one type",
             "/analytics/cross-type-concentration-variance": "canonicals where the consensus dose differs most across organoid types; sorted by max/min per-type-median ratio; ?q=Activin+A for per-unit detail; ?min_n= per-type record threshold (default 3); ?min_types= (default 2)",
+            "/analytics/reagent-type-enrichment": "enrichment ratio (type-rate / global-rate) for each canonical within each organoid type; ?type=retinal for top enriched canonicals; ?q=taurine for which types over-use it; global = top 50 pairs; ?min_n= threshold (default 3)",
             "/analytics/assay-endpoints": "assay endpoint cluster summary (per type + cross-type)",
             "/analytics/quality": "per-paper quality scores (gold/silver/bronze) + corpus summary",
             "/analytics/mior": "MIOR completeness report (Minimum Information About an Organoid Research)",
@@ -4858,6 +5006,17 @@ async def route_source_cell_reagent_profile(datasette, request):
     return Response.json(data, status=status)
 
 
+async def route_reagent_type_enrichment(datasette, request):
+    organoid_type = request.args.get("type") or None
+    query = request.args.get("q") or None
+    try:
+        min_n = int(request.args.get("min_n") or 3)
+    except (TypeError, ValueError):
+        min_n = 3
+    data, status = handle_reagent_type_enrichment(organoid_type, query, min_n)
+    return Response.json(data, status=status)
+
+
 async def route_cross_type_concentration_variance(datasette, request):
     query = request.args.get("q") or None
     try:
@@ -5010,6 +5169,7 @@ def register_routes():
         (r"^/analytics/source-cell-reagent-profile$", route_source_cell_reagent_profile),
         (r"^/analytics/protocol-completeness$", route_protocol_completeness),
         (r"^/analytics/cross-type-concentration-variance$", route_cross_type_concentration_variance),
+        (r"^/analytics/reagent-type-enrichment$", route_reagent_type_enrichment),
         (r"^/analytics/journal-breakdown$", route_journal_breakdown),
         (r"^/analytics/concentration-by-type$", route_concentration_by_type),
         (r"^/analytics/kgx-summary$", route_kgx_summary),

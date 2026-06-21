@@ -37,7 +37,7 @@ paper (PMC)
   └─ S2       Biolink-validated KGX export (nodes.tsv + edges.tsv + kgx_manifest.json)
   └─ entity normalization (bFGF≡FGF2, RSPO1≡R-spondin1, …)
   └─ analytics pipeline → coverage · quality · consensus · failure modes · lineage · assay endpoints
-  └─ REST API (Datasette plugin, 54 routes)
+  └─ REST API (Datasette plugin, 55 routes)
 ```
 
 ## Analytics API
@@ -92,6 +92,7 @@ GET /analytics/unit-normalization-report  audit of raw unit → canonical_unit c
 GET /analytics/source-cell-reagent-profile  characteristic reagents by source_cell_type; top 20 per source + pairwise Jaccard; ?source=iPSC for top 30 + exclusive_to_source flags; ?min_papers= threshold (default 3)
 GET /analytics/protocol-completeness    per-paper completeness scores (0-6) across species/matrix/base_media/passaging/timeline/assay_endpoints; histogram + per-type ranking + top/bottom 20 papers; ?type= for one type
 GET /analytics/cross-type-concentration-variance  canonicals where dose differs most across organoid types; sorted by max/min per-type-median ratio; ?q= for per-canonical detail; ?min_n= (default 3)
+GET /analytics/reagent-type-enrichment  enrichment ratio (type-rate / global-rate) per canonical per type; ?type=retinal top enriched (taurine 14.85x, blebbistatin 11.83x); ?q= all types; global=top 50; ?min_n= (default 3)
 GET /analytics/assay-endpoints          assay endpoint cluster summary (12 clusters, per-type + cross-type)
 GET /analytics/failure-modes            failure mode cluster summary across the corpus
 GET /analytics/lineage                  DOI→DOI protocol lineage graph (ProtocolModification data)
@@ -206,7 +207,7 @@ outputs/
   analysis/                  pre-computed analytics (coverage, quality, consensus, etc.)
   kgx/                       KGX graph export
   comparison/                pre-computed protocol diffs
-tests/                       offline test suite (1200 tests, no network, no GPU)
+tests/                       offline test suite (1216 tests, no network, no GPU)
 docs/                        SUPERVISOR_CHECKLIST.md, PLAN, RESEARCH_BRIEF
 ```
 
@@ -235,7 +236,7 @@ python pipeline/aggregate_failure_modes.py
 python pipeline/build_lineage.py
 python pipeline/aggregate_assay_endpoints.py
 
-make test                               # run offline test suite (1200 tests)
+make test                               # run offline test suite (1216 tests)
 make validate-batch                     # pre-PR check: tests + prediction schema + evidence
 # or: pytest -q
 ```

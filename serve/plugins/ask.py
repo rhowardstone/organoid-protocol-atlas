@@ -127,6 +127,7 @@ exports. Prefer the JSON endpoints for programmatic use.
 - /analytics/source-cell-reagent-profile  characteristic reagents by source_cell_type (iPSC/adult_stem_cell/primary_tissue/ESC); top 20 per source + pairwise Jaccard; ?source=iPSC for top 30 with exclusive_to_source flags; ?min_papers= threshold (default 3)
 - /analytics/protocol-completeness     per-paper completeness scores (0-6) across species/matrix/base_media/passaging/timeline/assay_endpoints; histogram + per-type ranking + top/bottom 20 papers; ?type= for one type
 - /analytics/cross-type-concentration-variance  canonicals with highest inter-type dose disagreement (max/min per-type-median ratio); ?q=Activin+A for per-unit breakdown; ?min_n= (default 3); ?min_types= (default 2)
+- /analytics/reagent-type-enrichment   enrichment ratio (type-rate/global-rate) per canonical per type; ?type=retinal for top enriched; ?q=taurine for which types over-use it; global=top 50 pairs; ?min_n= (default 3)
 - /analytics/failure-modes             failure mode cluster summary across the corpus
 - /analytics/lineage                   DOI→DOI protocol lineage graph
 - /analytics/assay-endpoints           assay endpoint cluster summary (per-type + cross-type)

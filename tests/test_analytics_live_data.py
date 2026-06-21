@@ -891,3 +891,33 @@ def test_live_ctcv_activin_a_query():
     unit_data = data["units"][0]
     assert unit_data["n_types"] >= 2
     assert unit_data["max_to_min_ratio"] >= 5.0
+
+
+# ---------------------------------------------------------------------------
+# Route 55 — /analytics/reagent-type-enrichment live smoke tests
+# ---------------------------------------------------------------------------
+@require_protocols
+@require_reagents
+def test_live_rte_retinal_type():
+    data, status = ae.handle_reagent_type_enrichment("retinal", None, 3)
+    assert status == 200
+    assert data["organoid_type"] == "retinal"
+    assert data["n_type_protocols"] >= 30
+    # Sorted desc by enrichment_ratio
+    ratios = [e["enrichment_ratio"] for e in data["enriched"]]
+    assert ratios == sorted(ratios, reverse=True)
+    # taurine should be near the top (highly enriched in retinal)
+    top_canonicals = [e["canonical"] for e in data["enriched"][:10]]
+    assert "taurine" in top_canonicals
+
+
+@require_protocols
+@require_reagents
+def test_live_rte_global():
+    data, status = ae.handle_reagent_type_enrichment(None, None, 3)
+    assert status == 200
+    assert data["n_total_protocols"] >= 500
+    assert data["n_types"] >= 20
+    assert len(data["top_enriched"]) >= 20
+    # All enrichment ratios > 1.0
+    assert all(e["enrichment_ratio"] > 1.0 for e in data["top_enriched"])
