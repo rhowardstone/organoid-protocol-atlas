@@ -1,0 +1,10 @@
+{
+  "method": "R5 validation: semantic relevance (cosine to organoid-type centroid) of the 43 #44 candidates vs their downstream Tier-1 QC outcome",
+  "n": 43,
+  "qc_pass_n": 4,
+  "qc_fail_n": 39,
+  "mean_relevance_qc_pass": 0.0359,
+  "mean_relevance_qc_fail": 0.0403,
+  "generated_at": "2026-06-21T14:47:41+00:00",
+  "finding": "title-only relevance to the methods-text centroid does NOT separate QC-pass from QC-fail (0.0359 vs 0.0403) -> candidate pre-filtering needs ABSTRACT/full-text embeddings, not titles. R5 wires the ranking mechanism into the orchestrator; its signal is only meaningful when candidates carry abstracts (hybrid_discover fetches abstractText). Reported honestly; not used to claim a QC-prediction win."
+}
