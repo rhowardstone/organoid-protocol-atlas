@@ -88,11 +88,15 @@ exports. Prefer the JSON endpoints for programmatic use.
 - /analytics/consensus/{type} consensus concentrations and reagents for one type
 - /analytics/quality          per-paper quality scores (gold / silver / bronze tiers)
 - /analytics/mior             MIOR completeness report (12-item, 5-module per paper)
-- /analytics/reagent?q=EGF    cross-corpus reagent lookup with concentrations and evidence quotes
-- /analytics/failure-modes    failure mode cluster summary across the corpus
-- /analytics/lineage          DOI→DOI protocol lineage graph
-- /analytics/assay-endpoints  assay endpoint cluster summary (per-type + cross-type)
-- /analytics                  index of all analytics endpoints with generate commands
+- /analytics/reagent?q=EGF             cross-corpus reagent lookup with concentrations and evidence quotes
+- /analytics/reagent-network?q=EGF     co-occurring reagents: which reagents appear in the same papers as EGF
+- /analytics/type-similarity           pairwise Jaccard similarity between organoid types (canonical reagent sets)
+- /analytics/type-timeseries           publication counts by year and organoid type (growth trends, first-appearance)
+- /analytics/failure-modes             failure mode cluster summary across the corpus
+- /analytics/lineage                   DOI→DOI protocol lineage graph
+- /analytics/assay-endpoints           assay endpoint cluster summary (per-type + cross-type)
+- /analytics/candidates                OA/license verification status of the candidate pool
+- /analytics                           index of all analytics endpoints with generate commands
 
 ## TRAPI (Translator Reasoner API 1.5)
 
