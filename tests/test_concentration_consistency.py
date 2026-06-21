@@ -6,15 +6,14 @@ import check_concentration_consistency as cc
 
 
 def test_median_odd():
-    assert cc.median([1, 3, 5]) == 3
+    assert cc._median([1, 3, 5]) == 3
 
 
 def test_median_even():
-    assert cc.median([1, 2, 3, 4]) == 2.5
+    assert cc._median([1, 2, 3, 4]) == 2.5
 
 
 def test_no_flagged_when_values_within_threshold():
-    from collections import defaultdict
     groups = {("EGF", "ng/mL"): [
         {"id": 1, "pmcid": "PMC1", "organoid_type": "gut", "name": "EGF",
          "value": 50.0, "evidence_quote": "EGF 50 ng/mL"},
@@ -22,18 +21,19 @@ def test_no_flagged_when_values_within_threshold():
          "value": 100.0, "evidence_quote": "EGF 100 ng/mL"},
     ]}
     # 100/50=2x, within 10x threshold — should not flag
-    med = cc.median([50.0, 100.0])
-    for m in groups[("EGF", "ng/mL")]:
-        ratio = m["value"] / med
-        assert ratio <= cc.OUTLIER_THRESHOLD and ratio >= (1 / cc.OUTLIER_THRESHOLD)
+    _, flagged = cc.find_outliers(groups)
+    assert flagged == []
 
 
 def test_flags_10x_outlier():
-    vals = [50.0, 50.0, 50000.0]  # 50000 is 1000x the median of 50
-    med = cc.median(vals)
-    outlier_val = 50000.0
-    ratio = outlier_val / med
-    assert ratio > cc.OUTLIER_THRESHOLD
+    groups = {("EGF", "ng/mL"): [
+        {"id": 1, "pmcid": "PMC1", "organoid_type": "gut", "name": "EGF", "value": 50.0, "evidence_quote": ""},
+        {"id": 2, "pmcid": "PMC2", "organoid_type": "gut", "name": "EGF", "value": 50.0, "evidence_quote": ""},
+        {"id": 3, "pmcid": "PMC3", "organoid_type": "gut", "name": "EGF", "value": 50000.0, "evidence_quote": ""},
+    ]}
+    _, flagged = cc.find_outliers(groups)
+    assert len(flagged) == 1
+    assert flagged[0]["ratio_to_median"] > cc.OUTLIER_THRESHOLD
 
 
 def test_main_runs_and_produces_output(tmp_path):
