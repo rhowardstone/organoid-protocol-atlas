@@ -38,6 +38,7 @@ Routes (all return JSON; read-only, no writes):
   GET /analytics/supplement-breakdown        -- per-type and cross-type breakdown of supplements (kind=supplement): top 50 globally, cross-type list, per-type top 10; ?q= and ?type= filters; live from reagents.jsonl
   GET /analytics/role-breakdown              -- normalized functional role distribution for signaling reagents: signaling_factor/growth_factor/differentiation/inhibitor/agonist etc.; ?q= for one role; ?type= filter; live from reagents.jsonl
   GET /analytics/type-reagent-heatmap        -- type × canonical usage matrix: top_n canonicals × all types, each cell = n_papers; ?kind= filter; ?top_n= (default 20); live from reagents.jsonl
+  GET /analytics/canonical-name-variants     -- normalization complexity report: canonical → all raw names that map to it; top 30 by n_variants; ?q= for one canonical; live from reagents.jsonl
   GET /analytics                                -- index of available analytics
 
 All endpoints degrade gracefully — if the pre-computed file doesn't exist they return
@@ -3270,6 +3271,81 @@ def handle_type_reagent_heatmap(
     }, 200
 
 
+def handle_canonical_name_variants(
+    query: str | None,
+    min_variants: int = 2,
+) -> tuple[dict, int]:
+    """Canonical → raw name variant mapping (normalization complexity report).
+
+    Shows how many distinct raw names the pipeline normalizes to each canonical.
+    Without ?q=: top 30 most-ambiguous canonicals by n_variants (>= min_variants).
+    With ?q=FGF2: full variant list for one canonical (exact then substring match).
+    ?min_variants=: floor for the global list (default 2).
+    """
+    if not REAGENTS_JSONL.exists():
+        return {
+            "error": "reagents.jsonl not found",
+            "hint": "Run: python pipeline/export_public.py",
+        }, 404
+
+    reagents = [
+        json.loads(line)
+        for line in REAGENTS_JSONL.read_text().splitlines()
+        if line.strip()
+    ]
+
+    from collections import defaultdict
+    # canonical → set of raw names + paper count
+    canon_names: dict[str, set] = defaultdict(set)
+    canon_records: dict[str, int] = defaultdict(int)
+    for r in reagents:
+        c = r.get("canonical")
+        n = r.get("name")
+        if c and n:
+            canon_names[c].add(n)
+            canon_records[c] += 1
+
+    if query:
+        q_lower = query.lower()
+        if query in canon_names:
+            target = query
+        else:
+            matched = [c for c in canon_names if q_lower in c.lower()]
+            if not matched:
+                return {
+                    "error": f"No canonical matching {query!r}",
+                    "hint": "use /analytics/canonical-name-variants without ?q= to browse",
+                }, 404
+            target = matched[0]
+        return {
+            "canonical": target,
+            "n_variants": len(canon_names[target]),
+            "n_records": canon_records[target],
+            "names": sorted(canon_names[target]),
+        }, 200
+
+    # Global: filter by min_variants, sort by n_variants desc
+    entries = [
+        {
+            "canonical": c,
+            "n_variants": len(names),
+            "n_records": canon_records[c],
+            "names": sorted(names),
+        }
+        for c, names in canon_names.items()
+        if len(names) >= min_variants
+    ]
+    entries.sort(key=lambda x: (-x["n_variants"], -x["n_records"]))
+
+    return {
+        "n_canonicals_total": len(canon_names),
+        "n_with_multiple_names": sum(1 for n in canon_names.values() if len(n) >= 2),
+        "min_variants": min_variants,
+        "n_above_threshold": len(entries),
+        "most_ambiguous": entries[:30],
+    }, 200
+
+
 def handle_index() -> tuple[dict, int]:
     """Analytics endpoint index."""
     return {
@@ -3310,6 +3386,7 @@ def handle_index() -> tuple[dict, int]:
             "/analytics/supplement-breakdown": "per-type and cross-type breakdown of supplement (kind=supplement) canonicals: global top 50 by n_papers, cross-type list (>= min_types organoid types), per-type top 10; ?q=GlutaMAX for one canonical; ?type=kidney for one type; ?min_types= threshold (default 10)",
             "/analytics/role-breakdown": "normalized functional role distribution for signaling (kind=signaling) reagents: signaling_factor/growth_factor/differentiation/inhibitor/supplement/treatment/agonist/conditioned_medium/proliferation/other/not_stated; ?q=differentiation for top canonicals with that role; ?type= filter",
             "/analytics/type-reagent-heatmap": "organoid type × canonical reagent usage matrix for visualization: top_n canonicals (columns) × all types (rows), each cell = n_papers; ?kind=signaling|supplement|all (default signaling); ?top_n= (default 20, max 50)",
+            "/analytics/canonical-name-variants": "normalization complexity report: for each canonical, all distinct raw names that map to it; top 30 most-ambiguous sorted by n_variants; ?q=FGF2 for one canonical; ?min_variants= floor (default 2)",
             "/analytics/assay-endpoints": "assay endpoint cluster summary (per type + cross-type)",
             "/analytics/quality": "per-paper quality scores (gold/silver/bronze) + corpus summary",
             "/analytics/mior": "MIOR completeness report (Minimum Information About an Organoid Research)",
@@ -3565,6 +3642,16 @@ async def route_type_maturity(datasette, request):
     return Response.json(data, status=status)
 
 
+async def route_canonical_name_variants(datasette, request):
+    query = request.args.get("q") or None
+    try:
+        min_variants = int(request.args.get("min_variants") or 2)
+    except (TypeError, ValueError):
+        min_variants = 2
+    data, status = handle_canonical_name_variants(query, min_variants)
+    return Response.json(data, status=status)
+
+
 async def route_type_reagent_heatmap(datasette, request):
     kind = request.args.get("kind") or None
     try:
@@ -3666,6 +3753,7 @@ def register_routes():
         (r"^/analytics/supplement-breakdown$", route_supplement_breakdown),
         (r"^/analytics/role-breakdown$", route_role_breakdown),
         (r"^/analytics/type-reagent-heatmap$", route_type_reagent_heatmap),
+        (r"^/analytics/canonical-name-variants$", route_canonical_name_variants),
         (r"^/analytics/journal-breakdown$", route_journal_breakdown),
         (r"^/analytics/concentration-by-type$", route_concentration_by_type),
         (r"^/analytics/kgx-summary$", route_kgx_summary),

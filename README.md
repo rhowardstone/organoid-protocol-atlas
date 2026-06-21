@@ -37,7 +37,7 @@ paper (PMC)
   └─ S2       Biolink-validated KGX export (nodes.tsv + edges.tsv + kgx_manifest.json)
   └─ entity normalization (bFGF≡FGF2, RSPO1≡R-spondin1, …)
   └─ analytics pipeline → coverage · quality · consensus · failure modes · lineage · assay endpoints
-  └─ REST API (Datasette plugin, 43 routes)
+  └─ REST API (Datasette plugin, 44 routes)
 ```
 
 ## Analytics API
@@ -81,6 +81,7 @@ GET /analytics/reagent-cooccurrence     pairwise signaling-factor co-occurrence:
 GET /analytics/supplement-breakdown     per-type and cross-type breakdown of supplement canonicals: global top 50, cross-type list, per-type top 10; ?q= and ?type= filters
 GET /analytics/role-breakdown           normalized functional role distribution for signaling reagents: signaling_factor/growth_factor/differentiation/inhibitor/agonist etc.; ?q= for top canonicals per role; ?type= filter
 GET /analytics/type-reagent-heatmap     type × canonical reagent usage matrix (top_n canonicals × all types, cell = n_papers); ?kind=signaling|supplement|all; ?top_n= (default 20, max 50)
+GET /analytics/canonical-name-variants  normalization complexity: canonical → all raw names, top 30 by n_variants; ?q= for one canonical; ?min_variants= threshold
 GET /analytics/assay-endpoints          assay endpoint cluster summary (12 clusters, per-type + cross-type)
 GET /analytics/failure-modes            failure mode cluster summary across the corpus
 GET /analytics/lineage                  DOI→DOI protocol lineage graph (ProtocolModification data)
@@ -173,7 +174,7 @@ serve/
   run.sh                     serve the atlas (Datasette + plugins)
   metadata.yaml              facets + canned queries
   plugins/
-    analytics_endpoint.py    43-route analytics REST API (pure handlers + thin Datasette wrappers)
+    analytics_endpoint.py    44-route analytics REST API (pure handlers + thin Datasette wrappers)
     ask.py                   grounded Q&A (RAG over FTS → local model)
   templates/                 landing, recipe cards, /heatmap, /consensus
   static/atlas.css|js        theme + dark-mode toggle
@@ -224,7 +225,7 @@ python pipeline/aggregate_failure_modes.py
 python pipeline/build_lineage.py
 python pipeline/aggregate_assay_endpoints.py
 
-make test                               # run offline test suite (1053 tests)
+make test                               # run offline test suite (1066 tests)
 make validate-batch                     # pre-PR check: tests + prediction schema + evidence
 # or: pytest -q
 ```

@@ -639,3 +639,20 @@ def test_live_th_intestinal_has_egf():
         intestinal = next((r for r in data["matrix"] if r["organoid_type"] == "intestinal"), None)
         if intestinal:
             assert intestinal["values"][egf_idx] >= 5
+
+
+@require_reagents
+def test_live_nv_returns_200():
+    data, status = ae.handle_canonical_name_variants(None)
+    assert status == 200
+    assert data["n_canonicals_total"] >= 100
+    assert data["n_with_multiple_names"] >= 30
+    assert len(data["most_ambiguous"]) >= 10
+
+
+@require_reagents
+def test_live_nv_y27632_most_ambiguous():
+    data, status = ae.handle_canonical_name_variants("Y-27632")
+    assert status == 200
+    assert data["n_variants"] >= 5
+    assert "Y-27632" in data["names"]

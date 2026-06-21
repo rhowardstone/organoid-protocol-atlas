@@ -4414,3 +4414,145 @@ def test_th_n_papers_total_in_row(tmp_path, monkeypatch):
 def test_th_index_entry():
     data, _ = ae.handle_index()
     assert "/analytics/type-reagent-heatmap" in data["endpoints"]
+
+
+# ---------------------------------------------------------------------------
+# Route 44: /analytics/canonical-name-variants
+# ---------------------------------------------------------------------------
+
+def _write_reagents_for_nv(path, rows):
+    base = {
+        "pmcid": "PMC1", "organoid_type": "intestinal",
+        "kind": "signaling", "canonical": "EGF",
+        "name": "EGF", "role": None,
+        "value": None, "unit": None, "canonical_unit": None,
+        "grounded": False, "evidence_quote": None,
+        "figure_confirmed": False, "suspect_unit": False,
+        "doi": None, "id": "r1",
+    }
+    path.write_text("\n".join(json.dumps({**base, **r}) for r in rows))
+
+
+def _patch_nv(monkeypatch, path):
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", path)
+
+
+# Fixture:
+#   EGF: "EGF", "epidermal growth factor", "rhEGF" → 3 variants, 3 records
+#   FGF2: "FGF2", "bFGF", "FGF-2" → 3 variants, 3 records
+#   Noggin: "Noggin" → 1 variant, 2 records (2 papers same name)
+_NV_ROWS = [
+    {"canonical": "EGF",  "name": "EGF",                      "pmcid": "PMC1"},
+    {"canonical": "EGF",  "name": "epidermal growth factor",  "pmcid": "PMC2"},
+    {"canonical": "EGF",  "name": "rhEGF",                    "pmcid": "PMC3"},
+    {"canonical": "FGF2", "name": "FGF2",                     "pmcid": "PMC1"},
+    {"canonical": "FGF2", "name": "bFGF",                     "pmcid": "PMC2"},
+    {"canonical": "FGF2", "name": "FGF-2",                    "pmcid": "PMC3"},
+    {"canonical": "Noggin","name": "Noggin",                   "pmcid": "PMC1"},
+    {"canonical": "Noggin","name": "Noggin",                   "pmcid": "PMC2"},  # same name, deduplicated
+]
+
+
+def test_nv_returns_200(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_nv(p, _NV_ROWS)
+    _patch_nv(monkeypatch, p)
+    data, status = ae.handle_canonical_name_variants(None)
+    assert status == 200
+    assert "most_ambiguous" in data
+    assert "n_canonicals_total" in data
+    assert "n_with_multiple_names" in data
+
+
+def test_nv_n_canonicals_total(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_nv(p, _NV_ROWS)
+    _patch_nv(monkeypatch, p)
+    data, _ = ae.handle_canonical_name_variants(None)
+    assert data["n_canonicals_total"] == 3  # EGF, FGF2, Noggin
+
+
+def test_nv_n_with_multiple_names(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_nv(p, _NV_ROWS)
+    _patch_nv(monkeypatch, p)
+    data, _ = ae.handle_canonical_name_variants(None)
+    # EGF and FGF2 each have 3 variants, Noggin has only 1 → 2 with multiple
+    assert data["n_with_multiple_names"] == 2
+
+
+def test_nv_most_ambiguous_sorted_desc(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_nv(p, _NV_ROWS)
+    _patch_nv(monkeypatch, p)
+    data, _ = ae.handle_canonical_name_variants(None)
+    entries = data["most_ambiguous"]
+    # EGF and FGF2 both have 3 variants, Noggin (1) excluded by min_variants=2
+    assert len(entries) == 2
+    n_variants = [e["n_variants"] for e in entries]
+    assert n_variants == sorted(n_variants, reverse=True)
+
+
+def test_nv_min_variants_filter(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_nv(p, _NV_ROWS)
+    _patch_nv(monkeypatch, p)
+    # min_variants=4: neither EGF nor FGF2 qualify (both have 3)
+    data, _ = ae.handle_canonical_name_variants(None, min_variants=4)
+    assert data["n_above_threshold"] == 0
+    assert data["most_ambiguous"] == []
+
+
+def test_nv_query_exact(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_nv(p, _NV_ROWS)
+    _patch_nv(monkeypatch, p)
+    data, status = ae.handle_canonical_name_variants("EGF")
+    assert status == 200
+    assert data["canonical"] == "EGF"
+    assert data["n_variants"] == 3
+    assert "EGF" in data["names"]
+    assert "rhEGF" in data["names"]
+    assert "epidermal growth factor" in data["names"]
+
+
+def test_nv_query_n_records(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_nv(p, _NV_ROWS)
+    _patch_nv(monkeypatch, p)
+    data, _ = ae.handle_canonical_name_variants("Noggin")
+    # Noggin has 2 records (2 rows) even though only 1 unique name
+    assert data["n_records"] == 2
+    assert data["n_variants"] == 1
+
+
+def test_nv_query_substring_match(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_nv(p, _NV_ROWS)
+    _patch_nv(monkeypatch, p)
+    # "fgf" matches "FGF2" (case-insensitive substring)
+    data, status = ae.handle_canonical_name_variants("fgf")
+    assert status == 200
+    assert data["canonical"] == "FGF2"
+
+
+def test_nv_query_unknown_returns_404(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_nv(p, _NV_ROWS)
+    _patch_nv(monkeypatch, p)
+    _, status = ae.handle_canonical_name_variants("NOSUCHCANONICAL_XYZ")
+    assert status == 404
+
+
+def test_nv_noggin_excluded_from_global(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_nv(p, _NV_ROWS)
+    _patch_nv(monkeypatch, p)
+    data, _ = ae.handle_canonical_name_variants(None, min_variants=2)
+    names = [e["canonical"] for e in data["most_ambiguous"]]
+    assert "Noggin" not in names  # only 1 variant → excluded
+
+
+def test_nv_index_entry():
+    data, _ = ae.handle_index()
+    assert "/analytics/canonical-name-variants" in data["endpoints"]
