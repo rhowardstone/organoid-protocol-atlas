@@ -92,6 +92,7 @@ exports. Prefer the JSON endpoints for programmatic use.
 - /analytics/reagent-network?q=EGF     co-occurring reagents: which reagents appear in the same papers as EGF
 - /analytics/type-similarity           pairwise Jaccard similarity between organoid types (canonical reagent sets)
 - /analytics/type-timeseries           publication counts by year and organoid type (growth trends, first-appearance)
+- /analytics/universal-reagents        canonical reagents in >= 50% of protocols per type; also cross-type universals
 - /analytics/failure-modes             failure mode cluster summary across the corpus
 - /analytics/lineage                   DOI→DOI protocol lineage graph
 - /analytics/assay-endpoints           assay endpoint cluster summary (per-type + cross-type)
