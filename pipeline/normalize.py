@@ -159,6 +159,62 @@ def is_suspect_concentration(unit: str | None) -> bool:
     return concentration_class(unit) in ("in_vivo_dose", "volume", "percent", "other")
 
 
+# UCUM (Unified Code for Units of Measure) mapping.
+# Maps canonical units (output of canon_unit) to UCUM expression strings.
+# Source: https://ucum.org/ucum (ANSI/HL7 standard)
+# Only units that appear in biological culture protocol data are listed.
+# Units not listed here return None from ucum_unit().
+_CANON_TO_UCUM: dict[str, str] = {
+    # Mass per volume
+    "ng/mL": "ng.mL-1",
+    "ug/mL": "ug.mL-1",
+    "mg/mL": "mg.mL-1",
+    "pg/mL": "pg.mL-1",
+    "g/mL":  "g.mL-1",
+    "ng/uL": "ng.uL-1",
+    "ug/uL": "ug.uL-1",
+    "pg/uL": "pg.uL-1",
+    "mg/uL": "mg.uL-1",
+    "ng/L":  "ng.L-1",
+    "ug/L":  "ug.L-1",
+    "mg/L":  "mg.L-1",
+    "g/L":   "g.L-1",
+    # Molar concentration
+    "M":     "mol.L-1",
+    "mM":    "mmol.L-1",
+    "uM":    "umol.L-1",
+    "nM":    "nmol.L-1",
+    "pM":    "pmol.L-1",
+    "fM":    "fmol.L-1",
+    # Enzyme activity per volume
+    "U/mL":    "U.mL-1",
+    "mU/mL":   "mU.mL-1",
+    "IU/mL":   "[IU].mL-1",
+    "kIU/mL":  "k[IU].mL-1",
+}
+
+
+def ucum_unit(u: str | None) -> str | None:
+    """Return the UCUM expression for a concentration unit, or None if not mappable.
+
+    Accepts any form accepted by canon_unit() (raw extracted strings, Unicode
+    micro signs, slash/dot/space notations). Returns None for percent, in-vivo
+    doses, volumes, and unrecognised units — callers should check
+    concentration_class() first when those categories matter.
+
+    Examples:
+        ucum_unit("ng/ml")   -> "ng.mL-1"
+        ucum_unit("nM")      -> "nmol.L-1"
+        ucum_unit("µg/mL")   -> "ug.mL-1"
+        ucum_unit("mg/kg")   -> None   (in-vivo dose, not a culture concentration)
+        ucum_unit(None)      -> None
+    """
+    c = canon_unit(u)
+    if c is None:
+        return None
+    return _CANON_TO_UCUM.get(c)
+
+
 def build_canon_map(names) -> dict:
     """raw name -> canonical name. CANON first; else most-frequent surface form per key."""
     by_key = collections.defaultdict(collections.Counter)
