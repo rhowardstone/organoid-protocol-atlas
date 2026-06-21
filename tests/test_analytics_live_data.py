@@ -239,3 +239,34 @@ def test_live_summary_snapshots_consistent_with_breakdown_endpoints():
         top_snap = max(sc_snap, key=sc_snap.get)
         top_full = max(sc_full["cross_corpus"], key=sc_full["cross_corpus"].get)
         assert top_snap == top_full, f"source_cell_snapshot top={top_snap} != breakdown top={top_full}"
+
+
+# ---------------------------------------------------------------------------
+# grounding-quality live smoke tests
+# ---------------------------------------------------------------------------
+
+@require_reagents
+def test_live_grounding_quality_returns_200():
+    data, status = ae.handle_grounding_quality(None)
+    assert status == 200
+    assert "cross_corpus" in data
+    assert "by_kind" in data
+    assert "top_ungrounded" in data
+
+
+@require_reagents
+def test_live_grounding_quality_rate_in_range():
+    data, _ = ae.handle_grounding_quality(None)
+    gr = data["cross_corpus"]["grounding_rate"]
+    assert gr is not None
+    # corpus has a mix of grounded and not; rate should be 0.3-0.8
+    assert 0.3 <= gr <= 0.8, f"grounding_rate={gr} out of expected range"
+
+
+@require_reagents
+def test_live_grounding_quality_signaling_ranked_high():
+    data, _ = ae.handle_grounding_quality(None)
+    bk = data["by_kind"]
+    # signaling factors are most likely to have been curated; should be present
+    assert "signaling" in bk
+    assert bk["signaling"]["n_reagents"] > 100
