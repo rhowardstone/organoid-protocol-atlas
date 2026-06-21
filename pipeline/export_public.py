@@ -29,6 +29,12 @@ OUT = REPO / "exports" / "public"
 # citation-snippet policy); the in-context highlighter is simply absent in public.
 TABLES = ("protocols", "reagents")
 
+# Evidence snippet cap: keeps quotes readable as attribution context without
+# redistributing full method-step paragraphs. Aligns with llms.txt policy
+# ("does not redistribute full methods text"). KGX uses 300; public UI gets
+# slightly more context at 500.
+PUBLIC_SNIPPET_MAX = 500
+
 
 def is_public_license(license: str | None) -> bool:
     """Public-redistributable iff CC0 or CC-BY (incl. -SA) and NOT NonCommercial (NC)
@@ -54,7 +60,11 @@ def main():
         rows = conn.execute(f"SELECT * FROM {t} WHERE pmcid IN ({ph})", cc).fetchall()
         with open(OUT / f"{t}.jsonl", "w") as f:
             for r in rows:
-                f.write(json.dumps({k: r[k] for k in r.keys()}, ensure_ascii=False) + "\n")
+                row = {k: r[k] for k in r.keys()}
+                eq = row.get("evidence_quote")
+                if eq and len(eq) > PUBLIC_SNIPPET_MAX:
+                    row["evidence_quote"] = eq[:PUBLIC_SNIPPET_MAX]
+                f.write(json.dumps(row, ensure_ascii=False) + "\n")
         manifest["tables"][t] = len(rows)
         print(f"  {t}: {len(rows)} rows")
     (OUT / "manifest.json").write_text(json.dumps(manifest, indent=2))
