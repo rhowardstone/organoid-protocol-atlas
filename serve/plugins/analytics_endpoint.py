@@ -29,6 +29,7 @@ Routes (all return JSON; read-only, no writes):
   GET /analytics/concentration-by-type       -- per-organoid-type concentration stats for one canonical reagent: median/min/max/n per unit per type; requires ?q=
   GET /analytics/journal-breakdown           -- journal contribution counts cross-corpus and per organoid type; optional ?type= for one type
   GET /analytics/type-comparison             -- side-by-side organoid type comparison: shared/unique canonical reagents, Jaccard score, per-kind breakdown; requires ?a= and ?b=
+  GET /analytics/concentration-deviation     -- dose inconsistency ranking: canonical reagents sorted by coefficient of variation (std/mean) per dominant unit; min_n= threshold (default 3)
   GET /analytics                                -- index of available analytics
 
 All endpoints degrade gracefully — if the pre-computed file doesn't exist they return
@@ -39,6 +40,7 @@ This is the serve-layer wrapper; all analysis logic lives in pipeline/*.py.
 from __future__ import annotations
 
 import json
+import math
 import re
 import sys
 from pathlib import Path
@@ -2137,6 +2139,123 @@ def handle_concentration_by_type(query: str | None) -> tuple[dict, int]:
     }, 200
 
 
+def handle_concentration_deviation(min_n: int = 3) -> tuple[dict, int]:
+    """Dose inconsistency ranking: canonical reagents sorted by coefficient of variation.
+
+    For each canonical reagent + dominant unit, computes CV = std/mean across all
+    records with a numeric value. High CV means inconsistent dosing across labs — a
+    signal for dose uncertainty or protocol variation. Only reagents with n_with_value
+    >= min_n (default 3) are included, since CV is meaningless for tiny samples.
+
+    Optional: ?min_n=5 to raise the sample-size threshold.
+
+    Returns:
+      - most_variable: top 30 by CV desc (dose most debated)
+      - most_consistent: top 30 by CV asc, CV < 0.5 only (dose well-established)
+      - n_canonicals_total: total canonicals with enough data
+      - n_excluded_too_few: how many canonicals had < min_n values
+    """
+    if not REAGENTS_JSONL.exists():
+        return {"error": "reagents.jsonl not found", "hint": "Run: python pipeline/export_public.py"}, 404
+
+    try:
+        rows = [
+            json.loads(line)
+            for line in REAGENTS_JSONL.read_text().splitlines()
+            if line.strip()
+        ]
+    except (json.JSONDecodeError, OSError) as exc:
+        return {"error": f"reagents.jsonl unreadable: {exc}"}, 500
+
+    # Accumulate values per (canonical, dominant_unit) — use canonical_unit as the unit key
+    # Two passes: first collect all values, then pick dominant unit per canonical
+    from collections import defaultdict
+    canon_unit_vals: dict[str, dict[str, list]] = defaultdict(lambda: defaultdict(list))
+    canon_n_records: dict[str, int] = defaultdict(int)
+
+    for r in rows:
+        canon = (r.get("canonical") or r.get("name") or "").strip()
+        if not canon:
+            continue
+        canon_n_records[canon] += 1
+        v = r.get("value")
+        if v is None:
+            continue
+        try:
+            fv = float(v)
+        except (TypeError, ValueError):
+            continue
+        unit = (r.get("canonical_unit") or r.get("unit") or "unknown").strip()
+        canon_unit_vals[canon][unit].append(fv)
+
+    def _cv_stats(vals: list[float], unit: str, n_records: int) -> dict:
+        n = len(vals)
+        if n < 2:
+            return None
+        mean = sum(vals) / n
+        if mean == 0:
+            return None
+        variance = sum((x - mean) ** 2 for x in vals) / (n - 1)
+        std = math.sqrt(variance)
+        cv = std / mean
+        vmin, vmax = min(vals), max(vals)
+        med_sorted = sorted(vals)
+        median = med_sorted[n // 2] if n % 2 else (med_sorted[n // 2 - 1] + med_sorted[n // 2]) / 2
+        return {
+            "canonical": None,  # filled by caller
+            "dominant_unit": unit,
+            "n_records": n_records,
+            "n_with_value": n,
+            "mean": round(mean, 4),
+            "median": round(median, 4),
+            "std": round(std, 4),
+            "cv": round(cv, 4),
+            "min": round(vmin, 4),
+            "max": round(vmax, 4),
+        }
+
+    results = []
+    n_excluded = 0
+
+    for canon, unit_map in canon_unit_vals.items():
+        # dominant unit = one with most values
+        dom_unit = max(unit_map, key=lambda u: len(unit_map[u]))
+        dom_vals = unit_map[dom_unit]
+        if len(dom_vals) < min_n:
+            n_excluded += 1
+            continue
+        stat = _cv_stats(dom_vals, dom_unit, canon_n_records[canon])
+        if stat is None:
+            n_excluded += 1
+            continue
+        stat["canonical"] = canon
+        results.append(stat)
+
+    if not results:
+        return {
+            "most_variable": [],
+            "most_consistent": [],
+            "n_canonicals_total": 0,
+            "n_excluded_too_few": n_excluded,
+            "min_n_threshold": min_n,
+        }, 200
+
+    results.sort(key=lambda x: x["cv"], reverse=True)
+    most_variable = results[:30]
+    most_consistent = sorted(
+        [r for r in results if r["cv"] < 0.5],
+        key=lambda x: x["cv"]
+    )[:30]
+
+    return {
+        "most_variable": most_variable,
+        "most_consistent": most_consistent,
+        "n_canonicals_total": len(results),
+        "n_excluded_too_few": n_excluded,
+        "min_n_threshold": min_n,
+    }, 200
+
+
 KGX_DIR = REPO / "exports" / "kgx"
 
 
@@ -2283,6 +2402,7 @@ def handle_index() -> tuple[dict, int]:
             "/analytics/concentration-by-type": "per-organoid-type concentration stats for one canonical reagent — median/min/max/n per unit per type; requires ?q=EGF; useful for comparing dose ranges across organoid systems",
             "/analytics/journal-breakdown": "journal contribution counts: cross-corpus top 50 + per-type top 5; optional ?type=kidney for full breakdown of one type — audits corpus composition and journal bias",
             "/analytics/type-comparison": "side-by-side organoid type comparison: shared/unique canonical reagents, Jaccard score, per-kind breakdown; requires ?a=intestinal&b=cerebral",
+            "/analytics/concentration-deviation": "dose inconsistency ranking: canonical reagents sorted by coefficient of variation (std/mean) across records with numeric values; ?min_n= to set sample threshold (default 3)",
             "/analytics/assay-endpoints": "assay endpoint cluster summary (per type + cross-type)",
             "/analytics/quality": "per-paper quality scores (gold/silver/bronze) + corpus summary",
             "/analytics/mior": "MIOR completeness report (Minimum Information About an Organoid Research)",
@@ -2506,6 +2626,15 @@ async def route_concentration_by_type(datasette, request):
     return Response.json(data, status=status)
 
 
+async def route_concentration_deviation(datasette, request):
+    try:
+        min_n = int(request.args.get("min_n") or 3)
+    except (TypeError, ValueError):
+        min_n = 3
+    data, status = handle_concentration_deviation(min_n)
+    return Response.json(data, status=status)
+
+
 async def route_kgx_summary(datasette, request):
     data, status = handle_kgx_summary()
     return Response.json(data, status=status)
@@ -2550,6 +2679,7 @@ def register_routes():
         (r"^/analytics/concentration-stats$", route_concentration_stats),
         (r"^/analytics/temporal-reagent-adoption$", route_temporal_reagent_adoption),
         (r"^/analytics/type-comparison$", route_type_comparison),
+        (r"^/analytics/concentration-deviation$", route_concentration_deviation),
         (r"^/analytics/journal-breakdown$", route_journal_breakdown),
         (r"^/analytics/concentration-by-type$", route_concentration_by_type),
         (r"^/analytics/kgx-summary$", route_kgx_summary),
