@@ -1,0 +1,111 @@
+{
+  "organoid_type": "neuromuscular",
+  "n_protocols": 16,
+  "base_media": {
+    "top": "DMEM/F12",
+    "distribution": [
+      {
+        "value": "DMEM/F12",
+        "count": 3,
+        "fraction": 0.3
+      },
+      {
+        "value": "TESR-E8",
+        "count": 2,
+        "fraction": 0.2
+      },
+      {
+        "value": "N2/B27",
+        "count": 1,
+        "fraction": 0.1
+      },
+      {
+        "value": "Advanced DMEM/F12",
+        "count": 1,
+        "fraction": 0.1
+      },
+      {
+        "value": "StemFlex",
+        "count": 1,
+        "fraction": 0.1
+      },
+      {
+        "value": "mTeSR",
+        "count": 1,
+        "fraction": 0.1
+      },
+      {
+        "value": "StemMACS iPS-Brew XF",
+        "count": 1,
+        "fraction": 0.1
+      }
+    ],
+    "n_reported": 10,
+    "n_missing": 6
+  },
+  "matrix": {
+    "top": "Matrigel",
+    "distribution": [
+      {
+        "value": "Matrigel",
+        "count": 10,
+        "fraction": 0.833
+      },
+      {
+        "value": "Matrigel GFR",
+        "count": 1,
+        "fraction": 0.083
+      },
+      {
+        "value": "Matrigel\u2122",
+        "count": 1,
+        "fraction": 0.083
+      }
+    ],
+    "n_reported": 12,
+    "n_missing": 4
+  },
+  "source_cell_type": {
+    "top": "iPSC",
+    "distribution": [
+      {
+        "value": "iPSC",
+        "count": 15,
+        "fraction": 0.938
+      },
+      {
+        "value": "adult_stem_cell",
+        "count": 1,
+        "fraction": 0.062
+      }
+    ],
+    "n_reported": 16,
+    "n_missing": 0
+  },
+  "species": {
+    "top": "human",
+    "distribution": [
+      {
+        "value": "human",
+        "count": 14,
+        "fraction": 0.933
+      },
+      {
+        "value": "mouse",
+        "count": 1,
+        "fraction": 0.067
+      }
+    ],
+    "n_reported": 15,
+    "n_missing": 1
+  },
+  "signaling_factors": [],
+  "media_supplements": [],
+  "small_molecules": [],
+  "timeline": {
+    "n_protocols_with_timeline": 4,
+    "stages": []
+  },
+  "universal_reagents": [],
+  "high_variability_reagents": []
+}

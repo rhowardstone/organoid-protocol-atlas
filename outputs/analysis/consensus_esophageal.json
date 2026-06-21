@@ -1,0 +1,146 @@
+{
+  "organoid_type": "esophageal",
+  "n_protocols": 13,
+  "base_media": {
+    "top": "DMEM/F12",
+    "distribution": [
+      {
+        "value": "DMEM/F12",
+        "count": 2,
+        "fraction": 0.2
+      },
+      {
+        "value": "Essential 8 (E8)",
+        "count": 1,
+        "fraction": 0.1
+      },
+      {
+        "value": "aDMEM/F12",
+        "count": 1,
+        "fraction": 0.1
+      },
+      {
+        "value": "ADF",
+        "count": 1,
+        "fraction": 0.1
+      },
+      {
+        "value": "KSFM",
+        "count": 1,
+        "fraction": 0.1
+      },
+      {
+        "value": "cFAD",
+        "count": 1,
+        "fraction": 0.1
+      },
+      {
+        "value": "keratinocyte serum-free medium",
+        "count": 1,
+        "fraction": 0.1
+      },
+      {
+        "value": "YEE-MEOM",
+        "count": 1,
+        "fraction": 0.1
+      },
+      {
+        "value": "Advanced DMEM/F12",
+        "count": 1,
+        "fraction": 0.1
+      }
+    ],
+    "n_reported": 10,
+    "n_missing": 3
+  },
+  "matrix": {
+    "top": "Matrigel",
+    "distribution": [
+      {
+        "value": "Matrigel",
+        "count": 6,
+        "fraction": 0.545
+      },
+      {
+        "value": "human vitronectin VTN XF",
+        "count": 1,
+        "fraction": 0.091
+      },
+      {
+        "value": "Matrigel TM",
+        "count": 1,
+        "fraction": 0.091
+      },
+      {
+        "value": "collagen",
+        "count": 1,
+        "fraction": 0.091
+      },
+      {
+        "value": "Matrigel basement membrane extract",
+        "count": 1,
+        "fraction": 0.091
+      },
+      {
+        "value": "Cultrex Basement Membrane Extract, Type 2",
+        "count": 1,
+        "fraction": 0.091
+      }
+    ],
+    "n_reported": 11,
+    "n_missing": 2
+  },
+  "source_cell_type": {
+    "top": "adult_stem_cell",
+    "distribution": [
+      {
+        "value": "adult_stem_cell",
+        "count": 6,
+        "fraction": 0.462
+      },
+      {
+        "value": "primary_tissue",
+        "count": 4,
+        "fraction": 0.308
+      },
+      {
+        "value": "iPSC",
+        "count": 2,
+        "fraction": 0.154
+      },
+      {
+        "value": "ESC",
+        "count": 1,
+        "fraction": 0.077
+      }
+    ],
+    "n_reported": 13,
+    "n_missing": 0
+  },
+  "species": {
+    "top": "human",
+    "distribution": [
+      {
+        "value": "human",
+        "count": 6,
+        "fraction": 0.545
+      },
+      {
+        "value": "mouse",
+        "count": 5,
+        "fraction": 0.455
+      }
+    ],
+    "n_reported": 11,
+    "n_missing": 2
+  },
+  "signaling_factors": [],
+  "media_supplements": [],
+  "small_molecules": [],
+  "timeline": {
+    "n_protocols_with_timeline": 1,
+    "stages": []
+  },
+  "universal_reagents": [],
+  "high_variability_reagents": []
+}

@@ -1,0 +1,106 @@
+{
+  "organoid_type": "blood-brain-barrier",
+  "n_protocols": 14,
+  "base_media": {
+    "top": "DMEM/F-12",
+    "distribution": [
+      {
+        "value": "DMEM/F-12",
+        "count": 1,
+        "fraction": 0.25
+      },
+      {
+        "value": "Astrocyte Growth Medium (AGM)",
+        "count": 1,
+        "fraction": 0.25
+      },
+      {
+        "value": "DMEM/F12",
+        "count": 1,
+        "fraction": 0.25
+      },
+      {
+        "value": "mTesR culture media",
+        "count": 1,
+        "fraction": 0.25
+      }
+    ],
+    "n_reported": 4,
+    "n_missing": 10
+  },
+  "matrix": {
+    "top": "Matrigel",
+    "distribution": [
+      {
+        "value": "Matrigel",
+        "count": 3,
+        "fraction": 0.375
+      },
+      {
+        "value": "rat tail collagen-I",
+        "count": 1,
+        "fraction": 0.125
+      },
+      {
+        "value": "PEG hydrogels",
+        "count": 1,
+        "fraction": 0.125
+      },
+      {
+        "value": "fibronectin-collagen type IV",
+        "count": 1,
+        "fraction": 0.125
+      },
+      {
+        "value": "type I rat tail collagen",
+        "count": 1,
+        "fraction": 0.125
+      },
+      {
+        "value": "Matrigel \u00ae hESC-Qualified Matrix",
+        "count": 1,
+        "fraction": 0.125
+      }
+    ],
+    "n_reported": 8,
+    "n_missing": 6
+  },
+  "source_cell_type": {
+    "top": "iPSC",
+    "distribution": [
+      {
+        "value": "iPSC",
+        "count": 13,
+        "fraction": 0.929
+      },
+      {
+        "value": "primary_tissue",
+        "count": 1,
+        "fraction": 0.071
+      }
+    ],
+    "n_reported": 14,
+    "n_missing": 0
+  },
+  "species": {
+    "top": "human",
+    "distribution": [
+      {
+        "value": "human",
+        "count": 12,
+        "fraction": 1.0
+      }
+    ],
+    "n_reported": 12,
+    "n_missing": 2
+  },
+  "signaling_factors": [],
+  "media_supplements": [],
+  "small_molecules": [],
+  "timeline": {
+    "n_protocols_with_timeline": 1,
+    "stages": []
+  },
+  "universal_reagents": [],
+  "high_variability_reagents": []
+}

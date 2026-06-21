@@ -1,0 +1,1382 @@
+{
+  "n_total_papers": 582,
+  "n_with_assay_endpoints": 342,
+  "coverage_fraction": 0.5876,
+  "n_clusters": 12,
+  "by_organoid_type": {
+    "thyroid": {
+      "other": {
+        "n_papers": 12,
+        "fraction": 0.6
+      },
+      "gene_expression_qPCR": {
+        "n_papers": 6,
+        "fraction": 0.3
+      },
+      "immunostaining_IF_IHC": {
+        "n_papers": 5,
+        "fraction": 0.25
+      },
+      "RNA_sequencing": {
+        "n_papers": 3,
+        "fraction": 0.15
+      },
+      "single_cell_analysis": {
+        "n_papers": 2,
+        "fraction": 0.1
+      },
+      "proliferation_viability": {
+        "n_papers": 2,
+        "fraction": 0.1
+      },
+      "electron_microscopy": {
+        "n_papers": 2,
+        "fraction": 0.1
+      },
+      "secretion_functional_assay": {
+        "n_papers": 1,
+        "fraction": 0.05
+      },
+      "histology_morphology": {
+        "n_papers": 1,
+        "fraction": 0.05
+      }
+    },
+    "mammary": {
+      "other": {
+        "n_papers": 9,
+        "fraction": 0.6429
+      },
+      "gene_expression_qPCR": {
+        "n_papers": 4,
+        "fraction": 0.2857
+      },
+      "proliferation_viability": {
+        "n_papers": 4,
+        "fraction": 0.2857
+      },
+      "RNA_sequencing": {
+        "n_papers": 4,
+        "fraction": 0.2857
+      },
+      "immunostaining_IF_IHC": {
+        "n_papers": 3,
+        "fraction": 0.2143
+      },
+      "histology_morphology": {
+        "n_papers": 3,
+        "fraction": 0.2143
+      },
+      "flow_cytometry_FACS": {
+        "n_papers": 2,
+        "fraction": 0.1429
+      },
+      "western_blot": {
+        "n_papers": 1,
+        "fraction": 0.0714
+      }
+    },
+    "cardiac": {
+      "other": {
+        "n_papers": 33,
+        "fraction": 0.5593
+      },
+      "calcium_imaging_electrophysiology": {
+        "n_papers": 14,
+        "fraction": 0.2373
+      },
+      "gene_expression_qPCR": {
+        "n_papers": 10,
+        "fraction": 0.1695
+      },
+      "histology_morphology": {
+        "n_papers": 9,
+        "fraction": 0.1525
+      },
+      "immunostaining_IF_IHC": {
+        "n_papers": 8,
+        "fraction": 0.1356
+      },
+      "proliferation_viability": {
+        "n_papers": 7,
+        "fraction": 0.1186
+      },
+      "flow_cytometry_FACS": {
+        "n_papers": 4,
+        "fraction": 0.0678
+      },
+      "RNA_sequencing": {
+        "n_papers": 4,
+        "fraction": 0.0678
+      },
+      "secretion_functional_assay": {
+        "n_papers": 2,
+        "fraction": 0.0339
+      },
+      "single_cell_analysis": {
+        "n_papers": 1,
+        "fraction": 0.0169
+      },
+      "western_blot": {
+        "n_papers": 1,
+        "fraction": 0.0169
+      },
+      "proteomics_mass_spec": {
+        "n_papers": 1,
+        "fraction": 0.0169
+      },
+      "electron_microscopy": {
+        "n_papers": 1,
+        "fraction": 0.0169
+      }
+    },
+    "blood-brain-barrier": {
+      "other": {
+        "n_papers": 8,
+        "fraction": 0.5714
+      },
+      "histology_morphology": {
+        "n_papers": 4,
+        "fraction": 0.2857
+      },
+      "immunostaining_IF_IHC": {
+        "n_papers": 3,
+        "fraction": 0.2143
+      },
+      "secretion_functional_assay": {
+        "n_papers": 2,
+        "fraction": 0.1429
+      },
+      "proliferation_viability": {
+        "n_papers": 2,
+        "fraction": 0.1429
+      },
+      "gene_expression_qPCR": {
+        "n_papers": 2,
+        "fraction": 0.1429
+      },
+      "calcium_imaging_electrophysiology": {
+        "n_papers": 1,
+        "fraction": 0.0714
+      },
+      "western_blot": {
+        "n_papers": 1,
+        "fraction": 0.0714
+      }
+    },
+    "pancreatic": {
+      "secretion_functional_assay": {
+        "n_papers": 15,
+        "fraction": 0.4286
+      },
+      "other": {
+        "n_papers": 14,
+        "fraction": 0.4
+      },
+      "gene_expression_qPCR": {
+        "n_papers": 8,
+        "fraction": 0.2286
+      },
+      "immunostaining_IF_IHC": {
+        "n_papers": 6,
+        "fraction": 0.1714
+      },
+      "histology_morphology": {
+        "n_papers": 5,
+        "fraction": 0.1429
+      },
+      "proliferation_viability": {
+        "n_papers": 4,
+        "fraction": 0.1143
+      },
+      "RNA_sequencing": {
+        "n_papers": 3,
+        "fraction": 0.0857
+      },
+      "electron_microscopy": {
+        "n_papers": 2,
+        "fraction": 0.0571
+      },
+      "flow_cytometry_FACS": {
+        "n_papers": 2,
+        "fraction": 0.0571
+      },
+      "calcium_imaging_electrophysiology": {
+        "n_papers": 1,
+        "fraction": 0.0286
+      },
+      "western_blot": {
+        "n_papers": 1,
+        "fraction": 0.0286
+      }
+    },
+    "prostate": {
+      "other": {
+        "n_papers": 5,
+        "fraction": 0.3125
+      },
+      "immunostaining_IF_IHC": {
+        "n_papers": 2,
+        "fraction": 0.125
+      }
+    },
+    "endometrial": {
+      "other": {
+        "n_papers": 8,
+        "fraction": 0.4
+      },
+      "histology_morphology": {
+        "n_papers": 7,
+        "fraction": 0.35
+      },
+      "immunostaining_IF_IHC": {
+        "n_papers": 5,
+        "fraction": 0.25
+      },
+      "gene_expression_qPCR": {
+        "n_papers": 4,
+        "fraction": 0.2
+      },
+      "secretion_functional_assay": {
+        "n_papers": 3,
+        "fraction": 0.15
+      },
+      "electron_microscopy": {
+        "n_papers": 1,
+        "fraction": 0.05
+      },
+      "proliferation_viability": {
+        "n_papers": 1,
+        "fraction": 0.05
+      }
+    },
+    "gastric": {
+      "other": {
+        "n_papers": 15,
+        "fraction": 0.4286
+      },
+      "immunostaining_IF_IHC": {
+        "n_papers": 5,
+        "fraction": 0.1429
+      },
+      "proliferation_viability": {
+        "n_papers": 5,
+        "fraction": 0.1429
+      },
+      "histology_morphology": {
+        "n_papers": 3,
+        "fraction": 0.0857
+      },
+      "western_blot": {
+        "n_papers": 3,
+        "fraction": 0.0857
+      },
+      "secretion_functional_assay": {
+        "n_papers": 2,
+        "fraction": 0.0571
+      },
+      "gene_expression_qPCR": {
+        "n_papers": 2,
+        "fraction": 0.0571
+      },
+      "flow_cytometry_FACS": {
+        "n_papers": 1,
+        "fraction": 0.0286
+      }
+    },
+    "bladder": {
+      "other": {
+        "n_papers": 9,
+        "fraction": 0.6923
+      },
+      "histology_morphology": {
+        "n_papers": 6,
+        "fraction": 0.4615
+      },
+      "immunostaining_IF_IHC": {
+        "n_papers": 4,
+        "fraction": 0.3077
+      },
+      "gene_expression_qPCR": {
+        "n_papers": 2,
+        "fraction": 0.1538
+      },
+      "flow_cytometry_FACS": {
+        "n_papers": 2,
+        "fraction": 0.1538
+      },
+      "proliferation_viability": {
+        "n_papers": 1,
+        "fraction": 0.0769
+      },
+      "RNA_sequencing": {
+        "n_papers": 1,
+        "fraction": 0.0769
+      },
+      "single_cell_analysis": {
+        "n_papers": 1,
+        "fraction": 0.0769
+      }
+    },
+    "liver": {
+      "other": {
+        "n_papers": 7,
+        "fraction": 0.7
+      },
+      "secretion_functional_assay": {
+        "n_papers": 3,
+        "fraction": 0.3
+      },
+      "RNA_sequencing": {
+        "n_papers": 1,
+        "fraction": 0.1
+      },
+      "histology_morphology": {
+        "n_papers": 1,
+        "fraction": 0.1
+      },
+      "immunostaining_IF_IHC": {
+        "n_papers": 1,
+        "fraction": 0.1
+      },
+      "gene_expression_qPCR": {
+        "n_papers": 1,
+        "fraction": 0.1
+      },
+      "proliferation_viability": {
+        "n_papers": 1,
+        "fraction": 0.1
+      }
+    },
+    "neuromuscular": {
+      "other": {
+        "n_papers": 6,
+        "fraction": 0.375
+      },
+      "histology_morphology": {
+        "n_papers": 4,
+        "fraction": 0.25
+      },
+      "RNA_sequencing": {
+        "n_papers": 3,
+        "fraction": 0.1875
+      },
+      "immunostaining_IF_IHC": {
+        "n_papers": 3,
+        "fraction": 0.1875
+      },
+      "single_cell_analysis": {
+        "n_papers": 2,
+        "fraction": 0.125
+      },
+      "secretion_functional_assay": {
+        "n_papers": 1,
+        "fraction": 0.0625
+      },
+      "calcium_imaging_electrophysiology": {
+        "n_papers": 1,
+        "fraction": 0.0625
+      },
+      "electron_microscopy": {
+        "n_papers": 1,
+        "fraction": 0.0625
+      },
+      "gene_expression_qPCR": {
+        "n_papers": 1,
+        "fraction": 0.0625
+      }
+    },
+    "retinal": {
+      "other": {
+        "n_papers": 28,
+        "fraction": 0.7568
+      },
+      "immunostaining_IF_IHC": {
+        "n_papers": 11,
+        "fraction": 0.2973
+      },
+      "gene_expression_qPCR": {
+        "n_papers": 7,
+        "fraction": 0.1892
+      },
+      "proliferation_viability": {
+        "n_papers": 5,
+        "fraction": 0.1351
+      },
+      "electron_microscopy": {
+        "n_papers": 4,
+        "fraction": 0.1081
+      },
+      "RNA_sequencing": {
+        "n_papers": 3,
+        "fraction": 0.0811
+      },
+      "histology_morphology": {
+        "n_papers": 3,
+        "fraction": 0.0811
+      },
+      "flow_cytometry_FACS": {
+        "n_papers": 2,
+        "fraction": 0.0541
+      },
+      "secretion_functional_assay": {
+        "n_papers": 2,
+        "fraction": 0.0541
+      },
+      "calcium_imaging_electrophysiology": {
+        "n_papers": 2,
+        "fraction": 0.0541
+      },
+      "single_cell_analysis": {
+        "n_papers": 1,
+        "fraction": 0.027
+      },
+      "western_blot": {
+        "n_papers": 1,
+        "fraction": 0.027
+      }
+    },
+    "vascular": {
+      "other": {
+        "n_papers": 6,
+        "fraction": 0.3
+      },
+      "immunostaining_IF_IHC": {
+        "n_papers": 3,
+        "fraction": 0.15
+      },
+      "flow_cytometry_FACS": {
+        "n_papers": 3,
+        "fraction": 0.15
+      },
+      "histology_morphology": {
+        "n_papers": 2,
+        "fraction": 0.1
+      },
+      "gene_expression_qPCR": {
+        "n_papers": 2,
+        "fraction": 0.1
+      },
+      "RNA_sequencing": {
+        "n_papers": 1,
+        "fraction": 0.05
+      },
+      "western_blot": {
+        "n_papers": 1,
+        "fraction": 0.05
+      },
+      "proliferation_viability": {
+        "n_papers": 1,
+        "fraction": 0.05
+      },
+      "calcium_imaging_electrophysiology": {
+        "n_papers": 1,
+        "fraction": 0.05
+      }
+    },
+    "cholangiocyte": {
+      "other": {
+        "n_papers": 7,
+        "fraction": 0.7
+      },
+      "immunostaining_IF_IHC": {
+        "n_papers": 3,
+        "fraction": 0.3
+      },
+      "gene_expression_qPCR": {
+        "n_papers": 2,
+        "fraction": 0.2
+      },
+      "proliferation_viability": {
+        "n_papers": 2,
+        "fraction": 0.2
+      },
+      "histology_morphology": {
+        "n_papers": 2,
+        "fraction": 0.2
+      },
+      "RNA_sequencing": {
+        "n_papers": 2,
+        "fraction": 0.2
+      },
+      "calcium_imaging_electrophysiology": {
+        "n_papers": 1,
+        "fraction": 0.1
+      },
+      "secretion_functional_assay": {
+        "n_papers": 1,
+        "fraction": 0.1
+      }
+    },
+    "fallopian-tube": {
+      "other": {
+        "n_papers": 7,
+        "fraction": 0.4375
+      },
+      "proliferation_viability": {
+        "n_papers": 4,
+        "fraction": 0.25
+      },
+      "gene_expression_qPCR": {
+        "n_papers": 3,
+        "fraction": 0.1875
+      },
+      "immunostaining_IF_IHC": {
+        "n_papers": 3,
+        "fraction": 0.1875
+      },
+      "electron_microscopy": {
+        "n_papers": 1,
+        "fraction": 0.0625
+      },
+      "flow_cytometry_FACS": {
+        "n_papers": 1,
+        "fraction": 0.0625
+      },
+      "histology_morphology": {
+        "n_papers": 1,
+        "fraction": 0.0625
+      },
+      "RNA_sequencing": {
+        "n_papers": 1,
+        "fraction": 0.0625
+      },
+      "western_blot": {
+        "n_papers": 1,
+        "fraction": 0.0625
+      }
+    },
+    "salivary-gland": {
+      "secretion_functional_assay": {
+        "n_papers": 5,
+        "fraction": 0.3125
+      },
+      "other": {
+        "n_papers": 4,
+        "fraction": 0.25
+      },
+      "gene_expression_qPCR": {
+        "n_papers": 2,
+        "fraction": 0.125
+      },
+      "histology_morphology": {
+        "n_papers": 2,
+        "fraction": 0.125
+      },
+      "immunostaining_IF_IHC": {
+        "n_papers": 2,
+        "fraction": 0.125
+      },
+      "calcium_imaging_electrophysiology": {
+        "n_papers": 2,
+        "fraction": 0.125
+      },
+      "single_cell_analysis": {
+        "n_papers": 1,
+        "fraction": 0.0625
+      },
+      "RNA_sequencing": {
+        "n_papers": 1,
+        "fraction": 0.0625
+      },
+      "western_blot": {
+        "n_papers": 1,
+        "fraction": 0.0625
+      },
+      "flow_cytometry_FACS": {
+        "n_papers": 1,
+        "fraction": 0.0625
+      }
+    },
+    "hepatic": {
+      "other": {
+        "n_papers": 17,
+        "fraction": 0.5862
+      },
+      "proliferation_viability": {
+        "n_papers": 7,
+        "fraction": 0.2414
+      },
+      "histology_morphology": {
+        "n_papers": 6,
+        "fraction": 0.2069
+      },
+      "immunostaining_IF_IHC": {
+        "n_papers": 6,
+        "fraction": 0.2069
+      },
+      "gene_expression_qPCR": {
+        "n_papers": 6,
+        "fraction": 0.2069
+      },
+      "secretion_functional_assay": {
+        "n_papers": 5,
+        "fraction": 0.1724
+      },
+      "electron_microscopy": {
+        "n_papers": 2,
+        "fraction": 0.069
+      },
+      "flow_cytometry_FACS": {
+        "n_papers": 2,
+        "fraction": 0.069
+      },
+      "western_blot": {
+        "n_papers": 2,
+        "fraction": 0.069
+      },
+      "RNA_sequencing": {
+        "n_papers": 2,
+        "fraction": 0.069
+      },
+      "single_cell_analysis": {
+        "n_papers": 1,
+        "fraction": 0.0345
+      }
+    },
+    "kidney": {
+      "other": {
+        "n_papers": 20,
+        "fraction": 0.6667
+      },
+      "histology_morphology": {
+        "n_papers": 12,
+        "fraction": 0.4
+      },
+      "immunostaining_IF_IHC": {
+        "n_papers": 11,
+        "fraction": 0.3667
+      },
+      "gene_expression_qPCR": {
+        "n_papers": 10,
+        "fraction": 0.3333
+      },
+      "RNA_sequencing": {
+        "n_papers": 5,
+        "fraction": 0.1667
+      },
+      "western_blot": {
+        "n_papers": 3,
+        "fraction": 0.1
+      },
+      "electron_microscopy": {
+        "n_papers": 3,
+        "fraction": 0.1
+      },
+      "single_cell_analysis": {
+        "n_papers": 3,
+        "fraction": 0.1
+      },
+      "calcium_imaging_electrophysiology": {
+        "n_papers": 1,
+        "fraction": 0.0333
+      },
+      "proliferation_viability": {
+        "n_papers": 1,
+        "fraction": 0.0333
+      }
+    },
+    "inner-ear": {
+      "other": {
+        "n_papers": 5,
+        "fraction": 0.2381
+      },
+      "immunostaining_IF_IHC": {
+        "n_papers": 3,
+        "fraction": 0.1429
+      },
+      "gene_expression_qPCR": {
+        "n_papers": 2,
+        "fraction": 0.0952
+      },
+      "calcium_imaging_electrophysiology": {
+        "n_papers": 2,
+        "fraction": 0.0952
+      },
+      "histology_morphology": {
+        "n_papers": 2,
+        "fraction": 0.0952
+      },
+      "proliferation_viability": {
+        "n_papers": 1,
+        "fraction": 0.0476
+      },
+      "flow_cytometry_FACS": {
+        "n_papers": 1,
+        "fraction": 0.0476
+      },
+      "RNA_sequencing": {
+        "n_papers": 1,
+        "fraction": 0.0476
+      },
+      "western_blot": {
+        "n_papers": 1,
+        "fraction": 0.0476
+      }
+    },
+    "esophageal": {
+      "other": {
+        "n_papers": 6,
+        "fraction": 0.4615
+      },
+      "proliferation_viability": {
+        "n_papers": 3,
+        "fraction": 0.2308
+      },
+      "histology_morphology": {
+        "n_papers": 2,
+        "fraction": 0.1538
+      },
+      "immunostaining_IF_IHC": {
+        "n_papers": 2,
+        "fraction": 0.1538
+      },
+      "gene_expression_qPCR": {
+        "n_papers": 2,
+        "fraction": 0.1538
+      },
+      "RNA_sequencing": {
+        "n_papers": 1,
+        "fraction": 0.0769
+      },
+      "western_blot": {
+        "n_papers": 1,
+        "fraction": 0.0769
+      }
+    },
+    "intestinal": {
+      "other": {
+        "n_papers": 19,
+        "fraction": 0.5429
+      },
+      "gene_expression_qPCR": {
+        "n_papers": 9,
+        "fraction": 0.2571
+      },
+      "proliferation_viability": {
+        "n_papers": 9,
+        "fraction": 0.2571
+      },
+      "immunostaining_IF_IHC": {
+        "n_papers": 8,
+        "fraction": 0.2286
+      },
+      "histology_morphology": {
+        "n_papers": 6,
+        "fraction": 0.1714
+      },
+      "western_blot": {
+        "n_papers": 3,
+        "fraction": 0.0857
+      },
+      "secretion_functional_assay": {
+        "n_papers": 3,
+        "fraction": 0.0857
+      },
+      "RNA_sequencing": {
+        "n_papers": 2,
+        "fraction": 0.0571
+      },
+      "flow_cytometry_FACS": {
+        "n_papers": 1,
+        "fraction": 0.0286
+      },
+      "electron_microscopy": {
+        "n_papers": 1,
+        "fraction": 0.0286
+      },
+      "calcium_imaging_electrophysiology": {
+        "n_papers": 1,
+        "fraction": 0.0286
+      }
+    },
+    "cerebral": {
+      "other": {
+        "n_papers": 22,
+        "fraction": 0.5789
+      },
+      "calcium_imaging_electrophysiology": {
+        "n_papers": 9,
+        "fraction": 0.2368
+      },
+      "immunostaining_IF_IHC": {
+        "n_papers": 6,
+        "fraction": 0.1579
+      },
+      "gene_expression_qPCR": {
+        "n_papers": 5,
+        "fraction": 0.1316
+      },
+      "histology_morphology": {
+        "n_papers": 5,
+        "fraction": 0.1316
+      },
+      "secretion_functional_assay": {
+        "n_papers": 2,
+        "fraction": 0.0526
+      },
+      "proliferation_viability": {
+        "n_papers": 2,
+        "fraction": 0.0526
+      },
+      "single_cell_analysis": {
+        "n_papers": 2,
+        "fraction": 0.0526
+      },
+      "RNA_sequencing": {
+        "n_papers": 2,
+        "fraction": 0.0526
+      },
+      "proteomics_mass_spec": {
+        "n_papers": 1,
+        "fraction": 0.0263
+      }
+    },
+    "skin": {
+      "other": {
+        "n_papers": 5,
+        "fraction": 0.4167
+      },
+      "RNA_sequencing": {
+        "n_papers": 3,
+        "fraction": 0.25
+      },
+      "gene_expression_qPCR": {
+        "n_papers": 2,
+        "fraction": 0.1667
+      },
+      "histology_morphology": {
+        "n_papers": 1,
+        "fraction": 0.0833
+      },
+      "western_blot": {
+        "n_papers": 1,
+        "fraction": 0.0833
+      },
+      "immunostaining_IF_IHC": {
+        "n_papers": 1,
+        "fraction": 0.0833
+      }
+    },
+    "tumor": {
+      "other": {
+        "n_papers": 3,
+        "fraction": 0.3333
+      },
+      "histology_morphology": {
+        "n_papers": 2,
+        "fraction": 0.2222
+      },
+      "RNA_sequencing": {
+        "n_papers": 1,
+        "fraction": 0.1111
+      },
+      "immunostaining_IF_IHC": {
+        "n_papers": 1,
+        "fraction": 0.1111
+      },
+      "western_blot": {
+        "n_papers": 1,
+        "fraction": 0.1111
+      }
+    },
+    "lung": {
+      "other": {
+        "n_papers": 16,
+        "fraction": 0.4848
+      },
+      "proliferation_viability": {
+        "n_papers": 7,
+        "fraction": 0.2121
+      },
+      "gene_expression_qPCR": {
+        "n_papers": 5,
+        "fraction": 0.1515
+      },
+      "histology_morphology": {
+        "n_papers": 5,
+        "fraction": 0.1515
+      },
+      "immunostaining_IF_IHC": {
+        "n_papers": 4,
+        "fraction": 0.1212
+      },
+      "RNA_sequencing": {
+        "n_papers": 2,
+        "fraction": 0.0606
+      },
+      "flow_cytometry_FACS": {
+        "n_papers": 2,
+        "fraction": 0.0606
+      },
+      "single_cell_analysis": {
+        "n_papers": 1,
+        "fraction": 0.0303
+      },
+      "electron_microscopy": {
+        "n_papers": 1,
+        "fraction": 0.0303
+      },
+      "proteomics_mass_spec": {
+        "n_papers": 1,
+        "fraction": 0.0303
+      },
+      "secretion_functional_assay": {
+        "n_papers": 1,
+        "fraction": 0.0303
+      }
+    },
+    "bone": {
+      "other": {
+        "n_papers": 3,
+        "fraction": 0.2727
+      },
+      "electron_microscopy": {
+        "n_papers": 2,
+        "fraction": 0.1818
+      },
+      "histology_morphology": {
+        "n_papers": 2,
+        "fraction": 0.1818
+      },
+      "flow_cytometry_FACS": {
+        "n_papers": 1,
+        "fraction": 0.0909
+      },
+      "immunostaining_IF_IHC": {
+        "n_papers": 1,
+        "fraction": 0.0909
+      },
+      "proliferation_viability": {
+        "n_papers": 1,
+        "fraction": 0.0909
+      }
+    }
+  },
+  "cross_type_cluster_usage": {
+    "other": {
+      "n_types": 26,
+      "n_papers": 294,
+      "types": [
+        "bladder",
+        "blood-brain-barrier",
+        "bone",
+        "cardiac",
+        "cerebral",
+        "cholangiocyte",
+        "endometrial",
+        "esophageal",
+        "fallopian-tube",
+        "gastric",
+        "hepatic",
+        "inner-ear",
+        "intestinal",
+        "kidney",
+        "liver",
+        "lung",
+        "mammary",
+        "neuromuscular",
+        "pancreatic",
+        "prostate",
+        "retinal",
+        "salivary-gland",
+        "skin",
+        "thyroid",
+        "tumor",
+        "vascular"
+      ]
+    },
+    "immunostaining_IF_IHC": {
+      "n_types": 26,
+      "n_papers": 110,
+      "types": [
+        "bladder",
+        "blood-brain-barrier",
+        "bone",
+        "cardiac",
+        "cerebral",
+        "cholangiocyte",
+        "endometrial",
+        "esophageal",
+        "fallopian-tube",
+        "gastric",
+        "hepatic",
+        "inner-ear",
+        "intestinal",
+        "kidney",
+        "liver",
+        "lung",
+        "mammary",
+        "neuromuscular",
+        "pancreatic",
+        "prostate",
+        "retinal",
+        "salivary-gland",
+        "skin",
+        "thyroid",
+        "tumor",
+        "vascular"
+      ]
+    },
+    "gene_expression_qPCR": {
+      "n_types": 23,
+      "n_papers": 97,
+      "types": [
+        "bladder",
+        "blood-brain-barrier",
+        "cardiac",
+        "cerebral",
+        "cholangiocyte",
+        "endometrial",
+        "esophageal",
+        "fallopian-tube",
+        "gastric",
+        "hepatic",
+        "inner-ear",
+        "intestinal",
+        "kidney",
+        "liver",
+        "lung",
+        "mammary",
+        "neuromuscular",
+        "pancreatic",
+        "retinal",
+        "salivary-gland",
+        "skin",
+        "thyroid",
+        "vascular"
+      ]
+    },
+    "histology_morphology": {
+      "n_types": 25,
+      "n_papers": 96,
+      "types": [
+        "bladder",
+        "blood-brain-barrier",
+        "bone",
+        "cardiac",
+        "cerebral",
+        "cholangiocyte",
+        "endometrial",
+        "esophageal",
+        "fallopian-tube",
+        "gastric",
+        "hepatic",
+        "inner-ear",
+        "intestinal",
+        "kidney",
+        "liver",
+        "lung",
+        "mammary",
+        "neuromuscular",
+        "pancreatic",
+        "retinal",
+        "salivary-gland",
+        "skin",
+        "thyroid",
+        "tumor",
+        "vascular"
+      ]
+    },
+    "proliferation_viability": {
+      "n_types": 21,
+      "n_papers": 70,
+      "types": [
+        "bladder",
+        "blood-brain-barrier",
+        "bone",
+        "cardiac",
+        "cerebral",
+        "cholangiocyte",
+        "endometrial",
+        "esophageal",
+        "fallopian-tube",
+        "gastric",
+        "hepatic",
+        "inner-ear",
+        "intestinal",
+        "kidney",
+        "liver",
+        "lung",
+        "mammary",
+        "pancreatic",
+        "retinal",
+        "thyroid",
+        "vascular"
+      ]
+    },
+    "secretion_functional_assay": {
+      "n_types": 15,
+      "n_papers": 48,
+      "types": [
+        "blood-brain-barrier",
+        "cardiac",
+        "cerebral",
+        "cholangiocyte",
+        "endometrial",
+        "gastric",
+        "hepatic",
+        "intestinal",
+        "liver",
+        "lung",
+        "neuromuscular",
+        "pancreatic",
+        "retinal",
+        "salivary-gland",
+        "thyroid"
+      ]
+    },
+    "RNA_sequencing": {
+      "n_types": 21,
+      "n_papers": 46,
+      "types": [
+        "bladder",
+        "cardiac",
+        "cerebral",
+        "cholangiocyte",
+        "esophageal",
+        "fallopian-tube",
+        "hepatic",
+        "inner-ear",
+        "intestinal",
+        "kidney",
+        "liver",
+        "lung",
+        "mammary",
+        "neuromuscular",
+        "pancreatic",
+        "retinal",
+        "salivary-gland",
+        "skin",
+        "thyroid",
+        "tumor",
+        "vascular"
+      ]
+    },
+    "calcium_imaging_electrophysiology": {
+      "n_types": 12,
+      "n_papers": 36,
+      "types": [
+        "blood-brain-barrier",
+        "cardiac",
+        "cerebral",
+        "cholangiocyte",
+        "inner-ear",
+        "intestinal",
+        "kidney",
+        "neuromuscular",
+        "pancreatic",
+        "retinal",
+        "salivary-gland",
+        "vascular"
+      ]
+    },
+    "flow_cytometry_FACS": {
+      "n_types": 14,
+      "n_papers": 25,
+      "types": [
+        "bladder",
+        "bone",
+        "cardiac",
+        "fallopian-tube",
+        "gastric",
+        "hepatic",
+        "inner-ear",
+        "intestinal",
+        "lung",
+        "mammary",
+        "pancreatic",
+        "retinal",
+        "salivary-gland",
+        "vascular"
+      ]
+    },
+    "western_blot": {
+      "n_types": 16,
+      "n_papers": 23,
+      "types": [
+        "blood-brain-barrier",
+        "cardiac",
+        "esophageal",
+        "fallopian-tube",
+        "gastric",
+        "hepatic",
+        "inner-ear",
+        "intestinal",
+        "kidney",
+        "mammary",
+        "pancreatic",
+        "retinal",
+        "salivary-gland",
+        "skin",
+        "tumor",
+        "vascular"
+      ]
+    },
+    "electron_microscopy": {
+      "n_types": 12,
+      "n_papers": 21,
+      "types": [
+        "bone",
+        "cardiac",
+        "endometrial",
+        "fallopian-tube",
+        "hepatic",
+        "intestinal",
+        "kidney",
+        "lung",
+        "neuromuscular",
+        "pancreatic",
+        "retinal",
+        "thyroid"
+      ]
+    },
+    "single_cell_analysis": {
+      "n_types": 10,
+      "n_papers": 15,
+      "types": [
+        "bladder",
+        "cardiac",
+        "cerebral",
+        "hepatic",
+        "kidney",
+        "lung",
+        "neuromuscular",
+        "retinal",
+        "salivary-gland",
+        "thyroid"
+      ]
+    },
+    "proteomics_mass_spec": {
+      "n_types": 3,
+      "n_papers": 3,
+      "types": [
+        "cardiac",
+        "cerebral",
+        "lung"
+      ]
+    }
+  },
+  "raw_top_terms": [
+    {
+      "term": "immunofluorescence",
+      "count": 40
+    },
+    {
+      "term": "gene expression",
+      "count": 27
+    },
+    {
+      "term": "cell viability",
+      "count": 26
+    },
+    {
+      "term": "immunohistochemistry",
+      "count": 24
+    },
+    {
+      "term": "immunofluorescence staining",
+      "count": 22
+    },
+    {
+      "term": "flow cytometry",
+      "count": 17
+    },
+    {
+      "term": "western blot",
+      "count": 17
+    },
+    {
+      "term": "morphology",
+      "count": 14
+    },
+    {
+      "term": "rt-qpcr",
+      "count": 14
+    },
+    {
+      "term": "histology",
+      "count": 13
+    },
+    {
+      "term": "transmission electron microscopy",
+      "count": 13
+    },
+    {
+      "term": "qrt-pcr",
+      "count": 13
+    },
+    {
+      "term": "proliferation",
+      "count": 12
+    },
+    {
+      "term": "immunostaining",
+      "count": 11
+    },
+    {
+      "term": "scanning electron microscopy",
+      "count": 10
+    },
+    {
+      "term": "qpcr",
+      "count": 10
+    },
+    {
+      "term": "scrna-seq",
+      "count": 9
+    },
+    {
+      "term": "rna sequencing",
+      "count": 8
+    },
+    {
+      "term": "insulin secretion",
+      "count": 8
+    },
+    {
+      "term": "albumin secretion",
+      "count": 8
+    },
+    {
+      "term": "apoptosis",
+      "count": 8
+    },
+    {
+      "term": "single-cell rna sequencing",
+      "count": 7
+    },
+    {
+      "term": "cell proliferation",
+      "count": 7
+    },
+    {
+      "term": "organoid size",
+      "count": 7
+    },
+    {
+      "term": "cytotoxicity",
+      "count": 6
+    },
+    {
+      "term": "live",
+      "count": 6
+    },
+    {
+      "term": "immunocytochemistry",
+      "count": 6
+    },
+    {
+      "term": "teer",
+      "count": 5
+    },
+    {
+      "term": "elisa",
+      "count": 5
+    },
+    {
+      "term": "rna-seq",
+      "count": 5
+    }
+  ]
+}

@@ -1,0 +1,186 @@
+{
+  "organoid_type": "lung",
+  "n_protocols": 33,
+  "base_media": {
+    "top": "mTeSR1",
+    "distribution": [
+      {
+        "value": "mTeSR1",
+        "count": 4,
+        "fraction": 0.222
+      },
+      {
+        "value": "DMEM/F12",
+        "count": 4,
+        "fraction": 0.222
+      },
+      {
+        "value": "Advanced DMEM/F-12",
+        "count": 2,
+        "fraction": 0.111
+      },
+      {
+        "value": "Advanced DMEM/F12",
+        "count": 2,
+        "fraction": 0.111
+      },
+      {
+        "value": "MTEC Plus medium",
+        "count": 1,
+        "fraction": 0.056
+      },
+      {
+        "value": "DMEM",
+        "count": 1,
+        "fraction": 0.056
+      },
+      {
+        "value": "mTeSR\u21221 medium",
+        "count": 1,
+        "fraction": 0.056
+      },
+      {
+        "value": "X-VIVO 15",
+        "count": 1,
+        "fraction": 0.056
+      },
+      {
+        "value": "mTesR1",
+        "count": 1,
+        "fraction": 0.056
+      },
+      {
+        "value": "Dulbecco\u2019s Modified Eagle\u2019s Medium/F12",
+        "count": 1,
+        "fraction": 0.056
+      }
+    ],
+    "n_reported": 18,
+    "n_missing": 15
+  },
+  "matrix": {
+    "top": "Matrigel",
+    "distribution": [
+      {
+        "value": "Matrigel",
+        "count": 19,
+        "fraction": 0.704
+      },
+      {
+        "value": "matrigel",
+        "count": 1,
+        "fraction": 0.037
+      },
+      {
+        "value": "Vitronectin XF",
+        "count": 1,
+        "fraction": 0.037
+      },
+      {
+        "value": "Matrigel\u2122",
+        "count": 1,
+        "fraction": 0.037
+      },
+      {
+        "value": "Corning\u00ae Matrigel\u00ae Growth Factor Reduced Basement Membrane Matrix",
+        "count": 1,
+        "fraction": 0.037
+      },
+      {
+        "value": "collagen",
+        "count": 1,
+        "fraction": 0.037
+      },
+      {
+        "value": "Corning Matrigel",
+        "count": 1,
+        "fraction": 0.037
+      },
+      {
+        "value": "Growth factor-reduced matrigel",
+        "count": 1,
+        "fraction": 0.037
+      },
+      {
+        "value": "BME",
+        "count": 1,
+        "fraction": 0.037
+      }
+    ],
+    "n_reported": 27,
+    "n_missing": 6
+  },
+  "source_cell_type": {
+    "top": "iPSC",
+    "distribution": [
+      {
+        "value": "iPSC",
+        "count": 15,
+        "fraction": 0.455
+      },
+      {
+        "value": "adult_stem_cell",
+        "count": 15,
+        "fraction": 0.455
+      },
+      {
+        "value": "other",
+        "count": 2,
+        "fraction": 0.061
+      },
+      {
+        "value": "ESC",
+        "count": 1,
+        "fraction": 0.03
+      }
+    ],
+    "n_reported": 33,
+    "n_missing": 0
+  },
+  "species": {
+    "top": "human",
+    "distribution": [
+      {
+        "value": "human",
+        "count": 24,
+        "fraction": 0.75
+      },
+      {
+        "value": "mouse",
+        "count": 4,
+        "fraction": 0.125
+      },
+      {
+        "value": "murine",
+        "count": 1,
+        "fraction": 0.031
+      },
+      {
+        "value": "canine",
+        "count": 1,
+        "fraction": 0.031
+      },
+      {
+        "value": "Artibeus jamaicensis",
+        "count": 1,
+        "fraction": 0.031
+      },
+      {
+        "value": "Mus musculus",
+        "count": 1,
+        "fraction": 0.031
+      }
+    ],
+    "n_reported": 32,
+    "n_missing": 1
+  },
+  "signaling_factors": [],
+  "media_supplements": [],
+  "small_molecules": [],
+  "timeline": {
+    "n_protocols_with_timeline": 4,
+    "stages": []
+  },
+  "universal_reagents": [],
+  "high_variability_reagents": []
+}

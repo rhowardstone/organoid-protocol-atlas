@@ -1,0 +1,176 @@
+{
+  "organoid_type": "hepatic",
+  "n_protocols": 29,
+  "base_media": {
+    "top": "Advanced DMEM/F12",
+    "distribution": [
+      {
+        "value": "Advanced DMEM/F12",
+        "count": 2,
+        "fraction": 0.095
+      },
+      {
+        "value": "DMEM/F12",
+        "count": 2,
+        "fraction": 0.095
+      },
+      {
+        "value": "CMGF + R/G",
+        "count": 1,
+        "fraction": 0.048
+      },
+      {
+        "value": "AdDMEM/F12",
+        "count": 1,
+        "fraction": 0.048
+      },
+      {
+        "value": "DMEM",
+        "count": 1,
+        "fraction": 0.048
+      },
+      {
+        "value": "Dulbecco\u2019s modified Eagle medium/F12 medium",
+        "count": 1,
+        "fraction": 0.048
+      },
+      {
+        "value": "mTSER complete medium",
+        "count": 1,
+        "fraction": 0.048
+      },
+      {
+        "value": "Dulbecco's modified Eagle medium (DMEM) high glucose",
+        "count": 1,
+        "fraction": 0.048
+      },
+      {
+        "value": "William\u2019s E medium",
+        "count": 1,
+        "fraction": 0.048
+      },
+      {
+        "value": "advanced DMEM/F-12",
+        "count": 1,
+        "fraction": 0.048
+      }
+    ],
+    "n_reported": 21,
+    "n_missing": 8
+  },
+  "matrix": {
+    "top": "Matrigel",
+    "distribution": [
+      {
+        "value": "Matrigel",
+        "count": 15,
+        "fraction": 0.652
+      },
+      {
+        "value": "collagen",
+        "count": 1,
+        "fraction": 0.043
+      },
+      {
+        "value": "growth factor reduced Matrigel",
+        "count": 1,
+        "fraction": 0.043
+      },
+      {
+        "value": "BME",
+        "count": 1,
+        "fraction": 0.043
+      },
+      {
+        "value": "Geltrex",
+        "count": 1,
+        "fraction": 0.043
+      },
+      {
+        "value": "Matrigel\u2122",
+        "count": 1,
+        "fraction": 0.043
+      },
+      {
+        "value": "geltrex",
+        "count": 1,
+        "fraction": 0.043
+      },
+      {
+        "value": "Basement Membrane Extract, Type 2",
+        "count": 1,
+        "fraction": 0.043
+      },
+      {
+        "value": "Matrigel Basement Membrane Matrix, LDEV-free",
+        "count": 1,
+        "fraction": 0.043
+      }
+    ],
+    "n_reported": 23,
+    "n_missing": 6
+  },
+  "source_cell_type": {
+    "top": "iPSC",
+    "distribution": [
+      {
+        "value": "iPSC",
+        "count": 15,
+        "fraction": 0.517
+      },
+      {
+        "value": "adult_stem_cell",
+        "count": 10,
+        "fraction": 0.345
+      },
+      {
+        "value": "primary_tissue",
+        "count": 3,
+        "fraction": 0.103
+      },
+      {
+        "value": "other",
+        "count": 1,
+        "fraction": 0.034
+      }
+    ],
+    "n_reported": 29,
+    "n_missing": 0
+  },
+  "species": {
+    "top": "human",
+    "distribution": [
+      {
+        "value": "human",
+        "count": 23,
+        "fraction": 0.852
+      },
+      {
+        "value": "mouse",
+        "count": 2,
+        "fraction": 0.074
+      },
+      {
+        "value": "Canis lupus familiaris",
+        "count": 1,
+        "fraction": 0.037
+      },
+      {
+        "value": "porcine",
+        "count": 1,
+        "fraction": 0.037
+      }
+    ],
+    "n_reported": 27,
+    "n_missing": 2
+  },
+  "signaling_factors": [],
+  "media_supplements": [],
+  "small_molecules": [],
+  "timeline": {
+    "n_protocols_with_timeline": 5,
+    "stages": []
+  },
+  "universal_reagents": [],
+  "high_variability_reagents": []
+}

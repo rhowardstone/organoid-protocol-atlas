@@ -1,0 +1,156 @@
+{
+  "organoid_type": "endometrial",
+  "n_protocols": 20,
+  "base_media": {
+    "top": "DMEM/F12",
+    "distribution": [
+      {
+        "value": "DMEM/F12",
+        "count": 3,
+        "fraction": 0.231
+      },
+      {
+        "value": "RPMI 1640",
+        "count": 3,
+        "fraction": 0.231
+      },
+      {
+        "value": "human endometrial media (hEOM)",
+        "count": 1,
+        "fraction": 0.077
+      },
+      {
+        "value": "advanced DMEM",
+        "count": 1,
+        "fraction": 0.077
+      },
+      {
+        "value": "Dulbecco's Modified Eagle Medium",
+        "count": 1,
+        "fraction": 0.077
+      },
+      {
+        "value": "serum-free medium",
+        "count": 1,
+        "fraction": 0.077
+      },
+      {
+        "value": "Advanced DMEM/F12",
+        "count": 1,
+        "fraction": 0.077
+      },
+      {
+        "value": "ExM",
+        "count": 1,
+        "fraction": 0.077
+      },
+      {
+        "value": "advanced DMEM/F-12",
+        "count": 1,
+        "fraction": 0.077
+      }
+    ],
+    "n_reported": 13,
+    "n_missing": 7
+  },
+  "matrix": {
+    "top": "Matrigel",
+    "distribution": [
+      {
+        "value": "Matrigel",
+        "count": 12,
+        "fraction": 0.75
+      },
+      {
+        "value": "basement membrane extract (BME/Geltrex)",
+        "count": 1,
+        "fraction": 0.062
+      },
+      {
+        "value": "Cultrex Reduced Growth Factor Basement Membrane Extract",
+        "count": 1,
+        "fraction": 0.062
+      },
+      {
+        "value": "Basement Membrane Extract Type II",
+        "count": 1,
+        "fraction": 0.062
+      },
+      {
+        "value": "Growth Factor Reduced Matrigel",
+        "count": 1,
+        "fraction": 0.062
+      }
+    ],
+    "n_reported": 16,
+    "n_missing": 4
+  },
+  "source_cell_type": {
+    "top": "adult_stem_cell",
+    "distribution": [
+      {
+        "value": "adult_stem_cell",
+        "count": 13,
+        "fraction": 0.65
+      },
+      {
+        "value": "primary_tissue",
+        "count": 3,
+        "fraction": 0.15
+      },
+      {
+        "value": "iPSC",
+        "count": 3,
+        "fraction": 0.15
+      },
+      {
+        "value": "other",
+        "count": 1,
+        "fraction": 0.05
+      }
+    ],
+    "n_reported": 20,
+    "n_missing": 0
+  },
+  "species": {
+    "top": "human",
+    "distribution": [
+      {
+        "value": "human",
+        "count": 14,
+        "fraction": 0.778
+      },
+      {
+        "value": "mouse",
+        "count": 1,
+        "fraction": 0.056
+      },
+      {
+        "value": "sheep",
+        "count": 1,
+        "fraction": 0.056
+      },
+      {
+        "value": "Bos taurus",
+        "count": 1,
+        "fraction": 0.056
+      },
+      {
+        "value": "ovine",
+        "count": 1,
+        "fraction": 0.056
+      }
+    ],
+    "n_reported": 18,
+    "n_missing": 2
+  },
+  "signaling_factors": [],
+  "media_supplements": [],
+  "small_molecules": [],
+  "timeline": {
+    "n_protocols_with_timeline": 2,
+    "stages": []
+  },
+  "universal_reagents": [],
+  "high_variability_reagents": []
+}
