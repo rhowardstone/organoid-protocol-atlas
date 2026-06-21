@@ -54,6 +54,23 @@ def test_consensus_list_finds_files(tmp_path, monkeypatch):
     assert "cerebral" in types
 
 
+def test_consensus_list_skips_all_aggregate_list(tmp_path, monkeypatch):
+    """consensus_all.json is the aggregate LIST (not a per-type dict). The index must
+    skip it instead of calling .get() on a list — regression for the live 500
+    ('list' object has no attribute 'get')."""
+    monkeypatch.setattr(ae, "ANALYSIS_DIR", tmp_path)
+    (tmp_path / "consensus_intestinal.json").write_text(
+        json.dumps({"organoid_type": "intestinal", "n_protocols": 12})
+    )
+    (tmp_path / "consensus_all.json").write_text(
+        json.dumps([{"organoid_type": "intestinal"}, {"organoid_type": "cerebral"}])
+    )
+    data, status = ae.handle_consensus_list()
+    assert status == 200                                   # no 500
+    types = {r["organoid_type"] for r in data["available"]}
+    assert types == {"intestinal"}                         # 'all' aggregate excluded
+
+
 # --------------------------------------------------------------------------- #
 # handle_consensus
 # --------------------------------------------------------------------------- #
