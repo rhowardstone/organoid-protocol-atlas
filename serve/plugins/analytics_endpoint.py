@@ -36,6 +36,7 @@ Routes (all return JSON; read-only, no writes):
   GET /analytics/type-maturity               -- field maturity classification per organoid type: first_year, n_years_active, trajectory (accelerating/stable/slowing), maturity_tier; live from protocols.jsonl
   GET /analytics/reagent-cooccurrence        -- pairwise signaling-factor co-occurrence: top 100 pairs by n_papers with Jaccard; ?q= for one canonical; ?type= filter; live from reagents.jsonl
   GET /analytics/supplement-breakdown        -- per-type and cross-type breakdown of supplements (kind=supplement): top 50 globally, cross-type list, per-type top 10; ?q= and ?type= filters; live from reagents.jsonl
+  GET /analytics/role-breakdown              -- normalized functional role distribution for signaling reagents: signaling_factor/growth_factor/differentiation/inhibitor/agonist etc.; ?q= for one role; ?type= filter; live from reagents.jsonl
   GET /analytics                                -- index of available analytics
 
 All endpoints degrade gracefully — if the pre-computed file doesn't exist they return
@@ -3060,6 +3061,137 @@ def handle_supplement_breakdown(
     }, 200
 
 
+# Normalized functional role categories for signaling reagents
+_ROLE_MAP: dict[str, str] = {
+    "signaling factor": "signaling_factor",
+    "signaling": "signaling_factor",
+    "signaling pathway": "signaling_factor",
+    "growth factor": "growth_factor",
+    "differentiation": "differentiation",
+    "induction": "differentiation",
+    "morphogen": "differentiation",
+    "inhibitor": "inhibitor",
+    "inhibition": "inhibitor",
+    "supplement": "supplement",
+    "supplementation": "supplement",
+    "treatment": "treatment",
+    "stimulation": "treatment",
+    "activation": "agonist",
+    "agonist": "agonist",
+    "pathway agonist": "agonist",
+    "conditioned medium": "conditioned_medium",
+    "proliferation": "proliferation",
+}
+
+
+def _normalize_role(raw: str | None) -> str:
+    if raw is None or str(raw).lower().strip() in ("null", "not stated", ""):
+        return "not_stated"
+    return _ROLE_MAP.get(str(raw).strip().lower(), "other")
+
+
+def handle_role_breakdown(
+    query: str | None,
+    organoid_type: str | None,
+) -> tuple[dict, int]:
+    """Functional role distribution for signaling (kind=signaling) reagents.
+
+    Without params: global role distribution (normalized) + per-type breakdown.
+    ?q=differentiation: top canonicals assigned that normalized role, sorted by n_papers.
+    ?type=kidney: role distribution for one organoid type.
+    Roles are normalized: signaling_factor / growth_factor / differentiation /
+    inhibitor / supplement / treatment / agonist / conditioned_medium /
+    proliferation / other / not_stated.
+    """
+    if not REAGENTS_JSONL.exists():
+        return {
+            "error": "reagents.jsonl not found",
+            "hint": "Run: python pipeline/export_public.py",
+        }, 404
+
+    reagents = [
+        json.loads(line)
+        for line in REAGENTS_JSONL.read_text().splitlines()
+        if line.strip()
+    ]
+    rows = [r for r in reagents if r.get("kind") == "signaling"]
+    if organoid_type:
+        rows = [r for r in rows if r.get("organoid_type") == organoid_type]
+
+    if not rows:
+        return {
+            "error": f"No signaling records for organoid type {organoid_type!r}" if organoid_type else "No signaling records found",
+            "hint": "use /analytics/role-breakdown without ?type= to see all types",
+        }, 404
+
+    n_total = len(rows)
+
+    if query:
+        # Return top canonicals for this normalized role
+        known_roles = set(_ROLE_MAP.values()) | {"other", "not_stated"}
+        if query not in known_roles:
+            return {
+                "error": f"Unknown role {query!r}",
+                "valid_roles": sorted(known_roles),
+            }, 404
+        from collections import defaultdict
+        canon_papers: dict[str, set] = defaultdict(set)
+        for r in rows:
+            if _normalize_role(r.get("role")) == query and r.get("canonical"):
+                canon_papers[r["canonical"]].add(r["pmcid"])
+        top = sorted(
+            [{"canonical": c, "n_papers": len(p), "n_records": len([x for x in rows if x.get("canonical") == c and _normalize_role(x.get("role")) == query])}
+             for c, p in canon_papers.items()],
+            key=lambda x: (-x["n_papers"], -x["n_records"]),
+        )
+        return {
+            "role": query,
+            "organoid_type": organoid_type,
+            "n_canonicals": len(top),
+            "top_canonicals": top[:50],
+        }, 200
+
+    # Global role distribution
+    from collections import Counter, defaultdict
+    role_counter: Counter = Counter()
+    for r in rows:
+        role_counter[_normalize_role(r.get("role"))] += 1
+
+    role_dist = sorted(
+        [
+            {
+                "role": role,
+                "n_records": count,
+                "pct": round(count / n_total * 100, 1),
+            }
+            for role, count in role_counter.items()
+        ],
+        key=lambda x: -x["n_records"],
+    )
+    n_with_role = n_total - role_counter.get("not_stated", 0)
+
+    # Per-type breakdown
+    type_role: dict[str, Counter] = defaultdict(Counter)
+    for r in rows:
+        type_role[r.get("organoid_type", "unknown")][_normalize_role(r.get("role"))] += 1
+
+    per_type = {
+        typ: sorted(
+            [{"role": role, "n_records": count} for role, count in cntr.items()],
+            key=lambda x: -x["n_records"],
+        )
+        for typ, cntr in sorted(type_role.items(), key=lambda kv: -sum(kv[1].values()))
+    }
+
+    return {
+        "n_records_total": n_total,
+        "n_with_role": n_with_role,
+        "organoid_type": organoid_type,
+        "role_distribution": role_dist,
+        "per_type": per_type,
+    }, 200
+
+
 def handle_index() -> tuple[dict, int]:
     """Analytics endpoint index."""
     return {
@@ -3098,6 +3230,7 @@ def handle_index() -> tuple[dict, int]:
             "/analytics/type-maturity": "field maturity classification per organoid type: first_year, n_years_active, n_papers_total, trajectory (accelerating/stable/slowing), maturity_tier (established/developing/emerging); ?type=kidney for one type",
             "/analytics/reagent-cooccurrence": "pairwise signaling-factor co-occurrence: top pairs by n_papers with Jaccard similarity; ?q=EGF for all partners of one canonical; ?type= for one organoid type; ?min_papers= threshold (default 3)",
             "/analytics/supplement-breakdown": "per-type and cross-type breakdown of supplement (kind=supplement) canonicals: global top 50 by n_papers, cross-type list (>= min_types organoid types), per-type top 10; ?q=GlutaMAX for one canonical; ?type=kidney for one type; ?min_types= threshold (default 10)",
+            "/analytics/role-breakdown": "normalized functional role distribution for signaling (kind=signaling) reagents: signaling_factor/growth_factor/differentiation/inhibitor/supplement/treatment/agonist/conditioned_medium/proliferation/other/not_stated; ?q=differentiation for top canonicals with that role; ?type= filter",
             "/analytics/assay-endpoints": "assay endpoint cluster summary (per type + cross-type)",
             "/analytics/quality": "per-paper quality scores (gold/silver/bronze) + corpus summary",
             "/analytics/mior": "MIOR completeness report (Minimum Information About an Organoid Research)",
@@ -3353,6 +3486,13 @@ async def route_type_maturity(datasette, request):
     return Response.json(data, status=status)
 
 
+async def route_role_breakdown(datasette, request):
+    query = request.args.get("q") or None
+    organoid_type = request.args.get("type") or None
+    data, status = handle_role_breakdown(query, organoid_type)
+    return Response.json(data, status=status)
+
+
 async def route_supplement_breakdown(datasette, request):
     query = request.args.get("q") or None
     organoid_type = request.args.get("type") or None
@@ -3435,6 +3575,7 @@ def register_routes():
         (r"^/analytics/type-maturity$", route_type_maturity),
         (r"^/analytics/reagent-cooccurrence$", route_reagent_cooccurrence),
         (r"^/analytics/supplement-breakdown$", route_supplement_breakdown),
+        (r"^/analytics/role-breakdown$", route_role_breakdown),
         (r"^/analytics/journal-breakdown$", route_journal_breakdown),
         (r"^/analytics/concentration-by-type$", route_concentration_by_type),
         (r"^/analytics/kgx-summary$", route_kgx_summary),

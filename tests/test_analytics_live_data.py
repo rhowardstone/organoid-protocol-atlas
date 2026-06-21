@@ -598,3 +598,24 @@ def test_live_sb_glutamax_cross_type():
     assert data["query_canonical"] == "GlutaMAX"
     assert data["n_types"] >= 10
     assert data["n_papers_total"] >= 50
+
+
+@require_reagents
+def test_live_rb_returns_200():
+    data, status = ae.handle_role_breakdown(None, None)
+    assert status == 200
+    assert data["n_records_total"] >= 1000
+    roles = {r["role"] for r in data["role_distribution"]}
+    assert "growth_factor" in roles
+    assert "signaling_factor" in roles
+    assert "inhibitor" in roles
+
+
+@require_reagents
+def test_live_rb_differentiation_has_canonicals():
+    data, status = ae.handle_role_breakdown("differentiation", None)
+    assert status == 200
+    assert data["n_canonicals"] >= 3
+    # BMP4 is a key differentiation factor in many organoid types
+    canon_names = {c["canonical"] for c in data["top_canonicals"]}
+    assert len(canon_names) >= 3

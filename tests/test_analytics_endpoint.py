@@ -4123,3 +4123,154 @@ def test_sb_per_type_present(tmp_path, monkeypatch):
 def test_sb_index_entry():
     data, _ = ae.handle_index()
     assert "/analytics/supplement-breakdown" in data["endpoints"]
+
+
+# ---------------------------------------------------------------------------
+# Route 42: /analytics/role-breakdown
+# ---------------------------------------------------------------------------
+
+def _write_reagents_for_rb(path, rows):
+    base = {
+        "pmcid": "PMC1", "organoid_type": "intestinal",
+        "kind": "signaling", "canonical": "EGF",
+        "name": "EGF", "role": "growth factor",
+        "value": None, "unit": None, "canonical_unit": None,
+        "grounded": False, "evidence_quote": None,
+        "figure_confirmed": False, "suspect_unit": False,
+        "doi": None, "id": "r1",
+    }
+    path.write_text("\n".join(json.dumps({**base, **r}) for r in rows))
+
+
+def _patch_rb(monkeypatch, path):
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", path)
+
+
+# Fixture:
+#  PMC1 intestinal: EGF (growth factor), Noggin (inhibitor), CHIR99021 (signaling)
+#  PMC2 kidney:     BMP4 (differentiation), Wnt (signaling factor), FGF2 (growth factor)
+#  PMC3 cerebral:   EGF (growth factor), FGF2 (growth factor), BDNF (None role)
+#  PMC4 intestinal: supplement B27 (kind=supplement, excluded)
+_RB_ROWS = [
+    {"pmcid": "PMC1", "organoid_type": "intestinal", "kind": "signaling", "canonical": "EGF",      "role": "growth factor"},
+    {"pmcid": "PMC1", "organoid_type": "intestinal", "kind": "signaling", "canonical": "Noggin",   "role": "inhibitor"},
+    {"pmcid": "PMC1", "organoid_type": "intestinal", "kind": "signaling", "canonical": "CHIR99021","role": "signaling"},
+    {"pmcid": "PMC2", "organoid_type": "kidney",     "kind": "signaling", "canonical": "BMP4",     "role": "differentiation"},
+    {"pmcid": "PMC2", "organoid_type": "kidney",     "kind": "signaling", "canonical": "Wnt",      "role": "signaling factor"},
+    {"pmcid": "PMC2", "organoid_type": "kidney",     "kind": "signaling", "canonical": "FGF2",     "role": "growth factor"},
+    {"pmcid": "PMC3", "organoid_type": "cerebral",   "kind": "signaling", "canonical": "EGF",      "role": "growth factor"},
+    {"pmcid": "PMC3", "organoid_type": "cerebral",   "kind": "signaling", "canonical": "FGF2",     "role": "growth factor"},
+    {"pmcid": "PMC3", "organoid_type": "cerebral",   "kind": "signaling", "canonical": "BDNF",     "role": None},
+    {"pmcid": "PMC4", "organoid_type": "intestinal", "kind": "supplement","canonical": "B27",      "role": "supplement"},
+]
+# Expected (signaling only, 9 rows):
+#   growth_factor:   EGF×2 (PMC1+PMC3) + FGF2×2 (PMC2+PMC3) + EGF(PMC3) = 5 records (EGF, EGF, FGF2, FGF2 mapped to growth_factor)
+#   Actually: "growth factor" → growth_factor: EGF(PMC1), FGF2(PMC2), EGF(PMC3), FGF2(PMC3) = 4 records
+#   inhibitor:       Noggin(PMC1) = 1 record
+#   signaling_factor: CHIR99021(PMC1 "signaling"), Wnt(PMC2 "signaling factor") = 2 records
+#   differentiation: BMP4(PMC2) = 1 record
+#   not_stated:      BDNF(PMC3 None) = 1 record
+#   Total signaling rows = 9
+
+
+def test_rb_returns_200(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_rb(p, _RB_ROWS)
+    _patch_rb(monkeypatch, p)
+    data, status = ae.handle_role_breakdown(None, None)
+    assert status == 200
+    assert "role_distribution" in data
+    assert "per_type" in data
+    assert "n_records_total" in data
+
+
+def test_rb_n_records_total(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_rb(p, _RB_ROWS)
+    _patch_rb(monkeypatch, p)
+    # Only signaling kind, 9 rows (B27 supplement excluded)
+    data, _ = ae.handle_role_breakdown(None, None)
+    assert data["n_records_total"] == 9
+
+
+def test_rb_top_role_is_growth_factor(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_rb(p, _RB_ROWS)
+    _patch_rb(monkeypatch, p)
+    data, _ = ae.handle_role_breakdown(None, None)
+    assert data["role_distribution"][0]["role"] == "growth_factor"
+    assert data["role_distribution"][0]["n_records"] == 4
+
+
+def test_rb_normalization_signaling_maps_correctly(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_rb(p, _RB_ROWS)
+    _patch_rb(monkeypatch, p)
+    data, _ = ae.handle_role_breakdown(None, None)
+    roles = {r["role"]: r["n_records"] for r in data["role_distribution"]}
+    # "signaling" + "signaling factor" → both map to signaling_factor = 2 records
+    assert roles.get("signaling_factor") == 2
+
+
+def test_rb_not_stated_for_none_role(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_rb(p, _RB_ROWS)
+    _patch_rb(monkeypatch, p)
+    data, _ = ae.handle_role_breakdown(None, None)
+    roles = {r["role"]: r["n_records"] for r in data["role_distribution"]}
+    assert roles.get("not_stated") == 1
+
+
+def test_rb_n_with_role(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_rb(p, _RB_ROWS)
+    _patch_rb(monkeypatch, p)
+    data, _ = ae.handle_role_breakdown(None, None)
+    # 9 total, 1 not_stated → 8 with role
+    assert data["n_with_role"] == 8
+
+
+def test_rb_type_filter_kidney(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_rb(p, _RB_ROWS)
+    _patch_rb(monkeypatch, p)
+    data, status = ae.handle_role_breakdown(None, "kidney")
+    assert status == 200
+    assert data["n_records_total"] == 3  # BMP4, Wnt, FGF2
+    roles = {r["role"] for r in data["role_distribution"]}
+    assert "growth_factor" in roles
+    assert "signaling_factor" in roles
+    assert "differentiation" in roles
+
+
+def test_rb_type_filter_no_data_returns_404(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_rb(p, _RB_ROWS)
+    _patch_rb(monkeypatch, p)
+    _, status = ae.handle_role_breakdown(None, "NOTYPE_XYZ")
+    assert status == 404
+
+
+def test_rb_query_growth_factor_returns_canonicals(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_rb(p, _RB_ROWS)
+    _patch_rb(monkeypatch, p)
+    data, status = ae.handle_role_breakdown("growth_factor", None)
+    assert status == 200
+    assert data["role"] == "growth_factor"
+    canon_names = {c["canonical"] for c in data["top_canonicals"]}
+    assert "EGF" in canon_names
+    assert "FGF2" in canon_names
+
+
+def test_rb_query_unknown_role_returns_404(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_rb(p, _RB_ROWS)
+    _patch_rb(monkeypatch, p)
+    _, status = ae.handle_role_breakdown("UNKNOWN_ROLE_XYZ", None)
+    assert status == 404
+
+
+def test_rb_index_entry():
+    data, _ = ae.handle_index()
+    assert "/analytics/role-breakdown" in data["endpoints"]
