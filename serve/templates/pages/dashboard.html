@@ -368,6 +368,7 @@ async function load() {
     ['/analytics/canonical-type-adoption', 'Reagent diffusion: n distinct organoid types using each canonical by year; first_year, n_types_current, year_peak; ?q=EGF for per-year type list + cumulative counts; ?min_types= threshold (default 5)'],
     ['/analytics/unit-normalization-report', 'Audit of raw unit string → canonical_unit normalization clusters (e.g. "uM" ← [μM, µM, µm, uM, μmol/L, ...]); sorted by n_raw_strings; ?q=uM for detailed breakdown + top canonicals'],
     ['/analytics/source-cell-reagent-profile', 'Characteristic reagents by source_cell_type (iPSC/adult_stem_cell/primary_tissue/ESC); top 20 per source + pairwise Jaccard; ?source=iPSC for top 30 with exclusive_to_source flags; ?min_papers= threshold (default 3)'],
+    ['/analytics/protocol-completeness', 'Per-paper completeness scores (0-6) across species/matrix/base_media/passaging/timeline/assay_endpoints; histogram + per-type ranking + top/bottom 20 papers; ?type= for one type'],
     ['/analytics/mior',                 'MIOR completeness report (12 items, 5 modules)'],
     ['/analytics/assay-endpoints',      'Assay endpoint cluster summary (per-type + cross-type)'],
     ['/analytics/failure-modes',        'Failure mode cluster summary across the corpus'],

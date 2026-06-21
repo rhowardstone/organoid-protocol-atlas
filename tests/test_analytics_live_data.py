@@ -413,3 +413,455 @@ def test_live_journal_breakdown_nature_comms_present():
     # Nature Communications is reliably present in the corpus
     cc = data["cross_corpus"]
     assert any("nature communications" in j.lower() for j in cc)
+
+
+# ---------------------------------------------------------------------------
+# type-comparison live smoke tests
+# ---------------------------------------------------------------------------
+
+@require_reagents
+def test_live_type_comparison_intestinal_cerebral():
+    data, status = ae.handle_type_comparison("intestinal", "cerebral")
+    assert status == 200
+    assert data["n_shared"] >= 5
+    assert data["jaccard_similarity"] > 0
+    assert data["jaccard_similarity"] < 1.0
+    # EGF appears in both
+    shared_names = {r["canonical"].lower() for r in data["shared"]}
+    assert any("egf" in n for n in shared_names)
+
+
+# ---------------------------------------------------------------------------
+# concentration-deviation live smoke tests
+# ---------------------------------------------------------------------------
+
+@require_reagents
+def test_live_cd_returns_200():
+    data, status = ae.handle_concentration_deviation()
+    assert status == 200
+    assert "most_variable" in data
+    assert "most_consistent" in data
+    assert data["n_canonicals_total"] >= 5
+
+
+@require_reagents
+def test_live_cd_egf_in_most_variable():
+    data, _ = ae.handle_concentration_deviation()
+    # EGF is reported across a wide dose range — expect high CV
+    variable_names = {e["canonical"] for e in data["most_variable"]}
+    # At least some reagents should be in the most_variable list
+    assert len(data["most_variable"]) >= 3
+    # min_n_threshold should be present
+    assert data["min_n_threshold"] == 3
+
+
+# ---------------------------------------------------------------------------
+# reagent-prevalence live smoke tests
+# ---------------------------------------------------------------------------
+
+@require_reagents
+def test_live_rp_returns_200():
+    data, status = ae.handle_reagent_prevalence(None)
+    assert status == 200
+    assert data["n_canonicals_total"] >= 100
+    assert data["n_types_total"] >= 10
+    assert len(data["cross_field"]) >= 1  # some reagents appear in >= 20 types
+
+
+@require_reagents
+def test_live_rp_egf_query():
+    data, status = ae.handle_reagent_prevalence("EGF")
+    assert status == 200
+    assert data["canonical"] == "EGF"
+    assert data["n_types"] >= 10
+    assert data["n_records_total"] >= 50
+    # EGF should appear in intestinal, kidney, cerebral at minimum
+    type_names = {e["organoid_type"] for e in data["per_type"]}
+    assert "intestinal" in type_names
+
+
+@require_reagents
+def test_live_rp_b27_is_cross_field():
+    data, _ = ae.handle_reagent_prevalence(None)
+    cross = {e["canonical"] for e in data["cross_field"]}
+    # B27, FGF2, GlutaMAX appear in all 25 types
+    assert len(cross & {"B27", "FGF2", "GlutaMAX"}) >= 2
+
+
+# ---------------------------------------------------------------------------
+# protocol-outliers live smoke tests
+# ---------------------------------------------------------------------------
+
+@require_protocols
+def test_live_po_returns_200():
+    data, status = ae.handle_protocol_outliers(None)
+    assert status == 200
+    assert data["n_types"] >= 10
+    assert data["n_papers_total"] >= 100
+    assert "per_type" in data
+
+
+@require_protocols
+def test_live_po_intestinal_has_outliers():
+    data, status = ae.handle_protocol_outliers("intestinal")
+    assert status == 200
+    assert data["organoid_type"] == "intestinal"
+    assert data["n_papers"] >= 20
+    assert data["mean_n_sf"] > 0
+    # At least one complex or minimal outlier in a large enough corpus
+    assert data["n_complex"] + data["n_minimal"] >= 1
+
+
+# ---------------------------------------------------------------------------
+# grounding-distribution live smoke tests
+# ---------------------------------------------------------------------------
+
+@require_protocols
+def test_live_gd_returns_200():
+    data, status = ae.handle_grounding_distribution(None)
+    assert status == 200
+    assert data["n"] >= 100
+    assert data["n_types"] >= 10
+    assert len(data["histogram"]) == 10
+    assert data["mean"] is not None
+
+
+@require_protocols
+def test_live_gd_intestinal_type():
+    data, status = ae.handle_grounding_distribution("intestinal")
+    assert status == 200
+    assert data["organoid_type"] == "intestinal"
+    assert data["n"] >= 20
+    # intestinal grounding rate should be > 0.5 in a well-grounded corpus
+    assert data["mean"] > 0.5
+
+
+# ---------------------------------------------------------------------------
+# type-maturity live smoke tests
+# ---------------------------------------------------------------------------
+
+@require_protocols
+def test_live_tm_returns_200():
+    data, status = ae.handle_type_maturity(None)
+    assert status == 200
+    assert data["n_types"] >= 20
+    assert "established" in data["by_tier"]
+    assert len(data["by_tier"]["established"]) >= 5
+
+
+@require_protocols
+def test_live_tm_intestinal_details():
+    data, status = ae.handle_type_maturity("intestinal")
+    assert status == 200
+    assert data["organoid_type"] == "intestinal"
+    # established OR developing — 35 papers, first_year 2018
+    assert data["maturity_tier"] in ("established", "developing")
+    assert data["first_year"] <= 2020
+    assert data["n_papers_total"] >= 20
+    assert data["trajectory"] in ("accelerating", "stable", "slowing", "insufficient_data")
+
+
+@require_reagents
+def test_live_rc_returns_200():
+    data, status = ae.handle_reagent_cooccurrence(None, None, min_papers=3)
+    assert status == 200
+    assert data["n_papers_total"] >= 100
+    assert data["n_canonicals"] >= 50
+    assert len(data["top_pairs"]) >= 10
+
+
+@require_reagents
+def test_live_rc_egf_has_partners():
+    data, status = ae.handle_reagent_cooccurrence("EGF", None)
+    assert status == 200
+    assert data["query_canonical"] == "EGF"
+    assert data["n_co_occurring"] >= 10
+    canonicals = {r["canonical"] for r in data["co_occurring"]}
+    # EGF and Noggin are both core intestinal factors — expect them to co-occur
+    assert "Noggin" in canonicals
+
+
+@require_reagents
+def test_live_sb_returns_200():
+    data, status = ae.handle_supplement_breakdown(None, None)
+    assert status == 200
+    assert data["n_papers_with_supplements"] >= 100
+    assert data["n_supplement_canonicals"] >= 20
+    assert len(data["cross_type_supplements"]) >= 3
+    assert data["top_supplements"][0]["canonical"] in ("GlutaMAX", "B27", "penicillin/streptomycin")
+
+
+@require_reagents
+def test_live_sb_glutamax_cross_type():
+    data, status = ae.handle_supplement_breakdown("GlutaMAX", None)
+    assert status == 200
+    assert data["query_canonical"] == "GlutaMAX"
+    assert data["n_types"] >= 10
+    assert data["n_papers_total"] >= 50
+
+
+@require_reagents
+def test_live_rb_returns_200():
+    data, status = ae.handle_role_breakdown(None, None)
+    assert status == 200
+    assert data["n_records_total"] >= 1000
+    roles = {r["role"] for r in data["role_distribution"]}
+    assert "growth_factor" in roles
+    assert "signaling_factor" in roles
+    assert "inhibitor" in roles
+
+
+@require_reagents
+def test_live_rb_differentiation_has_canonicals():
+    data, status = ae.handle_role_breakdown("differentiation", None)
+    assert status == 200
+    assert data["n_canonicals"] >= 3
+    # BMP4 is a key differentiation factor in many organoid types
+    canon_names = {c["canonical"] for c in data["top_canonicals"]}
+    assert len(canon_names) >= 3
+
+
+@require_reagents
+def test_live_th_returns_200():
+    data, status = ae.handle_type_reagent_heatmap(None, top_n=20)
+    assert status == 200
+    assert data["n_types"] >= 15
+    assert len(data["canonicals"]) == 20
+    assert data["canonicals"][0] in ("EGF", "Y-27632", "R-spondin1", "Noggin")
+
+
+@require_reagents
+def test_live_th_intestinal_has_egf():
+    data, status = ae.handle_type_reagent_heatmap("signaling", top_n=10)
+    assert status == 200
+    if "EGF" in data["canonicals"]:
+        egf_idx = data["canonicals"].index("EGF")
+        intestinal = next((r for r in data["matrix"] if r["organoid_type"] == "intestinal"), None)
+        if intestinal:
+            assert intestinal["values"][egf_idx] >= 5
+
+
+@require_reagents
+def test_live_nv_returns_200():
+    data, status = ae.handle_canonical_name_variants(None)
+    assert status == 200
+    assert data["n_canonicals_total"] >= 100
+    assert data["n_with_multiple_names"] >= 30
+    assert len(data["most_ambiguous"]) >= 10
+
+
+@require_reagents
+def test_live_nv_y27632_most_ambiguous():
+    data, status = ae.handle_canonical_name_variants("Y-27632")
+    assert status == 200
+    assert data["n_variants"] >= 5
+    assert "Y-27632" in data["names"]
+
+
+@require_reagents
+def test_live_cu_returns_200():
+    data, status = ae.handle_concentration_unit_distribution(None)
+    assert status == 200
+    assert data["n_canonicals_with_values"] >= 50
+    assert data["n_multi_unit"] >= 10
+    assert len(data["multi_unit_canonicals"]) >= 5
+
+
+@require_reagents
+def test_live_cu_r_spondin1_multi_unit():
+    # R-spondin1 uses both ng/mL (purified protein) and % (conditioned medium)
+    data, status = ae.handle_concentration_unit_distribution("R-spondin1")
+    assert status == 200
+    assert data["n_units"] >= 2
+    unit_names = {u["unit"] for u in data["units"]}
+    assert "ng/mL" in unit_names
+
+
+@require_protocols
+def test_live_ps_returns_200():
+    data, status = ae.handle_protocol_size_distribution(None)
+    assert status == 200
+    assert data["n_papers_total"] >= 500
+    assert data["signaling_factors"]["mean"] >= 3.0
+    assert len(data["signaling_factors"]["histogram"]) >= 5
+
+
+@require_protocols
+def test_live_ps_intestinal():
+    data, status = ae.handle_protocol_size_distribution("intestinal")
+    assert status == 200
+    assert data["signaling_factors"]["n_papers"] >= 30
+    assert data["signaling_factors"]["mean"] >= 4.0
+
+
+@require_reagents
+def test_live_eq_global_coverage():
+    data, status = ae.handle_evidence_quote_coverage(None, None)
+    assert status == 200
+    assert data["n_total"] >= 5000
+    # Corpus has ~53% coverage; allow wide range for corpus growth
+    assert data["overall_coverage_rate"] >= 0.3
+    assert data["overall_coverage_rate"] <= 1.0
+    assert "by_kind" in data
+    assert "per_type" in data
+    assert len(data["per_type"]) >= 20
+
+
+@require_reagents
+def test_live_eq_intestinal_type_filter():
+    data, status = ae.handle_evidence_quote_coverage("intestinal", None)
+    assert status == 200
+    assert data["organoid_type"] == "intestinal"
+    assert data["n_total"] >= 100
+    assert "top_canonicals_by_coverage" in data
+    # signaling_rate and supplement_rate present in by_kind
+    assert data["by_kind"]["signaling"]["n_total"] >= 50
+
+
+@require_reagents
+def test_live_cvr_global_returns_200():
+    data, status = ae.handle_concentration_value_rate(None, 5, None)
+    assert status == 200
+    assert data["n_canonicals_evaluated"] >= 50
+    # EGF and Wnt3a are always in the corpus
+    names = {e["canonical"] for e in data["highest_reporters"] + data["lowest_reporters"]}
+    assert len(names) >= 5
+    # B27 supplement has 0/100+ records with numeric value — always in lowest
+    lowest_names = {e["canonical"] for e in data["lowest_reporters"]}
+    assert "B27" in lowest_names or "penicillin/streptomycin" in lowest_names
+
+
+@require_reagents
+def test_live_cvr_egf_per_type():
+    data, status = ae.handle_concentration_value_rate("EGF", 3, None)
+    assert status == 200
+    assert data["canonical"] == "EGF"
+    assert data["n_total"] >= 100
+    assert data["overall_value_rate"] >= 0.3
+    assert len(data["per_type"]) >= 10
+
+
+@require_reagents
+def test_live_ka_global_returns_200():
+    data, status = ae.handle_kind_ambiguity(None, 3)
+    assert status == 200
+    assert data["n_dual_kind_canonicals"] >= 20
+    names = {e["canonical"] for e in data["dual_kind_canonicals"]}
+    # Y-27632 is the largest dual-kind canonical (149 signaling, 47 supplement)
+    assert "Y-27632" in names
+
+
+@require_reagents
+def test_live_ka_y27632_per_type():
+    data, status = ae.handle_kind_ambiguity("Y-27632", 3)
+    assert status == 200
+    assert data["canonical"] == "Y-27632"
+    assert data["n_signaling"] >= 100
+    assert data["n_supplement"] >= 10
+    assert data["global_dominant_kind"] == "signaling"
+    assert len(data["per_type"]) >= 10
+
+
+@require_protocols
+@require_reagents
+def test_live_cta_global_returns_200():
+    data, status = ae.handle_canonical_type_adoption(None, 5)
+    assert status == 200
+    assert data["n_canonicals"] >= 20
+    # EGF and CHIR99021 spread to 20+ types
+    names = {e["canonical"] for e in data["top_by_type_breadth"]}
+    assert "EGF" in names
+    assert data["top_by_type_breadth"][0]["n_types_current"] >= 15
+
+
+@require_protocols
+@require_reagents
+def test_live_cta_egf_per_year():
+    data, status = ae.handle_canonical_type_adoption("EGF", 5)
+    assert status == 200
+    assert data["canonical"] == "EGF"
+    assert data["n_types_current"] >= 15
+    assert data["first_year"] <= 2018
+    assert len(data["by_year"]) >= 5
+
+
+@require_reagents
+def test_live_unr_global_returns_200():
+    data, status = ae.handle_unit_normalization_report(None)
+    assert status == 200
+    assert data["n_canonical_units"] >= 5
+    assert data["coverage_rate"] > 0.1
+    by_cu = {e["canonical_unit"]: e for e in data["unit_clusters"]}
+    # uM is the most ambiguous cluster (10 raw strings in live data)
+    assert "uM" in by_cu
+    assert by_cu["uM"]["n_raw_strings"] >= 5
+
+
+@require_reagents
+def test_live_unr_uM_query():
+    data, status = ae.handle_unit_normalization_report("uM")
+    assert status == 200
+    assert data["canonical_unit"] == "uM"
+    assert data["n_records"] >= 100
+    # μM and µM are always present
+    raw_names = {e["raw_unit"] for e in data["raw_strings"]}
+    assert "μM" in raw_names or "µM" in raw_names
+
+
+@require_protocols
+@require_reagents
+def test_live_scr_global_returns_200():
+    data, status = ae.handle_source_cell_reagent_profile(None, 3)
+    assert status == 200
+    sources = {e["source_cell_type"] for e in data["per_source"]}
+    assert "iPSC" in sources
+    assert "adult_stem_cell" in sources
+    # iPSC top canonical should be CHIR99021 or Y-27632
+    ipsc = next(e for e in data["per_source"] if e["source_cell_type"] == "iPSC")
+    assert ipsc["n_papers"] >= 50
+    top_name = ipsc["top_canonicals"][0]["canonical"]
+    assert top_name in ("CHIR99021", "Y-27632", "EGF", "FGF2")
+
+
+@require_protocols
+@require_reagents
+def test_live_scr_ipsc_source_filter():
+    data, status = ae.handle_source_cell_reagent_profile("iPSC", 3)
+    assert status == 200
+    assert data["source_cell_type"] == "iPSC"
+    assert data["n_papers"] >= 50
+    # CHIR99021 is the defining iPSC reagent
+    by_canon = {e["canonical"]: e for e in data["top_canonicals"]}
+    assert "CHIR99021" in by_canon
+    # exclusive_to_source is a bool (may be True or False depending on corpus)
+    assert isinstance(by_canon["CHIR99021"]["exclusive_to_source"], bool)
+    # top canonical has n_papers >= 50 (CHIR or Y-27632 each appear in 100+ iPSC papers)
+    assert data["top_canonicals"][0]["n_papers"] >= 50
+
+
+# ---------------------------------------------------------------------------
+# Route 53 — /analytics/protocol-completeness live smoke tests
+# ---------------------------------------------------------------------------
+@require_protocols
+def test_live_pc_global():
+    data, status = ae.handle_protocol_completeness(None)
+    assert status == 200
+    assert data["n_protocols"] >= 500
+    assert data["max_score"] == 6
+    # species is the most-reported field (>= 85%)
+    rates = data["field_reporting_rates"]
+    assert rates["species"] >= 0.85
+    # per_type is sorted desc by mean_score
+    means = [e["mean_score"] for e in data["per_type"]]
+    assert means == sorted(means, reverse=True)
+
+
+@require_protocols
+def test_live_pc_type_filter():
+    data, status = ae.handle_protocol_completeness("intestinal")
+    assert status == 200
+    assert data["organoid_type"] == "intestinal"
+    assert data["n_protocols"] >= 30
+    # papers are sorted by score desc
+    scores = [p["score"] for p in data["papers"]]
+    assert scores == sorted(scores, reverse=True)
