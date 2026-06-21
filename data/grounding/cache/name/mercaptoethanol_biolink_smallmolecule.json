@@ -1,0 +1,271 @@
+[
+  {
+    "curie": "CHEBI:41218",
+    "label": "Mercaptoethanol",
+    "highlighting": {},
+    "synonyms": [
+      "2-ME",
+      "Thioglycol",
+      "Thiomonoglycol",
+      "mercaptoethanol",
+      "Mercaptoethanol",
+      "2-mercaptoethanol",
+      "b-Mercaptoethanol",
+      "2-MERCAPTOETHANOL",
+      "2-Mercaptoethanol",
+      "Β-mercaptoethanol",
+      "2-sulfanylethanol",
+      "2 Mercaptoethanol",
+      "beta-Mercaptoethanol",
+      "BETA-MERCAPTOETHANOL",
+      "beta-mercaptoethanol",
+      "Ethanol, 2-mercapto-",
+      "2-mercaptoethanol (substance)"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 650.3825,
+    "clique_identifier_count": 14
+  },
+  {
+    "curie": "CHEBI:81527",
+    "label": "β-FNA",
+    "highlighting": {},
+    "synonyms": [
+      "β-FNA",
+      "beta-FNA",
+      "Beta-Funaltrexamine",
+      "beta-funaltrexamine",
+      "beta-Funaltrexamine",
+      "naltrexone fumarate methyl ester",
+      "2-Butenoic acid, 4-(((5alpha,6beta)-17-(cyclopropylmethyl)-4,5-epoxy-3,14-dihydroxymorphinan-6-yl)amino)-4-oxo-, methyl ester, (E)-"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 253.97372,
+    "clique_identifier_count": 9
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:16132316",
+    "label": "β-endorphin",
+    "highlighting": {},
+    "synonyms": [
+      "β-endorphin",
+      "CID 101600084",
+      "Beta-Endorphin"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 242.35252,
+    "clique_identifier_count": 8
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:16132311",
+    "label": "β-endorphin",
+    "highlighting": {},
+    "synonyms": [
+      "β-endorphin",
+      "beta-Endorphin, camel",
+      "Beta-endorphin (1-31)"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 214.63269,
+    "clique_identifier_count": 6
+  },
+  {
+    "curie": "UNII:MG6JW60TUG",
+    "label": "β-Hydroxythiofentanyl",
+    "highlighting": {},
+    "synonyms": [
+      "β-Hydroxythiofentanyl",
+      "beta-Hydroxythiofentanyl",
+      ".BETA.-HYDROXYTHIOFENTANYL"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 214.63269,
+    "clique_identifier_count": 6
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:146039",
+    "label": "SL-mercaptoethanol",
+    "highlighting": {},
+    "synonyms": [
+      "SL-mercaptoethanol",
+      "S (((2,2,5,5-tetramethyl-1-oxy-3-pyrrolidinyl)carbamoyl)methyl)-2-mercaptoethanol",
+      "1-Pyrrolidinyloxy, 3-((((2-hydroxyethyl)thio)acetyl)amino)-2,2,5,5-tetramethyl-, (R)-"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 207.0457,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:122260",
+    "label": "β-neoendorphin",
+    "highlighting": {},
+    "synonyms": [
+      "β-neoendorphin",
+      "beta-neo-endorphin",
+      "beta-Neo-endorphin"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 197.62997,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:71308750",
+    "label": "β-endorphin",
+    "highlighting": {},
+    "synonyms": [
+      "β-endorphin",
+      "Beta-endorphin(rat)",
+      "L-tyrosylglycylglycyl-L-phenylalanyl-L-methionyl-L-threonyl-L-seryl-L-alpha-glutamyl-L-lysyl-L-seryl-L-glutaminyl-L-threonyl-L-prolyl-L-leucyl-L-valyl-L-threonyl-L-leucyl-L-phenylalanyl-L-lysyl-L-asparaginyl-L-alanyl-L-isoleucyl-L-isoleucyl-L-lysyl-L-asparaginyl-L-valyl-L-histidyl-L-lysyl-L-lysylglycyl-L-glutamine"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 197.62997,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "UNII:9658A8O6GK",
+    "label": "β-Methylfentanyl",
+    "highlighting": {},
+    "synonyms": [
+      "β-Methylfentanyl",
+      "Betamethylfentanyl",
+      "beta-Methylfentanyl",
+      ".BETA.-METHYLFENTANYL"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 197.62997,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:11622683",
+    "label": "L-β-BA",
+    "highlighting": {},
+    "synonyms": [
+      "L-β-BA",
+      "L-beta-BA",
+      "(2S,3S)-3-azaniumyl-2-benzyl-4-hydroxy-4-oxobutanoate"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 183.86769,
+    "clique_identifier_count": 5
+  }
+]

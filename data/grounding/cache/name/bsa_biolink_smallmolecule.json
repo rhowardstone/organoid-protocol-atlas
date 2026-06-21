@@ -1,0 +1,273 @@
+[
+  {
+    "curie": "PUBCHEM.COMPOUND:139532554",
+    "label": "CaMKII inhibitor BSA-9",
+    "highlighting": {},
+    "synonyms": [
+      "CaMKII inhibitor BSA-9"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 269.73373,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:513919",
+    "label": "3,5-Diacetyltetrahydropyran-2,4,6 treated BSA",
+    "highlighting": {},
+    "synonyms": [
+      "3,5-Diacetyltetrahydropyran-2,4,6 treated BSA"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 200.6932,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:513913",
+    "label": "3,3',4,4'-Benzophenonetetracarboxylic dianhydride treated BSA",
+    "highlighting": {},
+    "synonyms": [
+      "3,3',4,4'-Benzophenonetetracarboxylic dianhydride treated BSA"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 189.13272,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:166139504",
+    "label": "Blood group A trisaccharide-APE-[biotin]-BSA",
+    "highlighting": {},
+    "synonyms": [
+      "Blood group A trisaccharide-APE-[biotin]-BSA"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 178.83151,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:53726860",
+    "label": "N-Acetyl-D-lactosamine BSA (3 atom spacer)",
+    "highlighting": {},
+    "synonyms": [
+      "N-Acetyl-D-lactosamine BSA (3 atom spacer)"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 169.5945,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:172641245",
+    "label": "3-Carboxyumbelliferyl b-D-galactoside BSA conjugate",
+    "highlighting": {},
+    "synonyms": [
+      "3-Carboxyumbelliferyl b-D-galactoside BSA conjugate"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 112.830124,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:172642659",
+    "label": "Gal-a-1,4-Gal-CETE-BSA Conjugate",
+    "highlighting": {},
+    "synonyms": [
+      "Gal-a-1,4-Gal-CETE-BSA Conjugate"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 112.830124,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:172642647",
+    "label": "Fuc-a-1,2-Gal-b-1,4-Glc-APD-BSA",
+    "highlighting": {},
+    "synonyms": [
+      "Fuc-a-1,2-Gal-b-1,4-Glc-APD-BSA"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 101.74677,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:4166230",
+    "label": "N-(4-phenylthiazol-2-yl)benzenesulfonamide",
+    "highlighting": {},
+    "synonyms": [
+      "N-(phenylthiazol)BSA",
+      "N-(4-phenylthiazol-2-yl)benzenesulfonamide"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 91.74306,
+    "clique_identifier_count": 4
+  },
+  {
+    "curie": "CHEBI:36595",
+    "label": "succinic anhydride",
+    "highlighting": {},
+    "synonyms": [
+      "SAA",
+      "Rikacid sa",
+      "Succinyloxide",
+      "succinyl oxide",
+      "Succinyl oxide",
+      "Oxolane-2,5-dione",
+      "Succinyl peroxide",
+      "oxolane-2,5-dione",
+      "succinyl anhydride",
+      "Succinic anhydride",
+      "Succinyl anhydride",
+      "SUCCINIC ANHYDRIDE",
+      "succinic anhydride",
+      "Succinate anhydride",
+      "Butanedioic anhydride",
+      "butanedioic anhydride",
+      "2,5(3H,4H)-Furandione",
+      "dihydro-2,5-furandione",
+      "Dihydrofuran-2,5-dione",
+      "Dihydro-2,5-furandione",
+      "dihydrofuran-2,5-dione",
+      "Dihydro-furan-2,5-dione",
+      "Succinic acid anhydride",
+      "succinic acid anhydride",
+      "Bernsteinsaeureanhydrid",
+      "Dihydro-2, 5-furandione",
+      "2,5-Dioxotetrahydrofuran",
+      "2,5-dioxotetrahydrofuran",
+      "2,5-Diketotetrahydrofuran",
+      "Tetrahydro-2,5-dioxofuran",
+      "Tetrahydro-2,5-furandione",
+      "2,5-diketotetrahydrofuran",
+      "tetrahydro-2,5-furandione",
+      "tetrahydro-2,5-dioxofuran",
+      "Tetrahydro-2, 5-dioxofuran",
+      "Succinic anhydride treated bsa",
+      "Dihydro-2,5-diketotetrahydrofuran",
+      "2-Alkenyl (C11-C13) succinic acid anhydride",
+      "Butanedioic acid,anhydride succinic anhydride",
+      "Succinic anhydride treated bovine serum albumin",
+      "2,5-Furandione, dihydro-, mono-C11-13-alkenyl derivs."
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 23.946722,
+    "clique_identifier_count": 12
+  }
+]

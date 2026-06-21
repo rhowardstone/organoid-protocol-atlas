@@ -1,0 +1,276 @@
+[
+  {
+    "curie": "CHEBI:78236",
+    "label": "N-acetyl-L-cysteinate",
+    "highlighting": {},
+    "synonyms": [
+      "N-acetyl-L-cysteine",
+      "N-acetyl-L-cysteinate",
+      "(2R)-2-acetamido-3-sulfanylpropanoate"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 712.4878,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "CHEBI:34960",
+    "label": "S-(2-Hydroxyethyl)-N-acetyl-L-cysteine",
+    "highlighting": {},
+    "synonyms": [
+      "N-acetyl-S-(2-hydroxyethyl)cysteine",
+      "S-(2-Hydroxyethyl)-N-acetyl-L-cysteine",
+      "N-ACETYL-S-(2-HYDROXYETHYL)-L-CYSTEINE",
+      "N-Acetyl-S-(2-hydroxyethyl)-L-cysteine"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 691.9597,
+    "clique_identifier_count": 8
+  },
+  {
+    "curie": "CHEBI:133435",
+    "label": "S-(5-acetamido-2-hydroxyphenyl)-N-acetyl-L-cysteine",
+    "highlighting": {},
+    "synonyms": [
+      "paracetamol mercapturate",
+      "Acetaminophen mercaptate",
+      "Paracetamol mercapturate",
+      "Acetaminophen mercapturate",
+      "ACETAMINOPHEN MERCAPTURATE",
+      "acetaminophen mercapturate",
+      "Acetaminophen mercaptic acid",
+      "acetaminophen mercapturic acid",
+      "Acetaminophen mercapturic acid",
+      "3-(N-Acetyl-L-cystein-S-yl)acetaminophen",
+      "3-(N-acetyl-L-cystein-S-yl)acetaminophen",
+      "Paracetamol N-acetyl-L-cysteine conjugate",
+      "paracetamol N-acetyl-L-cysteine conjugate",
+      "acetaminophen N-acetyl-L-cysteine conjugate",
+      "N-Acetyl-L-cysteine S-paracetamol conjugate",
+      "Acetaminophen N-acetyl-L-cysteine conjugate",
+      "N-acetyl-L-cysteine S-paracetamol conjugate",
+      "Paracetamol N-acetyl-L-cysteine conjugic acid",
+      "N-acetyl-L-cysteine S-acetaminophen conjugate",
+      "N-Acetyl-L-cysteine S-acetaminophen conjugate",
+      "Acetaminophen mercapturate monopotassium salt",
+      "N-Acetyl-L-cysteine S-paracetamol conjugic acid",
+      "Acetaminophen N-acetyl-L-cysteine conjugic acid",
+      "N-Acetyl-L-cysteine S-acetaminophen conjugic acid",
+      "S-(5-acetamido-2-hydroxyphenyl)-N-acetyl-L-cysteine",
+      "N-Acetyl-S-(5-(acetylamino)-2-hydroxyphenyl)-L-cysteine",
+      "L-Cysteine, N-acetyl-S-(5-(acetylamino)-2-hydroxyphenyl)-"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 623.98816,
+    "clique_identifier_count": 8
+  },
+  {
+    "curie": "UNII:2SPH1IMO2V",
+    "label": "N-Acetyl-D-cysteine",
+    "highlighting": {},
+    "synonyms": [
+      "Mucomyst",
+      "N-Acetyl-L-cysteine",
+      "N-Acetyl-D-cysteine",
+      "N-Acetyl-DL-cysteine",
+      "N-ACETYL-DL-CYSTEINE",
+      "2-[(1-Hydroxyethylidene)amino]-3-sulfanylpropanoate",
+      "2-[(1-Hydroxyethylidene)amino]-3-sulphanylpropanoate",
+      "2-[(1-Hydroxyethylidene)amino]-3-sulphanylpropanoic acid"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 555.7866,
+    "clique_identifier_count": 8
+  },
+  {
+    "curie": "CHEBI:47911",
+    "label": "S-substituted N-acetyl-L-cysteine",
+    "highlighting": {},
+    "synonyms": [
+      "Mercapturic acid",
+      "S-Substituted N-acetyl-L-cysteine",
+      "S-substituted N-acetyl-L-cysteine",
+      "S-substituted N-acetyl-L-cysteines"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 536.04736,
+    "clique_identifier_count": 4
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:132856",
+    "label": "S-(2-hydroxycyclohexyl)-N-acetyl-(L)-cysteine methyl ester",
+    "highlighting": {},
+    "synonyms": [
+      "S-(2-hydroxycyclohexyl)-N-acetyl-(L)-cysteine methyl ester",
+      "S-(2-Hydroxycyclohexyl)-N-acetyl-(L)-cysteine methyl ester"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 508.84042,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "UNII:5YPL14V8M7",
+    "label": "S-(N,N-Diethyldithiocarbamoyl)-N-acetyl-L-cysteine",
+    "highlighting": {},
+    "synonyms": [
+      "S-(N,N-DIETHYLDITHIOCARBAMOYL)-N-ACETYL-L-CYSTEINE",
+      "S-(N,N-Diethyldithiocarbamoyl)-N-acetyl-L-cysteine"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 490.62497,
+    "clique_identifier_count": 4
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:157010367",
+    "label": "Sulforaphane-N-acetyl-L-cysteine",
+    "highlighting": {},
+    "synonyms": [
+      "Sulforaphane-N-acetyl-L-cysteine",
+      "(2S)-3-(Dodecanoyloxy)-2-[(11Z,14Z)-icosa-11,14-dienoyloxy]propyl (7Z,10Z,13Z,16Z)-docosa-7,10,13,16-tetraenoic acid"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 489.9485,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:9837144",
+    "label": "N-acetyl-L-cysteine isopropyl ester",
+    "highlighting": {},
+    "synonyms": [
+      "N-acetyl-L-cysteine isopropyl ester"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 461.72607,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:10998095",
+    "label": "N-Acetyl-L-cysteine Allyl Ester",
+    "highlighting": {},
+    "synonyms": [
+      "N-Acetyl-L-cysteine Allyl Ester"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 461.72607,
+    "clique_identifier_count": 3
+  }
+]

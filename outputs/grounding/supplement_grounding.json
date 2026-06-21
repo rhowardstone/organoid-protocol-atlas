@@ -1,0 +1,279 @@
+{
+  "n_total": 30,
+  "n_resolved": 15,
+  "n_curated": 12,
+  "n_needs_review": 2,
+  "n_not_found": 1,
+  "coverage_rate": 0.9,
+  "grounding_method": "SRI Name Resolver + curated product map",
+  "notes": [
+    "resolved: verified SRI hit (label/synonym match)",
+    "curated: product mixture with no single CHEBI CURIE — product ID provided",
+    "needs_review: SRI hit but label mismatch — inspect before accepting",
+    "not_found: no acceptable hit from SRI",
+    "GlutaMAX resolved as CHEBI:2483 (L-alanyl-L-glutamine dipeptide)",
+    "FBS/fetal bovine serum resolved as CHEBI:93046",
+    "B27/N2 are product mixtures — no single CHEBI; Thermo Fisher catalog IDs provided"
+  ],
+  "records": [
+    {
+      "name": "GlutaMAX",
+      "label": "GlutaMAX (L-alanyl-L-glutamine)",
+      "identifier": "CHEBI:2483",
+      "curie": "CHEBI:2483",
+      "source": "SRI CHEBI lookup: 'L-alanyl-L-glutamine' -> CHEBI:2483",
+      "note": "GlutaMAX is a dipeptide stable substitute for glutamine (L-Ala-L-Gln)",
+      "grounding_status": "curated",
+      "n_records": 133
+    },
+    {
+      "name": "B27",
+      "label": "B-27 Supplement",
+      "identifier": "Thermo Fisher Cat# 17504044",
+      "source": "https://www.thermofisher.com/order/catalog/product/17504044",
+      "note": "27-component neuronal supplement mixture; no single CHEBI CURIE",
+      "grounding_status": "curated",
+      "n_records": 114
+    },
+    {
+      "name": "penicillin/streptomycin",
+      "label": "penicillin + streptomycin antibiotic mixture",
+      "identifier": "CHEBI:17334+CHEBI:17076",
+      "source": "CHEBI:17334 (penicillin), CHEBI:17076 (streptomycin)",
+      "note": "mixed canonical resolved as two distinct CHEBI CURIEs",
+      "grounding_status": "curated",
+      "n_records": 106
+    },
+    {
+      "name": "FBS",
+      "label": "fetal bovine serum",
+      "identifier": "CHEBI:93046",
+      "curie": "CHEBI:93046",
+      "source": "CHEBI:93046 (fetal bovine serum)",
+      "note": "alias for fetal bovine serum; CHEBI:93046",
+      "grounding_status": "curated",
+      "n_records": 99
+    },
+    {
+      "name": "Nicotinamide",
+      "curie": "CHEBI:17154",
+      "label": "Nicotinamide",
+      "source": "SRI Name Resolver",
+      "grounding_status": "resolved",
+      "n_records": 86
+    },
+    {
+      "name": "HEPES",
+      "curie": "CHEBI:42334",
+      "label": "HEPES",
+      "source": "SRI Name Resolver",
+      "grounding_status": "resolved",
+      "n_records": 79
+    },
+    {
+      "name": "B27 supplement",
+      "label": "B-27 Supplement",
+      "identifier": "Thermo Fisher Cat# 17504044",
+      "source": "https://www.thermofisher.com/order/catalog/product/17504044",
+      "note": "alias for B27",
+      "grounding_status": "curated",
+      "n_records": 70
+    },
+    {
+      "name": "N2",
+      "label": "N-2 Supplement",
+      "identifier": "Thermo Fisher Cat# 17502048",
+      "source": "https://www.thermofisher.com/order/catalog/product/17502048",
+      "note": "serum-free neuronal supplement mixture; no single CHEBI CURIE",
+      "grounding_status": "curated",
+      "n_records": 66
+    },
+    {
+      "name": "N-acetylcysteine",
+      "curie": "CHEBI:28939",
+      "label": "Acetylcysteine",
+      "source": "SRI Name Resolver",
+      "grounding_status": "resolved",
+      "n_records": 65
+    },
+    {
+      "name": "N2 supplement",
+      "label": "N-2 Supplement",
+      "identifier": "Thermo Fisher Cat# 17502048",
+      "source": "https://www.thermofisher.com/order/catalog/product/17502048",
+      "note": "alias for N2",
+      "grounding_status": "curated",
+      "n_records": 62
+    },
+    {
+      "name": "Y-27632",
+      "curie": "CHEBI:75393",
+      "label": "Y-27632",
+      "source": "SRI Name Resolver",
+      "grounding_status": "resolved",
+      "n_records": 47
+    },
+    {
+      "name": "fetal bovine serum",
+      "label": "fetal bovine serum",
+      "identifier": "CHEBI:93046",
+      "curie": "CHEBI:93046",
+      "source": "CHEBI:93046 (fetal bovine serum)",
+      "note": "CHEBI entry exists for this serum type",
+      "grounding_status": "curated",
+      "n_records": 37
+    },
+    {
+      "name": "L-glutamine",
+      "curie": "CHEBI:18050",
+      "label": "L-Glutamine",
+      "source": "SRI Name Resolver",
+      "grounding_status": "resolved",
+      "n_records": 33
+    },
+    {
+      "name": "Primocin",
+      "label": "Primocin (antibiotic combination)",
+      "identifier": "InVivoGen Cat# ant-pm-1",
+      "source": "https://www.invivogen.com/primocin",
+      "note": "broad-spectrum antibiotic mixture; no single CHEBI CURIE",
+      "grounding_status": "curated",
+      "n_records": 33
+    },
+    {
+      "name": "N-acetyl-L-cysteine",
+      "curie": "CHEBI:78236",
+      "label": "N-acetyl-L-cysteinate",
+      "source": "SRI Name Resolver",
+      "grounding_status": "resolved",
+      "n_records": 33
+    },
+    {
+      "name": "Pen/Strep",
+      "label": "penicillin + streptomycin antibiotic mixture",
+      "identifier": "CHEBI:17334+CHEBI:17076",
+      "source": "CHEBI:17334 (penicillin), CHEBI:17076 (streptomycin)",
+      "note": "alias for penicillin/streptomycin",
+      "grounding_status": "curated",
+      "n_records": 32
+    },
+    {
+      "name": "non-essential amino acids",
+      "label": "MEM Non-Essential Amino Acids Solution",
+      "identifier": "Thermo Fisher Cat# 11140050",
+      "source": "https://www.thermofisher.com/order/catalog/product/11140050",
+      "note": "formulation mixture; individual amino acids have CHEBI CURIEs",
+      "grounding_status": "curated",
+      "n_records": 28
+    },
+    {
+      "name": "BSA",
+      "curie": "PUBCHEM.COMPOUND:139532554",
+      "label": "CaMKII inhibitor BSA-9",
+      "source": "SRI Name Resolver",
+      "grounding_status": "needs_review",
+      "flags": [
+        "label_mismatch"
+      ],
+      "n_records": 27
+    },
+    {
+      "name": "β-mercaptoethanol",
+      "curie": "CHEBI:41218",
+      "label": "Mercaptoethanol",
+      "source": "SRI Name Resolver",
+      "grounding_status": "resolved",
+      "n_records": 25
+    },
+    {
+      "name": "penicillin",
+      "curie": "CHEBI:17334",
+      "label": "penicillin",
+      "source": "SRI Name Resolver",
+      "grounding_status": "resolved",
+      "n_records": 24
+    },
+    {
+      "name": "streptomycin",
+      "curie": "CHEBI:17076",
+      "label": "Streptomycin",
+      "source": "SRI Name Resolver",
+      "grounding_status": "resolved",
+      "n_records": 24
+    },
+    {
+      "name": "insulin",
+      "curie": "CHEBI:5931",
+      "label": "insulin human",
+      "source": "SRI Name Resolver",
+      "grounding_status": "resolved",
+      "n_records": 23
+    },
+    {
+      "name": "KnockOut Serum Replacement",
+      "label": "KnockOut Serum Replacement",
+      "identifier": "Thermo Fisher Cat# 10828028",
+      "source": "https://www.thermofisher.com/order/catalog/product/10828028",
+      "note": "defined serum replacement for ES/iPSC culture; no single CHEBI CURIE",
+      "grounding_status": "curated",
+      "n_records": 18
+    },
+    {
+      "name": "2-mercaptoethanol",
+      "grounding_status": "not_found",
+      "error": "The read operation timed out",
+      "n_records": 18
+    },
+    {
+      "name": "DMSO",
+      "curie": "CHEBI:28262",
+      "label": "Dimethyl sulfoxide",
+      "source": "SRI Name Resolver",
+      "grounding_status": "resolved",
+      "n_records": 17
+    },
+    {
+      "name": "Heparin",
+      "curie": "CHEBI:28304",
+      "label": "Heparin",
+      "source": "SRI Name Resolver",
+      "grounding_status": "resolved",
+      "n_records": 16
+    },
+    {
+      "name": "ascorbic acid",
+      "curie": "CHEBI:22652",
+      "label": "Ascorbic acid",
+      "source": "SRI Name Resolver",
+      "grounding_status": "resolved",
+      "n_records": 15
+    },
+    {
+      "name": "sodium pyruvate",
+      "curie": "CHEBI:32816",
+      "label": "Pyruvic acid",
+      "source": "SRI Name Resolver",
+      "grounding_status": "resolved",
+      "n_records": 15
+    },
+    {
+      "name": "DMEM/F12",
+      "curie": "NCBIGene:397474",
+      "label": "F12",
+      "source": "SRI Name Resolver",
+      "grounding_status": "needs_review",
+      "flags": [
+        "label_mismatch"
+      ],
+      "n_records": 13
+    },
+    {
+      "name": "taurine",
+      "curie": "CHEBI:15891",
+      "label": "Taurine",
+      "source": "SRI Name Resolver",
+      "grounding_status": "resolved",
+      "n_records": 13
+    }
+  ]
+}

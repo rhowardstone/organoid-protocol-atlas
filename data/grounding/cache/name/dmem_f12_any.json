@@ -1,0 +1,402 @@
+[
+  {
+    "curie": "NCBIGene:397474",
+    "label": "F12",
+    "highlighting": {},
+    "synonyms": [
+      "HAF",
+      "F12",
+      "FXII",
+      "factor XII",
+      "hageman factor",
+      "coagulation factor XII",
+      "A0A287AX98_PIG Coagulation factor XII (trembl)",
+      "A0A4X1SEE3_PIG Coagulation factor XII (trembl)",
+      "A0A8D1F451_PIG Coagulation factor XII (trembl)",
+      "A0A8D2CGA5_PIG Coagulation factor XII (trembl)",
+      "A0A8D2CGR7_PIG Coagulation factor XII (trembl)",
+      "FA12_PIG Coagulation factor XII (sprot)"
+    ],
+    "taxa": [
+      "NCBITaxon:9823"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 345.2993,
+    "clique_identifier_count": 47
+  },
+  {
+    "curie": "NCBIGene:112820019",
+    "label": "F12",
+    "highlighting": {},
+    "synonyms": [
+      "F12",
+      "coagulation factor XII",
+      "A0A3Q7NM62_CALUR Coagulation factor XII (trembl)",
+      "A0A3Q7NM65_CALUR Coagulation factor XII (trembl)",
+      "A0A3Q7NM69_CALUR Coagulation factor XII (trembl)",
+      "A0A3Q7NN03_CALUR Coagulation factor XII (trembl)",
+      "A0A3Q7NN09_CALUR Coagulation factor XII (trembl)",
+      "A0A3Q7NN13_CALUR Coagulation factor XII (trembl)",
+      "A0A3Q7NNC3_CALUR Coagulation factor XII (trembl)",
+      "A0A3Q7NNC6_CALUR Coagulation factor XII (trembl)",
+      "A0A3Q7NND5_CALUR Coagulation factor XII (trembl)",
+      "A0A3Q7NNE0_CALUR Coagulation factor XII (trembl)",
+      "A0A3Q7NWW9_CALUR Coagulation factor XII (trembl)",
+      "A0A3Q7NWX4_CALUR Coagulation factor XII (trembl)",
+      "A0A3Q7NWX7_CALUR Coagulation factor XII (trembl)",
+      "A0A3Q7Q361_CALUR Coagulation factor XII (trembl)",
+      "A0A3Q7Q365_CALUR Coagulation factor XII (trembl)",
+      "A0A3Q7Q370_CALUR Coagulation factor XII (trembl)",
+      "A0A3Q7Q375_CALUR Coagulation factor XII (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:34884"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 267.21014,
+    "clique_identifier_count": 19
+  },
+  {
+    "curie": "NCBIGene:2161",
+    "label": "F12",
+    "highlighting": {},
+    "synonyms": [
+      "F12",
+      "HAF",
+      "HAE3",
+      "HAEX",
+      "F12 Gene",
+      "F12 gene",
+      "HAGEMAN FACTOR",
+      "Hageman factor",
+      "coagulation factor XII",
+      "COAGULATION FACTOR XII",
+      "beta-factor XIIa part 1",
+      "beta-factor XIIa part 2",
+      "Plasma coagulation Factor XIIa",
+      "coagulation factor XIIa heavy chain",
+      "coagulation factor XIIa light chain",
+      "coagulation factor XII (Hageman factor)",
+      "Coagulation Factor XII (Hageman Factor) Gene",
+      "hF12",
+      "HAF (human)",
+      "EC 3.4.21.38",
+      "Hageman Factor",
+      "hageman factor (human)",
+      "Coagulation Factor XII",
+      "Beta-Factor XIIa Part 1",
+      "Beta-Factor XIIa Part 2",
+      "Coagulation Factor XII, human",
+      "coagulation factor XII (human)",
+      "Coagulation Factor XIIa Light Chain",
+      "Coagulation Factor XIIa Heavy Chain",
+      "FA12_HUMAN Coagulation factor XII (sprot)",
+      "Q8IZZ5_HUMAN Coagulation factor XII (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9606"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 221.64607,
+    "clique_identifier_count": 11
+  },
+  {
+    "curie": "NCBIGene:489090",
+    "label": "F12",
+    "highlighting": {},
+    "synonyms": [
+      "F12",
+      "coagulation factor XII",
+      "A0A8I3NR05_CANLF Coagulation factor XII (trembl)",
+      "A0A8P0SKJ6_CANLF Coagulation factor XII (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9615"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 205.38354,
+    "clique_identifier_count": 9
+  },
+  {
+    "curie": "NCBIGene:105883825",
+    "label": "F12",
+    "highlighting": {},
+    "synonyms": [
+      "F12",
+      "coagulation factor XII",
+      "A0A8C5XW84_MICMU Coagulation factor XII (trembl)",
+      "A0A8C5YC64_MICMU Coagulation factor XII (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:30608"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 195.9857,
+    "clique_identifier_count": 8
+  },
+  {
+    "curie": "NCBIGene:113189451",
+    "label": "F12",
+    "highlighting": {},
+    "synonyms": [
+      "F12",
+      "coagulation factor XII",
+      "A0A8D2HL75_UROPR Coagulation factor XII (trembl)",
+      "A0A8D2KJB8_UROPR Coagulation factor XII (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9999"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 195.9857,
+    "clique_identifier_count": 8
+  },
+  {
+    "curie": "NCBIGene:114046645",
+    "label": "F12",
+    "highlighting": {},
+    "synonyms": [
+      "F12",
+      "coagulation factor XII",
+      "A0A4X2JLZ3_VOMUR Coagulation factor XII (trembl)",
+      "A0A4X2JMF1_VOMUR Coagulation factor XII (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:29139"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 195.9857,
+    "clique_identifier_count": 8
+  },
+  {
+    "curie": "NCBIGene:115294753",
+    "label": "F12",
+    "highlighting": {},
+    "synonyms": [
+      "F12",
+      "coagulation factor XII",
+      "A0A673TPT9_SURSU Coagulation factor XII (trembl)",
+      "A0A673TPZ6_SURSU Coagulation factor XII (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:37032"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 195.9857,
+    "clique_identifier_count": 8
+  },
+  {
+    "curie": "NCBIGene:58992",
+    "label": "F12",
+    "highlighting": {},
+    "synonyms": [
+      "HAF",
+      "F12",
+      "FXII",
+      "factor XII",
+      "hageman factor",
+      "coagulation factor XII",
+      "coagulation factor XII (Hageman factor)",
+      "mF12",
+      "HAF (mouse)",
+      "hageman factor (mouse)",
+      "coagulation factor XII (mouse)",
+      "FA12_MOUSE Coagulation factor XII (sprot)"
+    ],
+    "taxa": [
+      "NCBITaxon:10090"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 185.47983,
+    "clique_identifier_count": 7
+  },
+  {
+    "curie": "NCBIGene:101720589",
+    "label": "F12",
+    "highlighting": {},
+    "synonyms": [
+      "F12",
+      "coagulation factor XII",
+      "A0AAX6NT65_HETGA Coagulation factor XII (trembl)",
+      "A0AAX6RCL3_HETGA Coagulation factor XII (trembl)",
+      "A0AAX6RDW3_HETGA Coagulation factor XII (trembl)",
+      "A0AAX6REY7_HETGA Coagulation factor XII (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:10181"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 185.47983,
+    "clique_identifier_count": 7
+  }
+]
