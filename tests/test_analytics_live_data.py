@@ -510,3 +510,27 @@ def test_live_po_intestinal_has_outliers():
     assert data["mean_n_sf"] > 0
     # At least one complex or minimal outlier in a large enough corpus
     assert data["n_complex"] + data["n_minimal"] >= 1
+
+
+# ---------------------------------------------------------------------------
+# grounding-distribution live smoke tests
+# ---------------------------------------------------------------------------
+
+@require_protocols
+def test_live_gd_returns_200():
+    data, status = ae.handle_grounding_distribution(None)
+    assert status == 200
+    assert data["n"] >= 100
+    assert data["n_types"] >= 10
+    assert len(data["histogram"]) == 10
+    assert data["mean"] is not None
+
+
+@require_protocols
+def test_live_gd_intestinal_type():
+    data, status = ae.handle_grounding_distribution("intestinal")
+    assert status == 200
+    assert data["organoid_type"] == "intestinal"
+    assert data["n"] >= 20
+    # intestinal grounding rate should be > 0.5 in a well-grounded corpus
+    assert data["mean"] > 0.5

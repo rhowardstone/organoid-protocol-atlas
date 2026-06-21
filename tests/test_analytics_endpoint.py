@@ -3525,3 +3525,142 @@ def test_po_custom_z_thresh(tmp_path, monkeypatch):
 def test_po_index_entry():
     data, _ = ae.handle_index()
     assert "/analytics/protocol-outliers" in data["endpoints"]
+
+
+# ---------------------------------------------------------------------------
+# /analytics/grounding-distribution unit tests
+# ---------------------------------------------------------------------------
+
+def _write_protos_for_gd(path, rows):
+    path.write_text("\n".join(json.dumps(r) for r in rows) + "\n")
+
+
+def _patch_gd(monkeypatch, path):
+    monkeypatch.setattr(ae, "PROTOCOLS_JSONL", path)
+
+
+_GD_ROWS = [
+    {"organoid_type": "intestinal", "grounding_rate": 1.0, "reagents_grounded": 10, "reagents_total": 10,
+     "pmcid": "A", "doi": "10/A", "year": "2020"},
+    {"organoid_type": "intestinal", "grounding_rate": 0.5, "reagents_grounded": 5, "reagents_total": 10,
+     "pmcid": "B", "doi": "10/B", "year": "2021"},
+    {"organoid_type": "intestinal", "grounding_rate": 0.8, "reagents_grounded": 8, "reagents_total": 10,
+     "pmcid": "C", "doi": "10/C", "year": "2022"},
+    {"organoid_type": "kidney", "grounding_rate": 0.6, "reagents_grounded": 6, "reagents_total": 10,
+     "pmcid": "D", "doi": "10/D", "year": "2021"},
+    {"organoid_type": "kidney", "grounding_rate": 0.2, "reagents_grounded": 2, "reagents_total": 10,
+     "pmcid": "E", "doi": "10/E", "year": "2022"},
+    # This row has no grounding_rate → excluded
+    {"organoid_type": "intestinal", "grounding_rate": None, "pmcid": "F", "doi": "10/F", "year": "2020"},
+]
+
+
+def test_gd_404_missing_file(tmp_path, monkeypatch):
+    monkeypatch.setattr(ae, "PROTOCOLS_JSONL", tmp_path / "missing.jsonl")
+    _, status = ae.handle_grounding_distribution(None)
+    assert status == 404
+
+
+def test_gd_200_cross_corpus(tmp_path, monkeypatch):
+    p = tmp_path / "protocols.jsonl"
+    _write_protos_for_gd(p, _GD_ROWS)
+    _patch_gd(monkeypatch, p)
+    data, status = ae.handle_grounding_distribution(None)
+    assert status == 200
+    assert data["n"] == 5   # 6 rows but 1 has grounding_rate=None
+    assert data["n_types"] == 2
+    assert "histogram" in data
+    assert "per_type_mean" in data
+
+
+def test_gd_histogram_has_10_buckets(tmp_path, monkeypatch):
+    p = tmp_path / "protocols.jsonl"
+    _write_protos_for_gd(p, _GD_ROWS)
+    _patch_gd(monkeypatch, p)
+    data, _ = ae.handle_grounding_distribution(None)
+    assert len(data["histogram"]) == 10
+
+
+def test_gd_histogram_100_percent_bucket(tmp_path, monkeypatch):
+    p = tmp_path / "protocols.jsonl"
+    _write_protos_for_gd(p, _GD_ROWS)
+    _patch_gd(monkeypatch, p)
+    data, _ = ae.handle_grounding_distribution(None)
+    # grounding_rate=1.0 falls in bucket 9 which is "90-100%"
+    assert data["histogram"]["90-100%"] == 1
+
+
+def test_gd_mean_correct(tmp_path, monkeypatch):
+    p = tmp_path / "protocols.jsonl"
+    _write_protos_for_gd(p, _GD_ROWS)
+    _patch_gd(monkeypatch, p)
+    data, _ = ae.handle_grounding_distribution(None)
+    # mean = (1.0 + 0.5 + 0.8 + 0.6 + 0.2) / 5 = 3.1/5 = 0.62
+    assert abs(data["mean"] - 0.62) < 0.01
+
+
+def test_gd_ranking_best_type_first(tmp_path, monkeypatch):
+    p = tmp_path / "protocols.jsonl"
+    _write_protos_for_gd(p, _GD_ROWS)
+    _patch_gd(monkeypatch, p)
+    data, _ = ae.handle_grounding_distribution(None)
+    ranking = data["ranking_by_mean_grounding_rate"]
+    # intestinal mean = (1.0+0.5+0.8)/3 = 0.767; kidney mean = (0.6+0.2)/2 = 0.4
+    assert ranking[0] == "intestinal"
+    means = [data["per_type_mean"][t] for t in ranking]
+    assert means == sorted(means, reverse=True)
+
+
+def test_gd_top20_sorted_desc(tmp_path, monkeypatch):
+    p = tmp_path / "protocols.jsonl"
+    _write_protos_for_gd(p, _GD_ROWS)
+    _patch_gd(monkeypatch, p)
+    data, _ = ae.handle_grounding_distribution(None)
+    top = data["top_20_by_grounding_rate"]
+    rates = [pp["grounding_rate"] for pp in top]
+    assert rates == sorted(rates, reverse=True)
+    assert top[0]["pmcid"] == "A"  # 1.0
+
+
+def test_gd_bottom20_sorted_asc(tmp_path, monkeypatch):
+    p = tmp_path / "protocols.jsonl"
+    _write_protos_for_gd(p, _GD_ROWS)
+    _patch_gd(monkeypatch, p)
+    data, _ = ae.handle_grounding_distribution(None)
+    bot = data["bottom_20_by_grounding_rate"]
+    rates = [pp["grounding_rate"] for pp in bot]
+    assert rates == sorted(rates)
+    assert bot[0]["pmcid"] == "E"  # 0.2
+
+
+def test_gd_single_type_query(tmp_path, monkeypatch):
+    p = tmp_path / "protocols.jsonl"
+    _write_protos_for_gd(p, _GD_ROWS)
+    _patch_gd(monkeypatch, p)
+    data, status = ae.handle_grounding_distribution("kidney")
+    assert status == 200
+    assert data["organoid_type"] == "kidney"
+    assert data["n"] == 2
+
+
+def test_gd_404_unknown_type(tmp_path, monkeypatch):
+    p = tmp_path / "protocols.jsonl"
+    _write_protos_for_gd(p, _GD_ROWS)
+    _patch_gd(monkeypatch, p)
+    _, status = ae.handle_grounding_distribution("xyz_unknown")
+    assert status == 404
+
+
+def test_gd_excludes_none_grounding_rate(tmp_path, monkeypatch):
+    p = tmp_path / "protocols.jsonl"
+    _write_protos_for_gd(p, _GD_ROWS)
+    _patch_gd(monkeypatch, p)
+    data, _ = ae.handle_grounding_distribution(None)
+    # Row F has grounding_rate=None and should be excluded → n=5
+    all_pmcids = {pp["pmcid"] for pp in data["top_20_by_grounding_rate"] + data["bottom_20_by_grounding_rate"]}
+    assert "F" not in all_pmcids
+
+
+def test_gd_index_entry():
+    data, _ = ae.handle_index()
+    assert "/analytics/grounding-distribution" in data["endpoints"]
