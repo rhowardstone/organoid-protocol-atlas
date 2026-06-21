@@ -366,6 +366,7 @@ async function load() {
     ['/analytics/concentration-value-rate', 'Canonicals ranked by fraction of records with a numeric dose value; highest_reporters (well-dosed) + lowest_reporters (common but rarely dosed); ?q=Wnt3a for per-type breakdown; ?min_n= threshold (default 5); ?kind= filter'],
     ['/analytics/kind-ambiguity',       'Canonicals that appear in both signaling and supplement kinds; sorted by minority_fraction (ambiguity score); ?q=Y-27632 for per-type kind breakdown; ?min_n= threshold (default 3)'],
     ['/analytics/canonical-type-adoption', 'Reagent diffusion: n distinct organoid types using each canonical by year; first_year, n_types_current, year_peak; ?q=EGF for per-year type list + cumulative counts; ?min_types= threshold (default 5)'],
+    ['/analytics/unit-normalization-report', 'Audit of raw unit string → canonical_unit normalization clusters (e.g. "uM" ← [μM, µM, µm, uM, μmol/L, ...]); sorted by n_raw_strings; ?q=uM for detailed breakdown + top canonicals'],
     ['/analytics/mior',                 'MIOR completeness report (12 items, 5 modules)'],
     ['/analytics/assay-endpoints',      'Assay endpoint cluster summary (per-type + cross-type)'],
     ['/analytics/failure-modes',        'Failure mode cluster summary across the corpus'],

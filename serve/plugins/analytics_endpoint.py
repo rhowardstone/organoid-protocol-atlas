@@ -45,6 +45,7 @@ Routes (all return JSON; read-only, no writes):
   GET /analytics/concentration-value-rate   -- canonicals ranked by fraction of records with a numeric dose value; highest_reporters + lowest_reporters lists; ?q= for per-type breakdown; ?min_n= threshold; ?kind= filter; live from reagents.jsonl
   GET /analytics/kind-ambiguity            -- canonicals that appear in both signaling and supplement kinds; sorted by ambiguity (minority_fraction); ?q= for per-type kind breakdown; ?min_n= threshold; live from reagents.jsonl
   GET /analytics/canonical-type-adoption   -- reagent diffusion: n_organoid_types using each canonical by year (first_year, n_types_current, year_peak); ?q= for per-year type list; ?min_types= filter; live from both JSONLs
+  GET /analytics/unit-normalization-report  -- shows how raw unit strings cluster into canonical_unit groups (ng/mL←[ng/mL,ng/ml,ng ml-1], uM←[μM,µM,µm,...]); sorted by n_raw_strings; ?q= for one canonical_unit; live from reagents.jsonl
   GET /analytics                                -- index of available analytics
 
 All endpoints degrade gracefully — if the pre-computed file doesn't exist they return
@@ -3552,6 +3553,98 @@ def handle_protocol_size_distribution(
     }, 200
 
 
+def handle_unit_normalization_report(query=None):
+    """Route 51: how raw unit strings cluster into canonical_unit groups.
+
+    Each canonical_unit (normalized form) may have been derived from multiple
+    distinct raw unit strings (e.g. canonical_unit='uM' ← raw: μM, µM, µm, uM, μmol/L, ...).
+    This report shows those clusters to validate and audit the normalization mapping.
+
+    Without ?q=: returns all canonical_unit groups sorted by n_raw_strings desc (most
+    ambiguous first). Also shows overall coverage (how many records have canonical_unit).
+    With ?q=uM: detailed breakdown of raw strings + per-canonical usage for that unit.
+    """
+    reagents = [
+        json.loads(line)
+        for line in REAGENTS_JSONL.read_text().splitlines()
+        if line.strip()
+    ]
+
+    from collections import defaultdict, Counter
+
+    n_total = len(reagents)
+    n_with_cu = sum(1 for r in reagents if r.get("canonical_unit", ""))
+
+    # Build canonical_unit → {raw_unit → n_records}
+    cu_raw: dict[str, Counter] = {}
+    for r in reagents:
+        cu = r.get("canonical_unit", "")
+        ru = r.get("unit", "")
+        if not cu:
+            continue
+        cu_raw.setdefault(cu, Counter())
+        if ru:
+            cu_raw[cu][ru] += 1
+
+    if query:
+        # Detailed breakdown for one canonical_unit
+        query_cu = query.strip()
+        if query_cu not in cu_raw:
+            known = sorted(cu_raw.keys())
+            return {
+                "error": f"No canonical_unit '{query_cu}' found",
+                "known_canonical_units": known[:30],
+            }, 404
+
+        raw_counts = cu_raw[query_cu]
+        n_records = sum(raw_counts.values())
+
+        # Per canonical: which canonicals use this unit most?
+        canon_cu: Counter = Counter()
+        for r in reagents:
+            if r.get("canonical_unit", "") == query_cu:
+                c = r.get("canonical", "")
+                if c:
+                    canon_cu[c] += 1
+
+        return {
+            "canonical_unit": query_cu,
+            "n_records": n_records,
+            "n_raw_strings": len(raw_counts),
+            "raw_strings": [
+                {"raw_unit": ru, "n_records": cnt}
+                for ru, cnt in raw_counts.most_common()
+            ],
+            "top_canonicals": [
+                {"canonical": c, "n_records": cnt}
+                for c, cnt in canon_cu.most_common(20)
+            ],
+        }, 200
+
+    # Global summary
+    units = []
+    for cu, raw_cnt in cu_raw.items():
+        n_raw = len(raw_cnt)
+        n_rec = sum(raw_cnt.values())
+        units.append({
+            "canonical_unit": cu,
+            "n_records": n_rec,
+            "n_raw_strings": n_raw,
+            "raw_strings": [ru for ru, _ in raw_cnt.most_common()],
+            "most_common_raw": raw_cnt.most_common(1)[0][0] if raw_cnt else None,
+        })
+
+    units.sort(key=lambda x: (-x["n_raw_strings"], -x["n_records"]))
+
+    return {
+        "n_total_reagents": n_total,
+        "n_with_canonical_unit": n_with_cu,
+        "coverage_rate": round(n_with_cu / n_total, 4) if n_total else 0.0,
+        "n_canonical_units": len(units),
+        "unit_clusters": units,
+    }, 200
+
+
 def handle_canonical_type_adoption(query=None, min_types=5):
     """Route 50: reagent diffusion — how many distinct organoid types use each canonical per year.
 
@@ -4061,6 +4154,7 @@ def handle_index() -> tuple[dict, int]:
             "/analytics/concentration-value-rate": "canonicals ranked by fraction of records with a numeric dose value; highest_reporters (well-dosed) + lowest_reporters (commonly used but rarely dosed); ?q=Wnt3a for per-type breakdown; ?min_n= threshold (default 5); ?kind= filter",
             "/analytics/kind-ambiguity": "canonicals that appear in both signaling and supplement kinds; sorted by minority_fraction (ambiguity score); highlights normalization targets; ?q=Y-27632 for per-type kind breakdown; ?min_n= threshold (default 3)",
             "/analytics/canonical-type-adoption": "reagent diffusion: for each canonical, tracks n distinct organoid types using it per year (first_year, n_types_current, year_peak = most new-type adoptions); ?q=EGF for per-year type list; ?min_types= threshold (default 5)",
+            "/analytics/unit-normalization-report": "audit of raw unit string → canonical_unit normalization clusters: e.g. 'uM' ← [μM, µM, µm, μmol/L, ...]; sorted by n_raw_strings; ?q=uM for detailed breakdown + top canonicals using that unit",
             "/analytics/assay-endpoints": "assay endpoint cluster summary (per type + cross-type)",
             "/analytics/quality": "per-paper quality scores (gold/silver/bronze) + corpus summary",
             "/analytics/mior": "MIOR completeness report (Minimum Information About an Organoid Research)",
@@ -4360,6 +4454,12 @@ async def route_canonical_type_adoption(datasette, request):
     return Response.json(data, status=status)
 
 
+async def route_unit_normalization_report(datasette, request):
+    query = request.args.get("q") or None
+    data, status = handle_unit_normalization_report(query)
+    return Response.json(data, status=status)
+
+
 async def route_concentration_unit_distribution(datasette, request):
     query = request.args.get("q") or None
     try:
@@ -4488,6 +4588,7 @@ def register_routes():
         (r"^/analytics/concentration-value-rate$", route_concentration_value_rate),
         (r"^/analytics/kind-ambiguity$", route_kind_ambiguity),
         (r"^/analytics/canonical-type-adoption$", route_canonical_type_adoption),
+        (r"^/analytics/unit-normalization-report$", route_unit_normalization_report),
         (r"^/analytics/journal-breakdown$", route_journal_breakdown),
         (r"^/analytics/concentration-by-type$", route_concentration_by_type),
         (r"^/analytics/kgx-summary$", route_kgx_summary),
