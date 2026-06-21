@@ -3237,3 +3237,137 @@ def test_cd_min_n_param(tmp_path, monkeypatch):
 def test_cd_index_entry():
     data, _ = ae.handle_index()
     assert "/analytics/concentration-deviation" in data["endpoints"]
+
+
+# ---------------------------------------------------------------------------
+# /analytics/reagent-prevalence unit tests
+# ---------------------------------------------------------------------------
+
+def _write_reagents_for_rp(path, rows):
+    path.write_text("\n".join(json.dumps(r) for r in rows) + "\n")
+
+
+def _patch_rp(monkeypatch, path):
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", path)
+
+
+_RP_ROWS = [
+    # EGF in 3 types
+    {"canonical": "EGF", "organoid_type": "intestinal", "kind": "signaling"},
+    {"canonical": "EGF", "organoid_type": "kidney", "kind": "signaling"},
+    {"canonical": "EGF", "organoid_type": "cerebral", "kind": "signaling"},
+    {"canonical": "EGF", "organoid_type": "intestinal", "kind": "signaling"},  # second record same type
+    # CHIR in 2 types
+    {"canonical": "CHIR99021", "organoid_type": "intestinal", "kind": "signaling"},
+    {"canonical": "CHIR99021", "organoid_type": "kidney", "kind": "signaling"},
+    # Noggin in 1 type
+    {"canonical": "Noggin", "organoid_type": "cerebral", "kind": "signaling"},
+]
+
+
+def test_rp_404_missing_file(tmp_path, monkeypatch):
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", tmp_path / "missing.jsonl")
+    _, status = ae.handle_reagent_prevalence(None)
+    assert status == 404
+
+
+def test_rp_200_cross_corpus(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_rp(p, _RP_ROWS)
+    _patch_rp(monkeypatch, p)
+    data, status = ae.handle_reagent_prevalence(None)
+    assert status == 200
+    assert data["n_canonicals_total"] == 3
+    assert data["n_types_total"] == 3
+
+
+def test_rp_sorted_by_n_types_desc(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_rp(p, _RP_ROWS)
+    _patch_rp(monkeypatch, p)
+    data, _ = ae.handle_reagent_prevalence(None)
+    entries = data["all_canonicals"]
+    assert entries[0]["canonical"] == "EGF"  # 3 types, highest
+    assert entries[0]["n_types"] == 3
+    n_types_list = [e["n_types"] for e in entries]
+    assert n_types_list == sorted(n_types_list, reverse=True)
+
+
+def test_rp_n_records_includes_duplicates(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_rp(p, _RP_ROWS)
+    _patch_rp(monkeypatch, p)
+    data, _ = ae.handle_reagent_prevalence(None)
+    egf = next(e for e in data["all_canonicals"] if e["canonical"] == "EGF")
+    assert egf["n_records"] == 4  # 4 total EGF rows
+
+
+def test_rp_specialist_list_is_low_breadth(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_rp(p, _RP_ROWS)
+    _patch_rp(monkeypatch, p)
+    data, _ = ae.handle_reagent_prevalence(None)
+    specialist = data["specialist"]
+    for e in specialist:
+        assert e["n_types"] <= 2
+    # CHIR and Noggin are specialist (2 and 1 types)
+    specialist_names = {e["canonical"] for e in specialist}
+    assert "CHIR99021" in specialist_names
+    assert "Noggin" in specialist_names
+
+
+def test_rp_min_types_filter(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_rp(p, _RP_ROWS)
+    _patch_rp(monkeypatch, p)
+    data, _ = ae.handle_reagent_prevalence(None, min_types=3)
+    # Only EGF has 3 types
+    assert data["n_canonicals_above_threshold"] == 1
+    assert data["all_canonicals"][0]["canonical"] == "EGF"
+
+
+def test_rp_query_returns_per_type(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_rp(p, _RP_ROWS)
+    _patch_rp(monkeypatch, p)
+    data, status = ae.handle_reagent_prevalence("EGF")
+    assert status == 200
+    assert data["canonical"] == "EGF"
+    assert data["n_types"] == 3
+    assert data["n_records_total"] == 4
+    types = {e["organoid_type"] for e in data["per_type"]}
+    assert types == {"intestinal", "kidney", "cerebral"}
+
+
+def test_rp_query_case_insensitive(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_rp(p, _RP_ROWS)
+    _patch_rp(monkeypatch, p)
+    data, status = ae.handle_reagent_prevalence("egf")
+    assert status == 200
+    assert data["canonical"] == "EGF"
+
+
+def test_rp_query_404_no_match(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_rp(p, _RP_ROWS)
+    _patch_rp(monkeypatch, p)
+    _, status = ae.handle_reagent_prevalence("xyzabc_does_not_exist")
+    assert status == 404
+
+
+def test_rp_breadth_distribution_correct(tmp_path, monkeypatch):
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_rp(p, _RP_ROWS)
+    _patch_rp(monkeypatch, p)
+    data, _ = ae.handle_reagent_prevalence(None)
+    bd = data["breadth_distribution"]
+    # EGF→3, CHIR→2, Noggin→1
+    assert bd["3"] == 1
+    assert bd["2"] == 1
+    assert bd["1"] == 1
+
+
+def test_rp_index_entry():
+    data, _ = ae.handle_index()
+    assert "/analytics/reagent-prevalence" in data["endpoints"]

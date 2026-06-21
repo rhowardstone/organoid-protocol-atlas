@@ -30,6 +30,7 @@ Routes (all return JSON; read-only, no writes):
   GET /analytics/journal-breakdown           -- journal contribution counts cross-corpus and per organoid type; optional ?type= for one type
   GET /analytics/type-comparison             -- side-by-side organoid type comparison: shared/unique canonical reagents, Jaccard score, per-kind breakdown; requires ?a= and ?b=
   GET /analytics/concentration-deviation     -- dose inconsistency ranking: canonical reagents sorted by coefficient of variation (std/mean) per dominant unit; min_n= threshold (default 3)
+  GET /analytics/reagent-prevalence          -- type-breadth ranking: canonical reagents sorted by n_organoid_types they appear in; ?q= for per-type breakdown of one canonical; ?min_types= threshold
   GET /analytics                                -- index of available analytics
 
 All endpoints degrade gracefully — if the pre-computed file doesn't exist they return
@@ -2139,6 +2140,100 @@ def handle_concentration_by_type(query: str | None) -> tuple[dict, int]:
     }, 200
 
 
+def handle_reagent_prevalence(query: str | None, min_types: int = 1) -> tuple[dict, int]:
+    """Type-breadth ranking of canonical reagents.
+
+    Returns canonicals sorted by how many organoid types they appear in.
+    High breadth = used across many types (universal); low breadth = specialist.
+
+    Without ?q=: ranked list of all canonicals with n_types >= min_types (default 1),
+    plus breadth_distribution (count of canonicals per n_types bucket),
+    plus n_canonicals_total, n_types_total.
+    Each entry: canonical, n_types, n_records, types (sorted).
+
+    With ?q= (case-insensitive substring): full per-type detail for one canonical —
+    n_records per type, sorted by n_records desc.
+    """
+    if not REAGENTS_JSONL.exists():
+        return {"error": "reagents.jsonl not found", "hint": "Run: python pipeline/export_public.py"}, 404
+
+    try:
+        rows = [
+            json.loads(line)
+            for line in REAGENTS_JSONL.read_text().splitlines()
+            if line.strip()
+        ]
+    except (json.JSONDecodeError, OSError) as exc:
+        return {"error": f"reagents.jsonl unreadable: {exc}"}, 500
+
+    from collections import defaultdict, Counter
+    # Build: canonical → {type → n_records}
+    canon_type_counts: dict[str, dict[str, int]] = defaultdict(lambda: defaultdict(int))
+
+    for r in rows:
+        canon = (r.get("canonical") or r.get("name") or "").strip()
+        if not canon:
+            continue
+        ot = (r.get("organoid_type") or "unknown").strip()
+        canon_type_counts[canon][ot] += 1
+
+    if query and query.strip():
+        # Per-type detail for one canonical (substring match, case-insensitive)
+        q_lower = query.strip().lower()
+        matches = {c: d for c, d in canon_type_counts.items() if q_lower in c.lower()}
+        if not matches:
+            return {"error": f"no canonical matching '{query}'"}, 404
+        exact = next((c for c in matches if c.lower() == q_lower), None)
+        canon = exact or max(matches, key=lambda c: sum(matches[c].values()))
+        type_map = canon_type_counts[canon]
+        per_type = sorted(
+            [{"organoid_type": t, "n_records": n} for t, n in type_map.items()],
+            key=lambda x: x["n_records"], reverse=True
+        )
+        return {
+            "canonical": canon,
+            "canonical_query": query,
+            "n_types": len(type_map),
+            "n_records_total": sum(type_map.values()),
+            "per_type": per_type,
+        }, 200
+
+    # Cross-corpus breadth ranking
+    breadth_dist: dict[int, int] = Counter()
+    entries = []
+    for canon, type_map in canon_type_counts.items():
+        n_t = len(type_map)
+        breadth_dist[n_t] += 1
+        if n_t < min_types:
+            continue
+        entries.append({
+            "canonical": canon,
+            "n_types": n_t,
+            "n_records": sum(type_map.values()),
+            "types": sorted(type_map),
+        })
+
+    entries.sort(key=lambda x: (x["n_types"], x["n_records"]), reverse=True)
+
+    # Convenience sub-lists
+    cross_field = [e for e in entries if e["n_types"] >= 20]
+    specialist = sorted(
+        [e for e in entries if e["n_types"] <= 2],
+        key=lambda x: x["n_records"], reverse=True
+    )[:20]
+
+    return {
+        "n_canonicals_total": len(canon_type_counts),
+        "n_types_total": len({ot for d in canon_type_counts.values() for ot in d}),
+        "min_types_threshold": min_types,
+        "n_canonicals_above_threshold": len(entries),
+        "breadth_distribution": {str(k): v for k, v in sorted(breadth_dist.items(), reverse=True)},
+        "cross_field": cross_field,  # appear in >= 20 types
+        "specialist": specialist,  # appear in <= 2 types, top 20 by n_records
+        "all_canonicals": entries,  # full ranked list (may be large)
+    }, 200
+
+
 def handle_concentration_deviation(min_n: int = 3) -> tuple[dict, int]:
     """Dose inconsistency ranking: canonical reagents sorted by coefficient of variation.
 
@@ -2403,6 +2498,7 @@ def handle_index() -> tuple[dict, int]:
             "/analytics/journal-breakdown": "journal contribution counts: cross-corpus top 50 + per-type top 5; optional ?type=kidney for full breakdown of one type — audits corpus composition and journal bias",
             "/analytics/type-comparison": "side-by-side organoid type comparison: shared/unique canonical reagents, Jaccard score, per-kind breakdown; requires ?a=intestinal&b=cerebral",
             "/analytics/concentration-deviation": "dose inconsistency ranking: canonical reagents sorted by coefficient of variation (std/mean) across records with numeric values; ?min_n= to set sample threshold (default 3)",
+            "/analytics/reagent-prevalence": "type-breadth ranking: canonical reagents sorted by number of organoid types they appear in; cross_field (>=20 types) + specialist (<=2 types) sub-lists; ?q=EGF for per-type breakdown; ?min_types= threshold",
             "/analytics/assay-endpoints": "assay endpoint cluster summary (per type + cross-type)",
             "/analytics/quality": "per-paper quality scores (gold/silver/bronze) + corpus summary",
             "/analytics/mior": "MIOR completeness report (Minimum Information About an Organoid Research)",
@@ -2626,6 +2722,16 @@ async def route_concentration_by_type(datasette, request):
     return Response.json(data, status=status)
 
 
+async def route_reagent_prevalence(datasette, request):
+    query = request.args.get("q") or None
+    try:
+        min_types = int(request.args.get("min_types") or 1)
+    except (TypeError, ValueError):
+        min_types = 1
+    data, status = handle_reagent_prevalence(query, min_types)
+    return Response.json(data, status=status)
+
+
 async def route_concentration_deviation(datasette, request):
     try:
         min_n = int(request.args.get("min_n") or 3)
@@ -2680,6 +2786,7 @@ def register_routes():
         (r"^/analytics/temporal-reagent-adoption$", route_temporal_reagent_adoption),
         (r"^/analytics/type-comparison$", route_type_comparison),
         (r"^/analytics/concentration-deviation$", route_concentration_deviation),
+        (r"^/analytics/reagent-prevalence$", route_reagent_prevalence),
         (r"^/analytics/journal-breakdown$", route_journal_breakdown),
         (r"^/analytics/concentration-by-type$", route_concentration_by_type),
         (r"^/analytics/kgx-summary$", route_kgx_summary),

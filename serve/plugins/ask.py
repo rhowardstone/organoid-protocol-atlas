@@ -108,6 +108,7 @@ exports. Prefer the JSON endpoints for programmatic use.
 - /analytics/journal-breakdown          journal contribution counts: cross-corpus top 50 + per-type top 5; ?type=kidney for full single-type breakdown
 - /analytics/type-comparison           side-by-side organoid type comparison: shared/unique canonical reagents, Jaccard similarity, per-kind breakdown; ?a=intestinal&b=cerebral
 - /analytics/concentration-deviation   dose inconsistency ranking: canonical reagents sorted by coefficient of variation (std/mean); most_variable and most_consistent lists; ?min_n= threshold
+- /analytics/reagent-prevalence        type-breadth ranking: canonicals sorted by n_organoid_types; cross_field (>=20 types) + specialist (<=2 types) sub-lists; ?q=EGF for per-type breakdown
 - /analytics/failure-modes             failure mode cluster summary across the corpus
 - /analytics/lineage                   DOI→DOI protocol lineage graph
 - /analytics/assay-endpoints           assay endpoint cluster summary (per-type + cross-type)

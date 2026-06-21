@@ -453,3 +453,36 @@ def test_live_cd_egf_in_most_variable():
     assert len(data["most_variable"]) >= 3
     # min_n_threshold should be present
     assert data["min_n_threshold"] == 3
+
+
+# ---------------------------------------------------------------------------
+# reagent-prevalence live smoke tests
+# ---------------------------------------------------------------------------
+
+@require_reagents
+def test_live_rp_returns_200():
+    data, status = ae.handle_reagent_prevalence(None)
+    assert status == 200
+    assert data["n_canonicals_total"] >= 100
+    assert data["n_types_total"] >= 10
+    assert len(data["cross_field"]) >= 1  # some reagents appear in >= 20 types
+
+
+@require_reagents
+def test_live_rp_egf_query():
+    data, status = ae.handle_reagent_prevalence("EGF")
+    assert status == 200
+    assert data["canonical"] == "EGF"
+    assert data["n_types"] >= 10
+    assert data["n_records_total"] >= 50
+    # EGF should appear in intestinal, kidney, cerebral at minimum
+    type_names = {e["organoid_type"] for e in data["per_type"]}
+    assert "intestinal" in type_names
+
+
+@require_reagents
+def test_live_rp_b27_is_cross_field():
+    data, _ = ae.handle_reagent_prevalence(None)
+    cross = {e["canonical"] for e in data["cross_field"]}
+    # B27, FGF2, GlutaMAX appear in all 25 types
+    assert len(cross & {"B27", "FGF2", "GlutaMAX"}) >= 2
