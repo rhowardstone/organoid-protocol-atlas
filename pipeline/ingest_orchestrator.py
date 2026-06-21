@@ -74,6 +74,25 @@ def select_candidates(candidate_rows, have_pmc, have_doi, cc_only=False, limit=N
     return out[:limit] if limit else out
 
 
+def rank_candidates_by_relevance(cands, cand_vecs, centroids, min_relevance=0.0):
+    """R5: re-rank candidates by SEMANTIC relevance to their organoid-type centroid
+    (cosine), so on-topic protocol papers extract first and obvious off-topic pulls can
+    be dropped BEFORE burning GPU on extraction. Pure: cand_vecs is a parallel list of
+    embedding vectors (or None); centroids maps organoid_type -> unit centroid vector.
+    Candidates whose type has no centroid keep score None and are RETAINED (not
+    penalised — we don't have a reference to judge them). Returns candidates (with a
+    '_relevance' field) sorted by score desc, dropping scored ones below min_relevance."""
+    from hybrid_discover import cosine_to_centroid
+    scored = []
+    for c, v in zip(cands, cand_vecs):
+        cen = centroids.get(c.get("organoid_type")) if centroids else None
+        s = cosine_to_centroid(v, cen) if (cen is not None and v is not None) else None
+        scored.append((c, s))
+    kept = [(c, s) for c, s in scored if s is None or s >= min_relevance]
+    kept.sort(key=lambda cs: (cs[1] is None, -(cs[1] if cs[1] is not None else 0.0)))
+    return [{**c, "_relevance": (round(s, 4) if s is not None else None)} for c, s in kept]
+
+
 def verdict(r, min_grounding):
     """Pure QC gate: reject-reason for a process_one result, or None to ACCEPT. Testable
     without network/Ollama (feed it a result dict)."""
@@ -203,13 +222,38 @@ def main():
                          "OLLAMA_NUM_PARALLEL>=N for real GPU concurrency)")
     ap.add_argument("--candidates", type=Path, default=CANDIDATES,
                     help="candidate pool CSV (default: 180-pool)")
+    ap.add_argument("--rank-semantic", action="store_true",
+                    help="R5: re-rank candidates by semantic relevance to organoid-type "
+                         "centroids (needs a built semantic index) before applying --limit")
+    ap.add_argument("--min-relevance", type=float, default=0.0,
+                    help="with --rank-semantic, drop candidates scoring below this cosine")
     args = ap.parse_args()
     candidates_path = args.candidates
     OUT.mkdir(parents=True, exist_ok=True)
     have_pmc, have_doi = existing_corpus()
 
+    # When semantic-ranking, select the FULL eligible pool first, rank, then take --limit
+    # (so the most on-topic candidates extract, not just the first N in file order).
+    sel_limit = None if args.rank_semantic else args.limit
     cands = select_candidates(list(csv.DictReader(open(candidates_path))), have_pmc, have_doi,
-                              cc_only=args.cc_only, limit=args.limit)
+                              cc_only=args.cc_only, limit=sel_limit)
+    if args.rank_semantic:
+        import hybrid_discover as hd
+        ci = hd.type_centroids(REPO / "data" / "index")
+        if ci is None:
+            print("  [rank-semantic] no semantic index (run semantic_index.py build) — "
+                  "skipping re-rank", flush=True)
+        else:
+            _, _, centroids = ci
+            texts = [f"{(c.get('title') or '').strip()}. {(c.get('notes') or '').strip()}".strip(". ")
+                     or (c.get('pmcid') or '') for c in cands]
+            vecs = hd.embed_texts(texts)
+            vlist = list(vecs) if vecs is not None else [None] * len(cands)
+            before = len(cands)
+            cands = rank_candidates_by_relevance(cands, vlist, centroids, args.min_relevance)
+            print(f"  [rank-semantic] ranked {before} candidates; kept {len(cands)} "
+                  f"(min_relevance={args.min_relevance})", flush=True)
+        cands = cands[: args.limit]
 
     accepted, rejected, new_rows = run_batch(cands, args.min_grounding, args.dry_run,
                                              workers=args.workers)
