@@ -29,20 +29,51 @@ OUT = REPO / "exports" / "public"
 # citation-snippet policy); the in-context highlighter is simply absent in public.
 TABLES = ("protocols", "reagents")
 
+# Evidence snippet cap: keeps quotes readable as attribution context without
+# redistributing full method-step paragraphs. Aligns with llms.txt policy
+# ("does not redistribute full methods text"). KGX uses 300; public UI gets
+# slightly more context at 500.
+PUBLIC_SNIPPET_MAX = 500
+
+
+def is_public_license(license: str | None) -> bool:
+    """Public-redistributable iff CC0 or CC-BY (incl. -SA) and NOT NonCommercial (NC)
+    or NoDerivatives (ND). Excludes author-manuscript / unknown / CC-BY-NC /
+    CC-BY-NC-ND / CC-BY-ND. (NC/ND content isn't freely redistributable for a public
+    Translator resource; ND also forbids the KG derivative.) Per codex PR #24 finding 2."""
+    s = (license or "").upper().strip().replace(" ", "-").replace("_", "-")
+    if "NC" in s or "ND" in s:
+        return False
+    return s.startswith("CC-BY") or s.startswith("CC0")
+
 
 def main():
     OUT.mkdir(parents=True, exist_ok=True)
     conn = sqlite3.connect(DB)
     conn.row_factory = sqlite3.Row
-    cc = [r[0] for r in conn.execute(
-        "SELECT pmcid FROM protocols WHERE license LIKE 'CC%'")]
+    cc = sorted({r["pmcid"] for r in conn.execute("SELECT pmcid, license FROM protocols")
+                 if is_public_license(r["license"])})
     ph = ",".join("?" * len(cc))
-    manifest = {"license_filter": "CC*", "n_papers": len(cc), "papers": sorted(cc), "tables": {}}
+    n_types = len({r["organoid_type"] for r in
+                   conn.execute("SELECT organoid_type FROM protocols WHERE pmcid IN ({})".format(ph), cc)
+                   if r["organoid_type"]})
+    manifest = {
+        "license_filter": "CC0/CC-BY (no NC/ND)",
+        "schema_version": "0.4",
+        "n_papers": len(cc),
+        "n_types": n_types,
+        "papers": sorted(cc),
+        "tables": {},
+    }
     for t in TABLES:
         rows = conn.execute(f"SELECT * FROM {t} WHERE pmcid IN ({ph})", cc).fetchall()
         with open(OUT / f"{t}.jsonl", "w") as f:
             for r in rows:
-                f.write(json.dumps({k: r[k] for k in r.keys()}, ensure_ascii=False) + "\n")
+                row = {k: r[k] for k in r.keys()}
+                eq = row.get("evidence_quote")
+                if eq and len(eq) > PUBLIC_SNIPPET_MAX:
+                    row["evidence_quote"] = eq[:PUBLIC_SNIPPET_MAX]
+                f.write(json.dumps(row, ensure_ascii=False) + "\n")
         manifest["tables"][t] = len(rows)
         print(f"  {t}: {len(rows)} rows")
     (OUT / "manifest.json").write_text(json.dumps(manifest, indent=2))
