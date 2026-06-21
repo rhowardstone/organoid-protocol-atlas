@@ -5166,6 +5166,263 @@ def handle_canonical_merge_candidates(min_records: int = 3) -> tuple[dict, int]:
     }, 200
 
 
+def handle_within_type_dose_range(
+    query: str | None = None,
+    organoid_type: str | None = None,
+    unit: str | None = None,
+    min_n: int = 3,
+) -> tuple[dict, int]:
+    """Route 61: within-type fold-range per canonical reagent × organoid type.
+
+    For each (canonical, organoid_type, canonical_unit) triple with >= min_n numeric
+    records, computes min, max, fold_range (max/min), and CV. Sorted by fold_range
+    desc — highest intra-type dose disagreement first.
+
+    Surfaces the 'FGF2 kidney: 6–200 ng/mL (33×)' pattern identified by Claude's
+    AI-market-research paper as the reproducibility concern missed by cross-type stats.
+
+    Filters: ?q=FGF2 for one canonical; ?type=kidney for one organoid type;
+             ?unit=ng/mL to fix unit; ?min_n= (default 3).
+    Without filters: top 50 combos by fold_range.
+    """
+    if not REAGENTS_JSONL.exists():
+        return {"error": "reagents.jsonl not found", "hint": "Run: python pipeline/export_public.py"}, 404
+
+    from collections import defaultdict
+
+    try:
+        reagents = [
+            json.loads(line)
+            for line in REAGENTS_JSONL.read_text().splitlines()
+            if line.strip()
+        ]
+    except (json.JSONDecodeError, OSError) as exc:
+        return {"error": f"reagents.jsonl unreadable: {exc}"}, 500
+
+    # canonical → type → unit → [values]
+    groups: dict = defaultdict(lambda: defaultdict(lambda: defaultdict(list)))
+
+    for r in reagents:
+        canon = (r.get("canonical") or r.get("name") or "").strip()
+        otype = (r.get("organoid_type") or "").strip()
+        u = (r.get("canonical_unit") or r.get("unit") or "").strip()
+        v = r.get("value")
+        if not (canon and otype and u and v is not None):
+            continue
+        if query and query.lower() not in canon.lower():
+            continue
+        if organoid_type and organoid_type.lower() != otype.lower():
+            continue
+        if unit and unit.lower() != u.lower():
+            continue
+        try:
+            fv = float(str(v))
+            if fv > 0:
+                groups[canon][otype][u].append(fv)
+        except (TypeError, ValueError):
+            pass
+
+    results: list[dict] = []
+    for canon, types_map in groups.items():
+        for otype, unit_map in types_map.items():
+            for u, vals in unit_map.items():
+                if len(vals) < min_n:
+                    continue
+                vmin, vmax = min(vals), max(vals)
+                fold = round(vmax / vmin, 2) if vmin > 0 else None
+                n = len(vals)
+                mean = sum(vals) / n
+                variance = sum((x - mean) ** 2 for x in vals) / n
+                std = variance ** 0.5
+                cv = round(std / mean, 4) if mean else None
+                med_sorted = sorted(vals)
+                median = (
+                    med_sorted[n // 2]
+                    if n % 2
+                    else (med_sorted[n // 2 - 1] + med_sorted[n // 2]) / 2
+                )
+                results.append({
+                    "canonical": canon,
+                    "organoid_type": otype,
+                    "unit": u,
+                    "n": n,
+                    "min": round(vmin, 4),
+                    "max": round(vmax, 4),
+                    "fold_range": fold,
+                    "median": round(median, 4),
+                    "cv": cv,
+                    "headline": (
+                        f"{canon} in {otype}: {vmin}–{vmax} {u} ({fold}×)"
+                        if fold is not None
+                        else f"{canon} in {otype}: n={n} records"
+                    ),
+                })
+
+    results.sort(key=lambda x: -(x["fold_range"] or 0))
+
+    out: dict = {
+        "description": (
+            "Within-type dose fold-range per canonical reagent × organoid type. "
+            "fold_range = max/min within the same type — high values flag reproducibility concerns."
+        ),
+        "min_n": min_n,
+        "n_combos": len(results),
+    }
+    if query:
+        out["query"] = query
+    if organoid_type:
+        out["organoid_type"] = organoid_type
+    if unit:
+        out["unit"] = unit
+    out["results"] = results if (query or organoid_type) else results[:50]
+    return out, 200
+
+
+def handle_convergence_leaders(
+    min_years: int = 3,
+    min_n: int = 3,
+) -> tuple[dict, int]:
+    """Route 62: canonical reagents ranked by dosing convergence over time.
+
+    Re-uses the temporal-variance data to surface reagents whose within-year CV
+    fell most steeply (converging) vs. rose (diverging). The BMP4 retinal
+    'consensus emerged' finding from Claude's AI-market-research paper is the
+    canonical use-case: an endpoint that tells you which doses have settled.
+
+    Each canonical must have data in >= min_years years (each year needing >= min_n
+    records). Trend is set by the delta between the earliest and latest yearly CV:
+      converging: delta < -0.2
+      diverging:  delta > +0.2
+      stable:     otherwise
+
+    Returns:
+      - converging: up to 30 canonicals sorted by cv_drop desc (biggest improvement)
+      - diverging:  up to 30 canonicals sorted by cv_rise desc (most chaotic trend)
+      - n_stable: count of stable canonicals
+      - n_canonicals_with_data: total canonicals analysed
+    Params: ?min_years= (default 3); ?min_n= (default 3)
+    """
+    if not REAGENTS_JSONL.exists():
+        return {"error": "reagents.jsonl not found", "hint": "Run: python pipeline/export_public.py"}, 404
+    if not PROTOCOLS_JSONL.exists():
+        return {"error": "protocols.jsonl not found", "hint": "Run: python pipeline/export_public.py"}, 404
+
+    pmcid_year: dict[str, int] = {}
+    with open(PROTOCOLS_JSONL) as f:
+        for line in f:
+            line = line.strip()
+            if not line:
+                continue
+            try:
+                p = json.loads(line)
+            except json.JSONDecodeError:
+                continue
+            pmcid = (p.get("pmcid") or "").strip()
+            year = p.get("year")
+            if pmcid and year:
+                try:
+                    pmcid_year[pmcid] = int(year)
+                except (TypeError, ValueError):
+                    pass
+
+    from collections import defaultdict
+
+    # canonical → year → [value]  (dominant-unit pass not needed — use raw to track trend shape)
+    canonical_year_vals: dict[str, dict[int, list[float]]] = defaultdict(lambda: defaultdict(list))
+    with open(REAGENTS_JSONL) as f:
+        for line in f:
+            line = line.strip()
+            if not line:
+                continue
+            try:
+                r = json.loads(line)
+            except json.JSONDecodeError:
+                continue
+            canon = (r.get("canonical") or "").strip()
+            if not canon:
+                continue
+            pmcid = (r.get("pmcid") or "").strip()
+            year = pmcid_year.get(pmcid)
+            if not year:
+                continue
+            v = r.get("value")
+            if v is None:
+                continue
+            try:
+                fv = float(v)
+                if fv > 0:
+                    canonical_year_vals[canon][year].append(fv)
+            except (TypeError, ValueError):
+                pass
+
+    converging: list[dict] = []
+    diverging: list[dict] = []
+    n_stable = 0
+
+    for canon, year_vals in canonical_year_vals.items():
+        # Per year, compute CV; skip years with < min_n records
+        yearly_cvs: list[tuple[int, float]] = []
+        for year in sorted(year_vals.keys()):
+            vals = year_vals[year]
+            if len(vals) < min_n:
+                continue
+            mean_v = sum(vals) / len(vals)
+            if mean_v == 0:
+                continue
+            variance = sum((v - mean_v) ** 2 for v in vals) / len(vals)
+            cv = variance ** 0.5 / mean_v
+            yearly_cvs.append((year, round(cv, 4)))
+
+        if len(yearly_cvs) < min_years:
+            continue
+
+        first_cv = yearly_cvs[0][1]
+        last_cv = yearly_cvs[-1][1]
+        delta = round(last_cv - first_cv, 4)
+
+        entry = {
+            "canonical": canon,
+            "n_years_with_data": len(yearly_cvs),
+            "first_year": yearly_cvs[0][0],
+            "last_year": yearly_cvs[-1][0],
+            "first_year_cv": first_cv,
+            "last_year_cv": last_cv,
+            "cv_change": delta,
+            "yearly_cv": [{"year": y, "cv": cv} for y, cv in yearly_cvs],
+        }
+
+        if delta < -0.2:
+            entry["trend"] = "converging"
+            entry["cv_drop"] = round(-delta, 4)
+            converging.append(entry)
+        elif delta > 0.2:
+            entry["trend"] = "diverging"
+            entry["cv_rise"] = round(delta, 4)
+            diverging.append(entry)
+        else:
+            n_stable += 1
+
+    converging.sort(key=lambda x: -x["cv_drop"])
+    diverging.sort(key=lambda x: -x["cv_rise"])
+
+    return {
+        "description": (
+            "Canonical reagents ranked by temporal CV trend. "
+            "'converging' = dosing consensus is emerging (CV fell); "
+            "'diverging' = dose disagreement is growing (CV rose). "
+            "Source: within-year CV per publication year across all records."
+        ),
+        "min_years": min_years,
+        "min_n_per_year": min_n,
+        "n_canonicals_with_data": len(converging) + len(diverging) + n_stable,
+        "n_converging": len(converging),
+        "n_diverging": len(diverging),
+        "n_stable": n_stable,
+        "converging": converging[:30],
+        "diverging": diverging[:30],
+    }, 200
+
+
 def handle_index() -> tuple[dict, int]:
     """Analytics endpoint index."""
     return {
@@ -5229,6 +5486,8 @@ def handle_index() -> tuple[dict, int]:
             "/analytics/candidates": "OA/license verification status of the candidate pools (issue #14 pipeline)",
             "/analytics/status": "live system health check (corpus + analytics artifact inventory)",
             "/analytics/summary": "high-level dashboard: corpus stats, quality distribution, top types/assays/failures",
+            "/analytics/within-type-dose-range": "within-type fold-range per canonical × organoid type: min/max/fold_range/CV; ranks intra-type dose disagreement (e.g. FGF2 kidney 6-200 ng/mL = 33×); ?q= ?type= ?unit= ?min_n=",
+            "/analytics/convergence-leaders": "canonical reagents ranked by temporal CV trend: converging (consensus emerging) vs diverging (dose disagreement growing); ?min_years= ?min_n= thresholds; surfaces BMP4 retinal-style success stories",
         },
         "generate": {
             "consensus": "python pipeline/compute_consensus.py --all",
@@ -5693,6 +5952,31 @@ async def route_canonical_merge_candidates(datasette, request):
     return Response.json(data, status=status)
 
 
+async def route_within_type_dose_range(datasette, request):
+    query = request.args.get("q") or None
+    organoid_type = request.args.get("type") or None
+    unit = request.args.get("unit") or None
+    try:
+        min_n = int(request.args.get("min_n") or 3)
+    except (TypeError, ValueError):
+        min_n = 3
+    data, status = handle_within_type_dose_range(query, organoid_type, unit, min_n)
+    return Response.json(data, status=status)
+
+
+async def route_convergence_leaders(datasette, request):
+    try:
+        min_years = int(request.args.get("min_years") or 3)
+    except (TypeError, ValueError):
+        min_years = 3
+    try:
+        min_n = int(request.args.get("min_n") or 3)
+    except (TypeError, ValueError):
+        min_n = 3
+    data, status = handle_convergence_leaders(min_years, min_n)
+    return Response.json(data, status=status)
+
+
 @hookimpl
 def register_routes():
     return [
@@ -5757,4 +6041,6 @@ def register_routes():
         (r"^/analytics/candidates$", route_candidates),
         (r"^/analytics/status$", route_status),
         (r"^/analytics/summary$", route_summary),
+        (r"^/analytics/within-type-dose-range$", route_within_type_dose_range),
+        (r"^/analytics/convergence-leaders$", route_convergence_leaders),
     ]

@@ -175,6 +175,8 @@ For full-table streaming with no row cap, append ?_stream=1 to the CSV URL:
 - /analytics/lineage                   DOI→DOI protocol lineage graph
 - /analytics/assay-endpoints           assay endpoint cluster summary (per-type + cross-type)
 - /analytics/candidates                OA/license verification status of the candidate pool
+- /analytics/within-type-dose-range   intra-type fold-range per canonical × organoid type: min/max/fold_range ranked by dose disagreement (e.g. FGF2 kidney 6-200 ng/mL = 33×); ?q= ?type= ?unit= ?min_n=
+- /analytics/convergence-leaders      canonicals ranked by temporal CV trend: converging (dose consensus emerging) vs diverging; ?min_years= ?min_n= thresholds; surfaces BMP4 retinal-style success stories
 - /analytics                           index of all analytics endpoints with generate commands
 
 ## TRAPI (Translator Reasoner API 1.5)
