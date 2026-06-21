@@ -18,6 +18,9 @@ Routes (all return JSON; read-only, no writes):
   GET /analytics/species-breakdown            -- species distribution per organoid type from protocols.jsonl
   GET /analytics/matrix-breakdown             -- extracellular matrix usage per organoid type from protocols.jsonl
   GET /analytics/base-media-breakdown         -- base media usage per organoid type from protocols.jsonl
+  GET /analytics/source-cell-breakdown        -- source cell type distribution per organoid type (iPSC / adult_stem_cell / primary_tissue / ESC)
+  GET /analytics/protocol-complexity          -- per-type protocol complexity: avg signaling factors, supplements, grounding rate
+  GET /analytics/reporting-gaps              -- field reporting rates across the corpus (species/matrix/base_media/passaging/timeline) — transparency audit
   GET /analytics                                -- index of available analytics
 
 All endpoints degrade gracefully — if the pre-computed file doesn't exist they return
@@ -423,13 +426,14 @@ def handle_summary() -> tuple[dict, int]:
         except (json.JSONDecodeError, OSError):
             pass
 
-    # Species + matrix + base_media snapshots — single pass over protocols.jsonl.
+    # Species + matrix + base_media + source_cell snapshots — single pass.
     # Derived live so the summary stays fresh without a separate pre-computed artifact.
     if PROTOCOLS_JSONL.exists():
         try:
             sp_counts: dict[str, int] = {}
             mx_counts: dict[str, int] = {}
             bm_counts: dict[str, int] = {}
+            sc_counts: dict[str, int] = {}
             for line in PROTOCOLS_JSONL.read_text().splitlines():
                 if not line.strip():
                     continue
@@ -443,15 +447,20 @@ def handle_summary() -> tuple[dict, int]:
                 raw_bm = (p.get("base_media") or "not_stated").strip()
                 bm = _BASE_MEDIA_ALIASES.get(raw_bm.lower(), raw_bm)
                 bm_counts[bm] = bm_counts.get(bm, 0) + 1
+                raw_sc = (p.get("source_cell_type") or "not_stated").strip()
+                sc = _SOURCE_CELL_ALIASES.get(raw_sc.lower(), raw_sc)
+                sc_counts[sc] = sc_counts.get(sc, 0) + 1
             summary["species_snapshot"] = dict(sorted(sp_counts.items(), key=lambda kv: -kv[1])[:3])
             summary["matrix_snapshot"] = dict(sorted(mx_counts.items(), key=lambda kv: -kv[1])[:3])
             summary["base_media_snapshot"] = dict(sorted(bm_counts.items(), key=lambda kv: -kv[1])[:3])
+            summary["source_cell_snapshot"] = dict(sorted(sc_counts.items(), key=lambda kv: -kv[1])[:3])
         except (json.JSONDecodeError, OSError):
             pass
 
     # Live-derived convenience fields — excluded from has_data gate.
     _analytics_keys = set(summary) - {
-        "manifest", "mior", "species_snapshot", "matrix_snapshot", "base_media_snapshot"
+        "manifest", "mior", "species_snapshot", "matrix_snapshot",
+        "base_media_snapshot", "source_cell_snapshot",
     }
     has_data = bool(_analytics_keys)
 
@@ -1152,6 +1161,271 @@ def handle_base_media_breakdown(organoid_type: str | None) -> tuple[dict, int]:
     }, 200
 
 
+# Source cell type values from protocols.jsonl are already normalised by the pipeline
+# (iPSC / adult_stem_cell / primary_tissue / ESC / other).  The alias dict below
+# handles any legacy / LLM-variant spellings that slip through.
+_SOURCE_CELL_ALIASES: dict[str, str] = {
+    "ipsc": "iPSC",
+    "ips cell": "iPSC",
+    "ips cells": "iPSC",
+    "induced pluripotent stem cell": "iPSC",
+    "induced pluripotent stem cells": "iPSC",
+    "pluripotent stem cell": "iPSC",
+    "hipscs": "iPSC",
+    "hipsc": "iPSC",
+    "esc": "ESC",
+    "embryonic stem cell": "ESC",
+    "embryonic stem cells": "ESC",
+    "hesc": "ESC",
+    "hescs": "ESC",
+    "es cell": "ESC",
+    "adult stem cell": "adult_stem_cell",
+    "adult_stemcell": "adult_stem_cell",
+    "primary": "primary_tissue",
+    "primary tissue": "primary_tissue",
+    "primary cells": "primary_tissue",
+    "primary cell": "primary_tissue",
+    "biopsy": "primary_tissue",
+}
+
+
+def handle_source_cell_breakdown(organoid_type: str | None) -> tuple[dict, int]:
+    """Source cell type distribution per organoid type from protocols.jsonl.
+
+    Normalises legacy variant spellings to the canonical set (iPSC,
+    adult_stem_cell, primary_tissue, ESC, other). Optional ?type=kidney
+    for one type.
+    """
+    if not PROTOCOLS_JSONL.exists():
+        return {
+            "error": "protocols.jsonl not found",
+            "hint": "Run: python pipeline/export_public.py",
+        }, 404
+
+    if organoid_type and not re.match(r'^[\w-]+$', organoid_type):
+        return {"error": "invalid organoid_type"}, 400
+
+    per_type: dict[str, dict[str, int]] = {}
+    cross_corpus: dict[str, int] = {}
+
+    try:
+        for line in PROTOCOLS_JSONL.read_text().splitlines():
+            if not line.strip():
+                continue
+            p = json.loads(line)
+            ot = (p.get("organoid_type") or "").strip()
+            if not ot or ot == "other":
+                continue
+            raw = (p.get("source_cell_type") or "not_stated").strip()
+            sc = _SOURCE_CELL_ALIASES.get(raw.lower(), raw)
+            per_type.setdefault(ot, {})
+            per_type[ot][sc] = per_type[ot].get(sc, 0) + 1
+            cross_corpus[sc] = cross_corpus.get(sc, 0) + 1
+    except (json.JSONDecodeError, OSError) as exc:
+        return {"error": f"protocols.jsonl unreadable: {exc}"}, 500
+
+    if not per_type:
+        return {"error": "no organoid type data in protocols.jsonl"}, 404
+
+    if organoid_type:
+        if organoid_type not in per_type:
+            return {
+                "error": f"No data for organoid type '{organoid_type}'",
+                "available_types": sorted(per_type),
+            }, 404
+        return {
+            "organoid_type": organoid_type,
+            "source_cell_type": dict(sorted(per_type[organoid_type].items(), key=lambda kv: -kv[1])),
+        }, 200
+
+    return {
+        "cross_corpus": dict(sorted(cross_corpus.items(), key=lambda kv: -kv[1])),
+        "per_type": {
+            t: dict(sorted(counts.items(), key=lambda kv: -kv[1]))
+            for t, counts in sorted(per_type.items())
+        },
+        "n_types": len(per_type),
+    }, 200
+
+
+def handle_protocol_complexity(organoid_type: str | None) -> tuple[dict, int]:
+    """Per-type protocol complexity metrics from protocols.jsonl.
+
+    Aggregates n_signaling_factors, n_supplements, n_figure_confirmed, and
+    grounding_rate per organoid type. Returns mean, min, max, and n for each
+    field so callers can assess which types require the most complex protocols.
+    Optional ?type=kidney to return stats for one type.
+    """
+    if not PROTOCOLS_JSONL.exists():
+        return {
+            "error": "protocols.jsonl not found",
+            "hint": "Run: python pipeline/export_public.py",
+        }, 404
+
+    if organoid_type and not re.match(r'^[\w-]+$', organoid_type):
+        return {"error": "invalid organoid_type"}, 400
+
+    # Accumulate per-type lists for each metric.
+    _FIELDS = ["n_signaling_factors", "n_supplements", "n_figure_confirmed", "grounding_rate"]
+    buckets: dict[str, dict[str, list]] = {}
+
+    try:
+        for line in PROTOCOLS_JSONL.read_text().splitlines():
+            if not line.strip():
+                continue
+            p = json.loads(line)
+            ot = (p.get("organoid_type") or "").strip()
+            if not ot or ot == "other":
+                continue
+            buckets.setdefault(ot, {f: [] for f in _FIELDS})
+            for f in _FIELDS:
+                v = p.get(f)
+                if v is not None:
+                    try:
+                        buckets[ot][f].append(float(v))
+                    except (TypeError, ValueError):
+                        pass
+    except (json.JSONDecodeError, OSError) as exc:
+        return {"error": f"protocols.jsonl unreadable: {exc}"}, 500
+
+    if not buckets:
+        return {"error": "no organoid type data in protocols.jsonl"}, 404
+
+    def _stats(vals: list) -> dict | None:
+        if not vals:
+            return None
+        return {
+            "mean": round(sum(vals) / len(vals), 3),
+            "min": min(vals),
+            "max": max(vals),
+            "n": len(vals),
+        }
+
+    def _type_summary(ot: str) -> dict:
+        b = buckets[ot]
+        # paper count = longest field list (grounding_rate is always present)
+        n_papers = max(len(b[f]) for f in _FIELDS) if b else 0
+        return {
+            "n_papers": n_papers,
+            **{f: _stats(b[f]) for f in _FIELDS},
+        }
+
+    if organoid_type:
+        if organoid_type not in buckets:
+            return {
+                "error": f"No data for organoid type '{organoid_type}'",
+                "available_types": sorted(buckets),
+            }, 404
+        return {"organoid_type": organoid_type, **_type_summary(organoid_type)}, 200
+
+    per_type = {t: _type_summary(t) for t in sorted(buckets)}
+    # cross-corpus ranking by avg n_signaling_factors
+    ranked = sorted(
+        [(t, s["n_signaling_factors"]["mean"]) for t, s in per_type.items()
+         if s["n_signaling_factors"]],
+        key=lambda x: -x[1],
+    )
+    return {
+        "per_type": per_type,
+        "n_types": len(per_type),
+        "ranking_by_avg_signaling_factors": [t for t, _ in ranked],
+    }, 200
+
+
+def handle_reporting_gaps(organoid_type: str | None) -> tuple[dict, int]:
+    """Field reporting rates across protocols.jsonl — transparency audit.
+
+    Shows what fraction of papers report each key protocol field (species,
+    matrix, base_media, source_cell_type, passaging, timeline). Helps
+    researchers understand systematic reporting gaps in the literature and
+    in our extraction. Optional ?type=kidney for one organoid type.
+    """
+    if not PROTOCOLS_JSONL.exists():
+        return {
+            "error": "protocols.jsonl not found",
+            "hint": "Run: python pipeline/export_public.py",
+        }, 404
+
+    if organoid_type and not re.match(r'^[\w-]+$', organoid_type):
+        return {"error": "invalid organoid_type"}, 400
+
+    # Fields to audit; values of None/""/not_stated count as not-reported.
+    _AUDIT_FIELDS = [
+        "species", "matrix", "base_media", "source_cell_type", "passaging", "timeline",
+    ]
+
+    def _is_reported(val) -> bool:
+        if val is None:
+            return False
+        s = str(val).strip().lower()
+        return s not in ("", "not_stated", "not_reported")
+
+    def _field_stats(rows: list[dict]) -> dict:
+        n = len(rows)
+        if n == 0:
+            return {}
+        stats: dict[str, dict] = {}
+        for f in _AUDIT_FIELDS:
+            rep = sum(1 for r in rows if _is_reported(r.get(f)))
+            stats[f] = {
+                "reported": rep,
+                "not_stated": n - rep,
+                "total": n,
+                "reporting_rate": round(rep / n, 4),
+            }
+        return stats
+
+    # Build per-type bucket.
+    by_type: dict[str, list] = {}
+    all_rows: list[dict] = []
+
+    try:
+        for line in PROTOCOLS_JSONL.read_text().splitlines():
+            if not line.strip():
+                continue
+            p = json.loads(line)
+            ot = (p.get("organoid_type") or "").strip()
+            if not ot or ot == "other":
+                continue
+            by_type.setdefault(ot, []).append(p)
+            all_rows.append(p)
+    except (json.JSONDecodeError, OSError) as exc:
+        return {"error": f"protocols.jsonl unreadable: {exc}"}, 500
+
+    if not by_type:
+        return {"error": "no organoid type data in protocols.jsonl"}, 404
+
+    if organoid_type:
+        if organoid_type not in by_type:
+            return {
+                "error": f"No data for organoid type '{organoid_type}'",
+                "available_types": sorted(by_type),
+            }, 404
+        rows_for_type = by_type[organoid_type]
+        return {
+            "organoid_type": organoid_type,
+            "n_papers": len(rows_for_type),
+            "fields": _field_stats(rows_for_type),
+        }, 200
+
+    cross_corpus = _field_stats(all_rows)
+    per_type = {t: {"n_papers": len(rs), "fields": _field_stats(rs)} for t, rs in sorted(by_type.items())}
+
+    # Rank fields by cross-corpus reporting gap (lowest rate = biggest gap).
+    ranked_gaps = sorted(
+        cross_corpus.keys(),
+        key=lambda f: cross_corpus[f]["reporting_rate"],
+    )
+
+    return {
+        "n_papers": len(all_rows),
+        "n_types": len(by_type),
+        "cross_corpus": cross_corpus,
+        "ranking_by_gap": ranked_gaps,
+        "per_type": per_type,
+    }, 200
+
+
 def handle_mior() -> tuple[dict, int]:
     """Return pre-computed MIOR completeness report."""
     path = ANALYSIS_DIR / "mior_completeness.json"
@@ -1186,6 +1460,9 @@ def handle_index() -> tuple[dict, int]:
             "/analytics/species-breakdown": "species distribution per organoid type (human / mouse / other) from protocols.jsonl; optional ?type=kidney",
             "/analytics/matrix-breakdown": "extracellular matrix usage per organoid type (Matrigel / Geltrex / Vitronectin / ...) with alias normalisation; optional ?type=kidney",
             "/analytics/base-media-breakdown": "base media usage per organoid type (DMEM/F12 / mTeSR1 / Advanced DMEM/F12 / ...) with alias normalisation; optional ?type=kidney",
+            "/analytics/source-cell-breakdown": "source cell type distribution per organoid type (iPSC / adult_stem_cell / primary_tissue / ESC); optional ?type=kidney",
+            "/analytics/protocol-complexity": "per-type protocol complexity: avg n_signaling_factors, n_supplements, n_figure_confirmed, grounding_rate with min/max/n; ranked by complexity",
+            "/analytics/reporting-gaps": "field reporting rates across the corpus (species/matrix/base_media/source_cell_type/passaging/timeline) — transparency audit; optional ?type=kidney",
             "/analytics/assay-endpoints": "assay endpoint cluster summary (per type + cross-type)",
             "/analytics/quality": "per-paper quality scores (gold/silver/bronze) + corpus summary",
             "/analytics/mior": "MIOR completeness report (Minimum Information About an Organoid Research)",
@@ -1347,6 +1624,24 @@ async def route_base_media_breakdown(datasette, request):
     return Response.json(data, status=status)
 
 
+async def route_source_cell_breakdown(datasette, request):
+    organoid_type = request.args.get("type") or None
+    data, status = handle_source_cell_breakdown(organoid_type)
+    return Response.json(data, status=status)
+
+
+async def route_protocol_complexity(datasette, request):
+    organoid_type = request.args.get("type") or None
+    data, status = handle_protocol_complexity(organoid_type)
+    return Response.json(data, status=status)
+
+
+async def route_reporting_gaps(datasette, request):
+    organoid_type = request.args.get("type") or None
+    data, status = handle_reporting_gaps(organoid_type)
+    return Response.json(data, status=status)
+
+
 async def route_candidates(datasette, request):
     data, status = handle_candidates()
     return Response.json(data, status=status)
@@ -1378,6 +1673,9 @@ def register_routes():
         (r"^/analytics/species-breakdown$", route_species_breakdown),
         (r"^/analytics/matrix-breakdown$", route_matrix_breakdown),
         (r"^/analytics/base-media-breakdown$", route_base_media_breakdown),
+        (r"^/analytics/source-cell-breakdown$", route_source_cell_breakdown),
+        (r"^/analytics/protocol-complexity$", route_protocol_complexity),
+        (r"^/analytics/reporting-gaps$", route_reporting_gaps),
         (r"^/analytics/assay-endpoints$", route_assay_endpoints),
         (r"^/analytics/quality$", route_quality),
         (r"^/analytics/mior$", route_mior),
