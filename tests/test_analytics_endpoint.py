@@ -978,3 +978,103 @@ def test_type_timeseries_excludes_other(tmp_path, monkeypatch):
 def test_type_timeseries_index_entry():
     data, _ = ae.handle_index()
     assert "/analytics/type-timeseries" in data["endpoints"]
+
+
+# --------------------------------------------------------------------------- #
+# handle_universal_reagents
+# --------------------------------------------------------------------------- #
+
+def _make_reagents_jsonl(path, rows):
+    path.write_text("\n".join(json.dumps(r) for r in rows))
+
+
+def test_universal_reagents_404_when_jsonl_missing(tmp_path, monkeypatch):
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", tmp_path / "r.jsonl")
+    data, status = ae.handle_universal_reagents(None, 0.5)
+    assert status == 404
+    assert "hint" in data
+
+
+def test_universal_reagents_returns_per_type_essentials(tmp_path, monkeypatch):
+    reagents = tmp_path / "r.jsonl"
+    rows = [
+        # intestinal: 2 papers; EGF appears in both (100%), WNT3A in 1 (50%)
+        {"pmcid": "PMC001", "organoid_type": "intestinal", "canonical": "EGF"},
+        {"pmcid": "PMC001", "organoid_type": "intestinal", "canonical": "WNT3A"},
+        {"pmcid": "PMC002", "organoid_type": "intestinal", "canonical": "EGF"},
+    ]
+    _make_reagents_jsonl(reagents, rows)
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", reagents)
+    data, status = ae.handle_universal_reagents(None, 0.5)
+    assert status == 200
+    pt = data["per_type"]["intestinal"]
+    names = [e["canonical"] for e in pt["essentials"]]
+    assert "egf" in names
+    assert "wnt3a" in names
+    egf_entry = next(e for e in pt["essentials"] if e["canonical"] == "egf")
+    assert egf_entry["fraction"] == 1.0
+    assert egf_entry["n_papers"] == 2
+
+
+def test_universal_reagents_min_fraction_filter(tmp_path, monkeypatch):
+    reagents = tmp_path / "r.jsonl"
+    rows = [
+        # EGF: 1/3 = 33%; WNT3A: 3/3 = 100%
+        {"pmcid": "PMC001", "organoid_type": "intestinal", "canonical": "EGF"},
+        {"pmcid": "PMC001", "organoid_type": "intestinal", "canonical": "WNT3A"},
+        {"pmcid": "PMC002", "organoid_type": "intestinal", "canonical": "WNT3A"},
+        {"pmcid": "PMC003", "organoid_type": "intestinal", "canonical": "WNT3A"},
+    ]
+    _make_reagents_jsonl(reagents, rows)
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", reagents)
+    data, status = ae.handle_universal_reagents(None, 0.5)
+    assert status == 200
+    names = [e["canonical"] for e in data["per_type"]["intestinal"]["essentials"]]
+    assert "wnt3a" in names
+    assert "egf" not in names   # 33% < 50% threshold
+
+
+def test_universal_reagents_single_type_filter(tmp_path, monkeypatch):
+    reagents = tmp_path / "r.jsonl"
+    rows = [
+        {"pmcid": "PMC001", "organoid_type": "cardiac",   "canonical": "CHIR"},
+        {"pmcid": "PMC001", "organoid_type": "intestinal","canonical": "WNT3A"},
+    ]
+    _make_reagents_jsonl(reagents, rows)
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", reagents)
+    data, status = ae.handle_universal_reagents("cardiac", 0.5)
+    assert status == 200
+    assert data["organoid_type"] == "cardiac"
+    assert "cardiac" in data["per_type"]
+    assert "intestinal" not in data["per_type"]
+
+
+def test_universal_reagents_404_for_unknown_type(tmp_path, monkeypatch):
+    reagents = tmp_path / "r.jsonl"
+    _make_reagents_jsonl(reagents, [
+        {"pmcid": "PMC001", "organoid_type": "cardiac", "canonical": "CHIR"},
+    ])
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", reagents)
+    data, status = ae.handle_universal_reagents("bladder", 0.5)
+    assert status == 404
+    assert "available_types" in data
+
+
+def test_universal_reagents_cross_type_universals(tmp_path, monkeypatch):
+    reagents = tmp_path / "r.jsonl"
+    # EGF in both cardiac and intestinal (at 100%)
+    rows = [
+        {"pmcid": "PMC001", "organoid_type": "cardiac",   "canonical": "EGF"},
+        {"pmcid": "PMC002", "organoid_type": "intestinal","canonical": "EGF"},
+    ]
+    _make_reagents_jsonl(reagents, rows)
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", reagents)
+    data, status = ae.handle_universal_reagents(None, 0.5)
+    assert status == 200
+    cross = [e["canonical"] for e in data["cross_type_universals"]]
+    assert "egf" in cross
+
+
+def test_universal_reagents_index_entry():
+    data, _ = ae.handle_index()
+    assert "/analytics/universal-reagents" in data["endpoints"]
