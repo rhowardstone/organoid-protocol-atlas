@@ -533,6 +533,26 @@ def test_summary_includes_analytics_ready(tmp_path, monkeypatch):
     assert "mior" in data["analytics_ready"]
 
 
+def test_summary_includes_manifest_n_reagents(tmp_path, monkeypatch):
+    """Summary endpoint embeds manifest.n_reagents so dashboard avoids a 4th fetch."""
+    monkeypatch.setattr(ae, "ANALYSIS_DIR", tmp_path)
+    monkeypatch.setattr(ae, "COVERAGE_REPORT_PATH", tmp_path / "nonexistent.json")
+    monkeypatch.setattr(ae, "MANIFEST_PATH", tmp_path / "manifest.json")
+    (tmp_path / "protocol_quality_scores.json").write_text('{"avg_score": 0.7}')
+    (tmp_path / "manifest.json").write_text(json.dumps({
+        "schema_version": "0.4",
+        "n_papers": 582,
+        "n_types": 26,
+        "tables": {"protocols": 582, "reagents": 5458},
+        "papers": [],
+    }))
+    data, status = ae.handle_summary()
+    assert status == 200
+    assert "manifest" in data
+    assert data["manifest"]["n_reagents"] == 5458
+    assert data["manifest"]["schema_version"] == "0.4"
+
+
 def test_summary_includes_mior_when_present(tmp_path, monkeypatch):
     """Summary endpoint embeds MIOR stats so callers avoid a second fetch."""
     monkeypatch.setattr(ae, "ANALYSIS_DIR", tmp_path)

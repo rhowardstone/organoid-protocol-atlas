@@ -192,14 +192,18 @@ async function load() {
     const avg = miorStatSrc.avg_mior_completeness;
     setText('s-mior', avg != null ? (avg * 100).toFixed(1) + '%' : '—');
   }
-  // Reagent count from manifest
-  try {
-    const mfRes = await fetch('/exports/public/manifest.json');
-    if (mfRes.ok) {
-      const mf = await mfRes.json();
-      setText('s-reagents', mf.tables?.reagents ?? '—');
-    }
-  } catch(_) {}
+  // Reagent count — prefer summary.manifest (no extra fetch needed)
+  const nReagents = (summary && summary.manifest && summary.manifest.n_reagents != null)
+    ? summary.manifest.n_reagents
+    : null;
+  if (nReagents != null) {
+    setText('s-reagents', nReagents);
+  } else {
+    try {
+      const mfRes = await fetch('/exports/public/manifest.json');
+      if (mfRes.ok) { const mf = await mfRes.json(); setText('s-reagents', mf.tables?.reagents ?? '—'); }
+    } catch(_) {}
+  }
 
   // ── Quality bar ───────────────────────────────────────────────────────
   const qEl = document.getElementById('quality-bar');

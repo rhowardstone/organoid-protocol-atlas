@@ -36,6 +36,7 @@ ANALYSIS_DIR = REPO / "outputs" / "analysis"
 COMPARISON_DIR = REPO / "outputs" / "comparison"
 COVERAGE_REPORT_PATH = ANALYSIS_DIR / "coverage_report.json"
 REAGENTS_JSONL = REPO / "exports" / "public" / "reagents.jsonl"
+MANIFEST_PATH = REPO / "exports" / "public" / "manifest.json"
 
 
 # --------------------------------------------------------------------------- #
@@ -224,6 +225,17 @@ def handle_summary() -> tuple[dict, int]:
     """
     summary: dict = {}
 
+    # Manifest — n_reagents and schema_version let dashboard callers avoid a separate fetch
+    if MANIFEST_PATH.exists():
+        try:
+            mf = json.loads(MANIFEST_PATH.read_text())
+            summary["manifest"] = {
+                "n_reagents": (mf.get("tables") or {}).get("reagents"),
+                "schema_version": mf.get("schema_version"),
+            }
+        except (json.JSONDecodeError, OSError):
+            pass
+
     # Corpus / coverage
     if COVERAGE_REPORT_PATH.exists():
         try:
@@ -317,7 +329,9 @@ def handle_summary() -> tuple[dict, int]:
         except (json.JSONDecodeError, OSError):
             pass
 
-    has_data = bool(summary)
+    # manifest and mior are convenience extras — don't count them as analytics data
+    _analytics_keys = set(summary) - {"manifest", "mior"}
+    has_data = bool(_analytics_keys)
 
     # Analytics inventory — always included so callers know what to generate
     summary["analytics_ready"] = {
