@@ -114,6 +114,7 @@ exports. Prefer the JSON endpoints for programmatic use.
 - /analytics/type-maturity             field maturity per organoid type: first_year, trajectory (accelerating/stable/slowing), maturity_tier (established/developing/emerging); ?type=kidney
 - /analytics/reagent-cooccurrence      pairwise signaling-factor co-occurrence: top pairs by n_papers with Jaccard similarity; ?q=EGF for all partners of one canonical; ?type= for one organoid type; ?min_papers= threshold
 - /analytics/supplement-breakdown      per-type and cross-type breakdown of supplement canonicals: global top 50, cross-type list, per-type top 10; ?q=GlutaMAX for one canonical; ?type=kidney for one type; ?min_types= threshold
+- /analytics/role-breakdown            normalized functional role distribution for signaling reagents: signaling_factor/growth_factor/differentiation/inhibitor/agonist etc.; ?q=differentiation for top canonicals; ?type= filter
 - /analytics/failure-modes             failure mode cluster summary across the corpus
 - /analytics/lineage                   DOI→DOI protocol lineage graph
 - /analytics/assay-endpoints           assay endpoint cluster summary (per-type + cross-type)
