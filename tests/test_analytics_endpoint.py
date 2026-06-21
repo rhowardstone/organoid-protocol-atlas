@@ -3664,3 +3664,136 @@ def test_gd_excludes_none_grounding_rate(tmp_path, monkeypatch):
 def test_gd_index_entry():
     data, _ = ae.handle_index()
     assert "/analytics/grounding-distribution" in data["endpoints"]
+
+
+# ---------------------------------------------------------------------------
+# /analytics/type-maturity unit tests
+# ---------------------------------------------------------------------------
+
+def _write_protos_for_tm(path, rows):
+    path.write_text("\n".join(json.dumps(r) for r in rows) + "\n")
+
+
+def _patch_tm(monkeypatch, path):
+    monkeypatch.setattr(ae, "PROTOCOLS_JSONL", path)
+
+
+_TM_ROWS = [
+    # intestinal: 2015-2024, many papers → established + check trajectory
+    *[{"organoid_type": "intestinal", "year": str(y)} for y in [2015, 2016, 2017, 2018] for _ in range(2)],
+    *[{"organoid_type": "intestinal", "year": str(y)} for y in [2019, 2020, 2021, 2022, 2023, 2024] for _ in range(6)],
+    # emerging: 2023 only, 3 papers
+    {"organoid_type": "new_type", "year": "2023"},
+    {"organoid_type": "new_type", "year": "2023"},
+    {"organoid_type": "new_type", "year": "2023"},
+]
+
+
+def test_tm_404_missing_file(tmp_path, monkeypatch):
+    monkeypatch.setattr(ae, "PROTOCOLS_JSONL", tmp_path / "missing.jsonl")
+    _, status = ae.handle_type_maturity(None)
+    assert status == 404
+
+
+def test_tm_200_cross_corpus(tmp_path, monkeypatch):
+    p = tmp_path / "protocols.jsonl"
+    _write_protos_for_tm(p, _TM_ROWS)
+    _patch_tm(monkeypatch, p)
+    data, status = ae.handle_type_maturity(None)
+    assert status == 200
+    assert data["n_types"] == 2
+    assert "by_tier" in data
+    assert "by_trajectory" in data
+    assert len(data["all_types"]) == 2
+
+
+def test_tm_intestinal_is_established(tmp_path, monkeypatch):
+    p = tmp_path / "protocols.jsonl"
+    _write_protos_for_tm(p, _TM_ROWS)
+    _patch_tm(monkeypatch, p)
+    data, _ = ae.handle_type_maturity(None)
+    intestinal = next(r for r in data["all_types"] if r["organoid_type"] == "intestinal")
+    # 2015 ≤ 2017 → established
+    assert intestinal["maturity_tier"] == "established"
+    assert intestinal["first_year"] == 2015
+    assert intestinal["last_year"] == 2024
+    assert intestinal["n_years_active"] == 10
+
+
+def test_tm_emerging_type(tmp_path, monkeypatch):
+    p = tmp_path / "protocols.jsonl"
+    _write_protos_for_tm(p, _TM_ROWS)
+    _patch_tm(monkeypatch, p)
+    data, _ = ae.handle_type_maturity(None)
+    new_t = next(r for r in data["all_types"] if r["organoid_type"] == "new_type")
+    # 3 papers, first_year 2023 → emerging
+    assert new_t["maturity_tier"] == "emerging"
+    assert new_t["n_papers_total"] == 3
+    assert new_t["first_year"] == 2023
+
+
+def test_tm_sorted_by_n_papers_desc(tmp_path, monkeypatch):
+    p = tmp_path / "protocols.jsonl"
+    _write_protos_for_tm(p, _TM_ROWS)
+    _patch_tm(monkeypatch, p)
+    data, _ = ae.handle_type_maturity(None)
+    totals = [r["n_papers_total"] for r in data["all_types"]]
+    assert totals == sorted(totals, reverse=True)
+
+
+def test_tm_papers_by_year_key_is_string(tmp_path, monkeypatch):
+    p = tmp_path / "protocols.jsonl"
+    _write_protos_for_tm(p, _TM_ROWS)
+    _patch_tm(monkeypatch, p)
+    data, _ = ae.handle_type_maturity(None)
+    intestinal = next(r for r in data["all_types"] if r["organoid_type"] == "intestinal")
+    # all keys should be strings (year as string)
+    assert all(isinstance(k, str) for k in intestinal["papers_by_year"])
+    assert "2015" in intestinal["papers_by_year"]
+
+
+def test_tm_single_type_query(tmp_path, monkeypatch):
+    p = tmp_path / "protocols.jsonl"
+    _write_protos_for_tm(p, _TM_ROWS)
+    _patch_tm(monkeypatch, p)
+    data, status = ae.handle_type_maturity("intestinal")
+    assert status == 200
+    assert data["organoid_type"] == "intestinal"
+    assert data["n_years_active"] == 10
+
+
+def test_tm_404_unknown_type(tmp_path, monkeypatch):
+    p = tmp_path / "protocols.jsonl"
+    _write_protos_for_tm(p, _TM_ROWS)
+    _patch_tm(monkeypatch, p)
+    _, status = ae.handle_type_maturity("xyz_unknown")
+    assert status == 404
+
+
+def test_tm_trajectory_accelerating(tmp_path, monkeypatch):
+    # 1 paper in early years, many in later years → accelerating
+    rows = (
+        [{"organoid_type": "fast", "year": str(y)} for y in [2015, 2016, 2017, 2018]]
+        + [{"organoid_type": "fast", "year": str(y)} for y in [2019, 2020, 2021, 2022] for _ in range(5)]
+    )
+    p = tmp_path / "protocols.jsonl"
+    _write_protos_for_tm(p, rows)
+    _patch_tm(monkeypatch, p)
+    data, _ = ae.handle_type_maturity("fast")
+    assert data["trajectory"] == "accelerating"
+
+
+def test_tm_by_tier_groups_present(tmp_path, monkeypatch):
+    p = tmp_path / "protocols.jsonl"
+    _write_protos_for_tm(p, _TM_ROWS)
+    _patch_tm(monkeypatch, p)
+    data, _ = ae.handle_type_maturity(None)
+    assert "established" in data["by_tier"]
+    assert "intestinal" in data["by_tier"]["established"]
+    assert "emerging" in data["by_tier"]
+    assert "new_type" in data["by_tier"]["emerging"]
+
+
+def test_tm_index_entry():
+    data, _ = ae.handle_index()
+    assert "/analytics/type-maturity" in data["endpoints"]

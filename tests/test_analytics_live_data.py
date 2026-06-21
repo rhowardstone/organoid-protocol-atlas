@@ -534,3 +534,28 @@ def test_live_gd_intestinal_type():
     assert data["n"] >= 20
     # intestinal grounding rate should be > 0.5 in a well-grounded corpus
     assert data["mean"] > 0.5
+
+
+# ---------------------------------------------------------------------------
+# type-maturity live smoke tests
+# ---------------------------------------------------------------------------
+
+@require_protocols
+def test_live_tm_returns_200():
+    data, status = ae.handle_type_maturity(None)
+    assert status == 200
+    assert data["n_types"] >= 20
+    assert "established" in data["by_tier"]
+    assert len(data["by_tier"]["established"]) >= 5
+
+
+@require_protocols
+def test_live_tm_intestinal_details():
+    data, status = ae.handle_type_maturity("intestinal")
+    assert status == 200
+    assert data["organoid_type"] == "intestinal"
+    # established OR developing — 35 papers, first_year 2018
+    assert data["maturity_tier"] in ("established", "developing")
+    assert data["first_year"] <= 2020
+    assert data["n_papers_total"] >= 20
+    assert data["trajectory"] in ("accelerating", "stable", "slowing", "insufficient_data")
