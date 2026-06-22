@@ -3234,6 +3234,43 @@ def test_cd_min_n_param(tmp_path, monkeypatch):
     assert data["min_n_threshold"] == 5
 
 
+def test_cd_low_n_warning_true_when_below_10(tmp_path, monkeypatch):
+    # n_with_value = 3 (< 10) → low_n_warning must be True
+    rows = [{"canonical": "EGF", "value": v, "canonical_unit": "ng/mL"} for v in [10, 50, 500]]
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_cd(p, rows)
+    _patch_cd(monkeypatch, p)
+    data, _ = ae.handle_concentration_deviation()
+    entry = data["most_variable"][0]
+    assert entry["n_with_value"] == 3
+    assert entry["low_n_warning"] is True
+
+
+def test_cd_low_n_warning_false_when_10_or_more(tmp_path, monkeypatch):
+    # n_with_value = 10 → low_n_warning must be False
+    rows = [{"canonical": "EGF", "value": float(v), "canonical_unit": "ng/mL"} for v in range(1, 11)]
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_cd(p, rows)
+    _patch_cd(monkeypatch, p)
+    data, _ = ae.handle_concentration_deviation()
+    entry = data["most_variable"][0]
+    assert entry["n_with_value"] == 10
+    assert entry["low_n_warning"] is False
+
+
+def test_cd_response_meta_has_warning_fields(tmp_path, monkeypatch):
+    # Response must carry low_n_warning_threshold and n_with_warning at top level
+    rows = [{"canonical": "EGF", "value": v, "canonical_unit": "ng/mL"} for v in [10, 50, 500]]
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_cd(p, rows)
+    _patch_cd(monkeypatch, p)
+    data, _ = ae.handle_concentration_deviation()
+    assert data["low_n_warning_threshold"] == 10
+    assert "n_with_warning" in data
+    assert data["n_with_warning"] >= 1  # EGF has n=3 → warning
+
+
+
 def test_cd_index_entry():
     data, _ = ae.handle_index()
     assert "/analytics/concentration-deviation" in data["endpoints"]
@@ -6402,3 +6439,830 @@ def test_gi_invalid_sort_returns_400(tmp_path, monkeypatch):
 def test_gi_index_entry():
     data, _ = ae.handle_index()
     assert "/analytics/grounding-inconsistency" in data["endpoints"]
+
+
+# ---------------------------------------------------------------------------
+# Route 57 — /analytics/canonical-merge-candidates (CMC)
+# ---------------------------------------------------------------------------
+_CMC_REAGENTS = [
+    # "B27" and "B27 supplement" → same normalized form "b27"
+    *[{"canonical": "B27", "organoid_type": "intestinal", "grounded": 0,
+       "kind": "supplement"} for _ in range(5)],
+    *[{"canonical": "B27 supplement", "organoid_type": "retinal", "grounded": 0,
+       "kind": "supplement"} for _ in range(3)],
+    # "Wnt3a" and "Wnt3a protein" → same normalized form "wnt3a" ("protein" in STRIP_WORDS)
+    *[{"canonical": "Wnt3a", "organoid_type": "liver", "grounded": 1,
+       "kind": "signaling"} for _ in range(4)],
+    *[{"canonical": "Wnt3a protein", "organoid_type": "kidney", "grounded": 0,
+       "kind": "signaling"} for _ in range(2)],
+    # "EGF" only — no partner → should NOT appear as candidate
+    *[{"canonical": "EGF", "organoid_type": "intestinal", "grounded": 1,
+       "kind": "signaling"} for _ in range(10)],
+    # distinct subtypes — "wnt" vs "wnt3a" → different norms, not merged
+    {"canonical": "Wnt3a", "organoid_type": "intestinal", "grounded": 1, "kind": "signaling"},
+    {"canonical": "Wnt", "organoid_type": "intestinal", "grounded": 0, "kind": "signaling"},
+    # TinyMerge: combined < min_records=3 → excluded; "supplement" stripped → both "tiny"
+    {"canonical": "Tiny supplement", "organoid_type": "liver", "grounded": 0, "kind": "supplement"},
+    {"canonical": "Tiny", "organoid_type": "liver", "grounded": 0, "kind": "supplement"},
+]
+
+
+def _write_cmc(path, rows):
+    path.write_text("\n".join(json.dumps(r) for r in rows))
+
+
+def _patch_cmc(monkeypatch, rp):
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", rp)
+
+
+def test_cmc_returns_200(tmp_path, monkeypatch):
+    rp = tmp_path / "reagents.jsonl"
+    _write_cmc(rp, _CMC_REAGENTS)
+    _patch_cmc(monkeypatch, rp)
+    data, status = ae.handle_canonical_merge_candidates(min_records=3)
+    assert status == 200
+
+
+def test_cmc_keys(tmp_path, monkeypatch):
+    rp = tmp_path / "reagents.jsonl"
+    _write_cmc(rp, _CMC_REAGENTS)
+    _patch_cmc(monkeypatch, rp)
+    data, _ = ae.handle_canonical_merge_candidates(min_records=3)
+    assert "n_candidates" in data
+    assert "candidates" in data
+    assert "min_records" in data
+    assert "description" in data
+
+
+def test_cmc_b27_merge_found(tmp_path, monkeypatch):
+    rp = tmp_path / "reagents.jsonl"
+    _write_cmc(rp, _CMC_REAGENTS)
+    _patch_cmc(monkeypatch, rp)
+    data, _ = ae.handle_canonical_merge_candidates(min_records=3)
+    canonicals_in_groups = {
+        m["canonical"]
+        for c in data["candidates"]
+        for m in c["members"]
+    }
+    assert "B27" in canonicals_in_groups
+    assert "B27 supplement" in canonicals_in_groups
+
+
+def test_cmc_nac_merge_found(tmp_path, monkeypatch):
+    rp = tmp_path / "reagents.jsonl"
+    _write_cmc(rp, _CMC_REAGENTS)
+    _patch_cmc(monkeypatch, rp)
+    data, _ = ae.handle_canonical_merge_candidates(min_records=3)
+    canonicals_in_groups = {
+        m["canonical"]
+        for c in data["candidates"]
+        for m in c["members"]
+    }
+    assert "Wnt3a" in canonicals_in_groups
+    assert "Wnt3a protein" in canonicals_in_groups
+
+
+def test_cmc_egf_not_in_candidates(tmp_path, monkeypatch):
+    rp = tmp_path / "reagents.jsonl"
+    _write_cmc(rp, _CMC_REAGENTS)
+    _patch_cmc(monkeypatch, rp)
+    data, _ = ae.handle_canonical_merge_candidates(min_records=3)
+    canonicals_in_groups = {
+        m["canonical"]
+        for c in data["candidates"]
+        for m in c["members"]
+    }
+    assert "EGF" not in canonicals_in_groups
+
+
+def test_cmc_sorted_by_total_records_desc(tmp_path, monkeypatch):
+    rp = tmp_path / "reagents.jsonl"
+    _write_cmc(rp, _CMC_REAGENTS)
+    _patch_cmc(monkeypatch, rp)
+    data, _ = ae.handle_canonical_merge_candidates(min_records=3)
+    totals = [c["total_records"] for c in data["candidates"]]
+    assert totals == sorted(totals, reverse=True)
+
+
+def test_cmc_tiny_merge_excluded_by_min_records(tmp_path, monkeypatch):
+    rp = tmp_path / "reagents.jsonl"
+    _write_cmc(rp, _CMC_REAGENTS)
+    _patch_cmc(monkeypatch, rp)
+    data, _ = ae.handle_canonical_merge_candidates(min_records=3)
+    canonicals_in_groups = {
+        m["canonical"]
+        for c in data["candidates"]
+        for m in c["members"]
+    }
+    assert "Tiny supplement" not in canonicals_in_groups
+
+
+def test_cmc_tiny_merge_included_when_min_1(tmp_path, monkeypatch):
+    rp = tmp_path / "reagents.jsonl"
+    _write_cmc(rp, _CMC_REAGENTS)
+    _patch_cmc(monkeypatch, rp)
+    data, _ = ae.handle_canonical_merge_candidates(min_records=1)
+    canonicals_in_groups = {
+        m["canonical"]
+        for c in data["candidates"]
+        for m in c["members"]
+    }
+    assert "Tiny supplement" in canonicals_in_groups
+
+
+def test_cmc_member_has_required_keys(tmp_path, monkeypatch):
+    rp = tmp_path / "reagents.jsonl"
+    _write_cmc(rp, _CMC_REAGENTS)
+    _patch_cmc(monkeypatch, rp)
+    data, _ = ae.handle_canonical_merge_candidates(min_records=3)
+    assert data["candidates"]
+    member = data["candidates"][0]["members"][0]
+    for key in ("canonical", "n_records", "n_grounded", "grounding_rate",
+                "n_organoid_types", "kinds"):
+        assert key in member, f"missing key: {key}"
+
+
+def test_cmc_group_has_n_canonicals(tmp_path, monkeypatch):
+    rp = tmp_path / "reagents.jsonl"
+    _write_cmc(rp, _CMC_REAGENTS)
+    _patch_cmc(monkeypatch, rp)
+    data, _ = ae.handle_canonical_merge_candidates(min_records=3)
+    for g in data["candidates"]:
+        assert g["n_canonicals"] == len(g["members"])
+        assert g["n_canonicals"] >= 2
+
+
+def test_cmc_total_records_sums_members(tmp_path, monkeypatch):
+    rp = tmp_path / "reagents.jsonl"
+    _write_cmc(rp, _CMC_REAGENTS)
+    _patch_cmc(monkeypatch, rp)
+    data, _ = ae.handle_canonical_merge_candidates(min_records=3)
+    for g in data["candidates"]:
+        assert g["total_records"] == sum(m["n_records"] for m in g["members"])
+
+
+def test_cmc_invalid_min_records_returns_400(tmp_path, monkeypatch):
+    rp = tmp_path / "reagents.jsonl"
+    _write_cmc(rp, _CMC_REAGENTS)
+    _patch_cmc(monkeypatch, rp)
+    _, status = ae.handle_canonical_merge_candidates(min_records=0)
+    assert status == 400
+
+
+def test_cmc_missing_file_returns_404(tmp_path, monkeypatch):
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", tmp_path / "no_file.jsonl")
+    _, status = ae.handle_canonical_merge_candidates()
+    assert status == 404
+
+
+def test_cmc_index_entry():
+    data, _ = ae.handle_index()
+    assert "/analytics/canonical-merge-candidates" in data["endpoints"]
+
+
+# ---------------------------------------------------------------------------
+# Route 57 — /analytics/grounding-by-kind (GBK)
+# ---------------------------------------------------------------------------
+_GBK_REAGENTS = [
+    # signaling: 4 grounded, 1 ungrounded
+    {"canonical": "EGF",    "kind": "signaling",   "grounding_status": "grounded",   "organoid_type": "intestinal"},
+    {"canonical": "EGF",    "kind": "signaling",   "grounding_status": "grounded",   "organoid_type": "kidney"},
+    {"canonical": "Noggin", "kind": "signaling",   "grounding_status": "grounded",   "organoid_type": "intestinal"},
+    {"canonical": "BMP4",   "kind": "signaling",   "grounding_status": "grounded",   "organoid_type": "cardiac"},
+    {"canonical": "Wnt3a",  "kind": "signaling",   "grounding_status": "ungrounded", "organoid_type": "intestinal"},
+    # supplement: 0 grounded, 3 ungrounded
+    {"canonical": "GlutaMAX", "kind": "supplement", "grounding_status": "ungrounded", "organoid_type": "intestinal"},
+    {"canonical": "B27",      "kind": "supplement", "grounding_status": "ungrounded", "organoid_type": "kidney"},
+    {"canonical": "GlutaMAX", "kind": "supplement", "grounding_status": "ungrounded", "organoid_type": "cardiac"},
+]
+
+
+def _write_gbk(path, rows):
+    path.write_text("\n".join(json.dumps(r) for r in rows))
+
+
+def _patch_gbk(monkeypatch, rp):
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", rp)
+
+
+def test_gbk_returns_200(tmp_path, monkeypatch):
+    rp = tmp_path / "reagents.jsonl"
+    _write_gbk(rp, _GBK_REAGENTS)
+    _patch_gbk(monkeypatch, rp)
+    data, status = ae.handle_grounding_by_kind()
+    assert status == 200
+
+
+def test_gbk_keys(tmp_path, monkeypatch):
+    rp = tmp_path / "reagents.jsonl"
+    _write_gbk(rp, _GBK_REAGENTS)
+    _patch_gbk(monkeypatch, rp)
+    data, _ = ae.handle_grounding_by_kind()
+    for k in ("by_kind", "per_type", "organoid_type_filter"):
+        assert k in data, f"missing key: {k}"
+
+
+def test_gbk_signaling_rate_correct(tmp_path, monkeypatch):
+    rp = tmp_path / "reagents.jsonl"
+    _write_gbk(rp, _GBK_REAGENTS)
+    _patch_gbk(monkeypatch, rp)
+    data, _ = ae.handle_grounding_by_kind()
+    sig = data["by_kind"]["signaling"]
+    # 4 grounded out of 5 = 0.8
+    assert sig["n_total"] == 5
+    assert sig["n_grounded"] == 4
+    assert sig["grounding_rate"] == pytest.approx(0.8)
+
+
+def test_gbk_supplement_zero_grounding(tmp_path, monkeypatch):
+    rp = tmp_path / "reagents.jsonl"
+    _write_gbk(rp, _GBK_REAGENTS)
+    _patch_gbk(monkeypatch, rp)
+    data, _ = ae.handle_grounding_by_kind()
+    sup = data["by_kind"]["supplement"]
+    assert sup["n_grounded"] == 0
+    assert sup["grounding_rate"] == 0.0
+
+
+def test_gbk_top_ungrounded_per_kind(tmp_path, monkeypatch):
+    rp = tmp_path / "reagents.jsonl"
+    _write_gbk(rp, _GBK_REAGENTS)
+    _patch_gbk(monkeypatch, rp)
+    data, _ = ae.handle_grounding_by_kind()
+    # GlutaMAX appears twice as ungrounded supplement
+    sup_ungrounded = {e["canonical"]: e["n"] for e in data["by_kind"]["supplement"]["top_ungrounded"]}
+    assert "GlutaMAX" in sup_ungrounded
+    assert sup_ungrounded["GlutaMAX"] == 2
+
+
+def test_gbk_per_type_present_without_filter(tmp_path, monkeypatch):
+    rp = tmp_path / "reagents.jsonl"
+    _write_gbk(rp, _GBK_REAGENTS)
+    _patch_gbk(monkeypatch, rp)
+    data, _ = ae.handle_grounding_by_kind()
+    assert data["per_type"] is not None
+    otypes = {r["organoid_type"] for r in data["per_type"]}
+    assert "intestinal" in otypes
+
+
+def test_gbk_type_filter(tmp_path, monkeypatch):
+    rp = tmp_path / "reagents.jsonl"
+    _write_gbk(rp, _GBK_REAGENTS)
+    _patch_gbk(monkeypatch, rp)
+    data, status = ae.handle_grounding_by_kind("intestinal")
+    assert status == 200
+    assert data["organoid_type_filter"] == "intestinal"
+    assert data["per_type"] is None  # suppressed when filtering
+
+
+def test_gbk_type_filter_excludes_other(tmp_path, monkeypatch):
+    rp = tmp_path / "reagents.jsonl"
+    _write_gbk(rp, _GBK_REAGENTS)
+    _patch_gbk(monkeypatch, rp)
+    data, _ = ae.handle_grounding_by_kind("kidney")
+    # Only kidney rows: EGF (grounded signaling) + B27 (ungrounded supplement) → 1 each
+    assert data["by_kind"]["signaling"]["n_total"] == 1
+    assert data["by_kind"]["supplement"]["n_total"] == 1
+
+
+def test_gbk_404_when_jsonl_missing(tmp_path, monkeypatch):
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", tmp_path / "missing.jsonl")
+    data, status = ae.handle_grounding_by_kind()
+    assert status == 404
+    assert "error" in data
+
+
+def test_gbk_empty_jsonl(tmp_path, monkeypatch):
+    rp = tmp_path / "reagents.jsonl"
+    rp.write_text("")
+    _patch_gbk(monkeypatch, rp)
+    data, status = ae.handle_grounding_by_kind()
+    assert status == 200
+    assert data["by_kind"] == {}
+
+
+def test_gbk_skips_invalid_json_lines(tmp_path, monkeypatch):
+    rp = tmp_path / "reagents.jsonl"
+    rp.write_text(
+        '{"canonical":"EGF","kind":"signaling","grounding_status":"grounded","organoid_type":"x"}\n'
+        'NOT_JSON\n'
+        '{"canonical":"B27","kind":"supplement","grounding_status":"ungrounded","organoid_type":"x"}\n'
+    )
+    _patch_gbk(monkeypatch, rp)
+    data, status = ae.handle_grounding_by_kind()
+    assert status == 200
+    assert data["by_kind"]["signaling"]["n_total"] == 1
+    assert data["by_kind"]["supplement"]["n_total"] == 1
+
+
+def test_gbk_index_entry():
+    data, _ = ae.handle_index()
+    assert "/analytics/grounding-by-kind" in data["endpoints"]
+
+
+# ---------------------------------------------------------------------------
+# Route 58 — /analytics/temporal-variance (TV)
+# ---------------------------------------------------------------------------
+_TV_PROTOCOLS = [
+    {"pmcid": "PMC1", "year": 2018},
+    {"pmcid": "PMC2", "year": 2018},
+    {"pmcid": "PMC3", "year": 2018},
+    {"pmcid": "PMC4", "year": 2022},
+    {"pmcid": "PMC5", "year": 2022},
+    {"pmcid": "PMC6", "year": 2022},
+    {"pmcid": "PMC7", "year": 2022},
+]
+# Insulin: converging — 2018 high variance, 2022 uniform
+_TV_REAGENTS = [
+    # 2018: Insulin 1, 5, 100 ng/mL (high variance)
+    {"pmcid": "PMC1", "canonical": "Insulin", "concentration_value": 1.0},
+    {"pmcid": "PMC2", "canonical": "Insulin", "concentration_value": 5.0},
+    {"pmcid": "PMC3", "canonical": "Insulin", "concentration_value": 100.0},
+    # 2022: Insulin all 10 (low variance)
+    {"pmcid": "PMC4", "canonical": "Insulin", "concentration_value": 10.0},
+    {"pmcid": "PMC5", "canonical": "Insulin", "concentration_value": 10.0},
+    {"pmcid": "PMC6", "canonical": "Insulin", "concentration_value": 10.0},
+    {"pmcid": "PMC7", "canonical": "Insulin", "concentration_value": 10.0},
+]
+
+
+def _write_tv_data(tmp_path, protocols, reagents):
+    pp = tmp_path / "protocols.jsonl"
+    rp = tmp_path / "reagents.jsonl"
+    pp.write_text("\n".join(json.dumps(r) for r in protocols))
+    rp.write_text("\n".join(json.dumps(r) for r in reagents))
+    return pp, rp
+
+
+def _patch_tv(monkeypatch, pp, rp):
+    monkeypatch.setattr(ae, "PROTOCOLS_JSONL", pp)
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", rp)
+
+
+def test_tv_returns_200(tmp_path, monkeypatch):
+    pp, rp = _write_tv_data(tmp_path, _TV_PROTOCOLS, _TV_REAGENTS)
+    _patch_tv(monkeypatch, pp, rp)
+    data, status = ae.handle_temporal_variance(min_n=3)
+    assert status == 200
+
+
+def test_tv_keys(tmp_path, monkeypatch):
+    pp, rp = _write_tv_data(tmp_path, _TV_PROTOCOLS, _TV_REAGENTS)
+    _patch_tv(monkeypatch, pp, rp)
+    data, _ = ae.handle_temporal_variance(min_n=3)
+    assert "results" in data
+    assert "min_n" in data
+
+
+def test_tv_yearly_keys(tmp_path, monkeypatch):
+    pp, rp = _write_tv_data(tmp_path, _TV_PROTOCOLS, _TV_REAGENTS)
+    _patch_tv(monkeypatch, pp, rp)
+    data, _ = ae.handle_temporal_variance(query="Insulin", min_n=3)
+    result = data["results"][0]
+    for k in ("canonical", "trend", "yearly", "first_year_cv", "last_year_cv"):
+        assert k in result
+
+
+def test_tv_converging_trend(tmp_path, monkeypatch):
+    pp, rp = _write_tv_data(tmp_path, _TV_PROTOCOLS, _TV_REAGENTS)
+    _patch_tv(monkeypatch, pp, rp)
+    data, _ = ae.handle_temporal_variance(query="Insulin", min_n=3)
+    result = data["results"][0]
+    # 2018 has high CV, 2022 CV=0 → converging
+    assert result["trend"] == "converging"
+    assert result["last_year_cv"] == pytest.approx(0.0)
+
+
+def test_tv_first_year_cv_positive(tmp_path, monkeypatch):
+    pp, rp = _write_tv_data(tmp_path, _TV_PROTOCOLS, _TV_REAGENTS)
+    _patch_tv(monkeypatch, pp, rp)
+    data, _ = ae.handle_temporal_variance(query="Insulin", min_n=3)
+    assert data["results"][0]["first_year_cv"] > 0
+
+
+def test_tv_min_n_filter(tmp_path, monkeypatch):
+    # min_n=5 → 2018 only has 3 records → excluded; 2022 has 4 → excluded too
+    pp, rp = _write_tv_data(tmp_path, _TV_PROTOCOLS, _TV_REAGENTS)
+    _patch_tv(monkeypatch, pp, rp)
+    data, _ = ae.handle_temporal_variance(query="Insulin", min_n=5)
+    assert data["results"] == []
+
+
+def test_tv_query_filter(tmp_path, monkeypatch):
+    pp, rp = _write_tv_data(tmp_path, _TV_PROTOCOLS, _TV_REAGENTS)
+    _patch_tv(monkeypatch, pp, rp)
+    data, _ = ae.handle_temporal_variance(query="NoSuchReagent", min_n=1)
+    assert data["results"] == []
+
+
+def test_tv_404_reagents_missing(tmp_path, monkeypatch):
+    pp = tmp_path / "protocols.jsonl"
+    pp.write_text("")
+    monkeypatch.setattr(ae, "PROTOCOLS_JSONL", pp)
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", tmp_path / "missing.jsonl")
+    data, status = ae.handle_temporal_variance()
+    assert status == 404
+
+
+def test_tv_404_protocols_missing(tmp_path, monkeypatch):
+    rp = tmp_path / "reagents.jsonl"
+    rp.write_text("")
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", rp)
+    monkeypatch.setattr(ae, "PROTOCOLS_JSONL", tmp_path / "missing.jsonl")
+    data, status = ae.handle_temporal_variance()
+    assert status == 404
+
+
+def test_tv_skips_non_positive_values(tmp_path, monkeypatch):
+    protocols = [{"pmcid": "PMC1", "year": 2020}, {"pmcid": "PMC2", "year": 2020}, {"pmcid": "PMC3", "year": 2020}]
+    reagents = [
+        {"pmcid": "PMC1", "canonical": "EGF", "concentration_value": 0.0},
+        {"pmcid": "PMC2", "canonical": "EGF", "concentration_value": -1.0},
+        {"pmcid": "PMC3", "canonical": "EGF", "concentration_value": 10.0},
+    ]
+    pp = tmp_path / "protocols.jsonl"
+    rp = tmp_path / "reagents.jsonl"
+    pp.write_text("\n".join(json.dumps(r) for r in protocols))
+    rp.write_text("\n".join(json.dumps(r) for r in reagents))
+    _patch_tv(monkeypatch, pp, rp)
+    # Only 1 valid value in 2020 → below min_n=3 → no results
+    data, status = ae.handle_temporal_variance(query="EGF", min_n=3)
+    assert status == 200
+    assert data["results"] == []
+
+
+def test_tv_index_entry():
+    data, _ = ae.handle_index()
+    assert "/analytics/temporal-variance" in data["endpoints"]
+
+
+# ---------------------------------------------------------------------------
+# Route 59 — /analytics/base-media-cooccurrence (BMC)
+# ---------------------------------------------------------------------------
+_BMC_PROTOCOLS = [
+    # Papers with both fields
+    {"pmcid": "PMC1", "source_cell_type": "iPSC", "base_media": "DMEM/F12", "organoid_type": "intestinal"},
+    {"pmcid": "PMC2", "source_cell_type": "iPSC", "base_media": "DMEM/F12", "organoid_type": "intestinal"},
+    {"pmcid": "PMC3", "source_cell_type": "iPSC", "base_media": "mTeSR1",   "organoid_type": "cardiac"},
+    {"pmcid": "PMC4", "source_cell_type": "adult_stem_cell", "base_media": "DMEM/F12", "organoid_type": "intestinal"},
+    {"pmcid": "PMC5", "source_cell_type": "adult_stem_cell", "base_media": "DMEM/F12", "organoid_type": "kidney"},
+    # Papers missing base_media (imputation targets)
+    {"pmcid": "PMC6", "source_cell_type": "iPSC", "base_media": "",            "organoid_type": "retinal"},
+    {"pmcid": "PMC7", "source_cell_type": "iPSC", "base_media": "not_stated",  "organoid_type": "lung"},
+    {"pmcid": "PMC8", "source_cell_type": "adult_stem_cell", "base_media": "", "organoid_type": "liver"},
+    # Papers missing source_cell_type — should be ignored
+    {"pmcid": "PMC9", "source_cell_type": "",          "base_media": "DMEM/F12", "organoid_type": "gastric"},
+    {"pmcid": "PMC10","source_cell_type": "not_stated","base_media": "DMEM/F12", "organoid_type": "gastric"},
+]
+
+
+def _write_bmc(tmp_path, protocols):
+    pp = tmp_path / "protocols.jsonl"
+    pp.write_text("\n".join(json.dumps(r) for r in protocols))
+    return pp
+
+
+def _patch_bmc(monkeypatch, pp):
+    monkeypatch.setattr(ae, "PROTOCOLS_JSONL", pp)
+
+
+def test_bmc_returns_200(tmp_path, monkeypatch):
+    pp = _write_bmc(tmp_path, _BMC_PROTOCOLS)
+    _patch_bmc(monkeypatch, pp)
+    data, status = ae.handle_base_media_cooccurrence()
+    assert status == 200
+
+
+def test_bmc_top_level_keys(tmp_path, monkeypatch):
+    pp = _write_bmc(tmp_path, _BMC_PROTOCOLS)
+    _patch_bmc(monkeypatch, pp)
+    data, _ = ae.handle_base_media_cooccurrence()
+    for k in ("n_papers_with_both", "n_papers_missing_media", "n_imputable",
+              "imputation_coverage", "conditional_distribution", "imputation_candidates"):
+        assert k in data, f"missing key: {k}"
+
+
+def test_bmc_missing_media_count(tmp_path, monkeypatch):
+    pp = _write_bmc(tmp_path, _BMC_PROTOCOLS)
+    _patch_bmc(monkeypatch, pp)
+    data, _ = ae.handle_base_media_cooccurrence()
+    # PMC6, PMC7, PMC8 have no base_media (or not_stated)
+    assert data["n_papers_missing_media"] == 3
+
+
+def test_bmc_n_papers_with_both(tmp_path, monkeypatch):
+    pp = _write_bmc(tmp_path, _BMC_PROTOCOLS)
+    _patch_bmc(monkeypatch, pp)
+    data, _ = ae.handle_base_media_cooccurrence()
+    # PMC1..5 have both; PMC9/PMC10 skipped (no source_cell_type)
+    assert data["n_papers_with_both"] == 5
+
+
+def test_bmc_ipsc_modal_media(tmp_path, monkeypatch):
+    pp = _write_bmc(tmp_path, _BMC_PROTOCOLS)
+    _patch_bmc(monkeypatch, pp)
+    data, _ = ae.handle_base_media_cooccurrence()
+    ipsc = next(c for c in data["conditional_distribution"] if c["source_cell_type"] == "iPSC")
+    # iPSC: DMEM/F12 × 2, mTeSR1 × 1 → modal is DMEM/F12
+    assert ipsc["modal_media"] == "DMEM/F12"
+    assert ipsc["modal_probability"] == pytest.approx(2 / 3, abs=1e-3)
+
+
+def test_bmc_imputation_candidates_predicted(tmp_path, monkeypatch):
+    pp = _write_bmc(tmp_path, _BMC_PROTOCOLS)
+    _patch_bmc(monkeypatch, pp)
+    data, _ = ae.handle_base_media_cooccurrence()
+    # PMC6, PMC7 are iPSC missing media → should be predicted as DMEM/F12
+    imputed_pmcids = {r["pmcid"]: r["predicted_media"] for r in data["imputation_candidates"]}
+    assert imputed_pmcids.get("PMC6") == "DMEM/F12"
+    assert imputed_pmcids.get("PMC7") == "DMEM/F12"
+
+
+def test_bmc_source_cell_filter(tmp_path, monkeypatch):
+    pp = _write_bmc(tmp_path, _BMC_PROTOCOLS)
+    _patch_bmc(monkeypatch, pp)
+    data, status = ae.handle_base_media_cooccurrence("iPSC")
+    assert status == 200
+    assert data["source_cell_filter"] == "iPSC"
+    # Only iPSC distributions
+    for c in data["conditional_distribution"]:
+        assert c["source_cell_type"] == "iPSC"
+
+
+def test_bmc_404_when_jsonl_missing(tmp_path, monkeypatch):
+    monkeypatch.setattr(ae, "PROTOCOLS_JSONL", tmp_path / "missing.jsonl")
+    data, status = ae.handle_base_media_cooccurrence()
+    assert status == 404
+    assert "error" in data
+
+
+def test_bmc_skips_no_source_cell(tmp_path, monkeypatch):
+    protocols = [
+        {"pmcid": "P1", "source_cell_type": "",           "base_media": "DMEM/F12", "organoid_type": "x"},
+        {"pmcid": "P2", "source_cell_type": "not_stated", "base_media": "DMEM/F12", "organoid_type": "x"},
+    ]
+    pp = _write_bmc(tmp_path, protocols)
+    _patch_bmc(monkeypatch, pp)
+    data, status = ae.handle_base_media_cooccurrence()
+    assert status == 200
+    assert data["n_papers_with_both"] == 0
+    assert data["conditional_distribution"] == []
+
+
+def test_bmc_imputation_coverage_ratio(tmp_path, monkeypatch):
+    pp = _write_bmc(tmp_path, _BMC_PROTOCOLS)
+    _patch_bmc(monkeypatch, pp)
+    data, _ = ae.handle_base_media_cooccurrence()
+    # 3 missing, all 3 have known source_cell_type in training set → all imputable
+    assert data["n_imputable"] == 3
+    assert data["imputation_coverage"] == pytest.approx(1.0)
+
+
+def test_bmc_index_entry():
+    data, _ = ae.handle_index()
+    assert "/analytics/base-media-cooccurrence" in data["endpoints"]
+
+
+# ---------------------------------------------------------------------------
+# Route 61 — /analytics/within-type-dose-range (WTDR)
+# ---------------------------------------------------------------------------
+_WTDR_REAGENTS = [
+    # FGF2 in kidney — wide range (6–200 ng/mL = 33×)
+    {"canonical": "FGF2", "organoid_type": "kidney", "canonical_unit": "ng/mL", "value": 6.0},
+    {"canonical": "FGF2", "organoid_type": "kidney", "canonical_unit": "ng/mL", "value": 20.0},
+    {"canonical": "FGF2", "organoid_type": "kidney", "canonical_unit": "ng/mL", "value": 200.0},
+    # FGF2 in intestinal — narrow range (50–100 ng/mL = 2×)
+    {"canonical": "FGF2", "organoid_type": "intestinal", "canonical_unit": "ng/mL", "value": 50.0},
+    {"canonical": "FGF2", "organoid_type": "intestinal", "canonical_unit": "ng/mL", "value": 100.0},
+    {"canonical": "FGF2", "organoid_type": "intestinal", "canonical_unit": "ng/mL", "value": 75.0},
+    # BMP4 in retinal — convergent (all 1.5 nM)
+    {"canonical": "BMP4", "organoid_type": "retinal", "canonical_unit": "nM", "value": 1.5},
+    {"canonical": "BMP4", "organoid_type": "retinal", "canonical_unit": "nM", "value": 1.5},
+    {"canonical": "BMP4", "organoid_type": "retinal", "canonical_unit": "nM", "value": 1.5},
+    # Reagent with null value — must be excluded
+    {"canonical": "EGF", "organoid_type": "kidney", "canonical_unit": "ng/mL", "value": None},
+]
+
+
+def _write_wtdr(tmp_path, reagents):
+    rp = tmp_path / "reagents.jsonl"
+    rp.write_text("\n".join(json.dumps(r) for r in reagents))
+    return rp
+
+
+def _patch_wtdr(monkeypatch, rp):
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", rp)
+
+
+def test_wtdr_returns_200(tmp_path, monkeypatch):
+    rp = _write_wtdr(tmp_path, _WTDR_REAGENTS)
+    _patch_wtdr(monkeypatch, rp)
+    data, status = ae.handle_within_type_dose_range()
+    assert status == 200
+
+
+def test_wtdr_top_level_keys(tmp_path, monkeypatch):
+    rp = _write_wtdr(tmp_path, _WTDR_REAGENTS)
+    _patch_wtdr(monkeypatch, rp)
+    data, _ = ae.handle_within_type_dose_range()
+    for k in ("description", "min_n", "n_combos", "results"):
+        assert k in data
+
+
+def test_wtdr_sorted_by_fold_range_desc(tmp_path, monkeypatch):
+    rp = _write_wtdr(tmp_path, _WTDR_REAGENTS)
+    _patch_wtdr(monkeypatch, rp)
+    data, _ = ae.handle_within_type_dose_range()
+    folds = [r["fold_range"] for r in data["results"] if r["fold_range"] is not None]
+    assert folds == sorted(folds, reverse=True)
+
+
+def test_wtdr_fgf2_kidney_fold_range(tmp_path, monkeypatch):
+    rp = _write_wtdr(tmp_path, _WTDR_REAGENTS)
+    _patch_wtdr(monkeypatch, rp)
+    data, _ = ae.handle_within_type_dose_range(query="FGF2", organoid_type="kidney")
+    assert data["results"], "no results for FGF2 kidney"
+    top = data["results"][0]
+    assert top["min"] == pytest.approx(6.0)
+    assert top["max"] == pytest.approx(200.0)
+    assert top["fold_range"] == pytest.approx(200.0 / 6.0, rel=0.01)
+    assert "33" in top["headline"]
+
+
+def test_wtdr_bmp4_retinal_fold_1(tmp_path, monkeypatch):
+    rp = _write_wtdr(tmp_path, _WTDR_REAGENTS)
+    _patch_wtdr(monkeypatch, rp)
+    data, _ = ae.handle_within_type_dose_range(query="BMP4", organoid_type="retinal")
+    assert data["results"]
+    top = data["results"][0]
+    assert top["fold_range"] == pytest.approx(1.0)
+    assert top["cv"] == pytest.approx(0.0)
+
+
+def test_wtdr_query_filter(tmp_path, monkeypatch):
+    rp = _write_wtdr(tmp_path, _WTDR_REAGENTS)
+    _patch_wtdr(monkeypatch, rp)
+    data, _ = ae.handle_within_type_dose_range(query="BMP4")
+    for r in data["results"]:
+        assert "BMP4" in r["canonical"]
+
+
+def test_wtdr_type_filter(tmp_path, monkeypatch):
+    rp = _write_wtdr(tmp_path, _WTDR_REAGENTS)
+    _patch_wtdr(monkeypatch, rp)
+    data, _ = ae.handle_within_type_dose_range(organoid_type="retinal")
+    for r in data["results"]:
+        assert r["organoid_type"] == "retinal"
+
+
+def test_wtdr_min_n_excludes_small_groups(tmp_path, monkeypatch):
+    rp = _write_wtdr(tmp_path, _WTDR_REAGENTS)
+    _patch_wtdr(monkeypatch, rp)
+    data, _ = ae.handle_within_type_dose_range(min_n=10)
+    assert data["results"] == []
+
+
+def test_wtdr_excludes_null_values(tmp_path, monkeypatch):
+    rp = _write_wtdr(tmp_path, _WTDR_REAGENTS)
+    _patch_wtdr(monkeypatch, rp)
+    data, _ = ae.handle_within_type_dose_range(query="EGF")
+    assert data["results"] == []
+
+
+def test_wtdr_404_missing_reagents(tmp_path, monkeypatch):
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", tmp_path / "missing.jsonl")
+    data, status = ae.handle_within_type_dose_range()
+    assert status == 404
+
+
+def test_wtdr_index_entry():
+    data, _ = ae.handle_index()
+    assert "/analytics/within-type-dose-range" in data["endpoints"]
+
+
+# ---------------------------------------------------------------------------
+# Route 62 — /analytics/convergence-leaders (CL)
+# ---------------------------------------------------------------------------
+_CL_PROTOCOLS = [
+    # 3 years of data per PMC
+    {"pmcid": "PMC1", "year": 2018}, {"pmcid": "PMC2", "year": 2018}, {"pmcid": "PMC3", "year": 2018},
+    {"pmcid": "PMC4", "year": 2020}, {"pmcid": "PMC5", "year": 2020}, {"pmcid": "PMC6", "year": 2020},
+    {"pmcid": "PMC7", "year": 2022}, {"pmcid": "PMC8", "year": 2022}, {"pmcid": "PMC9", "year": 2022},
+]
+
+_CL_REAGENTS = [
+    # BMP4: 2018=high CV (spread 1-100), 2020=medium, 2022=converged (all ~1.5) → converging
+    {"pmcid": "PMC1", "canonical": "BMP4", "value": 1.0},
+    {"pmcid": "PMC2", "canonical": "BMP4", "value": 50.0},
+    {"pmcid": "PMC3", "canonical": "BMP4", "value": 100.0},
+    {"pmcid": "PMC4", "canonical": "BMP4", "value": 1.5},
+    {"pmcid": "PMC5", "canonical": "BMP4", "value": 2.0},
+    {"pmcid": "PMC6", "canonical": "BMP4", "value": 1.0},
+    {"pmcid": "PMC7", "canonical": "BMP4", "value": 1.5},
+    {"pmcid": "PMC8", "canonical": "BMP4", "value": 1.5},
+    {"pmcid": "PMC9", "canonical": "BMP4", "value": 1.5},
+    # FGF2: 2018=low CV, 2022=high CV → diverging
+    {"pmcid": "PMC1", "canonical": "FGF2", "value": 10.0},
+    {"pmcid": "PMC2", "canonical": "FGF2", "value": 10.0},
+    {"pmcid": "PMC3", "canonical": "FGF2", "value": 10.0},
+    {"pmcid": "PMC4", "canonical": "FGF2", "value": 10.0},
+    {"pmcid": "PMC5", "canonical": "FGF2", "value": 10.0},
+    {"pmcid": "PMC6", "canonical": "FGF2", "value": 10.0},
+    {"pmcid": "PMC7", "canonical": "FGF2", "value": 5.0},
+    {"pmcid": "PMC8", "canonical": "FGF2", "value": 200.0},
+    {"pmcid": "PMC9", "canonical": "FGF2", "value": 10.0},
+]
+
+
+def _write_cl(tmp_path, protocols, reagents):
+    pp = tmp_path / "protocols.jsonl"
+    rp = tmp_path / "reagents.jsonl"
+    pp.write_text("\n".join(json.dumps(r) for r in protocols))
+    rp.write_text("\n".join(json.dumps(r) for r in reagents))
+    return pp, rp
+
+
+def _patch_cl(monkeypatch, pp, rp):
+    monkeypatch.setattr(ae, "PROTOCOLS_JSONL", pp)
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", rp)
+
+
+def test_cl_returns_200(tmp_path, monkeypatch):
+    pp, rp = _write_cl(tmp_path, _CL_PROTOCOLS, _CL_REAGENTS)
+    _patch_cl(monkeypatch, pp, rp)
+    data, status = ae.handle_convergence_leaders()
+    assert status == 200
+
+
+def test_cl_top_level_keys(tmp_path, monkeypatch):
+    pp, rp = _write_cl(tmp_path, _CL_PROTOCOLS, _CL_REAGENTS)
+    _patch_cl(monkeypatch, pp, rp)
+    data, _ = ae.handle_convergence_leaders()
+    for k in ("converging", "diverging", "n_stable", "n_converging", "n_diverging", "n_canonicals_with_data"):
+        assert k in data
+
+
+def test_cl_bmp4_is_converging(tmp_path, monkeypatch):
+    pp, rp = _write_cl(tmp_path, _CL_PROTOCOLS, _CL_REAGENTS)
+    _patch_cl(monkeypatch, pp, rp)
+    data, _ = ae.handle_convergence_leaders(min_years=3, min_n=3)
+    canonicals = [r["canonical"] for r in data["converging"]]
+    assert "BMP4" in canonicals
+
+
+def test_cl_fgf2_is_diverging(tmp_path, monkeypatch):
+    pp, rp = _write_cl(tmp_path, _CL_PROTOCOLS, _CL_REAGENTS)
+    _patch_cl(monkeypatch, pp, rp)
+    data, _ = ae.handle_convergence_leaders(min_years=3, min_n=3)
+    canonicals = [r["canonical"] for r in data["diverging"]]
+    assert "FGF2" in canonicals
+
+
+def test_cl_converging_sorted_by_cv_drop(tmp_path, monkeypatch):
+    pp, rp = _write_cl(tmp_path, _CL_PROTOCOLS, _CL_REAGENTS)
+    _patch_cl(monkeypatch, pp, rp)
+    data, _ = ae.handle_convergence_leaders(min_years=3, min_n=3)
+    drops = [r["cv_drop"] for r in data["converging"]]
+    assert drops == sorted(drops, reverse=True)
+
+
+def test_cl_min_years_filter(tmp_path, monkeypatch):
+    pp, rp = _write_cl(tmp_path, _CL_PROTOCOLS, _CL_REAGENTS)
+    _patch_cl(monkeypatch, pp, rp)
+    # require 5 years — our data only has 3, so no results
+    data, _ = ae.handle_convergence_leaders(min_years=5, min_n=3)
+    assert data["n_canonicals_with_data"] == 0
+    assert data["converging"] == []
+    assert data["diverging"] == []
+
+
+def test_cl_entry_keys(tmp_path, monkeypatch):
+    pp, rp = _write_cl(tmp_path, _CL_PROTOCOLS, _CL_REAGENTS)
+    _patch_cl(monkeypatch, pp, rp)
+    data, _ = ae.handle_convergence_leaders(min_years=3, min_n=3)
+    for entry in data["converging"]:
+        for k in ("canonical", "n_years_with_data", "first_year_cv", "last_year_cv", "cv_change", "trend", "cv_drop"):
+            assert k in entry, f"missing key {k} in converging entry"
+
+
+def test_cl_404_missing_reagents(tmp_path, monkeypatch):
+    pp = tmp_path / "protocols.jsonl"
+    pp.write_text("")
+    monkeypatch.setattr(ae, "PROTOCOLS_JSONL", pp)
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", tmp_path / "missing.jsonl")
+    data, status = ae.handle_convergence_leaders()
+    assert status == 404
+
+
+def test_cl_404_missing_protocols(tmp_path, monkeypatch):
+    rp = tmp_path / "reagents.jsonl"
+    rp.write_text("")
+    monkeypatch.setattr(ae, "REAGENTS_JSONL", rp)
+    monkeypatch.setattr(ae, "PROTOCOLS_JSONL", tmp_path / "missing.jsonl")
+    data, status = ae.handle_convergence_leaders()
+    assert status == 404
+
+
+def test_cl_index_entry():
+    data, _ = ae.handle_index()
+    assert "/analytics/convergence-leaders" in data["endpoints"]
