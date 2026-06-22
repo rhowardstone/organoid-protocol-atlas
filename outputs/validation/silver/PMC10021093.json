@@ -1,0 +1,89 @@
+{
+  "pmcid": "PMC10021093",
+  "doi": "10.1177/09636897231160216",
+  "multimodal": false,
+  "n_fields_checked": 14,
+  "n_correct": 10,
+  "incorrect": [
+    {
+      "field": "organoid_type",
+      "extracted": "intestinal",
+      "source_says": "fallopian-tube (FTEC fallopian tube epithelial cell organoids)",
+      "evidence_quote": "We derived two primary culture FTEC lines (A01 and A03) from the fallopian tubes of 2 patients ... For organoid culturing, we adopted the protocol from a previous report but with slight modifications. A total of 25,000 fresh isolated FTECs were cultured in one of six well dishes, mixed with 50 μl of 1% Matrigel",
+      "source_loc": "methods_text / Organoid Culturing; title is fallopian-tube"
+    },
+    {
+      "field": "source_cells.cell_type",
+      "extracted": "adult_stem_cell",
+      "source_says": "primary fallopian tube epithelial cells (FTEC), not characterized as adult stem cells; derived directly from patient fimbriae",
+      "evidence_quote": "We derived two primary culture FTEC lines (A01 and A03) from the fallopian tubes of 2 patients",
+      "source_loc": "methods_text / FTEC Derivation"
+    },
+    {
+      "field": "passaging.split_ratio",
+      "extracted": "1:3",
+      "source_says": "1:3 is the passaging ratio for FTMSC fibroblasts in 2D, NOT for the organoids; the organoid section gives no split ratio (cross-protocol contamination)",
+      "evidence_quote": "The FTMSCs were plated into 10 cm dishes, grown and passaged in a 1:3 ratio.",
+      "source_loc": "methods_text / FTMSCs Derivation"
+    },
+    {
+      "field": "passaging.method",
+      "extracted": "manual",
+      "source_says": "no organoid passaging method stated; only medium replacement 'every other day' is described for organoids",
+      "evidence_quote": "overlaid with 500 μl of the specified organoid culture medium and placed in a 5% CO2 atmosphere at 37°C. The medium was replaced every other day.",
+      "source_loc": "methods_text / Organoid Culturing"
+    }
+  ],
+  "recall_misses": [
+    {
+      "item": "cell line names A01 and A03",
+      "source_says": "two FTEC lines named A01 and A03 were derived; line_name in extraction is null",
+      "evidence_quote": "We derived two primary culture FTEC lines (A01 and A03) from the fallopian tubes of 2 patients",
+      "source_loc": "methods_text / FTEC Derivation"
+    },
+    {
+      "item": "Matrigel concentration = 1%",
+      "source_says": "Matrigel was used at 1%; extraction left matrix.percent null",
+      "evidence_quote": "mixed with 50 μl of 1% Matrigel (BD Matrigel Basement Membrane Matrix)",
+      "source_loc": "methods_text / Organoid Culturing"
+    },
+    {
+      "item": "seeding density 25,000 FTECs / well of 6-well dish",
+      "source_says": "organoids seeded at 25,000 cells per well; not captured",
+      "evidence_quote": "A total of 25,000 fresh isolated FTECs were cultured in one of six well dishes",
+      "source_loc": "methods_text / Organoid Culturing"
+    },
+    {
+      "item": "temperature 37°C",
+      "source_says": "culture at 37°C; extraction temperature_c left null though it cited the quote containing 37°C",
+      "evidence_quote": "placed in a 5% CO2 atmosphere at 37°C",
+      "source_loc": "methods_text / Organoid Culturing"
+    },
+    {
+      "item": "medium change cadence (every other day)",
+      "source_says": "organoid medium replaced every other day; not in timeline/passaging",
+      "evidence_quote": "The medium was replaced every other day.",
+      "source_loc": "methods_text / Organoid Culturing"
+    },
+    {
+      "item": "assay endpoints PAX8 staining and beta-catenin IHC",
+      "source_says": "PAX8 (secretory marker) and beta-catenin were also stained/quantified; extraction listed only FOXJ1 staining and proliferation rate",
+      "evidence_quote": "primary antibodies (1:100, FOXJ1 [ciliated cell marker], 1:100, PAX8 [secretory cell marker], and 1:100, beta-catenin",
+      "source_loc": "methods_text / Immunohistochemistry"
+    },
+    {
+      "item": "timeline measurement days 7, 14, 21",
+      "source_says": "proliferation measured on days 7, 14, 21 and counts on day 21; timeline array left empty",
+      "evidence_quote": "the six largest organoids from each group were measured for diameter on days 7, 14, and 21",
+      "source_loc": "methods_text / Organoid Numbers and Sizes"
+    },
+    {
+      "item": "alternative 'combined' (conditioned) medium not captured",
+      "source_says": "study compares two media; conventional (extracted) and a combined conditioned medium (FTEC:FTMSC:HUVEC = 10:7:2) plus added Wnt3a/RSPO1; only conventional captured",
+      "evidence_quote": "The combined medium was derived from mixing the conditioned medium from the FTEC, FTMSC, and HUVEC in a ratio of 10:7:2",
+      "source_loc": "methods_text / Combined Medium Collection"
+    }
+  ],
+  "verdict": "partial",
+  "notes": "Critical error: organoid_type extracted as 'intestinal' but the entire paper is fallopian-tube (FTEC) organoids — a categorical mislabel. The conventional-medium composition (Wnt3a 1000, RSPO1 200, glutamax 1%, HEPES 12mM, N2 1%, B27 2%, EGF 10, FGF10 100, noggin 100, nicotinamide 1mM, SB431542 0.5uM, Y-27632 9uM), base media DMEM, Matrigel, 5% CO2 were extracted accurately and verbatim-supported. However passaging 1:3/manual is cross-protocol contamination from the FTMSC fibroblast section (not the organoid). Several recall misses: cell lines A01/A03, 1% Matrigel, 25,000-cell seeding, 37°C, medium-change cadence, PAX8/beta-catenin endpoints, the day 7/14/21 timeline, and the entire combined/conditioned-medium arm. No figure images on disk (multimodal=false); Table 1 (ELISA Wnt3a/RSPO1 concentrations) is a results/validation table, not a protocol input, so its omission is acceptable."
+}

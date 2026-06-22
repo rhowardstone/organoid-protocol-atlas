@@ -1,0 +1,69 @@
+{
+  "pmcid": "PMC12625545",
+  "doi": "10.1186/s13287-025-04771-y",
+  "multimodal": true,
+  "n_fields_checked": 18,
+  "n_correct": 16,
+  "incorrect": [
+    {
+      "field": "matrix.name",
+      "extracted": "Matrigel",
+      "source_says": "Matrigel is the animal-derived reagent the paper REPLACES; the xeno-free protocol uses CELLstart as the chosen EB-attachment substrate. Matrigel is present only as the standard-protocol comparator.",
+      "evidence_quote": "On day 7, EBs were adhered to Matrigel™ (Corning; Cat#354234 – standard protocol) or the following xeno-free substrates: CELLstart™ ... After initial testing of all substrates (Fig. 1), further experiments were done with CELLstart.",
+      "source_loc": "Methods, 'Xeno-free derivation of iPSC-derived retinal organoids'"
+    },
+    {
+      "field": "timeline[Embryoid Bodies].day_start/day_end",
+      "extracted": "day_start 6, day_end 6",
+      "source_says": "EBs are generated from day 0 (iPSCs lifted with ReLeSR); BMP4 is added on day 6 and EBs are adhered on day 7. Day 6 is not the EB stage start/end; the schematic marks Day 0 'Lift iPSCs' and Day 7 'Adhere EBs'.",
+      "evidence_quote": "To generate embryoid bodies (EBs), iPSCs were lifted using ReLeSR™ ... On day 6, NIM was supplemented with 1.5 nM rhBMP4 ... On day 7, EBs were adhered",
+      "source_loc": "Methods + Fig.4A/Fig.1A schematic (Day 0 Lift iPSCs; Day 7 Adhere EBs)"
+    }
+  ],
+  "recall_misses": [
+    {
+      "item": "B27 supplement, 2% (Retinal Differentiation Medium)",
+      "source_says": "Core RDM supplement; not in media_supplements.",
+      "evidence_quote": "RDM - DMEM/F12 (3:1), 2% B27 supplement (Thermo Fisher Scientific; Cat#17504044)",
+      "source_loc": "Methods, RDM composition"
+    },
+    {
+      "item": "KnockOut Serum Replacement (KSR), 10% (xeno-free FBS substitute in 3D-RDM)",
+      "source_says": "The xeno-free replacement for FBS in the GMP protocol; missed entirely.",
+      "evidence_quote": "xeno-free 3D-RDM (RDM plus 10% FBS (as per our standard protocol) or 10% KnockOut™ Serum Replacement (KSR; Thermo Fisher Scientific; Cat#10828028)",
+      "source_loc": "Methods, 3D-RDM composition; Fig.2A schematic (FBS vs KSR)"
+    },
+    {
+      "item": "CELLstart (xeno-free EB-attachment matrix actually used in main protocol)",
+      "source_says": "The chosen xeno-free substrate; should be the primary matrix, not captured.",
+      "evidence_quote": "further experiments were done with CELLstart",
+      "source_loc": "Methods, substrate selection"
+    },
+    {
+      "item": "rhlaminin 521, 5 µg/ml (iPSC culture coating)",
+      "source_says": "iPSC plating substrate; absent from matrix/supplements.",
+      "evidence_quote": "iPSCs were cultured on recombinant human rhlaminin 521 coated cell culture plates in E8 medium",
+      "source_loc": "Methods, iPSC culture / 'rhlaminin 521 (5 µg/ml; Biolamina; Cat#LN521-02)'"
+    },
+    {
+      "item": "DMEM/F12 base medium for NIM (1:1) and RDM (3:1)",
+      "source_says": "Base medium of differentiation media; only E8 captured as base_media, differentiation base media missed.",
+      "evidence_quote": "Neural Induction Medium (NIM- DMEM/F12 (1:1) ...); RDM - DMEM/F12 (3:1)",
+      "source_loc": "Methods, NIM and RDM compositions"
+    },
+    {
+      "item": "Concentrations of captured supplements (FBS 10%, Primocin 0.2%, N2 1%, NEAA 1%, Glutamax 1%, heparin 2 µg/mL, taurine 100 µM, lipid concentrate 1:1000, all-trans retinoic acid 1 µM)",
+      "source_says": "All concentrations are null in extraction although the source states each dose verbatim.",
+      "evidence_quote": "10% Fetal Bovine Serum; 0.2% Primocin; 1% N2 supplement; 1% non-essential amino acids; 1% Glutamax; 2 µg/mL heparin; 100 µM taurine; 1:1000 chemically defined lipid concentrate; 1 µM all-trans retinoic acid",
+      "source_loc": "Methods (FBM, NIM, RDM, 3D-RDM compositions)"
+    },
+    {
+      "item": "BMP4 gradual withdrawal over 7 days (timeline detail)",
+      "source_says": "Signaling-factor schedule (taper) not captured.",
+      "evidence_quote": "BMP4 was gradually transitioned out of the NIM over seven days",
+      "source_loc": "Methods"
+    }
+  ],
+  "verdict": "partial",
+  "notes": "Multimodal: Fig.1A, Fig.2A and Fig.4A are protocol-timeline schematics (FBM→E8→NIM/BMP4 day6-7→RDM day16→3DRDM day30→day100→3DRDM- day160+) consistent with the methods text. Extracted factor/cell/passaging calls and most named supplements are CORRECT (rhBMP4 1.5 nM, ReLeSR, iPSC/human, E8). Two issues: (1) matrix is reported as Matrigel, but Matrigel is the reagent the paper REPLACES; CELLstart is the xeno-free substrate actually used, and KSR replaces FBS — the extraction captured the legacy/comparator reagents rather than the paper's headline xeno-free protocol; (2) the EB timeline window is imprecise. Recall is the main weakness: every supplement concentration is null despite verbatim doses in text, and B27, KSR, CELLstart, rhlaminin 521, and the DMEM/F12 base media were missed. assay_endpoints align with figures (OTX2, RCVRN/recoverin, cone arrestin=ARR3). Tables list empty in bundle; supplementary (Table S1/S2 in .docx) not fetched, so antibody/donor detail unverifiable."
+}

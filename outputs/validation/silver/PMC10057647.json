@@ -1,0 +1,103 @@
+{
+  "pmcid": "PMC10057647",
+  "doi": "10.3390/ijms24065912",
+  "multimodal": true,
+  "n_fields_checked": 18,
+  "n_correct": 12,
+  "incorrect": [
+    {
+      "field": "base_media",
+      "extracted": "mTeSR Plus media",
+      "source_says": "mTeSR Plus is the iPSC MAINTENANCE medium, not the retinal-organoid base/differentiation medium. RO differentiation uses Essential 6 (days 1-2), then neural induction media (Advanced DMEM/F12 1:1), then retinal differentiation media (DMEM/F12 3:1 + 10% FBS + 2% B27 + taurine + GlutaMAX + pen/strep).",
+      "evidence_quote": "Induced pluripotent stem cells (iPSC) were maintained on Geltrex-coated 6 well plates in mTeSR Plus media (Stemcell, Cambridge, UK). ... iPSC colonies were grown until 90-95% confluent, at which point they were cultured in Essential 6TM media (Gibco) for 2 days (Day 1 and 2 of differentiation) then neural induction media (Advanced DMEM/F12 (1:1) ... in retinal differentiation media (DMEM/F12 nutrient mix (3:1 ratio; Gibco), 10% foetal bovine serum (FBS; Gibco), 2% B27 supplement (without vitamin A; Gibco), 100 μM taurine",
+      "source_loc": "methods_text §4.1 & §4.4"
+    },
+    {
+      "field": "matrix",
+      "extracted": "Geltrex",
+      "source_says": "Geltrex is correct as the substrate coating, but it is used for 2D iPSC seeding; organoids themselves are subsequently grown in suspension in low-binding plates (no embedding matrix). Reporting is partially miscontextualized but the entity is correct.",
+      "evidence_quote": "seeded onto Geltrex (Gibco) coated 6-well plates ... NRVs were manually excised using 21G needles/scalpel blades and grown in low-binding 96-well plates",
+      "source_loc": "methods_text §4.4"
+    },
+    {
+      "field": "passaging.method",
+      "extracted": "Trypsin 0.05%",
+      "source_says": "Trypsin 0.05% is the passaging method for HEK293T cells (a validation cell line), NOT for the iPSC used to make organoids. iPSC were passaged using Versene.",
+      "evidence_quote": "Human embryonic kidney 293T (HEK293T) cells ... Cells were routinely passaged using Trypsin 0.05%. Induced pluripotent stem cells (iPSC) were maintained ... Cells were routinely passaged using Versene (Gibco).",
+      "source_loc": "methods_text §4.1"
+    },
+    {
+      "field": "media_supplements (FBS, L-glutamine, pen-strep)",
+      "extracted": "foetal bovine serum; L-glutamine; penicillin-streptomycin (listed as differentiation supplements with no concentration)",
+      "source_says": "10% FBS, 2 mM L-glutamine and 1% pen-strep are the HEK293T DMEM supplements. The RO retinal differentiation media separately contains 10% FBS, 2 mM GlutaMAX and 100 U/mL pen-strep. Concentrations were available in source but left null, and provenance (HEK293T vs RO) is conflated.",
+      "evidence_quote": "supplemented with 10% ( v / v ) foetal bovine serum (FBS; Gibco), 2 mM L-glutamine and 1% ( v / v ) penicillin-streptomycin (Gibco)",
+      "source_loc": "methods_text §4.1"
+    },
+    {
+      "field": "signaling_factors.retinoic acid.concentration",
+      "extracted": "1 μM (single value)",
+      "source_says": "Retinoic acid is a multi-step, time-varying factor: 1 μM at day 70, lowered to 0.5 μM at day 84, removed at day 100. Extraction captured only the initial 1 μM and missed the 0.5 μM step-down and removal.",
+      "evidence_quote": "At day 70, cultures were supplemented with 1 μM retinoic acid ... At day 84, the cultures were supplemented with 1% N2 and RA lowered to 0.5 μM. At day 100, B27 and RA were removed from the medium.",
+      "source_loc": "methods_text §4.4"
+    },
+    {
+      "field": "source_cells.line_name",
+      "extracted": "null",
+      "source_says": "The iPSC were derived from BJ dermal fibroblasts (ATCC CRL-2522); an isogenic AIPL1 WT vs CRISPR KO pair. Line name/RRID source (CRL-2522) was available and missed.",
+      "evidence_quote": "AIPL1 KO isogenic iPSC were generated from control BJ dermal fibroblast line (ATCC CRL-2522) by simultaneous reprogramming and CRISPR/Cas9 knockout",
+      "source_loc": "methods_text §4.3"
+    }
+  ],
+  "recall_misses": [
+    {
+      "item": "Essential 6 media stage (days 1-2)",
+      "source_says": "First differentiation medium; entirely absent from extraction.",
+      "evidence_quote": "they were cultured in Essential 6TM media (Gibco) for 2 days (Day 1 and 2 of differentiation)",
+      "source_loc": "methods_text §4.4"
+    },
+    {
+      "item": "Neural induction media (Advanced DMEM/F12 1:1) and its supplements",
+      "source_says": "Key RO induction medium with NEAA, N2, GlutaMAX, antibiotic-antimycotic all at 1%; missed entirely.",
+      "evidence_quote": "neural induction media (Advanced DMEM/F12 (1:1), 1% non-essential amino acids (NEAA), 1% N2 supplement, 1% GlutaMAX, 1% antibiotic-antimycotic (All Gibco)) until development of neuro-retinal vesicles (NRVs)",
+      "source_loc": "methods_text §4.4"
+    },
+    {
+      "item": "Retinal differentiation media base (DMEM/F12 3:1)",
+      "source_says": "The actual organoid differentiation base medium and its 10% FBS were not captured as the base; B27 captured but as a generic supplement.",
+      "evidence_quote": "in retinal differentiation media (DMEM/F12 nutrient mix (3:1 ratio; Gibco), 10% foetal bovine serum (FBS; Gibco), 2% B27 supplement (without vitamin A; Gibco), 100 μM taurine (Tocris, Abingdon, UK), 2 mM GlutaMAX (Gibco, Loughborough, UK) and 100 U/mL penicillin/streptomycin",
+      "source_loc": "methods_text §4.4"
+    },
+    {
+      "item": "Taurine concentration (100 μM)",
+      "source_says": "Taurine listed in supplements but concentration left null; 100 μM stated in source.",
+      "evidence_quote": "100 μM taurine (Tocris, Abingdon, UK)",
+      "source_loc": "methods_text §4.4"
+    },
+    {
+      "item": "N2 supplement added at day 84 (1%)",
+      "source_says": "A distinct timeline supplement addition; not captured.",
+      "evidence_quote": "At day 84, the cultures were supplemented with 1% N2",
+      "source_loc": "methods_text §4.4"
+    },
+    {
+      "item": "Full differentiation timeline",
+      "source_says": "timeline array in extraction is empty. Source gives a detailed schedule: Days 1-2 Essential 6; NRV development day 28-42 (also stated 20-25 days in Results); RA 1 μM at day 70; N2 + RA 0.5 μM at day 84; B27/RA removed day 100; RO matured/imaged to day 230-250.",
+      "evidence_quote": "until development of neuro-retinal vesicles (NRVs), typically between day 28 and 42 ... At day 70 ... At day 84 ... At day 100, B27 and RA were removed from the medium.",
+      "source_loc": "methods_text §4.4"
+    },
+    {
+      "item": "Culture vessels / suspension format",
+      "source_says": "Organoids grown in low-binding 96-well then 24-well plates; media changes every 2 days. Not captured.",
+      "evidence_quote": "grown in low-binding 96-well plates (96-well Nunc Sphera Round Bottom Plates ...) ... with media changes every 2 days. At day 70 ... ROs were transferred into low-binding 24-well plates.",
+      "source_loc": "methods_text §4.4"
+    },
+    {
+      "item": "Isogenic WT vs AIPL1 KO model design / CRISPR modification",
+      "source_says": "Core experimental design (AIPL1 CRISPR/Cas9 KO isogenic pair, p.H18Qfs*24) is absent from the 'modifications' field (empty).",
+      "evidence_quote": "We selected one iPSC clone with homozygous AIPL1 KO through a 1 bp insertion at the AIPL1 g1.4 target ... resulting in a missense mutation and frameshift leading to a premature stop codon within exon 2 (p.H18Qfs*24).",
+      "source_loc": "body_text §2.1"
+    }
+  ],
+  "verdict": "partial",
+  "notes": "Multimodal (3 figures with detailed captions; tables S1-S4 referenced but only present in an unparsed supplementary .zip, so table-level recall could not be assessed against text). Correct extractions: organoid_type=retinal, species=human, iPSC, Geltrex coating, B27 2%, RA initial 1 μM, temperature 37 C, 5% CO2, and the 5 assay endpoints (ONL thickness, TUNEL, qPCR, Western, cGMP ELISA) all verbatim-supported. Principal weaknesses: (1) base_media set to the iPSC maintenance medium (mTeSR Plus) rather than the organoid differentiation media; (2) provenance conflation between the HEK293T validation line, iPSC maintenance, and RO differentiation media (passaging=Trypsin belongs to HEK293T, not iPSC which used Versene); (3) empty timeline and modifications arrays despite a richly specified day-by-day schedule and a defining CRISPR AIPL1-KO design; (4) several stated concentrations (100 μM taurine, 2 mM L-glutamine/GlutaMAX, 1% N2/NEAA, FBS 10%) and the multi-step retinoic acid taper (1→0.5→0 μM) were dropped. No fabrications detected in the extraction. Overall correct-on-what-it-extracted but materially incomplete on the organoid-specific differentiation media and timeline."
+}

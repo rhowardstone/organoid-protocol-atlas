@@ -1,0 +1,107 @@
+{
+  "pmcid": "PMC10030769",
+  "doi": "10.3389/fimmu.2023.1142492",
+  "multimodal": false,
+  "n_fields_checked": 22,
+  "n_correct": 13,
+  "incorrect": [
+    {
+      "field": "signaling_factors[R-spondin 1].concentration",
+      "extracted": "500 nM (raw \"500 nM\", quote \"500 nM A83-01\")",
+      "source_says": "R-spondin 1 is supplied as conditioned medium from 293T cells (20% of total volume) in expansion medium, and as 500 ng/ml recombinant human R-spondin 1 in differentiation medium. It is never 500 nM. The value 500 nM belongs to the small molecule A83-01.",
+      "evidence_quote": "500 nM A83-01 (2939, Tocris) ... and conditioned medium from the L cell line secreting Wnt3A (50% of total volume) and 293T cells secreting R-spondin 1 (20%)",
+      "source_loc": "methods_text / Human intestinal organoids (expansion media)"
+    },
+    {
+      "field": "signaling_factors[R-spondin 1].role",
+      "extracted": "signaling factor (concentration mislabeled from A83-01)",
+      "source_says": "The extraction's own evidence quote for R-spondin 1 is verbatim the A83-01 entry ('500 nM A83-01'), confirming the concentration/quote was cross-wired from the A83-01 small molecule onto R-spondin 1.",
+      "evidence_quote": "500 nM A83-01 (2939, Tocris)",
+      "source_loc": "methods_text / Human intestinal organoids"
+    },
+    {
+      "field": "media_supplements[fetal bovine serum]",
+      "extracted": "fetal bovine serum (as an organoid media supplement)",
+      "source_says": "FBS is used in the cancer cell-line growth media (RPMI/EMEM for SW480, HCT116, Caco-2) and to wash the crypt pellet during isolation. It is NOT a component of the organoid expansion or differentiation media. Listing it under the organoid (adult_stem_cell) protocol is cross-protocol contamination from the cell-line section.",
+      "evidence_quote": "SW480 and HCT116 cells were grown in RPMI medium ... supplemented with 10% fetal bovine serum ... Crypt pellet was washed with FBS",
+      "source_loc": "methods_text / Cell lines + Human intestinal organoids (crypt isolation)"
+    },
+    {
+      "field": "base_media",
+      "extracted": "name: null, reporting: not_reported",
+      "source_says": "The organoid expansion and differentiation media are explicitly based on advanced DMEM F12 (Gibco 12634010), 26% of total volume in expansion medium. Base media is clearly reported.",
+      "evidence_quote": "Organoid expansion media [based on (76,77)] consisted of advanced DMEM F12 (12634010, Gibco) (26% of total volume)",
+      "source_loc": "methods_text / Human intestinal organoids"
+    }
+  ],
+  "recall_misses": [
+    {
+      "item": "Small molecule A83-01 (500 nM, Tocris 2939) - TGF-beta/ALK inhibitor in expansion medium",
+      "source_says": "A83-01 at 500 nM is an expansion-medium component; small_molecules array is empty and the value was instead mis-assigned to R-spondin 1.",
+      "evidence_quote": "500 nM A83-01 (2939, Tocris)",
+      "source_loc": "methods_text / Human intestinal organoids (expansion media)"
+    },
+    {
+      "item": "Small molecule SB202190 (10 uM, Tocris 1264) - p38 inhibitor in expansion medium",
+      "source_says": "Listed expansion-medium component; entirely absent from extraction (small_molecules empty).",
+      "evidence_quote": "10 μM SB202190 (1264, Tocris)",
+      "source_loc": "methods_text / Human intestinal organoids (expansion media)"
+    },
+    {
+      "item": "Nicotinamide (10 mM, Sigma N0636) in expansion medium",
+      "source_says": "Listed expansion-medium component; absent from both media_supplements and small_molecules.",
+      "evidence_quote": "10 mM Nicotinamide (N0636, Sigma-Aldrich)",
+      "source_loc": "methods_text / Human intestinal organoids (expansion media)"
+    },
+    {
+      "item": "Y-27632 ROCK inhibitor (10 uM, Sigma Y0503) added to expansion medium for first 2 days",
+      "source_says": "Listed small molecule used during initial seeding and 2D monolayer seeding; absent from small_molecules array.",
+      "evidence_quote": "10 μM Y-27632 (Rock inhibitor, Y0503, Sigma-Aldrich) was added to expansion medium for the first 2 days",
+      "source_loc": "methods_text / Human intestinal organoids"
+    },
+    {
+      "item": "R-spondin 1 differentiation-medium concentration (500 ng/ml recombinant human, Peprotech 120-38)",
+      "source_says": "Differentiation medium uses 500 ng/ml recombinant human R-spondin 1; extraction captured no correct R-spondin concentration for either medium.",
+      "evidence_quote": "500 ng/ml human R-spondin 1 (120-38, Peprotech)",
+      "source_loc": "methods_text / Human intestinal organoids (differentiation media)"
+    },
+    {
+      "item": "Wnt3A concentration (50% of total volume, L-cell conditioned medium)",
+      "source_says": "Wnt3A was extracted but with null concentration; source states it is conditioned medium at 50% of total volume.",
+      "evidence_quote": "conditioned medium from the L cell line secreting Wnt3A (50% of total volume)",
+      "source_loc": "methods_text / Human intestinal organoids (expansion media)"
+    },
+    {
+      "item": "Culture conditions: 37C, 5% CO2 humidified incubator",
+      "source_says": "culture_conditions marked not_extracted; source explicitly states 37C and 5% CO2 for organoid (Matrigel dome) incubation.",
+      "evidence_quote": "incubated upside down for 20 min in a 37°C 5% CO2 incubator until the Matrigel solidifies",
+      "source_loc": "methods_text / Human intestinal organoids"
+    },
+    {
+      "item": "Matrigel matrix detail (15 ul domes on 12-well plates; Corning FAL356231)",
+      "source_says": "Matrix name correct (Matrigel) but percent/format null; source gives 15 ul dome seeding and 1:50 Matrigel coating for 2D monolayers.",
+      "evidence_quote": "resuspended in ice-cold Matrigel (FAL356231, Corning) and seeded as 15 µl domes on pre-warmed 12-wells tissue culture plates",
+      "source_loc": "methods_text / Human intestinal organoids"
+    },
+    {
+      "item": "Passaging / single-cell dissociation method (Recombinant Trypsin EDTA, mechanical disruption)",
+      "source_says": "passaging marked not_reported; source describes dissociation of 3D organoids to single cells via recombinant trypsin-EDTA and mechanical disruption (for 2D seeding).",
+      "evidence_quote": "3D organoids were resuspended with Recombinant Trypsin EDTA Solution (03-079-1A, Biological Industries) and mechanically disrupted into a single cell suspension",
+      "source_loc": "methods_text / Human intestinal organoids"
+    },
+    {
+      "item": "Medium change interval (every other day)",
+      "source_says": "Feeding interval reported but not captured (passaging.interval/timeline empty).",
+      "evidence_quote": "Medium was changed every other day",
+      "source_loc": "methods_text / Human intestinal organoids"
+    },
+    {
+      "item": "Source tissue: ileal and colonic crypts from human surgical bowel-resection specimens (some Crohn's / ulcerative colitis)",
+      "source_says": "source_cells.evidence is null; organoids derive from primary ileal/colonic crypts of surgical specimens, including IBD patients.",
+      "evidence_quote": "Human ileal and colonic crypts were isolated and organoids were cultured as previously described",
+      "source_loc": "methods_text / Human intestinal organoids"
+    }
+  ],
+  "verdict": "partial",
+  "notes": "Text-only adjudication; no data/figures/local/PMC10030769/ directory exists, so multimodal=false. The single table (Table 1) is an immunofluorescence antibody list with no media composition. organoid_type (intestinal), matrix (Matrigel), source species/cell_type (human adult stem cell from crypts), Noggin (100 ng/ml), human EGF (50 ng/ml), Prostaglandine E2 (10 nM), and the Pen/Strep/HEPES/GlutaMAX/B27/NAC/Primocin supplement names are all correctly extracted and verbatim-supported. Two genuine correctness errors: (1) a cross-wired fabrication where A83-01's '500 nM' value AND its evidence quote were mis-assigned to R-spondin 1 (whose true concentrations are 20% conditioned medium / 500 ng/ml); (2) cross-protocol contamination listing FBS as an organoid supplement when FBS belongs only to the cancer cell-line media and crypt-wash steps. Significant recall gaps: all four small molecules (A83-01, SB202190, Nicotinamide, Y-27632) missing; base_media (advanced DMEM F12), culture_conditions (37C/5% CO2), passaging/dissociation, and feeding interval all unextracted despite being explicitly stated. No ESC->iPSC mislabel (this is an adult-stem-cell primary organoid, correctly labeled)."
+}

@@ -1,0 +1,115 @@
+{
+  "pmcid": "PMC10092774",
+  "doi": "10.7150/ijbs.80605",
+  "multimodal": false,
+  "n_fields_checked": 22,
+  "n_correct": 16,
+  "incorrect": [
+    {
+      "field": "source_cells.cell_type",
+      "extracted": "adult_stem_cell",
+      "source_says": "Lung stem/progenitor cells (LSPCs) isolated from neonatal mouse peripheral lung tissue (primary tissue), not adult stem cells",
+      "evidence_quote": "Lung tissues were obtained from neonatal C57BL/6 mice. ... Peripheral lung tissue without the trachea and bronchi was mechanically dissociated with scalpels and digested by a solution of 2 mg/ml collagenase A, 2 mg/ml trypsin, and 50 μg/ml gentamicin",
+      "source_loc": "methods_text :: Mice / Lungosphere formation assays"
+    },
+    {
+      "field": "culture_conditions.temperature_c",
+      "extracted": null,
+      "source_says": "37°C (stated explicitly; the cited evidence quote itself contains 37°C yet the field is null)",
+      "evidence_quote": "The flasks were incubated in a humidified atmosphere at 37°C and 5% CO 2",
+      "source_loc": "methods_text :: Lungosphere formation assays"
+    },
+    {
+      "field": "passaging.method",
+      "extracted": "mechanical dissociation",
+      "source_says": "Lungospheres were enzymatically dissociated to single cells using TrypLE Express; 'mechanical dissociation' (scalpels) applied only to the initial primary tissue, not to passaging of spheres/organoids",
+      "evidence_quote": "The lungospheres were washed with DMEM/F-12 and resuspended in TrypLE™ Express (Gibco). After incubation for 5-10 min at 37°C, the lungospheres were gently pipetted to generate single-cell suspensions.",
+      "source_loc": "methods_text :: Airway epithelium-like structures at the air-liquid interface (ALI)"
+    },
+    {
+      "field": "base_media.name",
+      "extracted": "DMEM/F-12",
+      "source_says": "DMEM/F-12 is the lungosphere base medium, but the downstream ALI and 3D organoid stages use PneumaCult-Ex Plus and PneumaCult-ALI as base media; extraction reports only the lungosphere base and omits the protocol's organoid/ALI base media",
+      "evidence_quote": "resuspended in PneumaCult™-Ex Plus Medium (STEMCELL) supplemented with 20 ng/ml mEGF ... adding only 1 ml of PneumaCult™-ALI Medium (STEMCELL) (supplemented with 20 ng/ml mEGF)",
+      "source_loc": "methods_text :: ALI / Lung organoids in Matrigel"
+    },
+    {
+      "field": "media_supplements[].fetal bovine serum",
+      "extracted": "fetal bovine serum (listed as a media supplement)",
+      "source_says": "FBS (10% v/v) was used only to STOP the collagenase/trypsin digestion of primary tissue, not as a component of the lungosphere/organoid culture medium",
+      "evidence_quote": "The digestion was stopped by the addition of 10% (v/v) fetal bovine serum (Gibco).",
+      "source_loc": "methods_text :: Lungosphere formation assays"
+    },
+    {
+      "field": "media_supplements[].concentration (all)",
+      "extracted": "B-27, penicillin, streptomycin, heparin all with concentration=null",
+      "source_says": "All supplement concentrations are stated verbatim in source: 1× B-27, 100 U/ml penicillin, 100 μg/ml streptomycin, 4 μg/ml heparin",
+      "evidence_quote": "lungosphere medium [1×B-27, 100 U/ml penicillin, 100 μg/ml streptomycin (Gibco), 4 μg/ml heparin (STEMCELL)",
+      "source_loc": "methods_text :: Lungosphere formation assays"
+    }
+  ],
+  "recall_misses": [
+    {
+      "item": "PneumaCult-Ex Plus Medium (ALI submerged-growth base medium, STEMCELL), supplemented with 20 ng/ml mEGF",
+      "source_says": "PneumaCult-Ex Plus Medium used for the submerged growth phase of ALI culture",
+      "evidence_quote": "resuspended in PneumaCult™-Ex Plus Medium (STEMCELL) supplemented with 20 ng/ml mEGF. ... fresh culturing medium changes were performed on both sides of the inserts every 2 days using PneumaCult™-Ex Plus Medium.",
+      "source_loc": "methods_text :: ALI"
+    },
+    {
+      "item": "PneumaCult-ALI Medium (ALI differentiation base medium AND the 3D Matrigel organoid medium, STEMCELL), supplemented with 20 ng/ml mEGF",
+      "source_says": "PneumaCult-ALI Medium used for ALI differentiation and as the medium overlaying the 3D Matrigel organoids",
+      "evidence_quote": "adding only 1 ml of PneumaCult™-ALI Medium (STEMCELL) (supplemented with 20 ng/ml mEGF) to the basal compartment ... PneumaCult™-ALI Medium supplemented with 20 ng/ml mEGF was added to each well.",
+      "source_loc": "methods_text :: ALI / Lung organoids in Matrigel"
+    },
+    {
+      "item": "B-27 concentration 1× (extracted as supplement but concentration omitted)",
+      "source_says": "1× B-27",
+      "evidence_quote": "lungosphere medium [1×B-27",
+      "source_loc": "methods_text :: Lungosphere formation assays"
+    },
+    {
+      "item": "Penicillin 100 U/ml and streptomycin 100 μg/ml (extracted as supplements but concentrations omitted)",
+      "source_says": "100 U/ml penicillin, 100 μg/ml streptomycin",
+      "evidence_quote": "100 U/ml penicillin, 100 μg/ml streptomycin (Gibco)",
+      "source_loc": "methods_text :: Lungosphere formation assays"
+    },
+    {
+      "item": "Heparin 4 μg/ml (extracted as supplement but concentration omitted)",
+      "source_says": "4 μg/ml heparin",
+      "evidence_quote": "4 μg/ml heparin (STEMCELL)",
+      "source_loc": "methods_text :: Lungosphere formation assays"
+    },
+    {
+      "item": "Growth Factor Reduced Matrigel (Corning) specifically; 3D organoids embedded in Matrigel domes solidified 30 min at 37°C (matrix qualifier GFR and dome format omitted)",
+      "source_says": "Growth Factor Reduced Matrigel formed into domes",
+      "evidence_quote": "mixed with Growth Factor Reduced Matrigel (Corning) and silica particles. The Matrigel-silica-lungosphere mixture was pipetted into a 24-well plate in domes and incubated at 37°C for 30 min for solidification.",
+      "source_loc": "methods_text :: Lung organoids in Matrigel"
+    },
+    {
+      "item": "Timeline empty: ALI differentiation run to day 28 post-ALI; basal medium changed every 2 days; lungosphere medium half-changed every 2-3 days; 3D organoid medium changed every 3 days",
+      "source_says": "28-day ALI differentiation period with defined medium-change cadences across all three stages",
+      "evidence_quote": "The medium in the basal chamber was changed with fresh medium every 2 days until day 28 post-ALI ... half the volume of medium was changed every 2 to 3 days ... the medium was replaced with fresh medium every 3 days.",
+      "source_loc": "methods_text :: Lungosphere / ALI / Lung organoids in Matrigel"
+    },
+    {
+      "item": "Cell seeding densities omitted: lungosphere 1.0×10^6 cells/ml; ALI Transwell 1.0×10^5 cells/insert in 0.5 ml apical, 1 ml basal",
+      "source_says": "Defined seeding densities for sphere and ALI stages",
+      "evidence_quote": "in DMEM/F-12] (1.0×10 6 cells/ml). ... Transwell inserts (Corning) were seeded with 1.0×10 5 cells in 0.5 ml medium per insert (apical chamber), and 1 ml medium was added to one well of the 12-well plate (basal chamber).",
+      "source_loc": "methods_text :: Lungosphere / ALI"
+    },
+    {
+      "item": "Tissue dissociation enzymes omitted (collagenase A 2 mg/ml, trypsin 2 mg/ml, gentamicin 50 μg/ml, DNase I 20 U/ml) used to liberate primary LSPCs",
+      "source_says": "Enzymatic digestion cocktail for primary isolation",
+      "evidence_quote": "digested by a solution of 2 mg/ml collagenase A, 2 mg/ml trypsin, and 50 μg/ml gentamicin (Sigma) in DMEM/F-12 (Gibco) for 45 min at 37°C ... resuspended in 20 U/ml DNase I (Sigma)",
+      "source_loc": "methods_text :: Lungosphere formation assays"
+    },
+    {
+      "item": "Treatment/exposure agents omitted: crystalline silica (50 μg/cm2, applied apically in ALI / mixed into Matrigel) and NLRP3 inhibitor MCC950 (10 mM stock, added 30 min pre-silica) define the experimental conditions",
+      "source_says": "Silica and MCC950 are the central perturbations of the model",
+      "evidence_quote": "After stimulation with 50 μg/cm 2 silica for 28 days ... The NLRP3 inflammasome selective inhibitor MCC950 ... 10 mM stock solution. MCC950 was added 30 min prior to silica stimulation.",
+      "source_loc": "methods_text :: Proliferation assay / Reagents"
+    }
+  ],
+  "verdict": "partial",
+  "notes": "Source is a mouse LSPC-derived lung organotypic model (2D ALI + 3D Matrigel organoid). No tables in bundle (tables=[]), no figure images on disk, supplementary_text is only video/figure-legend placeholders, so adjudication rests on methods_text (which is complete and authoritative); multimodal=false. CORRECTNESS: species=mouse, matrix=Matrigel, lungosphere base media=DMEM/F-12, CO2=5%, and the three signaling factors (mEGF 20 ng/ml, mFGF2 10 ng/ml, Y-27632 10 μM) are all verbatim-correct with no fabricated values — all evidence quotes check out exactly. Errors: (1) cell_type 'adult_stem_cell' is wrong — cells are neonatal-mouse primary lung stem/progenitor cells (primary tissue / progenitor), not adult; (2) temperature_c left null despite 37°C being inside the extraction's own evidence quote; (3) FBS mislabeled as a media supplement when it only quenched the digestion (cross-step contamination of the supplement list); (4) passaging 'mechanical dissociation' conflates initial scalpel tissue prep with the actual TrypLE-Express enzymatic sphere dissociation. The dominant problem is RECALL: the two STEMCELL PneumaCult media (Ex Plus and ALI) that define the ALI and 3D organoid stages are entirely missing; every supplement concentration (1× B-27, pen 100 U/ml, strep 100 μg/ml, heparin 4 μg/ml) is null though stated verbatim; timeline (28-day ALI, medium cadences) is empty; seeding densities, dissociation enzymes, GFR-Matrigel dome format, and the silica/MCC950 perturbations are all absent. Verdict partial: extracted items are largely accurate but the protocol is substantially under-captured, especially the ALI/3D media and all concentrations."
+}

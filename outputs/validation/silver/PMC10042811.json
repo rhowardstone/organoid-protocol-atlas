@@ -1,0 +1,97 @@
+{
+  "pmcid": "PMC10042811",
+  "doi": "10.1038/s41467-023-37398-9",
+  "multimodal": false,
+  "n_fields_checked": 18,
+  "n_correct": 11,
+  "incorrect": [
+    {
+      "field": "media_supplements[fetal bovine serum (FBS)]",
+      "extracted": "fetal bovine serum (FBS)",
+      "source_says": "FBS is a supplement of the DMEM medium used for the HEK-293/HEK-293T/LNZ308 immortalized cell lines, NOT the iPSC/hESC or organoid lineage; cross-protocol contamination",
+      "evidence_quote": "HEK-293, HEK-293T, and LNZ308 cells were cultured and maintained in DMEM supplemented with 10% (vol/vol) fetal bovine serum (FBS) (F0900-050, GenDEPOT), L-glutamine, non-essential amino acids, β-mercaptoethanol, and penicillin/streptomycin.",
+      "source_loc": "Methods, 'WT and LFS iPSC generation and cell culture'"
+    },
+    {
+      "field": "media_supplements[L-glutamine]",
+      "extracted": "L-glutamine",
+      "source_says": "L-glutamine belongs to the HEK-293/HEK-293T/LNZ308 DMEM cell-line medium, not the organoid/iPSC lineage",
+      "evidence_quote": "HEK-293, HEK-293T, and LNZ308 cells were cultured and maintained in DMEM supplemented with 10% (vol/vol) fetal bovine serum (FBS) ... L-glutamine, non-essential amino acids, β-mercaptoethanol, and penicillin/streptomycin.",
+      "source_loc": "Methods, 'WT and LFS iPSC generation and cell culture'"
+    },
+    {
+      "field": "media_supplements[non-essential amino acids]",
+      "extracted": "non-essential amino acids",
+      "source_says": "NEAA belongs to the HEK-293/HEK-293T/LNZ308 DMEM cell-line medium, not the organoid/iPSC lineage",
+      "evidence_quote": "HEK-293, HEK-293T, and LNZ308 cells were cultured and maintained in DMEM supplemented with 10% (vol/vol) fetal bovine serum (FBS) ... L-glutamine, non-essential amino acids, β-mercaptoethanol, and penicillin/streptomycin.",
+      "source_loc": "Methods, 'WT and LFS iPSC generation and cell culture'"
+    },
+    {
+      "field": "media_supplements[β-mercaptoethanol]",
+      "extracted": "β-mercaptoethanol",
+      "source_says": "β-mercaptoethanol belongs to the HEK-293/HEK-293T/LNZ308 DMEM cell-line medium, not the organoid/iPSC lineage",
+      "evidence_quote": "HEK-293, HEK-293T, and LNZ308 cells were cultured and maintained in DMEM supplemented with 10% (vol/vol) fetal bovine serum (FBS) ... L-glutamine, non-essential amino acids, β-mercaptoethanol, and penicillin/streptomycin.",
+      "source_loc": "Methods, 'WT and LFS iPSC generation and cell culture'"
+    },
+    {
+      "field": "media_supplements[penicillin/streptomycin]",
+      "extracted": "penicillin/streptomycin",
+      "source_says": "penicillin/streptomycin belongs to the HEK-293/HEK-293T/LNZ308 DMEM cell-line medium, not the organoid/iPSC lineage",
+      "evidence_quote": "HEK-293, HEK-293T, and LNZ308 cells were cultured and maintained in DMEM supplemented with 10% (vol/vol) fetal bovine serum (FBS) ... L-glutamine, non-essential amino acids, β-mercaptoethanol, and penicillin/streptomycin.",
+      "source_loc": "Methods, 'WT and LFS iPSC generation and cell culture'"
+    },
+    {
+      "field": "passaging.method",
+      "extracted": "mechanical",
+      "source_says": "The source never states the iPSC passaging method (mechanical vs enzymatic); 'mechanical' is unsupported. The only stated dissociation reagent is Accutase, used for astrocytes (1:3 weekly), not for the 1:10 iPSC passaging the extraction reports.",
+      "evidence_quote": "iPSCs were passaged after reaching 85% confluence. ... Cells were passaged every 5–7 days at a 1:10 ratio.",
+      "source_loc": "Methods, 'In vitro differentiation of iPSCs and hESCs to NPCs, and then to astrocytes'"
+    }
+  ],
+  "recall_misses": [
+    {
+      "item": "culture_conditions: 37 °C, 5% CO2 (humidified)",
+      "source_says": "Incubation temperature and CO2 are explicitly stated but extraction marked culture_conditions as not_extracted (temperature_c=null, co2_pct=null)",
+      "evidence_quote": "iPSCs and hESCs were cultured on Matrigel ... in mTeSR1 medium (Stemcell Technology, 85850) and maintained at 37 °C in a humidified 5% CO 2 incubator.",
+      "source_loc": "Methods, 'In vitro differentiation of iPSCs and hESCs to NPCs, and then to astrocytes'"
+    },
+    {
+      "item": "Astrocyte differentiation medium (ScienCell, 1801)",
+      "source_says": "A distinct astrocyte medium is used downstream; not captured as a media/timeline stage",
+      "evidence_quote": "NPCs were then dissociated into single cells and seeded at 15,000 cells/cm 2 density on Matrigel-coated plates in the astrocyte medium (ScienCell Research Laboratories, 1801).",
+      "source_loc": "Methods, astrocyte differentiation"
+    },
+    {
+      "item": "STEMdiff Neural Progenitor Medium (NPC maintenance medium)",
+      "source_says": "NPC maintenance medium is named but missing from extraction",
+      "evidence_quote": "iPSC and hESC-derived NPCs were maintained in STEMdiff Neural Progenitor Medium (Stemcell Technologies, 05833)",
+      "source_loc": "Methods, NPC differentiation"
+    },
+    {
+      "item": "Accutase passaging of astrocytes, 1:3 split, weekly, cultured to day 75",
+      "source_says": "A second passaging regime (astrocytes) with reagent, ratio, and interval is fully stated but not in extracted timeline/passaging",
+      "evidence_quote": "After 20 days of culture, astrocytes were split 1:3 every week with Accutase cell detachment solution (StemCell Technologies, 07922), continually cultured until day 75",
+      "source_loc": "Methods, astrocyte differentiation"
+    },
+    {
+      "item": "Timeline milestones: EBs formed; day 5 EBs replated; rosette selection day 14; astrocytes day 75; organoids ~1 month 3D culture before transplant",
+      "source_says": "Multiple explicit timeline days exist; extraction timeline is empty []",
+      "evidence_quote": "On day 5, EBs were collected and replated onto a Matrigel-coated well of a six-well plate ... Rosette selection was performed after 14 days of culture ... continually cultured until day 75",
+      "source_loc": "Methods, differentiation"
+    },
+    {
+      "item": "Assay/marker endpoints (SOX2, PAX6, NESTIN for NPCs; S100β, GFAP for astrocytes; GFAP, OLIG2, β-TUBULIN III in Fig.1a)",
+      "source_says": "Validation markers are explicitly listed; assay_endpoints extracted as []",
+      "evidence_quote": "validated by immunostaining with NPC markers (SOX2, PAX6, and NESTIN) ... validated by immunostaining with NPC markers (S100β and GFAP)",
+      "source_loc": "Methods, differentiation"
+    },
+    {
+      "item": "H1 hESC line WA01 (WiCell) also used alongside iPSCs",
+      "source_says": "A second pluripotent source (hESC) is used in the same lineage; extraction captures only the iPSC line WT1-G",
+      "evidence_quote": "H1 hESCs (WA01) were purchased from WiCell.",
+      "source_loc": "Methods, 'WT and LFS iPSC generation and cell culture'"
+    }
+  ],
+  "verdict": "partial",
+  "notes": "Text-only adjudication: tables list is empty, no figure image files on disk (data/figures/local/PMC10042811/ absent), supplementary_text is only a table-of-contents. Core correctly captured: organoid_type cerebral, iPSC source WT1-G (real WT line), Matrigel, mTeSR1, SMADi factors LDN193189 0.1 uM + SB431542 10 uM (verbatim), ROCK inhibitor Y-27632, KnockOut SR 20% and bFGF 10 ng/mL (valid alt iPSC medium), split 1:10 / interval 5 d. Two correctness problems: (1) cross-protocol contamination — FBS, L-glutamine, NEAA, β-mercaptoethanol, pen/strep are pulled from the DMEM medium used for the HEK-293/HEK-293T/LNZ308 immortalized cell lines, not the iPSC/hESC/organoid lineage; (2) passaging.method 'mechanical' is unsupported (source states no method; only Accutase is named, and that for astrocytes). No ESC->iPSC mislabel detected (WT1-G is correctly iPSC). Notable recall gaps: 37 °C / 5% CO2, NPC and astrocyte media, astrocyte Accutase 1:3 weekly passaging, full timeline (EB d5, rosette d14, astrocyte d75), validation markers, and the H1 hESC WA01 second source. The actual cerebral-organoid 3D protocol is only loosely described in the source body (formed in ~1 month 3D culture, ~1.5 mm transplanted), which limits extractable organoid-specific detail."
+}

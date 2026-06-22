@@ -1,0 +1,75 @@
+{
+  "pmcid": "PMC11194494",
+  "doi": "10.1073/pnas.2317285121",
+  "multimodal": true,
+  "n_fields_checked": 13,
+  "n_correct": 11,
+  "incorrect": [
+    {
+      "field": "source_cells.line_name",
+      "extracted": "JM2019",
+      "source_says": "JM2019 is a real iPSC line in the paper, but the SIX6-GFP reporter (the extracted assay_endpoint) belongs to IMR90-4, not JM2019. JM2019 carries the BRN3b-EGFP-Thy1.2 reporter. The single chosen line is arbitrary; the protocol uses six lines (H7, H9, IMR90-4, WTC11, PGP1, JM2019).",
+      "evidence_quote": "iPSC lines IMR90-4, WTC11, PGP1, and JM2019 ... including the H7 cell line (BRN3b-tdTomato-Thy1.2), IMR90-4 (SIX6-GFP), and JM2019 (BRN3b-EGFP-Thy1.2)",
+      "source_loc": "methods_text: Maintenance of hPSC Cultures / CRISPR-Cas9 Gene Editing"
+    },
+    {
+      "field": "media_supplements concentrations",
+      "extracted": "B27 supplement concentration=null; MEM nonessential amino acids concentration=null; FBS concentration=null",
+      "source_says": "Source gives explicit doses: 2% B27, 1% MEM NEAA, 1% FBS in RDM (plus 500 uL FBS on Day 8). Concentrations were available but not extracted.",
+      "evidence_quote": "Retinal Differentiation Medium [RDM, consisting of DMEM/F12 (3:1), 2% B27 supplement, 1% MEM nonessential amino acids, and 1x anti-anti] with 1% fetal bovine serum (FBS)",
+      "source_loc": "methods_text: Retinal Organoid Differentiation from hPSCs"
+    }
+  ],
+  "recall_misses": [
+    {
+      "item": "Neural Induction Medium (NIM)",
+      "source_says": "Core differentiation medium applied Days 1-6; missing entirely from base_media/media_supplements/timeline.",
+      "evidence_quote": "all spent media were replaced with 6 mL of fresh mTeSR1/mTeSR PLUS, as well as 6 mL of fresh Neural Induction Medium (NIM)",
+      "source_loc": "methods_text: Retinal Organoid Differentiation from hPSCs"
+    },
+    {
+      "item": "Retinal Differentiation Medium (RDM) base = DMEM/F12 (3:1)",
+      "source_says": "RDM base media (DMEM/F12 3:1) is the second-phase base medium from Day 16 onward; not captured in base_media.",
+      "evidence_quote": "Retinal Differentiation Medium [RDM, consisting of DMEM/F12 (3:1), 2% B27 supplement, 1% MEM nonessential amino acids, and 1x anti-anti]",
+      "source_loc": "methods_text: Retinal Organoid Differentiation from hPSCs"
+    },
+    {
+      "item": "anti-anti (antibiotic-antimycotic, 1x)",
+      "source_says": "1x anti-anti is a stated RDM component; missing from media_supplements.",
+      "evidence_quote": "1% MEM nonessential amino acids, and 1x anti-anti",
+      "source_loc": "methods_text: Retinal Organoid Differentiation from hPSCs"
+    },
+    {
+      "item": "Seeding density 2,000 cells/well (range 250-8,000 cpw)",
+      "source_says": "Optimized starting cell density per aggregate, central to the standardized protocol; not captured.",
+      "evidence_quote": "we decided to use a seeding density of 2,000 cells/aggregate for further experiments, as this density appeared to provide the greatest reproducibility",
+      "source_loc": "body_text (Results) / Fig. 2A schematic (250-8000 cpw)"
+    },
+    {
+      "item": "Low-adhesion 96-well U-bottom plates + forced reaggregation by centrifugation",
+      "source_says": "Defining substrate/method of the standardized aggregation step; missing from passaging/timeline.",
+      "evidence_quote": "singularized cells were seeded into low-adhesion 96-well U-bottom plates at defined cell numbers followed by centrifugation resulting in a forced reaggregation",
+      "source_loc": "body_text (Results); Fig. 1B & Fig. 2A schematics"
+    },
+    {
+      "item": "Differentiation timeline (Days 1, 2, 3, 6, 8, 16; out to Day 150)",
+      "source_says": "Extracted timeline is empty despite a fully specified day-by-day schedule including BMP4/LDN on Day 6, FBS on Day 8, transfer to RDM on Day 16, and analysis to Day 150.",
+      "evidence_quote": "On Day 6, 12 mL of fresh NIM with either 50 ng/mL of BMP4 or 200 nM of LDN-193189 ... On Day 8 ... 500 uL of Fetal Bovine Serum (FBS) ... On Day 16, organoids were manually removed from the plates and transferred to 10 cm dishes containing Retinal Differentiation Medium",
+      "source_loc": "methods_text: Retinal Organoid Differentiation from hPSCs; Fig. 2A & Fig. 6 (Day 30/60/150)"
+    },
+    {
+      "item": "FBS 500 uL on Day 8 (adhesion step)",
+      "source_says": "A distinct FBS application (adhesion) separate from the 1% FBS in RDM; dose/timepoint not captured.",
+      "evidence_quote": "On Day 8 of differentiation, 500 uL of Fetal Bovine Serum (FBS) was then added directly to each well of a six-well plate to ensure cellular aggregates adhere to wells",
+      "source_loc": "methods_text: Retinal Organoid Differentiation from hPSCs"
+    },
+    {
+      "item": "Alternative matrix Geltrex and alternative passaging ReLeSR; alternative base mTeSR PLUS",
+      "source_says": "Source lists permissible alternatives (Geltrex for Matrigel, ReLeSR for Accutase, mTeSR PLUS for mTeSR1); only one of each pair extracted.",
+      "evidence_quote": "maintained on six well-plates coated with either Matrigel or Geltrex and grown in mTeSR1 or mTeSR PLUS medium ... passaged using either Accutase or ReLeSR",
+      "source_loc": "methods_text: Maintenance of hPSC Cultures"
+    }
+  ],
+  "verdict": "partial",
+  "notes": "Every extracted value present is correct and well-grounded (BMP4 50 ng/mL, LDN-193189 200 nM verbatim; Matrigel, mTeSR1, Accutase, retinal type all correct). The two BMP signaling factors and their doses are accurate. Main weaknesses are RECALL: the entire timeline array is empty despite a fully day-resolved schedule (Days 1-16, out to Day 150), and the protocol-defining NIM medium, RDM base (DMEM/F12 3:1), 1x anti-anti, the 96-well U-bottom forced-reaggregation step, and the optimized 2,000 cells/well seeding density were all missed. Supplement concentrations (2% B27, 1% MEM NEAA, 1% FBS) were stated in source but extracted as null. Figures 1 and 2 were visually read: schematics confirm single-cell Accutase dissociation, 96-well U-bottom seeding, 250-8000 cpw densities, and Day -1/Day 1/Day 16 timeline; no additional reagent doses appear in figure schematics. JM2019 line choice is defensible but mismatched to the SIX6:GFP endpoint (IMR90-4 reporter)."
+}

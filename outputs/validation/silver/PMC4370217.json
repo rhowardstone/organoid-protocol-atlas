@@ -1,0 +1,81 @@
+{
+  "pmcid": "PMC4370217",
+  "doi": "10.7554/eLife.05098",
+  "multimodal": true,
+  "n_fields_checked": 18,
+  "n_correct": 16,
+  "incorrect": [
+    {
+      "field": "source_cells.cell_type / line_name",
+      "extracted": "cell_type=iPSC, line_name=H1",
+      "source_says": "H1 is a human ES (embryonic stem) cell line, not an iPSC. The iPSC lines used were 3-5 and 20-1. The primary lines were hESCs H1, H9, and UM77-2.",
+      "evidence_quote": "Human ES cell lines H1 (NIH registry #0043) and H9 (NIH registry #0062) were obtained from WiCell Research Institute. Human ES line UM77-2 (NIH registry #0278) was obtained from the University of Michigan. iPSC lines 3-5 and 20-1 were generated at Cincinnati Children's Hospital",
+      "source_loc": "Materials and methods > Maintenance of hESCs"
+    },
+    {
+      "field": "base_media.name",
+      "extracted": "mTeSR1 (single base medium)",
+      "source_says": "mTeSR1 is only the pluripotent-maintenance medium. The protocol uses RPMI 1640 for definitive-endoderm differentiation and Advanced DMEM/F12 ('foregut media') for foregut/organoid culture; these differentiation base media were omitted.",
+      "evidence_quote": "Stem cells were maintained on Matrigel ... in mTeSR1 medium ... Cells were treated with Activin A (100 ng ml -1) for 3 consecutive days in RPMI 1640 media ... cells were incubated in foregut media: Advanced DMEM/F12 plus N-2 and B27 supplement",
+      "source_loc": "Materials and methods > Maintenance / Differentiation into definitive endoderm / Differentiation into anterior foregut"
+    }
+  ],
+  "recall_misses": [
+    {
+      "item": "Additional cell lines (multiple hESC + iPSC lines)",
+      "source_says": "Lines H9 (NIH #0062), UM77-2 (NIH #0278), and iPSC lines 3-5 and 20-1 were all used; extraction reported only a single (mislabeled) line.",
+      "evidence_quote": "Human ES cell lines H1 (NIH registry #0043) and H9 (NIH registry #0062) ... Human ES line UM77-2 (NIH registry #0278) ... iPSC lines 3-5 and 20-1 were generated at Cincinnati Children's Hospital",
+      "source_loc": "Materials and methods > Maintenance of hESCs"
+    },
+    {
+      "item": "RPMI 1640 base medium (definitive endoderm stage)",
+      "source_says": "RPMI 1640 is the base medium for the Activin A definitive-endoderm step.",
+      "evidence_quote": "Cells were treated with Activin A (100 ng ml -1) for 3 consecutive days in RPMI 1640 media (Life Technologies, Grand Island, NY)",
+      "source_loc": "Materials and methods > Differentiation of PSCs into definitive endoderm"
+    },
+    {
+      "item": "Advanced DMEM/F12 base medium ('foregut media')",
+      "source_says": "Advanced DMEM/F12 is the base for foregut, maintenance, spheroid and organoid culture.",
+      "evidence_quote": "cells were incubated in foregut media: Advanced DMEM/F12 plus N-2 and B27 supplement, 10 mM Hepes, 1x L-Glutamine (200 mM), 1x Penicillin-streptomycin (5000 U/ml...)",
+      "source_loc": "Materials and methods > Differentiation of definitive endoderm into anterior foregut"
+    },
+    {
+      "item": "HyClone defined FBS (dFBS) graded serum during endoderm step",
+      "source_says": "Endoderm differentiation uses increasing dFBS concentrations 0%, 0.2%, 2%; distinct from the 1% FBS overlay extracted.",
+      "evidence_quote": "with increasing concentrations of 0%, 0.2% and 2% HyClone defined fetal bovine serum (dFBS, Thermo Scientific, West Palm Beach, FL)",
+      "source_loc": "Materials and methods > Differentiation of PSCs into definitive endoderm"
+    },
+    {
+      "item": "Timeline (extracted timeline array is empty)",
+      "source_says": "Stage durations are explicit: 4-day Activin A (3 days dosing), 4 days NOG+SB foregut, 4-6 days NOG+SB+FGF4+Ch(+SAG) spheroid generation, 8-day maintenance with growth factors; Figure 3D timeline shows Day 1/6/10/20/50 of FGF10 culture; media replaced every 4 days; organoids re-embedded every 10-15 days.",
+      "evidence_quote": "a 4-day Activin A ... protocol ... for 4 days ... with NOG, SB, 500 ng/ml FGF4 ... and 2 uM CHIR99021 ... for 4-6 days ... overlaid and replaced every 4 days. Organoids were transferred into new Matrigel droplets every 10-15 days.",
+      "source_loc": "Materials and methods (multiple) + Figure 3D (visual timeline: Day 1,6,10,20,50)"
+    },
+    {
+      "item": "Passaging / organoid maintenance interval",
+      "source_says": "Organoids re-embedded in fresh Matrigel droplets every 10-15 days; reported as not_reported in extraction.",
+      "evidence_quote": "Organoids were transferred into new Matrigel droplets every 10-15 days.",
+      "source_loc": "Materials and methods > Directed differentiation into ... lung organoids"
+    },
+    {
+      "item": "Culture conditions: 37C incubation, RT Matrigel setting",
+      "source_says": "Spheroids embedded in Matrigel incubated at room temperature 10 min; matrix seeding incubated at 37C 30 min; culture_conditions reported not_extracted.",
+      "evidence_quote": "incubated at room temperature for 10 min ... incubated at 37C for 30 min without media",
+      "source_loc": "Materials and methods > lung organoids / decellularized lung matrices"
+    },
+    {
+      "item": "Decellularized human lung matrix (alternative scaffold)",
+      "source_says": "Lung spheroids were also seeded onto decellularized human lung matrix slices, an additional culture matrix not captured.",
+      "evidence_quote": "Human lungs ... were decellularized as previously described ... Matrix slices were placed in a 96 well plate and approximately 50 NOG+SB+F+Ch+SAG spheres were pipetted directly onto the matrices.",
+      "source_loc": "Materials and methods > Seeding lung spheroids on decellularized human lung matrices"
+    },
+    {
+      "item": "Matrigel catalog/format details",
+      "source_says": "Matrigel BD Bioscience #356237, embedded as droplets in a 24-well plate; matrix percent and vendor/catalog not captured.",
+      "evidence_quote": "spheroids were embedded in a droplet of Matrigel (BD Bioscience #356237) in one well of a 24 well plate",
+      "source_loc": "Materials and methods > Directed differentiation into ... lung organoids"
+    }
+  ],
+  "verdict": "partial",
+  "notes": "Dye et al. 2015 eLife human lung organoid (HLO) protocol. Dose/factor extraction is strong: 14/15 signaling factor and supplement concentrations match source verbatim (Activin A 100, Noggin 200, SB431542 10uM, FGF2 50/500, Sant-2 10uM, SU5402 10uM, SHH 100, FGF4 500, CHIR99021 2uM, FGF10 500, SAG no dose given). Two correctness issues: (1) H1 mislabeled as iPSC -- it is an hESC line; (2) base_media collapsed to only mTeSR1, missing RPMI 1640 and Advanced DMEM/F12 differentiation media. Main weakness is RECALL: the entire timeline array is empty despite explicit stage durations in text and a visual Day 1/6/10/20/50 timeline in Figure 3D; passaging interval (every 10-15 days), 37C/RT conditions, the dFBS gradient, the decellularized lung matrix scaffold, and the additional cell lines (H9, UM77-2, iPSC 3-5/20-1) were all missed. Multimodal=true: schematic figures (Fig 1A/D, Fig 3A/D) were visually read and corroborate the staged protocol/timeline. Extractor: tier1_local gemma3:12b."
+}

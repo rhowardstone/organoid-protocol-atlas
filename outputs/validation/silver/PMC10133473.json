@@ -1,0 +1,68 @@
+{
+  "pmcid": "PMC10133473",
+  "doi": "10.3389/fcell.2023.1177838",
+  "multimodal": false,
+  "n_fields_checked": 9,
+  "n_correct": 1,
+  "incorrect": [
+    {
+      "field": "source_cells.cell_type / reporting",
+      "extracted": "iPSC, reporting=reported",
+      "source_says": "Paper is a narrative review; iPSCs are mentioned only generically as one of several graft sources for transplantation, with no specific line, RRID, or derivation protocol. No source cells are 'reported' for any protocol performed in this paper.",
+      "evidence_quote": "photoreceptor transplantation has garnered enthusiasm as a therapeutic solution ... especially in combination with induced pluripotent stem cells (iPSCs) (Zhong et al., 2014; Takagi et al., 2019; Watari et al., 2023), embryonic stem cells (ESCs) (Da Cruz et al., 2018), mesenchymal stem cells ...",
+      "source_loc": "body_text, Section 3 Stem Cell Transplantation and Regeneration"
+    },
+    {
+      "field": "media_supplements[0] N-Acetylcysteine (NAC)",
+      "extracted": "media supplement",
+      "source_says": "NAC is described as an ORAL antioxidant supplement that may support photoreceptor health in vivo, not as a culture-media component.",
+      "evidence_quote": "Oral supplementation with antioxidants like N-Acetylcysteine (NAC) (C) may also support photoreceptor health, with NAC as a known scavenger of reactive oxygen species.",
+      "source_loc": "body_text, Section 2 A photoreceptor survival guide"
+    },
+    {
+      "field": "media_supplements[1] lactose",
+      "extracted": "media supplement",
+      "source_says": "Lactose/glucose are discussed as in-vitro/in-vivo metabolites supporting photoreceptor health (RdCVF/GLUT1 metabolism), not as ingredients of any organoid medium used in this paper.",
+      "evidence_quote": "Complementary findings indicate that lactose supports photoreceptor health in vitro and point to a supportive role of glucose, lactose, and other similar metabolites (Jablonski et al., 2001; Wang et al., 2003).",
+      "source_loc": "body_text, Section 2 (RdCVF metabolism discussion)"
+    },
+    {
+      "field": "media_supplements[2] glucose",
+      "extracted": "media supplement",
+      "source_says": "Glucose is discussed as a photoreceptor metabolite tied to RdCVF/GLUT1 transport, not a medium ingredient.",
+      "evidence_quote": "A redox-sensitive interaction between RdCVF and Basigin-1 might even serve as a prerequisite for full activation of GLUT1 transport activity in photoreceptors ... a supportive role of glucose, lactose, and other similar metabolites.",
+      "source_loc": "body_text, Section 2"
+    },
+    {
+      "field": "signaling_factors[0] RdCVF",
+      "extracted": "survival factor (protocol signaling factor)",
+      "source_says": "RdCVF is reviewed as a therapeutic trophic factor in animal/gene-therapy contexts. The cited quote is a true statement about RdCVF biology but is not evidence of a culture protocol factor; no concentration or culture use in this paper.",
+      "evidence_quote": "RdCVF shares 33% similarity with thioredoxin but does not have detectable oxidoreductase activity (Leveillard et al., 2004).",
+      "source_loc": "body_text, Section 2"
+    },
+    {
+      "field": "signaling_factors[1] TGF-beta",
+      "extracted": "maintenance signaling factor (protocol)",
+      "source_says": "TGF-beta is described as an in-vivo anti-inflammatory cytokine treatment that rescued cones in rd1/rd10 MOUSE models — not a factor added to an organoid culture in this paper.",
+      "evidence_quote": "treatment with the anti-inflammatory cytokine transforming growth factor beta (TGF-beta) rescued degenerating cones and protected against loss of visual function (Wang et al., 2020).",
+      "source_loc": "body_text, Section 2"
+    },
+    {
+      "field": "signaling_factors[2] Nrf2",
+      "extracted": "antioxidant signaling factor (protocol)",
+      "source_says": "Nrf2 is a transcription-factor/signaling PATHWAY discussed therapeutically (AAV overexpression in RPE in mouse models), not a recombinant factor added to medium.",
+      "evidence_quote": "efforts to enhance Nrf2 signaling have been attempted as a mechanism for inhibiting the cellular oxidative stress response ... AAV-mediated overexpression of Nrf2 in the RPE demonstrated measurable benefits.",
+      "source_loc": "body_text, Section 2"
+    },
+    {
+      "field": "organoid_type / document_type",
+      "extracted": "retinal organoid protocol (implied by populated protocol schema)",
+      "source_says": "The document is a NARRATIVE REVIEW of vision-restoration strategies (gene therapy, pharmacology, transplantation, optogenetics, prosthetics). It contains no Methods/culture protocol, no tables, and only conceptual review figures. Extracting it as an organoid culture protocol is a category error.",
+      "evidence_quote": "section_titles: ['1 Introduction','2 A photoreceptor survival guide','3 Stem Cell Transplantation and Regeneration','4 Optogenetic strategies for restoring vision','5 Artificial vision and prosthetics','6 Discussion']",
+      "source_loc": "section_map / section_titles"
+    }
+  ],
+  "recall_misses": [],
+  "verdict": "poor",
+  "notes": "Wrong document type: PMC10133473 is a Frontiers in Cell and Dev Biol REVIEW article (DOI 10.3389/fcell.2023.1177838) on restoring vision in inherited retinal degenerations, with no organoid culture protocol, no Methods section, and no tables (tables=[]). The extractor (tier1_local::gemma3:12b) populated protocol fields by mining review prose: 'media_supplements' (NAC=oral antioxidant; glucose/lactose=photoreceptor metabolites) and 'signaling_factors' (RdCVF=trophic factor biology; TGF-beta=in-vivo mouse cytokine treatment; Nrf2=a signaling pathway, not a factor). All such fields are mislabeled/fabricated relative to source intent. iPSC 'source_cells' is a generic graft-source mention, not a reported protocol cell line. Only credit given: the verbatim RdCVF/thioredoxin quote is accurate to the text (sentence is faithfully reproduced), so 1 of the checked claims is textually-grounded even though its protocol role is wrong. No recall misses because there is no protocol content to miss; the correct extraction would be an empty/abstain protocol flagged as 'not a protocol paper'. multimodal=false: data/figures/local/PMC10133473/ does not exist; figures were caption-only (Tier 2 vision not run). Recommend: add a document-type gate so review articles are not coerced into the protocol schema."
+}

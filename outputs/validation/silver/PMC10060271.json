@@ -1,0 +1,63 @@
+{
+  "pmcid": "PMC10060271",
+  "doi": "10.1007/s13402-022-00750-0",
+  "multimodal": false,
+  "n_fields_checked": 25,
+  "n_correct": 20,
+  "incorrect": [
+    {
+      "field": "signaling_factors (cross-protocol media contamination)",
+      "extracted": "Single flat list mixing lung factors (Noggin 10%, R-spondin-1 10%, FGF-7, FGF-10 100 ng/mL, A83-01 500 nM, SB202190 1 uM, Y-27632) WITH PDAC-specific factors (WNT Surrogate-Fc 0.5 nM, Noggin-Fc 4%, Rspo3-Fc 4%, gastrin 10 nM) as if one recipe for a 'lung' organoid",
+      "source_says": "Two SEPARATE media. 'Full lung Ad-DF+++ medium' = 10% Noggin CM, 10% R-spondin-1 CM, B27, nicotinamide, FGF-7, FGF-10, A83-01, SB202190, Y-27632. 'Full PDAC Ad-DF+++ medium' = WNT Surrogate-Fc, Noggin-Fc, Rspo3-Fc, B27 w/o vit A, nicotinamide, FGF-10, A83-01, gastrin, Y-27632.",
+      "evidence_quote": "Full lung Ad-DF+++ medium consisted of 10% Noggin conditioned medium ... Full PDAC Ad-DF+++ medium consisted of 0.5nM WNT Surrogate-Fc-Fusion protein (Immunoprecise), 4% Noggin-Fc Fusion Protein conditioned medium (Immunoprecise), 4% Rspo3-Fc Fusion Protein conditioned medium (Immunoprecise), 1x B27 without vitamin A, 10 mM nicotinamide, 100 ng/ml FGF-10, 500 nM A83-01, 10 nM gastrin (R&D Systems) and 5 mM Y-27,632",
+      "source_loc": "methods_text, Tissue processing and organoid culture"
+    },
+    {
+      "field": "signaling_factors[WNT Surrogate-Fc].concentration.unit / gastrin.unit / Y-27632 (PDAC) unit",
+      "extracted": "PDAC factors normalized to nM (e.g. WNT Surrogate 0.5 nM, gastrin 10 nM) and Y-27632 5 uM",
+      "source_says": "PDAC Y-27632 is given as '5 mM' in source (likely a source typo for uM, but the extraction did not flag and the PDAC recipe should not be in a lung extraction at all)",
+      "evidence_quote": "10 nM gastrin (R&D Systems) and 5 mM Y-27,632",
+      "source_loc": "methods_text, Full PDAC Ad-DF+++ medium"
+    }
+  ],
+  "recall_misses": [
+    {
+      "item": "Table 1 patient-derived organoid lines (9 lines) and their identities/mutations",
+      "source_says": "Nine named PDO lines with morphology, IHC (Napsin A / P40 / TTF1) and mutation status: NSCLC_006N/006T, 013N/013T, 046N/046T, 051N/051T, PDAC_052, PDAC_060; e.g. PDAC_052 KRAS c.34G>T, PDAC_060 KRAS c.35G>A, NSCLC_006T parental KRAS c.34G<T (lost in organoid), NSCLC_013T parental EGFR c.2573T>G (lost in organoid). source_cells.line_name is null in extraction.",
+      "evidence_quote": "PDAC_052 AC Cystic NA NA NA NA KRAS c.34G > T Tumoral PDAC_060 AC Cystic NA NA NA NA KRAS c.35G > A Tumoral",
+      "source_loc": "Table 1 (tables[0].text)"
+    },
+    {
+      "item": "Matrix embedding ratio (Cultrex percent)",
+      "source_says": "Organoids embedded in 2/3 Cultrex Type 2 + 1/3 medium; matrix.percent left null in extraction",
+      "evidence_quote": "resuspended in 2/3 Cultrex Type 2 (R&D Systems) and 1/3 Full Ad-DF+++ medium",
+      "source_loc": "methods_text, Tissue processing and organoid culture"
+    },
+    {
+      "item": "Culture conditions temperature and CO2",
+      "source_says": "37 C and 5% CO2 are stated; extraction marked culture_conditions reporting 'not_extracted' with all fields null",
+      "evidence_quote": "BF, green and blue fluorescence whole-well images (4x objective) were taken with the Tecan Spark Cyto set at 37 °C / 5% CO 2",
+      "source_loc": "methods_text, In vitro drug screening"
+    },
+    {
+      "item": "Dissociation enzymes (organoid derivation step)",
+      "source_says": "Dispase II 0.5 mg/mL, collagenase II 1.5-5 mg/mL, Primocin 1:500, Y-27632 10 uM in Mg/Ca PBS, 60 min 37 C; none captured as small_molecules/derivation reagents",
+      "evidence_quote": "fragments were dissociated with 0.5 mg/mL dispase type II (Sigma-Aldrich), 1.5–5 mg/mL collagenase type II (Sigma-Aldrich), 1:500 Primocin and 10 µM Y-27,632 (Cayman Chemicals) in MG 2+ /Ca 2+ PBS (GIBCO) for 60 min at 37 °C",
+      "source_loc": "methods_text, Tissue processing and organoid culture"
+    },
+    {
+      "item": "nicotinamide concentration and B27 (without vitamin A for PDAC)",
+      "source_says": "nicotinamide 10 mM in both media; PDAC uses B27 without vitamin A. Extraction lists nicotinamide and 'B27 supplement' with null concentrations and does not distinguish B27 vs B27-w/o-vit-A.",
+      "evidence_quote": "1 x B27 supplement (GIBCO), 10 mM nicotinamide (Sigma-Aldrich)",
+      "source_loc": "methods_text, Full lung / Full PDAC media"
+    },
+    {
+      "item": "Tissue source organoid type beyond lung (PDAC)",
+      "source_says": "Study derives BOTH NSCLC (lung) and pancreatic ductal adenocarcinoma (PDAC) organoids; extraction labels organoid_type only 'lung' yet imported PDAC media factors, an internal inconsistency",
+      "evidence_quote": "obtained from adeno- and squamous cell carcinoma non-small cell lung carcinoma (NSCLC) and pancreatic ductal adenocarcinoma patients",
+      "source_loc": "methods_text, Patient tissue"
+    }
+  ],
+  "verdict": "partial",
+  "notes": "No figures/local dir on disk, so adjudication is text+table based (multimodal=false). Most individual reagent values are faithfully transcribed (FGF-7 '25 ng/mM' and PDAC Y-27632 '5 mM' are source typos copied verbatim, not extraction errors). The dominant defect is cross-protocol media contamination: the extractor flattened the paper's two distinct recipes (Full lung vs Full PDAC medium) into a single signaling_factors list for a 'lung' organoid, so a lung consumer would wrongly include WNT Surrogate-Fc, Noggin-Fc, Rspo3-Fc and gastrin. Major recall gaps: the entire Table 1 line panel (9 PDO lines, IHC markers, parental-vs-organoid mutation loss), the 2/3 Cultrex embedding ratio, 37 C / 5% CO2 culture conditions, and the dissociation enzyme cocktail. No fabrications or ESC->iPSC mislabels found (this is a primary-tissue PDO paper, not PSC-derived)."
+}

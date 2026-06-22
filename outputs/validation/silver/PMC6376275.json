@@ -1,0 +1,108 @@
+{
+  "pmcid": "PMC6376275",
+  "doi": "10.15252/embj.2018100300",
+  "multimodal": true,
+  "n_fields_checked": 14,
+  "n_correct": 9,
+  "incorrect": [
+    {
+      "field": "source_cells.species",
+      "extracted": "Mus musculus",
+      "source_says": "Human airway organoids (AOs) derived from human NSCLC-patient lung tissue and BAL fluid; the only mouse in the paper is the NSG xenograft host, not the organoid source.",
+      "evidence_quote": "We collected macroscopically inconspicuous lung tissue from non-small-cell lung cancer (NSCLC) patients undergoing medically indicated surgery and isolated epithelial cells through mechanical and enzymatic tissue disruption ... Following our experience with generating organoids from other adult human tissues",
+      "source_loc": "body_text (Results: Generation and characterization of human airway organoids)"
+    },
+    {
+      "field": "signaling_factors[].name = Wnt3a",
+      "extracted": "Wnt3a (cited with the Chir activation quote)",
+      "source_says": "Wnt3a is never mentioned in the source. Wnt signaling is activated with the GSK3 inhibitor Chir (CHIR99021), not with Wnt3a protein. The factor name is unsupported.",
+      "evidence_quote": "To activate Wnt signaling, Chir (3 μM) was added to the culture media 6 days after splitting.",
+      "source_loc": "methods_text (RNA preparation and qRT-PCR); 'Wnt3a' string count = 0 in methods+body"
+    },
+    {
+      "field": "signaling_factors[CHIR99021].concentration / role",
+      "extracted": "concentration: null, role: \"null\"",
+      "source_says": "Chir99021 used at 3 μM, as a Wnt activator, and only in the experimental Wnt-activation qRT-PCR assay (added 6 days after splitting) — it is NOT a component of the standard AO expansion medium. Concentration and role were both missed/blanked.",
+      "evidence_quote": "To activate Wnt signaling, Chir (3 μM) was added to the culture media 6 days after splitting.",
+      "source_loc": "methods_text (RNA preparation and qRT-PCR)"
+    },
+    {
+      "field": "signaling_factors[R-spondin].evidence",
+      "extracted": "quote describing the R-spondin WITHDRAWAL assay (removal), confidence 0.0",
+      "source_says": "R-spondin is a positive component of AO medium (Wnt amplifier required for expansion); the cited quote is the withdrawal/depletion experiment, which is the wrong evidence for asserting R-spondin as a medium factor.",
+      "evidence_quote": "Withdrawal of the Wnt amplifier R-spondin terminated AO expansion after 3-4 passages",
+      "source_loc": "body_text (Results)"
+    },
+    {
+      "field": "passaging.split_ratio",
+      "extracted": "1:1–1:6",
+      "source_says": "Two different ratios are stated for two different contexts. Routine expansion passaging uses 1:1-1:6 (correct), but Fig 1 reports routine maintenance at 1:2 to 1:4. The extracted single value is defensible from Methods but the figure-level value 1:2-1:4 was not reconciled.",
+      "evidence_quote": "organoid fragments were resuspended in cold BME and reseeded as above at ratios (1:1-1:6) allowing the formation of new organoids",
+      "source_loc": "methods_text (Organoid culture); cf. body_text Fig 1: 'passaged by mechanical disruption at 1:2 to 1:4 ratios every other week'"
+    }
+  ],
+  "recall_misses": [
+    {
+      "item": "AO medium composition (Table EV1)",
+      "source_says": "The full airway-organoid medium recipe (signaling factors, growth factors, small molecules) is defined in Table EV1, 'Organoid culture components', which is referenced but not present in the bundle text/supplement. Factors such as Noggin/FGF/EGF/SB202190/A83-01/Y-27632/nicotinamide etc. cannot be adjudicated; extraction captured none of the EV1 medium components.",
+      "evidence_quote": "Organoid culture components Table EV1 ... 400 μl of AO medium was added to each well",
+      "source_loc": "methods_text (Reagents and Tools table; Organoid culture) — Table EV1 content absent from bundle"
+    },
+    {
+      "item": "BME concentration / type",
+      "source_says": "Cells embedded in 10 mg/ml Cultrex growth-factor-reduced BME type 2; 40 μl drops. Extraction has matrix.name=BME but percent/concentration null.",
+      "evidence_quote": "Lung cell pellets were resuspended in 10 mg ml-1 cold Cultrex growth factor reduced BME type 2 (Trevigen-3533-010-02), and 40 μl drops of BME-cell suspension were allowed to solidify",
+      "source_loc": "methods_text (Organoid culture)"
+    },
+    {
+      "item": "Incubation temperature 37°C and ambient O2",
+      "source_says": "Culture at 37°C, 5% CO2, ambient O2. Extraction captured co2_pct=5.0 but left temperature_c=null and o2_pct=null, despite the quote it cites containing 37°C and ambient O2.",
+      "evidence_quote": "plates transferred to humidified 37°C/5% CO 2 incubators at ambient O 2",
+      "source_loc": "methods_text (Organoid culture)"
+    },
+    {
+      "item": "Collagenase enzymatic digestion (tissue dissociation)",
+      "source_says": "Solid lung tissue digested in AO medium containing 1-2 mg/ml collagenase at 37°C for 1-2 h; BAL fluid with 0.5 mg/ml collagenase + 0.5% Sputolysin + 250 ng/ml amphotericin B + 10 μg/ml gentamicin. Not captured.",
+      "evidence_quote": "digested in 10 ml AO medium (Table EV1) containing 1-2 mg ml-1 collagenase (Sigma-C9407) on an orbital shaker at 37°C for 1-2 h",
+      "source_loc": "methods_text (Tissue processing)"
+    },
+    {
+      "item": "AdDF+++ definition (Glutamax/HEPES concentrations)",
+      "source_says": "Base wash/dilution medium AdDF+++ = Advanced DMEM/F12 + 1x Glutamax + 10 mM HEPES + antibiotics. Extraction lists Glutamax/HEPES/antibiotics as supplements but with concentration=null (1x Glutamax, 10 mM HEPES are stated).",
+      "evidence_quote": "AdDF +++ (Advanced DMEM/F12 containing 1× Glutamax, 10 mM HEPES, and antibiotics)",
+      "source_loc": "methods_text (Tissue processing)"
+    },
+    {
+      "item": "Nutlin-3a concentration (TP53-mutant tumor selection)",
+      "source_says": "5 μM Nutlin-3a added to culture medium to select TP53-mutant tumor organoids. Extraction lists Nutlin-3a as a supplement but with concentration=null and no role.",
+      "evidence_quote": "in case of TP53 mutations by the addition of 5 μM Nutlin-3a (Cayman Chemicals-10004372) to the culture medium",
+      "source_loc": "methods_text (Organoid culture)"
+    },
+    {
+      "item": "Medium change interval",
+      "source_says": "Medium changed every 4 days; organoids passaged every 2 weeks. Interval captured (14 d) but the 4-day feeding schedule is a culture-relevant timeline item not represented (timeline array is empty).",
+      "evidence_quote": "Medium was changed every 4 days and organoids were passaged every 2 weeks",
+      "source_loc": "methods_text (Organoid culture)"
+    },
+    {
+      "item": "ALI differentiation: EGF 25 ng/ml + collagen-coated transwell + 250,000 cells",
+      "source_says": "For air-liquid interface differentiation, single cells seeded at 250,000/transwell on bovine collagen I (30 μg/ml), in AO medium + 25 ng/ml recombinant human EGF, then air-exposed differentiation medium after 4 days. EGF and ALI conditions entirely missed.",
+      "evidence_quote": "250,000 cells were seeded on semi-permeable transwell membranes (Corning-3378) coated with bovine collagen type I (30 μg ml-1; Purecol...) Single cells were seeded in AO growth medium supplemented with 25 ng ml-1 recombinant human epidermal growth factor",
+      "source_loc": "methods_text (Air-liquid interface cultures)"
+    },
+    {
+      "item": "Functional/CFTR assay reagents and doses (forskolin, VX-809 3 μM, VX-770 1 μM, calcein 3 μM, IWP-2 3 μM)",
+      "source_says": "Swelling/CFTR-function assays use VX-809 (3 μM) and VX-770 (1 μM), forskolin, calcein green 3 μM, and Wnt inhibitor IWP-2 (3 μM). small_molecules array is empty; IWP-2 and these doses are missed.",
+      "evidence_quote": "Cultures were incubated for 24 h with or without CFTR-targeting drugs VX-809 and VX-770 (3 and 1 μM, respectively, Selleck Chemicals)",
+      "source_loc": "methods_text (Functional organoid swelling assay; RNA prep qRT-PCR for IWP-2)"
+    },
+    {
+      "item": "Seeding density for viability assay (3,000 cells)",
+      "source_says": "3 x 10^3 cells per replicate plated in BME for luminescent viability assay; Fig 1D shows growth d0-d14. Quantitative seeding density not captured.",
+      "evidence_quote": "3 × 10 3 cells per replicate were plated in BME and incubated in AO medium as described",
+      "source_loc": "methods_text (Luminescent viability assay)"
+    }
+  ],
+  "verdict": "partial",
+  "notes": "Multimodal: all 4 figures were visually read; none are protocol schematics (they are EM/IF characterization, swelling/CFTR functional, tumor histology/genomics, and RSV-infection panels) so figures added no new culture-protocol fields. Core matrix (BME) and base media (Advanced DMEM/F12) are correct; passaging method/interval and CO2=5% are correct. Critical error: species mislabeled as Mus musculus — these are HUMAN airway organoids (mouse is only the NSG xenograft host). Wnt3a is fabricated (0 mentions; Wnt is activated by Chir/CHIR99021, the same molecule double-listed). Pervasive recall gaps: nearly all numeric doses/concentrations are null (CHIR 3 μM, Nutlin-3a 5 μM, BME 10 mg/ml, HEPES 10 mM, EGF 25 ng/ml, VX-809/VX-770), temperature 37°C and ambient O2 left null though present in the cited quote, and the actual AO-medium recipe lives in Table EV1 which is absent from the bundle (so true medium-factor recall cannot be fully scored)."
+}

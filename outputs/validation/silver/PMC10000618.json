@@ -1,0 +1,57 @@
+{
+  "pmcid": "PMC10000618",
+  "doi": "10.3390/cells12050733",
+  "multimodal": false,
+  "n_fields_checked": 24,
+  "n_correct": 22,
+  "incorrect": [
+    {
+      "field": "base_media.name",
+      "extracted": "DMEM/F12",
+      "source_says": "advanced DMEM/F12",
+      "evidence_quote": "cultured in advanced DMEM/F12 supplemented with GlutaMax, Penicilin/streptomycin, 10 mM HEPES",
+      "source_loc": "methods_text 2.9 Tumoroids Culture"
+    },
+    {
+      "field": "matrix.percent",
+      "extracted": null,
+      "source_says": "70%",
+      "evidence_quote": "The tumoroids were plated at 2500 cells/10 µL of 70% Cultrex UltiMatrix reduced growth factor basement membrane Extract",
+      "source_loc": "methods_text 2.9 Tumoroids Culture"
+    }
+  ],
+  "recall_misses": [
+    {
+      "item": "A83-01 (TGF-beta/ALK inhibitor, 500 nM) signaling factor in tumoroid medium",
+      "source_says": "500 nM A83-01",
+      "evidence_quote": "1.25 mM N-acetyl-L-cysteine (Sigma-Aldrich), 10 mM Nicotinamide (Sigma-Aldrich), 500 nM A83-01 (Sigma-Aldrich), 0.3 µM CHIR99021 (Sigma-Aldrich)",
+      "source_loc": "methods_text 2.9 Tumoroids Culture"
+    },
+    {
+      "item": "CHIR99021 (GSK3 inhibitor / Wnt agonist, 0.3 µM) signaling factor in tumoroid medium",
+      "source_says": "0.3 µM CHIR99021",
+      "evidence_quote": "500 nM A83-01 (Sigma-Aldrich), 0.3 µM CHIR99021 (Sigma-Aldrich), 50 ng/mL human EGF (PeproTech",
+      "source_loc": "methods_text 2.9 Tumoroids Culture"
+    },
+    {
+      "item": "GlutaMax media supplement in tumoroid medium",
+      "source_says": "GlutaMax",
+      "evidence_quote": "cultured in advanced DMEM/F12 supplemented with GlutaMax, Penicilin/streptomycin, 10 mM HEPES",
+      "source_loc": "methods_text 2.9 Tumoroids Culture"
+    },
+    {
+      "item": "HEPES at 10 mM in tumoroid medium (extraction lists HEPES but with no concentration, and the 10 mM tumoroid value is omitted)",
+      "source_says": "10 mM HEPES",
+      "evidence_quote": "supplemented with GlutaMax, Penicilin/streptomycin, 10 mM HEPES, 10 µM Y-27632",
+      "source_loc": "methods_text 2.9 Tumoroids Culture"
+    },
+    {
+      "item": "Timeline: tumoroids treated 7 days after plating for an additional 10 days (timeline array empty)",
+      "source_says": "treated ... 7 days after plating for an additional 10 days",
+      "evidence_quote": "The tumoroids were treated with the solvent, 30 nM CTX, 5 µM RSL3, 1 mM metformin or co-treatments 7 days after plating for an additional 10 days.",
+      "source_loc": "methods_text 2.9 Tumoroids Culture"
+    }
+  ],
+  "verdict": "partial",
+  "notes": "Scope is the patient-derived HNSCC tumoroid (section 2.9); extraction correctly captured source_cells (primary_tissue), matrix name (Cultrex UltiMatrix RGF BME), and 11/13 signaling factors with correct doses (Y-27632 10 µM, Capsofungin 0.5 µg/mL, B27 1×, NAC 1.25 mM, Nicotinamide 10 mM, EGF 50 ng/mL, FGF10 10 ng/mL, FGF2 5 ng/mL, PGE2 1 µM, Forskolin 1 µM, RSPO3-Fc 4%, Noggin-Fc 4%). All extracted doses verified verbatim against source; no fabricated values. Two true factor recall misses: A83-01 (500 nM) and CHIR99021 (0.3 µM) — both standard organoid-medium small molecules listed mid-cocktail. Matrix percent (70%) and the treatment timeline (7 days to treatment, +10 days) were also missed, and base_media should read 'advanced DMEM/F12'. GlutaMax supplement omitted. No tables in bundle (tables=[]) and no figure images on disk, so no multimodal recall sources beyond text. Misclassified organoid_type 'other' (source is a tumoroid/tumor model) but source_cells/matrix correct."
+}

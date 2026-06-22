@@ -1,0 +1,95 @@
+{
+  "pmcid": "PMC10001859",
+  "doi": "10.3390/ijms24054266",
+  "multimodal": false,
+  "n_fields_checked": 13,
+  "n_correct": 9,
+  "incorrect": [
+    {
+      "field": "base_media.name",
+      "extracted": "EMEM",
+      "source_says": "EMEM is the base medium for MYOFIBROBLASTS, not for the colonoids/organoids. The colonoid base medium is expansion medium (EM, an advanced DMEM F12-based L-WRN conditioned medium formulation per Zhou et al.); advanced DMEM F12 is the working/wash medium for colonoids.",
+      "evidence_quote": "Myofibroblasts were expanded in EMEM (Lonza, Basel, Switzerland) containing 10% FBS ... Fragments were washed with advanced DMEM F12 medium containing 10% FBS",
+      "source_loc": "methods_text 4.1 Human Colonoid and Myofibroblast Cultures"
+    },
+    {
+      "field": "culture_conditions.temperature_c",
+      "extracted": null,
+      "source_says": "37 °C is explicitly stated for culture/incubation.",
+      "evidence_quote": "penicillin/streptomycin (Sigma-Aldrich Chemie GmbH, Taufkirchen, Germany) at 37 °C with 5% CO 2",
+      "source_loc": "methods_text 4.1"
+    },
+    {
+      "field": "source_cells.cell_type",
+      "extracted": "adult_stem_cell",
+      "source_says": "Acceptable but imprecise: cultures are biopsy-derived primary human colon crypt organoids (colonoids) from healthy donors; the model is a stem-cell-enriched/transit-amplifying colonoid system rather than a defined adult-stem-cell line. Tissue origin (transverse colon biopsy) and the co-cultured colonic myofibroblast partner cell were not captured.",
+      "evidence_quote": "Human colon 3D organoid cultures were established from biopsies of healthy donors ... Myofibroblasts were isolated from epithelium-free biopsies of transverse colon",
+      "source_loc": "methods_text 4.1"
+    },
+    {
+      "field": "media_supplements (completeness)",
+      "extracted": "FBS, non-essential amino acids, penicillin/streptomycin, L-WRN conditioned medium, PGE2",
+      "source_says": "EM also contains SB202190 (a p38 inhibitor), which is omitted. The listed EM/DM components are mixed with the myofibroblast medium components (FBS, NEAA, pen/strep belong to the EMEM myofibroblast medium, not the colonoid EM).",
+      "evidence_quote": "To prepare differentiation medium (DM), L-WRN conditioned medium, SB202190 and PGE2 were excluded, and 10% ( v / v ) Noggin conditioned medium was included in the EM composition",
+      "source_loc": "methods_text 4.1"
+    }
+  ],
+  "recall_misses": [
+    {
+      "item": "SB202190 (p38 MAPK inhibitor, EM component)",
+      "source_says": "SB202190 is a component of expansion medium (EM); it was excluded to make differentiation medium (DM).",
+      "evidence_quote": "To prepare differentiation medium (DM), L-WRN conditioned medium, SB202190 and PGE2 were excluded",
+      "source_loc": "methods_text 4.1"
+    },
+    {
+      "item": "advanced DMEM F12 (base/working medium for colonoids)",
+      "source_says": "Advanced DMEM F12 is used as the wash and resuspension medium for colonoid fragments and was missed as a base medium.",
+      "evidence_quote": "washed three times with advanced DMEM F12 medium ... Fragments were washed with advanced DMEM F12 medium containing 10% FBS",
+      "source_loc": "methods_text 4.1"
+    },
+    {
+      "item": "Collagen IV coating density (10 mg/cm2)",
+      "source_says": "Transwell membranes were coated with human collagen IV at 10 mg/cm2; the matrix concentration/coating density was missed (percent left null).",
+      "evidence_quote": "transwell inserts (6.5 mm diameter polyester membrane with 3 µm pores; Corning GmbH, Kaiserslautern, Germany) were coated with 10 mg/cm 2 human collagen IV solution",
+      "source_loc": "methods_text 4.1"
+    },
+    {
+      "item": "0.02% trypsin-EDTA dissociation",
+      "source_says": "Colonoids dissociated with 0.02% trypsin-EDTA for 3 min at 37 °C to obtain ~30-cell fragments; dissociation reagent missed (passaging.method null).",
+      "evidence_quote": "exposed to 0.02% trypsin-EDTA for 3 min at 37 °C and then triturated with a P200 pipet tip 2–3 times to obtain small fragments each with about 30 cells",
+      "source_loc": "methods_text 4.1"
+    },
+    {
+      "item": "Myofibroblast seeding density 5.5 x 10^4 cells/well",
+      "source_says": "Myofibroblasts seeded at 5.5 x 10^4 cells/well in a 24-well plate, 2 days before coculture.",
+      "evidence_quote": "Myofibroblasts with a density of 5.5 × 10 4 cells/well were seeded in a 24-well plate, 2 days before starting the coculture",
+      "source_loc": "methods_text 4.1"
+    },
+    {
+      "item": "Timeline (2-day EM/SE culture; 4-day coculture; 4-day differentiation)",
+      "source_says": "Multiple culture durations are stated; the timeline array is empty in the extraction.",
+      "evidence_quote": "Colonoids after two-day culture in expansion medium (EM) ... were used for analysis after four days of coculture ... DM: 4 days in differentiation medium",
+      "source_loc": "methods_text 4.1 / Figure 4 caption"
+    },
+    {
+      "item": "FBS concentration (10%)",
+      "source_says": "FBS was extracted but its concentration (10%) was left null.",
+      "evidence_quote": "EMEM (Lonza, Basel, Switzerland) containing 10% FBS",
+      "source_loc": "methods_text 4.1"
+    },
+    {
+      "item": "TEER confluency threshold (>150 Omega/cm2)",
+      "source_says": "Confluent monolayer defined functionally as TEER > 150 Omega/cm2; a culture-relevant QC endpoint not captured as a parameter.",
+      "evidence_quote": "Formation of a confluent colonoid monolayer which was characterized as transepithelial electrical resistance (TEER) values higher than 150 Ω/cm 2",
+      "source_loc": "methods_text 4.1"
+    },
+    {
+      "item": "Noggin conditioned medium as the DM-defining factor / Wnt withdrawal as differentiation trigger",
+      "source_says": "Differentiation is driven by withdrawal of Wnt-3a / R-spondin (L-WRN) signaling and inclusion of 10% Noggin CM; this differentiation modification was not captured in modifications/timeline.",
+      "evidence_quote": "differentiated colonoid monolayers by withdrawal of Wnt-3a and R-spondin",
+      "source_loc": "body_text 2.3 / methods_text 4.1"
+    }
+  ],
+  "verdict": "partial",
+  "notes": "Single-condition primary human colonoid (transverse colon) + colonic myofibroblast coculture protocol. Correctly extracted signaling factors with concentrations (Y-27632 10 uM, CHIR-99021 10 uM, valproic acid 1 mM, Noggin 10% v/v CM), matrix name (human collagen IV), CO2 5%, and assay endpoints. Main weaknesses: (1) base_media=EMEM conflates the myofibroblast medium with the colonoid base medium and the colonoid EM/DM medium components are partly mixed with myofibroblast medium components; (2) missed SB202190 (EM component) and advanced DMEM F12; (3) timeline and passaging arrays empty despite explicit durations and 0.02% trypsin-EDTA dissociation in source; (4) temperature 37 C missed though stated. No tables present in bundle (tables=[]); supplementary_text contained no extractable content, so multimodal=false. Full EM/DM recipe (Wnt-3a, R-spondin) is cited to Zhou et al. and not fully in-text, limiting deeper recall. NEVER fabricated: all quotes verbatim from methods_text/figure captions."
+}

@@ -1,0 +1,68 @@
+{
+  "pmcid": "PMC6906116",
+  "doi": "10.1038/s41586-019-1289-x",
+  "multimodal": true,
+  "n_fields_checked": 27,
+  "n_correct": 26,
+  "incorrect": [
+    {
+      "field": "culture_conditions.temperature_c",
+      "extracted": null,
+      "source_says": "37 C",
+      "evidence_quote": "using mTESR1 medium (Stem Cell Technologies) with 100 U/mL penicillin and 100 μg/mL streptomycin (Corning), at 37˚C in 5% CO 2 .",
+      "source_loc": "methods_text: PSC culture"
+    }
+  ],
+  "recall_misses": [
+    {
+      "item": "timeline (entire staged schedule)",
+      "source_says": "Day-staged CDM I-IV protocol: CDM I day 0-18; CDM II from day 18; CDM III from day 35; CDM IV from day 70. Extracted timeline is empty [].",
+      "evidence_quote": "From day 18, the floating aggregates were cultured ... in CDM II ... On day 35, cell aggregates were transferred to spinner-flask bioreactors ... in CDM III ... From day 70, organoids were cultured in CDM IV",
+      "source_loc": "methods_text: Organoid differentiation; corroborated visually by Fig.1a schematic (Day 0/18/35/70 axis with CDM I-IV)"
+    },
+    {
+      "item": "differentiation base media (Glasgow-MEM and DMEM/F12)",
+      "source_says": "CDM I base = Glasgow-MEM; CDM II base = DMEM/F12. Only PSC-maintenance medium mTESR1 was captured as base_media.",
+      "evidence_quote": "Cortical Differentiation Medium (CDM) I, containing Glasgow-MEM (Gibco), 20% Knockout Serum Replacement ... CDM II, containing DMEM/F12 medium (Gibco), 2mM Glutamax",
+      "source_loc": "methods_text: Organoid differentiation"
+    },
+    {
+      "item": "seeding / aggregation parameters (passaging reported as not_reported)",
+      "source_says": "Day 0 single-cell dissociation with Accutase and reaggregation of 9,000 cells per well; passaging field set to not_reported.",
+      "evidence_quote": "on day 0, feeder-free cultured human PSCs ... were dissociated to single cells with Accutase (Gibco), and 9,000 cells per well were reaggregated in ultra-low cell-adhesion 96-well plates",
+      "source_loc": "methods_text: Organoid differentiation"
+    },
+    {
+      "item": "agitation speeds (bioreactor culture conditions)",
+      "source_says": "Orbital agitation at 70 rpm from day 18; spinner-flask at 56 rpm from day 35. Not captured in culture_conditions.",
+      "evidence_quote": "under orbital agitation (70 rpm) in CDM II ... transferred to spinner-flask bioreactors (Corning) and maintained at 56 rpm, in CDM III",
+      "source_loc": "methods_text: Organoid differentiation"
+    },
+    {
+      "item": "Matrigel concentrations",
+      "source_says": "Matrigel used at 1% (CDM III) and 2% (CDM IV); extracted Matrigel supplement has concentration null.",
+      "evidence_quote": "CDM III, consisting of CDM II supplemented with 10% fetal bovine serum (FBS) ... and 1% Matrigel (Corning). From day 70 ... CDM IV, consisting of CDM III supplemented with B27 supplement (Gibco) and 2% Matrigel.",
+      "source_loc": "methods_text: Organoid differentiation"
+    },
+    {
+      "item": "supplement concentrations (all extracted as null)",
+      "source_says": "Quantified supplements not captured: 20% KSR, 0.1mM MEM-NEAA, 1mM pyruvate, 0.1mM 2-mercaptoethanol, 2mM Glutamax, 1% N2, 1% Lipid Concentrate, 0.25 ug/mL fungizone, 10% FBS, 5 ug/mL heparin, 100 U/mL penicillin, 100 ug/mL streptomycin.",
+      "evidence_quote": "20% Knockout Serum Replacement (Gibco), 0.1 mM Minimum Essential Medium non-essential amino acids ... 1 mM pyruvate (Gibco), 0.1 mM 2-mercaptoethanol (Gibco), 100 U/mL penicillin, and 100 μg/mL streptomycin",
+      "source_loc": "methods_text: Organoid differentiation"
+    },
+    {
+      "item": "additional cell lines used",
+      "source_says": "Five PSC lines used across the study (PGP1, HUES66, 11a, GM08330, Mito 210); extraction reports only PGP1.",
+      "evidence_quote": "the HUES66 hESC and the 11a hiPSC lines from the Harvard Stem Cell Institute; the GM08330 hiPSC line ... and the Mito 210 hiPSC line",
+      "source_loc": "methods_text: PSC culture; Extended Data Table 1"
+    },
+    {
+      "item": "atmospheric O2 / normoxia note",
+      "source_says": "Protocol explicitly removes the 40% O2 requirement (cultured at ambient O2); o2_pct left null.",
+      "evidence_quote": "We eliminated the need for growth under 40% O 2 , the need for cell aggregates to be periodically bisected, and the use of high O 2 penetration dishes, by adapting the cultures to growth in spinner-flask bioreactors.",
+      "source_loc": "methods_text: Organoid differentiation"
+    }
+  ],
+  "verdict": "good",
+  "notes": "All extracted identities/doses are verbatim-correct against the source (cell line PGP1, Geltrex matrix, mTESR1, 5% CO2, and the four signaling factors Y-27632 20uM, IWR1 3uM, SB431542 5uM, SAG 100nM all exact). Recall is the weakness: the entire day-staged timeline (empty []), differentiation base media (Glasgow-MEM, DMEM/F12), seeding/aggregation (9,000 cells, Accutase), agitation speeds (70/56 rpm), and nearly all supplement and Matrigel concentrations were missed despite being explicitly stated. Temperature 37C was present in a captured quote but not written to temperature_c. Fig.1a schematic (read visually) corroborates the CDM I-IV / day-0-18-35-70 timeline but adds no new quantitative protocol data beyond the methods text. Note: extraction also lists 5 cell lines collapsed to PGP1 only. Evidence confidence values in prediction are all 0.0."
+}

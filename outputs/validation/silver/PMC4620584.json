@@ -1,0 +1,117 @@
+{
+  "pmcid": "PMC4620584",
+  "doi": "10.1038/ncomms9715",
+  "multimodal": true,
+  "n_fields_checked": 18,
+  "n_correct": 9,
+  "incorrect": [
+    {
+      "field": "source_cells.cell_type",
+      "extracted": "iPSC",
+      "source_says": "H9 is a human embryonic stem cell (hESC) line, not an iPSC. The kidney tubular-organoid protocol uses H9 hPSCs.",
+      "evidence_quote": "Cell lines included H9/WA09 hESCs (WiCell) ... In all, 60,000-120,000 H9 hPSCs were plated per 1.9 cm 2 and sandwiched",
+      "source_loc": "Methods: 3D Culture; Methods: Tubular Organoid Differentiation"
+    },
+    {
+      "field": "signaling_factors[CHIR99021] 3 uM",
+      "extracted": "3 μM CHIR99021 (role signaling, kidney organoid)",
+      "source_says": "3 μM CHIR99021 belongs to the mouse ESC maintenance medium (N2/B27+2i), not to the human kidney organoid differentiation. The organoid differentiation uses 12 μM CHIR.",
+      "evidence_quote": "mESCs in N2/B27 medium+2i (... 1,000 U ml -1 mouse leukaemia inhibitory factor (LIF, Millipore), 3 μM CHIR99021 (Stemgent), and 100 nM Sigma PD173074)",
+      "source_loc": "Methods: 3D Culture (mESC media)"
+    },
+    {
+      "field": "signaling_factors[fibroblast growth factor 2] 10 ng/ml",
+      "extracted": "10 ng/ml FGF2 (signaling)",
+      "source_says": "FGF2 is used only to derive primed LD-iPSCs from naive hLR5 iPSCs (a different cell line), not in the H9 kidney organoid protocol.",
+      "evidence_quote": "LD-iPSCs were derived from naive hLR5 iPSCs by withdrawing LIF and doxycycline and substituting with 10 ng ml -1 fibroblast growth factor 2 (PeproTech)",
+      "source_loc": "Methods: 3D Culture (LD-iPSC derivation)"
+    },
+    {
+      "field": "signaling_factors[human LIF] 10 ng/ml",
+      "extracted": "10 ng/ml human LIF (signaling)",
+      "source_says": "Human LIF (10 ng/ml) supplements hESC media used to maintain hLR5 iPSCs, not the kidney organoid protocol.",
+      "evidence_quote": "subsequently supplemented with 10 ng ml -1 human LIF (Sigma) and 2 ng ml -1 doxycycline (Sigma)",
+      "source_loc": "Methods: 3D Culture (hLR5 iPSC media)"
+    },
+    {
+      "field": "signaling_factors[doxycycline] 2 ng/ml",
+      "extracted": "2 ng/ml doxycycline (signaling)",
+      "source_says": "Doxycycline (2 ng/ml) is part of the hLR5 iPSC maintenance media (reprogramming-factor induction), not the kidney organoid protocol.",
+      "evidence_quote": "subsequently supplemented with 10 ng ml -1 human LIF (Sigma) and 2 ng ml -1 doxycycline (Sigma)",
+      "source_loc": "Methods: 3D Culture (hLR5 iPSC media)"
+    },
+    {
+      "field": "signaling_factors[R-spondin]",
+      "extracted": "R-spondin (role signaling)",
+      "source_says": "R-spondin is never mentioned anywhere in the source text, figures, or supplement. This is a fabricated factor.",
+      "evidence_quote": "(no occurrence of 'R-spondin' / 'spondin' as a reagent in the article; the only 'spondin' substrings are within the word 'corresponding')",
+      "source_loc": "absent from source"
+    },
+    {
+      "field": "media_supplements (mESC/hLR5 components listed as organoid media)",
+      "extracted": "Glutamax, BSA, β-mercaptoethanol, non-essential amino acids, penicillin-streptomycin, B27, N2, DMEM/F12, Neurobasal media",
+      "source_says": "Most of these belong to the mESC N2/B27+2i medium or the hLR5 hESC medium for unrelated cell lines. The actual H9 kidney organoid differentiation medium (RB) is only: Advanced RPMI + 1X Glutamax + 1X B27. N2, Neurobasal, BSA, β-ME, NEAA, pen-strep, DMEM/F12 are not part of the organoid protocol.",
+      "evidence_quote": "changed to RB (Advanced RPMI+1X Glutamax+1X B27 Supplement, all from Thermo Fisher Scientific) and replaced every 3 days thereafter",
+      "source_loc": "Methods: Tubular Organoid Differentiation"
+    },
+    {
+      "field": "matrix.name",
+      "extracted": "GelTrex",
+      "source_says": "GelTrex (3% Reduced Growth Factor) is the feeder-free maintenance coating. The kidney organoid morphogenesis matrix is dilute Matrigel (0.2 mg/ml) sandwich; Fig.1a schematic labels the sandwich supplement 'Matrigel'. GelTrex alone is an incomplete/partly-wrong matrix call for the organoid protocol.",
+      "evidence_quote": "Dissociated, undifferentiated hPSCs sandwiched between two layers of dilute Matrigel (0.2 mg ml -1 ) formed compact, ball-like colonies; ... The following day the media was replaced with 500 μl 1.5% GelTrex in mTeSR1.",
+      "source_loc": "Results / Fig.1b; Methods: 3D Culture; Fig.1a schematic"
+    }
+  ],
+  "recall_misses": [
+    {
+      "item": "12 μM CHIR step duration (36 h)",
+      "source_says": "The core organoid-inducing CHIR pulse is 12 μM CHIR for 36 h; extraction captured 12 μM CHIR but no duration and gave no timeline.",
+      "evidence_quote": "hPSC spheroids were treated with 12 μM CHIR (Stemgent) for 36 h, then changed to RB",
+      "source_loc": "Methods: Tubular Organoid Differentiation"
+    },
+    {
+      "item": "Sandwich matrix: dilute Matrigel 0.2 mg/ml + 1.5% GelTrex in mTeSR1 overlay",
+      "source_says": "The lumenogenesis/spheroid step uses a Matrigel sandwich at 0.2 mg/ml, then a 1.5% GelTrex-in-mTeSR1 overlay the next day. Matrix.percent was null; the Matrigel sandwich concentration was missed.",
+      "evidence_quote": "sandwiched between two layers of dilute Matrigel (0.2 mg ml -1 ) ... the media was replaced with 500 μl 1.5% GelTrex in mTeSR1",
+      "source_loc": "Results Fig.1b; Methods: 3D Culture"
+    },
+    {
+      "item": "Full differentiation timeline (Fig.1a schematic)",
+      "source_says": "Fig.1a gives an explicit timeline: d0 single cells; d1; d2; d3 cavitated spheroids; CHIR99021 d3->d4.5; B27/RPMI from d4.5; mesenchyme ~d10; tubular organoids by d16. timeline=[] in extraction (completely missed).",
+      "evidence_quote": "Day:d0 ... Single cells ... d1 ... d2 ... Cavitated spheroids ... d3 ... CHIR99021 ... d4.5 ... Mesenchyme ... d10 ... Tubular organoids ... d16 (Media mTeSR1 then RPMI; Supplement Y27632, Matrigel, CHIR99021, B27)",
+      "source_loc": "Figure 1a schematic (visual)"
+    },
+    {
+      "item": "Alternative differentiation timeline (IWP2 path)",
+      "source_says": "Alternative protocol: 12 μM CHIR in RBNI 24 h, RBNI 48 h, 5 μM IWP2 48 h, RBNI 48 h, then RB every 3 days. IWP2 5 μM extracted but with no concentration evidence and no timeline.",
+      "evidence_quote": "spheroids were treated with 12 μM CHIR in RB minus insulin (RBNI) for 24 h, RBNI for 48 h, 5 μM inhibitor of WNT production-2 (IWP2, Tocris) for 48 h, RBNI for 48 h and RB every 3 days thereafter",
+      "source_loc": "Methods: Tubular Organoid Differentiation"
+    },
+    {
+      "item": "Plating density for organoid differentiation",
+      "source_says": "60,000-120,000 H9 hPSCs plated per 1.9 cm2 to seed the protocol; not captured.",
+      "evidence_quote": "In all, 60,000-120,000 H9 hPSCs were plated per 1.9 cm 2 and sandwiched",
+      "source_loc": "Methods: Tubular Organoid Differentiation"
+    },
+    {
+      "item": "Y27632 (ROCK inhibitor) role and use point",
+      "source_says": "Y27632 10 μM is used at initial plating of the sandwich; extraction captured the dose but flagged role as generic 'signaling' rather than ROCK inhibition / survival.",
+      "evidence_quote": "media supplemented with 10 μM Rho-kinase inhibitor Y27632 (Stemgent)",
+      "source_loc": "Methods: 3D Culture"
+    },
+    {
+      "item": "Media change cadence",
+      "source_says": "Media changed daily during maintenance; RB replaced every 3 days during differentiation. Not captured.",
+      "evidence_quote": "For all cells, media was changed daily ... replaced every 3 days thereafter",
+      "source_loc": "Methods: 3D Culture; Tubular Organoid Differentiation"
+    },
+    {
+      "item": "Culture temperature 37 C",
+      "source_says": "Thick gel cultures incubated 45 min at 37 C; culture_conditions left not_extracted.",
+      "evidence_quote": "incubated for 45 min at 37 degrees",
+      "source_loc": "Methods: 3D Culture"
+    }
+  ],
+  "verdict": "poor",
+  "notes": "Extraction conflated reagents from multiple unrelated cell-line maintenance media (mESC N2/B27+2i; hLR5/LD-iPSC media) with the actual H9 kidney organoid differentiation protocol, producing several wrong/irrelevant factors (3 uM CHIR99021, FGF2, human LIF, doxycycline) and a fabricated factor (R-spondin, absent from source). The cell type is wrong (H9 is hESC, not iPSC). The genuine, minimal organoid protocol -- mTeSR1 maintenance on GelTrex, Matrigel 0.2 mg/ml sandwich + Y27632, 12 uM CHIR 36 h, then Advanced RPMI + Glutamax + B27 (RB) every 3 days, organoids by ~d16 -- was only partially captured, with the entire timeline (timeline=[]) and matrix concentrations missed despite an explicit Fig.1a schematic. Correct items: base media mTeSR1, 12 uM CHIR, 10 uM Y27632, 5 uM IWP2, passaging via Accutase/TrypLE, organoid_type kidney, assay endpoints (KIM-1, TEER, permeability). This bundle is multimodal: Fig.1a/Fig.2a schematics carry the timeline that the text-only extraction ignored."
+}
