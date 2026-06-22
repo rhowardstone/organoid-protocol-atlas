@@ -3,6 +3,18 @@
 {% block body_class %}index{% endblock %}
 
 {% block content %}
+<style>
+.apa-review-warning {
+  background: #fff8e1;
+  border: 1px solid #f59e0b;
+  border-radius: 8px;
+  padding: .75rem 1rem;
+  margin-bottom: 1rem;
+  font-size: .88rem;
+  line-height: 1.5;
+}
+.apa-review-warning a { color: var(--accent); }
+</style>
 <div class="apa-topbar">
   <span class="dot"></span> <a href="/">ORGANOID PROTOCOL ATLAS</a>
   <span class="dot"></span> <a href="/atlas/protocols">All protocols</a>
@@ -48,6 +60,16 @@ function highlight(text, quotes){
   const sm  = reags.filter(r => r.kind === 'small_molecule');
   const cite = `<a href="https://doi.org/${esc(p.doi)}" target="_blank" rel="noopener">${esc(p.doi)}</a>`;
   const title = `${esc((p.organoid_type||'').toUpperCase())} organoid · ${esc(p.first_author||'')} ${esc(p.year||'')}`;
+  const isReview = (p.publication_type || '').toLowerCase() === 'review';
+  const cardLabel = isReview ? 'Review-derived summary' : 'Recipe card';
+  const cocktailLabel = isReview
+    ? `Cited study reagent/pathway mentions <span style="color:var(--muted);font-weight:400">(${sig.length}) — review article, not an executable protocol</span>`
+    : `Signaling cocktail <span style="color:var(--muted);font-weight:400">(${sig.length})${sig.filter(r=>r.figure_confirmed).length?` · ${sig.filter(r=>r.figure_confirmed).length} 📷 confirmed in a figure schematic`:''}</span>`;
+  const reviewBanner = isReview ? `<div class="apa-review-warning">
+    ⚠ <strong>Review article</strong> — These entries are reagents and pathways <em>mentioned across multiple cited studies</em>, not components of a single executable protocol.
+    The extractor was not designed to classify review-derived mentions from primary protocol steps.
+    <a href="https://doi.org/${esc(p.doi)}" target="_blank" rel="noopener">Verify source →</a>
+  </div>` : '';
 
   const ax = [
     ['Organoid type', p.organoid_type],
@@ -68,11 +90,11 @@ function highlight(text, quotes){
     </tr>`).join('') || `<tr><td colspan="5" style="color:var(--muted)">No signaling factors extracted.</td></tr>`;
 
   document.getElementById('recipe').innerHTML = `
-    <div class="apa-kicker">Recipe card · ${esc(pmcid)}</div>
+    ${reviewBanner}<div class="apa-kicker">${cardLabel} · ${esc(pmcid)}</div>
     <h1>${title}</h1>
     <p style="color:var(--muted);margin:.2rem 0 0">Source: ${cite}</p>
     <div class="apa-axes">${ax}</div>
-    <h3 style="margin:1.2rem 0 .3rem">Signaling cocktail <span style="color:var(--muted);font-weight:400">(${sig.length})${sig.filter(r=>r.figure_confirmed).length?` · ${sig.filter(r=>r.figure_confirmed).length} 📷 confirmed in a figure schematic`:''}</span></h3>
+    <h3 style="margin:1.2rem 0 .3rem">${cocktailLabel}</h3>
     <table class="apa-cocktail">
       <thead><tr><th>Reagent</th><th>Role</th><th>Conc.</th><th>Evidence</th><th>Verbatim span</th></tr></thead>
       <tbody>${rows}</tbody>
