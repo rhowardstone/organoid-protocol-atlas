@@ -100,6 +100,14 @@ ALIASES = {
     "pge2": "prostaglandin E2",
 }
 
+# Cell-line name normalization: free-text variant -> canonical Cellosaurus query name.
+# These are typographic variants (hyphen omitted, space added, etc.) of the SAME line —
+# not aliases to a different line. Each entry confirmed against Cellosaurus:
+#   WTC11 -> WTC-11 (Conklin lab iPSC; expected CVCL_Y803 — hyphen absent in some papers).
+CELL_LINE_ALIASES: dict[str, str] = {
+    "WTC11": "WTC-11",
+}
+
 
 def _slug(s: str) -> str:
     return re.sub(r"[^a-z0-9]+", "_", (s or "").lower()).strip("_") or "_"
@@ -238,20 +246,25 @@ def ground_cell_line(name: str, offline: bool = False) -> dict:
            "source": "cellosaurus"}
     if not name:
         return rec
-    qs = {"q": f'id:"{name}"', "format": "json", "rows": 5, "fields": "id,ac,sy"}
-    data, _ = _cached("cellosaurus", name,
+    # Normalize to canonical Cellosaurus name before lookup (SOLR tokenizes hyphens in
+    # id: queries, so "WTC-11" → empty results; WTC11 normalizes to the searchable form).
+    lookup = CELL_LINE_ALIASES.get(name, name)
+    # General search avoids SOLR id: tokenization issues with hyphens/spaces.
+    qs = {"q": f'"{lookup}"', "format": "json", "rows": 5, "fields": "id,ac,sy"}
+    data, _ = _cached("cellosaurus", lookup,
                       lambda: _get_json(f"{CELLOSAURUS}?{urllib.parse.urlencode(qs)}"), offline)
     if data is None:
         return rec
     lines = (((data or {}).get("Cellosaurus") or {}).get("cell-line-list")) or []
     for cl in lines:
         names = {n.get("value", "").lower() for n in (cl.get("name-list") or [])}
-        if name.lower() in names:                     # require an exact name match
+        # Accept if EITHER the original query name OR the normalized alias name matches.
+        if name.lower() in names or lookup.lower() in names:
             acc = next((a.get("value") for a in (cl.get("accession-list") or [])
                         if a.get("type") == "primary"), None)
             if acc:
                 rec.update(grounding_status="resolved", curie=f"Cellosaurus:{acc}",
-                           label=name)
+                           label=lookup)
                 return rec
     rec["grounding_status"] = "not_found"
     return rec
