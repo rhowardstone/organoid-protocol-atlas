@@ -1,0 +1,69 @@
+{
+  "NCBIGene:1270": {
+    "id": {
+      "identifier": "NCBIGene:1270",
+      "label": "CNTF"
+    },
+    "equivalent_identifiers": [
+      {
+        "identifier": "NCBIGene:1270",
+        "label": "CNTF",
+        "taxa": [
+          "NCBITaxon:9606"
+        ]
+      },
+      {
+        "identifier": "ENSEMBL:ENSG00000242689"
+      },
+      {
+        "identifier": "HGNC:2169",
+        "label": "CNTF"
+      },
+      {
+        "identifier": "OMIM:118945"
+      },
+      {
+        "identifier": "UMLS:C1413557",
+        "label": "CNTF gene"
+      },
+      {
+        "identifier": "UniProtKB:P26441",
+        "label": "CNTF_HUMAN Ciliary neurotrophic factor (sprot)",
+        "taxa": [
+          "NCBITaxon:9606"
+        ]
+      },
+      {
+        "identifier": "PR:P26441",
+        "label": "ciliary neurotrophic factor (human)"
+      },
+      {
+        "identifier": "ENSEMBL:ENSP00000355370"
+      },
+      {
+        "identifier": "ENSEMBL:ENSP00000355370.4"
+      }
+    ],
+    "taxa": [
+      "NCBITaxon:9606"
+    ],
+    "type": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "information_content": 95.4
+  }
+}

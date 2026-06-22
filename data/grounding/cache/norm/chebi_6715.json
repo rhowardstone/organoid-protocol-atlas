@@ -1,0 +1,791 @@
+{
+  "CHEBI:6715": {
+    "id": {
+      "identifier": "CHEBI:6715",
+      "label": "medroxyprogesterone"
+    },
+    "equivalent_identifiers": [
+      {
+        "identifier": "CHEBI:6715",
+        "label": "medroxyprogesterone"
+      },
+      {
+        "identifier": "UNII:HSU1C9YRES",
+        "label": "MEDROXYPROGESTERONE"
+      },
+      {
+        "identifier": "PUBCHEM.COMPOUND:10631",
+        "label": "Medroxyprogesterone"
+      },
+      {
+        "identifier": "CHEMBL.COMPOUND:CHEMBL1390"
+      },
+      {
+        "identifier": "MESH:D008525",
+        "label": "Medroxyprogesterone"
+      },
+      {
+        "identifier": "CAS:208-298-6"
+      },
+      {
+        "identifier": "CAS:520-85-4"
+      },
+      {
+        "identifier": "GTOPDB:2879",
+        "label": "medroxyprogesterone"
+      },
+      {
+        "identifier": "HMDB:HMDB0001939",
+        "label": "Medroxyprogesterone"
+      },
+      {
+        "identifier": "KEGG.COMPOUND:C07119"
+      },
+      {
+        "identifier": "INCHIKEY:FRQMUZJSZHZSGN-HBNHAYAOSA-N"
+      },
+      {
+        "identifier": "UMLS:C0025147",
+        "label": "medroxyprogesterone"
+      },
+      {
+        "identifier": "RXCUI:6691"
+      },
+      {
+        "identifier": "CHEBI:6715",
+        "label": "medroxyprogesterone"
+      },
+      {
+        "identifier": "UNII:HSU1C9YRES",
+        "label": "MEDROXYPROGESTERONE"
+      },
+      {
+        "identifier": "PUBCHEM.COMPOUND:10631",
+        "label": "Medroxyprogesterone"
+      },
+      {
+        "identifier": "CHEMBL.COMPOUND:CHEMBL1390"
+      },
+      {
+        "identifier": "MESH:D008525",
+        "label": "Medroxyprogesterone"
+      },
+      {
+        "identifier": "CAS:208-298-6"
+      },
+      {
+        "identifier": "CAS:520-85-4"
+      },
+      {
+        "identifier": "GTOPDB:2879",
+        "label": "medroxyprogesterone"
+      },
+      {
+        "identifier": "HMDB:HMDB0001939",
+        "label": "Medroxyprogesterone"
+      },
+      {
+        "identifier": "KEGG.COMPOUND:C07119"
+      },
+      {
+        "identifier": "INCHIKEY:FRQMUZJSZHZSGN-HBNHAYAOSA-N"
+      },
+      {
+        "identifier": "UMLS:C0025147",
+        "label": "medroxyprogesterone"
+      },
+      {
+        "identifier": "RXCUI:6691"
+      },
+      {
+        "identifier": "CHEBI:6716",
+        "label": "medroxyprogesterone acetate"
+      },
+      {
+        "identifier": "CHEBI:145457"
+      },
+      {
+        "identifier": "UNII:C2QI4IOI2G",
+        "label": "MEDROXYPROGESTERONE ACETATE"
+      },
+      {
+        "identifier": "PUBCHEM.COMPOUND:6279",
+        "label": "Medroxyprogesterone Acetate"
+      },
+      {
+        "identifier": "CHEMBL.COMPOUND:CHEMBL717",
+        "label": "MEDROXYPROGESTERONE ACETATE"
+      },
+      {
+        "identifier": "DRUGBANK:DB00603",
+        "label": "Medroxyprogesterone acetate"
+      },
+      {
+        "identifier": "MESH:D017258",
+        "label": "Medroxyprogesterone Acetate"
+      },
+      {
+        "identifier": "CAS:1301724-98-0"
+      },
+      {
+        "identifier": "CAS:200-757-9"
+      },
+      {
+        "identifier": "CAS:71-58-9"
+      },
+      {
+        "identifier": "DrugCentral:1659",
+        "label": "medroxyprogesterone"
+      },
+      {
+        "identifier": "KEGG.COMPOUND:C08150"
+      },
+      {
+        "identifier": "INCHIKEY:PSGAAPLEWMOORI-PEINSRQWSA-N"
+      },
+      {
+        "identifier": "UMLS:C0065864",
+        "label": "medroxyprogesterone acetate"
+      },
+      {
+        "identifier": "RXCUI:1000112"
+      },
+      {
+        "identifier": "CHEBI:6716",
+        "label": "medroxyprogesterone acetate"
+      },
+      {
+        "identifier": "CHEBI:145457"
+      },
+      {
+        "identifier": "UNII:C2QI4IOI2G",
+        "label": "MEDROXYPROGESTERONE ACETATE"
+      },
+      {
+        "identifier": "PUBCHEM.COMPOUND:6279",
+        "label": "Medroxyprogesterone Acetate"
+      },
+      {
+        "identifier": "CHEMBL.COMPOUND:CHEMBL717",
+        "label": "MEDROXYPROGESTERONE ACETATE"
+      },
+      {
+        "identifier": "DRUGBANK:DB00603",
+        "label": "Medroxyprogesterone acetate"
+      },
+      {
+        "identifier": "MESH:D017258",
+        "label": "Medroxyprogesterone Acetate"
+      },
+      {
+        "identifier": "CAS:1301724-98-0"
+      },
+      {
+        "identifier": "CAS:200-757-9"
+      },
+      {
+        "identifier": "CAS:71-58-9"
+      },
+      {
+        "identifier": "DrugCentral:1659",
+        "label": "medroxyprogesterone"
+      },
+      {
+        "identifier": "KEGG.COMPOUND:C08150"
+      },
+      {
+        "identifier": "INCHIKEY:PSGAAPLEWMOORI-PEINSRQWSA-N"
+      },
+      {
+        "identifier": "UMLS:C0065864",
+        "label": "medroxyprogesterone acetate"
+      },
+      {
+        "identifier": "RXCUI:1000112"
+      },
+      {
+        "identifier": "RXCUI:93902"
+      },
+      {
+        "identifier": "UMLS:C0307424",
+        "label": "medroxyprogesterone Oral Tablet [Provera]"
+      },
+      {
+        "identifier": "RXCUI:202886"
+      },
+      {
+        "identifier": "UMLS:C0699700",
+        "label": "Depo-Provera"
+      },
+      {
+        "identifier": "RXCUI:202888"
+      },
+      {
+        "identifier": "UMLS:C0699702",
+        "label": "Provera"
+      },
+      {
+        "identifier": "RXCUI:365613"
+      },
+      {
+        "identifier": "UMLS:C1239571",
+        "label": "medroxyprogesterone Injectable Suspension [Depo-Provera]"
+      },
+      {
+        "identifier": "RXCUI:372739"
+      },
+      {
+        "identifier": "UMLS:C1246799",
+        "label": "medroxyprogesterone Oral Tablet"
+      },
+      {
+        "identifier": "RXCUI:378653"
+      },
+      {
+        "identifier": "UMLS:C1252994",
+        "label": "medroxyprogesterone Injectable Suspension"
+      },
+      {
+        "identifier": "RXCUI:545467"
+      },
+      {
+        "identifier": "UMLS:C1589969",
+        "label": "depo-subQ provera"
+      },
+      {
+        "identifier": "RXCUI:727610"
+      },
+      {
+        "identifier": "UMLS:C1962242",
+        "label": "medroxyprogesterone Prefilled Syringe"
+      },
+      {
+        "identifier": "RXCUI:791057"
+      },
+      {
+        "identifier": "UMLS:C2341954",
+        "label": "medroxyprogesterone Prefilled Syringe [Depo-Provera]"
+      },
+      {
+        "identifier": "RXCUI:791063"
+      },
+      {
+        "identifier": "UMLS:C2341956",
+        "label": "medroxyprogesterone Prefilled Syringe [depo-subQ provera]"
+      },
+      {
+        "identifier": "RXCUI:1000113"
+      },
+      {
+        "identifier": "UMLS:C2930120",
+        "label": "medroxyprogesterone acetate 10 MG"
+      },
+      {
+        "identifier": "RXCUI:1000114"
+      },
+      {
+        "identifier": "UMLS:C0773969",
+        "label": "medroxyprogesterone acetate 10 MG Oral Tablet"
+      },
+      {
+        "identifier": "RXCUI:1000123"
+      },
+      {
+        "identifier": "UMLS:C2930129",
+        "label": "medroxyprogesterone acetate 10 MG [Provera]"
+      },
+      {
+        "identifier": "RXCUI:1000124"
+      },
+      {
+        "identifier": "UMLS:C0698565",
+        "label": "medroxyprogesterone acetate 10 MG Oral Tablet [Provera]"
+      },
+      {
+        "identifier": "RXCUI:1000125"
+      },
+      {
+        "identifier": "UMLS:C2930130",
+        "label": "medroxyprogesterone acetate 150 MG/ML"
+      },
+      {
+        "identifier": "RXCUI:1000126"
+      },
+      {
+        "identifier": "UMLS:C1646068",
+        "label": "1 ML medroxyprogesterone acetate 150 MG/ML Injection"
+      },
+      {
+        "identifier": "RXCUI:1000127"
+      },
+      {
+        "identifier": "UMLS:C2930131",
+        "label": "medroxyprogesterone acetate 150 MG/ML [Depo-Provera]"
+      },
+      {
+        "identifier": "RXCUI:1000128"
+      },
+      {
+        "identifier": "UMLS:C1586542",
+        "label": "1 ML medroxyprogesterone acetate 150 MG/ML Injection [Depo-Provera]"
+      },
+      {
+        "identifier": "RXCUI:1000130"
+      },
+      {
+        "identifier": "UMLS:C2930132",
+        "label": "medroxyprogesterone acetate 400 MG/ML"
+      },
+      {
+        "identifier": "RXCUI:1000131"
+      },
+      {
+        "identifier": "UMLS:C1648910",
+        "label": "medroxyprogesterone acetate 400 MG/ML Injectable Suspension"
+      },
+      {
+        "identifier": "RXCUI:1000132"
+      },
+      {
+        "identifier": "UMLS:C2930133",
+        "label": "medroxyprogesterone acetate 400 MG/ML [Depo-Provera]"
+      },
+      {
+        "identifier": "RXCUI:1000133"
+      },
+      {
+        "identifier": "UMLS:C1586543",
+        "label": "medroxyprogesterone acetate 400 MG/ML Injectable Suspension [Depo-Provera]"
+      },
+      {
+        "identifier": "RXCUI:1000134"
+      },
+      {
+        "identifier": "UMLS:C2930134",
+        "label": "medroxyprogesterone acetate 2.5 MG"
+      },
+      {
+        "identifier": "RXCUI:1000135"
+      },
+      {
+        "identifier": "UMLS:C0773970",
+        "label": "medroxyprogesterone acetate 2.5 MG Oral Tablet"
+      },
+      {
+        "identifier": "RXCUI:1000138"
+      },
+      {
+        "identifier": "UMLS:C2930136",
+        "label": "medroxyprogesterone acetate 2.5 MG [Provera]"
+      },
+      {
+        "identifier": "RXCUI:1000139"
+      },
+      {
+        "identifier": "UMLS:C0353462",
+        "label": "medroxyprogesterone acetate 2.5 MG Oral Tablet [Provera]"
+      },
+      {
+        "identifier": "RXCUI:1000140"
+      },
+      {
+        "identifier": "UMLS:C2930137",
+        "label": "medroxyprogesterone acetate 5 MG"
+      },
+      {
+        "identifier": "RXCUI:1000141"
+      },
+      {
+        "identifier": "UMLS:C0773971",
+        "label": "medroxyprogesterone acetate 5 MG Oral Tablet"
+      },
+      {
+        "identifier": "RXCUI:1000144"
+      },
+      {
+        "identifier": "UMLS:C2930139",
+        "label": "medroxyprogesterone acetate 5 MG [Provera]"
+      },
+      {
+        "identifier": "RXCUI:1000145"
+      },
+      {
+        "identifier": "UMLS:C0698564",
+        "label": "medroxyprogesterone acetate 5 MG Oral Tablet [Provera]"
+      },
+      {
+        "identifier": "RXCUI:1000148"
+      },
+      {
+        "identifier": "UMLS:C2930141",
+        "label": "medroxyprogesterone acetate 50 MG/ML"
+      },
+      {
+        "identifier": "RXCUI:1000153"
+      },
+      {
+        "identifier": "UMLS:C1276165",
+        "label": "1 ML medroxyprogesterone acetate 150 MG/ML Prefilled Syringe"
+      },
+      {
+        "identifier": "RXCUI:1000154"
+      },
+      {
+        "identifier": "UMLS:C0590126",
+        "label": "1 ML medroxyprogesterone acetate 150 MG/ML Prefilled Syringe [Depo-Provera]"
+      },
+      {
+        "identifier": "RXCUI:1000155"
+      },
+      {
+        "identifier": "UMLS:C2930143",
+        "label": "medroxyprogesterone acetate 160 MG/ML"
+      },
+      {
+        "identifier": "RXCUI:1000156"
+      },
+      {
+        "identifier": "UMLS:C1962243",
+        "label": "0.65 ML medroxyprogesterone acetate 160 MG/ML Prefilled Syringe"
+      },
+      {
+        "identifier": "RXCUI:1000157"
+      },
+      {
+        "identifier": "UMLS:C2930144",
+        "label": "medroxyprogesterone acetate 160 MG/ML [depo-subQ provera]"
+      },
+      {
+        "identifier": "RXCUI:1000158"
+      },
+      {
+        "identifier": "UMLS:C1814219",
+        "label": "0.65 ML medroxyprogesterone acetate 160 MG/ML Prefilled Syringe [depo-subQ provera]"
+      },
+      {
+        "identifier": "RXCUI:1000160"
+      },
+      {
+        "identifier": "UMLS:C2930145",
+        "label": "medroxyprogesterone acetate 20 MG"
+      },
+      {
+        "identifier": "RXCUI:1000350"
+      },
+      {
+        "identifier": "UMLS:C2930173",
+        "label": "medroxyprogesterone acetate 1.5 MG"
+      },
+      {
+        "identifier": "RXCUI:1000363"
+      },
+      {
+        "identifier": "UMLS:C2930175",
+        "label": "medroxyprogesterone acetate 100 MG"
+      },
+      {
+        "identifier": "RXCUI:1000364"
+      },
+      {
+        "identifier": "UMLS:C0692990",
+        "label": "medroxyprogesterone acetate 100 MG Oral Tablet"
+      },
+      {
+        "identifier": "RXCUI:1000374"
+      },
+      {
+        "identifier": "UMLS:C1637890",
+        "label": "medroxyprogesterone acetate 160 MG/ML Injectable Suspension"
+      },
+      {
+        "identifier": "RXCUI:1000375"
+      },
+      {
+        "identifier": "UMLS:C2930177",
+        "label": "medroxyprogesterone acetate 200 MG"
+      },
+      {
+        "identifier": "RXCUI:1000376"
+      },
+      {
+        "identifier": "UMLS:C0692991",
+        "label": "medroxyprogesterone acetate 200 MG Oral Tablet"
+      },
+      {
+        "identifier": "RXCUI:1000377"
+      },
+      {
+        "identifier": "UMLS:C2930178",
+        "label": "medroxyprogesterone acetate 200 MG/ML"
+      },
+      {
+        "identifier": "RXCUI:1000378"
+      },
+      {
+        "identifier": "UMLS:C0792746",
+        "label": "medroxyprogesterone acetate 200 MG/ML Injectable Suspension"
+      },
+      {
+        "identifier": "RXCUI:1000379"
+      },
+      {
+        "identifier": "UMLS:C2930179",
+        "label": "medroxyprogesterone acetate 250 MG"
+      },
+      {
+        "identifier": "RXCUI:1000380"
+      },
+      {
+        "identifier": "UMLS:C0693092",
+        "label": "medroxyprogesterone acetate 250 MG Oral Tablet"
+      },
+      {
+        "identifier": "RXCUI:1000383"
+      },
+      {
+        "identifier": "UMLS:C2930180",
+        "label": "medroxyprogesterone acetate 400 MG"
+      },
+      {
+        "identifier": "RXCUI:1000384"
+      },
+      {
+        "identifier": "UMLS:C0693405",
+        "label": "medroxyprogesterone acetate 400 MG Oral Tablet"
+      },
+      {
+        "identifier": "RXCUI:1000385"
+      },
+      {
+        "identifier": "UMLS:C2930181",
+        "label": "medroxyprogesterone acetate 500 MG"
+      },
+      {
+        "identifier": "RXCUI:1000386"
+      },
+      {
+        "identifier": "UMLS:C0692992",
+        "label": "medroxyprogesterone acetate 500 MG Oral Tablet"
+      },
+      {
+        "identifier": "RXCUI:1159192"
+      },
+      {
+        "identifier": "UMLS:C3213584",
+        "label": "medroxyprogesterone Injectable Product"
+      },
+      {
+        "identifier": "RXCUI:1159194"
+      },
+      {
+        "identifier": "UMLS:C0360516",
+        "label": "medroxyprogesterone Oral Product"
+      },
+      {
+        "identifier": "RXCUI:1159195"
+      },
+      {
+        "identifier": "UMLS:C3213586",
+        "label": "medroxyprogesterone Pill"
+      },
+      {
+        "identifier": "RXCUI:1173112"
+      },
+      {
+        "identifier": "UMLS:C3227157",
+        "label": "Depo-Provera Injectable Product"
+      },
+      {
+        "identifier": "RXCUI:1182477"
+      },
+      {
+        "identifier": "UMLS:C3236312",
+        "label": "Provera Oral Product"
+      },
+      {
+        "identifier": "RXCUI:1182478"
+      },
+      {
+        "identifier": "UMLS:C3236313",
+        "label": "Provera Pill"
+      },
+      {
+        "identifier": "RXCUI:1186698"
+      },
+      {
+        "identifier": "UMLS:C3240450",
+        "label": "depo-subQ provera Injectable Product"
+      },
+      {
+        "identifier": "RXCUI:1738611"
+      },
+      {
+        "identifier": "UMLS:C0746480",
+        "label": "medroxyprogesterone Injection"
+      },
+      {
+        "identifier": "RXCUI:1738613"
+      },
+      {
+        "identifier": "UMLS:C4081386",
+        "label": "medroxyprogesterone Injection [Depo-Provera]"
+      },
+      {
+        "identifier": "RXCUI:2645568"
+      },
+      {
+        "identifier": "UMLS:C5834738",
+        "label": "medroxyPROGESTERone acetate Prefilled Syringe"
+      },
+      {
+        "identifier": "RXCUI:2645848"
+      },
+      {
+        "identifier": "UMLS:C4720049",
+        "label": "medroxyPROGESTERone acetate Oral Tablet"
+      },
+      {
+        "identifier": "RXCUI:2647174"
+      },
+      {
+        "identifier": "UMLS:C5782318",
+        "label": "medroxyprogesterone acetate Injectable Suspension"
+      },
+      {
+        "identifier": "RXCUI:2648219"
+      },
+      {
+        "identifier": "UMLS:C2092240",
+        "label": "medroxyprogesterone acetate Injection"
+      },
+      {
+        "identifier": "RXCUI:2654175"
+      },
+      {
+        "identifier": "UMLS:C5838042",
+        "label": "medroxyPROGESTERone acetate Oral Tablet [Amen]"
+      },
+      {
+        "identifier": "RXCUI:2654178"
+      },
+      {
+        "identifier": "UMLS:C5838045",
+        "label": "medroxyPROGESTERone acetate Prefilled Syringe [Depo-Provera]"
+      },
+      {
+        "identifier": "RXCUI:2654473"
+      },
+      {
+        "identifier": "UMLS:C5838339",
+        "label": "medroxyPROGESTERone acetate Injection [Depo-Provera]"
+      },
+      {
+        "identifier": "RXCUI:2654826"
+      },
+      {
+        "identifier": "UMLS:C5838691",
+        "label": "medroxyPROGESTERone acetate Oral Tablet [Provera]"
+      },
+      {
+        "identifier": "RXCUI:2654933"
+      },
+      {
+        "identifier": "UMLS:C5838798",
+        "label": "medroxyPROGESTERone acetate Injectable Suspension [depo-subQ provera]"
+      },
+      {
+        "identifier": "RXCUI:2656062"
+      },
+      {
+        "identifier": "UMLS:C5839923",
+        "label": "medroxyPROGESTERone acetate Injectable Suspension [Depo-Provera]"
+      },
+      {
+        "identifier": "RXCUI:2656273"
+      },
+      {
+        "identifier": "UMLS:C5840132",
+        "label": "medroxyPROGESTERone acetate Oral Tablet [Prodroxy]"
+      },
+      {
+        "identifier": "RXCUI:2656502"
+      },
+      {
+        "identifier": "UMLS:C5840361",
+        "label": "medroxyPROGESTERone acetate Injectable Suspension [Farlutal]"
+      },
+      {
+        "identifier": "RXCUI:2657302"
+      },
+      {
+        "identifier": "UMLS:C5841160",
+        "label": "medroxyPROGESTERone acetate Oral Tablet [Cycrin]"
+      },
+      {
+        "identifier": "RXCUI:2657860"
+      },
+      {
+        "identifier": "UMLS:C5841717",
+        "label": "medroxyPROGESTERone acetate Oral Tablet [Curretab]"
+      },
+      {
+        "identifier": "RXCUI:2658389"
+      },
+      {
+        "identifier": "UMLS:C5842241",
+        "label": "medroxyPROGESTERone acetate Injectable Suspension [Provera]"
+      },
+      {
+        "identifier": "RXCUI:2658496"
+      },
+      {
+        "identifier": "UMLS:C5842347",
+        "label": "medroxyPROGESTERone acetate Prefilled Syringe [depo-subQ provera]"
+      },
+      {
+        "identifier": "RXCUI:2658949"
+      },
+      {
+        "identifier": "UMLS:C5842799",
+        "label": "medroxyPROGESTERone acetate Oral Tablet [Farlutal]"
+      },
+      {
+        "identifier": "RXCUI:2660079"
+      },
+      {
+        "identifier": "UMLS:C5843887",
+        "label": "medroxyPROGESTERone acetate Pill"
+      },
+      {
+        "identifier": "RXCUI:2660774"
+      },
+      {
+        "identifier": "UMLS:C5844581",
+        "label": "medroxyPROGESTERone acetate Oral Product"
+      },
+      {
+        "identifier": "RXCUI:2661863"
+      },
+      {
+        "identifier": "UMLS:C5845668",
+        "label": "medroxyPROGESTERone acetate Injectable Product"
+      }
+    ],
+    "type": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:Drug",
+      "biolink:OntologyClass",
+      "biolink:MolecularMixture",
+      "biolink:ChemicalMixture"
+    ],
+    "information_content": 95.4
+  }
+}

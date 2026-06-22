@@ -1,0 +1,570 @@
+[
+  {
+    "curie": "NCBIGene:100641115",
+    "label": "Wnt",
+    "highlighting": {},
+    "synonyms": [
+      "Wnt",
+      "protein Wnt-2"
+    ],
+    "taxa": [
+      "NCBITaxon:400682"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 2110.558,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "NCBIGene:105938539",
+    "label": "wnt7bb",
+    "highlighting": {},
+    "synonyms": [
+      "Wnt",
+      "wnt7bb",
+      "protein Wnt-7b",
+      "A0A147B0S4_FUNHE Protein Wnt (trembl)",
+      "A0A3Q2NRP3_FUNHE Protein Wnt (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:8078"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 657.6541,
+    "clique_identifier_count": 8
+  },
+  {
+    "curie": "NCBIGene:105917077",
+    "label": "LOC105917077",
+    "highlighting": {},
+    "synonyms": [
+      "Wnt",
+      "LOC105917077",
+      "protein Wnt-8c"
+    ],
+    "taxa": [
+      "NCBITaxon:8078"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 467.22983,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "NCBIGene:114487",
+    "label": "Wnt2",
+    "highlighting": {},
+    "synonyms": [
+      "Wnt",
+      "Wnt2",
+      "protein Wnt-2",
+      "Wnt family member 2",
+      "wingless-type MMTV integration site 2",
+      "wingless-related MMTV integration site 2",
+      "wingless-type MMTV integration site family member 2",
+      "A0A0G2JZF4_RAT Protein Wnt (trembl)",
+      "A6IE38_RAT Protein Wnt (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:10116"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 390.8468,
+    "clique_identifier_count": 7
+  },
+  {
+    "curie": "NCBIGene:105928918",
+    "label": "wnt10b",
+    "highlighting": {},
+    "synonyms": [
+      "Wnt",
+      "wnt10b",
+      "protein Wnt-10b",
+      "Wnt family member 10B"
+    ],
+    "taxa": [
+      "NCBITaxon:8078"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 385.99704,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "UniProtKB:A0A8D1FKR0",
+    "label": "A0A8D1FKR0_PIG Protein Wnt (trembl)",
+    "highlighting": {},
+    "synonyms": [
+      "A0A8D1FKR0_PIG Protein Wnt (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9823"
+    ],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 354.4611,
+    "clique_identifier_count": 23
+  },
+  {
+    "curie": "UniProtKB:A0A4X1UFP5",
+    "label": "A0A4X1UFP5_PIG Protein Wnt (trembl)",
+    "highlighting": {},
+    "synonyms": [
+      "A0A4X1UFP5_PIG Protein Wnt (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9823"
+    ],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 344.75638,
+    "clique_identifier_count": 21
+  },
+  {
+    "curie": "UniProtKB:A0A8D0T7B7",
+    "label": "A0A8D0T7B7_PIG Protein Wnt (trembl)",
+    "highlighting": {},
+    "synonyms": [
+      "A0A8D0T7B7_PIG Protein Wnt (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9823"
+    ],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 334.12604,
+    "clique_identifier_count": 19
+  },
+  {
+    "curie": "UniProtKB:A0A8D0UV75",
+    "label": "A0A8D0UV75_PIG Protein Wnt (trembl)",
+    "highlighting": {},
+    "synonyms": [
+      "A0A8D0UV75_PIG Protein Wnt (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9823"
+    ],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 334.12604,
+    "clique_identifier_count": 19
+  },
+  {
+    "curie": "NCBIGene:105933812",
+    "label": "wnt7ba",
+    "highlighting": {},
+    "synonyms": [
+      "Wnt",
+      "wnt7b",
+      "wnt7ba",
+      "protein Wnt-7b",
+      "Wnt family member 7B"
+    ],
+    "taxa": [
+      "NCBITaxon:8078"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 328.82706,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "NCBIGene:110371067",
+    "label": "wg",
+    "highlighting": {},
+    "synonyms": [
+      "wg",
+      "WNT",
+      "wingless",
+      "HaOG208030",
+      "LOW QUALITY PROTEIN: protein Wnt-1"
+    ],
+    "taxa": [
+      "NCBITaxon:29058"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 328.82706,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "CHEBI:78030",
+    "label": "WNT-974",
+    "highlighting": {},
+    "synonyms": [
+      "WNT974",
+      "LGK974",
+      "WNT-974",
+      "LGK 974",
+      "WNT 974",
+      "LGK-974",
+      "Wnt-974",
+      "PORCN inhibitor LGK974",
+      "porcupine inhibitor WNT974",
+      "Porcupine Inhibitor WNT974",
+      "(2,4'-bipyridine)-5-acetamide, 2',3-dimethyl-N-(5-(2-pyrazinyl)-2-pyridinyl)-",
+      "2-(2',3-dimethyl-2,4'-bipyridin-5-yl)-N-[5-(pyrazin-2-yl)pyridin-2-yl]acetamide"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 318.6405,
+    "clique_identifier_count": 11
+  },
+  {
+    "curie": "UniProtKB:A0A8D1S706",
+    "label": "A0A8D1S706_PIG Protein Wnt (trembl)",
+    "highlighting": {},
+    "synonyms": [
+      "A0A8D1S706_PIG Protein Wnt (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9823"
+    ],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 309.23795,
+    "clique_identifier_count": 15
+  },
+  {
+    "curie": "UniProtKB:A0A8D0JFK1",
+    "label": "A0A8D0JFK1_PIG Wnt ligand secretion mediator (trembl)",
+    "highlighting": {},
+    "synonyms": [
+      "A0A8D0JFK1_PIG Wnt ligand secretion mediator (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9823"
+    ],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 305.03854,
+    "clique_identifier_count": 21
+  },
+  {
+    "curie": "UniProtKB:A0A8D1MRZ4",
+    "label": "A0A8D1MRZ4_PIG Wnt ligand secretion mediator (trembl)",
+    "highlighting": {},
+    "synonyms": [
+      "A0A8D1MRZ4_PIG Wnt ligand secretion mediator (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9823"
+    ],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 295.6329,
+    "clique_identifier_count": 19
+  },
+  {
+    "curie": "UniProtKB:A0A4X1W465",
+    "label": "A0A4X1W465_PIG Protein Wnt (trembl)",
+    "highlighting": {},
+    "synonyms": [
+      "A0A4X1W465_PIG Protein Wnt (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9823"
+    ],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 294.34467,
+    "clique_identifier_count": 13
+  },
+  {
+    "curie": "UniProtKB:A0A4X1WCQ7",
+    "label": "A0A4X1WCQ7_PIG Protein Wnt (trembl)",
+    "highlighting": {},
+    "synonyms": [
+      "A0A4X1WCQ7_PIG Protein Wnt (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9823"
+    ],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 294.34467,
+    "clique_identifier_count": 13
+  },
+  {
+    "curie": "UniProtKB:A0A8D0SV00",
+    "label": "A0A8D0SV00_PIG Protein Wnt (trembl)",
+    "highlighting": {},
+    "synonyms": [
+      "A0A8D0SV00_PIG Protein Wnt (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9823"
+    ],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 294.34467,
+    "clique_identifier_count": 13
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:57519544",
+    "label": "Wnt-C59",
+    "highlighting": {},
+    "synonyms": [
+      "Wnt-C59",
+      "2-(4-(2-methylpyridin-4-yl)phenyl)-N-(4-(pyridin-3-yl)phenyl)acetamide",
+      "2-(4-(2-Methylpyridin-4-yl)phenyl)-N-(4-(pyridin-3-yl)phenyl)acetamide"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 281.75095,
+    "clique_identifier_count": 8
+  },
+  {
+    "curie": "UniProtKB:A0A8D1TR28",
+    "label": "A0A8D1TR28_PIG Protein Wnt (trembl)",
+    "highlighting": {},
+    "synonyms": [
+      "A0A8D1TR28_PIG Protein Wnt (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9823"
+    ],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 277.1516,
+    "clique_identifier_count": 11
+  }
+]

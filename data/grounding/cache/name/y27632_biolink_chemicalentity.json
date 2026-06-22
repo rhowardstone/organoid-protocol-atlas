@@ -1,0 +1,57 @@
+[
+  {
+    "curie": "CHEBI:92773",
+    "label": "Y 27632",
+    "highlighting": {},
+    "synonyms": [
+      "Y27632",
+      "Y-27632",
+      "Y 27632",
+      "Y-27632 dihydrochloride",
+      "4-[(1R)-1-aminoethyl]-N-pyridin-4-yl-1-cyclohexanecarboxamide"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 756.5027,
+    "clique_identifier_count": 9
+  },
+  {
+    "curie": "CHEBI:75393",
+    "label": "Y-27632",
+    "highlighting": {},
+    "synonyms": [
+      "Y27632",
+      "Y-27632",
+      "Y 27632",
+      "4-[(1R)-1-aminoethyl]-N-(pyridin-4-yl)cyclohexane-1-carboxamide",
+      "trans-4-[(1R)-1-aminoethyl]-N-(pyridin-4-yl)cyclohexanecarboxamide",
+      "(R)-(+)-trans-N-(4-pyridyl)-4-(1-aminoethyl)-cyclohexanecarboxamide"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 556.8447,
+    "clique_identifier_count": 6
+  }
+]

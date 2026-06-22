@@ -1,0 +1,81 @@
+{
+  "NCBIGene:4838": {
+    "id": {
+      "identifier": "NCBIGene:4838",
+      "label": "NODAL"
+    },
+    "equivalent_identifiers": [
+      {
+        "identifier": "NCBIGene:4838",
+        "label": "NODAL",
+        "taxa": [
+          "NCBITaxon:9606"
+        ]
+      },
+      {
+        "identifier": "ENSEMBL:ENSG00000156574"
+      },
+      {
+        "identifier": "HGNC:7865",
+        "label": "NODAL"
+      },
+      {
+        "identifier": "OMIM:601265"
+      },
+      {
+        "identifier": "UMLS:C1417752",
+        "label": "NODAL gene"
+      },
+      {
+        "identifier": "UniProtKB:Q96S42",
+        "label": "NODAL_HUMAN Nodal homolog (sprot)",
+        "taxa": [
+          "NCBITaxon:9606"
+        ]
+      },
+      {
+        "identifier": "PR:Q96S42",
+        "label": "nodal homolog (human)"
+      },
+      {
+        "identifier": "ENSEMBL:ENSP00000287139"
+      },
+      {
+        "identifier": "ENSEMBL:ENSP00000287139.3"
+      },
+      {
+        "identifier": "UMLS:C1568997",
+        "label": "NODAL protein, human"
+      },
+      {
+        "identifier": "UMLS:C3272515",
+        "label": "Nodal Homolog"
+      },
+      {
+        "identifier": "MESH:C526007",
+        "label": "NODAL protein, human"
+      }
+    ],
+    "taxa": [
+      "NCBITaxon:9606"
+    ],
+    "type": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "information_content": 89.4
+  }
+}

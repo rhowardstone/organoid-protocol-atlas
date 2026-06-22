@@ -1,0 +1,138 @@
+{
+  "NCBIGene:397422": {
+    "id": {
+      "identifier": "NCBIGene:397422",
+      "label": "CCL2"
+    },
+    "equivalent_identifiers": [
+      {
+        "identifier": "NCBIGene:397422",
+        "label": "CCL2",
+        "taxa": [
+          "NCBITaxon:9823"
+        ]
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCG00000017723"
+      },
+      {
+        "identifier": "RGD:14056892"
+      },
+      {
+        "identifier": "UniProtKB:B3GDZ4",
+        "label": "B3GDZ4_PIG C-C motif chemokine (trembl)",
+        "taxa": [
+          "NCBITaxon:9823"
+        ]
+      },
+      {
+        "identifier": "UniProtKB:P42831",
+        "label": "CCL2_PIG C-C motif chemokine 2 (sprot)",
+        "taxa": [
+          "NCBITaxon:9823"
+        ]
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00000018779"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00000018779.2"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00015005616"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00015005616.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00030034551"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00030034551.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00035035342"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00035035342.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00040004899"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00040004899.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00045021669"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00045021669.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00050022292"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00050022292.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00055013103"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00055013103.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00060033287"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00060033287.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00065040308"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00065040308.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00070012916"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00070012916.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00085029072"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00105024686"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00110040787"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00115033396"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00130028127"
+      }
+    ],
+    "taxa": [
+      "NCBITaxon:9823"
+    ],
+    "type": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ]
+  }
+}

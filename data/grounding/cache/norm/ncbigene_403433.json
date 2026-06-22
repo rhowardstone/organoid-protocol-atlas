@@ -1,0 +1,74 @@
+{
+  "NCBIGene:403433": {
+    "id": {
+      "identifier": "NCBIGene:403433",
+      "label": "MSTN"
+    },
+    "equivalent_identifiers": [
+      {
+        "identifier": "NCBIGene:403433",
+        "label": "MSTN",
+        "taxa": [
+          "NCBITaxon:9615"
+        ]
+      },
+      {
+        "identifier": "ENSEMBL:ENSCAFG00845024446"
+      },
+      {
+        "identifier": "RGD:12233617"
+      },
+      {
+        "identifier": "UniProtKB:Q6UKZ8",
+        "label": "GDF8_CANLF Growth/differentiation factor 8 (sprot)",
+        "taxa": [
+          "NCBITaxon:9615"
+        ]
+      },
+      {
+        "identifier": "ENSEMBL:ENSCAFP00000013840"
+      },
+      {
+        "identifier": "ENSEMBL:ENSCAFP00000013840.2"
+      },
+      {
+        "identifier": "ENSEMBL:ENSCAFP00030025505"
+      },
+      {
+        "identifier": "ENSEMBL:ENSCAFP00030025505.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSCAFP00040021141"
+      },
+      {
+        "identifier": "ENSEMBL:ENSCAFP00040021141.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSCAFP00845033852"
+      },
+      {
+        "identifier": "ENSEMBL:ENSCAFP00845033852.1"
+      }
+    ],
+    "taxa": [
+      "NCBITaxon:9615"
+    ],
+    "type": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ]
+  }
+}

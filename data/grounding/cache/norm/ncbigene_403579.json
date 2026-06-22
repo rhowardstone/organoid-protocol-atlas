@@ -1,0 +1,75 @@
+{
+  "NCBIGene:403579": {
+    "id": {
+      "identifier": "NCBIGene:403579",
+      "label": "AVP"
+    },
+    "equivalent_identifiers": [
+      {
+        "identifier": "NCBIGene:403579",
+        "label": "AVP",
+        "taxa": [
+          "NCBITaxon:9615"
+        ]
+      },
+      {
+        "identifier": "ENSEMBL:ENSCAFG00845015347"
+      },
+      {
+        "identifier": "RGD:12106395"
+      },
+      {
+        "identifier": "UniProtKB:A0A8C0SVU0",
+        "label": "A0A8C0SVU0_CANLF Arginine vasopressin (trembl)",
+        "taxa": [
+          "NCBITaxon:9615"
+        ]
+      },
+      {
+        "identifier": "ENSEMBL:ENSCAFP00000009620"
+      },
+      {
+        "identifier": "ENSEMBL:ENSCAFP00000009620.6"
+      },
+      {
+        "identifier": "ENSEMBL:ENSCAFP00040026668"
+      },
+      {
+        "identifier": "ENSEMBL:ENSCAFP00040026668.1"
+      },
+      {
+        "identifier": "UniProtKB:A0A8I3NZX3",
+        "label": "A0A8I3NZX3_CANLF Arginine vasopressin (trembl)",
+        "taxa": [
+          "NCBITaxon:9615"
+        ]
+      },
+      {
+        "identifier": "ENSEMBL:ENSCAFP00845021550"
+      },
+      {
+        "identifier": "ENSEMBL:ENSCAFP00845021550.1"
+      }
+    ],
+    "taxa": [
+      "NCBITaxon:9615"
+    ],
+    "type": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ]
+  }
+}

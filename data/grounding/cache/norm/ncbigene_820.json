@@ -1,0 +1,97 @@
+{
+  "NCBIGene:820": {
+    "id": {
+      "identifier": "NCBIGene:820",
+      "label": "CAMP"
+    },
+    "equivalent_identifiers": [
+      {
+        "identifier": "NCBIGene:820",
+        "label": "CAMP",
+        "taxa": [
+          "NCBITaxon:9606"
+        ]
+      },
+      {
+        "identifier": "ENSEMBL:ENSG00000164047"
+      },
+      {
+        "identifier": "HGNC:1472",
+        "label": "CAMP"
+      },
+      {
+        "identifier": "OMIM:600474"
+      },
+      {
+        "identifier": "UMLS:C1413106",
+        "label": "CAMP gene"
+      },
+      {
+        "identifier": "UniProtKB:A0A384NPR0",
+        "label": "A0A384NPR0_HUMAN Cathelicidin antimicrobial peptide (trembl)",
+        "taxa": [
+          "NCBITaxon:9606"
+        ]
+      },
+      {
+        "identifier": "UMLS:C5565266",
+        "label": "CAMP protein, human"
+      },
+      {
+        "identifier": "MESH:C000718839",
+        "label": "CAMP protein, human"
+      },
+      {
+        "identifier": "UniProtKB:J3KNB4",
+        "label": "J3KNB4_HUMAN Cathelicidin antimicrobial peptide (trembl)",
+        "taxa": [
+          "NCBITaxon:9606"
+        ]
+      },
+      {
+        "identifier": "ENSEMBL:ENSP00000296435"
+      },
+      {
+        "identifier": "ENSEMBL:ENSP00000296435.2"
+      },
+      {
+        "identifier": "UniProtKB:P49913",
+        "label": "CAMP_HUMAN Cathelicidin antimicrobial peptide (sprot)",
+        "taxa": [
+          "NCBITaxon:9606"
+        ]
+      },
+      {
+        "identifier": "PR:P49913",
+        "label": "cathelicidin antimicrobial peptide (human)"
+      },
+      {
+        "identifier": "ENSEMBL:ENSP00000498425"
+      },
+      {
+        "identifier": "ENSEMBL:ENSP00000498425.1"
+      }
+    ],
+    "taxa": [
+      "NCBITaxon:9606"
+    ],
+    "type": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "information_content": 88.2
+  }
+}

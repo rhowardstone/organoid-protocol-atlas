@@ -1,0 +1,638 @@
+[
+  {
+    "curie": "NCBIGene:4155959",
+    "label": "fgf-2",
+    "highlighting": {},
+    "synonyms": [
+      "fgf-2",
+      "FGF-2",
+      "Q1A4J4_GVCF FGF-2 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:56947"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2085.5107,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "NCBIGene:5184230",
+    "label": "fgf-2",
+    "highlighting": {},
+    "synonyms": [
+      "fgf-2",
+      "A5IZW8_9BBAC Fgf-2 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:359919"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2085.5107,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "NCBIGene:13842641",
+    "label": "fgf-2",
+    "highlighting": {},
+    "synonyms": [
+      "fgf-2",
+      "fibroblast growth factor 2",
+      "K4ER73_9BBAC Fibroblast growth factor 2 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:166056"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2085.5107,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "NCBIGene:20712838",
+    "label": "fgf-2",
+    "highlighting": {},
+    "synonyms": [
+      "fgf-2",
+      "fibroblast growth factor 2",
+      "A0A097DAT0_9BBAC Fibroblast growth factor 2 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:307444"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2085.5107,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "NCBIGene:80539475",
+    "label": "fgf-2",
+    "highlighting": {},
+    "synonyms": [
+      "fgf-2",
+      "A0AAE7SXS7_9BBAC Fgf-2 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:2760664"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2085.5107,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "GTOPDB:4924",
+    "label": "FGF-2",
+    "highlighting": {},
+    "synonyms": [
+      "FGF-2"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 1315.8108,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "NCBIGene:11107112",
+    "label": "PrGV_gp105",
+    "highlighting": {},
+    "synonyms": [
+      "FGF-2",
+      "PrGV_gp105",
+      "D2J4S2_9BBAC FGF-2 (trembl)",
+      "E7BN92_9BBAC FGF-2 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:252584",
+      "NCBITaxon:362830"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 571.67456,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "NCBIGene:10722988",
+    "label": "ClanGV_gp107",
+    "highlighting": {},
+    "synonyms": [
+      "fgf-2",
+      "ClanGV_gp107",
+      "F4ZKY4_9BBAC Fgf-2 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:283675"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 527.7846,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "NCBIGene:17428809",
+    "label": "CaLGV108",
+    "highlighting": {},
+    "synonyms": [
+      "fgf-2",
+      "CaLGV108",
+      "U5KB76_9BBAC Fgf-2 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:1986291"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 527.7846,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "NCBIGene:23632122",
+    "label": "UO69_gp120",
+    "highlighting": {},
+    "synonyms": [
+      "fgf-2",
+      "UO69_gp120",
+      "A0A0C5AQA2_9BBAC Fgf-2 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:307454"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 527.7846,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "NCBIGene:26855122",
+    "label": "AYR72_gp096",
+    "highlighting": {},
+    "synonyms": [
+      "fgf-2",
+      "AYR72_gp096",
+      "A0A109WXI8_9BBAC Fgf-2 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:1750712"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 527.7846,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "NCBIGene:30685113",
+    "label": "BVA96_gp109",
+    "highlighting": {},
+    "synonyms": [
+      "FGF-2",
+      "BVA96_gp109",
+      "A0A1L5JGR6_9BBAC FGF-2 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:262175"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 527.7846,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "NCBIGene:39105806",
+    "label": "B1782p128",
+    "highlighting": {},
+    "synonyms": [
+      "FGF-2",
+      "B1782p128",
+      "A0A1S5YE74_9BBAC FGF-2 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:3051996"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 527.7846,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "NCBIGene:443306",
+    "label": "FGF2",
+    "highlighting": {},
+    "synonyms": [
+      "FGF2",
+      "BFGF",
+      "FGF-2",
+      "HBGF-2",
+      "fibroblast growth factor 2",
+      "basic fibroblast growth factor",
+      "heparin-binding growth factor 2",
+      "fibroblast growth factor 2 (basic)",
+      "FGF2_SHEEP Fibroblast growth factor 2 (sprot)"
+    ],
+    "taxa": [
+      "NCBITaxon:9940"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 525.07385,
+    "clique_identifier_count": 12
+  },
+  {
+    "curie": "NCBIGene:100142029",
+    "label": "LOC100142029",
+    "highlighting": {},
+    "synonyms": [
+      "FGF-2",
+      "GLEAN_06603",
+      "LOC100142029",
+      "fibroblast growth factor 1"
+    ],
+    "taxa": [
+      "NCBITaxon:7070"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 426.13928,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "NCBIGene:949308",
+    "label": "PhopGV116",
+    "highlighting": {},
+    "synonyms": [
+      "fgf-2",
+      "PhopGV116",
+      "fibroblast growth factor 2",
+      "Q8JRU3_9BBAC Fibroblast growth factor 2 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:192584"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 414.14334,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "NCBIGene:27429796",
+    "label": "A6771_gp120",
+    "highlighting": {},
+    "synonyms": [
+      "FGF-2",
+      "A6771_gp120"
+    ],
+    "taxa": [
+      "NCBITaxon:2072024"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 403.79742,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "NCBIGene:80537901",
+    "label": "QKQ25_gp108",
+    "highlighting": {},
+    "synonyms": [
+      "fgf-2",
+      "QKQ25_gp108"
+    ],
+    "taxa": [
+      "NCBITaxon:307448"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 403.79742,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "NCBIGene:37616852",
+    "label": "D1P97_gp109",
+    "highlighting": {},
+    "synonyms": [
+      "fgf-2",
+      "clas109",
+      "D1P97_gp109"
+    ],
+    "taxa": [
+      "NCBITaxon:1986290"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 326.55634,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "NCBIGene:37627155",
+    "label": "D1Y34_gp127",
+    "highlighting": {},
+    "synonyms": [
+      "fgf-2",
+      "AsGV127",
+      "D1Y34_gp127"
+    ],
+    "taxa": [
+      "NCBITaxon:10464"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 326.55634,
+    "clique_identifier_count": 1
+  }
+]

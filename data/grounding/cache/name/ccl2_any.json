@@ -1,0 +1,809 @@
+[
+  {
+    "curie": "NCBIGene:397422",
+    "label": "CCL2",
+    "highlighting": {},
+    "synonyms": [
+      "CCL2",
+      "MCP-1",
+      "C-C motif chemokine 2",
+      "small-inducible cytokine A2",
+      "monocyte chemotactic protein 1",
+      "monocyte chemoattractant protein 1",
+      "B3GDZ4_PIG C-C motif chemokine (trembl)",
+      "CCL2_PIG C-C motif chemokine 2 (sprot)"
+    ],
+    "taxa": [
+      "NCBITaxon:9823"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 5625.2124,
+    "clique_identifier_count": 32
+  },
+  {
+    "curie": "NCBIGene:6347",
+    "label": "CCL2",
+    "highlighting": {},
+    "synonyms": [
+      "HC11",
+      "CCL2",
+      "MCP1",
+      "MCAF",
+      "SCYA2",
+      "MCP-1",
+      "SMC-CF",
+      "GDCF-2",
+      "MGC9434",
+      "HSMCR30",
+      "CCL2 Gene",
+      "CCL2 gene",
+      "C-C motif chemokine 2",
+      "small-inducible cytokine A2",
+      "SMALL INDUCIBLE CYTOKINE A2",
+      "C-C motif chemokine ligand 2",
+      "CHEMOKINE, CC MOTIF, LIGAND 2",
+      "monocyte secretory protein JE",
+      "monocyte chemotactic protein 1",
+      "chemokine (C-C motif) ligand 2",
+      "MONOCYTE CHEMOTACTIC PROTEIN 1",
+      "monocyte chemoattractant protein-1",
+      "Chemokine (C-C Motif) Ligand 2 Gene",
+      "monocyte chemotactic and activating factor",
+      "MONOCYTE CHEMOTACTIC AND ACTIVATING FACTOR",
+      "small inducible cytokine subfamily A (Cys-Cys), member 2",
+      "monocyte chemotactic protein 1, homologous to mouse Sig-je",
+      "small inducible cytokine A2 (monocyte chemotactic protein 1, homologous to mouse Sig-je)",
+      "hCCL2",
+      "HC11 (human)",
+      "MCAF (human)",
+      "MCP-1 (human)",
+      "CCL2 protein, human",
+      "MCP1 protein, human",
+      "SCYA2 protein, human",
+      "MCP-1 protein, human",
+      "C-C Motif Chemokine 2",
+      "Small Inducible Cytokine A2",
+      "Small-Inducible Cytokine A2",
+      "Monocyte Secretory Protein JE",
+      "C-C motif chemokine 2 (human)",
+      "Monocyte Chemotactic Protein-1",
+      "Monocyte Chemotactic Protein 1",
+      "Monocyte Chemoattractant Protein-1",
+      "Monocyte Chemoattractant Protein 1",
+      "small-inducible cytokine A2 (human)",
+      "monocyte secretory protein JE (human)",
+      "monocyte chemotactic protein 1 (human)",
+      "CCL2_HUMAN C-C motif chemokine 2 (sprot)",
+      "monocyte chemoattractant protein-1, human",
+      "Monocyte Chemotactic and Activating Factor",
+      "monocyte chemoattractant protein 1 (human)",
+      "Monocyte Chemotactic and Activating Protein",
+      "chemokine (C-C motif) ligand 2 protein, human",
+      "monocyte chemotactic and activating factor (human)"
+    ],
+    "taxa": [
+      "NCBITaxon:9606"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 3997.74,
+    "clique_identifier_count": 11
+  },
+  {
+    "curie": "NCBIGene:20296",
+    "label": "Ccl2",
+    "highlighting": {},
+    "synonyms": [
+      "JE",
+      "MCP1",
+      "HC11",
+      "Ccl2",
+      "MCAF",
+      "Sigje",
+      "MCP-1",
+      "Scya2",
+      "SMC-CF",
+      "C-C motif chemokine 2",
+      "small-inducible cytokine A2",
+      "C-C motif chemokine ligand 2",
+      "chemokine (C-C motif) ligand 2",
+      "monocyte chemotactic protein 1",
+      "monocyte chemoattractant protein 1",
+      "platelet-derived growth factor-inducible protein JE",
+      "Je",
+      "Mcp1",
+      "mCCL2",
+      "MCP-1 (mouse)",
+      "C-C motif chemokine 2 (mouse)",
+      "small-inducible cytokine A2 (mouse)",
+      "monocyte chemotactic protein 1 (mouse)",
+      "CCL2_MOUSE C-C motif chemokine 2 (sprot)",
+      "monocyte chemoattractant protein 1 (mouse)",
+      "platelet-derived growth factor-inducible protein JE (mouse)",
+      "Q5SVU3_MOUSE C-C motif chemokine (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:10090"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 3534.9146,
+    "clique_identifier_count": 8
+  },
+  {
+    "curie": "NCBIGene:24770",
+    "label": "Ccl2",
+    "highlighting": {},
+    "synonyms": [
+      "Ccl2",
+      "Sigje",
+      "MCP-1",
+      "Scya2",
+      "C-C motif chemokine 2",
+      "small inducible gene JE",
+      "small inducible cytokine A2",
+      "C-C motif chemokine ligand 2",
+      "chemokine (C-C motif) ligand 2",
+      "monocyte chemotactic protein 1",
+      "monocyte chemoattractant protein 1",
+      "immediate-early serum-responsive protein JE",
+      "immediate-early serum-responsive JE protein",
+      "A6HHD2_RAT C-C motif chemokine (trembl)",
+      "Je",
+      "Mcp1",
+      "rCCL2",
+      "MCP-1 (rat)",
+      "C-C motif chemokine 2 (rat)",
+      "small-inducible cytokine A2 (rat)",
+      "monocyte chemotactic protein 1 (rat)",
+      "CCL2_RAT C-C motif chemokine 2 (sprot)",
+      "monocyte chemoattractant protein 1 (rat)",
+      "immediate-early serum-responsive protein JE (rat)"
+    ],
+    "taxa": [
+      "NCBITaxon:10116"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 3534.9146,
+    "clique_identifier_count": 8
+  },
+  {
+    "curie": "NCBIGene:100981087",
+    "label": "CCL2",
+    "highlighting": {},
+    "synonyms": [
+      "CCL2",
+      "C-C motif chemokine 2",
+      "A0A2R9ARC2_PANPA C-C motif chemokine (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9597"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 3130.5977,
+    "clique_identifier_count": 6
+  },
+  {
+    "curie": "NCBIGene:281043",
+    "label": "CCL2",
+    "highlighting": {},
+    "synonyms": [
+      "MCP1",
+      "CCL2",
+      "SCYA2",
+      "MCP-1",
+      "MCP1A",
+      "MCP-1A",
+      "C-C motif chemokine 2",
+      "small-inducible cytokine A2",
+      "acidic seminal fluid protein",
+      "monocyte chemotactic protein 1",
+      "monocyte chemotactic protein 1A",
+      "monocyte chemoattractant protein 1",
+      "CCL2_BOVIN C-C motif chemokine 2 (sprot)"
+    ],
+    "taxa": [
+      "NCBITaxon:9913"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2882.5986,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:748205",
+    "label": "CCL2",
+    "highlighting": {},
+    "synonyms": [
+      "CCL2",
+      "C-C motif chemokine 2",
+      "small inducible cytokine A2",
+      "C-C motif chemokine ligand 2",
+      "chemokine (C-C motif) ligand 2",
+      "H2QCN3_PANTR C-C motif chemokine (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9598"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2882.5986,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:100135494",
+    "label": "Ccl2",
+    "highlighting": {},
+    "synonyms": [
+      "MCP1",
+      "Ccl2",
+      "SCYA2",
+      "MCP-1",
+      "C-C motif chemokine 2",
+      "small-inducible cytokine A2",
+      "monocyte chemotactic protein 1",
+      "monocyte chemoattractant protein-1",
+      "CCL2_CAVPO C-C motif chemokine 2 (sprot)"
+    ],
+    "taxa": [
+      "NCBITaxon:10141"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2882.5986,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:100387612",
+    "label": "CCL2",
+    "highlighting": {},
+    "synonyms": [
+      "CCL2",
+      "C-C motif chemokine 2",
+      "chemokine (C-C motif) ligand 2",
+      "A0A5F4WHC5_CALJA C-C motif chemokine (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9483"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2882.5986,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:105485162",
+    "label": "CCL2",
+    "highlighting": {},
+    "synonyms": [
+      "CCL2",
+      "C-C motif chemokine 2",
+      "monocyte chemoattractant protein-1",
+      "Q6XVN5_MACNE C-C motif chemokine (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9545"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2882.5986,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:105508744",
+    "label": "CCL2",
+    "highlighting": {},
+    "synonyms": [
+      "CCL2",
+      "C-C motif chemokine 2",
+      "A0A2K5HPS3_COLAP C-C motif chemokine (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:336983"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2882.5986,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:105530865",
+    "label": "CCL2",
+    "highlighting": {},
+    "synonyms": [
+      "CCL2",
+      "C-C motif chemokine 2",
+      "A0A2K5YU85_MANLE C-C motif chemokine (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9568"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2882.5986,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:105589372",
+    "label": "CCL2",
+    "highlighting": {},
+    "synonyms": [
+      "CCL2",
+      "C-C motif chemokine 2",
+      "A0A2K5NYE4_CERAT C-C motif chemokine (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9531"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2882.5986,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:108308445",
+    "label": "CCL2",
+    "highlighting": {},
+    "synonyms": [
+      "CCL2",
+      "C-C motif chemokine 2",
+      "A0A2K5PJT1_CEBIM C-C motif chemokine (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:2715852"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2882.5986,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:108541409",
+    "label": "CCL2",
+    "highlighting": {},
+    "synonyms": [
+      "CCL2",
+      "C-C motif chemokine 2",
+      "A0A2K6M922_RHIBE C-C motif chemokine (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:61621"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2882.5986,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:112609760",
+    "label": "CCL2",
+    "highlighting": {},
+    "synonyms": [
+      "CCL2",
+      "C-C motif chemokine 2",
+      "A0A8D2FD90_THEGE C-C motif chemokine (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9565"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2882.5986,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:403981",
+    "label": "CCL2",
+    "highlighting": {},
+    "synonyms": [
+      "CCL2",
+      "MCP-1",
+      "C-C motif chemokine 2",
+      "small-inducible cytokine A2",
+      "C-C motif chemokine ligand 2",
+      "chemokine (C-C motif) ligand 2",
+      "monocyte chemotactic protein 1",
+      "monocyte chemoattractant protein-1",
+      "CCL2_CANLF C-C motif chemokine 2 (sprot)"
+    ],
+    "taxa": [
+      "NCBITaxon:9615"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2230.2827,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "NCBIGene:574138",
+    "label": "CCL2",
+    "highlighting": {},
+    "synonyms": [
+      "CCL2",
+      "MCP-1",
+      "chemokine CCL2/MCP-1",
+      "C-C motif chemokine 2",
+      "small-inducible cytokine A2",
+      "C-C motif chemokine ligand 2",
+      "monocyte chemotactic protein 1",
+      "monocyte chemoattractant protein-1",
+      "CCL2_MACMU C-C motif chemokine 2 (sprot)",
+      "Q71ME7_MACMU C-C motif chemokine (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9544"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2230.2827,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "NCBIGene:100009130",
+    "label": "CCL2",
+    "highlighting": {},
+    "synonyms": [
+      "CCL2",
+      "MCP-1",
+      "C-C motif chemokine 2",
+      "small-inducible cytokine A2",
+      "monocyte chemotactic protein 1",
+      "monocyte chemoattractant protein-1",
+      "CCL2_RABIT C-C motif chemokine 2 (sprot)"
+    ],
+    "taxa": [
+      "NCBITaxon:9986"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2230.2827,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "NCBIGene:100034136",
+    "label": "CCL2",
+    "highlighting": {},
+    "synonyms": [
+      "MCP1",
+      "CCL2",
+      "SCYA2",
+      "MCP-1",
+      "C-C motif chemokine 2",
+      "small-inducible cytokine A2",
+      "monocyte chemotactic protein 1",
+      "monocyte chemoattractant protein 1",
+      "B1AB87_HORSE C-C motif chemokine (trembl)",
+      "CCL2_HORSE C-C motif chemokine 2 (sprot)"
+    ],
+    "taxa": [
+      "NCBITaxon:9796"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2230.2827,
+    "clique_identifier_count": 3
+  }
+]

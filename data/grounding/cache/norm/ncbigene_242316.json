@@ -1,0 +1,69 @@
+{
+  "NCBIGene:242316": {
+    "id": {
+      "identifier": "NCBIGene:242316",
+      "label": "Gdf6"
+    },
+    "equivalent_identifiers": [
+      {
+        "identifier": "NCBIGene:242316",
+        "label": "Gdf6",
+        "taxa": [
+          "NCBITaxon:10090"
+        ]
+      },
+      {
+        "identifier": "ENSEMBL:ENSMUSG00000051279"
+      },
+      {
+        "identifier": "MGI:95689",
+        "label": "Gdf6"
+      },
+      {
+        "identifier": "UniProtKB:A2AII0",
+        "label": "A2AII0_MOUSE Growth/differentiation factor 6 (trembl)",
+        "taxa": [
+          "NCBITaxon:10090"
+        ]
+      },
+      {
+        "identifier": "UniProtKB:P43028",
+        "label": "GDF6_MOUSE Growth/differentiation factor 6 (sprot)",
+        "taxa": [
+          "NCBITaxon:10090"
+        ]
+      },
+      {
+        "identifier": "PR:P43028",
+        "label": "growth/differentiation factor 6 (mouse)"
+      },
+      {
+        "identifier": "ENSEMBL:ENSMUSP00000062884"
+      },
+      {
+        "identifier": "ENSEMBL:ENSMUSP00000062884.3"
+      }
+    ],
+    "taxa": [
+      "NCBITaxon:10090"
+    ],
+    "type": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "information_content": 83.6
+  }
+}

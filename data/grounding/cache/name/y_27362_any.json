@@ -1,0 +1,595 @@
+[
+  {
+    "curie": "CHEBI:31246",
+    "label": "Y 25130",
+    "highlighting": {},
+    "synonyms": [
+      "Y 25130",
+      "Azasetron hydrochloride",
+      "AZASETRON HYDROCHLORIDE",
+      "N-(1-azabicyclo[2.2.2]octan-3-yl)-6-chloro-4-methyl-3-oxo-1,4-benzoxazine-8-carboxamide;hydron;chloride"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:MolecularMixture",
+      "biolink:ChemicalMixture",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 157.36896,
+    "clique_identifier_count": 13
+  },
+  {
+    "curie": "CHEBI:8682",
+    "label": "pyronin Y",
+    "highlighting": {},
+    "synonyms": [
+      "PYRONIN",
+      "Pyronine",
+      "Pyronin G",
+      "Pyronin Y",
+      "pyronin Y",
+      "PYRONIN Y",
+      "C.I. 45005",
+      "PYRONINE Y",
+      "Pyronine Y",
+      "Pyronine G",
+      "Pyronin Yellow",
+      "Pyronine G stain",
+      "Pyronine G stain (substance)",
+      "3,6-Bis(dimethylamino)xanthylium chloride",
+      "Xanthylium, 3,6-bis(dimethylamino)-, chloride",
+      "6-(dimethylamino)-N,N-dimethyl-3H-xanthen-3-iminium chloride"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:MolecularMixture",
+      "biolink:ChemicalMixture",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 142.98828,
+    "clique_identifier_count": 10
+  },
+  {
+    "curie": "CHEBI:92773",
+    "label": "Y 27632",
+    "highlighting": {},
+    "synonyms": [
+      "Y27632",
+      "Y-27632",
+      "Y 27632",
+      "Y-27632 dihydrochloride",
+      "4-[(1R)-1-aminoethyl]-N-pyridin-4-yl-1-cyclohexanecarboxamide"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 137.30487,
+    "clique_identifier_count": 9
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:132781",
+    "label": "Y 26611",
+    "highlighting": {},
+    "synonyms": [
+      "Y 26611",
+      "Y-26611",
+      "7-AMMCIFQ",
+      "7-(2-aminomethylmorpholino)-1-cyclopropyl-6,8-difluoro-1,4-dihydro-4-oxo-3-quinolinecarboxylic acid"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 137.30487,
+    "clique_identifier_count": 9
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:24868177",
+    "label": "neuropeptide Y",
+    "highlighting": {},
+    "synonyms": [
+      "CID 77068007",
+      "neuropeptide Y",
+      "NPY (human, rat)",
+      "[3H]neuropeptide Y",
+      "human Neuropeptide Y",
+      "HUMAN NEUROPEPTIDE Y",
+      "[3H]NPY (human, mouse, rat)",
+      "[125I]NPY (human, mouse, rat)"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 137.30487,
+    "clique_identifier_count": 9
+  },
+  {
+    "curie": "MONDO:0010763",
+    "label": "spermatogenic failure, Y-linked, 1",
+    "highlighting": {},
+    "synonyms": [
+      "SPGFY1",
+      "HYPOSPERMATOGENESIS",
+      "Hypospermatogenesis",
+      "hypospermatogenesis",
+      "Hypospermatogenesis (finding)",
+      "Y-linked spermatogenic failure 1",
+      "type I Sertoli cell-only syndrome",
+      "SERTOLI CELL-ONLY SYNDROME, TYPE I",
+      "Sertoli cell-only syndrome, type 2",
+      "Sertoli cell-only syndrome, type 1",
+      "SPERMATOGENIC FAILURE, Y-LINKED, 1",
+      "Sertoli Cell-Only Syndrome, Type I",
+      "spermatogenic failure, Y-linked, 1",
+      "Y-linked Sertoli cell-only syndrome",
+      "Sertoli Cell-Only Syndrome, Type II",
+      "SERTOLI CELL-ONLY SYNDROME, TYPE II",
+      "Sertoli cell-only syndrome, Y-linked",
+      "SERTOLI CELL-ONLY SYNDROME, Y-LINKED",
+      "INCOMPLETE SERTOLI CELL-ONLY SYNDROME",
+      "Incomplete Sertoli Cell-Only Syndrome",
+      "incomplete Sertoli cell-only syndrome",
+      "spermatogenic failure, Y-linked, type 1",
+      "spermatogenic failure, Y-linked, 1, Y-linked"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:Disease",
+      "biolink:DiseaseOrPhenotypicFeature",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity"
+    ],
+    "score": 135.01454,
+    "clique_identifier_count": 15
+  },
+  {
+    "curie": "NCBIGene:15135",
+    "label": "Hbb-y",
+    "highlighting": {},
+    "synonyms": [
+      "Ey",
+      "Hby",
+      "Hbb-y",
+      "epsilon Y globin",
+      "epsilon-Y2-globin",
+      "hemoglobin epsilon-Y2 chain",
+      "hemoglobin subunit epsilon-Y2",
+      "hemoglobin Y, beta-like embryonic chain",
+      "mHbb-y",
+      "epsilon-Y2-globin (mouse)",
+      "hemoglobin epsilon-Y2 chain (mouse)",
+      "hemoglobin subunit epsilon-Y2 (mouse)",
+      "HBE_MOUSE Hemoglobin subunit epsilon-Y2 (sprot)",
+      "Q9CR49_MOUSE Globin b1 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:10090"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 131.02214,
+    "clique_identifier_count": 8
+  },
+  {
+    "curie": "CHEBI:79404",
+    "label": "Y 23684",
+    "highlighting": {},
+    "synonyms": [
+      "Y 23684",
+      "Y-23684",
+      "2-(4-Chlorophenyl)-5,6-dihydro-[1]benzothepino[5,4-c]pyridazin-3(2H)-one-7-oxide",
+      "(1)Benzothiepino(5,4-c)pyridazin-3(2H)-one, 2-(4-chlorophenyl)-5,6-dihydro-, 7-oxide"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 131.02214,
+    "clique_identifier_count": 8
+  },
+  {
+    "curie": "CHEBI:91412",
+    "label": "Y-33075",
+    "highlighting": {},
+    "synonyms": [
+      "Y33075",
+      "Y-33075",
+      "Y-39983",
+      "4-[(1R)-1-aminoethyl]-N-(1H-pyrrolo[2,3-b]pyridin-4-yl)benzamide"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 131.02214,
+    "clique_identifier_count": 8
+  },
+  {
+    "curie": "CHEBI:92788",
+    "label": "Y 26763",
+    "highlighting": {},
+    "synonyms": [
+      "Y-26763",
+      "Y 26763",
+      "N-[(3S,4R)-6-cyano-3-hydroxy-2,2-dimethyl-3,4-dihydro-2H-1-benzopyran-4-yl]-N-hydroxyacetamide",
+      "Acetamide, N-(6-cyano-3,4-dihydro-3-hydroxy-2,2-dimethyl-2H-1-benzopyran-4-yl)-N-hydroxy-, (3S-trans)-"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 131.02214,
+    "clique_identifier_count": 8
+  },
+  {
+    "curie": "UniProtKB:A0A8D1JXD6",
+    "label": "A0A8D1JXD6_PIG Nuclear transcription factor Y subunit (trembl)",
+    "highlighting": {},
+    "synonyms": [
+      "A0A8D1JXD6_PIG Nuclear transcription factor Y subunit (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9823"
+    ],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 129.98987,
+    "clique_identifier_count": 19
+  },
+  {
+    "curie": "UniProtKB:P17095-1",
+    "label": "high mobility group protein HMG-I/HMG-Y isoform HMG-Y (mouse)",
+    "highlighting": {},
+    "synonyms": [
+      "mHMGA1/iso:HMG-Y",
+      "high mobility group protein HMG-I/HMG-Y isoform HMG-Y (mouse)",
+      "high mobility group protein HMG-I/HMG-Y isoform HMGI-E (mouse)",
+      "high mobility group protein HMG-I/HMG-Y isoform HMGA1b (mouse)"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 127.32206,
+    "clique_identifier_count": 12
+  },
+  {
+    "curie": "UniProtKB:A0A4X1W6A0",
+    "label": "A0A4X1W6A0_PIG Nuclear transcription factor Y subunit gamma (trembl)",
+    "highlighting": {},
+    "synonyms": [
+      "A0A4X1W6A0_PIG Nuclear transcription factor Y subunit gamma (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9823"
+    ],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 127.19767,
+    "clique_identifier_count": 21
+  },
+  {
+    "curie": "UniProtKB:A0A8D1WZY0",
+    "label": "A0A8D1WZY0_PIG Y+L amino acid transporter 2 (trembl)",
+    "highlighting": {},
+    "synonyms": [
+      "A0A8D1WZY0_PIG Y+L amino acid transporter 2 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9823"
+    ],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 127.19767,
+    "clique_identifier_count": 21
+  },
+  {
+    "curie": "NCBIGene:30980",
+    "label": "y",
+    "highlighting": {},
+    "synonyms": [
+      "Y",
+      "y",
+      "T6",
+      "y-PA",
+      "CG3757",
+      "yellow",
+      "CG3757-PA",
+      "EG:125H10.2",
+      "Dmel\\CG3757",
+      "A0A4V1G8Q9_DROME Protein yellow (trembl)",
+      "fly-y",
+      "protein yellow (fruit fly)",
+      "YELL_DROME Protein yellow (sprot)"
+    ],
+    "taxa": [
+      "NCBITaxon:7227"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 125.42389,
+    "clique_identifier_count": 6
+  },
+  {
+    "curie": "UniProtKB:A0A8D1QSK6",
+    "label": "A0A8D1QSK6_PIG Y-box binding protein 3 (trembl)",
+    "highlighting": {},
+    "synonyms": [
+      "A0A8D1QSK6_PIG Y-box binding protein 3 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9823"
+    ],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 125.4181,
+    "clique_identifier_count": 17
+  },
+  {
+    "curie": "UniProtKB:A0A8D0QUK8",
+    "label": "A0A8D0QUK8_PIG Y-box binding protein 1 (trembl)",
+    "highlighting": {},
+    "synonyms": [
+      "A0A8D0QUK8_PIG Y-box binding protein 1 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9823"
+    ],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 125.4181,
+    "clique_identifier_count": 17
+  },
+  {
+    "curie": "UniProtKB:O35698",
+    "label": "RBMY_MOUSE RNA-binding motif protein, Y chromosome (sprot)",
+    "highlighting": {},
+    "synonyms": [
+      "Rbm",
+      "Rbmy",
+      "mRbmy",
+      "Rbmy1a1",
+      "RNA-binding motif protein 1 (mouse)",
+      "Y chromosome RNA recognition motif 1 (mouse)",
+      "RNA-binding motif protein, Y chromosome (mouse)",
+      "RBMY_MOUSE RNA-binding motif protein, Y chromosome (sprot)",
+      "RNA-binding motif protein, Y chromosome, family 1 member A1 (mouse)"
+    ],
+    "taxa": [
+      "NCBITaxon:10090"
+    ],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 125.283356,
+    "clique_identifier_count": 20
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:16132350",
+    "label": "Neuropeptide Y",
+    "highlighting": {},
+    "synonyms": [
+      "Neuropeptide Y",
+      "NEUROPEPTIDE-Y",
+      "Ypskpdnpgedapaedlaryysalrhyinlitrqry-NH2",
+      "Neuropeptide Y (porcine) trifluoroacetate salt H-Tyr-Pro-Ser-Lys-Pro-Asp-Asn-Pro-Gly-Glu-Asp-Ala-Pro-Ala-Glu-Asp-Leu-Ala-Arg-Tyr-Tyr-Ser-Ala-Leu-Arg-His-Tyr-Ile-Asn-Leu-Ile-Thr-Arg-Gln-Arg-Tyr-NH2 trifluoroacetate salt"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 123.99866,
+    "clique_identifier_count": 7
+  },
+  {
+    "curie": "UNII:3304VH0J6B",
+    "label": "Y-39983",
+    "highlighting": {},
+    "synonyms": [
+      "Y-39983"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:MolecularMixture",
+      "biolink:ChemicalMixture",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 123.99866,
+    "clique_identifier_count": 7
+  }
+]

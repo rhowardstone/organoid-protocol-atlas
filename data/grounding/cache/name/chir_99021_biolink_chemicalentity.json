@@ -1,0 +1,490 @@
+[
+  {
+    "curie": "CHEBI:91091",
+    "label": "CHIR 99021",
+    "highlighting": {},
+    "synonyms": [
+      "CT-99021",
+      "CHIR-911",
+      "CHIR99021",
+      "Chir99021",
+      "CHIR 99021",
+      "CHIR-99021",
+      "Chir-99021",
+      "Chir 99021",
+      "LADUVIGLUSIB",
+      "laduviglusib",
+      "Laduviglusib",
+      "6-((2-((4-(2,4-Dichlorophenyl)-5-(4-methyl-1H-imidazol-2-yl)pyrimidin-2-yl)amino)ethyl)amino)nicotinonitrile",
+      "6-[(2-{[4-(2,4-dichlorophenyl)-5-(4-methyl-1H-imidazol-2-yl)pyrimidin-2-yl]amino}ethyl)amino]pyridine-3-carbonitrile"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 1910.7047,
+    "clique_identifier_count": 11
+  },
+  {
+    "curie": "UNII:X6BE5J2G31",
+    "label": "CHIR 99021 dihydrochloride",
+    "highlighting": {},
+    "synonyms": [
+      "CHIR 99021 dihydrochloride",
+      "LADUVIGLUSIB DIHYDROCHLORIDE"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:MolecularMixture",
+      "biolink:ChemicalMixture",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 1151.3579,
+    "clique_identifier_count": 4
+  },
+  {
+    "curie": "UNII:5AW8G37ZX5",
+    "label": "CHIR-99021 HCl",
+    "highlighting": {},
+    "synonyms": [
+      "CHIR-99021 HCl",
+      "LADUVIGLUSIB HYDROCHLORIDE"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:MolecularMixture",
+      "biolink:ChemicalMixture",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 1151.3579,
+    "clique_identifier_count": 4
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:169435932",
+    "label": "CHIR-99021-d4",
+    "highlighting": {},
+    "synonyms": [
+      "CHIR-99021-d4"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 785.924,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "UNII:5K64W8EU3E",
+    "label": "CHIR-124",
+    "highlighting": {},
+    "synonyms": [
+      "Chir-124",
+      "CHIR-124"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 244.53845,
+    "clique_identifier_count": 8
+  },
+  {
+    "curie": "CHEBI:134107",
+    "label": "CHIR-090",
+    "highlighting": {},
+    "synonyms": [
+      "Chir-090",
+      "CHIR 090",
+      "CHIR-090",
+      "N-{(1S,2R)-2-hydroxy-1-[(hydroxyamino)carbonyl]propyl}-4-{[4-(morpholin-4-ylmethyl)phenyl]ethynyl}benzamide",
+      "N-[(2S,3R)-3-hydroxy-1-(hydroxyamino)-1-oxobutan-2-yl]-4-({4-[(morpholin-4-yl)methyl]phenyl}ethynyl)benzamide"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 231.42987,
+    "clique_identifier_count": 7
+  },
+  {
+    "curie": "CHEBI:167657",
+    "label": "CHIR-98014",
+    "highlighting": {},
+    "synonyms": [
+      "CHIR98014",
+      "CHIR 98014",
+      "CHIR-98014",
+      "6-N-[2-[[4-(2,4-dichlorophenyl)-5-imidazol-1-ylpyrimidin-2-yl]amino]ethyl]-3-nitropyridine-2,6-diamine",
+      "N-6-[2-[[4-(2,4-dichlorophenyl)-5-(1H-imidazol-1-yl)-2-pyrimidinyl]amino]ethyl]-3-nitro-2,6-pyridinediamine",
+      "N(6)-(2-{[4-(2,4-dichlorophenyl)-5-(1H-imidazol-1-yl)pyrimidin-2-yl]amino}ethyl)-3-nitropyridine-2,6-diamine"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 216.5686,
+    "clique_identifier_count": 6
+  },
+  {
+    "curie": "UNII:CMQ1L0E91Y",
+    "label": "Chir-98023",
+    "highlighting": {},
+    "synonyms": [
+      "Chir-98023",
+      "CHIR-98023"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 199.41252,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:133041",
+    "label": "CHIR 2279",
+    "highlighting": {},
+    "synonyms": [
+      "Chir 2279",
+      "CHIR 2279"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 179.12117,
+    "clique_identifier_count": 4
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:133042",
+    "label": "CHIR 4531",
+    "highlighting": {},
+    "synonyms": [
+      "Chir 4531",
+      "CHIR 4531"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 179.12117,
+    "clique_identifier_count": 4
+  },
+  {
+    "curie": "UNII:43I7U24XMF",
+    "label": "Chir-29498",
+    "highlighting": {},
+    "synonyms": [
+      "CHIR-29498",
+      "Chir-29498"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 179.12117,
+    "clique_identifier_count": 4
+  },
+  {
+    "curie": "UNII:E4UVE212VL",
+    "label": "CHIR-21208",
+    "highlighting": {},
+    "synonyms": [
+      "CHIR-21208",
+      "Acetamide, N-(2-amino-2-oxoethyl)-2-methoxy-N-(9-methyl-6-(((4-(trifluoromethyl)phenyl)methyl)amino)-9H-purin-2-yl)-"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 179.12117,
+    "clique_identifier_count": 4
+  },
+  {
+    "curie": "GTOPDB:9365",
+    "label": "CHIR-124",
+    "highlighting": {},
+    "synonyms": [
+      "CHIR-124"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 122.269226,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "MESH:C473710",
+    "label": "Chir 98014",
+    "highlighting": {},
+    "synonyms": [
+      "Chir98014",
+      "Chir 98014",
+      "Chir-98014"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 122.269226,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:136258312",
+    "label": "CHIR-258 (TKI-258,Dovitinib)",
+    "highlighting": {},
+    "synonyms": [
+      "CHIR-258 (TKI-258,Dovitinib)"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:MolecularMixture",
+      "biolink:ChemicalMixture",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 99.8486,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "UMLS:C2930694",
+    "label": "CT 99021",
+    "highlighting": {},
+    "synonyms": [
+      "CT99021",
+      "CT 99021",
+      "CT-99021"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 89.41223,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "UNII:I35H55G906",
+    "label": "Dovitinib",
+    "highlighting": {},
+    "synonyms": [
+      "dovitinib",
+      "DOVITINIB",
+      "Dovitinib",
+      "CHIR-258NVP-tki258"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 83.26469,
+    "clique_identifier_count": 10
+  },
+  {
+    "curie": "UMLS:C3537162",
+    "label": "CHIR-265",
+    "highlighting": {},
+    "synonyms": [
+      "CHIR-265"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 77.14329,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "UMLS:C1568328",
+    "label": "CHIR 258",
+    "highlighting": {},
+    "synonyms": [
+      "CHIR258",
+      "CHIR-258",
+      "CHIR 258"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 77.14329,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "MESH:C403318",
+    "label": "ChiR protein, Streptomyces",
+    "highlighting": {},
+    "synonyms": [
+      "ChiR protein, Streptomyces"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 71.77129,
+    "clique_identifier_count": 1
+  }
+]

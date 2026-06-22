@@ -1,0 +1,729 @@
+[
+  {
+    "curie": "NCBIGene:403433",
+    "label": "MSTN",
+    "highlighting": {},
+    "synonyms": [
+      "GDF8",
+      "MSTN",
+      "GDF-8",
+      "myostatin",
+      "growth/differentiation factor 8",
+      "GDF8_CANLF Growth/differentiation factor 8 (sprot)"
+    ],
+    "taxa": [
+      "NCBITaxon:9615"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 628.0946,
+    "clique_identifier_count": 12
+  },
+  {
+    "curie": "NCBIGene:100860887",
+    "label": "MSTN",
+    "highlighting": {},
+    "synonyms": [
+      "MSTN",
+      "GDF8",
+      "GDF-8",
+      "growth/differentiation factor 8",
+      "A5YU17_CAPHI Growth/differentiation factor 8 (trembl)",
+      "GDF8_CAPHI Growth/differentiation factor 8 (sprot)"
+    ],
+    "taxa": [
+      "NCBITaxon:9925"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 587.1871,
+    "clique_identifier_count": 10
+  },
+  {
+    "curie": "NCBIGene:443449",
+    "label": "MSTN",
+    "highlighting": {},
+    "synonyms": [
+      "GDF8",
+      "MSTN",
+      "GDF-8",
+      "growth differentiation factor 8",
+      "growth/differentiation factor 8",
+      "A0A0A0YQ60_SHEEP Growth/differentiation factor 8 (trembl)",
+      "GDF8_SHEEP Growth/differentiation factor 8 (sprot)",
+      "Q19BJ5_SHEEP Growth/differentiation factor 8 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9940"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 466.75977,
+    "clique_identifier_count": 10
+  },
+  {
+    "curie": "NCBIGene:710114",
+    "label": "MSTN",
+    "highlighting": {},
+    "synonyms": [
+      "GDF8",
+      "MSTN",
+      "GDF-8",
+      "myostatin",
+      "growth/differentiation factor 8",
+      "GDF8_MACMU Growth/differentiation factor 8 (sprot)"
+    ],
+    "taxa": [
+      "NCBITaxon:9544"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 438.75894,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:100303659",
+    "label": "MSTN",
+    "highlighting": {},
+    "synonyms": [
+      "GDF8",
+      "MSTN",
+      "GDF-8",
+      "growth/differentiation factor-8",
+      "growth/differentiation factor 8",
+      "GDF8_MELGA Growth/differentiation factor 8 (sprot)"
+    ],
+    "taxa": [
+      "NCBITaxon:9103"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 438.75894,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:281187",
+    "label": "MSTN",
+    "highlighting": {},
+    "synonyms": [
+      "GDF8",
+      "MSTN",
+      "GDF-8",
+      "myostatin",
+      "growth/differentiation factor 8",
+      "C6KEF7_BOVIN Growth/differentiation factor 8 (trembl)",
+      "GDF8_BOVIN Growth/differentiation factor 8 (sprot)"
+    ],
+    "taxa": [
+      "NCBITaxon:9913"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 422.05963,
+    "clique_identifier_count": 6
+  },
+  {
+    "curie": "NCBIGene:100491923",
+    "label": "mstn.2",
+    "highlighting": {},
+    "synonyms": [
+      "gdf8",
+      "mstn",
+      "mstn.2",
+      "myostatin, gene 2",
+      "growth/differentiation factor 8",
+      "A0A803JZQ6_XENTR Growth/differentiation factor 8 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:8364"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 394.11276,
+    "clique_identifier_count": 4
+  },
+  {
+    "curie": "NCBIGene:100968757",
+    "label": "MSTN",
+    "highlighting": {},
+    "synonyms": [
+      "GDF8",
+      "MSTN",
+      "GDF-8",
+      "Growth/differentiation factor 8",
+      "growth/differentiation factor 8",
+      "GDF8_PANPA Growth/differentiation factor 8 (sprot)"
+    ],
+    "taxa": [
+      "NCBITaxon:9597"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 394.11276,
+    "clique_identifier_count": 4
+  },
+  {
+    "curie": "NCBIGene:102141305",
+    "label": "MSTN",
+    "highlighting": {},
+    "synonyms": [
+      "GDF8",
+      "MSTN",
+      "GDF-8",
+      "Growth/differentiation factor 8",
+      "growth/differentiation factor 8",
+      "GDF8_MACFA Growth/differentiation factor 8 (sprot)"
+    ],
+    "taxa": [
+      "NCBITaxon:9541"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 394.11276,
+    "clique_identifier_count": 4
+  },
+  {
+    "curie": "NCBIGene:102414042",
+    "label": "MSTN",
+    "highlighting": {},
+    "synonyms": [
+      "MSTN",
+      "GDF8",
+      "GDF-8",
+      "growth/differentiation factor 8",
+      "GDF8_BUBBU Growth/differentiation factor 8 (sprot)"
+    ],
+    "taxa": [
+      "NCBITaxon:89462"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 389.74933,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "NCBIGene:108701488",
+    "label": "mstn.2.L",
+    "highlighting": {},
+    "synonyms": [
+      "gdf8",
+      "mstn.2.L",
+      "myostatin, gene 2 L homeolog",
+      "growth/differentiation factor 8",
+      "A0A1L8EX41_XENLA Growth/differentiation factor 8 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:8355"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 389.74933,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "NCBIGene:100118233",
+    "label": "Mstn",
+    "highlighting": {},
+    "synonyms": [
+      "Mstn",
+      "Gdf8"
+    ],
+    "taxa": [
+      "NCBITaxon:7425"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 350.7023,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "NCBIGene:105230782",
+    "label": "myo",
+    "highlighting": {},
+    "synonyms": [
+      "myo",
+      "GDF8",
+      "bone morphogenetic protein 6",
+      "Growth/differentiation factor 8",
+      "uncharacterized protein LOC105230782",
+      "A0A034WL39_BACDO Growth/differentiation factor 8 (trembl)",
+      "A0A034WL45_BACDO Uncharacterized protein LOC105230782 isoform X2 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:27457"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 349.08023,
+    "clique_identifier_count": 4
+  },
+  {
+    "curie": "NCBIGene:108703078",
+    "label": "mstn.2.S",
+    "highlighting": {},
+    "synonyms": [
+      "gdf8",
+      "mstn.2.S",
+      "myostatin, gene 2 S homeolog",
+      "growth differentiation factor 8",
+      "growth/differentiation factor 8",
+      "A0A1L8EPU9_XENLA Growth/differentiation factor 8 (trembl)",
+      "A0A974BV34_XENLA Growth/differentiation factor 8 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:8355"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 349.08023,
+    "clique_identifier_count": 4
+  },
+  {
+    "curie": "NCBIGene:470605",
+    "label": "MSTN",
+    "highlighting": {},
+    "synonyms": [
+      "GDF8",
+      "MSTN",
+      "GDF-8",
+      "myostatin",
+      "growth/differentiation factor 8",
+      "GDF8_PANTR Growth/differentiation factor 8 (sprot)"
+    ],
+    "taxa": [
+      "NCBITaxon:9598"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 339.47028,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "NCBIGene:101135255",
+    "label": "MSTN",
+    "highlighting": {},
+    "synonyms": [
+      "GDF8",
+      "MSTN",
+      "GDF-8",
+      "Growth/differentiation factor 8",
+      "growth/differentiation factor 8",
+      "GDF8_GORGO Growth/differentiation factor 8 (sprot)"
+    ],
+    "taxa": [
+      "NCBITaxon:9595"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 339.47028,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "NCBIGene:112922930",
+    "label": "MSTN",
+    "highlighting": {},
+    "synonyms": [
+      "GDF8",
+      "MSTN",
+      "GDF-8",
+      "Growth/differentiation factor 8",
+      "growth/differentiation factor 8",
+      "C5IUP0_VULVU Growth/differentiation factor 8 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9627"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 339.47028,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "NCBIGene:17700",
+    "label": "Mstn",
+    "highlighting": {},
+    "synonyms": [
+      "Gdf8",
+      "Mstn",
+      "Cmpt",
+      "myostatin",
+      "growth/differentiation factor 8",
+      "mMSTN",
+      "GDF-8 (mouse)",
+      "myostatin (mouse)",
+      "growth/differentiation factor 8 (mouse)",
+      "GDF8_MOUSE Growth/differentiation factor 8 (sprot)",
+      "Q540E2_MOUSE Growth/differentiation factor 8 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:10090"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 327.07758,
+    "clique_identifier_count": 8
+  },
+  {
+    "curie": "NCBIGene:29152",
+    "label": "Mstn",
+    "highlighting": {},
+    "synonyms": [
+      "Gdf8",
+      "Mstn",
+      "GDF-8",
+      "myostatin",
+      "growth/differentiation factor 8",
+      "A6INV1_RAT Growth/differentiation factor 8 (trembl)",
+      "rMSTN",
+      "GDF-8 (rat)",
+      "myostatin (rat)",
+      "growth/differentiation factor 8 (rat)",
+      "GDF8_RAT Growth/differentiation factor 8 (sprot)"
+    ],
+    "taxa": [
+      "NCBITaxon:10116"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 327.07758,
+    "clique_identifier_count": 8
+  },
+  {
+    "curie": "NCBIGene:399534",
+    "label": "MSTN",
+    "highlighting": {},
+    "synonyms": [
+      "GDF8",
+      "MSTN",
+      "GDF-8",
+      "GDF8:MSTN",
+      "myostatin",
+      "growth differentiation factor 8",
+      "growth/differentiation factor 8",
+      "Q6SVB3_PIG Growth/differentiation factor 8 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9823"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 313.28345,
+    "clique_identifier_count": 4
+  }
+]

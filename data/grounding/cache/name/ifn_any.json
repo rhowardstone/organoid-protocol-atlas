@@ -1,0 +1,675 @@
+[
+  {
+    "curie": "GTOPDB:4968",
+    "label": "IFN-γ",
+    "highlighting": {},
+    "synonyms": [
+      "IFN-γ"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 1513.5267,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "NCBIGene:100310806",
+    "label": "IFN-ALPHAOMEGA",
+    "highlighting": {},
+    "synonyms": [
+      "IFN-ALPHAOMEGA",
+      "interferon-alphaomega",
+      "A0A8D0YZ30_PIG Uncharacterized protein (trembl)",
+      "C8CKA9_PIG Interferon-alphaomega (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9823"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 316.3849,
+    "clique_identifier_count": 27
+  },
+  {
+    "curie": "NCBIGene:100154098",
+    "label": "IFN-OMEGA-5",
+    "highlighting": {},
+    "synonyms": [
+      "IFN-OMEGA-5",
+      "interferon omega 7",
+      "A0A4X1WC82_PIG Uncharacterized protein (trembl)",
+      "B3VSD1_PIG Interferon omega 7 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9823"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 300.44745,
+    "clique_identifier_count": 29
+  },
+  {
+    "curie": "NCBIGene:100310807",
+    "label": "IFN-DELTA-2",
+    "highlighting": {},
+    "synonyms": [
+      "spI IFN",
+      "IFN-delta-1",
+      "IFN-DELTA-2",
+      "interferon-delta-2",
+      "interferon-delta-1",
+      "short type I interferon",
+      "A0A4X1WBY1_PIG Interferon-delta-2 (trembl)",
+      "A0A4X1WBZ2_PIG Uncharacterized protein (trembl)",
+      "C8CKB2_PIG Interferon-delta-2 (trembl)",
+      "Q29115_PIG Interferon-delta-1 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9823"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 280.73587,
+    "clique_identifier_count": 23
+  },
+  {
+    "curie": "NCBIGene:100154912",
+    "label": "IFN-OMEGA-6",
+    "highlighting": {},
+    "synonyms": [
+      "IFN-OMEGA-6",
+      "interferon omega 6",
+      "A0A8D1NAU2_PIG Interferon omega 6 (trembl)",
+      "C8CKC9_PIG Interferon omega-1 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9823"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 264.63037,
+    "clique_identifier_count": 19
+  },
+  {
+    "curie": "NCBIGene:100303727",
+    "label": "IFN-DELTA-7",
+    "highlighting": {},
+    "synonyms": [
+      "IFN-DELTA-7",
+      "interferon delta 7",
+      "A0A4X1W6K1_PIG Uncharacterized protein (trembl)",
+      "C8CKB7_PIG Interferon-delta-7 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9823"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 264.63037,
+    "clique_identifier_count": 19
+  },
+  {
+    "curie": "NCBIGene:100153693",
+    "label": "IFN-DELTA-8",
+    "highlighting": {},
+    "synonyms": [
+      "IFN-DELTA-8",
+      "uncharacterized protein LOC100153693",
+      "A0A4X1WCC1_PIG Interferon-delta-8 (trembl)",
+      "I3LKN2_PIG Interferon-delta-8 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9823"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 255.32326,
+    "clique_identifier_count": 17
+  },
+  {
+    "curie": "NCBIGene:100156149",
+    "label": "IFN-OMEGA-4",
+    "highlighting": {},
+    "synonyms": [
+      "IFN-OMEGA-4",
+      "interferon omega 4",
+      "A0A4X1WC30_PIG Interferon omega 4 (trembl)",
+      "C8CKC7_PIG Interferon omega 3 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9823"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 255.32326,
+    "clique_identifier_count": 17
+  },
+  {
+    "curie": "NCBIGene:100152100",
+    "label": "IFN-ALPHA-13",
+    "highlighting": {},
+    "synonyms": [
+      "IFN-ALPHA-13",
+      "interferon-alpha-13",
+      "A0A8D1PXM7_PIG Uncharacterized protein (trembl)",
+      "C8CKA4_PIG Interferon-alpha-13 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9823"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 219.50618,
+    "clique_identifier_count": 11
+  },
+  {
+    "curie": "NCBIGene:100154938",
+    "label": "IFN-ALPHA-17",
+    "highlighting": {},
+    "synonyms": [
+      "IFNa8",
+      "IFN-ALPHA-17",
+      "interferon-alpha-8",
+      "interferon-alpha-17",
+      "A0A4X1WCB6_PIG Uncharacterized protein (trembl)",
+      "C8CKA8_PIG Interferon-alpha-17 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9823"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 219.50618,
+    "clique_identifier_count": 11
+  },
+  {
+    "curie": "NCBIGene:100157352",
+    "label": "IFN-ALPHA-1",
+    "highlighting": {},
+    "synonyms": [
+      "IFN-ALPHA-1",
+      "interferon-alpha-1",
+      "A0A8D1CD39_PIG Uncharacterized protein (trembl)",
+      "Q304W2_PIG Interferon alpha-1 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9823"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 219.50618,
+    "clique_identifier_count": 11
+  },
+  {
+    "curie": "NCBIGene:100310805",
+    "label": "IFN-ALPHA-4",
+    "highlighting": {},
+    "synonyms": [
+      "IFN-ALPHA-4",
+      "interferon alpha",
+      "interferon alpha-6",
+      "interferon-alpha-4",
+      "interferon alpha-12",
+      "A0A4X1WC24_PIG Interferon-alpha-4 (trembl)",
+      "C8CK95_PIG Interferon-alpha-4 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9823"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 219.50618,
+    "clique_identifier_count": 11
+  },
+  {
+    "curie": "NCBIGene:100156933",
+    "label": "IFN-DELTA-5",
+    "highlighting": {},
+    "synonyms": [
+      "IFN-DELTA-5",
+      "interferon-delta-5",
+      "A0A4X1WC14_PIG Uncharacterized protein (trembl)",
+      "C8CKB5_PIG Interferon-delta-5 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9823"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 203.40067,
+    "clique_identifier_count": 9
+  },
+  {
+    "curie": "NCBIGene:100152132",
+    "label": "IFN-OMEGA-3",
+    "highlighting": {},
+    "synonyms": [
+      "IFN-OMEGA-3",
+      "PoIFN omega 1",
+      "interferon omega 3",
+      "A0A4X1WC26_PIG Uncharacterized protein (trembl)",
+      "Q29085_PIG Interferon omega-1 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9823"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 194.09357,
+    "clique_identifier_count": 8
+  },
+  {
+    "curie": "NCBIGene:100156558",
+    "label": "IFN-DELTA-3",
+    "highlighting": {},
+    "synonyms": [
+      "IFN-DELTA-3",
+      "uncharacterized protein LOC100156558",
+      "A0A8D1XCN5_PIG Uncharacterized protein (trembl)",
+      "C8CKB3_PIG Interferon-delta-3 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9823"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 194.09357,
+    "clique_identifier_count": 8
+  },
+  {
+    "curie": "CHEBI:59271",
+    "label": "γ-iE-DAP",
+    "highlighting": {},
+    "synonyms": [
+      "iE-DAP",
+      "γ-iE-DAP",
+      "gamma-D-Glu-mDAP",
+      "gamma-D-glutamyl-meso-diaminopimelic acid",
+      "(2S,6R)-2-amino-6-(D-gamma-glutamylamino)heptanedioic acid"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 185.30824,
+    "clique_identifier_count": 4
+  },
+  {
+    "curie": "NCBIGene:100153724",
+    "label": "IFN-ALPHA-8",
+    "highlighting": {},
+    "synonyms": [
+      "IFN-ALPHA-8",
+      "interferon alpha",
+      "interferon-alpha-8",
+      "A0A8D0SHB6_PIG Interferon-alpha-8 (trembl)",
+      "Q0GC46_PIG Interferon alpha-5 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9823"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 183.6891,
+    "clique_identifier_count": 7
+  },
+  {
+    "curie": "NCBIGene:100158139",
+    "label": "IFN-DELTA-6",
+    "highlighting": {},
+    "synonyms": [
+      "IFN-DELTA-6",
+      "interferon-delta-6",
+      "A0A4X1WDG0_PIG Uncharacterized protein (trembl)",
+      "C8CKB6_PIG Interferon-delta-6 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9823"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 183.6891,
+    "clique_identifier_count": 7
+  },
+  {
+    "curie": "NCBIGene:100152129",
+    "label": "IFN-DELTA-10",
+    "highlighting": {},
+    "synonyms": [
+      "IFN-DELTA-10",
+      "uncharacterized protein LOC100152129",
+      "C8CKC0_PIG Interferon-delta-10 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9823"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 171.89351,
+    "clique_identifier_count": 6
+  },
+  {
+    "curie": "NCBIGene:100152899",
+    "label": "IFN-DELTA-4",
+    "highlighting": {},
+    "synonyms": [
+      "IFN-DELTA-4",
+      "interferon-delta-4",
+      "C8CKB4_PIG Interferon-delta-4 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9823"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 171.89351,
+    "clique_identifier_count": 6
+  }
+]

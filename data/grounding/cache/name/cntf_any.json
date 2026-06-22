@@ -1,0 +1,691 @@
+[
+  {
+    "curie": "NCBIGene:1270",
+    "label": "CNTF",
+    "highlighting": {},
+    "synonyms": [
+      "CNTF",
+      "HCNTF",
+      "CNTF gene",
+      "CILIARY NEUROTROPHIC FACTOR",
+      "ciliary neurotrophic factor",
+      "Ciliary Neuronotrophic Factor",
+      "hCNTF",
+      "ciliary neurotrophic factor (human)",
+      "CNTF_HUMAN Ciliary neurotrophic factor (sprot)"
+    ],
+    "taxa": [
+      "NCBITaxon:9606"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 3062.778,
+    "clique_identifier_count": 9
+  },
+  {
+    "curie": "NCBIGene:25707",
+    "label": "Cntf",
+    "highlighting": {},
+    "synonyms": [
+      "Cntf",
+      "ciliary neurotropic factor",
+      "ciliary neurotrophic factor",
+      "A6I0E7_RAT Ciliary neurotrophic factor (trembl)",
+      "G3V7M6_RAT Ciliary neurotrophic factor (trembl)",
+      "rCNTF",
+      "CNTF (rat)",
+      "ciliary neurotrophic factor (rat)",
+      "CNTF_RAT Ciliary neurotrophic factor (sprot)"
+    ],
+    "taxa": [
+      "NCBITaxon:10116"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 3062.778,
+    "clique_identifier_count": 9
+  },
+  {
+    "curie": "NCBIGene:12803",
+    "label": "Cntf",
+    "highlighting": {},
+    "synonyms": [
+      "Cntf",
+      "ciliary neurotrophic factor",
+      "mCNTF",
+      "CNTF (mouse)",
+      "ciliary neurotrophic factor (mouse)",
+      "CNTF_MOUSE Ciliary neurotrophic factor (sprot)",
+      "Q544D1_MOUSE Ciliary neurotrophic factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:10090"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2922.633,
+    "clique_identifier_count": 8
+  },
+  {
+    "curie": "NCBIGene:115007728",
+    "label": "cntf",
+    "highlighting": {},
+    "synonyms": [
+      "cntf",
+      "ciliary neurotrophic factor",
+      "A0A6J2PME1_COTGO Uncharacterized protein LOC115007728 isoform X3 (trembl)",
+      "A0A6J2PMN0_COTGO Uncharacterized protein LOC115007728 isoform X1 (trembl)",
+      "A0A6J2PMY1_COTGO Uncharacterized protein LOC115007728 isoform X2 (trembl)",
+      "A0A6J2PNB9_COTGO Uncharacterized protein LOC115007728 isoform X4 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:56716"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2765.964,
+    "clique_identifier_count": 7
+  },
+  {
+    "curie": "NCBIGene:396488",
+    "label": "CNTF",
+    "highlighting": {},
+    "synonyms": [
+      "CNF",
+      "GPA",
+      "CNTF",
+      "ciliary neurotrophic factor",
+      "growth-promoting activity factor",
+      "chick-CNTF",
+      "growth-promoting activity (chicken)",
+      "ciliary neurotrophic factor (chicken)",
+      "CNTF_CHICK Ciliary neurotrophic factor (sprot)"
+    ],
+    "taxa": [
+      "NCBITaxon:9031"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2588.3477,
+    "clique_identifier_count": 6
+  },
+  {
+    "curie": "NCBIGene:100149185",
+    "label": "cntf",
+    "highlighting": {},
+    "synonyms": [
+      "cntf",
+      "cntf2",
+      "si:dkey-117m1.3",
+      "ciliary neurotrophic factor",
+      "B8JKE1_DANRE Ciliary neurotrophic factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:7955"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2588.3477,
+    "clique_identifier_count": 6
+  },
+  {
+    "curie": "NCBIGene:101961364",
+    "label": "Cntf",
+    "highlighting": {},
+    "synonyms": [
+      "Cntf",
+      "ciliary neurotrophic factor",
+      "I3MT52_ICTTR Ciliary neurotrophic factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:43179"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2588.3477,
+    "clique_identifier_count": 6
+  },
+  {
+    "curie": "NCBIGene:102004189",
+    "label": "Cntf",
+    "highlighting": {},
+    "synonyms": [
+      "Cntf",
+      "ciliary neurotrophic factor",
+      "A0A8C2UR11_CHILA Ciliary neurotrophic factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:34839"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2588.3477,
+    "clique_identifier_count": 6
+  },
+  {
+    "curie": "NCBIGene:103235099",
+    "label": "CNTF",
+    "highlighting": {},
+    "synonyms": [
+      "CNTF",
+      "ciliary neurotrophic factor",
+      "A0A0D9R138_CHLSB Ciliary neurotrophic factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:60711"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2588.3477,
+    "clique_identifier_count": 6
+  },
+  {
+    "curie": "NCBIGene:103782925",
+    "label": "CNTF",
+    "highlighting": {},
+    "synonyms": [
+      "CNTF",
+      "ciliary neurotrophic factor",
+      "A0A2R9C1K8_PANPA Ciliary neurotrophic factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9597"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2588.3477,
+    "clique_identifier_count": 6
+  },
+  {
+    "curie": "NCBIGene:114862123",
+    "label": "cntf",
+    "highlighting": {},
+    "synonyms": [
+      "cntf",
+      "ciliary neurotrophic factor",
+      "A0A6P7NKA5_BETSP Ciliary neurotrophic factor isoform X2 (trembl)",
+      "A0A9W2XZH9_BETSP Ciliary neurotrophic factor isoform X1 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:158456"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2588.3477,
+    "clique_identifier_count": 6
+  },
+  {
+    "curie": "NCBIGene:483464",
+    "label": "CNTF",
+    "highlighting": {},
+    "synonyms": [
+      "CNTF",
+      "ciliary neurotrophic factor",
+      "A0A8P0NA50_CANLF Ciliary neurotrophic factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9615"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2383.3047,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:100547985",
+    "label": "CNTF",
+    "highlighting": {},
+    "synonyms": [
+      "CNTF",
+      "ciliary neurotrophic factor",
+      "G1NBP7_MELGA Ciliary neurotrophic factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9103"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2383.3047,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:100565480",
+    "label": "cntf",
+    "highlighting": {},
+    "synonyms": [
+      "cntf",
+      "ciliary neurotrophic factor",
+      "G1KFR7_ANOCA Ciliary neurotrophic factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:28377"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2383.3047,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:100610090",
+    "label": "CNTF",
+    "highlighting": {},
+    "synonyms": [
+      "CNTF",
+      "ciliary neurotrophic factor",
+      "H2Q3Q2_PANTR Ciliary neurotrophic factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9598"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2383.3047,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:100619162",
+    "label": "CNTF",
+    "highlighting": {},
+    "synonyms": [
+      "CNTF",
+      "ciliary neurotrophic factor",
+      "A0A5F8HE74_MONDO Ciliary neurotrophic factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:13616"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2383.3047,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:100680604",
+    "label": "CNTF",
+    "highlighting": {},
+    "synonyms": [
+      "CNTF",
+      "ciliary neurotrophic factor",
+      "F7FQ83_ORNAN Ciliary neurotrophic factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9258"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2383.3047,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:100724905",
+    "label": "Cntf",
+    "highlighting": {},
+    "synonyms": [
+      "Cntf",
+      "ciliary neurotrophic factor",
+      "A0A286XAK1_CAVPO Ciliary neurotrophic factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:10141"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2383.3047,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:100774933",
+    "label": "Cntf",
+    "highlighting": {},
+    "synonyms": [
+      "Cntf",
+      "ciliary neurotrophic factor",
+      "ciliary neurotrophic factor-like protein",
+      "A0A061I730_CRIGR Ciliary neurotrophic factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:10029"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2383.3047,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:100848228",
+    "label": "CNTF",
+    "highlighting": {},
+    "synonyms": [
+      "CNTF",
+      "ciliary neurotrophic factor",
+      "E1BFH9_BOVIN Ciliary neurotrophic factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9913"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2383.3047,
+    "clique_identifier_count": 5
+  }
+]

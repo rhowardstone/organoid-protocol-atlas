@@ -1,0 +1,76 @@
+{
+  "Cellosaurus": {
+    "cell-line-list": [
+      {
+        "accession-list": [
+          {
+            "type": "primary",
+            "value": "CVCL_D4YF"
+          }
+        ],
+        "name-list": [
+          {
+            "type": "identifier",
+            "value": "H1"
+          }
+        ]
+      },
+      {
+        "accession-list": [
+          {
+            "type": "primary",
+            "value": "CVCL_B7J5"
+          }
+        ],
+        "name-list": [
+          {
+            "type": "identifier",
+            "value": "BC-H1"
+          }
+        ]
+      },
+      {
+        "accession-list": [
+          {
+            "type": "primary",
+            "value": "CVCL_C4BE"
+          }
+        ],
+        "name-list": [
+          {
+            "type": "identifier",
+            "value": "14A2.H1"
+          }
+        ]
+      },
+      {
+        "accession-list": [
+          {
+            "type": "primary",
+            "value": "CVCL_H370"
+          }
+        ],
+        "name-list": [
+          {
+            "type": "identifier",
+            "value": "293/H1"
+          }
+        ]
+      },
+      {
+        "accession-list": [
+          {
+            "type": "primary",
+            "value": "CVCL_M440"
+          }
+        ],
+        "name-list": [
+          {
+            "type": "identifier",
+            "value": "GIST-H1"
+          }
+        ]
+      }
+    ]
+  }
+}

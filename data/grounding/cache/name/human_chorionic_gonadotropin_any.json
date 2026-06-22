@@ -1,0 +1,610 @@
+[
+  {
+    "curie": "UMLS:C1141639",
+    "label": "human chorionic gonadotropin",
+    "highlighting": {},
+    "synonyms": [
+      "hCG",
+      "HCG",
+      "h-HCG",
+      "Urinary hCG",
+      "HCG preparation",
+      "hCG preparation",
+      "Chorionic gonadotropin",
+      "Gonadotropin,chorionic",
+      "GONADOTROPIN,CHORIONIC",
+      "Chorionic Gonadotropin",
+      "chorionic gonadotropin",
+      "CHORIONIC GONADOTROPIN",
+      "gonadotropin, chorionic",
+      "Gonadotropin, Chorionic",
+      "GONADOTROPIN, CHORIONIC",
+      "Chorionic gonadotrophin",
+      "GONADOTROPHIN, CHORIONIC",
+      "chorionic gonadotropin (HCG)",
+      "HUMAN CHORIONIC GONADOTROPIN",
+      "Human-chorionic gonadotropin",
+      "Chorionic gonadotropin human",
+      "HCG - Human chorionic gonado",
+      "human chorionic gonadotropin",
+      "Human Chorionic Gonadotropin",
+      "hCG - Hum chorion gonadotrop",
+      "Human chorionic gonadotropin",
+      "Chorionic Gonadotropin, Human",
+      "human chorionic gonadotropins",
+      "Gonadotropin, Human Chorionic",
+      "Human menopausal gonadotropin",
+      "Human chorionic gonadotrophin",
+      "human chorionic gonadotrophin",
+      "Chorionic gonadotrophin human",
+      "Chorionic Gonadotropin (Human)",
+      "Gonadotropins, Chorionic, Human",
+      "Human chorionic gonadotropin, NOS",
+      "Human chorionic gonadotrophin, NOS",
+      "HCG (Human Chorionic Gonadotropin)",
+      "HCG - Human chorionic gonadotropin",
+      "Human chorionic gonadotropin (HCG)",
+      "human chorionic gonadotropin (HCG)",
+      "hCG - Human chorionic gonadotrophin",
+      "HCG - Human chorionic gonadotrophin",
+      "chorionic gonadotropin, human (hCG)",
+      "Human chorionic gonadotrophin product",
+      "Human chorionic gonadotropin (substance)",
+      "HCG - Human chorionic gonadotrophin product",
+      "Human menopausal gonadotropin (urine derived)",
+      "Human chorionic gonadotropin-containing product",
+      "Product containing human chorionic gonadotropin (medicinal product)"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 2407.3655,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "CHEBI:81570",
+    "label": "Chorionic Gonadotropin (Human)",
+    "highlighting": {},
+    "synonyms": [
+      "hCG",
+      "h-HCG",
+      "Urinary hCG",
+      "CG preparation",
+      "Choriogonadotropin",
+      "Choriogonadotrophin",
+      "Chorionic Gonadotropin",
+      "chorionic gonadotropin",
+      "Chorionic gonadotropin",
+      "Gonadotropin,chorionic",
+      "CHORIONIC GONADOTROPIN",
+      "Chorionic gonadotropins",
+      "GONADOTROPIN, CHORIONIC",
+      "Gonadotropin, Chorionic",
+      "Pregnancy urine hormone",
+      "chorionic gonadotrophin",
+      "Chorionic gonadotrophin",
+      "Choriogonadotropin intact",
+      "Chorionic gonadotropin, NOS",
+      "Human chorionic gonadotropin",
+      "CG - Chorionic gonadotrophin",
+      "Human-chorionic gonadotropin",
+      "Chorionic gonadotrophin, NOS",
+      "Chorionic gonadotrophin prod",
+      "Human menopausal gonadotropin",
+      "Choriogonadotropin (substance)",
+      "Chorionic Gonadotropin (Human)",
+      "Chorionic gonadotrophin product",
+      "Chorionic gonadotropin preparation",
+      "Chorionic gonadotrophin preparation",
+      "Choriogonadotropin-containing product",
+      "Human menopausal gonadotropin (urine derived)",
+      "Product containing choriogonadotropin (medicinal product)",
+      "choriogonadotropin alfa",
+      "Choriogonadotropin Alfa",
+      "Choriogonadotropin alfa",
+      "CHORIOGONADOTROPIN ALFA",
+      "Choriogonadotrophin alfa",
+      "choriogonadotropin alpha",
+      "Choriogonadotropin alpha",
+      "Choriogonadotropin.alpha subunit",
+      "Choriogonadotropin alfa (substance)",
+      "Chorionic gonadotropin (recombinant)",
+      "choriogonadotropin alfa (medication)",
+      "Recombinant Choriogonadotropin Alpha",
+      "Choriogonadotropin alfa-containing product",
+      "Product containing choriogonadotropin alfa (medicinal product)",
+      "chorionic gonadotropin 5000 UNT/ML Injectable Solution",
+      "chorionic gonadotropin, human@5,000 unit@INTRAMUSC@VIAL (EA)",
+      "chorionic gonadotropin, human 5,000 unit INTRAMUSC VIAL (EA)",
+      "chorionic gonadotropin 5000 UNT/ML",
+      "chorionic gonadotropin Injectable Solution [Pregnyl]",
+      "chorionic gonadotropin Injectable Solution [Novarel]",
+      "chorionic gonadotropin Injectable Solution",
+      "chorionic gonadotropin 500 UNT/ML",
+      "Chorionic gonadotro 5000iu inj",
+      "GONADOTROPIN,CHORIONIC 5000UNT/VIL INJ",
+      "Chorionic gonadotrophin 5000iu injection+solvent",
+      "chorionic gonadotropin 500 UNT/ML Injectable Solution",
+      "Chorionic gonadotrophin 5000iu injection (pdr for recon)+solvent",
+      "chorionic gonadotropin (HCG) 5000 units intramuscular powder for injection",
+      "chorionic gonadotropin Prefilled Syringe",
+      "CHORIOGONADOTROPIN ALFA 250MCG/0.5ML SYR",
+      "CHORIOGONADOTROPIN ALFA 250MCG/0.5ML INJ,SYR",
+      "choriogonadotropin alfa@250 mcg/0.5 mL@SUBCUT@SYRINGE (ML)",
+      "choriogonadotropin alfa 250 mcg/0.5 mL SUBCUT SYRINGE (ML)",
+      "0.5 ML choriogonadotropin alfa 0.5 MG/ML Prefilled Syringe",
+      "choriogonadotropin alfa 250 MCG in 0.5 ML Prefilled Syringe",
+      "choriogonadotropin alfa 250 MCG per 0.5 ML Prefilled Syringe",
+      "choriogonadotropin alfa 0.25 MG per 0.5 ML Prefilled Syringe",
+      "Chorionic Gonadotropin Alfa, Recombinant 0.25 MG/0.5 ML Subcutaneous Solution",
+      "chorionic gonadotropin (HCG) recombinant 250 mcg/0.5 mL subcutaneous solution",
+      "chorionic gonadotropin Prefilled Syringe [Ovidrel]",
+      "0.5 ML Ovidrel 0.5 MG/ML Prefilled Syringe",
+      "Ovidrel 250 MCG in 0.5 mL Prefilled Syringe",
+      "Ovidrel 250 MCG per 0.5 ML Prefilled Syringe",
+      "Ovidrel 250mcg/0.5ml Pre-Filled Syringe for Injection",
+      "Ovidrel, recombinant 250 mcg/0.5 mL subcutaneous solution",
+      "0.5 ML choriogonadotropin alfa 0.5 MG/ML Prefilled Syringe [Ovidrel]",
+      "CHORIOGONADOTROPIN ALFA 250 ug in 0.5 mL SUBCUTANEOUS INJECTION, SOLUTION [Ovidrel]",
+      "Chorionic Gonadotropin Alfa, Recombinant 0.25 MG/0.5 ML Subcutaneous Solution [OVIDREL]",
+      "chorionic gonadotropin 10000 UNT/ML",
+      "Chorionic Gonadotropin KIT",
+      "Chorion gonadotro 10,000iu inj",
+      "GONADOTROPIN,CHORIONIC 10000UNT/VIL INJ",
+      "Chorionic gonadotrophin 10,000iu inj+solv",
+      "chorionic gonadotropin 10000 UNT/ML Injectable Solution",
+      "chorionic gonadotropin 10,000 UNT/ML Injectable Solution",
+      "chorionic gonadotropin, human@10,000 unit@INTRAMUSC@VIAL (EA)",
+      "chorionic gonadotropin, human 10,000 unit INTRAMUSC VIAL (EA)",
+      "Chorionic Gonadotropin 10000 U Intramuscular Powder for Solution",
+      "Chorionic Gonadotropin 10,000U Powder for solution for injection",
+      "Chorionic gonadotrophin 10,000iu injection (pdr for recon)+solvent",
+      "CHORIOGONADOTROPIN ALFA 10000 [USP'U] in 10 mL INTRAMUSCULAR INJECTION",
+      "Chorionic Gonadotropin, 10000 units intramuscular powder for injection",
+      "chorionic gonadotropin (HCG) 10000 units intramuscular powder for injection",
+      "chorionic gonadotropin 10000 UNT/ML [Pregnyl]",
+      "PREGNYL KIT",
+      "Pregnyl KIT",
+      "Pregnyl 10,000unit Powder for Injection",
+      "Pregnyl 10,000 UNT/ML Injectable Solution",
+      "Pregnyl, 10000 units intramuscular powder for injection",
+      "chorionic gonadotropin 10000 UNT/ML Injectable Solution [Pregnyl]",
+      "Chorionic Gonadotropin 10000 U Intramuscular Powder for Solution [PREGNYL]",
+      "CHORIOGONADOTROPIN ALFA 10000 [USP'U] in 10 mL INTRAMUSCULAR INJECTION, POWDER, LYOPHILIZED, FOR SOLUTION [Pregnyl]",
+      "chorionic gonadotropin 10000 UNT/ML [Novarel]",
+      "Novarel 10,000 UNT/ML Injectable Solution",
+      "Novarel, 10000 units intramuscular powder for injection",
+      "chorionic gonadotropin 10000 UNT/ML Injectable Solution [Novarel]",
+      "Chorionic gonadotropin, injectable",
+      "chorionic gonadotropin Injectable Product",
+      "Novarel Injectable Product",
+      "Ovidrel Injectable Product",
+      "Pregnyl Injectable Product",
+      "chorionic gonadotropin 1000 UNT/ML",
+      "chorionic gonadotropin 1000 UNT/ML Injectable Solution",
+      "chorionic gonadotropin 10,000 UNT per 10 ML Injectable Solution",
+      "chorionic gonadotropin 1000 UNT/ML [Chorulon]",
+      "chorionic gonadotropin Injectable Solution [Chorulon]",
+      "Chorulon Injectable Product",
+      "CHORULON KIT",
+      "Chorulon 1000 UNT/ML Injectable Solution",
+      "Chorulon 10,000 UNT per 10 ML Injectable Solution",
+      "chorionic gonadotropin 1000 UNT/ML Injectable Solution [Chorulon]",
+      "CHORIONIC GONADOTROPIN 10000 [iU] INTRAMUSCULAR INJECTION, POWDER, LYOPHILIZED, FOR SOLUTION [CHORULON]",
+      "choriogonadotropin alfa 0.5 MG/ML",
+      "choriogonadotropin alfa 0.5 MG/ML [Ovidrel]",
+      "chorionic gonadotropin 5000 UNT/ML [Novarel]",
+      "Novarel KIT",
+      "Novarel 5,000unit Powder for Injection",
+      "Novarel 5000 UNT/ML Injectable Solution",
+      "Novarel, 5000 units intramuscular powder for injection",
+      "chorionic gonadotropin 5000 UNT/ML Injectable Solution [Novarel]",
+      "Chorionic Gonadotropin 5000 U Intramuscular Powder for Solution [NOVAREL]",
+      "CHORIONIC GONADOTROPIN 5000 [USP'U] INTRAMUSCULAR INJECTION, POWDER, LYOPHILIZED, FOR SOLUTION [Novarel]",
+      "choriogonadotropin alfa Prefilled Syringe",
+      "choriogonadotropin alfa Prefilled Syringe [Ovidrel]",
+      "choriogonadotropin alfa Injectable Product"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:Drug",
+      "biolink:OntologyClass",
+      "biolink:MolecularMixture",
+      "biolink:ChemicalMixture"
+    ],
+    "score": 1067.6719,
+    "clique_identifier_count": 83
+  },
+  {
+    "curie": "UMLS:C1295672",
+    "label": "Abnormal human chorionic gonadotropin",
+    "highlighting": {},
+    "synonyms": [
+      "Abnormal human chorionic gonadotropin",
+      "Human chorionic gonadotropin abnormal",
+      "Abnormal human chorionic gonadotrophin",
+      "Abnormal human chorionic gonadotropin (finding)"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:PhenotypicFeature",
+      "biolink:DiseaseOrPhenotypicFeature",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity"
+    ],
+    "score": 933.72314,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "UMLS:C0853016",
+    "label": "Blood human chorionic gonadotropin decreased",
+    "highlighting": {},
+    "synonyms": [
+      "Blood placental gonadotrophins decreased",
+      "Blood human chorionic gonadotropin decreased"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:PhenotypicFeature",
+      "biolink:DiseaseOrPhenotypicFeature",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity"
+    ],
+    "score": 876.65063,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "UMLS:C0853017",
+    "label": "Blood human chorionic gonadotropin increased",
+    "highlighting": {},
+    "synonyms": [
+      "Blood placental gonadotrophins increased",
+      "Blood human chorionic gonadotropin increased"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:PhenotypicFeature",
+      "biolink:DiseaseOrPhenotypicFeature",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity"
+    ],
+    "score": 876.65063,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "UMLS:C0648914",
+    "label": "asialoagalacto-human chorionic gonadotropin",
+    "highlighting": {},
+    "synonyms": [
+      "asialoagalacto-hCG",
+      "asialoagalacto-human chorionic gonadotropin"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 739.9581,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "UMLS:C0113187",
+    "label": "asialo-human chorionic gonadotropin",
+    "highlighting": {},
+    "synonyms": [
+      "asialo-HCG",
+      "desialo HCG",
+      "desialylated HCG",
+      "asialo-human chorionic gonadotropin"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 739.9581,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "UMLS:C3203515",
+    "label": "Human chorionic gonadotropin negative",
+    "highlighting": {},
+    "synonyms": [
+      "Human chorionic gonadotropin negative"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:PhenotypicFeature",
+      "biolink:DiseaseOrPhenotypicFeature",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity"
+    ],
+    "score": 739.9581,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "NCIT:C136631",
+    "label": "Elevated Human Chorionic Gonadotropin",
+    "highlighting": {},
+    "synonyms": [
+      "Elevated HCG",
+      "Elevated Human Chorionicgonadotropin",
+      "Elevated Human Chorionic Gonadotropin"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:PhenotypicFeature",
+      "biolink:DiseaseOrPhenotypicFeature",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity"
+    ],
+    "score": 739.9581,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "UMLS:C3203514",
+    "label": "Human chorionic gonadotropin increased",
+    "highlighting": {},
+    "synonyms": [
+      "Human chorionic gonadotropin increased"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:PhenotypicFeature",
+      "biolink:DiseaseOrPhenotypicFeature",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity"
+    ],
+    "score": 739.9581,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "UMLS:C3203513",
+    "label": "Human chorionic gonadotropin decreased",
+    "highlighting": {},
+    "synonyms": [
+      "Human chorionic gonadotropin decreased"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:PhenotypicFeature",
+      "biolink:DiseaseOrPhenotypicFeature",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity"
+    ],
+    "score": 739.9581,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "UMLS:C3203517",
+    "label": "Human chorionic gonadotropin positive",
+    "highlighting": {},
+    "synonyms": [
+      "Human chorionic gonadotropin positive"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:PhenotypicFeature",
+      "biolink:DiseaseOrPhenotypicFeature",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity"
+    ],
+    "score": 739.9581,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "UMLS:C3203516",
+    "label": "Human chorionic gonadotropin normal",
+    "highlighting": {},
+    "synonyms": [
+      "Human chorionic gonadotropin normal"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:PhenotypicFeature",
+      "biolink:DiseaseOrPhenotypicFeature",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity"
+    ],
+    "score": 739.9581,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "GO:0044752",
+    "label": "response to human chorionic gonadotropin",
+    "highlighting": {},
+    "synonyms": [
+      "response to human chorionic gonadotropin",
+      "response to human chorionic gonadotropin stimulus"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:BiologicalProcess",
+      "biolink:Occurrent",
+      "biolink:OntologyClass",
+      "biolink:BiologicalProcessOrActivity",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 694.7292,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "UMLS:C0207783",
+    "label": "human chorionic gonadotropin-tetanus toxoid",
+    "highlighting": {},
+    "synonyms": [
+      "Pr-beta-HCG-TT",
+      "human chorionic gonadotropin-tetanus toxoid"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 694.7292,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "UMLS:C1112190",
+    "label": "Urine human chorionic gonadotropin increased",
+    "highlighting": {},
+    "synonyms": [
+      "Urine human chorionic gonadotropin increased"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:PhenotypicFeature",
+      "biolink:DiseaseOrPhenotypicFeature",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity"
+    ],
+    "score": 694.7292,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "UMLS:C1112195",
+    "label": "Urine human chorionic gonadotropin decreased",
+    "highlighting": {},
+    "synonyms": [
+      "Urine human chorionic gonadotropin decreased"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:PhenotypicFeature",
+      "biolink:DiseaseOrPhenotypicFeature",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity"
+    ],
+    "score": 694.7292,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "UMLS:C1112196",
+    "label": "Urine human chorionic gonadotropin negative",
+    "highlighting": {},
+    "synonyms": [
+      "Urine human chorionic gonadotropin negative"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:PhenotypicFeature",
+      "biolink:DiseaseOrPhenotypicFeature",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity"
+    ],
+    "score": 694.7292,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "UMLS:C1112193",
+    "label": "Urine human chorionic gonadotropin normal",
+    "highlighting": {},
+    "synonyms": [
+      "Urine human chorionic gonadotropin normal"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:PhenotypicFeature",
+      "biolink:DiseaseOrPhenotypicFeature",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity"
+    ],
+    "score": 694.7292,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "UMLS:C1112197",
+    "label": "Urine human chorionic gonadotropin positive",
+    "highlighting": {},
+    "synonyms": [
+      "Urine human chorionic gonadotropin positive"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:PhenotypicFeature",
+      "biolink:DiseaseOrPhenotypicFeature",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity"
+    ],
+    "score": 694.7292,
+    "clique_identifier_count": 2
+  }
+]
