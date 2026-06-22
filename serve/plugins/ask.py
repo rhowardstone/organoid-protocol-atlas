@@ -188,7 +188,11 @@ The committed KGX graph (exports/kgx/nodes.tsv + edges.tsv) is live-queryable vi
 - GET  /trapi                      — HTML explainer and interactive console
 
 Nodes carry SRI-resolved Biolink CURIEs; edges use biolink:mentions predicates connecting
-organoid_protocol → reagent, with provenance back to the source PMCID and DOI.
+biolink:Publication → entity (Gene, SmallMolecule, Protein, etc.), with provenance back to
+the source PMCID and DOI. Note: the graph is paper-centric (Publication subjects), not
+protocol-centric; all reagent categories must be queried together (Gene + SmallMolecule
++ Protein + ChemicalEntity + MolecularMixture + CellLine) to recover a paper's full
+reagent footprint.
 
 ## Grounded Q&A
 
@@ -218,7 +222,7 @@ otherwise the endpoint returns retrieved evidence rows without model synthesis.
 
 LLMS_TXT = _build_llms_txt()
 
-# organoid types we can detect in a question to bias retrieval (all 26 schema types)
+# organoid types we can detect in a question to bias retrieval (25 canonical types; hepatic→liver)
 _TYPES = [
     "intestinal", "gastric", "cerebral", "kidney", "liver", "lung",
     "retinal", "pancreatic",
