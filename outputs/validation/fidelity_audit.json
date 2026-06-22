@@ -1,0 +1,15 @@
+{
+  "method": "silver, reproducible: per dosed signaling-factor extraction, auto-check value/unit faithfulness against the verbatim source quote (no model in loop)",
+  "n": 120,
+  "provenance_rate": 0.967,
+  "value_in_quote_rate": 0.992,
+  "auto_fidelity_rate": 0.992,
+  "auto_fidelity_ci95": [
+    0.954,
+    0.999
+  ],
+  "pct_conditioned_medium_bug": 0,
+  "suspect_unit_n": 7,
+  "nm_buffer_suspect_n": 0,
+  "error_examples": []
+}

@@ -28,8 +28,12 @@ def test_canon_unit_per_ml_notations():
 def test_canon_unit_molar_and_percent():
     assert canon_unit("nmol/L") == "nM"
     assert canon_unit("mM") == "mM"
-    # percent variants carry meaning (e.g. conditioned medium) — kept verbatim
-    assert canon_unit("% v/v") == "% v/v"
+    # percent variants now collapse to canonical "%" (de-fragments reporting; % stays a
+    # SUSPECT dose class via concentration_class, so no fraction becomes a molar dose)
+    assert canon_unit("% v/v") == "%"
+    assert canon_unit("% (v/v)") == "%"
+    assert canon_unit("% conditioned medium") == "%"
+    assert canon_unit("v/v") == "%"
     assert canon_unit(None) is None
 
 
