@@ -3234,6 +3234,43 @@ def test_cd_min_n_param(tmp_path, monkeypatch):
     assert data["min_n_threshold"] == 5
 
 
+def test_cd_low_n_warning_true_when_below_10(tmp_path, monkeypatch):
+    # n_with_value = 3 (< 10) → low_n_warning must be True
+    rows = [{"canonical": "EGF", "value": v, "canonical_unit": "ng/mL"} for v in [10, 50, 500]]
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_cd(p, rows)
+    _patch_cd(monkeypatch, p)
+    data, _ = ae.handle_concentration_deviation()
+    entry = data["most_variable"][0]
+    assert entry["n_with_value"] == 3
+    assert entry["low_n_warning"] is True
+
+
+def test_cd_low_n_warning_false_when_10_or_more(tmp_path, monkeypatch):
+    # n_with_value = 10 → low_n_warning must be False
+    rows = [{"canonical": "EGF", "value": float(v), "canonical_unit": "ng/mL"} for v in range(1, 11)]
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_cd(p, rows)
+    _patch_cd(monkeypatch, p)
+    data, _ = ae.handle_concentration_deviation()
+    entry = data["most_variable"][0]
+    assert entry["n_with_value"] == 10
+    assert entry["low_n_warning"] is False
+
+
+def test_cd_response_meta_has_warning_fields(tmp_path, monkeypatch):
+    # Response must carry low_n_warning_threshold and n_with_warning at top level
+    rows = [{"canonical": "EGF", "value": v, "canonical_unit": "ng/mL"} for v in [10, 50, 500]]
+    p = tmp_path / "reagents.jsonl"
+    _write_reagents_for_cd(p, rows)
+    _patch_cd(monkeypatch, p)
+    data, _ = ae.handle_concentration_deviation()
+    assert data["low_n_warning_threshold"] == 10
+    assert "n_with_warning" in data
+    assert data["n_with_warning"] >= 1  # EGF has n=3 → warning
+
+
+
 def test_cd_index_entry():
     data, _ = ae.handle_index()
     assert "/analytics/concentration-deviation" in data["endpoints"]

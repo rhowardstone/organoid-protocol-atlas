@@ -2583,6 +2583,11 @@ def handle_concentration_deviation(min_n: int = 3) -> tuple[dict, int]:
     signal for dose uncertainty or protocol variation. Only reagents with n_with_value
     >= min_n (default 3) are included, since CV is meaningless for tiny samples.
 
+    n-convention: n_with_value = records with a numeric dose value (distinct from
+    n_records = total mentions of the canonical). CV is computed only over numeric
+    values. Entries with n_with_value < 10 carry low_n_warning: true — treat their
+    CV as indicative rather than statistically reliable.
+
     Optional: ?min_n=5 to raise the sample-size threshold.
 
     Returns:
@@ -2590,6 +2595,8 @@ def handle_concentration_deviation(min_n: int = 3) -> tuple[dict, int]:
       - most_consistent: top 30 by CV asc, CV < 0.5 only (dose well-established)
       - n_canonicals_total: total canonicals with enough data
       - n_excluded_too_few: how many canonicals had < min_n values
+      - low_n_warning_threshold: 10 (entries below this have low_n_warning: true)
+      - n_with_warning: how many of the returned entries have low_n_warning: true
     """
     if not REAGENTS_JSONL.exists():
         return {"error": "reagents.jsonl not found", "hint": "Run: python pipeline/export_public.py"}, 404
@@ -2642,6 +2649,7 @@ def handle_concentration_deviation(min_n: int = 3) -> tuple[dict, int]:
             "dominant_unit": unit,
             "n_records": n_records,
             "n_with_value": n,
+            "low_n_warning": n < 10,
             "mean": round(mean, 4),
             "median": round(median, 4),
             "std": round(std, 4),
@@ -2683,12 +2691,15 @@ def handle_concentration_deviation(min_n: int = 3) -> tuple[dict, int]:
         key=lambda x: x["cv"]
     )[:30]
 
+    n_with_warning = sum(1 for r in results if r.get("low_n_warning"))
     return {
         "most_variable": most_variable,
         "most_consistent": most_consistent,
         "n_canonicals_total": len(results),
         "n_excluded_too_few": n_excluded,
         "min_n_threshold": min_n,
+        "low_n_warning_threshold": 10,
+        "n_with_warning": n_with_warning,
     }, 200
 
 
