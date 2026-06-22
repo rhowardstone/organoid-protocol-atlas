@@ -65,7 +65,28 @@ CANON = {
     "pge2": "PGE2", "prostaglandine2": "PGE2", "prostaglandinee2": "PGE2",
     "prostaglandine2pge2": "PGE2", "heparin": "Heparin",
     "sag": "SAG", "purmorphamine": "Purmorphamine", "dapt": "DAPT", "shh": "SHH",
+    # supplement synonym merge (review #118): "B27" == "B27 supplement". The vitamin-A
+    # / insulin variants keep distinct norm_keys, so they are NOT collapsed here.
+    "b27": "B-27 supplement", "b27supplement": "B-27 supplement",
+    "b27supplements": "B-27 supplement",
+    "n2": "N-2 supplement", "n2supplement": "N-2 supplement",
 }
+
+
+# Bare cytokine/morphogen FAMILY terms that are NOT a specific compound. The extractor
+# sometimes emits "FGF"/"Wnt"/"BMP" from a generic mention; stored as if a reagent they
+# inflate counts and produce spurious low-n dose-CV entries (review #118). We never
+# fabricate a specific member (no FGF->FGF2); callers flag these as ambiguous and
+# EXCLUDE them from per-compound dose statistics.
+AMBIGUOUS_FAMILY = {"fgf", "fgfs", "wnt", "wnts", "bmp", "bmps", "tgf", "tgfs",
+                    "interleukin", "interleukins", "ephrin", "ephrins"}
+
+
+def is_ambiguous_family(name: str | None) -> bool:
+    """True if `name` is a bare cytokine/morphogen family term (FGF, Wnt, BMP, …) rather
+    than a specific compound — not fabricated into a member, just flagged for exclusion
+    from per-compound dose stats."""
+    return norm_key(name) in AMBIGUOUS_FAMILY
 
 
 # Abbreviations that appear in figure schematics (Tier-2 vision) but rarely in prose.
