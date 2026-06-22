@@ -115,7 +115,33 @@ def canon_unit(u: str | None) -> str | None:
     low_ns = low.replace(" ", "")  # tolerate spaced molar like "n m" -> nM
     if low_ns in molar:
         return molar[low_ns]
-    return s  # percent variants etc. kept verbatim (carry meaning, e.g. % v/v)
+    # percent / volume-fraction variants -> canonical "%" so the same quantity compares
+    # and the reporting de-fragments ("% v/v", "% (v/v)", "% V/V", "% conditioned medium",
+    # bare "v/v"/"w/v" all collapse). % stays a SUSPECT dose class (see concentration_class),
+    # so this only unifies reporting; it never promotes a fraction to a molar dose.
+    if "%" in s or low_ns in ("v/v", "w/v", "vv", "wv"):
+        return "%"
+    return s
+
+
+def fix_concentration_unit(value, unit, quote):
+    """Correct a dropped-percent parse: the model sometimes puts a non-unit phrase in the
+    unit field (e.g. "conditioned medium") for a value the source states as a percentage
+    ("10% R-spondin conditioned medium"). If the quote shows '<value>%' and the unit
+    carries no '%', return '%'. Otherwise return canon_unit(unit)."""
+    cu = canon_unit(unit)
+    if value is None or not quote or (cu and "%" in cu):
+        return cu
+    forms = {str(value)}
+    try:
+        f = float(value)
+        if f == int(f):
+            forms.add(str(int(f)))
+    except (TypeError, ValueError):
+        pass
+    if any(re.search(r"(?<!\d)" + re.escape(x) + r"\s*%", quote) for x in forms if x):
+        return "%"
+    return cu
 
 
 # Concentration-unit VALIDITY classes (R2 — validity filter motivated by the #39

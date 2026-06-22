@@ -1,0 +1,181 @@
+{
+  "method": "silver, reproducible: per dosed signaling-factor extraction, auto-check value/unit faithfulness against the verbatim source quote (no model in loop)",
+  "n": 4664,
+  "provenance_rate": 0.997,
+  "value_in_quote_rate": 0.968,
+  "auto_fidelity_rate": 0.963,
+  "auto_fidelity_ci95": [
+    0.957,
+    0.968
+  ],
+  "pct_conditioned_medium_bug": 23,
+  "suspect_unit_n": 239,
+  "nm_buffer_suspect_n": 4,
+  "error_examples": [
+    {
+      "name": "nicotinamide",
+      "value": 10.0,
+      "unit": "nM",
+      "provenance": true,
+      "value_in_quote": true,
+      "pct_cm_bug": false,
+      "suspect_unit": false,
+      "nm_buffer_suspect": true,
+      "pmcid": "PMC11447403"
+    },
+    {
+      "name": "hFGF10",
+      "value": 100.0,
+      "unit": "ng/mL",
+      "provenance": true,
+      "value_in_quote": true,
+      "pct_cm_bug": true,
+      "suspect_unit": false,
+      "nm_buffer_suspect": false,
+      "pmcid": "PMC11787675"
+    },
+    {
+      "name": "[Leu15]-gastrin I",
+      "value": 100.0,
+      "unit": "ng/mL",
+      "provenance": true,
+      "value_in_quote": true,
+      "pct_cm_bug": true,
+      "suspect_unit": false,
+      "nm_buffer_suspect": false,
+      "pmcid": "PMC11787675"
+    },
+    {
+      "name": "HEPES",
+      "value": 10.0,
+      "unit": "nM",
+      "provenance": true,
+      "value_in_quote": true,
+      "pct_cm_bug": false,
+      "suspect_unit": false,
+      "nm_buffer_suspect": true,
+      "pmcid": "PMC11863571"
+    },
+    {
+      "name": "Nicotinamide",
+      "value": 10.0,
+      "unit": "nM",
+      "provenance": true,
+      "value_in_quote": true,
+      "pct_cm_bug": false,
+      "suspect_unit": false,
+      "nm_buffer_suspect": true,
+      "pmcid": "PMC11863571"
+    },
+    {
+      "name": "Wnt3A",
+      "value": 30.0,
+      "unit": "conditioned medium",
+      "provenance": true,
+      "value_in_quote": true,
+      "pct_cm_bug": true,
+      "suspect_unit": true,
+      "nm_buffer_suspect": false,
+      "pmcid": "PMC11863571"
+    },
+    {
+      "name": "Noggin",
+      "value": 4.0,
+      "unit": "conditioned medium",
+      "provenance": true,
+      "value_in_quote": true,
+      "pct_cm_bug": true,
+      "suspect_unit": true,
+      "nm_buffer_suspect": false,
+      "pmcid": "PMC11863571"
+    },
+    {
+      "name": "Wnt3a",
+      "value": 10.0,
+      "unit": "nM",
+      "provenance": true,
+      "value_in_quote": true,
+      "pct_cm_bug": true,
+      "suspect_unit": false,
+      "nm_buffer_suspect": false,
+      "pmcid": "PMC11896854"
+    },
+    {
+      "name": "nicotinamide",
+      "value": 10.0,
+      "unit": "nM",
+      "provenance": true,
+      "value_in_quote": true,
+      "pct_cm_bug": false,
+      "suspect_unit": false,
+      "nm_buffer_suspect": true,
+      "pmcid": "PMC11896854"
+    },
+    {
+      "name": "RSpondin",
+      "value": 50.0,
+      "unit": "ng/mL",
+      "provenance": true,
+      "value_in_quote": true,
+      "pct_cm_bug": true,
+      "suspect_unit": false,
+      "nm_buffer_suspect": false,
+      "pmcid": "PMC12162862"
+    },
+    {
+      "name": "EGF",
+      "value": 50.0,
+      "unit": "ng/mL",
+      "provenance": true,
+      "value_in_quote": true,
+      "pct_cm_bug": true,
+      "suspect_unit": false,
+      "nm_buffer_suspect": false,
+      "pmcid": "PMC12320862"
+    },
+    {
+      "name": "brain-derived neurotrophic growth factor",
+      "value": 2.0,
+      "unit": "ng/mL",
+      "provenance": true,
+      "value_in_quote": true,
+      "pct_cm_bug": true,
+      "suspect_unit": false,
+      "nm_buffer_suspect": false,
+      "pmcid": "PMC12513484"
+    },
+    {
+      "name": "Y-27632",
+      "value": 10.0,
+      "unit": "\u03bcM",
+      "provenance": true,
+      "value_in_quote": true,
+      "pct_cm_bug": true,
+      "suspect_unit": false,
+      "nm_buffer_suspect": false,
+      "pmcid": "PMC12704714"
+    },
+    {
+      "name": "CHIR99021",
+      "value": 2.0,
+      "unit": "\u03bcM",
+      "provenance": true,
+      "value_in_quote": true,
+      "pct_cm_bug": true,
+      "suspect_unit": false,
+      "nm_buffer_suspect": false,
+      "pmcid": "PMC12744831"
+    },
+    {
+      "name": "ALK2/3 inhibitor LDN-193189",
+      "value": 1.0,
+      "unit": "\u00b5M",
+      "provenance": true,
+      "value_in_quote": true,
+      "pct_cm_bug": true,
+      "suspect_unit": false,
+      "nm_buffer_suspect": false,
+      "pmcid": "PMC12766203"
+    }
+  ]
+}
