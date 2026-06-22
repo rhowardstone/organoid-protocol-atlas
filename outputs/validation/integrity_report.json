@@ -1,0 +1,15 @@
+{
+  "method": "Crossref cross-reference of corpus DOIs: retraction, DOI-resolution, title-match; tortured-phrase heuristic on title. Flag-and-quarantine, never silent-delete. Provenance moat: PMC OA JATS (version of record) only.",
+  "checked": 80,
+  "n_retracted": 0,
+  "n_unresolved_doi": 0,
+  "n_title_mismatch": 0,
+  "n_tortured_phrase": 0,
+  "clean_rate": 1.0,
+  "flagged": {
+    "retracted": [],
+    "unresolved": [],
+    "title_mismatch": [],
+    "tortured": []
+  }
+}
