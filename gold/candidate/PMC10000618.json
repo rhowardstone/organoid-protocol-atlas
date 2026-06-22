@@ -1,0 +1,186 @@
+{
+  "pmcid": "PMC10000618",
+  "doi": "10.3390/cells12050733",
+  "verified_by": "@codex-supervisor",
+  "candidate_by": "silver-second-pass",
+  "gold": {
+    "organoid_type": "tumor",
+    "source_cells": {
+      "cell_type": "primary_tissue",
+      "tissue_origin": "HNSCC (head and neck squamous cell carcinoma)",
+      "species": "Homo sapiens",
+      "reporting": "reported"
+    },
+    "matrix": {
+      "name": "Cultrex UltiMatrix RGF BME",
+      "percent": 70,
+      "cell_density": "2500 cells/10 µL",
+      "reporting": "reported"
+    },
+    "base_media": {
+      "value": "advanced DMEM/F12",
+      "reporting": "reported"
+    },
+    "media_supplements": [
+      {
+        "name": "GlutaMax",
+        "concentration": null,
+        "reporting": "reported"
+      },
+      {
+        "name": "Penicillin/streptomycin",
+        "concentration": null,
+        "reporting": "reported"
+      },
+      {
+        "name": "HEPES",
+        "concentration": {"value": 10, "canonical_unit": "mM"},
+        "reporting": "reported"
+      },
+      {
+        "name": "B27",
+        "concentration": {"value": 1, "canonical_unit": "x"},
+        "reporting": "reported"
+      },
+      {
+        "name": "N-acetyl-L-cysteine (NAC)",
+        "concentration": {"value": 1.25, "canonical_unit": "mM"},
+        "reporting": "reported"
+      },
+      {
+        "name": "Nicotinamide",
+        "concentration": {"value": 10, "canonical_unit": "mM"},
+        "reporting": "reported"
+      },
+      {
+        "name": "Caspofungin",
+        "concentration": {"value": 0.5, "canonical_unit": "µg/mL"},
+        "reporting": "reported"
+      }
+    ],
+    "signaling_factors": [
+      {
+        "name": "Y-27632",
+        "role": "ROCK inhibitor",
+        "concentration": {"value": 10, "canonical_unit": "µM"},
+        "reporting": "reported"
+      },
+      {
+        "name": "A83-01",
+        "role": "TGFβ/ALK inhibitor",
+        "concentration": {"value": 500, "canonical_unit": "nM"},
+        "reporting": "reported"
+      },
+      {
+        "name": "CHIR99021",
+        "role": "GSK3 inhibitor / Wnt agonist",
+        "concentration": {"value": 0.3, "canonical_unit": "µM"},
+        "reporting": "reported"
+      },
+      {
+        "name": "EGF",
+        "full_name": "Human Epidermal Growth Factor",
+        "role": "EGF receptor agonist",
+        "concentration": {"value": 50, "canonical_unit": "ng/mL"},
+        "reporting": "reported"
+      },
+      {
+        "name": "FGF10",
+        "full_name": "Human Fibroblast Growth Factor 10",
+        "role": "FGF receptor agonist",
+        "concentration": {"value": 10, "canonical_unit": "ng/mL"},
+        "reporting": "reported"
+      },
+      {
+        "name": "FGF2",
+        "full_name": "Human Fibroblast Growth Factor 2",
+        "role": "FGF receptor agonist",
+        "concentration": {"value": 5, "canonical_unit": "ng/mL"},
+        "reporting": "reported"
+      },
+      {
+        "name": "PGE2",
+        "full_name": "Prostaglandin E2",
+        "role": "EP receptor agonist / Wnt amplifier",
+        "concentration": {"value": 1, "canonical_unit": "µM"},
+        "reporting": "reported"
+      },
+      {
+        "name": "Forskolin",
+        "role": "adenylyl cyclase activator / cAMP elevator",
+        "concentration": {"value": 1, "canonical_unit": "µM"},
+        "reporting": "reported"
+      },
+      {
+        "name": "RSPO3-Fc",
+        "full_name": "R-spondin 3 Fc fusion protein conditioned medium",
+        "role": "Wnt/LGR agonist",
+        "concentration": {"value": 4, "canonical_unit": "% (vol/vol)"},
+        "reporting": "reported"
+      },
+      {
+        "name": "Noggin-Fc",
+        "full_name": "Noggin Fc fusion protein conditioned medium",
+        "role": "BMP inhibitor",
+        "concentration": {"value": 4, "canonical_unit": "% (vol/vol)"},
+        "reporting": "reported"
+      }
+    ],
+    "culture_vessel": "24-well plates",
+    "treatment_timeline": {
+      "treatment_start_day": 7,
+      "treatment_duration_days": 10,
+      "agents_tested": ["cetuximab (CTX)", "RSL3", "metformin"],
+      "reporting": "reported"
+    }
+  },
+  "evidence": {
+    "base_media.value": "tumoroids were extracted from head and neck cancer surgical resection following the protocol developed by Driehus et al. [22] and cultured in advanced DMEM/F12 supplemented with GlutaMax",
+    "matrix.percent": "The tumoroids were plated at 2500 cells/10 µL of 70% Cultrex UltiMatrix reduced growth factor basement membrane Extract",
+    "matrix.name": "The tumoroids were plated at 2500 cells/10 µL of 70% Cultrex UltiMatrix reduced growth factor basement membrane Extract",
+    "matrix.cell_density": "The tumoroids were plated at 2500 cells/10 µL of 70% Cultrex UltiMatrix reduced growth factor basement membrane Extract",
+    "source_cells.cell_type": "tumoroids were extracted from head and neck cancer surgical resection",
+    "source_cells.species": "patients — human tissue origin, informed patient consent obtained",
+    "GlutaMax": "cultured in advanced DMEM/F12 supplemented with GlutaMax, Penicilin/streptomycin, 10 mM HEPES",
+    "HEPES": "cultured in advanced DMEM/F12 supplemented with GlutaMax, Penicilin/streptomycin, 10 mM HEPES",
+    "Penicillin/streptomycin": "cultured in advanced DMEM/F12 supplemented with GlutaMax, Penicilin/streptomycin, 10 mM HEPES",
+    "Y-27632": "Y-27632 (10 µM)",
+    "B27": "B27 supplement (1×)",
+    "NAC": "N-acetyl-L-cysteine (1.25 mM)",
+    "Nicotinamide": "Nicotinamide (10 mM)",
+    "A83-01": "500 nM A83-01 (Sigma-Aldrich)",
+    "CHIR99021": "0.3 µM CHIR99021 (Sigma-Aldrich)",
+    "EGF": "Human EGF (50 ng/mL)",
+    "FGF10": "Human FGF10 (10 ng/mL)",
+    "FGF2": "Human FGF2 (5 ng/mL)",
+    "PGE2": "Prostaglandin E2 (1 µM)",
+    "Forskolin": "Forskolin (1 µM)",
+    "RSPO3-Fc": "4% (col/col) RSPO3-Fc fusion protein conditioned medium (ImmunoPrecise, IPATherapeutics, Utrecht, Netherlands)",
+    "Noggin-Fc": "4% (vol/vol) Noggin-Fc fusion protein conditioned medium",
+    "Caspofungin": "0.5 µg/mL Capsofungin (Sigma)",
+    "treatment_timeline": "The tumoroids were treated with the solvent, 30 nM CTX, 5 µM RSL3, 1 mM metformin or co-treatments 7 days after plating for an additional 10 days.",
+    "culture_vessel": "plated in 24-well plates"
+  },
+  "silver_corrections": {
+    "base_media.name": {
+      "silver_value": "DMEM/F12",
+      "gold_value": "advanced DMEM/F12",
+      "correction_reason": "Silver extractor dropped 'advanced' qualifier. Full verbatim: 'cultured in advanced DMEM/F12 supplemented with GlutaMax'"
+    },
+    "matrix.percent": {
+      "silver_value": null,
+      "gold_value": 70,
+      "correction_reason": "Silver extractor returned null. Full verbatim: '70% Cultrex UltiMatrix reduced growth factor basement membrane Extract'"
+    }
+  },
+  "flags": [
+    "recall_miss:A83-01_500nM",
+    "recall_miss:CHIR99021_0.3uM",
+    "recall_miss:GlutaMax_supplement",
+    "recall_miss:HEPES_10mM",
+    "recall_miss:treatment_timeline_day7_plus_10days",
+    "silver_correction:base_media.name_missing_advanced_qualifier",
+    "silver_correction:matrix.percent_was_null_now_70"
+  ],
+  "notes": "Gold candidate for HNSCC patient-derived tumoroid protocol (Driehus et al. adaptation). Silver evaluation scored 92% precision (22/24 fields correct). Two fields corrected: (1) base_media.name: silver extracted 'DMEM/F12'; correct value is 'advanced DMEM/F12' per verbatim text; (2) matrix.percent: silver extracted null; correct value is 70% per verbatim plating description. Five recall misses noted and flagged: A83-01 (500 nM, TGFβ/ALK inhibitor), CHIR99021 (0.3 µM, GSK3 inhibitor/Wnt agonist), GlutaMax (base media supplement), HEPES at 10 mM (base media supplement), and treatment timeline (day 7 post-plating, 10-day duration). Caspofungin (0.5 µg/mL antifungal) verified present and included in media_supplements. RSPO3-Fc and Noggin-Fc supplied as conditioned media at 4% vol/vol each. Treatment agents (cetuximab 30 nM, RSL3 5 µM, metformin 1 mM) were pharmacological challenge conditions, not culture media components; they are captured in treatment_timeline for completeness. Silver precision remains high at 22/24 for the 24 fields evaluated."
+}
