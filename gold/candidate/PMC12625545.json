@@ -1,0 +1,220 @@
+{
+  "pmcid": "PMC12625545",
+  "doi": "10.1186/s13287-025-04771-y",
+  "verified_by": "@codex-supervisor",
+  "candidate_by": "silver-second-pass",
+  "gold": {
+    "organoid_type": "retinal",
+    "source_cells": {
+      "cell_type": "iPSC",
+      "species": "Homo sapiens"
+    },
+    "matrix": {
+      "name": "CELLstart",
+      "reporting": "reported"
+    },
+    "base_media": {
+      "value": "DMEM/F12",
+      "reporting": "reported"
+    },
+    "signaling_factors": [
+      {
+        "name": "rhBMP4",
+        "role": "retinal specification",
+        "concentration": {"value": 1.5, "canonical_unit": "nM"},
+        "withdrawal_schedule": "100% day 6, 50% day 9, 25% day 12, 12.5% day 14"
+      }
+    ],
+    "media_supplements": [
+      {
+        "name": "N2 supplement",
+        "concentration": "1%",
+        "medium_context": "NIM",
+        "vendor": "Thermo Fisher Scientific",
+        "catalog": "Cat#17502048"
+      },
+      {
+        "name": "non-essential amino acids (NEAA)",
+        "concentration": "1%",
+        "medium_context": "NIM, RDM",
+        "vendor": "Thermo Fisher Scientific",
+        "catalog": "Cat#11140050"
+      },
+      {
+        "name": "Glutamax",
+        "concentration": "1%",
+        "medium_context": "NIM, RDM",
+        "vendor": "Thermo Fisher Scientific",
+        "catalog": "Cat#35050061"
+      },
+      {
+        "name": "heparin",
+        "concentration": "2 µg/mL",
+        "medium_context": "NIM",
+        "vendor": "MilliporeSigma",
+        "catalog": "Cat#H3149"
+      },
+      {
+        "name": "Primocin",
+        "concentration": "0.2%",
+        "medium_context": "NIM, RDM, FBM",
+        "vendor": "InvivoGen",
+        "catalog": "Cat#ant-pm-2"
+      },
+      {
+        "name": "B27 supplement",
+        "concentration": "2%",
+        "medium_context": "RDM",
+        "vendor": "Thermo Fisher Scientific",
+        "catalog": "Cat#17504044"
+      },
+      {
+        "name": "KnockOut Serum Replacement (KSR)",
+        "concentration": "10%",
+        "medium_context": "3D-RDM (xeno-free)",
+        "vendor": "Thermo Fisher Scientific",
+        "catalog": "Cat#10828028",
+        "note": "Replaces 10% FBS in xeno-free 3D-RDM"
+      },
+      {
+        "name": "taurine",
+        "concentration": "100 µM",
+        "medium_context": "3D-RDM",
+        "vendor": "MilliporeSigma",
+        "catalog": "Cat#T0625"
+      },
+      {
+        "name": "chemically defined lipid concentrate",
+        "concentration": "1:1000",
+        "medium_context": "3D-RDM",
+        "vendor": "Thermo Fisher Scientific",
+        "catalog": "Cat#11905031"
+      },
+      {
+        "name": "all-trans retinoic acid",
+        "concentration": "1 µM",
+        "medium_context": "3D-RDM (days 30–100)",
+        "vendor": "MilliporeSigma",
+        "catalog": "Cat#R2625"
+      },
+      {
+        "name": "fetal bovine serum (FBS)",
+        "concentration": "10%",
+        "medium_context": "FBM (fibroblast culture) / 3D-RDM (standard protocol)",
+        "vendor": "Atlas Biologicals",
+        "catalog": "Cat#F-0500-A",
+        "note": "Used in standard (non-xeno-free) 3D-RDM; replaced by KSR in xeno-free arm"
+      },
+      {
+        "name": "rhlaminin 521",
+        "concentration": "5 µg/mL",
+        "medium_context": "iPSC culture coating",
+        "vendor": "Biolamina",
+        "catalog": "Cat#LN521-02",
+        "note": "Coating substrate for iPSC maintenance plates"
+      }
+    ],
+    "timeline": [
+      {
+        "stage": "iPSC Maintenance",
+        "day_start": null,
+        "day_end": -1,
+        "description": "iPSCs cultured on rhlaminin 521-coated plates in E8 medium",
+        "base_medium": "E8",
+        "coating": "rhlaminin 521 (5 µg/mL)"
+      },
+      {
+        "stage": "Embryoid Bodies",
+        "day_start": 0,
+        "day_end": 15,
+        "description": "iPSCs lifted with ReLeSR on day 0 into ultra-low adhesion dishes; E8-to-NIM transition over days 0–3; BMP4 added day 6; EBs adhered to CELLstart on day 7; BMP4 gradually withdrawn over days 6–14",
+        "base_medium": "NIM (DMEM/F12 1:1)"
+      },
+      {
+        "stage": "2D Retinal Differentiation",
+        "day_start": 16,
+        "day_end": 29,
+        "description": "Media switched to RDM on day 16",
+        "base_medium": "RDM (DMEM/F12 3:1)"
+      },
+      {
+        "stage": "3D Retinal Organoid",
+        "day_start": 30,
+        "day_end": 100,
+        "description": "Outgrowths mechanically lifted to ultra-low attachment flasks in 3D-RDM (with retinoic acid)",
+        "base_medium": "3D-RDM"
+      },
+      {
+        "stage": "Mature Retinal Organoid",
+        "day_start": 100,
+        "day_end": 160,
+        "description": "Media switched to 3D-RDM minus (no retinoic acid)",
+        "base_medium": "3D-RDM minus"
+      }
+    ],
+    "passaging_reagent": {
+      "name": "ReLeSR",
+      "vendor": "STEMCELL Technologies",
+      "catalog": "Cat#05872",
+      "use": "iPSC lifting for EB generation (day 0)"
+    },
+    "assay_endpoints": [
+      {"marker": "OTX2", "cell_type": "photoreceptor precursor / photoreceptor"},
+      {"marker": "recoverin (RCVRN)", "cell_type": "photoreceptor"},
+      {"marker": "cone arrestin (ARR3)", "cell_type": "cone photoreceptor"},
+      {"marker": "PKCα", "cell_type": "bipolar cell"},
+      {"marker": "calretinin", "cell_type": "retinal ganglion / amacrine cell"},
+      {"marker": "s-Opsin", "cell_type": "cone photoreceptor"},
+      {"marker": "synaptophysin", "cell_type": "synaptic marker"},
+      {"marker": "CRALBP", "cell_type": "RPE / Müller glia"},
+      {"marker": "human nuclear antigen (HNA)", "cell_type": "donor cell identity (transplantation assay)"}
+    ],
+    "gmp_xeno_free": {
+      "xeno_free": true,
+      "gmp_compatible": true,
+      "key_substitutions": [
+        "CELLstart replaces Matrigel as EB-attachment substrate",
+        "KSR replaces FBS in 3D-RDM",
+        "rhlaminin 521 used for iPSC maintenance coating"
+      ]
+    }
+  },
+  "evidence": {
+    "organoid_type": "We report an optimized, xeno-free, GMP-compatible protocol for the generation of retinal organoids from human induced pluripotent stem cells (iPSCs)",
+    "source_cells.cell_type": "retinal organoids from human induced pluripotent stem cells (iPSCs)",
+    "source_cells.species": "human induced pluripotent stem cells (iPSCs)",
+    "matrix.name": "On day 7, EBs were adhered to Matrigel™ (Corning; Cat#354234 – standard protocol) or the following xeno-free substrates: CELLstart™ ... After initial testing of all substrates (Fig. 1), further experiments were done with CELLstart",
+    "matrix.xeno_free_rationale": "CELLstart™ was selected as it is a fully-defined xeno-free product, has lot-to-consistency and produced under cGMP",
+    "base_media.NIM": "Neural Induction Medium (NIM- DMEM/F12 (1:1) (Thermo Fisher Scientific; Cat#11320033), 1% N2 supplement (Thermo Fisher Scientific; Cat#17502048), 1% non-essential amino acids (Thermo Fisher Scientific; Cat#11140050), 1% Glutamax (Thermo Fisher Scientific; Cat#35050061), 2 µg/mL heparin (MilliporeSigma; Cat#H3149) and 0.2% Primocin (InvivoGen; Cat#ant-pm-2))",
+    "base_media.RDM": "RDM - DMEM/F12 (3:1), 2% B27 supplement (Thermo Fisher Scientific; Cat#17504044), 1% non-essential amino acids, 1% Glutamax and 0.2% Primocin",
+    "base_media.3D-RDM": "RDM plus 10% FBS (as per our standard protocol) or 10% KnockOut™ Serum Replacement (KSR; Thermo Fisher Scientific; Cat#10828028), 100 µM taurine (MilliporeSigma; Cat#T0625), 1:1000 chemically defined lipid concentrate (Thermo Fisher Scientific; Cat#11905031), and 1 µM all-trans retinoic acid (MilliporeSigma; Cat#R2625)",
+    "timeline.EB_day_start": "To generate embryoid bodies (EBs), iPSCs were lifted using ReLeSR™ (STEMCELL Technologies; Cat#05872)",
+    "timeline.BMP4_day": "On day 6, NIM was supplemented with 1.5 nM rhBMP4 (R&D Systems; Cat#314-BP-05/CF)",
+    "timeline.EB_adhesion": "On day 7, EBs were adhered to Matrigel™ (Corning; Cat#354234 – standard protocol) or the following xeno-free substrates: CELLstart™",
+    "timeline.BMP4_withdrawal": "BMP4 was gradually transitioned out of the NIM over seven days",
+    "timeline.BMP4_withdrawal_schedule": "100% on Day 6, 50% on day 9, 25% on day 12, 12.5% on day 14",
+    "timeline.RDM_switch": "Day 16: Media switched to RDM",
+    "timeline.3D_lift": "Day 30: Outgrowth mechanically lifted to ultra-low attachment flasks in 3D-RDM",
+    "timeline.3D_RDM_minus": "Day 100: Media switched to 3D-RDM minus (no retinoic acid)",
+    "iPSC_coating": "iPSCs were cultured on recombinant human rhlaminin 521 coated cell culture plates in E8 medium (rhlaminin 521 (5 µg/mL; Biolamina; Cat#LN521-02))",
+    "passaging_reagent": "iPSCs were lifted using ReLeSR™ (STEMCELL Technologies; Cat#05872)",
+    "rhBMP4_concentration": "NIM was supplemented with 1.5 nM rhBMP4 (R&D Systems; Cat#314-BP-05/CF)",
+    "B27_supplement": "RDM - DMEM/F12 (3:1), 2% B27 supplement (Thermo Fisher Scientific; Cat#17504044)",
+    "KSR": "10% KnockOut™ Serum Replacement (KSR; Thermo Fisher Scientific; Cat#10828028)",
+    "assay_endpoints.OTX2": "the outer nuclear layer of all retinal organoids contained OTX2 and recoverin positive photoreceptor cells that extended outer segment-like structures",
+    "assay_endpoints.recoverin": "OTX2 and recoverin positive photoreceptor cells",
+    "assay_endpoints.cone_arrestin": "cone arrestin/ARR3"
+  },
+  "flags": [
+    "correction:matrix_was_Matrigel_now_CELLstart — silver extracted Matrigel but Matrigel is the standard-protocol comparator; CELLstart is the selected xeno-free substrate used in further experiments",
+    "correction:timeline_EB_day_start_was_6_now_0 — EBs initiated day 0 (ReLeSR lift); day 6 is BMP4 addition; day 7 is EB adhesion; silver had day_start=6 and day_end=6",
+    "recall_miss:B27_2pct — 2% B27 supplement (Cat#17504044) in RDM not extracted by silver",
+    "recall_miss:KSR_10pct — 10% KnockOut Serum Replacement in xeno-free 3D-RDM not extracted by silver",
+    "recall_miss:CELLstart_matrix — same as matrix correction; also a recall miss in the supplement/matrix list",
+    "recall_miss:rhlaminin521_iPSC_coating — 5 µg/mL rhlaminin 521 (Biolamina Cat#LN521-02) for iPSC culture not extracted",
+    "recall_miss:DMEM_F12_NIM_RDM_ratios — NIM uses DMEM/F12 (1:1), RDM uses DMEM/F12 (3:1); ratios not captured by silver",
+    "recall_miss:supplement_concentrations_all_null — FBS 10%, Primocin 0.2%, N2 1%, NEAA 1%, Glutamax 1%, heparin 2 µg/mL, taurine 100 µM, lipid concentrate 1:1000, all-trans retinoic acid 1 µM all stated in text but not extracted",
+    "recall_miss:BMP4_gradual_withdrawal — BMP4 withdrawn stepwise over 7 days (100% d6→50% d9→25% d12→12.5% d14) not captured"
+  ],
+  "notes": "Xeno-free GMP-compatible iPSC-derived retinal organoid protocol. Key methodological innovation is substitution of Matrigel (animal-derived, batch-variable) with CELLstart (defined, cGMP, xeno-free) for EB attachment, and substitution of FBS with KSR in 3D-RDM. The silver extractor incorrectly assigned Matrigel as the matrix — the paper explicitly tests multiple substrates and selects CELLstart for all further experiments. EB timeline correction: day 0 = iPSC lift with ReLeSR (EB initiation); day 6 = BMP4 addition; day 7 = EB adhesion to substrate; silver had day_start=day_end=6 which conflates BMP4 addition with EB generation start. BMP4 withdrawal is stepwise over days 6–14, not a single removal event. RDM uses a 3:1 DMEM/F12 ratio (different from NIM's 1:1). The paper demonstrates equivalency across substrates (Matrigel, rhLaminin-111 ± nidogen-1/collagen IV, CELLstart) by phase microscopy and IHC; no statistical difference in OTX2/recoverin/ARR3 expression across groups. iPSC maintenance uses E8 medium on rhlaminin 521-coated plates — part of the xeno-free upstream workflow. silver_precision=89% (16/18 correct); recall misses total 7 documented items including the matrix identity error."
+}
