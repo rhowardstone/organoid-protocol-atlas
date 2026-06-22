@@ -154,9 +154,16 @@ def call_ollama(prompt: str) -> dict:
         # num_ctx must be set explicitly — ollama's default context (~4k) silently
         # truncates long protocol papers (e.g. Broda 40k methods), losing the
         # concentrations stated in later steps. 16k tokens covers the 24k-char window.
+        # num_predict caps generation length so a pathological input can't trigger an
+        # unbounded repetition-loop generation that pegs the GPU indefinitely (observed:
+        # a single paper ran 67 min, hanging the whole marathon — the urlopen socket
+        # timeout below does NOT bound a non-streaming request that never sends bytes).
+        # 6144 is generous headroom for the largest legitimate extraction JSON; a runaway
+        # stops at the cap (~2-3 min), yields unparseable JSON, and is rejected downstream.
         data=json.dumps({"model": MODEL, "prompt": prompt, "format": "json",
                          "stream": False,
-                         "options": {"temperature": 0, "num_ctx": 16384}}).encode(),
+                         "options": {"temperature": 0, "num_ctx": 16384,
+                                     "num_predict": 6144}}).encode(),
         headers={"Content-Type": "application/json"},
     )
     resp = json.load(urllib.request.urlopen(req, timeout=600))["response"]

@@ -38,6 +38,10 @@ REPO = Path(__file__).resolve().parent.parent
 CKPT = REPO / "outputs" / "ingest" / "marathon_checkpoint.json"
 PROGRESS = REPO / "outputs" / "ingest" / "marathon_progress.json"
 PUBLIC_LICENSES = {"CC0", "CC-BY"}
+# Hard per-chunk wall-clock cap (backstop against a runaway local-LLM generation hanging
+# a worker). A healthy 400-candidate chunk runs ~25-55 min; 75 min cleanly separates slow
+# chunks from indefinite hangs. On timeout the chunk is skipped and the marathon continues.
+CHUNK_TIMEOUT_SEC = 75 * 60
 
 
 def load_pool(path: Path, cc_only: bool) -> list[dict]:
@@ -65,7 +69,20 @@ def run_chunk(slice_path: Path, chunk: int, workers: int, min_grounding: float) 
     cmd = [sys.executable, str(REPO / "pipeline" / "ingest_orchestrator.py"),
            "--candidates", str(slice_path), "--limit", str(chunk),
            "--workers", str(workers), "--min-grounding", str(min_grounding), "--cc-only"]
-    proc = subprocess.run(cmd, cwd=REPO, capture_output=True, text=True)
+    # Hard wall-clock cap (backstop): a healthy chunk runs ~25-55 min; a runaway local-LLM
+    # generation can hang a worker (and thus the whole chunk) indefinitely. timeout= kills
+    # the orchestrator subprocess so the marathon SKIPS the chunk instead of hanging forever
+    # (the offset still advances below — chunk loss is bounded to one chunk). num_predict in
+    # tier1_extract.call_ollama is the primary cap; this is belt-and-suspenders.
+    try:
+        proc = subprocess.run(cmd, cwd=REPO, capture_output=True, text=True,
+                              timeout=CHUNK_TIMEOUT_SEC)
+    except subprocess.TimeoutExpired as e:
+        partial = (e.stdout or "") if isinstance(e.stdout, str) else ""
+        sys.stdout.write(partial[-2000:])
+        sys.stderr.write(f"\n[run_chunk] orchestrator exceeded {CHUNK_TIMEOUT_SEC}s — killed; "
+                         f"skipping chunk\n")
+        return {"error": f"chunk_timeout>{CHUNK_TIMEOUT_SEC}s"}
     # the orchestrator prints "... -> outputs/ingest/batch_*.json" on its last line
     report_path = None
     for line in proc.stdout.splitlines():
