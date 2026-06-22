@@ -1,0 +1,63 @@
+{
+  "pmcid": "PMC10040241",
+  "doi": "10.1242/dmm.049750",
+  "multimodal": false,
+  "n_fields_checked": 23,
+  "n_correct": 19,
+  "incorrect": [
+    {
+      "field": "source_cells.cell_type",
+      "extracted": "adult_stem_cell",
+      "source_says": "Freshly isolated primary mouse liver cells (WLCs/HCs/NPCs) obtained by two-step collagenase perfusion; not a stem-cell-derived organoid. These are primary cells forming spheroids.",
+      "evidence_quote": "Liver cells were isolated from 2-month-old mTmG mouse liver using the standard two-step collagenase perfusion method ... Cells were filtered by a 70-μm filter and used directly as unfractionated WLCs, or centrifugated at 50 g for 5 min to pellet HCs.",
+      "source_loc": "Methods / Primary mouse liver cell isolation"
+    },
+    {
+      "field": "matrix.percent",
+      "extracted": null,
+      "source_says": "1% (Matrigel in spheroid medium; 1% growth factor-reduced Matrigel in cholangiocyte medium)",
+      "evidence_quote": "50% mouse HepatiCult™ Organoid Growth Medium (STEMCELL Technologies), 50% cholangiocyte organoid culture medium reported previously ( Hu et al., 2018 ) and 1% Matrigel.",
+      "source_loc": "Methods / Mouse hepatic spheroid and organoid culture"
+    }
+  ],
+  "recall_misses": [
+    {
+      "item": "HepatiCult Organoid Growth Medium (50% of final spheroid medium)",
+      "source_says": "The actual culture medium for all spheroids was a 1:1 mix of HepatiCult Organoid Growth Medium and the cholangiocyte organoid medium; extraction captured only the cholangiocyte-medium half and omitted HepatiCult entirely, so the recorded base_media/supplements describe only half of the true formulation.",
+      "evidence_quote": "The same culture medium was used for all spheroid cultures: 50% mouse HepatiCult™ Organoid Growth Medium (STEMCELL Technologies), 50% cholangiocyte organoid culture medium reported previously ( Hu et al., 2018 ) and 1% Matrigel.",
+      "source_loc": "Methods / Mouse hepatic spheroid and organoid culture"
+    },
+    {
+      "item": "L-WRN conditioned medium, 50%",
+      "source_says": "A major medium component (Wnt3a/R-spondin/Noggin source) supplementing the advanced DMEM/F12 base.",
+      "evidence_quote": "supplementing advanced DMEM/F12 (Thermo Fisher Scientific) with 50% conditioned medium from L-WRN cells (CRL-3276™, American Type Culture Collection, Manassas, VA, USA)",
+      "source_loc": "Methods / Mouse hepatic spheroid and organoid culture"
+    },
+    {
+      "item": "HEPES, 10 mM",
+      "source_says": "Buffering supplement in the cholangiocyte organoid medium, not extracted.",
+      "evidence_quote": "10 mM HEPES, 1% GlutaMax (Thermo Fisher Scientific), 1% penicillin–streptomycin",
+      "source_loc": "Methods / Mouse hepatic spheroid and organoid culture"
+    },
+    {
+      "item": "Supplement concentrations: B27 2%, N2 1%, GlutaMax 1%, penicillin-streptomycin 1%",
+      "source_says": "Concentrations are stated verbatim but extraction recorded these supplements with concentration=null.",
+      "evidence_quote": "2% B27 (Thermo Fisher Scientific), 1% N2 (Thermo Fisher Scientific) ... 1% GlutaMax (Thermo Fisher Scientific), 1% penicillin–streptomycin",
+      "source_loc": "Methods / Mouse hepatic spheroid and organoid culture"
+    },
+    {
+      "item": "Timeline: 7-day spheroid culture (PPTR tumor 2 days; co-culture 7 days)",
+      "source_says": "Explicit culture durations stated; extraction timeline is empty.",
+      "evidence_quote": "WLCs, HCs and NPCs were seeded in 24-well AW400 culture plates ... for 7 days according to the manufacturer's instructions. PPTR tumor cells were seeded at 125 cells/microwell in AW400 plates and cultured for 2 days.",
+      "source_loc": "Methods / Mouse hepatic spheroid and organoid culture"
+    },
+    {
+      "item": "Culture conditions: continuous shaking at 80 rpm; 40°C digestion",
+      "source_says": "Culture/agitation condition stated; culture_conditions left not_extracted (no temp/CO2/O2 reported in source for the culture itself, but shaking condition is reported and missed).",
+      "evidence_quote": "All cultures were kept under continuous shaking at 80 rpm on a CO 2 -resistant orbital shaker (Thermo Fisher Scientific).",
+      "source_loc": "Methods / Mouse spheroid co-culture"
+    }
+  ],
+  "verdict": "partial",
+  "notes": "Text-only paper: source bundle has tables=[] and no figure images on disk, so multimodal=false. The 10 signaling factors and their concentrations were extracted verbatim and correctly (CHIR99021 3 uM, NAC 1.25 mM, nicotinamide 10 mM, gastrin 10 nM, EGF/FGF7/FGF10 50 ng/ml, HGF 25 ng/ml, A83-01 1 uM, Y-27632 10 uM); base media (Advanced DMEM/F12), matrix name (Matrigel), species (mouse), and 6 assay endpoints all correct. No fabrications or cross-protocol contamination detected; every extracted signaling factor matches the source string exactly. Main weaknesses: (1) cell_type mislabeled as adult_stem_cell when the source uses freshly isolated PRIMARY liver cells (WLC/HC/NPC) — no ASC/iPSC/ESC involved; (2) the medium is a 50:50 blend of HepatiCult Organoid Growth Medium + cholangiocyte organoid medium, and the entire HepatiCult half plus the 50% L-WRN conditioned medium and 10 mM HEPES were missed, so the captured formulation represents only part of the true medium; (3) Matrigel percent (1%) missed; (4) timeline (7-day culture) and shaking condition (80 rpm) missed. organoid_type 'liver' (pred) vs 'cholangiocyte' (bundle): defensible either way since cultures are hepatic spheroids grown in cholangiocyte medium; not counted as incorrect."
+}

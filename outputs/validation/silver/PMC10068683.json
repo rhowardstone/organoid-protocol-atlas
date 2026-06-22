@@ -1,0 +1,63 @@
+{
+  "pmcid": "PMC10068683",
+  "doi": "10.1186/s13619-023-00161-y",
+  "multimodal": false,
+  "n_fields_checked": 7,
+  "n_correct": 5,
+  "incorrect": [
+    {
+      "field": "source_cells.cell_type",
+      "extracted": "adult_stem_cell",
+      "source_says": "human FETAL liver organoid derived from fetal tissues (tissue-derived, not adult)",
+      "evidence_quote": "Hendriks et al. (Hendriks et al. 2023 ) utilize expandable human fetal liver organoid to mimic the steatosis under various triggers ... Hendriks et al. filled the gap by harnessing the inherently proliferative properties of human liver organoid derived from fetal tissues.",
+      "source_loc": "methods_text / Main text & Conclusions"
+    },
+    {
+      "field": "signaling_factors[0] (hFGF19, role=agonist, treated as a factor)",
+      "extracted": "hFGF19 as signaling_factor with role 'agonist'",
+      "source_says": "recombinant hFGF19 is a SCREENED anti-NAFLD drug/treatment, not a base-culture signaling factor; the FXR 'agonist' label belongs to a separate compound",
+      "evidence_quote": "found inhibitors of ACC, FAS and DGAT2, a FXR agonist, as well as recombinant hFGF19 could efficiently alleviate the steatosis",
+      "source_loc": "methods_text / Main text"
+    }
+  ],
+  "recall_misses": [
+    {
+      "item": "PNPLA3 I148M variant series (HE -/+, HO -/-, KO) as engineered genetic models / modifications",
+      "source_says": "CRISPR-generated PNPLA3 mutations were a core trigger; none captured in 'modifications'",
+      "evidence_quote": "they used CRISPR tools to generate different PNPLA3 mutations in organoids: PNPLA3 I148M −/+ (HE), PNPLA3 I148M −/− (HO) and PNPLA3-KO",
+      "source_loc": "methods_text / Main text"
+    },
+    {
+      "item": "APOB-/- and MTTP-/- knockouts (the 'FatTracer' line) as modifications",
+      "source_says": "engineered KO organoids are central genetic models; absent from 'modifications'",
+      "evidence_quote": "the engineered human fetal liver organoids carrying APOB −/− or MTTP −/− showed significant intracellular lipid accumulation ... So they renamed it FatTracer",
+      "source_loc": "methods_text / Main text"
+    },
+    {
+      "item": "FADS2 perturbations (KO and overexpression) as modifications",
+      "source_says": "FADS2 KO and OE were the key functional manipulations; not captured",
+      "evidence_quote": "Further validation by knockout FADS2 in WT organoids also phenocopied steatosis. Interestingly, overexpression FADS2 alleviated steatosis",
+      "source_loc": "methods_text / Main text"
+    },
+    {
+      "item": "Nile Red staining as an assay endpoint / readout",
+      "source_says": "steatosis was visualized/quantified by Nile Red staining; missing from assay_endpoints",
+      "evidence_quote": "Visualized by Nile Red staining, the degree of steatosis could be quantified and scored",
+      "source_loc": "methods_text / Main text"
+    },
+    {
+      "item": "Drug-screen signaling/small-molecule agents: ACC inhibitor, FAS inhibitor, DGAT2 inhibitor, FXR agonist",
+      "source_says": "a panel of named drug classes reduced steatosis; only hFGF19 and FFA were captured, the rest missed (small_molecules is empty)",
+      "evidence_quote": "found inhibitors of ACC, FAS and DGAT2, a FXR agonist, as well as recombinant hFGF19 could efficiently alleviate the steatosis",
+      "source_loc": "methods_text / Main text"
+    },
+    {
+      "item": "[U-13C]-glucose isotope tracing assay",
+      "source_says": "isotope tracing used to demonstrate DNL; not in assay_endpoints",
+      "evidence_quote": "[U- 13 C]-glucose isotope-tracing also demonstrated the DNL contribution to the lipid accumulation",
+      "source_loc": "methods_text / Main text"
+    }
+  ],
+  "verdict": "partial",
+  "notes": "SOURCE IS A COMMENTARY (News & Views 'Highlight' on Hendriks et al. 2023, Nat Biotechnol, CR1) — NOT a primary protocol paper. It carries NO protocol detail: no base media, no matrix, no concentrations, no timeline, no temp/CO2, no tables (tables=[], supplementary=''). Extraction's mostly-null fields are therefore appropriate, not errors. Main CORRECTNESS error: cell_type='adult_stem_cell' contradicts repeated source statements that these are human FETAL liver / fetal-tissue-derived organoids (developmental-stage mislabel). hFGF19 is a screened therapeutic, not a culture signaling factor, and the 'agonist' role conflates it with the separate FXR agonist. No fabrications detected; the one provided evidence quote is verbatim and accurate. RECALL gaps are mainly the genetic models (PNPLA3/APOB/MTTP/FADS2 edits) and assay readouts (Nile Red, 13C tracing, named drug classes) that the source states but extraction omitted from modifications/assay_endpoints/small_molecules. Given the source is a non-protocol commentary, recall expectations are limited, but the genetic engineering and readouts were clearly extractable. multimodal=false: only Fig.1 caption present; no figure JPG on disk (Tier-2 vision not run)."
+}

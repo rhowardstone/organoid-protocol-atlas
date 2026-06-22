@@ -1,0 +1,83 @@
+{
+  "pmcid": "PMC10121224",
+  "doi": "10.7554/elife.83205",
+  "multimodal": false,
+  "n_fields_checked": 18,
+  "n_correct": 11,
+  "incorrect": [
+    {
+      "field": "base_media.name",
+      "extracted": "Knockout DMEM",
+      "source_says": "Knockout DMEM is the mouse iPSC MAINTENANCE medium (for pluripotency), NOT the organoid differentiation base medium. Mouse retinal differentiation uses GMEM (D0) then DMEM/F12 with GlutaMAX; human differentiation uses E8 -> NIM (DMEM/F-12) -> RIM (DMEM/F-12).",
+      "evidence_quote": "the iPSC lines were maintained on feeder cells (Millipore) in a maintenance medium constituted by Knockout DMEM (ThermoFisher Scientific) ... At differentiation day (D)0, iPSCs were plated ... in 100 µl retinal differentiation medium consisting of GMEM (ThermoFisher Scientific), 1 x NEAA, 1 x sodium pyruvate (Sigma) and 1.5%(v/v) knockout serum replacement (KSR)",
+      "source_loc": "Methods: Maintenance of iPSC / Differentiation of mouse and human retinal organoids"
+    },
+    {
+      "field": "media_supplements (composition / altitude)",
+      "extracted": "Mixed list combining maintenance reagents (β-Mercaptoethanol, FBS, MEM-NEAA, PS) with differentiation reagents (taurine, 9-cis retinal, B27 without Vitamin A, nicotinamide)",
+      "source_says": "These reagents belong to DISTINCT protocols/stages. β-ME 15% ES-FBS, LIF, NEAA, PS are mouse iPSC pluripotency-maintenance reagents; taurine, 9-cis retinal, B27, IGF1 are retinal-differentiation reagents; nicotinamide is a human large-scale-production additive. Single-protocol schema conflates two protocols (mouse + human) and three stages (maintain/differentiate/mature).",
+      "evidence_quote": "in a maintenance medium constituted by Knockout DMEM ... 2000 U/ml leukemia inhibitory factor (LIF) ... and 15% ES cell-qualified fetal bovine serum (FBS) ... [vs] The media were replaced by DMEM/F12 with GlutaMAX, 1 x PS, 1x N2 supplement, 1 mM taurine (Sigma), 500 nM 9- cis retinal (Sigma)",
+      "source_loc": "Methods: Maintenance of iPSC vs Differentiation of mouse and human retinal organoids"
+    },
+    {
+      "field": "signaling_factors (cross-protocol merge)",
+      "extracted": "LIF (2000 U/ml, mouse maintenance), IGF1 (100 ng/ml, mouse differentiation), Y-27632 (10 µM)",
+      "source_says": "Quotes are individually accurate but merged across protocols: Y-27632 10 µM belongs to the HUMAN embryoid-body protocol, LIF to mouse maintenance, IGF1 to mouse differentiation. Human IGF1 dose (20 ng/ml at D38) is a separate value the merge obscures.",
+      "evidence_quote": "small clumps dissociated from iPSCs in one well of a six-well plate were resuspended in E8 medium supplemented with 10 µM Y-27632 (Tocris) ... From D38 onward, 10% fetal bovine serum was added to RIM supplemented with 20 ng/ml IGF-1",
+      "source_loc": "Methods: Differentiation of mouse and human retinal organoids (human paragraph)"
+    },
+    {
+      "field": "source_cells.line_name",
+      "extracted": "Nrl -GFP WT",
+      "source_says": "The primary functional cell line for the disease model and screen is the rd16 mouse iPSC line; human LCA-1/LCA-2 patient iPSCs are the validation lines. Extraction captured only the WT control line, omitting the disease and human lines entirely.",
+      "evidence_quote": "The mouse Nrl -GFP WT and rd16 iPSC lines were obtained ... fibroblasts of the familial control, two clones of LCA10 patient 1 (annotated as LCA-1 and LCA-1-clone C), and two clones of LCA10 patient 2 (annotated as LCA-2 and LCA-2-clone D)",
+      "source_loc": "Methods: Mouse and human pluripotent cell lines"
+    }
+  ],
+  "recall_misses": [
+    {
+      "item": "Mouse retinal differentiation base medium + KSR + sodium pyruvate",
+      "source_says": "D0 mouse differentiation medium = GMEM + 1x NEAA + 1x sodium pyruvate + 1.5% (v/v) KSR; later DMEM/F12 with GlutaMAX + 1x N2 supplement",
+      "evidence_quote": "100 µl retinal differentiation medium consisting of GMEM (ThermoFisher Scientific), 1 x NEAA, 1 x sodium pyruvate (Sigma) and 1.5%(v/v) knockout serum replacement (KSR)",
+      "source_loc": "Methods: Differentiation of mouse and human retinal organoids"
+    },
+    {
+      "item": "Human protocol media entirely missed (E8, NIM, RIM)",
+      "source_says": "Human EB in E8 + Y-27632; NIM = DMEM/F-12 + N2 + NEAA + 2 µg/ml heparin; RIM = DMEM/F-12 + B27 w/o Vit A + 1% antibiotic-antimycotic + GlutaMAX + NEAA",
+      "evidence_quote": "neural induction media (NIM) (DMEM/F-12 (1:1)) ... 2 µg/ml heparin (Sigma) ... a 3:1 retinal induction medium (RIM) consisting of DMEM/F-12 supplemented with 1 x B27 without Vitamin A ... 1% antibiotic-antimycotic solution",
+      "source_loc": "Methods: Differentiation of mouse and human retinal organoids (human paragraph)"
+    },
+    {
+      "item": "Concentrations of differentiation supplements not extracted",
+      "source_says": "taurine 1 mM; 9-cis retinal 500 nM (mouse), 1 µM then 0.5 µM (human); nicotinamide 5 mM; heparin 2 µg/ml; β-ME 55 µM",
+      "evidence_quote": "1 mM taurine (Sigma), 500 nM 9- cis retinal (Sigma) ... nicotinamide was added to the culture to reach a final concentration of 5 mM from D0 to D8 ... with 55 µM 2-ME freshly added",
+      "source_loc": "Methods: Differentiation of mouse and human retinal organoids"
+    },
+    {
+      "item": "Culture conditions (left not_extracted)",
+      "source_says": "37 °C, 5% CO2; O2 5% from D0-D10 and 20% from D10 onwards (mouse); human maintained at 37 °C, 5% O2, 5% CO2",
+      "evidence_quote": "The cultures were incubated in 5% O 2 from D0 to D10 and in 20% O 2 from D10 onwards ... Cells were maintained at 37 °C, 5% O 2 , and 5% CO 2",
+      "source_loc": "Methods: Maintenance of iPSC / Differentiation"
+    },
+    {
+      "item": "small_molecules empty despite drug screen + Key Resources Table",
+      "source_says": "Screen identified reserpine (EC50 16.7 µM; tested 10/20/30 µM); Key Resources Table lists Reserpine, MRT68921, Lys05, Chloroquine, Hydroxychloroquine, ROC-325, Bafilomycin A1, Tubastatin A",
+      "evidence_quote": "Chemical compound, drug Reserpine Sigma Aldrich 06859 Chemical compound, drug MRT68921 Sigma Aldrich SML1644 Chemical compound, drug Lys05 ... Chemical compound, drug Bafilomycin A1 ... Tubastatin A",
+      "source_loc": "Appendix 1—key resources table"
+    },
+    {
+      "item": "timeline empty despite explicit staged day events",
+      "source_says": "D0 plating; D1 Matrigel addition; D10 medium switch + O2 change; D26 supplement addition (mouse). Human: D1/D2/D3 NIM, D7 plating, D16 RIM, D28 scraping, D38 FBS, D63-D91 9-cis retinal",
+      "evidence_quote": "At D1, 240 µl GFR-Matrigel ... The media were replaced ... at D10 ... From D26 onward, 1 x NEAA, 1 x B27 ... were added",
+      "source_loc": "Methods: Differentiation of mouse and human retinal organoids"
+    },
+    {
+      "item": "Matrix percent / details and human coating omitted",
+      "source_says": "Mouse uses GFR-Matrigel >9.5 mg/ml diluted 240 µl in 1.8 ml at D1; human uses GFR Matrigel-coated dishes; human iPSCs maintained on GFR Matrigel-coated plates",
+      "evidence_quote": "240 µl GFR-Matrigel (>9.5 mg/ml) was diluted in 1.8 ml retinal differentiation medium ... D7 EBs ... were plated onto one GFR Matrigel-coated 60 mm dish",
+      "source_loc": "Methods: Differentiation of mouse and human retinal organoids"
+    }
+  ],
+  "verdict": "partial",
+  "notes": "No fabrications and no ESC->iPSC mislabel: all cells are genuinely iPSC and quoted values are verbatim-accurate. Core defect is cross-protocol / cross-stage CONTAMINATION: the single-protocol schema collapsed two distinct protocols (mouse rd16 and human LCA10 patient organoids) and three stages (iPSC maintenance, differentiation, maturation) into one record. base_media wrongly captured the mouse iPSC maintenance medium (Knockout DMEM) instead of any differentiation base medium (GMEM/DMEM-F12/E8/NIM/RIM). The human protocol, all small molecules (drug-screen focus of the paper), the full timeline, and culture O2/CO2/temp conditions were missed. Recall is the dominant weakness. Figures present only as captions (no JPGs on disk); Key Resources Table was available and under-used. Schema lacks capacity for multi-protocol papers, which is the root cause."
+}

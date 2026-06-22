@@ -1,0 +1,88 @@
+{
+  "pmcid": "PMC10040243",
+  "doi": "10.1242/bio.059845",
+  "multimodal": false,
+  "n_fields_checked": 11,
+  "n_correct": 8,
+  "incorrect": [
+    {
+      "field": "signaling_factors[0].concentration (Thiazovivin)",
+      "extracted": "2.0 µM",
+      "source_says": "The c-organoid generation protocol uses 4 µM Thiazovivin; 2 µM is from the iPSC-maintenance and NPC-generation sections, not the organoid protocol. Cross-protocol contamination of the concentration value.",
+      "evidence_quote": "A total of 4.5×10 3 cells were seeded into each well of an ultra-low-attachment 96-well plate (Corning) to form embryoid bodies in mTeSR Plus medium supplemented with 4 µM of Thiazovivin (Millipore) for the first 2 days.",
+      "source_loc": "methods_text > Generation of cerebral organoids"
+    },
+    {
+      "field": "base_media (c-organoid differentiation base)",
+      "extracted": "mTeSR Plus Culture Media",
+      "source_says": "mTeSR Plus is the iPSC-maintenance / EB-formation medium. The actual cerebral-organoid differentiation base medium is a 1:1 mix of DMEM-F12 and Neurobasal. The extraction captured the upstream maintenance medium and missed the organoid differentiation base.",
+      "evidence_quote": "embryoid bodies were embedded in 15 µL Matrigel droplets and cultured in six-well plates containing c-organoid differentiation media consisting of 1:1 DMEM-F12 and Neurobasal media (Gibco)",
+      "source_loc": "methods_text > Generation of cerebral organoids"
+    },
+    {
+      "field": "media_supplements (B27 detail)",
+      "extracted": "B27 supplement (no qualifier, no concentration)",
+      "source_says": "Source specifies B27 WITHOUT Vitamin A at 1% in the organoid differentiation media; Vitamin A is added later. The without-Vitamin-A qualifier and concentration were dropped.",
+      "evidence_quote": "1% B27 supplement without Vitamin A (Life Technologies) ... Organoids were then cultured in c-organoid differentiation media supplemented with Vitamin A on an orbital shaker",
+      "source_loc": "methods_text > Generation of cerebral organoids"
+    }
+  ],
+  "recall_misses": [
+    {
+      "item": "Neural induction medium (StemDiff) step",
+      "source_says": "After EB formation, organoids are cultured in StemDiff neural induction medium before Matrigel embedding. Missing entirely from base_media/timeline.",
+      "evidence_quote": "EBs were cultured in neural induction medium (StemDiff, STEMCELL). After neuroepithelium emerged (usually at ∼day 9–10), embryoid bodies were embedded in 15 µL Matrigel droplets",
+      "source_loc": "methods_text > Generation of cerebral organoids"
+    },
+    {
+      "item": "N2 supplement (0.5%) in differentiation media",
+      "source_says": "N2 supplement at 0.5% is a component of the c-organoid differentiation media but is absent from extracted media_supplements.",
+      "evidence_quote": "with addition of 0.5% N2 supplement (Life Technologies)",
+      "source_loc": "methods_text > Generation of cerebral organoids"
+    },
+    {
+      "item": "2-Mercaptoethanol (0.1 µM) in differentiation media",
+      "source_says": "2-Mercaptoethanol at 0.1 µM is a differentiation-media component, missing from extracted supplements.",
+      "evidence_quote": "0.1 µM of 2-Mercaptoethanol (Millipore)",
+      "source_loc": "methods_text > Generation of cerebral organoids"
+    },
+    {
+      "item": "Supplement concentrations for B27/N2/MEM-NEAA/Glutamax/Insulin",
+      "source_says": "Source gives explicit concentrations (1% B27 w/o VitA, 0.5% N2, 0.5% MEM-NEAA, 1% Glutamax, 2.6 µg/ml Insulin); all dropped as null in extraction.",
+      "evidence_quote": "0.5% ml MEM-NEAA (Gibco), 1% Glutamax (Gibco), 1% B27 supplement without Vitamin A (Life Technologies), 0.1 µM of 2-Mercaptoethanol (Millipore), 2.6 µg/ml Insulin (Sigma-Aldrich)",
+      "source_loc": "methods_text > Generation of cerebral organoids"
+    },
+    {
+      "item": "Vitamin A (retinoic acid) addition step",
+      "source_says": "Vitamin A is added to the differentiation media at the shaker stage (a distinct signaling/timeline step); not captured in small_molecules or timeline.",
+      "evidence_quote": "Organoids were then cultured in c-organoid differentiation media supplemented with Vitamin A on an orbital shaker (CO2 Resistant Shakers, ThermoFisher Scientific) at 80 rpm.",
+      "source_loc": "methods_text > Generation of cerebral organoids"
+    },
+    {
+      "item": "EB seeding density and 96-well ultra-low-attachment format",
+      "source_says": "4.5×10^3 cells per well in ultra-low-attachment 96-well plate to form EBs; not captured in any field.",
+      "evidence_quote": "A total of 4.5×10 3 cells were seeded into each well of an ultra-low-attachment 96-well plate (Corning) to form embryoid bodies",
+      "source_loc": "methods_text > Generation of cerebral organoids"
+    },
+    {
+      "item": "Timeline / culture duration (42 days, orbital shaker 80 rpm)",
+      "source_says": "Organoids cultured 42 days; static 4 days then orbital shaker at 80 rpm. timeline array is empty and culture_conditions are null/not_extracted.",
+      "evidence_quote": "in static culture for 4 days. Organoids were then cultured ... on an orbital shaker ... at 80 rpm. Organoids were cultured for 42 days",
+      "source_loc": "methods_text > Generation of cerebral organoids"
+    },
+    {
+      "item": "Matrigel coating concentration (100 µg/ml) and droplet volume (15 µL)",
+      "source_says": "Matrigel percent/concentration extracted as null; source gives droplet volume 15 µL and coating 100 µg/ml.",
+      "evidence_quote": "embedded in 15 µL Matrigel droplets ... coated with diluted Matrigel (100 µg/ml, Corning)",
+      "source_loc": "methods_text > Generation of cerebral organoids / Human induced pluripotent stem cells"
+    },
+    {
+      "item": "Assay endpoints (additional markers)",
+      "source_says": "Extraction lists 7 markers but source uses many more IF markers for organoids (TBR1, EOMES/TBR2, DCX, Olig2, O4, GAD67, vGluT1, PH3, p16, PAX6) plus qPCR (Olig2, NG2, GalC).",
+      "evidence_quote": "rat anti-CTIP2 ... mouse anti-EOMES ... rabbit anti-Olig2 ... rabbit anti-TBR1 ... mouse anti-PAX6 ... mouse anti-phospho-Histone H3 ... TaqMan assays for human were olig2, ng2 and GalC",
+      "source_loc": "methods_text > Histological Analysis / Gene expression analysis"
+    }
+  ],
+  "verdict": "partial",
+  "notes": "No ESC->iPSC mislabel (source is iPSC throughout; correct). Matrix Matrigel and iPSC cell type correct. Two notable correctness problems are cross-protocol contamination: (1) Thiazovivin concentration extracted as 2 µM (from iPSC/NPC sections) instead of the 4 µM used in the cerebral-organoid protocol; (2) base_media set to mTeSR Plus (maintenance medium) rather than the organoid differentiation base (1:1 DMEM-F12/Neurobasal). Recall is weak: missed the StemDiff neural-induction step, N2 and 2-Mercaptoethanol supplements, all supplement concentrations, Vitamin A addition, EB seeding density, 42-day timeline, orbital-shaker 80 rpm conditions, and Matrigel droplet/coating amounts. Not multimodal: no figure JPGs on disk; Table 1 (patient iPSC info) has caption only with no machine-readable rows; supplementary_text is just a download link. Verdict partial: core identity fields correct but media/concentration accuracy and timeline recall are deficient."
+}

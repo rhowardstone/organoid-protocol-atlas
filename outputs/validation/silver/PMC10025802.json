@@ -1,0 +1,47 @@
+{
+  "pmcid": "PMC10025802",
+  "doi": "10.1186/s13578-023-00995-8",
+  "multimodal": false,
+  "n_fields_checked": 9,
+  "n_correct": 1,
+  "incorrect": [
+    {
+      "field": "organoid_type",
+      "extracted": "other (bundle classified 'tumor')",
+      "source_says": "This is a narrative REVIEW article on tetraspanins (TSPANs); it describes no organoid system, no derivation, and no culture protocol. The word 'organoid' appears only 3x, all as passing references to others' findings (e.g. 'CD9 high pancreatic cancer cells have increased organoid formation capability', 'TSPAN6 deletion promotes colorectal cancer organoid growth').",
+      "evidence_quote": "TSPAN6 deletion promotes colorectal cancer organoid growth in an EV-dependent manner",
+      "source_loc": "body_text (Results discussion of cited refs [83])"
+    },
+    {
+      "field": "signaling_factors / EGFR (role:partner)",
+      "extracted": "EGFR, partner",
+      "source_says": "EGFR is listed as a TSPAN protein-protein interaction partner in a REVIEW figure caption about cancer cell signaling, NOT as a growth factor added to an organoid medium. Misapplication of review pathway content as a culture recipe.",
+      "evidence_quote": "Other partners of TSPANs include growth factor receptors (EGFR [ 9 ], mtTGF-β [ 10 ])",
+      "source_loc": "figures[0] Fig.1 caption / body_text Introduction"
+    },
+    {
+      "field": "signaling_factors / mtTGF-β",
+      "extracted": "mtTGF-β, partner",
+      "source_says": "mtTGF-β (membrane-type TGF-β) is named as a TSPAN binding partner in the review, not a media additive. The captured 'quote' is the review's list of TSPAN partners.",
+      "evidence_quote": "growth factor receptors (EGFR [ 9 ], mtTGF-β [ 10 ])",
+      "source_loc": "figures[0] Fig.1 caption / body_text Introduction"
+    },
+    {
+      "field": "signaling_factors / Wnt/β-catenin, ERK1/2, STAT3/5, Src, Notch",
+      "extracted": "5 pathways listed as signaling_factors",
+      "source_says": "These are intracellular signaling PATHWAYS that TSPANs modulate in cancer, lifted from a review sentence/figure caption. They are not exogenous signaling factors or small molecules added to any organoid culture.",
+      "evidence_quote": "Thus, TSPANs can affect several signaling pathways, including PI3K/AKT, Wnt/β-catenin, ERK1/2, STAT3/5, Src, Notch pathways",
+      "source_loc": "figures[0] Fig.1 caption / body_text Introduction"
+    },
+    {
+      "field": "signaling_factors / R-spondin",
+      "extracted": "R-spondin (role:null, evidence:null)",
+      "source_says": "FABRICATION. The string 'spondin' / 'R-spondin' does not appear anywhere in methods_text, body_text, tables, or figure captions (0 occurrences). No supporting evidence object is attached. Likely hallucinated from organoid-protocol priors.",
+      "evidence_quote": "(no occurrence of 'R-spondin' or 'spondin' anywhere in the source bundle)",
+      "source_loc": "absent from source"
+    }
+  ],
+  "recall_misses": [],
+  "verdict": "poor",
+  "notes": "Source is a 2023 narrative REVIEW (Cell & Bioscience) titled around tetraspanins (TSPANs) in cancer and extracellular-vesicle biogenesis. It contains NO organoid derivation/culture protocol: methods_text holds only an abbreviations list and author-contributions boilerplate; the two tables are 'TSPAN family members' (Table 1) and 'function/regulatory mechanism of TSPAN members in cancer' (Table 2) — neither is a recipe. No Matrigel, no base media, no passaging, no cell line/RRID, no timeline (matrigel=0, passage=0, spondin=0 hits). The extractor correctly left most recipe fields null/not_reported (1 defensible field: base_media not_reported), but it manufactured a 'tumor organoid' shell by harvesting cancer-signaling pathway/partner names from a review figure caption (EGFR, mtTGF-β, Wnt/β-catenin, ERK1/2, STAT3/5, Src, Notch) and adding a fully fabricated R-spondin entry. No recall misses exist because the source contains no protocol items to recover. This paper should be flagged as MIS-TARGETED (not an organoid protocol) and excluded from the corpus; the extraction is poor due to category error + fabrication."
+}
