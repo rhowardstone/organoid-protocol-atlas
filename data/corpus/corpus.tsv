@@ -4700,3 +4700,158 @@ kidney	10.1172/jci.insight.154882	PMC8783682	Helms	2021	JCI insight	tbd	tbd	CC-B
 hepatic	10.3389/fphys.2021.830683	PMC8814660	Chimenti	2021	Frontiers in physiology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
 pancreatic	10.3389/ti.2021.10214	PMC8842259	Wassmer	2021	Transplant international : official journal of the European Society for Organ Transplantation	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.5
 hepatic	10.3389/ftox.2021.657432	PMC8915818	Rizki-Safitri	2021	Frontiers in toxicology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.5
+tumor	10.1146/annurev-bioeng-122019-121602	PMC13087914	Abdeen	2021	Annual review of biomedical engineering	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+cardiac	10.3389/fphys.2020.00165	PMC7080659	Wong	2020	Frontiers in physiology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.8
+intestinal	10.1371/journal.pone.0231423	PMC7164685	Ambrosini	2020	PloS one	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+cardiac	10.1038/s41598-020-62955-3	PMC7181791	Thavandiran	2020	Scientific reports	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+cardiac	10.3390/ijms21093404	PMC7246991	Sacchetto	2020	International journal of molecular sciences	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+cardiac	10.3390/cells9051270	PMC7290967	Błyszczuk	2020	Cells	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+cardiac	10.3389/fcell.2020.00735	PMC7406690	Heng	2020	Frontiers in cell and developmental biology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.75
+cardiac	10.3390/cells9071733	PMC7409052	Filippo Buono	2020	Cells	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+cardiac	10.3389/fphar.2020.01314	PMC7472597	Kastner	2020	Frontiers in pharmacology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+cardiac	10.3389/fcell.2020.559032	PMC7500153	Pagliarosi	2020	Frontiers in cell and developmental biology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.667
+cardiac	10.3390/bioengineering7030092	PMC7552661	Branco	2020	Bioengineering (Basel, Switzerland)	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.769
+cardiac	10.3390/biom10091306	PMC7565384	Afflerbach	2020	Biomolecules	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+cardiac	10.3389/fcell.2020.594226	PMC7593613	Zhao	2020	Frontiers in cell and developmental biology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+cardiac	10.3390/cells9102178	PMC7600463	Ylostalo	2020	Cells	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+tumor	10.1053/j.gastro.2020.11.011	PMC7617122	Kobayashi	2021	Gastroenterology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.667
+cardiac	10.3390/ijms21217950	PMC7663133	López-Muneta	2020	International journal of molecular sciences	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.714
+cardiac	10.3389/fbioe.2020.580744	PMC7674657	Abecasis	2020	Frontiers in bioengineering and biotechnology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.1093/jmcb/mjaa031	PMC7683020	Pan	2020	Journal of molecular cell biology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.3390/v12111288	PMC7697248	García-Rodríguez	2020	Viruses	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+cardiac	10.3390/ijms21238893	PMC7727666	Li	2020	International journal of molecular sciences	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.5
+intestinal	10.1016/j.mib.2020.10.002	PMC7758878	Bhalchandra	2020	Current opinion in microbiology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+tumor	10.1016/j.jcmgh.2020.09.003	PMC7788239	Liu	2021	Cellular and molecular gastroenterology and hepatology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.857
+intestinal	10.1002/advs.202002135	PMC7788499	Curvello	2020	Advanced science (Weinheim, Baden-Wurttemberg, Germany)	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.8
+skin	10.1038/s41419-020-03330-y	PMC7790817	Wang	2021	Cell death & disease	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+tumor	10.1038/s41467-020-20223-y	PMC7809039	Tajan	2021	Nature communications	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.889
+prostate	10.1007/s13238-020-00786-8	PMC7815845	Teng	2021	Protein & cell	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+vascular	10.3390/cells10010074	PMC7824831	Pars	2021	Cells	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.909
+cardiac	10.3389/fnins.2020.622137	PMC7835643	Passaro	2020	Frontiers in neuroscience	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+salivary-gland	10.1038/s41536-020-00115-x	PMC7851389	Rocchi	2021	NPJ Regenerative medicine	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.5
+tumor	10.1038/s41418-020-0565-5	PMC7852529	Alzamil	2021	Cell death and differentiation	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+prostate	10.1038/s41467-020-20820-x	PMC7854732	Bernasocchi	2021	Nature communications	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+bone	10.3390/ma14030569	PMC7865713	Congrains	2021	Materials (Basel, Switzerland)	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+endometrial	10.1186/s13287-021-02188-x	PMC7881492	Yokomizo	2021	Stem cell research & therapy	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+skin	10.1038/s41392-020-00441-y	PMC7886855	Ji	2021	Signal transduction and targeted therapy	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.857
+tumor	10.1038/s41467-021-21300-6	PMC7892572	Karkampouna	2021	Nature communications	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.909
+inner-ear	10.3389/fcell.2021.637779	PMC7907461	Wu	2021	Frontiers in cell and developmental biology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.5
+tumor	10.1002/advs.202002483	PMC7927606	Ng	2021	Advanced science (Weinheim, Baden-Wurttemberg, Germany)	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+pancreatic	10.1172/jci.insight.141851	PMC7934853	Saikia	2021	JCI insight	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+bone	10.3389/fimmu.2021.643852	PMC7938325	Martinov	2021	Frontiers in immunology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.5
+tumor	10.1186/s12964-021-00713-2	PMC7945251	Leggett	2021	Cell communication and signaling : CCS	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.833
+tumor	10.3390/cancers13051097	PMC7961698	Zowada	2021	Cancers	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+tumor	10.3390/cancers13051179	PMC7967139	Wang	2021	Cancers	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+tumor	10.7150/thno.53901	PMC7977458	Wang	2021	Theranostics	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+tumor	10.1117/1.jbo.26.3.036005	PMC7983069	Gil	2021	Journal of biomedical optics	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+mammary	10.1038/s41467-021-22070-x	PMC7988009	Clark	2021	Nature communications	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+tumor	10.3389/fendo.2021.627819	PMC7991829	Dijkstra	2021	Frontiers in endocrinology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+tumor	10.3390/diagnostics11030469	PMC8000964	Iwasaki	2021	Diagnostics (Basel, Switzerland)	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+tumor	10.3389/fbioe.2021.647031	PMC8006407	Teixeira	2021	Frontiers in bioengineering and biotechnology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+tumor	10.1186/s13046-021-01917-7	PMC8011220	Nero	2021	Journal of experimental & clinical cancer research : CR	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+tumor	10.3389/fcell.2021.588278	PMC8027362	Shah	2021	Frontiers in cell and developmental biology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.889
+tumor	10.1038/s41698-021-00168-1	PMC8042051	Wensink	2021	NPJ precision oncology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.5
+tumor	10.1186/s13046-021-01939-1	PMC8050903	Feng	2021	Journal of experimental & clinical cancer research : CR	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.5
+tumor	10.1038/s41467-021-22544-y	PMC8058065	Della Chiara	2021	Nature communications	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+tumor	10.1038/s41467-021-22531-3	PMC8058071	Gudiño	2021	Nature communications	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+tumor	10.3390/molecules26082278	PMC8071039	Derakhshani	2021	Molecules (Basel, Switzerland)	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.5
+mammary	10.1038/s41467-021-22988-2	PMC8115695	Buchmann	2021	Nature communications	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.5
+vascular	10.3390/ijms22094322	PMC8122466	Lenin	2021	International journal of molecular sciences	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.667
+tumor	10.3389/fonc.2021.657210	PMC8131869	Liu	2021	Frontiers in oncology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+tumor	10.1002/advs.202004344	PMC8132060	Kan	2021	Advanced science (Weinheim, Baden-Wurttemberg, Germany)	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+bone	10.1038/s41526-021-00146-8	PMC8140135	Iordachescu	2021	NPJ microgravity	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.75
+tumor	10.3390/cells10051024	PMC8145874	Windmöller	2021	Cells	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+tumor	10.3389/fcell.2021.639111	PMC8152669	Zhao	2021	Frontiers in cell and developmental biology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+neuromuscular	10.1007/s12015-020-10103-9	PMC8166717	Hildebrandt	2021	Stem cell reviews and reports	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.5
+mammary	10.1186/s13567-021-00947-5	PMC8173821	Finot	2021	Veterinary research	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+tumor	10.1371/journal.pone.0252907	PMC8186796	Sargenti	2021	PloS one	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+tumor	10.1002/advs.202003897	PMC8188185	Zhao	2021	Advanced science (Weinheim, Baden-Wurttemberg, Germany)	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+tumor	10.1038/s41392-021-00641-0	PMC8190181	Wu	2021	Signal transduction and targeted therapy	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+bone	10.1038/s41536-021-00145-z	PMC8195980	Zhou	2021	NPJ Regenerative medicine	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+tumor	10.3390/cancers13112539	PMC8196829	Beutel	2021	Cancers	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+tumor	10.3390/biology10060500	PMC8226560	Lee	2021	Biology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+endometrial	10.3390/jpm11060504	PMC8229407	Francés-Herrero	2021	Journal of personalized medicine	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+tumor	10.3390/cancers13122996	PMC8232709	Raniszewska	2021	Cancers	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.75
+tumor	10.1371/journal.pone.0253258	PMC8263287	Truelsen	2021	PloS one	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+tumor	10.3390/cancers13133349	PMC8268501	Cunnea	2021	Cancers	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+tumor	10.3390/cancers13133282	PMC8268692	Jiso	2021	Cancers	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+tumor	10.3389/fgene.2021.698771	PMC8273277	Takeda	2021	Frontiers in genetics	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+tumor	10.1186/s13046-021-02034-1	PMC8276416	Cho	2021	Journal of experimental & clinical cancer research : CR	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+tumor	10.3389/fonc.2021.705797	PMC8290842	Yan	2021	Frontiers in oncology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+tumor	10.1155/2021/9994535	PMC8294990	Kwon	2021	Journal of oncology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.8
+tumor	10.3390/biomedicines9070705	PMC8301364	Armstrong	2021	Biomedicines	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+tumor	10.3390/cancers13143437	PMC8308039	Kang	2021	Cancers	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+tumor	10.3390/ph14070682	PMC8308742	Bi	2021	Pharmaceuticals (Basel, Switzerland)	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+skin	10.7150/thno.59661	PMC8344006	Ebner-Peking	2021	Theranostics	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.6
+tumor	10.3390/cancers13153805	PMC8345131	Invrea	2021	Cancers	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+tumor	10.3390/cancers13153760	PMC8345202	Park	2021	Cancers	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+tumor	10.3390/cancers13153906	PMC8345430	Padmanabhan	2021	Cancers	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.571
+tumor	10.1038/s41588-021-00891-2	PMC8346364	Bollen	2021	Nature genetics	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+tumor	10.1136/gutjnl-2020-322658	PMC8355876	Smyth	2021	Gut	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+tumor	10.1002/cam4.4114	PMC8366099	Hong	2021	Cancer medicine	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+tumor	10.1038/s41467-021-25341-9	PMC8379232	Mao	2021	Nature communications	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+tumor	10.3390/cancers13164235	PMC8391691	Wandmacher	2021	Cancers	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+tumor	10.3390/cancers13163997	PMC8394300	Qiu	2021	Cancers	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+inner-ear	10.3389/fcell.2021.710159	PMC8414802	Erni	2021	Frontiers in cell and developmental biology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+tumor	10.1186/s12967-021-03062-3	PMC8424985	Kryeziu	2021	Journal of translational medicine	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.714
+tumor	10.15252/embj.2020107182	PMC8447605	Smith	2021	The EMBO journal	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+tumor	10.3390/cells10092211	PMC8466455	Gowrikumar	2021	Cells	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+tumor	10.3390/jpm11090869	PMC8466534	M Kholosy	2021	Journal of personalized medicine	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.8
+tumor	10.3390/mi12091106	PMC8467891	Wang	2021	Micromachines	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.75
+tumor	10.3390/jpm11090923	PMC8471928	Strijker	2021	Journal of personalized medicine	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+tumor	10.1007/s12032-021-01582-y	PMC8478748	Heninger	2021	Medical oncology (Northwood, London, England)	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.8
+tumor	10.1186/s12943-021-01426-3	PMC8480086	Pamarthy	2021	Molecular cancer	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+tumor	10.1038/s41598-021-98911-y	PMC8486855	Tatla	2021	Scientific reports	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.75
+tumor	10.1186/s12935-021-02219-w	PMC8487492	Wang	2021	Cancer cell international	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+tumor	10.7150/thno.59533	PMC8490519	Xing	2021	Theranostics	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+tumor	10.1038/s41467-021-26059-4	PMC8492851	Krieger	2021	Nature communications	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+tumor	10.1038/s41467-021-26081-6	PMC8497512	Khan	2021	Nature communications	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.5
+endometrial	10.3390/cancers13194990	PMC8507901	Eritja	2021	Cancers	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.833
+tumor	10.3390/molecules26196018	PMC8512555	Li	2021	Molecules (Basel, Switzerland)	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+tumor	10.1016/j.patter.2021.100360	PMC8515010	Fan	2021	Patterns (New York, N.Y.)	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+tumor	10.3389/fbioe.2021.697657	PMC8520924	Cho	2021	Frontiers in bioengineering and biotechnology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.5
+tumor	10.3390/biom11101479	PMC8533166	Shimonosono	2021	Biomolecules	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+tumor	10.3390/cells10102771	PMC8534514	Ishibashi	2021	Cells	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+tumor	10.3390/cells10102695	PMC8534916	Corallo	2021	Cells	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+skin	10.3389/fcell.2021.720879	PMC8542792	Yang	2021	Frontiers in cell and developmental biology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.833
+mammary	10.1126/sciadv.abf6063	PMC8550236	Wilson	2021	Science advances	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+mammary	10.7554/elife.67915	PMC8550756	Katsuno-Kambe	2021	eLife	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+tumor	10.1002/ctm2.589	PMC8567053	Guo	2021	Clinical and translational medicine	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+pancreatic	10.1371/journal.pone.0248034	PMC8577775	Saenz	2021	PloS one	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+tumor	10.7150/ijbs.67379	PMC8579464	Zhao	2021	International journal of biological sciences	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.75
+tumor	10.3390/cancers13215434	PMC8582471	Küçükköse	2021	Cancers	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.5
+tumor	10.3389/fcell.2021.744969	PMC8585768	Dong	2021	Frontiers in cell and developmental biology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+tumor	10.1186/s40164-021-00246-x	PMC8590337	Li	2021	Experimental hematology & oncology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+tumor	10.1038/s41598-021-01783-5	PMC8595654	Johansson	2021	Scientific reports	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+tumor	10.1002/advs.202101176	PMC8596108	Chen	2021	Advanced science (Weinheim, Baden-Wurttemberg, Germany)	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.909
+skin	10.3389/fcell.2021.709824	PMC8600117	Sun	2021	Frontiers in cell and developmental biology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+tumor	10.1038/s41392-021-00795-x	PMC8602417	Gao	2021	Signal transduction and targeted therapy	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+tumor	10.3390/bioengineering8110163	PMC8615023	Rijal	2021	Bioengineering (Basel, Switzerland)	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+tumor	10.3390/biom11111572	PMC8615701	Van Hemelryk	2021	Biomolecules	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+prostate	10.1038/s41388-021-02059-y	PMC8616751	Ter Steege	2021	Oncogene	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+skin	10.3390/molecules26227014	PMC8618597	Koycheva	2021	Molecules (Basel, Switzerland)	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+inner-ear	10.1038/s43856-021-00044-w	PMC8633908	Jeong	2021	Communications medicine	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.5
+tumor	10.1002/1878-0261.13045	PMC8637575	Wambecke	2021	Molecular oncology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+tumor	10.1038/s41467-021-26840-5	PMC8640014	Bolis	2021	Nature communications	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.875
+pancreatic	10.1111/apha.13733	PMC8646749	Memon	2021	Acta physiologica (Oxford, England)	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+endometrial	10.1038/s41588-021-00972-2	PMC8648563	Garcia-Alonso	2021	Nature genetics	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+tumor	10.1002/advs.202100759	PMC8655181	Yu	2021	Advanced science (Weinheim, Baden-Wurttemberg, Germany)	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.875
+skin	10.3389/fcell.2021.799268	PMC8655873	Lei	2021	Frontiers in cell and developmental biology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+tumor	10.3390/cancers13236076	PMC8656523	Lin	2021	Cancers	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+tumor	10.3390/cancers13235914	PMC8656609	Herrero	2021	Cancers	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.75
+tumor	10.3390/ijms222312891	PMC8658015	Briede	2021	International journal of molecular sciences	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+prostate	10.3390/ijms222313097	PMC8658468	Buskin	2021	International journal of molecular sciences	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.636
+tumor	10.1016/j.celrep.2021.110060	PMC8665414	Klomp	2021	Cell reports	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+skin	10.1016/j.ynpai.2021.100063	PMC8683679	Chrysostomidou	2021	Neurobiology of pain (Cambridge, Mass.)	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+tumor	10.1038/s41467-021-26901-9	PMC8692330	Singh	2021	Nature communications	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+tumor	10.1038/s41598-021-03708-8	PMC8692465	Kawai	2021	Scientific reports	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+tumor	10.3389/fphar.2021.777114	PMC8696016	Poloznikov	2021	Frontiers in pharmacology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.75
+tumor	10.3390/biom11121912	PMC8699338	Shi	2021	Biomolecules	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.667
+tumor	10.3390/ijms222413553	PMC8706449	Ohya	2021	International journal of molecular sciences	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+tumor	10.3389/fonc.2021.771173	PMC8724556	Spiller	2021	Frontiers in oncology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+tumor	10.3390/ijms23010216	PMC8745679	Yoon	2021	International journal of molecular sciences	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.714
+tumor	10.1080/21655979.2021.1974809	PMC8810105	Luo	2021	Bioengineered	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+tumor	10.3389/fonc.2021.812264	PMC8825372	Jia	2021	Frontiers in oncology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+pancreatic	10.3389/fmed.2021.751110	PMC8864178	Levink	2021	Frontiers in medicine	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.5
+tumor	10.1038/s43856-021-00019-x	PMC9053236	Berg	2021	Communications medicine	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+endometrial	10.3389/frph.2021.804921	PMC9580781	Muter	2021	Frontiers in reproductive health	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
