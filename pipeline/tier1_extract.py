@@ -125,7 +125,8 @@ passaging: {{method, split_ratio, interval_days}},
 timeline: [{{name, day_start, day_end}}],
 assay_endpoints: [string],
 failure_modes: [{{description, condition, evidence_quote}}],
-modifications: [{{cited_doi, change_description, evidence_quote}}].
+modifications: [{{cited_doi, change_description, evidence_quote}}],
+publication_type ("primary_methods" | "review" | "other"): "review" if this text summarizes findings from multiple other papers' protocols; "primary_methods" if it presents one new original culture procedure.
 RULES:
 - evidence_quote MUST be copied verbatim (exact substring) from the text.
 - culture_conditions: numeric temperature_c / co2_pct / o2_pct ONLY if the text states them
@@ -150,6 +151,17 @@ RULES:
 
 TEXT:
 {evidence}"""
+
+
+def detect_publication_type(bundle: dict, model_out: dict) -> str:
+    """Determine article type: prefer deterministic JATS attribute, fall back to model."""
+    jats_at = bundle.get("article_type", "").lower()
+    if "review" in jats_at:
+        return "review"
+    mp = str(model_out.get("publication_type", "")).lower().strip('"').strip()
+    if mp in ("review", "primary_methods", "other"):
+        return mp
+    return "primary_methods"
 
 
 def call_ollama(prompt: str) -> dict:
@@ -366,7 +378,9 @@ def main():
         except Exception as e:  # noqa: BLE001
             summary.append({"pmcid": pmcid, "doi": doi, "error": f"{type(e).__name__}: {e}"})
             continue
-        (PRED_DIR / f"{pmcid}.json").write_text(proto.model_dump_json(indent=2))
+        pred_dict = json.loads(proto.model_dump_json(indent=2))
+        pred_dict["publication_type"] = detect_publication_type(bundle, m)
+        (PRED_DIR / f"{pmcid}.json").write_text(json.dumps(pred_dict, indent=2))
         rate = round(g["grounded"] / g["reagents"], 3) if g["reagents"] else None
         # mirror the GATED values stored on the prediction (DOI-checked, evidence-grounded)
         failure_modes = [
@@ -386,6 +400,7 @@ def main():
             "grounding_rate": rate,
             "failure_modes": failure_modes,
             "modifications": modifications,
+            "publication_type": pred_dict.get("publication_type"),
         })
 
     # incremental (--only): merge fresh rows into the existing summary, keeping the rest

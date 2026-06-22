@@ -64,7 +64,8 @@ CREATE TABLE protocols (
     extractor TEXT,
     passaging TEXT,
     timeline TEXT,
-    assay_endpoints TEXT
+    assay_endpoints TEXT,
+    publication_type TEXT
 );
 
 CREATE TABLE reagents (
@@ -191,14 +192,15 @@ def main():
             for t in (p.get("timeline") or []) if t.get("name"))
         endpoints_s = " · ".join(str(x) for x in (p.get("assay_endpoints") or []))
         conn.execute(
-            "INSERT INTO protocols VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+            "INSERT INTO protocols VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
             (pmcid, p.get("source_doi"), oty, sc.get("species"),
              sc.get("cell_type"), (p.get("matrix") or {}).get("name"), bm.get("name"),
              bm.get("reporting"), cm.get("first_author"), cm.get("year"),
              cm.get("journal"), cm.get("license"), cm.get("gold_candidate"),
              len(sf), len(sup), n_conf, grounded, len(sf),
              round(grounded / len(sf), 3) if sf else None, p.get("extractor_version"),
-             passaging_s or None, timeline_s or None, endpoints_s or None),
+             passaging_s or None, timeline_s or None, endpoints_s or None,
+             p.get("publication_type")),
         )
         add_reagents(sf, "signaling")
         add_reagents(sup, "supplement")

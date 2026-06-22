@@ -121,6 +121,7 @@ def parse_jats(xml_bytes: bytes) -> dict:
     root = ET.fromstring(xml_bytes, parser=parser)
     body = root.find(".//{*}body")
     warnings: list[str] = []
+    article_type = root.get("article-type", "")
 
     all_secs = list(body.iter("{*}sec")) if body is not None else []
     top_secs = body.findall("{*}sec") if body is not None else []
@@ -251,6 +252,7 @@ def parse_jats(xml_bytes: bytes) -> dict:
         "section_map": section_map,
         "section_titles": section_titles,
         "extraction_warnings": warnings,
+        "article_type": article_type,
     }
 
 
