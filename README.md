@@ -44,6 +44,24 @@ paper (PMC)
 
 All endpoints return JSON and degrade gracefully (404 + `hint` when not yet computed).
 
+### Priority endpoints for agents
+
+Use these 8 first — they cover the most common protocol-intelligence queries:
+
+| Endpoint | Purpose |
+|----------|---------|
+| `/analytics/summary` | Corpus stats, quality distribution, top types |
+| `/analytics/coverage` | Per-type coverage and completeness |
+| `/analytics/reporting-gaps` | Field reporting rates — transparency audit of systematic gaps |
+| `/analytics/consensus/{type}` | Consensus concentrations + reagents for one type |
+| `/analytics/reagent?q=` | Cross-corpus reagent lookup with evidence quotes |
+| `/analytics/concentration-by-type?q=` | Per-type dose stats for one canonical reagent |
+| `/analytics/within-type-dose-range` | Intra-type dose disagreement ranking |
+| `/analytics/protocol-completeness` | Per-paper completeness scores (0–6) |
+
+Agents and crawlers: use `/llms.txt`, `/analytics/*`, and public exports (`exports/public/`).
+Do not scrape Datasette table pages or JS-rendered dashboard/consensus/heatmap pages row-by-row.
+
 ```
 GET /analytics                          index of all endpoints + generate commands
 GET /analytics/summary                  dashboard: corpus stats, quality distribution, top types
@@ -105,6 +123,8 @@ GET /analytics/compare/{a}/{b}          protocol diff between two papers (pre-co
 GET /analytics/substitutions?q=TERM    search ProtocolModification records for reagent substitutions
 GET /analytics/mior                     MIOR completeness per paper + corpus (12 items, 5 modules)
 GET /analytics/candidates               OA/license verification status of candidate pool (issue #14)
+GET /analytics/within-type-dose-range   within-type fold-range per canonical × organoid type: min/max/fold_range/CV; ranks intra-type dose disagreement (e.g. FGF2 kidney 6–200 ng/mL = 33×); ?q= ?type= ?unit= ?min_n=
+GET /analytics/convergence-leaders      canonicals ranked by temporal CV trend: converging (consensus emerging) vs diverging (dose disagreement growing); surfaces BMP4 retinal-style success stories; ?min_years= ?min_n=
 ```
 
 ### TRAPI (Translator Reasoner API 1.5)
@@ -190,14 +210,14 @@ serve/
   run.sh                     serve the atlas (Datasette + plugins)
   metadata.yaml              facets + canned queries
   plugins/
-    analytics_endpoint.py    60-route analytics REST API (pure handlers + thin Datasette wrappers)
+    analytics_endpoint.py    62-route analytics REST API (pure handlers + thin Datasette wrappers)
     ask.py                   grounded Q&A (RAG over FTS → local model)
   templates/                 landing, recipe cards, /heatmap, /consensus
   static/atlas.css|js        theme + dark-mode toggle
 exports/
   public/
     protocols.jsonl          582 papers, 25 organoid types (public snapshot)
-    reagents.jsonl           5,458 grounded reagent records
+    reagents.jsonl           5,458 public reagent rows (DOI-linked evidence where available; missing evidence preserved, not invented)
     manifest.json            counts + schema version
   kgx/
     nodes.tsv                KGX nodes (Biolink categories + CURIEs)
