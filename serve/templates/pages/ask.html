@@ -5,8 +5,7 @@
 {% block content %}
 <div class="apa-topbar">
   <span class="dot"></span> <a href="/">ORGANOID PROTOCOL ATLAS</a>
-  <span class="dot"></span> <a href="/atlas/protocols">Protocols</a>
-  <span class="dot"></span> <a href="/explore">Explore</a>
+  <span class="dot"></span> <a href="/explore">Protocols</a>
   <span class="dot"></span> <a href="/heatmap">Heatmap</a>
   <span class="dot"></span> <a href="/consensus">Consensus</a>
   <span class="dot"></span> <a href="/dashboard">Dashboard</a>
@@ -59,7 +58,12 @@ async function ask(q){
   }
   const modelNote = d.model
     ? `<div class="apa-ask-model">answered locally by ${esc(d.model)}</div>`
-    : (d.model_available === false ? '<div class="apa-ask-model">model synthesis unavailable here; showing retrieved evidence</div>' : '');
+    : (d.model_available === false
+        ? `<div class="apa-ask-model">Model synthesis runs on the local A100 — not available on this deployment.
+           The grounded evidence above is retrieved directly from the knowledge graph.
+           Agents: use <a href="/llms.txt" class="cite">llms.txt</a> for the full endpoint guide,
+           or download <a href="/exports/public/reagents.jsonl" class="cite">reagents.jsonl</a> for bulk access.</div>`
+        : '');
 
   let html = `<div class="apa-ask-card">
       <div class="apa-ask-q">${esc(d.question)} ${badge}</div>
