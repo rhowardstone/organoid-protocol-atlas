@@ -41,6 +41,10 @@ def collect_entities(pred: dict):
         nm = (r.get("name") or "").strip()
         if nm:
             yield nm, "reagent", "small_molecules"
+    for r in pred.get("media_supplements") or []:
+        nm = (r.get("name") or "").strip()
+        if nm:
+            yield nm, "reagent", "media_supplements"
     sc = pred.get("source_cells") or {}
     line = (sc.get("line_name") or "").strip()
     if line:
