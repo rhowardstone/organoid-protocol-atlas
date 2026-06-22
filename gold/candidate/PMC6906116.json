@@ -1,0 +1,81 @@
+{
+  "pmcid": "PMC6906116",
+  "doi": "10.1038/s41586-019-1289-x",
+  "verified_by": null,
+  "candidate_by": "agentA-subagent",
+  "gold": {
+    "organoid_type": "cerebral",
+    "source_cells": {
+      "cell_type": "iPSC",
+      "species": "Homo sapiens"
+    },
+    "matrix": {
+      "name": "Matrigel",
+      "reporting": "reported"
+    },
+    "base_media": {
+      "value": "Glasgow-MEM",
+      "reporting": "reported"
+    },
+    "signaling_factors": [
+      {
+        "name": "Y-27632",
+        "role": "ROCK inhibitor",
+        "concentration": {"value": 20, "canonical_unit": "uM"}
+      },
+      {
+        "name": "IWR1",
+        "role": "Wnt inhibitor",
+        "concentration": {"value": 3, "canonical_unit": "uM"}
+      },
+      {
+        "name": "SB431542",
+        "role": "TGFβ inhibitor",
+        "concentration": {"value": 5, "canonical_unit": "uM"}
+      }
+    ],
+    "media_supplements": [
+      {"name": "Knockout Serum Replacement"},
+      {"name": "MEM-NEAA (Minimum Essential Medium non-essential amino acids)"},
+      {"name": "pyruvate"},
+      {"name": "2-mercaptoethanol"},
+      {"name": "penicillin"},
+      {"name": "streptomycin"},
+      {"name": "Glutamax"},
+      {"name": "N2"},
+      {"name": "Chemically Defined Lipid Concentrate"},
+      {"name": "fungizone"},
+      {"name": "fetal bovine serum (FBS)"},
+      {"name": "heparin"},
+      {"name": "B27 supplement"}
+    ]
+  },
+  "evidence": {
+    "organoid_type": "To generate dorsally patterned forebrain organoids, we modified the method previously described in Kadoshima et al.",
+    "source_cells.cell_type": "feeder-free cultured human PSCs, 80–90% confluent, were dissociated to single cells with Accutase (Gibco), and 9,000 cells per well were reaggregated",
+    "source_cells.species": "All human PSCs were maintained below passage 50",
+    "matrix": "supplemented with 10% fetal bovine serum (FBS) (GE-Healthcare), 5 μg/mL heparin (Sigma), and 1% Matrigel (Corning)",
+    "base_media": "in Cortical Differentiation Medium (CDM) I, containing Glasgow-MEM (Gibco), 20% Knockout Serum Replacement (Gibco)",
+    "Y-27632": "From day 0 to day 6, ROCK inhibitor Y-27632 (Millipore) was added to the medium at a final concentration of 20 μM.",
+    "IWR1": "From day 0 to day 18, Wnt inhibitor IWR1 (Calbiochem) and TGFβ inhibitor SB431542 (Stem Cell Technologies) were added at a concentration of 3 μM and 5 μM, respectively.",
+    "SB431542": "From day 0 to day 18, Wnt inhibitor IWR1 (Calbiochem) and TGFβ inhibitor SB431542 (Stem Cell Technologies) were added at a concentration of 3 μM and 5 μM, respectively.",
+    "Knockout Serum Replacement": "20% Knockout Serum Replacement (Gibco)",
+    "MEM-NEAA (Minimum Essential Medium non-essential amino acids)": "0.1 mM Minimum Essential Medium non-essential amino acids (MEM-NEAA) (Gibco)",
+    "pyruvate": "1 mM pyruvate (Gibco)",
+    "2-mercaptoethanol": "0.1 mM 2-mercaptoethanol (Gibco)",
+    "penicillin": "100 U/mL penicillin",
+    "streptomycin": "100 μg/mL streptomycin (Corning)",
+    "Glutamax": "2mM Glutamax (Gibco)",
+    "N2": "1% N2 (Gibco)",
+    "Chemically Defined Lipid Concentrate": "1% Chemically Defined Lipid Concentrate (Gibco)",
+    "fungizone": "0.25 μg/mL fungizone (Gibco)",
+    "fetal bovine serum (FBS)": "supplemented with 10% fetal bovine serum (FBS) (GE-Healthcare)",
+    "heparin": "5 μg/mL heparin (Sigma)",
+    "B27 supplement": "consisting of CDM III supplemented with B27 supplement (Gibco) and 2% Matrigel"
+  },
+  "flags": [
+    "low_confidence:source_cells.cell_type",
+    "low_confidence:base_media"
+  ],
+  "notes": "Cerebral/dorsally-patterned forebrain organoid protocol (modified from Kadoshima et al.). source_cells.cell_type: the dorsally patterned organoids were derived from a MIX of hiPSC and hESC lines (PGP1, GM08330, 11a, Mito 210 are hiPSC; HUES66 is hESC). Methods text says 'feeder-free cultured human PSCs' generically; it does not state a single cell_type for THIS protocol's organoids. I set cell_type='iPSC' because 4 of 5 lines are hiPSC and the efficiency/representative data lean on hiPSC, but hESC (HUES66) is also used — flagged low_confidence. Species inferred as Homo sapiens from 'All human PSCs' / 'human PSCs' (no Latin binomial in text). base_media is staged: CDM I uses Glasgow-MEM (day 0–18); CDM II onward uses DMEM/F12. I report Glasgow-MEM as the base media of the induction phase, but DMEM/F12 ('DMEM/F12 medium (Gibco)') is the base of CDM II–IV — flagged low_confidence due to this ambiguity; a reviewer may prefer DMEM/F12 or both. Matrigel used at 1% (CDM III, from day 35) and 2% (CDM IV, from day 70). SAG (SHH agonist, 100nM, days 7–20) is NOT included as a signaling_factor because the text applies it only to the separate VENTRAL SPHEROID model, not to the cerebral/dorsal forebrain organoid. KSR is bucketed as a media_supplement (serum replacement), not a signaling factor. Penicillin/streptomycin appear in PSC maintenance (mTESR1) and in CDM I/II; listed once as supplements. No matrix/coating Matrigel for embedding — Matrigel here is a media additive. PSC maintenance used mTESR1 + Geltrex coating, but those are upstream of organoid differentiation and not the organoid base media/matrix."
+}

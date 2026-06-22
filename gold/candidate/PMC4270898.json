@@ -1,0 +1,133 @@
+{
+  "pmcid": "PMC4270898",
+  "doi": "10.1038/nature13863",
+  "verified_by": null,
+  "candidate_by": "agentA-subagent",
+  "gold": {
+    "organoid_type": "gastric",
+    "source_cells": {
+      "cell_type": "ESC",
+      "species": "Homo sapiens"
+    },
+    "matrix": {
+      "name": "Matrigel",
+      "reporting": "reported"
+    },
+    "base_media": {
+      "value": "Advanced DMEM/F12",
+      "reporting": "reported"
+    },
+    "signaling_factors": [
+      {
+        "name": "Activin A",
+        "role": "definitive endoderm induction",
+        "concentration": {
+          "value": 100,
+          "canonical_unit": "ng ml-1"
+        }
+      },
+      {
+        "name": "BMP4",
+        "role": "added on first day of DE induction",
+        "concentration": {
+          "value": 50,
+          "canonical_unit": "ng ml-1"
+        }
+      },
+      {
+        "name": "WNT3A",
+        "role": "foregut/endoderm patterning",
+        "concentration": {
+          "value": 500,
+          "canonical_unit": "ng ml-1"
+        }
+      },
+      {
+        "name": "CHIR99021",
+        "role": "Wnt agonist (alternative to WNT3A)",
+        "concentration": {
+          "value": 2,
+          "canonical_unit": "uM"
+        }
+      },
+      {
+        "name": "FGF4",
+        "role": "foregut/endoderm patterning",
+        "concentration": {
+          "value": 500,
+          "canonical_unit": "ng ml-1"
+        }
+      },
+      {
+        "name": "Noggin",
+        "role": "foregut patterning; added to gut media first 3 days",
+        "concentration": {
+          "value": 200,
+          "canonical_unit": "ng ml-1"
+        }
+      },
+      {
+        "name": "RA (retinoic acid)",
+        "role": "posteriorize foregut endoderm; added to gut media first 3 days",
+        "concentration": {
+          "value": 2,
+          "canonical_unit": "uM"
+        }
+      },
+      {
+        "name": "EGF",
+        "role": "gut media (3D organoid culture)",
+        "concentration": {
+          "value": 100,
+          "canonical_unit": "ng ml-1"
+        }
+      }
+    ],
+    "media_supplements": [
+      {
+        "name": "N2"
+      },
+      {
+        "name": "B27"
+      },
+      {
+        "name": "L-glutamine"
+      },
+      {
+        "name": "HEPES"
+      },
+      {
+        "name": "penicillin/streptomycin"
+      },
+      {
+        "name": "dFBS (defined fetal bovine serum)"
+      }
+    ]
+  },
+  "evidence": {
+    "source_cells": "Human embryonic stem cell lines WA01 (H1) and WA09 (H9) were obtained from WiCell",
+    "matrix": "resuspended in 50 μl Matrigel (BD Biosciences), and plated in a three-dimensional droplet",
+    "base_media": "spheroids were overlaid with gut media: Advanced DMEM/F12 with N2 (Invitrogen), B27 (Invitrogen), L-glutamine, 10 μM HEPES, penicillin/streptomycin, and EGF (100 ng ml −1 ; R&D Systems)",
+    "Activin A": "Cells were exposed to Activin A (100 ng ml −1 ; Cell Guidance Systems)",
+    "BMP4": "BMP4 (50 ng ml −1 ; R&D Systems)",
+    "WNT3A": "WNT3A (500 ng ml −1 ; R&D Systems), CHIR99021 (2 μM; Stemgent); FGF4 (500 ng ml −1 ; R&D Systems), and Noggin (200 ng ml −1 ; R&D Systems)",
+    "CHIR99021": "WNT3A (500 ng ml −1 ; R&D Systems), CHIR99021 (2 μM; Stemgent); FGF4 (500 ng ml −1 ; R&D Systems), and Noggin (200 ng ml −1 ; R&D Systems)",
+    "FGF4": "WNT3A (500 ng ml −1 ; R&D Systems), CHIR99021 (2 μM; Stemgent); FGF4 (500 ng ml −1 ; R&D Systems), and Noggin (200 ng ml −1 ; R&D Systems)",
+    "Noggin": "WNT3A (500 ng ml −1 ; R&D Systems), CHIR99021 (2 μM; Stemgent); FGF4 (500 ng ml −1 ; R&D Systems), and Noggin (200 ng ml −1 ; R&D Systems)",
+    "RA (retinoic acid)": "RA (2 μM; Sigma Aldrich) was added on the third day",
+    "EGF": "spheroids were overlaid with gut media: Advanced DMEM/F12 with N2 (Invitrogen), B27 (Invitrogen), L-glutamine, 10 μM HEPES, penicillin/streptomycin, and EGF (100 ng ml −1 ; R&D Systems)",
+    "N2": "Advanced DMEM/F12 with N2 (Invitrogen), B27 (Invitrogen), L-glutamine, 10 μM HEPES, penicillin/streptomycin",
+    "B27": "Advanced DMEM/F12 with N2 (Invitrogen), B27 (Invitrogen), L-glutamine, 10 μM HEPES, penicillin/streptomycin",
+    "L-glutamine": "Advanced DMEM/F12 with N2 (Invitrogen), B27 (Invitrogen), L-glutamine, 10 μM HEPES, penicillin/streptomycin",
+    "HEPES": "Advanced DMEM/F12 with N2 (Invitrogen), B27 (Invitrogen), L-glutamine, 10 μM HEPES, penicillin/streptomycin",
+    "penicillin/streptomycin": "Advanced DMEM/F12 with N2 (Invitrogen), B27 (Invitrogen), L-glutamine, 10 μM HEPES, penicillin/streptomycin",
+    "dFBS (defined fetal bovine serum)": "define fetal bovine serum (dFBS; Invitrogen)"
+  },
+  "flags": [
+    "source_cells.cell_type: paper uses both hESC (WA01/H1, WA09/H9) and 'ESC and iPSC lines'; primary gastric organoid protocol and reporter/overexpression lines use hESC, so cell_type set to ESC. iPSC also mentioned as maintained - confirm intended scope.",
+    "base_media: 'Advanced DMEM/F12' is the 3D gastric-organoid gut media base. Earlier differentiation steps use RPMI 1640 (DE/foregut). Confirm which stage is the intended base_media for the organoid record.",
+    "concentration units use canonical 'ng ml-1' and 'uM'; source verbatim uses 'ng ml −1' (U+2212 minus) and 'μM'.",
+    "RA factor name verbatim is 'RA'; expanded to retinoic acid for clarity - not verbatim expansion in source."
+  ],
+  "notes": "Gastric organoids derived from human PSCs (hESC WA01/H1, WA09/H9). Matrix = Matrigel (BD Biosciences) for both maintenance (HESC-qualified) and 3D droplet culture. Stage-specific media: mTesR1 (maintenance), RPMI 1640 + dFBS (DE/foregut patterning), Advanced DMEM/F12-based 'gut media' (3D organoid). CHIR99021 listed as an alternative Wnt agonist to WNT3A ('WNT3A (or CHIR99021)'). RA and Noggin re-added to gut media for first 3 days of 3D culture. dFBS used at 0%/0.2%/2.0% (increasing) during DE; 2.0% during foregut patterning. ROCK inhibitor Y-27632 (10 μM) used at plating but is a survival/dissociation reagent, not classified as a morphogen here - omitted from signaling_factors; flag if reviewer wants it included."
+}
