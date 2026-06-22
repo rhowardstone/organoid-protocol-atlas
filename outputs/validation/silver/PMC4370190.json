@@ -1,0 +1,89 @@
+{
+  "pmcid": "PMC4370190",
+  "doi": "10.1038/ncomms5047",
+  "multimodal": true,
+  "n_fields_checked": 16,
+  "n_correct": 12,
+  "incorrect": [
+    {
+      "field": "source_cells.line_name",
+      "extracted": "IMR90-4 (single line)",
+      "source_says": "Three hiPSC lines were used: IMR90-4, CB-iPSC6.2, and KA.1. Extraction reports only IMR90-4 and omits the other two.",
+      "evidence_quote": "Three hiPSC lines, IMR90-4 37 (WiCell), CB-iPSC6.2 38 and KA.1 39 , 66 , were used in this study",
+      "source_loc": "methods_text (hiPSC culture)"
+    },
+    {
+      "field": "passaging.interval_days",
+      "extracted": "5",
+      "source_says": "Passaging interval is a range of 5-7 days, not a single value of 5.",
+      "evidence_quote": "Cells were passaged every 5–7 days at approximately 80% confluence.",
+      "source_loc": "methods_text (hiPSC culture)"
+    },
+    {
+      "field": "culture_conditions.temperature_c",
+      "extracted": "null (reporting: not_extracted)",
+      "source_says": "Suspension culture / electrophysiology explicitly performed at 37 °C; conditions are stated in source but were not extracted.",
+      "evidence_quote": "collected and cultured in suspension at 37 °C in a humidified 5% CO 2 incubator",
+      "source_loc": "methods_text (Formation of 3-D Retinal Cups)"
+    },
+    {
+      "field": "culture_conditions.co2_pct",
+      "extracted": "null (reporting: not_extracted)",
+      "source_says": "Source states a humidified 5% CO2 incubator; not extracted.",
+      "evidence_quote": "in a humidified 5% CO 2 incubator",
+      "source_loc": "methods_text (Formation of 3-D Retinal Cups)"
+    }
+  ],
+  "recall_misses": [
+    {
+      "item": "all-trans retinoic acid (RA) — 1 µM then 0.5 µM",
+      "source_says": "RA is a central photoreceptor-maturation factor in this protocol, applied daily at defined week windows, then reduced to 0.5 µM. Completely absent from signaling_factors and small_molecules.",
+      "evidence_quote": "suspension cultures of RCs were supplemented daily with 1 µM all-trans retinoic acid (RA; Sigma) at various time windows: W7-W17; W7-W14 or W10-W14; subsequently, RA concentration was decreased to 0.5 µM",
+      "source_loc": "methods_text (Retinoic acid treatment)"
+    },
+    {
+      "item": "DMEM/F12 (base of neural-induction medium NIM, 1:1; later 3:1)",
+      "source_says": "DMEM/F12 is the basal medium of NIM and of the retinal-cup medium; not captured as base_media or supplement.",
+      "evidence_quote": "neural-induction medium (NIM) containing Dulbecco’s modified eagle medium (DMEM)/F12 (1:1)",
+      "source_loc": "methods_text (Early stages of retinal differentiation)"
+    },
+    {
+      "item": "B27 without vitamin A, at 2%",
+      "source_says": "B27 extracted but concentration (2%) and the 'without vitamin A' qualifier (later replaced by N2 at W17) were missed.",
+      "evidence_quote": "switched to DMEM/F12 (3:1) supplemented with 2% B27 (without vitamin A, Invitrogen)",
+      "source_loc": "methods_text (Early stages of retinal differentiation)"
+    },
+    {
+      "item": "heparin 2 µg/ml concentration",
+      "source_says": "Heparin extracted but its concentration was not captured.",
+      "evidence_quote": "2µg ml −1 heparin (Sigma)",
+      "source_loc": "methods_text (Early stages of retinal differentiation)"
+    },
+    {
+      "item": "Taurine 100 µM concentration",
+      "source_says": "Taurine extracted but concentration was not captured.",
+      "evidence_quote": "100 µM Taurine (Sigma)",
+      "source_loc": "methods_text (Formation of 3-D Retinal Cups)"
+    },
+    {
+      "item": "FBS 10% concentration / GlutaMAX 2 mM concentration",
+      "source_says": "FBS and GlutaMAX extracted but concentrations (10%, 2 mM) and the D42 start were missed.",
+      "evidence_quote": "the medium was supplemented with 10% fetal bovine serum (FBS; Gibco), 100 µM Taurine (Sigma) and 2mM GlutaMAX (Invitrogen) beginning on D42",
+      "source_loc": "methods_text (Formation of 3-D Retinal Cups)"
+    },
+    {
+      "item": "Dispase enzymatic detachment at D0",
+      "source_says": "Initial aggregate formation uses dispase enzymatic detachment; not captured (passaging is reported as 'mechanical' only).",
+      "evidence_quote": "on day 0 (D0) of differentiation, hiPSC were enzymatically detached by dispase treatment, dissociated into small clumps",
+      "source_loc": "methods_text (Early stages of retinal differentiation)"
+    },
+    {
+      "item": "Timeline detail: gradual mTeSR1→NIM transition (D1 3:1, D2 1:1, D3 100% NIM), D7 seeding, D16 switch, retinal-cup formation in week 4, FBS/taurine/RA from W7, B27→N2 switch at W17",
+      "source_says": "Extraction timeline has only two coarse stages (D0-7 early diff; D28 retinal cups) and omits the detailed day-by-day media transitions and key transition days documented in text and Figure 1 (D7–D24) / Figure 5q.",
+      "evidence_quote": "by replacing the medium with a 3:1 ratio of mTeSR1/NIM on D1, 1:1 on D2, and 100% NIM on D3. On D7, aggregates ... were seeded ... switched to DMEM/F12 (3:1) supplemented with 2% B27 ... on D16",
+      "source_loc": "methods_text (Early stages of retinal differentiation); Figure 1 schematic; Figure 5q timeline"
+    }
+  ],
+  "verdict": "partial",
+  "notes": "Extracted dose/factor/matrix/media items are individually correct where present (Matrigel GFR, mTeSR1, Blebbistatin 10 µM, N2/NEAA/heparin/B27/antibiotic-antimycotic/FBS/Taurine/GlutaMAX). Main weaknesses: (1) only 1 of 3 cell lines captured; (2) the protocol's defining maturation factor, all-trans retinoic acid (1 µM→0.5 µM), is entirely missing; (3) DMEM/F12 basal medium missing; (4) nearly all supplement concentrations are null despite being explicit in source; (5) 37 °C / 5% CO2 marked not_extracted though stated verbatim; (6) timeline collapsed to two coarse stages, losing the day-by-day media transitions. Source has no data tables (tables array empty); figures are immunohistochemistry/timeline schematics (Fig 1 D7-D24 panels + RT-PCR; Fig 5q retinogenesis timeline) which were read visually and add no dose/factor info beyond the methods text. Note source_doi in prediction (10.1038/ncomms5047) is the Nature Communications DOI, consistent with bundle."
+}

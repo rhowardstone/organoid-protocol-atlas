@@ -1,0 +1,81 @@
+{
+  "pmcid": "PMC10005775",
+  "doi": "10.3390/nano13050893",
+  "multimodal": false,
+  "n_fields_checked": 18,
+  "n_correct": 16,
+  "incorrect": [
+    {
+      "field": "matrix",
+      "extracted": "GFR-Matrigel",
+      "source_says": "GFR-Matrigel belongs to the CS40iFAD-nxx (AD/PS1) line, NOT to the extracted KSCBi005 line; KSCBi005 was cultured on fibronectin",
+      "evidence_quote": "KSCBi005 cells were cultured on fibronectin (Corning, Corning, NY, USA)-coated plates using Essential 8 medium (Gibco, Grand Island, NY, USA), and CS40iFAD-nxx cells were cultured on GFR-Matrigel (Corning, NY, USA)-coated plates in mTeSR TM Plus medium",
+      "source_loc": "methods_text 2.1 iPSC Culture"
+    },
+    {
+      "field": "passaging.interval_days",
+      "extracted": "4",
+      "source_says": "passaged every 4-5 days, not a single value of 4",
+      "evidence_quote": "Each cell line was passaged every 4–5 days, depending on the confluency of the cells, using ReLeSR TM",
+      "source_loc": "methods_text 2.1 iPSC Culture"
+    }
+  ],
+  "recall_misses": [
+    {
+      "item": "Second iPSC cell line (CS40iFAD-nxx, PSEN1-mutated AD line, RRID:CVCL_YX94)",
+      "source_says": "A second, disease (AD/PS1) iPSC line was used to generate the AD organoids; only the WT line KSCBi005 was extracted",
+      "evidence_quote": "PSEN1-mutated patient-derived CS40iFAD-nxx (RRID:CVCL_YX94) iPSCs from the Cedars Sinai Medical Center iPSC Core Facility ... were used to generate wild-type and AD brain organoids, respectively",
+      "source_loc": "methods_text 2.1 iPSC Culture"
+    },
+    {
+      "item": "RRID for the cell line(s)",
+      "source_says": "RRID CVCL_YX94 is given for CS40iFAD-nxx; extraction left rrid null",
+      "evidence_quote": "CS40iFAD-nxx (RRID:CVCL_YX94)",
+      "source_loc": "methods_text 2.1 iPSC Culture"
+    },
+    {
+      "item": "Second base medium: mTeSR Plus (for the CS40iFAD-nxx line)",
+      "source_says": "The AD line used mTeSR Plus; only Essential 8 was extracted as base_media",
+      "evidence_quote": "CS40iFAD-nxx cells were cultured on GFR-Matrigel ... in mTeSR TM Plus medium (STEMCELL Technologies, Cambridge, MA, USA)",
+      "source_loc": "methods_text 2.1 iPSC Culture"
+    },
+    {
+      "item": "Base medium for neuronal differentiation: Neurobasal-A",
+      "source_says": "Neurobasal-A is the differentiation base medium; not captured in base_media or supplements",
+      "evidence_quote": "neuronal differentiation medium consisting of Neurobasal-A, with 1 × GlutaMAX and 1 × B-27 Supplement without Vitamin A",
+      "source_loc": "methods_text 2.2 Cortical Brain Organoid Culture"
+    },
+    {
+      "item": "GlutaMAX concentration (1x) and B-27 (1x)",
+      "source_says": "Both supplements are used at 1x; extraction left concentration null",
+      "evidence_quote": "with 1 × GlutaMAX and 1 × B-27 Supplement without Vitamin A",
+      "source_loc": "methods_text 2.2 Cortical Brain Organoid Culture"
+    },
+    {
+      "item": "Seeding density / EB formation: 9000 cells per well in ultralow-attachment 96-well plates",
+      "source_says": "Initial seeding number and plate format for EB formation; not captured (timeline empty)",
+      "evidence_quote": "seeded into ultralow-attachment 96-well plates (Corning, NY, USA), with 9000 cells in each well",
+      "source_loc": "methods_text 2.2 Cortical Brain Organoid Culture"
+    },
+    {
+      "item": "Timeline milestones (Day 1-5 daily medium, Day 6 EB transfer, Day 25-42 BDNF/NT3, Day 43+ no growth factors, organoids cultured 8-14 weeks)",
+      "source_says": "Detailed differentiation timeline stated; extraction timeline array is empty",
+      "evidence_quote": "The medium was refreshed daily for 5 days. On Day 6, the formed EBs were then transferred ... from Day 25 until Day 42. From Day 43 onward, the neuronal differentiation medium was used without any growth factors",
+      "source_loc": "methods_text 2.2 Cortical Brain Organoid Culture"
+    },
+    {
+      "item": "Accutase for single-cell dissociation",
+      "source_says": "iPSCs dissociated with Accutase prior to seeding; not captured",
+      "evidence_quote": "iPSCs were dissociated into single cells using Accutase",
+      "source_loc": "methods_text 2.2 Cortical Brain Organoid Culture"
+    },
+    {
+      "item": "STB-MP treatment dose and schedule (100 ug/mL, 14 days from Day 84, 1:1000 dilution)",
+      "source_says": "The experimental compound dose/schedule is the core treatment of the study; not captured in small_molecules",
+      "evidence_quote": "STB-MP was administered to both WT and AD cortical brain organoids for 14 days, beginning at Day 84 ... After STB-MP treatment at a concentration of 100 µg/mL",
+      "source_loc": "body_text 3.3 / methods 2.3"
+    }
+  ],
+  "verdict": "partial",
+  "notes": "Source tables array is empty (no machine-readable tables; figures are images only), so this is a text/methods-only adjudication and is not multimodal. Extracted signaling factors (dorsomorphin 2.5 uM, SB431542 10 uM, ROCK inhibitor 50 uM, bFGF/EGF/BDNF/NT3 each 20 ng/mL) are all verbatim-correct, as are organoid_type (cerebral/cortical), Essential 8 base medium, ReLeSR passaging method, and the four assay endpoints. Two correctness errors: (1) GFR-Matrigel is mis-associated with KSCBi005 (that line used fibronectin; GFR-Matrigel belongs to the un-extracted AD line), and (2) passaging interval collapsed 4-5 days to 4. Main weakness is recall: the entire second (disease) cell line, its RRID, its mTeSR Plus medium, the Neurobasal-A differentiation base, supplement concentrations, seeding density, the full differentiation timeline, Accutase, and the central STB-MP treatment dose/schedule were all missed."
+}

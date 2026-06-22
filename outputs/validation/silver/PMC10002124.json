@@ -1,0 +1,58 @@
+{
+  "pmcid": "PMC10002124",
+  "doi": "10.3390/ijms24054413",
+  "multimodal": false,
+  "n_fields_checked": 17,
+  "n_correct": 14,
+  "incorrect": [
+    {
+      "field": "source_cells.cell_type",
+      "extracted": "iPSC",
+      "source_says": "The paper discusses PSCs generically (both ESCs and iPSCs); it does not designate iPSC as the cell source for any specific protocol. The lung-organoid generation described is repeatedly attributed to hESCs.",
+      "evidence_quote": "PSCs include both embryonic stem cells (ESCs) and induced pluripotent stem cells (iPSCs) [ 34 , 35 , 36 , 37 ]",
+      "source_loc": "body_text / Introduction"
+    },
+    {
+      "field": "source_cells.cell_type (specificity)",
+      "extracted": "iPSC",
+      "source_says": "The authors' own lung-organoid work analyzing DNA damage is explicitly done in minilungs derived from hESCs, contradicting an iPSC designation.",
+      "evidence_quote": "We made use of the advantages of bleomycin to analyze expression of DNA damage in minilungs derived from hESCs.",
+      "source_loc": "methods_text / Section 3 (IPF)"
+    },
+    {
+      "field": "matrix.name",
+      "extracted": "Matrigel",
+      "source_says": "Matrigel appears only as a parenthetical example of a class of biogels in a Figure 2 schematic caption, not as a matrix used in any concrete protocol with composition or percentage.",
+      "evidence_quote": "Tridimensional structures composed of cells of the airways ( B ) or the alveoli ( C ), derived from PSCs and embedded into biogels (e.g., Matrigel Tm , etc.)",
+      "source_loc": "figures / Figure 2 caption"
+    }
+  ],
+  "recall_misses": [
+    {
+      "item": "dexamethasone (maturation-cocktail factor)",
+      "source_says": "Dexamethasone is named as a specific agent added to the maturation cocktail to generate the authors' paddle-racquet lung organoids (PRLOs); it is culture-relevant and was omitted from signaling_factors / small_molecules.",
+      "evidence_quote": "Generation of such PRLOs was achieved via addition of dexamethasone to the maturation cocktail at certain times of differentiation.",
+      "source_loc": "methods_text / Section 2"
+    },
+    {
+      "item": "human fibronectin (2D substrate)",
+      "source_says": "Human fibronectin is named as a substrate for mounting 2D minilungs, a culture-matrix item not captured in the matrix field.",
+      "evidence_quote": "Bidimensional arrays (2D minilungs) of both airways and lung epithelial cells derived from PSCs mounted on different substrates, such as human fibronectin.",
+      "source_loc": "figures / Figure 2 caption"
+    },
+    {
+      "item": "hESC cell source (incl. RUES2 line)",
+      "source_says": "hESCs are repeatedly given as the stem-cell source for lung organoids, and a specific hESC line (RUES2) is named for one cited protocol; neither was captured (line_name left null, cell_type set to iPSC).",
+      "evidence_quote": "Han et al. [ 139 ], however, developed human minilungs and colonic organoids from hESCs (RUES2) based on previously reported stepwise strategies.",
+      "source_loc": "methods_text / Section 6 (SARS-CoV-2)"
+    },
+    {
+      "item": "definitive endoderm -> progenitor staged timeline",
+      "source_says": "A sequential/staged differentiation timeline (definitive endoderm, then progenitors, then maturation) is described but the timeline field is empty.",
+      "evidence_quote": "these protocols depend on generation of definitive endoderm and generation of progenitors ... lung progenitors that are subsequently matured by addition of fibroblast growth factors",
+      "source_loc": "methods_text / Section 2"
+    }
+  ],
+  "verdict": "partial",
+  "notes": "SOURCE is a REVIEW article (Int J Mol Sci 2023, MDPI), not a primary protocol paper. It contains NO methods/protocol section with concrete reagents, NO tables (tables=[]), and NO supplementary text (empty); the 2 figures are schematic illustrations whose graphics were not read (multimodal=false). All extracted signaling factors (Activin A, TGFb, WNT, NOTCH, BMP4, Wnt3a, CHI99021, Noggin, FGF2, FGF7, FGF10, BMP4) are verbatim-faithful to the source's generic narrative of pathways 'commonly used' across the field, with no concentrations (the paper gives none) -- these quote-checks are CORRECT as transcriptions. CHI99021 reproduces the paper's own (mis)spelling of CHIR99021. The extraction's organoid_type='lung' is correct (the bundle's own organoid_type metadata field erroneously says 'intestinal'). Main errors: (1) cell_type asserted as iPSC when the paper's source is generically PSCs and its own experiments use hESCs; (2) Matrigel promoted to a protocol matrix when it is only a parenthetical figure-caption example. Recall misses are minor given the review nature: dexamethasone, human fibronectin substrate, the RUES2 hESC line, and the staged endoderm->progenitor->maturation timeline. Because the article carries no quantitative protocol (no doses/timelines/media to validate), this document is poorly suited as a silver-gold protocol-extraction target."
+}

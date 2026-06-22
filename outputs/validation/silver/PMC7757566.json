@@ -1,0 +1,101 @@
+{
+  "pmcid": "PMC7757566",
+  "doi": "10.1016/j.xpro.2020.100192",
+  "multimodal": true,
+  "n_fields_checked": 18,
+  "n_correct": 14,
+  "incorrect": [
+    {
+      "field": "signaling_factors.EGF.role",
+      "extracted": "withdrawn (global, concentration null)",
+      "source_says": "EGF is present at 50 ng/mL in Pancreatic Normal Medium and Tumor Medium 2; it is only WITHDRAWN selectively for Tumor Medium 1. Labeling EGF globally 'withdrawn' is incorrect and the 50 ng/mL concentration was missed.",
+      "evidence_quote": "EGF (50 μg/mL) 50 ng/mL 100 μL ... Therefore, the EGFR ligand EGF can be withdrawn from the culture medium for tumor, but not for normal cells.",
+      "source_loc": "Tables 6 & 8 (Pancreatic Normal Medium / Tumor Medium 2); Step-By-Step Method Details / Limitations text"
+    },
+    {
+      "field": "signaling_factors.Wnt.role",
+      "extracted": "withdrawn (entry named 'Wnt')",
+      "source_says": "Wnt is a standard component (Wnt CM or Wnt surrogate, 0.5× / 0.5 nM) in normal and tumor medium 1; withdrawal is only discussed as a tumor-selective option, not a default. The duplicate generic 'Wnt' entry conflicts with the separately extracted 'Wnt3a' supplement.",
+      "evidence_quote": "∗Wnt CM or Wnt surrogate 0.5× or 0.5 nM∗ 50 mL or X μL∗ ... Another example is the withdrawal of Wnt-ligand. ... pancreatic ductal adenocarcinomas are Wnt-independent.",
+      "source_loc": "Tables 6 & 7; Limitations text"
+    },
+    {
+      "field": "passaging.reporting",
+      "extracted": "not_reported (method/split_ratio/interval all null)",
+      "source_says": "Passaging is reported in detail: TrypLE/mechanical dissociation, split 1:2–1:6, every 5–10 (normal 1:2–1:3, tumor 1:2–1:6) every 7–10 days.",
+      "evidence_quote": "pancreatic normal organoids can generally be passaged 1:2–1:3 every 7–10 days. Pancreatic tumor organoids can be passaged 1:2–1:6 every 7–10 days. ... Pancreatic organoids are usually passaged every 5–10 days depending on their growth and density.",
+      "source_loc": "Step-By-Step Method Details, passaging section"
+    },
+    {
+      "field": "culture_conditions.reporting",
+      "extracted": "not_extracted (temperature_c null, co2_pct null)",
+      "source_says": "Culture conditions are explicitly stated: 37°C and 5% CO2.",
+      "evidence_quote": "place the plate in the incubator at 37°C and 5% CO 2 .",
+      "source_loc": "Step-By-Step Method Details, steps 46/53"
+    }
+  ],
+  "recall_misses": [
+    {
+      "item": "Culture temperature & CO2 (37°C, 5% CO2)",
+      "source_says": "Standard incubation conditions stated repeatedly.",
+      "evidence_quote": "transfer the plate to a 37°C and 5% CO 2 incubator",
+      "source_loc": "Steps 28, 46, 53"
+    },
+    {
+      "item": "Passaging method & split ratio / interval (TrypLE; 1:2–1:6; 7–10 days)",
+      "source_says": "Detailed dissociation and split scheme given.",
+      "evidence_quote": "pancreatic tumor organoids can be passaged 1:2–1:6 every 7–10 days",
+      "source_loc": "Passaging section"
+    },
+    {
+      "item": "Y-27632 (ROCK inhibitor), 10 μM",
+      "source_says": "ROCK inhibitor added to plating/seeding medium at 10 μM (also in digestion buffers).",
+      "evidence_quote": "seeding medium containing 10 μM ROCK inhibitor and place the plate in the incubator ... ROCK inhibitor (Y-27632) (10 mM) 10 μM",
+      "source_loc": "Step 46; Digestion Buffer tables 3 & 4"
+    },
+    {
+      "item": "EGF concentration 50 ng/mL",
+      "source_says": "EGF final concentration is 50 ng/mL in normal & tumor-2 media.",
+      "evidence_quote": "EGF (50 μg/mL) 50 ng/mL 100 μL",
+      "source_loc": "Tables 6 & 8"
+    },
+    {
+      "item": "N-Acetyl Cysteine concentration 2.5 mM",
+      "source_says": "Listed in Pancreatic Basic Medium with final concentration.",
+      "evidence_quote": "N-Acetyl Cysteine 2.5 mM",
+      "source_loc": "Table 5 (Pancreatic Basic Medium 2×)"
+    },
+    {
+      "item": "Nicotinamide concentration 20 mM",
+      "source_says": "Listed in Pancreatic Basic Medium with final concentration.",
+      "evidence_quote": "Nicotinamide 20 mM",
+      "source_loc": "Table 5"
+    },
+    {
+      "item": "B27 concentration (2×, serum-free 50× stock)",
+      "source_says": "B27 final concentration is 2× in basic medium.",
+      "evidence_quote": "B27 (50×) 2× 40",
+      "source_loc": "Table 5"
+    },
+    {
+      "item": "Distinct media formulations (Normal vs Tumor Medium 1 vs Tumor Medium 2)",
+      "source_says": "Three distinct culture media defined; PGE2 only in normal medium, EGF absent from tumor-1, FGF10/A83-01 absent from tumor-2. Extraction collapses all into one undifferentiated factor list.",
+      "evidence_quote": "Pancreatic Normal Medium (1x) ... Pancreatic Tumor Medium 1 (1x) ... Pancreatic Tumor Medium 2 (1x)",
+      "source_loc": "Tables 6, 7, 8"
+    },
+    {
+      "item": "Timeline (graphical abstract): establishment 7-10 d, digestion 2-24 h, expansion 7-10 d, biobanking 1 h",
+      "source_says": "Protocol schematic encodes stage durations; extraction timeline is empty.",
+      "evidence_quote": "Step 1 Organoid establishment 7-10 days; digestion 2-24 hours; Step 3 culture/expansion 7-10 days; Step 4 Biobanking 1 hour",
+      "source_loc": "Figure fx1 (graphical abstract, VISUAL)"
+    },
+    {
+      "item": "Matrigel/BME solidification & droplet culture (3D embedding)",
+      "source_says": "Organoids embedded in Matrigel/BME droplets, inverted 30 min at 37°C to solidify.",
+      "evidence_quote": "Leave the plate for 30 min, allowing the Matrigel/BME to solidify. CRITICAL: Keep the plate inverted",
+      "source_loc": "Step 28"
+    }
+  ],
+  "verdict": "partial",
+  "notes": "Extraction got the core supplement/factor identities and most concentrations right (Noggin 200 ng/mL, Gastrin 20 nM, Rspo3 250 ng/mL, FGF10 100 ng/mL, PGE2 1 μM, A83-01 500 nM, Primocin 50 μg/mL all verbatim-correct; matrix Matrigel/BME, base media Ad-DF+++, human primary pancreatic tissue all correct). Main failures: (1) EGF mis-modeled as globally 'withdrawn' when it is a 50 ng/mL component withdrawn only in tumor-medium-1 — a clinically meaningful nuance lost; (2) passaging and culture-conditions marked not-reported/not-extracted despite explicit 37°C/5%CO2 and 1:2–1:6 / 7–10 d in text; (3) Y-27632 ROCK inhibitor (10 μM) missed entirely; (4) three distinct media formulations collapsed into one list, losing factor-by-medium structure; (5) graphical-abstract timeline missed (timeline empty). Confidence fields all 0.0 and most evidence quotes null. extractor_version gemma3:12b."
+}

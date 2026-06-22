@@ -1,0 +1,89 @@
+{
+  "pmcid": "PMC10029057",
+  "doi": "10.3389/fbioe.2023.1058970",
+  "multimodal": true,
+  "n_fields_checked": 16,
+  "n_correct": 9,
+  "incorrect": [
+    {
+      "field": "organoid_type",
+      "extracted": "lung",
+      "source_says": "This is a multi-organ REVIEW (not a single-protocol paper); the bundle is tagged thyroid and the document covers ~20 tissues. 'Lung' is not the paper's subject.",
+      "evidence_quote": "To date, primary organoids have been derived to a large number of fetal and adult human tissues ( Figure 2A ). ... A list of the culture conditions utilised to culture primary organoids of different human tissues is presented in Table 1 .",
+      "source_loc": "methods_text / section 'Primary organoids derivation and culture'; bundle organoid_type='thyroid'"
+    },
+    {
+      "field": "signaling_factors[CHIR].evidence.quote",
+      "extracted": "activators of tyrosine kinase receptor signalling such as EGF, and inhibitors of BMP/TGF-β signalling such as Noggin or A83-01",
+      "source_says": "Quote attached to CHIR does not mention CHIR; the CHIR mention is in a different sentence. Mis-cited evidence.",
+      "evidence_quote": "Wnt activators such as the GSK3-inhibitor CHIR, activators of tyrosine kinase receptor signalling such as EGF",
+      "source_loc": "methods_text / 'Primary organoids derivation and culture'"
+    },
+    {
+      "field": "signaling_factors[EGF].evidence.quote",
+      "extracted": "activators of tyrosine kinase receptor signalling such as EGF, and inhibitors of BMP/TGF-β signalling such as Noggin or A83-01",
+      "source_says": "Same quote reused for both CHIR and EGF; EGF role labeled 'activator' is loosely supported but the shared/duplicated quote indicates weak grounding.",
+      "evidence_quote": "activators of tyrosine kinase receptor signalling such as EGF",
+      "source_loc": "methods_text / 'Primary organoids derivation and culture'"
+    },
+    {
+      "field": "base_media",
+      "extracted": "not_reported (null)",
+      "source_says": "Acceptable as null, but the source frames media as 'chemically defined' / 'serum- and xeno-free supplements'; no single base medium is named because it is a review. Borderline, counted correct.",
+      "evidence_quote": "Overall, chemically defined culture conditions are considered the most suitable and reproducible way to grow organoids",
+      "source_loc": "methods_text / 'Primary organoids derivation and culture'"
+    }
+  ],
+  "recall_misses": [
+    {
+      "item": "Thyroid-specific factor list (the bundle's tagged organ) entirely missed",
+      "source_says": "Table 1 thyroid rows list Heparin, FGF2, forskolin, TSH, retinoic acid, p38 inhibitor as culture supplements — none extracted.",
+      "evidence_quote": "Thyroid Adult - EGF, FGF2, Wnt-3a, Noggin, R-spondin, A83-01, Heparin ... Adult Graves’s disease EGF, FGF10, Wnt-3a, R-spondin, A83-01, p38 inhibitor, forskolin, TSH ... Fetal - EGF, FGF10, retinoic acid, Noggin, R-spondin, A83-01, forskolin, TSH",
+      "source_loc": "tables[0] (TABLE 1), Thyroid rows"
+    },
+    {
+      "item": "CHIR99021 (specific Wnt/GSK3 activator named in Table 1 across many organs)",
+      "source_says": "Extraction lists only generic 'CHIR'; Table 1 repeatedly names CHIR99021 as a defined supplement.",
+      "evidence_quote": "EGF, FGF7, FGF10, Noggin, R-spondin, CHIR99021, SB431542",
+      "source_loc": "tables[0] (TABLE 1), Lung Fetal row"
+    },
+    {
+      "item": "SB202190 and SB431542 (p38/TGF-β inhibitors) recurrent in Table 1",
+      "source_says": "Common medium supplements across intestine, stomach, lung, endometrium rows; not extracted.",
+      "evidence_quote": "EGF, Wnt-3a, Noggin, R-spondin, Gastrin, A83-01, SB202190",
+      "source_loc": "tables[0] (TABLE 1), Intestine/Stomach rows"
+    },
+    {
+      "item": "Gastrin",
+      "source_says": "Pervasive supplement in stomach/intestine/liver/pancreas rows of Table 1; missed.",
+      "evidence_quote": "EGF, FGF10, Wnt-3a, Noggin, R-spondin, Gastrin, A83-01",
+      "source_loc": "tables[0] (TABLE 1), Stomach Adult row"
+    },
+    {
+      "item": "HGF",
+      "source_says": "Listed as a key medium supplement (tonsil, liver, endometrium, placenta) and in narrative; not extracted (only mentioned, not captured).",
+      "evidence_quote": "FGF10, FGF2, HGF, Noggin, R-spondin, A83-01, Prostaglandin E2",
+      "source_loc": "tables[0] (TABLE 1), Tonsil Adult row"
+    },
+    {
+      "item": "Forskolin, TSH, Heparin, retinoic acid, p38 inhibitor, FGF2 (thyroid + other organ supplements)",
+      "source_says": "Multiple defined small molecules / hormones tabulated; none captured by extraction.",
+      "evidence_quote": "EGF, FGF2, Wnt-3a, Noggin, R-spondin, A83-01, Heparin",
+      "source_loc": "tables[0] (TABLE 1), Thyroid/Cervix/Lacrimal rows"
+    },
+    {
+      "item": "Prostaglandin E2, Estradiol, dexamethasone, Neuregulin-1, dihydrotestosterone, hydrocortisone, Gastrin, DKK-1",
+      "source_says": "Hormones/small molecules tabulated per organ; extraction's small_molecules array is empty.",
+      "evidence_quote": "EGF, Wnt-3a, Noggin, R-spondin, Gastrin, LY2157299, SB202190, Prostaglandin E2",
+      "source_loc": "tables[0] (TABLE 1), Intestine Adult (Jung) row"
+    },
+    {
+      "item": "Matrix / ECM (extraction left matrix null)",
+      "source_says": "Source describes ECM embedding agents and decellularized ECM hydrogels as a core component; matrix.name should at least be 'ECM hydrogel / synthetic gel', not null.",
+      "evidence_quote": "II) A cytocompatible and protein-rich embedding agents mimicking the tissue’s extracellular matrix (ECM); ... the extracellular matrix (e.g., ECM hydrogels, synthetic gels) is important",
+      "source_loc": "methods_text / 'Primary organoids derivation and culture'"
+    }
+  ],
+  "verdict": "poor",
+  "notes": "PMC10029057 is a REVIEW article (Frontiers Bioeng Biotechnol 2023), not a single derivable protocol. It has no single cell line, matrix %, base medium, or dose — culture conditions live as per-organ factor LISTS in Table 1 (no concentrations). The extractor (tier1_local::gemma3:12b) mis-set organoid_type to 'lung' (bundle tag is 'thyroid'; true answer = multi-organ/none), pulled only ~8 generic narrative factors, and ignored Table 1 entirely — the single richest culture-relevant source. small_molecules, timeline, modifications are empty; matrix is null despite explicit ECM discussion. Two evidence quotes (CHIR, EGF) are duplicated/mis-cited. Of the factors it did extract, the names are individually present in source (correct), so correctness is partial but recall against Table 1 is very low. Concentrations are correctly null because the review reports none. multimodal=true: 3 tables + 2 figures present; recipe lives in tables which Tier-1 text extraction missed (see extraction_warnings: 'tables_present (3) — recipe may live in tables'). n_fields_checked counts the 8 extracted factors + organoid_type + matrix + base_media + 4 high-level slots (small_molecules, timeline, passaging, assay_endpoints) actually compared."
+}

@@ -1,0 +1,63 @@
+{
+  "pmcid": "PMC10739970",
+  "doi": "10.1038/s41598-023-50250-w",
+  "multimodal": true,
+  "n_fields_checked": 14,
+  "n_correct": 12,
+  "incorrect": [
+    {
+      "field": "base_media",
+      "extracted": "DMEM/F-12",
+      "source_says": "DMEM/F-12 is the iPSC maintenance medium, not the organoid base medium; organoids use HM/EM/DM whose composition is in Supplementary Table S1",
+      "evidence_quote": "The iPSC colonies were picked and maintained on a γ-irradiated mouse embryonic fibroblast feeder layer in DMEM/F-12 medium (Thermo Fisher) ... The medium composition is described in detail in Supplementary Table S1.",
+      "source_loc": "methods"
+    },
+    {
+      "field": "passaging.method / split_ratio",
+      "extracted": "collagenase type IV, 1:5–10",
+      "source_says": "collagenase type IV at 1:5–10 is the iPSC weekly passaging; ORGANOID passaging is mechanical splitting with a surgical blade at a 1:3–1:5 ratio",
+      "evidence_quote": "fully enlarged organoids were mechanically split with surgical blade and then passaged weekly at a ratio of 1:3–1:5",
+      "source_loc": "methods"
+    }
+  ],
+  "recall_misses": [
+    {
+      "item": "Full differentiation timeline (Day 0 iPSC → Day 3 Definitive Endoderm → Day 9 Hepatic Endoderm → Day 13 HE → organoid generation → Day 20~ hLO)",
+      "source_says": "Schematic timeline with stage day-marks; timeline[] in extraction is empty",
+      "evidence_quote": "Day 0 iPSC; 3 Definitive Endoderm; 9 Hepatic Endoderm; HE 13; Organoid generation; hLO 20~ (Fig 1a schematic); caption: 'Schematic diagram of the previous (upper) and new (lower) protocols to generate iPSC-derived expandable liver organoids'",
+      "source_loc": "figure"
+    },
+    {
+      "item": "Differentiation maturation timeline: Day 0–3 EM + BMP7, Day 3–9 DM",
+      "source_says": "HM-cultured organoids in EM+BMP7 for 3 days then DM for 6 additional days; confirmed by Fig 2f schematic (Day 0–1/3 EM+BMP7, Day 3–9 DM)",
+      "evidence_quote": "HM-cultured organoids were incubated in EM supplemented with 25 ng/ml BMP7 (PeproTech) for 3 days and then in differentiation medium DM for an additional 6 days",
+      "source_loc": "methods"
+    },
+    {
+      "item": "Y-27632 added for 3 days during organoid generation",
+      "source_says": "duration of ROCK inhibitor treatment (3 days) not captured",
+      "evidence_quote": "10 µM Y-27632 (Tocris) was added for 3 days to improve viability",
+      "source_loc": "methods"
+    },
+    {
+      "item": "Organoid formation time 3–5 days post-embedding",
+      "source_says": "timeline stage missing",
+      "evidence_quote": "Three-dimensional liver organoids formed in 3–5 days",
+      "source_loc": "methods"
+    },
+    {
+      "item": "Single-cell dissociation at day 13 of differentiation (HE stage) is the key protocol modification anchoring the timeline",
+      "source_says": "captured under modifications[] but not as a timeline stage",
+      "evidence_quote": "cells were detached and dissociated into single cells using TrypLE™ Express Enzyme (Thermo Fisher) after HE induction at day 13 of differentiation",
+      "source_loc": "methods"
+    },
+    {
+      "item": "Media defined in protocol (HM hepatic medium, EM expansion medium, DM differentiation medium, MH mature-hepatocyte medium)",
+      "source_says": "named media systems and their roles not captured as base_media/conditions",
+      "evidence_quote": "A. MH (mature hepatocyte medium); B. MH (3D); C. HM (hepatic medium); D. EM (expansion medium); E. DM (differentiation medium)",
+      "source_loc": "figure"
+    }
+  ],
+  "verdict": "partial",
+  "notes": "Extracted reagents/doses (bFGF 10 ng/ml, BMP7 25 ng/ml, Y-27632 10 µM, Matrigel, iPSC source) are all verbatim-correct, but the empty timeline[] is a major omission: methods and Fig 1a/2f schematics give a complete staged timeline (DE d3, HE d9/d13, organoid d20~, EM+BMP7 d0–3, DM d3–9). DMEM/F-12 and collagenase passaging are conflated from the iPSC-maintenance section rather than the organoid medium (Suppl. Table S1, not in bundle)."
+}

@@ -1,0 +1,124 @@
+{
+  "pmcid": "PMC10003131",
+  "doi": "10.3390/ijms24054529",
+  "multimodal": true,
+  "n_fields_checked": 16,
+  "n_correct": 13,
+  "incorrect": [
+    {
+      "field": "source_cells.cell_type",
+      "extracted": "iPSC",
+      "source_says": "The core protocols compiled in this review (Huch/Broutier/Nuciforo, Table 2) are adult-tissue / adult-stem-cell (ASC) derived from LGR5+ cholangiocytes and primary hepatocytes; iPSC is described only as an ALTERNATIVE source, not the primary source cell.",
+      "evidence_quote": "The first experiments that enabled the development of organoids were based on the isolation, from murine intestinal epithelium, of single leucine-rich repeat-containing G-protein-coupled receptors 5 (LGR5) positive adult stem cell ... ESCs and iPSCs are alternative sources for the in vitro generation of organoid models",
+      "source_loc": "methods_text §4 Liver Organoids"
+    },
+    {
+      "field": "media_supplements (TNF-a concentration)",
+      "extracted": "ROCKi listed as only media supplement; TNF-a placed under signaling_factors with quote '100 ng/mL TNF-a' but concentration field left null",
+      "source_says": "hepatocytes growth was aided by the addition of 100 ng/mL TNF-a; concentration is explicitly stated and should be captured",
+      "evidence_quote": "the addition of 100 ng/mL TNF-α to the hep-orgs culture medium",
+      "source_loc": "methods_text §4 Liver Organoids"
+    },
+    {
+      "field": "concentrations (EGF, HGF, ROCKi)",
+      "extracted": "EGF, HGF, ROCKi extracted with concentration=null",
+      "source_says": "Table 2 gives explicit concentrations: EGF 50 ng/mL, HGF 25 ng/mL, Y-27632 (ROCKi) 10 uM. Extractor ignored Table 2 entirely.",
+      "evidence_quote": "EGF 50 ng/mL HGF 25 ng/mL ... Y-27632 (ROCKi) 10 µM Rho-kinase inhibitor, it blocks apoptosis process.",
+      "source_loc": "Table 2 (Components of liver organoids expansion medium)"
+    }
+  ],
+  "recall_misses": [
+    {
+      "item": "B-27 supplement (1:50)",
+      "source_says": "B-27 serum-free supplement at 1:50 dilution, core expansion-medium component",
+      "evidence_quote": "B-27 1:50 Serum-free supplement, without vitamin A, it increases differentiated cell vitality during long term expansion culture condition.",
+      "source_loc": "Table 2"
+    },
+    {
+      "item": "N-2 supplement (1:100)",
+      "source_says": "N-2 serum-free supplement at 1:100 dilution",
+      "evidence_quote": "N-2 1:100 Serum-free supplement, it promotes neuronal primary cell cultures’ growth.",
+      "source_loc": "Table 2"
+    },
+    {
+      "item": "Nicotinamide (10 mM)",
+      "source_says": "Nicotinamide 10 mM, anti-inflammatory / metabolic regulator",
+      "evidence_quote": "Nicotinammide 10 mM Anti-inflammatory agent, it controls cell metabolism, mitochondria functionality and energy production.",
+      "source_loc": "Table 2"
+    },
+    {
+      "item": "N-acetyl-L-cysteine (1.25 mM)",
+      "source_says": "N-acetyl-L-cysteine 1.25 mM, antioxidant/cytoprotective",
+      "evidence_quote": "N-acetil-L-cisteine 1.25 mM Mucolytic agent, with cytoprotective, anti-inflammatory and antioxidant effects",
+      "source_loc": "Table 2"
+    },
+    {
+      "item": "Forskolin (10 uM)",
+      "source_says": "Forskolin 10 uM, cAMP agonist supporting long-term expansion (also named in prose as FSK)",
+      "evidence_quote": "Forskolin 10 µM Diterpenes, agonist of cAMP pathway ... it supports long-term expansion of organoids.",
+      "source_loc": "Table 2 (also methods_text §4: 'Forskolin (FSK), an activator of cyclic adenosine monophosphate (cAMP)')"
+    },
+    {
+      "item": "A83-01 (5 uM)",
+      "source_says": "A83-01 5 uM, TGF-beta signalling inhibitor for long-term expansion (named in prose as A8301)",
+      "evidence_quote": "A83-01 5 µM TGF-β signalling inhibitor, it blocks the epithelial to mesenchimal transition TGF-β induced; it supports long-term expansion of organoids culture.",
+      "source_loc": "Table 2 (also methods_text §4: 'the inhibitor of TGF-β signalling, A8301')"
+    },
+    {
+      "item": "[Leu15]-Gastrin I (10 nM)",
+      "source_says": "[Leu15]-Gastrin I 10 nM, prolongs organoid survival",
+      "evidence_quote": "[Leu 15 ]-Gastrin I 10 nM Essential for digestive system, gastrin stimulates the production of gastric acid from paretial cells and prolong the survival time of liver organoids.",
+      "source_loc": "Table 2"
+    },
+    {
+      "item": "FGF-10 (100 ng/mL)",
+      "source_says": "FGF-10 100 ng/mL, mitogenic growth factor (distinct from FGF-19 which extractor captured)",
+      "evidence_quote": "FGF-10 100 ng/mL Growth factors with mitogen effect, they promote cell proliferation, differentiation, and survival.",
+      "source_loc": "Table 2"
+    },
+    {
+      "item": "Noggin (100 ng/mL)",
+      "source_says": "Noggin 100 ng/mL, BMP inhibitor",
+      "evidence_quote": "Noggin 100 ng/mL Bone morphogenic protein (BMP) inhibitor.",
+      "source_loc": "Table 2"
+    },
+    {
+      "item": "R-Spo1 concentration (10%)",
+      "source_says": "R-Spondin 1 was extracted but concentration (10%) from Table 2 was missed",
+      "evidence_quote": "R-Spo1 10% Agonist of WNT/β-catenin and WNT/PCP pathways and ligand of LGR5 + receptor, it improves efficiency of organoids expansion.",
+      "source_loc": "Table 2"
+    },
+    {
+      "item": "Wnt3a concentration (30%)",
+      "source_says": "Wnt3a was extracted but concentration (30%) from Table 2 was missed",
+      "evidence_quote": "Wnt3a 30% Agonist of WNT pathway, it promotes stem cell LGR5 + proliferation, essential for organoids expansion.",
+      "source_loc": "Table 2"
+    },
+    {
+      "item": "Cultrex Basement Membrane Extract (BME) matrix",
+      "source_says": "Cultrex BME is a co-equal matrix option alongside Matrigel; only Matrigel was extracted",
+      "evidence_quote": "it is necessary to provide the organoids with structural support using hydrogels such as Matrigel or Cultrex Basement Membrane Extract (BME)",
+      "source_loc": "methods_text §4 (also Table 3)"
+    },
+    {
+      "item": "Timeline: R-Spo1 and Wnt3a removed after 3 days",
+      "source_says": "Protocol timeline detail: WNT activators withdrawn from healthy-organoid medium after 3 days; extraction timeline is empty",
+      "evidence_quote": "R-Spo1 and Wnt3a were removed from medium of healthy organoids after 3 days of culture",
+      "source_loc": "Table 2 caption"
+    },
+    {
+      "item": "Timeline: hepatocyte organoid division 50-75 days; cryopreservation 1-2 years",
+      "source_says": "hep-orgs divide every 50-75 days from adult liver; organoids cryopreserved 1-2 years; extraction timeline/passaging empty",
+      "evidence_quote": "just one hepatocyte out of every 100 produces hep-orgs, which proliferates more slowly and divides every 50–75 days when derived from the adult liver ... cryopreserve liver organoids for long-time periods that can reach as long as 1–2 years",
+      "source_loc": "methods_text §4"
+    },
+    {
+      "item": "iPSC differentiation factors: Activin A, BMP4, PI3Ki, Oncostatin M (concentrations not given in source)",
+      "source_says": "Activin A, BMP4, PI3Ki and Oncostatin M named for iPSC route; extractor captured the first three but missed Oncostatin M",
+      "evidence_quote": "To differentiate the hepatic progenitors into hepatocytes, HGF and Oncostatin M were also added in the medium",
+      "source_loc": "methods_text §4"
+    }
+  ],
+  "verdict": "partial",
+  "notes": "Review article (Mauro et al., IJMS 2023) compiling liver organoid protocols from Huch/Broutier/Nuciforo labs; Table 2 is the authoritative expansion-medium recipe with full concentrations. Extracted factor NAMES from prose are largely correct (R-Spo1, Wnt3a, FGF-19, DAPT, dexamethasone, EGF, HGF, TNF-a 100 ng/mL, Activin A, BMP4, PI3Ki) and matrix=Matrigel is correct. But the extractor ignored Table 2 entirely, so it missed ~10 medium components AND every quantitative concentration (B-27 1:50, N-2 1:100, Nicotinamide 10 mM, NAC 1.25 mM, Forskolin 10 uM, Y-27632 10 uM, A83-01 5 uM, Gastrin 10 nM, FGF-10 100 ng/mL, EGF 50 ng/mL, HGF 25 ng/mL, Noggin 100 ng/mL, R-Spo1 10%, Wnt3a 30%). base_media=not_reported is defensible (the review never names a basal medium). source_cells=iPSC is misleading: the primary protocols are adult-stem-cell/LGR5+ derived, iPSC is only an alternative. timeline and passaging left empty despite extractable details. Multimodal=true (key culture facts live in tables). Verdict partial: good name-level recall from prose, poor table recall and near-total loss of concentrations."
+}

@@ -1,0 +1,102 @@
+{
+  "pmcid": "PMC10024732",
+  "doi": "10.1038/s41467-023-37247-9",
+  "multimodal": false,
+  "n_fields_checked": 21,
+  "n_correct": 16,
+  "incorrect": [
+    {
+      "field": "media_supplements / fetal calf serum",
+      "extracted": "fetal calf serum (listed as an HLO media supplement)",
+      "source_says": "10% fetal calf serum belongs to the MOUSE primary hepatocyte culture medium, not to the human liver organoid (HLO) protocol. The HLO endoderm step uses FBS (0.2% then 2%); the organoid stages use B27/N2-supplemented advanced DMEM/F12, not fetal calf serum.",
+      "evidence_quote": "The remaining hepatocytes were re-suspended in DMEM medium containing 1 × PS, 10% fetal calf serum (Gibco, 10091148), 100 nmol/L dexamethasone (Sigma, D4902).",
+      "source_loc": "Methods, 'Primary hepatocyte culture and treatment'"
+    },
+    {
+      "field": "base_media",
+      "extracted": "RPMI 1640",
+      "source_says": "RPMI 1640 is only the definitive-endoderm induction medium (days 1–3). The actual base medium for the organoid expansion (5F), patterning (RA) and maturation stages is advanced DMEM/F12, and the maturation base is Lonza Hepatocyte Culture Medium. Reporting RPMI 1640 as THE base media for the organoid is incomplete/misleading.",
+      "evidence_quote": "On days 4 to 6, cells were cultured in advanced DMEM/F12 (Gibco, 12634010) with B27 (Gibco, 12587010), N2 (Gibco, 17502048), 500 ng/mL FGF4",
+      "source_loc": "Methods, 'Generation of human liver organoids (HLOs)'"
+    },
+    {
+      "field": "culture_conditions.temperature_c",
+      "extracted": "null",
+      "source_says": "Temperature is explicitly stated as 37 °C; the extraction captured the quote in evidence but left temperature_c null.",
+      "evidence_quote": "Cells were maintained at 37 °C in humidified air with 5% CO 2 .",
+      "source_loc": "Methods, 'Generation of human liver organoids (HLOs)'"
+    },
+    {
+      "field": "timeline (day_end for differentiation / coverage)",
+      "extracted": "differentiation day_start 1 / day_end 6; then Hepatocyte Culture Medium day 15–24",
+      "source_says": "The protocol has more stages than captured: endoderm RPMI days 1–3; foregut adv-DMEM/F12+FGF4+CHIR days 4–6; Matrigel embedding + 5F medium 4 days; RA medium 4 more days; re-embedding at day 15; Hepatocyte Culture Medium days 15–24. The two captured intervals omit the 5F-expansion and RA stages (roughly days 6–15).",
+      "evidence_quote": "About 100,000 cells were embedded in 50 µL Matrigel drop and expanded with 5 F medium for 4 days. ... After 4 days’ treatment, the 5 F medium was switched to RA medium for another 4 days ... At day 15, organoids were removed from Matrigel and re-embedded",
+      "source_loc": "Methods, 'Generation of human liver organoids (HLOs)'"
+    },
+    {
+      "field": "source_cells.cell_type",
+      "extracted": "other",
+      "source_says": "HUES9 is a human embryonic stem cell line (hESC / pluripotent stem cell); 'other' under-specifies a well-defined PSC line.",
+      "evidence_quote": "The HUES9 human embryonic stem cells (hESCs) used in this study",
+      "source_loc": "Methods, 'Generation of human liver organoids (HLOs)'"
+    }
+  ],
+  "recall_misses": [
+    {
+      "item": "FGF2 (5 ng/mL) signaling factor",
+      "source_says": "FGF2 at 5 ng/mL is a component of the 5F expansion medium and was entirely omitted from signaling_factors.",
+      "evidence_quote": "5 F medium contains advanced DMEM/F12, 1×B27, 1×N2, 5 ng/mL FGF2 (Peprotech, 100-18B), 20 ng/mL EGF",
+      "source_loc": "Methods, 'Generation of human liver organoids (HLOs)'"
+    },
+    {
+      "item": "dexamethasone (0.1 mM) in maturation medium",
+      "source_says": "Dexamethasone at 0.1 mM is part of the day 15–24 Hepatocyte Culture Medium maturation cocktail; missed.",
+      "evidence_quote": "Hepatocyte Culture Medium (Lonza, 185319) supplemented with 10% Matrigel, 10 ng/mL hepatocyte growth factor (PeproTech, 100-39H), 0.1 mM dexamethasone (Sigma, D4902), 20 ng/mL Oncostatin M",
+      "source_loc": "Methods, 'Generation of human liver organoids (HLOs)'"
+    },
+    {
+      "item": "FBS 0.2% and 2% in endoderm induction (days 2–3)",
+      "source_says": "FBS at 0.2% (day 2) and 2% (day 3) used during definitive-endoderm induction; not captured.",
+      "evidence_quote": "100 ng/mL activin A and 0.2% FBS (Gibco, 16000-044) at day 2, and 100 ng/mL activin A and 2% FBS at day 3",
+      "source_loc": "Methods, 'Generation of human liver organoids (HLOs)'"
+    },
+    {
+      "item": "mTeSR1 (hESC maintenance medium)",
+      "source_says": "mTeSR1 is the maintenance medium for the starting hESCs; not captured as a media component.",
+      "evidence_quote": "The hESCs were grown in feeder-free adherent culture in chemically defined mTeSR1 (STEMCELL, 05850) supplemented with 1% penicillin/streptomycin",
+      "source_loc": "Methods, 'Generation of human liver organoids (HLOs)'"
+    },
+    {
+      "item": "Geltrex (coating matrix)",
+      "source_says": "Geltrex is used to precoat plates for hESC and foregut culture; only Matrigel (the embedding matrix) was captured.",
+      "evidence_quote": "Culture plates were precoated with Geltrex (Gibco, A1413202).",
+      "source_loc": "Methods, 'Generation of human liver organoids (HLOs)'"
+    },
+    {
+      "item": "advanced DMEM/F12 base medium (foregut, 5F, RA stages)",
+      "source_says": "advanced DMEM/F12 is the base medium across multiple organoid stages and was not captured as a base_media entry.",
+      "evidence_quote": "On days 4 to 6, cells were cultured in advanced DMEM/F12 (Gibco, 12634010) with B27 (Gibco, 12587010), N2 (Gibco, 17502048)",
+      "source_loc": "Methods, 'Generation of human liver organoids (HLOs)'"
+    },
+    {
+      "item": "Hepatocyte Culture Medium (Lonza) + 10% Matrigel (maturation base)",
+      "source_says": "The maturation base medium (Lonza Hepatocyte Culture Medium, supplemented with 10% Matrigel) was not captured as a base/media entry; only the timeline label references it.",
+      "evidence_quote": "the media was switched to Hepatocyte Culture Medium (Lonza, 185319) supplemented with 10% Matrigel",
+      "source_loc": "Methods, 'Generation of human liver organoids (HLOs)'"
+    },
+    {
+      "item": "Cell seeding densities (3×10^5 cells/well; 100,000 cells per 50 µL Matrigel drop)",
+      "source_says": "Seeding density for foregut differentiation and the number of cells embedded per Matrigel drop are culture-relevant quantitative parameters that were not captured.",
+      "evidence_quote": "cells were seeded on Geltrex-coated 6 well culture plates with 3 × 10 5 cells/well. ... About 100,000 cells were embedded in 50 µL Matrigel drop",
+      "source_loc": "Methods, 'Generation of human liver organoids (HLOs)'"
+    },
+    {
+      "item": "Re-embedding onto ultra-low attachment plate at day 15",
+      "source_says": "A defined culture-format transition (removal from Matrigel and re-embedding on ultra-low-attachment plates at day 15) is missed.",
+      "evidence_quote": "At day 15, organoids were removed from Matrigel and re-embedded on the ultra-low attachment multiwall plate (Corning, 3473).",
+      "source_loc": "Methods, 'Generation of human liver organoids (HLOs)'"
+    }
+  ],
+  "verdict": "partial",
+  "notes": "All extracted signaling-factor identities and doses (activin A 100, BMP4 50, FGF4 500, EGF 20, VEGF 10, CHIR99021 3 µM, A83-01 0.5 µM, ascorbic acid 50 µg/mL, retinoic acid 2 µM, HGF 10, Oncostatin M 20) match the source verbatim and are correct. CO2 5% and the HUES9/Matrigel/accutase calls are correct. The bundle contains NO tables (tables=[] ) and empty supplementary_text, so all evidence is in methods_text; multimodal=false. Main weaknesses: (1) a cross-contamination error — 'fetal calf serum' was pulled from the mouse primary-hepatocyte medium and wrongly attached to the HLO protocol; (2) base_media reduced to RPMI 1640 only, omitting advanced DMEM/F12 and Lonza Hepatocyte Culture Medium; (3) recall gaps for FGF2 (5 ng/mL), maturation dexamethasone (0.1 mM), endoderm FBS (0.2%/2%), mTeSR1, Geltrex, seeding densities, and intermediate timeline stages (5F expansion, RA patterning). Doses are reliable; media architecture, full factor roster, and timeline granularity are under-extracted."
+}

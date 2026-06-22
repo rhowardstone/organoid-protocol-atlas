@@ -1,0 +1,96 @@
+{
+  "pmcid": "PMC10014581",
+  "doi": "10.1038/s41556-022-01075-8",
+  "multimodal": false,
+  "n_fields_checked": 18,
+  "n_correct": 13,
+  "incorrect": [
+    {
+      "field": "source_cells.cell_type",
+      "extracted": "iPSC",
+      "source_says": "ESC (human embryonic stem cell, H9/WA09)",
+      "evidence_quote": "Undifferentiated human ESCs H9 (WA09, WiCell Madison, WI) were maintained on tissue culture plates pre-coated with 0.1% gelatine with irradiated C57BL6 mouse embryonic fibroblast feeder cells",
+      "source_loc": "methods_text > Maintenance of human ESC"
+    },
+    {
+      "field": "organoid_type",
+      "extracted": "intestinal",
+      "source_says": "The H9-derived protocol extracted (ESC maintenance -> transient ADE -> VFG/EP expansion) is upstream ventral foregut endoderm; the paper's organoid endpoints are pancreatic spheroids and hepatic organoids. Bundle metadata labels the article 'hepatic'. 'intestinal' is only one of three downstream lineages and is not the focus of the extracted H9 protocol.",
+      "evidence_quote": "GFP + cells were expanded as pancreatic spheroids and GFP – cells as hepatic organoids according to the described protocols",
+      "source_loc": "methods_text > Generation of PDX1-eGFP positive and negative cells ... for pancreatic spheroid and hepatic organoid expansion"
+    },
+    {
+      "field": "matrix.name",
+      "extracted": "Matrigel",
+      "source_says": "Matrigel is correct as a name, but the source specifies growth factor reduced (GFR) Matrigel used UN-DILUTED for coating; extraction left percent=null and gives no GFR/undiluted detail and no evidence quote.",
+      "evidence_quote": "pre-coated with un-diluted growth factor reduced (GFR) Matrigel (Corning, 354230)",
+      "source_loc": "methods_text > Transient differentiation of ADE cells"
+    },
+    {
+      "field": "passaging.method",
+      "extracted": "collagenase IV",
+      "source_says": "Collagenase IV is correct for the H9 ESC maintenance step only; the VFG/EP cultures (the expansion the extraction is otherwise describing) are passaged with trypsin-EDTA [0.25%] plus FBS inactivation and a cell scraper. Extraction captured only one of multiple passaging methods.",
+      "evidence_quote": "Cells were passaged as clusters with collagenase IV (Thermo Fisher Scientific, 17104019) when reaching approximately 70% confluence",
+      "source_loc": "methods_text > Maintenance of human ESC"
+    },
+    {
+      "field": "culture_conditions",
+      "extracted": "not_extracted (temperature_c/co2_pct/o2_pct all null)",
+      "source_says": "Culture conditions are explicitly and repeatedly stated, including the defining hypoxic differentiation/expansion condition.",
+      "evidence_quote": "maintained in 20% O 2 /5% CO 2 /37°C ... three-dimensional differentiation under hypoxic conditions (5% O 2 /5% CO 2 /37°C) for 5 days",
+      "source_loc": "methods_text > Maintenance of human ESC; Transient differentiation of ADE cells"
+    }
+  ],
+  "recall_misses": [
+    {
+      "item": "BMP4 at 50 ng/mL in EP/VFG expansion media",
+      "source_says": "Extraction recorded BMP4 only at 0.5 ng/mL (ADE differentiation days 2-4). The high-dose BMP4 used to drive VFG expansion was missed.",
+      "evidence_quote": "complete EP/VFG media (SFD medium supplemented with BMP4 [50 ng/mL], FGF2 [10 ng/mL], VEGF [10 ng/mL], EGF [10 ng/mL]",
+      "source_loc": "methods_text > Generation and expansion of VFG"
+    },
+    {
+      "item": "Hypoxic culture condition (5% O2 / 5% CO2 / 37C)",
+      "source_says": "The core ADE/VFG differentiation and expansion is performed under hypoxia; entirely absent from extraction.",
+      "evidence_quote": "maintained under hypoxic conditions (5% O 2 /5% CO 2 /37 °C)",
+      "source_loc": "methods_text > Generation and expansion of VFG"
+    },
+    {
+      "item": "ROCK inhibitor Y-27632 concentration (10 µM) and timing",
+      "source_says": "Y-27632 was captured as a supplement name but its dose (10 uM, first 24 h) and small-molecule classification were missed (small_molecules is empty).",
+      "evidence_quote": "with 10μM ROCK inhibitor Y-27632 (STEMCELL Technologies, 72302) for the first 24 hours",
+      "source_loc": "methods_text > Transient differentiation of ADE cells"
+    },
+    {
+      "item": "CHIR99021 (3 uM) and Monothioglycerol (4.5x10-4 M) as small molecules",
+      "source_says": "CHIR99021 captured under signaling_factors with dose, but small_molecules array is empty and monothioglycerol/ascorbic acid concentrations were not captured.",
+      "evidence_quote": "CHIR99021 [3 μM] (Tocris, 4423) and 4.5x10 -4 M Monothioglycerol",
+      "source_loc": "methods_text > Transient differentiation of ADE cells"
+    },
+    {
+      "item": "FGF7 and FGF10 (50 ng/mL) as signaling factors",
+      "source_says": "FGF7 and FGF10 at 50 ng/mL are used to drive PDX1+/PDX1- fate (hepatic vs pancreatic) and in differentiation protocols; both missed entirely.",
+      "evidence_quote": "50 ng/mL FGF2, FGF7 (Peprotech, 100-19), or FGF10 (Peprotech, 100-26) for 5 days",
+      "source_loc": "methods_text > Generation of PDX1-eGFP positive and negative cells"
+    },
+    {
+      "item": "Retinoic acid (RA) 2 uM, hNOGGIN 50 ng/mL, TPB (PKC activator)",
+      "source_says": "Multiple key pancreatic-differentiation factors/small molecules (RA, NOGGIN, TPB, SANT-1, LDN193189, KAAD-cyclopamine, dorsomorphin, nicotinamide, mWnt3a) entirely absent.",
+      "evidence_quote": "supplemented with 2 μM retinoic acid (RA) ... then with 64 ng/mL FGF2 and 50 ng/mL hNOGGIN ... and 0.5 μM TPB (PKC activator)",
+      "source_loc": "methods_text > Pancreatic differentiation (Ameri et al. protocol)"
+    },
+    {
+      "item": "Cell-seeding densities and DR4 MEF feeder layer",
+      "source_says": "VFG cultures are grown on GFR-Matrigel pre-seeded with irradiated DR4 MEF feeders at defined densities; the feeder/density detail (culture-relevant) is missing.",
+      "evidence_quote": "pre-coated with GFR-Matrigel and pre-seeded with low density (8,000 cells/cm 2 ) irradiated DR4 mouse embryonic fibroblast feeder cells (MEFs) (ATCC, SCRC-1045)",
+      "source_loc": "methods_text > Generation and expansion of VFG"
+    },
+    {
+      "item": "Additional cell lines: HUES4 WT and HUES4 PDX1-eGFP reporter (PDXeG clone 170-3)",
+      "source_says": "Only H9 captured; HUES4 WT and the PDX1-eGFP reporter line (central to the study's spheroid/organoid sorting) were missed.",
+      "evidence_quote": "Undifferentiated ESC HUES4 WT and PDXeG clone 170-3 ... were adapted and maintained in DEF-CS (Takara, Y30017)",
+      "source_loc": "methods_text > Maintenance of human ESC"
+    }
+  ],
+  "verdict": "partial",
+  "notes": "Bundle is text-only for adjudication: tables array is empty, supplementary_text lists only ATAC/motif/H3K27ac data tables (no culture-parameter tables), and the 16 figures are genomics/mechanistic with no dose tables (graphics not read; multimodal=false). All adjudication is against methods_text. Of the doses extraction DID capture (FGF2 10, Activin A 100, CHIR 3uM, BMP4 0.5, VEGF 10, EGF 10 ng/mL, base media DMEM/F12 GlutaMAX, RPMI/SFD supplements), the values are verbatim-correct. Two clear correctness errors: cell_type ESC mislabeled as iPSC, and organoid_type 'intestinal' is inconsistent with the extracted H9 ventral-foregut protocol (bundle says hepatic). Recall is the main weakness: small_molecules and timeline arrays are empty, culture_conditions not extracted despite explicit hypoxia, and major downstream/expansion factors (BMP4 50 ng/mL, FGF7/FGF10, RA, NOGGIN, TPB, etc.), feeder layers, seeding densities, and two additional cell lines were missed. Verdict partial: captured fields are accurate but coverage of culture-relevant detail is low."
+}

@@ -1,0 +1,53 @@
+{
+  "method": "multi-modal silver-gold: independent Claude reviewer per paper reads methods+tables+figure images, scores extraction precision (vs full source) + recall (items only in tables/figures). Silver, not human-gold.",
+  "n_papers": 22,
+  "n_multimodal": 14,
+  "field_precision": 0.7857,
+  "n_fields_checked": 378,
+  "n_correct": 297,
+  "n_incorrect": 77,
+  "recall_misses_total": 190,
+  "recall_misses_per_paper": 8.64,
+  "recall_miss_location": {
+    "methods/body_text": 144,
+    "figure": 15,
+    "table": 31
+  },
+  "verdicts": {
+    "partial": 19,
+    "poor": 2,
+    "good": 1
+  },
+  "correctness_error_taxonomy": {
+    "cell_type_ESC_vs_iPSC": 31,
+    "other_value_unit_name": 28,
+    "media_conflation": 15,
+    "species": 2,
+    "fabrication": 1
+  },
+  "papers": [
+    "PMC10000618",
+    "PMC10001859",
+    "PMC10002124",
+    "PMC10003131",
+    "PMC10003263",
+    "PMC10005775",
+    "PMC10014235",
+    "PMC10014581",
+    "PMC10024732",
+    "PMC10029057",
+    "PMC10031036",
+    "PMC10057647",
+    "PMC10739970",
+    "PMC11194494",
+    "PMC12625545",
+    "PMC4370190",
+    "PMC4370217",
+    "PMC4620584",
+    "PMC6376275",
+    "PMC6906116",
+    "PMC7757566",
+    "PMC8516798"
+  ],
+  "note": "Precision here (~full-source) is the honest extraction-accuracy number; it is LOWER than the value-in-quote auto-proxy because it catches wrong-quote / cross-protocol / cell-type errors. Recall is the dominant gap (timeline, media, supplement doses, table-only values)."
+}

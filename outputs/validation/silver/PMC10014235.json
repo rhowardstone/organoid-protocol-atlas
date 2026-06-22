@@ -1,0 +1,77 @@
+{
+  "pmcid": "PMC10014235",
+  "doi": "10.1016/j.ymthe.2022.12.012",
+  "multimodal": false,
+  "n_fields_checked": 17,
+  "n_correct": 13,
+  "incorrect": [
+    {
+      "field": "source_cells.cell_type",
+      "extracted": "iPSC",
+      "source_says": "human embryonic stem cells (hESCs); H1 line from WiCell Research Institute (WA01)",
+      "evidence_quote": "The hESC line H1 (WiCell Research Institute) was cultured as a monolayer on laminin pre-coated plates and maintained in NutriStem hPSC XF medium.",
+      "source_loc": "methods_text (Laminin-based photoreceptor differentiation from hESCs); also Maintenance of hESC culture: 'The hESC lines H1 and H9 were from the WiCell Research Institute, WA01 and WA09)'"
+    },
+    {
+      "field": "matrix.name",
+      "extracted": "LN521",
+      "source_says": "Differentiation matrix is a mixture of LN523 + LN521 at a 2:1 ratio; LN521 alone is only the pluripotency-maintenance coating. Extraction reports only LN521 and omits the defining LN523 component.",
+      "evidence_quote": "The H1 cell line was routinely passaged at 10,000-20,000 cells/cm 2 in 24-well tissue culture plates (Costar, 3526) coated with LN521 or LN523 + LN521 (2:1) or LN323 + LN521 (2:1), to obtain a final concentration of 10 μg/mL.",
+      "source_loc": "methods_text (Laminin-based photoreceptor differentiation from hESCs); Figure 1B: 'transferred from LN521-coated plates to plates coated with LN523 + LN521'"
+    },
+    {
+      "field": "matrix.percent (coating concentration)",
+      "extracted": "null",
+      "source_says": "Matrix coated at final concentration of 10 μg/mL",
+      "evidence_quote": "coated with LN521 or LN523 + LN521 (2:1) ... to obtain a final concentration of 10 μg/mL",
+      "source_loc": "methods_text (Laminin-based photoreceptor differentiation from hESCs)"
+    },
+    {
+      "field": "base_media.name",
+      "extracted": "NutriStem hPSC XF medium",
+      "source_says": "NutriStem is the pluripotency-maintenance / plating medium; the basal medium used THROUGHOUT differentiation is GMEM (Glasgow Minimum Essential Medium). Extraction reports only the maintenance medium as the single base medium.",
+      "evidence_quote": "The basal medium used throughout the differentiation process consisted of Glasgow Minimum Essential Medium (GMEM; Gibco, 11710-035) supplemented with 0.1 mM β-mercaptoethanol ... 1× non-essential amino acid solution ... and 1 mM pyruvate",
+      "source_loc": "methods_text (Laminin-based photoreceptor differentiation from hESCs)"
+    }
+  ],
+  "recall_misses": [
+    {
+      "item": "GMEM (Glasgow Minimum Essential Medium) as differentiation basal medium",
+      "source_says": "GMEM is the basal medium used throughout the entire differentiation process; it was missed entirely (extraction lists only NutriStem).",
+      "evidence_quote": "The basal medium used throughout the differentiation process consisted of Glasgow Minimum Essential Medium (GMEM; Gibco, 11710-035)",
+      "source_loc": "methods_text (Laminin-based photoreceptor differentiation from hESCs)"
+    },
+    {
+      "item": "LN523 matrix component (and LN521+LN523 2:1 ratio)",
+      "source_says": "LN523 is the central novel matrix factor of the paper, used 2:1 with LN521; extraction omitted it.",
+      "evidence_quote": "coated with LN521 or LN523 + LN521 (2:1) or LN323 + LN521 (2:1), to obtain a final concentration of 10 μg/mL",
+      "source_loc": "methods_text (Laminin-based photoreceptor differentiation from hESCs)"
+    },
+    {
+      "item": "Concentrations of basal supplements: β-mercaptoethanol 0.1 mM, non-essential amino acids 1×, pyruvate 1 mM, B27 2%, N2 1%",
+      "source_says": "These supplements are extracted but with null concentration; the source gives explicit concentrations.",
+      "evidence_quote": "supplemented with 0.1 mM β-mercaptoethanol ... 1× non-essential amino acid solution ... and 1 mM pyruvate ... NIM consisted of 2% B27 supplement without vitamin A ... 1% N2 supplement",
+      "source_loc": "methods_text (Laminin-based photoreceptor differentiation from hESCs)"
+    },
+    {
+      "item": "B27 supplement is 'without vitamin A' qualifier",
+      "source_says": "B27 is specifically the vitamin-A-free formulation (relevant since retinoic acid is added separately); qualifier missed.",
+      "evidence_quote": "2% B27 supplement without vitamin A (Life Technologies, 12587001)",
+      "source_loc": "methods_text (NIM / PRDM composition)"
+    },
+    {
+      "item": "Seeding density and passaging detail (10,000-20,000 cells/cm2; ~70,000 cells/well; TrypLE 8 min at 37C; centrifuge 800 rpm 4 min)",
+      "source_says": "Passaging method 'TrypLE dissociation' captured but split_ratio/interval/seeding density null; quantitative seeding and dissociation parameters present in source.",
+      "evidence_quote": "passaged at 10,000-20,000 cells/cm 2 ... plated at a seeding density of ∼70,000 cells/well ... sub-cultured by trypsinization using TrypLE (Gibco, 12563-011) for 8 min at 37°C, 5% CO 2",
+      "source_loc": "methods_text (Laminin-based photoreceptor differentiation from hESCs / Maintenance of hESC culture)"
+    },
+    {
+      "item": "Culture conditions: 37C, 5% CO2",
+      "source_says": "Temperature and CO2 stated in source but extraction marked culture_conditions reporting as 'not_extracted'.",
+      "evidence_quote": "trypsinization using TrypLE (Gibco, 12563-011) for 8 min at 37°C, 5% CO 2",
+      "source_loc": "methods_text (Laminin-based photoreceptor differentiation from hESCs)"
+    }
+  ],
+  "verdict": "partial",
+  "notes": "Signaling-factor doses are all correct and verbatim-supported: SB431542 5 uM, CKI-7 5 uM, BDNF 10 ng/mL, CNTF 10 ng/mL, retinoic acid 0.5 uM, DAPT 10 uM (DAPT dose correct though evidence field null). Timeline correct: NIM day 2-8 ('NIM was changed every 2 days from day 2 to day 8'), photoreceptor differentiation day 9-32 ('On day 9 ... replaced with photoreceptor differentiation medium (PRDM) ... changed every other day until D32'). Two substantive correctness errors: (1) cell type mislabeled as iPSC when source unambiguously uses hESCs (H1, WiCell WA01); (2) differentiation matrix reduced to LN521 alone, dropping the paper's defining LN523 + LN521 (2:1) composition and the 10 ug/mL coating concentration. Base media conflates maintenance medium (NutriStem) with differentiation basal medium (GMEM), missing GMEM entirely. No machine-readable tables in bundle (tables array empty); supplementary tables S1/S2/S3 are mass-spec and DE-gene content, not culture doses, so table-level recall is N/A. multimodal=false: extraction sourced from methods_text only. Doses are strong; identity/matrix/base-media fields are the weak points."
+}

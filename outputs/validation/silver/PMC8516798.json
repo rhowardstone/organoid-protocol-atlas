@@ -1,0 +1,127 @@
+{
+  "pmcid": "PMC8516798",
+  "doi": "10.1016/j.celrep.2021.109920",
+  "multimodal": false,
+  "n_fields_checked": 22,
+  "n_correct": 16,
+  "incorrect": [
+    {
+      "field": "organoid_type / protocol scope",
+      "extracted": "lung (single hPSC-AO protocol); signaling_factors include FGF4, BMP2, hEGF, LDN193189",
+      "source_says": "Paper describes TWO distinct protocols: 'Airway organoid differentiation' (hPSC-AOs, lung) and 'Colonic organoids differentiation' (hPSC-COs). FGF4 (500 ng/ml), BMP2 (100 ng/ml), hEGF (100 ng/ml) and LDN193189 (600 nM) belong ONLY to the colonic protocol, not the lung/airway one.",
+      "evidence_quote": "Colonic organoids differentiation ... DE was treated with 3 μM CHIR99021 and 500 ng/ml FGF4 (Peprotech) ... colonic lineage induction by treatment with 100 ng/ml 3 μM CHIR99021, 100 ng/ml BMP2 (Peprotech), and 100 ng/ml hEGF (Peprotech) ... differentiation medium containing 600 nM LDN193189 (Axon)",
+      "source_loc": "methods_text, 'Colonic organoids differentiation' section"
+    },
+    {
+      "field": "source_cells.line_name",
+      "extracted": "H1 (single line)",
+      "source_says": "Two hESC lines were used: H1 AND RUES2, both from WiCell. RUES2 was omitted.",
+      "evidence_quote": "The H1 and RUES2 hESCs were purchased from WiCell Research Institute Inc.",
+      "source_loc": "methods_text, 'Experimental model and subject details / Cell lines'"
+    },
+    {
+      "field": "source_cells.cell_type",
+      "extracted": "other",
+      "source_says": "H1/RUES2 are human embryonic stem cells (hESC / hPSC); cell_type should be ESC/PSC, not 'other'.",
+      "evidence_quote": "The hESC H1 line was grown and maintained on 1% matrigel (Corning) coated six-well plates in homemade mTesR1 medium",
+      "source_loc": "methods_text, 'Cell lines'"
+    },
+    {
+      "field": "base_media",
+      "extracted": "null / not_reported",
+      "source_says": "Base media ARE reported and central to the protocol: maintenance in homemade mTeSR1 (H1) / StemFlex (RUES2); DE in RPMI1640; AFE+lung-progenitor in cSFD medium; later PneumaCult-Ex Plus then PneumaCult-ALI.",
+      "evidence_quote": "hESCs were treated with 3 μM CHIR99021 ... in basal medium RPMI1640 (Cellgro) ... the endoderm cells were cultured in complete serum free differentiation (cSFD) medium ... D30 hPSC-AOs were switched to culturing in PneumaCult Ex Plus medium (StemCell Technologies, Inc.) ... changed to PneumaCult ALI medium (StemCell Technologies, Inc.)",
+      "source_loc": "methods_text, 'Airway organoid differentiation'"
+    },
+    {
+      "field": "passaging.method",
+      "extracted": "Accutase",
+      "source_says": "Routine hESC maintenance passaging used ReLeSR at 1:6-1:10; Accutase (1:2-1:3) was used only for the first day of DE differentiation. The reported split_ratio '1:6-1:10' corresponds to ReLeSR, not Accutase, so method+ratio are internally mismatched.",
+      "evidence_quote": "When hESCs reached ∼90% confluence, the cells were passaged at 1:6-1:10 with ReLeSR (Stem Cell Technology). ... For definitive endoderm (DE) differentiation, cells were passaged with Accutase (Innovative Cell Technology) at 1:2-1:3 for the first day.",
+      "source_loc": "methods_text, 'Cell lines' and 'Airway organoid differentiation'"
+    },
+    {
+      "field": "culture_conditions",
+      "extracted": "not_extracted (temperature_c null, co2_pct null)",
+      "source_says": "Temperature and CO2 ARE reported: 37°C, 5% CO2.",
+      "evidence_quote": "grown and maintained on 1% matrigel (Corning) coated six-well plates in homemade mTesR1 medium at 37°C under the 5% CO2 culture conditions",
+      "source_loc": "methods_text, 'Cell lines'"
+    }
+  ],
+  "recall_misses": [
+    {
+      "item": "IWP2 (Wnt inhibitor, anterior foregut endoderm step)",
+      "source_says": "1 μM IWP2 used during AFE induction; not in extraction.",
+      "evidence_quote": "switched to 10 μM SB431542 and 1 μM IWP2 (R&D Systems) treatment for 24 hours",
+      "source_loc": "methods_text, 'Airway organoid differentiation'"
+    },
+    {
+      "item": "FGF10 (human) 100 ng/ml — 3D airway organoid medium",
+      "source_says": "Key 3D lung organoid factor; missed entirely.",
+      "evidence_quote": "The 3D culture was maintained in cSFD containing 100 ng/ml human FGF10, 250 ng/ml human FGF2, 50 nM dexamethasone, 0.1 mM 8-bromo-cAMP (Sigma Aldrich) and 0.1 mM IBMX",
+      "source_loc": "methods_text, 'Airway organoid differentiation'"
+    },
+    {
+      "item": "FGF2 (bFGF) 250 ng/ml — 3D airway organoid medium",
+      "source_says": "3D lung organoid factor; missed.",
+      "evidence_quote": "100 ng/ml human FGF10, 250 ng/ml human FGF2, 50 nM dexamethasone",
+      "source_loc": "methods_text, 'Airway organoid differentiation'"
+    },
+    {
+      "item": "Dexamethasone 50 nM — 3D airway organoid medium",
+      "source_says": "Glucocorticoid in 3D maturation medium; missed.",
+      "evidence_quote": "250 ng/ml human FGF2, 50 nM dexamethasone, 0.1 mM 8-bromo-cAMP",
+      "source_loc": "methods_text, 'Airway organoid differentiation'"
+    },
+    {
+      "item": "8-bromo-cAMP 0.1 mM — 3D airway organoid medium",
+      "source_says": "cAMP analog in 3D medium; missed.",
+      "evidence_quote": "50 nM dexamethasone, 0.1 mM 8-bromo-cAMP (Sigma Aldrich) and 0.1 mM IBMX (Sigma Aldrich)",
+      "source_loc": "methods_text, 'Airway organoid differentiation'"
+    },
+    {
+      "item": "IBMX 0.1 mM — 3D airway organoid medium",
+      "source_says": "Phosphodiesterase inhibitor in 3D medium; missed.",
+      "evidence_quote": "0.1 mM 8-bromo-cAMP (Sigma Aldrich) and 0.1 mM IBMX (Sigma Aldrich)",
+      "source_loc": "methods_text, 'Airway organoid differentiation'"
+    },
+    {
+      "item": "A83-01 1 μM — PneumaCult-Ex Plus / ALI ciliation step",
+      "source_says": "TGF-beta/ALK inhibitor used to promote ciliated cells; missed.",
+      "evidence_quote": "switched to culturing in PneumaCult Ex Plus medium (StemCell Technologies, Inc.) supplemented with 1 μM A83-01(Tocris) and 1 μM DMH1(Tocris) for at least 10 days",
+      "source_loc": "methods_text, 'Airway organoid differentiation'"
+    },
+    {
+      "item": "DMH1 1 μM — PneumaCult-Ex Plus / ALI ciliation step",
+      "source_says": "BMP inhibitor used to promote ciliated cells; missed.",
+      "evidence_quote": "1 μM A83-01(Tocris) and 1 μM DMH1(Tocris) for at least 10 days",
+      "source_loc": "methods_text, 'Airway organoid differentiation'"
+    },
+    {
+      "item": "FBS 2% — DE differentiation",
+      "source_says": "Serum supplement during DE step; missed.",
+      "evidence_quote": "changed to the basal medium containing 100 ng/ml Activin A and 2% FBS for the next 48 hours",
+      "source_loc": "methods_text, 'Airway organoid differentiation'"
+    },
+    {
+      "item": "Air-liquid interface (ALI) / transwell timeline and seeding density",
+      "source_says": "Protocol timeline (D15 2D->3D, D30, D40 dissociate, 30,000 cells/0.4 μm transwell insert, D49 ALI, ≥14 days air exposure) entirely absent; extraction timeline is empty.",
+      "evidence_quote": "At day 40, the hPSC-AOs above were dissociated into single cells and seeded into 0.4 μm transwell permeable support inserts coated with 1% Matrigel at 30,000 cells per insert ... changed to PneumaCult ALI medium ... at day 49 ... exposed to air for at least 14 days",
+      "source_loc": "methods_text, 'Airway organoid differentiation'"
+    },
+    {
+      "item": "70 μL Matrigel dome on 24-well plate (3D embedding) and 1% Matrigel transwell coating",
+      "source_says": "Matrix percent/format details present but extraction left matrix.percent null and no embedding detail.",
+      "evidence_quote": "mixed with matrigel, and replated to form 70 μL domes on 24-well plates ... seeded into 0.4 μm transwell permeable support inserts coated with 1% Matrigel",
+      "source_loc": "methods_text, 'Airway organoid differentiation'"
+    },
+    {
+      "item": "Y-27632 (ROCK inhibitor, key resources table)",
+      "source_says": "Listed in chemicals table; commonly used in passaging/seeding. Not in extraction.",
+      "evidence_quote": "Y-27632 MedchemExpress #HY-10583",
+      "source_loc": "methods_text, Key resources table"
+    }
+  ],
+  "verdict": "partial",
+  "notes": "Figures (fx1 graphical abstract; gr1-gr6) are result/mechanistic panels (scRNA-seq UMAPs, IF, screen, glycolysis schematic) with NO differentiation-timeline schematic, so multimodal=false; visually inspected fx1 and gr1 to confirm. Extraction conflates two separate protocols: it is labeled organoid_type=lung but its signaling_factors mix the airway (hPSC-AO) and colonic (hPSC-CO) protocols (FGF4/BMP2/hEGF/LDN193189 are colonic-only) and contains duplicate entries (CHIR99021 x2, hEGF x2, BMP2 vs 'human BMP2'). Correctly captured factors with concentrations: CHIR99021 3 μM, Activin A 100 ng/ml, dorsomorphin 2 μM, SB431542 10 μM, BMP4 10 ng/ml, ATRA 50 nM, plus Matrigel and Accutase mention. Major recall gaps: entire 3D airway maturation cocktail (FGF10, FGF2, dexamethasone, 8-bromo-cAMP, IBMX), ALI/ciliation factors (A83-01, DMH1), IWP2, FBS, full timeline, base media (RPMI1640/cSFD/PneumaCult Ex+ALI/mTeSR1/StemFlex), second cell line RUES2, and reported 37°C/5% CO2. One faithfully-copied source typo ('100 ng/ml 3 μM CHIR99021'). Evidence 'quote' fields cite source_doi rather than pmcid and all confidences are 0.0."
+}
