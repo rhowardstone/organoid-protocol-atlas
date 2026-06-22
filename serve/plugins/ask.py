@@ -145,7 +145,7 @@ For full-table streaming with no row cap, append ?_stream=1 to the CSV URL:
 - /analytics/concentration-by-type     per-organoid-type concentration stats for one canonical reagent; requires ?q=EGF; shows how dose differs across kidney/intestinal/liver/etc
 - /analytics/journal-breakdown          journal contribution counts: cross-corpus top 50 + per-type top 5; ?type=kidney for full single-type breakdown
 - /analytics/type-comparison           side-by-side organoid type comparison: shared/unique canonical reagents, Jaccard similarity, per-kind breakdown; ?a=intestinal&b=cerebral
-- /analytics/concentration-deviation   dose inconsistency ranking: canonical reagents sorted by coefficient of variation (std/mean); most_variable and most_consistent lists; ?min_n= threshold
+- /analytics/concentration-deviation   dose inconsistency ranking: canonical reagents sorted by coefficient of variation (std/mean); most_variable and most_consistent lists; ?min_n= threshold; NOTE: n_with_value = numeric-dose records (≠ n_records total mentions); entries with n_with_value < 10 carry low_n_warning: true — treat as indicative not statistically robust
 - /analytics/reagent-prevalence        type-breadth ranking: canonicals sorted by n_organoid_types; cross_field (>=20 types) + specialist (<=2 types) sub-lists; ?q=EGF for per-type breakdown
 - /analytics/protocol-outliers         per-type outlier detection on n_signaling_factors: complex and minimal protocols with z-scores; ?type=kidney for one type; ?z_thresh= sensitivity
 - /analytics/grounding-distribution    per-paper grounding rate histogram (10 buckets), per-type mean ranking, top/bottom 20 papers; ?type=kidney for one type; live from protocols.jsonl
