@@ -48,6 +48,29 @@ def is_non_reagent(name: str | None) -> bool:
     return bool(name) and bool(NON_REAGENT_RE.search(name))
 
 
+# Pathway / signaling-family context guard: bare family names without a specific
+# isoform number/letter are pathway-context prose, not actionable culture reagents.
+# "WNT signaling" ≠ "WNT3A" or "CHIR99021". Also catches any name that explicitly
+# qualifies itself with "signaling / pathway / axis / cascade / family / regulation".
+# Conservative: only matches when NO isoform suffix (digit or letter run) follows
+# the base name — so "BMP4", "FGF2", "TGF-β1", "EGF" are never blocked.
+PATHWAY_CONTEXT_RE = re.compile(
+    # bare family names (no trailing digit / letter suffix → isoform):
+    r"^\s*(?:wnt|bmp|tgf(?:[\s\-]?(?:beta|α|β|alpha))?|sonic[\s+]hedgehog|shh"
+    r"|notch|pdgf|vegf|hippo|hedgehog)\s*$"
+    r"|"
+    # any name that declares itself as signaling / pathway / etc.:
+    r"\b(?:wnt|bmp|fgf|tgf|egf|shh|notch|hedgehog|pdgf|vegf)\s+"
+    r"(?:signaling?|pathway|activity|axis|cascade|family|regulation"
+    r"|ligand|superfamily|inhibition|inhibitor|activation|response)\b",
+    re.I,
+)
+
+
+def is_pathway_context(name: str | None) -> bool:
+    return bool(name) and bool(PATHWAY_CONTEXT_RE.search(name))
+
+
 sys.path.insert(0, str(REPO / "organoid_demo"))
 
 from schema import (  # noqa: E402
@@ -324,7 +347,8 @@ def to_protocol(doi: str, m: dict, evidence: str) -> tuple[OrganoidProtocol, dic
         base_media=BaseMedia(name=bm.get("name"),
                              reporting=Reporting.REPORTED if bm.get("name") else Reporting.NOT_REPORTED),
         signaling_factors=[reagent(d) for d in (m.get("signaling_factors") or [])
-                           if d.get("name") and not is_non_reagent(d.get("name"))],
+                           if d.get("name") and not is_non_reagent(d.get("name"))
+                           and not is_pathway_context(d.get("name"))],
         media_supplements=[Reagent(name=str(s.get("name") if isinstance(s, dict) else s).strip())
                            for s in (m.get("media_supplements") or []) if s],
         passaging=passaging,
