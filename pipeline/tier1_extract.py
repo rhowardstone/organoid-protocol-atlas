@@ -54,9 +54,11 @@ def is_non_reagent(name: str | None) -> bool:
 # qualifies itself with "signaling / pathway / axis / cascade / family / regulation".
 # Conservative: only matches when NO isoform suffix (digit or letter run) follows
 # the base name — so "BMP4", "FGF2", "TGF-β1", "EGF" are never blocked.
+# "FGF"/"FGFs" are in the bare-family group (ambiguous; distinct from FGF2/FGF10 etc.).
+# "EGF" is NOT here — bare EGF is the specific ligand, not a family shorthand.
 PATHWAY_CONTEXT_RE = re.compile(
     # bare family names (no trailing digit / letter suffix → isoform):
-    r"^\s*(?:wnt|bmp|tgf(?:[\s\-]?(?:beta|α|β|alpha))?|sonic[\s+]hedgehog|shh"
+    r"^\s*(?:wnt|wnts?|bmp|bmps?|fgf|fgfs?|tgf(?:[\s\-]?(?:beta|α|β|alpha))?|sonic[\s+]hedgehog|shh"
     r"|notch|pdgf|vegf|hippo|hedgehog)\s*$"
     r"|"
     # any name that declares itself as signaling / pathway / etc.:
