@@ -1,12 +1,13 @@
 """
 Redirect raw Datasette table/database/query pages to /explore for human browsers.
-JSON API calls (?_shape=, .json, .csv, Accept: application/json) pass through
-so the /explore page can still fetch data from the same endpoints.
+JSON API calls (?_shape=, .json, .csv, Accept: application/json) and filtered
+Datasette views (?organoid_type__exact=, ?canonical__exact=, etc.) pass through
+so drill-down links from the dashboard and consensus pages work correctly.
 """
 import functools
 from datasette import hookimpl
 
-# Paths that should redirect HTML browsers to /explore
+# Paths that should redirect HTML browsers to /explore (unfiltered only)
 _HTML_BLOCK = {
     "/atlas",
     "/atlas/protocols",
@@ -16,9 +17,16 @@ _HTML_BLOCK = {
     "/atlas/grounding_by_protocol",
 }
 
+# Datasette filter operators — filtered table views are allowed through
+# so drill-down links (e.g. ?organoid_type__exact=cerebral) reach the data
+_FILTER_OPS = (
+    "__exact", "__contains", "__gt", "__gte", "__lt", "__lte",
+    "__in", "__like", "__notcontains", "__arraycontains",
+)
+
 
 def _is_api(scope):
-    """Return True if this looks like a JSON/CSV API request, not a browser."""
+    """Return True if this looks like a JSON/CSV API or a filtered Datasette view."""
     qs = scope.get("query_string", b"").decode()
     headers = dict(scope.get("headers", []))
     accept = headers.get(b"accept", b"").decode()
@@ -29,6 +37,7 @@ def _is_api(scope):
         or "application/json" in accept
         or path.endswith(".json")
         or path.endswith(".csv")
+        or any(op in qs for op in _FILTER_OPS)
     )
 
 
