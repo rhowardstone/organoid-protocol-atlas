@@ -10,6 +10,16 @@
 .cons-cite { font-size:0.72rem; font-family:var(--mono,monospace); color:var(--accent); border:1px solid color-mix(in srgb,var(--accent) 40%,transparent); border-radius:4px; padding:1px 5px; text-decoration:none; white-space:nowrap; }
 .cons-cite:hover { background:color-mix(in srgb,var(--accent) 10%,transparent); }
 .cons-sources { display:flex; flex-wrap:wrap; gap:4px; margin-top:4px; }
+.cons-corpus-label { font-size:0.7rem; color:var(--fg-muted,#888); margin-bottom:3px; }
+/* type-nav */
+.cons-typenav { display:flex; flex-wrap:wrap; gap:6px; padding:10px 0 16px; }
+.cons-typenav a { font-size:0.78rem; padding:3px 9px; border-radius:4px; background:color-mix(in srgb,var(--accent) 10%,transparent); color:var(--accent); text-decoration:none; border:1px solid color-mix(in srgb,var(--accent) 25%,transparent); white-space:nowrap; }
+.cons-typenav a:hover { background:color-mix(in srgb,var(--accent) 22%,transparent); }
+/* filter */
+.cons-filter-wrap { margin-bottom:14px; display:flex; gap:8px; align-items:center; }
+.cons-filter-wrap input { flex:1; max-width:280px; padding:5px 10px; border:1px solid color-mix(in srgb,var(--accent) 30%,transparent); border-radius:5px; background:var(--bg2,#1a1a1a); color:var(--fg,#eee); font-size:0.9rem; }
+.cons-filter-wrap .cons-clear { font-size:0.78rem; color:var(--accent); cursor:pointer; text-decoration:underline; }
+.cons-card-hidden { display:none !important; }
 </style>
 
 <div class="apa-topbar">
@@ -24,10 +34,17 @@
   <div class="apa-kicker">Consensus recipes</div>
   <h1>The canonical recipe for each organoid system</h1>
   <p class="apa-sub">For every organoid type, how often each signaling factor appears across that
-  type's protocols — the <strong>core cocktail</strong> (used by most protocols) versus
-  <strong>variable</strong> additions. Frequencies are computed from the corpus, not asserted;
-  each factor row names every paper that uses it. Types with only one or two protocols are labelled
-  as such — a single paper is not a consensus.</p>
+  type's protocols — the <strong>core cocktail</strong> (≥50% of protocols) versus
+  <strong>variable</strong> additions. Each paper chip links to its DOI. Use the filter or jump-links
+  below to navigate to a specific system.</p>
+</div>
+
+<div id="typeNavWrap" style="display:none">
+  <div class="cons-filter-wrap">
+    <input id="consFilter" type="search" placeholder="Filter by organoid type…" />
+    <span class="cons-clear" id="consClear" style="display:none">Clear</span>
+  </div>
+  <div class="cons-typenav" id="typeNav"></div>
 </div>
 
 <div id="consensus" class="apa-cons-wrap"><p class="apa-sub">Loading…</p></div>
@@ -70,6 +87,8 @@ function citeLink(p){
      >${esc(p.first_author||'?')} ${p.year||''}</a>`;
 }
 
+function typeAnchor(t){ return 'type-' + t.toLowerCase().replace(/[^a-z0-9]+/g,'-'); }
+
 (async () => {
   let protos, sig;
   try {
@@ -107,6 +126,31 @@ function citeLink(p){
   }
 
   const types = Object.keys(m).sort((a,b)=>(nByType[b]||0)-(nByType[a]||0)||a.localeCompare(b));
+
+  // Build type-nav
+  const navEl = document.getElementById('typeNav');
+  navEl.innerHTML = types.map(t =>
+    `<a href="#${typeAnchor(t)}">${esc(t)} <span style="opacity:.55;font-size:.72em">${nByType[t]||0}</span></a>`
+  ).join('');
+  document.getElementById('typeNavWrap').style.display = '';
+
+  // Filter logic
+  const filterInput = document.getElementById('consFilter');
+  const clearBtn = document.getElementById('consClear');
+  filterInput.addEventListener('input', () => {
+    const q = filterInput.value.trim().toLowerCase();
+    clearBtn.style.display = q ? '' : 'none';
+    document.querySelectorAll('.apa-cons-card').forEach(card => {
+      const match = !q || card.dataset.type.includes(q);
+      card.classList.toggle('cons-card-hidden', !match);
+    });
+  });
+  clearBtn.addEventListener('click', () => {
+    filterInput.value = '';
+    clearBtn.style.display = 'none';
+    document.querySelectorAll('.apa-cons-card').forEach(c => c.classList.remove('cons-card-hidden'));
+  });
+
   let html='';
   for(const t of types){
     const n = nByType[t]||0;
@@ -140,8 +184,9 @@ function citeLink(p){
       </div>`;
     };
 
-    html += `<section class="apa-cons-card">
+    html += `<section class="apa-cons-card" id="${typeAnchor(t)}" data-type="${esc(t.toLowerCase())}">
       <div class="cons-head"><h2>${esc(t)} organoid</h2><span class="cons-meta">${note}</span></div>
+      <div class="cons-corpus-label">Corpus (${n} paper${n!==1?'s':''})</div>
       <div class="cons-corpus">${corpusHtml}</div>
       ${core.length?`<div class="cons-grouplabel">Core cocktail</div>${core.map(rowHtml).join('')}`:''}
       ${variable.length?`<div class="cons-grouplabel variable">Variable additions</div>${variable.map(rowHtml).join('')}`:''}

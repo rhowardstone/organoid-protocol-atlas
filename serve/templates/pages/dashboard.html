@@ -5,7 +5,7 @@
 {% block content %}
 <div class="apa-topbar">
   <span class="dot"></span> <a href="/">ORGANOID PROTOCOL ATLAS</a>
-  <span class="dot"></span> <a href="/atlas/protocols">Protocols</a>
+  <span class="dot"></span> <a href="/explore">Explore</a>
   <span class="dot"></span> <a href="/heatmap">Heatmap</a>
   <span class="dot"></span> <a href="/consensus">Consensus</a>
   <span class="dot"></span> <a href="/explore">Explore</a>
@@ -28,9 +28,9 @@
     <div class="apa-stat"><div class="n" id="s-papers">—</div><div class="l">papers in corpus</div></div>
     <div class="apa-stat"><div class="n" id="s-types">—</div><div class="l">organoid systems</div></div>
     <div class="apa-stat"><div class="n" id="s-reagents">—</div><div class="l">grounded reagent rows</div></div>
-    <div class="apa-stat"><div class="n" id="s-grounding">—</div><div class="l">avg grounding rate</div></div>
+    <a class="apa-stat" href="/analytics/grounding-quality" title="Grounding quality breakdown by type and kind"><div class="n" id="s-grounding">—</div><div class="l">avg grounding rate ↗</div></a>
     <div class="apa-stat"><div class="n" id="s-mior">—</div><div class="l">avg MIOR completeness</div></div>
-    <div class="apa-stat"><div class="n" id="s-gold">—</div><div class="l">gold-tier protocols</div></div>
+    <a class="apa-stat" href="/atlas/protocols?gold_candidate__exact=yes" title="Browse gold-tier candidate protocols"><div class="n" id="s-gold">—</div><div class="l">gold-tier protocols ↗</div></a>
   </div>
 
   <!-- Quality + MIOR side by side -->
@@ -215,14 +215,14 @@ async function load() {
     const gp = pct(q.n_gold,   n), sp = pct(q.n_silver, n), bp = pct(q.n_bronze, n);
     qEl.innerHTML = `
       <div class="dash-stacked-bar">
-        <div class="dash-bar-seg dash-bar-gold"   style="flex:${q.n_gold}"   title="Gold ${q.n_gold}"  >${q.n_gold > 10 ? gp+'%' : ''}</div>
+        <a href="/atlas/protocols?gold_candidate__exact=yes" class="dash-bar-seg dash-bar-gold" style="flex:${q.n_gold};text-decoration:none"  title="Gold ${q.n_gold} — click to browse">${q.n_gold > 10 ? gp+'%' : ''}</a>
         <div class="dash-bar-seg dash-bar-silver" style="flex:${q.n_silver}" title="Silver ${q.n_silver}">${q.n_silver > 10 ? sp+'%' : ''}</div>
         <div class="dash-bar-seg dash-bar-bronze" style="flex:${q.n_bronze}" title="Bronze ${q.n_bronze}">${q.n_bronze > 10 ? bp+'%' : ''}</div>
       </div>`;
     document.getElementById('quality-detail').innerHTML =
-      `<span style="color:var(--warn)">■</span> Gold ${q.n_gold} &nbsp;
-       <span style="color:var(--muted)">■</span> Silver ${q.n_silver} &nbsp;
-       <span style="color:#7c553a">■</span> Bronze ${q.n_bronze} &nbsp;·&nbsp;
+      `<a href="/atlas/protocols?gold_candidate__exact=yes" style="color:inherit;text-decoration:none" title="Browse gold-tier protocols"><span style="color:#c77c1e">■</span> Gold ${q.n_gold}</a> &nbsp;
+       <a href="/analytics/quality" style="color:inherit;text-decoration:none" title="Quality scores JSON"><span style="color:var(--muted)">■</span> Silver ${q.n_silver} &nbsp;
+       <span style="color:#7c553a">■</span> Bronze ${q.n_bronze}</a> &nbsp;·&nbsp;
        avg score ${q.avg_score != null ? (q.avg_score*100).toFixed(1)+'%' : '—'}`;
   } else {
     qEl.innerHTML = '<div class="dash-error">Quality scores unavailable — run: python pipeline/score_protocol_quality.py</div>';
