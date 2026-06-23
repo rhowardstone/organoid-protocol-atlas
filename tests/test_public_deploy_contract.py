@@ -88,7 +88,8 @@ def test_llms_txt_route_documents_public_api_and_limits():
 def test_public_ask_page_is_honest_without_model():
     html = (ROOT / "serve/templates/pages/ask.html").read_text()
 
-    assert "model synthesis unavailable here" in html
+    # PR #133 updated phrasing; check current template text (ask.html line 21)
+    assert "synthesis is unavailable" in html
     assert "evidence retrieved" in html
     assert "public Render deployment" in html
 
