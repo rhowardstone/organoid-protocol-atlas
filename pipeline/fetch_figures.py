@@ -46,6 +46,7 @@ def _read_url(url: str, timeout: int, tries: int = 4) -> bytes:
             if i == tries - 1:
                 raise
             time.sleep(2 * (i + 1))
+    raise RuntimeError(f"unreachable: exhausted {tries} retries for {url}")
 
 REPO = Path(__file__).resolve().parent.parent
 CORPUS = REPO / "data" / "corpus" / "corpus.tsv"
