@@ -367,9 +367,39 @@ async def llms_txt(datasette, request):
     return Response.text(LLMS_TXT)
 
 
+_EXPORTS_DIR = Path(__file__).resolve().parents[2] / "exports" / "public"
+
+
+async def _serve_export(filename: str, content_type: str):
+    path = _EXPORTS_DIR / filename
+    if path.exists():
+        return Response(body=path.read_bytes(), status=200,
+                        headers={"content-type": content_type,
+                                 "content-disposition": f"attachment; filename={filename}"})
+    return Response.redirect(f"/atlas/{filename.replace('.jsonl', '').replace('.json', '')}.json?_shape=array&_size=max", status=302)
+
+
+async def serve_protocols_jsonl(datasette, request):
+    return await _serve_export("protocols.jsonl", "application/x-ndjson")
+
+
+async def serve_reagents_jsonl(datasette, request):
+    return await _serve_export("reagents.jsonl", "application/x-ndjson")
+
+
+async def serve_public_manifest(datasette, request):
+    return await _serve_export("manifest.json", "application/json")
+
+
 @hookimpl
 def register_routes():
-    return [(r"^/-/ask$", ask), (r"^/llms\.txt$", llms_txt)]
+    return [
+        (r"^/-/ask$", ask),
+        (r"^/llms\.txt$", llms_txt),
+        (r"^/exports/public/protocols\.jsonl$", serve_protocols_jsonl),
+        (r"^/exports/public/reagents\.jsonl$", serve_reagents_jsonl),
+        (r"^/exports/public/manifest\.json$", serve_public_manifest),
+    ]
 
 
 @hookimpl
