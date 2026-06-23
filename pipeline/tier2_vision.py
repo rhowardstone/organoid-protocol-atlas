@@ -113,6 +113,11 @@ def main():
         bpath = BUNDLES / f"{pmcid}.json"
         if not figdir.exists() or not bpath.exists():
             continue
+        # resume: a full (non-subset) run skips papers already processed, so a relaunch
+        # after interruption continues where it left off instead of re-running vision on
+        # the whole corpus. An explicit pmcid arg (subset) always re-runs.
+        if not subset and (PRED2 / f"{pmcid}.json").exists():
+            continue
         b = json.loads(bpath.read_text())
         body_l = (b.get("body_text", "") or "").lower()
         doi = b.get("doi")
