@@ -11,15 +11,15 @@ def test_public_manifest_counts_match_render_copy():
     manifest = json.loads((ROOT / "exports/public/manifest.json").read_text())
 
     assert manifest["license_filter"] == "CC0/CC-BY (no NC/ND)"
-    assert manifest["n_papers"] == 582
-    assert manifest["tables"] == {"protocols": 582, "reagents": 5458}
+    assert manifest["n_papers"] == 5119
+    assert manifest["tables"] == {"protocols": 5119, "reagents": 43219}
 
 
 def test_public_landing_page_does_not_claim_local_corpus_counts():
     html = (ROOT / "serve/templates/index.html").read_text()
 
-    assert "582</div><div class=\"l\">public protocols" in html
-    assert "5458</div><div class=\"l\">public rows" in html
+    assert "5119</div><div class=\"l\">public protocols" in html
+    assert "43219</div><div class=\"l\">public rows" in html
     assert "0</div><div class=\"l\">full-text bodies" in html
     assert "/llms.txt" in html
     assert "28</div><div class=\"l\">protocols extracted" not in html
@@ -30,8 +30,8 @@ def test_llms_txt_route_documents_public_api_and_limits():
     plugin = (ROOT / "serve/plugins/ask.py").read_text()
 
     assert "LLMS_TXT" in plugin
-    assert "582 papers, 582" in plugin
-    assert "5458 public reagent/protocol rows" in plugin
+    assert "5119 papers, 5119" in plugin
+    assert "43219 public reagent/protocol rows" in plugin
     assert "does not redistribute" in plugin
     assert "/atlas/protocols.json" in plugin
     assert "/atlas/reagents.json" in plugin
