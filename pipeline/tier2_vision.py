@@ -80,7 +80,11 @@ def call_vision(img_b64: str, label: str, caption: str) -> dict:
         "model": MODEL,
         "prompt": PROMPT.format(label=label, caption=(caption or "")[:600]),
         "images": [img_b64], "format": "json", "stream": False,
-        "options": {"temperature": 0},
+        # num_predict caps generation so a pathological figure can't trigger an unbounded
+        # runaway that pegs the GPU indefinitely (same failure mode that hung the text
+        # marathon; the urlopen socket timeout below does NOT bound a non-streaming request).
+        # Vision output is a small JSON object, so 2048 is ample headroom.
+        "options": {"temperature": 0, "num_predict": 2048},
     }).encode()
     req = urllib.request.Request(OLLAMA, data=body, headers={"Content-Type": "application/json"})
     resp = json.load(urllib.request.urlopen(req, timeout=600))["response"]

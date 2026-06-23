@@ -78,6 +78,12 @@ def fetch(pmcid: str, license_: str) -> dict:
     lic = (license_ or "").strip().lower()
     if lic not in OPEN_LICENSES:
         return {"pmcid": pmcid, "license": license_, "skipped": "license-gated"}
+    # resume fast: a completed paper has a figures.json sidecar — skip the S3 list entirely
+    # so a large corpus-wide fetch can be re-run/resumed without re-listing every paper.
+    done = FIG_DIR / pmcid / "figures.json"
+    if done.exists():
+        rec = json.loads(done.read_text())
+        return {**rec, "skipped": "already-fetched"}
     keys = figure_keys(s3_list(pmcid))
     if not keys:
         return {"pmcid": pmcid, "license": license_, "skipped": "no-figures-on-mirror"}
