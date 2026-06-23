@@ -1,21 +1,21 @@
 {
-  "generated_at": "2026-06-20T22:04:31.892974+00:00",
+  "generated_at": "2026-06-22T17:21:42.600921+00:00",
   "generator": "pipeline/eval_gold.py",
   "honesty": "Only HUMAN-VERIFIED gold (truthy verified_by) is scored; unverified gold is skipped and never counted. No model-vs-model.",
   "provenance": {
-    "gold_dir": "gold/candidate",
+    "gold_dir": "gold/verified",
     "pred_dir": "/atb-data/rye/Organoid/data/predictions/local",
     "gold_files_found": 6,
     "gold_pmcids": [
-      "PMC3033971",
-      "PMC4270898",
+      "PMC10000618",
+      "PMC10005775",
+      "PMC10031036",
+      "PMC12625545",
       "PMC4370217",
-      "PMC4620584",
-      "PMC6428276",
       "PMC6906116"
     ],
-    "verified_count": 0,
-    "skipped_unverified_count": 6,
+    "verified_count": 6,
+    "skipped_unverified_count": 0,
     "skipped_no_prediction_count": 0
   },
   "match_rules": {
@@ -32,45 +32,332 @@
     "set_match": "normalized set overlap; duplicates collapsed",
     "scalar_match": "exact after normalize -> correct/incorrect/missing/not_in_gold"
   },
-  "verified_gold_scored": [],
-  "skipped_unverified": [
+  "verified_gold_scored": [
     {
-      "pmcid": "PMC3033971",
-      "file": "gold/candidate/PMC3033971.json",
-      "reason": "verified_by is null"
+      "pmcid": "PMC10000618",
+      "gold_file": "gold/verified/PMC10000618.json",
+      "pred_file": "/atb-data/rye/Organoid/data/predictions/local/PMC10000618.json",
+      "verified_by": "rhowardstone"
     },
     {
-      "pmcid": "PMC4270898",
-      "file": "gold/candidate/PMC4270898.json",
-      "reason": "verified_by is null"
+      "pmcid": "PMC10005775",
+      "gold_file": "gold/verified/PMC10005775.json",
+      "pred_file": "/atb-data/rye/Organoid/data/predictions/local/PMC10005775.json",
+      "verified_by": "rhowardstone"
+    },
+    {
+      "pmcid": "PMC10031036",
+      "gold_file": "gold/verified/PMC10031036.json",
+      "pred_file": "/atb-data/rye/Organoid/data/predictions/local/PMC10031036.json",
+      "verified_by": "rhowardstone"
+    },
+    {
+      "pmcid": "PMC12625545",
+      "gold_file": "gold/verified/PMC12625545.json",
+      "pred_file": "/atb-data/rye/Organoid/data/predictions/local/PMC12625545.json",
+      "verified_by": "rhowardstone"
     },
     {
       "pmcid": "PMC4370217",
-      "file": "gold/candidate/PMC4370217.json",
-      "reason": "verified_by is null"
-    },
-    {
-      "pmcid": "PMC4620584",
-      "file": "gold/candidate/PMC4620584.json",
-      "reason": "verified_by is null"
-    },
-    {
-      "pmcid": "PMC6428276",
-      "file": "gold/candidate/PMC6428276.json",
-      "reason": "verified_by is null"
+      "gold_file": "gold/verified/PMC4370217.json",
+      "pred_file": "/atb-data/rye/Organoid/data/predictions/local/PMC4370217.json",
+      "verified_by": "rhowardstone"
     },
     {
       "pmcid": "PMC6906116",
-      "file": "gold/candidate/PMC6906116.json",
-      "reason": "verified_by is null"
+      "gold_file": "gold/verified/PMC6906116.json",
+      "pred_file": "/atb-data/rye/Organoid/data/predictions/local/PMC6906116.json",
+      "verified_by": "rhowardstone"
     }
   ],
+  "skipped_unverified": [],
   "skipped_no_prediction": [],
-  "is_real_metric": false,
+  "is_real_metric": true,
   "aggregate": {
-    "papers_scored": 0,
-    "set_fields": {},
-    "scalar_fields": {}
+    "papers_scored": 6,
+    "set_fields": {
+      "signaling_factors": {
+        "micro": {
+          "tp": 27,
+          "fp": 11,
+          "fn": 8,
+          "precision": 0.7105,
+          "recall": 0.7714,
+          "f1": 0.7397
+        },
+        "macro": {
+          "precision": 0.8195,
+          "recall": 0.8667,
+          "f1": 0.8398,
+          "papers_with_support": 6
+        }
+      },
+      "small_molecules": {
+        "micro": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "macro": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "papers_with_support": 0
+        }
+      }
+    },
+    "scalar_fields": {
+      "source_cells.cell_type": {
+        "correct": 5,
+        "incorrect": 1,
+        "missing": 0,
+        "not_in_gold": 0,
+        "scorable": 6,
+        "accuracy": 0.8333
+      },
+      "matrix": {
+        "correct": 1,
+        "incorrect": 4,
+        "missing": 0,
+        "not_in_gold": 1,
+        "scorable": 5,
+        "accuracy": 0.2
+      },
+      "base_media": {
+        "correct": 0,
+        "incorrect": 5,
+        "missing": 0,
+        "not_in_gold": 1,
+        "scorable": 5,
+        "accuracy": 0.0
+      }
+    }
   },
-  "per_paper": {}
+  "per_paper": {
+    "PMC10000618": {
+      "set_fields": {
+        "signaling_factors": {
+          "tp": 2,
+          "fp": 10,
+          "fn": 8,
+          "precision": 0.1667,
+          "recall": 0.2,
+          "f1": 0.1818
+        },
+        "small_molecules": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "scalar_fields": {
+        "source_cells.cell_type": {
+          "status": "correct",
+          "gold": "primary_tissue",
+          "pred": "primary_tissue"
+        },
+        "matrix": {
+          "status": "incorrect",
+          "gold": "Cultrex UltiMatrix RGF BME",
+          "pred": "Cultrex UltiMatrix reduced growth factor basement membrane Extract"
+        },
+        "base_media": {
+          "status": "incorrect",
+          "gold": "advanced DMEM/F12",
+          "pred": "DMEM/F12"
+        }
+      }
+    },
+    "PMC10005775": {
+      "set_fields": {
+        "signaling_factors": {
+          "tp": 7,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "small_molecules": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "scalar_fields": {
+        "source_cells.cell_type": {
+          "status": "correct",
+          "gold": "iPSC",
+          "pred": "iPSC"
+        },
+        "matrix": {
+          "status": "incorrect",
+          "gold": "fibronectin",
+          "pred": "GFR-Matrigel"
+        },
+        "base_media": {
+          "status": "incorrect",
+          "gold": "Essential 8",
+          "pred": "Essential 8 medium"
+        }
+      }
+    },
+    "PMC10031036": {
+      "set_fields": {
+        "signaling_factors": {
+          "tp": 3,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "small_molecules": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "scalar_fields": {
+        "source_cells.cell_type": {
+          "status": "correct",
+          "gold": "iPSC",
+          "pred": "iPSC"
+        },
+        "matrix": {
+          "status": "not_in_gold",
+          "gold": null,
+          "pred": null
+        },
+        "base_media": {
+          "status": "not_in_gold",
+          "gold": null,
+          "pred": null
+        }
+      }
+    },
+    "PMC12625545": {
+      "set_fields": {
+        "signaling_factors": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "small_molecules": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "scalar_fields": {
+        "source_cells.cell_type": {
+          "status": "correct",
+          "gold": "iPSC",
+          "pred": "iPSC"
+        },
+        "matrix": {
+          "status": "incorrect",
+          "gold": "CELLstart",
+          "pred": "Matrigel"
+        },
+        "base_media": {
+          "status": "incorrect",
+          "gold": "DMEM/F12",
+          "pred": "Essential 8"
+        }
+      }
+    },
+    "PMC4370217": {
+      "set_fields": {
+        "signaling_factors": {
+          "tp": 11,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "small_molecules": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "scalar_fields": {
+        "source_cells.cell_type": {
+          "status": "incorrect",
+          "gold": "ESC",
+          "pred": "iPSC"
+        },
+        "matrix": {
+          "status": "correct",
+          "gold": "Matrigel",
+          "pred": "Matrigel"
+        },
+        "base_media": {
+          "status": "incorrect",
+          "gold": "Advanced DMEM/F12",
+          "pred": "mTeSR1"
+        }
+      }
+    },
+    "PMC6906116": {
+      "set_fields": {
+        "signaling_factors": {
+          "tp": 3,
+          "fp": 1,
+          "fn": 0,
+          "precision": 0.75,
+          "recall": 1.0,
+          "f1": 0.8571
+        },
+        "small_molecules": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "scalar_fields": {
+        "source_cells.cell_type": {
+          "status": "correct",
+          "gold": "iPSC",
+          "pred": "iPSC"
+        },
+        "matrix": {
+          "status": "incorrect",
+          "gold": "Matrigel",
+          "pred": "Geltrex"
+        },
+        "base_media": {
+          "status": "incorrect",
+          "gold": "Glasgow-MEM",
+          "pred": "mTESR1"
+        }
+      }
+    }
+  }
 }

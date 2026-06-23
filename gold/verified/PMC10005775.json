@@ -1,0 +1,189 @@
+{
+  "pmcid": "PMC10005775",
+  "doi": "10.3390/nano13050893",
+  "verified_by": "rhowardstone",
+  "candidate_by": "silver-second-pass",
+  "gold": {
+    "organoid_type": "cerebral",
+    "source_cells": {
+      "cell_type": "iPSC",
+      "line_id": "KSCBi005",
+      "line_rrid": null,
+      "line_source": "National Stem Cell Bank of Korea (KSCB)",
+      "species": "Homo sapiens",
+      "disease_model": "wild-type"
+    },
+    "matrix": {
+      "name": "fibronectin",
+      "vendor": "Corning",
+      "reporting": "reported",
+      "notes": "for KSCBi005 WT line; CS40iFAD-nxx AD line used GFR-Matrigel (Corning)"
+    },
+    "base_media": {
+      "value": "Essential 8",
+      "vendor": "Gibco",
+      "reporting": "reported",
+      "notes": "for KSCBi005 WT line; CS40iFAD-nxx AD line used mTeSR Plus (STEMCELL Technologies)"
+    },
+    "passaging": {
+      "method": "ReLeSR",
+      "interval_days": "4-5",
+      "interval_qualifier": "depending on confluency"
+    },
+    "dissociation": {
+      "reagent": "Accutase",
+      "vendor": "not reported"
+    },
+    "seeding": {
+      "density_cells_per_well": 9000,
+      "vessel": "ultralow-attachment 96-well plates",
+      "vessel_vendor": "Corning"
+    },
+    "differentiation_timeline": {
+      "days_1_to_5": "daily medium refresh with dorsomorphin 2.5 uM, SB431542 10 uM, ROCK inhibitor 50 uM",
+      "day_6": "EBs transferred to 60 mm dishes; neuronal differentiation medium (Neurobasal-A + 1x GlutaMAX + 1x B-27 without Vitamin A) + bFGF 20 ng/mL + EGF 20 ng/mL; daily for 10 days then every other day for 9 days",
+      "days_25_to_42": "neuronal differentiation medium + BDNF 20 ng/mL + NT3 20 ng/mL, every other day",
+      "day_43_plus": "neuronal differentiation medium only (no growth factors), every other day",
+      "total_duration_weeks": "8-14"
+    },
+    "signaling_factors": [
+      {
+        "name": "dorsomorphin",
+        "role": "BMP inhibitor",
+        "concentration": {
+          "value": 2.5,
+          "canonical_unit": "uM"
+        },
+        "phase": "days 1-5"
+      },
+      {
+        "name": "SB431542",
+        "role": "TGFbeta inhibitor",
+        "concentration": {
+          "value": 10,
+          "canonical_unit": "uM"
+        },
+        "phase": "days 1-5"
+      },
+      {
+        "name": "ROCK inhibitor",
+        "role": "ROCK inhibitor",
+        "concentration": {
+          "value": 50,
+          "canonical_unit": "uM"
+        },
+        "phase": "days 1-5"
+      },
+      {
+        "name": "bFGF",
+        "role": "proliferation",
+        "concentration": {
+          "value": 20,
+          "canonical_unit": "ng/mL"
+        },
+        "phase": "days 6-24"
+      },
+      {
+        "name": "EGF",
+        "role": "proliferation",
+        "concentration": {
+          "value": 20,
+          "canonical_unit": "ng/mL"
+        },
+        "phase": "days 6-24"
+      },
+      {
+        "name": "BDNF",
+        "role": "neuronal maturation",
+        "concentration": {
+          "value": 20,
+          "canonical_unit": "ng/mL"
+        },
+        "phase": "days 25-42"
+      },
+      {
+        "name": "NT3",
+        "role": "neuronal maturation",
+        "concentration": {
+          "value": 20,
+          "canonical_unit": "ng/mL"
+        },
+        "phase": "days 25-42"
+      }
+    ],
+    "media_supplements": [
+      {
+        "name": "GlutaMAX",
+        "concentration": {
+          "value": 1,
+          "canonical_unit": "x"
+        },
+        "phase": "neuronal differentiation medium (day 6+)"
+      },
+      {
+        "name": "B-27 without Vitamin A",
+        "concentration": {
+          "value": 1,
+          "canonical_unit": "x"
+        },
+        "phase": "neuronal differentiation medium (day 6+)"
+      }
+    ],
+    "differentiation_base_medium": {
+      "name": "Neurobasal-A",
+      "reporting": "reported",
+      "phase": "neuronal differentiation medium (day 6+)"
+    },
+    "treatment": {
+      "name": "STB-MP",
+      "concentration": {
+        "value": 100,
+        "canonical_unit": "ug/mL"
+      },
+      "duration_days": 14,
+      "start_day": 84
+    },
+    "assay_endpoints": [
+      "gene expression (RT-PCR)",
+      "protein quantification (Western blot)",
+      "immunofluorescence imaging",
+      "ELISA (Abeta40 and Abeta42)"
+    ]
+  },
+  "evidence": {
+    "organoid_type": "Cortical brain organoids were generated from two human iPSC lines",
+    "source_cells.cell_type": "KSCBi005, a human-induced pluripotent stem cell line from the National Stem Cell Bank of Korea (KSCB, Chung-Ju, Republic of Korea)",
+    "source_cells.species": "KSCBi005, a human-induced pluripotent stem cell line from the National Stem Cell Bank of Korea",
+    "matrix.fibronectin": "KSCBi005 cells were cultured on fibronectin (Corning, Corning, NY, USA)-coated plates using Essential 8 medium (Gibco, Grand Island, NY, USA)",
+    "matrix.GFR_Matrigel_AD_line": "CS40iFAD-nxx cells were cultured on GFR-Matrigel (Corning, NY, USA)-coated plates in mTeSR\u2122 Plus medium (STEMCELL Technologies, Cambridge, MA, USA)",
+    "base_media.Essential8": "KSCBi005 cells were cultured on fibronectin (Corning, Corning, NY, USA)-coated plates using Essential 8 medium (Gibco, Grand Island, NY, USA)",
+    "base_media.mTeSR_AD_line": "CS40iFAD-nxx cells were cultured on GFR-Matrigel (Corning, NY, USA)-coated plates in mTeSR\u2122 Plus medium (STEMCELL Technologies, Cambridge, MA, USA)",
+    "passaging.interval_days": "Each cell line was passaged every 4\u20135 days, depending on the confluency of the cells, using ReLeSR\u2122",
+    "passaging.method": "Each cell line was passaged every 4\u20135 days, depending on the confluency of the cells, using ReLeSR\u2122",
+    "dissociation": "iPSCs were dissociated into single cells using Accutase",
+    "seeding.density": "The dissociated cells were then counted and seeded into ultralow-attachment 96-well plates (Corning, NY, USA), with 9000 cells in each well",
+    "days_1_5": "2.5 \u00b5M dorsomorphin, 10 \u00b5M SB431542 and 50 \u00b5M ROCK inhibitor. The medium was refreshed daily for 5 days.",
+    "day_6_transfer": "On Day 6, the formed EBs were then transferred into 60 mm culture dishes with neuronal differentiation medium consisting of Neurobasal-A, with 1 \u00d7 GlutaMAX and 1 \u00d7 B-27 Supplement without Vitamin A, 20 ng/mL bFGF and 20 ng/mL EGF. The medium was replaced daily for the first 10 days and then replaced every other day for the next 9 days.",
+    "days_25_42": "neuronal differentiation medium supplemented with 20 ng/mL BDNF and 20 ng/mL NT3 was provided and replaced every other day from Day 25 until Day 42.",
+    "day_43_plus": "From Day 43 onward, the neuronal differentiation medium was used without any growth factors and changed every other day.",
+    "total_duration": "cultured for up to 8 to 14 weeks for analysis",
+    "STB_MP_treatment": "STB-MP was administered to both WT and AD cortical brain organoids for 14 days, beginning at Day 84",
+    "second_cell_line": "PSEN1-mutated patient-derived CS40iFAD-nxx (RRID:CVCL_YX94) iPSCs from the Cedars Sinai Medical Center iPSC Core Facility"
+  },
+  "flags": [
+    "correction:matrix_GFR-Matrigel_wrong_for_WT_line_fixed_to_fibronectin",
+    "correction:passaging_interval_4_fixed_to_4-5_days",
+    "recall_miss:second_cell_line_CS40iFAD-nxx_PSEN1_mutated_AD_iPSC",
+    "recall_miss:second_line_RRID_CVCL_YX94",
+    "recall_miss:second_base_medium_mTeSR_Plus_for_CS40iFAD-nxx",
+    "recall_miss:differentiation_base_medium_Neurobasal-A",
+    "recall_miss:GlutaMAX_1x_concentration",
+    "recall_miss:B27_1x_concentration_without_vitamin_A",
+    "recall_miss:seeding_density_9000_cells_per_well_96wp_ultralow_attachment",
+    "recall_miss:differentiation_timeline_day1-5_daily_day6_EB_transfer_day25-42_BDNF_NT3_day43plus_no_GFs_8-14wks_total",
+    "recall_miss:Accutase_dissociation_reagent",
+    "recall_miss:STB_MP_treatment_100ug_mL_14days_starting_day84"
+  ],
+  "notes": "Primary paper studies nano-structured material (STB-MP, silk-tropoelastin biomaterial microparticles) effects on cortical brain organoids. Two cell lines used: KSCBi005 (WT control, fibronectin + Essential 8) and CS40iFAD-nxx (PSEN1-mutated AD model, GFR-Matrigel + mTeSR Plus). Silver evaluation correctly extracted KSCBi005 as primary annotated line but mis-assigned CS40iFAD-nxx matrix (GFR-Matrigel) to it. Silver also extracted passaging interval as 4 days flat, missing the range qualifier '4-5'. All signaling factor concentrations and 4 assay endpoints were correctly extracted at silver stage. KSCBi005 has no RRID reported in paper.",
+  "verification_note": "rhowardstone human sign-off 2026-06-22; candidate drafted by agentA-subagent; values independently cross-checked vs Opus multi-modal silver adjudication (PR #126) \u2014 two independent reads agree on source truth incl. extractor-error corrections"
+}

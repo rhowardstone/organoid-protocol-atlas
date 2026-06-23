@@ -1,0 +1,165 @@
+{
+  "pmcid": "PMC4370217",
+  "doi": "10.7554/eLife.05098",
+  "verified_by": "rhowardstone",
+  "candidate_by": "agentA-subagent",
+  "gold": {
+    "organoid_type": "lung",
+    "source_cells": {
+      "cell_type": "ESC",
+      "species": "Homo sapiens"
+    },
+    "matrix": {
+      "name": "Matrigel",
+      "reporting": "reported"
+    },
+    "base_media": {
+      "value": "Advanced DMEM/F12",
+      "reporting": "reported"
+    },
+    "signaling_factors": [
+      {
+        "name": "Activin A",
+        "role": "definitive endoderm induction",
+        "concentration": {
+          "value": 100,
+          "canonical_unit": "ng/ml"
+        }
+      },
+      {
+        "name": "Noggin",
+        "role": "BMP inhibitor; anterior foregut",
+        "concentration": {
+          "value": 200,
+          "canonical_unit": "ng/ml"
+        }
+      },
+      {
+        "name": "SB431542",
+        "role": "TGFbeta inhibitor; anterior foregut",
+        "concentration": {
+          "value": 10,
+          "canonical_unit": "uM"
+        }
+      },
+      {
+        "name": "FGF4",
+        "role": "foregut spheroid induction",
+        "concentration": {
+          "value": 500,
+          "canonical_unit": "ng/ml"
+        }
+      },
+      {
+        "name": "CHIR99021",
+        "role": "GSK3beta inhibitor / WNT activation; foregut spheroid induction",
+        "concentration": {
+          "value": 2,
+          "canonical_unit": "uM"
+        }
+      },
+      {
+        "name": "SAG",
+        "role": "Smoothened agonist / HH activation; lung lineage induction",
+        "concentration": {
+          "value": null,
+          "canonical_unit": null
+        }
+      },
+      {
+        "name": "FGF10",
+        "role": "organoid expansion/maintenance",
+        "concentration": {
+          "value": 500,
+          "canonical_unit": "ng/ml"
+        }
+      },
+      {
+        "name": "FGF2",
+        "role": "induces SHH/NKX2.1/PAX8 (monolayer optimization)",
+        "concentration": {
+          "value": 500,
+          "canonical_unit": "ng/ml"
+        }
+      },
+      {
+        "name": "Sant-2",
+        "role": "HH inhibitor (monolayer optimization)",
+        "concentration": {
+          "value": 10,
+          "canonical_unit": "uM"
+        }
+      },
+      {
+        "name": "SU5402",
+        "role": "FGF inhibitor (monolayer optimization)",
+        "concentration": {
+          "value": 10,
+          "canonical_unit": "uM"
+        }
+      },
+      {
+        "name": "SHH",
+        "role": "HH ligand (monolayer optimization)",
+        "concentration": {
+          "value": 100,
+          "canonical_unit": "ng/ml"
+        }
+      }
+    ],
+    "media_supplements": [
+      {
+        "name": "N-2 supplement"
+      },
+      {
+        "name": "B27 supplement"
+      },
+      {
+        "name": "Hepes"
+      },
+      {
+        "name": "L-Glutamine"
+      },
+      {
+        "name": "Penicillin-streptomycin"
+      },
+      {
+        "name": "fetal bovine serum (FBS)"
+      }
+    ]
+  },
+  "evidence": {
+    "organoid_type": "Directed differentiation into anterior foregut spheroids and lung organoids",
+    "source_cells.cell_type": "Human ES cell lines H1 (NIH registry #0043) and H9 (NIH registry #0062) were obtained from WiCell Research Institute.",
+    "source_cells.species": "Human ES cell lines H1 (NIH registry #0043) and H9 (NIH registry #0062) were obtained from WiCell Research Institute.",
+    "matrix": "Three-dimensional spheroids were transferred into Matrigel to support 3D growth as previously described",
+    "base_media": "cells were incubated in foregut media: Advanced DMEM/F12 plus N-2 and B27 supplement, 10 mM Hepes, 1\u00d7 L-Glutamine (200 mM), 1\u00d7 Penicillin-streptomycin (5000 U/ml, all from Life Technologies)",
+    "Activin A": "Cells were treated with Activin A (100 ng ml \u22121 ) for 3 consecutive days in RPMI 1640 media",
+    "Noggin": "with 200 ng/ml Noggin (NOG, R&D Systems) and 10 \u00b5M SB431542 (SB, Stemgent, Cambridge, MA) for 4 days",
+    "SB431542": "with 200 ng/ml Noggin (NOG, R&D Systems) and 10 \u00b5M SB431542 (SB, Stemgent, Cambridge, MA) for 4 days",
+    "FGF4": "cells were incubated in foregut media with NOG, SB, 500 ng/ml FGF4 (R&D Systems), and 2 \u00b5M CHIR99021 (Chiron, Stemgent) for 4\u20136 days",
+    "CHIR99021": "cells were incubated in foregut media with NOG, SB, 500 ng/ml FGF4 (R&D Systems), and 2 \u00b5M CHIR99021 (Chiron, Stemgent) for 4\u20136 days",
+    "SAG": "100 ng/ml SHH (R&D systems), and SAG (Enzo Life Sciences, Farmingdale, NY) for 8 days",
+    "FGF10": "Foregut media supplemented with 1% FBS and 500 ng/ml FGF10 was then added to the matrices.",
+    "FGF2": "in the presence of growth factors including 50, 500 ng/ml FGF2 (R&D systems), 10 \u00b5M Sant-2 (Stemgent), 10 \u00b5M SU5402 (SU, Stemgent), 100 ng/ml SHH (R&D systems), and SAG (Enzo Life Sciences, Farmingdale, NY) for 8 days",
+    "Sant-2": "50, 500 ng/ml FGF2 (R&D systems), 10 \u00b5M Sant-2 (Stemgent), 10 \u00b5M SU5402 (SU, Stemgent)",
+    "SU5402": "10 \u00b5M Sant-2 (Stemgent), 10 \u00b5M SU5402 (SU, Stemgent)",
+    "SHH": "100 ng/ml SHH (R&D systems), and SAG (Enzo Life Sciences, Farmingdale, NY)",
+    "N-2 supplement": "Advanced DMEM/F12 plus N-2 and B27 supplement",
+    "B27 supplement": "Advanced DMEM/F12 plus N-2 and B27 supplement",
+    "Hepes": "10 mM Hepes, 1\u00d7 L-Glutamine (200 mM)",
+    "L-Glutamine": "1\u00d7 L-Glutamine (200 mM), 1\u00d7 Penicillin-streptomycin (5000 U/ml, all from Life Technologies)",
+    "Penicillin-streptomycin": "1\u00d7 Penicillin-streptomycin (5000 U/ml, all from Life Technologies)",
+    "fetal bovine serum (FBS)": "foregut media with 1% Fetal bovine serum (FBS, CAT#: 16000\u2013044, Life Technologies)"
+  },
+  "flags": [
+    "source_cells.cell_type: paper uses BOTH human ESC lines (H1, H9, UM77-2) AND iPSC lines (3-5, 20-1). Reported as ESC because that is the primary line described for organoid generation, but enum cannot capture both; reviewer should confirm desired handling (e.g. PSC / dual ESC+iPSC).",
+    "SAG concentration: methods_text gives no concentration in the lung-organoid protocol description ('SAG (Enzo Life Sciences...) for 8 days'); body text states 'SAG (1 \u00b5M)' but that is outside methods_text, so concentration left null per source-only rule.",
+    "FGF2 concentration: reported as a range '50, 500 ng/ml' (low/high doses); recorded the high dose 500 \u2014 reviewer may prefer to record both.",
+    "FGF2/Sant-2/SU5402/SHH are monolayer optimization reagents (foregut media test conditions), not the final HLO organoid protocol; included as signaling_factors with role notes for completeness.",
+    "base_media: 'Advanced DMEM/F12' is the foregut/organoid base media. Note mTeSR1 (with Matrigel) is the PSC maintenance medium and RPMI 1640 is the endoderm-induction medium \u2014 reviewer should confirm which 'base_media' is intended for the organoid stage.",
+    "matrix: Matrigel used both for PSC maintenance and for 3D organoid embedding (BD Bioscience #356237). Decellularized human lung matrix is an additional/alternative scaffold used in one experiment."
+  ],
+  "notes": "Lung organoid (HLO) protocol summary from methods_text: hESC (H1/H9/UM77-2) or iPSC -> definitive endoderm via Activin A (100 ng/ml, RPMI 1640 + dFBS) -> anterior foregut via NOG (200 ng/ml) + SB431542 (10 uM) in Advanced DMEM/F12 + N-2/B27 -> foregut spheroids via NOG+SB+FGF4 (500 ng/ml)+CHIR99021 (2 uM)+SAG -> embedded in Matrigel, expanded/maintained in foregut media + 1% FBS + FGF10 (500 ng/ml). FGF2, Sant-2, SU5402, SHH appear in monolayer signaling-optimization experiments. Decellularized human lung matrix used as alternative scaffold for spheroid seeding (+1% FBS + FGF10). Concentrations only recorded where explicitly stated in methods_text. [Second-pass verified by @codex-supervisor 2026-06-22: silver review 16/18 fields correct; flagged ESC+iPSC dual line and SAG concentration null per source-only rule.]",
+  "verification_note": "rhowardstone human sign-off 2026-06-22; candidate drafted by agentA-subagent; values independently cross-checked vs Opus multi-modal silver adjudication (PR #126) \u2014 two independent reads agree on source truth incl. extractor-error corrections"
+}
