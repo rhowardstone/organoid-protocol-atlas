@@ -1,0 +1,102 @@
+[
+  {
+    "curie": "CHEBI:190969",
+    "label": "RepSox",
+    "highlighting": {},
+    "synonyms": [
+      "RepSox",
+      "E616452",
+      "SJN2511",
+      "E 616452",
+      "E-616452",
+      "SJN 2511",
+      "SJN-2511",
+      "GW786460X",
+      "616452 Compound",
+      "ALK5 Inhibitor II",
+      "TGF-beta RI Kinase Inhibitor II",
+      "2-[3-(6-methylpyridin-2-yl)-1H-pyrazol-4-yl]-1,5-naphthyridine",
+      "2-(3-(6-methylpyridine-2-yl)-1H-pyrazol-4-yl)-1,5-naphthyridine"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 3820.9358,
+    "clique_identifier_count": 7
+  },
+  {
+    "curie": "MESH:C550621",
+    "label": "RepSox",
+    "highlighting": {},
+    "synonyms": [
+      "RepSox"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 2018.68,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "UNII:JT8ZW3H2ST",
+    "label": "REPSOX",
+    "highlighting": {},
+    "synonyms": [
+      "REPSOX"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 1273.6453,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:172990604",
+    "label": "RepSox-D12 (Major, might be less than D12 will be determine after reaction)",
+    "highlighting": {},
+    "synonyms": [
+      "RepSox-D12 (Major, might be less than D12 will be determine after reaction)"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 99.15892,
+    "clique_identifier_count": 1
+  }
+]

@@ -1,0 +1,695 @@
+[
+  {
+    "curie": "NCBIGene:100473254",
+    "label": "IGF1",
+    "highlighting": {},
+    "synonyms": [
+      "IGF1",
+      "IGF-I",
+      "Somatomedin",
+      "insulin-like growth factor I",
+      "A0A7N5JMM9_AILME Insulin-like growth factor 1 (trembl)",
+      "G1LIG6_AILME Insulin-like growth factor 1 (trembl)",
+      "IGF1_AILME Insulin-like growth factor 1 (sprot)"
+    ],
+    "taxa": [
+      "NCBITaxon:9646"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 622.1763,
+    "clique_identifier_count": 11
+  },
+  {
+    "curie": "NCBIGene:107316281",
+    "label": "IGF1",
+    "highlighting": {},
+    "synonyms": [
+      "IGF1",
+      "IGF-I",
+      "Somatomedin",
+      "insulin-like growth factor I",
+      "A0A8C2UAQ3_COTJA Insulin like growth factor 1 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:93934"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 593.6322,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:115595593",
+    "label": "igf1",
+    "highlighting": {},
+    "synonyms": [
+      "igf1",
+      "IGF-I",
+      "insulin-like growth factor I",
+      "insulin-like growth factor 1",
+      "A9XU11_SPAAU Insulin (trembl)",
+      "Q4G1F3_SPAAU Insulin (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:8175"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 565.0704,
+    "clique_identifier_count": 6
+  },
+  {
+    "curie": "NCBIGene:104657459",
+    "label": "IGF1",
+    "highlighting": {},
+    "synonyms": [
+      "IGF1",
+      "IGF-I",
+      "Somatomedin",
+      "insulin-like growth factor I",
+      "Insulin-like growth factor I",
+      "A0A2K6Q9L9_RHIRO Insulin-like growth factor 1 (trembl)",
+      "A0A2K6Q9M0_RHIRO Insulin-like growth factor 1 (trembl)",
+      "A0A2K6Q9N7_RHIRO Insulin-like growth factor 1 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:61622"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 558.182,
+    "clique_identifier_count": 11
+  },
+  {
+    "curie": "NCBIGene:100305062",
+    "label": "igf1",
+    "highlighting": {},
+    "synonyms": [
+      "igf1",
+      "igf-i",
+      "insulin-like growth factor I",
+      "insulin-like growth factor 1",
+      "Q6V293_ICTPU Insulin-like growth factor I (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:7998"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 522.8687,
+    "clique_identifier_count": 4
+  },
+  {
+    "curie": "UniProtKB:A0A068F5F7",
+    "label": "A0A068F5F7_CAIMO IGF-I (trembl)",
+    "highlighting": {},
+    "synonyms": [
+      "A0A068F5F7_CAIMO IGF-I (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:8855"
+    ],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 521.4263,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "NCBIGene:109896674",
+    "label": "LOC109896674",
+    "highlighting": {},
+    "synonyms": [
+      "IGF-I",
+      "LOC109896674",
+      "insulin-like growth factor 1"
+    ],
+    "taxa": [
+      "NCBITaxon:8019"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 515.14813,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "NCBIGene:112214206",
+    "label": "LOC112214206",
+    "highlighting": {},
+    "synonyms": [
+      "IGF-I",
+      "LOC112214206",
+      "insulin-like growth factor I"
+    ],
+    "taxa": [
+      "NCBITaxon:74940"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 515.14813,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "NCBIGene:116060060",
+    "label": "igf1",
+    "highlighting": {},
+    "synonyms": [
+      "igf1",
+      "IGF-I",
+      "insulin-like growth factor I"
+    ],
+    "taxa": [
+      "NCBITaxon:283035"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 515.14813,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "NCBIGene:119032208",
+    "label": "igf1",
+    "highlighting": {},
+    "synonyms": [
+      "igf1",
+      "IGF-I",
+      "insulin-like growth factor I"
+    ],
+    "taxa": [
+      "NCBITaxon:8177"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 515.14813,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "NCBIGene:122680115",
+    "label": "IGF1",
+    "highlighting": {},
+    "synonyms": [
+      "IGF1",
+      "IGF-I",
+      "insulin-like growth factor I"
+    ],
+    "taxa": [
+      "NCBITaxon:9860"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 515.14813,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "NCBIGene:101793597",
+    "label": "IGF1",
+    "highlighting": {},
+    "synonyms": [
+      "IGF1",
+      "IGF-I",
+      "IGF-1",
+      "insulin-like growth factor 1",
+      "Insulin-like growth factor I",
+      "A2IT63_ANAPL Insulin-like growth factor-I (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:8839"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 512.92645,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:127436645",
+    "label": "LOC127436645",
+    "highlighting": {},
+    "synonyms": [
+      "IGF-I",
+      "LOC127436645",
+      "insulin-like growth factor I, adult form"
+    ],
+    "taxa": [
+      "NCBITaxon:70543"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 508.09506,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "NCBIGene:100135551",
+    "label": "Igf1",
+    "highlighting": {},
+    "synonyms": [
+      "Igf1",
+      "IGF-I",
+      "somatomedin",
+      "insulin-like growth factor I",
+      "insulin-like growth factor 1",
+      "A0A2C9F1F9_CAVPO Insulin-like growth factor 1 (trembl)",
+      "IGF1_CAVPO Insulin-like growth factor 1 (sprot)"
+    ],
+    "taxa": [
+      "NCBITaxon:10141"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 490.605,
+    "clique_identifier_count": 6
+  },
+  {
+    "curie": "NCBIGene:397491",
+    "label": "IGF1",
+    "highlighting": {},
+    "synonyms": [
+      "IGF1",
+      "IGF-I",
+      "IGF-1",
+      "Npt2B",
+      "somatomedin C",
+      "insulin-like growth factor I",
+      "insulin-like growth factor 1",
+      "insulin like growth factor 1",
+      "A0A288CFX8_PIG Insulin-like growth factor 1 (trembl)",
+      "A0A8D0KJC7_PIG Insulin-like growth factor 1 (trembl)",
+      "A0A8D0UYR0_PIG Insulin-like growth factor 1 (trembl)",
+      "A0A8D1C5Z8_PIG Insulin-like growth factor 1 (trembl)",
+      "A0A8D1ETG0_PIG Insulin-like growth factor 1 (trembl)",
+      "G9BFS5_PIG Insulin-like growth factor 1 (trembl)",
+      "G9BFS6_PIG Insulin-like growth factor 1 (trembl)",
+      "G9BFS9_PIG Insulin-like growth factor 1 (trembl)",
+      "I3LBI3_PIG Insulin-like growth factor 1 (trembl)",
+      "IGF1_PIG Insulin-like growth factor 1 (sprot)",
+      "Q45QB4_PIG Insulin-like growth factor 1 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9823"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 468.23462,
+    "clique_identifier_count": 87
+  },
+  {
+    "curie": "NCBIGene:100136741",
+    "label": "LOC100136741",
+    "highlighting": {},
+    "synonyms": [
+      "igf1",
+      "IGF-I",
+      "somatomedin",
+      "LOC100136741",
+      "insulin-like growth factor I",
+      "insulin-like growth factor 1",
+      "IGF1_ONCMY Insulin-like growth factor 1 (sprot)"
+    ],
+    "taxa": [
+      "NCBITaxon:8022"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 463.24026,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:610255",
+    "label": "IGF1",
+    "highlighting": {},
+    "synonyms": [
+      "IGFI",
+      "IGF1",
+      "IGF-I",
+      "IGFIA",
+      "somatomedin C",
+      "insulin-like growth factor I",
+      "insulin-like growth factor 1",
+      "insulin like growth factor 1",
+      "Insulin-like growth factor I",
+      "A0A8C0MW23_CANLF Insulin-like growth factor 1 (trembl)",
+      "A0A8C0SXI4_CANLF Insulin-like growth factor 1 (trembl)",
+      "A0A8C0SXL0_CANLF Insulin-like growth factor 1 (trembl)",
+      "A0A8I3NBK5_CANLF Insulin-like growth factor 1 (trembl)",
+      "A0A8I3NN66_CANLF Insulin-like growth factor 1 (trembl)",
+      "IGF1_CANLF Insulin-like growth factor 1 (sprot)"
+    ],
+    "taxa": [
+      "NCBITaxon:9615"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 462.14438,
+    "clique_identifier_count": 33
+  },
+  {
+    "curie": "NCBIGene:114433",
+    "label": "igf1",
+    "highlighting": {},
+    "synonyms": [
+      "igf1",
+      "IGF-I",
+      "IGF-1",
+      "igf1a",
+      "IGF-1a",
+      "IGF-1L",
+      "insulin-like growth factor 1",
+      "Q90VV9_DANRE Insulin-like growth factor 1 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:7955"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 460.2002,
+    "clique_identifier_count": 6
+  },
+  {
+    "curie": "NCBIGene:104926290",
+    "label": "igf1",
+    "highlighting": {},
+    "synonyms": [
+      "igf1",
+      "IGF-I",
+      "insulin-like growth factor I",
+      "insulin-like growth factor 1",
+      "G3LW43_LARCR Insulin (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:215358"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 459.2966,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "NCBIGene:100534565",
+    "label": "igf1",
+    "highlighting": {},
+    "synonyms": [
+      "igf1",
+      "igf-i",
+      "insulin-like growth factor 1",
+      "preproinsulin-like growth factor I",
+      "B0Z6G4_ORENI Insulin-like growth factor 1 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:8128"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 450.3746,
+    "clique_identifier_count": 3
+  }
+]

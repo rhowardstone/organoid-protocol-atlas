@@ -1,0 +1,111 @@
+{
+  "NCBIGene:7422": {
+    "id": {
+      "identifier": "NCBIGene:7422",
+      "label": "VEGFA"
+    },
+    "equivalent_identifiers": [
+      {
+        "identifier": "NCBIGene:7422",
+        "label": "VEGFA",
+        "taxa": [
+          "NCBITaxon:9606"
+        ]
+      },
+      {
+        "identifier": "ENSEMBL:ENSG00000112715"
+      },
+      {
+        "identifier": "HGNC:12680",
+        "label": "VEGFA"
+      },
+      {
+        "identifier": "OMIM:192240"
+      },
+      {
+        "identifier": "UMLS:C1823619",
+        "label": "VEGFA gene"
+      },
+      {
+        "identifier": "UniProtKB:A0A0Y0IMM4",
+        "label": "A0A0Y0IMM4_HUMAN Vascular permeability factor (Fragment) (trembl)",
+        "taxa": [
+          "NCBITaxon:9606"
+        ]
+      },
+      {
+        "identifier": "UniProtKB:A2A2V4",
+        "label": "A2A2V4_HUMAN Vascular permeability factor (trembl)",
+        "taxa": [
+          "NCBITaxon:9606"
+        ]
+      },
+      {
+        "identifier": "ENSEMBL:ENSP00000230480"
+      },
+      {
+        "identifier": "ENSEMBL:ENSP00000230480.6"
+      },
+      {
+        "identifier": "UniProtKB:P15692",
+        "label": "VEGFA_HUMAN Vascular endothelial growth factor A, long form (sprot)",
+        "taxa": [
+          "NCBITaxon:9606"
+        ]
+      },
+      {
+        "identifier": "PR:P15692",
+        "label": "vascular endothelial growth factor A, long form (human)"
+      },
+      {
+        "identifier": "UMLS:C0376854",
+        "label": "VEGF165 protein, human"
+      },
+      {
+        "identifier": "UMLS:C0376855",
+        "label": "VEGF189 protein, human"
+      },
+      {
+        "identifier": "UMLS:C0376856",
+        "label": "VEGF206 protein, human"
+      },
+      {
+        "identifier": "UMLS:C0525171",
+        "label": "VEGF145 protein, human"
+      },
+      {
+        "identifier": "UMLS:C0752432",
+        "label": "VEGF183 protein, human"
+      },
+      {
+        "identifier": "UMLS:C1171892",
+        "label": "VEGF protein, human"
+      },
+      {
+        "identifier": "MESH:C467484",
+        "label": "VEGFA protein, human"
+      }
+    ],
+    "taxa": [
+      "NCBITaxon:9606"
+    ],
+    "type": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "information_content": 80.2
+  }
+}

@@ -38,20 +38,15 @@ from pathlib import Path
 from PIL import Image
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from normalize import CONC_OK, canon_unit, canonical_or_none  # noqa: E402
+from normalize import canonical_or_none  # noqa: E402
 
 REPO = Path(__file__).resolve().parent.parent
 BUNDLES = REPO / "data" / "evidence_bundles" / "local"
 FIG_DIR = REPO / "data" / "figures" / "local"
-PRED1 = REPO / "data" / "predictions" / "local"
 PRED2 = REPO / "data" / "predictions" / "local" / "tier2"
 OUT = REPO / "outputs" / "tier2"
 OLLAMA = "http://localhost:11434/api/generate"
 MODEL = "gemma3:12b"
-
-# hour-scale vs day/week/passage-scale stage labels (model sometimes maps "4h" -> day 0)
-HOUR_RE = re.compile(r"\b\d+\s*h(?:ours?|rs?)?\b", re.I)
-DAY_RE = re.compile(r"\bday\b|\bweek\b|\bw\d|\bd\d|\bp\d", re.I)
 
 # router cue: a caption that promises a protocol/timeline schematic
 SCHEMATIC_RE = re.compile(
@@ -80,85 +75,16 @@ RULES:
   false and return empty lists."""
 
 
-def clean_concentration(value, unit):
-    """Sanitize a vision-read dose. Keep a unit only if it's a real concentration unit
-    (drops e.g. an abbreviation the model dropped in the unit field: 'ACTA'); drop a
-    value that then has no valid unit (a bare number — often part of the name like
-    'laminin 111' — is not a usable concentration). Returns (value, canonical_unit)."""
-    cu = canon_unit(unit) if unit else None
-    if cu not in CONC_OK:
-        cu = None
-    if value is not None and cu is None:
-        value = None
-    return value, cu
-
-
-def tier1_reagent_canon(pmcid: str) -> set:
-    """Canonical reagent names this paper's Tier-1 (text) extraction found — the set
-    vision is allowed to CONFIRM. Vision never originates a reagent absent from text."""
-    p = PRED1 / f"{pmcid}.json"
-    if not p.exists():
-        return set()
-    try:
-        d = json.loads(p.read_text())
-    except Exception:  # noqa: BLE001
-        return set()
-    out = set()
-    for k in ("signaling_factors", "media_supplements", "small_molecules"):
-        for r in d.get(k) or []:
-            n = r.get("name") if isinstance(r, dict) else r
-            c = canonical_or_none(n)
-            if c:
-                out.add(c)
-    return out
-
-
-def confirm_reagents(vision_reagents, tier1_canon: set):
-    """Keep only vision reagents whose canonical resolves AND is in the paper's Tier-1
-    reagent set — vision CONFIRMS text, never originates. Each kept record carries
-    figure_confirmed=True and the verbatim figure text it was read from."""
-    out = []
-    for r in vision_reagents or []:
-        if not isinstance(r, dict):
-            continue
-        name = (r.get("name") or "").strip()
-        canon = canonical_or_none(name)
-        if not canon or canon not in tier1_canon:
-            continue
-        value, unit = clean_concentration(r.get("value"), r.get("unit"))
-        out.append({"name": name, "canonical": canon, "value": value, "unit": unit,
-                    "figure_confirmed": True, "evidence_figure_text": name})
-    return out
-
-
-def clean_stages(stages):
-    """Dedup timeline stages and null day numbers on hour-scale labels ('4h' is not
-    day 0). Preserves order."""
-    seen = set()
-    out = []
-    for s in stages or []:
-        if not isinstance(s, dict):
-            continue
-        name = (s.get("name") or "").strip()
-        if not name:
-            continue
-        ds, de = s.get("day_start"), s.get("day_end")
-        if HOUR_RE.search(name) and not DAY_RE.search(name):
-            ds = de = None  # hour-scale label: the day axis is unreliable
-        key = (name.lower(), ds, de)
-        if key in seen:
-            continue
-        seen.add(key)
-        out.append({"name": name, "day_start": ds, "day_end": de})
-    return out
-
-
 def call_vision(img_b64: str, label: str, caption: str) -> dict:
     body = json.dumps({
         "model": MODEL,
         "prompt": PROMPT.format(label=label, caption=(caption or "")[:600]),
         "images": [img_b64], "format": "json", "stream": False,
-        "options": {"temperature": 0},
+        # num_predict caps generation so a pathological figure can't trigger an unbounded
+        # runaway that pegs the GPU indefinitely (same failure mode that hung the text
+        # marathon; the urlopen socket timeout below does NOT bound a non-streaming request).
+        # Vision output is a small JSON object, so 2048 is ample headroom.
+        "options": {"temperature": 0, "num_predict": 2048},
     }).encode()
     req = urllib.request.Request(OLLAMA, data=body, headers={"Content-Type": "application/json"})
     resp = json.load(urllib.request.urlopen(req, timeout=600))["response"]
@@ -187,10 +113,14 @@ def main():
         bpath = BUNDLES / f"{pmcid}.json"
         if not figdir.exists() or not bpath.exists():
             continue
+        # resume: a full (non-subset) run skips papers already processed, so a relaunch
+        # after interruption continues where it left off instead of re-running vision on
+        # the whole corpus. An explicit pmcid arg (subset) always re-runs.
+        if not subset and (PRED2 / f"{pmcid}.json").exists():
+            continue
         b = json.loads(bpath.read_text())
         body_l = (b.get("body_text", "") or "").lower()
         doi = b.get("doi")
-        t1_canon = tier1_reagent_canon(pmcid)   # reagents vision is allowed to confirm
 
         flagged = []
         for f in b.get("figures", []):
@@ -212,30 +142,34 @@ def main():
                 n = (name or "").strip().lower()
                 return bool(n) and (n in body_l or n in cap_l)
 
-            stages = clean_stages([s for s in (v.get("timeline_stages") or [])
-                                    if isinstance(s, dict) and grounds(s.get("name"))])
+            stages = [s for s in (v.get("timeline_stages") or [])
+                      if isinstance(s, dict) and grounds(s.get("name"))]
             reagents = [r for r in (v.get("reagents_in_figure") or [])
                         if isinstance(r, dict) and grounds(r.get("name"))]
-            # CONFIRM-don't-originate: keep only figure reagents whose canonical is in
-            # THIS paper's Tier-1 (text) reagent set. Drops markers / reporters / panel
-            # labels / assay compounds vision read but text never extracted, and fixes
-            # value/unit parse noise. These figure_confirmed items are merge-eligible.
-            figure_confirmed = confirm_reagents(v.get("reagents_in_figure") or [], t1_canon)
+            # high-precision gate: only figure reagents that resolve to a curated
+            # culture factor (drops panel labels / reporters / assay compounds that
+            # merely pass the crude substring grounding). These are merge-eligible.
+            culture_factors = []
+            for r in reagents:
+                canon = canonical_or_none(r.get("name"))
+                if canon:
+                    culture_factors.append({"name": r.get("name"), "canonical": canon,
+                                            "value": r.get("value"), "unit": r.get("unit")})
             raw_stage_n = len(v.get("timeline_stages") or [])
             raw_reag_n = len(v.get("reagents_in_figure") or [])
             fig_records.append({
                 "label": label, "file": fp.name, "doi": doi,
                 "is_protocol_schematic": bool(v.get("is_protocol_schematic")),
                 "timeline_stages": stages, "reagents_in_figure": reagents,
-                "figure_confirmed_reagents": figure_confirmed,
+                "culture_factors": culture_factors,
                 "verbatim_labels": v.get("verbatim_labels") or [],
                 "raw_stages": raw_stage_n, "raw_reagents": raw_reag_n,
                 "grounded_stages": len(stages), "grounded_reagents": len(reagents),
-                "confirmed_reagents": len(figure_confirmed),
+                "culture_factor_n": len(culture_factors),
             })
             print(f"  [{pmcid}] {label}: schematic={fig_records[-1]['is_protocol_schematic']} "
                   f"stages {len(stages)}/{raw_stage_n} reagents {len(reagents)}/{raw_reag_n} "
-                  f"figure-confirmed {len(figure_confirmed)}", flush=True)
+                  f"culture-factors {len(culture_factors)}", flush=True)
 
         rec = {"pmcid": pmcid, "doi": doi, "model": MODEL,
                "n_flagged": len(flagged), "figures": fig_records}
@@ -244,13 +178,13 @@ def main():
         gr = sum(f.get("grounded_reagents", 0) for f in fig_records)
         rs = sum(f.get("raw_stages", 0) for f in fig_records)
         rr = sum(f.get("raw_reagents", 0) for f in fig_records)
-        cf = sum(f.get("confirmed_reagents", 0) for f in fig_records)
+        cf = sum(f.get("culture_factor_n", 0) for f in fig_records)
         summary.append({"pmcid": pmcid, "n_flagged": len(flagged),
                         "grounded_stages": gs, "raw_stages": rs,
                         "grounded_reagents": gr, "raw_reagents": rr,
-                        "confirmed_reagents": cf})
+                        "culture_factors": cf})
         print(f"[{pmcid}] flagged {len(flagged)} figs | grounded stages {gs}/{rs} "
-              f"reagents {gr}/{rr} | figure-confirmed {cf}", flush=True)
+              f"reagents {gr}/{rr} | culture-factors {cf}", flush=True)
 
     # incremental (subset) run: merge fresh rows into the existing summary so the
     # committed artifact reflects the whole CC-paper set, not just what was re-run.
@@ -264,18 +198,18 @@ def main():
     r_st = sum(s["raw_stages"] for s in summary)
     g_rg = sum(s["grounded_reagents"] for s in summary)
     r_rg = sum(s["raw_reagents"] for s in summary)
-    cfac = sum(s.get("confirmed_reagents", s.get("culture_factors", 0)) for s in summary)
+    cfac = sum(s["culture_factors"] for s in summary)
     (OUT / "vision_summary.json").write_text(json.dumps({
         "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "model": MODEL, "papers": len(summary),
         "grounding": {"stages_grounded": g_st, "stages_raw": r_st,
                       "reagents_grounded": g_rg, "reagents_raw": r_rg,
-                      "figure_confirmed_reagents": cfac},
+                      "culture_factors_gated": cfac},
         "rows": summary,
     }, indent=2))
     print(f"\nTier-2 vision: {len(summary)} papers | "
           f"timeline stages grounded {g_st}/{r_st} | reagents grounded {g_rg}/{r_rg} "
-          f"| figure-confirmed reagents {cfac}")
+          f"| culture-factors (gated) {cfac}")
     print(f"predictions (local-only): {PRED2} | summary: {OUT}/vision_summary.json")
 
 

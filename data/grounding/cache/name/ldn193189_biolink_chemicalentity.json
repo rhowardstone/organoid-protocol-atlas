@@ -1,0 +1,54 @@
+[
+  {
+    "curie": "CHEBI:91387",
+    "label": "LDN-193189",
+    "highlighting": {},
+    "synonyms": [
+      "LDN193189",
+      "LDN-193189",
+      "LDN 193189",
+      "4-[6-[4-(1-piperazinyl)phenyl]-3-pyrazolo[1,5-a]pyrimidinyl]quinoline",
+      "4-(6-(4-(Piperazin-1-yl)phenyl)pyrazolo[1,5-a]pyrimidin-3-yl)quinoline",
+      "4-(6-(4-(piperazin-1-yl)phenyl_pyrazolo[1,5-a]pyrimidin-3-yl)quinoline",
+      "Quinoline, 4-(6-(4-(1-piperazinyl)phenyl)pyrazolo(1,5-a)pyrimidin-3-yl)-"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 624.1611,
+    "clique_identifier_count": 10
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:66576997",
+    "label": "LDN193189 Tetrahydrochloride",
+    "highlighting": {},
+    "synonyms": [
+      "LDN193189 Tetrahydrochloride"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:MolecularMixture",
+      "biolink:ChemicalMixture",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 444.91797,
+    "clique_identifier_count": 4
+  }
+]

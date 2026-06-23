@@ -1,0 +1,47 @@
+{
+  "CHEBI:190969": {
+    "id": {
+      "identifier": "CHEBI:190969",
+      "label": "RepSox"
+    },
+    "equivalent_identifiers": [
+      {
+        "identifier": "CHEBI:190969",
+        "label": "RepSox"
+      },
+      {
+        "identifier": "PUBCHEM.COMPOUND:449054",
+        "label": "RepSox"
+      },
+      {
+        "identifier": "CHEMBL.COMPOUND:CHEMBL185238",
+        "label": "GW786460X"
+      },
+      {
+        "identifier": "CAS:446859-33-2"
+      },
+      {
+        "identifier": "CAS:663-924-9"
+      },
+      {
+        "identifier": "HMDB:HMDB0257156",
+        "label": "RepSox"
+      },
+      {
+        "identifier": "INCHIKEY:LBPKYPYHDKKRFS-UHFFFAOYSA-N"
+      }
+    ],
+    "type": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "information_content": 100.0
+  }
+}

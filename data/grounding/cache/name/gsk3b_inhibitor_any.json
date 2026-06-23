@@ -1,0 +1,763 @@
+[
+  {
+    "curie": "NCBIGene:100126852",
+    "label": "GSK3B",
+    "highlighting": {},
+    "synonyms": [
+      "GSK3B",
+      "GSK3beta",
+      "glycogen synthase kinase 3 beta",
+      "glycogen synthase kinase-3 beta",
+      "A0A4X1T5F0_PIG Glycogen synthase kinase-3 beta (trembl)",
+      "A0A8D1H996_PIG Glycogen synthase kinase-3 beta (trembl)",
+      "A0A8D1NTF2_PIG Glycogen synthase kinase-3 beta (trembl)",
+      "I6YP72_PIG Glycogen synthase kinase-3 beta (trembl)",
+      "I6ZT54_PIG Glycogen synthase kinase-3 beta (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9823"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 395.30124,
+    "clique_identifier_count": 50
+  },
+  {
+    "curie": "NCBIGene:478575",
+    "label": "GSK3B",
+    "highlighting": {},
+    "synonyms": [
+      "GSK3B",
+      "glycogen synthase kinase 3 beta",
+      "glycogen synthase kinase-3 beta",
+      "A0A8C0MPF2_CANLF Glycogen synthase kinase-3 beta (trembl)",
+      "A0A8C0T8A0_CANLF Glycogen synthase kinase-3 beta (trembl)",
+      "A0A8P0NMG8_CANLF Glycogen synthase kinase-3 beta (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9615"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 296.03052,
+    "clique_identifier_count": 18
+  },
+  {
+    "curie": "NCBIGene:100387683",
+    "label": "GSK3B",
+    "highlighting": {},
+    "synonyms": [
+      "GSK3B",
+      "glycogen synthase kinase-3 beta",
+      "A0A2R8M2M3_CALJA Glycogen synthase kinase-3 beta (trembl)",
+      "A0A2R8M2U0_CALJA Glycogen synthase kinase-3 beta (trembl)",
+      "F6V0J0_CALJA Glycogen synthase kinase-3 beta (trembl)",
+      "F6YPA3_CALJA [tau protein] kinase (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9483"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 272.26425,
+    "clique_identifier_count": 14
+  },
+  {
+    "curie": "NCBIGene:106829188",
+    "label": "GSK3B",
+    "highlighting": {},
+    "synonyms": [
+      "GSK3B",
+      "glycogen synthase kinase-3 beta",
+      "A0A8C4M6I9_EQUAS Glycogen synthase kinase-3 beta (trembl)",
+      "A0A9L0JI02_EQUAS Glycogen synthase kinase-3 beta (trembl)",
+      "A0A9L0K5E9_EQUAS Glycogen synthase kinase-3 beta (trembl)",
+      "A0A9L0K8T1_EQUAS Glycogen synthase kinase-3 beta (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9793"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 272.26425,
+    "clique_identifier_count": 14
+  },
+  {
+    "curie": "NCBIGene:2932",
+    "label": "GSK3B",
+    "highlighting": {},
+    "synonyms": [
+      "GSK3B",
+      "GSK3B Gene",
+      "GSK3B gene",
+      "GSK-3 beta",
+      "GLYCOGEN SYNTHASE KINASE 3-BETA",
+      "glycogen synthase kinase 3 beta",
+      "glycogen synthase kinase-3 beta",
+      "Glycogen Synthase Kinase 3 Beta Gene",
+      "serine/threonine-protein kinase GSK3B",
+      "A0A3B3ITW1_HUMAN Glycogen synthase kinase-3 beta (trembl)",
+      "hGSK3B",
+      "GSK3-beta",
+      "GSK-3 Beta",
+      "EC 2.7.11.1",
+      "EC 2.7.11.26",
+      "GSK-3 beta (human)",
+      "GSK3B protein, human",
+      "Glycogen Synthase Kinase-3 Beta",
+      "Glycogen Synthase Kinase 3-Beta",
+      "Serine/Threonine-Protein Kinase GSK3B",
+      "glycogen synthase kinase-3 beta (human)",
+      "serine/threonine-protein kinase GSK3B (human)",
+      "glycogen synthase kinase 3 beta protein, human",
+      "GSK3B_HUMAN Glycogen synthase kinase-3 beta (sprot)",
+      "Q6FI27_HUMAN Glycogen synthase kinase-3 beta (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9606"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 265.3278,
+    "clique_identifier_count": 13
+  },
+  {
+    "curie": "NCBIGene:84027",
+    "label": "Gsk3b",
+    "highlighting": {},
+    "synonyms": [
+      "FA",
+      "Gsk3b",
+      "factor A",
+      "GSK-3 beta",
+      "glycogen synthase kinase 3 beta",
+      "glycogen synthase kinase-3 beta",
+      "serine/threonine-protein kinase GSK3B",
+      "A0A0G2JSH4_RAT Glycogen synthase kinase-3 beta (trembl)",
+      "A0A0G2KB98_RAT Glycogen synthase kinase-3 beta (trembl)",
+      "A6IR80_RAT Glycogen synthase kinase-3 beta (trembl)",
+      "rGSK3B",
+      "FA (rat)",
+      "factor A (rat)",
+      "GSK-3 beta (rat)",
+      "glycogen synthase kinase-3 beta (rat)",
+      "serine/threonine-protein kinase GSK3B (rat)",
+      "GSK3B_RAT Glycogen synthase kinase-3 beta (sprot)"
+    ],
+    "taxa": [
+      "NCBITaxon:10116"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 257.87708,
+    "clique_identifier_count": 12
+  },
+  {
+    "curie": "NCBIGene:56637",
+    "label": "Gsk3b",
+    "highlighting": {},
+    "synonyms": [
+      "GSK3",
+      "Gsk3b",
+      "GSK-3",
+      "GSK-3beta",
+      "7330414F15Rik",
+      "8430431H08Rik",
+      "glycogen synthase kinase 3 beta",
+      "glycogen synthase kinase-3 beta",
+      "serine/threonine-protein kinase GSK3B",
+      "E9QAQ5_MOUSE Glycogen synthase kinase-3 beta (trembl)",
+      "Q5KU03_MOUSE Glycogen synthase kinase-3 beta (trembl)",
+      "mGSK3B",
+      "GSK-3 beta (mouse)",
+      "glycogen synthase kinase-3 beta (mouse)",
+      "serine/threonine-protein kinase GSK3B (mouse)",
+      "GSK3B_MOUSE Glycogen synthase kinase-3 beta (sprot)"
+    ],
+    "taxa": [
+      "NCBITaxon:10090"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 249.82967,
+    "clique_identifier_count": 11
+  },
+  {
+    "curie": "NCBIGene:713114",
+    "label": "GSK3B",
+    "highlighting": {},
+    "synonyms": [
+      "GSK3B",
+      "glycogen synthase kinase 3 beta",
+      "glycogen synthase kinase-3 beta",
+      "A0A5F8A1A5_MACMU Glycogen synthase kinase-3 beta (trembl)",
+      "H9EPM1_MACMU Glycogen synthase kinase-3 beta (trembl)",
+      "H9EPM2_MACMU Glycogen synthase kinase-3 beta (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9544"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 249.82967,
+    "clique_identifier_count": 11
+  },
+  {
+    "curie": "NCBIGene:100012447",
+    "label": "GSK3B",
+    "highlighting": {},
+    "synonyms": [
+      "GSK3B",
+      "glycogen synthase kinase-3 beta",
+      "A0A5F8GBH0_MONDO Glycogen synthase kinase-3 beta (trembl)",
+      "A0A5F8HIG1_MONDO Glycogen synthase kinase-3 beta (trembl)",
+      "F6PGQ1_MONDO Glycogen synthase kinase-3 beta (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:13616"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 249.82967,
+    "clique_identifier_count": 11
+  },
+  {
+    "curie": "NCBIGene:100920192",
+    "label": "GSK3B",
+    "highlighting": {},
+    "synonyms": [
+      "GSK3B",
+      "glycogen synthase kinase-3 beta",
+      "A0A7N4PD28_SARHA Glycogen synthase kinase-3 beta (trembl)",
+      "A0A7N4Q0J7_SARHA Glycogen synthase kinase-3 beta (trembl)",
+      "A0A7N4V658_SARHA Glycogen synthase kinase-3 beta (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9305"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 249.82967,
+    "clique_identifier_count": 11
+  },
+  {
+    "curie": "NCBIGene:101318843",
+    "label": "GSK3B",
+    "highlighting": {},
+    "synonyms": [
+      "GSK3B",
+      "glycogen synthase kinase-3 beta",
+      "A0A2U4AAG1_TURTR Glycogen synthase kinase-3 beta (trembl)",
+      "A0A2U4AAG3_TURTR Glycogen synthase kinase-3 beta (trembl)",
+      "A0A2U4AAG5_TURTR Glycogen synthase kinase-3 beta (trembl)",
+      "A0A2U4AAG6_TURTR Glycogen synthase kinase-3 beta (trembl)",
+      "A0A2U4AAI9_TURTR Glycogen synthase kinase-3 beta (trembl)",
+      "A0A2U4AAR6_TURTR Glycogen synthase kinase-3 beta (trembl)",
+      "A0A2U4AAS0_TURTR Glycogen synthase kinase-3 beta (trembl)",
+      "A0A2U4AB47_TURTR Glycogen synthase kinase-3 beta (trembl)",
+      "A0A6J3RA80_TURTR Glycogen synthase kinase-3 beta (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9739"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 249.82967,
+    "clique_identifier_count": 11
+  },
+  {
+    "curie": "NCBIGene:101935079",
+    "label": "GSK3B",
+    "highlighting": {},
+    "synonyms": [
+      "GSK3B",
+      "glycogen synthase kinase-3 beta",
+      "A0A8C3F8T8_CHRPI Glycogen synthase kinase-3 beta (trembl)",
+      "A0A8C3FAY9_CHRPI Glycogen synthase kinase-3 beta (trembl)",
+      "A0A8C3H6A4_CHRPI Glycogen synthase kinase-3 beta (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:8478"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 249.82967,
+    "clique_identifier_count": 11
+  },
+  {
+    "curie": "NCBIGene:116992975",
+    "label": "GSK3B",
+    "highlighting": {},
+    "synonyms": [
+      "GSK3B",
+      "glycogen synthase kinase-3 beta",
+      "A0A8C3TXM7_CATUS Glycogen synthase kinase-3 beta (trembl)",
+      "A0A8C3TXN7_CATUS Glycogen synthase kinase-3 beta (trembl)",
+      "A0A8C3TZV2_CATUS Glycogen synthase kinase-3 beta (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:91951"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 249.82967,
+    "clique_identifier_count": 11
+  },
+  {
+    "curie": "NCBIGene:118894954",
+    "label": "GSK3B",
+    "highlighting": {},
+    "synonyms": [
+      "GSK3B",
+      "glycogen synthase kinase-3 beta",
+      "A0A8B8XD87_BALMU Glycogen synthase kinase-3 beta (trembl)",
+      "A0A8B8XD94_BALMU Glycogen synthase kinase-3 beta (trembl)",
+      "A0A8B8XDK9_BALMU Glycogen synthase kinase-3 beta (trembl)",
+      "A0A8B8XII0_BALMU Glycogen synthase kinase-3 beta (trembl)",
+      "A0A8C0C6I3_BALMU Glycogen synthase kinase-3 beta (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9771"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 249.82967,
+    "clique_identifier_count": 11
+  },
+  {
+    "curie": "NCBIGene:103678785",
+    "label": "GSK3B",
+    "highlighting": {},
+    "synonyms": [
+      "GSK3B",
+      "glycogen synthase kinase-3 beta",
+      "A0A384DHG1_URSMA Glycogen synthase kinase-3 beta (trembl)",
+      "A0A384DI01_URSMA Glycogen synthase kinase-3 beta (trembl)",
+      "A0A8M1F544_URSMA Glycogen synthase kinase-3 beta (trembl)",
+      "A0A8M1F8W2_URSMA Glycogen synthase kinase-3 beta (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:29073"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 241.08165,
+    "clique_identifier_count": 10
+  },
+  {
+    "curie": "NCBIGene:100972306",
+    "label": "GSK3B",
+    "highlighting": {},
+    "synonyms": [
+      "GSK3B",
+      "glycogen synthase kinase-3 beta",
+      "A0A2R9C3U2_PANPA Glycogen synthase kinase-3 beta (trembl)",
+      "A0A2R9C6C8_PANPA Glycogen synthase kinase-3 beta (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9597"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 231.49927,
+    "clique_identifier_count": 9
+  },
+  {
+    "curie": "NCBIGene:101976552",
+    "label": "Gsk3b",
+    "highlighting": {},
+    "synonyms": [
+      "Gsk3b",
+      "glycogen synthase kinase-3 beta",
+      "I3MNZ2_ICTTR Glycogen synthase kinase-3 beta (trembl)",
+      "I3NFP6_ICTTR Glycogen synthase kinase-3 beta (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:43179"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 231.49927,
+    "clique_identifier_count": 9
+  },
+  {
+    "curie": "NCBIGene:102022723",
+    "label": "Gsk3b",
+    "highlighting": {},
+    "synonyms": [
+      "Gsk3b",
+      "glycogen synthase kinase-3 beta",
+      "A0A8C2VHL3_CHILA Glycogen synthase kinase-3 beta (trembl)",
+      "A0A8C2VHR1_CHILA Glycogen synthase kinase-3 beta (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:34839"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 231.49927,
+    "clique_identifier_count": 9
+  },
+  {
+    "curie": "NCBIGene:109388396",
+    "label": "GSK3B",
+    "highlighting": {},
+    "synonyms": [
+      "GSK3B",
+      "glycogen synthase kinase-3 beta",
+      "A0A8B7S5M7_HIPAR Glycogen synthase kinase-3 beta (trembl)",
+      "A0A8B7S5P7_HIPAR Glycogen synthase kinase-3 beta (trembl)",
+      "A0A8B7S5R4_HIPAR Glycogen synthase kinase-3 beta (trembl)",
+      "A0A8B7S5S3_HIPAR Glycogen synthase kinase-3 beta (trembl)",
+      "A0A8B7S6S7_HIPAR Glycogen synthase kinase-3 beta (trembl)",
+      "A0A8B7S7R9_HIPAR Glycogen synthase kinase-3 beta (trembl)",
+      "A0A8B7SA51_HIPAR Glycogen synthase kinase-3 beta (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:186990"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 231.49927,
+    "clique_identifier_count": 9
+  },
+  {
+    "curie": "NCBIGene:100061033",
+    "label": "GSK3B",
+    "highlighting": {},
+    "synonyms": [
+      "GSK3B",
+      "glycogen synthase kinase 3 beta",
+      "glycogen synthase kinase-3 beta",
+      "A0A3Q2H039_HORSE Glycogen synthase kinase-3 beta (trembl)",
+      "A0A9L0RXR4_HORSE Glycogen synthase kinase-3 beta (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9796"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 220.90645,
+    "clique_identifier_count": 8
+  }
+]

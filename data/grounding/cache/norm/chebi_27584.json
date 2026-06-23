@@ -1,0 +1,91 @@
+{
+  "CHEBI:27584": {
+    "id": {
+      "identifier": "CHEBI:27584",
+      "label": "Aldosterone"
+    },
+    "equivalent_identifiers": [
+      {
+        "identifier": "CHEBI:27584",
+        "label": "aldosterone"
+      },
+      {
+        "identifier": "CHEBI:40919"
+      },
+      {
+        "identifier": "CHEBI:2563"
+      },
+      {
+        "identifier": "CHEBI:22306"
+      },
+      {
+        "identifier": "UNII:4964P6T9RB",
+        "label": "ALDOSTERONE"
+      },
+      {
+        "identifier": "PUBCHEM.COMPOUND:5839",
+        "label": "Aldosterone"
+      },
+      {
+        "identifier": "CHEMBL.COMPOUND:CHEMBL273453",
+        "label": "ALDOSTERONE"
+      },
+      {
+        "identifier": "DRUGBANK:DB04630",
+        "label": "Aldosterone"
+      },
+      {
+        "identifier": "MESH:D000450",
+        "label": "Aldosterone"
+      },
+      {
+        "identifier": "CAS:200-139-9"
+      },
+      {
+        "identifier": "CAS:52-39-1"
+      },
+      {
+        "identifier": "DrugCentral:111",
+        "label": "aldosterone"
+      },
+      {
+        "identifier": "GTOPDB:2872",
+        "label": "aldosterone"
+      },
+      {
+        "identifier": "GTOPDB:3452",
+        "label": "[3H]aldosterone"
+      },
+      {
+        "identifier": "HMDB:HMDB0000037",
+        "label": "Aldosterone"
+      },
+      {
+        "identifier": "KEGG.COMPOUND:C01780",
+        "label": "Aldosterone"
+      },
+      {
+        "identifier": "INCHIKEY:PQSUYGKTWSAVDQ-ZVIOFETBSA-N"
+      },
+      {
+        "identifier": "UMLS:C0002006",
+        "label": "aldosterone"
+      },
+      {
+        "identifier": "RXCUI:1312358"
+      }
+    ],
+    "type": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "information_content": 77.6
+  }
+}

@@ -1,0 +1,719 @@
+[
+  {
+    "curie": "GTOPDB:4883",
+    "label": "BMP-4",
+    "highlighting": {},
+    "synonyms": [
+      "BMP-4"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 1398.1006,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "NCBIGene:100009569",
+    "label": "BMP4",
+    "highlighting": {},
+    "synonyms": [
+      "BMP4",
+      "BMP-4",
+      "bone morphogenetic protein 4",
+      "G1T0L5_RABIT Bone morphogenetic protein 4 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9986"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 681.1596,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:396165",
+    "label": "BMP4",
+    "highlighting": {},
+    "synonyms": [
+      "BMP4",
+      "BMP-4",
+      "bone morphogenetic protein 4",
+      "A0A8V0Z5C2_CHICK Bone morphogenetic protein 4 (trembl)",
+      "E1C0T2_CHICK Bone morphogenetic protein 4 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9031"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 627.3055,
+    "clique_identifier_count": 6
+  },
+  {
+    "curie": "NCBIGene:100860789",
+    "label": "BMP4",
+    "highlighting": {},
+    "synonyms": [
+      "BMP4",
+      "BMP-4",
+      "bone morphogenetic protein 4",
+      "A0A2Z4FRB3_CAPHI Bone morphogenetic protein 4 (trembl)",
+      "A6N998_CAPHI Bone morphogenetic protein 4 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9925"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 627.3055,
+    "clique_identifier_count": 6
+  },
+  {
+    "curie": "NCBIGene:407216",
+    "label": "BMP4",
+    "highlighting": {},
+    "synonyms": [
+      "BMP4",
+      "BMP-4",
+      "bone morphogenetic protein 4",
+      "BMP4_BOVIN Bone morphogenetic protein 4 (sprot)"
+    ],
+    "taxa": [
+      "NCBITaxon:9913"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 527.017,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "NCBIGene:110965868",
+    "label": "bmp4",
+    "highlighting": {},
+    "synonyms": [
+      "bmp4",
+      "bmp-4",
+      "bone morphogenetic protein 4"
+    ],
+    "taxa": [
+      "NCBITaxon:80966"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 509.27347,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "NCBIGene:111573266",
+    "label": "bmp4",
+    "highlighting": {},
+    "synonyms": [
+      "bmp4",
+      "bmp-4",
+      "bone morphogenetic protein 4"
+    ],
+    "taxa": [
+      "NCBITaxon:80972"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 509.27347,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "NCBIGene:25296",
+    "label": "Bmp4",
+    "highlighting": {},
+    "synonyms": [
+      "Bmp4",
+      "BMP-4",
+      "BMP-2B",
+      "BOMPR4A",
+      "bone morphogenetic protein 4",
+      "bone morphogenetic protein 2B",
+      "F7FF39_RAT Bone morphogenetic protein 4 (trembl)",
+      "Q6AYU9_RAT Bone morphogenetic protein 4 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:10116"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 471.89688,
+    "clique_identifier_count": 7
+  },
+  {
+    "curie": "NCBIGene:110550958",
+    "label": "Bmp4",
+    "highlighting": {},
+    "synonyms": [
+      "Bmp4",
+      "BMP-4",
+      "bone morphogenic protein-4",
+      "bone morphogenetic protein 4"
+    ],
+    "taxa": [
+      "NCBITaxon:10047"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 421.01028,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "NCBIGene:30612",
+    "label": "bmp4",
+    "highlighting": {},
+    "synonyms": [
+      "bmp4",
+      "bmp-4",
+      "zbmp-4",
+      "zgc:100779",
+      "etID309887.17",
+      "bone morphogenetic protein 4",
+      "O57574_DANRE Bone morphogenetic protein 4 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:7955"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 412.63586,
+    "clique_identifier_count": 4
+  },
+  {
+    "curie": "NCBIGene:12159",
+    "label": "Bmp4",
+    "highlighting": {},
+    "synonyms": [
+      "Bmp4",
+      "Bmp-4",
+      "Bmp2b",
+      "Bmp2b1",
+      "Bmp2b-1",
+      "bone morphogenetic protein 4",
+      "bone morphogenetic protein 2B",
+      "Dvr-4",
+      "mBMP4",
+      "BMP-4 (mouse)",
+      "BMP-2B (mouse)",
+      "bone morphogenetic protein 4 (mouse)",
+      "bone morphogenetic protein 2B (mouse)",
+      "BMP4_MOUSE Bone morphogenetic protein 4 (sprot)",
+      "Q3ULR1_MOUSE Bone morphogenetic protein 4 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:10090"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 348.4836,
+    "clique_identifier_count": 10
+  },
+  {
+    "curie": "NCBIGene:138200082",
+    "label": "bmp4",
+    "highlighting": {},
+    "synonyms": [
+      "bmp4",
+      "bmp-4",
+      "bone morphogenetic protein 4"
+    ],
+    "taxa": [
+      "NCBITaxon:100190"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 321.3158,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "NCBIGene:652",
+    "label": "BMP4",
+    "highlighting": {},
+    "synonyms": [
+      "ZYME",
+      "BMP4",
+      "OFC11",
+      "BMP2B",
+      "BMP2B1",
+      "MCOPS6",
+      "BMP4 gene",
+      "BMP4 Gene",
+      "BONE MORPHOGENETIC PROTEIN 4",
+      "bone morphogenetic protein 4",
+      "bone morphogenetic protein 2B",
+      "BONE MORPHOGENETIC PROTEIN 2B",
+      "Bone Morphogenetic Protein 4 Gene",
+      "DVR4",
+      "hBMP4",
+      "BMP-4",
+      "BMP-2B",
+      "BMP-4 (human)",
+      "BMP-2B (human)",
+      "BMP4 protein, human",
+      "BMP-4 protein, human",
+      "Bone Morphogenetic Protein 4",
+      "Bone Morphogenetic Protein 2B",
+      "bone morphogenetic protein-4, human",
+      "bone morphogenetic protein 4 (human)",
+      "bone morphogenetic protein 2B (human)",
+      "BMP4_HUMAN Bone morphogenetic protein 4 (sprot)",
+      "Q53XC5_HUMAN Bone morphogenetic protein 4 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9606"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 266.675,
+    "clique_identifier_count": 18
+  },
+  {
+    "curie": "NCBIGene:549788",
+    "label": "bmp4",
+    "highlighting": {},
+    "synonyms": [
+      "bmp4",
+      "zyme",
+      "DVR-4",
+      "bmp2b",
+      "ofc11",
+      "xbmp4",
+      "bmp-4",
+      "XBMP-4",
+      "bmp4-b",
+      "bmp4-a",
+      "bmp2b1",
+      "bone morphogenetic protein 4",
+      "Q90YD6_XENTR Bone morphogenetic protein 4 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:8364"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 254.5979,
+    "clique_identifier_count": 4
+  },
+  {
+    "curie": "UniProtKB:Q06826",
+    "label": "BMP4_RAT Bone morphogenetic protein 4 (sprot)",
+    "highlighting": {},
+    "synonyms": [
+      "Bmp4",
+      "Bmp-4",
+      "rBMP4",
+      "Dvr-4",
+      "BMP-4 (rat)",
+      "BMP-2B (rat)",
+      "bone morphogenetic protein 4 (rat)",
+      "bone morphogenetic protein 2B (rat)",
+      "BMP4_RAT Bone morphogenetic protein 4 (sprot)"
+    ],
+    "taxa": [
+      "NCBITaxon:10116"
+    ],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 242.71135,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "NCBIGene:133066204",
+    "label": "BMP4",
+    "highlighting": {},
+    "synonyms": [
+      "BMP4",
+      "BMP-4",
+      "BMP-4B",
+      "bone morphogenetic protein 4",
+      "bone morphogenetic protein 4B"
+    ],
+    "taxa": [
+      "NCBITaxon:30532"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 228.20642,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "NCBIGene:399322",
+    "label": "bmp4.S",
+    "highlighting": {},
+    "synonyms": [
+      "zyme",
+      "bmp4",
+      "DVR-4",
+      "xbmp4",
+      "BMP-4",
+      "bmp2b",
+      "ofc11",
+      "XBMP-4",
+      "bmp4-b",
+      "bmp4-a",
+      "bmp2b1",
+      "bmp4.S",
+      "bone morphogenetic protein-4",
+      "bone morphogenetic protein 4",
+      "bone morphogenetic protein 4 S homeolog",
+      "A0A8J0TPC4_XENLA Bone morphogenetic protein 4 (trembl)",
+      "B7ZPR8_XENLA Bone morphogenetic protein 4 (trembl)",
+      "BMP4_XENLA Bone morphogenetic protein 4 (sprot)"
+    ],
+    "taxa": [
+      "NCBITaxon:8355"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 206.09813,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:397874",
+    "label": "bmp4.L",
+    "highlighting": {},
+    "synonyms": [
+      "zyme",
+      "bmp4",
+      "DVR-4",
+      "xbmp4",
+      "bmp2b",
+      "ofc11",
+      "bmp-4",
+      "XBMP-4",
+      "bmp4-b",
+      "bmp4-a",
+      "bmp4.L",
+      "bmp2b1",
+      "bone morphogenetic protein 4",
+      "bone morphogenetic protein-4",
+      "bone morphogenetic protein 4 L homeolog",
+      "A0A8J0TEB6_XENLA Bone morphogenetic protein 4 (trembl)",
+      "A0A974C863_XENLA Bone morphogenetic protein 4 (trembl)",
+      "Q91703_XENLA Bone morphogenetic protein 4 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:8355"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 185.1265,
+    "clique_identifier_count": 4
+  },
+  {
+    "curie": "PR:000000165",
+    "label": "bone morphogenetic protein 4",
+    "highlighting": {},
+    "synonyms": [
+      "DVR4",
+      "BMP4",
+      "BMP-4",
+      "BMP2B",
+      "Dvr-4",
+      "BMP-2B",
+      "bone morphogenetic protein 4",
+      "bone morphogenetic protein 2B"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 162.35747,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "UniProtKB:A0A4X1W8M0",
+    "label": "A0A4X1W8M0_PIG BMP binding endothelial regulator (trembl)",
+    "highlighting": {},
+    "synonyms": [
+      "A0A4X1W8M0_PIG BMP binding endothelial regulator (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9823"
+    ],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 150.45407,
+    "clique_identifier_count": 17
+  }
+]

@@ -1,0 +1,513 @@
+[
+  {
+    "curie": "UniProtKB:P15692-4",
+    "label": "vascular endothelial growth factor A, long form isoform VEGF165 (human)",
+    "highlighting": {},
+    "synonyms": [
+      "hVEGFA/iso:VEGF165",
+      "vascular endothelial growth factor A isoform VEGF (human)",
+      "vascular endothelial growth factor A, long form isoform VEGF165 (human)"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 244.89363,
+    "clique_identifier_count": 4
+  },
+  {
+    "curie": "UniProtKB:P15692-11",
+    "label": "vascular endothelial growth factor A, long form isoform hL-VEGF165 (human)",
+    "highlighting": {},
+    "synonyms": [
+      "hVEGFA/iso:hL-VEGF165",
+      "vascular endothelial growth factor A, long form isoform hL-VEGF165 (human)"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 233.94144,
+    "clique_identifier_count": 4
+  },
+  {
+    "curie": "UMLS:C4078090",
+    "label": "VEGF165-ephrin A1-PE38KDEL",
+    "highlighting": {},
+    "synonyms": [
+      "VEGF165-ephrin A1-PE38KDEL"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 232.4639,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "UniProtKB:O73682-1",
+    "label": "vascular endothelial growth factor A-A isoform VEGF165 (zebrafish)",
+    "highlighting": {},
+    "synonyms": [
+      "z-VEGFA/iso:VEGF165",
+      "vascular endothelial growth factor A-A isoform VEGF165 (zebrafish)"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 221.30025,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "UMLS:C2001447",
+    "label": "VEGF165 protein, rat",
+    "highlighting": {},
+    "synonyms": [
+      "VEGF165 protein, rat"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 156.88187,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "MESH:C000604473",
+    "label": "VEGF165-ephrin A1-PE38KDEL",
+    "highlighting": {},
+    "synonyms": [
+      "VEGF165-ephrin A1-PE38KDEL"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 146.66838,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "NCBIGene:7422",
+    "label": "VEGFA",
+    "highlighting": {},
+    "synonyms": [
+      "VPF",
+      "VEGF",
+      "VEGFA",
+      "MVCD1",
+      "L-VEGF",
+      "VEGF-A",
+      "VEGFA gene",
+      "VEGFA Gene",
+      "vascular permeability factor",
+      "vascular endothelial growth factor",
+      "VASCULAR ENDOTHELIAL GROWTH FACTOR A",
+      "vascular endothelial growth factor A",
+      "vascular endothelial growth factor A121",
+      "vascular endothelial growth factor A165",
+      "Vascular Endothelial Growth Factor A Gene",
+      "vascular endothelial growth factor A, long form",
+      "A0A0Y0IMM4_HUMAN Vascular permeability factor (Fragment) (trembl)",
+      "A2A2V4_HUMAN Vascular permeability factor (trembl)",
+      "hVEGFA",
+      "VEGF206",
+      "VEGF148",
+      "VEGF165",
+      "VEGF189",
+      "VEGF145",
+      "VEGF183",
+      "VEGF121",
+      "VEGF164",
+      "VEGF 165",
+      "VEGF-165",
+      "VEGF-164",
+      "VEGF 164",
+      "VEGF(164)",
+      "VPF (human)",
+      "VEGF164(165)",
+      "L-VEGF (human)",
+      "VEGF-164 Isoform",
+      "VEGF protein, human",
+      "VEGFA protein, human",
+      "VEGF-A protein, human",
+      "VEGF183 protein, human",
+      "VEGF189 protein, human",
+      "VEGF206 protein, human",
+      "VEGF145 protein, human",
+      "VEGF165 protein, human",
+      "VEGF(206) protein, human",
+      "VEGF(165) protein, human",
+      "VEGF(183) protein, human",
+      "VEGF(189) protein, human",
+      "VEGF(145) protein, human",
+      "Vascular Permeability Factor",
+      "Vascular Endothelial Growth Factor",
+      "vascular permeability factor (human)",
+      "Vascular Endothelial Growth Factor A",
+      "vascular endothelial growth factor, human",
+      "vascular endothelial growth factor A, human",
+      "vascular endothelial growth factor-A, human",
+      "Vascular Endothelial Growth Factor A 165 Isoform",
+      "Vascular Endothelial Growth Factor A 164 Isoform",
+      "vascular endothelial growth factor A, long form (human)",
+      "VEGFA_HUMAN Vascular endothelial growth factor A, long form (sprot)"
+    ],
+    "taxa": [
+      "NCBITaxon:9606"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 108.621315,
+    "clique_identifier_count": 18
+  },
+  {
+    "curie": "REACT:R-GGA-195408",
+    "label": "NRP-1 forms a ternary complex with VEGF165 and VEGFR1 (Gallus gallus)",
+    "highlighting": {},
+    "synonyms": [
+      "NRP-1 forms a ternary complex with VEGF165 and VEGFR1 (Gallus gallus)"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:MolecularActivity",
+      "biolink:Occurrent",
+      "biolink:OntologyClass",
+      "biolink:BiologicalProcessOrActivity",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 96.44008,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "REACT:R-RNO-195408",
+    "label": "NRP-1 forms a ternary complex with VEGF165 and VEGFR1 (Rattus norvegicus)",
+    "highlighting": {},
+    "synonyms": [
+      "NRP-1 forms a ternary complex with VEGF165 and VEGFR1 (Rattus norvegicus)"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:MolecularActivity",
+      "biolink:Occurrent",
+      "biolink:OntologyClass",
+      "biolink:BiologicalProcessOrActivity",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 96.44008,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "REACT:R-DRE-195408",
+    "label": "NRP-1 forms a ternary complex with VEGF165 and VEGFR1 (Danio rerio)",
+    "highlighting": {},
+    "synonyms": [
+      "NRP-1 forms a ternary complex with VEGF165 and VEGFR1 (Danio rerio)"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:MolecularActivity",
+      "biolink:Occurrent",
+      "biolink:OntologyClass",
+      "biolink:BiologicalProcessOrActivity",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 96.44008,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "REACT:R-MMU-195408",
+    "label": "NRP-1 forms a ternary complex with VEGF165 and VEGFR1 (Mus musculus)",
+    "highlighting": {},
+    "synonyms": [
+      "NRP-1 forms a ternary complex with VEGF165 and VEGFR1 (Mus musculus)"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:MolecularActivity",
+      "biolink:Occurrent",
+      "biolink:OntologyClass",
+      "biolink:BiologicalProcessOrActivity",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 96.44008,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "REACT:R-CFA-195408",
+    "label": "NRP-1 forms a ternary complex with VEGF165 and VEGFR1 (Canis familiaris)",
+    "highlighting": {},
+    "synonyms": [
+      "NRP-1 forms a ternary complex with VEGF165 and VEGFR1 (Canis familiaris)"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:MolecularActivity",
+      "biolink:Occurrent",
+      "biolink:OntologyClass",
+      "biolink:BiologicalProcessOrActivity",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 96.44008,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "REACT:R-HSA-195408",
+    "label": "NRP-1 forms a ternary complex with VEGF165 and VEGFR1 (Homo sapiens)",
+    "highlighting": {},
+    "synonyms": [
+      "NRP-1 forms a ternary complex with VEGF165 and VEGFR1 (Homo sapiens)"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:MolecularActivity",
+      "biolink:Occurrent",
+      "biolink:OntologyClass",
+      "biolink:BiologicalProcessOrActivity",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 96.44008,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "REACT:R-XTR-195408",
+    "label": "NRP-1 forms a ternary complex with VEGF165 and VEGFR1 (Xenopus tropicalis)",
+    "highlighting": {},
+    "synonyms": [
+      "NRP-1 forms a ternary complex with VEGF165 and VEGFR1 (Xenopus tropicalis)"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:MolecularActivity",
+      "biolink:Occurrent",
+      "biolink:OntologyClass",
+      "biolink:BiologicalProcessOrActivity",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 96.44008,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "REACT:R-SSC-195408",
+    "label": "NRP-1 forms a ternary complex with VEGF165 and VEGFR1 (Sus scrofa)",
+    "highlighting": {},
+    "synonyms": [
+      "NRP-1 forms a ternary complex with VEGF165 and VEGFR1 (Sus scrofa)"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:MolecularActivity",
+      "biolink:Occurrent",
+      "biolink:OntologyClass",
+      "biolink:BiologicalProcessOrActivity",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 96.44008,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "REACT:R-BTA-195408",
+    "label": "NRP-1 forms a ternary complex with VEGF165 and VEGFR1 (Bos taurus)",
+    "highlighting": {},
+    "synonyms": [
+      "NRP-1 forms a ternary complex with VEGF165 and VEGFR1 (Bos taurus)"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:MolecularActivity",
+      "biolink:Occurrent",
+      "biolink:OntologyClass",
+      "biolink:BiologicalProcessOrActivity",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 96.44008,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "NCBIGene:8828",
+    "label": "NRP2",
+    "highlighting": {},
+    "synonyms": [
+      "NP2",
+      "NRP2",
+      "NPN2",
+      "PRO2714",
+      "NRP2 gene",
+      "VEGF165R2",
+      "NRP2 Gene",
+      "NEUROPILIN 2",
+      "neuropilin 2",
+      "neuropilin-2",
+      "neuropilin-2b(0)",
+      "neuropilin-2a(17)",
+      "Neuropilin 2 Gene",
+      "neuropilin-2a(22)",
+      "receptor for VEGF165 and semaphorins class3",
+      "VASCULAR ENDOTHELIAL GROWTH FACTOR-165 RECEPTOR 2",
+      "vascular endothelial cell growth factor 165 receptor 2",
+      "hNRP2",
+      "Neuropilin-2",
+      "Neuropilin 2",
+      "neuropilin-2, human",
+      "NRP2 protein, human",
+      "neuropilin-2 (human)",
+      "NRP2_HUMAN Neuropilin-2 (sprot)",
+      "Vascular Endothelial Cell Growth Factor-165 Receptor 2",
+      "Vascular Endothelial Cell Growth Factor 165 Receptor 2",
+      "vascular endothelial cell growth factor 165 receptor 2 (human)"
+    ],
+    "taxa": [
+      "NCBITaxon:9606"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 32.98181,
+    "clique_identifier_count": 9
+  },
+  {
+    "curie": "UMLS:C2698422",
+    "label": "NRP2 wt Allele",
+    "highlighting": {},
+    "synonyms": [
+      "NP2",
+      "NPN2",
+      "PRO2714",
+      "VEGF165R2",
+      "MGC126574",
+      "NRP2 wt Allele",
+      "Neuropilin 2 wt Allele",
+      "Receptor for VEGF165 and Semaphorins Class3 Gene"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:GenomicEntity"
+    ],
+    "score": 31.511786,
+    "clique_identifier_count": 1
+  }
+]

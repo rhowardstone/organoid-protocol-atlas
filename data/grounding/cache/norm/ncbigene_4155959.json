@@ -1,0 +1,44 @@
+{
+  "NCBIGene:4155959": {
+    "id": {
+      "identifier": "NCBIGene:4155959",
+      "label": "fgf-2"
+    },
+    "equivalent_identifiers": [
+      {
+        "identifier": "NCBIGene:4155959",
+        "label": "fgf-2",
+        "taxa": [
+          "NCBITaxon:56947"
+        ]
+      },
+      {
+        "identifier": "UniProtKB:Q1A4J4",
+        "label": "Q1A4J4_GVCF FGF-2 (trembl)",
+        "taxa": [
+          "NCBITaxon:56947"
+        ]
+      }
+    ],
+    "taxa": [
+      "NCBITaxon:56947"
+    ],
+    "type": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ]
+  }
+}

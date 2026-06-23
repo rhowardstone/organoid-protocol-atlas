@@ -1,0 +1,36 @@
+{
+  "NCBIGene:100641115": {
+    "id": {
+      "identifier": "NCBIGene:100641115",
+      "label": "Wnt"
+    },
+    "equivalent_identifiers": [
+      {
+        "identifier": "NCBIGene:100641115",
+        "label": "Wnt",
+        "taxa": [
+          "NCBITaxon:400682"
+        ]
+      },
+      {
+        "identifier": "ENSEMBL:GeneID_100641115"
+      }
+    ],
+    "taxa": [
+      "NCBITaxon:400682"
+    ],
+    "type": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin"
+    ]
+  }
+}

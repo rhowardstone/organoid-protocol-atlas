@@ -1,0 +1,334 @@
+{
+  "CHEBI:81570": {
+    "id": {
+      "identifier": "CHEBI:81570",
+      "label": "Chorionic Gonadotropin (Human)"
+    },
+    "equivalent_identifiers": [
+      {
+        "identifier": "CHEBI:81570",
+        "label": "Chorionic gonadotropin"
+      },
+      {
+        "identifier": "UNII:20ED16GHEB",
+        "label": "CHORIONIC GONADOTROPIN"
+      },
+      {
+        "identifier": "CHEMBL.COMPOUND:CHEMBL1201509",
+        "label": "GONADOTROPIN, CHORIONIC"
+      },
+      {
+        "identifier": "DRUGBANK:DB09126",
+        "label": "Chorionic Gonadotropin (Human)"
+      },
+      {
+        "identifier": "MESH:D006063",
+        "label": "Chorionic Gonadotropin"
+      },
+      {
+        "identifier": "DrugCentral:5196",
+        "label": "chorionic gonadotrophin"
+      },
+      {
+        "identifier": "KEGG.COMPOUND:C18185"
+      },
+      {
+        "identifier": "UMLS:C0018062",
+        "label": "chorionic gonadotropin"
+      },
+      {
+        "identifier": "RXCUI:340705"
+      },
+      {
+        "identifier": "UNII:6413W06WR3",
+        "label": "CHORIOGONADOTROPIN ALFA"
+      },
+      {
+        "identifier": "CHEMBL.COMPOUND:CHEMBL1201464",
+        "label": "CHORIOGONADOTROPIN ALFA"
+      },
+      {
+        "identifier": "DRUGBANK:DB00097",
+        "label": "Choriogonadotropin alfa"
+      },
+      {
+        "identifier": "DrugCentral:5149",
+        "label": "choriogonadotropin alfa"
+      },
+      {
+        "identifier": "UMLS:C0937609",
+        "label": "choriogonadotropin alfa"
+      },
+      {
+        "identifier": "RXCUI:283550"
+      },
+      {
+        "identifier": "RXCUI:4986"
+      },
+      {
+        "identifier": "RXCUI:310587"
+      },
+      {
+        "identifier": "UMLS:C0977250",
+        "label": "chorionic gonadotropin 5000 UNT/ML Injectable Solution"
+      },
+      {
+        "identifier": "RXCUI:359096"
+      },
+      {
+        "identifier": "UMLS:C1177253",
+        "label": "chorionic gonadotropin 5000 UNT/ML"
+      },
+      {
+        "identifier": "RXCUI:362680"
+      },
+      {
+        "identifier": "UMLS:C1236598",
+        "label": "chorionic gonadotropin Injectable Solution [Pregnyl]"
+      },
+      {
+        "identifier": "RXCUI:362681"
+      },
+      {
+        "identifier": "UMLS:C1236599",
+        "label": "chorionic gonadotropin Injectable Solution [Novarel]"
+      },
+      {
+        "identifier": "RXCUI:376655"
+      },
+      {
+        "identifier": "UMLS:C1250848",
+        "label": "chorionic gonadotropin Injectable Solution"
+      },
+      {
+        "identifier": "RXCUI:405755"
+      },
+      {
+        "identifier": "UMLS:C1330972",
+        "label": "chorionic gonadotropin 500 UNT/ML"
+      },
+      {
+        "identifier": "RXCUI:562828"
+      },
+      {
+        "identifier": "UMLS:C1595275",
+        "label": "chorionic gonadotropin 500 UNT/ML Injectable Solution"
+      },
+      {
+        "identifier": "RXCUI:727504"
+      },
+      {
+        "identifier": "UMLS:C1962181",
+        "label": "chorionic gonadotropin Prefilled Syringe"
+      },
+      {
+        "identifier": "RXCUI:727505"
+      },
+      {
+        "identifier": "UMLS:C1962182",
+        "label": "0.5 ML choriogonadotropin alfa 0.5 MG/ML Prefilled Syringe"
+      },
+      {
+        "identifier": "RXCUI:727506"
+      },
+      {
+        "identifier": "UMLS:C1962183",
+        "label": "chorionic gonadotropin Prefilled Syringe [Ovidrel]"
+      },
+      {
+        "identifier": "RXCUI:727507"
+      },
+      {
+        "identifier": "UMLS:C1814187",
+        "label": "0.5 ML choriogonadotropin alfa 0.5 MG/ML Prefilled Syringe [Ovidrel]"
+      },
+      {
+        "identifier": "RXCUI:896853"
+      },
+      {
+        "identifier": "UMLS:C2732072",
+        "label": "chorionic gonadotropin 10000 UNT/ML"
+      },
+      {
+        "identifier": "RXCUI:896854"
+      },
+      {
+        "identifier": "UMLS:C1595274",
+        "label": "chorionic gonadotropin 10000 UNT/ML Injectable Solution"
+      },
+      {
+        "identifier": "RXCUI:896855"
+      },
+      {
+        "identifier": "UMLS:C2732073",
+        "label": "chorionic gonadotropin 10000 UNT/ML [Pregnyl]"
+      },
+      {
+        "identifier": "RXCUI:896856"
+      },
+      {
+        "identifier": "UMLS:C1612521",
+        "label": "chorionic gonadotropin 10000 UNT/ML Injectable Solution [Pregnyl]"
+      },
+      {
+        "identifier": "RXCUI:896871"
+      },
+      {
+        "identifier": "UMLS:C2732081",
+        "label": "chorionic gonadotropin 10000 UNT/ML [Novarel]"
+      },
+      {
+        "identifier": "RXCUI:896872"
+      },
+      {
+        "identifier": "UMLS:C1614147",
+        "label": "chorionic gonadotropin 10000 UNT/ML Injectable Solution [Novarel]"
+      },
+      {
+        "identifier": "RXCUI:1151453"
+      },
+      {
+        "identifier": "UMLS:C0544364",
+        "label": "chorionic gonadotropin Injectable Product"
+      },
+      {
+        "identifier": "RXCUI:1178114"
+      },
+      {
+        "identifier": "UMLS:C3232030",
+        "label": "Novarel Injectable Product"
+      },
+      {
+        "identifier": "RXCUI:1185745"
+      },
+      {
+        "identifier": "UMLS:C3239515",
+        "label": "Ovidrel Injectable Product"
+      },
+      {
+        "identifier": "RXCUI:1185826"
+      },
+      {
+        "identifier": "UMLS:C3239595",
+        "label": "Pregnyl Injectable Product"
+      },
+      {
+        "identifier": "RXCUI:1593271"
+      },
+      {
+        "identifier": "UMLS:C3859554",
+        "label": "chorionic gonadotropin 1000 UNT/ML"
+      },
+      {
+        "identifier": "RXCUI:1593272"
+      },
+      {
+        "identifier": "UMLS:C3859555",
+        "label": "chorionic gonadotropin 1000 UNT/ML Injectable Solution"
+      },
+      {
+        "identifier": "RXCUI:1593274"
+      },
+      {
+        "identifier": "UMLS:C3859556",
+        "label": "chorionic gonadotropin 1000 UNT/ML [Chorulon]"
+      },
+      {
+        "identifier": "RXCUI:1593275"
+      },
+      {
+        "identifier": "UMLS:C3859557",
+        "label": "chorionic gonadotropin Injectable Solution [Chorulon]"
+      },
+      {
+        "identifier": "RXCUI:1593276"
+      },
+      {
+        "identifier": "UMLS:C3859558",
+        "label": "Chorulon Injectable Product"
+      },
+      {
+        "identifier": "RXCUI:1593277"
+      },
+      {
+        "identifier": "UMLS:C3859559",
+        "label": "chorionic gonadotropin 1000 UNT/ML Injectable Solution [Chorulon]"
+      },
+      {
+        "identifier": "RXCUI:1654655"
+      },
+      {
+        "identifier": "UMLS:C4027096",
+        "label": "choriogonadotropin alfa 0.5 MG/ML"
+      },
+      {
+        "identifier": "RXCUI:1654658"
+      },
+      {
+        "identifier": "UMLS:C4027097",
+        "label": "choriogonadotropin alfa 0.5 MG/ML [Ovidrel]"
+      },
+      {
+        "identifier": "RXCUI:1865294"
+      },
+      {
+        "identifier": "UMLS:C4301653",
+        "label": "chorionic gonadotropin 5000 UNT/ML [Novarel]"
+      },
+      {
+        "identifier": "RXCUI:1865295"
+      },
+      {
+        "identifier": "UMLS:C4284017",
+        "label": "chorionic gonadotropin 5000 UNT/ML Injectable Solution [Novarel]"
+      },
+      {
+        "identifier": "RXCUI:2646651"
+      },
+      {
+        "identifier": "UMLS:C5835606",
+        "label": "choriogonadotropin alfa Prefilled Syringe"
+      },
+      {
+        "identifier": "RXCUI:2658604"
+      },
+      {
+        "identifier": "UMLS:C5842455",
+        "label": "choriogonadotropin alfa Prefilled Syringe [Ovidrel]"
+      },
+      {
+        "identifier": "RXCUI:2661373"
+      },
+      {
+        "identifier": "UMLS:C5845179",
+        "label": "choriogonadotropin alfa Injectable Product"
+      },
+      {
+        "identifier": "RXCUI:202637"
+      },
+      {
+        "identifier": "RXCUI:218792"
+      },
+      {
+        "identifier": "RXCUI:284818"
+      },
+      {
+        "identifier": "RXCUI:1593273"
+      }
+    ],
+    "type": [
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:Drug",
+      "biolink:OntologyClass",
+      "biolink:MolecularMixture",
+      "biolink:ChemicalMixture"
+    ],
+    "information_content": 100.0
+  }
+}

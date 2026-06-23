@@ -1,0 +1,41 @@
+{
+  "PUBCHEM.COMPOUND:168266256": {
+    "id": {
+      "identifier": "PUBCHEM.COMPOUND:168266256",
+      "label": "Prolactin"
+    },
+    "equivalent_identifiers": [
+      {
+        "identifier": "PUBCHEM.COMPOUND:168266256",
+        "label": "Prolactin"
+      },
+      {
+        "identifier": "MESH:D011388",
+        "label": "Prolactin"
+      },
+      {
+        "identifier": "CAS:12585-34-1"
+      },
+      {
+        "identifier": "CAS:618-335-1"
+      },
+      {
+        "identifier": "CAS:9002-62-4"
+      },
+      {
+        "identifier": "INCHIKEY:ZNRYUPYKSAFPRM-UHFFFAOYSA-N"
+      }
+    ],
+    "type": [
+      "biolink:MolecularMixture",
+      "biolink:ChemicalMixture",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ]
+  }
+}

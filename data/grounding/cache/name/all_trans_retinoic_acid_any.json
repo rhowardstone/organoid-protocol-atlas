@@ -1,0 +1,515 @@
+[
+  {
+    "curie": "CHEBI:156173",
+    "label": "19-Hydroky-all-trans-retinoic acid",
+    "highlighting": {},
+    "synonyms": [
+      "19-Hydroxy-all-trans-retinoic acid",
+      "19-Hydroky-all-trans-retinoic acid",
+      "(2E,4E,6Z,8E)-7-(hydroxymethyl)-3-methyl-9-(2,6,6-trimethylcyclohexen-1-yl)nona-2,4,6,8-tetraenoic acid"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 762.45557,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "CHEBI:197188",
+    "label": "19-Oxo-all-trans-retinoic acid",
+    "highlighting": {},
+    "synonyms": [
+      "19-Oxo-all-trans-retinoic acid",
+      "(2E,4E,6Z,8E)-7-ormyl-3-methyl-9-(2,6,6-trimethylcyclohexen-1-yl)nona-2,4,6,8-tetraenoic acid"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 762.45557,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:15125882",
+    "label": "14-Methyl-all-trans-retinoic acid",
+    "highlighting": {},
+    "synonyms": [
+      "14-Methyl-all-trans-retinoic acid"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 762.45557,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "GO:0062182",
+    "label": "all-trans retinoic acid 4-hydrolase activity",
+    "highlighting": {},
+    "synonyms": [
+      "all-trans retinoic acid 4-hydrolase activity",
+      "all-trans-retinoate + reduced [NADPH--hemoprotein reductase] + O2 = all-trans-(4S)-hydroxyretinoate + oxidized [NADPH--hemoprotein reductase] + H2O + H(+)"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:MolecularActivity",
+      "biolink:Occurrent",
+      "biolink:OntologyClass",
+      "biolink:BiologicalProcessOrActivity",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 720.9281,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "GO:0062183",
+    "label": "all-trans retinoic acid 18-hydroxylase activity",
+    "highlighting": {},
+    "synonyms": [
+      "all-trans retinoic acid 18-hydroxylase activity",
+      "all-trans-retinoate + reduced [NADPH--hemoprotein reductase] + O2 = all-trans-18-hydroxyretinoate + oxidized [NADPH--hemoprotein reductase] + H2O + H(+)"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:MolecularActivity",
+      "biolink:Occurrent",
+      "biolink:OntologyClass",
+      "biolink:BiologicalProcessOrActivity",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 720.9281,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "UniProtKB:Q6UW56-2",
+    "label": "all-trans retinoic acid-induced differentiation factor isoform h2 (human)",
+    "highlighting": {},
+    "synonyms": [
+      "hATRAID/iso:h2",
+      "all-trans retinoic acid-induced differentiation factor isoform h2 (human)"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 719.421,
+    "clique_identifier_count": 4
+  },
+  {
+    "curie": "UniProtKB:Q6PGD0-2",
+    "label": "all-trans retinoic acid-induced differentiation factor isoform m2 (mouse)",
+    "highlighting": {},
+    "synonyms": [
+      "mATRAID/iso:m2",
+      "all-trans retinoic acid-induced differentiation factor isoform m2 (mouse)"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 719.421,
+    "clique_identifier_count": 4
+  },
+  {
+    "curie": "UniProtKB:Q6PGD0-1",
+    "label": "all-trans retinoic acid-induced differentiation factor isoform m1 (mouse)",
+    "highlighting": {},
+    "synonyms": [
+      "mATRAID/iso:m1",
+      "all-trans retinoic acid-induced differentiation factor isoform m1 (mouse)"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 719.421,
+    "clique_identifier_count": 4
+  },
+  {
+    "curie": "UniProtKB:Q6UW56-1",
+    "label": "all-trans retinoic acid-induced differentiation factor isoform h1 (human)",
+    "highlighting": {},
+    "synonyms": [
+      "hATRAID/iso:h1",
+      "all-trans retinoic acid-induced differentiation factor isoform h1 (human)"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 719.421,
+    "clique_identifier_count": 4
+  },
+  {
+    "curie": "NCBIGene:100522188",
+    "label": "ATRAID",
+    "highlighting": {},
+    "synonyms": [
+      "ATRAID",
+      "all-trans retinoic acid induced differentiation factor",
+      "LOW QUALITY PROTEIN: all-trans retinoic acid-induced differentiation factor",
+      "A0A480LCP7_PIG All-trans retinoic acid-induced differentiation factor isoform b (trembl)",
+      "A0A4X1TSH5_PIG EGF-like domain-containing protein (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9823"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 689.31396,
+    "clique_identifier_count": 21
+  },
+  {
+    "curie": "UniProtKB:A0A8C2AJV6",
+    "label": "A0A8C2AJV6_CYPCA All-trans retinoic acid-induced differentiation factor (trembl)",
+    "highlighting": {},
+    "synonyms": [
+      "A0A8C2AJV6_CYPCA All-trans retinoic acid-induced differentiation factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:7962"
+    ],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 650.111,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "UniProtKB:A0A8B9TJB2",
+    "label": "A0A8B9TJB2_ANAPL All-trans retinoic acid induced differentiation factor (trembl)",
+    "highlighting": {},
+    "synonyms": [
+      "A0A8B9TJB2_ANAPL All-trans retinoic acid induced differentiation factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:8839"
+    ],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 650.111,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "UniProtKB:A0A8C6X2L2",
+    "label": "A0A8C6X2L2_NAJNA All-trans retinoic acid induced differentiation factor (trembl)",
+    "highlighting": {},
+    "synonyms": [
+      "A0A8C6X2L2_NAJNA All-trans retinoic acid induced differentiation factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:35670"
+    ],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 650.111,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "UniProtKB:A0A669PM34",
+    "label": "A0A669PM34_PHACC All-trans retinoic acid induced differentiation factor (trembl)",
+    "highlighting": {},
+    "synonyms": [
+      "A0A669PM34_PHACC All-trans retinoic acid induced differentiation factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9054"
+    ],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 650.111,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "UniProtKB:A0A8D2JIW7",
+    "label": "A0A8D2JIW7_VARKO All-trans retinoic acid induced differentiation factor (trembl)",
+    "highlighting": {},
+    "synonyms": [
+      "A0A8D2JIW7_VARKO All-trans retinoic acid induced differentiation factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:61221"
+    ],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 650.111,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "UniProtKB:G7PLV4",
+    "label": "G7PLV4_MACFA All-trans retinoic acid induced differentiation factor (trembl)",
+    "highlighting": {},
+    "synonyms": [
+      "G7PLV4_MACFA All-trans retinoic acid induced differentiation factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9541"
+    ],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 650.111,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "UniProtKB:A0A8C2GNA5",
+    "label": "A0A8C2GNA5_CYPCA All-trans retinoic acid-induced differentiation factor (trembl)",
+    "highlighting": {},
+    "synonyms": [
+      "A0A8C2GNA5_CYPCA All-trans retinoic acid-induced differentiation factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:7962"
+    ],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 650.111,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "UniProtKB:A0A8C3BRC5",
+    "label": "A0A8C3BRC5_CAIMO All-trans retinoic acid induced differentiation factor (trembl)",
+    "highlighting": {},
+    "synonyms": [
+      "A0A8C3BRC5_CAIMO All-trans retinoic acid induced differentiation factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:8855"
+    ],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 650.111,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "UniProtKB:A0A3P9IPU0",
+    "label": "A0A3P9IPU0_ORYLA All-trans retinoic acid induced differentiation factor (trembl)",
+    "highlighting": {},
+    "synonyms": [
+      "A0A3P9IPU0_ORYLA All-trans retinoic acid induced differentiation factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:8090"
+    ],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 650.111,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "UniProtKB:A0A9L0TJN9",
+    "label": "A0A9L0TJN9_HORSE All-trans retinoic acid induced differentiation factor (trembl)",
+    "highlighting": {},
+    "synonyms": [
+      "A0A9L0TJN9_HORSE All-trans retinoic acid induced differentiation factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9796"
+    ],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 650.111,
+    "clique_identifier_count": 3
+  }
+]

@@ -1,0 +1,619 @@
+[
+  {
+    "curie": "PUBCHEM.COMPOUND:51003130",
+    "label": "ROCK inhibitor-2",
+    "highlighting": {},
+    "synonyms": [
+      "ROCK inhibitor-2"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 709.9763,
+    "clique_identifier_count": 4
+  },
+  {
+    "curie": "CHEMBL.COMPOUND:CHEMBL4554795",
+    "label": "ROCK inhibitor 3",
+    "highlighting": {},
+    "synonyms": [
+      "ROCK inhibitor 3"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 611.5403,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "CHEBI:137694",
+    "label": "(S)-2-methyl-1-(4-methylisoquinoline-5-sulfonyl)-1,4-diazepane dihydrochloride",
+    "highlighting": {},
+    "synonyms": [
+      "ROCK inhibitor",
+      "H-1152 dihydrochloride",
+      "H-1152 Dihydrochloride",
+      "dimethyl fasudil dihydrochloride",
+      "(S)-2-methyl-1-(4-methylisoquinoline-5-sulfonyl)-1,4-diazepane dihydrochloride",
+      "4-methyl-5-[(2S)-2-methyl-1,4-diazepane-1-sulfonyl]isoquinoline dihydrochloride"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:MolecularMixture",
+      "biolink:ChemicalMixture",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 531.65344,
+    "clique_identifier_count": 4
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:46182713",
+    "label": "ROCK inhibitor 3",
+    "highlighting": {},
+    "synonyms": [
+      "ROCK inhibitor 3"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 484.63422,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:77147225",
+    "label": "ROCK inhibitor-1",
+    "highlighting": {},
+    "synonyms": [
+      "ROCK inhibitor-1"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 484.63422,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "NCBIGene:579202",
+    "label": "ROCK",
+    "highlighting": {},
+    "synonyms": [
+      "ROCK",
+      "rho kinase",
+      "Rho kinase",
+      "A0A7M7NLN5_STRPU non-specific serine/threonine protein kinase (trembl)",
+      "A0A7M7NM52_STRPU non-specific serine/threonine protein kinase (trembl)",
+      "A0A7M7NP53_STRPU non-specific serine/threonine protein kinase (trembl)",
+      "D5LG91_STRPU non-specific serine/threonine protein kinase (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:7668"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 191.66425,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "DRUGBANK:DB00058",
+    "label": "Alpha-1-proteinase inhibitor",
+    "highlighting": {},
+    "synonyms": [
+      "API",
+      "SLPI",
+      "122320-05-2",
+      "Alfa1 antitrypsin",
+      "Antileukoproteinase",
+      "Alpha 1-antitrypsin",
+      "Alfa-1-antitripsina",
+      "Alpha-1-antitrypsin",
+      "Alpha-1-antiproteinase",
+      "Protease inhibitor wap4",
+      "Alpha-1 protease inhibitor",
+      "Mucus proteinase inhibitor",
+      "Alpha1-proteinase Inhibitor",
+      "Alpha 1-Proteinase Inhibitor",
+      ".Alpha.-1 protease inhibitor",
+      "Alpha-1-proteinase inhibitor",
+      "Alpha1-proteinase inhibitor human",
+      "Alpha 1-proteinase inhibitor human",
+      "Alpha-1-proteinase inhibitor human",
+      "Alpha-1-proteinase inhibitor,human",
+      "Alpha1-proteinase inhibitor (human)",
+      "Alpha-1-proteinase Inhibitor, Human",
+      ".Alpha.1-proteinase inhibitor human",
+      "Alfa 1-proteinase inhibitor (human)",
+      "Alpha 1-proteinase inhibitor, human",
+      "Alpha-1-proteinase Inhibitor (human)",
+      "Alpha 1-proteinase inhibitor (human)",
+      "Alpha-1 proteinase inhibitor (human)",
+      "Wap four-disulfide core domain protein 4",
+      "Secretory leukocyte protease inhibitor (human)",
+      "Recombinant secretory leukocyte protease inhibitor",
+      "Recombinant secretory leucocyte protease inhibitor",
+      "Zemaira KIT",
+      "ZEMAIRA KIT",
+      "Zemaira 1 MG Injection",
+      "Zemaira 1000mg Powder for Injection",
+      "Zemaira 4000mg Powder for Injection",
+      "Zemaira 5000mg Powder for Injection",
+      "Zemaira, human intravenous powder for injection",
+      "alpha 1-proteinase inhibitor, human 1 MG Injection [Zemaira]",
+      "Alpha-1 Proteinase Inhibitor Human 1 MG Intravenous Powder for Solution [ZEMAIRA]",
+      "Glassia 1 MG Injection",
+      "Glassia, human intravenous solution",
+      "Glassia 1g/50ml Solution for Injection",
+      "alpha 1-proteinase inhibitor, human 1 MG Injection [Glassia]",
+      "Alpha-1 Proteinase Inhibitor Human 1 MG Intravenous Solution [GLASSIA]",
+      ".ALPHA.1-PROTEINASE INHIBITOR HUMAN 1 g in 50 mL INTRAVENOUS INJECTION, SOLUTION [GLASSIA]",
+      "Aralast Injectable Product",
+      "Glassia Injectable Product",
+      "Prolastin Injectable Product",
+      "Zemaira Injectable Product",
+      "Aralast NP KIT",
+      "Aralast 1 MG Injection",
+      "Aralast NP 1 MG Injection",
+      "Aralast NP 1g Powder for Injection",
+      "Aralast NP 0.5g Powder for Injection",
+      "Aralast NP, human intravenous powder for injection",
+      "alpha 1-proteinase inhibitor, human 1 MG Injection [Aralast]",
+      "Alpha-1 Proteinase Inhibitor Human 1 MG Intravenous Powder for Solution [ARALAST NP]",
+      ".ALPHA.1-PROTEINASE INHIBITOR HUMAN 16 mg in 1 mL INTRAVENOUS INJECTION, POWDER, LYOPHILIZED, FOR SOLUTION [Aralast NP]",
+      "alpha 1-antitrypsin Injectable Product",
+      "alpha 1-proteinase inhibitor, human 1 MG",
+      "alpha 1-antitrypsin Injection",
+      "ALPHA-1-PROTEINASE INHIBITOR,HUMAN INJ",
+      "ALPHA-1-PROTEINASE INHIBIT 20MG/ML INJ",
+      "ALPHA-1-PROTEINASE INHIBIT 1GM/VIL INJ",
+      "ALPHA-1-PROTEINASE INHIBIT 50MG/ML INJ",
+      "ALPHA-1-PROTEINASE INHIBIT 500MG/VIL INJ",
+      "ALPHA-1-PROTEINASE INHIBI 4000MG/VIL INJ",
+      "ALPHA-1-PROTEINASE INHIBI 5000MG/VIL INJ",
+      "ALPHA-1-PROTEINASE INHIBITOR,HUMAN 50MG/ML INJ",
+      "ALPHA-1-PROTEINASE INHIBITOR,HUMAN 500MG/VIL INJ",
+      "ALPHA-1-PROTEINASE INHIBITOR,HUMAN 1000MG/VIL INJ",
+      "ALPHA-1-PROTEINASE INHIBITOR,HUMAN 5000MG/VIL INJ",
+      "ALPHA-1-PROTEINASE INHIBITOR,HUMAN 4000MG/VIL INJ",
+      "alpha 1-proteinase inhibitor, human 1 MG Injection",
+      "ALPHA-1-PROTEINASE INHIBITOR,HUMAN 20MG/ML INJ,SOLN",
+      "alpha-1-proteinase inhibitor@500 mg@INTRAVEN@VIAL (EA)",
+      "alpha-1-proteinase inhibitor 500 mg INTRAVEN VIAL (EA)",
+      "alpha-1-proteinase inhibitor 1,000 mg INTRAVEN VIAL (EA)",
+      "alpha-1-proteinase inhibitor@5,000 mg@INTRAVEN@VIAL (EA)",
+      "alpha-1-proteinase inhibitor 5,000 mg INTRAVEN VIAL (EA)",
+      "alpha-1-proteinase inhibitor@1,000 mg@INTRAVEN@VIAL (EA)",
+      "alpha-1-proteinase inhibitor 4,000 mg INTRAVEN VIAL (EA)",
+      "alpha-1-proteinase inhibitor@4,000 mg@INTRAVEN@VIAL (EA)",
+      "Alpha-1 Proteinase Inhibitor Human 1 MG Intravenous Solution",
+      "alpha-1-proteinase inhibitor@1 gram/50 mL (2 %)@INTRAVEN@VIAL (EA)",
+      "alpha-1-proteinase inhibitor 1 gram/50 mL (2 %) INTRAVEN VIAL (EA)",
+      "alpha 1-proteinase inhibitor human intravenous powder for injection",
+      "alpha-1-proteinase inhibitor@1,000 mg (+/-)/20 mL@INTRAVEN@VIAL (EA)",
+      "alpha-1-proteinase inhibitor 1,000 mg (+/-)/20 mL INTRAVEN VIAL (EA)",
+      "Alpha-1 Proteinase Inhibitor Human 1 MG Intravenous Powder for Solution",
+      "Human alpha1 proteinase inhibitor 1 g powder for solution for injection vial",
+      "Human alpha1 proteinase inhibitor 500 mg powder for solution for injection vial",
+      ".ALPHA.1-PROTEINASE INHIBITOR HUMAN 4000 mg in 76 mL INTRAVENOUS INJECTION, POWDER, LYOPHILIZED, FOR SOLUTION",
+      ".ALPHA.1-PROTEINASE INHIBITOR HUMAN 5000 mg in 95 mL INTRAVENOUS INJECTION, POWDER, LYOPHILIZED, FOR SOLUTION",
+      ".ALPHA.1-PROTEINASE INHIBITOR HUMAN 1000 mg in 20 mL INTRAVENOUS INJECTION, POWDER, LYOPHILIZED, FOR SOLUTION [Alpha-1-Proteinase Inhibitor Human]",
+      "Product containing precisely human alpha1 proteinase inhibitor 1 gram/1 vial powder for conventional release solution for injection (clinical drug)",
+      "Product containing precisely human alpha1 proteinase inhibitor 500 milligram/1 vial powder for conventional release solution for injection (clinical drug)",
+      "alpha 1-proteinase inhibitor, human 1 MG [Glassia]",
+      "alpha 1-antitrypsin Injection [Glassia]",
+      "alpha 1-proteinase inhibitor, human 1 MG [Aralast]",
+      "alpha 1-antitrypsin Injection [Aralast]",
+      "alpha 1-proteinase inhibitor, human 1 MG [Zemaira]",
+      "alpha 1-antitrypsin Injection [Zemaira]",
+      "alpha 1-proteinase inhibitor, human 1 MG [Prolastin]",
+      "alpha 1-antitrypsin Injection [Prolastin]",
+      "PROLASTIN-C KIT",
+      "Prolastin 1 MG Injection",
+      "PROLASTIN C 1000mg Liquid",
+      "Prolastin-C 1 MG Injection",
+      "Prolastin-C, human intravenous solution",
+      "Prolastin C 1000mg Powder for Injection",
+      "Prolastin-C, human intravenous powder for injection",
+      "alpha 1-proteinase inhibitor, human 1 MG Injection [Prolastin]",
+      "Alpha-1 Proteinase Inhibitor Human 1 MG Intravenous Solution [PROLASTIN-C]",
+      "Alpha-1 Proteinase Inhibitor Human 1 MG Intravenous Powder for Solution [PROLASTIN-C]",
+      ".alpha.1-proteinase Inhibitor Human 1000 mg in 20 mL INTRAVENOUS INJECTION, SOLUTION [Prolastin-C Liquid]",
+      ".alpha.1-proteinase Inhibitor Human 1000 mg in 20 mL INTRAVENOUS INJECTION, POWDER, LYOPHILIZED, FOR SOLUTION [PROLASTIN-C]",
+      "alpha 1-proteinase inhibitor, human Injection",
+      "alpha 1-proteinase inhibitor, human Injection [Glassia]",
+      "alpha 1-proteinase inhibitor, human Injection [Aralast]",
+      "alpha 1-proteinase inhibitor, human Injection [Zemaira]",
+      "alpha 1-proteinase inhibitor, human Injection [Prolastin]",
+      "alpha 1-proteinase inhibitor, human Injectable Product"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:Drug",
+      "biolink:OntologyClass",
+      "biolink:MolecularMixture",
+      "biolink:ChemicalMixture"
+    ],
+    "score": 171.52066,
+    "clique_identifier_count": 54
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:16666062",
+    "label": "Rock-IN-1",
+    "highlighting": {},
+    "synonyms": [
+      "Rock-IN-1"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 148.1839,
+    "clique_identifier_count": 4
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:45380564",
+    "label": "Rock-IN-D2",
+    "highlighting": {},
+    "synonyms": [
+      "Rock-IN-D2"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 148.1839,
+    "clique_identifier_count": 4
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:68520643",
+    "label": "Rock-IN-D3",
+    "highlighting": {},
+    "synonyms": [
+      "Rock-IN-D3"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 148.1839,
+    "clique_identifier_count": 4
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:139505507",
+    "label": "Rock-IN-7",
+    "highlighting": {},
+    "synonyms": [
+      "Rock-IN-7"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 148.1839,
+    "clique_identifier_count": 4
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:164946733",
+    "label": "Rock-IN-4",
+    "highlighting": {},
+    "synonyms": [
+      "Rock-IN-4"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:MolecularMixture",
+      "biolink:ChemicalMixture",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 148.1839,
+    "clique_identifier_count": 4
+  },
+  {
+    "curie": "UniProtKB:A0A4X1T867",
+    "label": "A0A4X1T867_PIG Metalloproteinase inhibitor 1 (trembl)",
+    "highlighting": {},
+    "synonyms": [
+      "A0A4X1T867_PIG Metalloproteinase inhibitor 1 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9823"
+    ],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 127.71169,
+    "clique_identifier_count": 23
+  },
+  {
+    "curie": "UniProtKB:A0A8D0LMY4",
+    "label": "A0A8D0LMY4_PIG ATPase inhibitor, mitochondrial (trembl)",
+    "highlighting": {},
+    "synonyms": [
+      "A0A8D0LMY4_PIG ATPase inhibitor, mitochondrial (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9823"
+    ],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 127.71169,
+    "clique_identifier_count": 23
+  },
+  {
+    "curie": "UniProtKB:A0A8D1XQQ4",
+    "label": "A0A8D1XQQ4_PIG Apoptosis inhibitor 5 (trembl)",
+    "highlighting": {},
+    "synonyms": [
+      "A0A8D1XQQ4_PIG Apoptosis inhibitor 5 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9823"
+    ],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 127.71169,
+    "clique_identifier_count": 23
+  },
+  {
+    "curie": "UniProtKB:A0A8D1PKE6",
+    "label": "A0A8D1PKE6_PIG ATPase inhibitor, mitochondrial (trembl)",
+    "highlighting": {},
+    "synonyms": [
+      "A0A8D1PKE6_PIG ATPase inhibitor, mitochondrial (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9823"
+    ],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 127.71169,
+    "clique_identifier_count": 23
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:45381940",
+    "label": "Rock-IN-D1",
+    "highlighting": {},
+    "synonyms": [
+      "Rock-IN-D1"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 127.63866,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:46871821",
+    "label": "Rock-IN-32",
+    "highlighting": {},
+    "synonyms": [
+      "Rock-IN-32"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 127.63866,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:76955629",
+    "label": "Rock-IN-8",
+    "highlighting": {},
+    "synonyms": [
+      "Rock-IN-8"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 127.63866,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:156385540",
+    "label": "Rock-IN-9",
+    "highlighting": {},
+    "synonyms": [
+      "Rock-IN-9"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 127.63866,
+    "clique_identifier_count": 3
+  }
+]

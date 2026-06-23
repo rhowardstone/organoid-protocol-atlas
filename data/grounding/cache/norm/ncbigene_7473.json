@@ -1,0 +1,89 @@
+{
+  "NCBIGene:7473": {
+    "id": {
+      "identifier": "NCBIGene:7473",
+      "label": "WNT3"
+    },
+    "equivalent_identifiers": [
+      {
+        "identifier": "NCBIGene:7473",
+        "label": "WNT3",
+        "taxa": [
+          "NCBITaxon:9606"
+        ]
+      },
+      {
+        "identifier": "ENSEMBL:ENSG00000108379"
+      },
+      {
+        "identifier": "HGNC:12782",
+        "label": "WNT3"
+      },
+      {
+        "identifier": "OMIM:165330"
+      },
+      {
+        "identifier": "UMLS:C1337001",
+        "label": "WNT3 gene"
+      },
+      {
+        "identifier": "UniProtKB:P56703",
+        "label": "WNT3_HUMAN Proto-oncogene Wnt-3 (sprot)",
+        "taxa": [
+          "NCBITaxon:9606"
+        ]
+      },
+      {
+        "identifier": "PR:P56703",
+        "label": "proto-oncogene Wnt-3 (human)"
+      },
+      {
+        "identifier": "ENSEMBL:ENSP00000225512"
+      },
+      {
+        "identifier": "ENSEMBL:ENSP00000225512.5"
+      },
+      {
+        "identifier": "ENSEMBL:ENSP00000478327"
+      },
+      {
+        "identifier": "ENSEMBL:ENSP00000478327.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSP00000480990"
+      },
+      {
+        "identifier": "ENSEMBL:ENSP00000480990.1"
+      },
+      {
+        "identifier": "UMLS:C1504629",
+        "label": "WNT3 protein, human"
+      },
+      {
+        "identifier": "MESH:C555507",
+        "label": "WNT3 protein, human"
+      }
+    ],
+    "taxa": [
+      "NCBITaxon:9606"
+    ],
+    "type": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "information_content": 87.2
+  }
+}

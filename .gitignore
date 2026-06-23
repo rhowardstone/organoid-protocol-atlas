@@ -35,3 +35,4 @@ data/public/
 
 # Regenerable semantic-retrieval vectors (R3); rebuilt by semantic_index.py build
 data/index/
+_marathon_slice.csv

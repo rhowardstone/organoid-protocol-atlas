@@ -1,0 +1,56 @@
+{
+  "NCBIGene:100195681": {
+    "id": {
+      "identifier": "NCBIGene:100195681",
+      "label": "il8"
+    },
+    "equivalent_identifiers": [
+      {
+        "identifier": "NCBIGene:100195681",
+        "label": "il8",
+        "taxa": [
+          "NCBITaxon:8030"
+        ]
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSAG00000006498"
+      },
+      {
+        "identifier": "UniProtKB:B5X6N7",
+        "label": "B5X6N7_SALSA Interleukin 8 precursor (trembl)",
+        "taxa": [
+          "NCBITaxon:8030"
+        ]
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSAP00020046258"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSAP00020046270"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSAP00070055058"
+      }
+    ],
+    "taxa": [
+      "NCBITaxon:8030"
+    ],
+    "type": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ]
+  }
+}

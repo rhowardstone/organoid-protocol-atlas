@@ -1,0 +1,558 @@
+[
+  {
+    "curie": "CHEBI:27584",
+    "label": "Aldosterone",
+    "highlighting": {},
+    "synonyms": [
+      "Aldosterone",
+      "aldosterone",
+      "ALDOSTERONE",
+      "Aldosterona",
+      "Aldosteronum",
+      "(+)-Aldosterone",
+      "[3H]aldosterone",
+      "(+)-aldosterone",
+      "18-Oxocorticosterone",
+      "Aldosterone (substance)",
+      "Aldosterone preparation",
+      "Aldosterone, (+-)-isomer",
+      "Aldosterone-containing product",
+      "Aldosterone, (11 beta,17 alpha)-isomer",
+      "11Β,21-dihydroxypregn-4-ene-3,18,20-trione",
+      "11Β,21-dihydroxy-3,20-dioxo-4-pregnen-18-al",
+      "11b,21-Dihydroxy-3,20-dioxo-4-pregnen-18-al",
+      "11Β,21-dihydroxy-3,20-diketo-4-pregnen-18-al",
+      "11Β,21-dihydroxy-3,20-diketopregn-4-ene-18-al",
+      "11beta,21-Dihydroxypregn-4-ene-3,18,20-trione",
+      "11beta,21-Dihydroxy-3,20-dioxo-4-pregnen-18-al",
+      "11beta,21-dihydroxy-3,20-dioxopregn-4-en-18-al",
+      "11beta,21-Dihydroxy-3,20-diketo-4-pregnen-18-al",
+      "(11Β)-11,21-dihydroxy-3,20-dioxopregn-4-en-18-al",
+      "(11b)-11,21-Dihydroxy-3,20-dioxopregn-4-en-18-al",
+      "18-Formyl-11β,21-dihydroxy-4-pregnene-3,20-dione",
+      "(11β)-11,21-dihydroxy-3,20-dioxopregn-4-en-18-al",
+      "11beta,21-Dihydroxy-3,20-diketopregn-4-ene-18-al",
+      "Product containing aldosterone (medicinal product)",
+      "(11beta)-11,21-dihydroxy-3,20-dioxopregn-4-en-18-al",
+      "18-Formyl-11beta,21-dihydroxy-4-pregnene-3,20-dione",
+      "(11beta)-11,21-Dihydroxy-3,20-dioxopregn-4-en-18-al",
+      "Pregn-4-en-18-al, 11,21-dihydroxy-3,20-dioxo-, (11beta)-"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 5755.139,
+    "clique_identifier_count": 19
+  },
+  {
+    "curie": "UNII:RH7JOB7P70",
+    "label": "aldosterone-21-acetate",
+    "highlighting": {},
+    "synonyms": [
+      "Aldosterone acetate",
+      "ALDOSTERONE ACETATE",
+      "aldosterone-21-acetate"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 382.48267,
+    "clique_identifier_count": 7
+  },
+  {
+    "curie": "CHEBI:30834",
+    "label": "aldosterone hemiacetal",
+    "highlighting": {},
+    "synonyms": [
+      "aldosterone",
+      "aldosterone hemiacetal",
+      "11beta,18-epoxy-18xi-hydroxypregn-4-ene-3,20-dione",
+      "3,20-Diketo-11-beta,18-oxido-4-pregnene-18,21-diol",
+      "11beta,18-epoxy-18,21-dihydroxypregn-4-ene-3,20-dione",
+      "11beta-18-Epoxy-18,21-dihydroxypregn-4-ene-3,20-dione",
+      "18xi,21-dihydroxy-11beta,18-epoxypregn-4-ene-3,20-dione",
+      "(11beta)-11,18-Epoxy-18,21-dihydroxypregn-4-ene-3,20-dione",
+      "18,11-hemiacetal of 11beta,21-dihydroxy-3,20-dioxopregn-4-en-18-al"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 363.10483,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "MONDO:0016505",
+    "label": "aldosterone-producing adrenal cortex adenoma",
+    "highlighting": {},
+    "synonyms": [
+      "APAC",
+      "Pure APAC",
+      "aldosterone-producing adenoma",
+      "Aldosterone-Producing Adrenal Gland Adenoma",
+      "aldosterone-producing adrenal cortex adenoma",
+      "Aldosterone Producing Adrenal Cortex Adenoma",
+      "aldosterone producing adrenal cortex adenoma",
+      "Aldosterone-Producing Adrenal Cortex Adenoma",
+      "Aldosterone-Producing Adrenal Cortical Adenoma",
+      "aldosterone producing adrenal cortical adenoma",
+      "Aldosterone Producing Adrenal Cortical Adenoma",
+      "Pure aldosterone-producing adrenocortical carcinoma",
+      "Pure aldosterone-secreting adrenocortical carcinoma",
+      "adrenocortical carcinoma with pure aldosterone hypersecretion"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:Disease",
+      "biolink:DiseaseOrPhenotypicFeature",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity"
+    ],
+    "score": 335.72525,
+    "clique_identifier_count": 7
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:171112",
+    "label": "aldosterone 21-sulfate",
+    "highlighting": {},
+    "synonyms": [
+      "Aldosterone 21-sulfate",
+      "aldosterone 21-sulfate"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 329.56778,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:165415513",
+    "label": "aldosterone 18-glucuronide",
+    "highlighting": {},
+    "synonyms": [
+      "Aldosterone-18-glucuronide",
+      "Aldosterone 18-glucuronide",
+      "aldosterone 18-glucuronide",
+      "aldosterone-18-D-glucosiduronic acid",
+      "Aldosterone 18-glucuronide (substance)",
+      "11 beta,18-epoxy-21-hydroxy-3,20-dioxopregn-4-en- 18-yl-beta-D-glucopyranosiduronic acid"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 329.56778,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "UNII:832Q0VW947",
+    "label": "Aldosterone hemisuccinate",
+    "highlighting": {},
+    "synonyms": [
+      "ALDOSTERONE HEMISUCCINATE",
+      "Aldosterone hemisuccinate"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 318.1901,
+    "clique_identifier_count": 4
+  },
+  {
+    "curie": "MONDO:0016506",
+    "label": "ectopic aldosterone-producing tumor",
+    "highlighting": {},
+    "synonyms": [
+      "Ectopic aldosterone-producing tumor",
+      "ectopic aldosterone-producing tumor",
+      "Ectopic aldosterone-producing tumour",
+      "Ectopic aldosterone-producing neoplasm",
+      "Extra-adrenal aldosterone-producing tumor",
+      "Extra-adrenal aldosterone-producing tumour",
+      "Ectopic aldosterone-producing neoplasm (disorder)"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:Disease",
+      "biolink:DiseaseOrPhenotypicFeature",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity"
+    ],
+    "score": 308.11197,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "CHEBI:88734",
+    "label": "Aldosterone 18-glucuronide",
+    "highlighting": {},
+    "synonyms": [
+      "Aldosterone 18-glucuronide",
+      "Aldosterone-18-D-glucuronoside",
+      "Aldosterone-18-delta-glucuronoside",
+      "Aldosterone-18-D-glucosiduronic acid",
+      "Aldosterone-18-delta-glucosiduronic acid",
+      "11beta,18-Epoxy-21-hydroxy-3,20-dioxopregn-4-en-18-yl-beta-D-glucopyranosiduronic acid",
+      "11beta,18-Epoxy-21-hydroxy-3,20-dioxopregn-4-en-18-yl-beta-delta-glucopyranosiduronic acid",
+      "(2S,3S,4S,5R,6S)-3,4,5-trihydroxy-6-{[(2S,14R,16R)-2-(2-hydroxyacetyl)-14-methyl-11-oxo-17-oxapentacyclo[14.2.1.0^{1,5}.0^{6,15}.0^{9,14}]nonadec-9-en-18-yl]oxy}oxane-2-carboxylic acid"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 296.0324,
+    "clique_identifier_count": 4
+  },
+  {
+    "curie": "UMLS:C0521797",
+    "label": "Ectopic aldosterone secretion",
+    "highlighting": {},
+    "synonyms": [
+      "Ectopic Aldosterone Secretion",
+      "Ectopic aldosterone secretion",
+      "Ectopic Aldosterone Secretion Syndrome",
+      "Ectopic aldosterone secretion (finding)"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:Disease",
+      "biolink:DiseaseOrPhenotypicFeature",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity"
+    ],
+    "score": 296.0324,
+    "clique_identifier_count": 4
+  },
+  {
+    "curie": "UMLS:C0860766",
+    "label": "Aldosterone urine increased",
+    "highlighting": {},
+    "synonyms": [
+      "Aldosterone urine high",
+      "Aldosterone urine increased",
+      "Urinary aldosterone increased"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:PhenotypicFeature",
+      "biolink:DiseaseOrPhenotypicFeature",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity"
+    ],
+    "score": 296.0324,
+    "clique_identifier_count": 4
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:128291",
+    "label": "3-hydroxy-delta(5)-aldosterone",
+    "highlighting": {},
+    "synonyms": [
+      "5-HAA",
+      "3-Hydroxy-delta(5)-aldosterone",
+      "3-hydroxy-delta(5)-aldosterone"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 289.27905,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:9578259",
+    "label": "18,21-aldosterone diacetate 3-carboxymethyloxime",
+    "highlighting": {},
+    "synonyms": [
+      "18,21-Aldosterone diacetate 3-carboxymethyloxime",
+      "18,21-aldosterone diacetate 3-carboxymethyloxime",
+      "Pregn-4-ene-3,20-dione, 18,21-bis(acetyloxy)-11,18-epoxy-, 3-(O-(carboxymethyl)oxime), (11beta)-"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 289.27905,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "MONDO:0015057",
+    "label": "renin-angiotensin-aldosterone system-blocker-induced angioedema",
+    "highlighting": {},
+    "synonyms": [
+      "RAE",
+      "AEACEI",
+      "reactive angioendotheliomatosis",
+      "Reactive angioendotheliomatosis",
+      "Raas-blocker-induced angioedema",
+      "Raas-blocker-induced angioneurotic edema",
+      "Raas-blocker-induced angioneurotic oedema",
+      "susceptibility to angioedema induced by ace inhibitors",
+      "angioedema induced by ACE inhibitors, susceptibility to",
+      "Angioedema caused by angiotensin-converting-enzyme inhibitor",
+      "Angio-oedema caused by angiotensin-converting-enzyme inhibitor",
+      "renin-angiotensin-aldosterone system-blocker-induced angioedema",
+      "Angioedema caused by angiotensin-converting-enzyme inhibitor (disorder)",
+      "renin-angiotensin-aldosterone system-blocker-induced angioneurotic edema",
+      "renin-angiotensin-aldosterone system-blocker-induced angioneurotic oedema"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:Disease",
+      "biolink:DiseaseOrPhenotypicFeature",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity"
+    ],
+    "score": 279.94418,
+    "clique_identifier_count": 6
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:129656384",
+    "label": "Aldosterone monohydrate",
+    "highlighting": {},
+    "synonyms": [
+      "Aldosterone monohydrate"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:MolecularMixture",
+      "biolink:ChemicalMixture",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 274.07404,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:131708876",
+    "label": "Aldosterone-d8",
+    "highlighting": {},
+    "synonyms": [
+      "Aldosterone-d8"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 274.07404,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "MONDO:0017921",
+    "label": "hearing loss-familial salivary gland insensitivity to aldosterone syndrome",
+    "highlighting": {},
+    "synonyms": [
+      "Tungland-Bellman syndrome",
+      "Tungland Bellman syndrome",
+      "Tunglang savage Bellman syndrome",
+      "Tunglang Savage Bellman syndrome",
+      "hearing loss insensitivity to aldosterone",
+      "Hearing loss insensitivity to aldosterone",
+      "hearing loss and familial salivary gland insensitivity to aldosterone",
+      "Hearing loss and familial salivary gland insensitivity to aldosterone",
+      "Hearing loss and salivary gland insensitivity to aldosterone syndrome",
+      "Hearing loss-familial salivary gland insensitivity to aldosterone syndrome",
+      "hearing loss-familial salivary gland insensitivity to aldosterone syndrome",
+      "Hearing loss and salivary gland insensitivity to aldosterone syndrome (disorder)"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:Disease",
+      "biolink:DiseaseOrPhenotypicFeature",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity"
+    ],
+    "score": 269.7683,
+    "clique_identifier_count": 7
+  },
+  {
+    "curie": "MONDO:0014200",
+    "label": "aldosterone-producing adenoma with seizures and neurological abnormalities",
+    "highlighting": {},
+    "synonyms": [
+      "PASNA",
+      "Conn adenoma",
+      "aldosteronoma",
+      "aldosterone-secreting adenoma",
+      "primary aldosteronism due to Conn adenoma",
+      "APA with seizures and neurological abnormalities",
+      "Conn adenoma with seizures and neurological abnormalities",
+      "Primary Aldosteronism, Seizures, and Neurologic Abnormalities",
+      "PRIMARY ALDOSTERONISM, SEIZURES, AND NEUROLOGIC ABNORMALITIES",
+      "primary aldosteronism, seizures, and neurologic abnormalities",
+      "complex neurodevelopmental disorder with or without aldosteronism",
+      "aldosterone-producing adenoma with seizures and neurological abnormalities",
+      "aldosterone-secreting adenoma with seizures and neurological abnormalities"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:Disease",
+      "biolink:DiseaseOrPhenotypicFeature",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity"
+    ],
+    "score": 265.48447,
+    "clique_identifier_count": 6
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:9576944",
+    "label": "aldosterone-3-(O-carboxymethyl)oximino-(2-iodohistamine)",
+    "highlighting": {},
+    "synonyms": [
+      "ACOIH",
+      "aldosterone-3-(O-carboxymethyl)oximino-(2-iodohistamine)",
+      "aldosterone-3-(O-carboxymethyl)oximino-(2-(125I)iodohistamine)",
+      "aldosterone-3-(O-carboxymethyl)oximino-(2-iodohistamine), I125 labeled"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 257.76764,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:44412033",
+    "label": "Aldosterone stimulating factor",
+    "highlighting": {},
+    "synonyms": [
+      "Aldosterone stimulating factor"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 254.98845,
+    "clique_identifier_count": 3
+  }
+]

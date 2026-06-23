@@ -1,0 +1,79 @@
+{
+  "NCBIGene:100473254": {
+    "id": {
+      "identifier": "NCBIGene:100473254",
+      "label": "IGF1"
+    },
+    "equivalent_identifiers": [
+      {
+        "identifier": "NCBIGene:100473254",
+        "label": "IGF1",
+        "taxa": [
+          "NCBITaxon:9646"
+        ]
+      },
+      {
+        "identifier": "ENSEMBL:ENSAMEG00000027551"
+      },
+      {
+        "identifier": "UniProtKB:A0A7N5JMM9",
+        "label": "A0A7N5JMM9_AILME Insulin-like growth factor 1 (trembl)",
+        "taxa": [
+          "NCBITaxon:9646"
+        ]
+      },
+      {
+        "identifier": "ENSEMBL:ENSAMEP00000027722"
+      },
+      {
+        "identifier": "ENSEMBL:ENSAMEP00000027722.1"
+      },
+      {
+        "identifier": "UniProtKB:G1LIG6",
+        "label": "G1LIG6_AILME Insulin-like growth factor 1 (trembl)",
+        "taxa": [
+          "NCBITaxon:9646"
+        ]
+      },
+      {
+        "identifier": "ENSEMBL:ENSAMEP00000006719"
+      },
+      {
+        "identifier": "ENSEMBL:ENSAMEP00000006719.2"
+      },
+      {
+        "identifier": "UniProtKB:Q6JLX1",
+        "label": "IGF1_AILME Insulin-like growth factor 1 (sprot)",
+        "taxa": [
+          "NCBITaxon:9646"
+        ]
+      },
+      {
+        "identifier": "ENSEMBL:ENSAMEP00000006724"
+      },
+      {
+        "identifier": "ENSEMBL:ENSAMEP00000006724.2"
+      }
+    ],
+    "taxa": [
+      "NCBITaxon:9646"
+    ],
+    "type": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ]
+  }
+}

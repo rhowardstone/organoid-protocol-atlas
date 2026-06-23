@@ -1,0 +1,712 @@
+[
+  {
+    "curie": "NCBIGene:100157103",
+    "label": "BMP2",
+    "highlighting": {},
+    "synonyms": [
+      "BMP2",
+      "bone morphogenetic protein 2",
+      "A0A286ZZE2_PIG Bone morphogenetic protein 2 (trembl)",
+      "A0A4X1UEL6_PIG Bone morphogenetic protein 2 (trembl)",
+      "E1AXT2_PIG Bone morphogenetic protein 2 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9823"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 4460.9946,
+    "clique_identifier_count": 26
+  },
+  {
+    "curie": "NCBIGene:477162",
+    "label": "BMP2",
+    "highlighting": {},
+    "synonyms": [
+      "BMP2",
+      "bone morphogenetic protein 2",
+      "A0A8I3PXE9_CANLF Bone morphogenetic protein 2 (trembl)",
+      "A0A8I3QCM6_CANLF Bone morphogenetic protein 2 (trembl)",
+      "A0A8P0NRN7_CANLF Bone morphogenetic protein 2 (trembl)",
+      "A0A8P0T128_CANLF Bone morphogenetic protein 2 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9615"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 3752.7659,
+    "clique_identifier_count": 15
+  },
+  {
+    "curie": "NCBIGene:650",
+    "label": "BMP2",
+    "highlighting": {},
+    "synonyms": [
+      "BDA2",
+      "BMP2",
+      "BMP2A",
+      "SSFSC",
+      "SSFSC1",
+      "BMP2 gene",
+      "BMP2 Gene",
+      "bone morphogenetic protein 2",
+      "BONE MORPHOGENETIC PROTEIN 2",
+      "BONE MORPHOGENETIC PROTEIN 2A",
+      "bone morphogenetic protein 2A",
+      "Bone Morphogenetic Protein 2 Gene",
+      "C8C060_HUMAN Bone morphogenetic protein 2 (trembl)",
+      "BMP-2",
+      "hBMP2",
+      "BMP-2A",
+      "BMP-2 (human)",
+      "BMP-2A (human)",
+      "BMP2 protein, human",
+      "BMP-2 protein, human",
+      "Bone Morphogenetic Protein 2",
+      "Bone Morphogenetic Protein 2A",
+      "bone morphogenetic protein 2, human",
+      "bone morphogenetic protein 2 (human)",
+      "bone morphogenetic protein 2A (human)",
+      "BMP2_HUMAN Bone morphogenetic protein 2 (sprot)"
+    ],
+    "taxa": [
+      "NCBITaxon:9606"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 3471.721,
+    "clique_identifier_count": 12
+  },
+  {
+    "curie": "NCBIGene:29373",
+    "label": "Bmp2",
+    "highlighting": {},
+    "synonyms": [
+      "Bmp2",
+      "BMP-2",
+      "BMP-2A",
+      "bone morphogenetic protein 2",
+      "bone morphogenetic protein 2A",
+      "A6HQI1_RAT Bone morphogenetic protein 2 (trembl)",
+      "G3V8W4_RAT Bone morphogenetic protein 2 (trembl)",
+      "rBMP2",
+      "Bmp-2",
+      "BMP-2 (rat)",
+      "BMP-2A (rat)",
+      "bone morphogenetic protein 2 (rat)",
+      "bone morphogenetic protein 2A (rat)",
+      "BMP2_RAT Bone morphogenetic protein 2 (sprot)"
+    ],
+    "taxa": [
+      "NCBITaxon:10116"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 3116.6045,
+    "clique_identifier_count": 9
+  },
+  {
+    "curie": "NCBIGene:12156",
+    "label": "Bmp2",
+    "highlighting": {},
+    "synonyms": [
+      "Bmp2",
+      "Bmp2a",
+      "bone morphogenetic protein 2",
+      "bone morphogenetic protein 2A",
+      "mBMP2",
+      "Bmp-2",
+      "BMP-2 (mouse)",
+      "BMP-2A (mouse)",
+      "bone morphogenetic protein 2 (mouse)",
+      "bone morphogenetic protein 2A (mouse)",
+      "BMP2_MOUSE Bone morphogenetic protein 2 (sprot)"
+    ],
+    "taxa": [
+      "NCBITaxon:10090"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2814.5742,
+    "clique_identifier_count": 7
+  },
+  {
+    "curie": "NCBIGene:113903357",
+    "label": "BMP2",
+    "highlighting": {},
+    "synonyms": [
+      "BMP2",
+      "bone morphogenetic protein 2",
+      "A0A4W2FU97_BOBOX Bone morphogenetic protein 2 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:30522"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2814.5742,
+    "clique_identifier_count": 7
+  },
+  {
+    "curie": "NCBIGene:100380549",
+    "label": "bmp2",
+    "highlighting": {},
+    "synonyms": [
+      "bmp2",
+      "Bone morphogenetic protein 2",
+      "C0HBA5_SALSA Bone morphogenetic protein 2 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:8030"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2633.8364,
+    "clique_identifier_count": 6
+  },
+  {
+    "curie": "NCBIGene:100967346",
+    "label": "BMP2",
+    "highlighting": {},
+    "synonyms": [
+      "BMP2",
+      "bone morphogenetic protein 2",
+      "A0A2R9ABN7_PANPA Bone morphogenetic protein 2 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9597"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2633.8364,
+    "clique_identifier_count": 6
+  },
+  {
+    "curie": "NCBIGene:101955462",
+    "label": "Bmp2",
+    "highlighting": {},
+    "synonyms": [
+      "Bmp2",
+      "bone morphogenetic protein 2",
+      "I3N300_ICTTR Bone morphogenetic protein 2 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:43179"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2633.8364,
+    "clique_identifier_count": 6
+  },
+  {
+    "curie": "NCBIGene:102018921",
+    "label": "Bmp2",
+    "highlighting": {},
+    "synonyms": [
+      "Bmp2",
+      "bone morphogenetic protein 2",
+      "A0A8C2W083_CHILA Bone morphogenetic protein 2 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:34839"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2633.8364,
+    "clique_identifier_count": 6
+  },
+  {
+    "curie": "NCBIGene:103246725",
+    "label": "BMP2",
+    "highlighting": {},
+    "synonyms": [
+      "BMP2",
+      "bone morphogenetic protein 2",
+      "A0A0D9RM38_CHLSB Bone morphogenetic protein 2 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:60711"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2633.8364,
+    "clique_identifier_count": 6
+  },
+  {
+    "curie": "NCBIGene:103674423",
+    "label": "BMP2",
+    "highlighting": {},
+    "synonyms": [
+      "BMP2",
+      "bone morphogenetic protein 2",
+      "A0A384D3D2_URSMA Bone morphogenetic protein 2 (trembl)",
+      "A0A384D3I4_URSMA Bone morphogenetic protein 2 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:29073"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2633.8364,
+    "clique_identifier_count": 6
+  },
+  {
+    "curie": "NCBIGene:458090",
+    "label": "BMP2",
+    "highlighting": {},
+    "synonyms": [
+      "BMP2",
+      "bone morphogenetic protein 2",
+      "H2QJY1_PANTR Bone morphogenetic protein 2 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9598"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2425.1897,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:615037",
+    "label": "BMP2",
+    "highlighting": {},
+    "synonyms": [
+      "BMP2",
+      "bone morphogenetic protein 2",
+      "A5PJI9_BOVIN Bone morphogenetic protein 2 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9913"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2425.1897,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:718330",
+    "label": "BMP2",
+    "highlighting": {},
+    "synonyms": [
+      "BMP2",
+      "bone morphogenetic protein 2",
+      "G7N2Y0_MACMU Bone morphogenetic protein 2 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9544"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2425.1897,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:100051701",
+    "label": "BMP2",
+    "highlighting": {},
+    "synonyms": [
+      "BMP2",
+      "bone morphogenetic protein 2",
+      "bone morphogenetic protein 2 precursor (BMP-2) (BMP-2A)",
+      "A0A9L0SUB3_HORSE Bone morphogenetic protein 2 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9796"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2425.1897,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:100084030",
+    "label": "BMP2",
+    "highlighting": {},
+    "synonyms": [
+      "BMP2",
+      "bone morphogenetic protein 2",
+      "A0A6I8NNW4_ORNAN Bone morphogenetic protein 2 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9258"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2425.1897,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:100301987",
+    "label": "BMP2",
+    "highlighting": {},
+    "synonyms": [
+      "BMP2",
+      "bone morphogenetic protein 2",
+      "A0A2I2UEZ4_FELCA Bone morphogenetic protein 2 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9685"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2425.1897,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:100408260",
+    "label": "BMP2",
+    "highlighting": {},
+    "synonyms": [
+      "BMP2",
+      "bone morphogenetic protein 2",
+      "bone morphogenetic protein 2 preproprotein",
+      "F7G4N4_CALJA Bone morphogenetic protein 2 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9483"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2425.1897,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:100460853",
+    "label": "BMP2",
+    "highlighting": {},
+    "synonyms": [
+      "BMP2",
+      "bone morphogenetic protein 2",
+      "H2P103_PONAB Bone morphogenetic protein 2 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9601"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2425.1897,
+    "clique_identifier_count": 5
+  }
+]

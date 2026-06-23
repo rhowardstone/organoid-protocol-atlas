@@ -1,0 +1,2540 @@
+{
+  "generated_at": "2026-06-22T07:51:18+00:00",
+  "provenance": {
+    "command": "python pipeline/ingest_orchestrator.py --limit 400 --min-grounding 0.5 --cc-only --workers 4 --candidates /atb-data/rye/Organoid/outputs/ingest/_marathon_slice.csv",
+    "model": "gemma3:12b",
+    "candidates_file": "_marathon_slice.csv",
+    "candidates_sha256_16": "3116f45ad43b34b7",
+    "min_grounding": 0.5,
+    "cc_only": true,
+    "dry_run": false,
+    "workers": 4
+  },
+  "candidates_considered": 400,
+  "accepted": 184,
+  "rejected": 216,
+  "accepted_papers": [
+    {
+      "pmcid": "PMC10001859",
+      "doi": "10.3390/ijms24054266",
+      "organoid_type": "intestinal",
+      "n_signaling": 4,
+      "grounded": 4,
+      "grounding_rate": 1.0,
+      "methods_chars": 11937
+    },
+    {
+      "pmcid": "PMC10002124",
+      "doi": "10.3390/ijms24054413",
+      "organoid_type": "intestinal",
+      "n_signaling": 12,
+      "grounded": 12,
+      "grounding_rate": 1.0,
+      "methods_chars": 28909
+    },
+    {
+      "pmcid": "PMC10003131",
+      "doi": "10.3390/ijms24054529",
+      "organoid_type": "intestinal",
+      "n_signaling": 11,
+      "grounded": 8,
+      "grounding_rate": 0.727,
+      "methods_chars": 37581
+    },
+    {
+      "pmcid": "PMC10030769",
+      "doi": "10.3389/fimmu.2023.1142492",
+      "organoid_type": "intestinal",
+      "n_signaling": 5,
+      "grounded": 5,
+      "grounding_rate": 1.0,
+      "methods_chars": 14840
+    },
+    {
+      "pmcid": "PMC10031308",
+      "doi": "10.1016/j.stemcr.2023.02.001",
+      "organoid_type": "intestinal",
+      "n_signaling": 2,
+      "grounded": 2,
+      "grounding_rate": 1.0,
+      "methods_chars": 4624
+    },
+    {
+      "pmcid": "PMC10033869",
+      "doi": "10.3389/fcimb.2023.1082524",
+      "organoid_type": "intestinal",
+      "n_signaling": 4,
+      "grounded": 4,
+      "grounding_rate": 1.0,
+      "methods_chars": 9335
+    },
+    {
+      "pmcid": "PMC10038780",
+      "doi": "10.1186/s13062-023-00360-2",
+      "organoid_type": "intestinal",
+      "n_signaling": 3,
+      "grounded": 2,
+      "grounding_rate": 0.667,
+      "methods_chars": 23782
+    },
+    {
+      "pmcid": "PMC10048957",
+      "doi": "10.3390/ijms24065199",
+      "organoid_type": "intestinal",
+      "n_signaling": 11,
+      "grounded": 10,
+      "grounding_rate": 0.909,
+      "methods_chars": 30595
+    },
+    {
+      "pmcid": "PMC10054012",
+      "doi": "10.3390/v15030635",
+      "organoid_type": "intestinal",
+      "n_signaling": 3,
+      "grounded": 3,
+      "grounding_rate": 1.0,
+      "methods_chars": 15387
+    },
+    {
+      "pmcid": "PMC10063961",
+      "doi": "10.3389/fmolb.2023.1155705",
+      "organoid_type": "intestinal",
+      "n_signaling": 4,
+      "grounded": 4,
+      "grounding_rate": 1.0,
+      "methods_chars": 3440
+    },
+    {
+      "pmcid": "PMC10066035",
+      "doi": "10.1038/s41564-023-01339-5",
+      "organoid_type": "intestinal",
+      "n_signaling": 9,
+      "grounded": 8,
+      "grounding_rate": 0.889,
+      "methods_chars": 21150
+    },
+    {
+      "pmcid": "PMC10067441",
+      "doi": "10.1242/dmm.049756",
+      "organoid_type": "intestinal",
+      "n_signaling": 5,
+      "grounded": 5,
+      "grounding_rate": 1.0,
+      "methods_chars": 9440
+    },
+    {
+      "pmcid": "PMC10070107",
+      "doi": "10.1172/jci.insight.162701",
+      "organoid_type": "intestinal",
+      "n_signaling": 3,
+      "grounded": 3,
+      "grounding_rate": 1.0,
+      "methods_chars": 9521
+    },
+    {
+      "pmcid": "PMC10070114",
+      "doi": "10.1172/jci.insight.165566",
+      "organoid_type": "intestinal",
+      "n_signaling": 2,
+      "grounded": 2,
+      "grounding_rate": 1.0,
+      "methods_chars": 32690
+    },
+    {
+      "pmcid": "PMC10070462",
+      "doi": "10.1038/s41598-023-32438-2",
+      "organoid_type": "intestinal",
+      "n_signaling": 8,
+      "grounded": 8,
+      "grounding_rate": 1.0,
+      "methods_chars": 10103
+    },
+    {
+      "pmcid": "PMC10073065",
+      "doi": "10.1007/s00383-023-05438-6",
+      "organoid_type": "intestinal",
+      "n_signaling": 6,
+      "grounded": 5,
+      "grounding_rate": 0.833,
+      "methods_chars": 39106
+    },
+    {
+      "pmcid": "PMC10077674",
+      "doi": "10.1186/s13287-023-03293-9",
+      "organoid_type": "intestinal",
+      "n_signaling": 3,
+      "grounded": 3,
+      "grounding_rate": 1.0,
+      "methods_chars": 12153
+    },
+    {
+      "pmcid": "PMC10079552",
+      "doi": "10.26508/lsa.202201857",
+      "organoid_type": "intestinal",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 7723
+    },
+    {
+      "pmcid": "PMC10080004",
+      "doi": "10.3389/fimmu.2023.1171141",
+      "organoid_type": "intestinal",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 20219
+    },
+    {
+      "pmcid": "PMC10093870",
+      "doi": "10.3390/ijms24076351",
+      "organoid_type": "intestinal",
+      "n_signaling": 8,
+      "grounded": 5,
+      "grounding_rate": 0.625,
+      "methods_chars": 16062
+    },
+    {
+      "pmcid": "PMC10094586",
+      "doi": "10.3390/ijms24076293",
+      "organoid_type": "intestinal",
+      "n_signaling": 11,
+      "grounded": 11,
+      "grounding_rate": 1.0,
+      "methods_chars": 18092
+    },
+    {
+      "pmcid": "PMC10097377",
+      "doi": "10.3390/nu15071766",
+      "organoid_type": "intestinal",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 11967
+    },
+    {
+      "pmcid": "PMC10100918",
+      "doi": "10.1128/spectrum.03098-22",
+      "organoid_type": "intestinal",
+      "n_signaling": 3,
+      "grounded": 3,
+      "grounding_rate": 1.0,
+      "methods_chars": 13538
+    },
+    {
+      "pmcid": "PMC10102376",
+      "doi": "10.3389/fphar.2023.1116558",
+      "organoid_type": "intestinal",
+      "n_signaling": 5,
+      "grounded": 5,
+      "grounding_rate": 1.0,
+      "methods_chars": 42206
+    },
+    {
+      "pmcid": "PMC10114999",
+      "doi": "10.1080/22221751.2023.2195020",
+      "organoid_type": "intestinal",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 13115
+    },
+    {
+      "pmcid": "PMC10127350",
+      "doi": "10.1186/s40959-023-00172-3",
+      "organoid_type": "cardiac",
+      "n_signaling": 5,
+      "grounded": 4,
+      "grounding_rate": 0.8,
+      "methods_chars": 25446
+    },
+    {
+      "pmcid": "PMC10134982",
+      "doi": "10.3390/antiox12040850",
+      "organoid_type": "intestinal",
+      "n_signaling": 2,
+      "grounded": 2,
+      "grounding_rate": 1.0,
+      "methods_chars": 14029
+    },
+    {
+      "pmcid": "PMC10136647",
+      "doi": "10.3390/cells12081174",
+      "organoid_type": "intestinal",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 8180
+    },
+    {
+      "pmcid": "PMC10138503",
+      "doi": "10.3390/ijms24087096",
+      "organoid_type": "intestinal",
+      "n_signaling": 6,
+      "grounded": 6,
+      "grounding_rate": 1.0,
+      "methods_chars": 13293
+    },
+    {
+      "pmcid": "PMC10139156",
+      "doi": "10.3390/ijms24087548",
+      "organoid_type": "intestinal",
+      "n_signaling": 3,
+      "grounded": 3,
+      "grounding_rate": 1.0,
+      "methods_chars": 51019
+    },
+    {
+      "pmcid": "PMC10140238",
+      "doi": "10.1007/s00535-023-01960-5",
+      "organoid_type": "intestinal",
+      "n_signaling": 4,
+      "grounded": 4,
+      "grounding_rate": 1.0,
+      "methods_chars": 6910
+    },
+    {
+      "pmcid": "PMC10142273",
+      "doi": "10.3390/microorganisms11041055",
+      "organoid_type": "intestinal",
+      "n_signaling": 2,
+      "grounded": 2,
+      "grounding_rate": 1.0,
+      "methods_chars": 18057
+    },
+    {
+      "pmcid": "PMC10157156",
+      "doi": "10.3389/fimmu.2023.1021824",
+      "organoid_type": "intestinal",
+      "n_signaling": 7,
+      "grounded": 6,
+      "grounding_rate": 0.857,
+      "methods_chars": 10227
+    },
+    {
+      "pmcid": "PMC10177590",
+      "doi": "10.3390/cells12091269",
+      "organoid_type": "intestinal",
+      "n_signaling": 6,
+      "grounded": 5,
+      "grounding_rate": 0.833,
+      "methods_chars": 21686
+    },
+    {
+      "pmcid": "PMC10179158",
+      "doi": "10.3390/ijms24098273",
+      "organoid_type": "intestinal",
+      "n_signaling": 4,
+      "grounded": 4,
+      "grounding_rate": 1.0,
+      "methods_chars": 15659
+    },
+    {
+      "pmcid": "PMC10187934",
+      "doi": "10.1371/journal.ppat.1011372",
+      "organoid_type": "intestinal",
+      "n_signaling": 4,
+      "grounded": 2,
+      "grounding_rate": 0.5,
+      "methods_chars": 20557
+    },
+    {
+      "pmcid": "PMC10192745",
+      "doi": "10.3389/fmed.2023.1085578",
+      "organoid_type": "intestinal",
+      "n_signaling": 7,
+      "grounded": 4,
+      "grounding_rate": 0.571,
+      "methods_chars": 9999
+    },
+    {
+      "pmcid": "PMC10197106",
+      "doi": "10.1016/j.isci.2023.106623",
+      "organoid_type": "intestinal",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 22956
+    },
+    {
+      "pmcid": "PMC10202470",
+      "doi": "10.1152/ajplung.00038.2023",
+      "organoid_type": "intestinal",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 12643
+    },
+    {
+      "pmcid": "PMC10212920",
+      "doi": "10.1038/s41467-023-38780-3",
+      "organoid_type": "intestinal",
+      "n_signaling": 6,
+      "grounded": 5,
+      "grounding_rate": 0.833,
+      "methods_chars": 21752
+    },
+    {
+      "pmcid": "PMC10217152",
+      "doi": "10.3390/cells12101427",
+      "organoid_type": "intestinal",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 13679
+    },
+    {
+      "pmcid": "PMC10217582",
+      "doi": "10.3390/cimb45050248",
+      "organoid_type": "intestinal",
+      "n_signaling": 4,
+      "grounded": 4,
+      "grounding_rate": 1.0,
+      "methods_chars": 65768
+    },
+    {
+      "pmcid": "PMC10220522",
+      "doi": "10.3390/v15051166",
+      "organoid_type": "intestinal",
+      "n_signaling": 2,
+      "grounded": 2,
+      "grounding_rate": 1.0,
+      "methods_chars": 9397
+    },
+    {
+      "pmcid": "PMC10224198",
+      "doi": "10.3390/nu15102361",
+      "organoid_type": "intestinal",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 21825
+    },
+    {
+      "pmcid": "PMC10229611",
+      "doi": "10.1038/s41467-023-37953-4",
+      "organoid_type": "intestinal",
+      "n_signaling": 3,
+      "grounded": 3,
+      "grounding_rate": 1.0,
+      "methods_chars": 17059
+    },
+    {
+      "pmcid": "PMC10243823",
+      "doi": "10.1172/jci.insight.146496",
+      "organoid_type": "intestinal",
+      "n_signaling": 8,
+      "grounded": 7,
+      "grounding_rate": 0.875,
+      "methods_chars": 13242
+    },
+    {
+      "pmcid": "PMC10248468",
+      "doi": "10.3389/fmicb.2023.1198945",
+      "organoid_type": "intestinal",
+      "n_signaling": 7,
+      "grounded": 7,
+      "grounding_rate": 1.0,
+      "methods_chars": 14960
+    },
+    {
+      "pmcid": "PMC10250713",
+      "doi": "10.3389/fvets.2023.1179836",
+      "organoid_type": "intestinal",
+      "n_signaling": 10,
+      "grounded": 10,
+      "grounding_rate": 1.0,
+      "methods_chars": 9533
+    },
+    {
+      "pmcid": "PMC10259511",
+      "doi": "10.1242/dev.201416",
+      "organoid_type": "intestinal",
+      "n_signaling": 4,
+      "grounded": 3,
+      "grounding_rate": 0.75,
+      "methods_chars": 21242
+    },
+    {
+      "pmcid": "PMC10264243",
+      "doi": "10.1038/s41587-022-01558-x",
+      "organoid_type": "intestinal",
+      "n_signaling": 6,
+      "grounded": 6,
+      "grounding_rate": 1.0,
+      "methods_chars": 29692
+    },
+    {
+      "pmcid": "PMC10280148",
+      "doi": "10.1111/cpr.13355",
+      "organoid_type": "intestinal",
+      "n_signaling": 6,
+      "grounded": 6,
+      "grounding_rate": 1.0,
+      "methods_chars": 12687
+    },
+    {
+      "pmcid": "PMC10290085",
+      "doi": "10.1038/s41467-023-39312-9",
+      "organoid_type": "intestinal",
+      "n_signaling": 4,
+      "grounded": 3,
+      "grounding_rate": 0.75,
+      "methods_chars": 30638
+    },
+    {
+      "pmcid": "PMC10294373",
+      "doi": "10.1186/s12967-023-04079-6",
+      "organoid_type": "intestinal",
+      "n_signaling": 5,
+      "grounded": 5,
+      "grounding_rate": 1.0,
+      "methods_chars": 14505
+    },
+    {
+      "pmcid": "PMC10299407",
+      "doi": "10.3390/ijms241210358",
+      "organoid_type": "intestinal",
+      "n_signaling": 9,
+      "grounded": 7,
+      "grounding_rate": 0.778,
+      "methods_chars": 13925
+    },
+    {
+      "pmcid": "PMC10300005",
+      "doi": "10.1038/s41598-023-35657-9",
+      "organoid_type": "intestinal",
+      "n_signaling": 3,
+      "grounded": 3,
+      "grounding_rate": 1.0,
+      "methods_chars": 12432
+    },
+    {
+      "pmcid": "PMC10305161",
+      "doi": "10.3390/nu15122660",
+      "organoid_type": "intestinal",
+      "n_signaling": 2,
+      "grounded": 1,
+      "grounding_rate": 0.5,
+      "methods_chars": 9356
+    },
+    {
+      "pmcid": "PMC10325096",
+      "doi": "10.1371/journal.ppat.1011351",
+      "organoid_type": "intestinal",
+      "n_signaling": 2,
+      "grounded": 2,
+      "grounding_rate": 1.0,
+      "methods_chars": 18744
+    },
+    {
+      "pmcid": "PMC10332454",
+      "doi": "10.1093/jmicro/dfad014",
+      "organoid_type": "intestinal",
+      "n_signaling": 2,
+      "grounded": 2,
+      "grounding_rate": 1.0,
+      "methods_chars": 50468
+    },
+    {
+      "pmcid": "PMC10337909",
+      "doi": "10.1126/sciadv.adg4055",
+      "organoid_type": "intestinal",
+      "n_signaling": 5,
+      "grounded": 4,
+      "grounding_rate": 0.8,
+      "methods_chars": 29550
+    },
+    {
+      "pmcid": "PMC10341493",
+      "doi": "10.3390/ijms241310815",
+      "organoid_type": "intestinal",
+      "n_signaling": 7,
+      "grounded": 7,
+      "grounding_rate": 1.0,
+      "methods_chars": 10066
+    },
+    {
+      "pmcid": "PMC10352992",
+      "doi": "10.3389/fphar.2023.1193213",
+      "organoid_type": "intestinal",
+      "n_signaling": 2,
+      "grounded": 2,
+      "grounding_rate": 1.0,
+      "methods_chars": 40431
+    },
+    {
+      "pmcid": "PMC10358246",
+      "doi": "10.1002/cam4.5943",
+      "organoid_type": "intestinal",
+      "n_signaling": 3,
+      "grounded": 3,
+      "grounding_rate": 1.0,
+      "methods_chars": 34092
+    },
+    {
+      "pmcid": "PMC10362068",
+      "doi": "10.1038/s41420-023-01556-1",
+      "organoid_type": "intestinal",
+      "n_signaling": 7,
+      "grounded": 6,
+      "grounding_rate": 0.857,
+      "methods_chars": 48394
+    },
+    {
+      "pmcid": "PMC10367556",
+      "doi": "10.7150/ijbs.85145",
+      "organoid_type": "intestinal",
+      "n_signaling": 2,
+      "grounded": 2,
+      "grounding_rate": 1.0,
+      "methods_chars": 47713
+    },
+    {
+      "pmcid": "PMC10372144",
+      "doi": "10.1038/s41598-023-39425-7",
+      "organoid_type": "intestinal",
+      "n_signaling": 7,
+      "grounded": 5,
+      "grounding_rate": 0.714,
+      "methods_chars": 12496
+    },
+    {
+      "pmcid": "PMC10392070",
+      "doi": "10.1111/cpr.13427",
+      "organoid_type": "intestinal",
+      "n_signaling": 5,
+      "grounded": 4,
+      "grounding_rate": 0.8,
+      "methods_chars": 11937
+    },
+    {
+      "pmcid": "PMC10400779",
+      "doi": "10.3389/fmed.2023.1195374",
+      "organoid_type": "intestinal",
+      "n_signaling": 3,
+      "grounded": 3,
+      "grounding_rate": 1.0,
+      "methods_chars": 40742
+    },
+    {
+      "pmcid": "PMC10401879",
+      "doi": "10.1186/s40164-023-00433-y",
+      "organoid_type": "intestinal",
+      "n_signaling": 8,
+      "grounded": 8,
+      "grounding_rate": 1.0,
+      "methods_chars": 65288
+    },
+    {
+      "pmcid": "PMC10426113",
+      "doi": "10.1186/s40104-023-00905-5",
+      "organoid_type": "intestinal",
+      "n_signaling": 3,
+      "grounded": 3,
+      "grounding_rate": 1.0,
+      "methods_chars": 35866
+    },
+    {
+      "pmcid": "PMC10439912",
+      "doi": "10.1038/s41419-023-06058-7",
+      "organoid_type": "intestinal",
+      "n_signaling": 3,
+      "grounded": 3,
+      "grounding_rate": 1.0,
+      "methods_chars": 24241
+    },
+    {
+      "pmcid": "PMC10442803",
+      "doi": "10.3389/fendo.2023.1233714",
+      "organoid_type": "intestinal",
+      "n_signaling": 13,
+      "grounded": 12,
+      "grounding_rate": 0.923,
+      "methods_chars": 34073
+    },
+    {
+      "pmcid": "PMC10450956",
+      "doi": "10.3389/fnut.2023.1220533",
+      "organoid_type": "intestinal",
+      "n_signaling": 4,
+      "grounded": 4,
+      "grounding_rate": 1.0,
+      "methods_chars": 14138
+    },
+    {
+      "pmcid": "PMC10453737",
+      "doi": "10.3390/cells12162067",
+      "organoid_type": "intestinal",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 46098
+    },
+    {
+      "pmcid": "PMC10457912",
+      "doi": "10.3390/microorganisms11082075",
+      "organoid_type": "intestinal",
+      "n_signaling": 3,
+      "grounded": 3,
+      "grounding_rate": 1.0,
+      "methods_chars": 10856
+    },
+    {
+      "pmcid": "PMC10465924",
+      "doi": "10.26508/lsa.202301912",
+      "organoid_type": "intestinal",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 10821
+    },
+    {
+      "pmcid": "PMC10471973",
+      "doi": "10.3389/fimmu.2023.1229724",
+      "organoid_type": "intestinal",
+      "n_signaling": 5,
+      "grounded": 3,
+      "grounding_rate": 0.6,
+      "methods_chars": 22981
+    },
+    {
+      "pmcid": "PMC10472753",
+      "doi": "10.1093/ibd/izad044",
+      "organoid_type": "intestinal",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 29780
+    },
+    {
+      "pmcid": "PMC10480426",
+      "doi": "10.1038/s41467-023-40993-5",
+      "organoid_type": "intestinal",
+      "n_signaling": 3,
+      "grounded": 3,
+      "grounding_rate": 1.0,
+      "methods_chars": 22527
+    },
+    {
+      "pmcid": "PMC10485618",
+      "doi": "10.3389/fcell.2023.1268540",
+      "organoid_type": "intestinal",
+      "n_signaling": 3,
+      "grounded": 3,
+      "grounding_rate": 1.0,
+      "methods_chars": 25511
+    },
+    {
+      "pmcid": "PMC10494524",
+      "doi": "10.1084/jem.20230106",
+      "organoid_type": "intestinal",
+      "n_signaling": 4,
+      "grounded": 3,
+      "grounding_rate": 0.75,
+      "methods_chars": 14632
+    },
+    {
+      "pmcid": "PMC10495981",
+      "doi": "10.3389/fimmu.2023.1253514",
+      "organoid_type": "intestinal",
+      "n_signaling": 3,
+      "grounded": 3,
+      "grounding_rate": 1.0,
+      "methods_chars": 25138
+    },
+    {
+      "pmcid": "PMC10498800",
+      "doi": "10.1080/19490976.2023.2256043",
+      "organoid_type": "intestinal",
+      "n_signaling": 3,
+      "grounded": 2,
+      "grounding_rate": 0.667,
+      "methods_chars": 26188
+    },
+    {
+      "pmcid": "PMC10504672",
+      "doi": "10.1016/j.xgen.2023.100389",
+      "organoid_type": "intestinal",
+      "n_signaling": 6,
+      "grounded": 6,
+      "grounding_rate": 1.0,
+      "methods_chars": 44374
+    },
+    {
+      "pmcid": "PMC10510063",
+      "doi": "10.1016/j.isci.2023.107829",
+      "organoid_type": "intestinal",
+      "n_signaling": 2,
+      "grounded": 2,
+      "grounding_rate": 1.0,
+      "methods_chars": 15729
+    },
+    {
+      "pmcid": "PMC10511861",
+      "doi": "10.1016/j.xpro.2023.102337",
+      "organoid_type": "intestinal",
+      "n_signaling": 12,
+      "grounded": 12,
+      "grounding_rate": 1.0,
+      "methods_chars": 55774
+    },
+    {
+      "pmcid": "PMC10512070",
+      "doi": "10.3389/fimmu.2023.1229406",
+      "organoid_type": "intestinal",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 12961
+    },
+    {
+      "pmcid": "PMC10512930",
+      "doi": "10.1080/19490976.2023.2248713",
+      "organoid_type": "intestinal",
+      "n_signaling": 7,
+      "grounded": 7,
+      "grounding_rate": 1.0,
+      "methods_chars": 13328
+    },
+    {
+      "pmcid": "PMC10514509",
+      "doi": "10.3389/fcell.2023.1268621",
+      "organoid_type": "intestinal",
+      "n_signaling": 2,
+      "grounded": 2,
+      "grounding_rate": 1.0,
+      "methods_chars": 15257
+    },
+    {
+      "pmcid": "PMC10520062",
+      "doi": "10.1038/s41467-023-41600-3",
+      "organoid_type": "intestinal",
+      "n_signaling": 3,
+      "grounded": 3,
+      "grounding_rate": 1.0,
+      "methods_chars": 21970
+    },
+    {
+      "pmcid": "PMC10520931",
+      "doi": "10.1016/j.xpro.2023.102608",
+      "organoid_type": "intestinal",
+      "n_signaling": 4,
+      "grounded": 4,
+      "grounding_rate": 1.0,
+      "methods_chars": 22621
+    },
+    {
+      "pmcid": "PMC10522987",
+      "doi": "10.1016/j.jcmgh.2023.08.003",
+      "organoid_type": "intestinal",
+      "n_signaling": 4,
+      "grounded": 4,
+      "grounding_rate": 1.0,
+      "methods_chars": 7480
+    },
+    {
+      "pmcid": "PMC10524013",
+      "doi": "10.1002/cam4.6408",
+      "organoid_type": "intestinal",
+      "n_signaling": 8,
+      "grounded": 4,
+      "grounding_rate": 0.5,
+      "methods_chars": 11382
+    },
+    {
+      "pmcid": "PMC10525449",
+      "doi": "10.3390/ani13182917",
+      "organoid_type": "intestinal",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 8275
+    },
+    {
+      "pmcid": "PMC10530926",
+      "doi": "10.3390/genes14091705",
+      "organoid_type": "intestinal",
+      "n_signaling": 11,
+      "grounded": 10,
+      "grounding_rate": 0.909,
+      "methods_chars": 6873
+    },
+    {
+      "pmcid": "PMC10531629",
+      "doi": "10.3390/ijms241814214",
+      "organoid_type": "intestinal",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 10369
+    },
+    {
+      "pmcid": "PMC10531822",
+      "doi": "10.3390/ijms241814377",
+      "organoid_type": "intestinal",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 15894
+    },
+    {
+      "pmcid": "PMC10533890",
+      "doi": "10.1038/s41467-023-41760-2",
+      "organoid_type": "intestinal",
+      "n_signaling": 12,
+      "grounded": 11,
+      "grounding_rate": 0.917,
+      "methods_chars": 21653
+    },
+    {
+      "pmcid": "PMC10539384",
+      "doi": "10.1038/s41419-023-06158-4",
+      "organoid_type": "intestinal",
+      "n_signaling": 2,
+      "grounded": 2,
+      "grounding_rate": 1.0,
+      "methods_chars": 10261
+    },
+    {
+      "pmcid": "PMC10541891",
+      "doi": "10.1038/s41598-023-43656-z",
+      "organoid_type": "intestinal",
+      "n_signaling": 2,
+      "grounded": 2,
+      "grounding_rate": 1.0,
+      "methods_chars": 8774
+    },
+    {
+      "pmcid": "PMC10542816",
+      "doi": "10.1038/s41467-023-41683-y",
+      "organoid_type": "intestinal",
+      "n_signaling": 5,
+      "grounded": 4,
+      "grounding_rate": 0.8,
+      "methods_chars": 28398
+    },
+    {
+      "pmcid": "PMC10556042",
+      "doi": "10.1038/s41467-023-41836-z",
+      "organoid_type": "intestinal",
+      "n_signaling": 2,
+      "grounded": 1,
+      "grounding_rate": 0.5,
+      "methods_chars": 19027
+    },
+    {
+      "pmcid": "PMC10556055",
+      "doi": "10.1038/s41467-023-41999-9",
+      "organoid_type": "intestinal",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 29554
+    },
+    {
+      "pmcid": "PMC10565108",
+      "doi": "10.1242/dmm.050279",
+      "organoid_type": "intestinal",
+      "n_signaling": 5,
+      "grounded": 4,
+      "grounding_rate": 0.8,
+      "methods_chars": 14023
+    },
+    {
+      "pmcid": "PMC10570415",
+      "doi": "10.3389/fcell.2023.1219218",
+      "organoid_type": "intestinal",
+      "n_signaling": 5,
+      "grounded": 4,
+      "grounding_rate": 0.8,
+      "methods_chars": 11146
+    },
+    {
+      "pmcid": "PMC10571995",
+      "doi": "10.3390/cancers15194795",
+      "organoid_type": "intestinal",
+      "n_signaling": 8,
+      "grounded": 8,
+      "grounding_rate": 1.0,
+      "methods_chars": 14140
+    },
+    {
+      "pmcid": "PMC10572896",
+      "doi": "10.3390/ijms241914539",
+      "organoid_type": "intestinal",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 4070
+    },
+    {
+      "pmcid": "PMC10575727",
+      "doi": "10.1172/jci169234",
+      "organoid_type": "intestinal",
+      "n_signaling": 3,
+      "grounded": 3,
+      "grounding_rate": 1.0,
+      "methods_chars": 15067
+    },
+    {
+      "pmcid": "PMC10575728",
+      "doi": "10.1172/jci163591",
+      "organoid_type": "intestinal",
+      "n_signaling": 9,
+      "grounded": 6,
+      "grounding_rate": 0.667,
+      "methods_chars": 13322
+    },
+    {
+      "pmcid": "PMC10577213",
+      "doi": "10.3389/fcell.2023.1223032",
+      "organoid_type": "intestinal",
+      "n_signaling": 8,
+      "grounded": 8,
+      "grounding_rate": 1.0,
+      "methods_chars": 16177
+    },
+    {
+      "pmcid": "PMC10578047",
+      "doi": "10.1093/burnst/tkad038",
+      "organoid_type": "intestinal",
+      "n_signaling": 3,
+      "grounded": 3,
+      "grounding_rate": 1.0,
+      "methods_chars": 9652
+    },
+    {
+      "pmcid": "PMC10579587",
+      "doi": "10.3389/fmicb.2023.1258796",
+      "organoid_type": "intestinal",
+      "n_signaling": 6,
+      "grounded": 5,
+      "grounding_rate": 0.833,
+      "methods_chars": 10490
+    },
+    {
+      "pmcid": "PMC10581692",
+      "doi": "10.7554/elife.86824",
+      "organoid_type": "intestinal",
+      "n_signaling": 4,
+      "grounded": 3,
+      "grounding_rate": 0.75,
+      "methods_chars": 24407
+    },
+    {
+      "pmcid": "PMC10597352",
+      "doi": "10.1128/msphere.00302-23",
+      "organoid_type": "intestinal",
+      "n_signaling": 3,
+      "grounded": 3,
+      "grounding_rate": 1.0,
+      "methods_chars": 19088
+    },
+    {
+      "pmcid": "PMC10600233",
+      "doi": "10.1038/s41467-023-42502-0",
+      "organoid_type": "intestinal",
+      "n_signaling": 3,
+      "grounded": 3,
+      "grounding_rate": 1.0,
+      "methods_chars": 25714
+    },
+    {
+      "pmcid": "PMC10601309",
+      "doi": "10.1186/s12864-023-09743-1",
+      "organoid_type": "intestinal",
+      "n_signaling": 6,
+      "grounded": 3,
+      "grounding_rate": 0.5,
+      "methods_chars": 26470
+    },
+    {
+      "pmcid": "PMC10603050",
+      "doi": "10.1038/s41598-023-45176-2",
+      "organoid_type": "intestinal",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 11358
+    },
+    {
+      "pmcid": "PMC10603924",
+      "doi": "10.3390/antiox12101889",
+      "organoid_type": "intestinal",
+      "n_signaling": 4,
+      "grounded": 3,
+      "grounding_rate": 0.75,
+      "methods_chars": 17604
+    },
+    {
+      "pmcid": "PMC10605946",
+      "doi": "10.3390/bios13100905",
+      "organoid_type": "intestinal",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 74692
+    },
+    {
+      "pmcid": "PMC10609725",
+      "doi": "10.3390/pharmaceutics15102397",
+      "organoid_type": "intestinal",
+      "n_signaling": 5,
+      "grounded": 4,
+      "grounding_rate": 0.8,
+      "methods_chars": 80439
+    },
+    {
+      "pmcid": "PMC10610902",
+      "doi": "10.1126/sciadv.adi1827",
+      "organoid_type": "intestinal",
+      "n_signaling": 3,
+      "grounded": 3,
+      "grounding_rate": 1.0,
+      "methods_chars": 10052
+    },
+    {
+      "pmcid": "PMC10619547",
+      "doi": "10.4014/jmb.2305.05013",
+      "organoid_type": "intestinal",
+      "n_signaling": 6,
+      "grounded": 5,
+      "grounding_rate": 0.833,
+      "methods_chars": 7648
+    },
+    {
+      "pmcid": "PMC10620187",
+      "doi": "10.1038/s41598-023-42849-w",
+      "organoid_type": "intestinal",
+      "n_signaling": 9,
+      "grounded": 9,
+      "grounding_rate": 1.0,
+      "methods_chars": 11064
+    },
+    {
+      "pmcid": "PMC10624923",
+      "doi": "10.1038/s41467-023-42774-6",
+      "organoid_type": "intestinal",
+      "n_signaling": 3,
+      "grounded": 3,
+      "grounding_rate": 1.0,
+      "methods_chars": 23797
+    },
+    {
+      "pmcid": "PMC10636852",
+      "doi": "10.1186/s13567-023-01234-1",
+      "organoid_type": "intestinal",
+      "n_signaling": 10,
+      "grounded": 10,
+      "grounding_rate": 1.0,
+      "methods_chars": 12739
+    },
+    {
+      "pmcid": "PMC10640563",
+      "doi": "10.1038/s41467-023-42948-2",
+      "organoid_type": "intestinal",
+      "n_signaling": 3,
+      "grounded": 3,
+      "grounding_rate": 1.0,
+      "methods_chars": 32591
+    },
+    {
+      "pmcid": "PMC10650080",
+      "doi": "10.3390/ijms242115671",
+      "organoid_type": "intestinal",
+      "n_signaling": 2,
+      "grounded": 2,
+      "grounding_rate": 1.0,
+      "methods_chars": 10689
+    },
+    {
+      "pmcid": "PMC10650907",
+      "doi": "10.3390/ijms242115921",
+      "organoid_type": "intestinal",
+      "n_signaling": 4,
+      "grounded": 4,
+      "grounding_rate": 1.0,
+      "methods_chars": 64497
+    },
+    {
+      "pmcid": "PMC10655390",
+      "doi": "10.1186/s40168-023-01686-9",
+      "organoid_type": "intestinal",
+      "n_signaling": 3,
+      "grounded": 3,
+      "grounding_rate": 1.0,
+      "methods_chars": 15129
+    },
+    {
+      "pmcid": "PMC10660498",
+      "doi": "10.1016/j.isci.2023.108180",
+      "organoid_type": "intestinal",
+      "n_signaling": 5,
+      "grounded": 3,
+      "grounding_rate": 0.6,
+      "methods_chars": 29807
+    },
+    {
+      "pmcid": "PMC10661832",
+      "doi": "10.1007/s12015-023-10633-y",
+      "organoid_type": "intestinal",
+      "n_signaling": 4,
+      "grounded": 4,
+      "grounding_rate": 1.0,
+      "methods_chars": 41166
+    },
+    {
+      "pmcid": "PMC10672161",
+      "doi": "",
+      "organoid_type": "intestinal",
+      "n_signaling": 3,
+      "grounded": 2,
+      "grounding_rate": 0.667,
+      "methods_chars": 23019
+    },
+    {
+      "pmcid": "PMC10674576",
+      "doi": "10.3390/nu15224834",
+      "organoid_type": "intestinal",
+      "n_signaling": 3,
+      "grounded": 2,
+      "grounding_rate": 0.667,
+      "methods_chars": 10718
+    },
+    {
+      "pmcid": "PMC10682727",
+      "doi": "10.3389/fcell.2023.1279227",
+      "organoid_type": "intestinal",
+      "n_signaling": 3,
+      "grounded": 3,
+      "grounding_rate": 1.0,
+      "methods_chars": 61677
+    },
+    {
+      "pmcid": "PMC10688992",
+      "doi": "10.1172/jci168277",
+      "organoid_type": "intestinal",
+      "n_signaling": 4,
+      "grounded": 4,
+      "grounding_rate": 1.0,
+      "methods_chars": 35143
+    },
+    {
+      "pmcid": "PMC10690841",
+      "doi": "10.1021/acsnano.3c08030",
+      "organoid_type": "intestinal",
+      "n_signaling": 3,
+      "grounded": 3,
+      "grounding_rate": 1.0,
+      "methods_chars": 12956
+    },
+    {
+      "pmcid": "PMC10691232",
+      "doi": "10.1073/pnas.2315503120",
+      "organoid_type": "intestinal",
+      "n_signaling": 2,
+      "grounded": 1,
+      "grounding_rate": 0.5,
+      "methods_chars": 19764
+    },
+    {
+      "pmcid": "PMC10692292",
+      "doi": "10.3168/jdsc.2023-0379",
+      "organoid_type": "intestinal",
+      "n_signaling": 3,
+      "grounded": 3,
+      "grounding_rate": 1.0,
+      "methods_chars": 266
+    },
+    {
+      "pmcid": "PMC10693086",
+      "doi": "10.1186/s13578-023-01175-4",
+      "organoid_type": "intestinal",
+      "n_signaling": 3,
+      "grounded": 3,
+      "grounding_rate": 1.0,
+      "methods_chars": 21705
+    },
+    {
+      "pmcid": "PMC10693174",
+      "doi": "10.1186/s40659-023-00476-9",
+      "organoid_type": "intestinal",
+      "n_signaling": 3,
+      "grounded": 3,
+      "grounding_rate": 1.0,
+      "methods_chars": 82760
+    },
+    {
+      "pmcid": "PMC10693581",
+      "doi": "10.1038/s41467-023-43619-y",
+      "organoid_type": "intestinal",
+      "n_signaling": 12,
+      "grounded": 12,
+      "grounding_rate": 1.0,
+      "methods_chars": 17302
+    },
+    {
+      "pmcid": "PMC10698950",
+      "doi": "10.1186/s12964-023-01332-9",
+      "organoid_type": "intestinal",
+      "n_signaling": 5,
+      "grounded": 3,
+      "grounding_rate": 0.6,
+      "methods_chars": 32656
+    },
+    {
+      "pmcid": "PMC10709431",
+      "doi": "10.1038/s41422-023-00848-6",
+      "organoid_type": "intestinal",
+      "n_signaling": 3,
+      "grounded": 3,
+      "grounding_rate": 1.0,
+      "methods_chars": 22904
+    },
+    {
+      "pmcid": "PMC10710160",
+      "doi": "10.3389/fcell.2023.1326727",
+      "organoid_type": "intestinal",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 6836
+    },
+    {
+      "pmcid": "PMC10721831",
+      "doi": "10.1038/s41377-023-01296-y",
+      "organoid_type": "intestinal",
+      "n_signaling": 5,
+      "grounded": 5,
+      "grounding_rate": 1.0,
+      "methods_chars": 17143
+    },
+    {
+      "pmcid": "PMC10723814",
+      "doi": "10.1093/stmcls/sxad068",
+      "organoid_type": "intestinal",
+      "n_signaling": 5,
+      "grounded": 4,
+      "grounding_rate": 0.8,
+      "methods_chars": 26453
+    },
+    {
+      "pmcid": "PMC10728136",
+      "doi": "10.1038/s41598-023-49874-9",
+      "organoid_type": "intestinal",
+      "n_signaling": 9,
+      "grounded": 8,
+      "grounding_rate": 0.889,
+      "methods_chars": 7535
+    },
+    {
+      "pmcid": "PMC10730191",
+      "doi": "10.1080/19490976.2023.2281012",
+      "organoid_type": "intestinal",
+      "n_signaling": 4,
+      "grounded": 4,
+      "grounding_rate": 1.0,
+      "methods_chars": 13695
+    },
+    {
+      "pmcid": "PMC10733903",
+      "doi": "10.1021/acs.analchem.3c03543",
+      "organoid_type": "intestinal",
+      "n_signaling": 5,
+      "grounded": 3,
+      "grounding_rate": 0.6,
+      "methods_chars": 12343
+    },
+    {
+      "pmcid": "PMC10743750",
+      "doi": "10.3390/ijms242417362",
+      "organoid_type": "intestinal",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 12775
+    },
+    {
+      "pmcid": "PMC10752947",
+      "doi": "10.3389/fmicb.2023.1278479",
+      "organoid_type": "intestinal",
+      "n_signaling": 2,
+      "grounded": 1,
+      "grounding_rate": 0.5,
+      "methods_chars": 45487
+    },
+    {
+      "pmcid": "PMC10752988",
+      "doi": "10.3389/fimmu.2023.1298186",
+      "organoid_type": "intestinal",
+      "n_signaling": 6,
+      "grounded": 6,
+      "grounding_rate": 1.0,
+      "methods_chars": 34438
+    },
+    {
+      "pmcid": "PMC10756131",
+      "doi": "10.18632/aging.205260",
+      "organoid_type": "intestinal",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 7140
+    },
+    {
+      "pmcid": "PMC10765088",
+      "doi": "10.1016/j.stem.2023.09.003",
+      "organoid_type": "intestinal",
+      "n_signaling": 8,
+      "grounded": 8,
+      "grounding_rate": 1.0,
+      "methods_chars": 47405
+    },
+    {
+      "pmcid": "PMC10779007",
+      "doi": "10.3390/ijms25010154",
+      "organoid_type": "intestinal",
+      "n_signaling": 5,
+      "grounded": 5,
+      "grounding_rate": 1.0,
+      "methods_chars": 39592
+    },
+    {
+      "pmcid": "PMC10795831",
+      "doi": "10.1172/jci.insight.171657",
+      "organoid_type": "intestinal",
+      "n_signaling": 4,
+      "grounded": 3,
+      "grounding_rate": 0.75,
+      "methods_chars": 20375
+    },
+    {
+      "pmcid": "PMC10811205",
+      "doi": "10.3389/fimmu.2023.1266667",
+      "organoid_type": "intestinal",
+      "n_signaling": 10,
+      "grounded": 10,
+      "grounding_rate": 1.0,
+      "methods_chars": 25521
+    },
+    {
+      "pmcid": "PMC10819272",
+      "doi": "10.3390/pharmaceutics16010037",
+      "organoid_type": "intestinal",
+      "n_signaling": 4,
+      "grounded": 4,
+      "grounding_rate": 1.0,
+      "methods_chars": 28935
+    },
+    {
+      "pmcid": "PMC10946932",
+      "doi": "10.1111/dme.15212",
+      "organoid_type": "intestinal",
+      "n_signaling": 4,
+      "grounded": 2,
+      "grounding_rate": 0.5,
+      "methods_chars": 23516
+    },
+    {
+      "pmcid": "PMC11444813",
+      "doi": "10.1055/s-0043-1778067",
+      "organoid_type": "intestinal",
+      "n_signaling": 5,
+      "grounded": 5,
+      "grounding_rate": 1.0,
+      "methods_chars": 32419
+    },
+    {
+      "pmcid": "PMC11935846",
+      "doi": "10.1002/smsc.202300027",
+      "organoid_type": "intestinal",
+      "n_signaling": 4,
+      "grounded": 4,
+      "grounding_rate": 1.0,
+      "methods_chars": 74342
+    },
+    {
+      "pmcid": "PMC7617127",
+      "doi": "10.1002/adma.202300305",
+      "organoid_type": "intestinal",
+      "n_signaling": 2,
+      "grounded": 2,
+      "grounding_rate": 1.0,
+      "methods_chars": 27419
+    },
+    {
+      "pmcid": "PMC9754017",
+      "doi": "10.1080/22221751.2022.2148561",
+      "organoid_type": "intestinal",
+      "n_signaling": 4,
+      "grounded": 3,
+      "grounding_rate": 0.75,
+      "methods_chars": 10689
+    },
+    {
+      "pmcid": "PMC9827699",
+      "doi": "10.1186/s12917-022-03536-6",
+      "organoid_type": "intestinal",
+      "n_signaling": 4,
+      "grounded": 4,
+      "grounding_rate": 1.0,
+      "methods_chars": 13571
+    },
+    {
+      "pmcid": "PMC9842023",
+      "doi": "10.1002/btm2.10327",
+      "organoid_type": "intestinal",
+      "n_signaling": 3,
+      "grounded": 3,
+      "grounding_rate": 1.0,
+      "methods_chars": 19341
+    },
+    {
+      "pmcid": "PMC9846123",
+      "doi": "10.1016/j.xpro.2022.102022",
+      "organoid_type": "intestinal",
+      "n_signaling": 3,
+      "grounded": 3,
+      "grounding_rate": 1.0,
+      "methods_chars": 33844
+    },
+    {
+      "pmcid": "PMC9848353",
+      "doi": "10.1080/07853890.2023.2166981",
+      "organoid_type": "intestinal",
+      "n_signaling": 4,
+      "grounded": 4,
+      "grounding_rate": 1.0,
+      "methods_chars": 47082
+    },
+    {
+      "pmcid": "PMC9858111",
+      "doi": "10.3390/cimb45010046",
+      "organoid_type": "intestinal",
+      "n_signaling": 4,
+      "grounded": 3,
+      "grounding_rate": 0.75,
+      "methods_chars": 19612
+    },
+    {
+      "pmcid": "PMC9862739",
+      "doi": "10.3390/jpm13010102",
+      "organoid_type": "intestinal",
+      "n_signaling": 4,
+      "grounded": 4,
+      "grounding_rate": 1.0,
+      "methods_chars": 8364
+    },
+    {
+      "pmcid": "PMC9863820",
+      "doi": "10.3390/nu15020393",
+      "organoid_type": "intestinal",
+      "n_signaling": 9,
+      "grounded": 8,
+      "grounding_rate": 0.889,
+      "methods_chars": 31980
+    },
+    {
+      "pmcid": "PMC9871440",
+      "doi": "10.1016/j.jcmgh.2022.11.005",
+      "organoid_type": "intestinal",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 24606
+    },
+    {
+      "pmcid": "PMC9879791",
+      "doi": "10.1016/j.jcmgh.2022.12.004",
+      "organoid_type": "intestinal",
+      "n_signaling": 4,
+      "grounded": 3,
+      "grounding_rate": 0.75,
+      "methods_chars": 18696
+    },
+    {
+      "pmcid": "PMC9893295",
+      "doi": "10.3389/fcell.2023.1070560",
+      "organoid_type": "intestinal",
+      "n_signaling": 2,
+      "grounded": 2,
+      "grounding_rate": 1.0,
+      "methods_chars": 59544
+    },
+    {
+      "pmcid": "PMC9917256",
+      "doi": "10.3390/ijms24032650",
+      "organoid_type": "intestinal",
+      "n_signaling": 7,
+      "grounded": 6,
+      "grounding_rate": 0.857,
+      "methods_chars": 6812
+    },
+    {
+      "pmcid": "PMC9917335",
+      "doi": "10.3390/ijms24032523",
+      "organoid_type": "intestinal",
+      "n_signaling": 11,
+      "grounded": 11,
+      "grounding_rate": 1.0,
+      "methods_chars": 53196
+    },
+    {
+      "pmcid": "PMC9921111",
+      "doi": "10.3390/nu15030672",
+      "organoid_type": "intestinal",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 12284
+    },
+    {
+      "pmcid": "PMC9922616",
+      "doi": "10.3389/fimmu.2023.1095812",
+      "organoid_type": "intestinal",
+      "n_signaling": 2,
+      "grounded": 2,
+      "grounding_rate": 1.0,
+      "methods_chars": 20410
+    },
+    {
+      "pmcid": "PMC9927950",
+      "doi": "10.1172/jci162190",
+      "organoid_type": "intestinal",
+      "n_signaling": 3,
+      "grounded": 2,
+      "grounding_rate": 0.667,
+      "methods_chars": 12806
+    },
+    {
+      "pmcid": "PMC9933985",
+      "doi": "10.3389/fcell.2023.1083175",
+      "organoid_type": "intestinal",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 34143
+    },
+    {
+      "pmcid": "PMC9962434",
+      "doi": "10.3390/ijms24043867",
+      "organoid_type": "intestinal",
+      "n_signaling": 7,
+      "grounded": 7,
+      "grounding_rate": 1.0,
+      "methods_chars": 13238
+    },
+    {
+      "pmcid": "PMC9977684",
+      "doi": "10.1038/s41586-022-05594-0",
+      "organoid_type": "intestinal",
+      "n_signaling": 3,
+      "grounded": 3,
+      "grounding_rate": 1.0,
+      "methods_chars": 89810
+    },
+    {
+      "pmcid": "PMC9980453",
+      "doi": "10.1080/21505594.2023.2171690",
+      "organoid_type": "intestinal",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 9817
+    },
+    {
+      "pmcid": "PMC9983034",
+      "doi": "10.3389/fimmu.2023.1108289",
+      "organoid_type": "intestinal",
+      "n_signaling": 4,
+      "grounded": 4,
+      "grounding_rate": 1.0,
+      "methods_chars": 45959
+    },
+    {
+      "pmcid": "PMC9984434",
+      "doi": "10.1038/s41418-022-01109-6",
+      "organoid_type": "intestinal",
+      "n_signaling": 2,
+      "grounded": 1,
+      "grounding_rate": 0.5,
+      "methods_chars": 14529
+    },
+    {
+      "pmcid": "PMC9995983",
+      "doi": "10.3389/fimmu.2023.1097383",
+      "organoid_type": "intestinal",
+      "n_signaling": 2,
+      "grounded": 2,
+      "grounding_rate": 1.0,
+      "methods_chars": 80737
+    }
+  ],
+  "rejected_papers": [
+    {
+      "pmcid": "PMC10009369",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10012963",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10014157",
+      "reason": "low_grounding=0.333"
+    },
+    {
+      "pmcid": "PMC10015380",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC10018364",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10031071",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10036411",
+      "reason": "low_grounding=0.25"
+    },
+    {
+      "pmcid": "PMC10049789",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10051511",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10054274",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC10062489",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10082705",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10093533",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10094153",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10095461",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC10096942",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10102183",
+      "reason": "low_grounding=0.167"
+    },
+    {
+      "pmcid": "PMC10106729",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10110400",
+      "reason": "low_grounding=0.25"
+    },
+    {
+      "pmcid": "PMC10110942",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10111656",
+      "reason": "low_grounding=0.25"
+    },
+    {
+      "pmcid": "PMC10119418",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10123543",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10126361",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10127040",
+      "reason": "low_grounding=0.429"
+    },
+    {
+      "pmcid": "PMC10128022",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10133457",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10134583",
+      "reason": "low_grounding=0.125"
+    },
+    {
+      "pmcid": "PMC10136548",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10136882",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10148876",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10149690",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10175644",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10194284",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10201494",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10203484",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10203872",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10205147",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10208915",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10212545",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10218716",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10219299",
+      "reason": "low_grounding=0.2"
+    },
+    {
+      "pmcid": "PMC10223909",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10236758",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10240816",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10256171",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10257902",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10258352",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10267020",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10272619",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10277517",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10288274",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10292664",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10296225",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10305070",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10307733",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10308910",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10313376",
+      "reason": "low_grounding=0.25"
+    },
+    {
+      "pmcid": "PMC10320870",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC10331606",
+      "reason": "low_grounding=0.3"
+    },
+    {
+      "pmcid": "PMC10334262",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10341460",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10347817",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10354114",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10359435",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10371469",
+      "reason": "low_grounding=0.167"
+    },
+    {
+      "pmcid": "PMC10372908",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10376622",
+      "reason": "low_grounding=0.167"
+    },
+    {
+      "pmcid": "PMC10377837",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC10380800",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10391861",
+      "reason": "low_grounding=0.3"
+    },
+    {
+      "pmcid": "PMC10409725",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10413981",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10417787",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10418685",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10423710",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC10427365",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC10435570",
+      "reason": "low_grounding=0.083"
+    },
+    {
+      "pmcid": "PMC10438469",
+      "reason": "low_grounding=0.4"
+    },
+    {
+      "pmcid": "PMC10443217",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC10444805",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10450339",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10454503",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10454946",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC10456523",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10458944",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10466729",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10467068",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10469456",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC10470749",
+      "reason": "low_grounding=0.429"
+    },
+    {
+      "pmcid": "PMC10470817",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC10473498",
+      "reason": "low_grounding=0.333"
+    },
+    {
+      "pmcid": "PMC10476265",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10477885",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC10482849",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10487515",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC10487879",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10494932",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10499023",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10511923",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10520344",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC10524773",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10524779",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10531064",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC10533014",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC10536476",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10537321",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10537549",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10542354",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC10548204",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC10548260",
+      "reason": "low_grounding=0.25"
+    },
+    {
+      "pmcid": "PMC10549226",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC10565107",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10565407",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10566403",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10570737",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10572051",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10572813",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10574532",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10574879",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10578018",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10587070",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10587605",
+      "reason": "low_grounding=0.333"
+    },
+    {
+      "pmcid": "PMC10589240",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10589335",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC10593748",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10601270",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC10602567",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC10604965",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC10613288",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10613651",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC10613914",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10617781",
+      "reason": "low_grounding=0.25"
+    },
+    {
+      "pmcid": "PMC10618422",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10620508",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10625086",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10625411",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10629719",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10637001",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10643697",
+      "reason": "low_grounding=0.273"
+    },
+    {
+      "pmcid": "PMC10647227",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC10650475",
+      "reason": "low_grounding=0.111"
+    },
+    {
+      "pmcid": "PMC10651741",
+      "reason": "low_grounding=0.333"
+    },
+    {
+      "pmcid": "PMC10664500",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10665386",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC10668694",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10669616",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC10670201",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC10674794",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10675917",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10682137",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC10683306",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10683363",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10684331",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10686454",
+      "reason": "low_grounding=0.385"
+    },
+    {
+      "pmcid": "PMC10689473",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC10690935",
+      "reason": "low_grounding=0.1"
+    },
+    {
+      "pmcid": "PMC10702702",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10705343",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC10705959",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10706681",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10716813",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10719361",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10724236",
+      "reason": "low_grounding=0.333"
+    },
+    {
+      "pmcid": "PMC10724343",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10730217",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC10730380",
+      "reason": "low_grounding=0.333"
+    },
+    {
+      "pmcid": "PMC10741055",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10741417",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10741426",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC10742111",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10743486",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10746188",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10747107",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10778194",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10779457",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10780244",
+      "reason": "extract_error:ValidationError"
+    },
+    {
+      "pmcid": "PMC10795834",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10909493",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC10917230",
+      "reason": "low_grounding=0.333"
+    },
+    {
+      "pmcid": "PMC11749282",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC11749593",
+      "reason": "low_grounding=0.429"
+    },
+    {
+      "pmcid": "PMC11749850",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC9683900",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC9808981",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC9809952",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC9814625",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC9825358",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC9834240",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC9843524",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC9857090",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC9858500",
+      "reason": "low_grounding=0.2"
+    },
+    {
+      "pmcid": "PMC9889654",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC9892604",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC9909405",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC9911716",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC9916789",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC9927949",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC9931717",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC9932599",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC9933378",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC9943070",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC9944905",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC9952851",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC9953162",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC9954166",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC9954691",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC9959938",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC9962335",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC9967872",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC9974642",
+      "reason": "low_grounding=0.25"
+    },
+    {
+      "pmcid": "PMC9977465",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC9977497",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC9980642",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC9991125",
+      "reason": "no_methods"
+    },
+    {
+      "pmcid": "PMC9991266",
+      "reason": "no_methods"
+    }
+  ]
+}

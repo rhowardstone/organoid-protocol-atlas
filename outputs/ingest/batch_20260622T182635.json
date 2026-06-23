@@ -1,0 +1,2455 @@
+{
+  "generated_at": "2026-06-22T18:26:35+00:00",
+  "provenance": {
+    "command": "python pipeline/ingest_orchestrator.py --limit 400 --min-grounding 0.5 --cc-only --workers 4 --candidates /atb-data/rye/Organoid/outputs/ingest/_marathon_slice.csv",
+    "model": "gemma3:12b",
+    "candidates_file": "_marathon_slice.csv",
+    "candidates_sha256_16": "6ee7592beeb48dd1",
+    "min_grounding": 0.5,
+    "cc_only": true,
+    "dry_run": false,
+    "workers": 4
+  },
+  "candidates_considered": 400,
+  "accepted": 167,
+  "rejected": 233,
+  "accepted_papers": [
+    {
+      "pmcid": "PMC11468740",
+      "doi": "10.1002/adhm.202001125",
+      "organoid_type": "intestinal",
+      "n_signaling": 7,
+      "grounded": 4,
+      "grounding_rate": 0.571,
+      "methods_chars": 102965
+    },
+    {
+      "pmcid": "PMC7423603",
+      "doi": "10.1038/s41380-020-0676-x",
+      "organoid_type": "cerebral",
+      "n_signaling": 4,
+      "grounded": 4,
+      "grounding_rate": 1.0,
+      "methods_chars": 14687
+    },
+    {
+      "pmcid": "PMC7707134",
+      "doi": "10.1038/s41418-020-00679-7",
+      "organoid_type": "cerebral",
+      "n_signaling": 2,
+      "grounded": 2,
+      "grounding_rate": 1.0,
+      "methods_chars": 22614
+    },
+    {
+      "pmcid": "PMC7799367",
+      "doi": "10.15252/emmm.202012523",
+      "organoid_type": "cerebral",
+      "n_signaling": 8,
+      "grounded": 8,
+      "grounding_rate": 1.0,
+      "methods_chars": 26684
+    },
+    {
+      "pmcid": "PMC7801686",
+      "doi": "10.1038/s41467-020-20351-5",
+      "organoid_type": "intestinal",
+      "n_signaling": 6,
+      "grounded": 3,
+      "grounding_rate": 0.5,
+      "methods_chars": 25814
+    },
+    {
+      "pmcid": "PMC7802613",
+      "doi": "10.1007/s11626-020-00532-8",
+      "organoid_type": "cerebral",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 41096
+    },
+    {
+      "pmcid": "PMC7804132",
+      "doi": "10.1038/s41467-020-20440-5",
+      "organoid_type": "cerebral",
+      "n_signaling": 5,
+      "grounded": 5,
+      "grounding_rate": 1.0,
+      "methods_chars": 11868
+    },
+    {
+      "pmcid": "PMC7806597",
+      "doi": "10.1038/s41598-020-79651-x",
+      "organoid_type": "retinal",
+      "n_signaling": 6,
+      "grounded": 5,
+      "grounding_rate": 0.833,
+      "methods_chars": 7062
+    },
+    {
+      "pmcid": "PMC7809623",
+      "doi": "10.1016/j.celrep.2020.108615",
+      "organoid_type": "cerebral",
+      "n_signaling": 4,
+      "grounded": 4,
+      "grounding_rate": 1.0,
+      "methods_chars": 12638
+    },
+    {
+      "pmcid": "PMC7823217",
+      "doi": "10.1016/j.tranon.2021.101015",
+      "organoid_type": "intestinal",
+      "n_signaling": 3,
+      "grounded": 3,
+      "grounding_rate": 1.0,
+      "methods_chars": 74990
+    },
+    {
+      "pmcid": "PMC7826262",
+      "doi": "10.1093/nar/gkaa1204",
+      "organoid_type": "intestinal",
+      "n_signaling": 3,
+      "grounded": 3,
+      "grounding_rate": 1.0,
+      "methods_chars": 17918
+    },
+    {
+      "pmcid": "PMC7831942",
+      "doi": "10.3390/genes12010112",
+      "organoid_type": "retinal",
+      "n_signaling": 11,
+      "grounded": 11,
+      "grounding_rate": 1.0,
+      "methods_chars": 49776
+    },
+    {
+      "pmcid": "PMC7841276",
+      "doi": "10.18502/jovr.v16i1.8251",
+      "organoid_type": "retinal",
+      "n_signaling": 8,
+      "grounded": 8,
+      "grounding_rate": 1.0,
+      "methods_chars": 3047
+    },
+    {
+      "pmcid": "PMC7848959",
+      "doi": "10.1111/cpr.12965",
+      "organoid_type": "cerebral",
+      "n_signaling": 2,
+      "grounded": 2,
+      "grounding_rate": 1.0,
+      "methods_chars": 7117
+    },
+    {
+      "pmcid": "PMC7866284",
+      "doi": "10.3390/ijms22031345",
+      "organoid_type": "retinal",
+      "n_signaling": 7,
+      "grounded": 7,
+      "grounding_rate": 1.0,
+      "methods_chars": 8099
+    },
+    {
+      "pmcid": "PMC7897192",
+      "doi": "10.1007/s10555-020-09931-5",
+      "organoid_type": "intestinal",
+      "n_signaling": 4,
+      "grounded": 3,
+      "grounding_rate": 0.75,
+      "methods_chars": 89006
+    },
+    {
+      "pmcid": "PMC7907388",
+      "doi": "10.1038/s41598-021-84071-6",
+      "organoid_type": "cerebral",
+      "n_signaling": 4,
+      "grounded": 4,
+      "grounding_rate": 1.0,
+      "methods_chars": 34358
+    },
+    {
+      "pmcid": "PMC7907455",
+      "doi": "10.3389/fcell.2021.607341",
+      "organoid_type": "retinal",
+      "n_signaling": 4,
+      "grounded": 4,
+      "grounding_rate": 1.0,
+      "methods_chars": 11458
+    },
+    {
+      "pmcid": "PMC7911731",
+      "doi": "10.3390/cells10020234",
+      "organoid_type": "cerebral",
+      "n_signaling": 2,
+      "grounded": 2,
+      "grounding_rate": 1.0,
+      "methods_chars": 6310
+    },
+    {
+      "pmcid": "PMC7912093",
+      "doi": "10.3390/cells10020256",
+      "organoid_type": "intestinal",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 7115
+    },
+    {
+      "pmcid": "PMC7912181",
+      "doi": "10.3390/cells10020240",
+      "organoid_type": "retinal",
+      "n_signaling": 7,
+      "grounded": 6,
+      "grounding_rate": 0.857,
+      "methods_chars": 69090
+    },
+    {
+      "pmcid": "PMC7913681",
+      "doi": "10.1093/nar/gkab030",
+      "organoid_type": "cerebral",
+      "n_signaling": 3,
+      "grounded": 3,
+      "grounding_rate": 1.0,
+      "methods_chars": 6567
+    },
+    {
+      "pmcid": "PMC7921392",
+      "doi": "10.1038/s41467-021-21591-9",
+      "organoid_type": "intestinal",
+      "n_signaling": 2,
+      "grounded": 2,
+      "grounding_rate": 1.0,
+      "methods_chars": 27405
+    },
+    {
+      "pmcid": "PMC7922555",
+      "doi": "10.3390/pharmaceutics13020280",
+      "organoid_type": "cerebral",
+      "n_signaling": 13,
+      "grounded": 10,
+      "grounding_rate": 0.769,
+      "methods_chars": 41537
+    },
+    {
+      "pmcid": "PMC7933808",
+      "doi": "10.1016/j.jlr.2021.100026",
+      "organoid_type": "intestinal",
+      "n_signaling": 2,
+      "grounded": 1,
+      "grounding_rate": 0.5,
+      "methods_chars": 8983
+    },
+    {
+      "pmcid": "PMC7940675",
+      "doi": "10.3389/fnagi.2021.643889",
+      "organoid_type": "cerebral",
+      "n_signaling": 5,
+      "grounded": 4,
+      "grounding_rate": 0.8,
+      "methods_chars": 10551
+    },
+    {
+      "pmcid": "PMC7961898",
+      "doi": "10.3390/ijms22052607",
+      "organoid_type": "retinal",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 17121
+    },
+    {
+      "pmcid": "PMC7961951",
+      "doi": "10.3390/ijms22052600",
+      "organoid_type": "cerebral",
+      "n_signaling": 6,
+      "grounded": 4,
+      "grounding_rate": 0.667,
+      "methods_chars": 12975
+    },
+    {
+      "pmcid": "PMC7984205",
+      "doi": "10.1111/dgd.12699",
+      "organoid_type": "cerebral",
+      "n_signaling": 6,
+      "grounded": 4,
+      "grounding_rate": 0.667,
+      "methods_chars": 18430
+    },
+    {
+      "pmcid": "PMC7990561",
+      "doi": "10.1155/2021/6618924",
+      "organoid_type": "intestinal",
+      "n_signaling": 2,
+      "grounded": 2,
+      "grounding_rate": 1.0,
+      "methods_chars": 50979
+    },
+    {
+      "pmcid": "PMC7995094",
+      "doi": "10.15252/emmm.202013191",
+      "organoid_type": "intestinal",
+      "n_signaling": 9,
+      "grounded": 8,
+      "grounding_rate": 0.889,
+      "methods_chars": 14010
+    },
+    {
+      "pmcid": "PMC7995978",
+      "doi": "10.3390/cells10030484",
+      "organoid_type": "cerebral",
+      "n_signaling": 7,
+      "grounded": 7,
+      "grounding_rate": 1.0,
+      "methods_chars": 43420
+    },
+    {
+      "pmcid": "PMC8004931",
+      "doi": "10.3390/ijms22063261",
+      "organoid_type": "cerebral",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 30681
+    },
+    {
+      "pmcid": "PMC8012682",
+      "doi": "10.3389/fncel.2021.648210",
+      "organoid_type": "retinal",
+      "n_signaling": 2,
+      "grounded": 2,
+      "grounding_rate": 1.0,
+      "methods_chars": 19456
+    },
+    {
+      "pmcid": "PMC8015192",
+      "doi": "10.1186/s42490-021-00049-5",
+      "organoid_type": "cerebral",
+      "n_signaling": 3,
+      "grounded": 3,
+      "grounding_rate": 1.0,
+      "methods_chars": 16799
+    },
+    {
+      "pmcid": "PMC8026433",
+      "doi": "10.1007/s00109-021-02051-9",
+      "organoid_type": "cerebral",
+      "n_signaling": 15,
+      "grounded": 15,
+      "grounding_rate": 1.0,
+      "methods_chars": 48637
+    },
+    {
+      "pmcid": "PMC8027322",
+      "doi": "10.3389/fcell.2021.649538",
+      "organoid_type": "cerebral",
+      "n_signaling": 20,
+      "grounded": 20,
+      "grounding_rate": 1.0,
+      "methods_chars": 85117
+    },
+    {
+      "pmcid": "PMC8037675",
+      "doi": "10.3390/ijms22073381",
+      "organoid_type": "cerebral",
+      "n_signaling": 10,
+      "grounded": 10,
+      "grounding_rate": 1.0,
+      "methods_chars": 62921
+    },
+    {
+      "pmcid": "PMC8042982",
+      "doi": "10.1186/s40478-021-01174-x",
+      "organoid_type": "cerebral",
+      "n_signaling": 2,
+      "grounded": 2,
+      "grounding_rate": 1.0,
+      "methods_chars": 14662
+    },
+    {
+      "pmcid": "PMC8047111",
+      "doi": "10.3389/fcell.2021.657337",
+      "organoid_type": "cerebral",
+      "n_signaling": 5,
+      "grounded": 5,
+      "grounding_rate": 1.0,
+      "methods_chars": 66433
+    },
+    {
+      "pmcid": "PMC8050001",
+      "doi": "10.1016/j.jbc.2021.100495",
+      "organoid_type": "cerebral",
+      "n_signaling": 3,
+      "grounded": 3,
+      "grounding_rate": 1.0,
+      "methods_chars": 2480
+    },
+    {
+      "pmcid": "PMC8054913",
+      "doi": "10.1016/j.cell.2021.02.050",
+      "organoid_type": "cerebral",
+      "n_signaling": 10,
+      "grounded": 9,
+      "grounding_rate": 0.9,
+      "methods_chars": 43841
+    },
+    {
+      "pmcid": "PMC8058361",
+      "doi": "10.3389/fcell.2021.649891",
+      "organoid_type": "cerebral",
+      "n_signaling": 7,
+      "grounded": 7,
+      "grounding_rate": 1.0,
+      "methods_chars": 47280
+    },
+    {
+      "pmcid": "PMC8062211",
+      "doi": "10.1186/s44149-021-00003-x",
+      "organoid_type": "intestinal",
+      "n_signaling": 4,
+      "grounded": 3,
+      "grounding_rate": 0.75,
+      "methods_chars": 22448
+    },
+    {
+      "pmcid": "PMC8063318",
+      "doi": "10.1186/s12929-021-00728-4",
+      "organoid_type": "cerebral",
+      "n_signaling": 4,
+      "grounded": 4,
+      "grounding_rate": 1.0,
+      "methods_chars": 49803
+    },
+    {
+      "pmcid": "PMC8065177",
+      "doi": "10.1016/j.celrep.2021.109022",
+      "organoid_type": "retinal",
+      "n_signaling": 2,
+      "grounded": 1,
+      "grounding_rate": 0.5,
+      "methods_chars": 36454
+    },
+    {
+      "pmcid": "PMC8067556",
+      "doi": "10.3390/cells10040824",
+      "organoid_type": "cerebral",
+      "n_signaling": 3,
+      "grounded": 3,
+      "grounding_rate": 1.0,
+      "methods_chars": 42947
+    },
+    {
+      "pmcid": "PMC8072266",
+      "doi": "10.3389/fbioe.2021.637048",
+      "organoid_type": "cerebral",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 36697
+    },
+    {
+      "pmcid": "PMC8073580",
+      "doi": "10.3390/cells10040914",
+      "organoid_type": "cerebral",
+      "n_signaling": 5,
+      "grounded": 5,
+      "grounding_rate": 1.0,
+      "methods_chars": 37542
+    },
+    {
+      "pmcid": "PMC8073899",
+      "doi": "10.3390/biomedicines9040440",
+      "organoid_type": "cerebral",
+      "n_signaling": 5,
+      "grounded": 5,
+      "grounding_rate": 1.0,
+      "methods_chars": 29696
+    },
+    {
+      "pmcid": "PMC8086141",
+      "doi": "10.1016/j.xpro.2021.100463",
+      "organoid_type": "cerebral",
+      "n_signaling": 11,
+      "grounded": 11,
+      "grounding_rate": 1.0,
+      "methods_chars": 54960
+    },
+    {
+      "pmcid": "PMC8092822",
+      "doi": "10.1128/jvi.02219-20",
+      "organoid_type": "cerebral",
+      "n_signaling": 4,
+      "grounded": 3,
+      "grounding_rate": 0.75,
+      "methods_chars": 8685
+    },
+    {
+      "pmcid": "PMC8095320",
+      "doi": "10.3389/fnins.2021.668857",
+      "organoid_type": "retinal",
+      "n_signaling": 2,
+      "grounded": 1,
+      "grounding_rate": 0.5,
+      "methods_chars": 24993
+    },
+    {
+      "pmcid": "PMC8097028",
+      "doi": "10.3389/fcell.2021.661113",
+      "organoid_type": "cerebral",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 18896
+    },
+    {
+      "pmcid": "PMC8099055",
+      "doi": "10.1371/journal.pone.0251173",
+      "organoid_type": "cerebral",
+      "n_signaling": 5,
+      "grounded": 5,
+      "grounding_rate": 1.0,
+      "methods_chars": 7877
+    },
+    {
+      "pmcid": "PMC8114082",
+      "doi": "10.3389/fcell.2021.645704",
+      "organoid_type": "cerebral",
+      "n_signaling": 4,
+      "grounded": 4,
+      "grounding_rate": 1.0,
+      "methods_chars": 18116
+    },
+    {
+      "pmcid": "PMC8121770",
+      "doi": "10.1016/j.xpro.2021.100524",
+      "organoid_type": "cerebral",
+      "n_signaling": 2,
+      "grounded": 2,
+      "grounding_rate": 1.0,
+      "methods_chars": 24188
+    },
+    {
+      "pmcid": "PMC8124071",
+      "doi": "10.1038/s41419-021-03776-8",
+      "organoid_type": "cerebral",
+      "n_signaling": 9,
+      "grounded": 9,
+      "grounding_rate": 1.0,
+      "methods_chars": 23010
+    },
+    {
+      "pmcid": "PMC8125313",
+      "doi": "10.3390/ijms22094616",
+      "organoid_type": "retinal",
+      "n_signaling": 16,
+      "grounded": 14,
+      "grounding_rate": 0.875,
+      "methods_chars": 29977
+    },
+    {
+      "pmcid": "PMC8128894",
+      "doi": "10.1038/s41536-021-00135-1",
+      "organoid_type": "retinal",
+      "n_signaling": 4,
+      "grounded": 4,
+      "grounding_rate": 1.0,
+      "methods_chars": 64262
+    },
+    {
+      "pmcid": "PMC8130283",
+      "doi": "10.1186/s12910-021-00627-1",
+      "organoid_type": "cerebral",
+      "n_signaling": 2,
+      "grounded": 1,
+      "grounding_rate": 0.5,
+      "methods_chars": 17718
+    },
+    {
+      "pmcid": "PMC8131530",
+      "doi": "10.3389/fncel.2021.667880",
+      "organoid_type": "cerebral",
+      "n_signaling": 4,
+      "grounded": 2,
+      "grounding_rate": 0.5,
+      "methods_chars": 18095
+    },
+    {
+      "pmcid": "PMC8140076",
+      "doi": "10.1038/s41467-021-23294-7",
+      "organoid_type": "cerebral",
+      "n_signaling": 4,
+      "grounded": 4,
+      "grounding_rate": 1.0,
+      "methods_chars": 19617
+    },
+    {
+      "pmcid": "PMC8141848",
+      "doi": "10.3389/fcell.2021.640212",
+      "organoid_type": "cerebral",
+      "n_signaling": 27,
+      "grounded": 27,
+      "grounding_rate": 1.0,
+      "methods_chars": 66285
+    },
+    {
+      "pmcid": "PMC8149661",
+      "doi": "10.1038/s41467-021-23395-3",
+      "organoid_type": "retinal",
+      "n_signaling": 3,
+      "grounded": 3,
+      "grounding_rate": 1.0,
+      "methods_chars": 27484
+    },
+    {
+      "pmcid": "PMC8155538",
+      "doi": "10.3389/fcell.2021.653138",
+      "organoid_type": "retinal",
+      "n_signaling": 7,
+      "grounded": 5,
+      "grounding_rate": 0.714,
+      "methods_chars": 83263
+    },
+    {
+      "pmcid": "PMC8155690",
+      "doi": "10.3389/fcell.2021.653305",
+      "organoid_type": "retinal",
+      "n_signaling": 3,
+      "grounded": 3,
+      "grounding_rate": 1.0,
+      "methods_chars": 15607
+    },
+    {
+      "pmcid": "PMC8157833",
+      "doi": "10.3390/cancers13102449",
+      "organoid_type": "cerebral",
+      "n_signaling": 6,
+      "grounded": 5,
+      "grounding_rate": 0.833,
+      "methods_chars": 70972
+    },
+    {
+      "pmcid": "PMC8162704",
+      "doi": "10.1038/s41380-020-0839-9",
+      "organoid_type": "cerebral",
+      "n_signaling": 9,
+      "grounded": 9,
+      "grounding_rate": 1.0,
+      "methods_chars": 20911
+    },
+    {
+      "pmcid": "PMC8168415",
+      "doi": "10.1111/cpr.13042",
+      "organoid_type": "cerebral",
+      "n_signaling": 4,
+      "grounded": 2,
+      "grounding_rate": 0.5,
+      "methods_chars": 10802
+    },
+    {
+      "pmcid": "PMC8172295",
+      "doi": "10.1155/2021/5511630",
+      "organoid_type": "cerebral",
+      "n_signaling": 6,
+      "grounded": 3,
+      "grounding_rate": 0.5,
+      "methods_chars": 48655
+    },
+    {
+      "pmcid": "PMC8175860",
+      "doi": "10.3389/fnins.2021.678454",
+      "organoid_type": "cerebral",
+      "n_signaling": 8,
+      "grounded": 8,
+      "grounding_rate": 1.0,
+      "methods_chars": 51712
+    },
+    {
+      "pmcid": "PMC8190957",
+      "doi": "10.1038/s41380-020-0806-5",
+      "organoid_type": "cerebral",
+      "n_signaling": 3,
+      "grounded": 2,
+      "grounding_rate": 0.667,
+      "methods_chars": 29132
+    },
+    {
+      "pmcid": "PMC8193062",
+      "doi": "10.3389/fncel.2021.671549",
+      "organoid_type": "cerebral",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 30434
+    },
+    {
+      "pmcid": "PMC8215814",
+      "doi": "10.1186/s13046-021-01986-8",
+      "organoid_type": "intestinal",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 10168
+    },
+    {
+      "pmcid": "PMC8217544",
+      "doi": "10.1038/s41598-021-91846-4",
+      "organoid_type": "cerebral",
+      "n_signaling": 3,
+      "grounded": 3,
+      "grounding_rate": 1.0,
+      "methods_chars": 11133
+    },
+    {
+      "pmcid": "PMC8222922",
+      "doi": "10.3389/fphys.2021.621970",
+      "organoid_type": "cerebral",
+      "n_signaling": 7,
+      "grounded": 7,
+      "grounding_rate": 1.0,
+      "methods_chars": 72137
+    },
+    {
+      "pmcid": "PMC8226961",
+      "doi": "10.3390/cells10061366",
+      "organoid_type": "cerebral",
+      "n_signaling": 4,
+      "grounded": 3,
+      "grounding_rate": 0.75,
+      "methods_chars": 33484
+    },
+    {
+      "pmcid": "PMC8227374",
+      "doi": "10.3390/v13060998",
+      "organoid_type": "intestinal",
+      "n_signaling": 2,
+      "grounded": 1,
+      "grounding_rate": 0.5,
+      "methods_chars": 46159
+    },
+    {
+      "pmcid": "PMC8228580",
+      "doi": "10.3390/cells10061426",
+      "organoid_type": "retinal",
+      "n_signaling": 7,
+      "grounded": 6,
+      "grounding_rate": 0.857,
+      "methods_chars": 57241
+    },
+    {
+      "pmcid": "PMC8231189",
+      "doi": "10.3390/ijms22126307",
+      "organoid_type": "retinal",
+      "n_signaling": 3,
+      "grounded": 3,
+      "grounding_rate": 1.0,
+      "methods_chars": 11083
+    },
+    {
+      "pmcid": "PMC8257041",
+      "doi": "10.3389/fncel.2021.646921",
+      "organoid_type": "cerebral",
+      "n_signaling": 7,
+      "grounded": 7,
+      "grounding_rate": 1.0,
+      "methods_chars": 40451
+    },
+    {
+      "pmcid": "PMC8263006",
+      "doi": "10.1128/mbio.00799-21",
+      "organoid_type": "cerebral",
+      "n_signaling": 2,
+      "grounded": 1,
+      "grounding_rate": 0.5,
+      "methods_chars": 28042
+    },
+    {
+      "pmcid": "PMC8264783",
+      "doi": "10.3389/fmolb.2021.686410",
+      "organoid_type": "cerebral",
+      "n_signaling": 4,
+      "grounded": 4,
+      "grounding_rate": 1.0,
+      "methods_chars": 70357
+    },
+    {
+      "pmcid": "PMC8268497",
+      "doi": "10.3390/ijms22137081",
+      "organoid_type": "retinal",
+      "n_signaling": 7,
+      "grounded": 5,
+      "grounding_rate": 0.714,
+      "methods_chars": 92720
+    },
+    {
+      "pmcid": "PMC8278985",
+      "doi": "10.1289/ehp8580",
+      "organoid_type": "cerebral",
+      "n_signaling": 4,
+      "grounded": 4,
+      "grounding_rate": 1.0,
+      "methods_chars": 22949
+    },
+    {
+      "pmcid": "PMC8282056",
+      "doi": "10.3389/fncel.2021.638439",
+      "organoid_type": "retinal",
+      "n_signaling": 5,
+      "grounded": 5,
+      "grounding_rate": 1.0,
+      "methods_chars": 33875
+    },
+    {
+      "pmcid": "PMC8288463",
+      "doi": "10.3389/fncel.2021.682272",
+      "organoid_type": "cerebral",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 8778
+    },
+    {
+      "pmcid": "PMC8303223",
+      "doi": "10.3390/cancers13143532",
+      "organoid_type": "intestinal",
+      "n_signaling": 3,
+      "grounded": 3,
+      "grounding_rate": 1.0,
+      "methods_chars": 46510
+    },
+    {
+      "pmcid": "PMC8306666",
+      "doi": "10.3390/cells10071790",
+      "organoid_type": "cerebral",
+      "n_signaling": 9,
+      "grounded": 7,
+      "grounding_rate": 0.778,
+      "methods_chars": 26443
+    },
+    {
+      "pmcid": "PMC8314181",
+      "doi": "10.3389/fnins.2021.680572",
+      "organoid_type": "cerebral",
+      "n_signaling": 9,
+      "grounded": 9,
+      "grounding_rate": 1.0,
+      "methods_chars": 23128
+    },
+    {
+      "pmcid": "PMC8316454",
+      "doi": "10.1038/s41467-021-24781-7",
+      "organoid_type": "retinal",
+      "n_signaling": 6,
+      "grounded": 6,
+      "grounding_rate": 1.0,
+      "methods_chars": 39556
+    },
+    {
+      "pmcid": "PMC8319209",
+      "doi": "10.1038/s41467-021-24817-y",
+      "organoid_type": "intestinal",
+      "n_signaling": 6,
+      "grounded": 6,
+      "grounding_rate": 1.0,
+      "methods_chars": 25528
+    },
+    {
+      "pmcid": "PMC8325286",
+      "doi": "10.1186/s13287-021-02369-8",
+      "organoid_type": "cerebral",
+      "n_signaling": 2,
+      "grounded": 1,
+      "grounding_rate": 0.5,
+      "methods_chars": 48933
+    },
+    {
+      "pmcid": "PMC8329278",
+      "doi": "10.1038/s41514-021-00070-x",
+      "organoid_type": "cerebral",
+      "n_signaling": 6,
+      "grounded": 4,
+      "grounding_rate": 0.667,
+      "methods_chars": 15255
+    },
+    {
+      "pmcid": "PMC8347370",
+      "doi": "10.3390/ijms22158196",
+      "organoid_type": "cerebral",
+      "n_signaling": 11,
+      "grounded": 8,
+      "grounding_rate": 0.727,
+      "methods_chars": 63768
+    },
+    {
+      "pmcid": "PMC8349709",
+      "doi": "10.1186/s40035-021-00252-3",
+      "organoid_type": "cerebral",
+      "n_signaling": 5,
+      "grounded": 5,
+      "grounding_rate": 1.0,
+      "methods_chars": 41816
+    },
+    {
+      "pmcid": "PMC8389592",
+      "doi": "10.3390/biology10080740",
+      "organoid_type": "cerebral",
+      "n_signaling": 9,
+      "grounded": 8,
+      "grounding_rate": 0.889,
+      "methods_chars": 42834
+    },
+    {
+      "pmcid": "PMC8391439",
+      "doi": "10.3390/foods10081885",
+      "organoid_type": "retinal",
+      "n_signaling": 7,
+      "grounded": 5,
+      "grounding_rate": 0.714,
+      "methods_chars": 16265
+    },
+    {
+      "pmcid": "PMC8392691",
+      "doi": "10.3390/cancers13164004",
+      "organoid_type": "cerebral",
+      "n_signaling": 5,
+      "grounded": 4,
+      "grounding_rate": 0.8,
+      "methods_chars": 27393
+    },
+    {
+      "pmcid": "PMC8394255",
+      "doi": "10.3390/cells10081957",
+      "organoid_type": "retinal",
+      "n_signaling": 8,
+      "grounded": 8,
+      "grounding_rate": 1.0,
+      "methods_chars": 29401
+    },
+    {
+      "pmcid": "PMC8395061",
+      "doi": "10.3390/ijms22168357",
+      "organoid_type": "retinal",
+      "n_signaling": 5,
+      "grounded": 5,
+      "grounding_rate": 1.0,
+      "methods_chars": 24295
+    },
+    {
+      "pmcid": "PMC8395162",
+      "doi": "10.3390/ijms22168518",
+      "organoid_type": "cerebral",
+      "n_signaling": 3,
+      "grounded": 3,
+      "grounding_rate": 1.0,
+      "methods_chars": 44284
+    },
+    {
+      "pmcid": "PMC8402194",
+      "doi": "10.3390/pharmaceutics13081314",
+      "organoid_type": "intestinal",
+      "n_signaling": 13,
+      "grounded": 11,
+      "grounding_rate": 0.846,
+      "methods_chars": 50195
+    },
+    {
+      "pmcid": "PMC8406283",
+      "doi": "10.1128/mbio.00680-21",
+      "organoid_type": "cerebral",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 34082
+    },
+    {
+      "pmcid": "PMC8408296",
+      "doi": "10.1186/s13619-021-00091-7",
+      "organoid_type": "cerebral",
+      "n_signaling": 7,
+      "grounded": 7,
+      "grounding_rate": 1.0,
+      "methods_chars": 38566
+    },
+    {
+      "pmcid": "PMC8414411",
+      "doi": "10.3389/fnins.2021.674563",
+      "organoid_type": "cerebral",
+      "n_signaling": 3,
+      "grounded": 3,
+      "grounding_rate": 1.0,
+      "methods_chars": 70608
+    },
+    {
+      "pmcid": "PMC8431772",
+      "doi": "10.3390/ijms22179608",
+      "organoid_type": "cerebral",
+      "n_signaling": 14,
+      "grounded": 12,
+      "grounding_rate": 0.857,
+      "methods_chars": 47868
+    },
+    {
+      "pmcid": "PMC8441292",
+      "doi": "10.1111/acel.13468",
+      "organoid_type": "cerebral",
+      "n_signaling": 3,
+      "grounded": 3,
+      "grounding_rate": 1.0,
+      "methods_chars": 14876
+    },
+    {
+      "pmcid": "PMC8448508",
+      "doi": "10.18632/oncotarget.28058",
+      "organoid_type": "intestinal",
+      "n_signaling": 3,
+      "grounded": 3,
+      "grounding_rate": 1.0,
+      "methods_chars": 13690
+    },
+    {
+      "pmcid": "PMC8456188",
+      "doi": "10.1186/s41021-021-00214-1",
+      "organoid_type": "cerebral",
+      "n_signaling": 11,
+      "grounded": 11,
+      "grounding_rate": 1.0,
+      "methods_chars": 36633
+    },
+    {
+      "pmcid": "PMC8456220",
+      "doi": "10.1002/advs.202101462",
+      "organoid_type": "cerebral",
+      "n_signaling": 4,
+      "grounded": 4,
+      "grounding_rate": 1.0,
+      "methods_chars": 16789
+    },
+    {
+      "pmcid": "PMC8458383",
+      "doi": "10.1038/s41467-021-25792-0",
+      "organoid_type": "retinal",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 42204
+    },
+    {
+      "pmcid": "PMC8465402",
+      "doi": "10.3390/ph14090878",
+      "organoid_type": "cerebral",
+      "n_signaling": 3,
+      "grounded": 3,
+      "grounding_rate": 1.0,
+      "methods_chars": 23386
+    },
+    {
+      "pmcid": "PMC8467374",
+      "doi": "10.3390/pathogens10091163",
+      "organoid_type": "intestinal",
+      "n_signaling": 5,
+      "grounded": 4,
+      "grounding_rate": 0.8,
+      "methods_chars": 40760
+    },
+    {
+      "pmcid": "PMC8470197",
+      "doi": "10.3390/ijms22189869",
+      "organoid_type": "retinal",
+      "n_signaling": 2,
+      "grounded": 2,
+      "grounding_rate": 1.0,
+      "methods_chars": 9450
+    },
+    {
+      "pmcid": "PMC8471616",
+      "doi": "10.3390/cells10092489",
+      "organoid_type": "retinal",
+      "n_signaling": 9,
+      "grounded": 7,
+      "grounding_rate": 0.778,
+      "methods_chars": 78650
+    },
+    {
+      "pmcid": "PMC8472465",
+      "doi": "10.3390/membranes11090700",
+      "organoid_type": "cerebral",
+      "n_signaling": 4,
+      "grounded": 3,
+      "grounding_rate": 0.75,
+      "methods_chars": 10228
+    },
+    {
+      "pmcid": "PMC8473633",
+      "doi": "10.3389/fmed.2021.728866",
+      "organoid_type": "cerebral",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 56519
+    },
+    {
+      "pmcid": "PMC8480669",
+      "doi": "10.1084/jem.20210862",
+      "organoid_type": "intestinal",
+      "n_signaling": 2,
+      "grounded": 1,
+      "grounding_rate": 0.5,
+      "methods_chars": 22937
+    },
+    {
+      "pmcid": "PMC8482155",
+      "doi": "10.3390/jdb9030038",
+      "organoid_type": "cerebral",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 6645
+    },
+    {
+      "pmcid": "PMC8500982",
+      "doi": "10.1111/jcmm.16882",
+      "organoid_type": "retinal",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 8851
+    },
+    {
+      "pmcid": "PMC8504127",
+      "doi": "10.1186/s12964-021-00777-0",
+      "organoid_type": "cerebral",
+      "n_signaling": 3,
+      "grounded": 2,
+      "grounding_rate": 0.667,
+      "methods_chars": 43785
+    },
+    {
+      "pmcid": "PMC8505255",
+      "doi": "10.1038/s41380-020-00910-4",
+      "organoid_type": "cerebral",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 10862
+    },
+    {
+      "pmcid": "PMC8507123",
+      "doi": "10.1186/s12896-021-00718-2",
+      "organoid_type": "cerebral",
+      "n_signaling": 4,
+      "grounded": 2,
+      "grounding_rate": 0.5,
+      "methods_chars": 8348
+    },
+    {
+      "pmcid": "PMC8507222",
+      "doi": "10.1186/s13041-021-00864-w",
+      "organoid_type": "cerebral",
+      "n_signaling": 9,
+      "grounded": 6,
+      "grounding_rate": 0.667,
+      "methods_chars": 32730
+    },
+    {
+      "pmcid": "PMC8508580",
+      "doi": "10.3390/ijms221910254",
+      "organoid_type": "cerebral",
+      "n_signaling": 5,
+      "grounded": 5,
+      "grounding_rate": 1.0,
+      "methods_chars": 47451
+    },
+    {
+      "pmcid": "PMC8513685",
+      "doi": "10.1128/msphere.00806-21",
+      "organoid_type": "intestinal",
+      "n_signaling": 2,
+      "grounded": 2,
+      "grounding_rate": 1.0,
+      "methods_chars": 11438
+    },
+    {
+      "pmcid": "PMC8517024",
+      "doi": "10.1038/s41467-021-26296-7",
+      "organoid_type": "cerebral",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 43557
+    },
+    {
+      "pmcid": "PMC8525405",
+      "doi": "10.3389/fgeed.2021.630600",
+      "organoid_type": "retinal",
+      "n_signaling": 2,
+      "grounded": 1,
+      "grounding_rate": 0.5,
+      "methods_chars": 66273
+    },
+    {
+      "pmcid": "PMC8526592",
+      "doi": "10.1038/s41398-021-01664-5",
+      "organoid_type": "cerebral",
+      "n_signaling": 2,
+      "grounded": 2,
+      "grounding_rate": 1.0,
+      "methods_chars": 8613
+    },
+    {
+      "pmcid": "PMC8529117",
+      "doi": "10.3389/fcell.2021.737429",
+      "organoid_type": "cerebral",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 47929
+    },
+    {
+      "pmcid": "PMC8531162",
+      "doi": "10.1038/s41380-021-01104-2",
+      "organoid_type": "cerebral",
+      "n_signaling": 12,
+      "grounded": 9,
+      "grounding_rate": 0.75,
+      "methods_chars": 35533
+    },
+    {
+      "pmcid": "PMC8534257",
+      "doi": "10.3390/cells10102683",
+      "organoid_type": "cerebral",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 14119
+    },
+    {
+      "pmcid": "PMC8536773",
+      "doi": "10.1038/s42003-021-02719-5",
+      "organoid_type": "cerebral",
+      "n_signaling": 3,
+      "grounded": 3,
+      "grounding_rate": 1.0,
+      "methods_chars": 12536
+    },
+    {
+      "pmcid": "PMC8549701",
+      "doi": "10.3390/ijms221910244",
+      "organoid_type": "cerebral",
+      "n_signaling": 9,
+      "grounded": 9,
+      "grounding_rate": 1.0,
+      "methods_chars": 47316
+    },
+    {
+      "pmcid": "PMC8551863",
+      "doi": "10.3389/fncel.2021.748849",
+      "organoid_type": "cerebral",
+      "n_signaling": 8,
+      "grounded": 6,
+      "grounding_rate": 0.75,
+      "methods_chars": 69455
+    },
+    {
+      "pmcid": "PMC8553627",
+      "doi": "10.1038/s41593-021-00923-4",
+      "organoid_type": "cerebral",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 33854
+    },
+    {
+      "pmcid": "PMC8557395",
+      "doi": "10.1093/nc/niab029",
+      "organoid_type": "cerebral",
+      "n_signaling": 7,
+      "grounded": 7,
+      "grounding_rate": 1.0,
+      "methods_chars": 47508
+    },
+    {
+      "pmcid": "PMC8557999",
+      "doi": "10.1186/s13619-021-00097-1",
+      "organoid_type": "retinal",
+      "n_signaling": 8,
+      "grounded": 8,
+      "grounding_rate": 1.0,
+      "methods_chars": 24545
+    },
+    {
+      "pmcid": "PMC8558279",
+      "doi": "10.1007/s00018-021-03917-4",
+      "organoid_type": "retinal",
+      "n_signaling": 8,
+      "grounded": 7,
+      "grounding_rate": 0.875,
+      "methods_chars": 1016
+    },
+    {
+      "pmcid": "PMC8566525",
+      "doi": "10.1038/s41598-021-00939-7",
+      "organoid_type": "cerebral",
+      "n_signaling": 3,
+      "grounded": 2,
+      "grounding_rate": 0.667,
+      "methods_chars": 11602
+    },
+    {
+      "pmcid": "PMC8569150",
+      "doi": "10.1038/s42003-021-02779-7",
+      "organoid_type": "cerebral",
+      "n_signaling": 5,
+      "grounded": 5,
+      "grounding_rate": 1.0,
+      "methods_chars": 9891
+    },
+    {
+      "pmcid": "PMC8576187",
+      "doi": "10.3389/fgene.2021.775205",
+      "organoid_type": "retinal",
+      "n_signaling": 6,
+      "grounded": 6,
+      "grounding_rate": 1.0,
+      "methods_chars": 42318
+    },
+    {
+      "pmcid": "PMC8577787",
+      "doi": "10.1371/journal.pgen.1009334",
+      "organoid_type": "cerebral",
+      "n_signaling": 5,
+      "grounded": 5,
+      "grounding_rate": 1.0,
+      "methods_chars": 20459
+    },
+    {
+      "pmcid": "PMC8577829",
+      "doi": "10.1016/j.stem.2021.08.012",
+      "organoid_type": "cerebral",
+      "n_signaling": 4,
+      "grounded": 3,
+      "grounding_rate": 0.75,
+      "methods_chars": 51590
+    },
+    {
+      "pmcid": "PMC8607587",
+      "doi": "10.1186/s13287-021-02651-9",
+      "organoid_type": "cerebral",
+      "n_signaling": 5,
+      "grounded": 5,
+      "grounding_rate": 1.0,
+      "methods_chars": 11614
+    },
+    {
+      "pmcid": "PMC8612198",
+      "doi": "10.2967/jnumed.121.261977",
+      "organoid_type": "intestinal",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 5214
+    },
+    {
+      "pmcid": "PMC8615730",
+      "doi": "10.3390/biomedicines9111741",
+      "organoid_type": "cerebral",
+      "n_signaling": 2,
+      "grounded": 2,
+      "grounding_rate": 1.0,
+      "methods_chars": 10697
+    },
+    {
+      "pmcid": "PMC8616120",
+      "doi": "10.3390/cells10113004",
+      "organoid_type": "cerebral",
+      "n_signaling": 8,
+      "grounded": 8,
+      "grounding_rate": 1.0,
+      "methods_chars": 13086
+    },
+    {
+      "pmcid": "PMC8635054",
+      "doi": "10.3389/fcell.2021.764725",
+      "organoid_type": "retinal",
+      "n_signaling": 2,
+      "grounded": 1,
+      "grounding_rate": 0.5,
+      "methods_chars": 12923
+    },
+    {
+      "pmcid": "PMC8643507",
+      "doi": "10.1093/hmg/ddab206",
+      "organoid_type": "intestinal",
+      "n_signaling": 4,
+      "grounded": 4,
+      "grounding_rate": 1.0,
+      "methods_chars": 12138
+    },
+    {
+      "pmcid": "PMC8657545",
+      "doi": "10.3390/ijms222312690",
+      "organoid_type": "cerebral",
+      "n_signaling": 2,
+      "grounded": 2,
+      "grounding_rate": 1.0,
+      "methods_chars": 44079
+    },
+    {
+      "pmcid": "PMC8661505",
+      "doi": "10.1042/bsr20211191",
+      "organoid_type": "cerebral",
+      "n_signaling": 2,
+      "grounded": 2,
+      "grounding_rate": 1.0,
+      "methods_chars": 14543
+    },
+    {
+      "pmcid": "PMC8667779",
+      "doi": "10.3389/fphar.2021.748956",
+      "organoid_type": "retinal",
+      "n_signaling": 2,
+      "grounded": 1,
+      "grounding_rate": 0.5,
+      "methods_chars": 11446
+    },
+    {
+      "pmcid": "PMC8674361",
+      "doi": "10.1038/s41467-021-27464-5",
+      "organoid_type": "cerebral",
+      "n_signaling": 9,
+      "grounded": 9,
+      "grounding_rate": 1.0,
+      "methods_chars": 24081
+    },
+    {
+      "pmcid": "PMC8675004",
+      "doi": "10.3389/fcell.2021.797167",
+      "organoid_type": "cerebral",
+      "n_signaling": 2,
+      "grounded": 1,
+      "grounding_rate": 0.5,
+      "methods_chars": 22018
+    },
+    {
+      "pmcid": "PMC8680120",
+      "doi": "10.1186/s12974-021-02351-4",
+      "organoid_type": "cerebral",
+      "n_signaling": 2,
+      "grounded": 2,
+      "grounding_rate": 1.0,
+      "methods_chars": 14551
+    },
+    {
+      "pmcid": "PMC8687838",
+      "doi": "10.1155/2021/4536382",
+      "organoid_type": "retinal",
+      "n_signaling": 5,
+      "grounded": 5,
+      "grounding_rate": 1.0,
+      "methods_chars": 13054
+    },
+    {
+      "pmcid": "PMC8698605",
+      "doi": "10.3390/bioengineering8120209",
+      "organoid_type": "cerebral",
+      "n_signaling": 8,
+      "grounded": 4,
+      "grounding_rate": 0.5,
+      "methods_chars": 9275
+    },
+    {
+      "pmcid": "PMC8700452",
+      "doi": "10.3390/cells10123422",
+      "organoid_type": "cerebral",
+      "n_signaling": 3,
+      "grounded": 3,
+      "grounding_rate": 1.0,
+      "methods_chars": 9672
+    },
+    {
+      "pmcid": "PMC8702079",
+      "doi": "10.3390/genes12122015",
+      "organoid_type": "retinal",
+      "n_signaling": 3,
+      "grounded": 3,
+      "grounding_rate": 1.0,
+      "methods_chars": 6634
+    },
+    {
+      "pmcid": "PMC8709464",
+      "doi": "10.3390/ijms222413195",
+      "organoid_type": "intestinal",
+      "n_signaling": 2,
+      "grounded": 1,
+      "grounding_rate": 0.5,
+      "methods_chars": 7179
+    },
+    {
+      "pmcid": "PMC8758476",
+      "doi": "10.1038/s41380-020-0807-4",
+      "organoid_type": "cerebral",
+      "n_signaling": 9,
+      "grounded": 8,
+      "grounding_rate": 0.889,
+      "methods_chars": 22862
+    },
+    {
+      "pmcid": "PMC8764387",
+      "doi": "10.3389/fnmol.2021.787243",
+      "organoid_type": "cerebral",
+      "n_signaling": 2,
+      "grounded": 1,
+      "grounding_rate": 0.5,
+      "methods_chars": 21777
+    },
+    {
+      "pmcid": "PMC8802810",
+      "doi": "10.3389/fcell.2021.784700",
+      "organoid_type": "cerebral",
+      "n_signaling": 2,
+      "grounded": 1,
+      "grounding_rate": 0.5,
+      "methods_chars": 36911
+    },
+    {
+      "pmcid": "PMC9245480",
+      "doi": "10.3390/biotech10030012",
+      "organoid_type": "cerebral",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 65681
+    }
+  ],
+  "rejected_papers": [
+    {
+      "pmcid": "PMC10032472",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC11115438",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC11468916",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC7792457",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC7801615",
+      "reason": "low_grounding=0.333"
+    },
+    {
+      "pmcid": "PMC7808910",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC7812034",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC7842896",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC7844938",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC7855621",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC7860132",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC7864813",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC7865724",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC7871400",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC7876476",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC7878833",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC7885116",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC7889267",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC7892608",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC7896132",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC7904736",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC7904742",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC7907173",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC7912435",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC7912469",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC7917623",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC7918566",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC7918597",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC7922592",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC7923060",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC7928227",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC7941713",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC7943797",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC7949107",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC7952537",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC7961561",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC7966189",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC7973205",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC7973473",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC7981590",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC7987357",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC7989039",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC7995442",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC7997736",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC7997884",
+      "reason": "low_grounding=0.143"
+    },
+    {
+      "pmcid": "PMC8000246",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8002192",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8003049",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8003205",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8010307",
+      "reason": "low_grounding=0.2"
+    },
+    {
+      "pmcid": "PMC8010701",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8012207",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8023246",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8025013",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8026466",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8033518",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8037102",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8038474",
+      "reason": "low_grounding=0.333"
+    },
+    {
+      "pmcid": "PMC8055708",
+      "reason": "low_grounding=0.333"
+    },
+    {
+      "pmcid": "PMC8058612",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC8059563",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8060508",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8062881",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8064465",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8069662",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8071412",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8074076",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8079643",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8079735",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8082939",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC8090526",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8092841",
+      "reason": "low_grounding=0.2"
+    },
+    {
+      "pmcid": "PMC8094529",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8100521",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8103065",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8117626",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8119699",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8122153",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8122303",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC8123696",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8125756",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8138431",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8143408",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8155536",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8156310",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8158941",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8161602",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC8187348",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8187652",
+      "reason": "low_grounding=0.286"
+    },
+    {
+      "pmcid": "PMC8198572",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8201350",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8217617",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC8228092",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8230131",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8230855",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8235146",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8235582",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8245514",
+      "reason": "low_grounding=0.333"
+    },
+    {
+      "pmcid": "PMC8266214",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8268119",
+      "reason": "low_grounding=0.25"
+    },
+    {
+      "pmcid": "PMC8269350",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC8275126",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC8284252",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC8285104",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8293489",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8294539",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC8301853",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC8307360",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8308834",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8309106",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8310358",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8316803",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8323738",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8325567",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8330894",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8339315",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8346474",
+      "reason": "low_grounding=0.25"
+    },
+    {
+      "pmcid": "PMC8350905",
+      "reason": "low_grounding=0.125"
+    },
+    {
+      "pmcid": "PMC8354672",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8355544",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8356022",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8362665",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8363920",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8375124",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8375580",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8390696",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8391228",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8393614",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8395727",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8396218",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8398904",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8403483",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8404151",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8404342",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC8409978",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8410758",
+      "reason": "low_grounding=0.25"
+    },
+    {
+      "pmcid": "PMC8421025",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8423999",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC8425951",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC8430601",
+      "reason": "low_grounding=0.25"
+    },
+    {
+      "pmcid": "PMC8431288",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8433470",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8438615",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8448601",
+      "reason": "low_grounding=0.143"
+    },
+    {
+      "pmcid": "PMC8450120",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8450131",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8452599",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8452982",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8456695",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8463074",
+      "reason": "extract_error:ValidationError"
+    },
+    {
+      "pmcid": "PMC8468137",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8478947",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8481890",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8482959",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8493070",
+      "reason": "low_grounding=0.273"
+    },
+    {
+      "pmcid": "PMC8498895",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC8498969",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8500881",
+      "reason": "low_grounding=0.2"
+    },
+    {
+      "pmcid": "PMC8503645",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8508697",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8511496",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC8514627",
+      "reason": "low_grounding=0.111"
+    },
+    {
+      "pmcid": "PMC8525043",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8530511",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8531253",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8533937",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8535263",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8535547",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8537471",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC8538546",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC8538891",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC8540847",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8541080",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8547956",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8548301",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8551831",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8555345",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8557138",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8571531",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8572485",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC8575963",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8577791",
+      "reason": "low_grounding=0.111"
+    },
+    {
+      "pmcid": "PMC8579151",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8580887",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8583900",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8595892",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8599796",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC8602392",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC8609271",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8613538",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC8625030",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8625592",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8628487",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8629662",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8633873",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8634123",
+      "reason": "low_grounding=0.333"
+    },
+    {
+      "pmcid": "PMC8634143",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8634724",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8642539",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC8648388",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8650509",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8651611",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8655188",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC8657784",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8678588",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8687053",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC8698996",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8700474",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8705319",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8706388",
+      "reason": "low_grounding=0.4"
+    },
+    {
+      "pmcid": "PMC8707055",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8707730",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8708555",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8713991",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8716760",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8724155",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8735255",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8750120",
+      "reason": "low_grounding=0.4"
+    },
+    {
+      "pmcid": "PMC8750338",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8750806",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8750870",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8761848",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8765704",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8774890",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8778049",
+      "reason": "low_grounding=0.2"
+    },
+    {
+      "pmcid": "PMC8784555",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8786735",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC8793361",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC8821105",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC8827685",
+      "reason": "no_methods"
+    },
+    {
+      "pmcid": "PMC8873021",
+      "reason": "low_grounding=0.091"
+    },
+    {
+      "pmcid": "PMC8896578",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC9290828",
+      "reason": "no_signaling"
+    }
+  ]
+}

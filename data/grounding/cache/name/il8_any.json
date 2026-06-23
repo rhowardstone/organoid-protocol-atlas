@@ -1,0 +1,706 @@
+[
+  {
+    "curie": "NCBIGene:100195681",
+    "label": "il8",
+    "highlighting": {},
+    "synonyms": [
+      "il8",
+      "IL-8",
+      "interleukin 8",
+      "Interleukin-8",
+      "B5X6N7_SALSA Interleukin 8 precursor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:8030"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 3575.5742,
+    "clique_identifier_count": 6
+  },
+  {
+    "curie": "NCBIGene:100034742",
+    "label": "IL8",
+    "highlighting": {},
+    "synonyms": [
+      "IL8",
+      "IL-8",
+      "cxcli2",
+      "interleukin 8",
+      "A2VBZ2_MELGA C-X-C motif chemokine (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9103"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 3292.3252,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:101804010",
+    "label": "IL8",
+    "highlighting": {},
+    "synonyms": [
+      "IL8",
+      "IL*08-02",
+      "Anpl-IL8",
+      "Anpl-IL*08-03",
+      "interleukin-8",
+      "Q0WZB5_ANAPL C-X-C motif chemokine (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:8839"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 3292.3252,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:102003438",
+    "label": "Cxcl8",
+    "highlighting": {},
+    "synonyms": [
+      "Il8",
+      "Cxcl8",
+      "interleukin 8",
+      "interleukin-8",
+      "A0A8C2UVS7_CHILA C-X-C motif chemokine (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:34839"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 585.6072,
+    "clique_identifier_count": 8
+  },
+  {
+    "curie": "NCBIGene:102953024",
+    "label": "CXCL8",
+    "highlighting": {},
+    "synonyms": [
+      "IL8",
+      "CXCL8",
+      "interleukin-8",
+      "A0A8C9KWK5_PANTA C-X-C motif chemokine (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:74533",
+      "NCBITaxon:9694"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 560.56757,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:107313502",
+    "label": "LOC107313502",
+    "highlighting": {},
+    "synonyms": [
+      "IL8",
+      "LOC107313502",
+      "interleukin-8",
+      "A0A8C2SP76_COTJA C-X-C motif chemokine (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:93934"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 560.56757,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:113894376",
+    "label": "CXCL8",
+    "highlighting": {},
+    "synonyms": [
+      "IL8",
+      "CXCL8",
+      "interleukin 8",
+      "interleukin-8",
+      "A0A4W2EW80_BOBOX C-X-C motif chemokine (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:30522"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 554.21545,
+    "clique_identifier_count": 7
+  },
+  {
+    "curie": "NCBIGene:100390587",
+    "label": "CXCL8",
+    "highlighting": {},
+    "synonyms": [
+      "IL8",
+      "CXCL8",
+      "interleukin 8",
+      "interleukin-8",
+      "A0A8I4A1B7_CALJA C-X-C motif chemokine (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9483"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 477.54208,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:100586157",
+    "label": "CXCL8",
+    "highlighting": {},
+    "synonyms": [
+      "IL8",
+      "CXCL8",
+      "interleukin 8",
+      "interleukin-8",
+      "A0A2I3HR56_NOMLE C-X-C motif chemokine (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:61853"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 477.54208,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:100933600",
+    "label": "CXCL8",
+    "highlighting": {},
+    "synonyms": [
+      "IL8",
+      "CXCL8",
+      "interleukin 8",
+      "interleukin-8",
+      "G3WTP6_SARHA C-X-C motif chemokine (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9305"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 477.54208,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:101707734",
+    "label": "Cxcl8",
+    "highlighting": {},
+    "synonyms": [
+      "Il8",
+      "Cxcl8",
+      "interleukin 8",
+      "interleukin-8",
+      "A0A0P6JFD0_HETGA C-X-C motif chemokine (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:10181"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 477.54208,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:102178438",
+    "label": "CXCL8",
+    "highlighting": {},
+    "synonyms": [
+      "IL8",
+      "CXCL8",
+      "interleukin 8",
+      "interleukin-8",
+      "A0A452FCP2_CAPHI C-X-C motif chemokine (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9925"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 477.54208,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:102428495",
+    "label": "CXCL8",
+    "highlighting": {},
+    "synonyms": [
+      "IL8",
+      "CXCL8",
+      "interleukin 8",
+      "interleukin-8",
+      "G1P3E5_MYOLU C-X-C motif chemokine (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:59463"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 477.54208,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:127379526",
+    "label": "cxcl19",
+    "highlighting": {},
+    "synonyms": [
+      "IL8",
+      "cxcl19",
+      "interleukin-8",
+      "C-X-C motif chemokine 19",
+      "A0A8C4F5H1_DICLA Chemokine (C-X-C motif) ligand 19 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:13489"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 477.54208,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:443418",
+    "label": "CXCL8",
+    "highlighting": {},
+    "synonyms": [
+      "IL8",
+      "IL-8",
+      "CXCL8",
+      "interleukin-8",
+      "C-X-C motif chemokine 8",
+      "chemokine (C-X-C motif) ligand 8",
+      "IL8_SHEEP Interleukin-8 (sprot)"
+    ],
+    "taxa": [
+      "NCBITaxon:9940"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 451.7805,
+    "clique_identifier_count": 8
+  },
+  {
+    "curie": "NCBIGene:101964975",
+    "label": "LOC101964975",
+    "highlighting": {},
+    "synonyms": [
+      "Il8",
+      "Cxcl8",
+      "LOC101964975",
+      "interleukin-8",
+      "C-X-C motif chemokine ligand 8",
+      "I3M1Y5_ICTTR C-X-C motif chemokine (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:43179"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 451.72183,
+    "clique_identifier_count": 6
+  },
+  {
+    "curie": "NCBIGene:396880",
+    "label": "CXCL8",
+    "highlighting": {},
+    "synonyms": [
+      "IL8",
+      "IL-8",
+      "CXCL8",
+      "AMCF-I",
+      "interleukin-8",
+      "C-X-C motif chemokine 8",
+      "C-X-C motif chemokine ligand 8",
+      "chemokine (C-X-C motif) ligand 8",
+      "alveolar macrophage chemotactic factor I",
+      "alveolar macrophage-derived chemotactic factor-I",
+      "IL8_PIG Interleukin-8 (sprot)",
+      "Q68CM2_PIG C-X-C motif chemokine (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9823"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 440.627,
+    "clique_identifier_count": 28
+  },
+  {
+    "curie": "NCBIGene:100978369",
+    "label": "CXCL8",
+    "highlighting": {},
+    "synonyms": [
+      "IL8",
+      "CXCL8",
+      "interleukin 8",
+      "interleukin-8"
+    ],
+    "taxa": [
+      "NCBITaxon:9597"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 433.71426,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "NCBIGene:102412933",
+    "label": "CXCL8",
+    "highlighting": {},
+    "synonyms": [
+      "IL8",
+      "CXCL8",
+      "interleukin-8",
+      "Q58GK7_BUBBU C-X-C motif chemokine (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:89462"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 433.71426,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "NCBIGene:100498389",
+    "label": "cxcl8a.2",
+    "highlighting": {},
+    "synonyms": [
+      "il8",
+      "cxcl8a.2",
+      "interleukin-8",
+      "C-X-C motif chemokine ligand 8a gene 2",
+      "A0A1B8Y8P4_XENTR Interleukin-8 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:8364"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 428.9495,
+    "clique_identifier_count": 4
+  }
+]

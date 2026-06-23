@@ -1,0 +1,689 @@
+[
+  {
+    "curie": "NCBIGene:4838",
+    "label": "NODAL",
+    "highlighting": {},
+    "synonyms": [
+      "HTX5",
+      "NODAL",
+      "NODAL gene",
+      "NODAL Gene",
+      "nodal homolog",
+      "nodal homolog (mouse)",
+      "nodal, mouse, homolog",
+      "NODAL, MOUSE, HOMOLOG OF",
+      "NODAL GROWTH DIFFERENTIATION FACTOR",
+      "nodal growth differentiation factor",
+      "Nodal Growth Differentiation Factor Gene",
+      "hNODAL",
+      "Nodal Homolog",
+      "NODAL protein, human",
+      "nodal homolog (human)",
+      "NODAL_HUMAN Nodal homolog (sprot)",
+      "Nodal Growth Differentiation Factor",
+      "nodal homolog (mouse) protein, human"
+    ],
+    "taxa": [
+      "NCBITaxon:9606"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 3502.5151,
+    "clique_identifier_count": 12
+  },
+  {
+    "curie": "NCBIGene:18119",
+    "label": "Nodal",
+    "highlighting": {},
+    "synonyms": [
+      "nodal",
+      "Nodal",
+      "Tg.413d",
+      "nodal growth differentiation factor",
+      "mNODAL",
+      "nodal (mouse)",
+      "NODAL_MOUSE Nodal (sprot)"
+    ],
+    "taxa": [
+      "NCBITaxon:10090"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2839.5396,
+    "clique_identifier_count": 7
+  },
+  {
+    "curie": "NCBIGene:294503",
+    "label": "Nodal",
+    "highlighting": {},
+    "synonyms": [
+      "Nodal",
+      "nodal homolog",
+      "nodal growth differentiation factor",
+      "A6K3Z7_RAT Nodal homolog (Mouse) (Predicted) (trembl)",
+      "D3ZGK9_RAT Nodal growth differentiation factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:10116"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2839.5396,
+    "clique_identifier_count": 7
+  },
+  {
+    "curie": "NCBIGene:100979020",
+    "label": "NODAL",
+    "highlighting": {},
+    "synonyms": [
+      "NODAL",
+      "nodal homolog",
+      "A0A2R9AMG2_PANPA Nodal growth differentiation factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9597"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2657.1985,
+    "clique_identifier_count": 6
+  },
+  {
+    "curie": "NCBIGene:101954730",
+    "label": "Nodal",
+    "highlighting": {},
+    "synonyms": [
+      "Nodal",
+      "nodal homolog",
+      "I3MK27_ICTTR Nodal growth differentiation factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:43179"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2657.1985,
+    "clique_identifier_count": 6
+  },
+  {
+    "curie": "NCBIGene:102013448",
+    "label": "Nodal",
+    "highlighting": {},
+    "synonyms": [
+      "Nodal",
+      "nodal homolog",
+      "A0A8C2W8N8_CHILA Nodal growth differentiation factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:34839"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2657.1985,
+    "clique_identifier_count": 6
+  },
+  {
+    "curie": "NCBIGene:103216052",
+    "label": "NODAL",
+    "highlighting": {},
+    "synonyms": [
+      "NODAL",
+      "nodal homolog",
+      "A0A0D9R7G7_CHLSB Nodal growth differentiation factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:60711"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2657.1985,
+    "clique_identifier_count": 6
+  },
+  {
+    "curie": "NCBIGene:118882698",
+    "label": "NODAL",
+    "highlighting": {},
+    "synonyms": [
+      "NODAL",
+      "nodal homolog",
+      "A0A8B8VIR4_BALMU Nodal growth differentiation factor (trembl)",
+      "A0A8B8VIR5_BALMU Nodal homolog isoform X2 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9771"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2657.1985,
+    "clique_identifier_count": 6
+  },
+  {
+    "curie": "NCBIGene:466100",
+    "label": "NODAL",
+    "highlighting": {},
+    "synonyms": [
+      "NODAL",
+      "nodal homolog",
+      "nodal growth differentiation factor",
+      "H2Q215_PANTR Nodal growth differentiation factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9598"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2446.7012,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:530748",
+    "label": "NODAL",
+    "highlighting": {},
+    "synonyms": [
+      "NODAL",
+      "nodal homolog",
+      "nodal growth differentiation factor",
+      "E1BJ34_BOVIN Nodal growth differentiation factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9913"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2446.7012,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:710424",
+    "label": "NODAL",
+    "highlighting": {},
+    "synonyms": [
+      "NODAL",
+      "nodal homolog",
+      "nodal growth differentiation factor",
+      "F7FDC0_MACMU Nodal growth differentiation factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9544"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2446.7012,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:778979",
+    "label": "nodal",
+    "highlighting": {},
+    "synonyms": [
+      "nodal",
+      "transforming growth factor beta superfamily signaling ligand",
+      "F7AEN4_CIOIN Transforming growth factor beta superfamily signaling ligand (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:7719"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2446.7012,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:100023464",
+    "label": "NODAL",
+    "highlighting": {},
+    "synonyms": [
+      "NODAL",
+      "nodal homolog",
+      "F7CYQ7_MONDO Nodal growth differentiation factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:13616"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2446.7012,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:100072735",
+    "label": "NODAL",
+    "highlighting": {},
+    "synonyms": [
+      "NODAL",
+      "nodal homolog",
+      "nodal growth differentiation factor",
+      "A0A9L0SJ47_HORSE Nodal growth differentiation factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9796"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2446.7012,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:100406643",
+    "label": "NODAL",
+    "highlighting": {},
+    "synonyms": [
+      "NODAL",
+      "nodal homolog",
+      "F7I2K8_CALJA Nodal growth differentiation factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9483"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2446.7012,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:100453474",
+    "label": "NODAL",
+    "highlighting": {},
+    "synonyms": [
+      "NODAL",
+      "nodal homolog",
+      "H2NAN3_PONAB NODAL isoform 1 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9601"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2446.7012,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:100588745",
+    "label": "NODAL",
+    "highlighting": {},
+    "synonyms": [
+      "NODAL",
+      "nodal homolog",
+      "G1S215_NOMLE Nodal growth differentiation factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:61853"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2446.7012,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:100654870",
+    "label": "NODAL",
+    "highlighting": {},
+    "synonyms": [
+      "NODAL",
+      "nodal homolog",
+      "G3TPH0_LOXAF Nodal growth differentiation factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9785"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2446.7012,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:100725590",
+    "label": "Nodal",
+    "highlighting": {},
+    "synonyms": [
+      "Nodal",
+      "nodal homolog",
+      "H0VUA4_CAVPO Nodal growth differentiation factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:10141"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2446.7012,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:100762314",
+    "label": "Nodal",
+    "highlighting": {},
+    "synonyms": [
+      "Nodal",
+      "nodal homolog",
+      "nodal-like protein",
+      "A0A8C2LAD5_CRIGR Nodal growth differentiation factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:10029"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2446.7012,
+    "clique_identifier_count": 5
+  }
+]

@@ -1,0 +1,623 @@
+[
+  {
+    "curie": "NCBIGene:403579",
+    "label": "AVP",
+    "highlighting": {},
+    "synonyms": [
+      "AVP",
+      "neurophysin II",
+      "arginine vasopressin",
+      "vasopressin-neurophysin 2-copeptin",
+      "arginine vasopressin (neurophysin II, antidiuretic hormone, diabetes insipidus, neurohypophyseal)",
+      "A0A8C0SVU0_CANLF Arginine vasopressin (trembl)",
+      "A0A8I3NZX3_CANLF Arginine vasopressin (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9615"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 779.27954,
+    "clique_identifier_count": 11
+  },
+  {
+    "curie": "UniProtKB:A0A8C2EHB9",
+    "label": "A0A8C2EHB9_CYPCA Arginine vasopressin (trembl)",
+    "highlighting": {},
+    "synonyms": [
+      "A0A8C2EHB9_CYPCA Arginine vasopressin (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:7962"
+    ],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 777.2903,
+    "clique_identifier_count": 7
+  },
+  {
+    "curie": "NCBIGene:101096305",
+    "label": "AVP",
+    "highlighting": {},
+    "synonyms": [
+      "AVP",
+      "arginine vasopressin",
+      "vasopressin-neurophysin 2-copeptin",
+      "A0A2I2U5X4_FELCA Arginine vasopressin (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9685"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 695.6034,
+    "clique_identifier_count": 4
+  },
+  {
+    "curie": "UniProtKB:A0A8C1VHY6",
+    "label": "A0A8C1VHY6_CYPCA Arginine vasopressin receptor 1Aa (trembl)",
+    "highlighting": {},
+    "synonyms": [
+      "A0A8C1VHY6_CYPCA Arginine vasopressin receptor 1Aa (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:7962"
+    ],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 687.7422,
+    "clique_identifier_count": 7
+  },
+  {
+    "curie": "NCBIGene:717101",
+    "label": "AVP",
+    "highlighting": {},
+    "synonyms": [
+      "AVP",
+      "arginine vasopressin",
+      "vasopressin-neurophysin 2-copeptin",
+      "arginine vasopressin (neurophysin II, antidiuretic hormone, diabetes insipidus, neurohypophyseal)",
+      "A0A5F8A1E9_MACMU Arginine vasopressin (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9544"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 677.39966,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:746870",
+    "label": "AVP",
+    "highlighting": {},
+    "synonyms": [
+      "AVP",
+      "arginine vasopressin",
+      "vasopressin-neurophysin 2-copeptin",
+      "arginine vasopressin-neurophysin II",
+      "arginine vasopressin (neurophysin II, antidiuretic hormone, diabetes insipidus, neurohypophyseal)",
+      "H2QJV2_PANTR Arginine vasopressin (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9598"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 618.6574,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "CHEBI:89492",
+    "label": "Arginine vasopressin 1-8",
+    "highlighting": {},
+    "synonyms": [
+      "Arginine vasopressin 1-8",
+      "Cys-tyr-phe-GLN-asn-cys-pro-arg",
+      "Cys-Tyr-Phe-Gln-Asn-Cys-Pro-Arg",
+      "Des-gly-NH(,2)('9),[arg('8)]-vasopressin",
+      "Des-Gly-NH(,2)('9),[Arg('8)]-Vasopressin",
+      "Cys-Tyr-Phe-Gln-Asn-Cys-Pro-Arg [Disulfide Bridge: 1-6]",
+      "(2R)-2-{[(2R)-1-{[(4R,10R,13R,16R)-19-amino-13-benzyl-10-[2-(C-hydroxycarbonimidoyl)ethyl]-7-(C-hydroxycarbonimidoylmethyl)-16-[(4-hydroxyphenyl)methyl]-6,9,12,15,18-pentaoxo-1,2-dithia-5,8,11,14,17-pentaazacycloicosan-4-yl]carbonyl}pyrrolidin-2-yl]formamido}-5-carbamimidamidopentanoic acid",
+      "(2R)-2-({[(2R)-1-[(4R,10R,13R,16R)-19-amino-13-benzyl-6,9,12,15,18-pentahydroxy-10-[2-(C-hydroxycarbonimidoyl)ethyl]-7-[(C-hydroxycarbonimidoyl)methyl]-16-[(4-hydroxyphenyl)methyl]-1,2-dithia-5,8,11,14,17-pentaazacycloicosa-5,8,11,14,17-pentaene-4-carbonyl]pyrrolidin-2-yl](hydroxy)methylidene}amino)-5-carbamimidamidopentanoate"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 601.60406,
+    "clique_identifier_count": 4
+  },
+  {
+    "curie": "UniProtKB:A0A8C4YUK2",
+    "label": "A0A8C4YUK2_GADMO Arginine vasopressin receptor 1A (trembl)",
+    "highlighting": {},
+    "synonyms": [
+      "A0A8C4YUK2_GADMO Arginine vasopressin receptor 1A (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:8049"
+    ],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 592.5959,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "UniProtKB:A0A3P9M176",
+    "label": "A0A3P9M176_ORYLA Arginine vasopressin receptor 2 (trembl)",
+    "highlighting": {},
+    "synonyms": [
+      "A0A3P9M176_ORYLA Arginine vasopressin receptor 2 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:8090"
+    ],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 592.5959,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "UniProtKB:A0A8C1LXF6",
+    "label": "A0A8C1LXF6_CYPCA Arginine vasopressin receptor 1Ab (trembl)",
+    "highlighting": {},
+    "synonyms": [
+      "A0A8C1LXF6_CYPCA Arginine vasopressin receptor 1Ab (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:7962"
+    ],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 592.5959,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "CHEBI:34543",
+    "label": "vasopressin",
+    "highlighting": {},
+    "synonyms": [
+      "VP",
+      "AVP",
+      "ADH",
+      "Argipressin",
+      "argipresina",
+      "VASOPRESSIN",
+      "Vasopressin",
+      "vasopressin",
+      "argipressin",
+      "Vasopressins",
+      "Vasopressina",
+      "argipressine",
+      "argipressinum",
+      "adh vasopressin",
+      "ADH preparation",
+      "Arg-vasopressin",
+      "beta-Hypophamine",
+      "vasopressin (ADH)",
+      "vasopressin (USP)",
+      "Vasopressin (USP)",
+      "ADH - Vasopressin",
+      "[Arg8]-vasopressin",
+      "ARGIPRESSIN TANNATE",
+      "VASOPRESSIN TANNATE",
+      "Argipressin tannate",
+      "Vasopressin product",
+      "Antidiuretic hormone",
+      "antidiuretic hormone",
+      "arginine-vasopressin",
+      "Arginine Vasopressin",
+      "arginine vasopressin",
+      "Antidiuretic Hormone",
+      "Vasopressini injectio",
+      "Hormone, Antidiuretic",
+      "8-Arginine-vasopressin",
+      "Vasopressin preparation",
+      "Vasopressin, Unspecified",
+      "Vasopressin, unspecified",
+      "8-L-Arginine vasopressin",
+      "8-L-arginine-vasopressin",
+      "VASOPRESSIN, UNSPECIFIED",
+      "[cyclo S-S]CYFQNCPRG-NH2",
+      "vasopressin (medication)",
+      "Inyectable de vasopresina",
+      "ADH (antidiuretic hormone)",
+      "ADH - Antidiuretic hormone",
+      "ADH - antidiuretic hormone",
+      "Vasopressin (arginine form)",
+      "Anti-diuretic hormone (ADH)",
+      "Antidiuretic hormone product",
+      "ADH-Antidiuretic hormone prod",
+      "Antidiuretic hormone-vasopress",
+      "ADH-Antidiuretic hormone product",
+      "Antidiuretic hormone preparation",
+      "Antidiuretic hormone-vasopressin",
+      "Antidiuretic hormone (substance)",
+      "Solute injectable de vasopressine",
+      "Antidiuretic Hormone (Vasopressin)",
+      "Antidiuretic hormone-containing product",
+      "Product containing antidiuretic hormone (medicinal product)",
+      "1-{[(4R,7S,10S,13S,16S,19R)-19-amino-7-(2-amino-2-oxoethyl)-10-(3-amino-3-oxopropyl)-13-benzyl-16-(4-hydroxybenzyl)-6,9,12,15,18-pentaoxo-1,2-dithia-5,8,11,14,17-pentaazacycloicosan-4-yl]carbonyl}-L-prolyl-L-arginylglycinamide"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 576.5204,
+    "clique_identifier_count": 34
+  },
+  {
+    "curie": "UniProtKB:A0A8C2AVC4",
+    "label": "A0A8C2AVC4_CYPCA Arginine vasopressin receptor 2, like (trembl)",
+    "highlighting": {},
+    "synonyms": [
+      "A0A8C2AVC4_CYPCA Arginine vasopressin receptor 2, like (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:7962"
+    ],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 560.3199,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "UniProtKB:G3NXW6",
+    "label": "G3NXW6_GASAC Arginine vasopressin-induced protein 1 (trembl)",
+    "highlighting": {},
+    "synonyms": [
+      "G3NXW6_GASAC Arginine vasopressin-induced protein 1 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:69293"
+    ],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 560.3199,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "UniProtKB:A0A8D2D698",
+    "label": "A0A8D2D698_SCIVU Arginine vasopressin-induced protein 1 (trembl)",
+    "highlighting": {},
+    "synonyms": [
+      "A0A8D2D698_SCIVU Arginine vasopressin-induced protein 1 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:55149"
+    ],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 560.3199,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "UniProtKB:A0A8C7JW56",
+    "label": "A0A8C7JW56_ONCKI Arginine vasopressin-induced protein 1 (trembl)",
+    "highlighting": {},
+    "synonyms": [
+      "A0A8C7JW56_ONCKI Arginine vasopressin-induced protein 1 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:8019"
+    ],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 560.3199,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "UniProtKB:A0A3B3XE51",
+    "label": "A0A3B3XE51_9TELE Arginine vasopressin-induced protein 1 (trembl)",
+    "highlighting": {},
+    "synonyms": [
+      "A0A3B3XE51_9TELE Arginine vasopressin-induced protein 1 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:48701"
+    ],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 560.3199,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:71313452",
+    "label": "Arginine Vasopressin-d5",
+    "highlighting": {},
+    "synonyms": [
+      "Arginine Vasopressin-d5"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 554.2787,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:139025970",
+    "label": "Arginine Vasopressin Diacetate",
+    "highlighting": {},
+    "synonyms": [
+      "Arginine Vasopressin Diacetate"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:MolecularMixture",
+      "biolink:ChemicalMixture",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 554.2787,
+    "clique_identifier_count": 3
+  },
+  {
+    "curie": "NCBIGene:100155615",
+    "label": "AVPI1",
+    "highlighting": {},
+    "synonyms": [
+      "AVPI1",
+      "AVP induced 1",
+      "arginine vasopressin induced 1",
+      "vasopressin-induced protein, 32kDa",
+      "arginine vasopressin-induced protein 1",
+      "A0A286ZYA1_PIG Arginine vasopressin-induced protein 1 (trembl)",
+      "A0A8D0MXE7_PIG Arginine vasopressin-induced protein 1 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9823"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 548.3589,
+    "clique_identifier_count": 25
+  },
+  {
+    "curie": "PUBCHEM.COMPOUND:44376291",
+    "label": "8-Arginine vasopressin trisulphide",
+    "highlighting": {},
+    "synonyms": [
+      "8-Arginine vasopressin trisulphide"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 518.19354,
+    "clique_identifier_count": 3
+  }
+]
