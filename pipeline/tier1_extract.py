@@ -48,13 +48,42 @@ def is_non_reagent(name: str | None) -> bool:
     return bool(name) and bool(NON_REAGENT_RE.search(name))
 
 
+# Pathway / signaling-family context guard: bare family names without a specific
+# isoform number/letter are pathway-context prose, not actionable culture reagents.
+# "WNT signaling" ≠ "WNT3A" or "CHIR99021". Also catches any name that explicitly
+# qualifies itself with "signaling / pathway / axis / cascade / family / regulation".
+# Conservative: only matches when NO isoform suffix (digit or letter run) follows
+# the base name — so "BMP4", "FGF2", "TGF-β1", "EGF" are never blocked.
+# "FGF"/"FGFs" are in the bare-family group (ambiguous; distinct from FGF2/FGF10 etc.).
+# "EGF" is NOT here — bare EGF is the specific ligand, not a family shorthand.
+PATHWAY_CONTEXT_RE = re.compile(
+    # bare family names (no trailing digit / letter suffix → isoform):
+    r"^\s*(?:wnt|wnts?|bmp|bmps?|fgf|fgfs?|tgf(?:[\s\-]?(?:beta|α|β|alpha))?|sonic[\s+]hedgehog|shh"
+    r"|notch|pdgf|vegf|hippo|hedgehog)\s*$"
+    r"|"
+    # any name that declares itself as signaling / pathway / etc.:
+    r"\b(?:wnt|bmp|fgf|tgf|egf|shh|notch|hedgehog|pdgf|vegf)\s+"
+    r"(?:signaling?|pathway|activity|axis|cascade|family|regulation"
+    r"|ligand|superfamily|inhibition|inhibitor|activation|response)\b",
+    re.I,
+)
+
+
+def is_pathway_context(name: str | None) -> bool:
+    return bool(name) and bool(PATHWAY_CONTEXT_RE.search(name))
+
+
 sys.path.insert(0, str(REPO / "organoid_demo"))
 
 from schema import (  # noqa: E402
-    BaseMedia, Concentration, CultureConditions, Evidence, Matrix, OrganoidProtocol,
-    OrganoidType, Passaging, Reagent, Reporting, SourceCells, SourceCellType,
-    TimelineStage,
+    BaseMedia, Concentration, CultureConditions, Evidence, FailureMode, Matrix,
+    OrganoidProtocol, OrganoidType, Passaging, ProtocolModification, Reagent, Reporting,
+    SourceCells, SourceCellType, TimelineStage,
 )
+
+# A real DOI ("10.<registrant>/<suffix>"). The model frequently emits a bare reference
+# index (e.g. "21") for a cited prior protocol; those must NOT become lineage edges.
+DOI_RE = re.compile(r"10\.\d{4,9}/\S+")
 
 BUNDLES = REPO / "data" / "evidence_bundles" / "local"
 PRED_DIR = REPO / "data" / "predictions" / "local"
@@ -111,7 +140,7 @@ def build_evidence_text(bundle: dict, cap: int = 24000) -> str:
 
 PROMPT = """You extract an organoid culture protocol from the text into JSON.
 Return ONLY JSON with keys:
-organoid_type (intestinal|gastric|cerebral|kidney|liver|lung|retinal|pancreatic|other),
+organoid_type (intestinal|gastric|cerebral|kidney|liver|lung|retinal|pancreatic|tumor|cardiac|vascular|cholangiocyte|skin|mammary|endometrial|bone|prostate|inner-ear|salivary-gland|bladder|neuromuscular|esophageal|blood-brain-barrier|thyroid|fallopian-tube|other),
 source_cells: {{cell_type (iPSC|ESC|adult_stem_cell|primary_tissue|other), species, line_name, rrid}},
 matrix: {{name}}, base_media: {{name}},
 culture_conditions: {{temperature_c, co2_pct, o2_pct, evidence_quote}},
@@ -120,8 +149,9 @@ media_supplements: [{{name}}],
 passaging: {{method, split_ratio, interval_days}},
 timeline: [{{name, day_start, day_end}}],
 assay_endpoints: [string],
-failure_modes: [{{description, condition}}],
-modifications: [{{cited_doi, change_description}}].
+failure_modes: [{{description, condition, evidence_quote}}],
+modifications: [{{cited_doi, change_description, evidence_quote}}],
+publication_type ("primary_methods" | "review" | "other"): "review" if this text summarizes findings from multiple other papers' protocols; "primary_methods" if it presents one new original culture procedure.
 RULES:
 - evidence_quote MUST be copied verbatim (exact substring) from the text.
 - culture_conditions: numeric temperature_c / co2_pct / o2_pct ONLY if the text states them
@@ -141,11 +171,22 @@ RULES:
   media_supplements, NOT signaling_factors.
 - treat R-spondin / R-spondin1 / RSPO1 as ONE entity (list once).
 - if a field is not stated, omit it; never invent a value.
-- failure_modes: list any explicit warnings, failure conditions, or critical steps the paper warns about (e.g. "temperature above 37°C reduces efficiency", "avoid repeated freeze-thaw"). Empty [] if none stated.
-- modifications: if the paper explicitly says it modified a prior protocol, capture the prior protocol's DOI (if mentioned) and what changed. Empty [] if this is an original protocol or no modifications are stated.
+- failure_modes: list any explicit warnings, failure conditions, or critical steps the paper warns about (e.g. "temperature above 37°C reduces efficiency", "avoid repeated freeze-thaw"). evidence_quote = the verbatim span stating it. Empty [] if none stated.
+- modifications: if the paper explicitly says it modified a prior protocol, capture the prior protocol's DOI (cited_doi = the full DOI string ONLY if it appears verbatim in THIS text; null otherwise — never a bare reference number, never invented) and what changed; evidence_quote = the verbatim span. Empty [] if this is an original protocol or no modifications are stated.
 
 TEXT:
 {evidence}"""
+
+
+def detect_publication_type(bundle: dict, model_out: dict) -> str:
+    """Determine article type: prefer deterministic JATS attribute, fall back to model."""
+    jats_at = bundle.get("article_type", "").lower()
+    if "review" in jats_at:
+        return "review"
+    mp = str(model_out.get("publication_type", "")).lower().strip('"').strip()
+    if mp in ("review", "primary_methods", "other"):
+        return mp
+    return "primary_methods"
 
 
 def call_ollama(prompt: str) -> dict:
@@ -154,16 +195,9 @@ def call_ollama(prompt: str) -> dict:
         # num_ctx must be set explicitly — ollama's default context (~4k) silently
         # truncates long protocol papers (e.g. Broda 40k methods), losing the
         # concentrations stated in later steps. 16k tokens covers the 24k-char window.
-        # num_predict caps generation length so a pathological input can't trigger an
-        # unbounded repetition-loop generation that pegs the GPU indefinitely (observed:
-        # a single paper ran 67 min, hanging the whole marathon — the urlopen socket
-        # timeout below does NOT bound a non-streaming request that never sends bytes).
-        # 6144 is generous headroom for the largest legitimate extraction JSON; a runaway
-        # stops at the cap (~2-3 min), yields unparseable JSON, and is rejected downstream.
         data=json.dumps({"model": MODEL, "prompt": prompt, "format": "json",
                          "stream": False,
-                         "options": {"temperature": 0, "num_ctx": 16384,
-                                     "num_predict": 6144}}).encode(),
+                         "options": {"temperature": 0, "num_ctx": 16384}}).encode(),
         headers={"Content-Type": "application/json"},
     )
     resp = json.load(urllib.request.urlopen(req, timeout=600))["response"]
@@ -175,6 +209,47 @@ def _enum(cls, val, default):
         return cls(val)
     except (ValueError, TypeError):
         return default
+
+
+def build_failure_modes(m: dict, doi: str, evidence: str) -> list[FailureMode]:
+    """Failure modes the model reported. Keep any with a non-empty description; attach a
+    verbatim Evidence quote when the model supplied one that is a real substring of the
+    source (a quote that is NOT verbatim is dropped, never stored as false evidence)."""
+    out = []
+    for fm in (m.get("failure_modes") or []):
+        if not isinstance(fm, dict):
+            continue
+        desc = str(fm.get("description") or "").strip()
+        if not desc:
+            continue
+        q = (fm.get("evidence_quote") or "").strip()
+        ev = Evidence(source_doi=doi, quote=q, section="Methods", confidence=0.0) \
+            if (q and q in evidence) else None
+        cond = (fm.get("condition") or "").strip() or None
+        out.append(FailureMode(description=desc, condition=cond, evidence=ev))
+    return out
+
+
+def build_modifications(m: dict, doi: str, evidence: str) -> list[ProtocolModification]:
+    """Protocol modifications the model reported. Require a change_description; keep
+    cited_doi ONLY if it is a real DOI (a bare reference index like "21" is dropped so
+    it cannot become a fabricated lineage edge)."""
+    out = []
+    for mod in (m.get("modifications") or []):
+        if not isinstance(mod, dict):
+            continue
+        change = str(mod.get("change_description") or "").strip()
+        if not change:
+            continue
+        # cited_doi must be a real DOI AND appear verbatim in the source — this kills both
+        # bare reference indices ("21") and example DOIs parroted from the prompt.
+        cd = str(mod.get("cited_doi") or "").strip()
+        cited = cd if (DOI_RE.fullmatch(cd) and cd in evidence) else None
+        q = (mod.get("evidence_quote") or "").strip()
+        ev = Evidence(source_doi=doi, quote=q, section="Methods", confidence=0.0) \
+            if (q and q in evidence) else None
+        out.append(ProtocolModification(cited_doi=cited, change_description=change, evidence=ev))
+    return out
 
 
 def to_protocol(doi: str, m: dict, evidence: str) -> tuple[OrganoidProtocol, dict]:
@@ -274,12 +349,15 @@ def to_protocol(doi: str, m: dict, evidence: str) -> tuple[OrganoidProtocol, dic
         base_media=BaseMedia(name=bm.get("name"),
                              reporting=Reporting.REPORTED if bm.get("name") else Reporting.NOT_REPORTED),
         signaling_factors=[reagent(d) for d in (m.get("signaling_factors") or [])
-                           if d.get("name") and not is_non_reagent(d.get("name"))],
+                           if d.get("name") and not is_non_reagent(d.get("name"))
+                           and not is_pathway_context(d.get("name"))],
         media_supplements=[Reagent(name=str(s.get("name") if isinstance(s, dict) else s).strip())
                            for s in (m.get("media_supplements") or []) if s],
         passaging=passaging,
         timeline=timeline,
         assay_endpoints=endpoints,
+        failure_modes=build_failure_modes(m, doi, evidence),
+        modifications=build_modifications(m, doi, evidence),
     )
     return proto, {"reagents": total, "grounded": grounded}
 
@@ -326,15 +404,18 @@ def main():
         except Exception as e:  # noqa: BLE001
             summary.append({"pmcid": pmcid, "doi": doi, "error": f"{type(e).__name__}: {e}"})
             continue
-        (PRED_DIR / f"{pmcid}.json").write_text(proto.model_dump_json(indent=2))
+        pred_dict = json.loads(proto.model_dump_json(indent=2))
+        pred_dict["publication_type"] = detect_publication_type(bundle, m)
+        (PRED_DIR / f"{pmcid}.json").write_text(json.dumps(pred_dict, indent=2))
         rate = round(g["grounded"] / g["reagents"], 3) if g["reagents"] else None
+        # mirror the GATED values stored on the prediction (DOI-checked, evidence-grounded)
         failure_modes = [
-            {"description": fm.get("description", ""), "condition": fm.get("condition")}
-            for fm in (m.get("failure_modes") or []) if fm.get("description")
+            {"description": fm.description, "condition": fm.condition}
+            for fm in proto.failure_modes
         ]
         modifications = [
-            {"cited_doi": mod.get("cited_doi"), "change_description": mod.get("change_description", "")}
-            for mod in (m.get("modifications") or []) if mod.get("change_description")
+            {"cited_doi": mod.cited_doi, "change_description": mod.change_description}
+            for mod in proto.modifications
         ]
         summary.append({
             "pmcid": pmcid, "doi": doi, "organoid_type": proto.organoid_type.value,
@@ -345,6 +426,7 @@ def main():
             "grounding_rate": rate,
             "failure_modes": failure_modes,
             "modifications": modifications,
+            "publication_type": pred_dict.get("publication_type"),
         })
 
     # incremental (--only): merge fresh rows into the existing summary, keeping the rest
