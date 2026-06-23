@@ -1,0 +1,301 @@
+{
+  "generator": "pipeline/model_bakeoff.py + pipeline/bakeoff_vllm.py",
+  "question": "Does a biomedical or higher-quality >=12B model extract better than gemma3:12b?",
+  "method": "same prompt + evidence + decoding (temp0/num_ctx16384); raw model JSON scored vs 6 human-verified gold via eval_gold.score_paper. Only the model varies.",
+  "gold_papers": [
+    "PMC10000618",
+    "PMC10005775",
+    "PMC10031036",
+    "PMC12625545",
+    "PMC4370217",
+    "PMC6906116"
+  ],
+  "results": {
+    "gemma3:12b": {
+      "model": "gemma3:12b",
+      "note": "baseline \u2014 general 12B (production extractor)",
+      "papers_scored": 6,
+      "errors": [],
+      "median_sec": 66.4,
+      "aggregate": {
+        "papers_scored": 6,
+        "set_fields": {
+          "signaling_factors": {
+            "micro": {
+              "tp": 24,
+              "fp": 14,
+              "fn": 11,
+              "precision": 0.6316,
+              "recall": 0.6857,
+              "f1": 0.6575
+            },
+            "macro": {
+              "precision": 0.6945,
+              "recall": 0.7,
+              "f1": 0.697,
+              "papers_with_support": 6
+            }
+          },
+          "small_molecules": {
+            "micro": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "macro": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "papers_with_support": 0
+            }
+          }
+        },
+        "scalar_fields": {
+          "source_cells.cell_type": {
+            "correct": 5,
+            "incorrect": 1,
+            "missing": 0,
+            "not_in_gold": 0,
+            "scorable": 6,
+            "accuracy": 0.8333
+          },
+          "matrix": {
+            "correct": 1,
+            "incorrect": 4,
+            "missing": 0,
+            "not_in_gold": 1,
+            "scorable": 5,
+            "accuracy": 0.2
+          },
+          "base_media": {
+            "correct": 0,
+            "incorrect": 5,
+            "missing": 0,
+            "not_in_gold": 1,
+            "scorable": 5,
+            "accuracy": 0.0
+          }
+        }
+      }
+    },
+    "phi4:14b": {
+      "model": "phi4:14b",
+      "note": "general 14B \u2014 the >=12B 'equal or higher quality' test",
+      "papers_scored": 6,
+      "errors": [],
+      "median_sec": 42.9,
+      "aggregate": {
+        "papers_scored": 6,
+        "set_fields": {
+          "signaling_factors": {
+            "micro": {
+              "tp": 18,
+              "fp": 7,
+              "fn": 17,
+              "precision": 0.72,
+              "recall": 0.5143,
+              "f1": 0.6
+            },
+            "macro": {
+              "precision": 0.7222,
+              "recall": 0.6076,
+              "f1": 0.6433,
+              "papers_with_support": 6
+            }
+          },
+          "small_molecules": {
+            "micro": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "macro": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "papers_with_support": 0
+            }
+          }
+        },
+        "scalar_fields": {
+          "source_cells.cell_type": {
+            "correct": 5,
+            "incorrect": 1,
+            "missing": 0,
+            "not_in_gold": 0,
+            "scorable": 6,
+            "accuracy": 0.8333
+          },
+          "matrix": {
+            "correct": 1,
+            "incorrect": 4,
+            "missing": 0,
+            "not_in_gold": 1,
+            "scorable": 5,
+            "accuracy": 0.2
+          },
+          "base_media": {
+            "correct": 0,
+            "incorrect": 5,
+            "missing": 0,
+            "not_in_gold": 1,
+            "scorable": 5,
+            "accuracy": 0.0
+          }
+        }
+      }
+    },
+    "meditron-7b": {
+      "model": "meditron:latest",
+      "note": "BIOMEDICAL but 7B Llama-2-based (below 12B bar)",
+      "papers_scored": 5,
+      "errors": [
+        {
+          "pmcid": "PMC10031036",
+          "error": "JSONDecodeError('Unterminated string starting at: line 39 column 5 (char 1970)')"
+        }
+      ],
+      "median_sec": 2.2,
+      "aggregate": {
+        "papers_scored": 5,
+        "set_fields": {
+          "signaling_factors": {
+            "micro": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 32,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "macro": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "papers_with_support": 5
+            }
+          },
+          "small_molecules": {
+            "micro": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "macro": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "papers_with_support": 0
+            }
+          }
+        },
+        "scalar_fields": {
+          "source_cells.cell_type": {
+            "correct": 0,
+            "incorrect": 0,
+            "missing": 5,
+            "not_in_gold": 0,
+            "scorable": 5,
+            "accuracy": 0.0
+          },
+          "matrix": {
+            "correct": 0,
+            "incorrect": 0,
+            "missing": 5,
+            "not_in_gold": 0,
+            "scorable": 5,
+            "accuracy": 0.0
+          },
+          "base_media": {
+            "correct": 0,
+            "incorrect": 0,
+            "missing": 5,
+            "not_in_gold": 0,
+            "scorable": 5,
+            "accuracy": 0.0
+          }
+        }
+      }
+    },
+    "OpenBioLLM-8B": {
+      "model": "aaditya/Llama3-OpenBioLLM-8B",
+      "note": "BIOMEDICAL instruct (Llama-3-8B-Instruct FT), served via vLLM, /v1/completions + Llama-3 template",
+      "engine": "vllm",
+      "papers_scored": 6,
+      "errors": [],
+      "median_sec": 19.9,
+      "aggregate": {
+        "papers_scored": 6,
+        "set_fields": {
+          "signaling_factors": {
+            "micro": {
+              "tp": 5,
+              "fp": 1,
+              "fn": 30,
+              "precision": 0.8333,
+              "recall": 0.1429,
+              "f1": 0.2439
+            },
+            "macro": {
+              "precision": 0.4583,
+              "recall": 0.0859,
+              "f1": 0.1386,
+              "papers_with_support": 6
+            }
+          },
+          "small_molecules": {
+            "micro": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "macro": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "papers_with_support": 0
+            }
+          }
+        },
+        "scalar_fields": {
+          "source_cells.cell_type": {
+            "correct": 2,
+            "incorrect": 2,
+            "missing": 2,
+            "not_in_gold": 0,
+            "scorable": 6,
+            "accuracy": 0.3333
+          },
+          "matrix": {
+            "correct": 1,
+            "incorrect": 3,
+            "missing": 1,
+            "not_in_gold": 1,
+            "scorable": 5,
+            "accuracy": 0.2
+          },
+          "base_media": {
+            "correct": 1,
+            "incorrect": 3,
+            "missing": 1,
+            "not_in_gold": 1,
+            "scorable": 5,
+            "accuracy": 0.2
+          }
+        }
+      }
+    }
+  }
+}
