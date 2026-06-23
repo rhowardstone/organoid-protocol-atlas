@@ -1,11 +1,11 @@
 {
-  "considered": 12000,
-  "accepted": 3990,
-  "rejected": 7210,
-  "chunks": 30,
-  "offset": 12004,
+  "considered": 400,
+  "accepted": 205,
+  "rejected": 195,
+  "chunks": 1,
+  "offset": 12404,
   "pool_size": 13168,
-  "accept_rate": 0.333,
+  "accept_rate": 0.512,
   "candidates": "data/corpus/incoming/organoid_corpus_candidates_mega.csv",
-  "updated_at": "2026-06-22T22:12:02+00:00"
+  "updated_at": "2026-06-23T00:37:16+00:00"
 }
