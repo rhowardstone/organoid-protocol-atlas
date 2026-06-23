@@ -53,8 +53,17 @@ html[data-theme="dark"] select { background: var(--paper-3); color: var(--ink); 
 }
 .apa-theme-btn:hover { border-color: var(--accent); color: var(--accent); }
 
-/* Kill default Datasette chrome so our shell shows through */
-body.index header, body.index footer { display: none !important; }
+/* The branded global navbar (nav.apa-nav) is injected into Datasette's <header>
+   via base.html's {% block nav %}. Collapse the wrapping <header> and its inner
+   <nav> with display:contents so the navbar becomes a direct flow child of
+   .not-footer — this both strips Datasette's default header padding/background
+   AND lets the navbar's position:sticky span the full page height (a sticky
+   element is clipped to its parent box, and the bare <header> was only nav-tall).
+   Previously `body.index header { display:none }` hid the navbar entirely on
+   every custom page, leaving researchers with no site navigation. */
+header, header > nav { display: contents !important; }
+/* Custom pages render their own .apa-foot, so hide Datasette's page footer. */
+body.index footer { display: none !important; }
 header.hd, .ft { background: var(--ink) !important; }
 
 body { background: var(--paper-2); color: var(--ink); font-family: var(--font); margin: 0; }
