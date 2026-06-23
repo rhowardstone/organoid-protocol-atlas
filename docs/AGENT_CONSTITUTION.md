@@ -16,6 +16,7 @@ directory; the brief overrides default behavior where they conflict.
 | Pipeline Engineer | [AGENT_PIPELINE.md](AGENT_PIPELINE.md) | `pipeline/`, `outputs/`, `exports/`, `data/corpus/` | On batch trigger or every 2 h |
 | Frontend Developer | [AGENT_FRONTEND.md](AGENT_FRONTEND.md) | `serve/templates/`, `serve/plugins/` | 45 min |
 | QA Engineer | [AGENT_QA.md](AGENT_QA.md) | `tests/`, `.github/workflows/` | 60 min |
+| Deployment Engineer | [AGENT_DEPLOYMENT.md](AGENT_DEPLOYMENT.md) | `deploy-render` branch, `exports/public/` sync | 30 min / on master push |
 | Corpus Scout | [AGENT_CORPUS_SCOUT.md](AGENT_CORPUS_SCOUT.md) | `data/corpus/corpus.tsv`, `data/corpus/oa_cache/`, `data/corpus/incoming/` | 2–3 h |
 
 ## Communication Protocol
@@ -23,6 +24,7 @@ directory; the brief overrides default behavior where they conflict.
 Agents do not talk to each other directly. All coordination happens through
 GitHub:
 
+- **Open a draft PR within 30 minutes of the first push to any branch.** A branch with no PR is invisible to the Supervisor and the QA Engineer. Use `gh pr create --draft` immediately after pushing.
 - **Open a PR** to propose changes. Never push directly to master.
 - **Open an issue** to surface a finding, flag a risk, or request human input.
 - **Comment on a PR or issue** to leave a finding or ask a question.
