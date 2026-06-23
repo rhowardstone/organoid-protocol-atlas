@@ -145,8 +145,8 @@ header.hd { display: none !important; }
       <a href="https://github.com/rhowardstone/organoid-protocol-atlas" class="apa-nav-link" target="_blank" rel="noopener">GitHub</a>
     </div>
     <div class="apa-nav-search">
-      <form onsubmit="event.preventDefault();var q=this.querySelector('input').value.trim();if(q)window.location='/atlas/reagents?_search='+encodeURIComponent(q);">
-        <input type="search" placeholder="Search reagents…" aria-label="Search reagents">
+      <form onsubmit="event.preventDefault();var q=this.querySelector('input').value.trim();if(q)window.location='/explore?q='+encodeURIComponent(q);">
+        <input type="search" placeholder="Search protocols, factors…" aria-label="Search protocols and reagents">
         <button type="submit" aria-label="Search">&#9658;</button>
       </form>
     </div>
