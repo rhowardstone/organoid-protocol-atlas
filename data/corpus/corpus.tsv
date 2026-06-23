@@ -5060,3 +5060,343 @@ intestinal	10.3390/cancers12010106	PMC7017077	Ahmed	2019	Cancers	tbd	tbd	CC-BY	y
 intestinal	10.3390/cells9010090	PMC7017129	Yen	2019	Cells	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.667
 skin	10.1186/s13287-020-01650-6	PMC7118821	Chen	2020	Stem cell research & therapy	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
 kidney	10.1186/s42490-019-0017-9	PMC7422605	Sekiya	2019	BMC biomedical engineering	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.667
+cardiac	10.3934/celltissue.2017.1.12	PMC12004971	Salazar	2017	AIMS cell and tissue engineering	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.1038/ncomms14578	PMC5343445	Tüysüz	2017	Nature communications	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.1242/dev.138453	PMC5358103	Tsai	2017	Development (Cambridge, England)	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.1038/srep45270	PMC5366908	Noel	2017	Scientific reports	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.15252/emmm.201607260	PMC5412884	Holmberg	2017	EMBO molecular medicine	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.3389/fimmu.2017.00599	PMC5440531	Hou	2017	Frontiers in immunology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.5966/sctm.2016-0153	PMC5442796	Hong	2017	Stem cells translational medicine	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.1007/s40139-017-0137-7	PMC5446548	Nikolić	2017	Current pathobiology reports	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.1038/s41598-017-06070-w	PMC5514129	Aladegbami	2017	Scientific reports	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.1155/2017/7970385	PMC5556610	Meran	2017	Stem cells international	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.714
+intestinal	10.1155/2017/5604727	PMC5585682	Peck	2017	Stem cells international	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.3389/fimmu.2017.01046	PMC5591398	Matsumoto	2017	Frontiers in immunology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.1155/2017/8387297	PMC5610807	Gjorevski	2017	Stem cells international	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.556
+intestinal	10.3791/55916	PMC5612278	Merenda	2017	Journal of visualized experiments : JoVE	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+cardiac	10.3390/bios7030024	PMC5618030	Devarasetty	2017	Biosensors	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.3390/ijms18102059	PMC5666741	Zhou	2017	International journal of molecular sciences	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.1186/s13567-017-0478-6	PMC5667514	Huang	2017	Veterinary research	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.1038/cr.2017.116	PMC5674155	Taubenschmid	2017	Cell research	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.1371/journal.pone.0187880	PMC5706668	Chen	2017	PloS one	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.625
+intestinal	10.7554/elife.29132	PMC5711377	Hill	2017	eLife	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.3389/fmicb.2017.02402	PMC5723307	Iakobachvili	2017	Frontiers in microbiology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.18632/oncotarget.22455	PMC5739782	Dilly	2017	Oncotarget	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.5
+tumor	10.1038/s41598-017-18762-4	PMC5765079	Kim	2018	Scientific reports	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.1002/stem.2712	PMC5765519	Young	2018	Stem cells (Dayton, Ohio)	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.18632/oncotarget.19847	PMC5787442	He	2018	Oncotarget	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.615
+cerebral	10.1098/rstb.2017.0037	PMC5790834	St Clair	2018	Philosophical transactions of the Royal Society of London. Series B, Biological sciences	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.1371/journal.pone.0191517	PMC5794098	Cai	2018	PloS one	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.667
+retinal	10.1038/s41598-018-20813-3	PMC5799252	Phillips	2018	Scientific reports	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+cerebral	10.1038/s41598-018-20436-8	PMC5799361	Jorfi	2018	Scientific reports	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.15252/emmm.201708213	PMC5801505	Hynds	2018	EMBO molecular medicine	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.5
+cerebral	10.1038/s41398-017-0062-x	PMC5802583	Forsberg	2018	Translational psychiatry	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.667
+intestinal	10.18632/oncotarget.23721	PMC5814218	Nam	2018	Oncotarget	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.1128/mbio.02419-17	PMC5821088	Rajan	2018	mBio	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.5
+tumor	10.18632/oncotarget.24279	PMC5828197	Kashfi	2018	Oncotarget	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+retinal	10.1016/j.stemcr.2017.12.008	PMC5830910	Waldron	2018	Stem cell reports	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.5
+kidney	10.1111/joa.12691	PMC5835792	Davies	2018	Journal of anatomy	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.75
+hepatic	10.1007/s00018-017-2713-8	PMC5852182	Alwahsh	2018	Cellular and molecular life sciences : CMLS	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.1371/journal.pone.0194016	PMC5854348	Zhang	2018	PloS one	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.3390/genes9030138	PMC5867859	Perochon	2018	Genes	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.3390/v10030124	PMC5869517	Lanik	2018	Viruses	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.714
+tumor	10.1186/s12885-018-4238-4	PMC5870823	Tsai	2018	BMC cancer	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.917
+tumor	10.15252/emmm.201708478	PMC5887910	Yan	2018	EMBO molecular medicine	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+cerebral	10.3389/fped.2018.00082	PMC5891587	LaMarca	2018	Frontiers in pediatrics	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+cardiac	10.1038/s41467-018-03714-x	PMC5893543	Anderson	2018	Nature communications	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.6
+intestinal	10.3389/fcimb.2018.00102	PMC5894114	Yin	2018	Frontiers in cellular and infection microbiology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.857
+pancreatic	10.1038/s41598-018-24194-5	PMC5895618	Hussain	2018	Scientific reports	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+cerebral	10.1038/s41398-018-0122-x	PMC5895714	Srikanth	2018	Translational psychiatry	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+pancreatic	10.1038/s41598-018-24375-2	PMC5906617	Shibata	2018	Scientific reports	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.875
+retinal	10.1186/s12864-018-4660-7	PMC5910558	Izuogu	2018	BMC genomics	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+gastric	10.1155/2018/9050715	PMC5911338	Ishii	2018	Gastroenterology research and practice	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.5
+neuromuscular	10.1016/j.celrep.2018.03.091	PMC5917451	Maffioletti	2018	Cell reports	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.833
+gastric	10.3390/genes9040178	PMC5924520	Flanagan	2018	Genes	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+cardiac	10.3389/fmed.2018.00110	PMC5928319	Dunn	2018	Frontiers in medicine	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+cardiac	10.1371/journal.pone.0196714	PMC5929561	Kim	2018	PloS one	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+inner-ear	10.1038/s41419-018-0488-y	PMC5941227	Chen	2018	Cell death & disease	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.75
+cerebral	10.1038/s41598-018-25603-5	PMC5943588	Nzou	2018	Scientific reports	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+retinal	10.1038/s41433-018-0061-z	PMC5944658	Chichagova	2018	Eye (London, England)	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+retinal	10.1002/stem.2775	PMC5947711	Lakowski	2018	Stem cells (Dayton, Ohio)	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+retinal	10.1523/eneuro.0035-18.2018	PMC5952320	Burns	2018	eNeuro	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.5
+hepatic	10.18632/oncotarget.25348	PMC5955094	Miyakawa	2018	Oncotarget	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.1080/21505594.2017.1326443	PMC5955461	Yin	2018	Virulence	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+cerebral	10.1186/s13024-018-0258-4	PMC5964712	Centeno	2018	Molecular neurodegeneration	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+tumor	10.1002/ijc.31383	PMC5969061	Hynds	2018	International journal of cancer	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+hepatic	10.1038/s41598-018-26584-1	PMC5974235	Garnier	2018	Scientific reports	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.941
+intestinal	10.1128/mcb.00102-18	PMC5974425	Bruurs	2018	Molecular and cellular biology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.3390/cancers10050151	PMC5977124	Baker	2018	Cancers	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.3390/v10050225	PMC5977218	Holly	2018	Viruses	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+tumor	10.3390/ijms19041098	PMC5979580	Usui	2018	International journal of molecular sciences	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.857
+intestinal	10.3389/fimmu.2018.01177	PMC5986899	Regoli	2018	Frontiers in immunology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.1038/s41467-018-04527-8	PMC5988836	Muta	2018	Nature communications	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.1186/s12915-018-0527-2	PMC5989470	Mead	2018	BMC biology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.3389/fimmu.2018.01270	PMC5996247	Andrews	2018	Frontiers in immunology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.889
+tumor	10.1038/s41467-018-04506-z	PMC5997733	Russo	2018	Nature communications	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.857
+cerebral	10.1038/s41419-018-0763-y	PMC6006338	Zhang	2018	Cell death & disease	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.778
+tumor	10.1038/s41467-018-04495-z	PMC6008438	Puca	2018	Nature communications	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.1371/journal.pone.0199412	PMC6013242	Yip	2018	PloS one	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+retinal	10.1007/s12015-018-9802-4	PMC6013538	Singh	2018	Stem cell reviews and reports	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.714
+intestinal	10.15252/msb.20188227	PMC6018986	Lindeboom	2018	Molecular systems biology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+lung	10.1186/s12931-018-0832-x	PMC6019726	Xin	2018	Respiratory research	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.833
+retinal	10.1155/2018/4968658	PMC6020468	Li	2018	Stem cells international	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+inner-ear	10.1155/2018/8137614	PMC6020521	Lee	2018	BioMed research international	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.7554/elife.36739	PMC6023609	McKinley	2018	eLife	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.1038/s41598-018-28198-z	PMC6023933	Rosenberg	2018	Scientific reports	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+cardiac	10.3390/cells7060048	PMC6025241	Di Baldassarre	2018	Cells	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.75
+intestinal	10.1186/s13567-018-0547-5	PMC6029049	Hamilton	2018	Veterinary research	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+gastric	10.3390/ijms19061683	PMC6032377	Alessandrini	2018	International journal of molecular sciences	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+cholangiocyte	10.3390/ijms19061745	PMC6032423	Nakagawa	2018	International journal of molecular sciences	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.571
+tumor	10.18632/oncotarget.25617	PMC6033374	Sarvestani	2018	Oncotarget	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+tumor	10.1186/s40170-018-0182-7	PMC6038244	Maiuri	2018	Cancer & metabolism	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+pancreatic	10.1186/s13046-018-0820-5	PMC6038340	Del Curatolo	2018	Journal of experimental & clinical cancer research : CR	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.3389/fmicb.2018.01483	PMC6039548	Schöttelndreier	2018	Frontiers in microbiology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+lung	10.1186/s13287-018-0943-9	PMC6042463	Magro-Lopez	2018	Stem cell research & therapy	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.571
+intestinal	10.3389/fpubh.2018.00185	PMC6048981	Truskey	2018	Frontiers in public health	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+tumor	10.1038/s41467-018-05385-0	PMC6068201	López-Arribillaga	2018	Nature communications	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.8
+intestinal	10.1038/s41467-018-05450-8	PMC6072745	Jung	2018	Nature communications	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.714
+cardiac	10.1038/s41467-018-05604-8	PMC6081372	Andersen	2018	Nature communications	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+hepatic	10.1186/s13287-018-0940-z	PMC6085644	Xu	2018	Stem cell research & therapy	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.5
+skin	10.1186/s13287-018-0958-2	PMC6090613	Kim	2018	Stem cell research & therapy	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.6
+lung	10.1186/s12931-018-0837-5	PMC6090695	Rodríguez-Castillo	2018	Respiratory research	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.714
+retinal	10.1016/j.omtn.2018.07.010	PMC6092551	Dulla	2018	Molecular therapy. Nucleic acids	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+hepatic	10.1016/j.stemcr.2018.06.015	PMC6092760	Ayabe	2018	Stem cell reports	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.625
+intestinal	10.1186/s12860-018-0165-0	PMC6094565	Moorefield	2018	BMC cell biology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.1038/s41467-018-06001-x	PMC6120921	Jaeckel	2018	Nature communications	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.1038/s41421-018-0051-0	PMC6120946	Li	2018	Cell discovery	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+lung	10.1242/dev.163485	PMC6124546	Nikolić	2018	Development (Cambridge, England)	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.667
+intestinal	10.1016/j.biomaterials.2018.07.043	PMC6131727	Ng	2018	Biomaterials	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.5
+inner-ear	10.1038/s41419-018-0967-1	PMC6134051	Jeong	2018	Cell death & disease	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+tumor	10.1038/s41598-018-32267-8	PMC6138725	Ravindranathan	2018	Scientific reports	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+kidney	10.1371/journal.pone.0203869	PMC6141081	Rauch	2018	PloS one	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.75
+tumor	10.1038/s41420-018-0103-0	PMC6158288	Zhang	2018	Cell death discovery	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+cerebral	10.3389/fnins.2018.00651	PMC6158340	Rabesandratana	2018	Frontiers in neuroscience	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.778
+intestinal	10.3390/toxins10090351	PMC6162544	Tse	2018	Toxins	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.3390/bioengineering5030049	PMC6163436	Miranda	2018	Bioengineering (Basel, Switzerland)	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+inner-ear	10.1038/s41467-018-06334-7	PMC6168603	Roccio	2018	Nature communications	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.833
+cerebral	10.3389/fnins.2018.00646	PMC6168705	Nayler	2018	Frontiers in neuroscience	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.889
+kidney	10.1007/s13770-017-0107-5	PMC6171675	Burton	2018	Tissue engineering and regenerative medicine	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+tumor	10.3389/fimmu.2018.02243	PMC6172418	Kim	2018	Frontiers in immunology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+kidney	10.1038/s41598-018-33256-7	PMC6175865	Tajiri	2018	Scientific reports	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+cerebral	10.1016/j.celrep.2018.06.100	PMC6178983	Coulter	2018	Cell reports	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.1038/s41467-018-06137-w	PMC6180039	Bayrer	2018	Nature communications	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+salivary-gland	10.1038/s41467-018-06469-7	PMC6181987	Tanaka	2018	Nature communications	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+gastric	10.1038/s41598-018-33578-6	PMC6189208	Schweiger	2018	Scientific reports	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+cardiac		PMC6189805	Vadivelu	2017	Micromachines	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+pancreatic	10.1038/s41598-018-33838-5	PMC6193982	Azzarelli	2018	Scientific reports	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.857
+intestinal	10.1016/j.ebiom.2018.08.040	PMC6197735	Li	2018	EBioMedicine	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.833
+retinal	10.1038/s41598-018-34037-y	PMC6199308	Saengwimol	2018	Scientific reports	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.5
+retinal	10.1186/s13287-018-1036-5	PMC6202849	Chakrabarty	2018	Stem cell research & therapy	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.857
+cerebral	10.1038/s41419-018-1081-0	PMC6204135	Hor	2018	Cell death & disease	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+cardiac	10.3389/fcvm.2018.00147	PMC6205951	Zamani	2018	Frontiers in cardiovascular medicine	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.667
+kidney	10.1371/journal.pone.0206447	PMC6209336	Jun	2018	PloS one	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.1038/s41467-018-06941-4	PMC6214937	Koren	2018	Nature communications	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+gastric	10.15252/embr.201846632	PMC6216254	van Elsland	2018	EMBO reports	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.769
+intestinal	10.1084/jem.20171029	PMC6219748	Aden	2018	The Journal of experimental medicine	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+retinal	10.3389/fnins.2018.00789	PMC6224345	Garita-Hernandez	2018	Frontiers in neuroscience	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+cerebral	10.1038/s41398-018-0281-9	PMC6224395	Srikanth	2018	Translational psychiatry	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+kidney	10.1038/s41598-018-34995-3	PMC6226521	Tan	2018	Scientific reports	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.3389/fimmu.2018.02522	PMC6230592	Glal	2018	Frontiers in immunology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.75
+tumor	10.1016/j.ajpath.2018.05.021	PMC6240511	Campbell	2018	The American journal of pathology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.5
+cerebral	10.3389/fncel.2018.00413	PMC6240766	Koh	2018	Frontiers in cellular neuroscience	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.5
+kidney	10.1242/dmm.035048	PMC6262817	Hurtado Del Pozo	2018	Disease models & mechanisms	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.5
+lung	10.1155/2018/3839803	PMC6276497	Castellani	2018	Analytical cellular pathology (Amsterdam)	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+cerebral	10.3389/fnins.2018.00914	PMC6291617	Pozner	2018	Frontiers in neuroscience	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+mammary	10.1038/s42003-018-0215-3	PMC6292906	Kogata	2018	Communications biology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+cerebral	10.1371/journal.pone.0209150	PMC6296660	Pavoni	2018	PloS one	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+cerebral	10.3389/fped.2018.00394	PMC6299043	Freitas	2018	Frontiers in pediatrics	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+prostate	10.1038/s41598-018-36424-x	PMC6299475	Choudhary	2018	Scientific reports	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.1155/2018/1848605	PMC6304839	Worley	2018	Stem cells international	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.3390/cells7120225	PMC6316377	Liu	2018	Cells	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal		PMC6324351	Alves da Silva	2018	Current developments in nutrition	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+hepatic		PMC6390985	Jafarpour	2018	International journal of organ transplantation medicine	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.714
+tumor	10.18632/oncotarget.26677	PMC6402720	Post	2019	Oncotarget	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+tumor	10.3390/ijms20040925	PMC6412705	Han	2019	International journal of molecular sciences	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.857
+tumor	10.18632/oncotarget.26740	PMC6443011	Khatri	2019	Oncotarget	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+bone	10.1038/s41598-019-42259-x	PMC6453955	Verbeeck	2019	Scientific reports	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+tumor	10.1186/s40425-019-0575-3	PMC6463631	Gonzalez-Exposito	2019	Journal for immunotherapy of cancer	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+cerebral	10.1063/1.5038337	PMC6481725	Kamm	2018	APL bioengineering	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.667
+intestinal	10.1063/1.5045124	PMC6481728	Oksdath	2018	APL bioengineering	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+vascular	10.1007/s10456-018-9639-0	PMC6510911	Man	2019	Angiogenesis	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+endometrial	10.1371/journal.pone.0217365	PMC6538153	Dundon	2019	PloS one	tbd	tbd	CC0	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+tumor	10.3390/ijms20092340	PMC6539579	Elbadawy	2019	International journal of molecular sciences	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.667
+tumor	10.1038/s41388-019-0712-y	PMC6546609	Hepburn	2019	Oncogene	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+tumor	10.1038/s41467-019-10369-9	PMC6559950	Pascual-García	2019	Nature communications	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.5
+tumor	10.3390/cells8050481	PMC6562414	Takahashi	2019	Cells	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+tumor	10.1186/s13046-019-1225-9	PMC6567511	Hwang	2019	Journal of experimental & clinical cancer research : CR	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+bone	10.1155/2019/9026729	PMC6589297	Liu	2019	Stem cells international	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.889
+bladder	10.1038/s41467-019-12037-4	PMC6731242	Zhao	2019	Nature communications	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+tumor	10.1038/s41416-019-0479-5	PMC6738327	Karamitopoulou	2019	British journal of cancer	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+skin	10.12688/wellcomeopenres.15405.2	PMC6790913	Elias	2019	Wellcome open research	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+prostate	10.1371/journal.pgen.1008451	PMC6816545	Olson	2019	PLoS genetics	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+esophageal	10.18632/oncotarget.27264	PMC6817447	Guha	2019	Oncotarget	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+prostate	10.1242/bio.045724	PMC6826291	Horton	2019	Biology open	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+tumor	10.3390/cancers11101569	PMC6826533	De Angelis	2019	Cancers	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.667
+prostate	10.3390/cancers11101405	PMC6826557	Patel	2019	Cancers	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.714
+mammary	10.3390/cancers11101423	PMC6826786	Samocha	2019	Cancers	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.889
+tumor	10.3390/mi10100688	PMC6843395	Choi	2019	Micromachines	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.5
+tumor	10.1186/s40425-019-0769-8	PMC6859637	Newey	2019	Journal for immunotherapy of cancer	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+endometrial	10.1038/s41467-019-13363-3	PMC6879518	Seishima	2019	Nature communications	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+tumor	10.1016/j.celrep.2019.10.107	PMC6899519	Bornes	2019	Cell reports	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+skin	10.1186/s13287-019-1504-6	PMC6921573	Su	2019	Stem cell research & therapy	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.8
+mammary	10.1038/s41598-019-56573-x	PMC6934680	Yang	2019	Scientific reports	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.5
+intestinal		PMC12982386	Devaris		Frontiers in pediatrics	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.75
+lung		PMC13199081	Tang		Frontiers in immunology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+tumor		PMC13199299	Qu		Frontiers in cell and developmental biology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.875
+cerebral		PMC13243271	Fu		Frontiers in aging neuroscience	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+tumor		PMC13254501	Li		Research (Washington, D.C.)	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+hepatic	10.3390/ijms10072972	PMC2738906	Vindigni	2009	International journal of molecular sciences	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+hepatic	10.1186/1476-5926-9-9	PMC3014870	Limaye	2010	Comparative hepatology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+mammary	10.1371/journal.pone.0025661	PMC3184152	Campbell	2011	PloS one	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+mammary	10.1371/journal.pone.0036618	PMC3344920	Ferguson	2012	PloS one	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+bladder	10.1371/journal.pone.0059413	PMC3613403	Tolg	2013	PloS one	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+mammary	10.1371/journal.pone.0060798	PMC3616012	Sigurdsson	2013	PloS one	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+lung	10.1007/s40139-013-0016-9	PMC3646155	Wong	2013	Current pathobiology reports	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+kidney	10.1371/journal.pone.0062953	PMC3646983	Ranghini	2013	PloS one	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.5
+intestinal	10.3389/fphar.2013.00079	PMC3703544	Kauffman	2013	Frontiers in pharmacology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.1098/rstb.2013.0014	PMC3785964	Fatehullah	2013	Philosophical transactions of the Royal Society of London. Series B, Biological sciences	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.1371/journal.pone.0076971	PMC3793972	de Groot	2013	PloS one	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.1371/journal.pone.0084651	PMC3882257	Lei	2014	PloS one	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.5
+hepatic	10.1371/journal.pone.0084287	PMC3896358	Tiruvannamalai-Annamalai	2014	PloS one	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.8
+intestinal	10.1371/journal.pone.0089881	PMC3935946	Bohórquez	2014	PloS one	tbd	tbd	CC0	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.1371/journal.pone.0092904	PMC3968040	Yamashita	2014	PloS one	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+cerebral	10.3389/fncel.2014.00109	PMC3990101	Kim	2014	Frontiers in cellular neuroscience	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.667
+intestinal	10.1186/1754-1611-8-9	PMC4022271	Ahmad	2014	Journal of biological engineering	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.3389/fgene.2014.00169	PMC4046163	Fujii	2014	Frontiers in genetics	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.8
+intestinal	10.1242/dmm.014399	PMC4142732	Moore	2014	Disease models & mechanisms	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.75
+cardiac	10.3389/fnins.2014.00391	PMC4255521	Neher	2014	Frontiers in neuroscience	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.14814/phy2.12147	PMC4270227	Zhang	2014	Physiological reports	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+gastric	10.1186/s13059-014-0444-9	PMC4281955	Alsinet	2014	Genome biology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.1038/ncomms6728	PMC4284662	Simmini	2014	Nature communications	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.833
+pancreatic	10.1371/journal.pone.0116582	PMC4309616	Raikwar	2015	PloS one	tbd	tbd	CC0	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.6
+cardiac	10.3390/jcm3020373	PMC4449681	Palomo	2014	Journal of clinical medicine	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.1128/iai.00161-15	PMC4468523	Forbester	2015	Infection and immunity	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.571
+hepatic	10.1242/dev.114215	PMC4483763	Gordillo	2015	Development (Cambridge, England)	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+lung	10.1089/scd.2014.0512	PMC4499787	Hannan	2015	Stem cells and development	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+mammary	10.1038/srep11458	PMC4499882	Gjorevski	2015	Scientific reports	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+prostate	10.1371/journal.pone.0133238	PMC4519179	Calderon-Gierszal	2015	PloS one	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.8
+intestinal	10.1038/srep12681	PMC4519788	Sharbati	2015	Scientific reports	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.1371/journal.pone.0134551	PMC4521699	Tamminen	2015	PloS one	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.875
+lung	10.1242/dmm.019117	PMC4527283	Mutze	2015	Disease models & mechanisms	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+cardiac	10.1371/journal.pone.0138847	PMC4580578	Longchamp	2015	PloS one	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+gastric	10.3390/ijms160819153	PMC4581291	Hoffmann	2015	International journal of molecular sciences	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.1371/journal.pone.0138531	PMC4587363	Davies	2015	PloS one	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+cerebral	10.1186/s13041-015-0146-6	PMC4589208	Lim	2015	Molecular brain	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.3389/fcell.2015.00070	PMC4641242	Hariharan	2015	Frontiers in cell and developmental biology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.1038/srep16479	PMC4642303	Ozawa	2015	Scientific reports	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.6
+tumor	10.15252/emmm.201505284	PMC4644372	Goossens	2015	EMBO molecular medicine	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.1038/srep16831	PMC4652176	Zietek	2015	Scientific reports	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.1038/srep17185	PMC4665766	Aihara	2015	Scientific reports	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.571
+intestinal	10.1186/s40348-015-0023-5	PMC4678132	Martin	2015	Molecular and cellular pediatrics	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.5
+lung	10.1016/j.stemcr.2015.11.010	PMC4720023	Konishi	2016	Stem cell reports	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+cerebral	10.1038/ncomms10243	PMC4729822	Guye	2016	Nature communications	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.667
+lung	10.1155/2016/5934782	PMC4736429	Orqueda	2016	Stem cells international	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+cerebral	10.1002/bies.201500111	PMC4737349	Turner	2016	BioEssays : news and reviews in molecular, cellular and developmental biology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+tumor	10.18632/oncotarget.5046	PMC4745780	Åkerfelt	2015	Oncotarget	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.3791/51765	PMC4758749	Andersson-Rolf	2014	Journal of visualized experiments : JoVE	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+hepatic	10.1038/srep22154	PMC4768167	Kuijk	2016	Scientific reports	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.1007/s00535-016-1170-8	PMC4771822	Nozaki	2016	Journal of gastroenterology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.1371/journal.pone.0151396	PMC4792464	Schlieve	2016	PloS one	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.1016/j.gdata.2015.05.032	PMC4793732	Hime	2015	Genomics data	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.667
+intestinal	10.1038/mtm.2016.24	PMC4830362	Lorenzi	2016	Molecular therapy. Methods & clinical development	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+hepatic	10.1371/journal.pone.0153435	PMC4830564	Tomizawa	2016	PloS one	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.8
+intestinal	10.1371/journal.pone.0153795	PMC4839657	Attayek	2016	PloS one	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.1038/ncomms11551	PMC4873670	de Jong	2016	Nature communications	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+lung	10.1007/s40139-016-0102-x	PMC4882378	Dye	2016	Current pathobiology reports	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.667
+intestinal	10.1371/journal.pone.0156334	PMC4883796	Park	2016	PloS one	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.667
+lung	10.1371/journal.ppat.1005544	PMC4913929	Quantius	2016	PLoS pathogens	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.667
+tumor	10.18632/oncotarget.7414	PMC4924693	Croglio	2016	Oncotarget	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+kidney	10.3390/ma9030190	PMC4927010	McKee	2016	Materials (Basel, Switzerland)	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+tumor	10.15252/emmm.201606184	PMC4931289	Fessler	2016	EMBO molecular medicine	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+kidney	10.3390/cancers8060057	PMC4931622	Xu	2016	Cancers	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.8
+retinal	10.1038/srep30742	PMC4965859	Wiley	2016	Scientific reports	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+gastric	10.1155/2016/4969163	PMC4971297	Arévalo-Romero	2016	Gastroenterology research and practice	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+hepatic	10.1002/hep.28469	PMC4973669	Huch	2016	Hepatology (Baltimore, Md.)	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+kidney	10.1038/cddiscovery.2016.53	PMC4979446	Little	2016	Cell death discovery	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+kidney	10.1007/s40472-016-0107-8	PMC4980402	Wilm	2016	Current transplantation reports	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+gastric	10.1242/dev.131490	PMC4986166	Fernandez Vallone	2016	Development (Cambridge, England)	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.833
+intestinal	10.1186/s12864-016-2999-1	PMC5000506	Tsalikis	2016	BMC genomics	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+inner-ear	10.1371/journal.pone.0162508	PMC5015985	DeJonge	2016	PloS one	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.1007/s11888-016-0335-4	PMC5016547	Young	2016	Current colorectal cancer reports	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+cerebral	10.1371/journal.pone.0161969	PMC5021368	Raja	2016	PloS one	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.3389/fphar.2016.00334	PMC5032635	Liu	2016	Frontiers in pharmacology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+hepatic	10.3390/v8090261	PMC5035974	Verrier	2016	Viruses	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.5
+intestinal	10.1038/ncomms12887	PMC5036006	Kikuchi	2016	Nature communications	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.1371/journal.pgen.1006349	PMC5065117	Ohashi	2016	PLoS genetics	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.1038/ncomms13171	PMC5080445	Berger	2016	Nature communications	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.75
+tumor	10.1038/ncomms13207	PMC5095178	Jardé	2016	Nature communications	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.857
+intestinal	10.1007/s40139-016-0119-1	PMC5101250	Hollins	2016	Current pathobiology reports	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.8
+cerebral	10.1113/jp270660	PMC5108911	Livesey	2016	The Journal of physiology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+tumor	10.7554/elife.18489	PMC5127645	Verissimo	2016	eLife	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.1038/srep38195	PMC5128881	Gonneaud	2016	Scientific reports	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.1152/ajpcell.00108.2016	PMC5129760	Wood	2016	American journal of physiology. Cell physiology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.833
+cerebral	10.1038/srep38856	PMC5146966	Wevers	2016	Scientific reports	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+kidney	10.1038/srep38353	PMC5159864	Yamaguchi	2016	Scientific reports	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.8
+cerebral	10.1016/j.ydbio.2016.06.037	PMC5161139	Kelava	2016	Developmental biology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.15252/embj.201695973	PMC5210127	Jackstadt	2017	The EMBO journal	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.14814/phy2.13060	PMC5210379	Zhang	2016	Physiological reports	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.1038/ncomms13824	PMC5227110	Qi	2017	Nature communications	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.1038/srep40820	PMC5241689	Wu	2017	Scientific reports	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+prostate	10.1038/ncomms14284	PMC5264212	Xie	2017	Nature communications	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+cerebral	10.1371/journal.pone.0170735	PMC5283667	Choi	2017	PloS one	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.18632/oncotarget.10658	PMC5288203	Möller	2016	Oncotarget	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.5
+cerebral	10.7717/peerj.2927	PMC5301978	Sartore	2017	PeerJ	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+pancreatic	10.1038/ncomms14127	PMC5316826	Cerdá-Esteban	2017	Nature communications	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.8
+lung	10.1007/s00441-016-2534-3	PMC5320021	Nardiello	2017	Cell and tissue research	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.5
+pancreatic	10.1084/jem.20162024	PMC5339682	Öhlund	2017	The Journal of experimental medicine	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+retinal	10.1167/tvst.6.2.5	PMC5354473	Vetter	2017	Translational vision science & technology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.5
+cerebral	10.1186/s13229-017-0124-1	PMC5357816	Wang	2017	Molecular autism	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+retinal	10.1242/dev.142760	PMC5358108	Eldred	2017	Development (Cambridge, England)	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+kidney	10.1242/dev.142950	PMC5358112	Saarela	2017	Development (Cambridge, England)	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+tumor	10.3389/fendo.2017.00052	PMC5362593	Lerario	2017	Frontiers in endocrinology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+cerebral	10.1038/srep45091	PMC5366860	Dezonne	2017	Scientific reports	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+kidney	10.3934/bioeng.2016.3.305	PMC5381928	Chambers	2016	AIMS bioengineering	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+lung	10.1038/ncomms14922	PMC5385585	Zhang	2017	Nature communications	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+kidney	10.5966/sctm.2015-0429	PMC5442819	Da Sacco	2017	Stem cells translational medicine	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+lung	10.5966/sctm.2016-0192	PMC5442826	Wilkinson	2017	Stem cells translational medicine	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+retinal	10.1016/j.stemcr.2017.04.030	PMC5470175	Kruczek	2017	Stem cell reports	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.833
+cerebral	10.3389/fcimb.2017.00276	PMC5476750	Tohidpour	2017	Frontiers in cellular and infection microbiology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.615
+gastric	10.1186/s13073-017-0447-8	PMC5477353	Greer	2017	Genome medicine	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.1371/journal.ppat.1006446	PMC5489213	Wilson	2017	PLoS pathogens	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+hepatic	10.1186/s13036-017-0066-3	PMC5494890	Jacobson	2017	Journal of biological engineering	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+cerebral	10.3389/fpsyt.2017.00126	PMC5507945	Galvez-Contreras	2017	Frontiers in psychiatry	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.5
+cerebral	10.3389/fnmol.2017.00243	PMC5540894	Sokpor	2017	Frontiers in molecular neuroscience	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.5
+hepatic	10.1186/s40360-017-0168-z	PMC5553585	Fahrner	2017	BMC pharmacology & toxicology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+gastric	10.1128/mbio.01168-17	PMC5559637	Gall	2017	mBio	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+gastric	10.1242/dmm.029876	PMC5560064	Flanagan	2017	Disease models & mechanisms	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+cerebral	10.1186/s12929-017-0362-8	PMC5563385	Lee	2017	Journal of biomedical science	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+retinal	10.1038/s41598-017-09743-8	PMC5572737	Sardar Pasha	2017	Scientific reports	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.5
+intestinal	10.1177/2041731417725464	PMC5574483	Redondo	2017	Journal of tissue engineering	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.5
+cerebral	10.1155/2017/5682354	PMC5585580	Wei	2017	Stem cells international	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+pancreatic	10.1038/s41598-017-11169-1	PMC5589819	Scavuzzo	2017	Scientific reports	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.667
+tumor	10.7554/elife.27861	PMC5593504	Shah	2017	eLife	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.3390/vetsci3040031	PMC5606586	Meneses	2016	Veterinary sciences	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.833
+intestinal	10.1371/journal.pone.0185025	PMC5608296	Pietz	2017	PloS one	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.875
+intestinal	10.18632/aging.101279	PMC5611984	Moorefield	2017	Aging	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+tumor	10.1038/s41598-017-12017-y	PMC5615065	Ogawa	2017	Scientific reports	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+cerebral	10.3389/fnmol.2017.00309	PMC5625114	Feng	2017	Frontiers in molecular neuroscience	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+cerebral	10.1038/s41598-017-12779-5	PMC5634411	Dakic	2017	Scientific reports	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.6
+intestinal	10.1038/s41467-017-00779-y	PMC5635127	Kitano	2017	Nature communications	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.833
+cerebral	10.3389/fncel.2017.00321	PMC5645492	Nayler	2017	Frontiers in cellular neuroscience	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+hepatic	10.1371/journal.pone.0186491	PMC5648188	Van den Bossche	2017	PloS one	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.75
+intestinal	10.1016/j.celrep.2017.09.072	PMC5656747	Novellasdemunt	2017	Cell reports	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+hepatic	10.1038/s41598-017-14542-2	PMC5658340	Yanagi	2017	Scientific reports	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+tumor	10.1038/onc.2017.194	PMC5658682	Nakayama	2017	Oncogene	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.5
+hepatic	10.1038/s41467-017-01341-6	PMC5660090	Lin	2017	Nature communications	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+kidney	10.1038/s41598-017-14809-8	PMC5665994	Mills	2017	Scientific reports	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.5
+intestinal	10.3390/ijms18102046	PMC5666728	Soendergaard	2017	International journal of molecular sciences	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+lung	10.1186/s12931-017-0680-0	PMC5700468	Ishikawa	2017	Respiratory research	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.5
+esophageal	10.1038/s41467-017-01500-9	PMC5700926	Natsuizaka	2017	Nature communications	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.75
+intestinal	10.1242/jcs.211656	PMC5702049	Carroll	2017	Journal of cell science	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.18632/oncotarget.21698	PMC5706877	Ocadiz-Ruiz	2017	Oncotarget	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+gastric	10.1186/s12876-017-0706-6	PMC5719643	Shibata	2017	BMC gastroenterology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.6
+bladder	10.7554/elife.30862	PMC5720590	Halstead	2017	eLife	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+cerebral	10.3389/fneur.2017.00626	PMC5725435	Huang	2017	Frontiers in neurology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+lung	10.3390/v9120379	PMC5744153	Magro-Lopez	2017	Viruses	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+retinal	10.1186/s13287-017-0738-4	PMC5747074	Hongisto	2017	Stem cell research & therapy	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 0.667
+retinal	10.3389/fncir.2017.00105	PMC5770695	Javed	2017	Frontiers in neural circuits	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+cerebral	10.3390/jdb4030026	PMC5831776	Anderson	2016	Journal of developmental biology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.1208/s12248-017-0178-1	PMC6044282	Mochel	2017	The AAPS journal	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.3390/mi7070107	PMC6190004	Kang	2016	Micromachines	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+pancreatic	10.1016/j.ceb.2017.11.014	PMC6277812	Demcollari	2017	Current opinion in cell biology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.1080/10717544.2017.1381199	PMC8241135	Zhang	2017	Drug delivery	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
