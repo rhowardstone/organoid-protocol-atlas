@@ -1,0 +1,147 @@
+{
+  "NCBIGene:397086": {
+    "id": {
+      "identifier": "NCBIGene:397086",
+      "label": "TNF"
+    },
+    "equivalent_identifiers": [
+      {
+        "identifier": "NCBIGene:397086",
+        "label": "TNF",
+        "taxa": [
+          "NCBITaxon:9823"
+        ]
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCG00000060860"
+      },
+      {
+        "identifier": "RGD:14181661"
+      },
+      {
+        "identifier": "UniProtKB:B3GDZ6",
+        "label": "B3GDZ6_PIG Tumor necrosis factor (trembl)",
+        "taxa": [
+          "NCBITaxon:9823"
+        ]
+      },
+      {
+        "identifier": "UniProtKB:P23563",
+        "label": "TNFA_PIG Tumor necrosis factor (sprot)",
+        "taxa": [
+          "NCBITaxon:9823"
+        ]
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00000075411"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00000075411.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00015031063"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00015031063.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00025048968"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00025048968.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00030042263"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00030042263.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00035009452"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00035009452.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00040043236"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00040043236.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00045046558"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00045046558.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00050003415"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00050003415.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00055045643"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00055045643.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00060025133"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00060025133.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00065014573"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00065014573.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00070040652"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00070040652.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00085014335"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00090018099"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00105028384"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00110030364"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00115013060"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00130026504"
+      }
+    ],
+    "taxa": [
+      "NCBITaxon:9823"
+    ],
+    "type": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ]
+  }
+}

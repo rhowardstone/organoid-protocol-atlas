@@ -1,0 +1,2125 @@
+{
+  "generated_at": "2026-06-21T23:55:50+00:00",
+  "provenance": {
+    "command": "python pipeline/ingest_orchestrator.py --limit 400 --min-grounding 0.5 --cc-only --workers 4 --candidates /atb-data/rye/Organoid/outputs/ingest/_marathon_slice.csv",
+    "model": "gemma3:12b",
+    "candidates_file": "_marathon_slice.csv",
+    "candidates_sha256_16": "5adf7f82020b6fd9",
+    "min_grounding": 0.5,
+    "cc_only": true,
+    "dry_run": false,
+    "workers": 4
+  },
+  "candidates_considered": 400,
+  "accepted": 101,
+  "rejected": 299,
+  "accepted_papers": [
+    {
+      "pmcid": "PMC11625218",
+      "doi": "10.1016/j.molmet.2024.102067",
+      "organoid_type": "pancreatic",
+      "n_signaling": 2,
+      "grounded": 1,
+      "grounding_rate": 0.5,
+      "methods_chars": 11834
+    },
+    {
+      "pmcid": "PMC11714201",
+      "doi": "10.1002/advs.202407054",
+      "organoid_type": "lung",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 25676
+    },
+    {
+      "pmcid": "PMC11724920",
+      "doi": "10.1038/s41467-025-55938-3",
+      "organoid_type": "lung",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 20209
+    },
+    {
+      "pmcid": "PMC11738646",
+      "doi": "10.14814/phy2.70191",
+      "organoid_type": "kidney",
+      "n_signaling": 2,
+      "grounded": 1,
+      "grounding_rate": 0.5,
+      "methods_chars": 8624
+    },
+    {
+      "pmcid": "PMC11740888",
+      "doi": "10.1093/stcltm/szae095",
+      "organoid_type": "lung",
+      "n_signaling": 5,
+      "grounded": 5,
+      "grounding_rate": 1.0,
+      "methods_chars": 44043
+    },
+    {
+      "pmcid": "PMC11750297",
+      "doi": "10.1016/j.tranon.2024.102263",
+      "organoid_type": "kidney",
+      "n_signaling": 6,
+      "grounded": 6,
+      "grounding_rate": 1.0,
+      "methods_chars": 10645
+    },
+    {
+      "pmcid": "PMC11766107",
+      "doi": "10.3390/ijms26020806",
+      "organoid_type": "kidney",
+      "n_signaling": 7,
+      "grounded": 7,
+      "grounding_rate": 1.0,
+      "methods_chars": 750
+    },
+    {
+      "pmcid": "PMC11779639",
+      "doi": "10.1038/s41388-024-03218-7",
+      "organoid_type": "gastric",
+      "n_signaling": 2,
+      "grounded": 2,
+      "grounding_rate": 1.0,
+      "methods_chars": 18171
+    },
+    {
+      "pmcid": "PMC11780661",
+      "doi": "10.1177/20417314241299076",
+      "organoid_type": "lung",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 22498
+    },
+    {
+      "pmcid": "PMC11784501",
+      "doi": "10.1016/j.stemcr.2024.11.012",
+      "organoid_type": "lung",
+      "n_signaling": 4,
+      "grounded": 4,
+      "grounding_rate": 1.0,
+      "methods_chars": 5604
+    },
+    {
+      "pmcid": "PMC11785764",
+      "doi": "10.1038/s41598-025-86979-9",
+      "organoid_type": "tumor",
+      "n_signaling": 6,
+      "grounded": 5,
+      "grounding_rate": 0.833,
+      "methods_chars": 44233
+    },
+    {
+      "pmcid": "PMC11790967",
+      "doi": "10.1038/s44318-024-00328-6",
+      "organoid_type": "lung",
+      "n_signaling": 9,
+      "grounded": 8,
+      "grounding_rate": 0.889,
+      "methods_chars": 34143
+    },
+    {
+      "pmcid": "PMC11791990",
+      "doi": "10.1002/advs.202406751",
+      "organoid_type": "lung",
+      "n_signaling": 3,
+      "grounded": 2,
+      "grounding_rate": 0.667,
+      "methods_chars": 29000
+    },
+    {
+      "pmcid": "PMC11799510",
+      "doi": "10.31662/jmaj.2024-0244",
+      "organoid_type": "kidney",
+      "n_signaling": 3,
+      "grounded": 3,
+      "grounding_rate": 1.0,
+      "methods_chars": 4104
+    },
+    {
+      "pmcid": "PMC11806626",
+      "doi": "10.1186/s13578-024-01342-1",
+      "organoid_type": "lung",
+      "n_signaling": 6,
+      "grounded": 6,
+      "grounding_rate": 1.0,
+      "methods_chars": 16494
+    },
+    {
+      "pmcid": "PMC11807189",
+      "doi": "10.1038/s41598-025-89200-z",
+      "organoid_type": "kidney",
+      "n_signaling": 2,
+      "grounded": 2,
+      "grounding_rate": 1.0,
+      "methods_chars": 8531
+    },
+    {
+      "pmcid": "PMC11832275",
+      "doi": "10.1093/stcltm/szae078",
+      "organoid_type": "kidney",
+      "n_signaling": 3,
+      "grounded": 3,
+      "grounding_rate": 1.0,
+      "methods_chars": 17340
+    },
+    {
+      "pmcid": "PMC11850601",
+      "doi": "10.1038/s44298-025-00092-2",
+      "organoid_type": "lung",
+      "n_signaling": 6,
+      "grounded": 6,
+      "grounding_rate": 1.0,
+      "methods_chars": 26773
+    },
+    {
+      "pmcid": "PMC11859300",
+      "doi": "10.3390/ph18020195",
+      "organoid_type": "lung",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 99083
+    },
+    {
+      "pmcid": "PMC11863571",
+      "doi": "10.1186/s13046-025-03332-8",
+      "organoid_type": "tumor",
+      "n_signaling": 12,
+      "grounded": 12,
+      "grounding_rate": 1.0,
+      "methods_chars": 16288
+    },
+    {
+      "pmcid": "PMC11864154",
+      "doi": "10.1016/j.stemcr.2024.102395",
+      "organoid_type": "kidney",
+      "n_signaling": 2,
+      "grounded": 1,
+      "grounding_rate": 0.5,
+      "methods_chars": 9670
+    },
+    {
+      "pmcid": "PMC11876382",
+      "doi": "10.3389/fcell.2025.1521411",
+      "organoid_type": "pancreatic",
+      "n_signaling": 11,
+      "grounded": 11,
+      "grounding_rate": 1.0,
+      "methods_chars": 10907
+    },
+    {
+      "pmcid": "PMC11881459",
+      "doi": "10.1186/s13046-025-03345-3",
+      "organoid_type": "tumor",
+      "n_signaling": 9,
+      "grounded": 9,
+      "grounding_rate": 1.0,
+      "methods_chars": 20118
+    },
+    {
+      "pmcid": "PMC11910536",
+      "doi": "10.1038/s41467-025-57795-6",
+      "organoid_type": "kidney",
+      "n_signaling": 9,
+      "grounded": 5,
+      "grounding_rate": 0.556,
+      "methods_chars": 26658
+    },
+    {
+      "pmcid": "PMC11939615",
+      "doi": "10.3390/antiox14030307",
+      "organoid_type": "hepatic",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 15124
+    },
+    {
+      "pmcid": "PMC11970545",
+      "doi": "10.1002/ijc.35386",
+      "organoid_type": "tumor",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 11931
+    },
+    {
+      "pmcid": "PMC11983408",
+      "doi": "10.3389/fphar.2025.1464525",
+      "organoid_type": "kidney",
+      "n_signaling": 3,
+      "grounded": 3,
+      "grounding_rate": 1.0,
+      "methods_chars": 9376
+    },
+    {
+      "pmcid": "PMC11984411",
+      "doi": "10.7150/thno.105994",
+      "organoid_type": "lung",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 23448
+    },
+    {
+      "pmcid": "PMC12011625",
+      "doi": "10.18699/vjgb-25-22",
+      "organoid_type": "kidney",
+      "n_signaling": 2,
+      "grounded": 1,
+      "grounding_rate": 0.5,
+      "methods_chars": 12652
+    },
+    {
+      "pmcid": "PMC12015132",
+      "doi": "10.26508/lsa.202402837",
+      "organoid_type": "lung",
+      "n_signaling": 11,
+      "grounded": 7,
+      "grounding_rate": 0.636,
+      "methods_chars": 14071
+    },
+    {
+      "pmcid": "PMC12015983",
+      "doi": "10.3389/fphar.2025.1550163",
+      "organoid_type": "lung",
+      "n_signaling": 13,
+      "grounded": 13,
+      "grounding_rate": 1.0,
+      "methods_chars": 71939
+    },
+    {
+      "pmcid": "PMC12089129",
+      "doi": "10.3389/fcell.2025.1593226",
+      "organoid_type": "pancreatic",
+      "n_signaling": 12,
+      "grounded": 11,
+      "grounding_rate": 0.917,
+      "methods_chars": 12493
+    },
+    {
+      "pmcid": "PMC12104653",
+      "doi": "10.1016/j.neo.2025.101171",
+      "organoid_type": "kidney",
+      "n_signaling": 13,
+      "grounded": 12,
+      "grounding_rate": 0.923,
+      "methods_chars": 55169
+    },
+    {
+      "pmcid": "PMC12113536",
+      "doi": "10.3390/metabo15050304",
+      "organoid_type": "kidney",
+      "n_signaling": 3,
+      "grounded": 3,
+      "grounding_rate": 1.0,
+      "methods_chars": 25712
+    },
+    {
+      "pmcid": "PMC12120747",
+      "doi": "10.1002/advs.202407871",
+      "organoid_type": "tumor",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 17590
+    },
+    {
+      "pmcid": "PMC12123483",
+      "doi": "10.1158/2767-9764.crc-24-0025",
+      "organoid_type": "pancreatic",
+      "n_signaling": 4,
+      "grounded": 4,
+      "grounding_rate": 1.0,
+      "methods_chars": 20999
+    },
+    {
+      "pmcid": "PMC12131615",
+      "doi": "10.1186/s12943-025-02374-y",
+      "organoid_type": "pancreatic",
+      "n_signaling": 3,
+      "grounded": 3,
+      "grounding_rate": 1.0,
+      "methods_chars": 20354
+    },
+    {
+      "pmcid": "PMC12134401",
+      "doi": "10.1002/mco2.70248",
+      "organoid_type": "lung",
+      "n_signaling": 7,
+      "grounded": 6,
+      "grounding_rate": 0.857,
+      "methods_chars": 67826
+    },
+    {
+      "pmcid": "PMC12135344",
+      "doi": "10.1002/cnr2.70242",
+      "organoid_type": "tumor",
+      "n_signaling": 2,
+      "grounded": 1,
+      "grounding_rate": 0.5,
+      "methods_chars": 25115
+    },
+    {
+      "pmcid": "PMC12152183",
+      "doi": "10.1038/s44319-025-00454-0",
+      "organoid_type": "kidney",
+      "n_signaling": 4,
+      "grounded": 3,
+      "grounding_rate": 0.75,
+      "methods_chars": 20332
+    },
+    {
+      "pmcid": "PMC12154794",
+      "doi": "10.3390/ijms26115302",
+      "organoid_type": "lung",
+      "n_signaling": 5,
+      "grounded": 4,
+      "grounding_rate": 0.8,
+      "methods_chars": 31135
+    },
+    {
+      "pmcid": "PMC12170848",
+      "doi": "10.1038/s41419-025-07770-2",
+      "organoid_type": "lung",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 18849
+    },
+    {
+      "pmcid": "PMC12178096",
+      "doi": "10.1002/ijc.35443",
+      "organoid_type": "tumor",
+      "n_signaling": 4,
+      "grounded": 4,
+      "grounding_rate": 1.0,
+      "methods_chars": 10762
+    },
+    {
+      "pmcid": "PMC12188316",
+      "doi": "10.1242/jcs.263679",
+      "organoid_type": "lung",
+      "n_signaling": 2,
+      "grounded": 2,
+      "grounding_rate": 1.0,
+      "methods_chars": 14052
+    },
+    {
+      "pmcid": "PMC12188421",
+      "doi": "10.1158/2767-9764.crc-25-0024",
+      "organoid_type": "tumor",
+      "n_signaling": 8,
+      "grounded": 8,
+      "grounding_rate": 1.0,
+      "methods_chars": 17560
+    },
+    {
+      "pmcid": "PMC12189712",
+      "doi": "10.3390/biology14060604",
+      "organoid_type": "tumor",
+      "n_signaling": 6,
+      "grounded": 6,
+      "grounding_rate": 1.0,
+      "methods_chars": 7197
+    },
+    {
+      "pmcid": "PMC12198217",
+      "doi": "10.3389/fimmu.2025.1573965",
+      "organoid_type": "tumor",
+      "n_signaling": 5,
+      "grounded": 5,
+      "grounding_rate": 1.0,
+      "methods_chars": 5127
+    },
+    {
+      "pmcid": "PMC12214878",
+      "doi": "10.1158/0008-5472.can-23-3252",
+      "organoid_type": "pancreatic",
+      "n_signaling": 6,
+      "grounded": 6,
+      "grounding_rate": 1.0,
+      "methods_chars": 44212
+    },
+    {
+      "pmcid": "PMC12270064",
+      "doi": "10.1016/j.mocell.2025.100241",
+      "organoid_type": "lung",
+      "n_signaling": 6,
+      "grounded": 6,
+      "grounding_rate": 1.0,
+      "methods_chars": 22576
+    },
+    {
+      "pmcid": "PMC12280876",
+      "doi": "10.34133/bmr.0229",
+      "organoid_type": "lung",
+      "n_signaling": 3,
+      "grounded": 3,
+      "grounding_rate": 1.0,
+      "methods_chars": 13629
+    },
+    {
+      "pmcid": "PMC12292442",
+      "doi": "10.3390/biomedicines13071596",
+      "organoid_type": "kidney",
+      "n_signaling": 4,
+      "grounded": 4,
+      "grounding_rate": 1.0,
+      "methods_chars": 48967
+    },
+    {
+      "pmcid": "PMC12293982",
+      "doi": "10.3390/cancers17142291",
+      "organoid_type": "lung",
+      "n_signaling": 9,
+      "grounded": 9,
+      "grounding_rate": 1.0,
+      "methods_chars": 12580
+    },
+    {
+      "pmcid": "PMC12304124",
+      "doi": "10.1038/s41419-025-07823-6",
+      "organoid_type": "lung",
+      "n_signaling": 5,
+      "grounded": 4,
+      "grounding_rate": 0.8,
+      "methods_chars": 44915
+    },
+    {
+      "pmcid": "PMC12328661",
+      "doi": "10.1038/s41420-025-02662-y",
+      "organoid_type": "tumor",
+      "n_signaling": 2,
+      "grounded": 2,
+      "grounding_rate": 1.0,
+      "methods_chars": 13148
+    },
+    {
+      "pmcid": "PMC12345701",
+      "doi": "10.3390/cells14151203",
+      "organoid_type": "kidney",
+      "n_signaling": 10,
+      "grounded": 8,
+      "grounding_rate": 0.8,
+      "methods_chars": 77465
+    },
+    {
+      "pmcid": "PMC12380290",
+      "doi": "10.1371/journal.ppat.1013401",
+      "organoid_type": "lung",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 19572
+    },
+    {
+      "pmcid": "PMC12380799",
+      "doi": "10.3389/fonc.2025.1630415",
+      "organoid_type": "lung",
+      "n_signaling": 5,
+      "grounded": 4,
+      "grounding_rate": 0.8,
+      "methods_chars": 39531
+    },
+    {
+      "pmcid": "PMC12381642",
+      "doi": "10.3389/fbioe.2025.1593368",
+      "organoid_type": "tumor",
+      "n_signaling": 3,
+      "grounded": 3,
+      "grounding_rate": 1.0,
+      "methods_chars": 19887
+    },
+    {
+      "pmcid": "PMC12390542",
+      "doi": "10.3390/v17081083",
+      "organoid_type": "lung",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 9646
+    },
+    {
+      "pmcid": "PMC12407345",
+      "doi": "10.1002/advs.202503473",
+      "organoid_type": "tumor",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 21623
+    },
+    {
+      "pmcid": "PMC12420279",
+      "doi": "10.3389/fonc.2025.1563969",
+      "organoid_type": "lung",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 26432
+    },
+    {
+      "pmcid": "PMC12423419",
+      "doi": "10.1016/j.jbc.2025.110534",
+      "organoid_type": "lung",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 18541
+    },
+    {
+      "pmcid": "PMC12450468",
+      "doi": "10.1242/jcs.264141",
+      "organoid_type": "kidney",
+      "n_signaling": 2,
+      "grounded": 1,
+      "grounding_rate": 0.5,
+      "methods_chars": 18334
+    },
+    {
+      "pmcid": "PMC12456009",
+      "doi": "10.1128/jvi.01175-25",
+      "organoid_type": "lung",
+      "n_signaling": 4,
+      "grounded": 4,
+      "grounding_rate": 1.0,
+      "methods_chars": 19467
+    },
+    {
+      "pmcid": "PMC12476959",
+      "doi": "10.1111/jcmm.70860",
+      "organoid_type": "lung",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 8276
+    },
+    {
+      "pmcid": "PMC12494930",
+      "doi": "10.1016/j.mtbio.2025.102316",
+      "organoid_type": "lung",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 15364
+    },
+    {
+      "pmcid": "PMC12506269",
+      "doi": "10.1186/s13046-025-03543-z",
+      "organoid_type": "gastric",
+      "n_signaling": 2,
+      "grounded": 1,
+      "grounding_rate": 0.5,
+      "methods_chars": 13292
+    },
+    {
+      "pmcid": "PMC12508193",
+      "doi": "10.1038/s12276-025-01524-y",
+      "organoid_type": "lung",
+      "n_signaling": 3,
+      "grounded": 3,
+      "grounding_rate": 1.0,
+      "methods_chars": 11683
+    },
+    {
+      "pmcid": "PMC12511327",
+      "doi": "10.1038/s41467-025-64036-3",
+      "organoid_type": "lung",
+      "n_signaling": 2,
+      "grounded": 2,
+      "grounding_rate": 1.0,
+      "methods_chars": 9426
+    },
+    {
+      "pmcid": "PMC12566473",
+      "doi": "10.3390/metabo15100670",
+      "organoid_type": "lung",
+      "n_signaling": 7,
+      "grounded": 7,
+      "grounding_rate": 1.0,
+      "methods_chars": 11135
+    },
+    {
+      "pmcid": "PMC12567532",
+      "doi": "10.3390/ph18101487",
+      "organoid_type": "lung",
+      "n_signaling": 4,
+      "grounded": 3,
+      "grounding_rate": 0.75,
+      "methods_chars": 27957
+    },
+    {
+      "pmcid": "PMC12567804",
+      "doi": "10.3390/v17101343",
+      "organoid_type": "lung",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 16950
+    },
+    {
+      "pmcid": "PMC12570672",
+      "doi": "10.1186/s10020-025-01355-7",
+      "organoid_type": "kidney",
+      "n_signaling": 2,
+      "grounded": 1,
+      "grounding_rate": 0.5,
+      "methods_chars": 16503
+    },
+    {
+      "pmcid": "PMC12575105",
+      "doi": "10.3389/fimmu.2025.1686343",
+      "organoid_type": "lung",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 16211
+    },
+    {
+      "pmcid": "PMC12586947",
+      "doi": "10.1002/cam4.71273",
+      "organoid_type": "tumor",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 9782
+    },
+    {
+      "pmcid": "PMC12602247",
+      "doi": "10.3389/fonc.2025.1675745",
+      "organoid_type": "tumor",
+      "n_signaling": 3,
+      "grounded": 2,
+      "grounding_rate": 0.667,
+      "methods_chars": 25870
+    },
+    {
+      "pmcid": "PMC12605006",
+      "doi": "10.1016/j.jbc.2025.110769",
+      "organoid_type": "hepatic",
+      "n_signaling": 4,
+      "grounded": 3,
+      "grounding_rate": 0.75,
+      "methods_chars": 6874
+    },
+    {
+      "pmcid": "PMC12616246",
+      "doi": "10.1158/0008-5472.can-25-1890",
+      "organoid_type": "tumor",
+      "n_signaling": 6,
+      "grounded": 6,
+      "grounding_rate": 1.0,
+      "methods_chars": 27211
+    },
+    {
+      "pmcid": "PMC12623841",
+      "doi": "10.1038/s41419-025-08178-8",
+      "organoid_type": "pancreatic",
+      "n_signaling": 6,
+      "grounded": 6,
+      "grounding_rate": 1.0,
+      "methods_chars": 18083
+    },
+    {
+      "pmcid": "PMC12631069",
+      "doi": "10.7150/ijbs.123492",
+      "organoid_type": "lung",
+      "n_signaling": 5,
+      "grounded": 4,
+      "grounding_rate": 0.8,
+      "methods_chars": 54460
+    },
+    {
+      "pmcid": "PMC12640618",
+      "doi": "10.1002/cam4.71407",
+      "organoid_type": "lung",
+      "n_signaling": 5,
+      "grounded": 5,
+      "grounding_rate": 1.0,
+      "methods_chars": 35212
+    },
+    {
+      "pmcid": "PMC12644026",
+      "doi": "10.3389/fcell.2025.1625950",
+      "organoid_type": "kidney",
+      "n_signaling": 4,
+      "grounded": 4,
+      "grounding_rate": 1.0,
+      "methods_chars": 15551
+    },
+    {
+      "pmcid": "PMC12646005",
+      "doi": "10.1128/msphere.00577-25",
+      "organoid_type": "lung",
+      "n_signaling": 5,
+      "grounded": 5,
+      "grounding_rate": 1.0,
+      "methods_chars": 15562
+    },
+    {
+      "pmcid": "PMC12650717",
+      "doi": "10.3390/cancers17223693",
+      "organoid_type": "kidney",
+      "n_signaling": 3,
+      "grounded": 2,
+      "grounding_rate": 0.667,
+      "methods_chars": 20243
+    },
+    {
+      "pmcid": "PMC12654702",
+      "doi": "10.3390/microorganisms13112444",
+      "organoid_type": "lung",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 34963
+    },
+    {
+      "pmcid": "PMC12666313",
+      "doi": "10.1158/1078-0432.ccr-25-1564",
+      "organoid_type": "tumor",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 18092
+    },
+    {
+      "pmcid": "PMC12682884",
+      "doi": "10.3389/fphar.2025.1685468",
+      "organoid_type": "tumor",
+      "n_signaling": 2,
+      "grounded": 2,
+      "grounding_rate": 1.0,
+      "methods_chars": 14765
+    },
+    {
+      "pmcid": "PMC12690986",
+      "doi": "10.3390/cancers17233850",
+      "organoid_type": "pancreatic",
+      "n_signaling": 3,
+      "grounded": 3,
+      "grounding_rate": 1.0,
+      "methods_chars": 49977
+    },
+    {
+      "pmcid": "PMC12691163",
+      "doi": "10.3390/cells14231869",
+      "organoid_type": "lung",
+      "n_signaling": 5,
+      "grounded": 4,
+      "grounding_rate": 0.8,
+      "methods_chars": 1931
+    },
+    {
+      "pmcid": "PMC12705678",
+      "doi": "10.1038/s44318-025-00633-8",
+      "organoid_type": "kidney",
+      "n_signaling": 3,
+      "grounded": 2,
+      "grounding_rate": 0.667,
+      "methods_chars": 11430
+    },
+    {
+      "pmcid": "PMC12717346",
+      "doi": "10.1007/s00262-025-04267-x",
+      "organoid_type": "tumor",
+      "n_signaling": 1,
+      "grounded": 1,
+      "grounding_rate": 1.0,
+      "methods_chars": 13918
+    },
+    {
+      "pmcid": "PMC12754274",
+      "doi": "10.1155/term/8367426",
+      "organoid_type": "lung",
+      "n_signaling": 16,
+      "grounded": 15,
+      "grounding_rate": 0.938,
+      "methods_chars": 52005
+    },
+    {
+      "pmcid": "PMC12784706",
+      "doi": "10.3390/cancers18010132",
+      "organoid_type": "tumor",
+      "n_signaling": 2,
+      "grounded": 1,
+      "grounding_rate": 0.5,
+      "methods_chars": 17255
+    },
+    {
+      "pmcid": "PMC12785844",
+      "doi": "10.3390/ijms27010017",
+      "organoid_type": "kidney",
+      "n_signaling": 8,
+      "grounded": 4,
+      "grounding_rate": 0.5,
+      "methods_chars": 30434
+    },
+    {
+      "pmcid": "PMC12807938",
+      "doi": "10.3389/fonc.2025.1736505",
+      "organoid_type": "tumor",
+      "n_signaling": 6,
+      "grounded": 5,
+      "grounding_rate": 0.833,
+      "methods_chars": 11208
+    },
+    {
+      "pmcid": "PMC12824383",
+      "doi": "10.1038/s41419-025-08316-2",
+      "organoid_type": "gastric",
+      "n_signaling": 3,
+      "grounded": 3,
+      "grounding_rate": 1.0,
+      "methods_chars": 15455
+    },
+    {
+      "pmcid": "PMC12847267",
+      "doi": "10.3389/fimmu.2025.1723270",
+      "organoid_type": "tumor",
+      "n_signaling": 5,
+      "grounded": 3,
+      "grounding_rate": 0.6,
+      "methods_chars": 54184
+    },
+    {
+      "pmcid": "PMC12848067",
+      "doi": "10.1038/s41420-025-02929-4",
+      "organoid_type": "kidney",
+      "n_signaling": 2,
+      "grounded": 2,
+      "grounding_rate": 1.0,
+      "methods_chars": 18705
+    },
+    {
+      "pmcid": "PMC12858893",
+      "doi": "10.1038/s41420-025-02936-5",
+      "organoid_type": "lung",
+      "n_signaling": 2,
+      "grounded": 2,
+      "grounding_rate": 1.0,
+      "methods_chars": 13348
+    },
+    {
+      "pmcid": "PMC12860476",
+      "doi": "10.1016/j.celrep.2025.116684",
+      "organoid_type": "pancreatic",
+      "n_signaling": 7,
+      "grounded": 7,
+      "grounding_rate": 1.0,
+      "methods_chars": 38678
+    },
+    {
+      "pmcid": "PMC7618356",
+      "doi": "10.1016/j.stem.2025.09.007",
+      "organoid_type": "lung",
+      "n_signaling": 7,
+      "grounded": 7,
+      "grounding_rate": 1.0,
+      "methods_chars": 39476
+    }
+  ],
+  "rejected_papers": [
+    {
+      "pmcid": "PMC11671414",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC11694085",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC11703377",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC11729090",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC11737194",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC11737797",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC11744579",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC11753331",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC11754104",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC11761242",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC11762634",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC11774489",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC11789318",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC11799519",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC11803115",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC11806117",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC11811434",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC11815631",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC11818319",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC11821005",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC11830817",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC11832783",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC11835666",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC11839712",
+      "reason": "low_grounding=0.2"
+    },
+    {
+      "pmcid": "PMC11839950",
+      "reason": "low_grounding=0.286"
+    },
+    {
+      "pmcid": "PMC11840747",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC11844277",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC11845140",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC11847805",
+      "reason": "low_grounding=0.2"
+    },
+    {
+      "pmcid": "PMC11853636",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC11858063",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC11861728",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC11868281",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC11876676",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC11897956",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC11902694",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC11903751",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC11917188",
+      "reason": "no_methods"
+    },
+    {
+      "pmcid": "PMC11929475",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC11931495",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC11937367",
+      "reason": "low_grounding=0.25"
+    },
+    {
+      "pmcid": "PMC11940167",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC11940321",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC11940501",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC11940762",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC11948574",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC11949018",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC11949504",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC11954590",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC11963670",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC11964095",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC11965581",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC11967787",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC11967802",
+      "reason": "low_grounding=0.333"
+    },
+    {
+      "pmcid": "PMC11973339",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC11979947",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC11984363",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC11985979",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12003742",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC12009310",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC12010671",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12011707",
+      "reason": "low_grounding=0.286"
+    },
+    {
+      "pmcid": "PMC12011828",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12024639",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12024909",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12024971",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12030913",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12040667",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12040775",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12041066",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12042417",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12045047",
+      "reason": "low_grounding=0.091"
+    },
+    {
+      "pmcid": "PMC12059482",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12068301",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12069885",
+      "reason": "low_grounding=0.125"
+    },
+    {
+      "pmcid": "PMC12074455",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12079437",
+      "reason": "low_grounding=0.111"
+    },
+    {
+      "pmcid": "PMC12082924",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12083520",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12085391",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12086961",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12087401",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12095297",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12095603",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12095627",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12095824",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12100890",
+      "reason": "extract_error:ValidationError"
+    },
+    {
+      "pmcid": "PMC12109814",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC12110022",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12110400",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12114508",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12115874",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12118445",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12119590",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12120697",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12120723",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12132926",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12142344",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12153547",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC12158708",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12160510",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12168629",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12168685",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12172373",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12173918",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12176927",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC12179525",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12183207",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12183231",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12183918",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12185430",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12187779",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12190584",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12190961",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12192682",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12193398",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12195887",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12196163",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12196815",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12203666",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12231600",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12232871",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12234459",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12241016",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12250287",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12256473",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12269678",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12271642",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12279861",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12284917",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12298216",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12299425",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12300583",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12302397",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12302539",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12304713",
+      "reason": "low_grounding=0.1"
+    },
+    {
+      "pmcid": "PMC12305560",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12306667",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12311085",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC12314558",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12318756",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12320244",
+      "reason": "low_grounding=0.176"
+    },
+    {
+      "pmcid": "PMC12322046",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12329224",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12331046",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12331437",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12332162",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12332185",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12343259",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12344862",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12346031",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12346291",
+      "reason": "low_grounding=0.222"
+    },
+    {
+      "pmcid": "PMC12347790",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12347899",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12350514",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12360054",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12368576",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12370961",
+      "reason": "low_grounding=0.25"
+    },
+    {
+      "pmcid": "PMC12371117",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12371260",
+      "reason": "extract_error:ValidationError"
+    },
+    {
+      "pmcid": "PMC12375131",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12375500",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12375593",
+      "reason": "low_grounding=0.077"
+    },
+    {
+      "pmcid": "PMC12375691",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12376695",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12378905",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12385877",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12390685",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12401065",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12403265",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12404958",
+      "reason": "low_grounding=0.429"
+    },
+    {
+      "pmcid": "PMC12421644",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC12426834",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12427786",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12429320",
+      "reason": "low_grounding=0.333"
+    },
+    {
+      "pmcid": "PMC12429354",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12435314",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12436518",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12439256",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12439346",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12441082",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12443670",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12446076",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12447028",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12450681",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12451012",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12451694",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12452740",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12454469",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12456146",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12460280",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12467002",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12467989",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12469042",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12469575",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12472551",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12473020",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12474119",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12477140",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12479425",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12486461",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12490251",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12494988",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12500543",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12524346",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC12531457",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12531872",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12537977",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12538541",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12538886",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12548464",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12550970",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12551809",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12552625",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12554688",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12564487",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12567191",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12568712",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12569161",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12579647",
+      "reason": "extract_error:ValidationError"
+    },
+    {
+      "pmcid": "PMC12589764",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12593192",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC12594573",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12594594",
+      "reason": "low_grounding=0.158"
+    },
+    {
+      "pmcid": "PMC12594761",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12602135",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12602224",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12603267",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12607753",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12608093",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12611759",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC12611971",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC12612446",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12614097",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12620338",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12620406",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12620627",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12622487",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC12623493",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12626167",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12629595",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12632174",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC12633749",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12652317",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12656932",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12665534",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12665601",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12673266",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12677674",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12678328",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12683232",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC12685918",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12689645",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12691421",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12691697",
+      "reason": "low_grounding=0.071"
+    },
+    {
+      "pmcid": "PMC12691747",
+      "reason": "low_grounding=0.333"
+    },
+    {
+      "pmcid": "PMC12692730",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12697995",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12698700",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12705775",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12706077",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC12706663",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12711315",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12712653",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12713212",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12714657",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12714929",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12716760",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12729921",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12730609",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12730708",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12730910",
+      "reason": "low_grounding=0.333"
+    },
+    {
+      "pmcid": "PMC12736778",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12737536",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12737679",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12738947",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12740920",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12740941",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12743103",
+      "reason": "low_grounding=0.429"
+    },
+    {
+      "pmcid": "PMC12747554",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12748225",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC12754180",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12756128",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12756406",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12767472",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12787066",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12803792",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12807975",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12816075",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12817525",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC12824356",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12830980",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12832242",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12837682",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12859458",
+      "reason": "low_grounding=0.0"
+    },
+    {
+      "pmcid": "PMC12870517",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12915409",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC12920173",
+      "reason": "no_signaling"
+    },
+    {
+      "pmcid": "PMC13012569",
+      "reason": "low_grounding=0.333"
+    }
+  ]
+}

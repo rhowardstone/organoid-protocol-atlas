@@ -1,0 +1,53 @@
+{
+  "NCBIGene:100009569": {
+    "id": {
+      "identifier": "NCBIGene:100009569",
+      "label": "BMP4"
+    },
+    "equivalent_identifiers": [
+      {
+        "identifier": "NCBIGene:100009569",
+        "label": "BMP4",
+        "taxa": [
+          "NCBITaxon:9986"
+        ]
+      },
+      {
+        "identifier": "ENSEMBL:ENSOCUG00000011097"
+      },
+      {
+        "identifier": "UniProtKB:G1T0L5",
+        "label": "G1T0L5_RABIT Bone morphogenetic protein 4 (trembl)",
+        "taxa": [
+          "NCBITaxon:9986"
+        ]
+      },
+      {
+        "identifier": "ENSEMBL:ENSOCUP00000009545"
+      },
+      {
+        "identifier": "ENSEMBL:ENSOCUP00000009545.2"
+      }
+    ],
+    "taxa": [
+      "NCBITaxon:9986"
+    ],
+    "type": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ]
+  }
+}

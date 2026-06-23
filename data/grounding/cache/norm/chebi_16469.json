@@ -1,0 +1,2935 @@
+{
+  "CHEBI:16469": {
+    "id": {
+      "identifier": "CHEBI:16469",
+      "label": "Estradiol"
+    },
+    "equivalent_identifiers": [
+      {
+        "identifier": "CHEBI:16469",
+        "label": "17beta-estradiol"
+      },
+      {
+        "identifier": "CHEBI:23963"
+      },
+      {
+        "identifier": "CHEBI:4864"
+      },
+      {
+        "identifier": "CHEBI:14219"
+      },
+      {
+        "identifier": "CHEBI:42475"
+      },
+      {
+        "identifier": "UNII:4TI98Z838E",
+        "label": "ESTRADIOL"
+      },
+      {
+        "identifier": "PUBCHEM.COMPOUND:5757",
+        "label": "Estradiol"
+      },
+      {
+        "identifier": "CHEMBL.COMPOUND:CHEMBL135",
+        "label": "ESTRADIOL"
+      },
+      {
+        "identifier": "DRUGBANK:DB00783",
+        "label": "Estradiol"
+      },
+      {
+        "identifier": "MESH:D004958",
+        "label": "Estradiol"
+      },
+      {
+        "identifier": "CAS:200-023-8"
+      },
+      {
+        "identifier": "CAS:50-28-2"
+      },
+      {
+        "identifier": "DrugCentral:1057",
+        "label": "estradiol"
+      },
+      {
+        "identifier": "GTOPDB:1012",
+        "label": "[3H]17β-estradiol"
+      },
+      {
+        "identifier": "GTOPDB:1013",
+        "label": "17β-estradiol"
+      },
+      {
+        "identifier": "HMDB:HMDB0000151",
+        "label": "Estradiol"
+      },
+      {
+        "identifier": "KEGG.COMPOUND:C00951",
+        "label": "Estradiol-17beta"
+      },
+      {
+        "identifier": "INCHIKEY:VOXZDWNPVJITMN-ZBRFXRBCSA-N"
+      },
+      {
+        "identifier": "UMLS:C0014912",
+        "label": "estradiol"
+      },
+      {
+        "identifier": "RXCUI:4083"
+      },
+      {
+        "identifier": "CHEBI:16469",
+        "label": "17beta-estradiol"
+      },
+      {
+        "identifier": "CHEBI:23963"
+      },
+      {
+        "identifier": "CHEBI:4864"
+      },
+      {
+        "identifier": "CHEBI:14219"
+      },
+      {
+        "identifier": "CHEBI:42475"
+      },
+      {
+        "identifier": "UNII:4TI98Z838E",
+        "label": "ESTRADIOL"
+      },
+      {
+        "identifier": "PUBCHEM.COMPOUND:5757",
+        "label": "Estradiol"
+      },
+      {
+        "identifier": "CHEMBL.COMPOUND:CHEMBL135",
+        "label": "ESTRADIOL"
+      },
+      {
+        "identifier": "DRUGBANK:DB00783",
+        "label": "Estradiol"
+      },
+      {
+        "identifier": "MESH:D004958",
+        "label": "Estradiol"
+      },
+      {
+        "identifier": "CAS:200-023-8"
+      },
+      {
+        "identifier": "CAS:50-28-2"
+      },
+      {
+        "identifier": "DrugCentral:1057",
+        "label": "estradiol"
+      },
+      {
+        "identifier": "GTOPDB:1012",
+        "label": "[3H]17β-estradiol"
+      },
+      {
+        "identifier": "GTOPDB:1013",
+        "label": "17β-estradiol"
+      },
+      {
+        "identifier": "HMDB:HMDB0000151",
+        "label": "Estradiol"
+      },
+      {
+        "identifier": "KEGG.COMPOUND:C00951",
+        "label": "Estradiol-17beta"
+      },
+      {
+        "identifier": "INCHIKEY:VOXZDWNPVJITMN-ZBRFXRBCSA-N"
+      },
+      {
+        "identifier": "UMLS:C0014912",
+        "label": "estradiol"
+      },
+      {
+        "identifier": "RXCUI:4083"
+      },
+      {
+        "identifier": "CHEBI:31561",
+        "label": "Estradiol valerate"
+      },
+      {
+        "identifier": "UNII:OKG364O896",
+        "label": "ESTRADIOL VALERATE"
+      },
+      {
+        "identifier": "PUBCHEM.COMPOUND:13791",
+        "label": "Estradiol Valerate"
+      },
+      {
+        "identifier": "CHEMBL.COMPOUND:CHEMBL1511",
+        "label": "ESTRADIOL VALERATE"
+      },
+      {
+        "identifier": "DRUGBANK:DB13956",
+        "label": "Estradiol valerate"
+      },
+      {
+        "identifier": "MESH:C015854",
+        "label": "[OBSOLETE] estradiol valerate"
+      },
+      {
+        "identifier": "CAS:213-559-2"
+      },
+      {
+        "identifier": "CAS:979-32-8"
+      },
+      {
+        "identifier": "DrugCentral:1064",
+        "label": "estradiol valerate"
+      },
+      {
+        "identifier": "GTOPDB:7655",
+        "label": "estradiol valerate"
+      },
+      {
+        "identifier": "HMDB:HMDB0303648",
+        "label": "Pelanin"
+      },
+      {
+        "identifier": "KEGG.COMPOUND:C12859"
+      },
+      {
+        "identifier": "INCHIKEY:RSEPBGGWRJCQGY-RBRWEJTLSA-N"
+      },
+      {
+        "identifier": "UMLS:C0059623",
+        "label": "estradiol valerate"
+      },
+      {
+        "identifier": "RXCUI:24395"
+      },
+      {
+        "identifier": "CHEBI:31561",
+        "label": "Estradiol valerate"
+      },
+      {
+        "identifier": "UNII:OKG364O896",
+        "label": "ESTRADIOL VALERATE"
+      },
+      {
+        "identifier": "PUBCHEM.COMPOUND:13791",
+        "label": "Estradiol Valerate"
+      },
+      {
+        "identifier": "CHEMBL.COMPOUND:CHEMBL1511",
+        "label": "ESTRADIOL VALERATE"
+      },
+      {
+        "identifier": "DRUGBANK:DB13956",
+        "label": "Estradiol valerate"
+      },
+      {
+        "identifier": "MESH:C015854",
+        "label": "[OBSOLETE] estradiol valerate"
+      },
+      {
+        "identifier": "CAS:213-559-2"
+      },
+      {
+        "identifier": "CAS:979-32-8"
+      },
+      {
+        "identifier": "DrugCentral:1064",
+        "label": "estradiol valerate"
+      },
+      {
+        "identifier": "GTOPDB:7655",
+        "label": "estradiol valerate"
+      },
+      {
+        "identifier": "HMDB:HMDB0303648",
+        "label": "Pelanin"
+      },
+      {
+        "identifier": "KEGG.COMPOUND:C12859"
+      },
+      {
+        "identifier": "INCHIKEY:RSEPBGGWRJCQGY-RBRWEJTLSA-N"
+      },
+      {
+        "identifier": "UMLS:C0059623",
+        "label": "estradiol valerate"
+      },
+      {
+        "identifier": "RXCUI:24395"
+      },
+      {
+        "identifier": "CHEBI:34745",
+        "label": "Estradiol 17beta-cyclopentylpropionate"
+      },
+      {
+        "identifier": "UNII:7E1DV054LO",
+        "label": "ESTRADIOL CYPIONATE"
+      },
+      {
+        "identifier": "PUBCHEM.COMPOUND:9403",
+        "label": "Estradiol Cypionate"
+      },
+      {
+        "identifier": "CHEMBL.COMPOUND:CHEMBL1200973",
+        "label": "ESTRADIOL CYPIONATE"
+      },
+      {
+        "identifier": "DRUGBANK:DB13954",
+        "label": "Estradiol cypionate"
+      },
+      {
+        "identifier": "MESH:C007630",
+        "label": "estradiol 17 beta-cypionate"
+      },
+      {
+        "identifier": "CAS:206-237-8"
+      },
+      {
+        "identifier": "CAS:313-06-4"
+      },
+      {
+        "identifier": "DrugCentral:1059",
+        "label": "estradiol cypionate"
+      },
+      {
+        "identifier": "KEGG.COMPOUND:C14640"
+      },
+      {
+        "identifier": "INCHIKEY:UOACKFBJUYNSLK-XRKIENNPSA-N"
+      },
+      {
+        "identifier": "UMLS:C0059610",
+        "label": "estradiol cypionate"
+      },
+      {
+        "identifier": "RXCUI:1000146"
+      },
+      {
+        "identifier": "CHEBI:34745",
+        "label": "Estradiol 17beta-cyclopentylpropionate"
+      },
+      {
+        "identifier": "UNII:7E1DV054LO",
+        "label": "ESTRADIOL CYPIONATE"
+      },
+      {
+        "identifier": "PUBCHEM.COMPOUND:9403",
+        "label": "Estradiol Cypionate"
+      },
+      {
+        "identifier": "CHEMBL.COMPOUND:CHEMBL1200973",
+        "label": "ESTRADIOL CYPIONATE"
+      },
+      {
+        "identifier": "DRUGBANK:DB13954",
+        "label": "Estradiol cypionate"
+      },
+      {
+        "identifier": "MESH:C007630",
+        "label": "estradiol 17 beta-cypionate"
+      },
+      {
+        "identifier": "CAS:206-237-8"
+      },
+      {
+        "identifier": "CAS:313-06-4"
+      },
+      {
+        "identifier": "DrugCentral:1059",
+        "label": "estradiol cypionate"
+      },
+      {
+        "identifier": "KEGG.COMPOUND:C14640"
+      },
+      {
+        "identifier": "INCHIKEY:UOACKFBJUYNSLK-XRKIENNPSA-N"
+      },
+      {
+        "identifier": "UMLS:C0059610",
+        "label": "estradiol cypionate"
+      },
+      {
+        "identifier": "RXCUI:1000146"
+      },
+      {
+        "identifier": "CHEBI:77006",
+        "label": "17beta-estradiol 3-benzoate"
+      },
+      {
+        "identifier": "UNII:1S4CJB5ZGN",
+        "label": "ESTRADIOL BENZOATE"
+      },
+      {
+        "identifier": "PUBCHEM.COMPOUND:222757",
+        "label": "Estradiol Benzoate"
+      },
+      {
+        "identifier": "CHEMBL.COMPOUND:CHEMBL282575",
+        "label": "ESTRADIOL BENZOATE"
+      },
+      {
+        "identifier": "DRUGBANK:DB13953",
+        "label": "Estradiol benzoate"
+      },
+      {
+        "identifier": "MESH:C074283",
+        "label": "estradiol 3-benzoate"
+      },
+      {
+        "identifier": "CAS:200-043-7"
+      },
+      {
+        "identifier": "CAS:50-50-0"
+      },
+      {
+        "identifier": "DrugCentral:1058",
+        "label": "estradiol benzoate"
+      },
+      {
+        "identifier": "KEGG.COMPOUND:C13444"
+      },
+      {
+        "identifier": "INCHIKEY:UYIFTLBWAOGQBI-BZDYCCQFSA-N"
+      },
+      {
+        "identifier": "UMLS:C0167626",
+        "label": "estradiol 3-benzoate"
+      },
+      {
+        "identifier": "RXCUI:60661"
+      },
+      {
+        "identifier": "CHEBI:77006",
+        "label": "17beta-estradiol 3-benzoate"
+      },
+      {
+        "identifier": "UNII:1S4CJB5ZGN",
+        "label": "ESTRADIOL BENZOATE"
+      },
+      {
+        "identifier": "PUBCHEM.COMPOUND:222757",
+        "label": "Estradiol Benzoate"
+      },
+      {
+        "identifier": "CHEMBL.COMPOUND:CHEMBL282575",
+        "label": "ESTRADIOL BENZOATE"
+      },
+      {
+        "identifier": "DRUGBANK:DB13953",
+        "label": "Estradiol benzoate"
+      },
+      {
+        "identifier": "MESH:C074283",
+        "label": "estradiol 3-benzoate"
+      },
+      {
+        "identifier": "CAS:200-043-7"
+      },
+      {
+        "identifier": "CAS:50-50-0"
+      },
+      {
+        "identifier": "DrugCentral:1058",
+        "label": "estradiol benzoate"
+      },
+      {
+        "identifier": "KEGG.COMPOUND:C13444"
+      },
+      {
+        "identifier": "INCHIKEY:UYIFTLBWAOGQBI-BZDYCCQFSA-N"
+      },
+      {
+        "identifier": "UMLS:C0167626",
+        "label": "estradiol 3-benzoate"
+      },
+      {
+        "identifier": "RXCUI:60661"
+      },
+      {
+        "identifier": "CHEBI:135981",
+        "label": "estradiol acetate"
+      },
+      {
+        "identifier": "UNII:5R97F5H93P",
+        "label": "ESTRADIOL ACETATE"
+      },
+      {
+        "identifier": "PUBCHEM.COMPOUND:9818306",
+        "label": "Estradiol Acetate"
+      },
+      {
+        "identifier": "CHEMBL.COMPOUND:CHEMBL1200430",
+        "label": "ESTRADIOL ACETATE"
+      },
+      {
+        "identifier": "CHEMBL.COMPOUND:CHEMBL1611800"
+      },
+      {
+        "identifier": "DRUGBANK:DB13952",
+        "label": "Estradiol acetate"
+      },
+      {
+        "identifier": "CAS:4245-41-4"
+      },
+      {
+        "identifier": "DrugCentral:4497",
+        "label": "estradiol acetate"
+      },
+      {
+        "identifier": "INCHIKEY:FHXBMXJMKMWVRG-SLHNCBLASA-N"
+      },
+      {
+        "identifier": "UMLS:C1330622",
+        "label": "estradiol acetate"
+      },
+      {
+        "identifier": "RXCUI:405416"
+      },
+      {
+        "identifier": "CHEBI:135981",
+        "label": "estradiol acetate"
+      },
+      {
+        "identifier": "UNII:5R97F5H93P",
+        "label": "ESTRADIOL ACETATE"
+      },
+      {
+        "identifier": "PUBCHEM.COMPOUND:9818306",
+        "label": "Estradiol Acetate"
+      },
+      {
+        "identifier": "CHEMBL.COMPOUND:CHEMBL1200430",
+        "label": "ESTRADIOL ACETATE"
+      },
+      {
+        "identifier": "CHEMBL.COMPOUND:CHEMBL1611800"
+      },
+      {
+        "identifier": "DRUGBANK:DB13952",
+        "label": "Estradiol acetate"
+      },
+      {
+        "identifier": "CAS:4245-41-4"
+      },
+      {
+        "identifier": "DrugCentral:4497",
+        "label": "estradiol acetate"
+      },
+      {
+        "identifier": "INCHIKEY:FHXBMXJMKMWVRG-SLHNCBLASA-N"
+      },
+      {
+        "identifier": "UMLS:C1330622",
+        "label": "estradiol acetate"
+      },
+      {
+        "identifier": "RXCUI:405416"
+      },
+      {
+        "identifier": "UNII:T32277KB09",
+        "label": "FLUOROESTRADIOL F-18"
+      },
+      {
+        "identifier": "PUBCHEM.COMPOUND:10869981",
+        "label": "Fluoroestradiol F-18"
+      },
+      {
+        "identifier": "CHEMBL.COMPOUND:CHEMBL4594261",
+        "label": "FLUOROESTRADIOL F-18"
+      },
+      {
+        "identifier": "DRUGBANK:DB15690",
+        "label": "Fluoroestradiol F-18"
+      },
+      {
+        "identifier": "CAS:94153-53-4"
+      },
+      {
+        "identifier": "DrugCentral:5395",
+        "label": "fluoroestradiol F 18"
+      },
+      {
+        "identifier": "HMDB:HMDB0304852",
+        "label": "Fluoroestradiol F18"
+      },
+      {
+        "identifier": "INCHIKEY:KDLLNMRYZGUVMA-ZYMZXAKXSA-N"
+      },
+      {
+        "identifier": "UMLS:C1831937",
+        "label": "fluoroestradiol F-18"
+      },
+      {
+        "identifier": "RXCUI:2372221"
+      },
+      {
+        "identifier": "UNII:T32277KB09",
+        "label": "FLUOROESTRADIOL F-18"
+      },
+      {
+        "identifier": "PUBCHEM.COMPOUND:10869981",
+        "label": "Fluoroestradiol F-18"
+      },
+      {
+        "identifier": "CHEMBL.COMPOUND:CHEMBL4594261",
+        "label": "FLUOROESTRADIOL F-18"
+      },
+      {
+        "identifier": "DRUGBANK:DB15690",
+        "label": "Fluoroestradiol F-18"
+      },
+      {
+        "identifier": "CAS:94153-53-4"
+      },
+      {
+        "identifier": "DrugCentral:5395",
+        "label": "fluoroestradiol F 18"
+      },
+      {
+        "identifier": "HMDB:HMDB0304852",
+        "label": "Fluoroestradiol F18"
+      },
+      {
+        "identifier": "INCHIKEY:KDLLNMRYZGUVMA-ZYMZXAKXSA-N"
+      },
+      {
+        "identifier": "UMLS:C1831937",
+        "label": "fluoroestradiol F-18"
+      },
+      {
+        "identifier": "RXCUI:2372221"
+      },
+      {
+        "identifier": "UNII:CXY7B3Q98Z",
+        "label": "ESTRADIOL HEMIHYDRATE"
+      },
+      {
+        "identifier": "PUBCHEM.COMPOUND:154274",
+        "label": "Estradiol Hemihydrate"
+      },
+      {
+        "identifier": "CAS:35380-71-3"
+      },
+      {
+        "identifier": "INCHIKEY:ZVVGLAMWAQMPDR-WVEWYJOQSA-N"
+      },
+      {
+        "identifier": "UNII:CXY7B3Q98Z",
+        "label": "ESTRADIOL HEMIHYDRATE"
+      },
+      {
+        "identifier": "PUBCHEM.COMPOUND:154274",
+        "label": "Estradiol Hemihydrate"
+      },
+      {
+        "identifier": "CAS:35380-71-3"
+      },
+      {
+        "identifier": "INCHIKEY:ZVVGLAMWAQMPDR-WVEWYJOQSA-N"
+      },
+      {
+        "identifier": "UMLS:C0772181",
+        "label": "estradiol hemihydrate"
+      },
+      {
+        "identifier": "RXCUI:236859"
+      },
+      {
+        "identifier": "RXCUI:48876"
+      },
+      {
+        "identifier": "UMLS:C0113071",
+        "label": "Depo-estradiol"
+      },
+      {
+        "identifier": "RXCUI:109022"
+      },
+      {
+        "identifier": "UMLS:C0362034",
+        "label": "estradiol Drug Implant"
+      },
+      {
+        "identifier": "RXCUI:142249"
+      },
+      {
+        "identifier": "UMLS:C0544372",
+        "label": "estradiol Injectable Solution"
+      },
+      {
+        "identifier": "RXCUI:151720"
+      },
+      {
+        "identifier": "UMLS:C0591465",
+        "label": "Estring"
+      },
+      {
+        "identifier": "RXCUI:152483"
+      },
+      {
+        "identifier": "UMLS:C0592238",
+        "label": "Vagifem"
+      },
+      {
+        "identifier": "RXCUI:197657"
+      },
+      {
+        "identifier": "UMLS:C0688786",
+        "label": "estradiol 0.5 MG Oral Tablet"
+      },
+      {
+        "identifier": "RXCUI:197658"
+      },
+      {
+        "identifier": "UMLS:C0688787",
+        "label": "estradiol 1 MG Oral Tablet"
+      },
+      {
+        "identifier": "RXCUI:197659"
+      },
+      {
+        "identifier": "UMLS:C0688788",
+        "label": "estradiol 2 MG Oral Tablet"
+      },
+      {
+        "identifier": "RXCUI:199545"
+      },
+      {
+        "identifier": "UMLS:C0693080",
+        "label": "estradiol 100 MG Drug Implant"
+      },
+      {
+        "identifier": "RXCUI:199547"
+      },
+      {
+        "identifier": "UMLS:C0693082",
+        "label": "estradiol 50 MG Drug Implant"
+      },
+      {
+        "identifier": "RXCUI:199607"
+      },
+      {
+        "identifier": "UMLS:C0693172",
+        "label": "estradiol 0.025 MG Vaginal Insert"
+      },
+      {
+        "identifier": "RXCUI:202619"
+      },
+      {
+        "identifier": "UMLS:C0699352",
+        "label": "Estrace"
+      },
+      {
+        "identifier": "RXCUI:205333"
+      },
+      {
+        "identifier": "UMLS:C0705994",
+        "label": "estradiol 1.5 MG Oral Tablet"
+      },
+      {
+        "identifier": "RXCUI:205909"
+      },
+      {
+        "identifier": "UMLS:C0706893",
+        "label": "estradiol 0.5 MG Oral Tablet [Estrace]"
+      },
+      {
+        "identifier": "RXCUI:206101"
+      },
+      {
+        "identifier": "UMLS:C0707116",
+        "label": "estradiol 1 MG Oral Tablet [Estrace]"
+      },
+      {
+        "identifier": "RXCUI:206241"
+      },
+      {
+        "identifier": "UMLS:C0707291",
+        "label": "estradiol 2 MG Oral Tablet [Estrace]"
+      },
+      {
+        "identifier": "RXCUI:206417"
+      },
+      {
+        "identifier": "UMLS:C0707493",
+        "label": "estradiol cypionate 5 MG/ML Injectable Solution [Depo-estradiol]"
+      },
+      {
+        "identifier": "RXCUI:206620"
+      },
+      {
+        "identifier": "UMLS:C0707735",
+        "label": "estradiol valerate 10 MG/ML Injectable Solution [Delestrogen]"
+      },
+      {
+        "identifier": "RXCUI:206715"
+      },
+      {
+        "identifier": "UMLS:C0707877",
+        "label": "estradiol valerate 20 MG/ML Injectable Solution [Delestrogen]"
+      },
+      {
+        "identifier": "RXCUI:206813"
+      },
+      {
+        "identifier": "UMLS:C0707997",
+        "label": "estradiol valerate 40 MG/ML Injectable Solution [Delestrogen]"
+      },
+      {
+        "identifier": "RXCUI:215168"
+      },
+      {
+        "identifier": "UMLS:C0718414",
+        "label": "Alora"
+      },
+      {
+        "identifier": "RXCUI:220918"
+      },
+      {
+        "identifier": "UMLS:C0724374",
+        "label": "Vivelle"
+      },
+      {
+        "identifier": "RXCUI:226597"
+      },
+      {
+        "identifier": "UMLS:C0732025",
+        "label": "estradiol 0.0006 MG/MG Topical Gel"
+      },
+      {
+        "identifier": "RXCUI:238003"
+      },
+      {
+        "identifier": "UMLS:C0773954",
+        "label": "168 HR estradiol 0.00208 MG/HR Transdermal System"
+      },
+      {
+        "identifier": "RXCUI:238004"
+      },
+      {
+        "identifier": "UMLS:C0773955",
+        "label": "168 HR estradiol 0.00417 MG/HR Transdermal System"
+      },
+      {
+        "identifier": "RXCUI:241527"
+      },
+      {
+        "identifier": "UMLS:C0779609",
+        "label": "168 HR estradiol 0.00312 MG/HR Transdermal System"
+      },
+      {
+        "identifier": "RXCUI:241946"
+      },
+      {
+        "identifier": "UMLS:C0780174",
+        "label": "84 HR estradiol 0.00156 MG/HR Transdermal System"
+      },
+      {
+        "identifier": "RXCUI:242333"
+      },
+      {
+        "identifier": "UMLS:C0780752",
+        "label": "168 HR estradiol 0.00104 MG/HR Transdermal System"
+      },
+      {
+        "identifier": "RXCUI:242891"
+      },
+      {
+        "identifier": "UMLS:C0781942",
+        "label": "84 HR estradiol 0.00208 MG/HR Transdermal System"
+      },
+      {
+        "identifier": "RXCUI:242892"
+      },
+      {
+        "identifier": "UMLS:C0781943",
+        "label": "84 HR estradiol 0.00417 MG/HR Transdermal System"
+      },
+      {
+        "identifier": "RXCUI:248478"
+      },
+      {
+        "identifier": "UMLS:C0789930",
+        "label": "84 HR estradiol 0.00104 MG/HR Transdermal System"
+      },
+      {
+        "identifier": "RXCUI:250213"
+      },
+      {
+        "identifier": "UMLS:C0792087",
+        "label": "estradiol 4 MG Oral Tablet"
+      },
+      {
+        "identifier": "RXCUI:251098"
+      },
+      {
+        "identifier": "UMLS:C0793096",
+        "label": "estradiol 25 MG Drug Implant"
+      },
+      {
+        "identifier": "RXCUI:284378"
+      },
+      {
+        "identifier": "UMLS:C0938946",
+        "label": "84 HR estradiol 0.00104 MG/HR Transdermal System [Vivelle]"
+      },
+      {
+        "identifier": "RXCUI:310169"
+      },
+      {
+        "identifier": "UMLS:C0976742",
+        "label": "estradiol 0.1 MG/ML Vaginal Cream"
+      },
+      {
+        "identifier": "RXCUI:310170"
+      },
+      {
+        "identifier": "UMLS:C0976743",
+        "label": "168 HR estradiol 0.00104 MG/HR Transdermal System [Climara]"
+      },
+      {
+        "identifier": "RXCUI:310172"
+      },
+      {
+        "identifier": "UMLS:C0976745",
+        "label": "84 HR estradiol 0.00156 MG/HR Transdermal System [Vivelle]"
+      },
+      {
+        "identifier": "RXCUI:310174"
+      },
+      {
+        "identifier": "UMLS:C0976747",
+        "label": "168 HR estradiol 0.00208 MG/HR Transdermal System [Climara]"
+      },
+      {
+        "identifier": "RXCUI:310176"
+      },
+      {
+        "identifier": "UMLS:C0976749",
+        "label": "84 HR estradiol 0.00208 MG/HR Transdermal System [Vivelle]"
+      },
+      {
+        "identifier": "RXCUI:310178"
+      },
+      {
+        "identifier": "UMLS:C0976753",
+        "label": "168 HR estradiol 0.00312 MG/HR Transdermal System [Climara]"
+      },
+      {
+        "identifier": "RXCUI:310180"
+      },
+      {
+        "identifier": "UMLS:C0976755",
+        "label": "84 HR estradiol 0.00417 MG/HR Transdermal System [Alora]"
+      },
+      {
+        "identifier": "RXCUI:310181"
+      },
+      {
+        "identifier": "UMLS:C0976756",
+        "label": "168 HR estradiol 0.00417 MG/HR Transdermal System [Climara]"
+      },
+      {
+        "identifier": "RXCUI:310183"
+      },
+      {
+        "identifier": "UMLS:C0976758",
+        "label": "84 HR estradiol 0.00417 MG/HR Transdermal System [Vivelle]"
+      },
+      {
+        "identifier": "RXCUI:310187"
+      },
+      {
+        "identifier": "UMLS:C0976763",
+        "label": "estradiol cypionate 5 MG/ML Injectable Solution"
+      },
+      {
+        "identifier": "RXCUI:310189"
+      },
+      {
+        "identifier": "UMLS:C0976765",
+        "label": "estradiol valerate 10 MG/ML Injectable Solution"
+      },
+      {
+        "identifier": "RXCUI:310190"
+      },
+      {
+        "identifier": "UMLS:C0976766",
+        "label": "estradiol valerate 20 MG/ML Injectable Solution"
+      },
+      {
+        "identifier": "RXCUI:310191"
+      },
+      {
+        "identifier": "UMLS:C0976767",
+        "label": "estradiol valerate 40 MG/ML Injectable Solution"
+      },
+      {
+        "identifier": "RXCUI:315880"
+      },
+      {
+        "identifier": "UMLS:C0985840",
+        "label": "estradiol 0.5 MG"
+      },
+      {
+        "identifier": "RXCUI:315881"
+      },
+      {
+        "identifier": "UMLS:C0985841",
+        "label": "estradiol 1 MG"
+      },
+      {
+        "identifier": "RXCUI:315882"
+      },
+      {
+        "identifier": "UMLS:C0985842",
+        "label": "estradiol 2 MG"
+      },
+      {
+        "identifier": "RXCUI:319865"
+      },
+      {
+        "identifier": "UMLS:C1096767",
+        "label": "Delestrogen"
+      },
+      {
+        "identifier": "RXCUI:323952"
+      },
+      {
+        "identifier": "UMLS:C1104231",
+        "label": "estradiol 0.1 MG/ML"
+      },
+      {
+        "identifier": "RXCUI:323984"
+      },
+      {
+        "identifier": "UMLS:C1105819",
+        "label": "Climara"
+      },
+      {
+        "identifier": "RXCUI:324012"
+      },
+      {
+        "identifier": "UMLS:C1110109",
+        "label": "estradiol 4 MG"
+      },
+      {
+        "identifier": "RXCUI:331457"
+      },
+      {
+        "identifier": "UMLS:C1127400",
+        "label": "estradiol 1.5 MG"
+      },
+      {
+        "identifier": "RXCUI:331469"
+      },
+      {
+        "identifier": "UMLS:C1127416",
+        "label": "estradiol 0.00208 MG/HR"
+      },
+      {
+        "identifier": "RXCUI:331470"
+      },
+      {
+        "identifier": "UMLS:C1127417",
+        "label": "estradiol 0.00156 MG/HR"
+      },
+      {
+        "identifier": "RXCUI:332446"
+      },
+      {
+        "identifier": "UMLS:C1128674",
+        "label": "estradiol 0.025 MG"
+      },
+      {
+        "identifier": "RXCUI:334688"
+      },
+      {
+        "identifier": "UMLS:C1131492",
+        "label": "estradiol 2.5 MG/ML"
+      },
+      {
+        "identifier": "RXCUI:337444"
+      },
+      {
+        "identifier": "UMLS:C1134958",
+        "label": "estradiol 0.00417 MG/HR"
+      },
+      {
+        "identifier": "RXCUI:340498"
+      },
+      {
+        "identifier": "UMLS:C1141386",
+        "label": "estradiol 0.00104 MG/HR"
+      },
+      {
+        "identifier": "RXCUI:345795"
+      },
+      {
+        "identifier": "UMLS:C1153723",
+        "label": "estradiol 0.00167 MG/HR"
+      },
+      {
+        "identifier": "RXCUI:345796"
+      },
+      {
+        "identifier": "UMLS:C1153724",
+        "label": "estradiol 0.00333 MG/HR"
+      },
+      {
+        "identifier": "RXCUI:353476"
+      },
+      {
+        "identifier": "UMLS:C1171241",
+        "label": "estradiol 0.00312 MG/HR"
+      },
+      {
+        "identifier": "RXCUI:353544"
+      },
+      {
+        "identifier": "UMLS:C1171414",
+        "label": "estradiol 20 MG"
+      },
+      {
+        "identifier": "RXCUI:353545"
+      },
+      {
+        "identifier": "UMLS:C1171415",
+        "label": "estradiol 50 MG"
+      },
+      {
+        "identifier": "RXCUI:353546"
+      },
+      {
+        "identifier": "UMLS:C1171416",
+        "label": "estradiol 25 MG"
+      },
+      {
+        "identifier": "RXCUI:362643"
+      },
+      {
+        "identifier": "UMLS:C1236561",
+        "label": "estradiol Injectable Solution [Depo-estradiol]"
+      },
+      {
+        "identifier": "RXCUI:362704"
+      },
+      {
+        "identifier": "UMLS:C1236622",
+        "label": "estradiol Injectable Solution [Delestrogen]"
+      },
+      {
+        "identifier": "RXCUI:368935"
+      },
+      {
+        "identifier": "UMLS:C1242937",
+        "label": "estradiol Oral Tablet [Estrace]"
+      },
+      {
+        "identifier": "RXCUI:372078"
+      },
+      {
+        "identifier": "UMLS:C1246122",
+        "label": "estradiol Oral Tablet"
+      },
+      {
+        "identifier": "RXCUI:378615"
+      },
+      {
+        "identifier": "UMLS:C1252951",
+        "label": "estradiol Vaginal Cream"
+      },
+      {
+        "identifier": "RXCUI:379698"
+      },
+      {
+        "identifier": "UMLS:C1254147",
+        "label": "estradiol 0.0006 MG/MG"
+      },
+      {
+        "identifier": "RXCUI:379699"
+      },
+      {
+        "identifier": "UMLS:C1254148",
+        "label": "estradiol Topical Gel"
+      },
+      {
+        "identifier": "RXCUI:379701"
+      },
+      {
+        "identifier": "UMLS:C1254150",
+        "label": "estradiol 0.001 MG/MG"
+      },
+      {
+        "identifier": "RXCUI:379711"
+      },
+      {
+        "identifier": "UMLS:C1254164",
+        "label": "estradiol 100 MG"
+      },
+      {
+        "identifier": "RXCUI:389138"
+      },
+      {
+        "identifier": "UMLS:C1276813",
+        "label": "estradiol 0.15 MG/ACTUAT Nasal Spray"
+      },
+      {
+        "identifier": "RXCUI:393138"
+      },
+      {
+        "identifier": "UMLS:C1305802",
+        "label": "estradiol Nasal Spray"
+      },
+      {
+        "identifier": "RXCUI:393407"
+      },
+      {
+        "identifier": "UMLS:C1306389",
+        "label": "estradiol 0.15 MG/ACTUAT"
+      },
+      {
+        "identifier": "RXCUI:402375"
+      },
+      {
+        "identifier": "UMLS:C1321672",
+        "label": "estradiol 0.00188 MG/HR"
+      },
+      {
+        "identifier": "RXCUI:402382"
+      },
+      {
+        "identifier": "UMLS:C1321679",
+        "label": "estradiol Topical Lotion"
+      },
+      {
+        "identifier": "RXCUI:403922"
+      },
+      {
+        "identifier": "UMLS:C1329127",
+        "label": "168 HR estradiol 0.00156 MG/HR Transdermal System"
+      },
+      {
+        "identifier": "RXCUI:403923"
+      },
+      {
+        "identifier": "UMLS:C1329128",
+        "label": "168 HR estradiol 0.0025 MG/HR Transdermal System"
+      },
+      {
+        "identifier": "RXCUI:404656"
+      },
+      {
+        "identifier": "UMLS:C1329861",
+        "label": "168 HR estradiol 0.00156 MG/HR Transdermal System [Climara]"
+      },
+      {
+        "identifier": "RXCUI:404657"
+      },
+      {
+        "identifier": "UMLS:C1329862",
+        "label": "168 HR estradiol 0.0025 MG/HR Transdermal System [Climara]"
+      },
+      {
+        "identifier": "RXCUI:405052"
+      },
+      {
+        "identifier": "UMLS:C1330258",
+        "label": "Estrogel"
+      },
+      {
+        "identifier": "RXCUI:405070"
+      },
+      {
+        "identifier": "UMLS:C1330276",
+        "label": "Femring"
+      },
+      {
+        "identifier": "RXCUI:405952"
+      },
+      {
+        "identifier": "UMLS:C1331185",
+        "label": "estradiol 0.0025 MG/HR"
+      },
+      {
+        "identifier": "RXCUI:476545"
+      },
+      {
+        "identifier": "UMLS:C1509421",
+        "label": "168 HR estradiol 0.000583 MG/HR Transdermal System"
+      },
+      {
+        "identifier": "RXCUI:476546"
+      },
+      {
+        "identifier": "UMLS:C1509895",
+        "label": "estradiol 0.000583 MG/HR"
+      },
+      {
+        "identifier": "RXCUI:483168"
+      },
+      {
+        "identifier": "UMLS:C1576935",
+        "label": "estradiol 0.9 MG"
+      },
+      {
+        "identifier": "RXCUI:483169"
+      },
+      {
+        "identifier": "UMLS:C1531888",
+        "label": "estradiol 0.9 MG Oral Tablet"
+      },
+      {
+        "identifier": "RXCUI:486140"
+      },
+      {
+        "identifier": "UMLS:C1577321",
+        "label": "estradiol 0.00156 MG/HR [Climara]"
+      },
+      {
+        "identifier": "RXCUI:486154"
+      },
+      {
+        "identifier": "UMLS:C1577327",
+        "label": "estradiol 0.00104 MG/HR [Alora]"
+      },
+      {
+        "identifier": "RXCUI:486155"
+      },
+      {
+        "identifier": "UMLS:C1572625",
+        "label": "84 HR estradiol 0.00104 MG/HR Transdermal System [Alora]"
+      },
+      {
+        "identifier": "RXCUI:545273"
+      },
+      {
+        "identifier": "UMLS:C1589838",
+        "label": "Menostar"
+      },
+      {
+        "identifier": "RXCUI:545274"
+      },
+      {
+        "identifier": "UMLS:C1589839",
+        "label": "estradiol 0.000583 MG/HR [Menostar]"
+      },
+      {
+        "identifier": "RXCUI:545276"
+      },
+      {
+        "identifier": "UMLS:C1586483",
+        "label": "168 HR estradiol 0.000583 MG/HR Transdermal System [Menostar]"
+      },
+      {
+        "identifier": "RXCUI:566798"
+      },
+      {
+        "identifier": "UMLS:C1599224",
+        "label": "estradiol 0.5 MG [Estrace]"
+      },
+      {
+        "identifier": "RXCUI:566973"
+      },
+      {
+        "identifier": "UMLS:C1599397",
+        "label": "estradiol 1 MG [Estrace]"
+      },
+      {
+        "identifier": "RXCUI:567099"
+      },
+      {
+        "identifier": "UMLS:C1599523",
+        "label": "estradiol 2 MG [Estrace]"
+      },
+      {
+        "identifier": "RXCUI:574825"
+      },
+      {
+        "identifier": "UMLS:C1592551",
+        "label": "estradiol 0.00104 MG/HR [Vivelle]"
+      },
+      {
+        "identifier": "RXCUI:575116"
+      },
+      {
+        "identifier": "UMLS:C1592840",
+        "label": "estradiol 0.00104 MG/HR [Climara]"
+      },
+      {
+        "identifier": "RXCUI:575118"
+      },
+      {
+        "identifier": "UMLS:C1592842",
+        "label": "estradiol 0.00156 MG/HR [Vivelle]"
+      },
+      {
+        "identifier": "RXCUI:575120"
+      },
+      {
+        "identifier": "UMLS:C1592844",
+        "label": "estradiol 0.00208 MG/HR [Climara]"
+      },
+      {
+        "identifier": "RXCUI:575122"
+      },
+      {
+        "identifier": "UMLS:C1592846",
+        "label": "estradiol 0.00208 MG/HR [Vivelle]"
+      },
+      {
+        "identifier": "RXCUI:575124"
+      },
+      {
+        "identifier": "UMLS:C1592848",
+        "label": "estradiol 0.00312 MG/HR [Climara]"
+      },
+      {
+        "identifier": "RXCUI:575126"
+      },
+      {
+        "identifier": "UMLS:C1592850",
+        "label": "estradiol 0.00417 MG/HR [Alora]"
+      },
+      {
+        "identifier": "RXCUI:575127"
+      },
+      {
+        "identifier": "UMLS:C1592851",
+        "label": "estradiol 0.00417 MG/HR [Climara]"
+      },
+      {
+        "identifier": "RXCUI:575129"
+      },
+      {
+        "identifier": "UMLS:C1592853",
+        "label": "estradiol 0.00417 MG/HR [Vivelle]"
+      },
+      {
+        "identifier": "RXCUI:576560"
+      },
+      {
+        "identifier": "UMLS:C1594254",
+        "label": "estradiol 0.0025 MG/HR [Climara]"
+      },
+      {
+        "identifier": "RXCUI:577026"
+      },
+      {
+        "identifier": "UMLS:C1618740",
+        "label": "estradiol 0.45 MG"
+      },
+      {
+        "identifier": "RXCUI:577027"
+      },
+      {
+        "identifier": "UMLS:C1612313",
+        "label": "estradiol 0.45 MG Oral Tablet"
+      },
+      {
+        "identifier": "RXCUI:577028"
+      },
+      {
+        "identifier": "UMLS:C1618226",
+        "label": "estradiol 1.8 MG"
+      },
+      {
+        "identifier": "RXCUI:577029"
+      },
+      {
+        "identifier": "UMLS:C1615628",
+        "label": "estradiol 1.8 MG Oral Tablet"
+      },
+      {
+        "identifier": "RXCUI:581547"
+      },
+      {
+        "identifier": "UMLS:C1613470",
+        "label": "estradiol 0.0006 MG/MG [Estrogel]"
+      },
+      {
+        "identifier": "RXCUI:581548"
+      },
+      {
+        "identifier": "UMLS:C1612919",
+        "label": "estradiol Topical Gel [Estrogel]"
+      },
+      {
+        "identifier": "RXCUI:581549"
+      },
+      {
+        "identifier": "UMLS:C1612366",
+        "label": "estradiol 0.0006 MG/MG Topical Gel [Estrogel]"
+      },
+      {
+        "identifier": "RXCUI:688507"
+      },
+      {
+        "identifier": "UMLS:C1829337",
+        "label": "estradiol 2.5 MG/ML Topical Lotion"
+      },
+      {
+        "identifier": "RXCUI:706464"
+      },
+      {
+        "identifier": "UMLS:C1948856",
+        "label": "Elestrin"
+      },
+      {
+        "identifier": "RXCUI:706465"
+      },
+      {
+        "identifier": "UMLS:C1948857",
+        "label": "estradiol 0.0006 MG/MG [Elestrin]"
+      },
+      {
+        "identifier": "RXCUI:706466"
+      },
+      {
+        "identifier": "UMLS:C1948858",
+        "label": "estradiol Topical Gel [Elestrin]"
+      },
+      {
+        "identifier": "RXCUI:706467"
+      },
+      {
+        "identifier": "UMLS:C1948859",
+        "label": "estradiol 0.0006 MG/MG Topical Gel [Elestrin]"
+      },
+      {
+        "identifier": "RXCUI:722259"
+      },
+      {
+        "identifier": "UMLS:C1949350",
+        "label": "Divigel"
+      },
+      {
+        "identifier": "RXCUI:722261"
+      },
+      {
+        "identifier": "UMLS:C1949351",
+        "label": "estradiol Topical Gel [Divigel]"
+      },
+      {
+        "identifier": "RXCUI:723525"
+      },
+      {
+        "identifier": "UMLS:C1949380",
+        "label": "estradiol 0.001 MG/MG [Divigel]"
+      },
+      {
+        "identifier": "RXCUI:728116"
+      },
+      {
+        "identifier": "UMLS:C1965185",
+        "label": "estradiol 1.53 MG/ACTUAT"
+      },
+      {
+        "identifier": "RXCUI:728117"
+      },
+      {
+        "identifier": "UMLS:C1965186",
+        "label": "estradiol Topical Spray"
+      },
+      {
+        "identifier": "RXCUI:728118"
+      },
+      {
+        "identifier": "UMLS:C1965187",
+        "label": "estradiol 1.53 MG/ACTUAT Topical Spray"
+      },
+      {
+        "identifier": "RXCUI:728119"
+      },
+      {
+        "identifier": "UMLS:C1965188",
+        "label": "Evamist"
+      },
+      {
+        "identifier": "RXCUI:728120"
+      },
+      {
+        "identifier": "UMLS:C1965189",
+        "label": "estradiol 1.53 MG/ACTUAT [Evamist]"
+      },
+      {
+        "identifier": "RXCUI:728121"
+      },
+      {
+        "identifier": "UMLS:C1965190",
+        "label": "estradiol Topical Spray [Evamist]"
+      },
+      {
+        "identifier": "RXCUI:728122"
+      },
+      {
+        "identifier": "UMLS:C1964268",
+        "label": "estradiol 1.53 MG/ACTUAT Topical Spray [Evamist]"
+      },
+      {
+        "identifier": "RXCUI:797453"
+      },
+      {
+        "identifier": "UMLS:C2343937",
+        "label": "estradiol 0.000313 MG/HR"
+      },
+      {
+        "identifier": "RXCUI:797455"
+      },
+      {
+        "identifier": "UMLS:C2343938",
+        "label": "estradiol 0.000313 MG/HR [Estring]"
+      },
+      {
+        "identifier": "RXCUI:797560"
+      },
+      {
+        "identifier": "UMLS:C2344012",
+        "label": "estradiol 0.00208 MG/HR [Femring]"
+      },
+      {
+        "identifier": "RXCUI:797570"
+      },
+      {
+        "identifier": "UMLS:C2344020",
+        "label": "estradiol 0.00417 MG/HR [Femring]"
+      },
+      {
+        "identifier": "RXCUI:848328"
+      },
+      {
+        "identifier": "UMLS:C0361215",
+        "label": "90 DAY estradiol 0.000313 MG/HR Vaginal System"
+      },
+      {
+        "identifier": "RXCUI:848330"
+      },
+      {
+        "identifier": "UMLS:C1875894",
+        "label": "90 DAY estradiol 0.000313 MG/HR Vaginal System [Estring]"
+      },
+      {
+        "identifier": "RXCUI:848331"
+      },
+      {
+        "identifier": "UMLS:C1321195",
+        "label": "90 DAY estradiol 0.00208 MG/HR Vaginal System"
+      },
+      {
+        "identifier": "RXCUI:848333"
+      },
+      {
+        "identifier": "UMLS:C1875895",
+        "label": "90 DAY estradiol 0.00208 MG/HR Vaginal System [Femring]"
+      },
+      {
+        "identifier": "RXCUI:848342"
+      },
+      {
+        "identifier": "UMLS:C1443700",
+        "label": "90 DAY estradiol 0.00417 MG/HR Vaginal System"
+      },
+      {
+        "identifier": "RXCUI:848343"
+      },
+      {
+        "identifier": "UMLS:C1875896",
+        "label": "90 DAY estradiol 0.00417 MG/HR Vaginal System [Femring]"
+      },
+      {
+        "identifier": "RXCUI:884706"
+      },
+      {
+        "identifier": "UMLS:C2726480",
+        "label": "estradiol 0.01 MG"
+      },
+      {
+        "identifier": "RXCUI:884707"
+      },
+      {
+        "identifier": "UMLS:C4552041",
+        "label": "estradiol 0.01 MG Vaginal Insert"
+      },
+      {
+        "identifier": "RXCUI:884708"
+      },
+      {
+        "identifier": "UMLS:C2726482",
+        "label": "estradiol 0.01 MG [Vagifem]"
+      },
+      {
+        "identifier": "RXCUI:884709"
+      },
+      {
+        "identifier": "UMLS:C2726483",
+        "label": "estradiol 0.01 MG Vaginal Insert [Vagifem]"
+      },
+      {
+        "identifier": "RXCUI:890916"
+      },
+      {
+        "identifier": "UMLS:C2728217",
+        "label": "estradiol 0.1 MG/ML [Estrace]"
+      },
+      {
+        "identifier": "RXCUI:890917"
+      },
+      {
+        "identifier": "UMLS:C0306124",
+        "label": "estradiol Vaginal Cream [Estrace]"
+      },
+      {
+        "identifier": "RXCUI:890918"
+      },
+      {
+        "identifier": "UMLS:C0706588",
+        "label": "estradiol 0.1 MG/ML Vaginal Cream [Estrace]"
+      },
+      {
+        "identifier": "RXCUI:978940"
+      },
+      {
+        "identifier": "UMLS:C2912136",
+        "label": "estradiol valerate 3 MG"
+      },
+      {
+        "identifier": "RXCUI:978941"
+      },
+      {
+        "identifier": "UMLS:C2912137",
+        "label": "estradiol valerate 3 MG Oral Tablet"
+      },
+      {
+        "identifier": "RXCUI:978942"
+      },
+      {
+        "identifier": "UMLS:C2912138",
+        "label": "estradiol valerate 2 MG"
+      },
+      {
+        "identifier": "RXCUI:978947"
+      },
+      {
+        "identifier": "UMLS:C2912143",
+        "label": "estradiol valerate 1 MG"
+      },
+      {
+        "identifier": "RXCUI:978948"
+      },
+      {
+        "identifier": "UMLS:C2912144",
+        "label": "estradiol valerate 1 MG Oral Tablet"
+      },
+      {
+        "identifier": "RXCUI:1000147"
+      },
+      {
+        "identifier": "UMLS:C2930140",
+        "label": "estradiol cypionate 10 MG/ML"
+      },
+      {
+        "identifier": "RXCUI:1149631"
+      },
+      {
+        "identifier": "UMLS:C3204934",
+        "label": "estradiol 0.00313 MG/HR"
+      },
+      {
+        "identifier": "RXCUI:1149632"
+      },
+      {
+        "identifier": "UMLS:C0789915",
+        "label": "84 HR estradiol 0.00313 MG/HR Transdermal System"
+      },
+      {
+        "identifier": "RXCUI:1149633"
+      },
+      {
+        "identifier": "UMLS:C1592849",
+        "label": "estradiol 0.00313 MG/HR [Vivelle]"
+      },
+      {
+        "identifier": "RXCUI:1149634"
+      },
+      {
+        "identifier": "UMLS:C0976754",
+        "label": "84 HR estradiol 0.00313 MG/HR Transdermal System [Vivelle]"
+      },
+      {
+        "identifier": "RXCUI:1149644"
+      },
+      {
+        "identifier": "UMLS:C1592847",
+        "label": "estradiol 0.00313 MG/HR [Alora]"
+      },
+      {
+        "identifier": "RXCUI:1149645"
+      },
+      {
+        "identifier": "UMLS:C0976752",
+        "label": "84 HR estradiol 0.00313 MG/HR Transdermal System [Alora]"
+      },
+      {
+        "identifier": "RXCUI:1165181"
+      },
+      {
+        "identifier": "UMLS:C3219439",
+        "label": "estradiol Drug Implant Product"
+      },
+      {
+        "identifier": "RXCUI:1165182"
+      },
+      {
+        "identifier": "UMLS:C3219440",
+        "label": "estradiol Inhalant Product"
+      },
+      {
+        "identifier": "RXCUI:1165183"
+      },
+      {
+        "identifier": "UMLS:C3219441",
+        "label": "estradiol Injectable Product"
+      },
+      {
+        "identifier": "RXCUI:1165184"
+      },
+      {
+        "identifier": "UMLS:C3219442",
+        "label": "estradiol Nasal Product"
+      },
+      {
+        "identifier": "RXCUI:1165185"
+      },
+      {
+        "identifier": "UMLS:C0360514",
+        "label": "estradiol Oral Product"
+      },
+      {
+        "identifier": "RXCUI:1165186"
+      },
+      {
+        "identifier": "UMLS:C3219443",
+        "label": "estradiol Pill"
+      },
+      {
+        "identifier": "RXCUI:1165762"
+      },
+      {
+        "identifier": "UMLS:C0360515",
+        "label": "estradiol Topical Product"
+      },
+      {
+        "identifier": "RXCUI:1165763"
+      },
+      {
+        "identifier": "UMLS:C3220005",
+        "label": "estradiol Vaginal Product"
+      },
+      {
+        "identifier": "RXCUI:1168498"
+      },
+      {
+        "identifier": "UMLS:C3222665",
+        "label": "Alora Topical Product"
+      },
+      {
+        "identifier": "RXCUI:1169730"
+      },
+      {
+        "identifier": "UMLS:C3223866",
+        "label": "Estrace Oral Product"
+      },
+      {
+        "identifier": "RXCUI:1169731"
+      },
+      {
+        "identifier": "UMLS:C3223867",
+        "label": "Estrace Pill"
+      },
+      {
+        "identifier": "RXCUI:1169732"
+      },
+      {
+        "identifier": "UMLS:C3223868",
+        "label": "Estrace Vaginal Product"
+      },
+      {
+        "identifier": "RXCUI:1170444"
+      },
+      {
+        "identifier": "UMLS:C3224563",
+        "label": "Estring Vaginal Product"
+      },
+      {
+        "identifier": "RXCUI:1170450"
+      },
+      {
+        "identifier": "UMLS:C3224569",
+        "label": "Estrogel Topical Product"
+      },
+      {
+        "identifier": "RXCUI:1171161"
+      },
+      {
+        "identifier": "UMLS:C3225243",
+        "label": "Evamist Topical Product"
+      },
+      {
+        "identifier": "RXCUI:1171689"
+      },
+      {
+        "identifier": "UMLS:C3225757",
+        "label": "Delestrogen Injectable Product"
+      },
+      {
+        "identifier": "RXCUI:1172338"
+      },
+      {
+        "identifier": "UMLS:C3226397",
+        "label": "Climara Topical Product"
+      },
+      {
+        "identifier": "RXCUI:1173114"
+      },
+      {
+        "identifier": "UMLS:C3227159",
+        "label": "Depo-estradiol Injectable Product"
+      },
+      {
+        "identifier": "RXCUI:1173164"
+      },
+      {
+        "identifier": "UMLS:C3227209",
+        "label": "Divigel Topical Product"
+      },
+      {
+        "identifier": "RXCUI:1173871"
+      },
+      {
+        "identifier": "UMLS:C3227899",
+        "label": "Elestrin Topical Product"
+      },
+      {
+        "identifier": "RXCUI:1176651"
+      },
+      {
+        "identifier": "UMLS:C3230591",
+        "label": "Femring Vaginal Product"
+      },
+      {
+        "identifier": "RXCUI:1183845"
+      },
+      {
+        "identifier": "UMLS:C3237665",
+        "label": "Menostar Topical Product"
+      },
+      {
+        "identifier": "RXCUI:1187123"
+      },
+      {
+        "identifier": "UMLS:C3240865",
+        "label": "Vagifem Vaginal Product"
+      },
+      {
+        "identifier": "RXCUI:1187404"
+      },
+      {
+        "identifier": "UMLS:C3241146",
+        "label": "Vivelle Topical Product"
+      },
+      {
+        "identifier": "RXCUI:1294793"
+      },
+      {
+        "identifier": "UMLS:C3465458",
+        "label": "estradiol Transdermal Product"
+      },
+      {
+        "identifier": "RXCUI:1295803"
+      },
+      {
+        "identifier": "UMLS:C3466459",
+        "label": "Menostar Transdermal Product"
+      },
+      {
+        "identifier": "RXCUI:1296507"
+      },
+      {
+        "identifier": "UMLS:C3467123",
+        "label": "Vivelle Transdermal Product"
+      },
+      {
+        "identifier": "RXCUI:1296736"
+      },
+      {
+        "identifier": "UMLS:C3467340",
+        "label": "Alora Transdermal Product"
+      },
+      {
+        "identifier": "RXCUI:1297126"
+      },
+      {
+        "identifier": "UMLS:C3467708",
+        "label": "Climara Transdermal Product"
+      },
+      {
+        "identifier": "RXCUI:1356974"
+      },
+      {
+        "identifier": "UMLS:C3504921",
+        "label": "Minivelle"
+      },
+      {
+        "identifier": "RXCUI:1356975"
+      },
+      {
+        "identifier": "UMLS:C3504922",
+        "label": "estradiol 0.00156 MG/HR [Minivelle]"
+      },
+      {
+        "identifier": "RXCUI:1356977"
+      },
+      {
+        "identifier": "UMLS:C3504924",
+        "label": "Minivelle Topical Product"
+      },
+      {
+        "identifier": "RXCUI:1356978"
+      },
+      {
+        "identifier": "UMLS:C3504925",
+        "label": "Minivelle Transdermal Product"
+      },
+      {
+        "identifier": "RXCUI:1356979"
+      },
+      {
+        "identifier": "UMLS:C3504926",
+        "label": "84 HR estradiol 0.00156 MG/HR Transdermal System [Minivelle]"
+      },
+      {
+        "identifier": "RXCUI:1356996"
+      },
+      {
+        "identifier": "UMLS:C3504943",
+        "label": "estradiol 0.00208 MG/HR [Minivelle]"
+      },
+      {
+        "identifier": "RXCUI:1356997"
+      },
+      {
+        "identifier": "UMLS:C3504944",
+        "label": "84 HR estradiol 0.00208 MG/HR Transdermal System [Minivelle]"
+      },
+      {
+        "identifier": "RXCUI:1357006"
+      },
+      {
+        "identifier": "UMLS:C3504953",
+        "label": "estradiol 0.00313 MG/HR [Minivelle]"
+      },
+      {
+        "identifier": "RXCUI:1357007"
+      },
+      {
+        "identifier": "UMLS:C3504954",
+        "label": "84 HR estradiol 0.00313 MG/HR Transdermal System [Minivelle]"
+      },
+      {
+        "identifier": "RXCUI:1357008"
+      },
+      {
+        "identifier": "UMLS:C3504955",
+        "label": "estradiol 0.00417 MG/HR [Minivelle]"
+      },
+      {
+        "identifier": "RXCUI:1357009"
+      },
+      {
+        "identifier": "UMLS:C3504956",
+        "label": "84 HR estradiol 0.00417 MG/HR Transdermal System [Minivelle]"
+      },
+      {
+        "identifier": "RXCUI:1549457"
+      },
+      {
+        "identifier": "UMLS:C3856013",
+        "label": "estradiol 3-benzoate 21 MG"
+      },
+      {
+        "identifier": "RXCUI:1549468"
+      },
+      {
+        "identifier": "UMLS:C3856024",
+        "label": "estradiol 3-benzoate 28 MG"
+      },
+      {
+        "identifier": "RXCUI:1551621"
+      },
+      {
+        "identifier": "UMLS:C3858136",
+        "label": "estradiol 0.00104 MG/HR [Minivelle]"
+      },
+      {
+        "identifier": "RXCUI:1551622"
+      },
+      {
+        "identifier": "UMLS:C3857712",
+        "label": "84 HR estradiol 0.00104 MG/HR Transdermal System [Minivelle]"
+      },
+      {
+        "identifier": "RXCUI:1594944"
+      },
+      {
+        "identifier": "UMLS:C3865186",
+        "label": "estradiol 3-benzoate 14 MG"
+      },
+      {
+        "identifier": "RXCUI:1648166"
+      },
+      {
+        "identifier": "UMLS:C4018701",
+        "label": "estradiol 3-benzoate 10 MG"
+      },
+      {
+        "identifier": "RXCUI:1648168"
+      },
+      {
+        "identifier": "UMLS:C4018703",
+        "label": "estradiol / progesterone Drug Implant"
+      },
+      {
+        "identifier": "RXCUI:1648169"
+      },
+      {
+        "identifier": "UMLS:C4018704",
+        "label": "estradiol 3-benzoate 10 MG / progesterone 100 MG Drug Implant"
+      },
+      {
+        "identifier": "RXCUI:1648170"
+      },
+      {
+        "identifier": "UMLS:C0243907",
+        "label": "Synovex C"
+      },
+      {
+        "identifier": "RXCUI:1648171"
+      },
+      {
+        "identifier": "UMLS:C4018705",
+        "label": "estradiol 3-benzoate 10 MG / progesterone 100 MG [Synovex C]"
+      },
+      {
+        "identifier": "RXCUI:1648172"
+      },
+      {
+        "identifier": "UMLS:C4018706",
+        "label": "estradiol / progesterone Drug Implant [Synovex C]"
+      },
+      {
+        "identifier": "RXCUI:1648173"
+      },
+      {
+        "identifier": "UMLS:C4018707",
+        "label": "Synovex C Drug Implant Product"
+      },
+      {
+        "identifier": "RXCUI:1648174"
+      },
+      {
+        "identifier": "UMLS:C4018708",
+        "label": "estradiol 3-benzoate 10 MG / progesterone 100 MG Drug Implant [Synovex C]"
+      },
+      {
+        "identifier": "RXCUI:1667336"
+      },
+      {
+        "identifier": "UMLS:C4051710",
+        "label": "estradiol 24 MG"
+      },
+      {
+        "identifier": "RXCUI:1667344"
+      },
+      {
+        "identifier": "UMLS:C4051717",
+        "label": "estradiol 16 MG"
+      },
+      {
+        "identifier": "RXCUI:1668215"
+      },
+      {
+        "identifier": "UMLS:C4056776",
+        "label": "estradiol 40 MG"
+      },
+      {
+        "identifier": "RXCUI:1669850"
+      },
+      {
+        "identifier": "UMLS:C4056774",
+        "label": "estradiol 14 MG"
+      },
+      {
+        "identifier": "RXCUI:1669860"
+      },
+      {
+        "identifier": "UMLS:C4056771",
+        "label": "estradiol 8 MG"
+      },
+      {
+        "identifier": "RXCUI:1791130"
+      },
+      {
+        "identifier": "UMLS:C4238333",
+        "label": "estradiol cypionate 5 MG/ML"
+      },
+      {
+        "identifier": "RXCUI:1791132"
+      },
+      {
+        "identifier": "UMLS:C4238334",
+        "label": "estradiol cypionate 5 MG/ML [Depo-estradiol]"
+      },
+      {
+        "identifier": "RXCUI:1791143"
+      },
+      {
+        "identifier": "UMLS:C4238335",
+        "label": "estradiol valerate 10 MG/ML"
+      },
+      {
+        "identifier": "RXCUI:1791145"
+      },
+      {
+        "identifier": "UMLS:C4238336",
+        "label": "estradiol valerate 10 MG/ML [Delestrogen]"
+      },
+      {
+        "identifier": "RXCUI:1791161"
+      },
+      {
+        "identifier": "UMLS:C4238342",
+        "label": "estradiol valerate 20 MG/ML"
+      },
+      {
+        "identifier": "RXCUI:1791163"
+      },
+      {
+        "identifier": "UMLS:C4238343",
+        "label": "estradiol valerate 20 MG/ML [Delestrogen]"
+      },
+      {
+        "identifier": "RXCUI:1791182"
+      },
+      {
+        "identifier": "UMLS:C4238344",
+        "label": "estradiol valerate 40 MG/ML"
+      },
+      {
+        "identifier": "RXCUI:1791184"
+      },
+      {
+        "identifier": "UMLS:C4238345",
+        "label": "estradiol valerate 40 MG/ML [Delestrogen]"
+      },
+      {
+        "identifier": "RXCUI:1797109"
+      },
+      {
+        "identifier": "UMLS:C4256996",
+        "label": "Yuvafem"
+      },
+      {
+        "identifier": "RXCUI:1797110"
+      },
+      {
+        "identifier": "UMLS:C4257049",
+        "label": "estradiol 0.01 MG [Yuvafem]"
+      },
+      {
+        "identifier": "RXCUI:1797112"
+      },
+      {
+        "identifier": "UMLS:C4257165",
+        "label": "Yuvafem Vaginal Product"
+      },
+      {
+        "identifier": "RXCUI:1797113"
+      },
+      {
+        "identifier": "UMLS:C4256563",
+        "label": "estradiol 0.01 MG Vaginal Insert [Yuvafem]"
+      },
+      {
+        "identifier": "RXCUI:1805869"
+      },
+      {
+        "identifier": "UMLS:C4276350",
+        "label": "estradiol Transdermal System"
+      },
+      {
+        "identifier": "RXCUI:1805871"
+      },
+      {
+        "identifier": "UMLS:C4276224",
+        "label": "estradiol Transdermal System [Menostar]"
+      },
+      {
+        "identifier": "RXCUI:1805876"
+      },
+      {
+        "identifier": "UMLS:C4276223",
+        "label": "estradiol Transdermal System [Alora]"
+      },
+      {
+        "identifier": "RXCUI:1805887"
+      },
+      {
+        "identifier": "UMLS:C4276221",
+        "label": "estradiol Transdermal System [Climara]"
+      },
+      {
+        "identifier": "RXCUI:1805946"
+      },
+      {
+        "identifier": "UMLS:C4276212",
+        "label": "estradiol Transdermal System [Minivelle]"
+      },
+      {
+        "identifier": "RXCUI:1805954"
+      },
+      {
+        "identifier": "UMLS:C4276211",
+        "label": "estradiol Transdermal System [Vivelle]"
+      },
+      {
+        "identifier": "RXCUI:2048903"
+      },
+      {
+        "identifier": "UMLS:C4704162",
+        "label": "Imvexxy"
+      },
+      {
+        "identifier": "RXCUI:2048904"
+      },
+      {
+        "identifier": "UMLS:C4704163",
+        "label": "estradiol 0.01 MG [Imvexxy]"
+      },
+      {
+        "identifier": "RXCUI:2048906"
+      },
+      {
+        "identifier": "UMLS:C4704164",
+        "label": "Imvexxy Vaginal Product"
+      },
+      {
+        "identifier": "RXCUI:2048908"
+      },
+      {
+        "identifier": "UMLS:C4704165",
+        "label": "estradiol 0.004 MG"
+      },
+      {
+        "identifier": "RXCUI:2048910"
+      },
+      {
+        "identifier": "UMLS:C4704166",
+        "label": "estradiol 0.004 MG [Imvexxy]"
+      },
+      {
+        "identifier": "RXCUI:2048916"
+      },
+      {
+        "identifier": "UMLS:C4704168",
+        "label": "estradiol 0.01 MG Vaginal Insert [Imvexxy]"
+      },
+      {
+        "identifier": "RXCUI:2048917"
+      },
+      {
+        "identifier": "UMLS:C4704169",
+        "label": "estradiol 0.004 MG Vaginal Insert"
+      },
+      {
+        "identifier": "RXCUI:2048918"
+      },
+      {
+        "identifier": "UMLS:C4704170",
+        "label": "estradiol 0.004 MG Vaginal Insert [Imvexxy]"
+      },
+      {
+        "identifier": "RXCUI:2108847"
+      },
+      {
+        "identifier": "UMLS:C4745994",
+        "label": "estradiol 25.7 MG"
+      },
+      {
+        "identifier": "RXCUI:2108849"
+      },
+      {
+        "identifier": "UMLS:C4745996",
+        "label": "estradiol / oxytetracycline Drug Implant Product"
+      },
+      {
+        "identifier": "RXCUI:2108850"
+      },
+      {
+        "identifier": "UMLS:C4745997",
+        "label": "estradiol / oxytetracycline Drug Implant"
+      },
+      {
+        "identifier": "RXCUI:2108852"
+      },
+      {
+        "identifier": "UMLS:C4745999",
+        "label": "estradiol 25.7 MG / oxytetracycline 0.5 MG Drug Implant"
+      },
+      {
+        "identifier": "RXCUI:2108853"
+      },
+      {
+        "identifier": "UMLS:C4746000",
+        "label": "Compudose"
+      },
+      {
+        "identifier": "RXCUI:2108854"
+      },
+      {
+        "identifier": "UMLS:C4746001",
+        "label": "estradiol 25.7 MG / oxytetracycline 0.5 MG [Compudose]"
+      },
+      {
+        "identifier": "RXCUI:2108855"
+      },
+      {
+        "identifier": "UMLS:C4746002",
+        "label": "estradiol / oxytetracycline Drug Implant [Compudose]"
+      },
+      {
+        "identifier": "RXCUI:2108856"
+      },
+      {
+        "identifier": "UMLS:C4746003",
+        "label": "Compudose Drug Implant Product"
+      },
+      {
+        "identifier": "RXCUI:2108857"
+      },
+      {
+        "identifier": "UMLS:C4746004",
+        "label": "estradiol 25.7 MG / oxytetracycline 0.5 MG Drug Implant [Compudose]"
+      },
+      {
+        "identifier": "RXCUI:2108858"
+      },
+      {
+        "identifier": "UMLS:C4746005",
+        "label": "estradiol 43.9 MG"
+      },
+      {
+        "identifier": "RXCUI:2108859"
+      },
+      {
+        "identifier": "UMLS:C4746006",
+        "label": "estradiol 43.9 MG / oxytetracycline 0.5 MG Drug Implant"
+      },
+      {
+        "identifier": "RXCUI:2109138"
+      },
+      {
+        "identifier": "UMLS:C4529460",
+        "label": "estradiol Vaginal Insert"
+      },
+      {
+        "identifier": "RXCUI:2109141"
+      },
+      {
+        "identifier": "UMLS:C4746123",
+        "label": "estradiol Vaginal Insert [Vagifem]"
+      },
+      {
+        "identifier": "RXCUI:2109143"
+      },
+      {
+        "identifier": "UMLS:C4746124",
+        "label": "estradiol Vaginal Insert [Yuvafem]"
+      },
+      {
+        "identifier": "RXCUI:2109148"
+      },
+      {
+        "identifier": "UMLS:C4746125",
+        "label": "estradiol Vaginal Insert [Imvexxy]"
+      },
+      {
+        "identifier": "RXCUI:2110769"
+      },
+      {
+        "identifier": "UMLS:C4759106",
+        "label": "Dotti"
+      },
+      {
+        "identifier": "RXCUI:2110770"
+      },
+      {
+        "identifier": "UMLS:C4759107",
+        "label": "estradiol 0.00104 MG/HR [Dotti]"
+      },
+      {
+        "identifier": "RXCUI:2110771"
+      },
+      {
+        "identifier": "UMLS:C4759108",
+        "label": "estradiol Transdermal System [Dotti]"
+      },
+      {
+        "identifier": "RXCUI:2110772"
+      },
+      {
+        "identifier": "UMLS:C4759109",
+        "label": "Dotti Topical Product"
+      },
+      {
+        "identifier": "RXCUI:2110773"
+      },
+      {
+        "identifier": "UMLS:C4759110",
+        "label": "Dotti Transdermal Product"
+      },
+      {
+        "identifier": "RXCUI:2110774"
+      },
+      {
+        "identifier": "UMLS:C4759111",
+        "label": "84 HR estradiol 0.00104 MG/HR Transdermal System [Dotti]"
+      },
+      {
+        "identifier": "RXCUI:2110776"
+      },
+      {
+        "identifier": "UMLS:C4759113",
+        "label": "estradiol 0.00156 MG/HR [Dotti]"
+      },
+      {
+        "identifier": "RXCUI:2110777"
+      },
+      {
+        "identifier": "UMLS:C4759114",
+        "label": "84 HR estradiol 0.00156 MG/HR Transdermal System [Dotti]"
+      },
+      {
+        "identifier": "RXCUI:2110779"
+      },
+      {
+        "identifier": "UMLS:C4759116",
+        "label": "estradiol 0.00208 MG/HR [Dotti]"
+      },
+      {
+        "identifier": "RXCUI:2110780"
+      },
+      {
+        "identifier": "UMLS:C4759117",
+        "label": "84 HR estradiol 0.00208 MG/HR Transdermal System [Dotti]"
+      },
+      {
+        "identifier": "RXCUI:2110782"
+      },
+      {
+        "identifier": "UMLS:C4759119",
+        "label": "estradiol 0.00313 MG/HR [Dotti]"
+      },
+      {
+        "identifier": "RXCUI:2110783"
+      },
+      {
+        "identifier": "UMLS:C4759120",
+        "label": "84 HR estradiol 0.00313 MG/HR Transdermal System [Dotti]"
+      },
+      {
+        "identifier": "RXCUI:2110785"
+      },
+      {
+        "identifier": "UMLS:C4759122",
+        "label": "estradiol 0.00417 MG/HR [Dotti]"
+      },
+      {
+        "identifier": "RXCUI:2110786"
+      },
+      {
+        "identifier": "UMLS:C4759123",
+        "label": "84 HR estradiol 0.00417 MG/HR Transdermal System [Dotti]"
+      },
+      {
+        "identifier": "RXCUI:2201643"
+      },
+      {
+        "identifier": "UMLS:C5210310",
+        "label": "estradiol Vaginal System"
+      },
+      {
+        "identifier": "RXCUI:2201645"
+      },
+      {
+        "identifier": "UMLS:C5210111",
+        "label": "estradiol Vaginal System [Femring]"
+      },
+      {
+        "identifier": "RXCUI:2201654"
+      },
+      {
+        "identifier": "UMLS:C5210112",
+        "label": "estradiol Vaginal System [Estring]"
+      },
+      {
+        "identifier": "RXCUI:2399887"
+      },
+      {
+        "identifier": "UMLS:C5417485",
+        "label": "Lyllana"
+      },
+      {
+        "identifier": "RXCUI:2399888"
+      },
+      {
+        "identifier": "UMLS:C5417521",
+        "label": "estradiol 0.00104 MG/HR [Lyllana]"
+      },
+      {
+        "identifier": "RXCUI:2399889"
+      },
+      {
+        "identifier": "UMLS:C5417534",
+        "label": "estradiol Transdermal System [Lyllana]"
+      },
+      {
+        "identifier": "RXCUI:2399890"
+      },
+      {
+        "identifier": "UMLS:C5417541",
+        "label": "Lyllana Topical Product"
+      },
+      {
+        "identifier": "RXCUI:2399891"
+      },
+      {
+        "identifier": "UMLS:C5417542",
+        "label": "Lyllana Transdermal Product"
+      },
+      {
+        "identifier": "RXCUI:2399892"
+      },
+      {
+        "identifier": "UMLS:C5417244",
+        "label": "84 HR estradiol 0.00104 MG/HR Transdermal System [Lyllana]"
+      },
+      {
+        "identifier": "RXCUI:2399894"
+      },
+      {
+        "identifier": "UMLS:C5417522",
+        "label": "estradiol 0.00156 MG/HR [Lyllana]"
+      },
+      {
+        "identifier": "RXCUI:2399895"
+      },
+      {
+        "identifier": "UMLS:C5417245",
+        "label": "84 HR estradiol 0.00156 MG/HR Transdermal System [Lyllana]"
+      },
+      {
+        "identifier": "RXCUI:2399897"
+      },
+      {
+        "identifier": "UMLS:C5417523",
+        "label": "estradiol 0.00208 MG/HR [Lyllana]"
+      },
+      {
+        "identifier": "RXCUI:2399898"
+      },
+      {
+        "identifier": "UMLS:C5417246",
+        "label": "84 HR estradiol 0.00208 MG/HR Transdermal System [Lyllana]"
+      },
+      {
+        "identifier": "RXCUI:2399900"
+      },
+      {
+        "identifier": "UMLS:C5417524",
+        "label": "estradiol 0.00313 MG/HR [Lyllana]"
+      },
+      {
+        "identifier": "RXCUI:2399901"
+      },
+      {
+        "identifier": "UMLS:C5417247",
+        "label": "84 HR estradiol 0.00313 MG/HR Transdermal System [Lyllana]"
+      },
+      {
+        "identifier": "RXCUI:2399903"
+      },
+      {
+        "identifier": "UMLS:C5417525",
+        "label": "estradiol 0.00417 MG/HR [Lyllana]"
+      },
+      {
+        "identifier": "RXCUI:2399904"
+      },
+      {
+        "identifier": "UMLS:C5417248",
+        "label": "84 HR estradiol 0.00417 MG/HR Transdermal System [Lyllana]"
+      },
+      {
+        "identifier": "RXCUI:2612071"
+      },
+      {
+        "identifier": "UMLS:C5704498",
+        "label": "estradiol 3-benzoate 20 MG"
+      },
+      {
+        "identifier": "RXCUI:2612081"
+      },
+      {
+        "identifier": "UMLS:C5704506",
+        "label": "estradiol 3-benzoate 20 MG / progesterone 200 MG Drug Implant"
+      },
+      {
+        "identifier": "RXCUI:2612082"
+      },
+      {
+        "identifier": "UMLS:C0144271",
+        "label": "Synovex S"
+      },
+      {
+        "identifier": "RXCUI:2612083"
+      },
+      {
+        "identifier": "UMLS:C5704507",
+        "label": "estradiol 3-benzoate 20 MG / progesterone 200 MG [Synovex S]"
+      },
+      {
+        "identifier": "RXCUI:2612084"
+      },
+      {
+        "identifier": "UMLS:C5704508",
+        "label": "Synovex S Drug Implant Product"
+      },
+      {
+        "identifier": "RXCUI:2612085"
+      },
+      {
+        "identifier": "UMLS:C5704509",
+        "label": "estradiol / progesterone Drug Implant [Synovex S]"
+      },
+      {
+        "identifier": "RXCUI:2612086"
+      },
+      {
+        "identifier": "UMLS:C4290875",
+        "label": "estradiol 3-benzoate 20 MG / progesterone 200 MG Drug Implant [Synovex S]"
+      },
+      {
+        "identifier": "RXCUI:2619677"
+      },
+      {
+        "identifier": "UMLS:C3183380",
+        "label": "250 MG estradiol 0.001 MG/MG Topical Gel"
+      },
+      {
+        "identifier": "RXCUI:2619678"
+      },
+      {
+        "identifier": "UMLS:C5700313",
+        "label": "250 MG estradiol 0.001 MG/MG Topical Gel [Divigel]"
+      },
+      {
+        "identifier": "RXCUI:2619679"
+      },
+      {
+        "identifier": "UMLS:C3183960",
+        "label": "500 MG estradiol 0.001 MG/MG Topical Gel"
+      },
+      {
+        "identifier": "RXCUI:2619680"
+      },
+      {
+        "identifier": "UMLS:C5700315",
+        "label": "500 MG estradiol 0.001 MG/MG Topical Gel [Divigel]"
+      },
+      {
+        "identifier": "RXCUI:2619681"
+      },
+      {
+        "identifier": "UMLS:C4745641",
+        "label": "750 MG estradiol 0.001 MG/MG Topical Gel"
+      },
+      {
+        "identifier": "RXCUI:2619682"
+      },
+      {
+        "identifier": "UMLS:C5700314",
+        "label": "750 MG estradiol 0.001 MG/MG Topical Gel [Divigel]"
+      },
+      {
+        "identifier": "RXCUI:2619683"
+      },
+      {
+        "identifier": "UMLS:C5700159",
+        "label": "1000 MG estradiol 0.001 MG/MG Topical Gel"
+      },
+      {
+        "identifier": "RXCUI:2619684"
+      },
+      {
+        "identifier": "UMLS:C1951555",
+        "label": "1000 MG estradiol 0.001 MG/MG Topical Gel [Divigel]"
+      },
+      {
+        "identifier": "RXCUI:2619685"
+      },
+      {
+        "identifier": "UMLS:C5700158",
+        "label": "1250 MG estradiol 0.001 MG/MG Topical Gel"
+      },
+      {
+        "identifier": "RXCUI:2619686"
+      },
+      {
+        "identifier": "UMLS:C5700312",
+        "label": "1250 MG estradiol 0.001 MG/MG Topical Gel [Divigel]"
+      },
+      {
+        "identifier": "RXCUI:2646890"
+      },
+      {
+        "identifier": "UMLS:C5835813",
+        "label": "estradiol 3-benzoate / progesterone Drug Implant"
+      },
+      {
+        "identifier": "RXCUI:2646933"
+      },
+      {
+        "identifier": "UMLS:C5835850",
+        "label": "estradiol cypionate Injectable Solution"
+      },
+      {
+        "identifier": "RXCUI:2646951"
+      },
+      {
+        "identifier": "UMLS:C5835864",
+        "label": "estradiol valerate Injectable Solution"
+      },
+      {
+        "identifier": "RXCUI:2648917"
+      },
+      {
+        "identifier": "UMLS:C5837493",
+        "label": "estradiol valerate Oral Tablet"
+      },
+      {
+        "identifier": "RXCUI:2654458"
+      },
+      {
+        "identifier": "UMLS:C5838324",
+        "label": "estradiol 3-benzoate / progesterone Drug Implant [Synovex S]"
+      },
+      {
+        "identifier": "RXCUI:2655373"
+      },
+      {
+        "identifier": "UMLS:C5839238",
+        "label": "estradiol cypionate Injectable Solution [Depo-estradiol]"
+      },
+      {
+        "identifier": "RXCUI:2655423"
+      },
+      {
+        "identifier": "UMLS:C5839288",
+        "label": "estradiol 3-benzoate / progesterone Drug Implant [Synovex C]"
+      },
+      {
+        "identifier": "RXCUI:2657912"
+      },
+      {
+        "identifier": "UMLS:C5841769",
+        "label": "estradiol valerate Injectable Solution [Delestrogen]"
+      },
+      {
+        "identifier": "RXCUI:2659528"
+      },
+      {
+        "identifier": "UMLS:C5843337",
+        "label": "estradiol valerate Injectable Product"
+      },
+      {
+        "identifier": "RXCUI:2661679"
+      },
+      {
+        "identifier": "UMLS:C5845484",
+        "label": "estradiol valerate Oral Product"
+      },
+      {
+        "identifier": "RXCUI:2662393"
+      },
+      {
+        "identifier": "UMLS:C5846197",
+        "label": "estradiol valerate Pill"
+      },
+      {
+        "identifier": "RXCUI:2663169"
+      },
+      {
+        "identifier": "UMLS:C5846973",
+        "label": "estradiol cypionate Injectable Product"
+      },
+      {
+        "identifier": "RXCUI:2686068"
+      },
+      {
+        "identifier": "UMLS:C5925560",
+        "label": "estradiol 3-benzoate 7 MG"
+      },
+      {
+        "identifier": "RXCUI:2054309"
+      },
+      {
+        "identifier": "RXCUI:2054310"
+      },
+      {
+        "identifier": "RXCUI:2054312"
+      },
+      {
+        "identifier": "RXCUI:2054313"
+      },
+      {
+        "identifier": "RXCUI:2054315"
+      },
+      {
+        "identifier": "RXCUI:2054316"
+      },
+      {
+        "identifier": "RXCUI:2054317"
+      },
+      {
+        "identifier": "RXCUI:2054318"
+      }
+    ],
+    "type": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MolecularMixture",
+      "biolink:ChemicalMixture",
+      "biolink:Drug",
+      "biolink:OntologyClass"
+    ],
+    "information_content": 77.8
+  }
+}

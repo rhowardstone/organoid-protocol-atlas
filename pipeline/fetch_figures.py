@@ -26,8 +26,27 @@ import csv
 import json
 import re
 import sys
+import time
+import urllib.error
 import urllib.request
 from pathlib import Path
+
+
+def _read_url(url: str, timeout: int, tries: int = 4) -> bytes:
+    """GET with retry+backoff on transient errors (the PMC OA S3 mirror 503s under load;
+    one such error must not crash a 5000-paper batch). Raises only after `tries` failures."""
+    for i in range(tries):
+        try:
+            return urllib.request.urlopen(url, timeout=timeout).read()
+        except (urllib.error.HTTPError, urllib.error.URLError, TimeoutError) as e:
+            code = getattr(e, "code", None)
+            # retry transient 5xx / network errors; re-raise client errors (e.g. 404) immediately
+            if code is not None and 400 <= code < 500:
+                raise
+            if i == tries - 1:
+                raise
+            time.sleep(2 * (i + 1))
+    raise RuntimeError(f"unreachable: exhausted {tries} retries for {url}")
 
 REPO = Path(__file__).resolve().parent.parent
 CORPUS = REPO / "data" / "corpus" / "corpus.tsv"
@@ -54,7 +73,7 @@ def load_corpus() -> dict:
 def s3_list(pmcid: str) -> list[str]:
     """All S3 keys under the latest version prefix for a PMCID."""
     url = f"{S3}/?list-type=2&prefix={pmcid}."
-    xml = urllib.request.urlopen(url, timeout=30).read().decode()
+    xml = _read_url(url, timeout=30).decode()
     keys = re.findall(r"<Key>([^<]+)</Key>", xml)
     if not keys:
         return []
@@ -78,6 +97,12 @@ def fetch(pmcid: str, license_: str) -> dict:
     lic = (license_ or "").strip().lower()
     if lic not in OPEN_LICENSES:
         return {"pmcid": pmcid, "license": license_, "skipped": "license-gated"}
+    # resume fast: a completed paper has a figures.json sidecar — skip the S3 list entirely
+    # so a large corpus-wide fetch can be re-run/resumed without re-listing every paper.
+    done = FIG_DIR / pmcid / "figures.json"
+    if done.exists():
+        rec = json.loads(done.read_text())
+        return {**rec, "skipped": "already-fetched"}
     keys = figure_keys(s3_list(pmcid))
     if not keys:
         return {"pmcid": pmcid, "license": license_, "skipped": "no-figures-on-mirror"}
@@ -88,7 +113,7 @@ def fetch(pmcid: str, license_: str) -> dict:
         name = k.split("/")[-1]
         fp = dest / name
         if not fp.exists():
-            data = urllib.request.urlopen(f"{S3}/{k}", timeout=120).read()
+            data = _read_url(f"{S3}/{k}", timeout=120)
             fp.write_bytes(data)
         figs.append({"key": k, "file": str(fp.relative_to(REPO)), "bytes": fp.stat().st_size})
     rec = {"pmcid": pmcid, "license": license_, "n_figures": len(figs), "figures": figs}
@@ -102,7 +127,11 @@ def main():
     targets = sys.argv[1:] or list(corpus)
     for pmcid in targets:
         cm = corpus.get(pmcid, {})
-        r = fetch(pmcid, cm.get("license", ""))
+        try:
+            r = fetch(pmcid, cm.get("license", ""))
+        except Exception as e:  # noqa: BLE001 — one bad paper must not halt a 5000-paper batch
+            print(f"[err]  {pmcid}: {type(e).__name__}: {e}", flush=True)
+            continue
         if "skipped" in r:
             print(f"[skip] {pmcid} ({r.get('license')}): {r['skipped']}")
         else:

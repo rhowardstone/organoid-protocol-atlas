@@ -1,0 +1,53 @@
+{
+  "CHEBI:92773": {
+    "id": {
+      "identifier": "CHEBI:92773",
+      "label": "Y 27632"
+    },
+    "equivalent_identifiers": [
+      {
+        "identifier": "CHEBI:92773",
+        "label": "4-[(1R)-1-aminoethyl]-N-pyridin-4-yl-1-cyclohexanecarboxamide"
+      },
+      {
+        "identifier": "PUBCHEM.COMPOUND:448042",
+        "label": "Y-27632 dihydrochloride"
+      },
+      {
+        "identifier": "CHEMBL.COMPOUND:CHEMBL1188380"
+      },
+      {
+        "identifier": "MESH:C108830",
+        "label": "Y 27632"
+      },
+      {
+        "identifier": "CAS:138381-45-0"
+      },
+      {
+        "identifier": "CAS:146986-50-7"
+      },
+      {
+        "identifier": "CAS:521059-79-0"
+      },
+      {
+        "identifier": "INCHIKEY:IYOZTVGMEWJPKR-VOMCLLRMSA-N"
+      },
+      {
+        "identifier": "UMLS:C0667301",
+        "label": "Y 27632"
+      }
+    ],
+    "type": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "information_content": 100.0
+  }
+}

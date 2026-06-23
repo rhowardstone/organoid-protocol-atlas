@@ -1,0 +1,116 @@
+{
+  "Cellosaurus": {
+    "cell-line-list": [
+      {
+        "accession-list": [
+          {
+            "type": "primary",
+            "value": "CVCL_1240"
+          }
+        ],
+        "name-list": [
+          {
+            "type": "synonym",
+            "value": "HT clone H9"
+          },
+          {
+            "type": "synonym",
+            "value": "HT(H9)"
+          },
+          {
+            "type": "synonym",
+            "value": "H 9"
+          },
+          {
+            "type": "synonym",
+            "value": "H-9"
+          },
+          {
+            "type": "identifier",
+            "value": "H9"
+          }
+        ]
+      },
+      {
+        "accession-list": [
+          {
+            "type": "primary",
+            "value": "CVCL_U163"
+          }
+        ],
+        "name-list": [
+          {
+            "type": "synonym",
+            "value": "H9inGFPhES"
+          },
+          {
+            "type": "synonym",
+            "value": "inGFPhES#3"
+          },
+          {
+            "type": "synonym",
+            "value": "WA09 inGFPhES#3"
+          },
+          {
+            "type": "identifier",
+            "value": "H9 inGFPhES"
+          }
+        ]
+      },
+      {
+        "accession-list": [
+          {
+            "type": "primary",
+            "value": "CVCL_F0SK"
+          }
+        ],
+        "name-list": [
+          {
+            "type": "synonym",
+            "value": "H9N"
+          },
+          {
+            "type": "identifier",
+            "value": "H9 NANOG"
+          }
+        ]
+      },
+      {
+        "accession-list": [
+          {
+            "type": "primary",
+            "value": "CVCL_C4EP"
+          }
+        ],
+        "name-list": [
+          {
+            "type": "synonym",
+            "value": "H9 ES PINK1-/-"
+          },
+          {
+            "type": "identifier",
+            "value": "H9 PINK1-/-"
+          }
+        ]
+      },
+      {
+        "accession-list": [
+          {
+            "type": "primary",
+            "value": "CVCL_JL69"
+          }
+        ],
+        "name-list": [
+          {
+            "type": "synonym",
+            "value": "H9 RBM15-MKL1"
+          },
+          {
+            "type": "identifier",
+            "value": "H9 RM"
+          }
+        ]
+      }
+    ]
+  }
+}

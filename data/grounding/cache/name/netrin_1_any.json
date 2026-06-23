@@ -1,0 +1,666 @@
+[
+  {
+    "curie": "UMLS:C0258174",
+    "label": "netrin-1",
+    "highlighting": {},
+    "synonyms": [
+      "netrin-1",
+      "Netrin-1",
+      "Netrin 1",
+      "NTN1 Protein",
+      "Protein, NTN1",
+      "Netrin-1 Protein",
+      "Netrin 1 Protein",
+      "Protein, Netrin-1"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 2168.1785,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "PR:000011463",
+    "label": "netrin-1",
+    "highlighting": {},
+    "synonyms": [
+      "NTN1",
+      "NTN1L",
+      "netrin-1"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 1367.9684,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "NCBIGene:105934680",
+    "label": "ntn5",
+    "highlighting": {},
+    "synonyms": [
+      "ntn5",
+      "Netrin-1",
+      "netrin-1",
+      "A0A146ZU16_FUNHE Netrin-1 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:8078"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 1047.2825,
+    "clique_identifier_count": 7
+  },
+  {
+    "curie": "NCBIGene:100750350",
+    "label": "Ntn1",
+    "highlighting": {},
+    "synonyms": [
+      "Ntn1",
+      "Netrin-1",
+      "netrin-1",
+      "A0A8C2MAK1_CRIGR Netrin-1 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:10029"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 902.39526,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:101722127",
+    "label": "Ntn1",
+    "highlighting": {},
+    "synonyms": [
+      "Ntn1",
+      "Netrin-1",
+      "netrin-1",
+      "A0AAX6PR53_HETGA Netrin-1 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:10181"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 810.57153,
+    "clique_identifier_count": 4
+  },
+  {
+    "curie": "NCBIGene:717645",
+    "label": "NTN1",
+    "highlighting": {},
+    "synonyms": [
+      "NTN1",
+      "netrin 1",
+      "netrin-1",
+      "A0A5F7ZQY2_MACMU Netrin-1 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9544"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 777.68286,
+    "clique_identifier_count": 9
+  },
+  {
+    "curie": "NCBIGene:111854453",
+    "label": "ntn5",
+    "highlighting": {},
+    "synonyms": [
+      "ntn5",
+      "netrin-1",
+      "A0A3B3RZL6_9TELE Netrin 5 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:1676925"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 775.17694,
+    "clique_identifier_count": 7
+  },
+  {
+    "curie": "NCBIGene:103242369",
+    "label": "NTN1",
+    "highlighting": {},
+    "synonyms": [
+      "NTN1",
+      "netrin-1",
+      "A0A0D9RD89_CHLSB Netrin-1 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:60711"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 757.5499,
+    "clique_identifier_count": 6
+  },
+  {
+    "curie": "NCBIGene:106564677",
+    "label": "LOC106564677",
+    "highlighting": {},
+    "synonyms": [
+      "netrin-1",
+      "LOC106564677",
+      "A0A1S3L5W0_SALSA Netrin-1 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:8030"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 757.5499,
+    "clique_identifier_count": 6
+  },
+  {
+    "curie": "NCBIGene:18208",
+    "label": "Ntn1",
+    "highlighting": {},
+    "synonyms": [
+      "Ntn1",
+      "Netrin-1",
+      "BC019633",
+      "AI561871",
+      "netrin 1",
+      "netrin-1",
+      "mNTN1",
+      "netrin-1 (mouse)",
+      "NET1_MOUSE Netrin-1 (sprot)"
+    ],
+    "taxa": [
+      "NCBITaxon:10090"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 747.27185,
+    "clique_identifier_count": 9
+  },
+  {
+    "curie": "NCBIGene:489497",
+    "label": "NTN1",
+    "highlighting": {},
+    "synonyms": [
+      "NTN1",
+      "netrin 1",
+      "netrin-1",
+      "A0A8C0LYS4_CANLF Netrin-1 (trembl)",
+      "A0A8I3MFH5_CANLF Netrin-1 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9615"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 740.7826,
+    "clique_identifier_count": 11
+  },
+  {
+    "curie": "UniProtKB:A0A4X1V6Z2",
+    "label": "A0A4X1V6Z2_PIG Netrin-1 (trembl)",
+    "highlighting": {},
+    "synonyms": [
+      "A0A4X1V6Z2_PIG Netrin-1 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9823"
+    ],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 737.5188,
+    "clique_identifier_count": 21
+  },
+  {
+    "curie": "NCBIGene:100476820",
+    "label": "NTN1",
+    "highlighting": {},
+    "synonyms": [
+      "NTN1",
+      "netrin-1",
+      "A0A7N5K8L2_AILME Netrin-1 (trembl)",
+      "G1L5J9_AILME Netrin-1 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9646"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 734.96625,
+    "clique_identifier_count": 8
+  },
+  {
+    "curie": "NCBIGene:109866087",
+    "label": "ntn1a",
+    "highlighting": {},
+    "synonyms": [
+      "ntn1a",
+      "netrin-1",
+      "A0A8C7HVH1_ONCKI Netrin-1 (trembl)",
+      "A0A8C7HYN2_ONCKI Netrin-1 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:8019"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 734.96625,
+    "clique_identifier_count": 8
+  },
+  {
+    "curie": "NCBIGene:112230274",
+    "label": "LOC112230274",
+    "highlighting": {},
+    "synonyms": [
+      "netrin-1",
+      "LOC112230274",
+      "A0A8C8FX07_ONCTS Netrin-1 (trembl)",
+      "A0A8C8LTJ0_ONCTS Netrin-1 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:74940"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 734.96625,
+    "clique_identifier_count": 8
+  },
+  {
+    "curie": "NCBIGene:112264047",
+    "label": "LOC112264047",
+    "highlighting": {},
+    "synonyms": [
+      "netrin-1",
+      "LOC112264047",
+      "A0A8C8LX30_ONCTS Netrin-1 (trembl)",
+      "A0A8C8LXH0_ONCTS Netrin-1 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:74940"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 734.96625,
+    "clique_identifier_count": 8
+  },
+  {
+    "curie": "NCBIGene:114590742",
+    "label": "NTN1",
+    "highlighting": {},
+    "synonyms": [
+      "NTN1",
+      "netrin-1",
+      "A0A670JIA3_PODMU Netrin 1 (trembl)",
+      "A0A670JJP4_PODMU Netrin 1 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:64176"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 734.96625,
+    "clique_identifier_count": 8
+  },
+  {
+    "curie": "NCBIGene:115178182",
+    "label": "LOC115178182",
+    "highlighting": {},
+    "synonyms": [
+      "netrin-1",
+      "LOC115178182",
+      "A0A674E8H7_SALTR Netrin-1 (trembl)",
+      "A0A674E8M4_SALTR Netrin-1 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:8032"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 734.96625,
+    "clique_identifier_count": 8
+  },
+  {
+    "curie": "NCBIGene:118940367",
+    "label": "LOC118940367",
+    "highlighting": {},
+    "synonyms": [
+      "netrin-1",
+      "LOC118940367",
+      "A0A8C7RFR3_ONCMY Netrin-1 (trembl)",
+      "A0A8C7UL62_ONCMY Netrin-1 (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:8022"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 734.96625,
+    "clique_identifier_count": 8
+  },
+  {
+    "curie": "NCBIGene:108241812",
+    "label": "ntn5",
+    "highlighting": {},
+    "synonyms": [
+      "ntn5",
+      "netrin-1",
+      "A0A3Q3AP87_KRYMA Netrin-1-like (trembl)",
+      "A0A3Q3FK92_KRYMA Netrin-1-like (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:37003"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 728.4636,
+    "clique_identifier_count": 8
+  }
+]

@@ -1,0 +1,104 @@
+{
+  "Cellosaurus": {
+    "cell-line-list": [
+      {
+        "accession-list": [
+          {
+            "type": "primary",
+            "value": "CVCL_6F02"
+          }
+        ],
+        "name-list": [
+          {
+            "type": "synonym",
+            "value": "BJ/610"
+          },
+          {
+            "type": "identifier",
+            "value": "BJ-610"
+          }
+        ]
+      },
+      {
+        "accession-list": [
+          {
+            "type": "primary",
+            "value": "CVCL_C8QN"
+          }
+        ],
+        "name-list": [
+          {
+            "type": "synonym",
+            "value": "BJ-EL"
+          },
+          {
+            "type": "synonym",
+            "value": "BJ EL"
+          },
+          {
+            "type": "synonym",
+            "value": "EL"
+          },
+          {
+            "type": "identifier",
+            "value": "BJ-TERT"
+          }
+        ]
+      },
+      {
+        "accession-list": [
+          {
+            "type": "primary",
+            "value": "CVCL_UU07"
+          }
+        ],
+        "name-list": [
+          {
+            "type": "identifier",
+            "value": "CNIO BJ"
+          }
+        ]
+      },
+      {
+        "accession-list": [
+          {
+            "type": "primary",
+            "value": "CVCL_3653"
+          }
+        ],
+        "name-list": [
+          {
+            "type": "synonym",
+            "value": "FF-WT-BJ"
+          },
+          {
+            "type": "synonym",
+            "value": "BJ1"
+          },
+          {
+            "type": "identifier",
+            "value": "BJ [Human fibroblast]"
+          }
+        ]
+      },
+      {
+        "accession-list": [
+          {
+            "type": "primary",
+            "value": "CVCL_6D12"
+          }
+        ],
+        "name-list": [
+          {
+            "type": "synonym",
+            "value": "BJ hiPSC 5 factor #11"
+          },
+          {
+            "type": "identifier",
+            "value": "BJ hiPSC #11"
+          }
+        ]
+      }
+    ]
+  }
+}

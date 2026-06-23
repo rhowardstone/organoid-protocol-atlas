@@ -1,0 +1,124 @@
+{
+  "NCBIGene:100157103": {
+    "id": {
+      "identifier": "NCBIGene:100157103",
+      "label": "BMP2"
+    },
+    "equivalent_identifiers": [
+      {
+        "identifier": "NCBIGene:100157103",
+        "label": "BMP2",
+        "taxa": [
+          "NCBITaxon:9823"
+        ]
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCG00000039442"
+      },
+      {
+        "identifier": "RGD:14191017"
+      },
+      {
+        "identifier": "UniProtKB:A0A286ZZE2",
+        "label": "A0A286ZZE2_PIG Bone morphogenetic protein 2 (trembl)",
+        "taxa": [
+          "NCBITaxon:9823"
+        ]
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00000037008"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00000037008.1"
+      },
+      {
+        "identifier": "UniProtKB:A0A4X1UEL6",
+        "label": "A0A4X1UEL6_PIG Bone morphogenetic protein 2 (trembl)",
+        "taxa": [
+          "NCBITaxon:9823"
+        ]
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00015011945"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00015011945.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00025026896"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00025026896.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00035040112"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00035040112.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00045022593"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00045022593.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00050042892"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00050042892.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00055035982"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00055035982.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00060012028"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00060012028.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00065042518"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00065042518.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00070028462"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00070028462.1"
+      },
+      {
+        "identifier": "UniProtKB:E1AXT2",
+        "label": "E1AXT2_PIG Bone morphogenetic protein 2 (trembl)",
+        "taxa": [
+          "NCBITaxon:9823"
+        ]
+      }
+    ],
+    "taxa": [
+      "NCBITaxon:9823"
+    ],
+    "type": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ]
+  }
+}

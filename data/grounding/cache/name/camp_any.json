@@ -1,0 +1,723 @@
+[
+  {
+    "curie": "NCBIGene:820",
+    "label": "CAMP",
+    "highlighting": {},
+    "synonyms": [
+      "CAMP",
+      "LL37",
+      "CAP18",
+      "HSD26",
+      "CRAMP",
+      "FALL39",
+      "CAP-18",
+      "FALL-39",
+      "CAMP gene",
+      "CRAMP, MOUSE, HOMOLOG OF",
+      "CATHELICIDIN ANTIMICROBIAL PEPTIDE",
+      "cathelicidin antimicrobial peptide",
+      "CATIONIC ANTIMICROBIAL PROTEIN, 18-KD",
+      "18 kDa cationic antimicrobial protein",
+      "epididymis secretory sperm binding protein",
+      "PEPTIDE ANTIBIOTIC, PR-39, PORCINE, HOMOLOG OF",
+      "FLB1 protein, human",
+      "CAMP protein, human",
+      "LL37 protein, human",
+      "SOB3 protein, human",
+      "CAP18 protein, human",
+      "h-CAMP protein, human",
+      "FALL-39 protein, human",
+      "cathelicidin antimicrobial peptide, human",
+      "A0A384NPR0_HUMAN Cathelicidin antimicrobial peptide (trembl)",
+      "J3KNB4_HUMAN Cathelicidin antimicrobial peptide (trembl)",
+      "hCAMP",
+      "hCAP-18",
+      "CAP-18 (human)",
+      "cathelicidin antimicrobial peptide (human)",
+      "18 kDa cationic antimicrobial protein (human)",
+      "CAMP_HUMAN Cathelicidin antimicrobial peptide (sprot)"
+    ],
+    "taxa": [
+      "NCBITaxon:9606"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 3855.8604,
+    "clique_identifier_count": 15
+  },
+  {
+    "curie": "NCBIGene:442947",
+    "label": "CAMP",
+    "highlighting": {},
+    "synonyms": [
+      "CAMP",
+      "antimicrobial peptide",
+      "cathelicidin antimicrobial peptide",
+      "A0A8C0TPA0_CANLF Cathelicidin antimicrobial peptide (trembl)",
+      "Q6TN20_CANLF Cathelicidin (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9615"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 3455.7786,
+    "clique_identifier_count": 11
+  },
+  {
+    "curie": "NCBIGene:111555562",
+    "label": "CAMP",
+    "highlighting": {},
+    "synonyms": [
+      "CAMP",
+      "cathelicidin antimicrobial peptide",
+      "A0A8C9GE46_9PRIM Cathelicidin antimicrobial peptide (trembl)",
+      "A0A8C9LIG5_9PRIM Cathelicidin antimicrobial peptide (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:591936"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 3055.697,
+    "clique_identifier_count": 8
+  },
+  {
+    "curie": "NCBIGene:12796",
+    "label": "Camp",
+    "highlighting": {},
+    "synonyms": [
+      "CLP",
+      "MCLP",
+      "Camp",
+      "Cnlp",
+      "CAP18",
+      "Cramp",
+      "FALL39",
+      "cathelin-like protein",
+      "cathelicidin antimicrobial peptide",
+      "cathelin-related antimicrobial peptide",
+      "mCAMP",
+      "CLP (mouse)",
+      "cathelin-like protein (mouse)",
+      "cathelicidin antimicrobial peptide (mouse)",
+      "CAMP_MOUSE Cathelicidin antimicrobial peptide (sprot)"
+    ],
+    "taxa": [
+      "NCBITaxon:10090"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2891.8953,
+    "clique_identifier_count": 7
+  },
+  {
+    "curie": "NCBIGene:316010",
+    "label": "Camp",
+    "highlighting": {},
+    "synonyms": [
+      "Camp",
+      "CRAMP",
+      "cathelicidin antimicrobial peptide",
+      "cathelin-related antimicrobial peptide",
+      "A6I3C7_RAT Cathelicidin antimicrobial peptide (trembl)",
+      "G3V8S9_RAT Cathelicidin antimicrobial peptide (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:10116"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2891.8953,
+    "clique_identifier_count": 7
+  },
+  {
+    "curie": "NCBIGene:100985563",
+    "label": "CAMP",
+    "highlighting": {},
+    "synonyms": [
+      "CAMP",
+      "cathelicidin antimicrobial peptide",
+      "A0A2R9CDL0_PANPA Cathelicidin antimicrobial peptide (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9597"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2706.1921,
+    "clique_identifier_count": 6
+  },
+  {
+    "curie": "NCBIGene:103227575",
+    "label": "CAMP",
+    "highlighting": {},
+    "synonyms": [
+      "CAMP",
+      "cathelicidin antimicrobial peptide",
+      "A0A0D9RTQ0_CHLSB Cathelicidin antimicrobial peptide (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:60711"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2706.1921,
+    "clique_identifier_count": 6
+  },
+  {
+    "curie": "NCBIGene:36948",
+    "label": "Camp",
+    "highlighting": {},
+    "synonyms": [
+      "Camp",
+      "dCAMP",
+      "CG6568",
+      "cg6568",
+      "Camp-PB",
+      "Camp-PA",
+      "CG6568-PA",
+      "CG6568-PB",
+      "Dmel\\CG6568",
+      "Cathelicidin-like antimicrobial protein",
+      "cathelicidin-like antimicrobial protein",
+      "A0A0B4LGS5_DROME Cathelicidin-like antimicrobial protein, isoform B (trembl)",
+      "Q8MRA9_DROME Cathelicidin-like antimicrobial protein, isoform A (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:7227"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2491.8135,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:100216361",
+    "label": "Camp",
+    "highlighting": {},
+    "synonyms": [
+      "Camp",
+      "CAP11",
+      "cathelicidin antimicrobial peptide",
+      "neutrophil cationic antibacterial polypeptide of 11 kDa",
+      "Q91X12_CAVPO Cathelicidin antimicrobial peptide (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:10141"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2491.8135,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:100476997",
+    "label": "CAMP",
+    "highlighting": {},
+    "synonyms": [
+      "CAMP",
+      "cathelicidin antimicrobial peptide",
+      "G1L3J9_AILME Cathelicidin antimicrobial peptide (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9646"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2491.8135,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:100533978",
+    "label": "CAMP",
+    "highlighting": {},
+    "synonyms": [
+      "CAMP",
+      "cathelicidin antimicrobial peptide",
+      "F1C962_FELCA Cathelicidin (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9685"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2491.8135,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:100588557",
+    "label": "CAMP",
+    "highlighting": {},
+    "synonyms": [
+      "CAMP",
+      "cathelicidin antimicrobial peptide",
+      "G1R3M3_NOMLE Cathelicidin antimicrobial peptide (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:61853"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2491.8135,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:100924204",
+    "label": "CAMP",
+    "highlighting": {},
+    "synonyms": [
+      "CAMP",
+      "cathelicidin antimicrobial peptide",
+      "G3VCM7_SARHA Cathelicidin antimicrobial peptide (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9305"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2491.8135,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:100943189",
+    "label": "CAMP",
+    "highlighting": {},
+    "synonyms": [
+      "CAMP",
+      "cathelicidin antimicrobial peptide",
+      "H0WLW9_OTOGA Cathelicidin antimicrobial peptide (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:30611"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2491.8135,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:101017082",
+    "label": "CAMP",
+    "highlighting": {},
+    "synonyms": [
+      "CAMP",
+      "cathelicidin antimicrobial peptide",
+      "A0A096N3S1_PAPAN Cathelicidin antimicrobial peptide (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9555"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2491.8135,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:101039558",
+    "label": "CAMP",
+    "highlighting": {},
+    "synonyms": [
+      "CAMP",
+      "cathelicidin antimicrobial peptide",
+      "A0A2K6UXA1_SAIBB Cathelicidin antimicrobial peptide (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:27679",
+      "NCBITaxon:39432"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2491.8135,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:101141595",
+    "label": "CAMP",
+    "highlighting": {},
+    "synonyms": [
+      "CAMP",
+      "cathelicidin antimicrobial peptide",
+      "A0A2K5TIY0_GORGO Cathelicidin antimicrobial peptide (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9595"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2491.8135,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:102139204",
+    "label": "CAMP",
+    "highlighting": {},
+    "synonyms": [
+      "CAMP",
+      "cathelicidin antimicrobial peptide",
+      "18 kDa cationic antimicrobial protein",
+      "G8F302_MACFA Cathelicidin antimicrobial peptide (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9541"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2491.8135,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:103674860",
+    "label": "CAMP",
+    "highlighting": {},
+    "synonyms": [
+      "CAMP",
+      "cathelicidin antimicrobial peptide",
+      "A0A384D4S2_URSMA Cathelicidin antimicrobial peptide (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:29073"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2491.8135,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:104671298",
+    "label": "CAMP",
+    "highlighting": {},
+    "synonyms": [
+      "CAMP",
+      "cathelicidin antimicrobial peptide",
+      "A0A2K6RID8_RHIRO Cathelicidin antimicrobial peptide (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:61622"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 2491.8135,
+    "clique_identifier_count": 5
+  }
+]

@@ -1,0 +1,616 @@
+[
+  {
+    "curie": "PUBCHEM.COMPOUND:168266256",
+    "label": "Prolactin",
+    "highlighting": {},
+    "synonyms": [
+      "Prolactin"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:MolecularMixture",
+      "biolink:ChemicalMixture",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 3405.1516,
+    "clique_identifier_count": 6
+  },
+  {
+    "curie": "CHEBI:81580",
+    "label": "Prolactin",
+    "highlighting": {},
+    "synonyms": [
+      "PRL",
+      "Prolactin"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 1922.4636,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "NCBIGene:100861193",
+    "label": "PROLACTIN",
+    "highlighting": {},
+    "synonyms": [
+      "PRL",
+      "prolactin",
+      "PROLACTIN",
+      "PRL_CAPHI Prolactin (sprot)"
+    ],
+    "taxa": [
+      "NCBITaxon:9925"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 1922.4636,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "UMLS:C0033371",
+    "label": "prolactin",
+    "highlighting": {},
+    "synonyms": [
+      "LTH",
+      "lth",
+      "Prolactin",
+      "prolactin",
+      "PROLACTIN",
+      "prolactins",
+      "luteotropin",
+      "Mammotropin",
+      "Luteotropin",
+      "PRL (Prolactin)",
+      "Prl - Prolactin",
+      "lactogenic hormone",
+      "Lactogenic hormone",
+      "luteotropic hormone",
+      "Prolactin preparation",
+      "Prolactin (substance)",
+      "LTH (luteotropic hormone)",
+      "mammary stimulating hormone",
+      "Prolactin-containing product",
+      "Pituitary Lactogenic Hormone",
+      "Hormone, Pituitary Lactogenic",
+      "Pituitary Mammotropic Hormone",
+      "Lactogenic Hormone, Pituitary",
+      "Hormone, Pituitary Mammotropic",
+      "Mammotropic Hormone, Pituitary",
+      "Product containing prolactin (medicinal product)"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 1922.4636,
+    "clique_identifier_count": 2
+  },
+  {
+    "curie": "GTOPDB:5049",
+    "label": "prolactin",
+    "highlighting": {},
+    "synonyms": [
+      "prolactin"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 1212.9396,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "PR:000013246",
+    "label": "prolactin",
+    "highlighting": {},
+    "synonyms": [
+      "PRL",
+      "prolactin"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "score": 1212.9396,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "PANTHER.FAMILY:PTHR11417:SF5",
+    "label": "PROLACTIN",
+    "highlighting": {},
+    "synonyms": [
+      "PROLACTIN"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:GeneFamily",
+      "biolink:GeneGroupingMixin",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity"
+    ],
+    "score": 1212.9396,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "UNII:2S58538ZG2",
+    "label": "PROLACTIN",
+    "highlighting": {},
+    "synonyms": [
+      "PROLACTIN"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 1212.9396,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "NCBIGene:396965",
+    "label": "PRL",
+    "highlighting": {},
+    "synonyms": [
+      "PRL",
+      "prolactin",
+      "PRL_PIG Prolactin (sprot)"
+    ],
+    "taxa": [
+      "NCBITaxon:9823"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 1063.5074,
+    "clique_identifier_count": 25
+  },
+  {
+    "curie": "NCBIGene:443317",
+    "label": "PRL",
+    "highlighting": {},
+    "synonyms": [
+      "PRL",
+      "prolactin",
+      "PRL_SHEEP Prolactin (sprot)"
+    ],
+    "taxa": [
+      "NCBITaxon:9940"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 717.2177,
+    "clique_identifier_count": 8
+  },
+  {
+    "curie": "NCBIGene:113881307",
+    "label": "PRL",
+    "highlighting": {},
+    "synonyms": [
+      "PRL",
+      "prolactin",
+      "A0A4W2FHN3_BOBOX Prolactin (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:30522"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 678.771,
+    "clique_identifier_count": 7
+  },
+  {
+    "curie": "NCBIGene:100970831",
+    "label": "PRL",
+    "highlighting": {},
+    "synonyms": [
+      "PRL",
+      "prolactin",
+      "A0A2R9B9P7_PANPA Prolactin (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9597"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 635.1837,
+    "clique_identifier_count": 6
+  },
+  {
+    "curie": "NCBIGene:103023606",
+    "label": "prl",
+    "highlighting": {},
+    "synonyms": [
+      "prl",
+      "prolactin",
+      "A0A3B1K5X0_ASTMX Prolactin (trembl)",
+      "A0A8B9KYJ7_ASTMX Prolactin-like (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:7994"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 592.5218,
+    "clique_identifier_count": 8
+  },
+  {
+    "curie": "NCBIGene:462468",
+    "label": "PRL",
+    "highlighting": {},
+    "synonyms": [
+      "PRL",
+      "prolactin",
+      "H2QSD1_PANTR Prolactin (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9598"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 584.86584,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:751517",
+    "label": "PRL",
+    "highlighting": {},
+    "synonyms": [
+      "PRL",
+      "prolactin",
+      "PRL_FELCA Prolactin (sprot)"
+    ],
+    "taxa": [
+      "NCBITaxon:9685"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 584.86584,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:778002",
+    "label": "prl",
+    "highlighting": {},
+    "synonyms": [
+      "prl",
+      "prolactin",
+      "Q1HAY9_TAKRU Prolactin (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:31033"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 584.86584,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:100126745",
+    "label": "PRL",
+    "highlighting": {},
+    "synonyms": [
+      "PRL",
+      "prolactin",
+      "A0A2I3N9S9_PAPAN Prolactin (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9555"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 584.86584,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:100136792",
+    "label": "prl",
+    "highlighting": {},
+    "synonyms": [
+      "prl",
+      "prolactin",
+      "PRL_ONCMY Prolactin (sprot)"
+    ],
+    "taxa": [
+      "NCBITaxon:8022"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 584.86584,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:100228929",
+    "label": "PRL",
+    "highlighting": {},
+    "synonyms": [
+      "PRL",
+      "prolactin",
+      "H0Z7J4_TAEGU Prolactin (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:59729"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 584.86584,
+    "clique_identifier_count": 5
+  },
+  {
+    "curie": "NCBIGene:100481524",
+    "label": "PRL",
+    "highlighting": {},
+    "synonyms": [
+      "PRL",
+      "prolactin",
+      "PRL_AILME Prolactin (sprot)"
+    ],
+    "taxa": [
+      "NCBITaxon:9646"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 584.86584,
+    "clique_identifier_count": 5
+  }
+]

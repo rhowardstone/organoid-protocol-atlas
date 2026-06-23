@@ -1,0 +1,27 @@
+{
+  "PR:000011463": {
+    "id": {
+      "identifier": "PR:000011463",
+      "label": "netrin-1"
+    },
+    "equivalent_identifiers": [
+      {
+        "identifier": "PR:000011463",
+        "label": "netrin-1"
+      }
+    ],
+    "type": [
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:GeneOrGeneProduct",
+      "biolink:MacromolecularMachineMixin"
+    ],
+    "information_content": 83.6
+  }
+}

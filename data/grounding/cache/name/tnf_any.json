@@ -1,0 +1,565 @@
+[
+  {
+    "curie": "REACT:R-RNO-3371353",
+    "label": "Soluble TNF-α binds TNFR1 (Rattus norvegicus)",
+    "highlighting": {},
+    "synonyms": [
+      "Soluble TNF-α binds TNFR1 (Rattus norvegicus)"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:MolecularActivity",
+      "biolink:Occurrent",
+      "biolink:OntologyClass",
+      "biolink:BiologicalProcessOrActivity",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 294.9813,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "REACT:R-HSA-3371353",
+    "label": "Soluble TNF-α binds TNFR1 (Homo sapiens)",
+    "highlighting": {},
+    "synonyms": [
+      "Soluble TNF-α binds TNFR1 (Homo sapiens)"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:MolecularActivity",
+      "biolink:Occurrent",
+      "biolink:OntologyClass",
+      "biolink:BiologicalProcessOrActivity",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 294.9813,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "REACT:R-SSC-3371353",
+    "label": "Soluble TNF-α binds TNFR1 (Sus scrofa)",
+    "highlighting": {},
+    "synonyms": [
+      "Soluble TNF-α binds TNFR1 (Sus scrofa)"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:MolecularActivity",
+      "biolink:Occurrent",
+      "biolink:OntologyClass",
+      "biolink:BiologicalProcessOrActivity",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 294.9813,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "REACT:R-MMU-3371353",
+    "label": "Soluble TNF-α binds TNFR1 (Mus musculus)",
+    "highlighting": {},
+    "synonyms": [
+      "Soluble TNF-α binds TNFR1 (Mus musculus)"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:MolecularActivity",
+      "biolink:Occurrent",
+      "biolink:OntologyClass",
+      "biolink:BiologicalProcessOrActivity",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 294.9813,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "REACT:R-BTA-3371353",
+    "label": "Soluble TNF-α binds TNFR1 (Bos taurus)",
+    "highlighting": {},
+    "synonyms": [
+      "Soluble TNF-α binds TNFR1 (Bos taurus)"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:MolecularActivity",
+      "biolink:Occurrent",
+      "biolink:OntologyClass",
+      "biolink:BiologicalProcessOrActivity",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 294.9813,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "NCBIGene:397086",
+    "label": "TNF",
+    "highlighting": {},
+    "synonyms": [
+      "TNF",
+      "TNFa",
+      "TNF-a",
+      "TNFSF2",
+      "cachectin",
+      "TNF-alpha",
+      "tumor necrosis factor",
+      "tumor necrosis factor alpha",
+      "tumor necrosis factor (TNF superfamily, member 2)",
+      "tumor necrosis factor ligand superfamily member 2",
+      "B3GDZ6_PIG Tumor necrosis factor (trembl)",
+      "TNFA_PIG Tumor necrosis factor (sprot)"
+    ],
+    "taxa": [
+      "NCBITaxon:9823"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 285.2975,
+    "clique_identifier_count": 35
+  },
+  {
+    "curie": "REACT:R-MMU-83660",
+    "label": "Membrane-anchored TNF-α binds TNFR1 (Mus musculus)",
+    "highlighting": {},
+    "synonyms": [
+      "Membrane-anchored TNF-α binds TNFR1 (Mus musculus)"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:MolecularActivity",
+      "biolink:Occurrent",
+      "biolink:OntologyClass",
+      "biolink:BiologicalProcessOrActivity",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 279.74487,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "REACT:R-SSC-83660",
+    "label": "Membrane-anchored TNF-α binds TNFR1 (Sus scrofa)",
+    "highlighting": {},
+    "synonyms": [
+      "Membrane-anchored TNF-α binds TNFR1 (Sus scrofa)"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:MolecularActivity",
+      "biolink:Occurrent",
+      "biolink:OntologyClass",
+      "biolink:BiologicalProcessOrActivity",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 279.74487,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "REACT:R-BTA-83660",
+    "label": "Membrane-anchored TNF-α binds TNFR1 (Bos taurus)",
+    "highlighting": {},
+    "synonyms": [
+      "Membrane-anchored TNF-α binds TNFR1 (Bos taurus)"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:MolecularActivity",
+      "biolink:Occurrent",
+      "biolink:OntologyClass",
+      "biolink:BiologicalProcessOrActivity",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 279.74487,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "REACT:R-HSA-83660",
+    "label": "Membrane-anchored TNF-α binds TNFR1 (Homo sapiens)",
+    "highlighting": {},
+    "synonyms": [
+      "Membrane-anchored TNF-α binds TNFR1 (Homo sapiens)"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:MolecularActivity",
+      "biolink:Occurrent",
+      "biolink:OntologyClass",
+      "biolink:BiologicalProcessOrActivity",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 279.74487,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "REACT:R-RNO-83660",
+    "label": "Membrane-anchored TNF-α binds TNFR1 (Rattus norvegicus)",
+    "highlighting": {},
+    "synonyms": [
+      "Membrane-anchored TNF-α binds TNFR1 (Rattus norvegicus)"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:MolecularActivity",
+      "biolink:Occurrent",
+      "biolink:OntologyClass",
+      "biolink:BiologicalProcessOrActivity",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 279.74487,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "CHEBI:9577",
+    "label": "(-)-α-thujone",
+    "highlighting": {},
+    "synonyms": [
+      "Thujon",
+      "Thujone",
+      "Absinthol",
+      "l-thujone",
+      "L-Thujone",
+      "a-Thujone",
+      "Α-thujone",
+      "(-)-Thujone",
+      "cis-Thujone",
+      "3-Thujanone",
+      "(+)-Thujone",
+      "beta-Thujone",
+      "3-Isothujone",
+      "alpha-Thujone",
+      "(-)-α-thujone",
+      "alpha-thujone",
+      "(-)-a-Thujone",
+      "(-)-α-Thujone",
+      "(-)-Isothujone",
+      "L-alpha-Thujone",
+      ".ALPHA.-THUJONE",
+      "(-)-3-thujanone",
+      "(-)-3-Thujanone",
+      "(-)-3-Isothujone",
+      "(-)-alpha-thujone",
+      "(-)-trans-Thujone",
+      "(-)-alpha-Thujone",
+      "alpha-(-)-Thujone",
+      "alpha, beta-Thujone",
+      "(1S,4R,5R)-Thujan-3-one",
+      "(1S,4R,5R)-thujan-3-one",
+      "(1S,4R,5R)-(-)-3-thujanone",
+      "(1S,4R,5R)-(-)-3-Thujanone",
+      "beta-Thujone, (1alpha,4alpha,5alpha)-isomer",
+      "beta-Thujone, 1S-(1alpha,4beta,5alpha)-isomer",
+      "beta-Thujone, (1S-(1alpha,4alpha,5alpha))-isomer",
+      "(1S,4R,5R)-1-Isopropyl-4-methylbicyclo[3.1.0]hexan-3-one",
+      "(1S,4R,5R)-1-isopropyl-4-methylbicyclo[3.1.0]hexan-3-one",
+      "(1S,4R,5R)-4-methyl-1-(propan-2-yl)bicyclo[3.1.0]hexan-3-one",
+      "(1S,4R,5R)-4-Methyl-1-(1-methylethyl)bicyclo[3.1.0]hexan-3-one",
+      "[1S-(1a,4a,5a)]-4-Methyl-1-(1-methylethyl)bicyclo[3.1.0]hexan-3-one",
+      "[1S-(1Α,4α,5α)]-4-methyl-1-(1-methylethyl)bicyclo[3.1.0]hexan-3-one",
+      "[1S-(1alpha,4alpha,5alpha)]-4-Methyl-1-(1-methylethyl)bicyclo[3.1.0]hexan-3-one",
+      "[1S-(1alpha,4alpha,5alpha)]-4-methyl-1-(1-methylethyl)bicyclo[3.1.0]hexan-3-one"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:SmallMolecule",
+      "biolink:MolecularEntity",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 271.11798,
+    "clique_identifier_count": 11
+  },
+  {
+    "curie": "REACT:R-CFA-3371385",
+    "label": "TNF-α is cleaved by ADAM17 (TACE) (Canis familiaris)",
+    "highlighting": {},
+    "synonyms": [
+      "TNF-α is cleaved by ADAM17 (TACE) (Canis familiaris)"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:MolecularActivity",
+      "biolink:Occurrent",
+      "biolink:OntologyClass",
+      "biolink:BiologicalProcessOrActivity",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 266.00516,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "REACT:R-XTR-3371385",
+    "label": "TNF-α is cleaved by ADAM17 (TACE) (Xenopus tropicalis)",
+    "highlighting": {},
+    "synonyms": [
+      "TNF-α is cleaved by ADAM17 (TACE) (Xenopus tropicalis)"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:MolecularActivity",
+      "biolink:Occurrent",
+      "biolink:OntologyClass",
+      "biolink:BiologicalProcessOrActivity",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 266.00516,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "REACT:R-MMU-3371385",
+    "label": "TNF-α is cleaved by ADAM17 (TACE) (Mus musculus)",
+    "highlighting": {},
+    "synonyms": [
+      "TNF-α is cleaved by ADAM17 (TACE) (Mus musculus)"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:MolecularActivity",
+      "biolink:Occurrent",
+      "biolink:OntologyClass",
+      "biolink:BiologicalProcessOrActivity",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 266.00516,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "REACT:R-SSC-3371385",
+    "label": "TNF-α is cleaved by ADAM17 (TACE) (Sus scrofa)",
+    "highlighting": {},
+    "synonyms": [
+      "TNF-α is cleaved by ADAM17 (TACE) (Sus scrofa)"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:MolecularActivity",
+      "biolink:Occurrent",
+      "biolink:OntologyClass",
+      "biolink:BiologicalProcessOrActivity",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 266.00516,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "REACT:R-HSA-3371385",
+    "label": "TNF-α is cleaved by ADAM17 (TACE) (Homo sapiens)",
+    "highlighting": {},
+    "synonyms": [
+      "TNF-α is cleaved by ADAM17 (TACE) (Homo sapiens)"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:MolecularActivity",
+      "biolink:Occurrent",
+      "biolink:OntologyClass",
+      "biolink:BiologicalProcessOrActivity",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 266.00516,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "REACT:R-BTA-3371385",
+    "label": "TNF-α is cleaved by ADAM17 (TACE) (Bos taurus)",
+    "highlighting": {},
+    "synonyms": [
+      "TNF-α is cleaved by ADAM17 (TACE) (Bos taurus)"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:MolecularActivity",
+      "biolink:Occurrent",
+      "biolink:OntologyClass",
+      "biolink:BiologicalProcessOrActivity",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 266.00516,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "REACT:R-RNO-3371385",
+    "label": "TNF-α is cleaved by ADAM17 (TACE) (Rattus norvegicus)",
+    "highlighting": {},
+    "synonyms": [
+      "TNF-α is cleaved by ADAM17 (TACE) (Rattus norvegicus)"
+    ],
+    "taxa": [],
+    "types": [
+      "biolink:MolecularActivity",
+      "biolink:Occurrent",
+      "biolink:OntologyClass",
+      "biolink:BiologicalProcessOrActivity",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "score": 266.00516,
+    "clique_identifier_count": 1
+  },
+  {
+    "curie": "NCBIGene:7124",
+    "label": "TNF",
+    "highlighting": {},
+    "synonyms": [
+      "TNF",
+      "DIF",
+      "TNFA",
+      "TNF-a",
+      "IMD127",
+      "TNFSF2",
+      "TNLG1F",
+      "TNF gene",
+      "TNF Gene",
+      "TNF-alpha",
+      "CACHECTIN",
+      "APC1 protein",
+      "TUMOR NECROSIS FACTOR",
+      "tumor necrosis factor",
+      "TNF, monocyte-derived",
+      "TNF, MONOCYTE-DERIVED",
+      "TNF, macrophage-derived",
+      "TNF, MACROPHAGE-DERIVED",
+      "TNF superfamily, member 2",
+      "tumor necrosis factor-alpha",
+      "tumor necrotic factor alpha",
+      "TUMOR NECROSIS FACTOR, ALPHA",
+      "tumor necrosis factor ligand 1F",
+      "tumor necrosis factor (TNF superfamily, member 2)",
+      "tumor necrosis factor ligand superfamily member 2",
+      "Tumor Necrosis Factor (TNF Superfamily, Member 2) Gene",
+      "hTNF",
+      "TNF-A",
+      "TNF Alpha",
+      "TNF-Alpha",
+      "TNFa (human)",
+      "TNF-a (human)",
+      "cachectin (human)",
+      "TNF-alpha (human)",
+      "TNF protein, human",
+      "TNF-2 protein, human",
+      "Tumor Necrosis Factor",
+      "TNFSF2 protein, human",
+      "Tumor Necrosis Factor Alpha",
+      "Tumor Necrosis Factor-Alpha",
+      "tumor necrosis factor, human",
+      "tumor necrosis factor (human)",
+      "tumor necrosis factor 2 protein, human",
+      "tumor necrosis factor-2 protein, human",
+      "TNF superfamily, member 2 protein, human",
+      "TNFA_HUMAN Tumor necrosis factor (sprot)",
+      "Tumor Necrosis Factor-alpha (macrophage-derived)",
+      "Tumor Necrosis Factor Ligand Superfamily Member 2",
+      "tumor necrosis factor ligand superfamily member 2 (human)",
+      "tumor necrosis factor-alpha promoter allele-2 protein, human",
+      "Q5STB3_HUMAN Tumor necrosis factor (trembl)"
+    ],
+    "taxa": [
+      "NCBITaxon:9606"
+    ],
+    "types": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:Entity",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ],
+    "score": 256.26688,
+    "clique_identifier_count": 24
+  }
+]

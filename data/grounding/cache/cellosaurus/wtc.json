@@ -1,0 +1,116 @@
+{
+  "Cellosaurus": {
+    "cell-line-list": [
+      {
+        "accession-list": [
+          {
+            "type": "primary",
+            "value": "CVCL_E6BZ"
+          }
+        ],
+        "name-list": [
+          {
+            "type": "synonym",
+            "value": "immortalized Mouse Mammary Epithelial Cell line WTC"
+          },
+          {
+            "type": "identifier",
+            "value": "iMMEC WTC"
+          }
+        ]
+      },
+      {
+        "accession-list": [
+          {
+            "type": "primary",
+            "value": "CVCL_VQ27"
+          }
+        ],
+        "name-list": [
+          {
+            "type": "identifier",
+            "value": "WTC CRISPRi HOPX g1"
+          }
+        ]
+      },
+      {
+        "accession-list": [
+          {
+            "type": "primary",
+            "value": "CVCL_VQ28"
+          }
+        ],
+        "name-list": [
+          {
+            "type": "identifier",
+            "value": "WTC CRISPRi HOPX g4"
+          }
+        ]
+      },
+      {
+        "accession-list": [
+          {
+            "type": "primary",
+            "value": "CVCL_IR30"
+          }
+        ],
+        "name-list": [
+          {
+            "type": "synonym",
+            "value": "AICS-0005-050"
+          },
+          {
+            "type": "synonym",
+            "value": "AICS0005"
+          },
+          {
+            "type": "synonym",
+            "value": "AICS-0005"
+          },
+          {
+            "type": "synonym",
+            "value": "PXN cl. 50"
+          },
+          {
+            "type": "synonym",
+            "value": "AICSi002-A-1"
+          },
+          {
+            "type": "synonym",
+            "value": "UCSFi001-A-1"
+          },
+          {
+            "type": "identifier",
+            "value": "WTC EGFP-PXN-cl50"
+          }
+        ]
+      },
+      {
+        "accession-list": [
+          {
+            "type": "primary",
+            "value": "CVCL_A5ES"
+          }
+        ],
+        "name-list": [
+          {
+            "type": "synonym",
+            "value": "AICS-0063-096"
+          },
+          {
+            "type": "synonym",
+            "value": "AICSi002-A-44"
+          },
+          {
+            "type": "synonym",
+            "value": "UCSFi001-A-44"
+          },
+          {
+            "type": "identifier",
+            "value": "WTC-DMD-mEGFP-cl96"
+          }
+        ]
+      }
+    ]
+  }
+}

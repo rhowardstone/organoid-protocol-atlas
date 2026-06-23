@@ -1,0 +1,36 @@
+{
+  "CHEBI:137694": {
+    "id": {
+      "identifier": "CHEBI:137694",
+      "label": "(S)-2-methyl-1-(4-methylisoquinoline-5-sulfonyl)-1,4-diazepane dihydrochloride"
+    },
+    "equivalent_identifiers": [
+      {
+        "identifier": "CHEBI:137694",
+        "label": "(S)-2-methyl-1-(4-methylisoquinoline-5-sulfonyl)-1,4-diazepane dihydrochloride"
+      },
+      {
+        "identifier": "PUBCHEM.COMPOUND:11560225",
+        "label": "H-1152 Dihydrochloride"
+      },
+      {
+        "identifier": "CAS:871543-07-6"
+      },
+      {
+        "identifier": "INCHIKEY:BFOPDSJOLUQULZ-GXKRWWSZSA-N"
+      }
+    ],
+    "type": [
+      "biolink:MolecularMixture",
+      "biolink:ChemicalMixture",
+      "biolink:ChemicalEntity",
+      "biolink:PhysicalEssence",
+      "biolink:ChemicalOrDrugOrTreatment",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide",
+      "biolink:NamedThing",
+      "biolink:PhysicalEssenceOrOccurrent"
+    ],
+    "information_content": 100.0
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "NCBIGene:397157": {
+    "id": {
+      "identifier": "NCBIGene:397157",
+      "label": "VEGFA"
+    },
+    "equivalent_identifiers": [
+      {
+        "identifier": "NCBIGene:397157",
+        "label": "VEGFA",
+        "taxa": [
+          "NCBITaxon:9823"
+        ]
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCG00000001695"
+      },
+      {
+        "identifier": "RGD:14230826"
+      },
+      {
+        "identifier": "UniProtKB:A0A4X1V7P2",
+        "label": "A0A4X1V7P2_PIG Vascular endothelial growth factor A (trembl)",
+        "taxa": [
+          "NCBITaxon:9823"
+        ]
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00025026471"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00025026471.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00030036446"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00030036446.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00035043120"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00035043120.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00045031438"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00045031438.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00050001066"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00050001066.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00055039942"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00055039942.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00065045482"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00065045482.1"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00070037248"
+      },
+      {
+        "identifier": "ENSEMBL:ENSSSCP00070037248.1"
+      },
+      {
+        "identifier": "UniProtKB:G4XMX5",
+        "label": "G4XMX5_PIG Vascular endothelial growth factor A (trembl)",
+        "taxa": [
+          "NCBITaxon:9823"
+        ]
+      },
+      {
+        "identifier": "UniProtKB:P49151",
+        "label": "VEGFA_PIG Vascular endothelial growth factor A (sprot)",
+        "taxa": [
+          "NCBITaxon:9823"
+        ]
+      }
+    ],
+    "taxa": [
+      "NCBITaxon:9823"
+    ],
+    "type": [
+      "biolink:Gene",
+      "biolink:GeneOrGeneProduct",
+      "biolink:GenomicEntity",
+      "biolink:ChemicalEntityOrGeneOrGeneProduct",
+      "biolink:PhysicalEssence",
+      "biolink:OntologyClass",
+      "biolink:BiologicalEntity",
+      "biolink:ThingWithTaxon",
+      "biolink:NamedThing",
+      "biolink:PhysicalEssenceOrOccurrent",
+      "biolink:MacromolecularMachineMixin",
+      "biolink:Protein",
+      "biolink:GeneProductMixin",
+      "biolink:Polypeptide",
+      "biolink:ChemicalEntityOrProteinOrPolypeptide"
+    ]
+  }
+}
