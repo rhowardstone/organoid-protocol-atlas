@@ -88,9 +88,11 @@ def main() -> None:
     }
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(json.dumps(summary, indent=2))
+    prec_s = f"{summary['field_precision']:.1%}" if summary["field_precision"] is not None else "n/a"
+    rmpp_s = str(summary["recall_misses_per_paper"]) if summary["recall_misses_per_paper"] is not None else "n/a"
     print(f"silver-gold: {n} papers ({summary['n_multimodal']} multimodal) | "
-          f"precision {summary['field_precision']:.1%} ({correct}/{checked}) | "
-          f"recall misses {len(misses)} ({summary['recall_misses_per_paper']}/paper)")
+          f"precision {prec_s} ({correct}/{checked}) | "
+          f"recall misses {len(misses)} ({rmpp_s}/paper)")
     print(f"verdicts {summary['verdicts']} | errors {summary['correctness_error_taxonomy']}")
     print(f"-> {OUT.relative_to(REPO)}")
 
