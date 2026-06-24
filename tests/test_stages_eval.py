@@ -82,7 +82,8 @@ def _reagent_names(stage: dict) -> set[str]:
 
 
 def score_stages(pred: dict, gold: dict) -> dict:
-    ps, gs = pred.get("stages", []), gold.get("stages", [])
+    _gold_body = gold.get("gold", gold)  # support nested {gold:{stages}} or flat {stages}
+    ps, gs = pred.get("stages", []), _gold_body.get("stages", [])
     pairs = _match_stages(ps, gs)
     matched_pred = {pi for pi, _ in pairs}
     matched_gold = {gi for _, gi in pairs}
