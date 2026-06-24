@@ -232,6 +232,23 @@ def test_corpus_has_no_hepatic_label():
     )
 
 
+def test_discover_data_route_registered():
+    """The public /discover-data.json endpoint (data behind the /discover view, PR #202)
+    must stay registered — it is part of the public deployment surface."""
+    plugin = (ROOT / "serve/plugins/discover_endpoint.py").read_text()
+    assert r"^/discover-data\.json$" in plugin, "/discover-data.json route registration missing"
+    assert "route_discover_data" in plugin
+
+
+def test_public_view_pages_exist():
+    """New public view pages must exist as templates so the routes they back can't
+    silently 500/404: compare (PR #186) and discover (PR #202)."""
+    for page in ("compare.html", "discover.html"):
+        assert (ROOT / "serve" / "templates" / "pages" / page).exists(), (
+            f"public view page serve/templates/pages/{page} is missing"
+        )
+
+
 def test_public_jsonl_has_no_hepatic_label():
     """protocols.jsonl must contain no 'hepatic' organoid_type entries.
     Re-run pipeline/export_public.py after relabel_organoid_type.py."""
