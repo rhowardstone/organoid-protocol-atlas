@@ -378,7 +378,7 @@ function protoCard(p, i){
       ${p.gold_candidate ? '<span class="apa-badge" style="font-size:.65rem">★ gold</span>' : ''}
     </div>
     <div class="proto-title">
-      <a href="/atlas/protocols/${esc(p.pmcid)}" title="${esc(p.doi||p.pmcid)}">${esc(p.first_author||'?')} ${p.year||''}</a>
+      <a href="/atlas/protocols/${encodeURIComponent(p.pmcid)}" title="${esc(p.doi||p.pmcid)}">${esc(p.first_author||'?')} ${p.year||''}</a>
       <span class="proto-arrow">· ${esc(p.journal||'')}</span>
     </div>
     <div class="proto-meta">${esc(p.source_cell_type||'—')} → ${esc(p.organoid_type||'?')} organoid</div>
@@ -391,7 +391,7 @@ function protoCard(p, i){
     </div>
     <div style="font-size:.72rem;font-family:var(--mono);color:var(--muted)">
       <a href="${doiHref}" target="_blank" rel="noopener" style="color:var(--muted)">${esc(p.pmcid||'')}</a>
-      · <a href="/atlas/protocols/${esc(p.pmcid)}" style="color:var(--accent)">full record →</a>
+      · <a href="/atlas/protocols/${encodeURIComponent(p.pmcid)}" style="color:var(--accent)">full record →</a>
     </div>
   </div>`;
 }
@@ -410,7 +410,7 @@ function reagentCard(r, i){
     <div class="reagent-meta">
       <span style="color:${c};font-weight:600">${esc(r.organoid_type||'')}</span>
       · ${esc(r.kind||'')}
-      ${r.pmcid ? `· <a href="/atlas/protocols/${esc(r.pmcid)}" style="color:var(--muted)">${esc(r.pmcid)}</a>` : ''}
+      ${r.pmcid ? `· <a href="/atlas/protocols/${encodeURIComponent(r.pmcid)}" style="color:var(--muted)">${esc(r.pmcid)}</a>` : ''}
     </div>
     ${dose ? `<div class="reagent-dose">${esc(dose)}</div>` : ''}
   </div>`;
