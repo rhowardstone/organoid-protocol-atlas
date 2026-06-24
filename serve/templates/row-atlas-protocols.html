@@ -14,6 +14,11 @@
   line-height: 1.5;
 }
 .apa-review-warning a { color: var(--accent); }
+.apa-rel-row { display:flex; flex-wrap:wrap; gap:.5rem; margin:.3rem 0 1.2rem; }
+.apa-rel { display:flex; flex-direction:column; gap:.1rem; padding:.45rem .75rem; border:1px solid var(--border,#333); border-radius:6px; text-decoration:none; color:inherit; background:var(--paper,#111); min-width:130px; max-width:200px; flex:1; }
+.apa-rel:hover { border-color:var(--accent,#4a9eff); }
+.apa-rel-a { font-size:.82rem; font-weight:500; }
+.apa-rel-m { font-size:.7rem; color:var(--muted,#888); }
 </style>
 <div class="apa-topbar">
   <span class="dot"></span> <a href="/">ORGANOID PROTOCOL ATLAS</a>
@@ -137,6 +142,25 @@ function highlight(text, quotes){
     document.getElementById('recipe').insertAdjacentHTML('beforeend',
       `<h3 style="margin:1.4rem 0 .3rem">Source methods <span style="color:var(--muted);font-weight:400">(every grounded value highlighted in context${lic})</span></h3>
        <div class="apa-source">${highlight(src.methods_text, quotes)}</div>`);
+  }
+
+  // Related protocols: same organoid type, best-grounded first, excluding current
+  if (p.organoid_type && p.organoid_type !== 'other') {
+    try {
+      const pool = await j(`/atlas/protocols.json?organoid_type__exact=${encodeURIComponent(p.organoid_type)}&_size=8&_shape=array&_sort_desc=grounding_rate`);
+      const related = pool.filter(r => r.pmcid !== pmcid).slice(0, 5);
+      if (related.length) {
+        const cards = related.map(r =>
+          `<a class="apa-rel" href="/atlas/protocols/${encodeURIComponent(r.pmcid)}">`
+          + `<span class="apa-rel-a">${esc(r.first_author || r.pmcid)} ${esc(String(r.year||''))}</span>`
+          + `<span class="apa-rel-m">${Math.round((r.grounding_rate||0)*100)}% grounded · ${r.n_signaling_factors||0} factors</span>`
+          + `</a>`
+        ).join('');
+        document.getElementById('recipe').insertAdjacentHTML('beforeend',
+          `<h3 style="margin:1.5rem 0 .4rem">Other ${esc(p.organoid_type)} protocols</h3>`
+          + `<div class="apa-rel-row">${cards}</div>`);
+      }
+    } catch(_) {}
   }
 })();
 </script>
