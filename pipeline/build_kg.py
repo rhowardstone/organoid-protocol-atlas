@@ -65,7 +65,9 @@ CREATE TABLE protocols (
     passaging TEXT,
     timeline TEXT,
     assay_endpoints TEXT,
-    publication_type TEXT
+    publication_type TEXT,
+    stages TEXT,
+    is_generation_protocol INTEGER
 );
 
 CREATE TABLE reagents (
@@ -191,8 +193,15 @@ def main():
             f"–{t.get('day_end') if t.get('day_end') is not None else '?'})"
             for t in (p.get("timeline") or []) if t.get("name"))
         endpoints_s = " · ".join(str(x) for x in (p.get("assay_endpoints") or []))
+        # v0.6 stages[] (schema #226) carried through to the export the recipe renderer
+        # (#228) reads. Stored as JSON text; export_public re-parses to an array. Empty
+        # when the prediction has no stages (pre-stages-run) -> renderer falls back to timeline.
+        raw_stages = p.get("stages") or []
+        stages_json = json.dumps(raw_stages, ensure_ascii=False) if raw_stages else None
+        is_gen = p.get("is_generation_protocol")
+        is_gen_i = None if is_gen is None else int(bool(is_gen))
         conn.execute(
-            "INSERT INTO protocols VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+            "INSERT INTO protocols VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
             (pmcid, p.get("source_doi"), oty, sc.get("species"),
              sc.get("cell_type"), (p.get("matrix") or {}).get("name"), bm.get("name"),
              bm.get("reporting"), cm.get("first_author"), cm.get("year"),
@@ -200,7 +209,7 @@ def main():
              len(sf), len(sup), n_conf, grounded, len(sf),
              round(grounded / len(sf), 3) if sf else None, p.get("extractor_version"),
              passaging_s or None, timeline_s or None, endpoints_s or None,
-             p.get("publication_type")),
+             p.get("publication_type"), stages_json, is_gen_i),
         )
         add_reagents(sf, "signaling")
         add_reagents(sup, "supplement")
