@@ -48,3 +48,42 @@
     injectButton();
   }
 })();
+
+// Robust source citations, shared by every page that links to a paper.
+// Corpus DOIs are sometimes stored with a resolver prefix ("dx.doi.org/10.…",
+// "https://doi.org/10.…", "doi:10.…") or are blank; naively prepending
+// https://doi.org/ then yields https://doi.org/dx.doi.org/… → 404. And a missing
+// first_author was being shown as a bare "?". Normalize here so links resolve and
+// labels are meaningful, with the PMC page / PMCID as the honest fallback.
+window.AtlasCite = (function () {
+  function cleanDoi(doi) {
+    if (!doi) return null;
+    var d = String(doi).trim()
+      .replace(/^https?:\/\//i, "")   // strip scheme
+      .replace(/^(dx\.)?doi\.org\//i, "")  // strip resolver host
+      .replace(/^doi:/i, "")          // strip doi: prefix
+      .trim();
+    return d.indexOf("10.") === 0 ? d : null;  // only link things that look like a DOI
+  }
+  function pmcUrl(pmcid) {
+    return pmcid
+      ? "https://www.ncbi.nlm.nih.gov/pmc/articles/" + encodeURIComponent(pmcid) + "/"
+      : null;
+  }
+  return {
+    cleanDoi: cleanDoi,
+    // Best source URL: a clean DOI, else the PMC article page, else "#".
+    href: function (p) {
+      if (!p) return "#";
+      var d = cleanDoi(p.doi);
+      if (d) return "https://doi.org/" + d;
+      return pmcUrl(p.pmcid) || "#";
+    },
+    // "Author year", falling back to the PMCID — never a bare "?".
+    label: function (p) {
+      if (!p) return "";
+      var a = (p.first_author && String(p.first_author).trim()) || p.pmcid || "";
+      return (a + " " + (p.year || "")).trim();
+    },
+  };
+})();
