@@ -1,0 +1,114 @@
+{
+  "model_class": "assembloid",
+  "is_organoid_strict": false,
+  "classification_reason": "The model is a 3D structure assembled from multiple cell types (neurons, astrocytes, microglia) rather than self-organized through developmental patterning.",
+  "tissue_or_system": "nervous system",
+  "species": "human",
+  "cell_source_type": "hiPSC-derived",
+  "disease_context": [],
+  "cell_populations": [
+    {
+      "label": "hiPSC-derived neurons",
+      "cell_type": "neurons",
+      "source": "hiPSC",
+      "differentiation_method": "doxycycline-inducible NGN2 and pC13N-dCas9-BFP-KRAB",
+      "engineered_features": [
+        "doxycycline-inducible NGN2",
+        "pC13N-dCas9-BFP-KRAB"
+      ],
+      "markers": [
+        "NeuN",
+        "Tuj1"
+      ]
+    },
+    {
+      "label": "hiPSC-derived astrocytes (serum-free)",
+      "cell_type": "astrocytes",
+      "source": "hiPSC",
+      "differentiation_method": "neural induction media with SMAD inhibitors, rosette selection",
+      "engineered_features": [],
+      "markers": [
+        "S100B",
+        "NFIA"
+      ]
+    },
+    {
+      "label": "hiPSC-derived astrocytes (serum-based)",
+      "cell_type": "astrocytes",
+      "source": "hiPSC",
+      "differentiation_method": "dual SMAD inhibition, NPC expansion, MACS enrichment",
+      "engineered_features": [],
+      "markers": [
+        "S100B",
+        "NFIA"
+      ]
+    },
+    {
+      "label": "hiPSC-derived microglia",
+      "cell_type": "microglia",
+      "source": "hiPSC",
+      "differentiation_method": "inducible transcription factors (MAFB, CEBPα, IRF, PU1, CEBPβ, IRF5) and cytokines (IL34, GM-CSF, M-CSF, TGFB1)",
+      "engineered_features": [
+        "MAFB",
+        "CEBPα",
+        "IRF",
+        "PU1",
+        "CEBPβ",
+        "IRF5"
+      ],
+      "markers": [
+        "Iba1"
+      ]
+    }
+  ],
+  "protocol_variants": [
+    {
+      "label": "hiPSC maintenance (WTC11)",
+      "purpose": "culture_generation"
+    },
+    {
+      "label": "hiPSC maintenance (KOLF2.1)",
+      "purpose": "culture_generation"
+    },
+    {
+      "label": "Neuron differentiation",
+      "purpose": "differentiation"
+    },
+    {
+      "label": "Serum-free astrocyte differentiation",
+      "purpose": "differentiation"
+    },
+    {
+      "label": "Serum-based astrocyte differentiation",
+      "purpose": "differentiation"
+    },
+    {
+      "label": "Microglia differentiation",
+      "purpose": "differentiation"
+    },
+    {
+      "label": "iAssembloid generation",
+      "purpose": "assembly"
+    }
+  ],
+  "perturbations": [
+    {
+      "label": "doxycycline induction",
+      "type": "chemical"
+    }
+  ],
+  "assays": [
+    {
+      "label": "confocal microscopy",
+      "type": "imaging"
+    },
+    {
+      "label": "immunohistochemistry",
+      "type": "imaging"
+    },
+    {
+      "label": "single-nuclei sequencing",
+      "type": "sequencing"
+    }
+  ]
+}
