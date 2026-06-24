@@ -97,6 +97,21 @@ code, .col-doi, .col-pmcid { font-family: var(--mono); font-size: 0.85em; }
 .apa-card p { margin: 0; font-size: .85rem; color: var(--muted); line-height: 1.5; }
 .apa-card.green { border-left-color: var(--accent-2); }
 
+/* ---------- Landing: protocols-by-type distribution ---------- */
+.apa-typedist { max-width: 1180px; margin: .5rem auto 0; padding: 0 1.5rem; }
+.apa-typedist-head { display: flex; align-items: baseline; gap: .6rem; flex-wrap: wrap; }
+.apa-typedist-head h2 { font-size: 1.05rem; margin: 0; }
+.apa-typedist-sub { font-size: .76rem; color: var(--muted); font-family: var(--mono); }
+.apa-typedist-chart { margin: .5rem 0 0; max-height: 300px; overflow: hidden; }
+.apa-typedist-chart svg { max-width: 100%; height: auto; }
+.apa-typedist-chart:empty { display: none; }
+.apa-typedist-table { margin: .4rem 0 0; font-size: .8rem; }
+.apa-typedist-table summary { cursor: pointer; color: var(--accent); font-family: var(--mono); font-size: .74rem; }
+.apa-typedist-table table { border-collapse: collapse; margin-top: .5rem; width: 100%; max-width: 420px; }
+.apa-typedist-table th, .apa-typedist-table td { text-align: left; padding: .2rem .6rem; border-bottom: 1px solid var(--border); }
+.apa-typedist-table th:last-child, .apa-typedist-table td:last-child { text-align: right; font-family: var(--mono); }
+.apa-typedist-table tbody tr:hover { background: var(--paper-3); }
+
 /* ---------- Badges (grounded / license) ---------- */
 .apa-badge { font-family: var(--mono); font-size: .68rem; padding: 1px 6px; border-radius: 5px; border: 1px solid var(--border); }
 .apa-badge.ok { color: var(--good); border-color: #bbf7d0; background: #f0fdf4; }
