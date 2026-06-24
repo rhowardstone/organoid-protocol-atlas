@@ -80,10 +80,13 @@ window.AtlasCite = (function () {
       return pmcUrl(p.pmcid) || "#";
     },
     // "Author year", falling back to the PMCID — never a bare "?".
+    // Year guard: some pipeline entries have extraction artifacts (serial numbers,
+    // row IDs) stored in the year column. Only show plausible publication years.
     label: function (p) {
       if (!p) return "";
       var a = (p.first_author && String(p.first_author).trim()) || p.pmcid || "";
-      return (a + " " + (p.year || "")).trim();
+      var yr = (p.year && +p.year >= 1990 && +p.year <= 2030) ? String(p.year) : "";
+      return (a + (yr ? " " + yr : "")).trim();
     },
   };
 })();
