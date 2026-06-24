@@ -369,8 +369,7 @@ function protoCard(p, i){
     ? `<span class="proto-factor">+${factors.length-8} more</span>`
     : '');
 
-  const doiHref = p.doi ? `https://doi.org/${esc(p.doi)}`
-                        : `https://www.ncbi.nlm.nih.gov/pmc/articles/${esc(p.pmcid)}/`;
+  const doiHref = AtlasCite.href(p);  // normalized DOI, PMC fallback (static/atlas.js)
 
   return `<div class="proto-card" style="animation-delay:${i*0.045}s">
     <div style="display:flex;align-items:center;justify-content:space-between;gap:.4rem">
@@ -378,7 +377,7 @@ function protoCard(p, i){
       ${p.gold_candidate ? '<span class="apa-badge" style="font-size:.65rem">★ gold</span>' : ''}
     </div>
     <div class="proto-title">
-      <a href="/atlas/protocols/${esc(p.pmcid)}" title="${esc(p.doi||p.pmcid)}">${esc(p.first_author||'?')} ${p.year||''}</a>
+      <a href="/atlas/protocols/${esc(p.pmcid)}" title="${esc(p.doi||p.pmcid)}">${esc(AtlasCite.label(p))}</a>
       <span class="proto-arrow">· ${esc(p.journal||'')}</span>
     </div>
     <div class="proto-meta">${esc(p.source_cell_type||'—')} → ${esc(p.organoid_type||'?')} organoid</div>
