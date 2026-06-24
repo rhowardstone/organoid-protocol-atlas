@@ -19,6 +19,7 @@ import json
 import re
 import os
 import urllib.request
+from pathlib import Path
 
 from datasette import hookimpl, Response
 
@@ -28,55 +29,209 @@ OLLAMA = os.environ.get("OLLAMA_URL", "http://localhost:11434/api/generate")
 MODEL = os.environ.get("OLLAMA_MODEL", "llama3.1:8b")
 TOP_K = 12
 
-LLMS_TXT = """# Organoid Protocol Atlas
+# Load public corpus counts from the committed manifest so llms.txt and the
+# landing page stay in sync with the actual export — never hand-maintained.
+_MANIFEST_PATH = Path(__file__).resolve().parents[2] / "exports" / "public" / "manifest.json"
+try:
+    _manifest = json.loads(_MANIFEST_PATH.read_text())
+except (FileNotFoundError, json.JSONDecodeError):
+    _manifest = {"n_papers": 0, "tables": {}}
+
+_N_PAPERS = _manifest.get("n_papers", 0)
+_N_PROTOCOLS = _manifest.get("tables", {}).get("protocols", _N_PAPERS)
+_N_REAGENTS = _manifest.get("tables", {}).get("reagents", 0)
+_N_ROWS = _N_PROTOCOLS + _N_REAGENTS
+
+# Expose manifest to Jinja2 templates (index.html uses {{ public_counts.n_papers }})
+PUBLIC_COUNTS = {
+    "n_papers": _N_PAPERS,
+    "n_protocols": _N_PROTOCOLS,
+    "n_reagents": _N_REAGENTS,
+    "n_types": _manifest.get("n_types", 0),
+}
+
+
+def _build_llms_txt() -> str:
+    _n_types = _manifest.get("n_types", 0)
+    return f"""# Organoid Protocol Atlas
 
 Public, license-safe Datasette deployment of the Organoid Protocol Atlas.
 
 Base URL: https://organoid-protocol-atlas.onrender.com
 Source: https://github.com/rhowardstone/organoid-protocol-atlas
 
+## Deployment note (important for agents)
+
+This service runs on Render's free tier. After a period of inactivity the server
+sleeps and the first request receives a 503 or a connection timeout while it wakes
+(typically 20-60 seconds). If your first fetch fails, retry after 60 seconds before
+concluding the service is unavailable. DNS resolves correctly; the issue is server
+sleep, not DNS. Do NOT fabricate data if the first attempt fails — retry once or
+twice, then report the service as temporarily unavailable.
+
 ## What is available here
 
-This public deployment contains the CC-licensed public subset: 5119 papers, 5119
-protocol rows, and 43219 public reagent/protocol rows. It does not redistribute
-full methods text or paper bodies. Evidence fields are short citation snippets
-kept so users and agents can trace claims back to the source paper.
+This public deployment contains the CC-licensed public subset: {_N_PAPERS} papers, {_N_PROTOCOLS}
+protocol rows, and {_N_REAGENTS} public reagent rows across {_n_types} organoid systems.
+It does not redistribute full methods text or paper bodies. Evidence fields are short verbatim snippets
+kept so agents can trace claims back to the source paper and DOI.
 
-The larger local pipeline tracks a verified 28-paper corpus and additional
-candidate papers, but those are not all public on this hosted deployment.
+The larger local pipeline tracks a verified corpus and additional candidate papers,
+but those are not all public on this hosted deployment. Schema version: 0.4.
 
-## Useful endpoints
+## Quick start for agents (3 calls to orient yourself)
+
+1. Corpus overview — what's here, how many papers and reagents:
+   GET /analytics/summary
+
+2. Reporting gaps — which protocol fields journals fail to require:
+   GET /analytics/reporting-gaps
+
+3. Dose disagreement ranking — reagents with the highest within-corpus concentration CV:
+   GET /analytics/concentration-deviation
+
+Then drill into one organoid type:
+   GET /analytics/consensus/kidney     (consensus reagents + median concentrations)
+   GET /analytics/coverage/kidney      (completeness, grounding rate, MIOR score)
+
+## Full corpus downloads (no pagination limit)
+
+These static files contain every record; they are served as-is and are not row-capped:
+
+- /exports/public/protocols.jsonl   — all {_N_PAPERS} papers, one JSON object per line
+- /exports/public/reagents.jsonl    — all {_N_REAGENTS} reagent records, one JSON object per line
+- /exports/public/manifest.json     — counts, schema version, generated timestamp
+
+These are the fastest way to do full-corpus analysis. Do not scrape the Datasette
+table pages row-by-row — use these files or the /analytics/* endpoints instead.
+
+## Table endpoints (Datasette JSON/CSV API)
+
+For ad-hoc filtered queries and exploration:
 
 - /atlas/protocols.json?_shape=array&_size=max
 - /atlas/reagents.json?_shape=array&_size=max
 - /atlas/reagents.json?_shape=array&_size=max&kind__exact=signaling
+- /atlas/reagents.json?_shape=array&kind__exact=signaling&organoid_type__exact=kidney
+
+For full-table streaming with no row cap, append ?_stream=1 to the CSV URL:
+- /atlas/protocols.csv?_stream=1    — all protocol rows streamed (no limit)
+- /atlas/reagents.csv?_stream=1     — all reagent rows streamed (no limit)
+
+## Analytics REST endpoints (pre-computed, read-only)
+
+- /analytics/summary          high-level corpus stats, quality distribution, top types
+- /analytics/coverage         per-type corpus coverage and completeness (grounding rate, MIOR)
+- /analytics/coverage/{type}  coverage for one organoid type (e.g. /analytics/coverage/kidney)
+- /analytics/consensus/{type} consensus concentrations and reagents for one type
+- /analytics/quality          per-paper quality scores (gold / silver / bronze tiers)
+- /analytics/mior             MIOR completeness report (12-item, 5-module per paper)
+- /analytics/reagent?q=EGF             cross-corpus reagent lookup with concentrations and evidence quotes
+- /analytics/reagent-network?q=EGF     co-occurring reagents: which reagents appear in the same papers as EGF
+- /analytics/type-similarity           pairwise Jaccard similarity between organoid types (canonical reagent sets)
+- /analytics/type-timeseries           publication counts by year and organoid type (growth trends, first-appearance)
+- /analytics/universal-reagents        canonical reagents in >= 50% of protocols per type; also cross-type universals
+- /analytics/species-breakdown         species distribution per organoid type (human / mouse / other); ?type=kidney for one type
+- /analytics/matrix-breakdown          extracellular matrix usage per organoid type (Matrigel / Geltrex / Vitronectin / ...); ?type=kidney for one type
+- /analytics/base-media-breakdown      base media usage per organoid type (DMEM/F12 / mTeSR1 / Advanced DMEM/F12 / ...); ?type=kidney for one type
+- /analytics/source-cell-breakdown     source cell type distribution per organoid type (iPSC / adult_stem_cell / primary_tissue / ESC); ?type=kidney for one type
+- /analytics/protocol-complexity       per-type protocol complexity: avg n_signaling_factors, n_supplements, n_figure_confirmed, grounding_rate; ranked by complexity; ?type=kidney for one type
+- /analytics/reporting-gaps            field reporting rates (species/matrix/base_media/source_cell_type/passaging/timeline) — transparency audit of systematic gaps; ?type=kidney for one type
+- /analytics/year-trend                yearly trends: paper count, avg n_signaling_factors, avg grounding_rate, field reporting rates by publication year
+- /analytics/grounding-quality         reagent grounding coverage: grounding_rate, evidence_quote_rate, suspect_unit_count by type and by kind; top ungrounded names for S1 prioritization
+- /analytics/concentration-stats       aggregate concentration distributions per canonical reagent: median, min, max, std; top 50 by n_with_value; ?q=EGF for one reagent
+- /analytics/temporal-reagent-adoption per-reagent temporal adoption: fraction of papers per year using each canonical reagent; ?q=EGF for year-by-year data, ?type=kidney for one type
+- /analytics/kgx-summary               KGX graph state: n_nodes/n_edges by category, resolution rate, review queue breakdown, top not_found/needs_review entities for S1/S2 triage
+- /analytics/concentration-by-type     per-organoid-type concentration stats for one canonical reagent; requires ?q=EGF; shows how dose differs across kidney/intestinal/liver/etc
+- /analytics/journal-breakdown          journal contribution counts: cross-corpus top 50 + per-type top 5; ?type=kidney for full single-type breakdown
+- /analytics/type-comparison           side-by-side organoid type comparison: shared/unique canonical reagents, Jaccard similarity, per-kind breakdown; ?a=intestinal&b=cerebral
+- /analytics/concentration-deviation   dose inconsistency ranking: canonical reagents sorted by coefficient of variation (std/mean); most_variable and most_consistent lists; ?min_n= threshold; NOTE: n_with_value = numeric-dose records (≠ n_records total mentions); entries with n_with_value < 10 carry low_n_warning: true — treat as indicative not statistically robust
+- /analytics/reagent-prevalence        type-breadth ranking: canonicals sorted by n_organoid_types; cross_field (>=20 types) + specialist (<=2 types) sub-lists; ?q=EGF for per-type breakdown
+- /analytics/protocol-outliers         per-type outlier detection on n_signaling_factors: complex and minimal protocols with z-scores; ?type=kidney for one type; ?z_thresh= sensitivity
+- /analytics/grounding-distribution    per-paper grounding rate histogram (10 buckets), per-type mean ranking, top/bottom 20 papers; ?type=kidney for one type; live from protocols.jsonl
+- /analytics/type-maturity             field maturity per organoid type: first_year, trajectory (accelerating/stable/slowing), maturity_tier (established/developing/emerging); ?type=kidney
+- /analytics/reagent-cooccurrence      pairwise signaling-factor co-occurrence: top pairs by n_papers with Jaccard similarity; ?q=EGF for all partners of one canonical; ?type= for one organoid type; ?min_papers= threshold
+- /analytics/supplement-breakdown      per-type and cross-type breakdown of supplement canonicals: global top 50, cross-type list, per-type top 10; ?q=GlutaMAX for one canonical; ?type=kidney for one type; ?min_types= threshold
+- /analytics/role-breakdown            normalized functional role distribution for signaling reagents: signaling_factor/growth_factor/differentiation/inhibitor/agonist etc.; ?q=differentiation for top canonicals; ?type= filter
+- /analytics/type-reagent-heatmap      organoid type × canonical usage matrix: top_n canonicals (columns) × all types (rows), cell = n_papers; ?kind=signaling|supplement|all; ?top_n= (default 20)
+- /analytics/canonical-name-variants   normalization complexity: for each canonical, all raw names that map to it; top 30 most-ambiguous by n_variants; ?q=FGF2 for one canonical; ?min_variants= threshold
+- /analytics/concentration-unit-distribution  unit inconsistency report: canonicals using multiple unit systems; top 30 by n_units; ?q=EGF for full unit breakdown with min/median/max per unit; ?min_n= threshold
+- /analytics/protocol-size-distribution  full histogram of n_signaling_factors and n_supplements per paper; global + per-type mean/median/std; ?type=kidney for one type with full histograms
+- /analytics/evidence-quote-coverage   per-type and per-kind rate of verbatim evidence quotes in reagent records; overall_coverage_rate + by_kind breakdown + per_type sorted by coverage_rate; ?type=kidney for top canonicals; ?kind=signaling|supplement filter
+- /analytics/concentration-value-rate  canonicals ranked by fraction of records with a numeric dose value; highest_reporters + lowest_reporters (top 30 each); ?q=Wnt3a for per-type breakdown; ?min_n= threshold (default 5); ?kind= filter
+- /analytics/kind-ambiguity            canonicals that appear in both signaling and supplement kinds; sorted by minority_fraction; ?q=Y-27632 for per-type kind breakdown; ?min_n= threshold (default 3)
+- /analytics/canonical-type-adoption   reagent diffusion: n distinct organoid types using each canonical by year; first_year, n_types_current, year_peak; ?q=EGF for per-year type list + cumulative; ?min_types= threshold (default 5)
+- /analytics/unit-normalization-report audit of raw unit string → canonical_unit clusters (e.g. 'uM' ← [μM, µM, µm, uM, μmol/L, ...]); sorted by n_raw_strings; ?q=uM for detailed breakdown + top canonicals
+- /analytics/source-cell-reagent-profile  characteristic reagents by source_cell_type (iPSC/adult_stem_cell/primary_tissue/ESC); top 20 per source + pairwise Jaccard; ?source=iPSC for top 30 with exclusive_to_source flags; ?min_papers= threshold (default 3)
+- /analytics/protocol-completeness     per-paper completeness scores (0-6) across species/matrix/base_media/passaging/timeline/assay_endpoints; histogram + per-type ranking + top/bottom 20 papers; ?type= for one type
+- /analytics/cross-type-concentration-variance  canonicals with highest inter-type dose disagreement (max/min per-type-median ratio); ?q=Activin+A for per-unit breakdown; ?min_n= (default 3); ?min_types= (default 2)
+- /analytics/reagent-type-enrichment   enrichment ratio (type-rate/global-rate) per canonical per type; ?type=retinal for top enriched; ?q=taurine for which types over-use it; global=top 50 pairs; ?min_n= (default 3)
+- /analytics/grounding-inconsistency   S1 grounding-gap targets: canonicals grounded in some papers but ungrounded in others; ?min_n= (default 5); ?sort=total|rate|n_ungrounded
+- /analytics/canonical-merge-candidates  canonical names likely referring to the same entity (normalize: strip supplement/protein/human/recombinant); top 100 groups by combined record count; ?min_records= threshold (default 3)
+- /analytics/grounding-by-kind         grounding rate by reagent kind (signaling vs supplement): n_grounded, n_ungrounded, grounding_rate, top_ungrounded per kind; ?type= for one organoid type; ?kind= for one kind; reveals 0%% supplement grounding gap
+- /analytics/temporal-variance         concentration CV trends over time for a canonical reagent: yearly mean/std/CV, trend label (converging/diverging/stable); ?q=CHIR99021 (required); ?min_n= per-year threshold (default 3)
+- /analytics/base-media-cooccurrence   conditional P(base_media | source_cell_type) from complete papers; imputation candidates (papers with cell_type but missing base_media); ?source= for one cell type
+- /analytics/failure-modes             failure mode cluster summary across the corpus
+- /analytics/lineage                   DOI→DOI protocol lineage graph
+- /analytics/assay-endpoints           assay endpoint cluster summary (per-type + cross-type)
+- /analytics/candidates                OA/license verification status of the candidate pool
+- /analytics/within-type-dose-range   intra-type fold-range per canonical × organoid type: min/max/fold_range ranked by dose disagreement (e.g. FGF2 kidney 6-200 ng/mL = 33×); ?q= ?type= ?unit= ?min_n=
+- /analytics/convergence-leaders      canonicals ranked by temporal CV trend: converging (dose consensus emerging) vs diverging; ?min_years= ?min_n= thresholds; surfaces BMP4 retinal-style success stories
+- /analytics                           index of all analytics endpoints with generate commands
+
+## TRAPI (Translator Reasoner API 1.5)
+
+The committed KGX graph (exports/kgx/nodes.tsv + edges.tsv) is live-queryable via TRAPI.
+
+- POST /trapi/query                — single-hop Biolink query (TRAPI 1.5 request/response)
+- GET  /trapi/meta_knowledge_graph — node categories, predicates, and edge counts
+- GET  /trapi                      — HTML explainer and interactive console
+
+Nodes carry SRI-resolved Biolink CURIEs; edges use biolink:mentions predicates connecting
+biolink:Publication → entity (Gene, SmallMolecule, Protein, etc.), with provenance back to
+the source PMCID and DOI. Note: the graph is paper-centric (Publication subjects), not
+protocol-centric; all reagent categories must be queried together (Gene + SmallMolecule
++ Protein + ChemicalEntity + MolecularMixture + CellLine) to recover a paper's full
+reagent footprint.
+
+## Grounded Q&A
+
 - /-/ask?q=which%20factors%20define%20kidney%20organoids%3F
 
-Datasette table pages also support faceting, filtering, sorting, and JSON
-exports. Prefer the JSON endpoints for programmatic use.
+Natural-language synthesis is only available when the deployment can reach a local model;
+otherwise the endpoint returns retrieved evidence rows without model synthesis.
 
 ## Evidence rules for agents
 
 - Treat rows as extracted literature evidence, not clinical or wet-lab advice.
 - Cite PMCID and DOI values from returned rows whenever making a claim.
 - Do not infer that a factor is absent from biology because it is absent here.
-- Respect grounding fields and evidence snippets; missing evidence beats false
-  certainty.
-- Natural-language synthesis from /-/ask is only available when the deployment
-  can reach the local model; otherwise the endpoint returns retrieved evidence
-  rows without model synthesis.
+- Respect grounding fields and evidence snippets; missing evidence beats false certainty.
+- evidence_quote fields are verbatim substrings of the source paper's methods section.
 
 ## Public subset counts
 
-- papers: 10
-- protocols: 10
-- reagent/protocol rows: 122
+- papers: {_N_PAPERS}
+- organoid_types: {_n_types}
+- protocols: {_N_PROTOCOLS}
+- reagent rows: {_N_REAGENTS}
+- schema_version: 0.4
 - full text redistributed: no
 """
 
-# organoid types we can detect in a question to bias retrieval
-_TYPES = ["intestinal", "gastric", "cerebral", "kidney", "liver", "lung",
-          "retinal", "pancreatic"]
+
+LLMS_TXT = _build_llms_txt()
+
+# organoid types we can detect in a question to bias retrieval (25 canonical types; hepatic→liver)
+_TYPES = [
+    "intestinal", "gastric", "cerebral", "kidney", "liver", "lung",
+    "retinal", "pancreatic",
+    "tumor", "cardiac", "vascular", "cholangiocyte", "skin", "mammary",
+    "endometrial", "bone", "prostate", "inner-ear", "salivary-gland",
+    "bladder", "neuromuscular", "esophageal", "blood-brain-barrier",
+    "thyroid", "fallopian-tube",
+    "hepatic",  # legacy alias in corpus; normalizes to liver post-marathon
+]
 
 # generic words that shouldn't drive retrieval (they match half the corpus)
 _STOP = {
@@ -212,6 +367,42 @@ async def llms_txt(datasette, request):
     return Response.text(LLMS_TXT)
 
 
+_EXPORTS_DIR = Path(__file__).resolve().parents[2] / "exports" / "public"
+
+
+async def _serve_export(filename: str, content_type: str):
+    path = _EXPORTS_DIR / filename
+    if path.exists():
+        return Response(body=path.read_bytes(), status=200,
+                        headers={"content-type": content_type,
+                                 "content-disposition": f"attachment; filename={filename}"})
+    return Response.redirect(f"/atlas/{filename.replace('.jsonl', '').replace('.json', '')}.json?_shape=array&_size=max", status=302)
+
+
+async def serve_protocols_jsonl(datasette, request):
+    return await _serve_export("protocols.jsonl", "application/x-ndjson")
+
+
+async def serve_reagents_jsonl(datasette, request):
+    return await _serve_export("reagents.jsonl", "application/x-ndjson")
+
+
+async def serve_public_manifest(datasette, request):
+    return await _serve_export("manifest.json", "application/json")
+
+
 @hookimpl
 def register_routes():
-    return [(r"^/-/ask$", ask), (r"^/llms\.txt$", llms_txt)]
+    return [
+        (r"^/-/ask$", ask),
+        (r"^/llms\.txt$", llms_txt),
+        (r"^/exports/public/protocols\.jsonl$", serve_protocols_jsonl),
+        (r"^/exports/public/reagents\.jsonl$", serve_reagents_jsonl),
+        (r"^/exports/public/manifest\.json$", serve_public_manifest),
+    ]
+
+
+@hookimpl
+def extra_template_vars(datasette, request):
+    """Inject manifest-derived counts into every Jinja2 template context."""
+    return {"public_counts": PUBLIC_COUNTS}
