@@ -63,16 +63,16 @@
   </details>
 </section>
 
-<section class="apa-typedist" aria-label="Evidence grounding across the corpus">
+<section class="apa-typedist" aria-label="Reagent ID coverage across the corpus">
   <div class="apa-typedist-head">
-    <h2>Evidence grounding across the corpus</h2>
-    <span class="apa-typedist-sub">how many protocols fall in each grounding-rate band · higher = more reagent values verbatim-verified against the source</span>
+    <h2>Reagent ID coverage</h2>
+    <span class="apa-typedist-sub">what fraction of each protocol's reagents are linked to a standard chemical ID · higher = more factors identified</span>
   </div>
   <figure id="grounding-chart" class="apa-typedist-chart" aria-hidden="true"></figure>
   <details class="apa-typedist-table" open>
     <summary>Show as data table</summary>
     <table>
-      <thead><tr><th scope="col">Grounding rate</th><th scope="col">Protocols</th></tr></thead>
+      <thead><tr><th scope="col">Coverage band</th><th scope="col">Protocols</th></tr></thead>
       <tbody>
         {% for g in grounding_buckets %}
         <tr><td>{{ g.label }}</td><td>{{ g.count }}</td></tr>
@@ -101,7 +101,7 @@
     var el = document.getElementById('type-chart');
     if (!el || !data.length || !plotReady()) return;
     el.replaceChildren();   // clear any prior render (e.g. on theme toggle)
-    var h = Math.min(300, 28 + data.length * 11);
+    var h = Math.min(420, 32 + data.length * 15);
     var chart = Plot.plot({
       height: h,
       marginLeft: 118,
@@ -122,6 +122,12 @@
     chart.setAttribute('aria-label', 'Bar chart: protocol count per organoid type, largest first');
     el.append(chart);
     el.removeAttribute('aria-hidden');
+    // Hover affordance on clickable bars
+    el.querySelectorAll('svg a rect').forEach(function(r){
+      r.style.transition = 'opacity .13s';
+      r.parentElement.addEventListener('mouseenter', function(){ r.style.opacity = '.72'; r.style.cursor = 'pointer'; });
+      r.parentElement.addEventListener('mouseleave', function(){ r.style.opacity = ''; });
+    });
   }
 
   // Trust tiers: ≥80% grounded = good (green), 50–80% = caution (amber), <50% = weak (red).
@@ -236,3 +242,4 @@
   <a href="https://github.com/rhowardstone/organoid-protocol-atlas">github.com/rhowardstone/organoid-protocol-atlas</a>
 </div>
 {% endblock %}
+
