@@ -51,6 +51,14 @@
 .exp-stat { font-family:var(--mono); font-size:.75rem; color:var(--muted); }
 .exp-stat strong { color:var(--ink); }
 
+/* Export bar */
+.exp-statbar { display:flex; align-items:center; justify-content:space-between; gap:.8rem; flex-wrap:wrap; margin-top:.6rem; }
+.exp-export { display:flex; align-items:center; gap:5px; }
+.exp-export-label { font-size:.72rem; font-family:var(--mono); color:var(--muted); }
+.exp-export .exp-tab { font-size:.73rem; padding:.25rem .6rem; }
+.exp-export a.exp-tab { text-decoration:none; display:inline-flex; align-items:center; }
+.exp-export.disabled { opacity:.4; pointer-events:none; }
+
 /* pending counter */
 .exp-load-btn { font-family:var(--mono); font-size:.82rem; padding:.6rem 1.8rem;
   border:1px solid var(--border); border-radius:8px; background:var(--paper);
@@ -86,7 +94,15 @@
   </div>
 
   <div class="exp-chips" id="chips"></div>
-  <div class="exp-stat" id="count" style="margin-top:.6rem"></div>
+  <div class="exp-statbar">
+    <div class="exp-stat" id="count"></div>
+    <div class="exp-export" id="export">
+      <span class="exp-export-label">Export this view</span>
+      <button class="exp-tab" type="button" id="exp-jsonl" onclick="exportData('jsonl')" title="Download the current filtered results as JSON Lines">↓ JSONL</button>
+      <button class="exp-tab" type="button" id="exp-tsv" onclick="exportData('tsv')" title="Download the current filtered results as tab-separated values">↓ TSV</button>
+      <a class="exp-tab" id="api-link" href="/atlas/protocols.json?_shape=array&amp;_size=max" target="_blank" rel="noopener" title="Raw Datasette JSON API for programmatic access">API ↗</a>
+    </div>
+  </div>
 </div>
 
 <div class="exp-grid" id="grid" style="margin-top:1rem"></div>
@@ -96,6 +112,39 @@
 <script>
 const esc = s => (s==null?'':String(s)).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const $ = id => document.getElementById(id);
+
+// ── Export (downloads the exact current filtered view) ──
+function downloadBlob(name, text, mime){
+  const blob = new Blob([text], {type: mime + ';charset=utf-8'});
+  const url = URL.createObjectURL(blob);
+  const a = Object.assign(document.createElement('a'), {href:url, download:name});
+  document.body.appendChild(a); a.click();
+  setTimeout(() => { URL.revokeObjectURL(url); a.remove(); }, 0);
+}
+function toTSV(items){
+  const cols = [...items.reduce((s,o) => { Object.keys(o).forEach(k => s.add(k)); return s; }, new Set())];
+  const cell = v => v==null ? '' : String(v).replace(/[\t\r\n]+/g, ' ').trim();
+  return [cols.join('\t'), ...items.map(o => cols.map(c => cell(o[c])).join('\t'))].join('\n');
+}
+function exportData(fmt){
+  const items = filteredItems;
+  if(!items || !items.length) return;
+  const scope = activeType || 'all';
+  const base = `atlas_${view === 'proto' ? 'protocols' : 'reagents'}_${scope}_${items.length}`;
+  if(fmt === 'jsonl') downloadBlob(base + '.jsonl', items.map(o => JSON.stringify(o)).join('\n'), 'application/x-ndjson');
+  else downloadBlob(base + '.tsv', toTSV(items), 'text/tab-separated-values');
+}
+function updateExportBar(){
+  const bar = $('export'); if(!bar) return;
+  bar.classList.toggle('disabled', !filteredItems.length);
+  const link = $('api-link');
+  if(link){
+    const tbl = view === 'proto' ? 'protocols' : 'reagents';
+    let url = `/atlas/${tbl}.json?_shape=array&_size=max`;
+    if(activeType) url += `&organoid_type__exact=${encodeURIComponent(activeType)}`;
+    link.href = url;
+  }
+}
 
 const TYPE_COLOR = {
   // Original 8
@@ -236,6 +285,7 @@ function render(resetPage = true){
   } else {
     btn.style.display = 'none';
   }
+  updateExportBar();
 }
 
 function loadMore(){
