@@ -34,9 +34,10 @@
   <div class="apa-kicker">Consensus recipes</div>
   <h1>The canonical recipe for each organoid system</h1>
   <p class="apa-sub">For every organoid type, how often each signaling factor appears across that
-  type's protocols — the <strong>core cocktail</strong> (≥50% of protocols) versus
+  type's protocols — the <strong>core cocktail</strong> (≥25% of protocols) versus
   <strong>variable</strong> additions. Each paper chip links to its DOI. Use the filter or jump-links
-  below to navigate to a specific system.</p>
+  below to navigate to a specific system. <span style="opacity:.8">(Prevalence is per canonical name;
+  unmerged variants such as Wnt3a/Wnt can split one factor's count.)</span></p>
 </div>
 
 <div id="typeNavWrap" style="display:none">
@@ -162,8 +163,14 @@ function typeAnchor(t){ return 'type-' + t.toLowerCase().replace(/[^a-z0-9]+/g,'
       return {c, k:d.pmcids.size, doses:d.doses, nums:d.nums, fig:d.fig, papers};
     }).sort((a,b)=>b.k-a.k || a.c.localeCompare(b.c));
 
-    const core = rows.filter(r=>r.k/n>=0.5);
-    const variable = rows.filter(r=>r.k/n<0.5);
+    // Core threshold is 0.25, not 0.5: across the 5,119-protocol corpus no single
+    // canonical factor reaches 50% prevalence (the top, R-spondin1 in intestinal,
+    // is ~49%), partly because canonical variants (Wnt3a/Wnt, R-spondin1/R-spondin)
+    // split a factor's count. 25% surfaces the established cocktails (e.g. intestinal
+    // R-spondin1/EGF/Noggin/Wnt3a) while keeping rare additions as variable.
+    const CORE_THRESHOLD = 0.25;
+    const core = rows.filter(r=>r.k/n>=CORE_THRESHOLD);
+    const variable = rows.filter(r=>r.k/n<CORE_THRESHOLD);
 
     const note = n<=1 ? `<span class="cons-warn">single protocol — not a consensus</span>`
                : n===2 ? `<span class="cons-warn">only ${n} protocols — provisional</span>`
