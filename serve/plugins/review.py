@@ -3,6 +3,7 @@ serve/plugins/review.py — Schema-agnostic structured-data annotation plugin.
 
 Routes:
   GET  /review/<pmcid>              — side-by-side review page
+  GET  /api/pmcview/<pmcid>         — PMC full text with evidence_quote highlights (JSON)
   POST /api/propose                 — submit an edit proposal (human or agent)
   GET  /api/proposals               — list proposals (?pmcid=, ?status=, ?field=)
   POST /api/proposals/<id>/accept   — accept a proposal (sets status=accepted)
@@ -21,9 +22,13 @@ the evidence_column that grounds each one.
 
 from __future__ import annotations
 
+import html
 import json
+import re
 import sqlite3
+import urllib.request
 import uuid
+import xml.etree.ElementTree as ET
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Optional
@@ -50,6 +55,19 @@ FIELD_META: dict[str, dict] = {
     "doi":               {"label": "DOI", "editable": False},
     "grounding_rate":    {"label": "Grounding rate", "editable": False},
 }
+
+# MIOR = Minimum Information about an Organoid Recipe
+# Fields that SHOULD be present in a complete protocol record
+MIOR_REQUIRED: list[dict] = [
+    {"field": "organoid_type",   "label": "type"},
+    {"field": "species",         "label": "species"},
+    {"field": "source_cell_type","label": "source cells"},
+    {"field": "matrix",          "label": "matrix"},
+    {"field": "base_media",      "label": "medium"},
+    {"field": "passaging",       "label": "passaging"},
+    {"field": "timeline",        "label": "timeline"},
+    {"field": "assay_endpoints", "label": "endpoints"},
+]
 
 PROPOSALS_DB_PATH = Path(__file__).resolve().parent.parent.parent / "data" / "proposals.db"
 
@@ -108,6 +126,105 @@ def _list_proposals(pmcid=None, status=None, field=None) -> list[dict]:
 
 
 # ---------------------------------------------------------------------------
+# PMC full-text fetch + highlight
+# ---------------------------------------------------------------------------
+
+def _fetch_pmc_text(pmcid: str) -> Optional[str]:
+    """Fetch full-text XML from PMC efetch, return concatenated body paragraphs."""
+    pmc_num = pmcid.replace("PMC", "")
+    url = (
+        f"https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi"
+        f"?db=pmc&id={pmc_num}&rettype=full&retmode=xml"
+    )
+    try:
+        req = urllib.request.Request(
+            url,
+            headers={"User-Agent": "OrganoidProtocolAtlas/1.0 (research tool)"},
+        )
+        with urllib.request.urlopen(req, timeout=15) as resp:
+            xml_bytes = resp.read()
+    except Exception:
+        return None
+
+    try:
+        root = ET.fromstring(xml_bytes)
+    except ET.ParseError:
+        return None
+
+    # Walk body/sec/p elements; collect text with section headings
+    parts: list[str] = []
+    for body in root.iter("body"):
+        for sec in body:
+            # Section title
+            title_el = sec.find("title")
+            if title_el is not None and title_el.text:
+                parts.append(f"\n## {title_el.text.strip()}\n")
+            # Paragraphs in this section (and subsections)
+            for p in sec.iter("p"):
+                # Flatten text including nested spans/italic/bold
+                text = "".join(p.itertext()).strip()
+                if text:
+                    parts.append(text)
+
+    return "\n\n".join(parts) if parts else None
+
+
+def _highlight_quotes(plain_text: str, quotes: list[dict]) -> str:
+    """
+    Given plain text and a list of {name, quote} dicts, return an HTML string
+    where each matched evidence_quote is wrapped in a <mark> tag.
+    Unmatched text is HTML-escaped.
+    """
+    # Build a list of (start, end, name) for all found quotes, non-overlapping
+    intervals: list[tuple[int, int, str]] = []
+    for q in quotes:
+        raw = q.get("quote", "") or ""
+        raw = raw.strip()
+        if len(raw) < 8:
+            continue
+        idx = plain_text.find(raw)
+        if idx == -1:
+            # Try case-insensitive
+            lo = plain_text.lower().find(raw.lower())
+            if lo == -1:
+                continue
+            idx = lo
+            raw = plain_text[idx: idx + len(raw)]
+        intervals.append((idx, idx + len(raw), q["name"]))
+
+    # Sort and de-overlap (keep first occurrence of overlapping spans)
+    intervals.sort(key=lambda x: x[0])
+    merged: list[tuple[int, int, str]] = []
+    prev_end = -1
+    for start, end, name in intervals:
+        if start >= prev_end:
+            merged.append((start, end, name))
+            prev_end = end
+
+    # Build HTML string
+    result_parts: list[str] = []
+    cursor = 0
+    for start, end, name in merged:
+        if cursor < start:
+            result_parts.append(html.escape(plain_text[cursor:start]))
+        span_text = html.escape(plain_text[start:end])
+        name_esc = html.escape(name, quote=True)
+        result_parts.append(
+            f'<mark class="ev-highlight" data-reagent="{name_esc}" '
+            f'title="{name_esc}">{span_text}</mark>'
+        )
+        cursor = end
+    if cursor < len(plain_text):
+        result_parts.append(html.escape(plain_text[cursor:]))
+
+    # Convert double-newlines to paragraph breaks for readable output
+    joined = "".join(result_parts)
+    joined = re.sub(r'\n## ([^\n]+)\n', r'<h3 class="pmc-sec-title">\1</h3>', joined)
+    joined = re.sub(r'\n\n+', '</p><p class="pmc-para">', joined)
+    return f'<p class="pmc-para">{joined}</p>'
+
+
+# ---------------------------------------------------------------------------
 # Route handlers
 # ---------------------------------------------------------------------------
 
@@ -145,15 +262,68 @@ async def review_page(scope, receive, send):
 
     proposals = _list_proposals(pmcid=pmcid)
 
+    # MIOR coverage: which required fields are present vs absent
+    mior_status = []
+    for m in MIOR_REQUIRED:
+        val = protocol.get(m["field"])
+        present = val is not None and val != "" and val != []
+        mior_status.append({**m, "present": present, "value": val})
+
     template = datasette.jinja_env.get_template("review.html")
-    html = template.render(
+    html_out = template.render(
         protocol=protocol,
         reagents=reagents,
         proposals=proposals,
         field_meta=FIELD_META,
         pmcid=pmcid,
+        mior_status=mior_status,
+        has_pmc=pmcid.startswith("PMC"),
     )
-    return Response.html(html)
+    return Response.html(html_out)
+
+
+async def api_pmcview(scope, receive, send):
+    """GET /api/pmcview/<pmcid> — fetch PMC full text, highlight evidence_quotes."""
+    pmcid = scope["url_route"]["kwargs"]["pmcid"]
+    datasette = scope["datasette"]
+
+    if not pmcid.startswith("PMC"):
+        return Response.json(
+            {"error": "no_pmc", "message": "PMC full text only available for PMC IDs"},
+            status=404,
+        )
+
+    # Get evidence quotes from DB
+    try:
+        result = await datasette.execute(
+            "atlas",
+            "SELECT name, canonical, evidence_quote FROM reagents "
+            "WHERE pmcid=? AND evidence_quote IS NOT NULL AND evidence_quote != ''",
+            [pmcid],
+        )
+        quotes = [
+            {"name": r[1] or r[0], "quote": r[2]}
+            for r in result.rows
+        ]
+    except Exception:
+        quotes = []
+
+    plain_text = _fetch_pmc_text(pmcid)
+    if plain_text is None:
+        return Response.json(
+            {"error": "fetch_failed", "message": "Could not retrieve PMC full text"},
+            status=502,
+        )
+
+    highlighted_html = _highlight_quotes(plain_text, quotes)
+    found = highlighted_html.count('class="ev-highlight"')
+
+    return Response.json({
+        "html": highlighted_html,
+        "found": found,
+        "total": len(quotes),
+        "pmcid": pmcid,
+    })
 
 
 async def api_protocol(scope, receive, send):
@@ -282,6 +452,7 @@ async def api_reject(scope, receive, send):
 def register_routes():
     return [
         (r"^/review/(?P<pmcid>[^/]+)$", review_page),
+        (r"^/api/pmcview/(?P<pmcid>[^/]+)$", api_pmcview),
         (r"^/api/protocol/(?P<pmcid>[^/]+)$", api_protocol),
         (r"^/api/propose$", api_propose),
         (r"^/api/proposals$", api_proposals),
