@@ -1,4 +1,4 @@
-{% extends "default:base.html" %}
+{% extends "base.html" %}
 
 {% block title %}Organoid Protocol Atlas{% endblock %}
 {% block body_class %}index{% endblock %}
@@ -8,8 +8,9 @@
   <span class="dot"></span> ORGANOID PROTOCOL ATLAS
   <span class="dot"></span> <a href="/explore">Explore</a>
   <span class="dot"></span> <a href="/figures">Figures</a>
-  <span class="dot"></span> <a href="/heatmap">Morphogen grammar</a>
+  <span class="dot"></span> <a href="/heatmap">Heatmap</a>
   <span class="dot"></span> <a href="/consensus">Consensus</a>
+  <span class="dot"></span> <a href="/dashboard">Dashboard</a>
   <span class="dot"></span> <a href="/ask">Ask</a>
   <span class="dot"></span> <a href="/llms.txt">llms.txt</a>
   <span class="dot"></span> <a href="https://github.com/rhowardstone/organoid-protocol-atlas">Source</a>
@@ -33,16 +34,83 @@
 </div>
 
 <div class="apa-stats">
-  <div class="apa-stat"><div class="n">5119</div><div class="l">public protocols</div></div>
-  <div class="apa-stat"><div class="n">43219</div><div class="l">public rows</div></div>
-  <div class="apa-stat"><div class="n">26</div><div class="l">organoid systems</div></div>
+  <div class="apa-stat"><div class="n">{{ public_counts.n_papers }}</div><div class="l">public protocols</div></div>
+  <div class="apa-stat"><div class="n">{{ public_counts.n_reagents }}</div><div class="l">public rows</div></div>
+  <div class="apa-stat"><div class="n">{{ public_counts.n_types or '26' }}</div><div class="l">organoid systems</div></div>
   <div class="apa-stat"><div class="n">CC</div><div class="l">public license filter</div></div>
   <div class="apa-stat"><div class="n">0</div><div class="l">full-text bodies</div></div>
   <div class="apa-stat"><div class="n">1</div><div class="l">agent guide at /llms.txt</div></div>
 </div>
 
+<section class="apa-typedist" aria-label="Protocols by organoid type">
+  <div class="apa-typedist-head">
+    <h2>Protocols by organoid type</h2>
+    <span class="apa-typedist-sub">live counts across {{ public_counts.n_types }} systems · browse any type below</span>
+  </div>
+  <figure id="type-chart" class="apa-typedist-chart" aria-hidden="true"></figure>
+  <details class="apa-typedist-table" open>
+    <summary>Show as data table</summary>
+    <table>
+      <thead><tr><th scope="col">Organoid type</th><th scope="col">Protocols</th></tr></thead>
+      <tbody>
+        {% for t in type_counts %}
+        <tr><td><a href="/explore?type={{ t.type|urlencode }}">{{ t.type }}</a></td><td>{{ t.count }}</td></tr>
+        {% else %}
+        <tr><td colspan="2">No protocols loaded yet.</td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </details>
+</section>
+
+<script>window.__TYPE_COUNTS__ = {{ type_counts|tojson }};</script>
+<script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6/dist/plot.umd.min.js" defer></script>
+<script defer>
+(function () {
+  var css = function (v, f) {
+    var c = getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+    return c || f;
+  };
+  function render() {
+    var data = (window.__TYPE_COUNTS__ || []).filter(function (d) { return d && d.count; });
+    var el = document.getElementById('type-chart');
+    if (!el || !data.length || typeof Plot === 'undefined' || typeof Plot.barX !== 'function') return;
+    el.replaceChildren();   // clear any prior render (e.g. on theme toggle)
+    var h = Math.min(300, 28 + data.length * 11);
+    var chart = Plot.plot({
+      height: h,
+      marginLeft: 118,
+      marginRight: 46,
+      marginTop: 6,
+      marginBottom: 22,
+      style: { background: 'transparent', color: css('--ink', '#0f172a'), fontFamily: css('--mono', 'monospace'), cursor: 'pointer' },
+      x: { axis: 'top', grid: true, label: 'protocols →', tickFormat: 's' },
+      y: { label: null },
+      marks: [
+        Plot.barX(data, { x: 'count', y: 'type', sort: { y: '-x' }, fill: css('--accent', '#0e7490'), rx: 2,
+          href: function (d) { return '/explore?type=' + encodeURIComponent(d.type); } }),
+        Plot.text(data, { x: 'count', y: 'type', text: function (d) { return d.count.toLocaleString(); }, dx: 5, textAnchor: 'start', fontSize: 10, fill: css('--muted', '#5b6b7b') }),
+        Plot.ruleX([0])
+      ]
+    });
+    chart.setAttribute('role', 'img');
+    chart.setAttribute('aria-label', 'Bar chart: protocol count per organoid type, largest first');
+    el.append(chart);
+    el.removeAttribute('aria-hidden');
+  }
+  window.addEventListener('load', function () {
+    render();
+    var det = document.querySelector('.apa-typedist-table');   // collapse table once chart is up
+    if (det && document.querySelector('#type-chart svg')) det.open = false;
+    // Re-render on theme toggle so axis/label colors follow the active theme.
+    new MutationObserver(render).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+  });
+})();
+</script>
+
 <div class="apa-cards">
-  <a class="apa-card" href="/atlas/protocols">
+  <a class="apa-card" href="/explore">
     <h3>Browse protocols -&gt;</h3>
     <p>One public recipe card per paper: cells, matrix, media, signaling cocktail with
     concentrations and evidence snippets. Faceted by organoid type, source cell, license.</p>
@@ -64,7 +132,7 @@
     <p>Natural-language questions retrieve grounded rows from the public knowledge graph. If
     a local model is attached, it synthesizes answers; otherwise the evidence rows are shown.</p>
   </a>
-  <a class="apa-card" href="/atlas/compare_reagent?reagent=CHIR99021">
+  <a class="apa-card" href="/explore?q=CHIR99021">
     <h3>Track one reagent -&gt;</h3>
     <p>See how a single factor, such as CHIR99021, EGF, or R-spondin, is used and dosed across
     every public protocol that includes it.</p>
@@ -74,15 +142,27 @@
     <p>A fast, bespoke search over every extracted reagent — filter by organoid type, kind,
     role, and grounding; each result links to its evidence and source DOI.</p>
   </a>
-  <a class="apa-card" href="/atlas/grounding_by_protocol">
+  <a class="apa-card" href="/explore">
     <h3>Grounding coverage -&gt;</h3>
     <p>How much of each public protocol's cocktail is evidence-grounded. The honest quality
     signal that drives where to improve next.</p>
   </a>
-  <a class="apa-card green" href="/atlas/protocols?gold_candidate=yes">
+  <a class="apa-card green" href="/explore">
     <h3>Gold candidates -&gt;</h3>
     <p>Public rows can be filtered for benchmark candidates, while human-verified gold
     evaluation remains a gated local workflow.</p>
+  </a>
+  <a class="apa-card" href="/trapi">
+    <h3>TRAPI / Biolink KG -&gt;</h3>
+    <p>The committed KGX graph is live-queryable via TRAPI 1.5: POST /trapi/query with a
+    single-hop Biolink message, or GET /trapi/meta_knowledge_graph for the schema. Every
+    node carries an SRI-resolved CURIE.</p>
+  </a>
+  <a class="apa-card" href="/dashboard">
+    <h3>Analytics dashboard -&gt;</h3>
+    <p>Corpus-level metrics in one page: grounding coverage, quality tier distribution,
+    MIOR completeness, top organoid systems, and assay clusters — all from committed,
+    reproducible pipeline artifacts.</p>
   </a>
 </div>
 
