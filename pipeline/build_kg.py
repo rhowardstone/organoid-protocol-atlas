@@ -22,12 +22,52 @@ from __future__ import annotations
 
 import csv
 import json
+import re
 import sqlite3
 import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from normalize import build_canon_map, canon_unit  # noqa: E402
+
+# qPCR/TaqMan assay IDs (e.g. "Hs00950669_m1") misclassified as culture reagents (#234) —
+# these are genes the paper MEASURED, not factors added to the culture; drop them.
+_TAQMAN_RE = re.compile(r"\b[A-Z]{2}\d{6,8}_[a-z0-9]+\b", re.I)
+
+
+def clean_year(y) -> str | None:
+    """Reject implausible extracted years (#225): protocols.io created_on epoch sliced to
+    '1715' etc. Keep only plausible publication years."""
+    try:
+        yi = int(str(y).strip()[:4])
+    except (ValueError, TypeError):
+        return None
+    return str(yi) if 1990 <= yi <= 2027 else None
+
+
+def select_reagents(items, canon_map):
+    """#234 drop qPCR/TaqMan assay IDs (measured genes, not added factors);
+    #235 dedup by canonical name within a protocol, keeping the dose-bearing mention.
+    Returns the chosen reagent dicts in first-appearance order."""
+    best: dict = {}
+    order: list = []
+    for r in items or []:
+        nm = r.get("name")
+        ev = r.get("evidence") or {}
+        if _TAQMAN_RE.search(ev.get("quote") or "") or _TAQMAN_RE.search(nm or ""):
+            continue
+        canon = canon_map.get(nm, nm)
+        key = (canon or "").strip().lower()
+        if not key:
+            continue
+        has_val = (r.get("concentration") or {}).get("value") is not None
+        if key in best:
+            if has_val and not best[key][1]:
+                best[key] = (r, has_val)
+            continue
+        best[key] = (r, has_val)
+        order.append(key)
+    return [best[k][0] for k in order]
 
 REPO = Path(__file__).resolve().parent.parent
 PRED = REPO / "data" / "predictions" / "local"
@@ -155,7 +195,7 @@ def main():
 
         def add_reagents(items, kind):
             nonlocal n_reagents
-            for r in items or []:
+            for r in select_reagents(items, canon_map):
                 conc = r.get("concentration") or {}
                 ev = r.get("evidence") or {}
                 cunit = canon_unit(conc.get("canonical_unit") or conc.get("unit"))
@@ -195,7 +235,7 @@ def main():
             "INSERT INTO protocols VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
             (pmcid, p.get("source_doi"), oty, sc.get("species"),
              sc.get("cell_type"), (p.get("matrix") or {}).get("name"), bm.get("name"),
-             bm.get("reporting"), cm.get("first_author"), cm.get("year"),
+             bm.get("reporting"), cm.get("first_author"), clean_year(cm.get("year")),
              cm.get("journal"), cm.get("license"), cm.get("gold_candidate"),
              len(sf), len(sup), n_conf, grounded, len(sf),
              round(grounded / len(sf), 3) if sf else None, p.get("extractor_version"),
