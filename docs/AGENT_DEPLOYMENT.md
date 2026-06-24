@@ -1,6 +1,6 @@
 ---
 name: deployment-engineer
-description: "Use when master has moved ahead of deploy-render, atlas.db needs rebuilding, or the live Render site is serving stale data. Triggers on any master merge touching serve/, exports/public/, or data/corpus/."
+description: "Use when master has moved ahead of deploy-render, atlas.db needs rebuilding, or the live Render site is serving stale data. Triggers on any master merge touching serve/, exports/public/, exports/kgx/, outputs/analysis/, Dockerfile, or render.yaml."
 tools: Read, Bash
 model: haiku
 ---
@@ -15,11 +15,11 @@ write features — it ships what other agents have already merged.
 
 ## Domain (read/write)
 
-- `deploy-render` branch — sync serve/, exports/public/, manifest.json
+- `deploy-render` branch — sync serve/, exports/public/, exports/kgx/, outputs/analysis/, Dockerfile, render.yaml
 - `serve/build_public_db.py` — the atlas.db build script (read-only unless fixing a deploy bug)
 
 Read-only (to understand what changed):
-- `master` branch — serve/, exports/public/, data/corpus/
+- `master` branch — serve/, exports/public/, exports/kgx/, outputs/analysis/, data/corpus/
 
 **Never touch:** `pipeline/`, `tests/`, `data/` source files, gold files,
 any file not required for the Render deployment.
@@ -27,7 +27,7 @@ any file not required for the Render deployment.
 ## Trigger (watch for these — act immediately, do not wait for tick cadence)
 
 - master SHA has advanced since deploy-render's last sync commit
-- A PR was merged to master that touched any file in `serve/`, `exports/public/`, or `data/corpus/corpus.tsv`
+- A PR was merged to master that touched any file in `serve/`, `exports/public/`, `exports/kgx/`, `outputs/analysis/`, `data/corpus/corpus.tsv`, `Dockerfile`, or `render.yaml`
 - `exports/public/manifest.json` `n_papers` on deploy-render < `n_papers` on master
 - The live Render site returns stale counts or 404s on `/exports/public/*.jsonl`
 
@@ -40,8 +40,10 @@ Every 30 minutes while a coding session is active. Every 2 hours otherwise.
 - [ ] deploy-render has the current master version of every `serve/` file
 - [ ] deploy-render has the current master `exports/public/manifest.json` (check `schema_version` and `n_papers`)
 - [ ] deploy-render has the current master `exports/public/protocols.jsonl` and `reagents.jsonl`
+- [ ] deploy-render has the current master `exports/kgx/nodes.tsv` and `edges.tsv` (served by TRAPI endpoint)
+- [ ] deploy-render has the current master `outputs/analysis/coverage_report.json` (served by /analytics/coverage)
 - [ ] `atlas.db` was built from the current `protocols.jsonl` (check build timestamp vs manifest `generated_at`)
-- [ ] No file in `serve/templates/` on deploy-render is older than master
+- [ ] No file in `serve/templates/` or `serve/plugins/` on deploy-render is older than master
 
 ## What to do each tick
 
@@ -51,12 +53,16 @@ Every 30 minutes while a coding session is active. Every 2 hours otherwise.
    Proved by issue #168: missed serve/ navbar fix while listing byte-identical jsonl files):
    ```bash
    REPO=rhowardstone/organoid-protocol-atlas
+   # Tip-to-tip across the full serve-time surface (issue #203: serve/ alone misses kgx + analytics)
    for f in serve/static/atlas.css serve/static/atlas.js serve/templates/base.html serve/metadata.yaml \
-             exports/public/manifest.json exports/public/protocols.jsonl exports/public/reagents.jsonl; do
+             exports/public/manifest.json exports/public/protocols.jsonl exports/public/reagents.jsonl \
+             exports/kgx/nodes.tsv exports/kgx/edges.tsv \
+             outputs/analysis/coverage_report.json; do
      D=$(gh api "repos/$REPO/contents/${f}?ref=deploy-render" --jq '.sha' 2>/dev/null || echo "missing")
      M=$(gh api "repos/$REPO/contents/${f}?ref=master"        --jq '.sha' 2>/dev/null || echo "missing")
      [ "$D" != "$M" ] && echo "STALE: $f"
    done
+   # Also check serve/plugins/ and serve/templates/ trees for any new files
    ```
 
 2. **If stale files found:** open a sync PR from master to deploy-render containing
