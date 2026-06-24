@@ -1,0 +1,85 @@
+<!doctype html><html><head><meta charset=utf-8><title>Organoid Protocol Atlas — recipe demo</title><style>
+*{box-sizing:border-box} body{font:15px/1.5 -apple-system,Segoe UI,Roboto,sans-serif;
+margin:0;background:#f6f7f9;color:#1a1f29} .wrap{max-width:820px;margin:0 auto;padding:28px}
+h1{font-size:22px;margin:0 0 4px} .sub{color:#5b6573;margin:0 0 24px}
+.card{background:#fff;border:1px solid #e3e7ed;border-radius:12px;padding:24px;margin:0 0 28px;
+box-shadow:0 1px 3px rgba(0,0,0,.05)} .hd{border-bottom:1px solid #eef0f3;padding-bottom:14px;margin-bottom:16px}
+.type{display:inline-block;background:#e8f0fe;color:#1a56db;font-weight:600;font-size:12px;
+text-transform:uppercase;letter-spacing:.04em;padding:3px 9px;border-radius:20px} h2{margin:8px 0 6px;font-size:20px}
+.cite{color:#5b6573;font-size:13px} .cite a{color:#1a56db;text-decoration:none} .lic{color:#0a7d33;font-weight:600}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 8px} .chips span{background:#f2f4f7;border-radius:8px;
+padding:6px 11px;font-size:13px} .chips b{color:#5b6573;font-weight:600;margin-right:4px}
+h3{font-size:14px;text-transform:uppercase;letter-spacing:.04em;color:#5b6573;margin:22px 0 10px}
+table{width:100%;border-collapse:collapse;font-size:14px} th{text-align:left;color:#5b6573;font-weight:600;
+border-bottom:2px solid #eef0f3;padding:6px 8px} td{border-bottom:1px solid #f2f4f7;padding:6px 8px}
+td.d{white-space:nowrap;font-variant-numeric:tabular-nums} td.k{color:#8a94a3;font-size:12px}
+.stages{list-style:none;padding:0;margin:0;counter-reset:s} .stages>li{border-left:2px solid #d7deea;
+padding:0 0 18px 18px;margin-left:10px;position:relative} .sh{display:flex;align-items:center;gap:10px}
+.sn{position:absolute;left:-13px;width:24px;height:24px;border-radius:50%;background:#1a56db;color:#fff;
+display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700} .day{margin-left:auto;
+color:#8a94a3;font-size:12px;white-space:nowrap} .meta{color:#5b6573;font-size:13px;margin:2px 0 6px}
+ul.reg{margin:6px 0;padding-left:18px} ul.reg li{margin:2px 0} .trans{color:#0a7d33;font-size:13px;margin:6px 0 0}
+.eps{display:flex;flex-wrap:wrap;gap:6px} .ep{background:#fff4e5;color:#9a5b00;border-radius:6px;padding:4px 9px;font-size:13px}
+.na{color:#b0b7c3;font-style:italic} .warn{background:#fff4e5;border:1px solid #f3d9a8;color:#9a5b00;
+border-radius:8px;padding:10px 12px;margin:0 0 14px;font-size:13px}
+</style></head><body><div class=wrap><h1>Recipe page — rendered from extracted data</h1><p class=sub>Demo of the /protocols/&lt;pmcid&gt; cookbook view (#178), rendered from exports/sample/cookbook_sample.json — real tier1 fields + v2 stages[]. 3 protocols.</p>
+<section class="card">
+  <div class="hd">
+    <span class="type">cerebral</span>
+    <h2>Cortical brain organoids protocol</h2>
+    <div class="cite">Kim 2023 &middot; Nanomaterials (Basel, Switzerland)
+      &middot; <a href="https://doi.org/10.3390/nano13050893">10.3390/nano13050893</a>
+      &middot; <span class="lic">CC-BY</span></div>
+  </div>
+  
+  <div class="chips"><span><b>From</b> iPSC KSCBi005 (human)</span>
+    <span><b>To</b> Cortical brain organoids</span>
+    <span><b>Matrix</b> GFR-Matrigel</span>
+    <span><b>Base media</b> Essential 8 medium</span></div>
+  <h3>Materials</h3>
+  <table><thead><tr><th>Reagent</th><th>Dose</th><th>Role</th><th>Class</th></tr></thead><tbody><tr><td>dorsomorphin</td><td class='d'>2.5&nbsp;µM</td><td>inhibitor</td><td class='k'>signaling factors</td></tr><tr><td>SB431542</td><td class='d'>10.0&nbsp;µM</td><td>inhibitor</td><td class='k'>signaling factors</td></tr><tr><td>ROCK inhibitor</td><td class='d'>50.0&nbsp;µM</td><td>inhibitor</td><td class='k'>signaling factors</td></tr><tr><td>bFGF</td><td class='d'>20.0&nbsp;ng/mL</td><td>growth factor</td><td class='k'>signaling factors</td></tr><tr><td>EGF</td><td class='d'>20.0&nbsp;ng/mL</td><td>growth factor</td><td class='k'>signaling factors</td></tr><tr><td>BDNF</td><td class='d'>20.0&nbsp;ng/mL</td><td>growth factor</td><td class='k'>signaling factors</td></tr><tr><td>NT3</td><td class='d'>20.0&nbsp;ng/mL</td><td>growth factor</td><td class='k'>signaling factors</td></tr><tr><td>GlutaMAX</td><td class='d'><span class="na">not reported</span></td><td></td><td class='k'>media supplements</td></tr><tr><td>B-27 Supplement without Vitamin A</td><td class='d'><span class="na">not reported</span></td><td></td><td class='k'>media supplements</td></tr></tbody></table>
+  <h3>Protocol &mdash; 9 stages</h3>
+  <ol class="stages"><li><div class='sh'><span class='sn'>1</span><b>Dissociation</b><span class='day'></span></div><p class='na'>no reagents added this stage</p><p class='trans'>→ Seeding</p></li><li><div class='sh'><span class='sn'>2</span><b>Seeding</b><span class='day'></span></div><div class=meta>ultralow-attachment 96-well plates</div><ul class='reg'><li>dorsomorphin &mdash; 2.5&nbsp;µM <em>(differentiation)</em></li><li>SB431542 &mdash; 10&nbsp;µM <em>(differentiation)</em></li><li>ROCK inhibitor &mdash; 50&nbsp;µM <em>(differentiation)</em></li></ul><p class='trans'>→ Medium Refresh</p></li><li><div class='sh'><span class='sn'>3</span><b>Medium Refresh</b><span class='day'></span></div><p class='na'>no reagents added this stage</p><p class='trans'>→ EB Formation</p></li><li><div class='sh'><span class='sn'>4</span><b>EB Formation</b><span class='day'>Day 5–10</span></div><p class='na'>no reagents added this stage</p><p class='trans'>→ Transfer to 60mm dish</p></li><li><div class='sh'><span class='sn'>5</span><b>Transfer to 60mm dish</b><span class='day'>Day 6+</span></div><div class=meta>Neurobasal-A &middot; 60 mm culture dishes</div><ul class='reg'><li>GlutaMAX &mdash; 1&nbsp;x <em>(supplement)</em></li><li>B-27 Supplement without Vitamin A &mdash; 1&nbsp;x <em>(supplement)</em></li><li>bFGF &mdash; 20&nbsp;ng/mL <em>(differentiation)</em></li><li>EGF &mdash; 20&nbsp;ng/mL <em>(differentiation)</em></li></ul><p class='trans'>→ Medium Replacement (Days 1-10)</p></li><li><div class='sh'><span class='sn'>6</span><b>Medium Replacement (Days 1-10)</b><span class='day'>Day 6–16</span></div><div class=meta>Neurobasal-A</div><p class='na'>no reagents added this stage</p><p class='trans'>→ Medium Replacement (Days 11-24)</p></li><li><div class='sh'><span class='sn'>7</span><b>Medium Replacement (Days 11-24)</b><span class='day'>Day 17–24</span></div><div class=meta>Neurobasal-A</div><p class='na'>no reagents added this stage</p><p class='trans'>→ BDNF/NT3 Supplementation</p></li><li><div class='sh'><span class='sn'>8</span><b>BDNF/NT3 Supplementation</b><span class='day'>Day 25–42</span></div><div class=meta>Neurobasal-A</div><ul class='reg'><li>BDNF &mdash; 20&nbsp;ng/mL <em>(differentiation)</em></li><li>NT3 &mdash; 20&nbsp;ng/mL <em>(differentiation)</em></li></ul><p class='trans'>→ Growth Factor Withdrawal</p></li><li><div class='sh'><span class='sn'>9</span><b>Growth Factor Withdrawal</b><span class='day'>Day 43+</span></div><div class=meta>Neurobasal-A</div><p class='na'>no reagents added this stage</p></li></ol>
+  <h3>Endpoints / readouts</h3>
+  <div class="eps"><span class='ep'>MTT assay</span><span class='ep'>RNA Extraction and Reverse Transcription PCR</span><span class='ep'>Western Blot Analysis</span><span class='ep'>Histology and Immunofluorescence</span><span class='ep'>ELISA</span><span class='ep'>Statistical Analysis</span></div>
+</section>
+<section class="card">
+  <div class="hd">
+    <span class="type">intestinal</span>
+    <h2>CM-CE monolayers protocol</h2>
+    <div class="cite">Salari 2023 &middot; International journal of molecular sciences
+      &middot; <a href="https://doi.org/10.3390/ijms24054266">10.3390/ijms24054266</a>
+      &middot; <span class="lic">CC-BY</span></div>
+  </div>
+  
+  <div class="chips"><span><b>From</b> adult_stem_cell (human)</span>
+    <span><b>To</b> CM-CE monolayers</span>
+    <span><b>Matrix</b> human collagen IV</span>
+    <span><b>Base media</b> EMEM</span></div>
+  <h3>Materials</h3>
+  <table><thead><tr><th>Reagent</th><th>Dose</th><th>Role</th><th>Class</th></tr></thead><tbody><tr><td>Y-27632</td><td class='d'>10.0&nbsp;µM</td><td>supplement</td><td class='k'>signaling factors</td></tr><tr><td>CHIR-99021</td><td class='d'>10.0&nbsp;µM</td><td>supplement</td><td class='k'>signaling factors</td></tr><tr><td>valproic acid</td><td class='d'>1.0&nbsp;mM</td><td>supplement</td><td class='k'>signaling factors</td></tr><tr><td>Noggin</td><td class='d'>10.0&nbsp;% (v/v) conditioned medium</td><td>supplement</td><td class='k'>signaling factors</td></tr><tr><td>FBS</td><td class='d'><span class="na">not reported</span></td><td></td><td class='k'>media supplements</td></tr><tr><td>non-essential amino acids</td><td class='d'><span class="na">not reported</span></td><td></td><td class='k'>media supplements</td></tr><tr><td>penicillin/streptomycin</td><td class='d'><span class="na">not reported</span></td><td></td><td class='k'>media supplements</td></tr><tr><td>L-WRN conditioned medium</td><td class='d'><span class="na">not reported</span></td><td></td><td class='k'>media supplements</td></tr><tr><td>PGE2</td><td class='d'><span class="na">not reported</span></td><td></td><td class='k'>media supplements</td></tr></tbody></table>
+  <h3>Protocol &mdash; 8 stages</h3>
+  <ol class="stages"><li><div class='sh'><span class='sn'>1</span><b>Colonoid expansion</b><span class='day'></span></div><div class=meta>EM &middot; 24-well plate</div><ul class='reg'><li>Y-27632 &mdash; 10&nbsp;µM <em>(proliferation)</em></li><li>CHIR-99021 &mdash; 10&nbsp;µM <em>(proliferation)</em></li><li>valproic acid &mdash; 1&nbsp;mM <em>(proliferation)</em></li></ul></li><li><div class='sh'><span class='sn'>2</span><b>Differentiation medium preparation</b><span class='day'></span></div><div class=meta>EM</div><ul class='reg'><li>Noggin conditioned medium &mdash; 10&nbsp;% <em>(differentiation)</em></li></ul></li><li><div class='sh'><span class='sn'>3</span><b>Transwell insert coating</b><span class='day'></span></div><div class=meta>Transwell inserts</div><ul class='reg'><li>human collagen IV solution &mdash; 10&nbsp;mg/cm2 <em>(coating)</em></li></ul></li><li><div class='sh'><span class='sn'>4</span><b>Colonoid seeding</b><span class='day'></span></div><div class=meta>advanced DMEM F12 &middot; Transwell inserts</div><p class='na'>no reagents added this stage</p></li><li><div class='sh'><span class='sn'>5</span><b>3D colonoid fragment generation</b><span class='day'></span></div><div class=meta>advanced DMEM F12</div><ul class='reg'><li>trypsin-EDTA &mdash; 0.02&nbsp;% <em>(fragmentation)</em></li></ul></li><li><div class='sh'><span class='sn'>6</span><b>Coculture</b><span class='day'></span></div><div class=meta>EM &middot; 24-well plate</div><p class='na'>no reagents added this stage</p></li><li><div class='sh'><span class='sn'>7</span><b>Maturation</b><span class='day'>Day 4+</span></div><div class=meta>EM &middot; 24-well plate</div><p class='na'>no reagents added this stage</p></li><li><div class='sh'><span class='sn'>8</span><b>Monolayer formation</b><span class='day'></span></div><p class='na'>no reagents added this stage</p></li></ol>
+  <h3>Endpoints / readouts</h3>
+  <div class="eps"><span class='ep'>TEER measurement</span><span class='ep'>Fluorometric Measurements (NHE activity)</span><span class='ep'>Immunofluorescence Imaging</span><span class='ep'>Immunohistochemical Analysis</span><span class='ep'>RT-qPCR Analysis</span><span class='ep'>SDS-PAGE and Western Blot</span></div>
+</section>
+<section class="card">
+  <div class="hd">
+    <span class="type">tumor</span>
+    <h2>tumoroids protocol</h2>
+    <div class="cite">Jehl 2023 &middot; Cells
+      &middot; <a href="https://doi.org/10.3390/cells12050733">10.3390/cells12050733</a>
+      &middot; <span class="lic">CC-BY</span></div>
+  </div>
+  
+  <div class="chips"><span><b>From</b> primary_tissue</span>
+    <span><b>To</b> tumoroids</span>
+    <span><b>Matrix</b> Cultrex UltiMatrix reduced growth factor basement membrane Extract</span>
+    <span><b>Base media</b> DMEM/F12</span></div>
+  <h3>Materials</h3>
+  <table><thead><tr><th>Reagent</th><th>Dose</th><th>Role</th><th>Class</th></tr></thead><tbody><tr><td>Y-27632</td><td class='d'>10.0&nbsp;µM</td><td></td><td class='k'>signaling factors</td></tr><tr><td>Capsofungin</td><td class='d'>0.5&nbsp;µg/mL</td><td></td><td class='k'>signaling factors</td></tr><tr><td>B27 supplement</td><td class='d'><span class="na">not reported</span></td><td></td><td class='k'>signaling factors</td></tr><tr><td>N-acetyl-L-cysteine</td><td class='d'>1.25&nbsp;mM</td><td></td><td class='k'>signaling factors</td></tr><tr><td>Nicotinamide</td><td class='d'>10.0&nbsp;mM</td><td></td><td class='k'>signaling factors</td></tr><tr><td>human EGF</td><td class='d'>50.0&nbsp;ng/mL</td><td></td><td class='k'>signaling factors</td></tr><tr><td>human FGF10</td><td class='d'>10.0&nbsp;ng/mL</td><td></td><td class='k'>signaling factors</td></tr><tr><td>human FGF2</td><td class='d'>5.0&nbsp;ng/mL</td><td></td><td class='k'>signaling factors</td></tr><tr><td>Prostaglandin E2</td><td class='d'>1.0&nbsp;µM</td><td></td><td class='k'>signaling factors</td></tr><tr><td>Forskolin</td><td class='d'>1.0&nbsp;µM</td><td></td><td class='k'>signaling factors</td></tr><tr><td>RSPO3-Fc fusion protein</td><td class='d'>4.0&nbsp;%</td><td></td><td class='k'>signaling factors</td></tr><tr><td>Noggin-Fc fusion protein</td><td class='d'>4.0&nbsp;%</td><td></td><td class='k'>signaling factors</td></tr><tr><td>ultra-glutamine</td><td class='d'><span class="na">not reported</span></td><td></td><td class='k'>media supplements</td></tr><tr><td>sodium pyruvate</td><td class='d'><span class="na">not reported</span></td><td></td><td class='k'>media supplements</td></tr><tr><td>heat-inactivated FBS</td><td class='d'><span class="na">not reported</span></td><td></td><td class='k'>media supplements</td></tr><tr><td>HEPES</td><td class='d'><span class="na">not reported</span></td><td></td><td class='k'>media supplements</td></tr><tr><td>hydrocortisone</td><td class='d'><span class="na">not reported</span></td><td></td><td class='k'>media supplements</td></tr><tr><td>methylcellulose</td><td class='d'><span class="na">not reported</span></td><td></td><td class='k'>media supplements</td></tr><tr><td>Pen/Strep</td><td class='d'><span class="na">not reported</span></td><td></td><td class='k'>media supplements</td></tr></tbody></table>
+  <h3>Protocol &mdash; 1 stages</h3>
+  <ol class="stages"><li><div class='sh'><span class='sn'>1</span><b>tumoroid extraction and culture</b><span class='day'></span></div><div class=meta>24-well plates</div><ul class='reg'><li>DMEM/F12 &mdash; <span class="na">not reported</span> <em>(medium)</em></li><li>GlutaMax &mdash; <span class="na">not reported</span> <em>(supplement)</em></li><li>Penicilin/streptomycin &mdash; <span class="na">not reported</span> <em>(supplement)</em></li><li>HEPES &mdash; 10&nbsp;mM <em>(supplement)</em></li><li>Y-27632 &mdash; 10&nbsp;µM <em>(supplement)</em></li><li>Capsofungin &mdash; 0.5&nbsp;µg/mL <em>(supplement)</em></li><li>B27 supplement &mdash; 1×&nbsp; <em>(supplement)</em></li><li>N-acetyl-L-cysteine &mdash; 1.25&nbsp;mM <em>(supplement)</em></li><li>Nicotinamide &mdash; 10&nbsp;mM <em>(supplement)</em></li><li>A83-01 &mdash; 500&nbsp;nM <em>(supplement)</em></li><li>CHIR99021 &mdash; 0.3&nbsp;µM <em>(supplement)</em></li><li>human EGF &mdash; 50&nbsp;ng/mL <em>(supplement)</em></li><li>human FGF10 &mdash; 10&nbsp;ng/mL <em>(supplement)</em></li><li>human FGF2 &mdash; 5&nbsp;ng/mL <em>(supplement)</em></li><li>Prostaglandin E2 &mdash; 1&nbsp;µM <em>(supplement)</em></li><li>Forskolin &mdash; 1&nbsp;µM <em>(supplement)</em></li><li>RSPO3-Fc fusion protein conditioned medium &mdash; 4%&nbsp; <em>(supplement)</em></li><li>Noggin-Fc fusion protein conditioned medium &mdash; 4%&nbsp; <em>(supplement)</em></li><li>Cultrex UltiMatrix reduced growth factor basement membrane Extract &mdash; 70%&nbsp; <em>(supplement)</em></li></ul></li></ol>
+  <h3>Endpoints / readouts</h3>
+  <div class="eps"><span class='ep'>Western blot</span><span class='ep'>ELISA</span><span class='ep'>qPCR/RT-PCR</span><span class='ep'>immunofluorescence/histology</span><span class='ep'>imaging</span><span class='ep'>sequencing</span><span class='ep'>viability/MTT</span><span class='ep'>TEER measurement</span><span class='ep'>flow cytometry</span><span class='ep'>clonogenic survival</span><span class='ep'>metabolic assays</span><span class='ep'>intracellular Fe 2+ accumulation</span><span class='ep'>detection of lipid peroxides</span></div>
+</section></div></body></html>
