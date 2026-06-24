@@ -45,10 +45,18 @@ Every 30 minutes while a coding session is active. Every 2 hours otherwise.
 
 ## What to do each tick
 
-1. **Compare master vs deploy-render** for all files in `serve/` and `exports/public/`:
+1. **Compare master vs deploy-render — tip-to-tip file SHA check** (do NOT use
+   `compare/deploy-render...master` — three-dot compares merge-base→master, producing
+   false positives and false negatives whenever deploy-render has received direct commits.
+   Proved by issue #168: missed serve/ navbar fix while listing byte-identical jsonl files):
    ```bash
-   gh api repos/rhowardstone/organoid-protocol-atlas/compare/deploy-render...master \
-     --jq '[.files[] | select(.filename | test("^(serve|exports/public)/")) | .filename]'
+   REPO=rhowardstone/organoid-protocol-atlas
+   for f in serve/static/atlas.css serve/static/atlas.js serve/templates/base.html serve/metadata.yaml \
+             exports/public/manifest.json exports/public/protocols.jsonl exports/public/reagents.jsonl; do
+     D=$(gh api "repos/$REPO/contents/${f}?ref=deploy-render" --jq '.sha' 2>/dev/null || echo "missing")
+     M=$(gh api "repos/$REPO/contents/${f}?ref=master"        --jq '.sha' 2>/dev/null || echo "missing")
+     [ "$D" != "$M" ] && echo "STALE: $f"
+   done
    ```
 
 2. **If stale files found:** open a sync PR from master to deploy-render containing
