@@ -241,9 +241,23 @@ def test_discover_data_route_registered():
 
 
 def test_public_view_pages_exist():
-    """New public view pages must exist as templates so the routes they back can't
-    silently 500/404: compare (PR #186) and discover (PR #202)."""
-    for page in ("compare.html", "discover.html"):
+    """Every public view page linked from the navbar must exist as a template so the
+    route it backs can't silently 500/404. Datasette serves templates/pages/<name>.html
+    at /<name>, so a missing template means a dead nav link. Guards all 8 page-backed
+    navbar routes (the navbar also links /trapi, served by a plugin not a page template).
+    Previously only compare (PR #186) and discover (PR #202) were guarded; explore is the
+    canonical human browse view (human_redirect.py redirects raw Datasette pages to it,
+    enhanced in PR #214) and was unguarded — extended to the full set."""
+    for page in (
+        "ask.html",
+        "compare.html",
+        "consensus.html",
+        "dashboard.html",
+        "discover.html",
+        "explore.html",
+        "figures.html",
+        "heatmap.html",
+    ):
         assert (ROOT / "serve" / "templates" / "pages" / page).exists(), (
             f"public view page serve/templates/pages/{page} is missing"
         )
