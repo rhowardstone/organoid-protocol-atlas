@@ -41,6 +41,7 @@ BUNDLES = REPO / "data" / "evidence_bundles" / "local"
 CORPUS = REPO / "data" / "corpus" / "corpus.tsv"
 CAND_PRE = REPO / "data" / "corpus" / "incoming" / "organoid_corpus_candidates_preprints.csv"
 CAND_PIO = REPO / "data" / "corpus" / "incoming" / "organoid_corpus_candidates_protocols_io.csv"
+INCOMING = REPO / "data" / "corpus" / "incoming"
 BIORXIV_DETAILS = "https://api.biorxiv.org/details/biorxiv"
 
 CORPUS_COLS = ["organoid_type", "doi", "pmcid", "first_author", "year", "journal",
@@ -67,16 +68,27 @@ def norm_license(lic: str | None, source: str) -> str:
         "cc_by": "CC-BY", "cc-by": "CC-BY", "cc0": "CC0", "cc_by_sa": "CC-BY-SA",
         "cc_by_nc": "CC-BY-NC", "cc_by_nc_nd": "CC-BY-NC-ND", "cc_by_nd": "CC-BY-ND",
     }
+    if source == "openalex":
+        # fetch_openalex_jats already normalized the license (CC-BY / CC0 / CC-BY-NC / ...);
+        # pass it through so is_public_license can gate it directly.
+        return (lic or "").strip() or "openalex-oa"
     return mapping.get(s, "preprint-no-redistribution" if s in ("", "preprint", "cc_no", "none") else s.upper())
 
 
+def _pmc(k: str) -> str:
+    k = (k or "").strip()
+    return k if k.startswith("PMC") or not k else "PMC" + k
+
+
 def load_candidate_meta() -> dict:
+    """pmcid -> candidate row, across preprint/protocols.io and every openalex_candidates_*.csv."""
     meta = {}
-    for path in (CAND_PRE, CAND_PIO):
+    paths = [CAND_PRE, CAND_PIO] + sorted(INCOMING.glob("openalex_candidates_*.csv"))
+    for path in paths:
         if not path.exists():
             continue
         for r in csv.DictReader(path.open()):
-            meta[r.get("pmcid", "")] = r
+            meta[_pmc(r.get("pmcid", ""))] = r
     return meta
 
 
@@ -123,8 +135,23 @@ def main() -> int:
     corpus_dois = {norm_doi(r.get("doi")) for r in corpus_rows if norm_doi(r.get("doi"))}
     cand = load_candidate_meta()
 
+    # OpenAlex PMC-keyed bundles are identified by their "discovery" field (set by
+    # fetch_openalex_jats); only those PMC predictions are new ingest (others are corpus).
+    openalex_pmc = set()
+    for p in PRED.glob("PMC*.json"):
+        if p.stem in corpus_pmcids:
+            continue
+        bp = BUNDLES / f"{p.stem}.json"
+        if bp.exists():
+            try:
+                if str(json.loads(bp.read_text()).get("discovery", "")).startswith("openalex"):
+                    openalex_pmc.add(p.stem)
+            except Exception:  # noqa: BLE001
+                pass
+
     keys = sorted([p.stem for p in PRED.glob("BIORXIV_*.json")]
-                  + [p.stem for p in PRED.glob("PROTOCOLSIO_*.json")])
+                  + [p.stem for p in PRED.glob("PROTOCOLSIO_*.json")]
+                  + list(openalex_pmc))
     keys = [k for k in keys if k not in corpus_pmcids]  # idempotent
 
     accepted, rej = [], {"thin(<2 reagents)": 0, "ungrounded(0 quotes)": 0,
@@ -132,10 +159,12 @@ def main() -> int:
                          "dup_within_new": 0, "no_bundle": 0}
     seen_new_dois: set[str] = set()
     pub_cache: dict = {}
-    counts = {"biorxiv": {"seen": 0, "acc": 0}, "protocols_io": {"seen": 0, "acc": 0}}
+    counts = {"biorxiv": {"seen": 0, "acc": 0}, "protocols_io": {"seen": 0, "acc": 0},
+              "openalex": {"seen": 0, "acc": 0}}
 
     for k in keys:
-        source = "biorxiv" if k.startswith("BIORXIV_") else "protocols_io"
+        source = ("biorxiv" if k.startswith("BIORXIV_")
+                  else "protocols_io" if k.startswith("PROTOCOLSIO_") else "openalex")
         counts[source]["seen"] += 1
         bp = BUNDLES / f"{k}.json"
         if not bp.exists():
@@ -172,7 +201,8 @@ def main() -> int:
             "pmcid": k,
             "first_author": cm.get("first_author", ""),
             "year": cm.get("year", ""),
-            "journal": cm.get("journal") or ("bioRxiv" if source == "biorxiv" else "protocols.io"),
+            "journal": cm.get("journal") or {"biorxiv": "bioRxiv", "protocols_io": "protocols.io",
+                                              "openalex": "organ-on-chip (OA)"}.get(source, ""),
             "species": sc.get("species") or cm.get("species", ""),
             "source_cell_type": sc.get("cell_type") or "",
             "license": norm_license(bundle.get("license"), source),
@@ -190,7 +220,8 @@ def main() -> int:
     print(f"candidates considered: {len(keys)} (not already in corpus)")
     print(f"ACCEPTED: {len(accepted)}  "
           f"[bioRxiv {counts['biorxiv']['acc']}/{counts['biorxiv']['seen']}, "
-          f"protocols.io {counts['protocols_io']['acc']}/{counts['protocols_io']['seen']}]")
+          f"protocols.io {counts['protocols_io']['acc']}/{counts['protocols_io']['seen']}, "
+          f"openalex {counts['openalex']['acc']}/{counts['openalex']['seen']}]")
     print("REJECTED:", {k: v for k, v in rej.items() if v})
     pub_n = sum(1 for r in accepted
                 if r["license"].upper().startswith(("CC-BY", "CC0"))
