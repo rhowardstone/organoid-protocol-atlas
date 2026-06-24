@@ -140,8 +140,15 @@ function updateExportBar(){
   const link = $('api-link');
   if(link){
     const tbl = view === 'proto' ? 'protocols' : 'reagents';
-    let url = `/atlas/${tbl}.json?_shape=array&_size=max`;
-    if(activeType) url += `&organoid_type__exact=${encodeURIComponent(activeType)}`;
+    // Unfiltered reagents exceed the Datasette row cap → link the uncapped
+    // static JSONL export so "API" never hands back a silently truncated set.
+    let url;
+    if(tbl === 'reagents' && !activeType){
+      url = '/exports/public/reagents.jsonl';
+    } else {
+      url = `/atlas/${tbl}.json?_shape=array&_size=max`;
+      if(activeType) url += `&organoid_type__exact=${encodeURIComponent(activeType)}`;
+    }
     link.href = url;
   }
 }
@@ -196,14 +203,46 @@ let query = '';
 let protos = [], reagents = [];
 let protosByPmcid = {};        // pmcid → protocol
 let signaling = {};            // pmcid → [canonical, ...]
+let manifest = {};             // authoritative corpus counts (uncapped)
+let reagentsLoaded = false, reagentsLoading = false, reagentsError = false;
 const PAGE_SIZE = 24;
 let page = 0;
 let filteredItems = [];
 
-function setView(v){
+// The Datasette JSON API is row-capped (max_returned_rows); the corpus has far
+// more reagents than that cap, so the full reagent set is loaded once from the
+// uncapped static JSONL export — lazily, only when the Reagents view is opened,
+// to keep the default Protocols view fast. Loading it also lets us rebuild the
+// complete per-protocol signaling map (the boot fetch is capped, so factor pills
+// can otherwise be incomplete for protocols past the cap).
+async function ensureReagents(){
+  if(reagentsLoaded || reagentsLoading) return;
+  reagentsLoading = true; incPending();
+  try {
+    const txt = await (await fetch('/exports/public/reagents.jsonl')).text();
+    reagents = txt.split('\n').filter(Boolean).map(l => JSON.parse(l));
+    const sig = {};
+    for(const r of reagents){
+      if(r.kind === 'signaling' && r.pmcid && r.canonical)
+        (sig[r.pmcid] = sig[r.pmcid] || []).push(r.canonical);
+    }
+    signaling = sig;             // complete map replaces the capped boot map
+    reagentsLoaded = true;
+  } catch(e){
+    reagentsError = true;       // surfaced honestly in render(), not silently swallowed
+  } finally {
+    reagentsLoading = false; decPending();
+  }
+}
+
+async function setView(v){
   view = v;
   $('tab-proto').classList.toggle('active', v==='proto');
   $('tab-reagent').classList.toggle('active', v==='reagent');
+  if(v === 'reagent' && !reagentsLoaded){
+    render();                    // show the loading state immediately
+    await ensureReagents();
+  }
   render();
 }
 
@@ -265,6 +304,16 @@ function render(resetPage = true){
     g.innerHTML = shown.length
       ? shown.map((p,i) => protoCard(p,i)).join('')
       : '<div class="exp-empty">No protocols match.</div>';
+  } else if(!reagentsLoaded){
+    const total = (manifest.tables && manifest.tables.reagents) || '';
+    filteredItems = [];
+    cnt.innerHTML = '';
+    g.innerHTML = reagentsError
+      ? `<div class="exp-empty">Couldn't load the reagent set. Fetch it directly: <a href="/exports/public/reagents.jsonl">reagents.jsonl</a>.</div>`
+      : `<div class="exp-empty">Loading the full reagent set${total?` (${Number(total).toLocaleString()} rows)`:''}…</div>`;
+    btn.style.display = 'none';
+    updateExportBar();
+    return;
   } else {
     filteredItems = reagents
       .filter(r => !activeType || r.organoid_type===activeType)
@@ -370,15 +419,19 @@ function reagentCard(r, i){
 // ── Boot ──
 (async () => {
   const j = async u => { incPending(); try { return await (await fetch(u)).json(); } finally { decPending(); } };
-  const [p, r, s] = await Promise.all([
+  // Protocols (5k, under the API row cap → complete) + the manifest for
+  // authoritative uncapped counts + a first pass at the signaling map for
+  // factor pills. The full reagent set loads lazily on the Reagents tab.
+  const [p, s, m] = await Promise.all([
     j('/atlas/protocols.json?_shape=array&_size=max'),
-    j('/atlas/reagents.json?_shape=array&_size=max'),
     j('/atlas/reagents.json?_shape=array&_size=max&kind__exact=signaling'),
+    j('/exports/public/manifest.json'),
   ]);
   protos = p || [];
-  reagents = r || [];
+  manifest = m || {};
 
-  // Build signaling factor map: pmcid → [canonical, ...]
+  // Build signaling factor map: pmcid → [canonical, ...] (capped boot pass;
+  // ensureReagents() rebuilds it completely once the Reagents tab is opened).
   for(const row of (s||[])){
     if(!row.pmcid || !row.canonical) continue;
     (signaling[row.pmcid] = signaling[row.pmcid] || []).push(row.canonical);
@@ -386,11 +439,15 @@ function reagentCard(r, i){
 
   for(const proto of protos) protosByPmcid[proto.pmcid] = proto;
 
-  // Update hero description with live corpus counts
-  const nTypes = new Set(protos.map(p => p.organoid_type).filter(Boolean)).size;
+  // Hero counts come from the generated manifest (authoritative, never row-capped).
+  const tbl = manifest.tables || {};
+  const nProtocols = tbl.protocols || protos.length;
+  const nReagents = tbl.reagents;
+  const nTypes = manifest.n_types || new Set(protos.map(p => p.organoid_type).filter(Boolean)).size;
   const desc = document.getElementById('hero-desc');
   if (desc) {
-    desc.textContent = `${protos.length.toLocaleString()} evidence-grounded organoid protocols across ${nTypes} systems, with ${reagents.length.toLocaleString()} annotated reagent rows — each value backed by a verbatim quote and DOI.`;
+    const reagentClause = nReagents != null ? `, with ${Number(nReagents).toLocaleString()} annotated reagent rows` : '';
+    desc.textContent = `${Number(nProtocols).toLocaleString()} evidence-grounded organoid protocols across ${nTypes} systems${reagentClause} — each value backed by a verbatim quote and DOI.`;
   }
 
   buildChips();

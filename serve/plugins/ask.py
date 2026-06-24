@@ -123,8 +123,8 @@ For full-table streaming with no row cap, append ?_stream=1 to the CSV URL:
 
 - /analytics/summary          high-level corpus stats, quality distribution, top types
 - /analytics/coverage         per-type corpus coverage and completeness (grounding rate, MIOR)
-- /analytics/coverage/{type}  coverage for one organoid type (e.g. /analytics/coverage/kidney)
-- /analytics/consensus/{type} consensus concentrations and reagents for one type
+- /analytics/coverage/{{type}}  coverage for one organoid type (e.g. /analytics/coverage/kidney)
+- /analytics/consensus/{{type}} consensus concentrations and reagents for one type
 - /analytics/quality          per-paper quality scores (gold / silver / bronze tiers)
 - /analytics/mior             MIOR completeness report (12-item, 5-module per paper)
 - /analytics/reagent?q=EGF             cross-corpus reagent lookup with concentrations and evidence quotes
@@ -178,7 +178,14 @@ For full-table streaming with no row cap, append ?_stream=1 to the CSV URL:
 - /analytics/candidates                OA/license verification status of the candidate pool
 - /analytics/within-type-dose-range   intra-type fold-range per canonical × organoid type: min/max/fold_range ranked by dose disagreement (e.g. FGF2 kidney 6-200 ng/mL = 33×); ?q= ?type= ?unit= ?min_n=
 - /analytics/convergence-leaders      canonicals ranked by temporal CV trend: converging (dose consensus emerging) vs diverging; ?min_years= ?min_n= thresholds; surfaces BMP4 retinal-style success stories
+- /analytics/compare/{{pmcid_a}}/{{pmcid_b}}  protocol diff between two papers (e.g. /analytics/compare/PMC1234567/PMC7654321): shared / only-A / only-B signaling+small-molecule factors with doses and grounding; loads cached result or computes on demand
+- /analytics/substitutions?q=Matrigel  search ProtocolModification records for reagent substitutions involving a term; ?to= for a specific replacement; ?type= to filter by organoid type
+- /analytics/status                    live service health check: corpus/artifact/consensus/manifest presence and freshness; HTTP 200 when healthy, 503 when degraded (pairs with the deployment note above)
 - /analytics                           index of all analytics endpoints with generate commands
+
+## Candidate-factor discovery
+
+- /discover-data.json  evidence-based cross-type transfer: for each organoid type, its established signaling recipe backbone (top factors by prevalence) plus candidate factors that are well established in the most similar types but under-used here, each scored by Σ similarity×prevalence with per-neighbour support. Hypotheses for new protocols, not validated recommendations. Powers the /discover view.
 
 ## TRAPI (Translator Reasoner API 1.5)
 
