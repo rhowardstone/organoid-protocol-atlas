@@ -135,7 +135,7 @@ function renderSug(side){
     const c = typeColor(p.organoid_type||'');
     return `<div class="cmp-sug-item" data-pmcid="${esc(p.pmcid)}" onclick="pick('${side}','${esc(p.pmcid)}')">
       <span class="sa-type" style="background:${c}">${esc(p.organoid_type||'?')}</span>
-      ${esc(p.first_author||'?')} ${esc(p.year||'')}
+      ${esc(AtlasCite.label(p))}
       <span class="sa-meta">· ${esc(p.journal||'')} · ${esc(p.pmcid)}</span>
     </div>`;
   }).join('');
@@ -144,7 +144,7 @@ function renderSug(side){
 function pick(side, pmcid){
   state[side] = pmcid;
   const p = byPmcid[pmcid];
-  $('pick-'+side).value = p ? `${p.first_author||'?'} ${p.year||''} · ${pmcid}` : pmcid;
+  $('pick-'+side).value = p ? `${AtlasCite.label(p)} · ${pmcid}` : pmcid;
   $('sug-'+side).classList.remove('open');
   syncURL();
   renderCompare();
@@ -223,8 +223,8 @@ async function renderCompare(){
     const c = typeColor(p.organoid_type||'');
     return `<div class="cmp-col-head">
       <span class="ctype" style="background:${c}">${esc(p.organoid_type||'?')}</span>
-      <h3><a href="/atlas/protocols/${esc(p.pmcid)}">${esc(p.first_author||'?')} ${esc(p.year||'')} →</a></h3>
-      <div class="cmeta">${esc(p.journal||'')} · ${p.doi?`<a href="https://doi.org/${esc(p.doi)}" target="_blank" rel="noopener">${esc(p.doi)}</a>`:esc(p.pmcid)}</div>
+      <h3><a href="/atlas/protocols/${esc(p.pmcid)}">${esc(AtlasCite.label(p))} →</a></h3>
+      <div class="cmeta">${esc(p.journal||'')} · ${AtlasCite.cleanDoi(p.doi)?`<a href="${esc(AtlasCite.href(p))}" target="_blank" rel="noopener">${esc(AtlasCite.cleanDoi(p.doi))}</a>`:esc(p.pmcid)}</div>
     </div>`;
   };
 

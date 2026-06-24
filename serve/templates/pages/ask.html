@@ -80,7 +80,7 @@ async function ask(q){
         <div class="src-head"><a href="/atlas/protocols/${esc(s.pmcid)}">${esc(s.reagent)}</a>${fig}
           <span class="src-meta">${esc(s.organoid_type)}${dose?' - '+esc(dose):''} - ${esc(s.pmcid)}</span></div>
         ${s.quote?`<div class="src-quote">"${esc(s.quote)}"</div>`:''}
-        ${s.doi?`<a class="src-doi" href="https://doi.org/${esc(s.doi)}" target="_blank" rel="noopener">${esc(s.doi)}</a>`:''}
+        ${AtlasCite.cleanDoi(s.doi)?`<a class="src-doi" href="${esc(AtlasCite.href(s))}" target="_blank" rel="noopener">${esc(AtlasCite.cleanDoi(s.doi))}</a>`:''}
       </div>`;
     }
     html += `</div>`;

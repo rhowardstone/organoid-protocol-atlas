@@ -84,7 +84,7 @@ function card(f){
         ${f.is_protocol_schematic?'<span class="apa-fg-type" style="color:var(--accent-2)">schematic</span>':''}</div>
       ${f.caption?`<div class="apa-fg-cap" onclick="this.classList.toggle('open')">${esc(f.caption)}</div>`:''}
       ${facs?`<div class="apa-fg-fac"><span class="t">📷 confirmed</span>${facs}</div>`:''}
-      <a class="apa-fg-doi" href="https://doi.org/${esc(f.doi)}" target="_blank" rel="noopener">${esc(f.doi)}</a>
+      ${AtlasCite.cleanDoi(f.doi)?`<a class="apa-fg-doi" href="${esc(AtlasCite.href(f))}" target="_blank" rel="noopener">${esc(AtlasCite.cleanDoi(f.doi))}</a>`:''}
     </div></div>`;
 }
 function render(){
