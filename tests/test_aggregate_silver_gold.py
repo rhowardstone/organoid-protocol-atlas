@@ -80,20 +80,15 @@ def test_main_aggregates_precision_recall_and_taxonomy(monkeypatch, tmp_path, ca
     assert summary["papers"] == ["PMC1", "PMC2"]
 
 
-@pytest.mark.xfail(reason="bug #171: print() crashes on None precision for empty/zero-checked "
-                          "silver dir; remove this marker when the Pipeline engineer fixes it",
-                   raises=TypeError, strict=True)
 def test_main_empty_dir_yields_null_precision(monkeypatch, tmp_path):
-    """DESIRED behaviour: no silver files → zero papers, null precision, no crash.
-    Currently xfails because main()'s final print can't format a None precision (#171).
-    The summary JSON is written correctly before the crash; only the process exit is wrong."""
+    """No silver files → zero papers, null precision, no crash (fixed in #171)."""
     silver = tmp_path / "silver"
     silver.mkdir()
     out = tmp_path / "out" / "summary.json"
     monkeypatch.setattr(ag, "REPO", tmp_path)
     monkeypatch.setattr(ag, "SILVER", silver)
     monkeypatch.setattr(ag, "OUT", out)
-    ag.main()  # raises TypeError today (#171); will return cleanly once fixed
+    ag.main()
     summary = json.loads(out.read_text())
     assert summary["n_papers"] == 0
     assert summary["field_precision"] is None
