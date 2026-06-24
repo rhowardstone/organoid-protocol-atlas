@@ -28,6 +28,7 @@ import argparse
 import csv
 import json
 import os
+import re
 import time
 import urllib.error
 import urllib.parse
@@ -83,21 +84,60 @@ def api_get(path: str, token: str, params: dict | None = None, tries: int = 4) -
     raise RuntimeError(f"unreachable: {url}")
 
 
+_TAG_RE = re.compile(r"<[^>]+>")
+_WS_RE = re.compile(r"[ \t]+")
+
+
+def _html_to_text(s: str) -> str:
+    """Strip HTML tags + collapse whitespace (protocols.io step bodies are HTML)."""
+    if not s:
+        return ""
+    s = s.replace("</p>", " ").replace("<br>", " ").replace("<br/>", " ").replace("</li>", "; ")
+    s = _TAG_RE.sub(" ", s)
+    s = (s.replace("&nbsp;", " ").replace("&amp;", "&").replace("&lt;", "<")
+         .replace("&gt;", ">").replace("&#39;", "'").replace("&quot;", '"'))
+    return _WS_RE.sub(" ", s).strip()
+
+
 def methods_from_protocol(p: dict) -> str:
-    """Synthesize a methods_text from a protocol's materials + ordered steps."""
+    """Synthesize a methods_text from a protocol's description + materials + ordered steps.
+
+    protocols.io step text lives in components[].source.description as HTML (NOT 'body');
+    section headers in source.title. The top-level description/before_start/guidelines and
+    materials_text carry real protocol prose too — include them so extraction has substance.
+    """
     parts = []
-    mats = p.get("materials") or []
-    if mats:
-        parts.append("[MATERIALS] " + "; ".join(
-            (m.get("name") or "").strip() for m in mats if m.get("name")))
+    desc = _html_to_text(p.get("description") or "")
+    if desc:
+        parts.append("[DESCRIPTION] " + desc)
+    bstart = _html_to_text(p.get("before_start") or "")
+    if bstart:
+        parts.append("[BEFORE START] " + bstart)
+    guide = _html_to_text(p.get("guidelines") or "")
+    if guide:
+        parts.append("[GUIDELINES] " + guide)
+    # materials: prefer the rendered materials_text, else join structured names
+    mtext = _html_to_text(p.get("materials_text") or "")
+    if mtext:
+        parts.append("[MATERIALS] " + mtext)
+    else:
+        mats = p.get("materials") or []
+        if mats:
+            parts.append("[MATERIALS] " + "; ".join(
+                (m.get("name") or "").strip() for m in mats if m.get("name")))
     for i, st in enumerate(p.get("steps") or [], 1):
-        # a step's text lives in components (type 1 = description) or a 'title'
-        txt = ""
+        # each step's prose lives in components[].source.description (HTML) or .title (sections)
+        chunks = []
         for c in (st.get("components") or []):
             src = c.get("source") or {}
-            if isinstance(src, dict) and src.get("body"):
-                txt += " " + src["body"]
-        txt = (txt or st.get("title") or "").strip()
+            if not isinstance(src, dict):
+                continue
+            body = _html_to_text(src.get("description") or src.get("body") or "")
+            if body:
+                chunks.append(body)
+            elif src.get("title"):
+                chunks.append(str(src["title"]).strip())
+        txt = " ".join(chunks).strip() or (st.get("title") or "").strip()
         if txt:
             parts.append(f"[STEP {i}] {txt}")
     return "\n".join(parts)

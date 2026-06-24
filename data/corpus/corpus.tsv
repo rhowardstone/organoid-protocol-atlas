@@ -5400,3 +5400,373 @@ intestinal	10.1208/s12248-017-0178-1	PMC6044282	Mochel	2017	The AAPS journal	tbd
 intestinal	10.3390/mi7070107	PMC6190004	Kang	2016	Micromachines	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
 pancreatic	10.1016/j.ceb.2017.11.014	PMC6277812	Demcollari	2017	Current opinion in cell biology	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
 intestinal	10.1080/10717544.2017.1381199	PMC8241135	Zhang	2017	Drug delivery	tbd	tbd	CC-BY	yes	tbd	no	auto-ingested	orchestrator batch; grounding 1.0
+intestinal	10.1101/2021.05.28.446131	BIORXIV_2021.05.28.446131	Fernandez-Majada, V.	2025	bioRxiv	mouse	adult_stem_cell	CC-BY-NC-ND	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+gastric	10.1101/2022.10.07.511362	BIORXIV_2022.10.07.511362	Ragusa, D.	2024	bioRxiv	murine	other	CC-BY	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+cerebral	10.1101/2022.12.19.520907	BIORXIV_2022.12.19.520907	Zillich, L.	2025	bioRxiv	human	iPSC	CC-BY-NC-ND	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+retinal	10.1101/2023.01.28.526051	BIORXIV_2023.01.28.526051	Hussey, K.	2024	bioRxiv	human	iPSC	preprint-no-redistribution	yes	no	no	biorxiv	biorxiv ingest 2026-06
+cerebral	10.1101/2023.03.15.530726	BIORXIV_2023.03.15.530726	Kim, J.-i.	2024	bioRxiv	human	iPSC	preprint-no-redistribution	yes	no	no	biorxiv	biorxiv ingest 2026-06
+cerebral	10.1101/2023.04.26.538498	BIORXIV_2023.04.26.538498	Li, E.	2024	bioRxiv	human	iPSC	CC-BY	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+cerebral	10.1101/2023.07.11.548571	BIORXIV_2023.07.11.548571	Bertucci, T.	2026	bioRxiv	human	iPSC	preprint-no-redistribution	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+other	10.1101/2023.07.27.550771	BIORXIV_2023.07.27.550771	Zhang, Y.	2025	bioRxiv	human	adult_stem_cell	preprint-no-redistribution	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+other	10.1101/2023.08.03.551772	BIORXIV_2023.08.03.551772	Mac, T. T.	2024	bioRxiv	human	iPSC	CC-BY	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+other	10.1101/2023.09.18.558215	BIORXIV_2023.09.18.558215	Xue, Y.	2025	bioRxiv	human	other	CC-BY-NC-ND	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+gastric	10.1101/2023.09.22.559003	BIORXIV_2023.09.22.559003	Gsell, S.	2024	bioRxiv		iPSC	CC-BY-NC	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+other	10.1101/2023.10.02.560364	BIORXIV_2023.10.02.560364	Rauner, G.	2025	bioRxiv	human	adult_stem_cell	preprint-no-redistribution	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+cerebral	10.1101/2023.12.29.573646	BIORXIV_2023.12.29.573646	van der Molen, T.	2025	bioRxiv	human	iPSC	CC-BY-NC-ND	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+pancreatic	10.1101/2024.02.20.581158	BIORXIV_2024.02.20.581158	Lu, L.	2025	bioRxiv	mouse	adult_stem_cell	CC-BY-NC-ND	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+intestinal	10.1101/2024.03.15.584288	BIORXIV_2024.03.15.584288	Surakhy, M.	2024	bioRxiv	mouse	adult_stem_cell	preprint-no-redistribution	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+kidney	10.1101/2024.03.15.585271	BIORXIV_2024.03.15.585271	Karakulak, T.	2024	bioRxiv	human	adult_stem_cell	CC-BY-NC	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+liver	10.1101/2024.03.25.586638	BIORXIV_2024.03.25.586638	Shrestha, S.	2024	bioRxiv	human	iPSC	CC-BY-NC-ND	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+cerebral	10.1101/2024.04.01.587603	BIORXIV_2024.04.01.587603	van Essen, M. J.	2024	bioRxiv	human	iPSC	CC-BY-NC-ND	yes	no	no	biorxiv	biorxiv ingest 2026-06
+cerebral	10.1101/2024.04.15.589507	BIORXIV_2024.04.15.589507	van der Kroeg, M.	2026	bioRxiv	human	iPSC	CC-BY	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+other	10.1101/2024.05.09.592870	BIORXIV_2024.05.09.592870	Arthurs, A. L.	2024	bioRxiv	human	adult_stem_cell	CC-BY-NC-ND	yes	no	no	biorxiv	biorxiv ingest 2026-06
+intestinal	10.1101/2024.05.23.595631	BIORXIV_2024.05.23.595631	Sen, A.	2024	bioRxiv	human	adult_stem_cell	CC-BY-NC-ND	yes	no	no	biorxiv	biorxiv ingest 2026-06
+other	10.1101/2024.06.03.597136	BIORXIV_2024.06.03.597136	Parrotta, E. I.	2024	bioRxiv	human	iPSC	preprint-no-redistribution	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+other	10.1101/2024.06.05.597501	BIORXIV_2024.06.05.597501	Slaby, E. M.	2024	bioRxiv	human	primary_tissue	preprint-no-redistribution	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+intestinal	10.1101/2024.06.06.597640	BIORXIV_2024.06.06.597640	Xiao, Q.	2024	bioRxiv	human	adult_stem_cell	preprint-no-redistribution	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+liver	10.1101/2024.06.10.598262	BIORXIV_2024.06.10.598262	Marsee, A.	2024	bioRxiv	human	adult_stem_cell	preprint-no-redistribution	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+intestinal	10.1101/2024.06.12.598673	BIORXIV_2024.06.12.598673	Poling, H. M.	2024	bioRxiv	human	iPSC	preprint-no-redistribution	yes	no	no	biorxiv	biorxiv ingest 2026-06
+cerebral	10.1101/2024.06.13.598579	BIORXIV_2024.06.13.598579	Narasipura, S. D.	2024	bioRxiv	human	iPSC	preprint-no-redistribution	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+cerebral	10.1101/2024.06.21.599412	BIORXIV_2024.06.21.599412	Castilla Bolanos, M. A.	2024	bioRxiv	human	iPSC	CC-BY	yes	no	no	biorxiv	biorxiv ingest 2026-06
+intestinal	10.1101/2024.06.26.600229	BIORXIV_2024.06.26.600229	Onesto, M. M.	2024	bioRxiv	human	iPSC	preprint-no-redistribution	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+cerebral	10.1101/2024.06.27.600564	BIORXIV_2024.06.27.600564	Honorato Ribeiro, J.	2024	bioRxiv	human	iPSC	CC-BY-NC	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+kidney	10.1101/2024.06.28.601028	BIORXIV_2024.06.28.601028	Schnell, J.	2024	bioRxiv	human	iPSC	preprint-no-redistribution	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+other	10.1101/2024.06.28.601068	BIORXIV_2024.06.28.601068	Um, J. H.	2024	bioRxiv	human	primary_tissue	CC-BY-NC-ND	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+other	10.1101/2024.06.28.601283	BIORXIV_2024.06.28.601283	Nikeghbal, P.	2024	bioRxiv	human	primary_tissue	preprint-no-redistribution	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+intestinal	10.1101/2024.06.30.601390	BIORXIV_2024.06.30.601390	Moerkens, R.	2024	bioRxiv	human	iPSC	preprint-no-redistribution	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+other	10.1101/2024.07.01.601571	BIORXIV_2024.07.01.601571	Keenen, M. M.	2024	bioRxiv	Homo sapiens	adult_stem_cell	preprint-no-redistribution	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+intestinal	10.1101/2024.07.02.601324	BIORXIV_2024.07.02.601324	Skoufa, E.	2024	bioRxiv	mouse	ESC	CC-BY-NC	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+liver	10.1101/2024.07.02.601804	BIORXIV_2024.07.02.601804	Saiki, N.	2024	bioRxiv	human	iPSC	CC-BY-NC-ND	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+intestinal	10.1101/2024.07.06.602364	BIORXIV_2024.07.06.602364	Hushka, E. A.	2024	bioRxiv	murine	iPSC	CC-BY-NC-ND	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+gastric	10.1101/2024.07.08.602480	BIORXIV_2024.07.08.602480	Jones, B. C.	2024	bioRxiv	human	adult_stem_cell	preprint-no-redistribution	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+gastric	10.1101/2024.07.08.602611	BIORXIV_2024.07.08.602611	Jo, K.	2024	bioRxiv	human	iPSC	CC-BY-NC-ND	yes	no	no	biorxiv	biorxiv ingest 2026-06
+cerebral	10.1101/2024.07.09.602767	BIORXIV_2024.07.09.602767	Vazquez, C.	2024	bioRxiv	human	iPSC	preprint-no-redistribution	yes	no	no	biorxiv	biorxiv ingest 2026-06
+intestinal	10.1101/2024.07.18.604049	BIORXIV_2024.07.18.604049	Aristin Revilla, S.	2024	bioRxiv	murine	adult_stem_cell	preprint-no-redistribution	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+cerebral	10.1101/2024.07.18.604098	BIORXIV_2024.07.18.604098	Shimada, I. S.	2024	bioRxiv	human	iPSC	preprint-no-redistribution	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+other	10.1101/2024.07.19.604365	BIORXIV_2024.07.19.604365	Charles, S.	2024	bioRxiv	human	iPSC	CC-BY-NC	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+cerebral	10.1101/2024.07.19.604372	BIORXIV_2024.07.19.604372	Evans, L. M. P.	2024	bioRxiv		iPSC	CC-BY-NC-ND	yes	no	no	biorxiv	biorxiv ingest 2026-06
+cerebral	10.1101/2024.07.25.605147	BIORXIV_2024.07.25.605147	Zolfaghar, M.	2024	bioRxiv	human	iPSC	CC-BY-NC-ND	yes	no	no	biorxiv	biorxiv ingest 2026-06
+other	10.1101/2024.07.29.601702	BIORXIV_2024.07.29.601702	Scholtes, M. P.	2024	bioRxiv	human	adult_stem_cell	CC-BY-NC-ND	yes	no	no	biorxiv	biorxiv ingest 2026-06
+other	10.1101/2024.07.31.605958	BIORXIV_2024.07.31.605958	Schaart, J. M.	2024	bioRxiv	human	adult_stem_cell	preprint-no-redistribution	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+pancreatic	10.1101/2024.08.05.606734	BIORXIV_2024.08.05.606734	Yang, L.	2024	bioRxiv	human	iPSC	CC-BY-NC-ND	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+cerebral	10.1101/2024.08.10.607464	BIORXIV_2024.08.10.607464	Osaki, T.	2024	bioRxiv	human	iPSC	CC-BY-NC-ND	yes	no	no	biorxiv	biorxiv ingest 2026-06
+liver	10.1101/2024.08.12.607504	BIORXIV_2024.08.12.607504	Myszczyszyn, A.	2024	bioRxiv	human	adult_stem_cell	CC-BY-NC-ND	yes	no	no	biorxiv	biorxiv ingest 2026-06
+gastric	10.1101/2024.08.13.607832	BIORXIV_2024.08.13.607832	Gros, A.	2024	bioRxiv		iPSC	CC-BY	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+cerebral	10.1101/2024.08.14.607977	BIORXIV_2024.08.14.607977	Willott, T. O.	2024	bioRxiv	human	iPSC	preprint-no-redistribution	yes	no	no	biorxiv	biorxiv ingest 2026-06
+other	10.1101/2024.08.18.608259	BIORXIV_2024.08.18.608259	Kesharwani, A.	2024	bioRxiv	human	iPSC	preprint-no-redistribution	yes	no	no	biorxiv	biorxiv ingest 2026-06
+liver	10.1101/2024.08.21.608997	BIORXIV_2024.08.21.608997	Lekkala, V. K. R.	2024	bioRxiv	human	iPSC	CC-BY-NC-ND	yes	no	no	biorxiv	biorxiv ingest 2026-06
+intestinal	10.1101/2024.08.22.609097	BIORXIV_2024.08.22.609097	Guyomar, T.	2024	bioRxiv	mouse	other	CC-BY	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+cerebral	10.1101/2024.08.23.609290	BIORXIV_2024.08.23.609290	Sarieva, K.	2024	bioRxiv	human	iPSC	CC-BY	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+other	10.1101/2024.08.28.610103	BIORXIV_2024.08.28.610103	Waechtershaeuser, K. N.	2024	bioRxiv	human	primary_tissue	CC-BY-ND	yes	no	no	biorxiv	biorxiv ingest 2026-06
+other	10.1101/2024.08.29.610410	BIORXIV_2024.08.29.610410	Kee, N.	2024	bioRxiv	human	iPSC	preprint-no-redistribution	yes	no	no	biorxiv	biorxiv ingest 2026-06
+liver	10.1101/2024.08.30.610426	BIORXIV_2024.08.30.610426	Al-Reza, H.	2024	bioRxiv	human	iPSC	CC-BY-NC-ND	yes	no	no	biorxiv	biorxiv ingest 2026-06
+other	10.1101/2024.09.01.610617	BIORXIV_2024.09.01.610617	He, S.	2024	bioRxiv	human	iPSC	preprint-no-redistribution	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+cerebral	10.1101/2024.09.03.610941	BIORXIV_2024.09.03.610941	Elmkvist, S. B.	2024	bioRxiv	human	iPSC	CC-BY-NC-ND	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+cerebral	10.1101/2024.09.03.611030	BIORXIV_2024.09.03.611030	Umans, B. D.	2024	bioRxiv	human	iPSC	CC-BY-NC-ND	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+gastric	10.1101/2024.09.05.609098	BIORXIV_2024.09.05.609098	Garge, R. K.	2024	bioRxiv	mouse	ESC	CC-BY	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+cerebral	10.1101/2024.09.07.611739	BIORXIV_2024.09.07.611739	McCrimmon, C. M.	2024	bioRxiv	human	iPSC	preprint-no-redistribution	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+other	10.1101/2024.09.08.611877	BIORXIV_2024.09.08.611877	Zych, M.	2024	bioRxiv	human	primary_tissue	CC-BY-NC-ND	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+cerebral	10.1101/2024.09.10.611955	BIORXIV_2024.09.10.611955	Capendale, P. E.	2024	bioRxiv	human	iPSC	CC-BY	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+cerebral	10.1101/2024.09.11.612577	BIORXIV_2024.09.11.612577	Isik, M.	2024	bioRxiv	human	iPSC	CC-BY-NC-ND	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+cerebral	10.1101/2024.09.17.613333	BIORXIV_2024.09.17.613333	Alam El Din, D.-M.	2024	bioRxiv	human	iPSC	CC-BY-NC-ND	yes	no	no	biorxiv	biorxiv ingest 2026-06
+gastric	10.1101/2024.09.18.613704	BIORXIV_2024.09.18.613704	Coppola, A.	2024	bioRxiv	mouse	ESC	preprint-no-redistribution	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+kidney	10.1101/2024.09.19.613645	BIORXIV_2024.09.19.613645	Shi, M.	2024	bioRxiv	human	iPSC	CC-BY-NC-ND	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+gastric	10.1101/2024.09.20.614192	BIORXIV_2024.09.20.614192	Rufo, J.	2024	bioRxiv	human	iPSC	CC-BY-NC-ND	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+cerebral	10.1101/2024.09.23.614496	BIORXIV_2024.09.23.614496	Switonska-Kurkowska, K.	2024	bioRxiv	human	iPSC	CC-BY	yes	no	no	biorxiv	biorxiv ingest 2026-06
+other	10.1101/2024.09.24.613225	BIORXIV_2024.09.24.613225	Hong, S.	2024	bioRxiv	human	iPSC	CC-BY-NC-ND	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+other	10.1101/2024.09.25.614931	BIORXIV_2024.09.25.614931	Kumar, D.	2024	bioRxiv	human	other	CC-BY-NC-ND	yes	no	no	biorxiv	biorxiv ingest 2026-06
+cerebral	10.1101/2024.09.30.615887	BIORXIV_2024.09.30.615887	Medina-Cano, D.	2024	bioRxiv	mouse	iPSC	CC-BY-NC-ND	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+cerebral	10.1101/2024.10.01.615952	BIORXIV_2024.10.01.615952	Kim, E.	2024	bioRxiv	human	iPSC	preprint-no-redistribution	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+pancreatic	10.1101/2024.10.01.616188	BIORXIV_2024.10.01.616188	Xie, G.	2024	bioRxiv	human	adult_stem_cell	preprint-no-redistribution	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+cerebral	10.1101/2024.10.02.616236	BIORXIV_2024.10.02.616236	Guglielmi, L.	2024	bioRxiv	human	ESC	CC-BY-NC-ND	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+intestinal	10.1101/2024.10.07.617033	BIORXIV_2024.10.07.617033	Magne, L.	2024	bioRxiv	human	primary_tissue	preprint-no-redistribution	yes	no	no	biorxiv	biorxiv ingest 2026-06
+cerebral	10.1101/2024.10.07.617044	BIORXIV_2024.10.07.617044	Meyer-Acosta, K. K.	2024	bioRxiv	human	iPSC	preprint-no-redistribution	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+cerebral	10.1101/2024.10.07.617121	BIORXIV_2024.10.07.617121	Niu, W.	2024	bioRxiv	human	iPSC	CC-BY-NC-ND	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+other	10.1101/2024.10.08.617181	BIORXIV_2024.10.08.617181	Xu, Z.	2024	bioRxiv	human	primary_tissue	preprint-no-redistribution	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+other	10.1101/2024.10.09.614903	BIORXIV_2024.10.09.614903	Bukhari, M. M. M.	2024	bioRxiv	human	adult_stem_cell	preprint-no-redistribution	yes	no	no	biorxiv	biorxiv ingest 2026-06
+liver	10.1101/2024.10.11.617794	BIORXIV_2024.10.11.617794	Rezvani, M.	2024	bioRxiv	human	other	preprint-no-redistribution	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+other	10.1101/2024.10.11.617829	BIORXIV_2024.10.11.617829	Pudjohartono, M. F.	2024	bioRxiv	human	adult_stem_cell	CC-BY-NC-ND	yes	no	no	biorxiv	biorxiv ingest 2026-06
+cerebral	10.1101/2024.10.17.618921	BIORXIV_2024.10.17.618921	Patel, M. D.	2024	bioRxiv	human	iPSC	preprint-no-redistribution	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+other	10.1101/2024.10.21.619461	BIORXIV_2024.10.21.619461	McCutcheon, C.	2024	bioRxiv	Sus scrofa	adult_stem_cell	preprint-no-redistribution	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+cerebral	10.1101/2024.10.21.619549	BIORXIV_2024.10.21.619549	Li, S.	2024	bioRxiv		iPSC	preprint-no-redistribution	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+kidney	10.1101/2024.10.27.620552	BIORXIV_2024.10.27.620552	Hong, S.	2024	bioRxiv	human	iPSC	CC-BY-NC-ND	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+liver	10.1101/2024.10.29.620824	BIORXIV_2024.10.29.620824	Ardisasmita, A. I.	2024	bioRxiv	human	adult_stem_cell	CC-BY-ND	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+other	10.1101/2024.10.29.620938	BIORXIV_2024.10.29.620938	Ozgun, A.	2024	bioRxiv	mouse	adult_stem_cell	CC-BY	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+pancreatic	10.1101/2024.10.30.620903	BIORXIV_2024.10.30.620903	Osorio-Vasquez, V.	2024	bioRxiv	human	adult_stem_cell	CC-BY-NC-ND	yes	no	no	biorxiv	biorxiv ingest 2026-06
+intestinal	10.1101/2024.11.08.622640	BIORXIV_2024.11.08.622640	Bohl, B.	2024	bioRxiv	human	primary_tissue	CC-BY-NC-ND	yes	no	no	biorxiv	biorxiv ingest 2026-06
+cerebral	10.1101/2024.11.11.622878	BIORXIV_2024.11.11.622878	Glass, M. R.	2024	bioRxiv	human	iPSC	preprint-no-redistribution	yes	no	no	biorxiv	biorxiv ingest 2026-06
+intestinal	10.1101/2024.11.13.623051	BIORXIV_2024.11.13.623051	O'Hern, C.	2024	bioRxiv	human	iPSC	preprint-no-redistribution	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+cerebral	10.1101/2024.11.14.623407	BIORXIV_2024.11.14.623407	Laterza, C.	2024	bioRxiv	human	iPSC	preprint-no-redistribution	yes	no	no	biorxiv	biorxiv ingest 2026-06
+other	10.1101/2024.11.16.623866	BIORXIV_2024.11.16.623866	Megli, C.	2024	bioRxiv	human	primary_tissue	CC-BY-NC-ND	yes	no	no	biorxiv	biorxiv ingest 2026-06
+cerebral	10.1101/2024.11.20.624497	BIORXIV_2024.11.20.624497	Park, G. Y.	2024	bioRxiv	human	iPSC	CC-BY	yes	no	no	biorxiv	biorxiv ingest 2026-06
+cerebral	10.1101/2024.11.26.624368	BIORXIV_2024.11.26.624368	Walsh, R. M.	2024	bioRxiv	human	iPSC	CC-BY-NC-ND	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+cerebral	10.1101/2024.11.28.625826	BIORXIV_2024.11.28.625826	Raguin, J.	2024	bioRxiv	human	iPSC	CC-BY	yes	no	no	biorxiv	biorxiv ingest 2026-06
+kidney	10.1101/2024.11.30.626171	BIORXIV_2024.11.30.626171	Fausto, C. C.	2024	bioRxiv	human	iPSC	CC-BY-NC-ND	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+other	10.1101/2024.12.04.626588	BIORXIV_2024.12.04.626588	Skowronek, D.	2024	bioRxiv	human	iPSC	CC-BY	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+cerebral	10.1101/2024.12.07.627350	BIORXIV_2024.12.07.627350	Robbins, A. S.	2024	bioRxiv	mouse	ESC	preprint-no-redistribution	yes	no	no	biorxiv	biorxiv ingest 2026-06
+other	10.1101/2024.12.07.627355	BIORXIV_2024.12.07.627355	Liu, R.	2024	bioRxiv	human	iPSC	preprint-no-redistribution	yes	no	no	biorxiv	biorxiv ingest 2026-06
+cerebral	10.1101/2024.12.09.627640	BIORXIV_2024.12.09.627640	LaMontagne, E.	2024	bioRxiv	human	other	preprint-no-redistribution	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+other	10.1101/2024.12.11.627627	BIORXIV_2024.12.11.627627	Kostina, A.	2024	bioRxiv	human	iPSC	preprint-no-redistribution	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+gastric	10.1101/2024.12.12.628151	BIORXIV_2024.12.12.628151	Fiuza, U.-M.	2024	bioRxiv	mouse	ESC	CC-BY-NC	yes	no	no	biorxiv	biorxiv ingest 2026-06
+intestinal	10.1101/2024.12.16.628471	BIORXIV_2024.12.16.628471	White, R.	2024	bioRxiv	Mus musculus	adult_stem_cell	CC-BY-NC-ND	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+gastric	10.1101/2024.12.16.628776	BIORXIV_2024.12.16.628776	Oriola, D.	2024	bioRxiv	mouse	ESC	CC-BY	yes	no	no	biorxiv	biorxiv ingest 2026-06
+cerebral	10.1101/2024.12.17.628908	BIORXIV_2024.12.17.628908	Zheng, C.	2024	bioRxiv	human	primary_tissue	preprint-no-redistribution	yes	no	no	biorxiv	biorxiv ingest 2026-06
+other	10.1101/2024.12.20.629498	BIORXIV_2024.12.20.629498	Jones, J. E.	2024	bioRxiv	human	iPSC	CC-BY-NC-ND	yes	no	no	biorxiv	biorxiv ingest 2026-06
+other	10.1101/2024.12.20.629528	BIORXIV_2024.12.20.629528	ABDALKADER, R. K.	2024	bioRxiv	human	iPSC	preprint-no-redistribution	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+other	10.1101/2024.12.20.629744	BIORXIV_2024.12.20.629744	Dufour, A.	2024	bioRxiv	human	adult_stem_cell	preprint-no-redistribution	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+cerebral	10.1101/2024.12.21.629881	BIORXIV_2024.12.21.629881	Lancaster, M. A.	2024	bioRxiv	mouse	ESC	CC-BY	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+other	10.1101/2024.12.22.629557	BIORXIV_2024.12.22.629557	Kim, E.	2024	bioRxiv	human	iPSC	preprint-no-redistribution	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+gastric	10.1101/2024.12.23.630037	BIORXIV_2024.12.23.630037	Bennabi, I.	2024	bioRxiv	mouse	ESC	CC-BY	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+other	10.1101/2024.12.23.630148	BIORXIV_2024.12.23.630148	Gillette, A. A.	2024	bioRxiv		primary_tissue	preprint-no-redistribution	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+intestinal	10.1101/2024.12.28.630600	BIORXIV_2024.12.28.630600	Botrugno, O. A.	2024	bioRxiv	human	adult_stem_cell	CC-BY-NC-ND	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+pancreatic	10.1101/2024.12.31.630904	BIORXIV_2024.12.31.630904	Sorzabal, I.	2025	bioRxiv	mouse	adult_stem_cell	preprint-no-redistribution	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+cerebral	10.1101/2025.01.08.631924	BIORXIV_2025.01.08.631924	Daviaud, N.	2025	bioRxiv	human	iPSC	CC-BY-NC-ND	yes	no	no	biorxiv	biorxiv ingest 2026-06
+other	10.1101/2025.01.09.631479	BIORXIV_2025.01.09.631479	Takao, T.	2025	bioRxiv	human	iPSC	preprint-no-redistribution	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+cerebral	10.1101/2025.01.09.631995	BIORXIV_2025.01.09.631995	Kumar, M.	2025	bioRxiv	human	iPSC	preprint-no-redistribution	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+other	10.1101/2025.01.10.632325	BIORXIV_2025.01.10.632325	Branco, M.	2025	bioRxiv	human	iPSC	CC-BY-NC-ND	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+cerebral	10.1101/2025.01.13.632763	BIORXIV_2025.01.13.632763	Kachkin, D.	2025	bioRxiv	human	iPSC	CC-BY	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+intestinal	10.1101/2025.01.14.632538	BIORXIV_2025.01.14.632538	Sari, I.	2025	bioRxiv	mouse	adult_stem_cell	CC-BY-NC-ND	yes	no	no	biorxiv	biorxiv ingest 2026-06
+cerebral	10.1101/2025.01.17.633436	BIORXIV_2025.01.17.633436	Faravelli, I.	2025	bioRxiv	human	iPSC	preprint-no-redistribution	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+intestinal	10.1101/2025.01.18.631624	BIORXIV_2025.01.18.631624	Zhao, H.	2025	bioRxiv	mouse	adult_stem_cell	CC-BY	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+other	10.1101/2025.01.19.633822	BIORXIV_2025.01.19.633822	Long, X.	2025	bioRxiv	human	iPSC	preprint-no-redistribution	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+liver	10.1101/2025.01.20.628680	BIORXIV_2025.01.20.628680	Petrus-Reurer, S.	2025	bioRxiv	human	adult_stem_cell	preprint-no-redistribution	yes	no	no	biorxiv	biorxiv ingest 2026-06
+cerebral	10.1101/2025.01.20.633788	BIORXIV_2025.01.20.633788	Kshirsagar, A.	2025	bioRxiv	human	iPSC	CC-BY-NC	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+gastric	10.1101/2025.01.25.634859	BIORXIV_2025.01.25.634859	Frenster, J. D.	2025	bioRxiv	mouse	ESC	CC-BY-NC	yes	no	no	biorxiv	biorxiv ingest 2026-06
+cerebral	10.1101/2025.01.28.635291	BIORXIV_2025.01.28.635291	Turpin-Moreno, I.	2025	bioRxiv	human	iPSC	preprint-no-redistribution	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+cerebral	10.1101/2025.01.29.635456	BIORXIV_2025.01.29.635456	Schickel, E.	2025	bioRxiv	human	iPSC	preprint-no-redistribution	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+lung	10.1101/2025.01.30.635624	BIORXIV_2025.01.30.635624	Dost, A. F. M.	2025	bioRxiv	human	adult_stem_cell	CC-BY-NC-ND	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+kidney	10.1101/2025.02.07.637033	BIORXIV_2025.02.07.637033	Kearney, H.	2025	bioRxiv	human	iPSC	CC-BY-NC-ND	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+cerebral	10.1101/2025.02.07.637106	BIORXIV_2025.02.07.637106	Glass, M. R.	2025	bioRxiv	human	iPSC	CC-BY	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+other	10.1101/2025.02.11.637697	BIORXIV_2025.02.11.637697	Albertini, S.	2025	bioRxiv	human	iPSC	preprint-no-redistribution	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+intestinal	10.1101/2025.02.12.637569	BIORXIV_2025.02.12.637569	Khalili, S.	2025	bioRxiv	human	iPSC	CC-BY-NC-ND	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+intestinal	10.1101/2025.02.12.637574	BIORXIV_2025.02.12.637574	Khalili, S.	2025	bioRxiv	human	adult_stem_cell	CC-BY-NC-ND	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+cerebral	10.1101/2025.02.12.637976	BIORXIV_2025.02.12.637976	Velazquez Ojeda, A.	2025	bioRxiv	human	iPSC	CC-BY-NC-ND	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+other	10.1101/2025.02.16.638505	BIORXIV_2025.02.16.638505	Shen, Y.	2025	bioRxiv	human	iPSC	preprint-no-redistribution	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+cerebral	10.1101/2025.02.16.638539	BIORXIV_2025.02.16.638539	Tian, C.	2025	bioRxiv	human	iPSC	preprint-no-redistribution	yes	no	no	biorxiv	biorxiv ingest 2026-06
+kidney	10.1101/2025.02.16.638545	BIORXIV_2025.02.16.638545	Vanichapol, T.	2025	bioRxiv	human	iPSC	preprint-no-redistribution	yes	no	no	biorxiv	biorxiv ingest 2026-06
+gastric	10.1101/2025.02.17.638725	BIORXIV_2025.02.17.638725	Mahmoud, A.	2025	bioRxiv	human	primary_tissue	CC-BY-NC	yes	no	no	biorxiv	biorxiv ingest 2026-06
+other	10.1101/2025.02.18.637712	BIORXIV_2025.02.18.637712	Acha, C.	2025	bioRxiv	human	iPSC	preprint-no-redistribution	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+kidney	10.1101/2025.02.23.639405	BIORXIV_2025.02.23.639405	Buhl, J. L.	2025	bioRxiv	human	adult_stem_cell	preprint-no-redistribution	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+lung	10.1101/2025.02.24.639173	BIORXIV_2025.02.24.639173	Aspal, M.	2025	bioRxiv	human	iPSC	CC-BY-NC	yes	no	no	biorxiv	biorxiv ingest 2026-06
+retinal	10.1101/2025.02.24.639921	BIORXIV_2025.02.24.639921	Polesovska, L.	2025	bioRxiv	human	iPSC	CC-BY-NC-ND	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+cerebral	10.1101/2025.02.25.640229	BIORXIV_2025.02.25.640229	El Soufi El Sabbagh, D.	2025	bioRxiv	human	iPSC	preprint-no-redistribution	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+kidney	10.1101/2025.02.27.640060	BIORXIV_2025.02.27.640060	Sarami, I.	2025	bioRxiv	human	iPSC	CC-BY-NC-ND	yes	no	no	biorxiv	biorxiv ingest 2026-06
+kidney	10.1101/2025.02.27.640561	BIORXIV_2025.02.27.640561	Wilson, S. B.	2025	bioRxiv	human	iPSC	CC-BY-NC-ND	yes	no	no	biorxiv	biorxiv ingest 2026-06
+cerebral	10.1101/2025.02.28.640914	BIORXIV_2025.02.28.640914	Li, T. L.	2025	bioRxiv	human	other	CC-BY-ND	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+intestinal	10.1101/2025.03.04.640785	BIORXIV_2025.03.04.640785	Slater, E.	2025	bioRxiv	human	adult_stem_cell	preprint-no-redistribution	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+other	10.1101/2025.03.06.641285	BIORXIV_2025.03.06.641285	Mercadante, M.	2025	bioRxiv	human	primary_tissue	CC-BY-NC	yes	no	no	biorxiv	biorxiv ingest 2026-06
+other	10.1101/2025.03.10.642373	BIORXIV_2025.03.10.642373	Reichenbach, J.	2025	bioRxiv		primary_tissue	CC-BY-ND	yes	no	no	biorxiv	biorxiv ingest 2026-06
+gastric	10.1101/2025.03.15.643474	BIORXIV_2025.03.15.643474	Balayo, T.	2025	bioRxiv	mouse	ESC	CC-BY-NC-ND	yes	no	no	biorxiv	biorxiv ingest 2026-06
+gastric	10.1101/2025.03.18.643854	BIORXIV_2025.03.18.643854	Marchand, M. F.	2025	bioRxiv	human	iPSC	preprint-no-redistribution	yes	no	no	biorxiv	biorxiv ingest 2026-06
+cerebral	10.1101/2025.03.20.644368	BIORXIV_2025.03.20.644368	Azbukina, N.	2025	bioRxiv	human	iPSC	CC-BY-NC-ND	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+cerebral	10.1101/2025.03.21.644499	BIORXIV_2025.03.21.644499	Hathazi, D.	2025	bioRxiv	human	iPSC	CC-BY-NC	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+cerebral	10.1101/2025.03.24.644896	BIORXIV_2025.03.24.644896	Pavlinek, A.	2025	bioRxiv	human	iPSC	CC-BY	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+gastric	10.1101/2025.03.26.645494	BIORXIV_2025.03.26.645494	Anlas, K.	2025	bioRxiv	Mouse	ESC	CC-BY-NC	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+liver	10.1101/2025.03.28.645886	BIORXIV_2025.03.28.645886	Smertina, E.	2025	bioRxiv	rabbit	adult_stem_cell	CC-BY-NC-ND	yes	no	no	biorxiv	biorxiv ingest 2026-06
+other	10.1101/2025.03.31.646441	BIORXIV_2025.03.31.646441	Xiao, Y.	2025	bioRxiv	human	iPSC	preprint-no-redistribution	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+other	10.1101/2025.04.01.646642	BIORXIV_2025.04.01.646642	Meyer, K.	2025	bioRxiv	human	iPSC	CC-BY-NC-ND	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+cerebral	10.1101/2025.04.08.647634	BIORXIV_2025.04.08.647634	Mojica-Perez, S.	2025	bioRxiv	human	iPSC	CC-BY-NC-ND	yes	no	no	biorxiv	biorxiv ingest 2026-06
+other	10.1101/2025.04.09.648007	BIORXIV_2025.04.09.648007	Silver, S. E.	2025	bioRxiv	human	iPSC	CC-BY-NC-ND	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+intestinal	10.1101/2025.04.10.648170	BIORXIV_2025.04.10.648170	Kaden, T.	2025	bioRxiv	human	other	preprint-no-redistribution	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+other	10.1101/2025.04.17.649331	BIORXIV_2025.04.17.649331	Zuccoli, E.	2025	bioRxiv	human	iPSC	CC-BY	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+retinal	10.1101/2025.04.17.649366	BIORXIV_2025.04.17.649366	Stahl, E. F.	2025	bioRxiv	fish	iPSC	CC-BY-ND	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+cerebral	10.1101/2025.04.23.650161	BIORXIV_2025.04.23.650161	Fumado Navarro, J.	2025	bioRxiv	human	iPSC	CC-BY	yes	no	no	biorxiv	biorxiv ingest 2026-06
+cerebral	10.1101/2025.04.23.650231	BIORXIV_2025.04.23.650231	Deyab, G.	2025	bioRxiv	human	iPSC	preprint-no-redistribution	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+other	10.1101/2025.04.23.650357	BIORXIV_2025.04.23.650357	Prasad, R.	2025	bioRxiv	human	iPSC	preprint-no-redistribution	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+other	10.1101/2025.04.29.651308	BIORXIV_2025.04.29.651308	Harihara, A.	2025	bioRxiv	human	iPSC	preprint-no-redistribution	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+kidney	10.1101/2025.04.30.651410	BIORXIV_2025.04.30.651410	Nakanoh, H.	2025	bioRxiv	mouse	primary_tissue	preprint-no-redistribution	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+cerebral	10.1101/2025.04.30.651571	BIORXIV_2025.04.30.651571	Pantula, A.	2025	bioRxiv	human	iPSC	preprint-no-redistribution	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+gastric	10.1101/2025.05.01.651639	BIORXIV_2025.05.01.651639	Dutta, A.	2025	bioRxiv	human	primary_tissue	preprint-no-redistribution	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+cerebral	10.1101/2025.05.01.651773	BIORXIV_2025.05.01.651773	Hernandez, S.	2025	bioRxiv	mouse	iPSC	CC-BY-NC-ND	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+other	10.1101/2025.05.02.651878	BIORXIV_2025.05.02.651878	Wu, X.	2025	bioRxiv	human	iPSC	CC-BY-NC-ND	yes	no	no	biorxiv	biorxiv ingest 2026-06
+intestinal	10.1101/2025.05.04.649927	BIORXIV_2025.05.04.649927	Har-Zahav, A.	2025	bioRxiv	human	adult_stem_cell	preprint-no-redistribution	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+intestinal	10.1101/2025.05.06.652311	BIORXIV_2025.05.06.652311	Capeling, M.	2025	bioRxiv	human	adult_stem_cell	preprint-no-redistribution	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+cerebral	10.1101/2025.05.08.652864	BIORXIV_2025.05.08.652864	Fang, H.	2025	bioRxiv	human	iPSC	CC-BY-NC	yes	no	no	biorxiv	biorxiv ingest 2026-06
+cerebral	10.1101/2025.05.14.653684	BIORXIV_2025.05.14.653684	Aprile, D.	2025	bioRxiv	human	iPSC	preprint-no-redistribution	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+cerebral	10.1101/2025.05.16.654315	BIORXIV_2025.05.16.654315	Ryu, S.	2025	bioRxiv	human	iPSC	CC0	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+cerebral	10.1101/2025.05.20.653559	BIORXIV_2025.05.20.653559	Wang, T.	2025	bioRxiv	human	iPSC	CC0	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+other	10.1101/2025.05.20.654824	BIORXIV_2025.05.20.654824	Rockel, A. F.	2025	bioRxiv	human	iPSC	preprint-no-redistribution	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+pancreatic	10.1101/2025.05.22.655586	BIORXIV_2025.05.22.655586	Adhikary, P.	2025	bioRxiv	human	primary_tissue	preprint-no-redistribution	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+gastric	10.1101/2025.05.23.655664	BIORXIV_2025.05.23.655664	Regalado, S. G.	2025	bioRxiv	mouse	other	CC-BY	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+other	10.1101/2025.05.23.655669	BIORXIV_2025.05.23.655669	Regalado, S. G.	2025	bioRxiv	mouse	ESC	CC-BY	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+cerebral	10.1101/2025.05.28.656641	BIORXIV_2025.05.28.656641	Statoulla, E.	2025	bioRxiv	human	iPSC	CC-BY-NC-ND	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+cerebral	10.1101/2025.06.02.657036	BIORXIV_2025.06.02.657036	Chen, X.	2025	bioRxiv	human	iPSC	CC-BY-NC-ND	yes	no	no	biorxiv	biorxiv ingest 2026-06
+retinal	10.1101/2025.06.03.657614	BIORXIV_2025.06.03.657614	Wenck, N.	2025	bioRxiv	human	iPSC	preprint-no-redistribution	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+cerebral	10.1101/2025.06.04.657874	BIORXIV_2025.06.04.657874	Wu, J.	2025	bioRxiv	human	iPSC	CC-BY-NC-ND	yes	no	no	biorxiv	biorxiv ingest 2026-06
+lung	10.1101/2025.06.05.658120	BIORXIV_2025.06.05.658120	Edelstein, S. E.	2025	bioRxiv	rat	adult_stem_cell	preprint-no-redistribution	yes	no	no	biorxiv	biorxiv ingest 2026-06
+retinal	10.1101/2025.06.07.658463	BIORXIV_2025.06.07.658463	Flohr, K.	2025	bioRxiv	human	iPSC	preprint-no-redistribution	yes	no	no	biorxiv	biorxiv ingest 2026-06
+cerebral	10.1101/2025.06.08.658480	BIORXIV_2025.06.08.658480	Chen, A.	2025	bioRxiv	human	iPSC	preprint-no-redistribution	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+kidney	10.1101/2025.06.09.658557	BIORXIV_2025.06.09.658557	Sendino Garvi, E.	2025	bioRxiv	human	iPSC	preprint-no-redistribution	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+kidney	10.1101/2025.06.10.658766	BIORXIV_2025.06.10.658766	Zylberberg, A. K.	2025	bioRxiv	human	iPSC	CC-BY	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+other	10.1101/2025.06.10.658800	BIORXIV_2025.06.10.658800	Yu, C.	2025	bioRxiv	murine	adult_stem_cell	preprint-no-redistribution	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+intestinal	10.1101/2025.06.11.659052	BIORXIV_2025.06.11.659052	Jeshvaghani, Z. S.	2025	bioRxiv	human	adult_stem_cell	CC-BY-NC	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+cerebral	10.1101/2025.06.11.659143	BIORXIV_2025.06.11.659143	Ayalavarapu, S.	2025	bioRxiv	human	iPSC	CC-BY-ND	yes	no	no	biorxiv	biorxiv ingest 2026-06
+retinal	10.1101/2025.06.13.659558	BIORXIV_2025.06.13.659558	Schwab, K.	2025	bioRxiv	human	other	CC0	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+cerebral	10.1101/2025.06.16.660009	BIORXIV_2025.06.16.660009	Baisiwala, S.	2025	bioRxiv	human	iPSC	CC-BY-NC	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+cerebral	10.1101/2025.06.24.661272	BIORXIV_2025.06.24.661272	Yentuer, Z.	2025	bioRxiv	human	iPSC	CC-BY	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+cerebral	10.1101/2025.06.25.661323	BIORXIV_2025.06.25.661323	Maletic, M.	2025	bioRxiv	human	iPSC	CC-BY-NC-ND	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+other	10.1101/2025.06.27.661907	BIORXIV_2025.06.27.661907	Dabilla, N.	2025	bioRxiv	human	iPSC	CC0	yes	no	no	biorxiv	biorxiv ingest 2026-06
+lung	10.1101/2025.06.30.662440	BIORXIV_2025.06.30.662440	Morichon, L.	2025	bioRxiv	human	iPSC	CC-BY-NC-ND	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+cerebral	10.1101/2025.07.01.662594	BIORXIV_2025.07.01.662594	Varela, M. C.	2025	bioRxiv	human	iPSC	CC-BY-NC-ND	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+other	10.1101/2025.07.01.662685	BIORXIV_2025.07.01.662685	Zuccoli, E.	2025	bioRxiv	human	iPSC	CC-BY	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+intestinal	10.1101/2025.07.03.663000	BIORXIV_2025.07.03.663000	Nikolakopoulou, K.	2025	bioRxiv	human	adult_stem_cell	CC-BY-NC-ND	yes	no	no	biorxiv	biorxiv ingest 2026-06
+cerebral	10.1101/2025.07.03.663054	BIORXIV_2025.07.03.663054	Rountree, C.	2025	bioRxiv		iPSC	preprint-no-redistribution	yes	no	no	biorxiv	biorxiv ingest 2026-06
+other	10.1101/2025.07.04.663184	BIORXIV_2025.07.04.663184	Serafimov, K.	2025	bioRxiv	human	primary_tissue	CC-BY	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+cerebral	10.1101/2025.07.05.663297	BIORXIV_2025.07.05.663297	Wang, J.	2025	bioRxiv	human	iPSC	CC0_NG	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+intestinal	10.1101/2025.07.09.663874	BIORXIV_2025.07.09.663874	Kong, M.	2025	bioRxiv	human	primary_tissue	CC-BY-NC-ND	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+cerebral	10.1101/2025.07.09.663904	BIORXIV_2025.07.09.663904	Hasenpusch-Theil, K.	2025	bioRxiv	human	iPSC	CC-BY-NC-ND	yes	no	no	biorxiv	biorxiv ingest 2026-06
+kidney	10.1101/2025.07.10.664023	BIORXIV_2025.07.10.664023	Liu, H.	2025	bioRxiv	rat	adult_stem_cell	preprint-no-redistribution	yes	no	no	biorxiv	biorxiv ingest 2026-06
+gastric	10.1101/2025.07.12.664536	BIORXIV_2025.07.12.664536	Ayyappan, V.	2025	bioRxiv	mouse	iPSC	CC-BY-NC	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+cerebral	10.1101/2025.07.13.664555	BIORXIV_2025.07.13.664555	Turkalj, E. M.	2025	bioRxiv	human	iPSC	preprint-no-redistribution	yes	no	no	biorxiv	biorxiv ingest 2026-06
+gastric	10.1101/2025.07.14.664617	BIORXIV_2025.07.14.664617	Triandafillou, C. G.	2025	bioRxiv	mouse	iPSC	CC-BY-NC-ND	yes	no	no	biorxiv	biorxiv ingest 2026-06
+retinal	10.1101/2025.07.17.665292	BIORXIV_2025.07.17.665292	van Oosten, E. M.	2025	bioRxiv	Homo sapiens	iPSC	preprint-no-redistribution	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+cerebral	10.1101/2025.07.21.665525	BIORXIV_2025.07.21.665525	SAMAROO, D.	2025	bioRxiv	human	iPSC	CC-BY-NC-ND	yes	no	no	biorxiv	biorxiv ingest 2026-06
+intestinal	10.1101/2025.07.21.665913	BIORXIV_2025.07.21.665913	Malonga, T.	2025	bioRxiv	rabbit	adult_stem_cell	CC-BY	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+lung	10.1101/2025.07.22.665497	BIORXIV_2025.07.22.665497	Rutherford, E. N.	2025	bioRxiv	human	adult_stem_cell	CC-BY-NC-ND	yes	no	no	biorxiv	biorxiv ingest 2026-06
+intestinal	10.1101/2025.07.22.665939	BIORXIV_2025.07.22.665939	Johnson, K. F.	2025	bioRxiv	human	iPSC	CC-BY-NC-ND	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+gastric	10.1101/2025.07.22.666114	BIORXIV_2025.07.22.666114	Taborsky, D.	2025	bioRxiv	mouse	ESC	CC-BY-NC-ND	yes	no	no	biorxiv	biorxiv ingest 2026-06
+pancreatic	10.1101/2025.07.28.667223	BIORXIV_2025.07.28.667223	Darden, C. M.	2025	bioRxiv	human	adult_stem_cell	CC-BY-NC-ND	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+other	10.1101/2025.07.29.667404	BIORXIV_2025.07.29.667404	Raji, H.	2025	bioRxiv	human	iPSC	preprint-no-redistribution	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+other	10.1101/2025.07.30.667685	BIORXIV_2025.07.30.667685	Zulk, J. J.	2025	bioRxiv	human	primary_tissue	CC-BY	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+gastric	10.1101/2025.08.04.668470	BIORXIV_2025.08.04.668470	Serrano Najera, G.	2025	bioRxiv		iPSC	CC-BY-NC-ND	yes	no	no	biorxiv	biorxiv ingest 2026-06
+cerebral	10.1101/2025.08.08.669314	BIORXIV_2025.08.08.669314	Serra-Almeida, C.	2025	bioRxiv	human	iPSC	CC-BY	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+other	10.1101/2025.08.08.669417	BIORXIV_2025.08.08.669417	Taroc, E. Z. M.	2025	bioRxiv	human	iPSC	CC0	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+other	10.1101/2025.08.11.669535	BIORXIV_2025.08.11.669535	SONTI, S.	2025	bioRxiv	human	adult_stem_cell	preprint-no-redistribution	yes	no	no	biorxiv	biorxiv ingest 2026-06
+cerebral	10.1101/2025.08.12.669648	BIORXIV_2025.08.12.669648	Harding, A. T.	2025	bioRxiv	human	other	preprint-no-redistribution	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+other	10.1101/2025.08.12.669895	BIORXIV_2025.08.12.669895	Ye, J.	2025	bioRxiv	human	primary_tissue	preprint-no-redistribution	yes	no	no	biorxiv	biorxiv ingest 2026-06
+cerebral	10.1101/2025.08.13.669874	BIORXIV_2025.08.13.669874	Da Silva, G. B. L.	2025	bioRxiv	human	iPSC	CC-BY-NC-ND	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+other	10.1101/2025.08.15.670497	BIORXIV_2025.08.15.670497	van Voorden, A. J.	2025	bioRxiv	human	adult_stem_cell	preprint-no-redistribution	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+cerebral	10.1101/2025.08.18.670956	BIORXIV_2025.08.18.670956	Olivero-Acosta, M. I.	2025	bioRxiv	Homo sapiens	iPSC	preprint-no-redistribution	yes	no	no	biorxiv	biorxiv ingest 2026-06
+intestinal	10.1101/2025.08.19.671065	BIORXIV_2025.08.19.671065	Zhou, J.	2025	bioRxiv	human	primary_tissue	CC-BY	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+cerebral	10.1101/2025.08.20.671243	BIORXIV_2025.08.20.671243	Abdalkader, R. K.	2025	bioRxiv	human	iPSC	preprint-no-redistribution	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+retinal	10.1101/2025.08.21.671525	BIORXIV_2025.08.21.671525	Ozaki, A.	2025	bioRxiv	human	ESC	CC-BY-NC	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+cerebral	10.1101/2025.08.26.672285	BIORXIV_2025.08.26.672285	Nagumo Wong, S.	2025	bioRxiv		iPSC	CC-BY-NC-ND	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+other	10.1101/2025.08.26.672478	BIORXIV_2025.08.26.672478	Acharya, B. R.	2025	bioRxiv	human	iPSC	preprint-no-redistribution	yes	no	no	biorxiv	biorxiv ingest 2026-06
+other	10.1101/2025.08.28.672864	BIORXIV_2025.08.28.672864	Rajendiran, H.	2025	bioRxiv	human	iPSC	CC-BY-NC-ND	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+other	10.1101/2025.08.29.672992	BIORXIV_2025.08.29.672992	Jeong, J.	2025	bioRxiv	human	iPSC	CC-BY	yes	no	no	biorxiv	biorxiv ingest 2026-06
+other	10.1101/2025.08.29.673024	BIORXIV_2025.08.29.673024	Zuidema, A.	2025	bioRxiv		primary_tissue	CC-BY	yes	no	no	biorxiv	biorxiv ingest 2026-06
+other	10.1101/2025.08.29.673172	BIORXIV_2025.08.29.673172	Wilde, C.	2025	bioRxiv	Rhesus macaque	adult_stem_cell	CC0_NG	yes	no	no	biorxiv	biorxiv ingest 2026-06
+other	10.1101/2025.08.31.673315	BIORXIV_2025.08.31.673315	Tsutsumi, R.	2025	bioRxiv	mouse	adult_stem_cell	preprint-no-redistribution	yes	no	no	biorxiv	biorxiv ingest 2026-06
+cerebral	10.1101/2025.09.01.673532	BIORXIV_2025.09.01.673532	Nigrisoli, D.	2025	bioRxiv	human	iPSC	CC-BY-NC-ND	yes	no	no	biorxiv	biorxiv ingest 2026-06
+cerebral	10.1101/2025.09.02.672952	BIORXIV_2025.09.02.672952	Tsai, Y.-C.	2025	bioRxiv	human	iPSC	CC-BY-NC	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+lung	10.1101/2025.09.03.672699	BIORXIV_2025.09.03.672699	Gong, Z.	2025	bioRxiv	human	primary_tissue	CC-BY	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+cerebral	10.1101/2025.09.03.673593	BIORXIV_2025.09.03.673593	Rosen, Y.	2025	bioRxiv	murine	ESC	CC-BY-NC	yes	no	no	biorxiv	biorxiv ingest 2026-06
+kidney	10.1101/2025.09.03.673963	BIORXIV_2025.09.03.673963	Johnson, C. P.	2025	bioRxiv	human	iPSC	CC-BY-NC-ND	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+kidney	10.1101/2025.09.05.669416	BIORXIV_2025.09.05.669416	Spennati, G.	2025	bioRxiv	human	iPSC	CC-BY	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+gastric	10.1101/2025.09.09.675057	BIORXIV_2025.09.09.675057	Narayanaswamy, S.	2025	bioRxiv	Nematostella vectensis	primary_tissue	CC-BY	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+other	10.1101/2025.09.09.675145	BIORXIV_2025.09.09.675145	Ermini, L.	2025	bioRxiv	human	other	CC-BY	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+cerebral	10.1101/2025.09.12.675864	BIORXIV_2025.09.12.675864	Wang, L.	2025	bioRxiv	human	iPSC	preprint-no-redistribution	yes	no	no	biorxiv	biorxiv ingest 2026-06
+cerebral	10.1101/2025.09.12.675888	BIORXIV_2025.09.12.675888	Wu, F.	2025	bioRxiv	SwHomo	iPSC	CC-BY	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+cerebral	10.1101/2025.09.17.676829	BIORXIV_2025.09.17.676829	McManis, A.	2025	bioRxiv	human	iPSC	CC-BY-NC-ND	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+liver	10.1101/2025.09.18.677209	BIORXIV_2025.09.18.677209	Liu, A.	2025	bioRxiv	human	adult_stem_cell	CC-BY-NC-ND	yes	no	no	biorxiv	biorxiv ingest 2026-06
+cerebral	10.1101/2025.09.23.678106	BIORXIV_2025.09.23.678106	Bennett, A. B.	2025	bioRxiv	human	iPSC	CC-BY-NC-ND	yes	no	no	biorxiv	biorxiv ingest 2026-06
+retinal	10.1101/2025.09.26.678910	BIORXIV_2025.09.26.678910	Kado Abdalkader, R.	2025	bioRxiv	human	iPSC	preprint-no-redistribution	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+cerebral	10.1101/2025.09.29.679057	BIORXIV_2025.09.29.679057	Georgiev, D.	2025	bioRxiv	human	iPSC	CC-BY	yes	no	no	biorxiv	biorxiv ingest 2026-06
+cerebral	10.1101/2025.10.01.679540	BIORXIV_2025.10.01.679540	Albert, A.	2025	bioRxiv	human	iPSC	CC-BY-NC-ND	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+cerebral	10.1101/2025.10.01.679721	BIORXIV_2025.10.01.679721	Faravelli, I.	2025	bioRxiv	human	iPSC	preprint-no-redistribution	yes	no	no	biorxiv	biorxiv ingest 2026-06
+other	10.1101/2025.10.01.679897	BIORXIV_2025.10.01.679897	Ehnes, D. D.	2025	bioRxiv	human	iPSC	CC-BY-NC-ND	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+intestinal	10.1101/2025.10.02.680056	BIORXIV_2025.10.02.680056	Letourneur, D.	2025	bioRxiv	mouse	adult_stem_cell	preprint-no-redistribution	yes	no	no	biorxiv	biorxiv ingest 2026-06
+other	10.1101/2025.10.04.680210	BIORXIV_2025.10.04.680210	Suhito, I. R.	2025	bioRxiv	human	adult_stem_cell	CC-BY-NC-ND	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+cerebral	10.1101/2025.10.07.681020	BIORXIV_2025.10.07.681020	Kim, K.	2025	bioRxiv	human	iPSC	CC-BY-NC-ND	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+cerebral	10.1101/2025.10.07.681041	BIORXIV_2025.10.07.681041	Trovo, L.	2025	bioRxiv	human	iPSC	preprint-no-redistribution	yes	no	no	biorxiv	biorxiv ingest 2026-06
+cerebral	10.1101/2025.10.09.681391	BIORXIV_2025.10.09.681391	Shnaider, T. A.	2025	bioRxiv	human	iPSC	CC-BY	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+lung	10.1101/2025.10.13.682184	BIORXIV_2025.10.13.682184	Gellner, T. B.	2025	bioRxiv	human	adult_stem_cell	CC-BY-NC-ND	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+intestinal	10.1101/2025.10.15.680997	BIORXIV_2025.10.15.680997	Metzl-Raz, E.	2025	bioRxiv	human	iPSC	CC-BY-NC-ND	yes	no	no	biorxiv	biorxiv ingest 2026-06
+cerebral	10.1101/2025.10.15.682580	BIORXIV_2025.10.15.682580	Bhatia, T. N.	2025	bioRxiv	human	iPSC	preprint-no-redistribution	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+gastric	10.1101/2025.10.15.682610	BIORXIV_2025.10.15.682610	Azami, T.	2025	bioRxiv	human	other	CC-BY-NC	yes	no	no	biorxiv	biorxiv ingest 2026-06
+intestinal	10.1101/2025.10.16.682736	BIORXIV_2025.10.16.682736	Kim, D.-W.	2025	bioRxiv	human	iPSC	CC-BY	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+intestinal	10.1101/2025.10.17.682808	BIORXIV_2025.10.17.682808	Wang, W.	2025	bioRxiv	human	iPSC	preprint-no-redistribution	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+other	10.1101/2025.10.17.683162	BIORXIV_2025.10.17.683162	Sherman, E.	2025	bioRxiv	human	iPSC	preprint-no-redistribution	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+liver	10.1101/2025.10.20.683433	BIORXIV_2025.10.20.683433	Kiamehr, M.	2025	bioRxiv	human	iPSC	CC-BY-NC-ND	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+other	10.1101/2025.10.21.683405	BIORXIV_2025.10.21.683405	Calvi, I.	2025	bioRxiv	human	primary_tissue	CC-BY-NC-ND	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+cerebral	10.1101/2025.10.21.683634	BIORXIV_2025.10.21.683634	Bertacchi, M.	2025	bioRxiv	human	iPSC	preprint-no-redistribution	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+cerebral	10.1101/2025.10.21.683816	BIORXIV_2025.10.21.683816	Ferreira-Oliveira, A.	2025	bioRxiv	human	iPSC	CC-BY-NC-ND	yes	no	no	biorxiv	biorxiv ingest 2026-06
+other	10.1101/2025.11.04.686649	BIORXIV_2025.11.04.686649	Lee, J.	2025	bioRxiv	human	iPSC	preprint-no-redistribution	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+intestinal	10.1101/2025.11.05.685987	BIORXIV_2025.11.05.685987	Le, A. P.	2025	bioRxiv	human	iPSC	preprint-no-redistribution	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+other	10.1101/2025.11.05.686546	BIORXIV_2025.11.05.686546	Cao, K. X.	2025	bioRxiv	mouse	adult_stem_cell	preprint-no-redistribution	yes	no	no	biorxiv	biorxiv ingest 2026-06
+cerebral	10.1101/2025.11.06.686937	BIORXIV_2025.11.06.686937	Lin, Y.	2025	bioRxiv	human	iPSC	CC0_NG	yes	no	no	biorxiv	biorxiv ingest 2026-06
+kidney	10.1101/2025.11.07.687192	BIORXIV_2025.11.07.687192	Lopes, F. M.	2025	bioRxiv	human	iPSC	preprint-no-redistribution	yes	no	no	biorxiv	biorxiv ingest 2026-06
+gastric	10.1101/2025.11.08.687257	BIORXIV_2025.11.08.687257	Lyon, K. N.	2025	bioRxiv	human	primary_tissue	CC-BY-NC-ND	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+gastric	10.1101/2025.11.09.687163	BIORXIV_2025.11.09.687163	Smirnova, N. P.	2026	bioRxiv	mouse	ESC	CC-BY-NC-ND	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+kidney	10.1101/2025.11.13.688016	BIORXIV_2025.11.13.688016	Pecksen, E.	2025	bioRxiv	human	iPSC	preprint-no-redistribution	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+cerebral	10.1101/2025.11.13.688334	BIORXIV_2025.11.13.688334	Jena, B. P.	2025	bioRxiv	human	primary_tissue	CC-BY-NC-ND	yes	no	no	biorxiv	biorxiv ingest 2026-06
+retinal	10.1101/2025.11.18.689013	BIORXIV_2025.11.18.689013	Rao, J.	2025	bioRxiv	human	iPSC	CC-BY-NC-ND	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+cerebral	10.1101/2025.11.18.689148	BIORXIV_2025.11.18.689148	Peters, C. E.	2025	bioRxiv	human	iPSC	CC-BY	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+liver	10.1101/2025.11.27.690974	BIORXIV_2025.11.27.690974	Cotovio, J. P.	2025	bioRxiv	human	iPSC	CC-BY-NC-ND	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+intestinal	10.1101/2025.11.28.691111	BIORXIV_2025.11.28.691111	Zhou, F. Y.	2025	bioRxiv	human	iPSC	CC-BY-NC-ND	yes	yes	no	biorxiv	biorxiv ingest 2026-06
+other	dx.doi.org/10.17504/protocols.io.3byl4q6zrvo5/v2	PROTOCOLSIO_100040		1715	protocols.io	human	iPSC	CC-BY	yes	no	no	protocols_io	protocols_io ingest 2026-06
+other	dx.doi.org/10.17504/protocols.io.6qpvr3ydovmk/v2	PROTOCOLSIO_100191		1716	protocols.io		primary_tissue	CC-BY	yes	no	no	protocols_io	protocols_io ingest 2026-06
+other	dx.doi.org/10.17504/protocols.io.x54v92rb1l3e/v1	PROTOCOLSIO_101794		1718	protocols.io		other	CC-BY	yes	no	no	protocols_io	protocols_io ingest 2026-06
+cerebral	dx.doi.org/10.17504/protocols.io.4r3l2qyz4l1y/v1	PROTOCOLSIO_104667		1722	protocols.io	human	other	CC-BY	yes	no	no	protocols_io	protocols_io ingest 2026-06
+other	dx.doi.org/10.17504/protocols.io.e6nvw1nkdlmk/v1	PROTOCOLSIO_106662		1724	protocols.io	human	iPSC	CC-BY	yes	no	no	protocols_io	protocols_io ingest 2026-06
+cerebral	dx.doi.org/10.1038/protex.2018.123	PROTOCOLSIO_115002		1545	protocols.io	human	iPSC	CC-BY	yes	no	no	protocols_io	protocols_io ingest 2026-06
+cerebral	dx.doi.org/10.21203/rs.2.9542/v1	PROTOCOLSIO_116343		1559	protocols.io	human	iPSC	CC-BY	yes	no	no	protocols_io	protocols_io ingest 2026-06
+cerebral	dx.doi.org/10.17504/protocols.io.kxygxw1ddv8j/v1	PROTOCOLSIO_118580		1737	protocols.io	human	iPSC	CC-BY	yes	no	no	protocols_io	protocols_io ingest 2026-06
+cerebral	dx.doi.org/10.17504/protocols.io.bp2l6dp5rvqe/v1	PROTOCOLSIO_119148		1738	protocols.io	human	iPSC	CC-BY	yes	no	no	protocols_io	protocols_io ingest 2026-06
+other	dx.doi.org/10.1038/protex.2014.037	PROTOCOLSIO_121602		1411	protocols.io	mouse	adult_stem_cell	CC-BY	yes	no	no	protocols_io	protocols_io ingest 2026-06
+kidney	dx.doi.org/10.1038/protex.2015.087	PROTOCOLSIO_121701		1444	protocols.io	human	iPSC	CC-BY	yes	no	no	protocols_io	protocols_io ingest 2026-06
+intestinal	dx.doi.org/10.1038/protex.2017.007	PROTOCOLSIO_121817		1484	protocols.io		iPSC	CC-BY	yes	no	no	protocols_io	protocols_io ingest 2026-06
+lung	dx.doi.org/10.1038/protex.2017.027	PROTOCOLSIO_121868		1492	protocols.io	human	iPSC	CC-BY	yes	no	no	protocols_io	protocols_io ingest 2026-06
+other	dx.doi.org/10.1038/protex.2017.062	PROTOCOLSIO_121869		1491	protocols.io	human	other	CC-BY	yes	no	no	protocols_io	protocols_io ingest 2026-06
+other	dx.doi.org/10.1038/protex.2017.030	PROTOCOLSIO_121875		1491	protocols.io	human	adult_stem_cell	CC-BY	yes	no	no	protocols_io	protocols_io ingest 2026-06
+cerebral	dx.doi.org/10.1038/protex.2017.049	PROTOCOLSIO_121880		1493	protocols.io	human	iPSC	CC-BY	yes	no	no	protocols_io	protocols_io ingest 2026-06
+cerebral	dx.doi.org/10.1038/protex.2017.064	PROTOCOLSIO_121907		1494	protocols.io	human	iPSC	CC-BY	yes	no	no	protocols_io	protocols_io ingest 2026-06
+lung	dx.doi.org/10.1038/protex.2017.097	PROTOCOLSIO_121942		1507	protocols.io	human	iPSC	CC-BY	yes	no	no	protocols_io	protocols_io ingest 2026-06
+intestinal	dx.doi.org/10.1038/protex.2017.098	PROTOCOLSIO_121946		1511	protocols.io	human	iPSC	CC-BY	yes	no	no	protocols_io	protocols_io ingest 2026-06
+lung	dx.doi.org/10.1038/protex.2017.106	PROTOCOLSIO_121949		1510	protocols.io	mouse	other	CC-BY	yes	no	no	protocols_io	protocols_io ingest 2026-06
+other	dx.doi.org/10.1038/protex.2017.143	PROTOCOLSIO_121965		1513	protocols.io	mouse	adult_stem_cell	CC-BY	yes	no	no	protocols_io	protocols_io ingest 2026-06
+cerebral	dx.doi.org/10.1038/protex.2018.071	PROTOCOLSIO_122033		1532	protocols.io	human	iPSC	CC-BY	yes	no	no	protocols_io	protocols_io ingest 2026-06
+intestinal	dx.doi.org/10.21203/rs.3.nprot-6891/v1	PROTOCOLSIO_122045		1606	protocols.io	human	iPSC	CC-BY	yes	no	no	protocols_io	protocols_io ingest 2026-06
+other	dx.doi.org/10.1038/protex.2018.121	PROTOCOLSIO_122072		1543	protocols.io	human	adult_stem_cell	CC-BY	yes	no	no	protocols_io	protocols_io ingest 2026-06
+intestinal	dx.doi.org/10.21203/rs.2.9220/v1	PROTOCOLSIO_122134		1556	protocols.io	mouse	adult_stem_cell	CC-BY	yes	no	no	protocols_io	protocols_io ingest 2026-06
+other	dx.doi.org/10.21203/rs.2.12413/v1	PROTOCOLSIO_122217		1574	protocols.io	mouse	adult_stem_cell	CC-BY	yes	no	no	protocols_io	protocols_io ingest 2026-06
+liver	dx.doi.org/10.21203/rs.2.13102/v1	PROTOCOLSIO_122233		1573	protocols.io	human	iPSC	CC-BY	yes	no	no	protocols_io	protocols_io ingest 2026-06
+cerebral	dx.doi.org/10.21203/rs.2.13464/v1	PROTOCOLSIO_122246		1570	protocols.io	human	other	CC-BY	yes	no	no	protocols_io	protocols_io ingest 2026-06
+other	dx.doi.org/10.21203/rs.3.pex-791/v1	PROTOCOLSIO_122274		1583	protocols.io	human	adult_stem_cell	CC-BY	yes	no	no	protocols_io	protocols_io ingest 2026-06
+gastric	dx.doi.org/10.21203/rs.3.pex-812/v1	PROTOCOLSIO_122287		1591	protocols.io	human	iPSC	CC-BY	yes	no	no	protocols_io	protocols_io ingest 2026-06
+intestinal	dx.doi.org/10.21203/rs.2.16232/v2	PROTOCOLSIO_122307		1582	protocols.io	Murine	adult_stem_cell	CC-BY	yes	no	no	protocols_io	protocols_io ingest 2026-06
+other	dx.doi.org/10.21203/rs.3.pex-889/v1	PROTOCOLSIO_122329		1591	protocols.io	human	iPSC	CC-BY	yes	no	no	protocols_io	protocols_io ingest 2026-06
+intestinal	dx.doi.org/10.21203/rs.3.pex-903/v1	PROTOCOLSIO_122334		1600	protocols.io	mouse	adult_stem_cell	CC-BY	yes	no	no	protocols_io	protocols_io ingest 2026-06
+kidney	dx.doi.org/10.21203/rs.3.pex-911/v1	PROTOCOLSIO_122342		1589	protocols.io	human	adult_stem_cell	CC-BY	yes	no	no	protocols_io	protocols_io ingest 2026-06
+cerebral	dx.doi.org/10.21203/rs.3.pex-998/v1	PROTOCOLSIO_122391		1596	protocols.io	human	iPSC	CC-BY	yes	no	no	protocols_io	protocols_io ingest 2026-06
+other	dx.doi.org/10.21203/rs.3.pex-1078/v1	PROTOCOLSIO_122418		1599	protocols.io	mouse	ESC	CC-BY	yes	no	no	protocols_io	protocols_io ingest 2026-06
+other	dx.doi.org/10.21203/rs.3.pex-1174/v1	PROTOCOLSIO_122449		1608	protocols.io	mouse	adult_stem_cell	CC-BY	yes	no	no	protocols_io	protocols_io ingest 2026-06
+gastric	dx.doi.org/10.21203/rs.3.pex-1441/v1	PROTOCOLSIO_122574		1621	protocols.io	human	iPSC	CC-BY	yes	no	no	protocols_io	protocols_io ingest 2026-06
+pancreatic	dx.doi.org/10.21203/rs.3.pex-1430/v2	PROTOCOLSIO_122620		1622	protocols.io	human	iPSC	CC-BY	yes	no	no	protocols_io	protocols_io ingest 2026-06
+other	dx.doi.org/10.21203/rs.3.pex-1563/v1	PROTOCOLSIO_122640		1670	protocols.io	mouse	ESC	CC-BY	yes	no	no	protocols_io	protocols_io ingest 2026-06
+other	dx.doi.org/10.21203/rs.3.pex-1589/v1	PROTOCOLSIO_122657		1670	protocols.io	human	iPSC	CC-BY	yes	no	no	protocols_io	protocols_io ingest 2026-06
+other	dx.doi.org/10.21203/rs.3.pex-1606/v1	PROTOCOLSIO_122665		1635	protocols.io	human	iPSC	CC-BY	yes	no	no	protocols_io	protocols_io ingest 2026-06
+other	dx.doi.org/10.21203/rs.3.pex-1708/v1	PROTOCOLSIO_122733		1638	protocols.io		iPSC	CC-BY	yes	no	no	protocols_io	protocols_io ingest 2026-06
+other	dx.doi.org/10.21203/rs.3.pex-1821/v1	PROTOCOLSIO_122758		1650	protocols.io	human	iPSC	CC-BY	yes	no	no	protocols_io	protocols_io ingest 2026-06
+other	dx.doi.org/10.21203/rs.3.pex-1852/v1	PROTOCOLSIO_122771		1651	protocols.io	human	iPSC	CC-BY	yes	no	no	protocols_io	protocols_io ingest 2026-06
+cerebral	dx.doi.org/10.21203/rs.3.pex-1877/v1	PROTOCOLSIO_122777		1655	protocols.io	human	iPSC	CC-BY	yes	no	no	protocols_io	protocols_io ingest 2026-06
+gastric	dx.doi.org/10.21203/rs.3.pex-2147/v1	PROTOCOLSIO_122893		1682	protocols.io	human	adult_stem_cell	CC-BY	yes	no	no	protocols_io	protocols_io ingest 2026-06
+intestinal	dx.doi.org/10.21203/rs.3.pex-2221/v1	PROTOCOLSIO_122938		1685	protocols.io	human	iPSC	CC-BY	yes	no	no	protocols_io	protocols_io ingest 2026-06
+cerebral	dx.doi.org/10.21203/rs.3.pex-2641/v1	PROTOCOLSIO_123117		1717	protocols.io	human	other	CC-BY	yes	no	no	protocols_io	protocols_io ingest 2026-06
+other	dx.doi.org/10.17504/protocols.io.3byl4wmdrvo5/v1	PROTOCOLSIO_124189		1741	protocols.io		other	CC-BY	yes	no	no	protocols_io	protocols_io ingest 2026-06
+cerebral	dx.doi.org/10.17504/protocols.io.eq2ly62regx9/v2	PROTOCOLSIO_189060		1745	protocols.io		iPSC	CC-BY	yes	no	no	protocols_io	protocols_io ingest 2026-06
+other	dx.doi.org/10.17504/protocols.io.j8nlk287wl5r/v1	PROTOCOLSIO_198125		1745	protocols.io	human	other	CC-BY	yes	no	no	protocols_io	protocols_io ingest 2026-06
+cerebral	dx.doi.org/10.17504/protocols.io.n92ldnxp7v5b/v1	PROTOCOLSIO_218435		1747	protocols.io		iPSC	CC-BY	yes	no	no	protocols_io	protocols_io ingest 2026-06
+other	dx.doi.org/10.17504/protocols.io.81wgbkjkogpk/v1	PROTOCOLSIO_220409		1750	protocols.io	mouse	ESC	CC-BY	yes	no	no	protocols_io	protocols_io ingest 2026-06
+gastric	dx.doi.org/10.17504/protocols.io.q26g7n873lwz/v1	PROTOCOLSIO_223331		1753	protocols.io	human	iPSC	CC-BY	yes	no	no	protocols_io	protocols_io ingest 2026-06
+cerebral	dx.doi.org/10.17504/protocols.io.kxygx4mb4l8j/v2	PROTOCOLSIO_224945		1755	protocols.io	human	iPSC	CC-BY	yes	no	no	protocols_io	protocols_io ingest 2026-06
+other	dx.doi.org/10.17504/protocols.io.261gekejog47/v1	PROTOCOLSIO_226706		1757	protocols.io	human	iPSC	CC-BY	yes	no	no	protocols_io	protocols_io ingest 2026-06
+cerebral	dx.doi.org/10.17504/protocols.io.6qpvrwq13lmk/v1	PROTOCOLSIO_230382		1761	protocols.io	human	iPSC	CC-BY	yes	no	no	protocols_io	protocols_io ingest 2026-06
+intestinal	dx.doi.org/10.17504/protocols.io.e6nvw44p2lmk/v1	PROTOCOLSIO_230414		1761	protocols.io	human	iPSC	CC-BY	yes	no	no	protocols_io	protocols_io ingest 2026-06
+other	dx.doi.org/10.17504/protocols.io.rm7vzem34vx1/v1	PROTOCOLSIO_235102		1765	protocols.io	human	other	CC-BY	yes	no	no	protocols_io	protocols_io ingest 2026-06
+intestinal	dx.doi.org/10.1007/978-1-0716-3076-1_12	PROTOCOLSIO_239915		1676	protocols.io	mouse	adult_stem_cell	CC-BY	yes	no	no	protocols_io	protocols_io ingest 2026-06
+cerebral	dx.doi.org/10.17504/protocols.io.kxygx8qrwv8j/v1	PROTOCOLSIO_244208		1772	protocols.io	human	iPSC	CC-BY	yes	no	no	protocols_io	protocols_io ingest 2026-06
+cerebral	dx.doi.org/10.17504/protocols.io.n2bvj1eobvk5/v1	PROTOCOLSIO_244239		1772	protocols.io	human	iPSC	CC-BY	yes	no	no	protocols_io	protocols_io ingest 2026-06
+other	dx.doi.org/10.1007/7651_2016_10	PROTOCOLSIO_245562		1470	protocols.io		primary_tissue	CC-BY	yes	no	no	protocols_io	protocols_io ingest 2026-06
+gastric	dx.doi.org/10.17504/protocols.io.78vhrw6	PROTOCOLSIO_28661		1571	protocols.io		iPSC	CC-BY	yes	no	no	protocols_io	protocols_io ingest 2026-06
+gastric	dx.doi.org/10.17504/protocols.io.bcqsivwe	PROTOCOLSIO_33266		1582	protocols.io		primary_tissue	CC-BY	yes	no	no	protocols_io	protocols_io ingest 2026-06
+cerebral	dx.doi.org/10.17504/protocols.io.kqdg39d5qg25/v1	PROTOCOLSIO_79544		1679	protocols.io	human	iPSC	CC-BY	yes	no	no	protocols_io	protocols_io ingest 2026-06
+intestinal	dx.doi.org/10.17504/protocols.io.4r3l22or3l1y/v1	PROTOCOLSIO_85691		1690	protocols.io		iPSC	CC-BY	yes	no	no	protocols_io	protocols_io ingest 2026-06
+other	dx.doi.org/10.17504/protocols.io.14egn33zzl5d/v1	PROTOCOLSIO_86475		1692	protocols.io		adult_stem_cell	CC-BY	yes	no	no	protocols_io	protocols_io ingest 2026-06
+other	dx.doi.org/10.17504/protocols.io.6qpvr32ppvmk/v1	PROTOCOLSIO_91258		1700	protocols.io	human	other	CC-BY	yes	no	no	protocols_io	protocols_io ingest 2026-06
+other	dx.doi.org/10.17504/protocols.io.dm6gp32y5vzp/v1	PROTOCOLSIO_91261		1700	protocols.io	human	iPSC	CC-BY	yes	no	no	protocols_io	protocols_io ingest 2026-06
+intestinal	dx.doi.org/10.17504/protocols.io.ewov1qmqkgr2/v1	PROTOCOLSIO_91745		1701	protocols.io	murine	adult_stem_cell	CC-BY	yes	no	no	protocols_io	protocols_io ingest 2026-06
+intestinal	dx.doi.org/10.17504/protocols.io.eq2lyjqjrlx9/v1	PROTOCOLSIO_91747		1701	protocols.io	mouse	adult_stem_cell	CC-BY	yes	no	no	protocols_io	protocols_io ingest 2026-06
+other		PROTOCOLSIO_92344		1702	protocols.io	human	adult_stem_cell	CC-BY	yes	no	no	protocols_io	protocols_io ingest 2026-06
+other		PROTOCOLSIO_92353		1702	protocols.io		other	CC-BY	yes	no	no	protocols_io	protocols_io ingest 2026-06
+cerebral	dx.doi.org/10.17504/protocols.io.kxygx3r6og8j/v2	PROTOCOLSIO_96771		1710	protocols.io	mouse	ESC	CC-BY	yes	no	no	protocols_io	protocols_io ingest 2026-06

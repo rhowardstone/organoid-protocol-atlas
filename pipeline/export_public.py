@@ -35,6 +35,22 @@ TABLES = ("protocols", "reagents")
 # slightly more context at 500.
 PUBLIC_SNIPPET_MAX = 500
 
+# Public-export schema version. Bump on a breaking change to the JSONL/manifest shape
+# so deploy consumers can detect it (deploy contract pins this).
+SCHEMA_VERSION = "0.4"
+
+# organoid_type label normalization applied at export time so the public data is
+# canonical regardless of upstream labels (e.g. a stray "hepatic" -> "liver"). Keeps
+# the manifest n_types and the no-hepatic deploy contract self-consistent without a
+# separate hand-run relabel step.
+TYPE_ALIASES = {"hepatic": "liver", "hepatobiliary": "liver"}
+
+
+def canon_type(t: str | None) -> str | None:
+    if not t:
+        return t
+    return TYPE_ALIASES.get(t.strip().lower(), t)
+
 
 def is_public_license(license: str | None) -> bool:
     """Public-redistributable iff CC0 or CC-BY (incl. -SA) and NOT NonCommercial (NC)
@@ -54,21 +70,28 @@ def main():
     cc = sorted({r["pmcid"] for r in conn.execute("SELECT pmcid, license FROM protocols")
                  if is_public_license(r["license"])})
     ph = ",".join("?" * len(cc))
-    manifest = {"license_filter": "CC0/CC-BY (no NC/ND)", "n_papers": len(cc),
+    manifest = {"schema_version": SCHEMA_VERSION,
+                "license_filter": "CC0/CC-BY (no NC/ND)", "n_papers": len(cc),
                 "papers": sorted(cc), "tables": {}}
+    types: set[str] = set()
     for t in TABLES:
         rows = conn.execute(f"SELECT * FROM {t} WHERE pmcid IN ({ph})", cc).fetchall()
         with open(OUT / f"{t}.jsonl", "w") as f:
             for r in rows:
                 row = {k: r[k] for k in r.keys()}
+                if "organoid_type" in row:
+                    row["organoid_type"] = canon_type(row["organoid_type"])
+                    if t == "protocols" and row["organoid_type"]:
+                        types.add(row["organoid_type"])
                 eq = row.get("evidence_quote")
                 if eq and len(eq) > PUBLIC_SNIPPET_MAX:
                     row["evidence_quote"] = eq[:PUBLIC_SNIPPET_MAX]
                 f.write(json.dumps(row, ensure_ascii=False) + "\n")
         manifest["tables"][t] = len(rows)
         print(f"  {t}: {len(rows)} rows")
+    manifest["n_types"] = len(types)
     (OUT / "manifest.json").write_text(json.dumps(manifest, indent=2))
-    print(f"exported CC-only public subset ({len(cc)} papers) -> {OUT}")
+    print(f"exported CC-only public subset ({len(cc)} papers, {len(types)} types) -> {OUT}")
 
 
 if __name__ == "__main__":
