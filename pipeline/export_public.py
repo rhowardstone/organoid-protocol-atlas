@@ -101,6 +101,15 @@ def main():
                 eq = row.get("evidence_quote")
                 if eq and len(eq) > PUBLIC_SNIPPET_MAX:
                     row["evidence_quote"] = eq[:PUBLIC_SNIPPET_MAX]
+                # stages[] is stored as JSON text in the KG; emit it as a real array so the
+                # recipe renderer (#228) sees p.stages as a list. Absent -> [] (timeline fallback).
+                if "stages" in row:
+                    try:
+                        row["stages"] = json.loads(row["stages"]) if row["stages"] else []
+                    except (TypeError, ValueError):
+                        row["stages"] = []
+                if "is_generation_protocol" in row and row["is_generation_protocol"] is not None:
+                    row["is_generation_protocol"] = bool(row["is_generation_protocol"])
                 f.write(json.dumps(row, ensure_ascii=False) + "\n")
         manifest["tables"][t] = len(rows)
         print(f"  {t}: {len(rows)} rows")
