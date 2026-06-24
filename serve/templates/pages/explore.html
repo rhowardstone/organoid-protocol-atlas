@@ -1,4 +1,4 @@
-{% extends "default:base.html" %}
+{% extends "base.html" %}
 {% block title %}Explore protocols — Organoid Protocol Atlas{% endblock %}
 {% block body_class %}index{% endblock %}
 
@@ -51,7 +51,19 @@
 .exp-stat { font-family:var(--mono); font-size:.75rem; color:var(--muted); }
 .exp-stat strong { color:var(--ink); }
 
+/* Export bar */
+.exp-statbar { display:flex; align-items:center; justify-content:space-between; gap:.8rem; flex-wrap:wrap; margin-top:.6rem; }
+.exp-export { display:flex; align-items:center; gap:5px; }
+.exp-export-label { font-size:.72rem; font-family:var(--mono); color:var(--muted); }
+.exp-export .exp-tab { font-size:.73rem; padding:.25rem .6rem; }
+.exp-export a.exp-tab { text-decoration:none; display:inline-flex; align-items:center; }
+.exp-export.disabled { opacity:.4; pointer-events:none; }
+
 /* pending counter */
+.exp-load-btn { font-family:var(--mono); font-size:.82rem; padding:.6rem 1.8rem;
+  border:1px solid var(--border); border-radius:8px; background:var(--paper);
+  color:var(--accent); cursor:pointer; transition:.15s; }
+.exp-load-btn:hover { border-color:var(--accent); background:var(--paper-3); }
 .exp-pending { position:fixed; bottom:1.5rem; right:1.5rem; background:var(--ink); color:var(--paper); font-family:var(--mono); font-size:.72rem; padding:.35rem .8rem; border-radius:20px; opacity:.85; transition:.2s; pointer-events:none; }
 .exp-pending.hidden { opacity:0; }
 </style>
@@ -62,14 +74,16 @@
   <span class="dot"></span>
   <a href="/consensus">Consensus</a>
   <span class="dot"></span>
-  <a href="/heatmap">Morphogen grammar</a>
+  <a href="/heatmap">Heatmap</a>
+  <span class="dot"></span>
+  <a href="/dashboard">Dashboard</a>
   <span class="dot"></span>
   <a href="/ask">Ask</a>
 </div>
 
 <div class="exp-hero">
   <h1>Explore protocols</h1>
-  <p>10 peer-reviewed organoid differentiation protocols with 122 annotated signaling factors, supplements, and matrix reagents.</p>
+  <p id="hero-desc">Evidence-grounded organoid differentiation protocols — source cells, matrix, media, and signaling cocktail, each value backed by a verbatim quote and DOI.</p>
 
   <div class="exp-controls">
     <input class="exp-search" id="search" type="search" placeholder="Search protocol, author, factor…" autocomplete="off">
@@ -80,23 +94,88 @@
   </div>
 
   <div class="exp-chips" id="chips"></div>
-  <div class="exp-stat" id="count" style="margin-top:.6rem"></div>
+  <div class="exp-statbar">
+    <div class="exp-stat" id="count"></div>
+    <div class="exp-export" id="export">
+      <span class="exp-export-label">Export this view</span>
+      <button class="exp-tab" type="button" id="exp-jsonl" onclick="exportData('jsonl')" title="Download the current filtered results as JSON Lines">↓ JSONL</button>
+      <button class="exp-tab" type="button" id="exp-tsv" onclick="exportData('tsv')" title="Download the current filtered results as tab-separated values">↓ TSV</button>
+      <a class="exp-tab" id="api-link" href="/atlas/protocols.json?_shape=array&amp;_size=max" target="_blank" rel="noopener" title="Raw Datasette JSON API for programmatic access">API ↗</a>
+    </div>
+  </div>
 </div>
 
 <div class="exp-grid" id="grid" style="margin-top:1rem"></div>
+<div style="text-align:center;padding:2rem 0 1rem"><button id="load-more" onclick="loadMore()" class="exp-load-btn" style="display:none">Load more</button></div>
 <div class="exp-pending hidden" id="pending"></div>
 
 <script>
 const esc = s => (s==null?'':String(s)).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const $ = id => document.getElementById(id);
 
+// ── Export (downloads the exact current filtered view) ──
+function downloadBlob(name, text, mime){
+  const blob = new Blob([text], {type: mime + ';charset=utf-8'});
+  const url = URL.createObjectURL(blob);
+  const a = Object.assign(document.createElement('a'), {href:url, download:name});
+  document.body.appendChild(a); a.click();
+  setTimeout(() => { URL.revokeObjectURL(url); a.remove(); }, 0);
+}
+function toTSV(items){
+  const cols = [...items.reduce((s,o) => { Object.keys(o).forEach(k => s.add(k)); return s; }, new Set())];
+  const cell = v => v==null ? '' : String(v).replace(/[\t\r\n]+/g, ' ').trim();
+  return [cols.join('\t'), ...items.map(o => cols.map(c => cell(o[c])).join('\t'))].join('\n');
+}
+function exportData(fmt){
+  const items = filteredItems;
+  if(!items || !items.length) return;
+  const scope = activeType || 'all';
+  const base = `atlas_${view === 'proto' ? 'protocols' : 'reagents'}_${scope}_${items.length}`;
+  if(fmt === 'jsonl') downloadBlob(base + '.jsonl', items.map(o => JSON.stringify(o)).join('\n'), 'application/x-ndjson');
+  else downloadBlob(base + '.tsv', toTSV(items), 'text/tab-separated-values');
+}
+function updateExportBar(){
+  const bar = $('export'); if(!bar) return;
+  bar.classList.toggle('disabled', !filteredItems.length);
+  const link = $('api-link');
+  if(link){
+    const tbl = view === 'proto' ? 'protocols' : 'reagents';
+    let url = `/atlas/${tbl}.json?_shape=array&_size=max`;
+    if(activeType) url += `&organoid_type__exact=${encodeURIComponent(activeType)}`;
+    link.href = url;
+  }
+}
+
 const TYPE_COLOR = {
-  'cerebral':   '#7c3aed',
-  'kidney':     '#0e7490',
-  'liver':      '#b45309',
-  'lung':       '#1d4ed8',
-  'pancreatic': '#c2410c',
-  'retinal':    '#6d28d9',
+  // Original 8
+  'cerebral':            '#7c3aed',
+  'kidney':              '#0e7490',
+  'liver':               '#b45309',
+  'lung':                '#1d4ed8',
+  'pancreatic':          '#c2410c',
+  'retinal':             '#6d28d9',
+  'intestinal':          '#15803d',
+  'gastric':             '#9333ea',
+  // Expanded 17
+  'cardiac':             '#dc2626',
+  'tumor':               '#374151',
+  'vascular':            '#0891b2',
+  'cholangiocyte':       '#d97706',
+  'skin':                '#b45309',
+  'mammary':             '#db2777',
+  'endometrial':         '#e11d48',
+  'bone':                '#92400e',
+  'prostate':            '#1d4ed8',
+  'inner-ear':           '#7c3aed',
+  'salivary-gland':      '#0f766e',
+  'bladder':             '#4338ca',
+  'neuromuscular':       '#0e7490',
+  'esophageal':          '#b91c1c',
+  'blood-brain-barrier': '#1e40af',
+  'thyroid':             '#065f46',
+  'fallopian-tube':      '#9d174d',
+  // Legacy alias
+  'hepatic':             '#b45309',
 };
 function typeColor(t){ return TYPE_COLOR[t] || '#64748b'; }
 
@@ -117,6 +196,9 @@ let query = '';
 let protos = [], reagents = [];
 let protosByPmcid = {};        // pmcid → protocol
 let signaling = {};            // pmcid → [canonical, ...]
+const PAGE_SIZE = 24;
+let page = 0;
+let filteredItems = [];
 
 function setView(v){
   view = v;
@@ -168,29 +250,61 @@ function matchReagent(r, q){
 }
 
 // ── Render ──
-function render(){
+function render(resetPage = true){
+  if(resetPage) page = 0;
   const g = $('grid');
   const cnt = $('count');
-  let items;
+  const btn = $('load-more');
 
   if(view === 'proto'){
-    items = protos
+    filteredItems = protos
       .filter(p => !activeType || p.organoid_type===activeType)
       .filter(p => matchProto(p, query));
-    cnt.innerHTML = `Showing <strong>${items.length}</strong> of <strong>${protos.length}</strong> protocols`;
-    g.innerHTML = items.length
-      ? items.map((p,i) => protoCard(p,i)).join('')
+    const shown = filteredItems.slice(0, (page+1)*PAGE_SIZE);
+    cnt.innerHTML = `Showing <strong>${shown.length}</strong> of <strong>${filteredItems.length}</strong> protocols`;
+    g.innerHTML = shown.length
+      ? shown.map((p,i) => protoCard(p,i)).join('')
       : '<div class="exp-empty">No protocols match.</div>';
   } else {
-    items = reagents
+    filteredItems = reagents
       .filter(r => !activeType || r.organoid_type===activeType)
       .filter(r => matchReagent(r, query));
-    cnt.innerHTML = `Showing <strong>${items.length}</strong> of <strong>${reagents.length}</strong> reagents`;
-    g.innerHTML = items.length
-      ? items.map((r,i) => reagentCard(r,i)).join('')
+    const shown = filteredItems.slice(0, (page+1)*PAGE_SIZE);
+    cnt.innerHTML = `Showing <strong>${shown.length}</strong> of <strong>${filteredItems.length}</strong> reagents`;
+    g.innerHTML = shown.length
+      ? shown.map((r,i) => reagentCard(r,i)).join('')
       : '<div class="exp-empty">No reagents match.</div>';
   }
+
+  const remaining = filteredItems.length - (page+1)*PAGE_SIZE;
+  if(remaining > 0){
+    btn.style.display = 'block';
+    btn.textContent = 'Load ' + Math.min(remaining, PAGE_SIZE) + ' more';
+  } else {
+    btn.style.display = 'none';
+  }
+  updateExportBar();
 }
+
+function loadMore(){
+  page++;
+  const g = $('grid');
+  const start = page * PAGE_SIZE;
+  const slice = filteredItems.slice(start, start + PAGE_SIZE);
+  g.innerHTML += slice.map((item, i) =>
+    view === 'proto' ? protoCard(item, start+i) : reagentCard(item, start+i)
+  ).join('');
+  const remaining = filteredItems.length - (page+1)*PAGE_SIZE;
+  const btn = $('load-more');
+  btn.textContent = remaining > 0
+    ? 'Load ' + Math.min(remaining, PAGE_SIZE) + ' more'
+    : '';
+  if(remaining <= 0) btn.style.display = 'none';
+  const shown = Math.min((page+1)*PAGE_SIZE, filteredItems.length);
+  const label = view === 'proto' ? 'protocols' : 'reagents';
+  $('count').innerHTML = `Showing <strong>${shown}</strong> of <strong>${filteredItems.length}</strong> ${label}`;
+}
+
 
 // ── Protocol card ──
 function protoCard(p, i){
@@ -272,7 +386,19 @@ function reagentCard(r, i){
 
   for(const proto of protos) protosByPmcid[proto.pmcid] = proto;
 
+  // Update hero description with live corpus counts
+  const nTypes = new Set(protos.map(p => p.organoid_type).filter(Boolean)).size;
+  const desc = document.getElementById('hero-desc');
+  if (desc) {
+    desc.textContent = `${protos.length.toLocaleString()} evidence-grounded organoid protocols across ${nTypes} systems, with ${reagents.length.toLocaleString()} annotated reagent rows — each value backed by a verbatim quote and DOI.`;
+  }
+
   buildChips();
+  const urlParams = new URLSearchParams(window.location.search);
+  const urlType = urlParams.get('type');
+  const urlQ = urlParams.get('q');
+  if(urlType){ activeType = urlType; buildChips(); }
+  if(urlQ){ query = urlQ; $('search').value = urlQ; }
   render();
 })();
 
