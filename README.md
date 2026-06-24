@@ -13,7 +13,7 @@ protocols stated by reference to a cited paper. The guiding rule throughout is
 **missing evidence beats false evidence** — values without grounding are dropped or flagged,
 never fabricated.
 
-Everything runs on a **local A100** (models via [ollama](https://ollama.com)) — no API, no keys.
+Everything runs on a **local A100** (models via [ollama](https://ollama.com)) — no API, no keys. [Demo](https://organoid-protocol-atlas.onrender.com/)
 
 ## Corpus
 
