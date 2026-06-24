@@ -1,0 +1,369 @@
+{
+  "stages": [
+    {
+      "name": "Cell Culture (CAL27, CAL33)",
+      "start_day": null,
+      "end_day": null,
+      "culture_vessel": null,
+      "medium_base": "DMEM",
+      "reagents": [
+        {
+          "name": "ultra-glutamine",
+          "concentration": 2,
+          "unit": "mM",
+          "role": "supplement"
+        },
+        {
+          "name": "sodium pyruvate",
+          "concentration": 0.5,
+          "unit": "mM",
+          "role": "supplement"
+        },
+        {
+          "name": "FBS",
+          "concentration": 10,
+          "unit": "%",
+          "role": "supplement"
+        }
+      ],
+      "transition": null
+    },
+    {
+      "name": "Cell Culture (SCC9)",
+      "start_day": null,
+      "end_day": null,
+      "culture_vessel": null,
+      "medium_base": "DMEM-F12",
+      "reagents": [
+        {
+          "name": "ultra-glutamine",
+          "concentration": 2.5,
+          "unit": "mM",
+          "role": "supplement"
+        },
+        {
+          "name": "HEPES",
+          "concentration": 15,
+          "unit": "mM",
+          "role": "supplement"
+        },
+        {
+          "name": "hydrocortisone",
+          "concentration": 400,
+          "unit": "ng/mL",
+          "role": "supplement"
+        },
+        {
+          "name": "FBS",
+          "concentration": 10,
+          "unit": "%",
+          "role": "supplement"
+        }
+      ],
+      "transition": null
+    },
+    {
+      "name": "EREG Silencing",
+      "start_day": null,
+      "end_day": null,
+      "culture_vessel": null,
+      "medium_base": null,
+      "reagents": [
+        {
+          "name": "siRNA EREG",
+          "concentration": 25,
+          "unit": "nM",
+          "role": "EREG inhibitor"
+        },
+        {
+          "name": "siRNA Ctrl",
+          "concentration": null,
+          "unit": null,
+          "role": "control siRNA"
+        },
+        {
+          "name": "Lipofectamine 2000",
+          "concentration": null,
+          "unit": null,
+          "role": "transfection reagent"
+        }
+      ],
+      "transition": "Western blot to confirm silencing"
+    },
+    {
+      "name": "Drug Treatment",
+      "start_day": null,
+      "end_day": null,
+      "culture_vessel": null,
+      "medium_base": null,
+      "reagents": [
+        {
+          "name": "CTX",
+          "concentration": 30,
+          "unit": "nM",
+          "role": "drug"
+        },
+        {
+          "name": "RSL3",
+          "concentration": 5,
+          "unit": "µM",
+          "role": "drug"
+        },
+        {
+          "name": "metformin",
+          "concentration": 1,
+          "unit": "mM",
+          "role": "drug"
+        }
+      ],
+      "transition": null
+    },
+    {
+      "name": "Sphere Evasion Assay",
+      "start_day": null,
+      "end_day": null,
+      "culture_vessel": "60 mm dishes, 24-well plates",
+      "medium_base": null,
+      "reagents": [
+        {
+          "name": "methylcellulose",
+          "concentration": 20,
+          "unit": "%",
+          "role": "supplement"
+        }
+      ],
+      "transition": null
+    },
+    {
+      "name": "IncuCyte Assay",
+      "start_day": null,
+      "end_day": null,
+      "culture_vessel": "96-well plates",
+      "medium_base": null,
+      "reagents": [],
+      "transition": null
+    },
+    {
+      "name": "Clonogenic Survival Assay",
+      "start_day": null,
+      "end_day": null,
+      "culture_vessel": "6-well plates",
+      "medium_base": null,
+      "reagents": [
+        {
+          "name": "crystal violet",
+          "concentration": 0.1,
+          "unit": "%",
+          "role": "staining"
+        }
+      ],
+      "transition": null
+    },
+    {
+      "name": "Metabolic Assays",
+      "start_day": null,
+      "end_day": null,
+      "culture_vessel": "Seahorse XF Cell Culture microplate",
+      "medium_base": "XF growth medium",
+      "reagents": [
+        {
+          "name": "glucose",
+          "concentration": 10,
+          "unit": "mM",
+          "role": "supplement"
+        },
+        {
+          "name": "L-glutamine",
+          "concentration": 4,
+          "unit": "mM",
+          "role": "supplement"
+        },
+        {
+          "name": "sodium pyruvate",
+          "concentration": 2,
+          "unit": "mM",
+          "role": "supplement"
+        },
+        {
+          "name": "oligomycin",
+          "concentration": 1.5,
+          "unit": "µM",
+          "role": "metabolic inhibitor"
+        },
+        {
+          "name": "rotenone/antimycin A",
+          "concentration": 0.5,
+          "unit": "µM",
+          "role": "metabolic inhibitor"
+        }
+      ],
+      "transition": null
+    },
+    {
+      "name": "Western Blot",
+      "start_day": null,
+      "end_day": null,
+      "culture_vessel": null,
+      "medium_base": null,
+      "reagents": [
+        {
+          "name": "lysis buffer",
+          "concentration": null,
+          "unit": null,
+          "role": "lysis"
+        },
+        {
+          "name": "protease inhibitor cocktail",
+          "concentration": null,
+          "unit": null,
+          "role": "protease inhibitor"
+        }
+      ],
+      "transition": null
+    },
+    {
+      "name": "Intracellular Fe2+ Accumulation",
+      "start_day": null,
+      "end_day": null,
+      "culture_vessel": "96-well plates, LabTek wells",
+      "medium_base": null,
+      "reagents": [
+        {
+          "name": "FerroOrange",
+          "concentration": 1,
+          "unit": "µM",
+          "role": "probe"
+        }
+      ],
+      "transition": null
+    },
+    {
+      "name": "Lipid Peroxides Accumulation",
+      "start_day": null,
+      "end_day": null,
+      "culture_vessel": "LabTek wells",
+      "medium_base": null,
+      "reagents": [
+        {
+          "name": "Liperfluo kit",
+          "concentration": 1,
+          "unit": "µM",
+          "role": "probe"
+        }
+      ],
+      "transition": null
+    },
+    {
+      "name": "Tumoroid Culture",
+      "start_day": 7,
+      "end_day": 17,
+      "culture_vessel": "24-well plates",
+      "medium_base": "advanced DMEM/F12",
+      "reagents": [
+        {
+          "name": "GlutaMax",
+          "concentration": null,
+          "unit": null,
+          "role": "supplement"
+        },
+        {
+          "name": "Penicilin/streptomycin",
+          "concentration": null,
+          "unit": null,
+          "role": "antibiotic"
+        },
+        {
+          "name": "HEPES",
+          "concentration": 10,
+          "unit": "mM",
+          "role": "supplement"
+        },
+        {
+          "name": "Y-27632",
+          "concentration": 10,
+          "unit": "µM",
+          "role": "supplement"
+        },
+        {
+          "name": "Capsofungin",
+          "concentration": 0.5,
+          "unit": "µg/mL",
+          "role": "supplement"
+        },
+        {
+          "name": "B27 supplement",
+          "concentration": 1,
+          "unit": "×",
+          "role": "supplement"
+        },
+        {
+          "name": "N-acetyl-L-cysteine",
+          "concentration": 1.25,
+          "unit": "mM",
+          "role": "supplement"
+        },
+        {
+          "name": "Nicotinamide",
+          "concentration": 10,
+          "unit": "mM",
+          "role": "supplement"
+        },
+        {
+          "name": "A83-01",
+          "concentration": 500,
+          "unit": "nM",
+          "role": "supplement"
+        },
+        {
+          "name": "CHIR99021",
+          "concentration": 0.3,
+          "unit": "µM",
+          "role": "supplement"
+        },
+        {
+          "name": "human EGF",
+          "concentration": 50,
+          "unit": "ng/mL",
+          "role": "supplement"
+        },
+        {
+          "name": "human FGF10",
+          "concentration": 10,
+          "unit": "ng/mL",
+          "role": "supplement"
+        },
+        {
+          "name": "human FGF2",
+          "concentration": 5,
+          "unit": "ng/mL",
+          "role": "supplement"
+        },
+        {
+          "name": "Prostaglandin E2",
+          "concentration": 1,
+          "unit": "µM",
+          "role": "supplement"
+        },
+        {
+          "name": "Forskolin",
+          "concentration": 1,
+          "unit": "µM",
+          "role": "supplement"
+        },
+        {
+          "name": "RSPO3-Fc fusion protein conditioned medium",
+          "concentration": 4,
+          "unit": "%",
+          "role": "supplement"
+        },
+        {
+          "name": "Noggin-Fc fusion protein conditioned medium",
+          "concentration": 4,
+          "unit": "%",
+          "role": "supplement"
+        }
+      ],
+      "transition": null
+    }
+  ]
+}

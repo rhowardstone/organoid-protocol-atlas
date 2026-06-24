@@ -1,0 +1,374 @@
+{
+  "stages": [
+    {
+      "name": "iPSC Culture (KSCBi005)",
+      "start_day": null,
+      "end_day": null,
+      "culture_vessel": "fibronectin-coated plates",
+      "medium_base": "Essential 8 medium",
+      "reagents": [
+        {
+          "name": "fibronectin",
+          "concentration": null,
+          "unit": null,
+          "role": "plate coating"
+        }
+      ],
+      "transition": null
+    },
+    {
+      "name": "iPSC Culture (CS40iFAD-nxx)",
+      "start_day": null,
+      "end_day": null,
+      "culture_vessel": "GFR-Matrigel-coated plates",
+      "medium_base": "mTeSR TM Plus medium",
+      "reagents": [
+        {
+          "name": "GFR-Matrigel",
+          "concentration": null,
+          "unit": null,
+          "role": "plate coating"
+        }
+      ],
+      "transition": null
+    },
+    {
+      "name": "EB aggregation",
+      "start_day": 0,
+      "end_day": 5,
+      "culture_vessel": "ultralow-attachment 96-well plates",
+      "medium_base": null,
+      "reagents": [
+        {
+          "name": "dorsomorphin",
+          "concentration": 2.5,
+          "unit": "µM",
+          "role": "BMP inhibitor"
+        },
+        {
+          "name": "SB431542",
+          "concentration": 10,
+          "unit": "µM",
+          "role": "TGF-β/Activin inhibitor"
+        },
+        {
+          "name": "ROCK inhibitor",
+          "concentration": 50,
+          "unit": "µM",
+          "role": "promote dissociation"
+        }
+      ],
+      "transition": "Day 6: transfer to 60mm dish"
+    },
+    {
+      "name": "Neuronal Differentiation",
+      "start_day": 6,
+      "end_day": 19,
+      "culture_vessel": "60 mm culture dishes",
+      "medium_base": "Neurobasal-A",
+      "reagents": [
+        {
+          "name": "GlutaMAX",
+          "concentration": 1,
+          "unit": "x",
+          "role": "supplement"
+        },
+        {
+          "name": "B-27 Supplement",
+          "concentration": 1,
+          "unit": "x",
+          "role": "supplement"
+        },
+        {
+          "name": "bFGF",
+          "concentration": 20,
+          "unit": "ng/mL",
+          "role": "growth factor"
+        },
+        {
+          "name": "EGF",
+          "concentration": 20,
+          "unit": "ng/mL",
+          "role": "growth factor"
+        }
+      ],
+      "transition": "Day 20: switch to medium with BDNF and NT3"
+    },
+    {
+      "name": "Enhanced Neuronal Differentiation",
+      "start_day": 20,
+      "end_day": 42,
+      "culture_vessel": "60 mm culture dishes",
+      "medium_base": "Neurobasal-A",
+      "reagents": [
+        {
+          "name": "GlutaMAX",
+          "concentration": 1,
+          "unit": "x",
+          "role": "supplement"
+        },
+        {
+          "name": "B-27 Supplement",
+          "concentration": 1,
+          "unit": "x",
+          "role": "supplement"
+        },
+        {
+          "name": "bFGF",
+          "concentration": 20,
+          "unit": "ng/mL",
+          "role": "growth factor"
+        },
+        {
+          "name": "EGF",
+          "concentration": 20,
+          "unit": "ng/mL",
+          "role": "growth factor"
+        },
+        {
+          "name": "BDNF",
+          "concentration": 20,
+          "unit": "ng/mL",
+          "role": "growth factor"
+        },
+        {
+          "name": "NT3",
+          "concentration": 20,
+          "unit": "ng/mL",
+          "role": "growth factor"
+        }
+      ],
+      "transition": "Day 43: remove growth factors"
+    },
+    {
+      "name": "Maturation",
+      "start_day": 43,
+      "end_day": null,
+      "culture_vessel": "60 mm culture dishes",
+      "medium_base": "Neurobasal-A",
+      "reagents": [
+        {
+          "name": "GlutaMAX",
+          "concentration": 1,
+          "unit": "x",
+          "role": "supplement"
+        },
+        {
+          "name": "B-27 Supplement",
+          "concentration": 1,
+          "unit": "x",
+          "role": "supplement"
+        }
+      ],
+      "transition": null
+    },
+    {
+      "name": "STB-MP Treatment",
+      "start_day": null,
+      "end_day": null,
+      "culture_vessel": null,
+      "medium_base": null,
+      "reagents": [
+        {
+          "name": "STB-MP",
+          "concentration": null,
+          "unit": null,
+          "role": "treatment"
+        }
+      ],
+      "transition": null
+    },
+    {
+      "name": "MTT Assay",
+      "start_day": null,
+      "end_day": null,
+      "culture_vessel": "24-well culture plate",
+      "medium_base": "iNSC maintenance medium",
+      "reagents": [
+        {
+          "name": "ROCK inhibitor",
+          "concentration": null,
+          "unit": null,
+          "role": "supplement"
+        },
+        {
+          "name": "MTT solution",
+          "concentration": 500,
+          "unit": "µg/mL",
+          "role": "metabolic assay"
+        },
+        {
+          "name": "DMSO",
+          "concentration": null,
+          "unit": null,
+          "role": "solubilize formazan"
+        }
+      ],
+      "transition": null
+    },
+    {
+      "name": "RNA Extraction",
+      "start_day": null,
+      "end_day": null,
+      "culture_vessel": null,
+      "medium_base": null,
+      "reagents": [
+        {
+          "name": "TRIzol",
+          "concentration": null,
+          "unit": null,
+          "role": "RNA extraction"
+        }
+      ],
+      "transition": null
+    },
+    {
+      "name": "Reverse Transcription PCR",
+      "start_day": null,
+      "end_day": null,
+      "culture_vessel": null,
+      "medium_base": null,
+      "reagents": [
+        {
+          "name": "Superscript-III First Strand KIT",
+          "concentration": null,
+          "unit": null,
+          "role": "cDNA synthesis"
+        },
+        {
+          "name": "SYBR Green PCR MIX",
+          "concentration": null,
+          "unit": null,
+          "role": "PCR reaction"
+        }
+      ],
+      "transition": null
+    },
+    {
+      "name": "Western Blot Analysis",
+      "start_day": null,
+      "end_day": null,
+      "culture_vessel": null,
+      "medium_base": null,
+      "reagents": [
+        {
+          "name": "Pro-Prep protein lysis buffer",
+          "concentration": null,
+          "unit": null,
+          "role": "protein lysis"
+        },
+        {
+          "name": "BSA",
+          "concentration": 3,
+          "unit": "%",
+          "role": "blocking"
+        },
+        {
+          "name": "antibodies",
+          "concentration": null,
+          "unit": null,
+          "role": "detection"
+        },
+        {
+          "name": "secondary antibodies",
+          "concentration": 1,
+          "unit": "2500",
+          "role": "detection"
+        },
+        {
+          "name": "ECL detection kit",
+          "concentration": null,
+          "unit": null,
+          "role": "detection"
+        }
+      ],
+      "transition": null
+    },
+    {
+      "name": "Histology and Immunofluorescence",
+      "start_day": null,
+      "end_day": null,
+      "culture_vessel": null,
+      "medium_base": null,
+      "reagents": [
+        {
+          "name": "4% paraformaldehyde",
+          "concentration": 4,
+          "unit": "%",
+          "role": "fixation"
+        },
+        {
+          "name": "sucrose solution",
+          "concentration": 30,
+          "unit": "%",
+          "role": "cryoprotection"
+        },
+        {
+          "name": "gelatin",
+          "concentration": null,
+          "unit": null,
+          "role": "cryoprotection"
+        },
+        {
+          "name": "perm-block solution",
+          "concentration": null,
+          "unit": null,
+          "role": "permeabilization and blocking"
+        },
+        {
+          "name": "primary antibodies",
+          "concentration": null,
+          "unit": null,
+          "role": "immunodetection"
+        },
+        {
+          "name": "secondary antibodies",
+          "concentration": null,
+          "unit": null,
+          "role": "immunodetection"
+        },
+        {
+          "name": "DAPI",
+          "concentration": null,
+          "unit": null,
+          "role": "nuclear staining"
+        },
+        {
+          "name": "DAKO fluorescence mounting medium",
+          "concentration": null,
+          "unit": null,
+          "role": "mounting"
+        }
+      ],
+      "transition": null
+    },
+    {
+      "name": "ELISA",
+      "start_day": null,
+      "end_day": null,
+      "culture_vessel": null,
+      "medium_base": "RIPA buffer",
+      "reagents": [
+        {
+          "name": "human Aβ40 ELISA Kit",
+          "concentration": null,
+          "unit": null,
+          "role": "Aβ40 quantification"
+        },
+        {
+          "name": "human Aβ42 ELISA Kit",
+          "concentration": null,
+          "unit": null,
+          "role": "Aβ42 quantification"
+        },
+        {
+          "name": "BCA",
+          "concentration": null,
+          "unit": null,
+          "role": "protein quantification"
+        }
+      ],
+      "transition": null
+    }
+  ]
+}

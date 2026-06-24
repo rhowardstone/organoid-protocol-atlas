@@ -1,0 +1,264 @@
+{
+  "stages": [
+    {
+      "name": "Colonoid and Myofibroblast Culture Initiation",
+      "start_day": 0,
+      "end_day": null,
+      "culture_vessel": null,
+      "medium_base": "EM",
+      "reagents": [
+        {
+          "name": "Y-27632",
+          "concentration": 10,
+          "unit": "µM",
+          "role": "ROCK inhibitor"
+        },
+        {
+          "name": "CHIR-99021",
+          "concentration": 10,
+          "unit": "µM",
+          "role": "WNT activator"
+        },
+        {
+          "name": "Valproic acid",
+          "concentration": 1,
+          "unit": "mM",
+          "role": "HDAC inhibitor"
+        }
+      ],
+      "transition": null
+    },
+    {
+      "name": "Myofibroblast Expansion",
+      "start_day": null,
+      "end_day": null,
+      "culture_vessel": "24-well plate",
+      "medium_base": "EMEM",
+      "reagents": [
+        {
+          "name": "FBS",
+          "concentration": 10,
+          "unit": "%",
+          "role": "Supplement"
+        },
+        {
+          "name": "Non-essential amino acids",
+          "concentration": 1,
+          "unit": "%",
+          "role": "Supplement"
+        },
+        {
+          "name": "Penicillin/Streptomycin",
+          "concentration": null,
+          "unit": null,
+          "role": "Antibiotic"
+        }
+      ],
+      "transition": null
+    },
+    {
+      "name": "Transwell Insert Coating",
+      "start_day": null,
+      "end_day": null,
+      "culture_vessel": "Transwell insert",
+      "medium_base": "DMEM F12",
+      "reagents": [
+        {
+          "name": "Human collagen IV solution",
+          "concentration": 10,
+          "unit": "mg/cm2",
+          "role": "Coating"
+        }
+      ],
+      "transition": null
+    },
+    {
+      "name": "Colonoid Fragment Preparation",
+      "start_day": null,
+      "end_day": null,
+      "culture_vessel": null,
+      "medium_base": "DMEM F12",
+      "reagents": [
+        {
+          "name": "Trypsin-EDTA",
+          "concentration": 0.02,
+          "unit": "%",
+          "role": "Cell dissociation"
+        }
+      ],
+      "transition": null
+    },
+    {
+      "name": "Colonoid Monolayer Formation",
+      "start_day": null,
+      "end_day": null,
+      "culture_vessel": "Transwell insert",
+      "medium_base": "EM",
+      "reagents": [
+        {
+          "name": "Y-27632",
+          "concentration": null,
+          "unit": null,
+          "role": null
+        },
+        {
+          "name": "CHIR-99021",
+          "concentration": null,
+          "unit": null,
+          "role": null
+        }
+      ],
+      "transition": "TEER > 150 Ω/cm2"
+    },
+    {
+      "name": "Coculture",
+      "start_day": null,
+      "end_day": 4,
+      "culture_vessel": "24-well plate",
+      "medium_base": "EM",
+      "reagents": [
+        {
+          "name": "Y-27632",
+          "concentration": null,
+          "unit": null,
+          "role": null
+        },
+        {
+          "name": "CHIR-99021",
+          "concentration": null,
+          "unit": null,
+          "role": null
+        }
+      ],
+      "transition": null
+    },
+    {
+      "name": "Fluorometric Measurements",
+      "start_day": null,
+      "end_day": null,
+      "culture_vessel": "Perfusion chamber",
+      "medium_base": null,
+      "reagents": [
+        {
+          "name": "BCECF-AM",
+          "concentration": 5,
+          "unit": "µM",
+          "role": "Fluorescent dye"
+        },
+        {
+          "name": "HOE642",
+          "concentration": 3,
+          "unit": "µM",
+          "role": "NHE inhibitor"
+        },
+        {
+          "name": "Tenapanor",
+          "concentration": 1,
+          "unit": "µM",
+          "role": "NHE inhibitor"
+        }
+      ],
+      "transition": null
+    },
+    {
+      "name": "Immunofluorescence",
+      "start_day": null,
+      "end_day": null,
+      "culture_vessel": "Cover slip",
+      "medium_base": "PBS",
+      "reagents": [
+        {
+          "name": "PFA",
+          "concentration": 2,
+          "unit": "%",
+          "role": "Fixative"
+        },
+        {
+          "name": "Normal goat serum",
+          "concentration": 5,
+          "unit": "%",
+          "role": "Blocking agent"
+        },
+        {
+          "name": "Triton X-100",
+          "concentration": 0.2,
+          "unit": "%",
+          "role": "Permeabilization"
+        },
+        {
+          "name": "KI67 antibody",
+          "concentration": 1,
+          "unit": ":100",
+          "role": "Antibody"
+        },
+        {
+          "name": "MUC2 antibody",
+          "concentration": 1,
+          "unit": ":200",
+          "role": "Antibody"
+        },
+        {
+          "name": "NHE3 antibody",
+          "concentration": 1,
+          "unit": ":500",
+          "role": "Antibody"
+        },
+        {
+          "name": "NHE8 antibody",
+          "concentration": 1,
+          "unit": ":500",
+          "role": "Antibody"
+        },
+        {
+          "name": "SLC26A3 antibody",
+          "concentration": 1,
+          "unit": ":200",
+          "role": "Antibody"
+        },
+        {
+          "name": "SMA antibody",
+          "concentration": 1,
+          "unit": ":200",
+          "role": "Antibody"
+        },
+        {
+          "name": "CD90 antibody",
+          "concentration": 1,
+          "unit": ":200",
+          "role": "Antibody"
+        },
+        {
+          "name": "Claudin-2 antibody",
+          "concentration": 1,
+          "unit": ":200",
+          "role": "Antibody"
+        },
+        {
+          "name": "ZO-1 antibody",
+          "concentration": 1,
+          "unit": ":200",
+          "role": "Antibody"
+        },
+        {
+          "name": "Alexa Fluor-conjugated secondary antibodies",
+          "concentration": 1,
+          "unit": ":500",
+          "role": "Secondary antibody"
+        },
+        {
+          "name": "DAPI",
+          "concentration": 2,
+          "unit": "µg/mL",
+          "role": "Nuclear stain"
+        },
+        {
+          "name": "Phalloidin-Alexa Fluor 647",
+          "concentration": 1,
+          "unit": ":500",
+          "role": "Actin stain"
+        }
+      ],
+      "transition": null
+    }
+  ]
+}
