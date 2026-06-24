@@ -63,7 +63,29 @@
   </details>
 </section>
 
+<section class="apa-typedist" aria-label="Evidence grounding across the corpus">
+  <div class="apa-typedist-head">
+    <h2>Evidence grounding across the corpus</h2>
+    <span class="apa-typedist-sub">how many protocols fall in each grounding-rate band · higher = more reagent values verbatim-verified against the source</span>
+  </div>
+  <figure id="grounding-chart" class="apa-typedist-chart" aria-hidden="true"></figure>
+  <details class="apa-typedist-table" open>
+    <summary>Show as data table</summary>
+    <table>
+      <thead><tr><th scope="col">Grounding rate</th><th scope="col">Protocols</th></tr></thead>
+      <tbody>
+        {% for g in grounding_buckets %}
+        <tr><td>{{ g.label }}</td><td>{{ g.count }}</td></tr>
+        {% else %}
+        <tr><td colspan="2">No protocols loaded yet.</td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </details>
+</section>
+
 <script>window.__TYPE_COUNTS__ = {{ type_counts|tojson }};</script>
+<script>window.__GROUNDING_BUCKETS__ = {{ grounding_buckets|tojson }};</script>
 <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6/dist/plot.umd.min.js" defer></script>
 <script defer>
@@ -72,10 +94,12 @@
     var c = getComputedStyle(document.documentElement).getPropertyValue(v).trim();
     return c || f;
   };
-  function render() {
+  var plotReady = function () { return typeof Plot !== 'undefined' && typeof Plot.barX === 'function'; };
+
+  function renderTypeChart() {
     var data = (window.__TYPE_COUNTS__ || []).filter(function (d) { return d && d.count; });
     var el = document.getElementById('type-chart');
-    if (!el || !data.length || typeof Plot === 'undefined' || typeof Plot.barX !== 'function') return;
+    if (!el || !data.length || !plotReady()) return;
     el.replaceChildren();   // clear any prior render (e.g. on theme toggle)
     var h = Math.min(300, 28 + data.length * 11);
     var chart = Plot.plot({
@@ -99,12 +123,52 @@
     el.append(chart);
     el.removeAttribute('aria-hidden');
   }
+
+  // Trust tiers: ≥80% grounded = good (green), 50–80% = caution (amber), <50% = weak (red).
+  function tierColor(b) {
+    if (b >= 8) return css('--good', '#15803d');
+    if (b >= 5) return css('--warn', '#b45309');
+    return css('--bad', '#b91c1c');
+  }
+  function renderGroundingChart() {
+    var data = (window.__GROUNDING_BUCKETS__ || []);
+    var el = document.getElementById('grounding-chart');
+    if (!el || !plotReady()) return;
+    var total = data.reduce(function (s, d) { return s + (d.count || 0); }, 0);
+    if (!total) return;
+    el.replaceChildren();
+    var chart = Plot.plot({
+      height: 240,
+      marginLeft: 48,
+      marginRight: 14,
+      marginTop: 12,
+      marginBottom: 50,
+      style: { background: 'transparent', color: css('--ink', '#0f172a'), fontFamily: css('--mono', 'monospace') },
+      x: { label: 'per-protocol grounding rate →', domain: data.map(function (d) { return d.label; }), tickRotate: -35 },
+      y: { label: 'protocols', grid: true, tickFormat: 's' },
+      marks: [
+        Plot.barY(data, { x: 'label', y: 'count', fill: function (d) { return tierColor(d.bucket); }, rx: 1 }),
+        Plot.text(data, { x: 'label', y: 'count', text: function (d) { return d.count ? d.count.toLocaleString() : ''; }, dy: -4, fontSize: 9, fill: css('--muted', '#5b6b7b') }),
+        Plot.ruleY([0])
+      ]
+    });
+    chart.setAttribute('role', 'img');
+    chart.setAttribute('aria-label', 'Histogram: number of protocols in each grounding-rate band');
+    el.append(chart);
+    el.removeAttribute('aria-hidden');
+  }
+
+  function renderAll() { renderTypeChart(); renderGroundingChart(); }
+
   window.addEventListener('load', function () {
-    render();
-    var det = document.querySelector('.apa-typedist-table');   // collapse table once chart is up
-    if (det && document.querySelector('#type-chart svg')) det.open = false;
-    // Re-render on theme toggle so axis/label colors follow the active theme.
-    new MutationObserver(render).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+    renderAll();
+    // Collapse each chart's fallback table once its chart has rendered.
+    document.querySelectorAll('.apa-typedist-table').forEach(function (det) {
+      var sec = det.closest('.apa-typedist');
+      if (sec && sec.querySelector('.apa-typedist-chart svg')) det.open = false;
+    });
+    // Re-render on theme toggle so axis/label/bar colors follow the active theme.
+    new MutationObserver(renderAll).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
   });
 })();
 </script>
