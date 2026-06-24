@@ -1,0 +1,149 @@
+{% extends "base.html" %}
+{% block title %}Discover candidate factors — Organoid Protocol Atlas{% endblock %}
+{% block body_class %}index{% endblock %}
+
+{% block content %}
+<style>
+.dsc-hero { max-width: 1000px; margin: 2.2rem auto 0; padding: 0 1.5rem; }
+.dsc-hero h1 { font-size: 2rem; font-weight: 700; margin: 0 0 .35rem; }
+.dsc-hero p { color: var(--muted); font-size: .9rem; margin: 0 0 1rem; max-width: 760px; line-height: 1.55; }
+.dsc-chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 .4rem; }
+.dsc-chip { padding: .28rem .7rem; border-radius: 20px; font-size: .75rem; font-family: var(--mono); cursor: pointer; border: 1px solid transparent; background: var(--paper-3); color: var(--muted); white-space: nowrap; }
+.dsc-chip:hover { color: var(--ink); border-color: var(--border); }
+.dsc-chip.active { color: #fff; }
+
+.dsc-result { max-width: 1000px; margin: 1.2rem auto 3rem; padding: 0 1.5rem; }
+.dsc-empty { color: var(--muted); font-size: .9rem; padding: 2rem 0; text-align: center; }
+.dsc-meta { font-family: var(--mono); font-size: .78rem; color: var(--muted); margin-bottom: 1rem; }
+.dsc-meta .sim { color: var(--ink); }
+
+.dsc-section { margin-bottom: 1.8rem; }
+.dsc-section h2 { font-size: 1.05rem; margin: 0 0 .2rem; }
+.dsc-section .sub { color: var(--muted); font-size: .82rem; margin: 0 0 .8rem; }
+
+.dsc-factorline { display: grid; grid-template-columns: 150px 1fr 56px; align-items: center; gap: .6rem; padding: .25rem 0; }
+.dsc-factorline .fname { font-size: .85rem; }
+.dsc-factorline .fname a { color: var(--ink); text-decoration: none; }
+.dsc-factorline .fname a:hover { color: var(--accent); }
+.dsc-track { background: var(--paper-3); border-radius: 4px; height: 12px; overflow: hidden; }
+.dsc-fill { height: 100%; background: var(--accent); border-radius: 4px; }
+.dsc-pct { font-family: var(--mono); font-size: .74rem; color: var(--muted); text-align: right; }
+
+.dsc-banner { background: color-mix(in srgb, var(--accent) 7%, var(--paper)); border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent); border-radius: 10px; padding: .7rem .95rem; font-size: .82rem; line-height: 1.5; margin-bottom: 1rem; }
+.dsc-cand { border: 1px solid var(--border); border-radius: 10px; padding: .7rem .9rem; margin-bottom: .6rem; background: var(--paper); }
+.dsc-cand-head { display: flex; align-items: baseline; justify-content: space-between; gap: .6rem; flex-wrap: wrap; }
+.dsc-cand-name { font-size: .95rem; font-weight: 600; }
+.dsc-cand-name a { color: var(--ink); text-decoration: none; }
+.dsc-cand-name a:hover { color: var(--accent); }
+.dsc-cand-here { font-family: var(--mono); font-size: .72rem; color: var(--warn); }
+.dsc-cand-why { font-size: .8rem; color: var(--muted); margin-top: .35rem; }
+.dsc-cand-why b { color: var(--ink); font-weight: 600; }
+.dsc-support-pill { display: inline-block; font-family: var(--mono); font-size: .7rem; padding: 1px 6px; border-radius: 3px; color: #fff; margin: 0 3px 3px 0; }
+</style>
+
+<div class="dsc-hero">
+  <h1>Discover candidate factors</h1>
+  <p>Pick an organoid system to see its established signaling recipe and — by borrowing from
+  the most similar systems — <strong>candidate factors not yet common here</strong> that
+  might seed a new protocol. Candidates are evidence-based <em>hypotheses</em>, not validated
+  recommendations.</p>
+  <div class="dsc-chips" id="chips"></div>
+</div>
+
+<div class="dsc-result" id="result">
+  <div class="dsc-empty">Loading…</div>
+</div>
+
+<script>
+const esc = s => (s==null?'':String(s)).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const $ = id => document.getElementById(id);
+
+const TYPE_COLOR = {
+  'cerebral':'#7c3aed','kidney':'#0e7490','liver':'#b45309','lung':'#1d4ed8','pancreatic':'#c2410c',
+  'retinal':'#6d28d9','intestinal':'#15803d','gastric':'#9333ea','cardiac':'#dc2626','tumor':'#374151',
+  'vascular':'#0891b2','cholangiocyte':'#d97706','skin':'#b45309','mammary':'#db2777','endometrial':'#e11d48',
+  'bone':'#92400e','prostate':'#1d4ed8','inner-ear':'#7c3aed','salivary-gland':'#0f766e','bladder':'#4338ca',
+  'neuromuscular':'#0e7490','esophageal':'#b91c1c','blood-brain-barrier':'#1e40af','thyroid':'#065f46',
+  'fallopian-tube':'#9d174d','hepatic':'#b45309'
+};
+const typeColor = t => TYPE_COLOR[t] || '#64748b';
+
+let DATA = { types: [], by_type: {} };
+let active = null;
+const pct = p => (p*100).toFixed(0) + '%';
+const reagentHref = f => `/atlas/reagents?canonical__exact=${encodeURIComponent(f)}`;
+
+function buildChips(){
+  $('chips').innerHTML = DATA.types.map(t => {
+    const c = typeColor(t);
+    return `<button class="dsc-chip${active===t?' active':''}" style="${active===t?`background:${c};border-color:${c}`:''}" onclick="pick('${esc(t)}')">${esc(t)}</button>`;
+  }).join('');
+}
+
+function pick(t){
+  active = t;
+  buildChips();
+  const u = new URL(window.location); u.searchParams.set('type', t); history.replaceState(null,'',u);
+  render();
+}
+
+function factorLine(f, maxPrev){
+  const w = maxPrev ? Math.max(3, Math.round(100*f.prevalence/maxPrev)) : 0;
+  return `<div class="dsc-factorline">
+    <div class="fname"><a href="${reagentHref(f.factor)}">${esc(f.factor)}</a></div>
+    <div class="dsc-track"><div class="dsc-fill" style="width:${w}%"></div></div>
+    <div class="dsc-pct">${pct(f.prevalence)}</div>
+  </div>`;
+}
+
+function candCard(c){
+  const pills = (c.support||[]).map(s =>
+    `<span class="dsc-support-pill" style="background:${typeColor(s.type)}">${esc(s.type)} ${pct(s.prevalence)}</span>`
+  ).join('');
+  return `<div class="dsc-cand">
+    <div class="dsc-cand-head">
+      <span class="dsc-cand-name"><a href="${reagentHref(c.factor)}">${esc(c.factor)}</a></span>
+      <span class="dsc-cand-here">used in only ${pct(c.prevalence_here)} of ${esc(active)} protocols</span>
+    </div>
+    <div class="dsc-cand-why">Established in similar systems: ${pills}</div>
+  </div>`;
+}
+
+function render(){
+  const el = $('result');
+  if(!active){ el.innerHTML = '<div class="dsc-empty">Pick an organoid system above.</div>'; return; }
+  const e = DATA.by_type[active];
+  if(!e){ el.innerHTML = '<div class="dsc-empty">No data for this system.</div>'; return; }
+  const c = typeColor(active);
+  const maxTop = e.top_factors.length ? e.top_factors[0].prevalence : 0;
+  const sim = (e.similar_types||[]).map(s => `<span class="sim">${esc(s.type)}</span> (${s.similarity.toFixed(2)})`).join(' · ');
+
+  el.innerHTML = `
+    <div class="dsc-meta">
+      <span style="color:${c};font-weight:600">${esc(active)}</span> — ${e.n_protocols.toLocaleString()} protocols with signaling factors
+      ${sim ? `<br>most similar systems: ${sim}` : ''}
+    </div>
+    <div class="dsc-section">
+      <h2>Established recipe backbone</h2>
+      <p class="sub">Signaling factors ranked by how often they appear across ${esc(active)} protocols. See <a href="/consensus">/consensus</a> for doses and citations.</p>
+      ${e.top_factors.length ? e.top_factors.map(f => factorLine(f, maxTop)).join('') : '<div class="dsc-empty">No signaling factors extracted for this system.</div>'}
+    </div>
+    <div class="dsc-section">
+      <h2>Candidate factors to explore</h2>
+      <div class="dsc-banner">⚗ <strong>Hypotheses, not recommendations.</strong> These factors are well established in the organoid systems most similar to ${esc(active)} but are under-used here — evidence-based starting points to consider when designing a new ${esc(active)} protocol. Always verify against the cited source protocols.</div>
+      ${e.candidates.length ? e.candidates.map(candCard).join('') : '<div class="dsc-empty">No strong cross-system candidates — this system\'s recipe is already distinct from its neighbours.</div>'}
+    </div>`;
+}
+
+(async () => {
+  try { DATA = await (await fetch('/discover-data.json')).json(); }
+  catch(e){ $('result').innerHTML = '<div class="dsc-empty">Could not load discovery data.</div>'; return; }
+  if(!DATA.types || !DATA.types.length){ $('result').innerHTML = '<div class="dsc-empty">No data available yet.</div>'; return; }
+  buildChips();
+  const urlT = new URLSearchParams(window.location.search).get('type');
+  active = (urlT && DATA.by_type[urlT]) ? urlT : DATA.types[0];
+  buildChips();
+  render();
+})();
+</script>
+{% endblock %}
