@@ -1,0 +1,67 @@
+{
+  "method": "backfill failure_modes + modifications into existing predictions via gemma3:12b (gated: FM needs description; modification cited_doi must be a real DOI verbatim in source)",
+  "n_predictions": 699,
+  "n_ok": 686,
+  "n_errors": 13,
+  "papers_with_failure_modes": 86,
+  "papers_with_modifications": 33,
+  "papers_with_grounded_doi_edge": 1,
+  "total_failure_modes": 126,
+  "total_modifications": 33,
+  "total_grounded_doi_edges": 1,
+  "errors": [
+    {
+      "pmcid": "PMC11794879",
+      "error": "extract: JSONDecodeError: Expecting ',' delimiter: line 105 column 1 (char 1941)"
+    },
+    {
+      "pmcid": "PMC11964763",
+      "error": "extract: JSONDecodeError: Expecting ',' delimiter: line 95 column 1 (char 1771)"
+    },
+    {
+      "pmcid": "PMC12154040",
+      "error": "extract: JSONDecodeError: Expecting ',' delimiter: line 97 column 1 (char 2391)"
+    },
+    {
+      "pmcid": "PMC12247448",
+      "error": "extract: JSONDecodeError: Expecting ',' delimiter: line 71 column 1 (char 1412)"
+    },
+    {
+      "pmcid": "PMC12270736",
+      "error": "extract: JSONDecodeError: Expecting ',' delimiter: line 131 column 1 (char 3346)"
+    },
+    {
+      "pmcid": "PMC12665400",
+      "error": "extract: JSONDecodeError: Expecting ',' delimiter: line 72 column 1 (char 1113)"
+    },
+    {
+      "pmcid": "PMC12953928",
+      "error": "extract: JSONDecodeError: Expecting ',' delimiter: line 81 column 1 (char 1390)"
+    },
+    {
+      "pmcid": "PMC12992574",
+      "error": "extract: JSONDecodeError: Expecting ',' delimiter: line 139 column 1 (char 3256)"
+    },
+    {
+      "pmcid": "PMC13114865",
+      "error": "extract: JSONDecodeError: Expecting ',' delimiter: line 103 column 1 (char 2102)"
+    },
+    {
+      "pmcid": "PMC5770275",
+      "error": "extract: JSONDecodeError: Expecting ',' delimiter: line 79 column 1 (char 1419)"
+    },
+    {
+      "pmcid": "PMC6296757",
+      "error": "extract: JSONDecodeError: Expecting ',' delimiter: line 100 column 1 (char 1834)"
+    },
+    {
+      "pmcid": "PMC7416290",
+      "error": "extract: JSONDecodeError: Expecting ',' delimiter: line 78 column 1 (char 1413)"
+    },
+    {
+      "pmcid": "PMC8675211",
+      "error": "extract: JSONDecodeError: Expecting ',' delimiter: line 89 column 1 (char 2022)"
+    }
+  ],
+  "generated_at": "2026-06-24T01:25:05+00:00"
+}

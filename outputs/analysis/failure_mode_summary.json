@@ -1,0 +1,661 @@
+{
+  "total_failure_modes": 164,
+  "n_organoid_types": 9,
+  "global_cluster_ranking": [
+    {
+      "cluster": "other",
+      "count": 140
+    },
+    {
+      "cluster": "matrix_gelation",
+      "count": 7
+    },
+    {
+      "cluster": "contamination",
+      "count": 6
+    },
+    {
+      "cluster": "concentration_critical",
+      "count": 4
+    },
+    {
+      "cluster": "organoid_collapse",
+      "count": 3
+    },
+    {
+      "cluster": "reagent_quality",
+      "count": 2
+    },
+    {
+      "cluster": "low_efficiency",
+      "count": 1
+    },
+    {
+      "cluster": "growth_arrest",
+      "count": 1
+    }
+  ],
+  "by_organoid_type": {
+    "cerebral": {
+      "total_failure_modes": 22,
+      "clusters": [
+        {
+          "cluster": "other",
+          "count": 19,
+          "examples": [
+            {
+              "pmcid": "PMC10324500",
+              "description": "temperature above 37\u00b0C reduces efficiency",
+              "condition": null,
+              "source_doi": "10.4252/wjsc.v15.i6.530"
+            },
+            {
+              "pmcid": "PMC10324500",
+              "description": "avoid repeated freeze-thaw",
+              "condition": null,
+              "source_doi": "10.4252/wjsc.v15.i6.530"
+            },
+            {
+              "pmcid": "PMC12155111",
+              "description": "development of necrotic core",
+              "condition": "insufficient vascular supply",
+              "source_doi": "10.3390/cells14110842"
+            },
+            {
+              "pmcid": "PMC12281010",
+              "description": "Heterogeneous structure",
+              "condition": "suspension conditions without spatial restriction or the addition of any exogenous patterning factors",
+              "source_doi": "10.1016/j.crtox.2025.100249"
+            },
+            {
+              "pmcid": "PMC12281010",
+              "description": "Opaque organoids",
+              "condition": "suspension culture protocols",
+              "source_doi": "10.1016/j.crtox.2025.100249"
+            }
+          ]
+        },
+        {
+          "cluster": "contamination",
+          "count": 1,
+          "examples": [
+            {
+              "pmcid": "PMC10632161",
+              "description": "Cells infected with mycoplasma can have their growth and differentiation affected",
+              "condition": "mycoplasma infection",
+              "source_doi": "10.21769/bioprotoc.4870"
+            }
+          ]
+        },
+        {
+          "cluster": "matrix_gelation",
+          "count": 1,
+          "examples": [
+            {
+              "pmcid": "PMC12711465",
+              "description": "Organoids leakage from Matrigel",
+              "condition": "leakage from Matrigel",
+              "source_doi": "10.3389/fendo.2025.1692333"
+            }
+          ]
+        },
+        {
+          "cluster": "organoid_collapse",
+          "count": 1,
+          "examples": [
+            {
+              "pmcid": "PMC13230137",
+              "description": "Post-mitotic projection neurons (TBR1+) remain significantly depleted even after reoxygenation, suggesting that the complex, energy-expensive transition from progenitor to mature neuron is irreversibly disrupted by prior hypoxic stress.",
+              "condition": "reoxygenation after hypoxic stress",
+              "source_doi": "10.3389/fcell.2026.1809928"
+            }
+          ]
+        }
+      ]
+    },
+    "gastric": {
+      "total_failure_modes": 14,
+      "clusters": [
+        {
+          "cluster": "other",
+          "count": 10,
+          "examples": [
+            {
+              "pmcid": "PMC11744189",
+              "description": "temperature above 37\u00b0C reduces efficiency",
+              "condition": null,
+              "source_doi": "10.1093/jmcb/mjae030"
+            },
+            {
+              "pmcid": "PMC12847443",
+              "description": "excessive digestion compromises cell viability",
+              "condition": "enzymatic exposure",
+              "source_doi": "10.3389/fmed.2025.1733668"
+            },
+            {
+              "pmcid": "PMC12847443",
+              "description": "insufficient digestion reduces PDTO establishment efficiency",
+              "condition": "enzymatic exposure",
+              "source_doi": "10.3389/fmed.2025.1733668"
+            },
+            {
+              "pmcid": "PMC12847443",
+              "description": "phenotypic shifts occurs",
+              "condition": "prolonged in vitro culture conditions",
+              "source_doi": "10.3389/fmed.2025.1733668"
+            },
+            {
+              "pmcid": "PMC12921360",
+              "description": "excessive bubble formation",
+              "condition": "mixing",
+              "source_doi": "10.3389/fcell.2025.1712621"
+            }
+          ]
+        },
+        {
+          "cluster": "matrix_gelation",
+          "count": 2,
+          "examples": [
+            {
+              "pmcid": "PMC13101647",
+              "description": "Matrigel's dense basement membrane\u2013like structure may further interfere with human immune signaling and restrict immune cell migration.",
+              "condition": "Matrigel is used",
+              "source_doi": "10.1002/cam4.71776"
+            },
+            {
+              "pmcid": "PMC8420044",
+              "description": "the practical use of Matrigel or other animal-derived devices to enable cells to assemble into 3-D organoids.",
+              "condition": "Matrigel or other animal-derived devices",
+              "source_doi": "10.1186/s13287-021-02521-4"
+            }
+          ]
+        },
+        {
+          "cluster": "low_efficiency",
+          "count": 1,
+          "examples": [
+            {
+              "pmcid": "PMC7951181",
+              "description": "DE monolayer too sparse or too dense",
+              "condition": "confluence",
+              "source_doi": "10.1038/s41596-018-0080-z"
+            }
+          ]
+        },
+        {
+          "cluster": "growth_arrest",
+          "count": 1,
+          "examples": [
+            {
+              "pmcid": "PMC8420044",
+              "description": "Growth factors are, in some cases, generated by cell lines expressing exogenous genes that encode them, rather than the common commercially available growth factors.",
+              "condition": "cell lines expressing exogenous genes",
+              "source_doi": "10.1186/s13287-021-02521-4"
+            }
+          ]
+        }
+      ]
+    },
+    "intestinal": {
+      "total_failure_modes": 24,
+      "clusters": [
+        {
+          "cluster": "other",
+          "count": 18,
+          "examples": [
+            {
+              "pmcid": "PMC10846528",
+              "description": "Over-digestion may significantly impair cell viability",
+              "condition": "Digestion time",
+              "source_doi": "10.1242/dmm.050319"
+            },
+            {
+              "pmcid": "PMC10846528",
+              "description": "Frozen clinical specimens typically have markedly reduced organoid formation rates",
+              "condition": "Frozen specimens",
+              "source_doi": "10.1242/dmm.050319"
+            },
+            {
+              "pmcid": "PMC11404120",
+              "description": "temperature above 37\u00b0C reduces efficiency",
+              "condition": null,
+              "source_doi": "10.1093/cei/uxad118"
+            },
+            {
+              "pmcid": "PMC11525200",
+              "description": "no primary cultures have been reported to last for sufficient time without passaging",
+              "condition": "long-term processes such as colonization by somatic mutants",
+              "source_doi": "10.1038/s41588-024-01875-8"
+            },
+            {
+              "pmcid": "PMC11544769",
+              "description": "failure of the establishment of primary oesophageal organoid cultures",
+              "condition": "microbial contamination",
+              "source_doi": "10.3390/cancers16213664"
+            }
+          ]
+        },
+        {
+          "cluster": "matrix_gelation",
+          "count": 3,
+          "examples": [
+            {
+              "pmcid": "PMC11419821",
+              "description": "Matrigel solidification",
+              "condition": "Pipetting without care",
+              "source_doi": "10.1016/j.xpro.2024.103316"
+            },
+            {
+              "pmcid": "PMC9048136",
+              "description": "Matrigel solidification",
+              "condition": "temperature above 37\u00b0C",
+              "source_doi": "10.1016/j.xpro.2022.101317"
+            },
+            {
+              "pmcid": "PMC9048136",
+              "description": "Matrigel dissociation",
+              "condition": "not pre-warmed",
+              "source_doi": "10.1016/j.xpro.2022.101317"
+            }
+          ]
+        },
+        {
+          "cluster": "contamination",
+          "count": 2,
+          "examples": [
+            {
+              "pmcid": "PMC12826098",
+              "description": "mycoplasma infection",
+              "condition": "present",
+              "source_doi": "10.1016/j.celrep.2025.116631"
+            },
+            {
+              "pmcid": "PMC12937747",
+              "description": "xenogenic contaminations",
+              "condition": "can impede mechanistic studies in cell biology experiments and hinder the interpretation of the underlying biological events",
+              "source_doi": ""
+            }
+          ]
+        },
+        {
+          "cluster": "reagent_quality",
+          "count": 1,
+          "examples": [
+            {
+              "pmcid": "PMC12937747",
+              "description": "batch-to-batch variability",
+              "condition": "introduces additional variability into experimental results",
+              "source_doi": ""
+            }
+          ]
+        }
+      ]
+    },
+    "kidney": {
+      "total_failure_modes": 9,
+      "clusters": [
+        {
+          "cluster": "other",
+          "count": 8,
+          "examples": [
+            {
+              "pmcid": "PMC12402132",
+              "description": "Dissociated human fetal kidney cells can be frozen and used for generation of hFKOs at a later experiment.",
+              "condition": null,
+              "source_doi": "10.1038/s44318-025-00504-2"
+            },
+            {
+              "pmcid": "PMC12937646",
+              "description": "Insufficient vascular network development",
+              "condition": "lack of integration with larger blood vessels",
+              "source_doi": ""
+            },
+            {
+              "pmcid": "PMC12937646",
+              "description": "long-term functional maintenance",
+              "condition": "epithelial cells mature only to a mid- to late-fetal stage",
+              "source_doi": ""
+            },
+            {
+              "pmcid": "PMC5113819",
+              "description": "Cells do not recover or grow slowly after thawing",
+              "condition": "Unhealthy cells at cryopreservation",
+              "source_doi": "10.1038/nprot.2016.098"
+            },
+            {
+              "pmcid": "PMC5113819",
+              "description": "Cells come off the plastic during CHIR99021 phase",
+              "condition": "Cell density is too low",
+              "source_doi": "10.1038/nprot.2016.098"
+            }
+          ]
+        },
+        {
+          "cluster": "organoid_collapse",
+          "count": 1,
+          "examples": [
+            {
+              "pmcid": "PMC12545897",
+              "description": "severely disrupted kidney organoid differentiation",
+              "condition": "WDR19 -LoF",
+              "source_doi": "10.1016/j.ekir.2025.07.019"
+            }
+          ]
+        }
+      ]
+    },
+    "liver": {
+      "total_failure_modes": 13,
+      "clusters": [
+        {
+          "cluster": "other",
+          "count": 11,
+          "examples": [
+            {
+              "pmcid": "PMC10358442",
+              "description": "Organoids insufficiently mimic the natural, complex organ physiology because of the absence of vascularization.",
+              "condition": "absence of vascularization",
+              "source_doi": "10.1097/tp.0000000000004520"
+            },
+            {
+              "pmcid": "PMC10739970",
+              "description": "temperature above 37\u00b0C reduces efficiency",
+              "condition": null,
+              "source_doi": "10.1038/s41598-023-50250-w"
+            },
+            {
+              "pmcid": "PMC10999936",
+              "description": "rapid deterioration of the cultures",
+              "condition": "removal of Wnt",
+              "source_doi": "10.1016/j.heliyon.2024.e28420"
+            },
+            {
+              "pmcid": "PMC11272814",
+              "description": "NTCP overexpression in organoids did not result in an increase in HBV DNA and HBsAg levels in the supernatants of parental organoids.",
+              "condition": "lentiviral transduction of NTCP overexpression",
+              "source_doi": "10.1007/s10238-024-01435-8"
+            },
+            {
+              "pmcid": "PMC11925438",
+              "description": "hepatocyte-specific functions are not as advanced as those of primary hepatocytes",
+              "condition": "hepatocyte-specific functions",
+              "source_doi": "10.3350/cmh.2024.1040"
+            }
+          ]
+        },
+        {
+          "cluster": "matrix_gelation",
+          "count": 1,
+          "examples": [
+            {
+              "pmcid": "PMC13260716",
+              "description": "Premature polymerization of Matrigel",
+              "condition": "Matrigel maintained at room temperature",
+              "source_doi": ""
+            }
+          ]
+        },
+        {
+          "cluster": "contamination",
+          "count": 1,
+          "examples": [
+            {
+              "pmcid": "PMC5722201",
+              "description": "increase in the digestion times compared to healthy tissue (>2h-o/n) facilitated reducing the number of viable healthy contaminating duct cells",
+              "condition": "fibrosis",
+              "source_doi": "10.1038/nm.4438"
+            }
+          ]
+        }
+      ]
+    },
+    "lung": {
+      "total_failure_modes": 8,
+      "clusters": [
+        {
+          "cluster": "other",
+          "count": 6,
+          "examples": [
+            {
+              "pmcid": "PMC12340526",
+              "description": "dexamethasone inhibits organoid organisation",
+              "condition": "added before 48\u2005h of incubation",
+              "source_doi": "10.1183/16000617.0255-2024"
+            },
+            {
+              "pmcid": "PMC12658161",
+              "description": "temperature above 37\u00b0C reduces efficiency",
+              "condition": null,
+              "source_doi": "10.15283/ijsc25036"
+            },
+            {
+              "pmcid": "PMC12804188",
+              "description": "temperature above 37\u00b0C reduces efficiency",
+              "condition": null,
+              "source_doi": "10.1038/s41598-025-31582-1"
+            },
+            {
+              "pmcid": "PMC12813125",
+              "description": "limited proliferative capacity",
+              "condition": "serial passaging",
+              "source_doi": "10.3389/fphar.2025.1639268"
+            },
+            {
+              "pmcid": "PMC12813125",
+              "description": "genetic instability",
+              "condition": "long-term expansion",
+              "source_doi": "10.3389/fphar.2025.1639268"
+            }
+          ]
+        },
+        {
+          "cluster": "concentration_critical",
+          "count": 2,
+          "examples": [
+            {
+              "pmcid": "PMC6531049",
+              "description": "If confluency is too low, insufficient cells will remain after endoderm differentiation.",
+              "condition": "confluency too low",
+              "source_doi": "10.1038/s41596-018-0104-8"
+            },
+            {
+              "pmcid": "PMC6531049",
+              "description": "If confluency is too high, differentiation in the center of the colonies may be incomplete and result in reduced spheroid formation.",
+              "condition": "confluency too high",
+              "source_doi": "10.1038/s41596-018-0104-8"
+            }
+          ]
+        }
+      ]
+    },
+    "other": {
+      "total_failure_modes": 59,
+      "clusters": [
+        {
+          "cluster": "other",
+          "count": 54,
+          "examples": [
+            {
+              "pmcid": "PMC10045189",
+              "description": "organoid sinking through basement membrane extract and three-dimensional organization loss",
+              "condition": "Elevated epidermal growth factor (EGF) concentrations",
+              "source_doi": "10.3390/biomedicines11030773"
+            },
+            {
+              "pmcid": "PMC10045189",
+              "description": "profound decrease in organoid establishment efficiency",
+              "condition": "high SB202190 concentrations",
+              "source_doi": "10.3390/biomedicines11030773"
+            },
+            {
+              "pmcid": "PMC10403358",
+              "description": "low success rates of establishment",
+              "condition": "<20%",
+              "source_doi": "10.1038/s41388-023-02776-6"
+            },
+            {
+              "pmcid": "PMC10403358",
+              "description": "overgrowth of tumour cells by benign epithelial basal cells",
+              "condition": "growth advantage for normal cells",
+              "source_doi": "10.1038/s41388-023-02776-6"
+            },
+            {
+              "pmcid": "PMC10403358",
+              "description": "maintenance of the mature luminal phenotype in culture",
+              "condition": "difficult",
+              "source_doi": "10.1038/s41388-023-02776-6"
+            }
+          ]
+        },
+        {
+          "cluster": "concentration_critical",
+          "count": 2,
+          "examples": [
+            {
+              "pmcid": "PMC12801665",
+              "description": "phenotype and biological responses can vary depending on culture conditions, such as temperature and CO\u2082 concentration whose minor fluctuations may affect experimental readouts",
+              "condition": null,
+              "source_doi": "10.1186/s12938-025-01467-5"
+            },
+            {
+              "pmcid": "PMC7922036",
+              "description": "too-high a speed can damage the cells",
+              "condition": null,
+              "source_doi": "10.3390/cancers13040874"
+            }
+          ]
+        },
+        {
+          "cluster": "reagent_quality",
+          "count": 1,
+          "examples": [
+            {
+              "pmcid": "PMC10450215",
+              "description": "batch-to-batch variability may result in inconsistent experimental outcomes",
+              "condition": null,
+              "source_doi": "10.3389/fendo.2023.1240064"
+            }
+          ]
+        },
+        {
+          "cluster": "contamination",
+          "count": 1,
+          "examples": [
+            {
+              "pmcid": "PMC11381393",
+              "description": "Overgrowth or contamination of normal epithelial cells",
+              "condition": null,
+              "source_doi": "10.3389/fimmu.2024.1413858"
+            }
+          ]
+        },
+        {
+          "cluster": "organoid_collapse",
+          "count": 1,
+          "examples": [
+            {
+              "pmcid": "PMC13079446",
+              "description": "organoids collapse and become dark in the centre",
+              "condition": "allowed to continue beyond approximately >300\u00a0\u03bcm",
+              "source_doi": "10.1093/biolre/ioaf252"
+            }
+          ]
+        }
+      ]
+    },
+    "pancreatic": {
+      "total_failure_modes": 7,
+      "clusters": [
+        {
+          "cluster": "other",
+          "count": 7,
+          "examples": [
+            {
+              "pmcid": "PMC10944495",
+              "description": "islets, especially porcine islets, are difficult to cryopreserve because of their vulnerability and maturity",
+              "condition": null,
+              "source_doi": "10.1038/s41598-024-57059-1"
+            },
+            {
+              "pmcid": "PMC11210168",
+              "description": "undifferentiated cells",
+              "condition": "off-target differentiation and tumorigenesis",
+              "source_doi": ""
+            },
+            {
+              "pmcid": "PMC12055624",
+              "description": "Absence of pancreatic ECM after islet isolation can compromise their viability and function.",
+              "condition": null,
+              "source_doi": "10.1007/s40472-025-00470-y"
+            },
+            {
+              "pmcid": "PMC12816206",
+              "description": "cultured cells from chronic pancreatitis are prone to spontaneous dedifferentiation in vitro",
+              "condition": null,
+              "source_doi": "10.3389/fcell.2025.1746622"
+            },
+            {
+              "pmcid": "PMC12963012",
+              "description": "development of extreme hyperglycemia and associated clinical signs (e.g., weight loss, dehydration, lethargy)",
+              "condition": "advanced diabetes",
+              "source_doi": "10.3389/frtra.2026.1740314"
+            }
+          ]
+        }
+      ]
+    },
+    "retinal": {
+      "total_failure_modes": 8,
+      "clusters": [
+        {
+          "cluster": "other",
+          "count": 7,
+          "examples": [
+            {
+              "pmcid": "PMC10713453",
+              "description": "The 409B2-iCas9 line acquired a common stem cell abnormality over time",
+              "condition": null,
+              "source_doi": "10.1038/s41587-023-01747-2"
+            },
+            {
+              "pmcid": "PMC10713453",
+              "description": "The B7-iCas9 acquired a duplication in the centromeric region of long arm of chr20: q11.21\u2013q11.22",
+              "condition": null,
+              "source_doi": "10.1038/s41587-023-01747-2"
+            },
+            {
+              "pmcid": "PMC4370190",
+              "description": "colony containing clearly visible differentiated cells",
+              "condition": "marked and mechanically removed before passaging",
+              "source_doi": "10.1038/ncomms5047"
+            },
+            {
+              "pmcid": "PMC4370190",
+              "description": "temperature above 37\u00b0C",
+              "condition": "reduces efficiency",
+              "source_doi": "10.1038/ncomms5047"
+            },
+            {
+              "pmcid": "PMC7363745",
+              "description": "RP2 KO organoids had a significantly higher proportion of TUNEL-positive cells",
+              "condition": "RP2 KO",
+              "source_doi": "10.1016/j.stemcr.2020.05.007"
+            }
+          ]
+        },
+        {
+          "cluster": "contamination",
+          "count": 1,
+          "examples": [
+            {
+              "pmcid": "PMC12843511",
+              "description": "wells with contamination or lack of aggregation",
+              "condition": null,
+              "source_doi": "10.1371/journal.pbio.3003597"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
