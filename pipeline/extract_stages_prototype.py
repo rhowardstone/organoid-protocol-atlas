@@ -55,6 +55,40 @@ METHODS TEXT:
 {evidence}
 """
 
+# v2 — addresses the prototype findings: scope to the GENERATION procedure only (exclude
+# characterization assays + upstream maintenance), add a real-protocol gate, and capture
+# assays separately so they don't pollute stages[].
+PROMPT_V2 = """You extract a reproducible organoid GENERATION PROTOCOL (a recipe) as JSON.
+
+Return ONLY: {{"is_generation_protocol": bool, "source_cells": str|null,
+"final_organoid": str|null, "assay_endpoints": [str], "stages": [ ... ]}}.
+
+SCOPE — stages[] is ONLY the culture procedure that BUILDS the organoid: the ordered
+sequence from seeding/aggregating the source cells through differentiation to the mature
+organoid. STRICTLY EXCLUDE (these are NOT stages):
+- characterization / readout assays: Western blot, ELISA, qPCR/RT-PCR, immunofluorescence/
+  histology, imaging, sequencing, viability/MTT, TEER measurement, flow cytometry. Put their
+  names in "assay_endpoints" instead.
+- routine maintenance/expansion of the source cell line BEFORE the protocol starts
+  (record it in "source_cells", not as a stage).
+- downstream drug treatments / functional perturbations / disease modeling.
+If the paper is NOT primarily an organoid generation protocol (e.g. it only uses organoids
+as one assay in a drug study), set "is_generation_protocol": false and return stages: [] .
+
+For EACH generation stage, in order:
+- "name": short stage name (e.g. "EB aggregation", "neural induction", "maturation")
+- "start_day"/"end_day": integer absolute day (Day 0 = protocol start) or null. MANY real
+  protocols are condition-keyed, not day-keyed — null days are fine; never invent days.
+- "culture_vessel", "medium_base": or null
+- "reagents": [{{"name","concentration","unit","role"}}] ADDED in this stage; numeric conc or null
+- "transition": trigger to the next stage (e.g. "Day 6: switch medium", "TEER > 150"), or null
+
+Rules: preserve ORDER; only reagents explicitly stated for that stage; never invent doses/days.
+
+METHODS TEXT:
+{evidence}
+"""
+
 
 def call_ollama(prompt: str) -> dict:
     req = urllib.request.Request(
@@ -69,7 +103,12 @@ def call_ollama(prompt: str) -> dict:
 
 def summarize(pmcid: str, data: dict) -> str:
     stages = data.get("stages") or []
-    lines = [f"\n=== {pmcid}: {len(stages)} stages ==="]
+    hdr = f"\n=== {pmcid}: {len(stages)} stages ==="
+    if "is_generation_protocol" in data:
+        hdr += (f" | gen_protocol={data.get('is_generation_protocol')}"
+                f" | source={data.get('source_cells')!r} -> {data.get('final_organoid')!r}"
+                f" | endpoints={len(data.get('assay_endpoints') or [])}")
+    lines = [hdr]
     for i, s in enumerate(stages, 1):
         days = f"d{s.get('start_day')}-{s.get('end_day')}"
         reg = ", ".join(f"{r.get('name')} {r.get('concentration')}{r.get('unit') or ''}".strip()
@@ -84,9 +123,12 @@ def summarize(pmcid: str, data: dict) -> str:
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--only", default="", help="single PMCID (default: all 3 seeds)")
+    ap.add_argument("--v2", action="store_true", help="use the scoped v2 prompt (gen-protocol gate)")
     args = ap.parse_args()
     OUT.mkdir(parents=True, exist_ok=True)
     keys = [args.only] if args.only else SEEDS
+    prompt_tmpl = PROMPT_V2 if args.v2 else PROMPT
+    suffix = ".v2" if args.v2 else ""
 
     for pmcid in keys:
         bp = BUNDLES / f"{pmcid}.json"
@@ -94,13 +136,13 @@ def main() -> int:
             print(f"{pmcid}: MISSING bundle", file=sys.stderr)
             continue
         methods = (json.loads(bp.read_text()).get("methods_text") or "")[:24000]
-        print(f"[{pmcid}] extracting stages ({len(methods)} chars)...", flush=True)
+        print(f"[{pmcid}] extracting stages ({len(methods)} chars){suffix}...", flush=True)
         try:
-            data = call_ollama(PROMPT.format(evidence=methods))
+            data = call_ollama(prompt_tmpl.format(evidence=methods))
         except Exception as e:  # noqa: BLE001
             print(f"{pmcid}: ERROR {type(e).__name__}: {e}", file=sys.stderr)
             continue
-        (OUT / f"{pmcid}.json").write_text(json.dumps(data, ensure_ascii=False, indent=2))
+        (OUT / f"{pmcid}{suffix}.json").write_text(json.dumps(data, ensure_ascii=False, indent=2))
         print(summarize(pmcid, data), flush=True)
     print(f"\n-> prototypes in {OUT.relative_to(REPO)}", flush=True)
     return 0
