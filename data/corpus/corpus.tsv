@@ -5999,3 +5999,529 @@ other	10.1002/btm2.10313	PMC9842054		2022	organ-on-chip (OA)	mouse	adult_stem_ce
 other	10.3390/genes14010198	PMC9859321		2023	organ-on-chip (OA)	human	primary_tissue	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
 other	10.1038/s42003-023-04434-9	PMC9870913		2023	organ-on-chip (OA)	human	primary_tissue	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
 other	10.1016/j.isci.2023.106198	PMC9985038		2023	organ-on-chip (OA)	human	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+intestinal	10.3390/ijms242116014	PMC10650475		2023	organ-on-chip (OA)	human	iPSC	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+lung	10.3390/biomedicines11113034	PMC10669847		2023	organ-on-chip (OA)	human	iPSC	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+other	10.3389/fimmu.2023.1303713	PMC10757342		2023	organ-on-chip (OA)	human	iPSC	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+intestinal	10.1038/s42003-023-05504-8	PMC10770338		2024	organ-on-chip (OA)	human	primary_tissue	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+intestinal	10.1084/jem.20231237	PMC10837083		2024	organ-on-chip (OA)	mouse	adult_stem_cell	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+intestinal	10.1186/s12967-023-04675-6	PMC10837874		2024	organ-on-chip (OA)		adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+intestinal	10.1038/s41467-024-45605-4	PMC10869357		2024	organ-on-chip (OA)	mouse	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.1038/s41368-024-00286-z	PMC10894862		2024	organ-on-chip (OA)	human	primary_tissue	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.1172/jci178331	PMC10904034		2024	organ-on-chip (OA)	human	primary_tissue	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+cerebral	10.1002/cam4.7081	PMC10923046		2024	organ-on-chip (OA)	human	primary_tissue	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+liver	10.3390/ijms25052680	PMC10932280		2024	organ-on-chip (OA)	human	iPSC	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+pancreatic	10.1186/s13046-024-03012-z	PMC10958863		2024	organ-on-chip (OA)	human	primary_tissue	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+pancreatic	10.1155/2024/1529449	PMC10963106		2024	organ-on-chip (OA)	human	primary_tissue	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+intestinal	10.1172/jci177728	PMC10977979		2024	organ-on-chip (OA)	mouse	adult_stem_cell	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+intestinal	10.1038/s41419-024-06658-x	PMC11039680		2024	organ-on-chip (OA)	mouse	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+intestinal	10.1186/s12860-024-00512-w	PMC11059635		2024	organ-on-chip (OA)	canine	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+liver	10.1016/j.isci.2024.109718	PMC11068562		2024	organ-on-chip (OA)	mouse	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.1371/journal.pone.0303260	PMC11093308		2024	organ-on-chip (OA)	human	iPSC	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+intestinal	10.1038/s41592-024-02172-2	PMC11093744		2024	organ-on-chip (OA)	human	iPSC	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+cerebral	10.1038/s41556-024-01412-z	PMC11098754		2024	organ-on-chip (OA)	human	iPSC	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+cerebral	10.1038/s41467-024-48905-x	PMC11190274		2024	organ-on-chip (OA)	human	iPSC	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.3389/fimmu.2024.1346491	PMC11193328		2024	organ-on-chip (OA)	mouse	other	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.7150/thno.93519	PMC11209726		2024	organ-on-chip (OA)	human	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+gastric	10.1186/s12935-024-03375-5	PMC11210105		2024	organ-on-chip (OA)	human	primary_tissue	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.1007/s12105-024-01658-x	PMC11213837		2024	organ-on-chip (OA)		primary_tissue	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.1007/s12015-024-10702-w	PMC11222197		2024	organ-on-chip (OA)	rodent	primary_tissue	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+other	10.1038/s41598-024-66003-2	PMC11222426		2024	organ-on-chip (OA)	human	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.1038/s44318-024-00113-5	PMC11251082		2024	organ-on-chip (OA)	mouse	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+lung	10.1098/rsos.240413	PMC11252670		2024	organ-on-chip (OA)	murine	adult_stem_cell	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+pancreatic	10.1038/s41597-024-03631-3	PMC11269565		2024	organ-on-chip (OA)	human	primary_tissue	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+other	10.1186/s12943-024-02061-4	PMC11270803		2024	organ-on-chip (OA)	human	primary_tissue	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.3390/bioengineering11070677	PMC11274239		2024	organ-on-chip (OA)	human	adult_stem_cell	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+other	10.3390/bios14070336	PMC11274478		2024	organ-on-chip (OA)		iPSC	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+other	10.2144/fsoa-2023-0135	PMC11290772		2024	organ-on-chip (OA)	human	primary_tissue	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.1021/acsami.4c08763	PMC11299152		2024	organ-on-chip (OA)	human	primary_tissue	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.3390/cancers16152762	PMC11312172		2024	organ-on-chip (OA)	human	primary_tissue	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+intestinal	10.3390/biomedicines12081774	PMC11351903		2024	organ-on-chip (OA)	human	adult_stem_cell	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+cerebral	10.3390/bioengineering11080794	PMC11352057		2024	organ-on-chip (OA)	human	iPSC	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+other	10.3390/biom14081026	PMC11352229		2024	organ-on-chip (OA)	mouse	adult_stem_cell	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+intestinal	10.4014/jmb.2405.05036	PMC11380516		2024	organ-on-chip (OA)	human	primary_tissue	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+other	10.1016/j.crmeth.2024.100835	PMC11384078		2024	organ-on-chip (OA)	rat	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+intestinal	10.3389/fmolb.2024.1446822	PMC11387180		2024	organ-on-chip (OA)	mouse	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+lung	10.3389/fimmu.2024.1481686	PMC11390664		2024	organ-on-chip (OA)	mouse	other	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+intestinal	10.1158/1078-0432.ccr-23-4072	PMC11393541		2024	organ-on-chip (OA)	human	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.3390/cells13171463	PMC11394313		2024	organ-on-chip (OA)	rat	primary_tissue	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+intestinal	10.1186/s43556-024-00201-2	PMC11402884		2024	organ-on-chip (OA)	mouse	adult_stem_cell	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+gastric	10.1002/advs.202308395	PMC11425230		2024	organ-on-chip (OA)	human	primary_tissue	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+liver	10.3390/biology13090684	PMC11428634		2024	organ-on-chip (OA)	mouse	adult_stem_cell	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+intestinal	10.1242/dev.202853	PMC11441983		2024	organ-on-chip (OA)	mouse	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+gastric	10.1097/md.0000000000039851	PMC11460907		2024	organ-on-chip (OA)		primary_tissue	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+other	10.3389/fonc.2024.1470379	PMC11513879		2024	organ-on-chip (OA)	human	primary_tissue	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+cerebral	10.1038/s41419-024-07152-0	PMC11519607		2024	organ-on-chip (OA)	human	iPSC	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+cerebral	10.1186/s40035-024-00446-5	PMC11520457		2024	organ-on-chip (OA)	human	iPSC	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+cerebral	10.1038/s41380-024-02629-y	PMC11541203		2024	organ-on-chip (OA)	human	iPSC	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+cerebral	10.1242/dmm.050740	PMC11552497		2024	organ-on-chip (OA)	human	iPSC	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+lung	10.70322/jrbtm.2024.10017	PMC11565471		2024	organ-on-chip (OA)	mouse	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+intestinal	10.1038/s41556-024-01526-4	PMC11567889		2024	organ-on-chip (OA)	human	iPSC	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.1002/advs.202407567	PMC11578294		2024	organ-on-chip (OA)	human	iPSC	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+cerebral	10.7554/elife.98096	PMC11581432		2024	organ-on-chip (OA)	Homo sapiens	iPSC	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+intestinal	10.1038/s43018-024-00823-z	PMC11584406		2024	organ-on-chip (OA)	human	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+gastric	10.3389/frph.2024.1490520	PMC11588683		2024	organ-on-chip (OA)	human	adult_stem_cell	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+other	10.3389/fmolb.2024.1440670	PMC11589788		2024	organ-on-chip (OA)	human	iPSC	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+liver	10.1002/adhm.202401511	PMC11616262		2024	organ-on-chip (OA)	human	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+intestinal	10.1016/j.isci.2024.111246	PMC11616604		2024	organ-on-chip (OA)	mouse	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+pancreatic	10.1002/cam4.70457	PMC11617587		2024	organ-on-chip (OA)	human	primary_tissue	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+cerebral	10.1371/journal.pone.0314858	PMC11620608		2024	organ-on-chip (OA)	human	iPSC	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+liver	10.1186/s12936-024-05202-8	PMC11622667		2024	organ-on-chip (OA)	human	iPSC	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+intestinal	10.1200/po.23.00260	PMC11627326		2024	organ-on-chip (OA)	mouse	adult_stem_cell	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+lung	10.3390/cancers16233996	PMC11640395		2024	organ-on-chip (OA)		other	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+other	10.3390/ijms252312706	PMC11640979		2024	organ-on-chip (OA)	Mus musculus	adult_stem_cell	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+other	10.3390/ijms252413286	PMC11676966		2024	organ-on-chip (OA)	human	adult_stem_cell	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+intestinal	10.7554/elife.95106	PMC11677240		2024	organ-on-chip (OA)	Homo sapiens	primary_tissue	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+cerebral	10.3389/fncel.2024.1488691	PMC11688374		2024	organ-on-chip (OA)	human	iPSC	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+cerebral	10.1111/cpr.13732	PMC11693565		2025	organ-on-chip (OA)	human	iPSC	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+intestinal	10.1158/2767-9764.crc-24-0471	PMC11695814		2025	organ-on-chip (OA)	mouse	iPSC	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+intestinal	10.7554/elife.95267	PMC11698494		2025	organ-on-chip (OA)	Mus musculus	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.1016/j.jmccpl.2024.100085	PMC11708310		2024	organ-on-chip (OA)	human	iPSC	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+intestinal	10.1007/s11248-024-00429-2	PMC11717838		2025	organ-on-chip (OA)	mouse	iPSC	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.3390/ijms26010271	PMC11719488		2024	organ-on-chip (OA)	human	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.7554/elife.95720	PMC11723586		2024	organ-on-chip (OA)	human	other	CC0	yes	yes	no	openalex	openalex ingest 2026-06
+pancreatic	10.1038/s41416-024-02893-3	PMC11723913		2025	organ-on-chip (OA)	human	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.1186/s13046-024-03270-x	PMC11724466		2025	organ-on-chip (OA)	human	other	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.3390/biomedicines12122714	PMC11726960		2024	organ-on-chip (OA)		iPSC	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+other	10.1186/s13046-025-03272-3	PMC11730809		2025	organ-on-chip (OA)	human	primary_tissue	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+cerebral	10.1016/j.heliyon.2024.e40813	PMC11732442		2025	organ-on-chip (OA)	human	iPSC	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.1038/s41586-024-08332-w	PMC11735409		2025	organ-on-chip (OA)	human	iPSC	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.1186/s13578-024-01339-w	PMC11740338		2025	organ-on-chip (OA)	human	other	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+intestinal	10.1093/lifemedi/lnae042	PMC11749485		2024	organ-on-chip (OA)		iPSC	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+other	10.1083/jcb.202403083	PMC11778283		2025	organ-on-chip (OA)	mouse	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+intestinal	10.1038/s41586-024-08247-6	PMC11779645		2025	organ-on-chip (OA)		iPSC	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.1038/s41590-024-02062-x	PMC11785521		2025	organ-on-chip (OA)	human	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+liver	10.1172/jci164997	PMC11785925		2024	organ-on-chip (OA)	mouse	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.1016/j.tranon.2025.102274	PMC11787020		2025	organ-on-chip (OA)		adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+intestinal	10.3389/fphar.2024.1496068	PMC11788346		2024	organ-on-chip (OA)	mouse	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+intestinal	10.1186/s13619-024-00216-8	PMC11799473		2025	organ-on-chip (OA)	mouse	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.1038/s41419-025-07400-x	PMC11806113		2025	organ-on-chip (OA)	human	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+intestinal	10.1177/19476035241313179	PMC11808691		2025	organ-on-chip (OA)	human	adult_stem_cell	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+other	10.1038/s41392-025-02150-w	PMC11825701		2025	organ-on-chip (OA)		primary_tissue	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+pancreatic	10.1038/s41597-025-04522-x	PMC11828881		2025	organ-on-chip (OA)	mouse	primary_tissue	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+pancreatic	10.1126/science.adl4793	PMC11831968		2024	organ-on-chip (OA)	human	iPSC	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.1038/s41380-024-02732-0	PMC11835743		2025	organ-on-chip (OA)	human	iPSC	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+lung	10.3389/fimmu.2025.1532144	PMC11839712		2025	organ-on-chip (OA)	human	adult_stem_cell	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+other	10.7150/thno.104523	PMC11840739		2025	organ-on-chip (OA)	human	iPSC	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+pancreatic	10.3390/cancers17040692	PMC11852484		2025	organ-on-chip (OA)	human	adult_stem_cell	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+cerebral	10.3389/fphar.2025.1552586	PMC11860083		2025	organ-on-chip (OA)		iPSC	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+pancreatic	10.3389/fendo.2025.1543960	PMC11864936		2025	organ-on-chip (OA)	mouse	adult_stem_cell	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+intestinal	10.1038/s43018-024-00899-7	PMC11864979		2025	organ-on-chip (OA)	murine	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.1038/s41598-025-91826-y	PMC11871353		2025	organ-on-chip (OA)	mouse	ESC	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+lung	10.1186/s12931-025-03138-4	PMC11871743		2025	organ-on-chip (OA)	human	iPSC	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+intestinal	10.1038/s12276-025-01397-1	PMC11873120		2025	organ-on-chip (OA)	human	iPSC	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+intestinal	10.1186/s10020-025-01131-7	PMC11877758		2025	organ-on-chip (OA)		iPSC	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+other	10.1111/cpr.13762	PMC11882745		2025	organ-on-chip (OA)	human	iPSC	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+cerebral	10.1002/1878-0261.13750	PMC11887676		2025	organ-on-chip (OA)	human	primary_tissue	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.1530/erc-24-0216	PMC11906015		2025	organ-on-chip (OA)	human	iPSC	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+intestinal	10.1371/journal.pone.0319701	PMC11906084		2025	organ-on-chip (OA)	mouse	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.1186/s40164-025-00637-4	PMC11912584		2025	organ-on-chip (OA)		other	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+other	10.3389/fmed.2025.1539024	PMC11919666		2025	organ-on-chip (OA)		iPSC	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+other	10.1016/j.isci.2025.112099	PMC11930733		2025	organ-on-chip (OA)	human	iPSC	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+lung	10.1038/s41536-025-00404-3	PMC11937367		2025	organ-on-chip (OA)	mouse	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.3390/biom15030375	PMC11940677		2025	organ-on-chip (OA)	human	primary_tissue	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+other	10.3390/ijms26062573	PMC11941904		2025	organ-on-chip (OA)		primary_tissue	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+intestinal	10.1002/advs.202415559	PMC11948081		2025	organ-on-chip (OA)	mouse	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.1038/s41531-025-00914-3	PMC11958823		2025	organ-on-chip (OA)	human	iPSC	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.1002/advs.202414558	PMC11967763		2025	organ-on-chip (OA)	human	primary_tissue	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+pancreatic	10.1002/advs.202412393	PMC11967802		2025	organ-on-chip (OA)	mouse	primary_tissue	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.1111/cpr.13780	PMC11969247		2025	organ-on-chip (OA)	human	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.1038/s41467-025-58554-3	PMC11972330		2025	organ-on-chip (OA)	mouse	other	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+intestinal	10.1038/s41419-025-07541-z	PMC11972347		2025	organ-on-chip (OA)	human	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+intestinal	10.1111/acel.14423	PMC11984690		2025	organ-on-chip (OA)	mouse	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.1002/advs.202414230	PMC11984888		2025	organ-on-chip (OA)	human	iPSC	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.3389/falgy.2025.1530122	PMC11987631		2025	organ-on-chip (OA)	human	primary_tissue	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+pancreatic	10.1007/s13402-024-01026-5	PMC11996933		2025	organ-on-chip (OA)	human	primary_tissue	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.1002/adhm.202402593	PMC12004427		2025	organ-on-chip (OA)	human	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.1186/s13287-025-04295-5	PMC12008940		2025	organ-on-chip (OA)	human	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+cerebral	10.1093/ve/veaf021	PMC12024116		2025	organ-on-chip (OA)	human	iPSC	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+intestinal	10.1038/s41467-025-58907-y	PMC12032359		2025	organ-on-chip (OA)	human	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.1038/s41467-025-58752-z	PMC12033372		2025	organ-on-chip (OA)	human	other	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.3389/fbioe.2025.1554226	PMC12034648		2025	organ-on-chip (OA)		iPSC	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+intestinal	10.3389/fbioe.2025.1521044	PMC12043594		2025	organ-on-chip (OA)		iPSC	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+other	10.1186/s13058-025-02032-7	PMC12044882		2025	organ-on-chip (OA)	human	primary_tissue	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.1242/jcs.263487	PMC12045047		2025	organ-on-chip (OA)	human	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.1242/dev.204619	PMC12045602		2025	organ-on-chip (OA)	human	ESC	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+intestinal	10.1038/s41467-025-59474-y	PMC12049494		2025	organ-on-chip (OA)	mouse	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.1126/sciadv.adu2958	PMC12057671		2025	organ-on-chip (OA)	mouse	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+intestinal	10.17912/micropub.biology.001529	PMC12062895		2025	organ-on-chip (OA)	mouse	adult_stem_cell	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+other	10.1038/s41419-025-07693-y	PMC12064713		2025	organ-on-chip (OA)	human	primary_tissue	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+lung	10.1016/j.stemcr.2025.102451	PMC12069885		2025	organ-on-chip (OA)	mouse	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+intestinal	10.1172/jci192640	PMC12077884		2025	organ-on-chip (OA)		adult_stem_cell	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+other	10.1038/s44318-025-00424-1	PMC12084385		2025	organ-on-chip (OA)	mouse	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+intestinal	10.1038/s41419-025-07737-3	PMC12095478		2025	organ-on-chip (OA)	mouse	primary_tissue	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+cerebral	10.3390/ncrna11030031	PMC12101413		2025	organ-on-chip (OA)	human	iPSC	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+other	10.7554/elife.101170	PMC12113261		2025	organ-on-chip (OA)	human	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+intestinal	10.3389/fphar.2025.1559812	PMC12117334		2025	organ-on-chip (OA)	human	primary_tissue	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+intestinal	10.1186/s41232-025-00378-1	PMC12117945		2025	organ-on-chip (OA)		iPSC	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+other	10.1016/j.omtm.2025.101476	PMC12124621		2025	organ-on-chip (OA)	human	iPSC	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.3389/fcell.2025.1569187	PMC12133876		2025	organ-on-chip (OA)	human	iPSC	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+cerebral	10.1038/s41467-025-60361-9	PMC12134268		2025	organ-on-chip (OA)	mouse	ESC	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.1016/j.stemcr.2025.102481	PMC12143156		2025	organ-on-chip (OA)	human	other	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+intestinal	10.1080/19490976.2025.2509281	PMC12143687		2025	organ-on-chip (OA)	mouse	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.1007/s10456-025-09985-5	PMC12143994		2025	organ-on-chip (OA)	human	iPSC	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.1038/s41467-025-60617-4	PMC12144119		2025	organ-on-chip (OA)	mouse	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+intestinal	10.3389/fmed.2025.1556611	PMC12148843		2025	organ-on-chip (OA)	human	primary_tissue	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+intestinal	10.1186/s13619-025-00243-z	PMC12149079		2025	organ-on-chip (OA)	mouse	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+cerebral	10.4014/jmb.2411.11040	PMC12149405		2025	organ-on-chip (OA)	human	iPSC	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+pancreatic	10.1016/j.xpro.2025.103834	PMC12149599		2025	organ-on-chip (OA)	human	iPSC	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+cerebral	10.1038/s41392-025-02275-y	PMC12152116		2025	organ-on-chip (OA)	human	other	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+intestinal	10.1016/j.jcmgh.2025.101505	PMC12152668		2025	organ-on-chip (OA)	mouse	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.3390/cells14110819	PMC12153919		2025	organ-on-chip (OA)	human	primary_tissue	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+other	10.7150/jca.109350	PMC12170997		2025	organ-on-chip (OA)	human	primary_tissue	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+intestinal	10.1016/j.jlr.2025.100826	PMC12173109		2025	organ-on-chip (OA)	mouse	adult_stem_cell	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+intestinal	10.1186/s13619-025-00240-2	PMC12181566		2025	organ-on-chip (OA)	mouse	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.1016/j.xpro.2025.103883	PMC12182356		2025	organ-on-chip (OA)	mouse	adult_stem_cell	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+other	10.3390/cancers17121959	PMC12190948		2025	organ-on-chip (OA)	human	primary_tissue	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+other	10.3390/ph18060838	PMC12196184		2025	organ-on-chip (OA)	rat	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+intestinal	10.3390/v17060764	PMC12197716		2025	organ-on-chip (OA)	human	primary_tissue	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+other	10.1172/jci181394	PMC12208539		2025	organ-on-chip (OA)	human	iPSC	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+intestinal	10.1038/s41467-025-60649-w	PMC12216638		2025	organ-on-chip (OA)	human	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.34133/bmr.0226	PMC12218223		2025	organ-on-chip (OA)	mouse	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.1172/jci.insight.188062	PMC12220968		2025	organ-on-chip (OA)	human	other	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+cerebral	10.21769/bioprotoc.5354	PMC12222629		2025	organ-on-chip (OA)	human	iPSC	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+other	10.7150/ijbs.112645	PMC12223764		2025	organ-on-chip (OA)	human	other	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.1002/advs.202405812	PMC12224932		2025	organ-on-chip (OA)	human	primary_tissue	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+cerebral	10.1038/s41467-025-61184-4	PMC12227528		2025	organ-on-chip (OA)	human	iPSC	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.1038/s41419-025-07819-2	PMC12229499		2025	organ-on-chip (OA)	human	primary_tissue	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+intestinal	10.1038/s12276-025-01461-w	PMC12229603		2025	organ-on-chip (OA)	mouse	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+intestinal	10.1111/cpr.13819	PMC12240636		2025	organ-on-chip (OA)	human	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+intestinal	10.1038/s41586-025-09097-6	PMC12240837		2025	organ-on-chip (OA)	mouse	iPSC	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+cerebral	10.1038/s41514-025-00251-y	PMC12246142		2025	organ-on-chip (OA)	human	iPSC	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.3389/fcell.2025.1551010	PMC12259556		2025	organ-on-chip (OA)	murine	iPSC	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+other	10.1210/endocr/bqaf114	PMC12264429		2025	organ-on-chip (OA)	Canis familiaris	adult_stem_cell	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+lung	10.1242/dmm.052106	PMC12264733		2025	organ-on-chip (OA)	human	iPSC	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.1007/s10911-025-09586-4	PMC12271291		2025	organ-on-chip (OA)	mouse	adult_stem_cell	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+other	10.1016/j.crmeth.2025.101055	PMC12272253		2025	organ-on-chip (OA)	mouse	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+intestinal	10.1016/j.isci.2025.112708	PMC12272824		2025	organ-on-chip (OA)	human	iPSC	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+intestinal	10.1155/sci/5105796	PMC12274096		2025	organ-on-chip (OA)	ovine	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+intestinal	10.1172/jci.insight.169105	PMC12288891		2025	organ-on-chip (OA)	mouse	primary_tissue	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+kidney	10.3390/biomedicines13071766	PMC12292604		2025	organ-on-chip (OA)	human	iPSC	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+pancreatic	10.3390/gels11070562	PMC12294231		2025	organ-on-chip (OA)	mouse	primary_tissue	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.1186/s40779-025-00625-z	PMC12302690		2025	organ-on-chip (OA)	rat	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.3389/fcell.2025.1632255	PMC12307505		2025	organ-on-chip (OA)	human	adult_stem_cell	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+other	10.1038/s41368-025-00387-3	PMC12307918		2025	organ-on-chip (OA)	mouse	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+intestinal	10.1098/rsos.250326	PMC12307977		2025	organ-on-chip (OA)	Bos taurus	adult_stem_cell	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+gastric	10.7150/ijbs.114373	PMC12320244		2025	organ-on-chip (OA)	human	primary_tissue	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+gastric	10.1126/sciadv.adv6723	PMC12333681		2025	organ-on-chip (OA)	human	primary_tissue	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.1111/cpr.70055	PMC12336453		2025	organ-on-chip (OA)	Mus musculus	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.3390/ijms26157151	PMC12346291		2025	organ-on-chip (OA)	human	primary_tissue	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+cerebral	10.3390/cells14151211	PMC12346388		2025	organ-on-chip (OA)	human	iPSC	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+other	10.3390/ijms26157383	PMC12347267		2025	organ-on-chip (OA)	human	adult_stem_cell	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+cerebral	10.3389/frdem.2025.1605051	PMC12358466		2025	organ-on-chip (OA)	human	iPSC	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+other	10.1038/s41392-025-02347-z	PMC12358586		2025	organ-on-chip (OA)	human	iPSC	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+lung	10.1016/j.bbrep.2025.102191	PMC12358629		2025	organ-on-chip (OA)	human	iPSC	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+other	10.1002/cac2.70029	PMC12365538		2025	organ-on-chip (OA)	human	primary_tissue	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.1186/s13287-025-04513-0	PMC12366404		2025	organ-on-chip (OA)	mouse	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.1038/s41467-025-62629-6	PMC12370961		2025	organ-on-chip (OA)	human	primary_tissue	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.1371/journal.ppat.1013315	PMC12373280		2025	organ-on-chip (OA)	mouse	primary_tissue	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+intestinal	10.1080/21505594.2025.2548623	PMC12377151		2025	organ-on-chip (OA)	pig	adult_stem_cell	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+other	10.1038/s41467-025-62523-1	PMC12378236		2025	organ-on-chip (OA)	human	iPSC	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+intestinal	10.1016/j.slasd.2024.100182	PMC12380041		2024	organ-on-chip (OA)	mouse	primary_tissue	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+intestinal	10.3390/biomimetics10080501	PMC12383887		2025	organ-on-chip (OA)	human	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.3390/cells14161247	PMC12384742		2025	organ-on-chip (OA)	human	iPSC	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+intestinal	10.3390/jpm15080394	PMC12387782		2025	organ-on-chip (OA)		iPSC	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+other	10.1371/journal.pbio.3003302	PMC12393714		2025	organ-on-chip (OA)	Sus scrofa	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.1371/journal.ppat.1013432	PMC12393735		2025	organ-on-chip (OA)	human	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+intestinal	10.1038/s41417-025-00923-7	PMC12396958		2025	organ-on-chip (OA)	human	iPSC	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+intestinal	10.1038/s41417-025-00935-3	PMC12396962		2025	organ-on-chip (OA)	human	iPSC	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+cerebral	10.1038/s41467-025-63279-4	PMC12398550		2025	organ-on-chip (OA)	human	iPSC	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+intestinal	10.1111/jcmm.70809	PMC12401127		2025	organ-on-chip (OA)		primary_tissue	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+intestinal	10.1080/19490976.2025.2547029	PMC12413070		2025	organ-on-chip (OA)	Murine	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other		PMC12413170			organ-on-chip (OA)		iPSC	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+other	10.3390/ijms26178740	PMC12429070		2025	organ-on-chip (OA)		iPSC	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+gastric	10.1038/s41467-025-62996-0	PMC12432263		2025	organ-on-chip (OA)	human	other	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+intestinal	10.1016/j.xcrm.2025.102284	PMC12432356		2025	organ-on-chip (OA)	human	primary_tissue	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.1038/s41698-025-01090-6	PMC12441132		2025	organ-on-chip (OA)	human	primary_tissue	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+cerebral	10.1016/j.isci.2025.113401	PMC12441700		2025	organ-on-chip (OA)	human	iPSC	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.1002/adhm.202404817	PMC12447032		2025	organ-on-chip (OA)	human	iPSC	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.1016/j.mtbio.2025.102231	PMC12448032		2025	organ-on-chip (OA)	human	primary_tissue	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+lung	10.1002/ehf2.15385	PMC12450791		2025	organ-on-chip (OA)	human	adult_stem_cell	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+intestinal	10.21769/bioprotoc.5449	PMC12457840		2025	organ-on-chip (OA)	mouse	iPSC	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+other	10.3390/biology14091306	PMC12467909		2025	organ-on-chip (OA)	mouse	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+intestinal	10.1016/j.chom.2025.08.001	PMC12471108		2025	organ-on-chip (OA)	human	primary_tissue	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.1038/s41416-025-03074-6	PMC12480652		2025	organ-on-chip (OA)	human	primary_tissue	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+intestinal	10.1186/s12964-025-02395-6	PMC12486794		2025	organ-on-chip (OA)	human	primary_tissue	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+cerebral	10.1038/s42003-025-08855-6	PMC12488937		2025	organ-on-chip (OA)	human	iPSC	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+intestinal	10.1038/s42003-025-08876-1	PMC12488953		2025	organ-on-chip (OA)	human	iPSC	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+cerebral	10.1002/advs.202501452	PMC12499486		2025	organ-on-chip (OA)	human	iPSC	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+kidney	10.1007/s12015-025-10971-z	PMC12504399		2025	organ-on-chip (OA)	human	iPSC	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+intestinal	10.1111/acel.70187	PMC12507422		2025	organ-on-chip (OA)	human	iPSC	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.1172/jci184522	PMC12520674		2025	organ-on-chip (OA)	mouse	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.1016/j.bbrep.2025.102295	PMC12524148		2025	organ-on-chip (OA)	human	adult_stem_cell	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+intestinal	10.1371/journal.pone.0332499	PMC12527130		2025	organ-on-chip (OA)	human	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+cerebral	10.1038/s41586-025-09362-8	PMC12527950		2025	organ-on-chip (OA)	human	other	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+liver	10.1016/j.ijpx.2025.100411	PMC12528922		2025	organ-on-chip (OA)		adult_stem_cell	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+other	10.1186/s13046-025-03540-2	PMC12529805		2025	organ-on-chip (OA)		adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.1126/science.adi8828	PMC12541708		2025	organ-on-chip (OA)	mouse	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.1186/s40104-025-01276-9	PMC12557852		2025	organ-on-chip (OA)	sheep	adult_stem_cell	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+intestinal	10.1038/s41419-025-08100-2	PMC12559404		2025	organ-on-chip (OA)	human	iPSC	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+liver	10.3390/biomimetics10100639	PMC12561621		2025	organ-on-chip (OA)	human	iPSC	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+other	10.3390/cells14201643	PMC12563307		2025	organ-on-chip (OA)	human	adult_stem_cell	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+intestinal	10.3390/ph18101540	PMC12566727		2025	organ-on-chip (OA)		iPSC	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+other	10.1038/s41467-025-64932-8	PMC12569204		2025	organ-on-chip (OA)	human	iPSC	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.1371/journal.pbio.3003448	PMC12574859		2025	organ-on-chip (OA)	mouse	other	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.3389/fimmu.2025.1703156	PMC12586042		2025	organ-on-chip (OA)	human	primary_tissue	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+intestinal	10.1002/1878-0261.70064	PMC12591322		2025	organ-on-chip (OA)	mouse	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+pancreatic	10.1038/s41420-025-02777-2	PMC12592554		2025	organ-on-chip (OA)	mouse	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+lung	10.7150/ijbs.118304	PMC12594594		2025	organ-on-chip (OA)	human	iPSC	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.1093/hropen/hoaf063	PMC12596476		2025	organ-on-chip (OA)	human	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+cerebral	10.3389/fnins.2025.1699814	PMC12620469		2025	organ-on-chip (OA)	human	iPSC	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+cerebral	10.1002/advs.202507256	PMC12631921		2025	organ-on-chip (OA)	human	iPSC	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+intestinal	10.1016/j.isci.2025.113801	PMC12636388		2025	organ-on-chip (OA)	human	primary_tissue	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.1155/term/5577199	PMC12640263		2025	organ-on-chip (OA)	chicken	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.3390/mps8060127	PMC12641787		2025	organ-on-chip (OA)	human	other	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+other	10.3390/biotech14040088	PMC12641844		2025	organ-on-chip (OA)	human	adult_stem_cell	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+other	10.3390/arm93060051	PMC12641937		2025	organ-on-chip (OA)	human	adult_stem_cell	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+other	10.1038/s41598-025-25523-1	PMC12644721		2025	organ-on-chip (OA)	human	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+intestinal	10.1038/s41598-025-25381-x	PMC12644823		2025	organ-on-chip (OA)	human	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.3390/biomedicines13112692	PMC12650001		2025	organ-on-chip (OA)	Rhesus macaque	adult_stem_cell	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+cerebral	10.3390/bioengineering12111216	PMC12650739		2025	organ-on-chip (OA)	human	iPSC	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+other	10.3390/genes16111312	PMC12652014		2025	organ-on-chip (OA)		iPSC	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+intestinal	10.3390/ijms262210874	PMC12652637		2025	organ-on-chip (OA)	Danio rerio	adult_stem_cell	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+other	10.3390/jpm15110556	PMC12653699		2025	organ-on-chip (OA)		other	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+intestinal	10.3390/toxins17110534	PMC12656439		2025	organ-on-chip (OA)		iPSC	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+intestinal	10.1126/sciadv.ady7682	PMC12662206		2025	organ-on-chip (OA)	mouse	iPSC	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.1016/j.xpro.2025.104211	PMC12663617		2025	organ-on-chip (OA)	mouse	adult_stem_cell	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+intestinal	10.1038/s44318-025-00581-3	PMC12669696		2025	organ-on-chip (OA)	mouse	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+liver	10.1242/dev.205026	PMC12669971		2025	organ-on-chip (OA)	human	primary_tissue	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+gastric	10.3389/fonc.2025.1664298	PMC12672344		2025	organ-on-chip (OA)		iPSC	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+other	10.3389/fmicb.2025.1698639	PMC12672529		2025	organ-on-chip (OA)	human	iPSC	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+cerebral	10.1016/j.celrep.2025.116217	PMC12674601		2025	organ-on-chip (OA)	human	iPSC	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.34133/bmr.0293	PMC12686348		2025	organ-on-chip (OA)		primary_tissue	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.3390/ijms262311456	PMC12691747		2025	organ-on-chip (OA)	human	primary_tissue	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+other	10.3390/ijms262311242	PMC12692286		2025	organ-on-chip (OA)	human	iPSC	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+cerebral	10.1038/s41467-025-66042-x	PMC12700901		2025	organ-on-chip (OA)	human	other	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.1002/ctm2.70541	PMC12711380		2025	organ-on-chip (OA)	human	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+cerebral	10.1038/s44319-025-00619-x	PMC12715241		2025	organ-on-chip (OA)	human	iPSC	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+pancreatic	10.1172/jci200909	PMC12721879		2026	organ-on-chip (OA)	human	adult_stem_cell	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+pancreatic	10.1172/jci194395	PMC12721884		2026	organ-on-chip (OA)	human	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.3390/biomedicines13122945	PMC12730211		2025	organ-on-chip (OA)		other	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+lung	10.1007/s00430-025-00865-9	PMC12743103		2025	organ-on-chip (OA)	human	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.1016/j.stemcr.2025.102711	PMC12744850		2025	organ-on-chip (OA)	human	iPSC	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+intestinal	10.1242/dmm.052610	PMC12746708		2025	organ-on-chip (OA)	mouse	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.1002/advs.202505989	PMC12752671		2025	organ-on-chip (OA)	human	other	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+lung	10.3389/fimmu.2025.1735479	PMC12757294		2025	organ-on-chip (OA)	human	primary_tissue	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.1101/gad.353319.125	PMC12758132		2026	organ-on-chip (OA)	vertebrate	ESC	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+cerebral	10.1126/sciadv.ady5905	PMC12758551		2026	organ-on-chip (OA)	human	ESC	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+gastric	10.1186/s40364-025-00867-y	PMC12764130		2026	organ-on-chip (OA)	human	other	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+lung	10.1002/advs.202510508	PMC12767113		2026	organ-on-chip (OA)	human	primary_tissue	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.3389/fvets.2025.1702980	PMC12771537		2025	organ-on-chip (OA)	Canis familiaris	adult_stem_cell	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+other	10.1093/hropen/hoaf076	PMC12774516		2026	organ-on-chip (OA)	bovine	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.32604/or.2025.069902	PMC12774535		2025	organ-on-chip (OA)	human	primary_tissue	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+other	10.7150/thno.120826	PMC12775825		2026	organ-on-chip (OA)	human	primary_tissue	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.3390/cells15010027	PMC12786284		2025	organ-on-chip (OA)		iPSC	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+other	10.1002/advs.202512951	PMC12786359		2026	organ-on-chip (OA)	human	primary_tissue	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.1038/s41467-025-67033-8	PMC12789560		2025	organ-on-chip (OA)	mouse	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.1016/j.stemcr.2025.102679	PMC12790718		2025	organ-on-chip (OA)	human	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+liver	10.1016/j.isci.2025.114340	PMC12794431		2026	organ-on-chip (OA)		adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+lung	10.70322/jrbtm.2025.10011	PMC12807509		2025	organ-on-chip (OA)	mouse	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.3389/fcell.2025.1722416	PMC12808478		2025	organ-on-chip (OA)		iPSC	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+cerebral	10.1093/biolre/ioaf191	PMC12808552		2026	organ-on-chip (OA)	human	iPSC	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.1002/ijc.70268	PMC12811216		2026	organ-on-chip (OA)	human	primary_tissue	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+liver	10.1016/j.isci.2025.114501	PMC12811488		2026	organ-on-chip (OA)	mouse	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.1111/cea.70205	PMC12813630		2026	organ-on-chip (OA)	human	other	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.1002/advs.202512670	PMC12822388		2026	organ-on-chip (OA)	mouse	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+cerebral	10.1002/advs.202417721	PMC12822396		2026	organ-on-chip (OA)	human	iPSC	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.34133/bmr.0307	PMC12824098		2026	organ-on-chip (OA)		iPSC	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+liver	10.1038/s41598-025-32539-0	PMC12824400		2026	organ-on-chip (OA)	human	iPSC	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+liver	10.3389/fphar.2025.1742956	PMC12827745		2025	organ-on-chip (OA)		other	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+other	10.1038/s41419-025-08293-6	PMC12830725		2025	organ-on-chip (OA)	human	primary_tissue	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.3389/fimmu.2025.1685137	PMC12832237		2025	organ-on-chip (OA)	mouse	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+cerebral	10.3389/fnmol.2025.1716805	PMC12833077		2025	organ-on-chip (OA)	human	iPSC	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+other	10.7150/ijbs.118753	PMC12836515		2026	organ-on-chip (OA)	human	primary_tissue	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.3390/bioengineering13010110	PMC12837753		2026	organ-on-chip (OA)	human	primary_tissue	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+other	10.3390/biomimetics11010012	PMC12838871		2025	organ-on-chip (OA)		iPSC	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+intestinal	10.3390/biomedicines14010248	PMC12839191		2026	organ-on-chip (OA)	human	primary_tissue	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+other	10.3390/cells15020152	PMC12839701		2026	organ-on-chip (OA)	human	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+liver	10.3390/cells15020125	PMC12839850		2026	organ-on-chip (OA)	human	primary_tissue	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+other	10.3390/polym18020194	PMC12845868		2026	organ-on-chip (OA)	pig	adult_stem_cell	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+cerebral	10.1186/s13041-025-01268-w	PMC12849627		2025	organ-on-chip (OA)	human	iPSC	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.3389/fvets.2025.1678271	PMC12856916		2025	organ-on-chip (OA)	Canis familiaris	primary_tissue	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+intestinal	10.1038/s41467-025-67979-9	PMC12864942		2025	organ-on-chip (OA)	human	primary_tissue	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.1002/advs.202505663	PMC12866767		2026	organ-on-chip (OA)	human	other	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.1002/advs.202509340	PMC12866796		2026	organ-on-chip (OA)	human	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.1038/s41563-025-02391-8	PMC12867766		2026	organ-on-chip (OA)		primary_tissue	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+liver	10.3389/fcell.2025.1706384	PMC12868238		2025	organ-on-chip (OA)		adult_stem_cell	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+other	10.1186/s13046-025-03629-8	PMC12870163		2026	organ-on-chip (OA)	mouse	other	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+cerebral	10.1016/j.nsa.2026.106982	PMC12873734		2026	organ-on-chip (OA)	human	iPSC	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+other	10.1093/ve/veag002	PMC12878718		2026	organ-on-chip (OA)	human	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.1186/s12935-025-04117-x	PMC12879323		2026	organ-on-chip (OA)	mouse	iPSC	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.1038/s42003-025-09462-1	PMC12881471		2026	organ-on-chip (OA)	human	iPSC	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+cerebral	10.1002/mco2.70618	PMC12883037		2026	organ-on-chip (OA)		iPSC	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+other	10.1002/advs.202513609	PMC12884776		2026	organ-on-chip (OA)	human	iPSC	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+intestinal	10.3389/fonc.2025.1704436	PMC12886026		2025	organ-on-chip (OA)	human	primary_tissue	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+other	10.1002/adhm.202501104	PMC12892023		2026	organ-on-chip (OA)		adult_stem_cell	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+other	10.3390/therapeutics2030011	PMC12893397		2025	organ-on-chip (OA)	human	iPSC	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.3389/fimmu.2026.1729388	PMC12894369		2026	organ-on-chip (OA)	human	primary_tissue	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+intestinal	10.1016/j.immuni.2025.11.014	PMC12895308		2026	organ-on-chip (OA)	mouse	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+liver	10.3390/cells15030216	PMC12896775		2026	organ-on-chip (OA)	human	adult_stem_cell	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+other	10.3390/cells15030247	PMC12897034		2026	organ-on-chip (OA)	human	iPSC	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+intestinal	10.3390/ani16030440	PMC12897086		2026	organ-on-chip (OA)	piglet	adult_stem_cell	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+intestinal	10.1002/cam4.71550	PMC12900261		2026	organ-on-chip (OA)	human	primary_tissue	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+pancreatic	10.1186/s12943-025-02541-1	PMC12903562		2026	organ-on-chip (OA)	human	other	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.1186/s13046-025-03625-y	PMC12903676		2026	organ-on-chip (OA)	mouse	primary_tissue	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+pancreatic	10.1016/j.celrep.2025.116666	PMC12904728		2025	organ-on-chip (OA)	human	iPSC	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+kidney	10.1038/s44321-025-00361-w	PMC12905196		2026	organ-on-chip (OA)	H. sapiens	primary_tissue	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+gastric	10.1038/s41416-025-03310-z	PMC12905249		2026	organ-on-chip (OA)	human	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+intestinal	10.1016/j.jcmgh.2025.101716	PMC12906100		2026	organ-on-chip (OA)	mouse	adult_stem_cell	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+other	10.1111/imr.70110	PMC12907622		2026	organ-on-chip (OA)	mouse	adult_stem_cell	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+other	10.1016/j.gendis.2025.101691	PMC12914539		2026	organ-on-chip (OA)	mouse	primary_tissue	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+intestinal	10.1038/s41586-025-09916-w	PMC12916511		2026	organ-on-chip (OA)		iPSC	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+intestinal	10.1186/s13046-026-03647-0	PMC12918055		2026	organ-on-chip (OA)	human	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.1080/13510002.2026.2626181	PMC12918307		2026	organ-on-chip (OA)	human	primary_tissue	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.1002/jev2.70227	PMC12919373		2026	organ-on-chip (OA)	human	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.1038/s41467-026-68611-0	PMC12923676		2026	organ-on-chip (OA)	mouse	primary_tissue	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.1016/j.mtbio.2026.102878	PMC12924735		2026	organ-on-chip (OA)	human	primary_tissue	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+cerebral	10.3389/fpsyt.2025.1714569	PMC12926382		2025	organ-on-chip (OA)		iPSC	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+gastric	10.3389/fimmu.2026.1712830	PMC12926446		2026	organ-on-chip (OA)	human	primary_tissue	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+intestinal	10.1002/adhm.202502079	PMC12927536		2026	organ-on-chip (OA)	human	iPSC	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+cerebral	10.1016/j.isci.2026.114780	PMC12930056		2026	organ-on-chip (OA)	human	iPSC	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.1038/s41467-026-68675-y	PMC12932823		2026	organ-on-chip (OA)	human	iPSC	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+intestinal	10.1016/j.jbc.2026.111205	PMC12934309		2026	organ-on-chip (OA)	human	primary_tissue	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+cerebral		PMC12938355		2026	organ-on-chip (OA)	mouse	primary_tissue	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+intestinal	10.1016/j.crmeth.2026.101331	PMC12946742		2026	organ-on-chip (OA)	human	iPSC	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+intestinal	10.1002/advs.202516098	PMC12948209		2026	organ-on-chip (OA)	human	primary_tissue	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+intestinal	10.3389/fgstr.2025.1592669	PMC12952359		2025	organ-on-chip (OA)	human	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+intestinal	10.1007/s40656-026-00720-x	PMC12953487		2026	organ-on-chip (OA)		adult_stem_cell	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+cerebral	10.1186/s40035-026-00539-3	PMC12955099		2026	organ-on-chip (OA)	human	iPSC	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.1016/j.xpro.2026.104401	PMC12955643		2026	organ-on-chip (OA)	human	adult_stem_cell	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+other	10.1002/advs.202516578	PMC12955881		2026	organ-on-chip (OA)	human	primary_tissue	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+intestinal	10.1002/fsn3.71602	PMC12958132		2026	organ-on-chip (OA)	mouse	adult_stem_cell	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+other	10.1186/s13046-026-03665-y	PMC12958674		2026	organ-on-chip (OA)		other	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+other	10.1016/j.isci.2026.114982	PMC12962116		2026	organ-on-chip (OA)	human	primary_tissue	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.3389/fncel.2026.1788096	PMC12962908		2026	organ-on-chip (OA)		primary_tissue	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+other	10.1096/fj.202504234r	PMC12963523		2026	organ-on-chip (OA)	human	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+gastric	10.32604/or.2025.074893	PMC12963677		2026	organ-on-chip (OA)		iPSC	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+other	10.7150/ijbs.123085	PMC12965060		2026	organ-on-chip (OA)	mouse	primary_tissue	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+intestinal	10.7150/ijbs.128078	PMC12965142		2026	organ-on-chip (OA)	human	iPSC	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.1371/journal.pone.0344295	PMC12965605		2026	organ-on-chip (OA)	mouse	other	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+cerebral	10.1016/j.bbrep.2026.102529	PMC12966747		2026	organ-on-chip (OA)	Homo sapiens	iPSC	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.3389/fdmed.2026.1763201	PMC12968307		2026	organ-on-chip (OA)	human	adult_stem_cell	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+cerebral	10.1093/neuonc/noaf248	PMC12979037		2026	organ-on-chip (OA)	human	iPSC	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+lung	10.1016/j.xgen.2025.101066	PMC12985369		2026	organ-on-chip (OA)	human	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+cerebral		PMC12986312		2026	organ-on-chip (OA)	human	other	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.1242/dev.204772	PMC12989076		2026	organ-on-chip (OA)	human	iPSC	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+intestinal	10.1038/s12276-025-01635-6	PMC12992830		2026	organ-on-chip (OA)	human	iPSC	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.1242/dmm.052511	PMC12994450		2026	organ-on-chip (OA)	human	iPSC	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.1007/s10911-026-09598-8	PMC13004756		2026	organ-on-chip (OA)	human	primary_tissue	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+lung	10.1038/s41467-026-70842-0	PMC13004988		2026	organ-on-chip (OA)	mouse	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.3389/fcell.2026.1767397	PMC13013538		2026	organ-on-chip (OA)	human	primary_tissue	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+other	10.1093/humupd/dmaf029	PMC13016920		2026	organ-on-chip (OA)	human	iPSC	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+other	10.3389/fcell.2026.1785805	PMC13018138		2026	organ-on-chip (OA)	human	iPSC	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+intestinal	10.1016/j.crmeth.2026.101310	PMC13030965		2026	organ-on-chip (OA)	Homo sapiens	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.1016/j.apsb.2025.12.038	PMC13031072		2026	organ-on-chip (OA)	human	primary_tissue	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+cerebral	10.1111/jnc.70416	PMC13033922		2026	organ-on-chip (OA)	human	iPSC	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+other	10.7717/peerj.20704	PMC13034868		2026	organ-on-chip (OA)	human	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.3389/fmed.2026.1754270	PMC13036131		2026	organ-on-chip (OA)	human	primary_tissue	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.31083/rcm48589	PMC13036539		2026	organ-on-chip (OA)		other	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+other	10.1002/advs.202509691	PMC13042494		2026	organ-on-chip (OA)	human	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+intestinal	10.1002/advs.202518084	PMC13042525		2026	organ-on-chip (OA)	human	other	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.1002/advs.202516948	PMC13042631		2026	organ-on-chip (OA)	human	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+cerebral	10.1002/mco2.70702	PMC13042763		2026	organ-on-chip (OA)	human	primary_tissue	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+lung	10.3389/fimmu.2026.1787094	PMC13046558		2026	organ-on-chip (OA)		other	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+other	10.1038/s41413-026-00521-9	PMC13046724		2026	organ-on-chip (OA)	mouse	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.1126/sciadv.aeb1451	PMC13048265		2026	organ-on-chip (OA)	human	primary_tissue	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+cerebral	10.3389/fncel.2026.1786186	PMC13053263		2026	organ-on-chip (OA)	human	iPSC	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+intestinal	10.1038/s41564-026-02295-6	PMC13056565		2026	organ-on-chip (OA)	mouse	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.3389/fcell.2026.1751258	PMC13056610		2026	organ-on-chip (OA)	human	adult_stem_cell	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+other	10.1038/s41467-026-70699-3	PMC13057301		2026	organ-on-chip (OA)	human	primary_tissue	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+cerebral	10.3389/ftox.2026.1723092	PMC13061382		2026	organ-on-chip (OA)	human	iPSC	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+other	10.1016/j.pccm.2026.02.003	PMC13063276		2026	organ-on-chip (OA)		adult_stem_cell	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+other	10.17161/sjm.v3i1.24566	PMC13064450		2026	organ-on-chip (OA)	human	primary_tissue	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+other	10.1002/adhm.202504880	PMC13068359		2026	organ-on-chip (OA)	human	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.3390/cancers18071076	PMC13072003		2026	organ-on-chip (OA)		iPSC	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+other	10.3390/cancers18071054	PMC13072156		2026	organ-on-chip (OA)		primary_tissue	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+other	10.3390/cells15070618	PMC13072173		2026	organ-on-chip (OA)		iPSC	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+kidney	10.1002/advs.202510441	PMC13073298		2026	organ-on-chip (OA)	human	iPSC	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.3390/ijms27073238	PMC13073776		2026	organ-on-chip (OA)		iPSC	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+other	10.20517/evcna.2025.84	PMC13074304		2026	organ-on-chip (OA)		other	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+cerebral	10.1186/s13041-026-01285-3	PMC13077919		2026	organ-on-chip (OA)	human	iPSC	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.1158/2767-9764.crc-25-0634	PMC13081119		2026	organ-on-chip (OA)	human	primary_tissue	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+gastric		PMC13083136			organ-on-chip (OA)	human	other	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+cerebral	10.1016/j.stemcr.2026.102832	PMC13083800		2026	organ-on-chip (OA)	mouse	iPSC	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.1016/j.celrep.2025.116645	PMC13084540		2025	organ-on-chip (OA)	Panthera leo	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+liver		PMC13084690		2026	organ-on-chip (OA)	human	iPSC	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other		PMC13085890		2026	organ-on-chip (OA)	human	other	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.1530/vb-25-0016	PMC13087870		2026	organ-on-chip (OA)		other	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+other	10.1002/advs.202522025	PMC13088297		2026	organ-on-chip (OA)	human	primary_tissue	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.1016/j.gendis.2025.101887	PMC13092676		2026	organ-on-chip (OA)		primary_tissue	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+intestinal		PMC13092766		2026	organ-on-chip (OA)		other	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+intestinal	10.1111/acel.70495	PMC13093538		2026	organ-on-chip (OA)	mouse	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+liver	10.3389/fimmu.2026.1782849	PMC13095628		2026	organ-on-chip (OA)		iPSC	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+other	10.1186/s40035-026-00548-2	PMC13101311		2026	organ-on-chip (OA)		other	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+cerebral	10.1016/j.crmeth.2026.101371	PMC13107059		2026	organ-on-chip (OA)	human	iPSC	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+intestinal	10.1080/19490976.2026.2661411	PMC13108364		2026	organ-on-chip (OA)	human	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.1096/fj.202503816r	PMC13109810		2026	organ-on-chip (OA)	mouse	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.1515/jtim-2026-0040	PMC13110467		2026	organ-on-chip (OA)		primary_tissue	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+intestinal	10.3389/fimmu.2026.1782006	PMC13111450		2026	organ-on-chip (OA)		iPSC	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+lung	10.1111/cpr.70200	PMC13114771		2026	organ-on-chip (OA)	human	iPSC	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+other	10.3390/cells15080724	PMC13115049		2026	organ-on-chip (OA)	human	iPSC	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+cerebral	10.1002/advs.202522926	PMC13115983		2026	organ-on-chip (OA)	human	iPSC	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.3390/ijms27083586	PMC13116155		2026	organ-on-chip (OA)	human	other	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+cerebral	10.3390/ijms27083371	PMC13116923		2026	organ-on-chip (OA)	human	iPSC	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+other	10.3390/pharmaceutics18040408	PMC13118741		2026	organ-on-chip (OA)		iPSC	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+liver	10.3390/pharmaceutics18040483	PMC13119268		2026	organ-on-chip (OA)	human	iPSC	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+intestinal	10.3390/microorganisms14040820	PMC13119276		2026	organ-on-chip (OA)	mouse	adult_stem_cell	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+other	10.1186/s40478-026-02283-1	PMC13126972		2026	organ-on-chip (OA)	Homo sapiens	iPSC	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.17305/bb.2025.13312	PMC13130751		2025	organ-on-chip (OA)		primary_tissue	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+other	10.3389/fphys.2026.1789642	PMC13132708		2026	organ-on-chip (OA)		adult_stem_cell	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+other	10.1016/j.omton.2026.201205	PMC13136644		2026	organ-on-chip (OA)		primary_tissue	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.7150/ijbs.129192	PMC13137857		2026	organ-on-chip (OA)	mouse	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+liver	10.1088/2752-5724/ae4e4d	PMC13138298		2026	organ-on-chip (OA)	human	iPSC	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+other	10.1038/s41388-026-03725-9	PMC13139034		2026	organ-on-chip (OA)	human	primary_tissue	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+intestinal	10.1242/dev.205259	PMC13143203		2026	organ-on-chip (OA)	mouse	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.3389/fonc.2026.1799955	PMC13143596		2026	organ-on-chip (OA)		iPSC	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+other	10.1038/s41419-026-08650-z	PMC13144379		2026	organ-on-chip (OA)	human	other	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.1038/s12276-026-01701-7	PMC13144418		2026	organ-on-chip (OA)	human	other	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.7759/cureus.106495	PMC13145298		2026	organ-on-chip (OA)		iPSC	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+cerebral	10.3390/app16052309	PMC13152003		2026	organ-on-chip (OA)	human	iPSC	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+pancreatic	10.34133/bmr.0361	PMC13158456		2026	organ-on-chip (OA)	human	primary_tissue	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+cerebral	10.1042/bsr20250131	PMC13161353		2026	organ-on-chip (OA)	human	iPSC	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+other	10.1038/s41392-026-02713-5	PMC13161432		2026	organ-on-chip (OA)	mouse	other	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+other	10.3390/ijms27094100	PMC13163291		2026	organ-on-chip (OA)		iPSC	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+other	10.3389/fncel.2026.1821605	PMC13167534		2026	organ-on-chip (OA)	human	iPSC	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+other	10.3389/fmed.2026.1817835	PMC13171836		2026	organ-on-chip (OA)		other	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+other	10.1038/s44321-026-00393-w	PMC13179391		2026	organ-on-chip (OA)	Human	other	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+retinal	10.1016/j.celrep.2026.117270	PMC13181862		2026	organ-on-chip (OA)	human	other	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.1038/s41467-026-73213-x	PMC13183884		2026	organ-on-chip (OA)	Mus musculus	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.1038/s42003-026-09897-0	PMC13183921		2026	organ-on-chip (OA)	human	primary_tissue	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.1128/jvi.00450-26	PMC13185614		2026	organ-on-chip (OA)	human	iPSC	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+other	10.1007/s10439-026-03995-0	PMC13186902		2026	organ-on-chip (OA)		iPSC	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+lung	10.1038/s44318-026-00774-4	PMC13187038		2026	organ-on-chip (OA)	human	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+intestinal	10.3389/fbioe.2026.1777423	PMC13189839		2026	organ-on-chip (OA)	Homo sapiens	adult_stem_cell	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+cerebral	10.1007/s12035-026-05903-y	PMC13190451		2026	organ-on-chip (OA)	human	adult_stem_cell	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+other	10.1007/s00018-026-06200-6	PMC13190940		2026	organ-on-chip (OA)	bovine	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.3389/fimmu.2026.1799028	PMC13194583		2026	organ-on-chip (OA)	human	adult_stem_cell	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+intestinal	10.1038/s41467-026-71083-x	PMC13195047		2026	organ-on-chip (OA)	mouse	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.3390/brainsci16050523	PMC13204064		2026	organ-on-chip (OA)	human	iPSC	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+kidney	10.3390/cimb48050468	PMC13204410		2026	organ-on-chip (OA)		other	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+other	10.3390/brainsci16050542	PMC13204640		2026	organ-on-chip (OA)		iPSC	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+other	10.3390/cells15100900	PMC13204734		2026	organ-on-chip (OA)		iPSC	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+intestinal	10.3390/biom16050688	PMC13204989		2026	organ-on-chip (OA)	mouse	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+intestinal	10.3390/cancers18101587	PMC13205027		2026	organ-on-chip (OA)		primary_tissue	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.3390/ijms27104528	PMC13207132		2026	organ-on-chip (OA)		other	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+cerebral	10.3390/ijms27104489	PMC13207597		2026	organ-on-chip (OA)	human	iPSC	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+other	10.3390/life16050784	PMC13209094		2026	organ-on-chip (OA)	human	iPSC	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+cerebral	10.3390/v18050552	PMC13211404		2026	organ-on-chip (OA)	human	iPSC	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+liver	10.3389/fmed.2026.1804561	PMC13212071		2026	organ-on-chip (OA)		primary_tissue	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+intestinal	10.1186/s12964-026-02963-4	PMC13217735		2026	organ-on-chip (OA)	murine	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.1172/jci194989	PMC13221221		2026	organ-on-chip (OA)	human	iPSC	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+cerebral	10.1101/gad.353292.125	PMC13224868		2026	organ-on-chip (OA)	human	iPSC	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+intestinal		PMC13226563			organ-on-chip (OA)	mouse	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.7150/thno.127654	PMC13231838		2026	organ-on-chip (OA)	human	iPSC	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.1093/nar/gkag557	PMC13234505		2026	organ-on-chip (OA)	human	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+cerebral	10.1371/journal.pone.0351146	PMC13240876		2026	organ-on-chip (OA)	human	iPSC	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other		PMC13243089			organ-on-chip (OA)		iPSC	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+other	10.1093/molehr/gaag030	PMC13244796		2026	organ-on-chip (OA)	human	iPSC	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+other	10.1177/19476035261458719	PMC13246504		2026	organ-on-chip (OA)	human	iPSC	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+intestinal	10.1002/ptr.70303	PMC13254238		2026	organ-on-chip (OA)	Murine	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+liver	10.3390/ijms27114746	PMC13256131		2026	organ-on-chip (OA)	human	other	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+other	10.3389/fimmu.2026.1813048	PMC13259699		2026	organ-on-chip (OA)		iPSC	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+intestinal	10.3389/fcimb.2026.1787954	PMC13259796		2026	organ-on-chip (OA)	human	primary_tissue	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.1002/adma.202516189	PMC13261385		2026	organ-on-chip (OA)	human	iPSC	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+pancreatic	10.1155/sci/2759804	PMC13263637		2026	organ-on-chip (OA)	human	other	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+intestinal	10.1002/cti2.70111	PMC13270256		2026	organ-on-chip (OA)		iPSC	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+pancreatic	10.3389/fendo.2026.1819394	PMC13271997		2026	organ-on-chip (OA)	human	iPSC	CC-BY	yes	no	no	openalex	openalex ingest 2026-06
+cerebral	10.1186/s43556-026-00492-7	PMC13272847		2026	organ-on-chip (OA)	human	primary_tissue	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+other	10.1038/s41698-026-01434-w	PMC13276166		2026	organ-on-chip (OA)	human	primary_tissue	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
+pancreatic	10.1158/0008-5472.can-24-2330	PMC7617379		2025	organ-on-chip (OA)	mouse	adult_stem_cell	CC-BY	yes	yes	no	openalex	openalex ingest 2026-06
