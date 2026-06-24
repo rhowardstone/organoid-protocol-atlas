@@ -1,0 +1,131 @@
+{
+  "pmcid": "PMC10001859",
+  "doi": "10.3390/ijms24054266",
+  "verified_by": null,
+  "candidate_by": "A100 (stages v2 prototype, #178)",
+  "gold": {
+    "organoid_type": "intestinal",
+    "is_generation_protocol": true,
+    "source_cells": "Human colon biopsies",
+    "final_organoid": "CM-CE monolayers",
+    "stages": [
+      {
+        "name": "Colonoid expansion",
+        "start_day": null,
+        "end_day": null,
+        "culture_vessel": "24-well plate",
+        "medium_base": "EM",
+        "reagents": [
+          {
+            "name": "Y-27632",
+            "concentration": 10,
+            "unit": "µM",
+            "role": "proliferation"
+          },
+          {
+            "name": "CHIR-99021",
+            "concentration": 10,
+            "unit": "µM",
+            "role": "proliferation"
+          },
+          {
+            "name": "valproic acid",
+            "concentration": 1,
+            "unit": "mM",
+            "role": "proliferation"
+          }
+        ]
+      },
+      {
+        "name": "Differentiation medium preparation",
+        "start_day": null,
+        "end_day": null,
+        "culture_vessel": null,
+        "medium_base": "EM",
+        "reagents": [
+          {
+            "name": "Noggin conditioned medium",
+            "concentration": 10,
+            "unit": "%",
+            "role": "differentiation"
+          }
+        ]
+      },
+      {
+        "name": "Transwell insert coating",
+        "start_day": null,
+        "end_day": null,
+        "culture_vessel": "Transwell inserts",
+        "medium_base": null,
+        "reagents": [
+          {
+            "name": "human collagen IV solution",
+            "concentration": 10,
+            "unit": "mg/cm2",
+            "role": "coating"
+          }
+        ]
+      },
+      {
+        "name": "Colonoid seeding",
+        "start_day": null,
+        "end_day": null,
+        "culture_vessel": "Transwell inserts",
+        "medium_base": "advanced DMEM F12",
+        "reagents": []
+      },
+      {
+        "name": "3D colonoid fragment generation",
+        "start_day": null,
+        "end_day": null,
+        "culture_vessel": null,
+        "medium_base": "advanced DMEM F12",
+        "reagents": [
+          {
+            "name": "trypsin-EDTA",
+            "concentration": 0.02,
+            "unit": "%",
+            "role": "fragmentation"
+          }
+        ]
+      },
+      {
+        "name": "Coculture",
+        "start_day": null,
+        "end_day": null,
+        "culture_vessel": "24-well plate",
+        "medium_base": "EM",
+        "reagents": []
+      },
+      {
+        "name": "Maturation",
+        "start_day": 4,
+        "end_day": null,
+        "culture_vessel": "24-well plate",
+        "medium_base": "EM",
+        "reagents": []
+      },
+      {
+        "name": "Monolayer formation",
+        "start_day": null,
+        "end_day": null,
+        "culture_vessel": null,
+        "medium_base": null,
+        "reagents": []
+      }
+    ],
+    "assay_endpoints": [
+      "TEER measurement",
+      "Fluorometric Measurements (NHE activity)",
+      "Immunofluorescence Imaging",
+      "Immunohistochemical Analysis",
+      "RT-qPCR Analysis",
+      "SDS-PAGE and Western Blot"
+    ]
+  },
+  "flags": [
+    "keying:condition-keyed"
+  ],
+  "notes": "Candidate stages-gold for the #226 gold gate (condition-keyed). Generated from the v2 stages prototype (gemma3:12b, scoped prompt); REQUIRES human review/correction before verified_by is set.",
+  "verification_note": "UNVERIFIED — candidate awaiting human sign-off (rhowardstone)."
+}

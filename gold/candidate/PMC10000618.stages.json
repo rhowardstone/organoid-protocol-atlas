@@ -1,0 +1,157 @@
+{
+  "pmcid": "PMC10000618",
+  "doi": "10.3390/cells12050733",
+  "verified_by": null,
+  "candidate_by": "A100 (stages v2 prototype, #178)",
+  "gold": {
+    "organoid_type": "tumor",
+    "is_generation_protocol": true,
+    "source_cells": "CAL27, CAL33 and SCC9 cell lines",
+    "final_organoid": "tumoroids",
+    "stages": [
+      {
+        "name": "tumoroid extraction and culture",
+        "start_day": null,
+        "end_day": null,
+        "culture_vessel": "24-well plates",
+        "reagents": [
+          {
+            "name": "DMEM/F12",
+            "concentration": null,
+            "unit": null,
+            "role": "medium"
+          },
+          {
+            "name": "GlutaMax",
+            "concentration": null,
+            "unit": null,
+            "role": "supplement"
+          },
+          {
+            "name": "Penicilin/streptomycin",
+            "concentration": null,
+            "unit": null,
+            "role": "supplement"
+          },
+          {
+            "name": "HEPES",
+            "concentration": "10",
+            "unit": "mM",
+            "role": "supplement"
+          },
+          {
+            "name": "Y-27632",
+            "concentration": "10",
+            "unit": "µM",
+            "role": "supplement"
+          },
+          {
+            "name": "Capsofungin",
+            "concentration": "0.5",
+            "unit": "µg/mL",
+            "role": "supplement"
+          },
+          {
+            "name": "B27 supplement",
+            "concentration": "1×",
+            "unit": null,
+            "role": "supplement"
+          },
+          {
+            "name": "N-acetyl-L-cysteine",
+            "concentration": "1.25",
+            "unit": "mM",
+            "role": "supplement"
+          },
+          {
+            "name": "Nicotinamide",
+            "concentration": "10",
+            "unit": "mM",
+            "role": "supplement"
+          },
+          {
+            "name": "A83-01",
+            "concentration": "500",
+            "unit": "nM",
+            "role": "supplement"
+          },
+          {
+            "name": "CHIR99021",
+            "concentration": "0.3",
+            "unit": "µM",
+            "role": "supplement"
+          },
+          {
+            "name": "human EGF",
+            "concentration": "50",
+            "unit": "ng/mL",
+            "role": "supplement"
+          },
+          {
+            "name": "human FGF10",
+            "concentration": "10",
+            "unit": "ng/mL",
+            "role": "supplement"
+          },
+          {
+            "name": "human FGF2",
+            "concentration": "5",
+            "unit": "ng/mL",
+            "role": "supplement"
+          },
+          {
+            "name": "Prostaglandin E2",
+            "concentration": "1",
+            "unit": "µM",
+            "role": "supplement"
+          },
+          {
+            "name": "Forskolin",
+            "concentration": "1",
+            "unit": "µM",
+            "role": "supplement"
+          },
+          {
+            "name": "RSPO3-Fc fusion protein conditioned medium",
+            "concentration": "4%",
+            "unit": null,
+            "role": "supplement"
+          },
+          {
+            "name": "Noggin-Fc fusion protein conditioned medium",
+            "concentration": "4%",
+            "unit": null,
+            "role": "supplement"
+          },
+          {
+            "name": "Cultrex UltiMatrix reduced growth factor basement membrane Extract",
+            "concentration": "70%",
+            "unit": null,
+            "role": "supplement"
+          }
+        ],
+        "transition": null
+      }
+    ],
+    "assay_endpoints": [
+      "Western blot",
+      "ELISA",
+      "qPCR/RT-PCR",
+      "immunofluorescence/histology",
+      "imaging",
+      "sequencing",
+      "viability/MTT",
+      "TEER measurement",
+      "flow cytometry",
+      "clonogenic survival",
+      "metabolic assays",
+      "intracellular Fe 2+ accumulation",
+      "detection of lipid peroxides"
+    ]
+  },
+  "flags": [
+    "keying:gate-case (is_generation borderline)"
+  ],
+  "notes": "Candidate stages-gold for the #226 gold gate (gate-case (is_generation borderline)). Generated from the v2 stages prototype (gemma3:12b, scoped prompt); REQUIRES human review/correction before verified_by is set.",
+  "verification_note": "UNVERIFIED — candidate awaiting human sign-off (rhowardstone)."
+}
