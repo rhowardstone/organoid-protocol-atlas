@@ -195,9 +195,13 @@ def call_ollama(prompt: str) -> dict:
         # num_ctx must be set explicitly — ollama's default context (~4k) silently
         # truncates long protocol papers (e.g. Broda 40k methods), losing the
         # concentrations stated in later steps. 16k tokens covers the 24k-char window.
+        # num_predict caps generation length: a non-streaming ollama call with no cap can
+        # run away into an unbounded generation that the urlopen socket timeout does NOT
+        # bound (the connection stays alive), hanging the marathon for hours. 6144 tokens
+        # is well above any real OrganoidProtocol JSON while killing pathological loops.
         data=json.dumps({"model": MODEL, "prompt": prompt, "format": "json",
                          "stream": False,
-                         "options": {"temperature": 0, "num_ctx": 16384}}).encode(),
+                         "options": {"temperature": 0, "num_ctx": 16384, "num_predict": 6144}}).encode(),
         headers={"Content-Type": "application/json"},
     )
     resp = json.load(urllib.request.urlopen(req, timeout=600))["response"]
