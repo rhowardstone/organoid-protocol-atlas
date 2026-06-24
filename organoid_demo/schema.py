@@ -191,11 +191,19 @@ class BaseMedia(BaseModel):
 
 
 class TimelineStage(BaseModel):
-    """One differentiation/maturation stage. Step-ordering is an eval target."""
-    name: str = Field(..., description="e.g. 'embryoid body', 'neural induction', 'expansion'.")
-    day_start: Optional[int] = None
-    day_end: Optional[int] = None
-    reagents: list[Reagent] = Field(default_factory=list)
+    """One differentiation/maturation stage. Step-ordering is an eval target.
+
+    v0.5: richer recipe fields — culture vessel, base medium, and the trigger
+    that defines the transition to the next stage. Reagents retain per-stage
+    linkage; null start/end days are valid for condition-keyed protocols.
+    """
+    name: str = Field(..., description="e.g. 'EB aggregation', 'neural induction', 'maturation'.")
+    start_day: Optional[int] = Field(None, description="Absolute protocol day this stage starts; null if condition-keyed.")
+    end_day: Optional[int] = Field(None, description="Absolute protocol day this stage ends; null if condition-keyed.")
+    culture_vessel: Optional[str] = Field(None, description="e.g. 'ultra-low attachment 96-well', 'Transwell'.")
+    medium_base: Optional[str] = Field(None, description="Base medium for this stage, e.g. 'E6', 'Advanced DMEM/F12'.")
+    reagents: list[Reagent] = Field(default_factory=list, description="Factors ADDED in this stage.")
+    transition: Optional[str] = Field(None, description="Trigger to the next stage, e.g. 'TEER > 150 Ω/cm²' or 'Day 6: switch medium'.")
     evidence: Optional[Evidence] = None
 
 
@@ -269,7 +277,17 @@ class OrganoidProtocol(BaseModel):
     )
     small_molecules: list[Reagent] = Field(default_factory=list)
 
-    timeline: list[TimelineStage] = Field(default_factory=list)
+    # v0.5: stages[] replaces the flat timeline. Each stage carries its own
+    # reagents, vessel, medium, and the transition trigger to the next step.
+    # is_generation_protocol gates the extraction: drug studies that use
+    # organoids as an assay get is_generation_protocol=False and stages=[].
+    stages: list[TimelineStage] = Field(default_factory=list,
+        description="Ordered culture/differentiation procedure (generation protocol only).")
+    is_generation_protocol: Optional[bool] = Field(
+        None,
+        description="True if this paper primarily presents an organoid generation/culture procedure. "
+                    "False for drug studies, disease models, etc. that use organoids as an assay tool.")
+
     passaging: Passaging = Field(default_factory=Passaging)
     culture_conditions: CultureConditions = Field(default_factory=CultureConditions)  # v0.3
 
@@ -289,7 +307,7 @@ class OrganoidProtocol(BaseModel):
     )
 
     # Extraction-level metadata for evaluation
-    schema_version: str = "0.4"
+    schema_version: str = "0.6"
     extractor_version: Optional[str] = None
     notes: Optional[str] = None
 

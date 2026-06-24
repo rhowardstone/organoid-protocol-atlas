@@ -147,7 +147,8 @@ culture_conditions: {{temperature_c, co2_pct, o2_pct, evidence_quote}},
 signaling_factors: [{{name, role, value, unit, evidence_quote}}],
 media_supplements: [{{name}}],
 passaging: {{method, split_ratio, interval_days}},
-timeline: [{{name, day_start, day_end}}],
+is_generation_protocol: bool (true if this paper primarily presents an organoid generation/culture procedure; false for drug studies / disease models that only use organoids as one assay),
+stages: [{{name, start_day, end_day, culture_vessel, medium_base, reagents: [{{name, concentration, unit, role}}], transition}}],
 assay_endpoints: [string],
 failure_modes: [{{description, condition, evidence_quote}}],
 modifications: [{{cited_doi, change_description, evidence_quote}}],
@@ -162,8 +163,15 @@ RULES:
 - Extract ONLY items explicitly stated in THIS text. Never copy example wording, never fill
   from background knowledge. If a field/list is not stated, use null or [] — do not invent.
 - passaging: method/split_ratio/interval_days only if the text states them (interval_days = integer).
-- timeline = ordered culture/differentiation stages NAMED IN THIS TEXT, with day_start/day_end
-  if the text gives them (integers); [] if the text does not describe staged timing.
+- is_generation_protocol: false if paper is primarily a drug/disease study using organoids as one assay.
+- stages: ONLY the ordered generation/culture procedure (seeding → differentiation → mature organoid).
+  STRICTLY EXCLUDE: characterization assays (Western, ELISA, qPCR, IF, imaging, flow cytometry,
+  TEER measurement) → put names in assay_endpoints instead. Exclude upstream source cell-line
+  maintenance → record in source_cells. If is_generation_protocol is false, return stages: [].
+  start_day/end_day = absolute day integers (Day 0 = protocol start) or null for condition-keyed steps.
+  culture_vessel = plate/vessel/format or null. medium_base = base medium for this stage or null.
+  stages[].reagents = factors ADDED in this stage (name, numeric concentration or null, unit, role or null).
+  transition = trigger to the next stage (e.g. "Day 6: switch medium", "TEER > 150 Ω/cm²") or null.
 - assay_endpoints = validation readouts/markers THIS paper actually reports; [] if none stated.
 - signaling_factors = morphogens / growth factors / pathway agonists or inhibitors
   (e.g. EGF, Noggin, R-spondin, Wnt3a, FGF4, FGF9, ActivinA, CHIR99021, SB431542, Y-27632).
@@ -294,14 +302,47 @@ def to_protocol(doi: str, m: dict, evidence: str) -> tuple[OrganoidProtocol, dic
         interval_days=_int(pg.get("interval_days")),
         reporting=(Reporting.REPORTED if (pg.get("method") or pg.get("split_ratio")
                    or pg.get("interval_days")) else Reporting.NOT_REPORTED))
-    timeline = [TimelineStage(name=str(t["name"]).strip(), day_start=_int(t.get("day_start")),
-                              day_end=_int(t.get("day_end")))
-                for t in (m.get("timeline") or []) if isinstance(t, dict) and t.get("name")]
-    endpoints = [str(x).strip() for x in (m.get("assay_endpoints") or []) if x]
-    # deterministic anti-hallucination: keep only stage names / endpoints that actually
-    # appear (verbatim, case-insensitive) in the source text. Kills prompt-example parroting.
+    # v0.6: parse stages[] (replaces timeline[]). stage.reagents carry per-stage
+    # concentrations; is_generation_protocol gates whether stages is meaningful.
+    is_gen = m.get("is_generation_protocol")
+    if isinstance(is_gen, str):
+        is_gen = is_gen.lower() not in ("false", "0", "no")
+    elif not isinstance(is_gen, bool):
+        is_gen = None
+
+    def _stage_reagent(d: dict) -> Reagent:
+        try:
+            v = float(d.get("concentration")) if d.get("concentration") is not None else None
+        except (ValueError, TypeError):
+            v = None
+        return Reagent(name=str(d.get("name") or "").strip(),
+                       role=d.get("role") or None,
+                       concentration=Concentration(value=v, unit=d.get("unit") or None) if v else None)
+
+    raw_stages = m.get("stages") or []
     el = evidence.lower()
-    timeline = [t for t in timeline if t.name and t.name.lower() in el]
+    stages = []
+    for t in raw_stages:
+        if not isinstance(t, dict) or not t.get("name"):
+            continue
+        name = str(t["name"]).strip()
+        if not name or name.lower() not in el:
+            continue  # anti-hallucination: stage name must appear in source text
+        reags = [_stage_reagent(r) for r in (t.get("reagents") or [])
+                 if isinstance(r, dict) and r.get("name")
+                 and not is_non_reagent(r.get("name"))
+                 and not is_pathway_context(r.get("name"))]
+        stages.append(TimelineStage(
+            name=name,
+            start_day=_int(t.get("start_day")),
+            end_day=_int(t.get("end_day")),
+            culture_vessel=t.get("culture_vessel") or None,
+            medium_base=t.get("medium_base") or None,
+            reagents=reags,
+            transition=t.get("transition") or None,
+        ))
+
+    endpoints = [str(x).strip() for x in (m.get("assay_endpoints") or []) if x]
     endpoints = [x for x in endpoints if x.lower() in el]
 
     # v0.3 culture_conditions — grounded numerics only. Keep a value iff the model's
@@ -358,7 +399,8 @@ def to_protocol(doi: str, m: dict, evidence: str) -> tuple[OrganoidProtocol, dic
         media_supplements=[Reagent(name=str(s.get("name") if isinstance(s, dict) else s).strip())
                            for s in (m.get("media_supplements") or []) if s],
         passaging=passaging,
-        timeline=timeline,
+        stages=stages,
+        is_generation_protocol=is_gen,
         assay_endpoints=endpoints,
         failure_modes=build_failure_modes(m, doi, evidence),
         modifications=build_modifications(m, doi, evidence),
