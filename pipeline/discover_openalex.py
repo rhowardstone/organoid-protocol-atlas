@@ -47,7 +47,7 @@ COLS = ["topic", "doi", "pmcid", "title", "year", "oa_status", "license", "oa_ur
         "route", "in_current_corpus"]
 
 
-def _get(url: str, timeout: int = 60, tries: int = 4) -> dict:
+def _get(url: str, timeout: int = 60, tries: int = 6) -> dict:
     req = urllib.request.Request(url, headers={
         "User-Agent": "organoid-protocol-atlas/1.0 (academic research; mailto:%s)" % EMAIL})
     for i in range(tries):
@@ -59,7 +59,8 @@ def _get(url: str, timeout: int = 60, tries: int = 4) -> dict:
                 raise
             if i == tries - 1:
                 raise
-            time.sleep(2 * (i + 1))
+            # 429 (rate limit) gets a much longer backoff than transient 5xx/timeouts
+            time.sleep((10 * (i + 1)) if code == 429 else (2 * (i + 1)))
     raise RuntimeError(f"unreachable: {url}")
 
 
@@ -112,7 +113,12 @@ def main() -> int:
     print(f"OpenAlex discovery topic={args.topic!r} (resolve_epmc={args.resolve_epmc})", flush=True)
     while True:
         p = {"filter": filt, "mailto": EMAIL, "per-page": 200, "cursor": cursor, "select": select}
-        d = _get(f"{OA_API}?{urllib.parse.urlencode(p)}")
+        try:
+            d = _get(f"{OA_API}?{urllib.parse.urlencode(p)}")
+        except Exception as e:  # noqa: BLE001
+            # crash-safe: keep whatever we paged so far rather than losing the whole crawl
+            print(f"  [paging stopped at {n} works] {type(e).__name__}: {e}", flush=True)
+            break
         res = d.get("results", [])
         if not res:
             break

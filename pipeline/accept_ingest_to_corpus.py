@@ -83,7 +83,8 @@ def _pmc(k: str) -> str:
 def load_candidate_meta() -> dict:
     """pmcid -> candidate row, across preprint/protocols.io and every openalex_candidates_*.csv."""
     meta = {}
-    paths = [CAND_PRE, CAND_PIO] + sorted(INCOMING.glob("openalex_candidates_*.csv"))
+    paths = ([CAND_PRE, CAND_PIO] + sorted(INCOMING.glob("openalex_candidates_*.csv"))
+             + sorted(INCOMING.glob("epmc_candidates_*.csv")))
     for path in paths:
         if not path.exists():
             continue
