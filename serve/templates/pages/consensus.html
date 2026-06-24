@@ -20,6 +20,10 @@
 .cons-filter-wrap input { flex:1; max-width:280px; padding:5px 10px; border:1px solid color-mix(in srgb,var(--accent) 30%,transparent); border-radius:5px; background:var(--bg2,#1a1a1a); color:var(--fg,#eee); font-size:0.9rem; }
 .cons-filter-wrap .cons-clear { font-size:0.78rem; color:var(--accent); cursor:pointer; text-decoration:underline; }
 .cons-card-hidden { display:none !important; }
+/* capped-chip "+N more" link and the per-card expander */
+.cons-more { font-style:italic; opacity:.85; }
+.cons-showmore { margin:10px 0 2px; font-size:0.8rem; font-family:var(--mono,monospace); color:var(--accent); background:color-mix(in srgb,var(--accent) 8%,transparent); border:1px solid color-mix(in srgb,var(--accent) 30%,transparent); border-radius:5px; padding:6px 12px; cursor:pointer; }
+.cons-showmore:hover { background:color-mix(in srgb,var(--accent) 18%,transparent); }
 </style>
 
 <div class="apa-topbar">
@@ -35,9 +39,11 @@
   <h1>The canonical recipe for each organoid system</h1>
   <p class="apa-sub">For every organoid type, how often each signaling factor appears across that
   type's protocols — the <strong>core cocktail</strong> (≥25% of protocols) versus
-  <strong>variable</strong> additions. Each paper chip links to its DOI. Use the filter or jump-links
-  below to navigate to a specific system. <span style="opacity:.8">(Prevalence is per canonical name;
-  unmerged variants such as Wnt3a/Wnt can split one factor's count.)</span></p>
+  <strong>variable</strong> additions. The long tail of factors reported in only a single
+  protocol is collapsed per system (expand to see it). Paper chips link to the DOI and cap at
+  a few per row — follow a factor name for the full list. Use the filter or jump-links below to
+  navigate. <span style="opacity:.8">(Prevalence is per canonical name; unmerged variants such
+  as Wnt3a/Wnt can split one factor's count.)</span></p>
 </div>
 
 <div id="typeNavWrap" style="display:none">
@@ -89,6 +95,50 @@ function citeLink(p){
 }
 
 function typeAnchor(t){ return 'type-' + t.toLowerCase().replace(/[^a-z0-9]+/g,'-'); }
+
+// Rendering budgets. The corpus has tens of thousands of (factor, paper) pairs;
+// drawing them all produces an 80k-node page that locks up the browser. Show the
+// meaningful head of each list and keep the full set one click (or one link) away.
+const CHIP_CAP = 8;     // paper chips per factor row
+const CORPUS_CAP = 12;  // corpus paper chips per organoid type
+const VAR_CAP = 15;     // variable factors shown before the per-card expander
+
+function sourcesHtml(papers, c, t){
+  if(!papers.length) return '';
+  const shown = papers.slice(0, CHIP_CAP).map(citeLink).join('');
+  const extra = papers.length - CHIP_CAP;
+  const more = extra > 0
+    ? `<a class="cons-cite cons-more" href="/atlas/reagents?canonical__exact=${encodeURIComponent(c)}&organoid_type__exact=${encodeURIComponent(t)}"
+         title="See all ${papers.length} papers using ${esc(c)} in ${esc(t)} organoids">+${extra} more →</a>`
+    : '';
+  return `<div class="cons-sources">${shown}${more}</div>`;
+}
+
+function rowHtml(r, t, n){
+  const pct = Math.round(100*r.k/n);
+  return `<div class="cons-row">
+    <div>
+      <a class="cons-name" href="/atlas/reagents?canonical__exact=${encodeURIComponent(r.c)}&organoid_type__exact=${encodeURIComponent(t)}">${esc(r.c)}</a>${r.fig?' <span class="apa-badge fig">📷</span>':''}
+      ${sourcesHtml(r.papers, r.c, t)}
+    </div>
+    <div class="cons-bar"><div class="cons-fill" style="width:${pct}%"></div><span class="cons-pct">${r.k}/${n}</span></div>
+    <div class="cons-dose">${doseRange(r.doses, r.nums)}</div>
+  </div>`;
+}
+
+function corpusHtml(papers, t){
+  const shown = papers.slice(0, CORPUS_CAP).map(citeLink).join('');
+  const extra = papers.length - CORPUS_CAP;
+  const more = extra > 0
+    ? `<a class="cons-cite cons-more" href="/atlas/protocols?organoid_type__exact=${encodeURIComponent(t)}"
+         title="All ${papers.length} ${esc(t)} protocols">+${extra} more →</a>`
+    : '';
+  return shown + more;
+}
+
+// Rows deferred behind each card's expander, keyed by anchor. Held as HTML
+// strings so the (expensive) DOM is only built when the user asks for it.
+const DEFERRED = {};
 
 (async () => {
   let protos, sig;
@@ -165,10 +215,17 @@ function typeAnchor(t){ return 'type-' + t.toLowerCase().replace(/[^a-z0-9]+/g,'
     document.querySelectorAll('.apa-cons-card').forEach(c => c.classList.remove('cons-card-hidden'));
   });
 
+  // Core threshold is 0.25, not 0.5: across the corpus no single canonical factor
+  // reaches 50% prevalence (the top, R-spondin1 in intestinal, is ~49%), partly
+  // because canonical variants (Wnt3a/Wnt, R-spondin1/R-spondin) split a factor's
+  // count. 25% surfaces the established cocktails (e.g. intestinal R-spondin1/EGF/
+  // Noggin/Wnt3a) while keeping rare additions as variable.
+  const CORE_THRESHOLD = 0.25;
+
   let html='';
   for(const t of types){
     const n = nByType[t]||0;
-    const corpusHtml = (typeProtos[t]||[]).map(citeLink).join('');
+    const corpus = corpusHtml(typeProtos[t]||[], t);
 
     const rows = Object.entries(m[t]).map(([c,d])=>{
       const papers = [...d.pmcids].map(pmcid=>protoMap[pmcid]).filter(Boolean)
@@ -176,43 +233,53 @@ function typeAnchor(t){ return 'type-' + t.toLowerCase().replace(/[^a-z0-9]+/g,'
       return {c, k:d.pmcids.size, doses:d.doses, nums:d.nums, fig:d.fig, papers};
     }).sort((a,b)=>b.k-a.k || a.c.localeCompare(b.c));
 
-    // Core threshold is 0.25, not 0.5: across the 5,119-protocol corpus no single
-    // canonical factor reaches 50% prevalence (the top, R-spondin1 in intestinal,
-    // is ~49%), partly because canonical variants (Wnt3a/Wnt, R-spondin1/R-spondin)
-    // split a factor's count. 25% surfaces the established cocktails (e.g. intestinal
-    // R-spondin1/EGF/Noggin/Wnt3a) while keeping rare additions as variable.
-    const CORE_THRESHOLD = 0.25;
-    const core = rows.filter(r=>r.k/n>=CORE_THRESHOLD);
-    const variable = rows.filter(r=>r.k/n<CORE_THRESHOLD);
+    // Three tiers: core (≥25%), variable (in ≥2 protocols, below core), and the
+    // long tail reported in a single protocol. Most of the corpus is that tail —
+    // it's the noise, not the consensus — so it's collapsed by default.
+    const core       = rows.filter(r => r.k/n >= CORE_THRESHOLD);
+    const sub        = rows.filter(r => r.k/n <  CORE_THRESHOLD);
+    const variable   = sub.filter(r => r.k >= 2);
+    const singletons = sub.filter(r => r.k < 2);
+
+    const varShown = variable.slice(0, VAR_CAP);
+    const deferred = [...variable.slice(VAR_CAP), ...singletons];  // rarer + single-protocol
+
+    const anchor = typeAnchor(t);
+    if(deferred.length) DEFERRED[anchor] = deferred.map(r => rowHtml(r, t, n)).join('');
 
     const note = n<=1 ? `<span class="cons-warn">single protocol — not a consensus</span>`
                : n===2 ? `<span class="cons-warn">only ${n} protocols — provisional</span>`
-               : `${core.length} core · ${variable.length} variable factors`;
+               : `${core.length} core · ${variable.length} variable`
+                 + (singletons.length ? ` · ${singletons.length} single-protocol` : '');
 
-    const rowHtml = r => {
-      const pct = Math.round(100*r.k/n);
-      const sources = r.papers.length
-        ? `<div class="cons-sources">${r.papers.map(citeLink).join('')}</div>`
-        : '';
-      return `<div class="cons-row">
-        <div>
-          <a class="cons-name" href="/atlas/reagents?canonical__exact=${encodeURIComponent(r.c)}&organoid_type__exact=${encodeURIComponent(t)}">${esc(r.c)}</a>${r.fig?' <span class="apa-badge fig">📷</span>':''}
-          ${sources}
-        </div>
-        <div class="cons-bar"><div class="cons-fill" style="width:${pct}%"></div><span class="cons-pct">${r.k}/${n}</span></div>
-        <div class="cons-dose">${doseRange(r.doses, r.nums)}</div>
-      </div>`;
-    };
+    const expander = deferred.length
+      ? `<button class="cons-showmore" data-anchor="${anchor}">Show ${deferred.length} more `
+        + `${deferred.length>1?'factors':'factor'}`
+        + (singletons.length ? ` — incl. ${singletons.length} reported in a single protocol` : '')
+        + `</button><div class="cons-more-rows" id="more-${anchor}"></div>`
+      : '';
 
-    html += `<section class="apa-cons-card" id="${typeAnchor(t)}" data-type="${esc(t.toLowerCase())}">
+    html += `<section class="apa-cons-card" id="${anchor}" data-type="${esc(t.toLowerCase())}">
       <div class="cons-head"><h2>${esc(t)} organoid</h2><span class="cons-meta">${note}</span></div>
       <div class="cons-corpus-label">Corpus (${n} paper${n!==1?'s':''})</div>
-      <div class="cons-corpus">${corpusHtml}</div>
-      ${core.length?`<div class="cons-grouplabel">Core cocktail</div>${core.map(rowHtml).join('')}`:''}
-      ${variable.length?`<div class="cons-grouplabel variable">Variable additions</div>${variable.map(rowHtml).join('')}`:''}
+      <div class="cons-corpus">${corpus}</div>
+      ${core.length?`<div class="cons-grouplabel">Core cocktail</div>${core.map(r=>rowHtml(r,t,n)).join('')}`:''}
+      ${varShown.length?`<div class="cons-grouplabel variable">Variable additions</div>${varShown.map(r=>rowHtml(r,t,n)).join('')}`:''}
+      ${expander}
     </section>`;
   }
-  document.getElementById('consensus').innerHTML = html;
+  const wrap = document.getElementById('consensus');
+  wrap.innerHTML = html;
+
+  // Build a card's deferred (rarer + single-protocol) rows only when asked.
+  wrap.addEventListener('click', e => {
+    const btn = e.target.closest('.cons-showmore');
+    if(!btn) return;
+    const a = btn.dataset.anchor;
+    const cont = document.getElementById('more-'+a);
+    if(cont && DEFERRED[a]){ cont.innerHTML = DEFERRED[a]; }
+    btn.remove();
+  });
 })();
 </script>
 {% endblock %}
