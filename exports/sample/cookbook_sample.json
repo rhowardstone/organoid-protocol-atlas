@@ -1,0 +1,732 @@
+[
+  {
+    "pmcid": "PMC10005775",
+    "doi": "10.3390/nano13050893",
+    "citation": {
+      "first_author": "Kim",
+      "year": "2023",
+      "journal": "Nanomaterials (Basel, Switzerland)",
+      "doi": "10.3390/nano13050893"
+    },
+    "license": "CC-BY",
+    "organoid_type": "cerebral",
+    "is_generation_protocol": true,
+    "source_cells": {
+      "cell_type": "iPSC",
+      "line_name": "KSCBi005",
+      "species": "human"
+    },
+    "final_organoid": "Cortical brain organoids",
+    "matrix": "GFR-Matrigel",
+    "base_media": "Essential 8 medium",
+    "materials": [
+      {
+        "name": "dorsomorphin",
+        "value": 2.5,
+        "unit": "µM",
+        "role": "inhibitor",
+        "kind": "signaling_factors"
+      },
+      {
+        "name": "SB431542",
+        "value": 10.0,
+        "unit": "µM",
+        "role": "inhibitor",
+        "kind": "signaling_factors"
+      },
+      {
+        "name": "ROCK inhibitor",
+        "value": 50.0,
+        "unit": "µM",
+        "role": "inhibitor",
+        "kind": "signaling_factors"
+      },
+      {
+        "name": "bFGF",
+        "value": 20.0,
+        "unit": "ng/mL",
+        "role": "growth factor",
+        "kind": "signaling_factors"
+      },
+      {
+        "name": "EGF",
+        "value": 20.0,
+        "unit": "ng/mL",
+        "role": "growth factor",
+        "kind": "signaling_factors"
+      },
+      {
+        "name": "BDNF",
+        "value": 20.0,
+        "unit": "ng/mL",
+        "role": "growth factor",
+        "kind": "signaling_factors"
+      },
+      {
+        "name": "NT3",
+        "value": 20.0,
+        "unit": "ng/mL",
+        "role": "growth factor",
+        "kind": "signaling_factors"
+      },
+      {
+        "name": "GlutaMAX",
+        "value": null,
+        "unit": null,
+        "role": null,
+        "kind": "media_supplements"
+      },
+      {
+        "name": "B-27 Supplement without Vitamin A",
+        "value": null,
+        "unit": null,
+        "role": null,
+        "kind": "media_supplements"
+      }
+    ],
+    "stages": [
+      {
+        "name": "Dissociation",
+        "start_day": null,
+        "end_day": null,
+        "culture_vessel": null,
+        "medium_base": null,
+        "reagents": [],
+        "transition": "Seeding"
+      },
+      {
+        "name": "Seeding",
+        "start_day": null,
+        "end_day": null,
+        "culture_vessel": "ultralow-attachment 96-well plates",
+        "medium_base": null,
+        "reagents": [
+          {
+            "name": "dorsomorphin",
+            "concentration": 2.5,
+            "unit": "µM",
+            "role": "differentiation"
+          },
+          {
+            "name": "SB431542",
+            "concentration": 10,
+            "unit": "µM",
+            "role": "differentiation"
+          },
+          {
+            "name": "ROCK inhibitor",
+            "concentration": 50,
+            "unit": "µM",
+            "role": "differentiation"
+          }
+        ],
+        "transition": "Medium Refresh"
+      },
+      {
+        "name": "Medium Refresh",
+        "start_day": null,
+        "end_day": null,
+        "culture_vessel": null,
+        "medium_base": null,
+        "reagents": [],
+        "transition": "EB Formation"
+      },
+      {
+        "name": "EB Formation",
+        "start_day": 5,
+        "end_day": 10,
+        "culture_vessel": null,
+        "medium_base": null,
+        "reagents": [],
+        "transition": "Transfer to 60mm dish"
+      },
+      {
+        "name": "Transfer to 60mm dish",
+        "start_day": 6,
+        "end_day": null,
+        "culture_vessel": "60 mm culture dishes",
+        "medium_base": "Neurobasal-A",
+        "reagents": [
+          {
+            "name": "GlutaMAX",
+            "concentration": 1,
+            "unit": "x",
+            "role": "supplement"
+          },
+          {
+            "name": "B-27 Supplement without Vitamin A",
+            "concentration": 1,
+            "unit": "x",
+            "role": "supplement"
+          },
+          {
+            "name": "bFGF",
+            "concentration": 20,
+            "unit": "ng/mL",
+            "role": "differentiation"
+          },
+          {
+            "name": "EGF",
+            "concentration": 20,
+            "unit": "ng/mL",
+            "role": "differentiation"
+          }
+        ],
+        "transition": "Medium Replacement (Days 1-10)"
+      },
+      {
+        "name": "Medium Replacement (Days 1-10)",
+        "start_day": 6,
+        "end_day": 16,
+        "culture_vessel": null,
+        "medium_base": "Neurobasal-A",
+        "reagents": [],
+        "transition": "Medium Replacement (Days 11-24)"
+      },
+      {
+        "name": "Medium Replacement (Days 11-24)",
+        "start_day": 17,
+        "end_day": 24,
+        "culture_vessel": null,
+        "medium_base": "Neurobasal-A",
+        "reagents": [],
+        "transition": "BDNF/NT3 Supplementation"
+      },
+      {
+        "name": "BDNF/NT3 Supplementation",
+        "start_day": 25,
+        "end_day": 42,
+        "culture_vessel": null,
+        "medium_base": "Neurobasal-A",
+        "reagents": [
+          {
+            "name": "BDNF",
+            "concentration": 20,
+            "unit": "ng/mL",
+            "role": "differentiation"
+          },
+          {
+            "name": "NT3",
+            "concentration": 20,
+            "unit": "ng/mL",
+            "role": "differentiation"
+          }
+        ],
+        "transition": "Growth Factor Withdrawal"
+      },
+      {
+        "name": "Growth Factor Withdrawal",
+        "start_day": 43,
+        "end_day": null,
+        "culture_vessel": null,
+        "medium_base": "Neurobasal-A",
+        "reagents": [],
+        "transition": null
+      }
+    ],
+    "assay_endpoints": [
+      "MTT assay",
+      "RNA Extraction and Reverse Transcription PCR",
+      "Western Blot Analysis",
+      "Histology and Immunofluorescence",
+      "ELISA",
+      "Statistical Analysis"
+    ]
+  },
+  {
+    "pmcid": "PMC10001859",
+    "doi": "10.3390/ijms24054266",
+    "citation": {
+      "first_author": "Salari",
+      "year": "2023",
+      "journal": "International journal of molecular sciences",
+      "doi": "10.3390/ijms24054266"
+    },
+    "license": "CC-BY",
+    "organoid_type": "intestinal",
+    "is_generation_protocol": true,
+    "source_cells": {
+      "cell_type": "adult_stem_cell",
+      "line_name": null,
+      "species": "human"
+    },
+    "final_organoid": "CM-CE monolayers",
+    "matrix": "human collagen IV",
+    "base_media": "EMEM",
+    "materials": [
+      {
+        "name": "Y-27632",
+        "value": 10.0,
+        "unit": "µM",
+        "role": "supplement",
+        "kind": "signaling_factors"
+      },
+      {
+        "name": "CHIR-99021",
+        "value": 10.0,
+        "unit": "µM",
+        "role": "supplement",
+        "kind": "signaling_factors"
+      },
+      {
+        "name": "valproic acid",
+        "value": 1.0,
+        "unit": "mM",
+        "role": "supplement",
+        "kind": "signaling_factors"
+      },
+      {
+        "name": "Noggin",
+        "value": 10.0,
+        "unit": "% (v/v) conditioned medium",
+        "role": "supplement",
+        "kind": "signaling_factors"
+      },
+      {
+        "name": "FBS",
+        "value": null,
+        "unit": null,
+        "role": null,
+        "kind": "media_supplements"
+      },
+      {
+        "name": "non-essential amino acids",
+        "value": null,
+        "unit": null,
+        "role": null,
+        "kind": "media_supplements"
+      },
+      {
+        "name": "penicillin/streptomycin",
+        "value": null,
+        "unit": null,
+        "role": null,
+        "kind": "media_supplements"
+      },
+      {
+        "name": "L-WRN conditioned medium",
+        "value": null,
+        "unit": null,
+        "role": null,
+        "kind": "media_supplements"
+      },
+      {
+        "name": "PGE2",
+        "value": null,
+        "unit": null,
+        "role": null,
+        "kind": "media_supplements"
+      }
+    ],
+    "stages": [
+      {
+        "name": "Colonoid expansion",
+        "start_day": null,
+        "end_day": null,
+        "culture_vessel": "24-well plate",
+        "medium_base": "EM",
+        "reagents": [
+          {
+            "name": "Y-27632",
+            "concentration": 10,
+            "unit": "µM",
+            "role": "proliferation"
+          },
+          {
+            "name": "CHIR-99021",
+            "concentration": 10,
+            "unit": "µM",
+            "role": "proliferation"
+          },
+          {
+            "name": "valproic acid",
+            "concentration": 1,
+            "unit": "mM",
+            "role": "proliferation"
+          }
+        ]
+      },
+      {
+        "name": "Differentiation medium preparation",
+        "start_day": null,
+        "end_day": null,
+        "culture_vessel": null,
+        "medium_base": "EM",
+        "reagents": [
+          {
+            "name": "Noggin conditioned medium",
+            "concentration": 10,
+            "unit": "%",
+            "role": "differentiation"
+          }
+        ]
+      },
+      {
+        "name": "Transwell insert coating",
+        "start_day": null,
+        "end_day": null,
+        "culture_vessel": "Transwell inserts",
+        "medium_base": null,
+        "reagents": [
+          {
+            "name": "human collagen IV solution",
+            "concentration": 10,
+            "unit": "mg/cm2",
+            "role": "coating"
+          }
+        ]
+      },
+      {
+        "name": "Colonoid seeding",
+        "start_day": null,
+        "end_day": null,
+        "culture_vessel": "Transwell inserts",
+        "medium_base": "advanced DMEM F12",
+        "reagents": []
+      },
+      {
+        "name": "3D colonoid fragment generation",
+        "start_day": null,
+        "end_day": null,
+        "culture_vessel": null,
+        "medium_base": "advanced DMEM F12",
+        "reagents": [
+          {
+            "name": "trypsin-EDTA",
+            "concentration": 0.02,
+            "unit": "%",
+            "role": "fragmentation"
+          }
+        ]
+      },
+      {
+        "name": "Coculture",
+        "start_day": null,
+        "end_day": null,
+        "culture_vessel": "24-well plate",
+        "medium_base": "EM",
+        "reagents": []
+      },
+      {
+        "name": "Maturation",
+        "start_day": 4,
+        "end_day": null,
+        "culture_vessel": "24-well plate",
+        "medium_base": "EM",
+        "reagents": []
+      },
+      {
+        "name": "Monolayer formation",
+        "start_day": null,
+        "end_day": null,
+        "culture_vessel": null,
+        "medium_base": null,
+        "reagents": []
+      }
+    ],
+    "assay_endpoints": [
+      "TEER measurement",
+      "Fluorometric Measurements (NHE activity)",
+      "Immunofluorescence Imaging",
+      "Immunohistochemical Analysis",
+      "RT-qPCR Analysis",
+      "SDS-PAGE and Western Blot"
+    ]
+  },
+  {
+    "pmcid": "PMC10000618",
+    "doi": "10.3390/cells12050733",
+    "citation": {
+      "first_author": "Jehl",
+      "year": "2023",
+      "journal": "Cells",
+      "doi": "10.3390/cells12050733"
+    },
+    "license": "CC-BY",
+    "organoid_type": "tumor",
+    "is_generation_protocol": true,
+    "source_cells": {
+      "cell_type": "primary_tissue",
+      "line_name": null,
+      "species": null
+    },
+    "final_organoid": "tumoroids",
+    "matrix": "Cultrex UltiMatrix reduced growth factor basement membrane Extract",
+    "base_media": "DMEM/F12",
+    "materials": [
+      {
+        "name": "Y-27632",
+        "value": 10.0,
+        "unit": "µM",
+        "role": null,
+        "kind": "signaling_factors"
+      },
+      {
+        "name": "Capsofungin",
+        "value": 0.5,
+        "unit": "µg/mL",
+        "role": null,
+        "kind": "signaling_factors"
+      },
+      {
+        "name": "B27 supplement",
+        "value": null,
+        "unit": null,
+        "role": null,
+        "kind": "signaling_factors"
+      },
+      {
+        "name": "N-acetyl-L-cysteine",
+        "value": 1.25,
+        "unit": "mM",
+        "role": null,
+        "kind": "signaling_factors"
+      },
+      {
+        "name": "Nicotinamide",
+        "value": 10.0,
+        "unit": "mM",
+        "role": null,
+        "kind": "signaling_factors"
+      },
+      {
+        "name": "human EGF",
+        "value": 50.0,
+        "unit": "ng/mL",
+        "role": null,
+        "kind": "signaling_factors"
+      },
+      {
+        "name": "human FGF10",
+        "value": 10.0,
+        "unit": "ng/mL",
+        "role": null,
+        "kind": "signaling_factors"
+      },
+      {
+        "name": "human FGF2",
+        "value": 5.0,
+        "unit": "ng/mL",
+        "role": null,
+        "kind": "signaling_factors"
+      },
+      {
+        "name": "Prostaglandin E2",
+        "value": 1.0,
+        "unit": "µM",
+        "role": null,
+        "kind": "signaling_factors"
+      },
+      {
+        "name": "Forskolin",
+        "value": 1.0,
+        "unit": "µM",
+        "role": null,
+        "kind": "signaling_factors"
+      },
+      {
+        "name": "RSPO3-Fc fusion protein",
+        "value": 4.0,
+        "unit": "%",
+        "role": null,
+        "kind": "signaling_factors"
+      },
+      {
+        "name": "Noggin-Fc fusion protein",
+        "value": 4.0,
+        "unit": "%",
+        "role": null,
+        "kind": "signaling_factors"
+      },
+      {
+        "name": "ultra-glutamine",
+        "value": null,
+        "unit": null,
+        "role": null,
+        "kind": "media_supplements"
+      },
+      {
+        "name": "sodium pyruvate",
+        "value": null,
+        "unit": null,
+        "role": null,
+        "kind": "media_supplements"
+      },
+      {
+        "name": "heat-inactivated FBS",
+        "value": null,
+        "unit": null,
+        "role": null,
+        "kind": "media_supplements"
+      },
+      {
+        "name": "HEPES",
+        "value": null,
+        "unit": null,
+        "role": null,
+        "kind": "media_supplements"
+      },
+      {
+        "name": "hydrocortisone",
+        "value": null,
+        "unit": null,
+        "role": null,
+        "kind": "media_supplements"
+      },
+      {
+        "name": "methylcellulose",
+        "value": null,
+        "unit": null,
+        "role": null,
+        "kind": "media_supplements"
+      },
+      {
+        "name": "Pen/Strep",
+        "value": null,
+        "unit": null,
+        "role": null,
+        "kind": "media_supplements"
+      }
+    ],
+    "stages": [
+      {
+        "name": "tumoroid extraction and culture",
+        "start_day": null,
+        "end_day": null,
+        "culture_vessel": "24-well plates",
+        "reagents": [
+          {
+            "name": "DMEM/F12",
+            "concentration": null,
+            "unit": null,
+            "role": "medium"
+          },
+          {
+            "name": "GlutaMax",
+            "concentration": null,
+            "unit": null,
+            "role": "supplement"
+          },
+          {
+            "name": "Penicilin/streptomycin",
+            "concentration": null,
+            "unit": null,
+            "role": "supplement"
+          },
+          {
+            "name": "HEPES",
+            "concentration": "10",
+            "unit": "mM",
+            "role": "supplement"
+          },
+          {
+            "name": "Y-27632",
+            "concentration": "10",
+            "unit": "µM",
+            "role": "supplement"
+          },
+          {
+            "name": "Capsofungin",
+            "concentration": "0.5",
+            "unit": "µg/mL",
+            "role": "supplement"
+          },
+          {
+            "name": "B27 supplement",
+            "concentration": "1×",
+            "unit": null,
+            "role": "supplement"
+          },
+          {
+            "name": "N-acetyl-L-cysteine",
+            "concentration": "1.25",
+            "unit": "mM",
+            "role": "supplement"
+          },
+          {
+            "name": "Nicotinamide",
+            "concentration": "10",
+            "unit": "mM",
+            "role": "supplement"
+          },
+          {
+            "name": "A83-01",
+            "concentration": "500",
+            "unit": "nM",
+            "role": "supplement"
+          },
+          {
+            "name": "CHIR99021",
+            "concentration": "0.3",
+            "unit": "µM",
+            "role": "supplement"
+          },
+          {
+            "name": "human EGF",
+            "concentration": "50",
+            "unit": "ng/mL",
+            "role": "supplement"
+          },
+          {
+            "name": "human FGF10",
+            "concentration": "10",
+            "unit": "ng/mL",
+            "role": "supplement"
+          },
+          {
+            "name": "human FGF2",
+            "concentration": "5",
+            "unit": "ng/mL",
+            "role": "supplement"
+          },
+          {
+            "name": "Prostaglandin E2",
+            "concentration": "1",
+            "unit": "µM",
+            "role": "supplement"
+          },
+          {
+            "name": "Forskolin",
+            "concentration": "1",
+            "unit": "µM",
+            "role": "supplement"
+          },
+          {
+            "name": "RSPO3-Fc fusion protein conditioned medium",
+            "concentration": "4%",
+            "unit": null,
+            "role": "supplement"
+          },
+          {
+            "name": "Noggin-Fc fusion protein conditioned medium",
+            "concentration": "4%",
+            "unit": null,
+            "role": "supplement"
+          },
+          {
+            "name": "Cultrex UltiMatrix reduced growth factor basement membrane Extract",
+            "concentration": "70%",
+            "unit": null,
+            "role": "supplement"
+          }
+        ],
+        "transition": null
+      }
+    ],
+    "assay_endpoints": [
+      "Western blot",
+      "ELISA",
+      "qPCR/RT-PCR",
+      "immunofluorescence/histology",
+      "imaging",
+      "sequencing",
+      "viability/MTT",
+      "TEER measurement",
+      "flow cytometry",
+      "clonogenic survival",
+      "metabolic assays",
+      "intracellular Fe 2+ accumulation",
+      "detection of lipid peroxides"
+    ]
+  }
+]
