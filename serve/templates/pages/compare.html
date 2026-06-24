@@ -1,0 +1,281 @@
+{% extends "base.html" %}
+{% block title %}Compare protocols — Organoid Protocol Atlas{% endblock %}
+{% block body_class %}index{% endblock %}
+
+{% block content %}
+<style>
+.cmp-hero { max-width: 1100px; margin: 2.2rem auto 0; padding: 0 1.5rem; }
+.cmp-hero h1 { font-size: 2rem; font-weight: 700; margin: 0 0 .35rem; }
+.cmp-hero p { color: var(--muted); font-size: .9rem; margin: 0 0 1.2rem; max-width: 720px; }
+.cmp-pickers { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+@media (max-width: 720px) { .cmp-pickers { grid-template-columns: 1fr; } }
+.cmp-picker { position: relative; }
+.cmp-picker label { display: block; font-family: var(--mono); font-size: .7rem; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin-bottom: .3rem; }
+.cmp-picker input { width: 100%; padding: .55rem .75rem; border: 1px solid var(--border); border-radius: 8px; font-size: .9rem; background: var(--paper); color: var(--ink); font-family: var(--font); box-sizing: border-box; }
+.cmp-picker input:focus { outline: none; border-color: var(--accent); }
+.cmp-sug { position: absolute; z-index: 30; left: 0; right: 0; top: 100%; margin-top: 2px; background: var(--paper); border: 1px solid var(--border); border-radius: 8px; box-shadow: 0 8px 22px rgba(15,23,42,.12); max-height: 320px; overflow-y: auto; display: none; }
+.cmp-sug.open { display: block; }
+.cmp-sug-item { padding: .45rem .7rem; font-size: .82rem; cursor: pointer; border-bottom: 1px solid var(--border); }
+.cmp-sug-item:last-child { border-bottom: none; }
+.cmp-sug-item:hover, .cmp-sug-item.active { background: var(--paper-3); }
+.cmp-sug-item .sa-type { font-family: var(--mono); font-size: .68rem; color: #fff; padding: 0 5px; border-radius: 3px; margin-right: .35rem; }
+.cmp-sug-item .sa-meta { color: var(--muted); font-family: var(--mono); font-size: .72rem; }
+
+.cmp-result { max-width: 1100px; margin: 1.4rem auto 3rem; padding: 0 1.5rem; }
+.cmp-empty { color: var(--muted); font-size: .9rem; padding: 2rem 0; text-align: center; }
+.cmp-summary { display: flex; flex-wrap: wrap; gap: .5rem; margin: 0 0 1rem; font-family: var(--mono); font-size: .78rem; }
+.cmp-pill { padding: .25rem .6rem; border-radius: 20px; border: 1px solid var(--border); background: var(--paper-3); color: var(--muted); }
+.cmp-pill strong { color: var(--ink); }
+
+.cmp-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+.cmp-cols > div { background: var(--paper); padding: 1rem 1.1rem; }
+.cmp-col-head .ctype { font-family: var(--mono); font-size: .68rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: #fff; padding: 2px 7px; border-radius: 3px; display: inline-block; }
+.cmp-col-head h3 { font-size: 1rem; margin: .4rem 0 .1rem; }
+.cmp-col-head h3 a { color: var(--ink); text-decoration: none; }
+.cmp-col-head h3 a:hover { color: var(--accent); }
+.cmp-col-head .cmeta { font-size: .78rem; color: var(--muted); }
+
+.cmp-axes { margin: 1.2rem auto 0; max-width: 1100px; }
+.cmp-axis-row { display: grid; grid-template-columns: 150px 1fr 1fr; gap: 1px; background: var(--border); }
+.cmp-axis-row > div { background: var(--paper); padding: .45rem .7rem; font-size: .84rem; }
+.cmp-axis-row .ak { font-family: var(--mono); font-size: .72rem; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }
+.cmp-axis-row.diff .av { background: color-mix(in srgb, var(--warn) 9%, var(--paper)); }
+.cmp-axes-wrap { border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+
+.cmp-reagents { margin-top: 1.6rem; }
+.cmp-reagents h2 { font-size: 1.1rem; margin: 0 0 .2rem; }
+.cmp-reagents .rsub { color: var(--muted); font-size: .82rem; margin: 0 0 .8rem; }
+.cmp-rgroup { margin-bottom: 1.2rem; }
+.cmp-rgroup h4 { font-family: var(--mono); font-size: .74rem; letter-spacing: .05em; text-transform: uppercase; margin: 0 0 .4rem; color: var(--muted); }
+.cmp-rtable { width: 100%; border-collapse: collapse; font-size: .84rem; }
+.cmp-rtable th, .cmp-rtable td { text-align: left; padding: .4rem .6rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+.cmp-rtable th { font-family: var(--mono); font-size: .7rem; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); }
+.cmp-rtable td.dose { font-family: var(--mono); font-size: .8rem; white-space: nowrap; }
+.cmp-none { color: var(--muted); }
+.gdot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: .35rem; vertical-align: middle; }
+.gdot.resolved { background: #2d6a4f; }
+.gdot.notfound { background: #e63946; }
+.gdot.na { background: #adb5bd; }
+.cmp-rname a { color: var(--ink); text-decoration: none; }
+.cmp-rname a:hover { color: var(--accent); }
+.cmp-warn { background: #fff8e1; border: 1px solid #f59e0b; border-radius: 8px; padding: .6rem .9rem; font-size: .85rem; margin-bottom: 1rem; }
+html[data-theme="dark"] .cmp-warn { background: #2a230b; }
+</style>
+
+<div class="cmp-hero">
+  <h1>Compare protocols</h1>
+  <p>Pick two protocols to see how their recipes differ side by side — which reagents they
+  share, which are unique to each, and which values are evidence-grounded.</p>
+  <div class="cmp-pickers">
+    <div class="cmp-picker">
+      <label for="pick-a">Protocol A</label>
+      <input id="pick-a" type="search" autocomplete="off" placeholder="Search author, type, PMCID…">
+      <div class="cmp-sug" id="sug-a"></div>
+    </div>
+    <div class="cmp-picker">
+      <label for="pick-b">Protocol B</label>
+      <input id="pick-b" type="search" autocomplete="off" placeholder="Search author, type, PMCID…">
+      <div class="cmp-sug" id="sug-b"></div>
+    </div>
+  </div>
+</div>
+
+<div class="cmp-result" id="result">
+  <div class="cmp-empty">Choose a protocol on each side to compare.</div>
+</div>
+
+<script>
+const esc = s => (s==null?'':String(s)).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const $ = id => document.getElementById(id);
+
+const TYPE_COLOR = {
+  'cerebral':'#7c3aed','kidney':'#0e7490','liver':'#b45309','lung':'#1d4ed8','pancreatic':'#c2410c',
+  'retinal':'#6d28d9','intestinal':'#15803d','gastric':'#9333ea','cardiac':'#dc2626','tumor':'#374151',
+  'vascular':'#0891b2','cholangiocyte':'#d97706','skin':'#b45309','mammary':'#db2777','endometrial':'#e11d48',
+  'bone':'#92400e','prostate':'#1d4ed8','inner-ear':'#7c3aed','salivary-gland':'#0f766e','bladder':'#4338ca',
+  'neuromuscular':'#0e7490','esophageal':'#b91c1c','blood-brain-barrier':'#1e40af','thyroid':'#065f46',
+  'fallopian-tube':'#9d174d','hepatic':'#b45309'
+};
+const typeColor = t => TYPE_COLOR[t] || '#64748b';
+
+let protos = [], byPmcid = {};
+const reagentCache = {};
+const state = { a: null, b: null };
+
+const j = async u => (await fetch(u)).json();
+
+function doseOf(r){
+  if(r.value==null && !r.canonical_unit && !r.unit) return '';
+  const u = r.canonical_unit || r.unit || '';
+  return `${r.value==null?'':r.value} ${u==='not stated'?'':u}`.trim();
+}
+function gdot(r){
+  const cls = r.grounded ? 'resolved' : 'notfound';
+  const lbl = r.grounded ? 'evidence-grounded' : 'not grounded (quote did not match source verbatim)';
+  return `<span class="gdot ${cls}" title="${lbl}"></span>`;
+}
+
+// ── Typeahead ──
+function suggestions(q){
+  const lower = q.toLowerCase().trim();
+  if(!lower) return [];
+  return protos.filter(p =>
+      (p.first_author||'').toLowerCase().includes(lower)
+   || (p.organoid_type||'').toLowerCase().includes(lower)
+   || (p.journal||'').toLowerCase().includes(lower)
+   || (p.pmcid||'').toLowerCase().includes(lower)
+   || String(p.year||'').includes(lower)
+  ).slice(0, 14);
+}
+function renderSug(side){
+  const inp = $('pick-'+side), box = $('sug-'+side);
+  const items = suggestions(inp.value);
+  if(!items.length){ box.classList.remove('open'); box.innerHTML=''; return; }
+  box.innerHTML = items.map(p => {
+    const c = typeColor(p.organoid_type||'');
+    return `<div class="cmp-sug-item" data-pmcid="${esc(p.pmcid)}" onclick="pick('${side}','${esc(p.pmcid)}')">
+      <span class="sa-type" style="background:${c}">${esc(p.organoid_type||'?')}</span>
+      ${esc(p.first_author||'?')} ${esc(p.year||'')}
+      <span class="sa-meta">· ${esc(p.journal||'')} · ${esc(p.pmcid)}</span>
+    </div>`;
+  }).join('');
+  box.classList.add('open');
+}
+function pick(side, pmcid){
+  state[side] = pmcid;
+  const p = byPmcid[pmcid];
+  $('pick-'+side).value = p ? `${p.first_author||'?'} ${p.year||''} · ${pmcid}` : pmcid;
+  $('sug-'+side).classList.remove('open');
+  syncURL();
+  renderCompare();
+}
+function syncURL(){
+  const u = new URL(window.location);
+  state.a ? u.searchParams.set('a', state.a) : u.searchParams.delete('a');
+  state.b ? u.searchParams.set('b', state.b) : u.searchParams.delete('b');
+  history.replaceState(null, '', u);
+}
+
+// ── Comparison ──
+async function reagentsFor(pmcid){
+  if(!reagentCache[pmcid]){
+    try { reagentCache[pmcid] = await j(`/atlas/reagents.json?_shape=array&_size=300&pmcid=${encodeURIComponent(pmcid)}`); }
+    catch(e){ reagentCache[pmcid] = []; }
+  }
+  return reagentCache[pmcid];
+}
+const rkey = r => (r.canonical || r.name || '').toLowerCase().trim();
+const rdisp = r => r.canonical || r.name || '?';
+
+function axisRow(k, va, vb){
+  const diff = (va||'') !== (vb||'');
+  return `<div class="cmp-axis-row${diff?' diff':''}">
+    <div class="ak">${esc(k)}</div><div class="av">${va||'—'}</div><div class="av">${vb||'—'}</div>
+  </div>`;
+}
+
+function reagentCell(r){
+  if(!r) return '<td class="dose cmp-none">—</td>';
+  const d = doseOf(r);
+  return `<td class="dose">${gdot(r)}${d?esc(d):'<span class="cmp-none">no dose</span>'}</td>`;
+}
+
+function groupTable(keys, mapA, mapB, showA, showB){
+  if(!keys.length) return '<p class="cmp-none" style="font-size:.84rem">None.</p>';
+  const rows = keys.sort().map(k => {
+    const ra = mapA[k], rb = mapB[k];
+    const disp = rdisp(ra || rb);
+    const canon = (ra||rb).canonical || (ra||rb).name;
+    return `<tr>
+      <td class="cmp-rname"><a href="/atlas/reagents?canonical__exact=${encodeURIComponent(canon)}">${esc(disp)}</a></td>
+      ${reagentCell(ra)}
+      ${reagentCell(rb)}
+    </tr>`;
+  }).join('');
+  return `<table class="cmp-rtable">
+    <thead><tr><th>Reagent</th><th>A</th><th>B</th></tr></thead>
+    <tbody>${rows}</tbody></table>`;
+}
+
+async function renderCompare(){
+  const el = $('result');
+  if(!state.a || !state.b){
+    el.innerHTML = '<div class="cmp-empty">Choose a protocol on each side to compare.</div>';
+    return;
+  }
+  const pa = byPmcid[state.a], pb = byPmcid[state.b];
+  if(!pa || !pb){ el.innerHTML = '<div class="cmp-empty">One of those protocols could not be found.</div>'; return; }
+  el.innerHTML = '<div class="cmp-empty">Loading…</div>';
+
+  const [ra, rb] = await Promise.all([reagentsFor(state.a), reagentsFor(state.b)]);
+  // signaling + small molecules are the comparable "recipe" rows
+  const recipe = arr => arr.filter(r => r.kind === 'signaling' || r.kind === 'small_molecule');
+  const mapA = {}, mapB = {};
+  recipe(ra).forEach(r => { if(rkey(r)) mapA[rkey(r)] = r; });
+  recipe(rb).forEach(r => { if(rkey(r)) mapB[rkey(r)] = r; });
+  const ka = Object.keys(mapA), kb = Object.keys(mapB);
+  const shared = ka.filter(k => kb.includes(k));
+  const onlyA = ka.filter(k => !kb.includes(k));
+  const onlyB = kb.filter(k => !ka.includes(k));
+
+  const gr = p => p.grounding_rate==null ? '—' : Math.round(p.grounding_rate*100)+'%';
+  const head = p => {
+    const c = typeColor(p.organoid_type||'');
+    return `<div class="cmp-col-head">
+      <span class="ctype" style="background:${c}">${esc(p.organoid_type||'?')}</span>
+      <h3><a href="/atlas/protocols/${esc(p.pmcid)}">${esc(p.first_author||'?')} ${esc(p.year||'')} →</a></h3>
+      <div class="cmeta">${esc(p.journal||'')} · ${p.doi?`<a href="https://doi.org/${esc(p.doi)}" target="_blank" rel="noopener">${esc(p.doi)}</a>`:esc(p.pmcid)}</div>
+    </div>`;
+  };
+
+  const sameWarn = state.a === state.b
+    ? '<div class="cmp-warn">⚠ You picked the same protocol on both sides.</div>' : '';
+
+  el.innerHTML = `
+    ${sameWarn}
+    <div class="cmp-summary">
+      <span class="cmp-pill"><strong>${shared.length}</strong> shared factors</span>
+      <span class="cmp-pill"><strong>${onlyA.length}</strong> only in A</span>
+      <span class="cmp-pill"><strong>${onlyB.length}</strong> only in B</span>
+      <span class="cmp-pill">A grounding <strong>${gr(pa)}</strong></span>
+      <span class="cmp-pill">B grounding <strong>${gr(pb)}</strong></span>
+    </div>
+    <div class="cmp-cols">${head(pa)}${head(pb)}</div>
+    <div class="cmp-axes-wrap cmp-axes">
+      ${axisRow('Organoid type', esc(pa.organoid_type), esc(pb.organoid_type))}
+      ${axisRow('Source cells', esc(pa.source_cell_type), esc(pb.source_cell_type))}
+      ${axisRow('Species', esc(pa.species), esc(pb.species))}
+      ${axisRow('Matrix', esc(pa.matrix), esc(pb.matrix))}
+      ${axisRow('Base media', esc(pa.base_media), esc(pb.base_media))}
+      ${axisRow('Signaling factors', String(pa.n_signaling_factors||0), String(pb.n_signaling_factors||0))}
+      ${axisRow('Grounding rate', gr(pa), gr(pb))}
+      ${axisRow('License', esc(pa.license), esc(pb.license))}
+    </div>
+    <div class="cmp-reagents">
+      <h2>Recipe comparison</h2>
+      <p class="rsub">Signaling factors and small molecules. <span class="gdot resolved"></span>grounded · <span class="gdot notfound"></span>not grounded.</p>
+      <div class="cmp-rgroup"><h4>Shared (${shared.length})</h4>${groupTable(shared, mapA, mapB)}</div>
+      <div class="cmp-rgroup"><h4>Only in A — ${esc(pa.first_author||'')} (${onlyA.length})</h4>${groupTable(onlyA, mapA, mapB)}</div>
+      <div class="cmp-rgroup"><h4>Only in B — ${esc(pb.first_author||'')} (${onlyB.length})</h4>${groupTable(onlyB, mapA, mapB)}</div>
+    </div>`;
+}
+
+// ── Wire pickers ──
+['a','b'].forEach(side => {
+  const inp = $('pick-'+side);
+  inp.addEventListener('input', () => { state[side] = null; renderSug(side); });
+  inp.addEventListener('focus', () => renderSug(side));
+  document.addEventListener('click', e => { if(!e.target.closest('.cmp-picker')) $('sug-'+side).classList.remove('open'); });
+});
+
+// ── Boot ──
+(async () => {
+  protos = (await j('/atlas/protocols.json?_shape=array&_size=max')) || [];
+  for(const p of protos) byPmcid[p.pmcid] = p;
+  const u = new URLSearchParams(window.location.search);
+  const a = u.get('a'), b = u.get('b');
+  if(a && byPmcid[a]) pick('a', a);
+  if(b && byPmcid[b]) pick('b', b);
+})();
+</script>
+{% endblock %}
