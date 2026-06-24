@@ -75,12 +75,24 @@ def test_live_manifest_schema_version_matches(live, committed):
     )
 
 
-@pytest.mark.parametrize("route", ["/", "/llms.txt", "/atlas/protocols.json", "/atlas/reagents.json"])
+@pytest.mark.parametrize("route", [
+    "/", "/llms.txt", "/atlas/protocols.json", "/atlas/reagents.json",
+    "/compare", "/discover", "/discover-data.json",   # added: new public views/endpoints (#186, #202)
+])
 def test_live_public_routes_serve_non_empty(route):
     """Every promised public route must return 200 with a non-trivial body."""
     status, body = _get(route)
     assert status == 200, f"{route} returned HTTP {status}"
     assert len(body) > 50, f"{route} returned a suspiciously small body ({len(body)} bytes)"
+
+
+def test_live_discover_data_json_shape():
+    """/discover-data.json (the data behind the public /discover view) must serve valid
+    JSON with the keys the front-end consumes — guards the candidate-discovery promise."""
+    status, body = _get("/discover-data.json")
+    assert status == 200, f"/discover-data.json returned HTTP {status}"
+    data = json.loads(body)
+    assert "types" in data and "by_type" in data, f"unexpected discover-data shape: {list(data)[:5]}"
 
 
 def test_live_llms_txt_advertises_redistribution_terms():
