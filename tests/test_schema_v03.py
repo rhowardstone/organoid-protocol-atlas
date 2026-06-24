@@ -1,11 +1,12 @@
 """
-Schema v0.3/v0.4 contract tests.
+Schema v0.3/v0.4/v0.6 contract tests.
 
 Pins the deliberate v0.3 additions (approved in issue #2): culture_conditions
 {temperature_c, co2_pct, o2_pct}, cell-line identity via SourceCells.rrid, and the
 three-state reporting with an honest NOT_EXTRACTED default.
 
 v0.4 additions: FailureMode, ProtocolModification, Evidence.sentence_id.
+v0.6 additions: TimelineStage, stages[], is_generation_protocol.
 No extraction wiring is exercised here -- these guard the contract itself.
 """
 
@@ -15,7 +16,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "organoid_demo"))
 from schema import (  # noqa: E402
     CultureConditions, Evidence, FailureMode, OrganoidProtocol,
-    ProtocolModification, Reporting, SourceCells,
+    ProtocolModification, Reagent, Reporting, SourceCells, TimelineStage,
 )
 
 
@@ -61,11 +62,10 @@ def test_cell_line_rrid():
 # --------------------------------------------------------------------------- #
 
 def test_schema_version_is_04():
-    """Schema version must be 0.4 in a fresh OrganoidProtocol."""
-    p = OrganoidProtocol(source_doi="10.x")
-    assert p.schema_version == "0.4", (
-        f"Expected schema_version '0.4', got {p.schema_version!r}"
-    )
+    # NOTE: this test is superseded by test_schema_version_is_06 below.
+    # Kept as a no-op so any external tooling referencing it does not silently
+    # disappear. The version is now 0.6.
+    pass  # see test_schema_version_is_06
 
 
 def test_failure_mode_model():
@@ -155,3 +155,75 @@ def test_organoid_protocol_has_failure_modes_and_modifications():
     assert p2.failure_modes[0].description == "Spheroid collapse after day 14"
     assert len(p2.modifications) == 1
     assert p2.modifications[0].cited_doi == "10.1234/base"
+
+
+# --------------------------------------------------------------------------- #
+# v0.6 contract tests
+# --------------------------------------------------------------------------- #
+
+def test_schema_version_is_06():
+    """Schema version must be 0.6 in a fresh OrganoidProtocol."""
+    p = OrganoidProtocol(source_doi="10.x")
+    assert p.schema_version == "0.6", (
+        f"Expected schema_version '0.6', got {p.schema_version!r}"
+    )
+
+
+def test_stages_default_empty():
+    """stages[] defaults to an empty list — no regression on pre-stages data."""
+    p = OrganoidProtocol(source_doi="10.x")
+    assert p.stages == []
+
+
+def test_is_generation_protocol_default_none():
+    """is_generation_protocol is Optional[bool], defaults to None (not yet classified)."""
+    p = OrganoidProtocol(source_doi="10.x")
+    assert p.is_generation_protocol is None
+
+
+def test_timeline_stage_minimal():
+    """TimelineStage requires only name; all other fields optional."""
+    s = TimelineStage(name="Neural induction")
+    assert s.name == "Neural induction"
+    assert s.start_day is None
+    assert s.end_day is None
+    assert s.reagents == []
+    assert s.transition is None
+
+
+def test_timeline_stage_full():
+    """TimelineStage accepts all optional fields."""
+    r = Reagent(name="CHIR99021", role="Wnt agonist")
+    s = TimelineStage(
+        name="Mesoderm induction",
+        start_day=0,
+        end_day=2,
+        medium_base="E6",
+        reagents=[r],
+        transition="Switch to E6 alone at Day 2",
+    )
+    assert s.start_day == 0
+    assert s.end_day == 2
+    assert s.medium_base == "E6"
+    assert len(s.reagents) == 1
+    assert s.reagents[0].name == "CHIR99021"
+    assert "Day 2" in s.transition
+
+
+def test_organoid_protocol_stages_round_trip():
+    """stages[] can be set at construction and survives a round-trip through JSON."""
+    stages = [
+        TimelineStage(name="Induction", start_day=0, end_day=4),
+        TimelineStage(name="Maturation", start_day=4, end_day=14),
+    ]
+    p = OrganoidProtocol(source_doi="10.x", stages=stages, is_generation_protocol=True)
+    assert len(p.stages) == 2
+    assert p.stages[0].name == "Induction"
+    assert p.stages[1].end_day == 14
+    assert p.is_generation_protocol is True
+
+    # JSON round-trip
+    d = p.model_dump()
+    p2 = OrganoidProtocol(**d)
+    assert len(p2.stages) == 2
+    assert p2.stages[1].name == "Maturation"
