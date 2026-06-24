@@ -36,3 +36,8 @@ data/public/
 # Regenerable semantic-retrieval vectors (R3); rebuilt by semantic_index.py build
 data/index/
 _marathon_slice.csv
+
+# secrets — never commit API tokens
+*.protocols_io_token
+.protocols_io_token
+PROTOCOLS_IO_TOKEN*
