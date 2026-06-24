@@ -87,11 +87,11 @@ function doseRange(doses, nums){
 }
 
 function citeLink(p){
-  const href = p.doi ? `https://doi.org/${esc(p.doi)}`
-                     : `https://www.ncbi.nlm.nih.gov/pmc/articles/${esc(p.pmcid)}/`;
-  return `<a class="cons-cite" href="${href}" target="_blank" rel="noopener"
-     title="${esc(p.first_author||'')} ${p.year||''} · ${esc(p.journal||'')} · ${esc(p.pmcid||'')}"
-     >${esc(p.first_author||'?')} ${p.year||''}</a>`;
+  // AtlasCite (static/atlas.js) normalizes resolver-prefixed DOIs and labels
+  // with PMCID when first_author is missing — no more bare "?" chips or 404s.
+  return `<a class="cons-cite" href="${esc(AtlasCite.href(p))}" target="_blank" rel="noopener"
+     title="${esc(AtlasCite.label(p))} · ${esc(p.journal||'')} · ${esc(p.pmcid||'')}"
+     >${esc(AtlasCite.label(p))}</a>`;
 }
 
 function typeAnchor(t){ return 'type-' + t.toLowerCase().replace(/[^a-z0-9]+/g,'-'); }
