@@ -41,18 +41,19 @@ _N_PAPERS = _manifest.get("n_papers", 0)
 _N_PROTOCOLS = _manifest.get("tables", {}).get("protocols", _N_PAPERS)
 _N_REAGENTS = _manifest.get("tables", {}).get("reagents", 0)
 _N_ROWS = _N_PROTOCOLS + _N_REAGENTS
+_N_TYPES = _manifest.get("n_types", 0)
 
-# Expose manifest to Jinja2 templates (index.html uses {{ public_counts.n_papers }})
+# Expose counts to Jinja2 templates (index.html uses {{ public_counts.n_papers }}).
+# Overwritten at startup by the DB-derived counts (see startup hookimpl below).
 PUBLIC_COUNTS = {
     "n_papers": _N_PAPERS,
     "n_protocols": _N_PROTOCOLS,
     "n_reagents": _N_REAGENTS,
-    "n_types": _manifest.get("n_types", 0),
+    "n_types": _N_TYPES,
 }
 
 
 def _build_llms_txt() -> str:
-    _n_types = _manifest.get("n_types", 0)
     return f"""# Organoid Protocol Atlas
 
 Public, license-safe Datasette deployment of the Organoid Protocol Atlas.
@@ -72,7 +73,7 @@ twice, then report the service as temporarily unavailable.
 ## What is available here
 
 This public deployment contains the CC-licensed public subset: {_N_PAPERS} papers, {_N_PROTOCOLS}
-protocol rows, and {_N_REAGENTS} public reagent rows across {_n_types} organoid systems.
+protocol rows, and {_N_REAGENTS} public reagent rows across {_N_TYPES} organoid systems.
 It does not redistribute full methods text or paper bodies. Evidence fields are short verbatim snippets
 kept so agents can trace claims back to the source paper and DOI.
 
@@ -212,7 +213,7 @@ otherwise the endpoint returns retrieved evidence rows without model synthesis.
 ## Public subset counts
 
 - papers: {_N_PAPERS}
-- organoid_types: {_n_types}
+- organoid_types: {_N_TYPES}
 - protocols: {_N_PROTOCOLS}
 - reagent rows: {_N_REAGENTS}
 - schema_version: 0.4
@@ -392,6 +393,35 @@ async def serve_public_manifest(datasette, request):
 
 
 @hookimpl
+async def startup(datasette):
+    """On Datasette startup, override manifest-derived counts with live DB counts.
+
+    This is the authoritative source — atlas.db is what we actually serve, and the
+    manifest can be stale if a deploy happened before the export was regenerated.
+    """
+    global _N_PAPERS, _N_PROTOCOLS, _N_REAGENTS, _N_TYPES, _N_ROWS, PUBLIC_COUNTS, LLMS_TXT
+    try:
+        db = datasette.get_database("atlas")
+        _N_PROTOCOLS = (await db.execute("SELECT COUNT(*) FROM protocols")).rows[0][0]
+        _N_REAGENTS = (await db.execute("SELECT COUNT(*) FROM reagents")).rows[0][0]
+        _N_TYPES = (await db.execute(
+            "SELECT COUNT(DISTINCT organoid_type) FROM protocols "
+            "WHERE organoid_type IS NOT NULL AND trim(organoid_type) != ''"
+        )).rows[0][0]
+        _N_PAPERS = _N_PROTOCOLS
+        _N_ROWS = _N_PROTOCOLS + _N_REAGENTS
+        PUBLIC_COUNTS = {
+            "n_papers": _N_PAPERS,
+            "n_protocols": _N_PROTOCOLS,
+            "n_reagents": _N_REAGENTS,
+            "n_types": _N_TYPES,
+        }
+        LLMS_TXT = _build_llms_txt()
+    except Exception:
+        pass  # keep manifest-derived fallback values loaded at import time
+
+
+@hookimpl
 def register_routes():
     return [
         (r"^/-/ask$", ask),
@@ -404,5 +434,5 @@ def register_routes():
 
 @hookimpl
 def extra_template_vars(datasette, request):
-    """Inject manifest-derived counts into every Jinja2 template context."""
+    """Inject live DB counts into every Jinja2 template context (updated at startup)."""
     return {"public_counts": PUBLIC_COUNTS}
