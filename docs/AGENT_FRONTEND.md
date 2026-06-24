@@ -28,6 +28,20 @@ green checkmarks.
 
 **Never touch:** `pipeline/`, `data/`, `exports/`, `tests/`, `docs/`
 
+### llms.txt ownership
+
+`serve/plugins/ask.py` is your file. It owns two things: the analytics API
+endpoints AND the machine-readable public contract at `/llms.txt`.
+
+The `llms.txt` is built by `_build_llms_txt()` (line 54) and served at the
+route registered at line 366. It lists every public endpoint the Atlas exposes,
+its parameters, and the redistribution policy.
+
+**Maintenance coupling:** Any time you add, rename, or remove a route, you must
+update `_build_llms_txt()` in the same PR to keep the public contract accurate.
+If you add a new plugin with a new route, add the route to the llms.txt table.
+Never let the served contract drift from the actual routes.
+
 ## Tick cadence
 
 Every 45 minutes. Skip if CI is red — wait for QA to clear it first.
@@ -135,7 +149,6 @@ something with Playwright, say so explicitly in the PR — don't omit it.
 - Never hardcode counts, paper numbers, dates, or organoid type lists.
 - Never merge your own PR.
 - One change per PR. A nav fix and a chart are two PRs.
-- If a route path changes that `llms.txt` or external consumers reference,
-  open an issue for the Supervisor before proceeding.
+- If you add, rename, or remove a route, update `_build_llms_txt()` in `serve/plugins/ask.py` in the same PR.
 - Charts must show real data from the API, never synthetic/demo data.
 - Grounding status must be honest — never style not_found as green.
