@@ -54,7 +54,7 @@
       <thead><tr><th scope="col">Organoid type</th><th scope="col">Protocols</th></tr></thead>
       <tbody>
         {% for t in type_counts %}
-        <tr><td><a href="/explore?q={{ t.type|urlencode }}">{{ t.type }}</a></td><td>{{ t.count }}</td></tr>
+        <tr><td><a href="/explore?type={{ t.type|urlencode }}">{{ t.type }}</a></td><td>{{ t.count }}</td></tr>
         {% else %}
         <tr><td colspan="2">No protocols loaded yet.</td></tr>
         {% endfor %}
@@ -84,11 +84,12 @@
       marginRight: 46,
       marginTop: 6,
       marginBottom: 22,
-      style: { background: 'transparent', color: css('--ink', '#0f172a'), fontFamily: css('--mono', 'monospace') },
+      style: { background: 'transparent', color: css('--ink', '#0f172a'), fontFamily: css('--mono', 'monospace'), cursor: 'pointer' },
       x: { axis: 'top', grid: true, label: 'protocols →', tickFormat: 's' },
       y: { label: null },
       marks: [
-        Plot.barX(data, { x: 'count', y: 'type', sort: { y: '-x' }, fill: css('--accent', '#0e7490'), rx: 2 }),
+        Plot.barX(data, { x: 'count', y: 'type', sort: { y: '-x' }, fill: css('--accent', '#0e7490'), rx: 2,
+          href: function (d) { return '/explore?type=' + encodeURIComponent(d.type); } }),
         Plot.text(data, { x: 'count', y: 'type', text: function (d) { return d.count.toLocaleString(); }, dx: 5, textAnchor: 'start', fontSize: 10, fill: css('--muted', '#5b6b7b') }),
         Plot.ruleX([0])
       ]
