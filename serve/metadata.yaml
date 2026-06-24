@@ -5,14 +5,14 @@ extra_js_urls:
   - /static/atlas.js
 description_html: >
   <p><strong>Evidence-grounded organoid culture protocols, extracted from the literature.</strong>
-  Methods sections from a 25-paper PMC corpus, parsed into structured protocol records
+  Methods sections from a 5,119-paper PMC open-access corpus, parsed into structured protocol records
   (source cells, matrix, base media, signaling cocktail) where every reagent links to a
   verbatim source span and a DOI. Extracted with a local model; evidence verified by
   exact-substring grounding.</p>
-  <p>A <em>PaperStack</em> application — the science-paper sibling of CaseStack. Reagent
-  rows carry short single-sentence citation snippets; full text is not redistributed.</p>
+  <p>Reagent rows carry short single-sentence citation snippets; full text is not redistributed.</p>
 license: MIT
 source: PMC Open Access + author-manuscript corpus (per-row license in the data)
+public_url: https://organoid-protocol-atlas.onrender.com
 databases:
   atlas:
     tables:
