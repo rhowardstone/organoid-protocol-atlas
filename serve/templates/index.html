@@ -42,6 +42,72 @@
   <div class="apa-stat"><div class="n">1</div><div class="l">agent guide at /llms.txt</div></div>
 </div>
 
+<section class="apa-typedist" aria-label="Protocols by organoid type">
+  <div class="apa-typedist-head">
+    <h2>Protocols by organoid type</h2>
+    <span class="apa-typedist-sub">live counts across {{ public_counts.n_types }} systems · browse any type below</span>
+  </div>
+  <figure id="type-chart" class="apa-typedist-chart" aria-hidden="true"></figure>
+  <details class="apa-typedist-table" open>
+    <summary>Show as data table</summary>
+    <table>
+      <thead><tr><th scope="col">Organoid type</th><th scope="col">Protocols</th></tr></thead>
+      <tbody>
+        {% for t in type_counts %}
+        <tr><td><a href="/explore?q={{ t.type|urlencode }}">{{ t.type }}</a></td><td>{{ t.count }}</td></tr>
+        {% else %}
+        <tr><td colspan="2">No protocols loaded yet.</td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </details>
+</section>
+
+<script>window.__TYPE_COUNTS__ = {{ type_counts|tojson }};</script>
+<script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6/dist/plot.umd.min.js" defer></script>
+<script defer>
+(function () {
+  var css = function (v, f) {
+    var c = getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+    return c || f;
+  };
+  function render() {
+    var data = (window.__TYPE_COUNTS__ || []).filter(function (d) { return d && d.count; });
+    var el = document.getElementById('type-chart');
+    if (!el || !data.length || typeof Plot === 'undefined' || typeof Plot.barX !== 'function') return;
+    el.replaceChildren();   // clear any prior render (e.g. on theme toggle)
+    var h = Math.min(300, 28 + data.length * 11);
+    var chart = Plot.plot({
+      height: h,
+      marginLeft: 118,
+      marginRight: 46,
+      marginTop: 6,
+      marginBottom: 22,
+      style: { background: 'transparent', color: css('--ink', '#0f172a'), fontFamily: css('--mono', 'monospace') },
+      x: { axis: 'top', grid: true, label: 'protocols →', tickFormat: 's' },
+      y: { label: null },
+      marks: [
+        Plot.barX(data, { x: 'count', y: 'type', sort: { y: '-x' }, fill: css('--accent', '#0e7490'), rx: 2 }),
+        Plot.text(data, { x: 'count', y: 'type', text: function (d) { return d.count.toLocaleString(); }, dx: 5, textAnchor: 'start', fontSize: 10, fill: css('--muted', '#5b6b7b') }),
+        Plot.ruleX([0])
+      ]
+    });
+    chart.setAttribute('role', 'img');
+    chart.setAttribute('aria-label', 'Bar chart: protocol count per organoid type, largest first');
+    el.append(chart);
+    el.removeAttribute('aria-hidden');
+  }
+  window.addEventListener('load', function () {
+    render();
+    var det = document.querySelector('.apa-typedist-table');   // collapse table once chart is up
+    if (det && document.querySelector('#type-chart svg')) det.open = false;
+    // Re-render on theme toggle so axis/label colors follow the active theme.
+    new MutationObserver(render).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+  });
+})();
+</script>
+
 <div class="apa-cards">
   <a class="apa-card" href="/explore">
     <h3>Browse protocols -&gt;</h3>
