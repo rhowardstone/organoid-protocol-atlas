@@ -38,6 +38,7 @@ const j = async u => (await fetch(u)).json();
 
 let ROWS = [];   // raw signaling reagent rows
 let TYPES = [];
+let VALID_TYPES = new Set();   // organoid types that actually have protocols
 
 function build(minTypes){
   // matrix[canonical][type] = {n, confirmed, doses:Set}
@@ -45,6 +46,10 @@ function build(minTypes){
   for (const r of ROWS){
     const c = r.canonical || r.name, t = r.organoid_type;
     if (!c || !t) continue;
+    // Skip types with no protocols (e.g. the legacy 'hepatic' alias, whose
+    // protocols normalize to liver) — it isn't a distinct organoid system and
+    // would fragment liver's grammar into a phantom column.
+    if (VALID_TYPES.size && !VALID_TYPES.has(t)) continue;
     typeSet.add(t);
     (m[c] = m[c] || {})[t] = m[c][t] || {n:0, confirmed:0, doses:new Set()};
     const cell = m[c][t]; cell.n++;
@@ -96,7 +101,20 @@ function render(minTypes){
 
 (async () => {
   try {
-    ROWS = await j('/atlas/reagents.json?_shape=array&_size=max&kind__exact=signaling');
+    // The matrix counts every signaling row per (factor, type), so it must see
+    // them all. The Datasette JSON API is row-capped (max_returned_rows) and
+    // signaling rows exceed that cap — a capped fetch undercounts every cell and
+    // drops factor×type pairs. Load the full set from the uncapped static export.
+    // Protocols (under the cap) give the set of real organoid systems.
+    const [resp, protos] = await Promise.all([
+      fetch('/exports/public/reagents.jsonl'),
+      j('/atlas/protocols.json?_shape=array&_size=max'),
+    ]);
+    const txt = await resp.text();
+    ROWS = txt.split('\n').filter(Boolean)
+              .map(l => JSON.parse(l))
+              .filter(r => r.kind === 'signaling');
+    VALID_TYPES = new Set((protos || []).map(p => p.organoid_type).filter(Boolean));
   } catch(e){ document.getElementById('hmWrap').innerHTML = '<p>Could not load the matrix.</p>'; return; }
   render(parseInt(document.getElementById('minTypes').value, 10));
   document.getElementById('minTypes').addEventListener('change', e => render(parseInt(e.target.value,10)));
