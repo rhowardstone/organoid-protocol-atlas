@@ -41,3 +41,6 @@ _marathon_slice.csv
 *.protocols_io_token
 .protocols_io_token
 PROTOCOLS_IO_TOKEN*
+
+# Marathon ingestion run artifacts (not redistributable; regenerated each run)
+outputs/ingest/
