@@ -19,6 +19,27 @@
 .apa-rel:hover { border-color:var(--accent,#4a9eff); }
 .apa-rel-a { font-size:.82rem; font-weight:500; }
 .apa-rel-m { font-size:.7rem; color:var(--muted,#888); }
+/* ── Staged recipe (#178) ── */
+.stg-block { margin: 1.2rem 0 .3rem; }
+.stg-h3 { font-size: 1rem; margin: 0 0 .6rem; display: flex; align-items: center; gap: .5rem; }
+.stg-tag { font-family: var(--mono); font-size: .6rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; padding: 2px 6px; border-radius: 3px; background: color-mix(in srgb, var(--accent) 14%, transparent); color: var(--accent); }
+.stg-tag.derived { background: color-mix(in srgb, var(--muted) 18%, transparent); color: var(--muted); }
+.stg-list { list-style: none; margin: 0; padding: 0; border-left: 2px solid var(--border); }
+.stg-card { position: relative; padding: .15rem 0 .9rem 1rem; margin-left: .4rem; }
+.stg-head { display: flex; align-items: baseline; gap: .5rem; flex-wrap: wrap; }
+.stg-num { position: absolute; left: -.85rem; top: 0; width: 1.1rem; height: 1.1rem; border-radius: 50%; background: var(--accent); color: #fff; font-family: var(--mono); font-size: .66rem; line-height: 1.1rem; text-align: center; }
+.stg-card.derived .stg-num { background: var(--muted); }
+.stg-name { font-weight: 600; font-size: .9rem; }
+.stg-day { font-family: var(--mono); font-size: .72rem; color: var(--muted); }
+.stg-meta { font-size: .75rem; color: var(--muted); margin: .2rem 0; }
+.stg-reagents { display: flex; flex-wrap: wrap; gap: 5px; margin-top: .35rem; }
+.stg-reagent { font-size: .76rem; font-family: var(--mono); padding: 1px 7px; border-radius: 4px; border: 1px solid var(--border); background: var(--paper-3); }
+.stg-reagent i { color: var(--muted); font-style: normal; }
+.stg-noreagent { font-size: .74rem; color: var(--muted); margin-top: .3rem; font-style: italic; }
+.stg-transition { font-size: .72rem; font-family: var(--mono); color: var(--muted); margin-top: .35rem; opacity: .85; }
+.stg-note { font-size: .78rem; color: var(--muted); margin: .5rem 0 0; }
+.stg-note a { color: var(--accent); }
+.stg-rawtl { font-size: .9rem; line-height: 1.6; }
 </style>
 <div class="apa-topbar">
   <span class="dot"></span> <a href="/">ORGANOID PROTOCOL ATLAS</a>
@@ -48,6 +69,92 @@ function highlight(text, quotes){
   const uniq = [...new Set(quotes.filter(Boolean))].sort((a,b) => b.length - a.length);
   for (const q of uniq){ const eq = esc(q); html = html.split(eq).join('<mark class="apa-hl">'+eq+'</mark>'); }
   return html;
+}
+
+// ── Staged recipe (issue #178) ───────────────────────────────────────────────
+function stageDose(r){
+  const c = r.concentration;
+  let val, unit;
+  if(c && typeof c === 'object'){ val = c.value; unit = c.canonical_unit || c.unit; }
+  else { val = c; unit = r.unit; }
+  unit = (unit && unit !== 'not stated') ? unit : '';
+  if(val == null && !unit) return '';
+  return `${val == null ? '' : val} ${unit}`.trim();
+}
+
+function dayBadge(s){
+  const a = s.start_day, b = s.end_day;
+  if(a == null && b == null) return '';
+  if(a != null && b != null) return a === b ? `Day ${a}` : `Day ${a}–${b}`;
+  if(a != null) return `Day ${a}+`;
+  return `→ Day ${b}`;
+}
+
+function stageCard(s, i){
+  const day = dayBadge(s);
+  const reags = (s.reagents || []).filter(r => r && r.name);
+  const reagentHtml = reags.length
+    ? `<div class="stg-reagents">${reags.map(r => {
+        const d = stageDose(r), role = (r.role && r.role !== 'not stated') ? r.role : '';
+        return `<span class="stg-reagent"><b>${esc(r.canonical_name || r.name)}</b>${d ? ` · ${esc(d)}` : ''}${role ? ` <i>${esc(role)}</i>` : ''}</span>`;
+      }).join('')}</div>`
+    : `<div class="stg-noreagent">no reagents added in this step</div>`;
+  const meta = [s.medium_base && `medium: ${esc(s.medium_base)}`,
+                s.culture_vessel && `vessel: ${esc(s.culture_vessel)}`].filter(Boolean).join(' · ');
+  return `<li class="stg-card">
+    <div class="stg-head"><span class="stg-num">${i+1}</span><span class="stg-name">${esc(s.name || 'stage')}</span>${day ? `<span class="stg-day">${esc(day)}</span>` : ''}</div>
+    ${meta ? `<div class="stg-meta">${meta}</div>` : ''}
+    ${reagentHtml}
+    ${s.transition ? `<div class="stg-transition">→ ${esc(s.transition)}</div>` : ''}
+  </li>`;
+}
+
+function parseTimeline(tl){
+  if(!tl) return [];
+  return tl.split(/\s*(?:→|->)\s*/).map(seg => {
+    seg = seg.trim(); if(!seg) return null;
+    const m = seg.match(/\(([^)]*\bd[^)]*)\)\s*$/i);
+    if(m) return { name: seg.slice(0, m.index).trim(), day: m[1].trim() };
+    return { name: seg, day: '' };
+  }).filter(Boolean);
+}
+
+function renderStages(p){
+  if(Array.isArray(p.stages) && p.stages.length){
+    return `<div class="stg-block">
+      <h3 class="stg-h3">Staged recipe <span class="stg-tag" title="Ordered stages extracted from the source protocol (schema v0.6, #178)">as extracted</span></h3>
+      <ol class="stg-list">${p.stages.map(stageCard).join('')}</ol>
+    </div>`;
+  }
+  if(p.is_generation_protocol === false){
+    return `<div class="stg-block"><h3 class="stg-h3">Staged recipe</h3>
+      <p class="stg-note">Not an organoid-generation protocol (organoids used as an assay) — no staged recipe was extracted.</p></div>`;
+  }
+  const steps = parseTimeline(p.timeline);
+  if(steps.length >= 2){
+    return `<div class="stg-block">
+      <h3 class="stg-h3">Timeline <span class="stg-tag derived" title="Derived from the reported free-text timeline; per-stage reagents not yet extracted (#178)">derived</span></h3>
+      <ol class="stg-list">${steps.map((s,i) => `<li class="stg-card derived">
+        <div class="stg-head"><span class="stg-num">${i+1}</span><span class="stg-name">${esc(s.name || 'stage')}</span>${s.day ? `<span class="stg-day">${esc(s.day)}</span>` : ''}</div>
+      </li>`).join('')}</ol>
+      <p class="stg-note">Derived from the reported timeline — per-stage reagents are not yet broken out. <a href="https://github.com/rhowardstone/organoid-protocol-atlas/issues/178" target="_blank" rel="noopener">#178</a></p>
+    </div>`;
+  }
+  if(p.timeline) return `<div class="stg-block"><h3 class="stg-h3">Timeline</h3><p class="stg-rawtl">${esc(p.timeline)}</p></div>`;
+  return '';
+}
+
+function renderEndpoints(p){
+  const e = p.assay_endpoints;
+  if(!e || (Array.isArray(e) && !e.length)) return '';
+  if(Array.isArray(e)){
+    return `<div class="stg-block">
+      <h3 class="stg-h3">Endpoints <span class="stg-tag derived">characterization</span></h3>
+      <div class="stg-reagents">${e.filter(Boolean).map(x => `<span class="stg-reagent">${esc(x)}</span>`).join('')}</div>
+      <p class="stg-note">Characterization readouts — not culture steps.</p>
+    </div>`;
+  }
+  return `<p style="font-size:.9rem"><strong>Validation / endpoints:</strong> ${esc(e)}</p>`;
 }
 
 (async () => {
@@ -91,7 +198,7 @@ function highlight(text, quotes){
       <td>${esc(r.role==='not stated'?'':r.role)}</td>
       <td>${esc(conc(r))}${r.suspect_unit ? ' <span class="apa-badge no" title="implausible unit — likely extraction error">⚠</span>' : ''}</td>
       <td>${badge(r.grounded)}</td>
-      <td class="quote">${r.evidence_quote?('“'+esc(r.evidence_quote)+'”'):''}</td>
+      <td class="quote">${r.evidence_quote?('"'+esc(r.evidence_quote)+'"'):''}</td>
     </tr>`).join('') || `<tr><td colspan="5" style="color:var(--muted)">No signaling factors extracted.</td></tr>`;
 
   document.getElementById('recipe').innerHTML = `
@@ -104,9 +211,9 @@ function highlight(text, quotes){
       <thead><tr><th>Reagent</th><th>Role</th><th>Conc.</th><th>Evidence</th><th>Verbatim span</th></tr></thead>
       <tbody>${rows}</tbody>
     </table>
-    ${p.timeline ? `<h3 style="margin:1.2rem 0 .3rem">Timeline</h3><p style="font-size:.9rem;line-height:1.6">${esc(p.timeline)}</p>` : ''}
+    ${renderStages(p)}
     ${p.passaging ? `<p style="font-size:.9rem"><strong>Passaging:</strong> ${esc(p.passaging)}</p>` : ''}
-    ${p.assay_endpoints ? `<p style="font-size:.9rem"><strong>Validation / endpoints:</strong> ${esc(p.assay_endpoints)}</p>` : ''}
+    ${renderEndpoints(p)}
     ${sup.length ? `<h3 style="margin:1.2rem 0 .3rem">Media supplements <span style="color:var(--muted);font-weight:400">(${sup.length})</span></h3>
       <p style="font-size:.9rem">${sup.map(r=>esc(r.name)).join(' · ')}</p>` : ''}
     ${sm.length ? `<h3 style="margin:1.2rem 0 .3rem">Small molecules <span style="color:var(--muted);font-weight:400">(${sm.length})</span></h3>
