@@ -16,6 +16,7 @@ Run:  python pipeline/export_public.py   ->  exports/public/{protocols,reagents,
 
 from __future__ import annotations
 
+import datetime
 import json
 import sqlite3
 from pathlib import Path
@@ -60,6 +61,7 @@ def main():
     manifest = {
         "license_filter": "CC0/CC-BY (no NC/ND)",
         "schema_version": "0.4",
+        "generated_at": datetime.datetime.utcnow().isoformat() + "Z",
         "n_papers": len(cc),
         "n_types": n_types,
         "papers": sorted(cc),
