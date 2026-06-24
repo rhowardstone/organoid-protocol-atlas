@@ -94,7 +94,15 @@ function typeAnchor(t){ return 'type-' + t.toLowerCase().replace(/[^a-z0-9]+/g,'
   let protos, sig;
   try {
     protos = await j('/atlas/protocols.json?_shape=array&_size=max');
-    sig = await j('/atlas/reagents.json?_shape=array&_size=max&kind__exact=signaling');
+    // Consensus prevalence is (papers using a factor) / (papers of that type), so
+    // it MUST see every signaling row. The Datasette JSON API is row-capped
+    // (max_returned_rows), and signaling rows exceed that cap — a capped fetch
+    // silently halves every numerator and empties the core cocktails. Load the
+    // full set from the uncapped static export instead and filter to signaling.
+    const txt = await (await fetch('/exports/public/reagents.jsonl')).text();
+    sig = txt.split('\n').filter(Boolean)
+             .map(l => JSON.parse(l))
+             .filter(r => r.kind === 'signaling');
   } catch(e){ document.getElementById('consensus').innerHTML='<p>Could not load.</p>'; return; }
 
   // Build pmcid → protocol lookup
@@ -126,7 +134,12 @@ function typeAnchor(t){ return 'type-' + t.toLowerCase().replace(/[^a-z0-9]+/g,'
     }
   }
 
-  const types = Object.keys(m).sort((a,b)=>(nByType[b]||0)-(nByType[a]||0)||a.localeCompare(b));
+  // Only types that actually have protocols have a consensus denominator. A type
+  // present in signaling rows but absent from protocols (e.g. the legacy 'hepatic'
+  // alias, whose protocols normalize to liver) would divide prevalence by zero and
+  // render Infinity% bars — skip it. Its reagent rows remain visible under Explore.
+  const types = Object.keys(m).filter(t => (nByType[t]||0) > 0)
+    .sort((a,b)=>(nByType[b]||0)-(nByType[a]||0)||a.localeCompare(b));
 
   // Build type-nav
   const navEl = document.getElementById('typeNav');
