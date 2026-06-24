@@ -155,7 +155,7 @@ def main() -> int:
             doi = full.get("doi") or it.get("doi") or ""
             uri = full.get("uri") or it.get("uri") or ""
             title = (full.get("title") or it.get("title") or "").strip()
-            lic = "protocols.io-CC-BY"  # protocols.io public protocols are CC-BY by default
+            lic = "CC-BY"  # protocols.io public protocols are CC-BY by default
             bundle = {"doi": doi, "pmcid": key, "organoid_type": "", "license": lic,
                       "source_route": "protocols_io", "fetched_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
                       "methods_text": methods, "body_text": methods, "methods_detected": True,
