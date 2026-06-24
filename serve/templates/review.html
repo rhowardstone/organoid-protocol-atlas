@@ -1,0 +1,450 @@
+{% extends "base.html" %}
+{% block title %}Review {{ pmcid }} — Organoid Protocol Atlas{% endblock %}
+{% block body_class %}index{% endblock %}
+
+{% block content %}
+<style>
+.rv-wrap { max-width:1280px; margin:0 auto; padding:1.5rem; }
+.rv-header { margin-bottom:1.2rem; border-bottom:1px solid var(--border); padding-bottom:1rem; }
+.rv-header h1 { font-size:1.4rem; font-weight:700; margin:0 0 .25rem; font-family:var(--mono); }
+.rv-header .rv-meta { font-size:.82rem; color:var(--muted); display:flex; gap:1rem; flex-wrap:wrap; align-items:center; }
+.rv-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; align-items:start; }
+@media(max-width:860px){ .rv-grid { grid-template-columns:1fr; } }
+
+/* ── MIOR coverage bar ── */
+.mior-bar { display:flex; gap:.3rem; flex-wrap:wrap; margin-bottom:1rem; align-items:center; }
+.mior-chip {
+  font-size:.68rem; font-family:var(--mono); padding:2px 7px; border-radius:3px;
+  border:1px solid var(--border); line-height:1.6; cursor:default;
+}
+.mior-chip.present { background:#dcfce7; border-color:#16a34a; color:#15803d; }
+.mior-chip.absent  { background:#fee2e2; border-color:#dc2626; color:#b91c1c; }
+.mior-label { font-size:.72rem; font-family:var(--mono); color:var(--muted); margin-right:.2rem; }
+.mior-score { font-size:.78rem; font-family:var(--mono); font-weight:700; }
+
+/* ── Left: PMC text panel ── */
+.rv-evidence {
+  background:var(--paper-3); border-radius:10px; padding:1.2rem;
+  border:1px solid var(--border); position:sticky; top:1rem;
+  max-height:calc(100vh - 3rem); overflow-y:auto;
+}
+.rv-evidence-head {
+  display:flex; align-items:center; justify-content:space-between;
+  margin-bottom:.8rem;
+}
+.rv-evidence h2 {
+  font-size:.9rem; font-weight:700; margin:0; font-family:var(--mono);
+  color:var(--muted); letter-spacing:.05em; text-transform:uppercase;
+}
+.ev-tab-bar { display:flex; gap:.3rem; }
+.ev-tab {
+  font-size:.7rem; font-family:var(--mono); padding:2px 9px; border-radius:4px;
+  border:1px solid var(--border); background:transparent; color:var(--muted);
+  cursor:pointer; transition:.1s;
+}
+.ev-tab.active { background:var(--accent); color:#fff; border-color:var(--accent); }
+
+/* PMC full-text view */
+#pmc-view { display:none; }
+#pmc-view.visible { display:block; }
+#pmc-loading { font-size:.82rem; color:var(--muted); padding:1rem 0; font-style:italic; }
+.pmc-highlight-legend {
+  font-size:.7rem; font-family:var(--mono); color:var(--muted);
+  padding:.3rem .5rem; background:var(--paper); border-radius:4px;
+  border:1px solid var(--border); margin-bottom:.8rem;
+  display:flex; align-items:center; gap:.5rem; flex-wrap:wrap;
+}
+mark.ev-highlight {
+  background:#fef08a; border-radius:2px; padding:0 2px;
+  cursor:pointer; border-bottom:2px solid #ca8a04;
+  transition:background .1s;
+}
+mark.ev-highlight:hover { background:#fde047; }
+mark.ev-highlight.active { background:#fb923c; border-color:#c2410c; }
+.pmc-body {
+  font-size:.82rem; line-height:1.7; color:var(--ink);
+  max-width:none;
+}
+.pmc-body .pmc-para { margin:.6rem 0; }
+.pmc-body .pmc-sec-title {
+  font-size:.88rem; font-weight:700; font-family:var(--mono);
+  margin:1.2rem 0 .4rem; color:var(--accent); text-transform:uppercase;
+  letter-spacing:.04em; border-bottom:1px solid var(--border); padding-bottom:.2rem;
+}
+#pmc-not-available {
+  display:none; font-size:.82rem; color:var(--muted); font-style:italic;
+  padding:.5rem 0;
+}
+
+/* Reagent list (fallback / secondary tab) */
+#reagents-view { display:none; }
+#reagents-view.visible { display:block; }
+.ev-reagent { margin-bottom:.85rem; padding:.7rem; background:var(--paper); border-radius:7px; border:1px solid var(--border); }
+.ev-name { font-weight:600; font-size:.88rem; margin-bottom:.2rem; display:flex; align-items:center; gap:.4rem; }
+.ev-role { font-size:.72rem; font-family:var(--mono); color:var(--muted); }
+.ev-dose { font-size:.78rem; font-family:var(--mono); color:var(--accent); }
+.ev-quote {
+  font-size:.74rem; color:var(--muted); font-style:italic; margin-top:.3rem;
+  padding:.3rem .45rem; background:var(--paper-3); border-radius:4px;
+  border-left:2px solid var(--accent); line-height:1.5;
+}
+.ev-grounded { display:inline-block; width:7px; height:7px; border-radius:50%; flex-shrink:0; margin-top:2px; }
+.ev-grounded.yes { background:#16a34a; }
+.ev-grounded.no  { background:#dc2626; }
+.ev-no-reagents { color:var(--muted); font-size:.85rem; font-style:italic; }
+
+/* ── Right: fields + proposals ── */
+.rv-fields { display:flex; flex-direction:column; gap:.6rem; }
+.rv-field { background:var(--paper); border:1px solid var(--border); border-radius:8px; padding:.8rem 1rem; }
+.rv-field-label {
+  font-size:.72rem; font-family:var(--mono); color:var(--muted); text-transform:uppercase;
+  letter-spacing:.05em; margin-bottom:.25rem; display:flex; align-items:center; justify-content:space-between;
+}
+.rv-field-value { font-size:.9rem; font-weight:500; word-break:break-word; }
+.rv-field-value.empty { color:var(--muted); font-style:italic; font-size:.82rem; }
+.rv-propose-btn {
+  font-size:.68rem; font-family:var(--mono); padding:2px 8px; border-radius:4px;
+  border:1px solid var(--border); background:transparent; color:var(--muted);
+  cursor:pointer; transition:.12s;
+}
+.rv-propose-btn:hover { border-color:var(--accent); color:var(--accent); }
+
+/* Proposals section */
+.rv-proposals { margin-top:1.2rem; }
+.rv-proposals h2 {
+  font-size:.9rem; font-weight:700; margin-bottom:.75rem; font-family:var(--mono);
+  color:var(--muted); letter-spacing:.05em; text-transform:uppercase;
+}
+.proposal-card { border:1px solid var(--border); border-radius:8px; padding:.8rem 1rem; margin-bottom:.6rem; background:var(--paper); }
+.proposal-card.pending  { border-left:3px solid #f59e0b; }
+.proposal-card.accepted { border-left:3px solid #16a34a; }
+.proposal-card.rejected { border-left:3px solid #dc2626; opacity:.6; }
+.prop-field  { font-family:var(--mono); font-size:.78rem; color:var(--accent); font-weight:600; }
+.prop-values { font-size:.82rem; margin:.3rem 0; }
+.prop-del    { color:var(--muted); text-decoration:line-through; margin-right:.4rem; }
+.prop-add    { font-weight:600; }
+.prop-meta   { font-size:.7rem; color:var(--muted); font-family:var(--mono); }
+.prop-ev     { font-size:.72rem; font-style:italic; color:var(--muted); margin-top:.25rem; padding:.25rem .4rem; background:var(--paper-3); border-radius:3px; }
+.prop-actions { display:flex; gap:.4rem; margin-top:.5rem; }
+.prop-btn    { font-size:.7rem; font-family:var(--mono); padding:3px 10px; border-radius:4px; cursor:pointer; border:1px solid var(--border); background:transparent; }
+.prop-btn.accept { border-color:#16a34a; color:#16a34a; }
+.prop-btn.reject { border-color:#dc2626; color:#dc2626; }
+.prop-btn:hover  { opacity:.7; }
+
+/* Modal */
+.rv-modal-bg { display:none; position:fixed; inset:0; background:rgba(0,0,0,.4); z-index:1000; align-items:center; justify-content:center; }
+.rv-modal-bg.open { display:flex; }
+.rv-modal { background:var(--paper); border-radius:12px; padding:1.5rem; width:min(520px,90vw); border:1px solid var(--border); box-shadow:0 8px 32px rgba(0,0,0,.18); }
+.rv-modal h3 { margin:0 0 1rem; font-size:1rem; }
+.rv-modal label { display:block; font-size:.8rem; font-family:var(--mono); color:var(--muted); margin-bottom:.2rem; margin-top:.7rem; }
+.rv-modal input, .rv-modal textarea, .rv-modal select {
+  width:100%; box-sizing:border-box; padding:.45rem .6rem; border:1px solid var(--border);
+  border-radius:6px; font-size:.88rem; background:var(--paper); color:var(--ink);
+  font-family:var(--font); }
+.rv-modal textarea { min-height:80px; resize:vertical; }
+.rv-modal-actions { display:flex; gap:.5rem; justify-content:flex-end; margin-top:1rem; }
+.rv-modal-btn { padding:.4rem 1.1rem; border-radius:6px; font-size:.85rem; cursor:pointer; font-family:var(--mono); border:1px solid var(--border); background:transparent; color:var(--ink); }
+.rv-modal-btn.primary { background:var(--accent); color:#fff; border-color:var(--accent); }
+.rv-modal-btn:hover { opacity:.8; }
+
+/* Highlight tooltip */
+.ev-tooltip {
+  position:fixed; background:var(--paper); border:1px solid var(--border);
+  border-radius:6px; padding:.4rem .6rem; font-size:.75rem; font-family:var(--mono);
+  box-shadow:0 2px 8px rgba(0,0,0,.12); pointer-events:none; z-index:500;
+  max-width:260px; line-height:1.4; display:none;
+}
+</style>
+
+<div class="rv-wrap">
+  <div class="rv-header">
+    <h1>{{ pmcid }}</h1>
+    <div class="rv-meta">
+      {% if protocol.doi %}<a href="https://doi.org/{{ protocol.doi }}" target="_blank" rel="noopener" style="color:var(--accent)">{{ protocol.doi }}</a>{% endif %}
+      {% if protocol.first_author %}<span>{{ protocol.first_author }}{% if protocol.year %} {{ protocol.year }}{% endif %}</span>{% endif %}
+      {% if protocol.journal %}<span>{{ protocol.journal }}</span>{% endif %}
+      <span style="font-family:var(--mono)">{{ protocol.organoid_type or '—' }}</span>
+      <a href="/atlas/protocols/{{ pmcid }}" style="color:var(--muted);font-family:var(--mono);font-size:.75rem">raw record ↗</a>
+    </div>
+  </div>
+
+  <div class="rv-grid">
+
+    <!-- LEFT: Evidence panel (PMC text + reagents tab) -->
+    <div class="rv-evidence">
+      <div class="rv-evidence-head">
+        <h2>Evidence from paper</h2>
+        <div class="ev-tab-bar">
+          {% if has_pmc %}
+          <button class="ev-tab active" id="tab-pmc" onclick="switchTab('pmc')">Full text</button>
+          {% endif %}
+          <button class="ev-tab {{ '' if has_pmc else 'active' }}" id="tab-reagents" onclick="switchTab('reagents')">Reagents ({{ reagents|length }})</button>
+        </div>
+      </div>
+
+      <!-- PMC full-text view -->
+      {% if has_pmc %}
+      <div id="pmc-view" class="visible">
+        <div class="pmc-highlight-legend">
+          <mark class="ev-highlight" style="cursor:default">highlighted</mark>
+          = evidence_quote found in text · click to see reagent
+        </div>
+        <div id="pmc-loading">Loading full text from PubMed Central…</div>
+        <div id="pmc-not-available">Full text not available via PMC API for this ID.</div>
+        <div id="pmc-body" class="pmc-body"></div>
+      </div>
+      {% endif %}
+
+      <!-- Reagents list view -->
+      <div id="reagents-view" class="{{ '' if has_pmc else 'visible' }}">
+        {% if reagents %}
+          {% for r in reagents %}
+          <div class="ev-reagent" data-name="{{ (r.canonical or r.name)|e }}">
+            <div class="ev-name">
+              <span class="ev-grounded {{ 'yes' if r.grounded else 'no' }}"></span>
+              <strong>{{ r.canonical or r.name }}</strong>
+              {% if r.role %}<span class="ev-role">{{ r.role }}</span>{% endif %}
+              {% if r.value %}<span class="ev-dose">{{ r.value }}{% if r.canonical_unit and r.canonical_unit != 'not stated' %} {{ r.canonical_unit }}{% endif %}</span>{% endif %}
+            </div>
+            {% if r.evidence_quote %}
+            <div class="ev-quote">"{{ r.evidence_quote }}"</div>
+            {% endif %}
+          </div>
+          {% endfor %}
+        {% else %}
+          <div class="ev-no-reagents">No reagent evidence quotes extracted for this protocol.</div>
+        {% endif %}
+      </div>
+    </div>
+
+    <!-- RIGHT: MIOR bar + editable fields + proposals -->
+    <div>
+
+      <!-- MIOR coverage bar -->
+      <div style="background:var(--paper);border:1px solid var(--border);border-radius:8px;padding:.8rem 1rem;margin-bottom:.8rem;">
+        <div style="font-size:.72rem;font-family:var(--mono);color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:.5rem;display:flex;align-items:center;justify-content:space-between;">
+          <span>MIOR completeness</span>
+          <span class="mior-score" style="color:{% set n_present = mior_status | selectattr('present') | list | length %}{% if n_present >= 6 %}#16a34a{% elif n_present >= 4 %}#b45309{% else %}#dc2626{% endif %}">
+            {{ mior_status | selectattr('present') | list | length }}/{{ mior_status|length }}
+          </span>
+        </div>
+        <div class="mior-bar">
+          {% for m in mior_status %}
+          <span class="mior-chip {{ 'present' if m.present else 'absent' }}" title="{{ m.field }}: {{ m.value if m.present else 'not reported' }}">
+            {{ m.label }}
+          </span>
+          {% endfor %}
+        </div>
+      </div>
+
+      <!-- Editable fields -->
+      <div class="rv-fields">
+        {% set display_fields = ['organoid_type','species','source_cell_type','matrix','base_media','passaging','timeline','assay_endpoints'] %}
+        {% for field in display_fields %}
+        {% set value = protocol[field] %}
+        {% set meta = field_meta.get(field, {}) %}
+        <div class="rv-field">
+          <div class="rv-field-label">
+            <span>{{ meta.get('label', field) }}</span>
+            {% if meta.get('editable', True) %}
+            <button class="rv-propose-btn" onclick="openModal('{{ field }}', {{ value|tojson }})">propose edit</button>
+            {% endif %}
+          </div>
+          <div class="rv-field-value {{ 'empty' if not value }}">
+            {{ value or 'not reported' }}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+
+      <!-- Proposals for this record -->
+      <div class="rv-proposals">
+        <h2>Proposals ({{ proposals | length }})</h2>
+        {% if proposals %}
+          {% for p in proposals %}
+          <div class="proposal-card {{ p.status }}">
+            <div class="prop-field">{{ p.field }}</div>
+            <div class="prop-values">
+              {% if p.old_value %}<span class="prop-del">{{ p.old_value }}</span>{% endif %}
+              <span class="prop-add">→ {{ p.proposed_value }}</span>
+            </div>
+            {% if p.evidence_span %}<div class="prop-ev">"{{ p.evidence_span }}"</div>{% endif %}
+            <div class="prop-meta">{{ p.proposed_by }} · {{ p.proposed_at[:10] }} · {{ p.status }}</div>
+            {% if p.status == 'pending' %}
+            <div class="prop-actions">
+              <button class="prop-btn accept" onclick="reviewProposal('{{ p.id }}', 'accept')">✓ accept</button>
+              <button class="prop-btn reject" onclick="reviewProposal('{{ p.id }}', 'reject')">✗ reject</button>
+            </div>
+            {% endif %}
+          </div>
+          {% endfor %}
+        {% else %}
+          <div style="color:var(--muted);font-size:.85rem;font-style:italic">No proposals yet. Agents can POST to /api/propose; humans can use the buttons above.</div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Propose-edit modal -->
+<div class="rv-modal-bg" id="modal-bg" onclick="if(event.target===this)closeModal()">
+  <div class="rv-modal">
+    <h3>Propose an edit</h3>
+    <input type="hidden" id="modal-field">
+    <label>Field</label>
+    <input type="text" id="modal-field-display" readonly style="background:var(--paper-3);color:var(--muted)">
+    <label>Current value</label>
+    <input type="text" id="modal-old" readonly style="background:var(--paper-3);color:var(--muted)">
+    <label>Proposed value</label>
+    <input type="text" id="modal-new" placeholder="Corrected value…">
+    <label>Evidence span (optional — verbatim quote from the paper that supports your edit)</label>
+    <textarea id="modal-evidence" placeholder='"cells were differentiated into cerebral organoids using…"'></textarea>
+    <div class="rv-modal-actions">
+      <button class="rv-modal-btn" onclick="closeModal()">Cancel</button>
+      <button class="rv-modal-btn primary" onclick="submitProposal()">Submit proposal</button>
+    </div>
+  </div>
+</div>
+
+<!-- Highlight tooltip -->
+<div class="ev-tooltip" id="ev-tooltip"></div>
+
+<script>
+const PMCID = {{ pmcid|tojson }};
+const HAS_PMC = {{ has_pmc|tojson }};
+
+// ── Tab switching ──
+function switchTab(tab) {
+  document.getElementById('tab-pmc')?.classList.toggle('active', tab === 'pmc');
+  document.getElementById('tab-reagents').classList.toggle('active', tab === 'reagents');
+  const pmcView = document.getElementById('pmc-view');
+  const reagentsView = document.getElementById('reagents-view');
+  if (pmcView) pmcView.classList.toggle('visible', tab === 'pmc');
+  reagentsView.classList.toggle('visible', tab === 'reagents');
+}
+
+// ── PMC full-text fetch + highlight ──
+async function loadPMCText() {
+  if (!HAS_PMC) return;
+  const loadingEl = document.getElementById('pmc-loading');
+  const bodyEl    = document.getElementById('pmc-body');
+  const notAvail  = document.getElementById('pmc-not-available');
+  try {
+    const resp = await fetch('/api/pmcview/' + encodeURIComponent(PMCID));
+    if (!resp.ok) {
+      loadingEl.style.display = 'none';
+      notAvail.style.display  = 'block';
+      return;
+    }
+    const data = await resp.json();
+    loadingEl.style.display = 'none';
+    if (!data.html) {
+      notAvail.style.display = 'block';
+      return;
+    }
+    bodyEl.innerHTML = data.html;
+    attachHighlightListeners();
+    // Show found count in legend if any
+    const legend = document.querySelector('.pmc-highlight-legend');
+    if (legend && data.found > 0) {
+      legend.insertAdjacentHTML('beforeend',
+        ` · <strong>${data.found}/${data.total}</strong> evidence spans located`);
+    }
+  } catch (e) {
+    loadingEl.style.display = 'none';
+    notAvail.style.display  = 'block';
+    notAvail.textContent    = 'Could not load full text: ' + e.message;
+  }
+}
+
+// ── Tooltip on highlight hover ──
+function attachHighlightListeners() {
+  const tooltip = document.getElementById('ev-tooltip');
+  document.querySelectorAll('mark.ev-highlight').forEach(function(mark) {
+    mark.addEventListener('mouseenter', function(e) {
+      const name = mark.dataset.reagent || '';
+      tooltip.textContent = name;
+      tooltip.style.display = 'block';
+      positionTooltip(e);
+      // Highlight matching reagent card
+      document.querySelectorAll('.ev-reagent').forEach(function(card) {
+        card.style.outline = card.dataset.name === name
+          ? '2px solid var(--accent)' : '';
+      });
+    });
+    mark.addEventListener('mousemove', positionTooltip);
+    mark.addEventListener('mouseleave', function() {
+      tooltip.style.display = 'none';
+      document.querySelectorAll('.ev-reagent').forEach(function(c) { c.style.outline = ''; });
+    });
+    mark.addEventListener('click', function() {
+      // Switch to reagents tab and scroll to matching card
+      switchTab('reagents');
+      const name = mark.dataset.reagent;
+      const card = [...document.querySelectorAll('.ev-reagent')]
+        .find(c => c.dataset.name === name);
+      if (card) {
+        card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        card.style.outline = '2px solid var(--accent)';
+        setTimeout(() => { card.style.outline = ''; }, 1500);
+      }
+    });
+  });
+}
+
+function positionTooltip(e) {
+  const tt = document.getElementById('ev-tooltip');
+  tt.style.left = (e.clientX + 12) + 'px';
+  tt.style.top  = (e.clientY - 32) + 'px';
+}
+
+// ── Modal ──
+function openModal(field, currentValue) {
+  document.getElementById('modal-field').value         = field;
+  document.getElementById('modal-field-display').value = field;
+  document.getElementById('modal-old').value           = currentValue || '';
+  document.getElementById('modal-new').value           = '';
+  document.getElementById('modal-evidence').value      = '';
+  document.getElementById('modal-bg').classList.add('open');
+  document.getElementById('modal-new').focus();
+}
+function closeModal() {
+  document.getElementById('modal-bg').classList.remove('open');
+}
+
+async function submitProposal() {
+  const field  = document.getElementById('modal-field').value;
+  const oldVal = document.getElementById('modal-old').value;
+  const newVal = document.getElementById('modal-new').value.trim();
+  const ev     = document.getElementById('modal-evidence').value.trim();
+  if (!newVal) { alert('Please enter a proposed value.'); return; }
+  const payload = {
+    pmcid: PMCID, field, old_value: oldVal || null,
+    proposed_value: newVal, evidence_span: ev || null, proposed_by: 'human',
+  };
+  const resp = await fetch('/api/propose', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify(payload),
+  });
+  if (resp.ok) {
+    closeModal();
+    location.reload();
+  } else {
+    const err = await resp.json().catch(() => ({}));
+    alert('Error: ' + (err.error || resp.status));
+  }
+}
+
+async function reviewProposal(id, action) {
+  const resp = await fetch('/api/proposals/' + id + '/' + action, { method: 'POST' });
+  if (resp.ok) location.reload();
+  else alert('Error ' + resp.status);
+}
+
+// ── Init ──
+window.addEventListener('DOMContentLoaded', function() {
+  if (HAS_PMC) loadPMCText();
+});
+</script>
+{% endblock %}
