@@ -222,8 +222,6 @@ function buildChips(){
 function toggleType(t){
   activeType = activeType===t ? null : t;
   buildChips();
-  const urlQ = new URLSearchParams(window.location.search).get('q');
-  if(urlQ){ query = urlQ; $('search').value = urlQ; }
   render();
 }
 
@@ -396,7 +394,10 @@ function reagentCard(r, i){
   }
 
   buildChips();
-  const urlQ = new URLSearchParams(window.location.search).get('q');
+  const urlParams = new URLSearchParams(window.location.search);
+  const urlType = urlParams.get('type');
+  const urlQ = urlParams.get('q');
+  if(urlType){ activeType = urlType; buildChips(); }
   if(urlQ){ query = urlQ; $('search').value = urlQ; }
   render();
 })();
