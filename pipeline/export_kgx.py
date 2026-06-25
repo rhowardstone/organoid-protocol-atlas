@@ -55,6 +55,21 @@ REPO = Path(__file__).resolve().parent.parent
 GROUNDED = REPO / "data" / "predictions" / "local" / "grounded"
 PRED = REPO / "data" / "predictions" / "local"
 OUT = REPO / "exports" / "kgx"
+CORPUS = REPO / "data" / "corpus" / "corpus.tsv"
+
+
+def cc_corpus_pmcids() -> set:
+    """License-safe corpus subset for the public KGX: papers in corpus.tsv with a
+    CC0/CC-BY license. Mirrors the public-export redistribution policy so the KGX
+    never carries mentions from non-CC or non-corpus (rejected/thin) predictions."""
+    sys.path.insert(0, str(REPO / "pipeline"))
+    from export_public import is_public_license  # noqa: E402
+    out = set()
+    if CORPUS.exists():
+        for r in csv.DictReader(CORPUS.open(encoding="utf-8-sig"), delimiter="\t"):
+            if r.get("pmcid") and is_public_license(r.get("license")):
+                out.add(r["pmcid"])
+    return out
 
 # --- provenance / policy constants -----------------------------------------
 PRIMARY_KNOWLEDGE_SOURCE = "infores:organoid-protocol-atlas"
@@ -357,13 +372,17 @@ def validate_kgx(nodes, edges):
 # ---------------------------------------------------------------------------
 # I/O
 # ---------------------------------------------------------------------------
-def load_sidecars(grounded_dir=GROUNDED, pred_dir=PRED):
-    """Read all grounded sidecars and their matching prediction records."""
+def load_sidecars(grounded_dir=GROUNDED, pred_dir=PRED, allowed=None):
+    """Read grounded sidecars and their matching prediction records.
+    If `allowed` (a set of pmcids) is given, only those papers are included —
+    used to gate the public KGX to the license-safe CC corpus."""
     sidecars, predictions = [], {}
     for path in sorted(Path(grounded_dir).glob("*.json")):
         sidecar = json.loads(path.read_text())
-        sidecars.append(sidecar)
         pmcid = sidecar.get("pmcid")
+        if allowed is not None and pmcid not in allowed:
+            continue
+        sidecars.append(sidecar)
         pred_path = Path(pred_dir) / f"{pmcid}.json"
         if pred_path.exists():
             try:
@@ -396,7 +415,9 @@ def write_outputs(nodes, edges, review_items, manifest, out_dir=OUT):
 
 
 def main():
-    sidecars, predictions = load_sidecars()
+    allowed = cc_corpus_pmcids()
+    print(f"  license gate: {len(allowed)} CC corpus papers eligible for KGX", flush=True)
+    sidecars, predictions = load_sidecars(allowed=allowed)
     nodes, edges, review_items, manifest = build_kgx(sidecars, predictions)
     ok, used_real, errors = validate_kgx(nodes, edges)
     manifest["validation"] = {
