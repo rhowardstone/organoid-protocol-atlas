@@ -209,6 +209,31 @@ reagent footprint.
 Natural-language synthesis is only available when the deployment can reach a local model;
 otherwise the endpoint returns retrieved evidence rows without model synthesis.
 
+## Agent research playbook
+
+This is structured extraction from the literature, not a document archive. Keep three claim
+tiers separate and never blur them:
+- EXTRACTED FACT — one paper's record. Cite its PMCID + DOI + verbatim evidence_quote.
+- CORPUS TREND — an aggregate across papers (consensus, prevalence, dose ranges). Always
+  report n and the denominator (e.g. "EGF in 47/52 intestinal protocols"); flag low-n (n<5) as weak.
+- INTERPRETATION / HYPOTHESIS — anything inferred (e.g. /discover-data transfer candidates).
+  Label it a hypothesis to test, never a recommendation.
+
+When asked for "the best / canonical protocol for <type>":
+1. Query /analytics/consensus?type=<type> for the canonical recipe; present it as a CORPUS TREND
+   with n + denominator, not as fact.
+2. Cite the highest-grounding-rate exemplar papers (PMCID/DOI + evidence_quote), not only the aggregate.
+3. State dose coverage explicitly: concentrations are populated for only ~a third of reagent rows,
+   so report "dose reported in N/M records" — never treat a missing dose as zero.
+
+When comparing organoid systems: cite PMCID/DOI + evidence_quote per claim; report n, denominator,
+and missingness for each side; normalize by denominator before comparing counts.
+
+Reporting discipline for every quantitative claim:
+- report n, the denominator, and missingness; warn explicitly on low-n (n<5).
+- a reagent or dose absent from a record is "not reported" — not "not used", and never "biologically absent".
+- prefer grounded rows (grounding_status / evidence_quote present) and say so when the evidence is thin.
+
 ## Evidence rules for agents
 
 - Treat rows as extracted literature evidence, not clinical or wet-lab advice.
