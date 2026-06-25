@@ -37,10 +37,22 @@ def main():
     conn.executescript(SCHEMA)
     for t in ("protocols", "reagents"):   # no `sources` table in the public build
         rows = [json.loads(l) for l in (EXPORTS / f"{t}.jsonl").read_text().splitlines() if l.strip()]
+        # Schema-drift guard: the committed exports may carry columns this branch's
+        # build_kg.SCHEMA predates (deploy branch can lag master). Add any missing
+        # columns as TEXT so the insert never fails on a newer export. Belt-and-braces
+        # for the master<->deploy divergence; no-op once schemas converge.
+        if rows:
+            existing = {c[1] for c in conn.execute(f"PRAGMA table_info({t})").fetchall()}
+            for col in {k for r in rows for k in r} - existing:
+                conn.execute(f'ALTER TABLE {t} ADD COLUMN "{col}" TEXT')
         for r in rows:
             cols = ",".join(r.keys())
             ph = ",".join("?" * len(r))
-            conn.execute(f"INSERT INTO {t} ({cols}) VALUES ({ph})", list(r.values()))
+            # list/dict (e.g. stages[]) -> JSON text, matching how the main KG stores
+            # them, so the recipe renderer parses the column identically.
+            vals = [json.dumps(v, ensure_ascii=False) if isinstance(v, (list, dict)) else v
+                    for v in r.values()]
+            conn.execute(f"INSERT INTO {t} ({cols}) VALUES ({ph})", vals)
         print(f"  {t}: {len(rows)} rows")
     conn.execute("INSERT INTO reagents_fts(reagents_fts) VALUES ('optimize')")
     conn.commit()

@@ -165,6 +165,10 @@ function renderEndpoints(p){
   } catch (e) {
     document.getElementById('recipe').innerHTML = '<p>Could not load this protocol.</p>'; return;
   }
+  // stages is a JSON-text column in the Datasette DB; the row API returns it as a
+  // string. Normalize to an array so the recipe renderer (Array.isArray check) fires.
+  if (typeof p.stages === 'string') { try { p.stages = JSON.parse(p.stages || '[]'); } catch (e) { p.stages = []; } }
+  if (!Array.isArray(p.stages)) p.stages = [];
   let src = null;
   try { [src] = await j(`/atlas/sources/${encodeURIComponent(pmcid)}.json?_shape=array`); } catch (e) {}
   const sig = reags.filter(r => r.kind === 'signaling');
