@@ -191,7 +191,7 @@ _EXAMPLE_QUERY = {
     "message": {
         "query_graph": {
             "nodes": {
-                "pub": {"ids": ["PMC:10021093"], "categories": ["biolink:Publication"]},
+                "pub": {"ids": ["PMC:10000618"], "categories": ["biolink:Publication"]},
                 "thing": {},
             },
             "edges": {
