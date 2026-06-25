@@ -17,7 +17,7 @@ def test_public_manifest_counts_match_render_copy():
     test does not need updating with every corpus batch merge)."""
     manifest = _load_manifest()
 
-    assert manifest["license_filter"] == "CC0/CC-BY (no NC/ND)"
+    assert manifest["license_filter"] == "CC0/CC-BY (no NC/ND), PMC-ID-only, organoid_type resolved"
     assert isinstance(manifest["n_papers"], int) and manifest["n_papers"] > 0
     tables = manifest.get("tables", {})
     assert "protocols" in tables and "reagents" in tables
@@ -194,8 +194,8 @@ def test_public_manifest_has_schema_version():
     """Manifest must declare schema_version so consumers can detect breaking changes."""
     manifest = _load_manifest()
     assert "schema_version" in manifest, "manifest.json is missing 'schema_version'"
-    assert manifest["schema_version"] == "0.4", (
-        f"Expected schema_version '0.4', got {manifest['schema_version']!r}"
+    assert manifest["schema_version"] == "0.5", (
+        f"Expected schema_version '0.5', got {manifest['schema_version']!r}"
     )
 
 
