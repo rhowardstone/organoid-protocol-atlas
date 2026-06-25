@@ -231,14 +231,16 @@ and missingness for each side; normalize by denominator before comparing counts.
 
 Reporting discipline for every quantitative claim:
 - report n, the denominator, and missingness; warn explicitly on low-n (n<5).
-- a reagent or dose absent from a record is "not reported" — not "not used", and never "biologically absent".
+- a reagent absent from a protocol record was not used in that protocol.
+- a dose absent for a reagent that IS present means the dose was not reported/extracted — never treat it as zero.
+- a reagent absent from the corpus entirely (for a given type) means "not found in our CC0/CC-BY papers" — a corpus-scope claim, not a biological one.
 - prefer grounded rows (grounding_status / evidence_quote present) and say so when the evidence is thin.
 
 ## Evidence rules for agents
 
 - Treat rows as extracted literature evidence, not clinical or wet-lab advice.
 - Cite PMCID and DOI values from returned rows whenever making a claim.
-- Do not infer that a factor is absent from biology because it is absent here.
+- Do not infer that a factor is absent from biology because it is absent from the entire corpus.
 - Respect grounding fields and evidence snippets; missing evidence beats false certainty.
 - evidence_quote fields are verbatim substrings of the source paper's methods section.
 
