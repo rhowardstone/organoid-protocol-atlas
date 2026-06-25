@@ -1,0 +1,42 @@
+# Organoid Protocol Atlas
+
+> Evidence-grounded organoid culture protocols extracted from 6,200+ open-access papers. Every reagent links to a verbatim source span and a DOI.
+
+The Organoid Protocol Atlas is a structured knowledge base of organoid differentiation and culture protocols drawn from peer-reviewed literature (PMC open-access corpus). It provides machine-readable protocol records — including source cells, extracellular matrix, base medium, signaling cocktail with concentrations, culture timeline, and validation endpoints — where every extracted value is traceable to an exact substring of the original methods section.
+
+The atlas covers >40 organoid types (intestinal, cerebral, hepatic, pancreatic, cardiac, tumor, lung, kidney, retinal, gastric, and more) with Cellosaurus/ChEBI/SRI entity grounding, a Biolink-compliant KGX knowledge graph (6,202 papers; 18,224 edges), a TRAPI endpoint for interoperability with the Biomedical Translator ecosystem, and a peer-review proposal system for community curation.
+
+## Key API Endpoints
+
+- [All protocols](https://organoid-protocol-atlas.onrender.com/atlas/protocols): Full protocol table — filter by organoid_type, species, license, grounding_rate
+- [Reagents](https://organoid-protocol-atlas.onrender.com/atlas/reagents): Per-reagent rows with canonical CURIEs, concentrations, roles, and verbatim evidence spans
+- [Consensus recipe by type](https://organoid-protocol-atlas.onrender.com/analytics/consensus/intestinal): Modal signaling cocktail, matrix, and medium for each organoid type
+- [Protocol record (agent API)](https://organoid-protocol-atlas.onrender.com/api/protocol/PMC10000618): Full structured JSON for a single paper — reagents, stages, proposals
+- [TRAPI endpoint](https://organoid-protocol-atlas.onrender.com/trapi/query): Biolink-compliant query interface (SmartAPI-registered)
+- [KGX export](https://organoid-protocol-atlas.onrender.com/atlas/kgx): nodes.tsv + edges.tsv — Biolink-validated knowledge graph (CC0/CC-BY papers only)
+- [Propose an edit](https://organoid-protocol-atlas.onrender.com/api/propose): POST JSON to submit a correction; human curators accept/reject via /api/proposals/<id>/accept
+- [Heatmap](https://organoid-protocol-atlas.onrender.com/heatmap): Reagent × organoid-type coverage matrix
+- [Dashboard](https://organoid-protocol-atlas.onrender.com/dashboard): Atlas-wide statistics (grounding coverage, license breakdown, corpus growth)
+
+## Schema (StructuredOrganoidProtocolRecord v0.6)
+
+Each protocol record contains:
+- `pmcid` / `doi` — source paper identifiers
+- `organoid_type` — normalised type label (intestinal, cerebral, hepatic, …)
+- `species` — host organism (Homo sapiens, Mus musculus, …)
+- `source_cell_type` — starting cell population (iPSC, ASC, primary biopsy, …)
+- `matrix` — extracellular scaffold (Matrigel, Cultrex, fibrin, …)
+- `base_media` — base medium formula (DMEM/F12, Advanced DMEM/F12, …)
+- `stages[]` — ordered culture timeline; each stage: `start_day`, `end_day`, `culture_vessel`, `medium_base`, `reagents[{name, canonical, value, unit, role}]`, `transition`
+- `reagents[]` — flat list of all extracted reagents with CURIEs, concentrations, roles, evidence_quote, and grounded flag
+- `assay_endpoints` — validation readouts cited in the paper
+- `grounding_rate` — fraction of reagents with verbatim-matched evidence spans
+- `license` — per-paper open-access license (CC0, CC-BY, CC-BY-NC, …)
+
+## Agent Usage Notes
+
+- Use `X-Codex-Agent: <agent-id>` header on POST /api/propose to log agent-origin proposals
+- All edits are pending by default; human acceptance is required before values become canonical
+- KGX nodes follow Biolink 3.x categories; edges use `biolink:mentions` predicate
+- TRAPI queries: POST JSON body conforming to TRAPI 1.4 spec to /trapi/query
+- Gold-verified records (verified_by: rhowardstone) in /gold/verified/ are the evaluation ground truth — do not overwrite without human authorization
